@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetPaymentPayout](#getpaymentpayout) - Retrieve a payout
-* [ListPaymentPayouts](#listpaymentpayouts) - List all payouts
+* [GetPaymentPayout2](#getpaymentpayout2) - Retrieve a payout
+* [ListPaymentPayouts2](#listpaymentpayouts2) - List all payouts
 
-## GetPaymentPayout
+## GetPaymentPayout2
 
 Retrieve a payout
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payout.GetPaymentPayoutAsync(
+var res = await sdk.Payout.GetPaymentPayout2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Payout.GetPaymentPayoutAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Payout                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetPaymentPayoutQueryParamFields](../../Models/Requests/GetPaymentPayoutQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPaymentPayout2QueryParamFields](../../Models/Requests/GetPaymentPayout2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetPaymentPayoutResponse](../../Models/Requests/GetPaymentPayoutResponse.md)**
+**[GetPaymentPayout2Response](../../Models/Requests/GetPaymentPayout2Response.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Payout.GetPaymentPayoutAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListPaymentPayouts
+## ListPaymentPayouts2
 
 List all payouts
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListPaymentPayoutsRequest req = new ListPaymentPayoutsRequest() {
+ListPaymentPayouts2Request req = new ListPaymentPayouts2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Payout.ListPaymentPayoutsAsync(req);
+var res = await sdk.Payout.ListPaymentPayouts2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListPaymentPayoutsRequest](../../Models/Requests/ListPaymentPayoutsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListPaymentPayouts2Request](../../Models/Requests/ListPaymentPayouts2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListPaymentPayoutsResponse](../../Models/Requests/ListPaymentPayoutsResponse.md)**
+**[ListPaymentPayouts2Response](../../Models/Requests/ListPaymentPayouts2Response.md)**
 
 ### Errors
 

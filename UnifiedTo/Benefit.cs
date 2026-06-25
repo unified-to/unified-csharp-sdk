@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a benefit
         /// </summary>
-        Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefitQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisBenefit2Response> CreateHrisBenefit2Async(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefit2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a benefit
         /// </summary>
-        Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<GetHrisBenefitQueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisBenefit2Response> GetHrisBenefit2Async(string connectionId, string id, List<GetHrisBenefit2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all benefits
         /// </summary>
-        Task<ListHrisBenefitsResponse> ListHrisBenefitsAsync(ListHrisBenefitsRequest request);
+        Task<ListHrisBenefits2Response> ListHrisBenefits2Async(ListHrisBenefits2Request request);
 
         /// <summary>
         /// Update a benefit
         /// </summary>
-        Task<PatchHrisBenefitResponse> PatchHrisBenefitAsync(PatchHrisBenefitRequest request);
+        Task<PatchHrisBenefit2Response> PatchHrisBenefit2Async(PatchHrisBenefit2Request request);
 
         /// <summary>
         /// Remove a benefit
         /// </summary>
-        Task<RemoveHrisBenefitResponse> RemoveHrisBenefitAsync(string connectionId, string id);
+        Task<RemoveHrisBenefit2Response> RemoveHrisBenefit2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a benefit
         /// </summary>
-        Task<UpdateHrisBenefitResponse> UpdateHrisBenefitAsync(UpdateHrisBenefitRequest request);
+        Task<UpdateHrisBenefit2Response> UpdateHrisBenefit2Async(UpdateHrisBenefit2Request request);
     }
 
     public class Benefit: IBenefit
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefitQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisBenefit2Response> CreateHrisBenefit2Async(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefit2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisBenefitRequest()
+            var request = new CreateHrisBenefit2Request()
             {
                 HrisBenefit = hrisBenefit,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisBenefitResponse()
+                    var response = new CreateHrisBenefit2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<GetHrisBenefitQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisBenefit2Response> GetHrisBenefit2Async(string connectionId, string id, List<GetHrisBenefit2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisBenefitRequest()
+            var request = new GetHrisBenefit2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisBenefitResponse()
+                    var response = new GetHrisBenefit2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisBenefitsResponse> ListHrisBenefitsAsync(ListHrisBenefitsRequest request)
+        public async Task<ListHrisBenefits2Response> ListHrisBenefits2Async(ListHrisBenefits2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/benefit", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBenefits", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBenefits2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisBenefit>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisBenefitsResponse()
+                    var response = new ListHrisBenefits2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisBenefitResponse> PatchHrisBenefitAsync(PatchHrisBenefitRequest request)
+        public async Task<PatchHrisBenefit2Response> PatchHrisBenefit2Async(PatchHrisBenefit2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/benefit/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisBenefitResponse()
+                    var response = new PatchHrisBenefit2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisBenefitResponse> RemoveHrisBenefitAsync(string connectionId, string id)
+        public async Task<RemoveHrisBenefit2Response> RemoveHrisBenefit2Async(string connectionId, string id)
         {
-            var request = new RemoveHrisBenefitRequest()
+            var request = new RemoveHrisBenefit2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisBenefitResponse()
+                return new RemoveHrisBenefit2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisBenefitResponse()
+                return new RemoveHrisBenefit2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisBenefitResponse> UpdateHrisBenefitAsync(UpdateHrisBenefitRequest request)
+        public async Task<UpdateHrisBenefit2Response> UpdateHrisBenefit2Async(UpdateHrisBenefit2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/benefit/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisBenefitResponse()
+                    var response = new UpdateHrisBenefit2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

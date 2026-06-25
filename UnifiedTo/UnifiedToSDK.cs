@@ -55,6 +55,11 @@ namespace UnifiedTo
         public IInsertionorder Insertionorder { get; }
         public IPromoted Promoted { get; }
         public ITarget Target { get; }
+        public IAnalytics Analytics { get; }
+        public IEvent Event { get; }
+        public IProperty Property { get; }
+        public ISession Session { get; }
+        public IVisitor Visitor { get; }
         public IAssessment Assessment { get; }
         public IPackage Package { get; }
         public IAts Ats { get; }
@@ -69,7 +74,6 @@ namespace UnifiedTo
         public IScorecard Scorecard { get; }
         public ICalendar Calendar { get; }
         public IBusy Busy { get; }
-        public IEvent Event { get; }
         public ILink Link { get; }
         public IRecording Recording { get; }
         public IWebinar Webinar { get; }
@@ -89,6 +93,11 @@ namespace UnifiedTo
         public IDeal Deal { get; }
         public ILead Lead { get; }
         public IPipeline Pipeline { get; }
+        public IDatastore Datastore { get; }
+        public IDatabase Database { get; }
+        public IQuery Query { get; }
+        public IRecord Record { get; }
+        public ITable Table { get; }
         public IEnrich Enrich { get; }
         public IPerson Person { get; }
         public IForms Forms { get; }
@@ -179,7 +188,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -210,6 +219,11 @@ namespace UnifiedTo
         public IInsertionorder Insertionorder { get; private set; }
         public IPromoted Promoted { get; private set; }
         public ITarget Target { get; private set; }
+        public IAnalytics Analytics { get; private set; }
+        public IEvent Event { get; private set; }
+        public IProperty Property { get; private set; }
+        public ISession Session { get; private set; }
+        public IVisitor Visitor { get; private set; }
         public IAssessment Assessment { get; private set; }
         public IPackage Package { get; private set; }
         public IAts Ats { get; private set; }
@@ -224,7 +238,6 @@ namespace UnifiedTo
         public IScorecard Scorecard { get; private set; }
         public ICalendar Calendar { get; private set; }
         public IBusy Busy { get; private set; }
-        public IEvent Event { get; private set; }
         public ILink Link { get; private set; }
         public IRecording Recording { get; private set; }
         public IWebinar Webinar { get; private set; }
@@ -244,6 +257,11 @@ namespace UnifiedTo
         public IDeal Deal { get; private set; }
         public ILead Lead { get; private set; }
         public IPipeline Pipeline { get; private set; }
+        public IDatastore Datastore { get; private set; }
+        public IDatabase Database { get; private set; }
+        public IQuery Query { get; private set; }
+        public IRecord Record { get; private set; }
+        public ITable Table { get; private set; }
         public IEnrich Enrich { get; private set; }
         public IPerson Person { get; private set; }
         public IForms Forms { get; private set; }
@@ -383,6 +401,16 @@ namespace UnifiedTo
 
             Target = new Target(SDKConfiguration);
 
+            Analytics = new Analytics(SDKConfiguration);
+
+            Event = new Event(SDKConfiguration);
+
+            Property = new Property(SDKConfiguration);
+
+            Session = new Session(SDKConfiguration);
+
+            Visitor = new Visitor(SDKConfiguration);
+
             Assessment = new Assessment(SDKConfiguration);
 
             Package = new Package(SDKConfiguration);
@@ -410,8 +438,6 @@ namespace UnifiedTo
             Calendar = new Calendar(SDKConfiguration);
 
             Busy = new Busy(SDKConfiguration);
-
-            Event = new Event(SDKConfiguration);
 
             Link = new Link(SDKConfiguration);
 
@@ -450,6 +476,16 @@ namespace UnifiedTo
             Lead = new Lead(SDKConfiguration);
 
             Pipeline = new Pipeline(SDKConfiguration);
+
+            Datastore = new Datastore(SDKConfiguration);
+
+            Database = new Database(SDKConfiguration);
+
+            Query = new Query(SDKConfiguration);
+
+            Record = new Record(SDKConfiguration);
+
+            Table = new Table(SDKConfiguration);
 
             Enrich = new Enrich(SDKConfiguration);
 
@@ -704,6 +740,16 @@ namespace UnifiedTo
 
             Target = new Target(SDKConfiguration);
 
+            Analytics = new Analytics(SDKConfiguration);
+
+            Event = new Event(SDKConfiguration);
+
+            Property = new Property(SDKConfiguration);
+
+            Session = new Session(SDKConfiguration);
+
+            Visitor = new Visitor(SDKConfiguration);
+
             Assessment = new Assessment(SDKConfiguration);
 
             Package = new Package(SDKConfiguration);
@@ -731,8 +777,6 @@ namespace UnifiedTo
             Calendar = new Calendar(SDKConfiguration);
 
             Busy = new Busy(SDKConfiguration);
-
-            Event = new Event(SDKConfiguration);
 
             Link = new Link(SDKConfiguration);
 
@@ -771,6 +815,16 @@ namespace UnifiedTo
             Lead = new Lead(SDKConfiguration);
 
             Pipeline = new Pipeline(SDKConfiguration);
+
+            Datastore = new Datastore(SDKConfiguration);
+
+            Database = new Database(SDKConfiguration);
+
+            Query = new Query(SDKConfiguration);
+
+            Record = new Record(SDKConfiguration);
+
+            Table = new Table(SDKConfiguration);
 
             Enrich = new Enrich(SDKConfiguration);
 

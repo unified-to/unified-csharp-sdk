@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a call
         /// </summary>
-        Task<GetUcCallResponse> GetUcCallAsync(string connectionId, string id, List<GetUcCallQueryParamFields>? fields = null, string? raw = null);
+        Task<GetUcCall2Response> GetUcCall2Async(string connectionId, string id, List<GetUcCall2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all calls
         /// </summary>
-        Task<ListUcCallsResponse> ListUcCallsAsync(ListUcCallsRequest request);
+        Task<ListUcCalls2Response> ListUcCalls2Async(ListUcCalls2Request request);
     }
 
     public class Call: ICall
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetUcCallResponse> GetUcCallAsync(string connectionId, string id, List<GetUcCallQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetUcCall2Response> GetUcCall2Async(string connectionId, string id, List<GetUcCall2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetUcCallRequest()
+            var request = new GetUcCall2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcCall", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcCall2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcCall>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetUcCallResponse()
+                    var response = new GetUcCall2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListUcCallsResponse> ListUcCallsAsync(ListUcCallsRequest request)
+        public async Task<ListUcCalls2Response> ListUcCalls2Async(ListUcCalls2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/call", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcCalls", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcCalls2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<UcCall>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListUcCallsResponse()
+                    var response = new ListUcCalls2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

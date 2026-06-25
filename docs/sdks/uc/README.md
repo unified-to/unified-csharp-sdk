@@ -5,28 +5,28 @@
 
 ### Available Operations
 
-* [CreateUcComment](#createuccomment) - Create a comment
-* [CreateUcContact](#createuccontact) - Create a contact
-* [CreateUcRecording](#createucrecording) - Create a recording
-* [GetUcCall](#getuccall) - Retrieve a call
-* [GetUcComment](#getuccomment) - Retrieve a comment
-* [GetUcContact](#getuccontact) - Retrieve a contact
-* [GetUcRecording](#getucrecording) - Retrieve a recording
-* [ListUcCalls](#listuccalls) - List all calls
-* [ListUcComments](#listuccomments) - List all comments
-* [ListUcContacts](#listuccontacts) - List all contacts
-* [ListUcRecordings](#listucrecordings) - List all recordings
-* [PatchUcComment](#patchuccomment) - Update a comment
-* [PatchUcContact](#patchuccontact) - Update a contact
-* [PatchUcRecording](#patchucrecording) - Update a recording
-* [RemoveUcComment](#removeuccomment) - Remove a comment
-* [RemoveUcContact](#removeuccontact) - Remove a contact
-* [RemoveUcRecording](#removeucrecording) - Remove a recording
-* [UpdateUcComment](#updateuccomment) - Update a comment
-* [UpdateUcContact](#updateuccontact) - Update a contact
-* [UpdateUcRecording](#updateucrecording) - Update a recording
+* [CreateUcComment2](#createuccomment2) - Create a comment
+* [CreateUcContact2](#createuccontact2) - Create a contact
+* [CreateUcRecording2](#createucrecording2) - Create a recording
+* [GetUcCall2](#getuccall2) - Retrieve a call
+* [GetUcComment2](#getuccomment2) - Retrieve a comment
+* [GetUcContact2](#getuccontact2) - Retrieve a contact
+* [GetUcRecording2](#getucrecording2) - Retrieve a recording
+* [ListUcCalls2](#listuccalls2) - List all calls
+* [ListUcComments2](#listuccomments2) - List all comments
+* [ListUcContacts2](#listuccontacts2) - List all contacts
+* [ListUcRecordings2](#listucrecordings2) - List all recordings
+* [PatchUcComment2](#patchuccomment2) - Update a comment
+* [PatchUcContact2](#patchuccontact2) - Update a contact
+* [PatchUcRecording2](#patchucrecording2) - Update a recording
+* [RemoveUcComment2](#removeuccomment2) - Remove a comment
+* [RemoveUcContact2](#removeuccontact2) - Remove a contact
+* [RemoveUcRecording2](#removeucrecording2) - Remove a recording
+* [UpdateUcComment2](#updateuccomment2) - Update a comment
+* [UpdateUcContact2](#updateuccontact2) - Update a contact
+* [UpdateUcRecording2](#updateucrecording2) - Update a recording
 
-## CreateUcComment
+## CreateUcComment2
 
 Create a comment
 
@@ -40,7 +40,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.CreateUcCommentAsync(
+var res = await sdk.Uc.CreateUcComment2Async(
     ucComment: new UcComment() {},
     connectionId: "<id>"
 );
@@ -54,12 +54,12 @@ var res = await sdk.Uc.CreateUcCommentAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `UcComment`                                                                                                                                      | [UcComment](../../Models/Components/UcComment.md)                                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateUcCommentQueryParamFields](../../Models/Requests/CreateUcCommentQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateUcComment2QueryParamFields](../../Models/Requests/CreateUcComment2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateUcCommentResponse](../../Models/Requests/CreateUcCommentResponse.md)**
+**[CreateUcComment2Response](../../Models/Requests/CreateUcComment2Response.md)**
 
 ### Errors
 
@@ -67,7 +67,7 @@ var res = await sdk.Uc.CreateUcCommentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateUcContact
+## CreateUcContact2
 
 Create a contact
 
@@ -81,7 +81,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.CreateUcContactAsync(
+var res = await sdk.Uc.CreateUcContact2Async(
     ucContact: new UcContact() {},
     connectionId: "<id>"
 );
@@ -95,12 +95,12 @@ var res = await sdk.Uc.CreateUcContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `UcContact`                                                                                                                                      | [UcContact](../../Models/Components/UcContact.md)                                                                                                | :heavy_check_mark:                                                                                                                               | A contact represents a person that optionally is associated with a call                                                                          |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateUcContactQueryParamFields](../../Models/Requests/CreateUcContactQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateUcContact2QueryParamFields](../../Models/Requests/CreateUcContact2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateUcContactResponse](../../Models/Requests/CreateUcContactResponse.md)**
+**[CreateUcContact2Response](../../Models/Requests/CreateUcContact2Response.md)**
 
 ### Errors
 
@@ -108,7 +108,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateUcRecording
+## CreateUcRecording2
 
 Create a recording
 
@@ -122,7 +122,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.CreateUcRecordingAsync(
+var res = await sdk.Uc.CreateUcRecording2Async(
     ucRecording: new UcRecording() {},
     connectionId: "<id>"
 );
@@ -136,12 +136,12 @@ var res = await sdk.Uc.CreateUcRecordingAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `UcRecording`                                                                                                                                    | [UcRecording](../../Models/Components/UcRecording.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateUcRecordingQueryParamFields](../../Models/Requests/CreateUcRecordingQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateUcRecording2QueryParamFields](../../Models/Requests/CreateUcRecording2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateUcRecordingResponse](../../Models/Requests/CreateUcRecordingResponse.md)**
+**[CreateUcRecording2Response](../../Models/Requests/CreateUcRecording2Response.md)**
 
 ### Errors
 
@@ -149,7 +149,7 @@ var res = await sdk.Uc.CreateUcRecordingAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetUcCall
+## GetUcCall2
 
 Retrieve a call
 
@@ -163,7 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.GetUcCallAsync(
+var res = await sdk.Uc.GetUcCall2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -177,12 +177,12 @@ var res = await sdk.Uc.GetUcCallAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Call                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetUcCallQueryParamFields](../../Models/Requests/GetUcCallQueryParamFields.md)>                                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetUcCall2QueryParamFields](../../Models/Requests/GetUcCall2QueryParamFields.md)>                                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetUcCallResponse](../../Models/Requests/GetUcCallResponse.md)**
+**[GetUcCall2Response](../../Models/Requests/GetUcCall2Response.md)**
 
 ### Errors
 
@@ -190,7 +190,7 @@ var res = await sdk.Uc.GetUcCallAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetUcComment
+## GetUcComment2
 
 Retrieve a comment
 
@@ -204,7 +204,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.GetUcCommentAsync(
+var res = await sdk.Uc.GetUcComment2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -218,12 +218,12 @@ var res = await sdk.Uc.GetUcCommentAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Comment                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetUcCommentQueryParamFields](../../Models/Requests/GetUcCommentQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetUcComment2QueryParamFields](../../Models/Requests/GetUcComment2QueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetUcCommentResponse](../../Models/Requests/GetUcCommentResponse.md)**
+**[GetUcComment2Response](../../Models/Requests/GetUcComment2Response.md)**
 
 ### Errors
 
@@ -231,7 +231,7 @@ var res = await sdk.Uc.GetUcCommentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetUcContact
+## GetUcContact2
 
 Retrieve a contact
 
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.GetUcContactAsync(
+var res = await sdk.Uc.GetUcContact2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -259,12 +259,12 @@ var res = await sdk.Uc.GetUcContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Contact                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetUcContactQueryParamFields](../../Models/Requests/GetUcContactQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetUcContact2QueryParamFields](../../Models/Requests/GetUcContact2QueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetUcContactResponse](../../Models/Requests/GetUcContactResponse.md)**
+**[GetUcContact2Response](../../Models/Requests/GetUcContact2Response.md)**
 
 ### Errors
 
@@ -272,7 +272,7 @@ var res = await sdk.Uc.GetUcContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetUcRecording
+## GetUcRecording2
 
 Retrieve a recording
 
@@ -286,7 +286,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.GetUcRecordingAsync(
+var res = await sdk.Uc.GetUcRecording2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -300,12 +300,12 @@ var res = await sdk.Uc.GetUcRecordingAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Recording                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetUcRecordingQueryParamFields](../../Models/Requests/GetUcRecordingQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetUcRecording2QueryParamFields](../../Models/Requests/GetUcRecording2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetUcRecordingResponse](../../Models/Requests/GetUcRecordingResponse.md)**
+**[GetUcRecording2Response](../../Models/Requests/GetUcRecording2Response.md)**
 
 ### Errors
 
@@ -313,7 +313,7 @@ var res = await sdk.Uc.GetUcRecordingAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListUcCalls
+## ListUcCalls2
 
 List all calls
 
@@ -328,24 +328,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUcCallsRequest req = new ListUcCallsRequest() {
+ListUcCalls2Request req = new ListUcCalls2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Uc.ListUcCallsAsync(req);
+var res = await sdk.Uc.ListUcCalls2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `request`                                                         | [ListUcCallsRequest](../../Models/Requests/ListUcCallsRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListUcCalls2Request](../../Models/Requests/ListUcCalls2Request.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
-**[ListUcCallsResponse](../../Models/Requests/ListUcCallsResponse.md)**
+**[ListUcCalls2Response](../../Models/Requests/ListUcCalls2Response.md)**
 
 ### Errors
 
@@ -353,7 +353,7 @@ var res = await sdk.Uc.ListUcCallsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListUcComments
+## ListUcComments2
 
 List all comments
 
@@ -368,24 +368,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUcCommentsRequest req = new ListUcCommentsRequest() {
+ListUcComments2Request req = new ListUcComments2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Uc.ListUcCommentsAsync(req);
+var res = await sdk.Uc.ListUcComments2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [ListUcCommentsRequest](../../Models/Requests/ListUcCommentsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListUcComments2Request](../../Models/Requests/ListUcComments2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListUcCommentsResponse](../../Models/Requests/ListUcCommentsResponse.md)**
+**[ListUcComments2Response](../../Models/Requests/ListUcComments2Response.md)**
 
 ### Errors
 
@@ -393,7 +393,7 @@ var res = await sdk.Uc.ListUcCommentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListUcContacts
+## ListUcContacts2
 
 List all contacts
 
@@ -408,24 +408,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUcContactsRequest req = new ListUcContactsRequest() {
+ListUcContacts2Request req = new ListUcContacts2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Uc.ListUcContactsAsync(req);
+var res = await sdk.Uc.ListUcContacts2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [ListUcContactsRequest](../../Models/Requests/ListUcContactsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListUcContacts2Request](../../Models/Requests/ListUcContacts2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListUcContactsResponse](../../Models/Requests/ListUcContactsResponse.md)**
+**[ListUcContacts2Response](../../Models/Requests/ListUcContacts2Response.md)**
 
 ### Errors
 
@@ -433,7 +433,7 @@ var res = await sdk.Uc.ListUcContactsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListUcRecordings
+## ListUcRecordings2
 
 List all recordings
 
@@ -448,24 +448,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUcRecordingsRequest req = new ListUcRecordingsRequest() {
+ListUcRecordings2Request req = new ListUcRecordings2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Uc.ListUcRecordingsAsync(req);
+var res = await sdk.Uc.ListUcRecordings2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListUcRecordingsRequest](../../Models/Requests/ListUcRecordingsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListUcRecordings2Request](../../Models/Requests/ListUcRecordings2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListUcRecordingsResponse](../../Models/Requests/ListUcRecordingsResponse.md)**
+**[ListUcRecordings2Response](../../Models/Requests/ListUcRecordings2Response.md)**
 
 ### Errors
 
@@ -473,7 +473,7 @@ var res = await sdk.Uc.ListUcRecordingsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchUcComment
+## PatchUcComment2
 
 Update a comment
 
@@ -488,26 +488,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchUcCommentRequest req = new PatchUcCommentRequest() {
+PatchUcComment2Request req = new PatchUcComment2Request() {
     UcComment = new UcComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Uc.PatchUcCommentAsync(req);
+var res = await sdk.Uc.PatchUcComment2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [PatchUcCommentRequest](../../Models/Requests/PatchUcCommentRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [PatchUcComment2Request](../../Models/Requests/PatchUcComment2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[PatchUcCommentResponse](../../Models/Requests/PatchUcCommentResponse.md)**
+**[PatchUcComment2Response](../../Models/Requests/PatchUcComment2Response.md)**
 
 ### Errors
 
@@ -515,7 +515,7 @@ var res = await sdk.Uc.PatchUcCommentAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchUcContact
+## PatchUcContact2
 
 Update a contact
 
@@ -530,26 +530,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchUcContactRequest req = new PatchUcContactRequest() {
+PatchUcContact2Request req = new PatchUcContact2Request() {
     UcContact = new UcContact() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Uc.PatchUcContactAsync(req);
+var res = await sdk.Uc.PatchUcContact2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [PatchUcContactRequest](../../Models/Requests/PatchUcContactRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [PatchUcContact2Request](../../Models/Requests/PatchUcContact2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[PatchUcContactResponse](../../Models/Requests/PatchUcContactResponse.md)**
+**[PatchUcContact2Response](../../Models/Requests/PatchUcContact2Response.md)**
 
 ### Errors
 
@@ -557,7 +557,7 @@ var res = await sdk.Uc.PatchUcContactAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchUcRecording
+## PatchUcRecording2
 
 Update a recording
 
@@ -572,26 +572,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchUcRecordingRequest req = new PatchUcRecordingRequest() {
+PatchUcRecording2Request req = new PatchUcRecording2Request() {
     UcRecording = new UcRecording() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Uc.PatchUcRecordingAsync(req);
+var res = await sdk.Uc.PatchUcRecording2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchUcRecordingRequest](../../Models/Requests/PatchUcRecordingRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchUcRecording2Request](../../Models/Requests/PatchUcRecording2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchUcRecordingResponse](../../Models/Requests/PatchUcRecordingResponse.md)**
+**[PatchUcRecording2Response](../../Models/Requests/PatchUcRecording2Response.md)**
 
 ### Errors
 
@@ -599,7 +599,7 @@ var res = await sdk.Uc.PatchUcRecordingAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveUcComment
+## RemoveUcComment2
 
 Remove a comment
 
@@ -613,7 +613,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.RemoveUcCommentAsync(
+var res = await sdk.Uc.RemoveUcComment2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -630,7 +630,7 @@ var res = await sdk.Uc.RemoveUcCommentAsync(
 
 ### Response
 
-**[RemoveUcCommentResponse](../../Models/Requests/RemoveUcCommentResponse.md)**
+**[RemoveUcComment2Response](../../Models/Requests/RemoveUcComment2Response.md)**
 
 ### Errors
 
@@ -638,7 +638,7 @@ var res = await sdk.Uc.RemoveUcCommentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveUcContact
+## RemoveUcContact2
 
 Remove a contact
 
@@ -652,7 +652,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.RemoveUcContactAsync(
+var res = await sdk.Uc.RemoveUcContact2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -669,7 +669,7 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 
 ### Response
 
-**[RemoveUcContactResponse](../../Models/Requests/RemoveUcContactResponse.md)**
+**[RemoveUcContact2Response](../../Models/Requests/RemoveUcContact2Response.md)**
 
 ### Errors
 
@@ -677,7 +677,7 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveUcRecording
+## RemoveUcRecording2
 
 Remove a recording
 
@@ -691,7 +691,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Uc.RemoveUcRecordingAsync(
+var res = await sdk.Uc.RemoveUcRecording2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -708,7 +708,7 @@ var res = await sdk.Uc.RemoveUcRecordingAsync(
 
 ### Response
 
-**[RemoveUcRecordingResponse](../../Models/Requests/RemoveUcRecordingResponse.md)**
+**[RemoveUcRecording2Response](../../Models/Requests/RemoveUcRecording2Response.md)**
 
 ### Errors
 
@@ -716,7 +716,7 @@ var res = await sdk.Uc.RemoveUcRecordingAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateUcComment
+## UpdateUcComment2
 
 Update a comment
 
@@ -731,26 +731,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
+UpdateUcComment2Request req = new UpdateUcComment2Request() {
     UcComment = new UcComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Uc.UpdateUcCommentAsync(req);
+var res = await sdk.Uc.UpdateUcComment2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [UpdateUcCommentRequest](../../Models/Requests/UpdateUcCommentRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateUcComment2Request](../../Models/Requests/UpdateUcComment2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[UpdateUcCommentResponse](../../Models/Requests/UpdateUcCommentResponse.md)**
+**[UpdateUcComment2Response](../../Models/Requests/UpdateUcComment2Response.md)**
 
 ### Errors
 
@@ -758,7 +758,7 @@ var res = await sdk.Uc.UpdateUcCommentAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateUcContact
+## UpdateUcContact2
 
 Update a contact
 
@@ -773,26 +773,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateUcContactRequest req = new UpdateUcContactRequest() {
+UpdateUcContact2Request req = new UpdateUcContact2Request() {
     UcContact = new UcContact() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Uc.UpdateUcContactAsync(req);
+var res = await sdk.Uc.UpdateUcContact2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [UpdateUcContactRequest](../../Models/Requests/UpdateUcContactRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateUcContact2Request](../../Models/Requests/UpdateUcContact2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[UpdateUcContactResponse](../../Models/Requests/UpdateUcContactResponse.md)**
+**[UpdateUcContact2Response](../../Models/Requests/UpdateUcContact2Response.md)**
 
 ### Errors
 
@@ -800,7 +800,7 @@ var res = await sdk.Uc.UpdateUcContactAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateUcRecording
+## UpdateUcRecording2
 
 Update a recording
 
@@ -815,26 +815,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateUcRecordingRequest req = new UpdateUcRecordingRequest() {
+UpdateUcRecording2Request req = new UpdateUcRecording2Request() {
     UcRecording = new UcRecording() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Uc.UpdateUcRecordingAsync(req);
+var res = await sdk.Uc.UpdateUcRecording2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateUcRecordingRequest](../../Models/Requests/UpdateUcRecordingRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateUcRecording2Request](../../Models/Requests/UpdateUcRecording2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateUcRecordingResponse](../../Models/Requests/UpdateUcRecordingResponse.md)**
+**[UpdateUcRecording2Response](../../Models/Requests/UpdateUcRecording2Response.md)**
 
 ### Errors
 

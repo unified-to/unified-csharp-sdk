@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetAdsPromoted](#getadspromoted) - Retrieve a promoted
-* [ListAdsPromoteds](#listadspromoteds) - List all promoteds
+* [GetAdsPromoted2](#getadspromoted2) - Retrieve a promoted
+* [ListAdsPromoteds2](#listadspromoteds2) - List all promoteds
 
-## GetAdsPromoted
+## GetAdsPromoted2
 
 Retrieve a promoted
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Promoted.GetAdsPromotedAsync(
+var res = await sdk.Promoted.GetAdsPromoted2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Promoted.GetAdsPromotedAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Promoted                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAdsPromotedQueryParamFields](../../Models/Requests/GetAdsPromotedQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAdsPromoted2QueryParamFields](../../Models/Requests/GetAdsPromoted2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAdsPromotedResponse](../../Models/Requests/GetAdsPromotedResponse.md)**
+**[GetAdsPromoted2Response](../../Models/Requests/GetAdsPromoted2Response.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Promoted.GetAdsPromotedAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAdsPromoteds
+## ListAdsPromoteds2
 
 List all promoteds
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAdsPromotedsRequest req = new ListAdsPromotedsRequest() {
+ListAdsPromoteds2Request req = new ListAdsPromoteds2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Promoted.ListAdsPromotedsAsync(req);
+var res = await sdk.Promoted.ListAdsPromoteds2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListAdsPromotedsRequest](../../Models/Requests/ListAdsPromotedsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListAdsPromoteds2Request](../../Models/Requests/ListAdsPromoteds2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListAdsPromotedsResponse](../../Models/Requests/ListAdsPromotedsResponse.md)**
+**[ListAdsPromoteds2Response](../../Models/Requests/ListAdsPromoteds2Response.md)**
 
 ### Errors
 

@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a lead
         /// </summary>
-        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<CreateCrmLeadQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCrmLead2Response> CreateCrmLead2Async(CrmLead crmLead, string connectionId, List<CreateCrmLead2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a lead
         /// </summary>
-        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<GetCrmLeadQueryParamFields>? fields = null, string? raw = null);
+        Task<GetCrmLead2Response> GetCrmLead2Async(string connectionId, string id, List<GetCrmLead2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all leads
         /// </summary>
-        Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest request);
+        Task<ListCrmLeads2Response> ListCrmLeads2Async(ListCrmLeads2Request request);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadRequest request);
+        Task<PatchCrmLead2Response> PatchCrmLead2Async(PatchCrmLead2Request request);
 
         /// <summary>
         /// Remove a lead
         /// </summary>
-        Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(string connectionId, string id);
+        Task<RemoveCrmLead2Response> RemoveCrmLead2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadRequest request);
+        Task<UpdateCrmLead2Response> UpdateCrmLead2Async(UpdateCrmLead2Request request);
     }
 
     public class Lead: ILead
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<CreateCrmLeadQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCrmLead2Response> CreateCrmLead2Async(CrmLead crmLead, string connectionId, List<CreateCrmLead2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCrmLeadRequest()
+            var request = new CreateCrmLead2Request()
             {
                 CrmLead = crmLead,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmLead", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmLead2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCrmLeadResponse()
+                    var response = new CreateCrmLead2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<GetCrmLeadQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCrmLead2Response> GetCrmLead2Async(string connectionId, string id, List<GetCrmLead2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCrmLeadRequest()
+            var request = new GetCrmLead2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmLead", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmLead2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCrmLeadResponse()
+                    var response = new GetCrmLead2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest request)
+        public async Task<ListCrmLeads2Response> ListCrmLeads2Async(ListCrmLeads2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmLeads", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmLeads2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CrmLead>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCrmLeadsResponse()
+                    var response = new ListCrmLeads2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadRequest request)
+        public async Task<PatchCrmLead2Response> PatchCrmLead2Async(PatchCrmLead2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmLead", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmLead2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCrmLeadResponse()
+                    var response = new PatchCrmLead2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(string connectionId, string id)
+        public async Task<RemoveCrmLead2Response> RemoveCrmLead2Async(string connectionId, string id)
         {
-            var request = new RemoveCrmLeadRequest()
+            var request = new RemoveCrmLead2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmLead", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmLead2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCrmLeadResponse()
+                return new RemoveCrmLead2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCrmLeadResponse()
+                return new RemoveCrmLead2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadRequest request)
+        public async Task<UpdateCrmLead2Response> UpdateCrmLead2Async(UpdateCrmLead2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmLead", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmLead2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCrmLeadResponse()
+                    var response = new UpdateCrmLead2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateCrmPipeline](#createcrmpipeline) - Create a pipeline
-* [GetCrmPipeline](#getcrmpipeline) - Retrieve a pipeline
-* [ListCrmPipelines](#listcrmpipelines) - List all pipelines
-* [PatchCrmPipeline](#patchcrmpipeline) - Update a pipeline
-* [RemoveCrmPipeline](#removecrmpipeline) - Remove a pipeline
-* [UpdateCrmPipeline](#updatecrmpipeline) - Update a pipeline
+* [CreateCrmPipeline2](#createcrmpipeline2) - Create a pipeline
+* [GetCrmPipeline2](#getcrmpipeline2) - Retrieve a pipeline
+* [ListCrmPipelines2](#listcrmpipelines2) - List all pipelines
+* [PatchCrmPipeline2](#patchcrmpipeline2) - Update a pipeline
+* [RemoveCrmPipeline2](#removecrmpipeline2) - Remove a pipeline
+* [UpdateCrmPipeline2](#updatecrmpipeline2) - Update a pipeline
 
-## CreateCrmPipeline
+## CreateCrmPipeline2
 
 Create a pipeline
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Pipeline.CreateCrmPipelineAsync(
+var res = await sdk.Pipeline.CreateCrmPipeline2Async(
     crmPipeline: new CrmPipeline() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CrmPipeline`                                                                                                                                    | [CrmPipeline](../../Models/Components/CrmPipeline.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCrmPipelineQueryParamFields](../../Models/Requests/CreateCrmPipelineQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCrmPipeline2QueryParamFields](../../Models/Requests/CreateCrmPipeline2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCrmPipelineResponse](../../Models/Requests/CreateCrmPipelineResponse.md)**
+**[CreateCrmPipeline2Response](../../Models/Requests/CreateCrmPipeline2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCrmPipeline
+## GetCrmPipeline2
 
 Retrieve a pipeline
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Pipeline.GetCrmPipelineAsync(
+var res = await sdk.Pipeline.GetCrmPipeline2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Pipeline                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetCrmPipelineQueryParamFields](../../Models/Requests/GetCrmPipelineQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCrmPipeline2QueryParamFields](../../Models/Requests/GetCrmPipeline2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCrmPipelineResponse](../../Models/Requests/GetCrmPipelineResponse.md)**
+**[GetCrmPipeline2Response](../../Models/Requests/GetCrmPipeline2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCrmPipelines
+## ListCrmPipelines2
 
 List all pipelines
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCrmPipelinesRequest req = new ListCrmPipelinesRequest() {
+ListCrmPipelines2Request req = new ListCrmPipelines2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
+var res = await sdk.Pipeline.ListCrmPipelines2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListCrmPipelinesRequest](../../Models/Requests/ListCrmPipelinesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListCrmPipelines2Request](../../Models/Requests/ListCrmPipelines2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListCrmPipelinesResponse](../../Models/Requests/ListCrmPipelinesResponse.md)**
+**[ListCrmPipelines2Response](../../Models/Requests/ListCrmPipelines2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCrmPipeline
+## PatchCrmPipeline2
 
 Update a pipeline
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
+PatchCrmPipeline2Request req = new PatchCrmPipeline2Request() {
     CrmPipeline = new CrmPipeline() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Pipeline.PatchCrmPipelineAsync(req);
+var res = await sdk.Pipeline.PatchCrmPipeline2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchCrmPipelineRequest](../../Models/Requests/PatchCrmPipelineRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchCrmPipeline2Request](../../Models/Requests/PatchCrmPipeline2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchCrmPipelineResponse](../../Models/Requests/PatchCrmPipelineResponse.md)**
+**[PatchCrmPipeline2Response](../../Models/Requests/PatchCrmPipeline2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCrmPipeline
+## RemoveCrmPipeline2
 
 Remove a pipeline
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
+var res = await sdk.Pipeline.RemoveCrmPipeline2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 
 ### Response
 
-**[RemoveCrmPipelineResponse](../../Models/Requests/RemoveCrmPipelineResponse.md)**
+**[RemoveCrmPipeline2Response](../../Models/Requests/RemoveCrmPipeline2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCrmPipeline
+## UpdateCrmPipeline2
 
 Update a pipeline
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
+UpdateCrmPipeline2Request req = new UpdateCrmPipeline2Request() {
     CrmPipeline = new CrmPipeline() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Pipeline.UpdateCrmPipelineAsync(req);
+var res = await sdk.Pipeline.UpdateCrmPipeline2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateCrmPipelineRequest](../../Models/Requests/UpdateCrmPipelineRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateCrmPipeline2Request](../../Models/Requests/UpdateCrmPipeline2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateCrmPipelineResponse](../../Models/Requests/UpdateCrmPipelineResponse.md)**
+**[UpdateCrmPipeline2Response](../../Models/Requests/UpdateCrmPipeline2Response.md)**
 
 ### Errors
 

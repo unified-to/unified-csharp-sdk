@@ -27,6 +27,8 @@ namespace UnifiedTo.Models.Components
         Mariadb,
         [JsonProperty("supabase")]
         Supabase,
+        [JsonProperty("snowflake")]
+        Snowflake,
     }
 
     public static class DbTypeExtension

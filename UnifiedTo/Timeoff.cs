@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeoff
         /// </summary>
-        Task<CreateHrisTimeoffResponse> CreateHrisTimeoffAsync(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoffQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisTimeoff2Response> CreateHrisTimeoff2Async(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoff2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a timeoff
         /// </summary>
-        Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<GetHrisTimeoffQueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisTimeoff2Response> GetHrisTimeoff2Async(string connectionId, string id, List<GetHrisTimeoff2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all timeoffs
         /// </summary>
-        Task<ListHrisTimeoffsResponse> ListHrisTimeoffsAsync(ListHrisTimeoffsRequest request);
+        Task<ListHrisTimeoffs2Response> ListHrisTimeoffs2Async(ListHrisTimeoffs2Request request);
 
         /// <summary>
         /// Update a timeoff
         /// </summary>
-        Task<PatchHrisTimeoffResponse> PatchHrisTimeoffAsync(PatchHrisTimeoffRequest request);
+        Task<PatchHrisTimeoff2Response> PatchHrisTimeoff2Async(PatchHrisTimeoff2Request request);
 
         /// <summary>
         /// Remove a timeoff
         /// </summary>
-        Task<RemoveHrisTimeoffResponse> RemoveHrisTimeoffAsync(string connectionId, string id);
+        Task<RemoveHrisTimeoff2Response> RemoveHrisTimeoff2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a timeoff
         /// </summary>
-        Task<UpdateHrisTimeoffResponse> UpdateHrisTimeoffAsync(UpdateHrisTimeoffRequest request);
+        Task<UpdateHrisTimeoff2Response> UpdateHrisTimeoff2Async(UpdateHrisTimeoff2Request request);
     }
 
     public class Timeoff: ITimeoff
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisTimeoffResponse> CreateHrisTimeoffAsync(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoffQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisTimeoff2Response> CreateHrisTimeoff2Async(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoff2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisTimeoffRequest()
+            var request = new CreateHrisTimeoff2Request()
             {
                 HrisTimeoff = hrisTimeoff,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisTimeoffResponse()
+                    var response = new CreateHrisTimeoff2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<GetHrisTimeoffQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisTimeoff2Response> GetHrisTimeoff2Async(string connectionId, string id, List<GetHrisTimeoff2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisTimeoffRequest()
+            var request = new GetHrisTimeoff2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisTimeoffResponse()
+                    var response = new GetHrisTimeoff2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisTimeoffsResponse> ListHrisTimeoffsAsync(ListHrisTimeoffsRequest request)
+        public async Task<ListHrisTimeoffs2Response> ListHrisTimeoffs2Async(ListHrisTimeoffs2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeoffs", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeoffs2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisTimeoff>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisTimeoffsResponse()
+                    var response = new ListHrisTimeoffs2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisTimeoffResponse> PatchHrisTimeoffAsync(PatchHrisTimeoffRequest request)
+        public async Task<PatchHrisTimeoff2Response> PatchHrisTimeoff2Async(PatchHrisTimeoff2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisTimeoffResponse()
+                    var response = new PatchHrisTimeoff2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisTimeoffResponse> RemoveHrisTimeoffAsync(string connectionId, string id)
+        public async Task<RemoveHrisTimeoff2Response> RemoveHrisTimeoff2Async(string connectionId, string id)
         {
-            var request = new RemoveHrisTimeoffRequest()
+            var request = new RemoveHrisTimeoff2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisTimeoffResponse()
+                return new RemoveHrisTimeoff2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisTimeoffResponse()
+                return new RemoveHrisTimeoff2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisTimeoffResponse> UpdateHrisTimeoffAsync(UpdateHrisTimeoffRequest request)
+        public async Task<UpdateHrisTimeoff2Response> UpdateHrisTimeoff2Async(UpdateHrisTimeoff2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisTimeoffResponse()
+                    var response = new UpdateHrisTimeoff2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateRepoCommit](#createrepocommit) - Create a commit
-* [GetRepoCommit](#getrepocommit) - Retrieve a commit
-* [ListRepoCommits](#listrepocommits) - List all commits
-* [PatchRepoCommit](#patchrepocommit) - Update a commit
-* [RemoveRepoCommit](#removerepocommit) - Remove a commit
-* [UpdateRepoCommit](#updaterepocommit) - Update a commit
+* [CreateRepoCommit2](#createrepocommit2) - Create a commit
+* [GetRepoCommit2](#getrepocommit2) - Retrieve a commit
+* [ListRepoCommits2](#listrepocommits2) - List all commits
+* [PatchRepoCommit2](#patchrepocommit2) - Update a commit
+* [RemoveRepoCommit2](#removerepocommit2) - Remove a commit
+* [UpdateRepoCommit2](#updaterepocommit2) - Update a commit
 
-## CreateRepoCommit
+## CreateRepoCommit2
 
 Create a commit
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commit.CreateRepoCommitAsync(
+var res = await sdk.Commit.CreateRepoCommit2Async(
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
     },
@@ -42,12 +42,12 @@ var res = await sdk.Commit.CreateRepoCommitAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `RepoCommit`                                                                                                                                     | [RepoCommit](../../Models/Components/RepoCommit.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateRepoCommitQueryParamFields](../../Models/Requests/CreateRepoCommitQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateRepoCommit2QueryParamFields](../../Models/Requests/CreateRepoCommit2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateRepoCommitResponse](../../Models/Requests/CreateRepoCommitResponse.md)**
+**[CreateRepoCommit2Response](../../Models/Requests/CreateRepoCommit2Response.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Commit.CreateRepoCommitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetRepoCommit
+## GetRepoCommit2
 
 Retrieve a commit
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commit.GetRepoCommitAsync(
+var res = await sdk.Commit.GetRepoCommit2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Commit.GetRepoCommitAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Commit                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetRepoCommitQueryParamFields](../../Models/Requests/GetRepoCommitQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetRepoCommit2QueryParamFields](../../Models/Requests/GetRepoCommit2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetRepoCommitResponse](../../Models/Requests/GetRepoCommitResponse.md)**
+**[GetRepoCommit2Response](../../Models/Requests/GetRepoCommit2Response.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Commit.GetRepoCommitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListRepoCommits
+## ListRepoCommits2
 
 List all commits
 
@@ -111,24 +111,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListRepoCommitsRequest req = new ListRepoCommitsRequest() {
+ListRepoCommits2Request req = new ListRepoCommits2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commit.ListRepoCommitsAsync(req);
+var res = await sdk.Commit.ListRepoCommits2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListRepoCommitsRequest](../../Models/Requests/ListRepoCommitsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListRepoCommits2Request](../../Models/Requests/ListRepoCommits2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListRepoCommitsResponse](../../Models/Requests/ListRepoCommitsResponse.md)**
+**[ListRepoCommits2Response](../../Models/Requests/ListRepoCommits2Response.md)**
 
 ### Errors
 
@@ -136,7 +136,7 @@ var res = await sdk.Commit.ListRepoCommitsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchRepoCommit
+## PatchRepoCommit2
 
 Update a commit
 
@@ -151,7 +151,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
+PatchRepoCommit2Request req = new PatchRepoCommit2Request() {
     RepoCommit = new RepoCommit() {
         RepoId = "<id>",
     },
@@ -159,20 +159,20 @@ PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Commit.PatchRepoCommitAsync(req);
+var res = await sdk.Commit.PatchRepoCommit2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [PatchRepoCommitRequest](../../Models/Requests/PatchRepoCommitRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchRepoCommit2Request](../../Models/Requests/PatchRepoCommit2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchRepoCommitResponse](../../Models/Requests/PatchRepoCommitResponse.md)**
+**[PatchRepoCommit2Response](../../Models/Requests/PatchRepoCommit2Response.md)**
 
 ### Errors
 
@@ -180,7 +180,7 @@ var res = await sdk.Commit.PatchRepoCommitAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveRepoCommit
+## RemoveRepoCommit2
 
 Remove a commit
 
@@ -194,7 +194,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commit.RemoveRepoCommitAsync(
+var res = await sdk.Commit.RemoveRepoCommit2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -211,7 +211,7 @@ var res = await sdk.Commit.RemoveRepoCommitAsync(
 
 ### Response
 
-**[RemoveRepoCommitResponse](../../Models/Requests/RemoveRepoCommitResponse.md)**
+**[RemoveRepoCommit2Response](../../Models/Requests/RemoveRepoCommit2Response.md)**
 
 ### Errors
 
@@ -219,7 +219,7 @@ var res = await sdk.Commit.RemoveRepoCommitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateRepoCommit
+## UpdateRepoCommit2
 
 Update a commit
 
@@ -234,7 +234,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
+UpdateRepoCommit2Request req = new UpdateRepoCommit2Request() {
     RepoCommit = new RepoCommit() {
         RepoId = "<id>",
     },
@@ -242,20 +242,20 @@ UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Commit.UpdateRepoCommitAsync(req);
+var res = await sdk.Commit.UpdateRepoCommit2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [UpdateRepoCommitRequest](../../Models/Requests/UpdateRepoCommitRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateRepoCommit2Request](../../Models/Requests/UpdateRepoCommit2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateRepoCommitResponse](../../Models/Requests/UpdateRepoCommitResponse.md)**
+**[UpdateRepoCommit2Response](../../Models/Requests/UpdateRepoCommit2Response.md)**
 
 ### Errors
 

@@ -14,7 +14,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Accounting.CreateAccountingAccountAsync(
+var res = await sdk.Accounting.CreateAccountingAccount2Async(
     accountingAccount: new AccountingAccount() {},
     connectionId: "<id>"
 );
@@ -43,7 +43,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Accounting.CreateAccountingAccountAsync(
+var res = await sdk.Accounting.CreateAccountingAccount2Async(
     accountingAccount: new AccountingAccount() {},
     connectionId: "<id>"
 );
@@ -66,7 +66,7 @@ By default, an API error will raise a `UnifiedTo.Models.Errors.SDKException` exc
 | `RawResponse` | *HttpResponseMessage* | The raw HTTP response |
 | `Body`        | *string*              | The response content  |
 
-When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAccountingAccountAsync` method throws the following exceptions:
+When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAccountingAccount2Async` method throws the following exceptions:
 
 | Error Type                           | Status Code | Content Type |
 | ------------------------------------ | ----------- | ------------ |
@@ -85,7 +85,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 try
 {
-    var res = await sdk.Accounting.CreateAccountingAccountAsync(
+    var res = await sdk.Accounting.CreateAccountingAccount2Async(
         accountingAccount: new AccountingAccount() {},
         connectionId: "<id>"
     );
@@ -129,7 +129,7 @@ var sdk = new UnifiedToSDK(
     }
 );
 
-var res = await sdk.Accounting.CreateAccountingAccountAsync(
+var res = await sdk.Accounting.CreateAccountingAccount2Async(
     accountingAccount: new AccountingAccount() {},
     connectionId: "<id>"
 );
@@ -151,7 +151,7 @@ var sdk = new UnifiedToSDK(
     }
 );
 
-var res = await sdk.Accounting.CreateAccountingAccountAsync(
+var res = await sdk.Accounting.CreateAccountingAccount2Async(
     accountingAccount: new AccountingAccount() {},
     connectionId: "<id>"
 );

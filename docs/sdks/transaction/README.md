@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingTransaction](#createaccountingtransaction) - Create a transaction
-* [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
-* [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
-* [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
-* [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
-* [UpdateAccountingTransaction](#updateaccountingtransaction) - Update a transaction
+* [CreateAccountingTransaction2](#createaccountingtransaction2) - Create a transaction
+* [GetAccountingTransaction2](#getaccountingtransaction2) - Retrieve a transaction
+* [ListAccountingTransactions2](#listaccountingtransactions2) - List all transactions
+* [PatchAccountingTransaction2](#patchaccountingtransaction2) - Update a transaction
+* [RemoveAccountingTransaction2](#removeaccountingtransaction2) - Remove a transaction
+* [UpdateAccountingTransaction2](#updateaccountingtransaction2) - Update a transaction
 
-## CreateAccountingTransaction
+## CreateAccountingTransaction2
 
 Create a transaction
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Transaction.CreateAccountingTransactionAsync(
+var res = await sdk.Transaction.CreateAccountingTransaction2Async(
     accountingTransaction: new AccountingTransaction() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingTransaction`                                                                                                                          | [AccountingTransaction](../../Models/Components/AccountingTransaction.md)                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingTransactionQueryParamFields](../../Models/Requests/CreateAccountingTransactionQueryParamFields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingTransaction2QueryParamFields](../../Models/Requests/CreateAccountingTransaction2QueryParamFields.md)>                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingTransactionResponse](../../Models/Requests/CreateAccountingTransactionResponse.md)**
+**[CreateAccountingTransaction2Response](../../Models/Requests/CreateAccountingTransaction2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingTransaction
+## GetAccountingTransaction2
 
 Retrieve a transaction
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Transaction.GetAccountingTransactionAsync(
+var res = await sdk.Transaction.GetAccountingTransaction2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Transaction.GetAccountingTransactionAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Transaction                                                                                                                            |
-| `Fields`                                                                                                                                         | List<[GetAccountingTransactionQueryParamFields](../../Models/Requests/GetAccountingTransactionQueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingTransaction2QueryParamFields](../../Models/Requests/GetAccountingTransaction2QueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingTransactionResponse](../../Models/Requests/GetAccountingTransactionResponse.md)**
+**[GetAccountingTransaction2Response](../../Models/Requests/GetAccountingTransaction2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Transaction.GetAccountingTransactionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingTransactions
+## ListAccountingTransactions2
 
 List all transactions
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
+ListAccountingTransactions2Request req = new ListAccountingTransactions2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Transaction.ListAccountingTransactionsAsync(req);
+var res = await sdk.Transaction.ListAccountingTransactions2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [ListAccountingTransactionsRequest](../../Models/Requests/ListAccountingTransactionsRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListAccountingTransactions2Request](../../Models/Requests/ListAccountingTransactions2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[ListAccountingTransactionsResponse](../../Models/Requests/ListAccountingTransactionsResponse.md)**
+**[ListAccountingTransactions2Response](../../Models/Requests/ListAccountingTransactions2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Transaction.ListAccountingTransactionsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingTransaction
+## PatchAccountingTransaction2
 
 Update a transaction
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
+PatchAccountingTransaction2Request req = new PatchAccountingTransaction2Request() {
     AccountingTransaction = new AccountingTransaction() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Transaction.PatchAccountingTransactionAsync(req);
+var res = await sdk.Transaction.PatchAccountingTransaction2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [PatchAccountingTransactionRequest](../../Models/Requests/PatchAccountingTransactionRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [PatchAccountingTransaction2Request](../../Models/Requests/PatchAccountingTransaction2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[PatchAccountingTransactionResponse](../../Models/Requests/PatchAccountingTransactionResponse.md)**
+**[PatchAccountingTransaction2Response](../../Models/Requests/PatchAccountingTransaction2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingTransaction
+## RemoveAccountingTransaction2
 
 Remove a transaction
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
+var res = await sdk.Transaction.RemoveAccountingTransaction2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
 
 ### Response
 
-**[RemoveAccountingTransactionResponse](../../Models/Requests/RemoveAccountingTransactionResponse.md)**
+**[RemoveAccountingTransaction2Response](../../Models/Requests/RemoveAccountingTransaction2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingTransaction
+## UpdateAccountingTransaction2
 
 Update a transaction
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
+UpdateAccountingTransaction2Request req = new UpdateAccountingTransaction2Request() {
     AccountingTransaction = new AccountingTransaction() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Transaction.UpdateAccountingTransactionAsync(req);
+var res = await sdk.Transaction.UpdateAccountingTransaction2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `request`                                                                                         | [UpdateAccountingTransactionRequest](../../Models/Requests/UpdateAccountingTransactionRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [UpdateAccountingTransaction2Request](../../Models/Requests/UpdateAccountingTransaction2Request.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
 
 ### Response
 
-**[UpdateAccountingTransactionResponse](../../Models/Requests/UpdateAccountingTransactionResponse.md)**
+**[UpdateAccountingTransaction2Response](../../Models/Requests/UpdateAccountingTransaction2Response.md)**
 
 ### Errors
 

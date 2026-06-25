@@ -259,6 +259,16 @@ namespace UnifiedTo.Models.Components
         AdsTarget,
         [JsonProperty("ads_promoted")]
         AdsPromoted,
+        [JsonProperty("analytics_property")]
+        AnalyticsProperty,
+        [JsonProperty("analytics_event")]
+        AnalyticsEvent,
+        [JsonProperty("analytics_session")]
+        AnalyticsSession,
+        [JsonProperty("analytics_visitor")]
+        AnalyticsVisitor,
+        [JsonProperty("analytics_report")]
+        AnalyticsReport,
         [JsonProperty("forms_form")]
         FormsForm,
         [JsonProperty("forms_submission")]
@@ -289,6 +299,14 @@ namespace UnifiedTo.Models.Components
         ClubsLocation,
         [JsonProperty("clubs_event")]
         ClubsEvent,
+        [JsonProperty("datastore_database")]
+        DatastoreDatabase,
+        [JsonProperty("datastore_table")]
+        DatastoreTable,
+        [JsonProperty("datastore_record")]
+        DatastoreRecord,
+        [JsonProperty("datastore_query")]
+        DatastoreQuery,
     }
 
     public static class ObjectTypeExtension

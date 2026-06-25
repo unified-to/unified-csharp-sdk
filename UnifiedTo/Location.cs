@@ -28,79 +28,79 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocationQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCommerceLocation2Response> CreateCommerceLocation2Async(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocation2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisLocation2Response> CreateHrisLocation2Async(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocation2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetClubsLocationResponse> GetClubsLocationAsync(string connectionId, string id, List<GetClubsLocationQueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsLocation2Response> GetClubsLocation2Async(string connectionId, string id, List<GetClubsLocation2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<GetCommerceLocationQueryParamFields>? fields = null, string? raw = null);
+        Task<GetCommerceLocation2Response> GetCommerceLocation2Async(string connectionId, string id, List<GetCommerceLocation2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisLocation2Response> GetHrisLocation2Async(string connectionId, string id, List<GetHrisLocation2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all locations
         /// </summary>
-        Task<ListClubsLocationsResponse> ListClubsLocationsAsync(ListClubsLocationsRequest request);
+        Task<ListClubsLocations2Response> ListClubsLocations2Async(ListClubsLocations2Request request);
 
         /// <summary>
         /// List all locations
         /// </summary>
-        Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request);
+        Task<ListCommerceLocations2Response> ListCommerceLocations2Async(ListCommerceLocations2Request request);
 
         /// <summary>
         /// List all locations
         /// </summary>
-        Task<ListHrisLocationsResponse> ListHrisLocationsAsync(ListHrisLocationsRequest request);
+        Task<ListHrisLocations2Response> ListHrisLocations2Async(ListHrisLocations2Request request);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(PatchCommerceLocationRequest request);
+        Task<PatchCommerceLocation2Response> PatchCommerceLocation2Async(PatchCommerceLocation2Request request);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchHrisLocationResponse> PatchHrisLocationAsync(PatchHrisLocationRequest request);
+        Task<PatchHrisLocation2Response> PatchHrisLocation2Async(PatchHrisLocation2Request request);
 
         /// <summary>
         /// Remove a location
         /// </summary>
-        Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id);
+        Task<RemoveCommerceLocation2Response> RemoveCommerceLocation2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a location
         /// </summary>
-        Task<RemoveHrisLocationResponse> RemoveHrisLocationAsync(string connectionId, string id);
+        Task<RemoveHrisLocation2Response> RemoveHrisLocation2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(UpdateCommerceLocationRequest request);
+        Task<UpdateCommerceLocation2Response> UpdateCommerceLocation2Async(UpdateCommerceLocation2Request request);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(UpdateHrisLocationRequest request);
+        Task<UpdateHrisLocation2Response> UpdateHrisLocation2Async(UpdateHrisLocation2Request request);
     }
 
     public class Location: ILocation
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -109,9 +109,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocationQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCommerceLocation2Response> CreateCommerceLocation2Async(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocation2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCommerceLocationRequest()
+            var request = new CreateCommerceLocation2Request()
             {
                 CommerceLocation = commerceLocation,
                 ConnectionId = connectionId,
@@ -135,7 +135,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -176,7 +176,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCommerceLocationResponse()
+                    var response = new CreateCommerceLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -200,9 +200,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisLocation2Response> CreateHrisLocation2Async(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocation2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisLocationRequest()
+            var request = new CreateHrisLocation2Request()
             {
                 HrisLocation = hrisLocation,
                 ConnectionId = connectionId,
@@ -226,7 +226,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -267,7 +267,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisLocationResponse()
+                    var response = new CreateHrisLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -291,9 +291,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetClubsLocationResponse> GetClubsLocationAsync(string connectionId, string id, List<GetClubsLocationQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsLocation2Response> GetClubsLocation2Async(string connectionId, string id, List<GetClubsLocation2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsLocationRequest()
+            var request = new GetClubsLocation2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -311,7 +311,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -352,7 +352,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsLocationResponse()
+                    var response = new GetClubsLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -376,9 +376,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<GetCommerceLocationQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCommerceLocation2Response> GetCommerceLocation2Async(string connectionId, string id, List<GetCommerceLocation2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCommerceLocationRequest()
+            var request = new GetCommerceLocation2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -396,7 +396,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -437,7 +437,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCommerceLocationResponse()
+                    var response = new GetCommerceLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -461,9 +461,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisLocation2Response> GetHrisLocation2Async(string connectionId, string id, List<GetHrisLocation2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisLocationRequest()
+            var request = new GetHrisLocation2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -481,7 +481,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -522,7 +522,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisLocationResponse()
+                    var response = new GetHrisLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -546,7 +546,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsLocationsResponse> ListClubsLocationsAsync(ListClubsLocationsRequest request)
+        public async Task<ListClubsLocations2Response> ListClubsLocations2Async(ListClubsLocations2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/location", request);
@@ -559,7 +559,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsLocations", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsLocations2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -600,7 +600,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsLocation>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsLocationsResponse()
+                    var response = new ListClubsLocations2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -624,7 +624,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request)
+        public async Task<ListCommerceLocations2Response> ListCommerceLocations2Async(ListCommerceLocations2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location", request);
@@ -637,7 +637,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceLocations", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceLocations2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -678,7 +678,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CommerceLocation>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCommerceLocationsResponse()
+                    var response = new ListCommerceLocations2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -702,7 +702,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisLocationsResponse> ListHrisLocationsAsync(ListHrisLocationsRequest request)
+        public async Task<ListHrisLocations2Response> ListHrisLocations2Async(ListHrisLocations2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location", request);
@@ -715,7 +715,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisLocations", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisLocations2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -756,7 +756,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisLocation>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisLocationsResponse()
+                    var response = new ListHrisLocations2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -780,7 +780,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(PatchCommerceLocationRequest request)
+        public async Task<PatchCommerceLocation2Response> PatchCommerceLocation2Async(PatchCommerceLocation2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);
@@ -799,7 +799,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -840,7 +840,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCommerceLocationResponse()
+                    var response = new PatchCommerceLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -864,7 +864,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisLocationResponse> PatchHrisLocationAsync(PatchHrisLocationRequest request)
+        public async Task<PatchHrisLocation2Response> PatchHrisLocation2Async(PatchHrisLocation2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
@@ -883,7 +883,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -924,7 +924,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisLocationResponse()
+                    var response = new PatchHrisLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -948,9 +948,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id)
+        public async Task<RemoveCommerceLocation2Response> RemoveCommerceLocation2Async(string connectionId, string id)
         {
-            var request = new RemoveCommerceLocationRequest()
+            var request = new RemoveCommerceLocation2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -966,7 +966,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1004,7 +1004,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCommerceLocationResponse()
+                return new RemoveCommerceLocation2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1021,7 +1021,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCommerceLocationResponse()
+                return new RemoveCommerceLocation2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1030,9 +1030,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisLocationResponse> RemoveHrisLocationAsync(string connectionId, string id)
+        public async Task<RemoveHrisLocation2Response> RemoveHrisLocation2Async(string connectionId, string id)
         {
-            var request = new RemoveHrisLocationRequest()
+            var request = new RemoveHrisLocation2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1048,7 +1048,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1086,7 +1086,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisLocationResponse()
+                return new RemoveHrisLocation2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1103,7 +1103,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisLocationResponse()
+                return new RemoveHrisLocation2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1112,7 +1112,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(UpdateCommerceLocationRequest request)
+        public async Task<UpdateCommerceLocation2Response> UpdateCommerceLocation2Async(UpdateCommerceLocation2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);
@@ -1131,7 +1131,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1172,7 +1172,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCommerceLocationResponse()
+                    var response = new UpdateCommerceLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1196,7 +1196,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(UpdateHrisLocationRequest request)
+        public async Task<UpdateHrisLocation2Response> UpdateHrisLocation2Async(UpdateHrisLocation2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
@@ -1215,7 +1215,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1256,7 +1256,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisLocationResponse()
+                    var response = new UpdateHrisLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

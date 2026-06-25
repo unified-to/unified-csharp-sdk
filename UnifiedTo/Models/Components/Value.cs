@@ -15,7 +15,6 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using System.Numerics;
     using System.Reflection;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
 
@@ -24,15 +23,9 @@ namespace UnifiedTo.Models.Components
         private ValueType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static ValueType MapOfAny { get { return new ValueType("mapOfAny"); } }
-        
-        public static ValueType Str { get { return new ValueType("str"); } }
-        
         public static ValueType Number { get { return new ValueType("number"); } }
         
-        public static ValueType Boolean { get { return new ValueType("boolean"); } }
-        
-        public static ValueType ArrayOfAtsMetadata5 { get { return new ValueType("arrayOfAtsMetadata5"); } }
+        public static ValueType Str { get { return new ValueType("str"); } }
         
         public static ValueType Null { get { return new ValueType("null"); } }
 
@@ -40,11 +33,8 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(ValueType v) { return v.Value; }
         public static ValueType FromString(string v) {
             switch(v) {
-                case "mapOfAny": return MapOfAny;
-                case "str": return Str;
                 case "number": return Number;
-                case "boolean": return Boolean;
-                case "arrayOfAtsMetadata5": return ArrayOfAtsMetadata5;
+                case "str": return Str;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for ValueType");
             }
@@ -72,38 +62,13 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Dictionary<string, object>? MapOfAny { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
         public string? Str { get; set; }
 
-        [SpeakeasyMetadata("form:explode=true")]
-        public double? Number { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public bool? Boolean { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public List<AtsMetadata5>? ArrayOfAtsMetadata5 { get; set; }
-
         public ValueType Type { get; set; }
 
-
-        public static Value CreateMapOfAny(Dictionary<string, object> mapOfAny) {
-            ValueType typ = ValueType.MapOfAny;
-
-            Value res = new Value(typ);
-            res.MapOfAny = mapOfAny;
-            return res;
-        }
-
-        public static Value CreateStr(string str) {
-            ValueType typ = ValueType.Str;
-
-            Value res = new Value(typ);
-            res.Str = str;
-            return res;
-        }
 
         public static Value CreateNumber(double number) {
             ValueType typ = ValueType.Number;
@@ -113,19 +78,11 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Value CreateBoolean(bool boolean) {
-            ValueType typ = ValueType.Boolean;
+        public static Value CreateStr(string str) {
+            ValueType typ = ValueType.Str;
 
             Value res = new Value(typ);
-            res.Boolean = boolean;
-            return res;
-        }
-
-        public static Value CreateArrayOfAtsMetadata5(List<AtsMetadata5> arrayOfAtsMetadata5) {
-            ValueType typ = ValueType.ArrayOfAtsMetadata5;
-
-            Value res = new Value(typ);
-            res.ArrayOfAtsMetadata5 = arrayOfAtsMetadata5;
+            res.Str = str;
             return res;
         }
 
@@ -153,33 +110,6 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new Value(ValueType.MapOfAny)
-                    {
-                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new Value(ValueType.MapOfAny), "MapOfAny"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                if (json[0] == '"' && json[^1] == '"'){
-                    return new Value(ValueType.Str)
-                    {
-                        Str = json[1..^1]
-                    };
-                }
-
-                try
-                {
                     var converted = Convert.ToDouble(json);
                     return new Value(ValueType.Number)
                     {
@@ -191,37 +121,11 @@ namespace UnifiedTo.Models.Components
                     // try next option
                 }
 
-                try
-                {
-                    var converted = Convert.ToBoolean(json);
-                    return new Value(ValueType.Boolean)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new Value(ValueType.Str)
                     {
-                        Boolean = converted
+                        Str = json[1..^1]
                     };
-                }
-                catch (System.FormatException)
-                {
-                    // try next option
-                }
-
-                try
-                {
-                    return new Value(ValueType.ArrayOfAtsMetadata5)
-                    {
-                        ArrayOfAtsMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<AtsMetadata5>>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(List<AtsMetadata5>), new Value(ValueType.ArrayOfAtsMetadata5), "ArrayOfAtsMetadata5"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 if (fallbackCandidates.Count > 0)
@@ -259,29 +163,14 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.MapOfAny != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
-                    return;
-                }
-                if (res.Str != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
-                    return;
-                }
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.Boolean != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
-                    return;
-                }
-                if (res.ArrayOfAtsMetadata5 != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAtsMetadata5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
 

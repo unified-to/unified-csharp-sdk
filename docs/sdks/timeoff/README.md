@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateHrisTimeoff](#createhristimeoff) - Create a timeoff
-* [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
-* [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
-* [PatchHrisTimeoff](#patchhristimeoff) - Update a timeoff
-* [RemoveHrisTimeoff](#removehristimeoff) - Remove a timeoff
-* [UpdateHrisTimeoff](#updatehristimeoff) - Update a timeoff
+* [CreateHrisTimeoff2](#createhristimeoff2) - Create a timeoff
+* [GetHrisTimeoff2](#gethristimeoff2) - Retrieve a timeoff
+* [ListHrisTimeoffs2](#listhristimeoffs2) - List all timeoffs
+* [PatchHrisTimeoff2](#patchhristimeoff2) - Update a timeoff
+* [RemoveHrisTimeoff2](#removehristimeoff2) - Remove a timeoff
+* [UpdateHrisTimeoff2](#updatehristimeoff2) - Update a timeoff
 
-## CreateHrisTimeoff
+## CreateHrisTimeoff2
 
 Create a timeoff
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Timeoff.CreateHrisTimeoffAsync(
+var res = await sdk.Timeoff.CreateHrisTimeoff2Async(
     hrisTimeoff: new HrisTimeoff() {
         UserId = "<id>",
     },
@@ -42,12 +42,12 @@ var res = await sdk.Timeoff.CreateHrisTimeoffAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisTimeoff`                                                                                                                                    | [HrisTimeoff](../../Models/Components/HrisTimeoff.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisTimeoffQueryParamFields](../../Models/Requests/CreateHrisTimeoffQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisTimeoff2QueryParamFields](../../Models/Requests/CreateHrisTimeoff2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisTimeoffResponse](../../Models/Requests/CreateHrisTimeoffResponse.md)**
+**[CreateHrisTimeoff2Response](../../Models/Requests/CreateHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Timeoff.CreateHrisTimeoffAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisTimeoff
+## GetHrisTimeoff2
 
 Retrieve a timeoff
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Timeoff.GetHrisTimeoffAsync(
+var res = await sdk.Timeoff.GetHrisTimeoff2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Timeoff.GetHrisTimeoffAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Timeoff                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetHrisTimeoffQueryParamFields](../../Models/Requests/GetHrisTimeoffQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisTimeoff2QueryParamFields](../../Models/Requests/GetHrisTimeoff2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisTimeoffResponse](../../Models/Requests/GetHrisTimeoffResponse.md)**
+**[GetHrisTimeoff2Response](../../Models/Requests/GetHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Timeoff.GetHrisTimeoffAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisTimeoffs
+## ListHrisTimeoffs2
 
 List all timeoffs
 
@@ -111,24 +111,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisTimeoffsRequest req = new ListHrisTimeoffsRequest() {
+ListHrisTimeoffs2Request req = new ListHrisTimeoffs2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Timeoff.ListHrisTimeoffsAsync(req);
+var res = await sdk.Timeoff.ListHrisTimeoffs2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListHrisTimeoffsRequest](../../Models/Requests/ListHrisTimeoffsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisTimeoffs2Request](../../Models/Requests/ListHrisTimeoffs2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListHrisTimeoffsResponse](../../Models/Requests/ListHrisTimeoffsResponse.md)**
+**[ListHrisTimeoffs2Response](../../Models/Requests/ListHrisTimeoffs2Response.md)**
 
 ### Errors
 
@@ -136,7 +136,7 @@ var res = await sdk.Timeoff.ListHrisTimeoffsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisTimeoff
+## PatchHrisTimeoff2
 
 Update a timeoff
 
@@ -151,7 +151,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
+PatchHrisTimeoff2Request req = new PatchHrisTimeoff2Request() {
     HrisTimeoff = new HrisTimeoff() {
         UserId = "<id>",
     },
@@ -159,20 +159,20 @@ PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Timeoff.PatchHrisTimeoffAsync(req);
+var res = await sdk.Timeoff.PatchHrisTimeoff2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchHrisTimeoffRequest](../../Models/Requests/PatchHrisTimeoffRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchHrisTimeoff2Request](../../Models/Requests/PatchHrisTimeoff2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchHrisTimeoffResponse](../../Models/Requests/PatchHrisTimeoffResponse.md)**
+**[PatchHrisTimeoff2Response](../../Models/Requests/PatchHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -180,7 +180,7 @@ var res = await sdk.Timeoff.PatchHrisTimeoffAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisTimeoff
+## RemoveHrisTimeoff2
 
 Remove a timeoff
 
@@ -194,7 +194,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Timeoff.RemoveHrisTimeoffAsync(
+var res = await sdk.Timeoff.RemoveHrisTimeoff2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -211,7 +211,7 @@ var res = await sdk.Timeoff.RemoveHrisTimeoffAsync(
 
 ### Response
 
-**[RemoveHrisTimeoffResponse](../../Models/Requests/RemoveHrisTimeoffResponse.md)**
+**[RemoveHrisTimeoff2Response](../../Models/Requests/RemoveHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -219,7 +219,7 @@ var res = await sdk.Timeoff.RemoveHrisTimeoffAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisTimeoff
+## UpdateHrisTimeoff2
 
 Update a timeoff
 
@@ -234,7 +234,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
+UpdateHrisTimeoff2Request req = new UpdateHrisTimeoff2Request() {
     HrisTimeoff = new HrisTimeoff() {
         UserId = "<id>",
     },
@@ -242,20 +242,20 @@ UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Timeoff.UpdateHrisTimeoffAsync(req);
+var res = await sdk.Timeoff.UpdateHrisTimeoff2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateHrisTimeoffRequest](../../Models/Requests/UpdateHrisTimeoffRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateHrisTimeoff2Request](../../Models/Requests/UpdateHrisTimeoff2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateHrisTimeoffResponse](../../Models/Requests/UpdateHrisTimeoffResponse.md)**
+**[UpdateHrisTimeoff2Response](../../Models/Requests/UpdateHrisTimeoff2Response.md)**
 
 ### Errors
 

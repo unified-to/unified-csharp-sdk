@@ -30,6 +30,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contact_phone")]
         public string? ContactPhone { get; set; }
 
+        [JsonProperty("contacts")]
+        public List<UcContact>? Contacts { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

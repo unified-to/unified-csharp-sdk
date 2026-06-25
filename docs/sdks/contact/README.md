@@ -5,26 +5,26 @@
 
 ### Available Operations
 
-* [CreateAccountingContact](#createaccountingcontact) - Create a contact
-* [CreateCrmContact](#createcrmcontact) - Create a contact
-* [CreateUcContact](#createuccontact) - Create a contact
-* [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
-* [GetCrmContact](#getcrmcontact) - Retrieve a contact
-* [GetUcContact](#getuccontact) - Retrieve a contact
-* [ListAccountingContacts](#listaccountingcontacts) - List all contacts
-* [ListCrmContacts](#listcrmcontacts) - List all contacts
-* [ListUcContacts](#listuccontacts) - List all contacts
-* [PatchAccountingContact](#patchaccountingcontact) - Update a contact
-* [PatchCrmContact](#patchcrmcontact) - Update a contact
-* [PatchUcContact](#patchuccontact) - Update a contact
-* [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
-* [RemoveCrmContact](#removecrmcontact) - Remove a contact
-* [RemoveUcContact](#removeuccontact) - Remove a contact
-* [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
-* [UpdateCrmContact](#updatecrmcontact) - Update a contact
-* [UpdateUcContact](#updateuccontact) - Update a contact
+* [CreateAccountingContact2](#createaccountingcontact2) - Create a contact
+* [CreateCrmContact2](#createcrmcontact2) - Create a contact
+* [CreateUcContact2](#createuccontact2) - Create a contact
+* [GetAccountingContact2](#getaccountingcontact2) - Retrieve a contact
+* [GetCrmContact2](#getcrmcontact2) - Retrieve a contact
+* [GetUcContact2](#getuccontact2) - Retrieve a contact
+* [ListAccountingContacts2](#listaccountingcontacts2) - List all contacts
+* [ListCrmContacts2](#listcrmcontacts2) - List all contacts
+* [ListUcContacts2](#listuccontacts2) - List all contacts
+* [PatchAccountingContact2](#patchaccountingcontact2) - Update a contact
+* [PatchCrmContact2](#patchcrmcontact2) - Update a contact
+* [PatchUcContact2](#patchuccontact2) - Update a contact
+* [RemoveAccountingContact2](#removeaccountingcontact2) - Remove a contact
+* [RemoveCrmContact2](#removecrmcontact2) - Remove a contact
+* [RemoveUcContact2](#removeuccontact2) - Remove a contact
+* [UpdateAccountingContact2](#updateaccountingcontact2) - Update a contact
+* [UpdateCrmContact2](#updatecrmcontact2) - Update a contact
+* [UpdateUcContact2](#updateuccontact2) - Update a contact
 
-## CreateAccountingContact
+## CreateAccountingContact2
 
 Create a contact
 
@@ -38,7 +38,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Contact.CreateAccountingContactAsync(
+var res = await sdk.Contact.CreateAccountingContact2Async(
     accountingContact: new AccountingContact() {},
     connectionId: "<id>"
 );
@@ -52,12 +52,12 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingContact`                                                                                                                              | [AccountingContact](../../Models/Components/AccountingContact.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingContactQueryParamFields](../../Models/Requests/CreateAccountingContactQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingContact2QueryParamFields](../../Models/Requests/CreateAccountingContact2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingContactResponse](../../Models/Requests/CreateAccountingContactResponse.md)**
+**[CreateAccountingContact2Response](../../Models/Requests/CreateAccountingContact2Response.md)**
 
 ### Errors
 
@@ -65,7 +65,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCrmContact
+## CreateCrmContact2
 
 Create a contact
 
@@ -79,7 +79,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Contact.CreateCrmContactAsync(
+var res = await sdk.Contact.CreateCrmContact2Async(
     crmContact: new CrmContact() {},
     connectionId: "<id>"
 );
@@ -93,12 +93,12 @@ var res = await sdk.Contact.CreateCrmContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CrmContact`                                                                                                                                     | [CrmContact](../../Models/Components/CrmContact.md)                                                                                              | :heavy_check_mark:                                                                                                                               | A contact represents a person that optionally is associated with a deal and/or a company                                                         |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCrmContactQueryParamFields](../../Models/Requests/CreateCrmContactQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCrmContact2QueryParamFields](../../Models/Requests/CreateCrmContact2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCrmContactResponse](../../Models/Requests/CreateCrmContactResponse.md)**
+**[CreateCrmContact2Response](../../Models/Requests/CreateCrmContact2Response.md)**
 
 ### Errors
 
@@ -106,7 +106,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateUcContact
+## CreateUcContact2
 
 Create a contact
 
@@ -120,7 +120,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Contact.CreateUcContactAsync(
+var res = await sdk.Contact.CreateUcContact2Async(
     ucContact: new UcContact() {},
     connectionId: "<id>"
 );
@@ -134,12 +134,12 @@ var res = await sdk.Contact.CreateUcContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `UcContact`                                                                                                                                      | [UcContact](../../Models/Components/UcContact.md)                                                                                                | :heavy_check_mark:                                                                                                                               | A contact represents a person that optionally is associated with a call                                                                          |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateUcContactQueryParamFields](../../Models/Requests/CreateUcContactQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateUcContact2QueryParamFields](../../Models/Requests/CreateUcContact2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateUcContactResponse](../../Models/Requests/CreateUcContactResponse.md)**
+**[CreateUcContact2Response](../../Models/Requests/CreateUcContact2Response.md)**
 
 ### Errors
 
@@ -147,7 +147,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingContact
+## GetAccountingContact2
 
 Retrieve a contact
 
@@ -161,7 +161,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Contact.GetAccountingContactAsync(
+var res = await sdk.Contact.GetAccountingContact2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -175,12 +175,12 @@ var res = await sdk.Contact.GetAccountingContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Contact                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetAccountingContactQueryParamFields](../../Models/Requests/GetAccountingContactQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingContact2QueryParamFields](../../Models/Requests/GetAccountingContact2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingContactResponse](../../Models/Requests/GetAccountingContactResponse.md)**
+**[GetAccountingContact2Response](../../Models/Requests/GetAccountingContact2Response.md)**
 
 ### Errors
 
@@ -188,7 +188,7 @@ var res = await sdk.Contact.GetAccountingContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCrmContact
+## GetCrmContact2
 
 Retrieve a contact
 
@@ -202,7 +202,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Contact.GetCrmContactAsync(
+var res = await sdk.Contact.GetCrmContact2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -216,12 +216,12 @@ var res = await sdk.Contact.GetCrmContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Contact                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetCrmContactQueryParamFields](../../Models/Requests/GetCrmContactQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCrmContact2QueryParamFields](../../Models/Requests/GetCrmContact2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCrmContactResponse](../../Models/Requests/GetCrmContactResponse.md)**
+**[GetCrmContact2Response](../../Models/Requests/GetCrmContact2Response.md)**
 
 ### Errors
 
@@ -229,7 +229,7 @@ var res = await sdk.Contact.GetCrmContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetUcContact
+## GetUcContact2
 
 Retrieve a contact
 
@@ -243,7 +243,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Contact.GetUcContactAsync(
+var res = await sdk.Contact.GetUcContact2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -257,12 +257,12 @@ var res = await sdk.Contact.GetUcContactAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Contact                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetUcContactQueryParamFields](../../Models/Requests/GetUcContactQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetUcContact2QueryParamFields](../../Models/Requests/GetUcContact2QueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetUcContactResponse](../../Models/Requests/GetUcContactResponse.md)**
+**[GetUcContact2Response](../../Models/Requests/GetUcContact2Response.md)**
 
 ### Errors
 
@@ -270,7 +270,7 @@ var res = await sdk.Contact.GetUcContactAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingContacts
+## ListAccountingContacts2
 
 List all contacts
 
@@ -285,376 +285,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
+ListAccountingContacts2Request req = new ListAccountingContacts2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Contact.ListAccountingContactsAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListAccountingContactsRequest](../../Models/Requests/ListAccountingContactsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
-
-### Response
-
-**[ListAccountingContactsResponse](../../Models/Requests/ListAccountingContactsResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListCrmContacts
-
-List all contacts
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListCrmContactsRequest req = new ListCrmContactsRequest() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Contact.ListCrmContactsAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListCrmContactsRequest](../../Models/Requests/ListCrmContactsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
-
-### Response
-
-**[ListCrmContactsResponse](../../Models/Requests/ListCrmContactsResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListUcContacts
-
-List all contacts
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListUcContactsRequest req = new ListUcContactsRequest() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Contact.ListUcContactsAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [ListUcContactsRequest](../../Models/Requests/ListUcContactsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
-
-### Response
-
-**[ListUcContactsResponse](../../Models/Requests/ListUcContactsResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchAccountingContact
-
-Update a contact
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
-    AccountingContact = new AccountingContact() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Contact.PatchAccountingContactAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchAccountingContactRequest](../../Models/Requests/PatchAccountingContactRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
-
-### Response
-
-**[PatchAccountingContactResponse](../../Models/Requests/PatchAccountingContactResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchCrmContact
-
-Update a contact
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchCrmContactRequest req = new PatchCrmContactRequest() {
-    CrmContact = new CrmContact() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Contact.PatchCrmContactAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [PatchCrmContactRequest](../../Models/Requests/PatchCrmContactRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
-
-### Response
-
-**[PatchCrmContactResponse](../../Models/Requests/PatchCrmContactResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchUcContact
-
-Update a contact
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchUcContactRequest req = new PatchUcContactRequest() {
-    UcContact = new UcContact() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Contact.PatchUcContactAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [PatchUcContactRequest](../../Models/Requests/PatchUcContactRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
-
-### Response
-
-**[PatchUcContactResponse](../../Models/Requests/PatchUcContactResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## RemoveAccountingContact
-
-Remove a contact
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Contact.RemoveAccountingContactAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
-
-### Response
-
-**[RemoveAccountingContactResponse](../../Models/Requests/RemoveAccountingContactResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## RemoveCrmContact
-
-Remove a contact
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Contact.RemoveCrmContactAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
-
-### Response
-
-**[RemoveCrmContactResponse](../../Models/Requests/RemoveCrmContactResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## RemoveUcContact
-
-Remove a contact
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Contact.RemoveUcContactAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
-
-### Response
-
-**[RemoveUcContactResponse](../../Models/Requests/RemoveUcContactResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## UpdateAccountingContact
-
-Update a contact
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
-    AccountingContact = new AccountingContact() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Contact.UpdateAccountingContactAsync(req);
+var res = await sdk.Contact.ListAccountingContacts2Async(req);
 
 // handle response
 ```
@@ -663,11 +298,11 @@ var res = await sdk.Contact.UpdateAccountingContactAsync(req);
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateAccountingContactRequest](../../Models/Requests/UpdateAccountingContactRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| `request`                                                                                 | [ListAccountingContacts2Request](../../Models/Requests/ListAccountingContacts2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateAccountingContactResponse](../../Models/Requests/UpdateAccountingContactResponse.md)**
+**[ListAccountingContacts2Response](../../Models/Requests/ListAccountingContacts2Response.md)**
 
 ### Errors
 
@@ -675,9 +310,9 @@ var res = await sdk.Contact.UpdateAccountingContactAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCrmContact
+## ListCrmContacts2
 
-Update a contact
+List all contacts
 
 ### Example Usage
 
@@ -690,13 +325,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
-    CrmContact = new CrmContact() {},
+ListCrmContacts2Request req = new ListCrmContacts2Request() {
     ConnectionId = "<id>",
-    Id = "<id>",
 };
 
-var res = await sdk.Contact.UpdateCrmContactAsync(req);
+var res = await sdk.Contact.ListCrmContacts2Async(req);
 
 // handle response
 ```
@@ -705,11 +338,11 @@ var res = await sdk.Contact.UpdateCrmContactAsync(req);
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [UpdateCrmContactRequest](../../Models/Requests/UpdateCrmContactRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| `request`                                                                   | [ListCrmContacts2Request](../../Models/Requests/ListCrmContacts2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[UpdateCrmContactResponse](../../Models/Requests/UpdateCrmContactResponse.md)**
+**[ListCrmContacts2Response](../../Models/Requests/ListCrmContacts2Response.md)**
 
 ### Errors
 
@@ -717,7 +350,47 @@ var res = await sdk.Contact.UpdateCrmContactAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateUcContact
+## ListUcContacts2
+
+List all contacts
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListUcContacts2Request req = new ListUcContacts2Request() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Contact.ListUcContacts2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListUcContacts2Request](../../Models/Requests/ListUcContacts2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+
+### Response
+
+**[ListUcContacts2Response](../../Models/Requests/ListUcContacts2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchAccountingContact2
 
 Update a contact
 
@@ -732,13 +405,97 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateUcContactRequest req = new UpdateUcContactRequest() {
+PatchAccountingContact2Request req = new PatchAccountingContact2Request() {
+    AccountingContact = new AccountingContact() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Contact.PatchAccountingContact2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchAccountingContact2Request](../../Models/Requests/PatchAccountingContact2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[PatchAccountingContact2Response](../../Models/Requests/PatchAccountingContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchCrmContact2
+
+Update a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchCrmContact2Request req = new PatchCrmContact2Request() {
+    CrmContact = new CrmContact() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Contact.PatchCrmContact2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchCrmContact2Request](../../Models/Requests/PatchCrmContact2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[PatchCrmContact2Response](../../Models/Requests/PatchCrmContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchUcContact2
+
+Update a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchUcContact2Request req = new PatchUcContact2Request() {
     UcContact = new UcContact() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Contact.UpdateUcContactAsync(req);
+var res = await sdk.Contact.PatchUcContact2Async(req);
 
 // handle response
 ```
@@ -747,11 +504,254 @@ var res = await sdk.Contact.UpdateUcContactAsync(req);
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [UpdateUcContactRequest](../../Models/Requests/UpdateUcContactRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| `request`                                                                 | [PatchUcContact2Request](../../Models/Requests/PatchUcContact2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[UpdateUcContactResponse](../../Models/Requests/UpdateUcContactResponse.md)**
+**[PatchUcContact2Response](../../Models/Requests/PatchUcContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveAccountingContact2
+
+Remove a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Contact.RemoveAccountingContact2Async(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
+
+### Response
+
+**[RemoveAccountingContact2Response](../../Models/Requests/RemoveAccountingContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveCrmContact2
+
+Remove a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Contact.RemoveCrmContact2Async(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
+
+### Response
+
+**[RemoveCrmContact2Response](../../Models/Requests/RemoveCrmContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveUcContact2
+
+Remove a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Contact.RemoveUcContact2Async(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
+
+### Response
+
+**[RemoveUcContact2Response](../../Models/Requests/RemoveUcContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAccountingContact2
+
+Update a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAccountingContact2Request req = new UpdateAccountingContact2Request() {
+    AccountingContact = new AccountingContact() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Contact.UpdateAccountingContact2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [UpdateAccountingContact2Request](../../Models/Requests/UpdateAccountingContact2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[UpdateAccountingContact2Response](../../Models/Requests/UpdateAccountingContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateCrmContact2
+
+Update a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateCrmContact2Request req = new UpdateCrmContact2Request() {
+    CrmContact = new CrmContact() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Contact.UpdateCrmContact2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateCrmContact2Request](../../Models/Requests/UpdateCrmContact2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[UpdateCrmContact2Response](../../Models/Requests/UpdateCrmContact2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateUcContact2
+
+Update a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateUcContact2Request req = new UpdateUcContact2Request() {
+    UcContact = new UcContact() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Contact.UpdateUcContact2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateUcContact2Request](../../Models/Requests/UpdateUcContact2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[UpdateUcContact2Response](../../Models/Requests/UpdateUcContact2Response.md)**
 
 ### Errors
 

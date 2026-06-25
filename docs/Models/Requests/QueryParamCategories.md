@@ -29,8 +29,10 @@
 | `Calendar`     | calendar       |
 | `Verification` | verification   |
 | `Ads`          | ads            |
+| `Analytics`    | analytics      |
 | `Forms`        | forms          |
 | `Shipping`     | shipping       |
 | `Assessment`   | assessment     |
 | `Signing`      | signing        |
 | `Clubs`        | clubs          |
+| `Datastore`    | datastore      |

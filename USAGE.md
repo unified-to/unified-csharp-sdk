@@ -7,7 +7,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Accounting.CreateAccountingAccountAsync(
+var res = await sdk.Accounting.CreateAccountingAccount2Async(
     accountingAccount: new AccountingAccount() {},
     connectionId: "<id>"
 );

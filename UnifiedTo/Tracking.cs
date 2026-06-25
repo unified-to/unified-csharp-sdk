@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a tracking
         /// </summary>
-        Task<GetShippingTrackingResponse> GetShippingTrackingAsync(string connectionId, string id, List<GetShippingTrackingQueryParamFields>? fields = null, string? raw = null);
+        Task<GetShippingTracking2Response> GetShippingTracking2Async(string connectionId, string id, List<GetShippingTracking2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all trackings
         /// </summary>
-        Task<ListShippingTrackingsResponse> ListShippingTrackingsAsync(ListShippingTrackingsRequest request);
+        Task<ListShippingTrackings2Response> ListShippingTrackings2Async(ListShippingTrackings2Request request);
     }
 
     public class Tracking: ITracking
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetShippingTrackingResponse> GetShippingTrackingAsync(string connectionId, string id, List<GetShippingTrackingQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetShippingTracking2Response> GetShippingTracking2Async(string connectionId, string id, List<GetShippingTracking2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetShippingTrackingRequest()
+            var request = new GetShippingTracking2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingTracking", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingTracking2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingTracking>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetShippingTrackingResponse()
+                    var response = new GetShippingTracking2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListShippingTrackingsResponse> ListShippingTrackingsAsync(ListShippingTrackingsRequest request)
+        public async Task<ListShippingTrackings2Response> ListShippingTrackings2Async(ListShippingTrackings2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/tracking", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingTrackings", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingTrackings2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ShippingTracking>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListShippingTrackingsResponse()
+                    var response = new ListShippingTrackings2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

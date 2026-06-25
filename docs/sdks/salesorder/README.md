@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingSalesorder](#createaccountingsalesorder) - Create a salesorder
-* [GetAccountingSalesorder](#getaccountingsalesorder) - Retrieve a salesorder
-* [ListAccountingSalesorders](#listaccountingsalesorders) - List all salesorders
-* [PatchAccountingSalesorder](#patchaccountingsalesorder) - Update a salesorder
-* [RemoveAccountingSalesorder](#removeaccountingsalesorder) - Remove a salesorder
-* [UpdateAccountingSalesorder](#updateaccountingsalesorder) - Update a salesorder
+* [CreateAccountingSalesorder2](#createaccountingsalesorder2) - Create a salesorder
+* [GetAccountingSalesorder2](#getaccountingsalesorder2) - Retrieve a salesorder
+* [ListAccountingSalesorders2](#listaccountingsalesorders2) - List all salesorders
+* [PatchAccountingSalesorder2](#patchaccountingsalesorder2) - Update a salesorder
+* [RemoveAccountingSalesorder2](#removeaccountingsalesorder2) - Remove a salesorder
+* [UpdateAccountingSalesorder2](#updateaccountingsalesorder2) - Update a salesorder
 
-## CreateAccountingSalesorder
+## CreateAccountingSalesorder2
 
 Create a salesorder
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Salesorder.CreateAccountingSalesorderAsync(
+var res = await sdk.Salesorder.CreateAccountingSalesorder2Async(
     accountingSalesorder: new AccountingSalesorder() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Salesorder.CreateAccountingSalesorderAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingSalesorder`                                                                                                                           | [AccountingSalesorder](../../Models/Components/AccountingSalesorder.md)                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingSalesorderQueryParamFields](../../Models/Requests/CreateAccountingSalesorderQueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingSalesorder2QueryParamFields](../../Models/Requests/CreateAccountingSalesorder2QueryParamFields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingSalesorderResponse](../../Models/Requests/CreateAccountingSalesorderResponse.md)**
+**[CreateAccountingSalesorder2Response](../../Models/Requests/CreateAccountingSalesorder2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Salesorder.CreateAccountingSalesorderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingSalesorder
+## GetAccountingSalesorder2
 
 Retrieve a salesorder
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Salesorder.GetAccountingSalesorderAsync(
+var res = await sdk.Salesorder.GetAccountingSalesorder2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Salesorder.GetAccountingSalesorderAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Salesorder                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetAccountingSalesorderQueryParamFields](../../Models/Requests/GetAccountingSalesorderQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingSalesorder2QueryParamFields](../../Models/Requests/GetAccountingSalesorder2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingSalesorderResponse](../../Models/Requests/GetAccountingSalesorderResponse.md)**
+**[GetAccountingSalesorder2Response](../../Models/Requests/GetAccountingSalesorder2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Salesorder.GetAccountingSalesorderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingSalesorders
+## ListAccountingSalesorders2
 
 List all salesorders
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingSalesordersRequest req = new ListAccountingSalesordersRequest() {
+ListAccountingSalesorders2Request req = new ListAccountingSalesorders2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Salesorder.ListAccountingSalesordersAsync(req);
+var res = await sdk.Salesorder.ListAccountingSalesorders2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [ListAccountingSalesordersRequest](../../Models/Requests/ListAccountingSalesordersRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListAccountingSalesorders2Request](../../Models/Requests/ListAccountingSalesorders2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[ListAccountingSalesordersResponse](../../Models/Requests/ListAccountingSalesordersResponse.md)**
+**[ListAccountingSalesorders2Response](../../Models/Requests/ListAccountingSalesorders2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Salesorder.ListAccountingSalesordersAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingSalesorder
+## PatchAccountingSalesorder2
 
 Update a salesorder
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
+PatchAccountingSalesorder2Request req = new PatchAccountingSalesorder2Request() {
     AccountingSalesorder = new AccountingSalesorder() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Salesorder.PatchAccountingSalesorderAsync(req);
+var res = await sdk.Salesorder.PatchAccountingSalesorder2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [PatchAccountingSalesorderRequest](../../Models/Requests/PatchAccountingSalesorderRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [PatchAccountingSalesorder2Request](../../Models/Requests/PatchAccountingSalesorder2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[PatchAccountingSalesorderResponse](../../Models/Requests/PatchAccountingSalesorderResponse.md)**
+**[PatchAccountingSalesorder2Response](../../Models/Requests/PatchAccountingSalesorder2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Salesorder.PatchAccountingSalesorderAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingSalesorder
+## RemoveAccountingSalesorder2
 
 Remove a salesorder
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Salesorder.RemoveAccountingSalesorderAsync(
+var res = await sdk.Salesorder.RemoveAccountingSalesorder2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Salesorder.RemoveAccountingSalesorderAsync(
 
 ### Response
 
-**[RemoveAccountingSalesorderResponse](../../Models/Requests/RemoveAccountingSalesorderResponse.md)**
+**[RemoveAccountingSalesorder2Response](../../Models/Requests/RemoveAccountingSalesorder2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Salesorder.RemoveAccountingSalesorderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingSalesorder
+## UpdateAccountingSalesorder2
 
 Update a salesorder
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() {
+UpdateAccountingSalesorder2Request req = new UpdateAccountingSalesorder2Request() {
     AccountingSalesorder = new AccountingSalesorder() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Salesorder.UpdateAccountingSalesorderAsync(req);
+var res = await sdk.Salesorder.UpdateAccountingSalesorder2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [UpdateAccountingSalesorderRequest](../../Models/Requests/UpdateAccountingSalesorderRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [UpdateAccountingSalesorder2Request](../../Models/Requests/UpdateAccountingSalesorder2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[UpdateAccountingSalesorderResponse](../../Models/Requests/UpdateAccountingSalesorderResponse.md)**
+**[UpdateAccountingSalesorder2Response](../../Models/Requests/UpdateAccountingSalesorder2Response.md)**
 
 ### Errors
 

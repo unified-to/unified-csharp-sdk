@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [ListEnrichCompanies](#listenrichcompanies) - Retrieve enrichment information for a company
-* [ListEnrichPeople](#listenrichpeople) - Retrieve enrichment information for a person
+* [ListEnrichCompanies2](#listenrichcompanies2) - Retrieve enrichment information for a company
+* [ListEnrichPeople2](#listenrichpeople2) - Retrieve enrichment information for a person
 
-## ListEnrichCompanies
+## ListEnrichCompanies2
 
 Retrieve enrichment information for a company
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Enrich.ListEnrichCompaniesAsync(connectionId: "<id>");
+var res = await sdk.Enrich.ListEnrichCompanies2Async(connectionId: "<id>");
 
 // handle response
 ```
@@ -37,7 +37,7 @@ var res = await sdk.Enrich.ListEnrichCompaniesAsync(connectionId: "<id>");
 
 ### Response
 
-**[ListEnrichCompaniesResponse](../../Models/Requests/ListEnrichCompaniesResponse.md)**
+**[ListEnrichCompanies2Response](../../Models/Requests/ListEnrichCompanies2Response.md)**
 
 ### Errors
 
@@ -45,7 +45,7 @@ var res = await sdk.Enrich.ListEnrichCompaniesAsync(connectionId: "<id>");
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListEnrichPeople
+## ListEnrichPeople2
 
 Retrieve enrichment information for a person
 
@@ -60,24 +60,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListEnrichPeopleRequest req = new ListEnrichPeopleRequest() {
+ListEnrichPeople2Request req = new ListEnrichPeople2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Enrich.ListEnrichPeopleAsync(req);
+var res = await sdk.Enrich.ListEnrichPeople2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListEnrichPeopleRequest](../../Models/Requests/ListEnrichPeopleRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListEnrichPeople2Request](../../Models/Requests/ListEnrichPeople2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListEnrichPeopleResponse](../../Models/Requests/ListEnrichPeopleResponse.md)**
+**[ListEnrichPeople2Response](../../Models/Requests/ListEnrichPeople2Response.md)**
 
 ### Errors
 

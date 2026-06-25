@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [CreateGenaiPrompt](#creategenaiprompt) - Create a prompt
+* [CreateGenaiPrompt2](#creategenaiprompt2) - Create a prompt
 
-## CreateGenaiPrompt
+## CreateGenaiPrompt2
 
 Create a prompt
 
@@ -21,7 +21,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Prompt.CreateGenaiPromptAsync(
+var res = await sdk.Prompt.CreateGenaiPrompt2Async(
     genaiPrompt: new GenaiPrompt() {},
     connectionId: "<id>"
 );
@@ -35,12 +35,12 @@ var res = await sdk.Prompt.CreateGenaiPromptAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `GenaiPrompt`                                                                                                                                    | [GenaiPrompt](../../Models/Components/GenaiPrompt.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateGenaiPromptQueryParamFields](../../Models/Requests/CreateGenaiPromptQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateGenaiPrompt2QueryParamFields](../../Models/Requests/CreateGenaiPrompt2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateGenaiPromptResponse](../../Models/Requests/CreateGenaiPromptResponse.md)**
+**[CreateGenaiPrompt2Response](../../Models/Requests/CreateGenaiPrompt2Response.md)**
 
 ### Errors
 

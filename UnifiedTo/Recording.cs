@@ -28,49 +28,49 @@ namespace UnifiedTo
         /// <summary>
         /// Create a recording
         /// </summary>
-        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<CreateUcRecordingQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateUcRecording2Response> CreateUcRecording2Async(UcRecording ucRecording, string connectionId, List<CreateUcRecording2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<GetCalendarRecordingQueryParamFields>? fields = null, string? raw = null);
+        Task<GetCalendarRecording2Response> GetCalendarRecording2Async(string connectionId, string id, List<GetCalendarRecording2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<GetUcRecordingQueryParamFields>? fields = null, string? raw = null);
+        Task<GetUcRecording2Response> GetUcRecording2Async(string connectionId, string id, List<GetUcRecording2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all recordings
         /// </summary>
-        Task<ListCalendarRecordingsResponse> ListCalendarRecordingsAsync(ListCalendarRecordingsRequest request);
+        Task<ListCalendarRecordings2Response> ListCalendarRecordings2Async(ListCalendarRecordings2Request request);
 
         /// <summary>
         /// List all recordings
         /// </summary>
-        Task<ListUcRecordingsResponse> ListUcRecordingsAsync(ListUcRecordingsRequest request);
+        Task<ListUcRecordings2Response> ListUcRecordings2Async(ListUcRecordings2Request request);
 
         /// <summary>
         /// Update a recording
         /// </summary>
-        Task<PatchUcRecordingResponse> PatchUcRecordingAsync(PatchUcRecordingRequest request);
+        Task<PatchUcRecording2Response> PatchUcRecording2Async(PatchUcRecording2Request request);
 
         /// <summary>
         /// Remove a recording
         /// </summary>
-        Task<RemoveUcRecordingResponse> RemoveUcRecordingAsync(string connectionId, string id);
+        Task<RemoveUcRecording2Response> RemoveUcRecording2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a recording
         /// </summary>
-        Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UpdateUcRecordingRequest request);
+        Task<UpdateUcRecording2Response> UpdateUcRecording2Async(UpdateUcRecording2Request request);
     }
 
     public class Recording: IRecording
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,9 +79,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<CreateUcRecordingQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateUcRecording2Response> CreateUcRecording2Async(UcRecording ucRecording, string connectionId, List<CreateUcRecording2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateUcRecordingRequest()
+            var request = new CreateUcRecording2Request()
             {
                 UcRecording = ucRecording,
                 ConnectionId = connectionId,
@@ -105,7 +105,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUcRecording", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUcRecording2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -146,7 +146,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcRecording>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateUcRecordingResponse()
+                    var response = new CreateUcRecording2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -170,9 +170,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<GetCalendarRecordingQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCalendarRecording2Response> GetCalendarRecording2Async(string connectionId, string id, List<GetCalendarRecording2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCalendarRecordingRequest()
+            var request = new GetCalendarRecording2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -190,7 +190,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarRecording", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarRecording2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -231,7 +231,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarRecording>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCalendarRecordingResponse()
+                    var response = new GetCalendarRecording2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -255,9 +255,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<GetUcRecordingQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetUcRecording2Response> GetUcRecording2Async(string connectionId, string id, List<GetUcRecording2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetUcRecordingRequest()
+            var request = new GetUcRecording2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -275,7 +275,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcRecording", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcRecording2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -316,7 +316,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcRecording>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetUcRecordingResponse()
+                    var response = new GetUcRecording2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -340,7 +340,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCalendarRecordingsResponse> ListCalendarRecordingsAsync(ListCalendarRecordingsRequest request)
+        public async Task<ListCalendarRecordings2Response> ListCalendarRecordings2Async(ListCalendarRecordings2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/recording", request);
@@ -353,7 +353,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarRecordings", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarRecordings2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -394,7 +394,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CalendarRecording>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCalendarRecordingsResponse()
+                    var response = new ListCalendarRecordings2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -418,7 +418,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListUcRecordingsResponse> ListUcRecordingsAsync(ListUcRecordingsRequest request)
+        public async Task<ListUcRecordings2Response> ListUcRecordings2Async(ListUcRecordings2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording", request);
@@ -431,7 +431,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcRecordings", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcRecordings2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -472,7 +472,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<UcRecording>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListUcRecordingsResponse()
+                    var response = new ListUcRecordings2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -496,7 +496,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcRecordingResponse> PatchUcRecordingAsync(PatchUcRecordingRequest request)
+        public async Task<PatchUcRecording2Response> PatchUcRecording2Async(PatchUcRecording2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
@@ -515,7 +515,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchUcRecording", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchUcRecording2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -556,7 +556,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcRecording>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchUcRecordingResponse()
+                    var response = new PatchUcRecording2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -580,9 +580,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveUcRecordingResponse> RemoveUcRecordingAsync(string connectionId, string id)
+        public async Task<RemoveUcRecording2Response> RemoveUcRecording2Async(string connectionId, string id)
         {
-            var request = new RemoveUcRecordingRequest()
+            var request = new RemoveUcRecording2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -598,7 +598,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUcRecording", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUcRecording2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -636,7 +636,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveUcRecordingResponse()
+                return new RemoveUcRecording2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -653,7 +653,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveUcRecordingResponse()
+                return new RemoveUcRecording2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -662,7 +662,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UpdateUcRecordingRequest request)
+        public async Task<UpdateUcRecording2Response> UpdateUcRecording2Async(UpdateUcRecording2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
@@ -681,7 +681,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateUcRecording", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateUcRecording2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -722,7 +722,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcRecording>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateUcRecordingResponse()
+                    var response = new UpdateUcRecording2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

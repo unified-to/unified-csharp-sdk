@@ -28,94 +28,94 @@ namespace UnifiedTo
         /// <summary>
         /// Create a label
         /// </summary>
-        Task<CreateShippingLabelResponse> CreateShippingLabelAsync(ShippingLabel shippingLabel, string connectionId, List<CreateShippingLabelQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateShippingLabel2Response> CreateShippingLabel2Async(ShippingLabel shippingLabel, string connectionId, List<CreateShippingLabel2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a rate
         /// </summary>
-        Task<CreateShippingRateResponse> CreateShippingRateAsync(ShippingRate shippingRate, string connectionId, List<CreateShippingRateQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateShippingRate2Response> CreateShippingRate2Async(ShippingRate shippingRate, string connectionId, List<CreateShippingRate2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a shipment
         /// </summary>
-        Task<CreateShippingShipmentResponse> CreateShippingShipmentAsync(ShippingShipment shippingShipment, string connectionId, List<CreateShippingShipmentQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateShippingShipment2Response> CreateShippingShipment2Async(ShippingShipment shippingShipment, string connectionId, List<CreateShippingShipment2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a carrier
         /// </summary>
-        Task<GetShippingCarrierResponse> GetShippingCarrierAsync(string connectionId, string id, List<GetShippingCarrierQueryParamFields>? fields = null, string? raw = null);
+        Task<GetShippingCarrier2Response> GetShippingCarrier2Async(string connectionId, string id, List<GetShippingCarrier2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a label
         /// </summary>
-        Task<GetShippingLabelResponse> GetShippingLabelAsync(string connectionId, string id, List<GetShippingLabelQueryParamFields>? fields = null, string? raw = null);
+        Task<GetShippingLabel2Response> GetShippingLabel2Async(string connectionId, string id, List<GetShippingLabel2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a shipment
         /// </summary>
-        Task<GetShippingShipmentResponse> GetShippingShipmentAsync(string connectionId, string id, List<GetShippingShipmentQueryParamFields>? fields = null, string? raw = null);
+        Task<GetShippingShipment2Response> GetShippingShipment2Async(string connectionId, string id, List<GetShippingShipment2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a tracking
         /// </summary>
-        Task<GetShippingTrackingResponse> GetShippingTrackingAsync(string connectionId, string id, List<GetShippingTrackingQueryParamFields>? fields = null, string? raw = null);
+        Task<GetShippingTracking2Response> GetShippingTracking2Async(string connectionId, string id, List<GetShippingTracking2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all carriers
         /// </summary>
-        Task<ListShippingCarriersResponse> ListShippingCarriersAsync(ListShippingCarriersRequest request);
+        Task<ListShippingCarriers2Response> ListShippingCarriers2Async(ListShippingCarriers2Request request);
 
         /// <summary>
         /// List all labels
         /// </summary>
-        Task<ListShippingLabelsResponse> ListShippingLabelsAsync(ListShippingLabelsRequest request);
+        Task<ListShippingLabels2Response> ListShippingLabels2Async(ListShippingLabels2Request request);
 
         /// <summary>
         /// List all shipments
         /// </summary>
-        Task<ListShippingShipmentsResponse> ListShippingShipmentsAsync(ListShippingShipmentsRequest request);
+        Task<ListShippingShipments2Response> ListShippingShipments2Async(ListShippingShipments2Request request);
 
         /// <summary>
         /// List all trackings
         /// </summary>
-        Task<ListShippingTrackingsResponse> ListShippingTrackingsAsync(ListShippingTrackingsRequest request);
+        Task<ListShippingTrackings2Response> ListShippingTrackings2Async(ListShippingTrackings2Request request);
 
         /// <summary>
         /// Update a label
         /// </summary>
-        Task<PatchShippingLabelResponse> PatchShippingLabelAsync(PatchShippingLabelRequest request);
+        Task<PatchShippingLabel2Response> PatchShippingLabel2Async(PatchShippingLabel2Request request);
 
         /// <summary>
         /// Update a shipment
         /// </summary>
-        Task<PatchShippingShipmentResponse> PatchShippingShipmentAsync(PatchShippingShipmentRequest request);
+        Task<PatchShippingShipment2Response> PatchShippingShipment2Async(PatchShippingShipment2Request request);
 
         /// <summary>
         /// Remove a label
         /// </summary>
-        Task<RemoveShippingLabelResponse> RemoveShippingLabelAsync(string connectionId, string id);
+        Task<RemoveShippingLabel2Response> RemoveShippingLabel2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a shipment
         /// </summary>
-        Task<RemoveShippingShipmentResponse> RemoveShippingShipmentAsync(string connectionId, string id);
+        Task<RemoveShippingShipment2Response> RemoveShippingShipment2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a label
         /// </summary>
-        Task<UpdateShippingLabelResponse> UpdateShippingLabelAsync(UpdateShippingLabelRequest request);
+        Task<UpdateShippingLabel2Response> UpdateShippingLabel2Async(UpdateShippingLabel2Request request);
 
         /// <summary>
         /// Update a shipment
         /// </summary>
-        Task<UpdateShippingShipmentResponse> UpdateShippingShipmentAsync(UpdateShippingShipmentRequest request);
+        Task<UpdateShippingShipment2Response> UpdateShippingShipment2Async(UpdateShippingShipment2Request request);
     }
 
     public class Shipping: IShipping
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -124,9 +124,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateShippingLabelResponse> CreateShippingLabelAsync(ShippingLabel shippingLabel, string connectionId, List<CreateShippingLabelQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateShippingLabel2Response> CreateShippingLabel2Async(ShippingLabel shippingLabel, string connectionId, List<CreateShippingLabel2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateShippingLabelRequest()
+            var request = new CreateShippingLabel2Request()
             {
                 ShippingLabel = shippingLabel,
                 ConnectionId = connectionId,
@@ -150,7 +150,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingLabel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingLabel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -191,7 +191,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingLabel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateShippingLabelResponse()
+                    var response = new CreateShippingLabel2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -215,9 +215,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateShippingRateResponse> CreateShippingRateAsync(ShippingRate shippingRate, string connectionId, List<CreateShippingRateQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateShippingRate2Response> CreateShippingRate2Async(ShippingRate shippingRate, string connectionId, List<CreateShippingRate2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateShippingRateRequest()
+            var request = new CreateShippingRate2Request()
             {
                 ShippingRate = shippingRate,
                 ConnectionId = connectionId,
@@ -241,7 +241,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingRate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingRate2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -282,7 +282,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingRate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateShippingRateResponse()
+                    var response = new CreateShippingRate2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -306,9 +306,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateShippingShipmentResponse> CreateShippingShipmentAsync(ShippingShipment shippingShipment, string connectionId, List<CreateShippingShipmentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateShippingShipment2Response> CreateShippingShipment2Async(ShippingShipment shippingShipment, string connectionId, List<CreateShippingShipment2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateShippingShipmentRequest()
+            var request = new CreateShippingShipment2Request()
             {
                 ShippingShipment = shippingShipment,
                 ConnectionId = connectionId,
@@ -332,7 +332,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingShipment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingShipment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -373,7 +373,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingShipment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateShippingShipmentResponse()
+                    var response = new CreateShippingShipment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -397,9 +397,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetShippingCarrierResponse> GetShippingCarrierAsync(string connectionId, string id, List<GetShippingCarrierQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetShippingCarrier2Response> GetShippingCarrier2Async(string connectionId, string id, List<GetShippingCarrier2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetShippingCarrierRequest()
+            var request = new GetShippingCarrier2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -417,7 +417,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingCarrier", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingCarrier2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -458,7 +458,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingCarrier>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetShippingCarrierResponse()
+                    var response = new GetShippingCarrier2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -482,9 +482,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetShippingLabelResponse> GetShippingLabelAsync(string connectionId, string id, List<GetShippingLabelQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetShippingLabel2Response> GetShippingLabel2Async(string connectionId, string id, List<GetShippingLabel2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetShippingLabelRequest()
+            var request = new GetShippingLabel2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -502,7 +502,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingLabel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingLabel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -543,7 +543,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingLabel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetShippingLabelResponse()
+                    var response = new GetShippingLabel2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -567,9 +567,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetShippingShipmentResponse> GetShippingShipmentAsync(string connectionId, string id, List<GetShippingShipmentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetShippingShipment2Response> GetShippingShipment2Async(string connectionId, string id, List<GetShippingShipment2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetShippingShipmentRequest()
+            var request = new GetShippingShipment2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -587,7 +587,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingShipment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingShipment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -628,7 +628,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingShipment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetShippingShipmentResponse()
+                    var response = new GetShippingShipment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -652,9 +652,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetShippingTrackingResponse> GetShippingTrackingAsync(string connectionId, string id, List<GetShippingTrackingQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetShippingTracking2Response> GetShippingTracking2Async(string connectionId, string id, List<GetShippingTracking2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetShippingTrackingRequest()
+            var request = new GetShippingTracking2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -672,7 +672,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingTracking", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingTracking2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -713,7 +713,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingTracking>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetShippingTrackingResponse()
+                    var response = new GetShippingTracking2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -737,7 +737,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListShippingCarriersResponse> ListShippingCarriersAsync(ListShippingCarriersRequest request)
+        public async Task<ListShippingCarriers2Response> ListShippingCarriers2Async(ListShippingCarriers2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/carrier", request);
@@ -750,7 +750,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingCarriers", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingCarriers2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -791,7 +791,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ShippingCarrier>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListShippingCarriersResponse()
+                    var response = new ListShippingCarriers2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -815,7 +815,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListShippingLabelsResponse> ListShippingLabelsAsync(ListShippingLabelsRequest request)
+        public async Task<ListShippingLabels2Response> ListShippingLabels2Async(ListShippingLabels2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/label", request);
@@ -828,7 +828,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingLabels", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingLabels2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -869,7 +869,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ShippingLabel>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListShippingLabelsResponse()
+                    var response = new ListShippingLabels2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -893,7 +893,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListShippingShipmentsResponse> ListShippingShipmentsAsync(ListShippingShipmentsRequest request)
+        public async Task<ListShippingShipments2Response> ListShippingShipments2Async(ListShippingShipments2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/shipment", request);
@@ -906,7 +906,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingShipments", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingShipments2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -947,7 +947,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ShippingShipment>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListShippingShipmentsResponse()
+                    var response = new ListShippingShipments2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -971,7 +971,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListShippingTrackingsResponse> ListShippingTrackingsAsync(ListShippingTrackingsRequest request)
+        public async Task<ListShippingTrackings2Response> ListShippingTrackings2Async(ListShippingTrackings2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/tracking", request);
@@ -984,7 +984,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingTrackings", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingTrackings2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1025,7 +1025,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ShippingTracking>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListShippingTrackingsResponse()
+                    var response = new ListShippingTrackings2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1049,7 +1049,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchShippingLabelResponse> PatchShippingLabelAsync(PatchShippingLabelRequest request)
+        public async Task<PatchShippingLabel2Response> PatchShippingLabel2Async(PatchShippingLabel2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/label/{id}", request);
@@ -1068,7 +1068,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchShippingLabel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchShippingLabel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1109,7 +1109,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingLabel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchShippingLabelResponse()
+                    var response = new PatchShippingLabel2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1133,7 +1133,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchShippingShipmentResponse> PatchShippingShipmentAsync(PatchShippingShipmentRequest request)
+        public async Task<PatchShippingShipment2Response> PatchShippingShipment2Async(PatchShippingShipment2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/shipment/{id}", request);
@@ -1152,7 +1152,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchShippingShipment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchShippingShipment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1193,7 +1193,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingShipment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchShippingShipmentResponse()
+                    var response = new PatchShippingShipment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1217,9 +1217,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveShippingLabelResponse> RemoveShippingLabelAsync(string connectionId, string id)
+        public async Task<RemoveShippingLabel2Response> RemoveShippingLabel2Async(string connectionId, string id)
         {
-            var request = new RemoveShippingLabelRequest()
+            var request = new RemoveShippingLabel2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1235,7 +1235,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeShippingLabel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeShippingLabel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1273,7 +1273,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveShippingLabelResponse()
+                return new RemoveShippingLabel2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1290,7 +1290,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveShippingLabelResponse()
+                return new RemoveShippingLabel2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1299,9 +1299,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveShippingShipmentResponse> RemoveShippingShipmentAsync(string connectionId, string id)
+        public async Task<RemoveShippingShipment2Response> RemoveShippingShipment2Async(string connectionId, string id)
         {
-            var request = new RemoveShippingShipmentRequest()
+            var request = new RemoveShippingShipment2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1317,7 +1317,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeShippingShipment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeShippingShipment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1355,7 +1355,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveShippingShipmentResponse()
+                return new RemoveShippingShipment2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1372,7 +1372,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveShippingShipmentResponse()
+                return new RemoveShippingShipment2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1381,7 +1381,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateShippingLabelResponse> UpdateShippingLabelAsync(UpdateShippingLabelRequest request)
+        public async Task<UpdateShippingLabel2Response> UpdateShippingLabel2Async(UpdateShippingLabel2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/label/{id}", request);
@@ -1400,7 +1400,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateShippingLabel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateShippingLabel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1441,7 +1441,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingLabel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateShippingLabelResponse()
+                    var response = new UpdateShippingLabel2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1465,7 +1465,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateShippingShipmentResponse> UpdateShippingShipmentAsync(UpdateShippingShipmentRequest request)
+        public async Task<UpdateShippingShipment2Response> UpdateShippingShipment2Async(UpdateShippingShipment2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/shipment/{id}", request);
@@ -1484,7 +1484,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateShippingShipment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateShippingShipment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1525,7 +1525,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingShipment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateShippingShipmentResponse()
+                    var response = new UpdateShippingShipment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a signatory
         /// </summary>
-        Task<CreateSigningSignatoryResponse> CreateSigningSignatoryAsync(SigningSignatory signingSignatory, string connectionId, List<CreateSigningSignatoryQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateSigningSignatory2Response> CreateSigningSignatory2Async(SigningSignatory signingSignatory, string connectionId, List<CreateSigningSignatory2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a signatory
         /// </summary>
-        Task<GetSigningSignatoryResponse> GetSigningSignatoryAsync(string connectionId, string id, List<GetSigningSignatoryQueryParamFields>? fields = null, string? raw = null);
+        Task<GetSigningSignatory2Response> GetSigningSignatory2Async(string connectionId, string id, List<GetSigningSignatory2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all signatories
         /// </summary>
-        Task<ListSigningSignatoriesResponse> ListSigningSignatoriesAsync(ListSigningSignatoriesRequest request);
+        Task<ListSigningSignatories2Response> ListSigningSignatories2Async(ListSigningSignatories2Request request);
 
         /// <summary>
         /// Update a signatory
         /// </summary>
-        Task<PatchSigningSignatoryResponse> PatchSigningSignatoryAsync(PatchSigningSignatoryRequest request);
+        Task<PatchSigningSignatory2Response> PatchSigningSignatory2Async(PatchSigningSignatory2Request request);
 
         /// <summary>
         /// Remove a signatory
         /// </summary>
-        Task<RemoveSigningSignatoryResponse> RemoveSigningSignatoryAsync(string connectionId, string id);
+        Task<RemoveSigningSignatory2Response> RemoveSigningSignatory2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a signatory
         /// </summary>
-        Task<UpdateSigningSignatoryResponse> UpdateSigningSignatoryAsync(UpdateSigningSignatoryRequest request);
+        Task<UpdateSigningSignatory2Response> UpdateSigningSignatory2Async(UpdateSigningSignatory2Request request);
     }
 
     public class Signatory: ISignatory
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateSigningSignatoryResponse> CreateSigningSignatoryAsync(SigningSignatory signingSignatory, string connectionId, List<CreateSigningSignatoryQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateSigningSignatory2Response> CreateSigningSignatory2Async(SigningSignatory signingSignatory, string connectionId, List<CreateSigningSignatory2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateSigningSignatoryRequest()
+            var request = new CreateSigningSignatory2Request()
             {
                 SigningSignatory = signingSignatory,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createSigningSignatory", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createSigningSignatory2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningSignatory>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateSigningSignatoryResponse()
+                    var response = new CreateSigningSignatory2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetSigningSignatoryResponse> GetSigningSignatoryAsync(string connectionId, string id, List<GetSigningSignatoryQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetSigningSignatory2Response> GetSigningSignatory2Async(string connectionId, string id, List<GetSigningSignatory2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetSigningSignatoryRequest()
+            var request = new GetSigningSignatory2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getSigningSignatory", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getSigningSignatory2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningSignatory>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetSigningSignatoryResponse()
+                    var response = new GetSigningSignatory2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListSigningSignatoriesResponse> ListSigningSignatoriesAsync(ListSigningSignatoriesRequest request)
+        public async Task<ListSigningSignatories2Response> ListSigningSignatories2Async(ListSigningSignatories2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/signing/{connection_id}/signatory", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listSigningSignatories", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listSigningSignatories2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<SigningSignatory>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListSigningSignatoriesResponse()
+                    var response = new ListSigningSignatories2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchSigningSignatoryResponse> PatchSigningSignatoryAsync(PatchSigningSignatoryRequest request)
+        public async Task<PatchSigningSignatory2Response> PatchSigningSignatory2Async(PatchSigningSignatory2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/signing/{connection_id}/signatory/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchSigningSignatory", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchSigningSignatory2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningSignatory>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchSigningSignatoryResponse()
+                    var response = new PatchSigningSignatory2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveSigningSignatoryResponse> RemoveSigningSignatoryAsync(string connectionId, string id)
+        public async Task<RemoveSigningSignatory2Response> RemoveSigningSignatory2Async(string connectionId, string id)
         {
-            var request = new RemoveSigningSignatoryRequest()
+            var request = new RemoveSigningSignatory2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeSigningSignatory", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeSigningSignatory2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveSigningSignatoryResponse()
+                return new RemoveSigningSignatory2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveSigningSignatoryResponse()
+                return new RemoveSigningSignatory2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateSigningSignatoryResponse> UpdateSigningSignatoryAsync(UpdateSigningSignatoryRequest request)
+        public async Task<UpdateSigningSignatory2Response> UpdateSigningSignatory2Async(UpdateSigningSignatory2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/signing/{connection_id}/signatory/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateSigningSignatory", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateSigningSignatory2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningSignatory>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateSigningSignatoryResponse()
+                    var response = new UpdateSigningSignatory2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

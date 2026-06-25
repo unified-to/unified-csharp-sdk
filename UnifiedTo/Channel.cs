@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a channel
         /// </summary>
-        Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<GetMessagingChannelQueryParamFields>? fields = null, string? raw = null);
+        Task<GetMessagingChannel2Response> GetMessagingChannel2Async(string connectionId, string id, List<GetMessagingChannel2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all channels
         /// </summary>
-        Task<ListMessagingChannelsResponse> ListMessagingChannelsAsync(ListMessagingChannelsRequest request);
+        Task<ListMessagingChannels2Response> ListMessagingChannels2Async(ListMessagingChannels2Request request);
     }
 
     public class Channel: IChannel
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<GetMessagingChannelQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetMessagingChannel2Response> GetMessagingChannel2Async(string connectionId, string id, List<GetMessagingChannel2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetMessagingChannelRequest()
+            var request = new GetMessagingChannel2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMessagingChannel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMessagingChannel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingChannel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetMessagingChannelResponse()
+                    var response = new GetMessagingChannel2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListMessagingChannelsResponse> ListMessagingChannelsAsync(ListMessagingChannelsRequest request)
+        public async Task<ListMessagingChannels2Response> ListMessagingChannels2Async(ListMessagingChannels2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/channel", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMessagingChannels", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMessagingChannels2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<MessagingChannel>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListMessagingChannelsResponse()
+                    var response = new ListMessagingChannels2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

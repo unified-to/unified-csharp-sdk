@@ -83,8 +83,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_customer_id")]
         public ListCustomerId? ListCustomerId { get; set; }
 
+        [JsonProperty("list_database_id")]
+        public ListDatabaseId? ListDatabaseId { get; set; }
+
         [JsonProperty("list_deal_id")]
         public ListDealId? ListDealId { get; set; }
+
+        [JsonProperty("list_dimension")]
+        public ListDimension? ListDimension { get; set; }
 
         [JsonProperty("list_document_id")]
         public ListDocumentId? ListDocumentId { get; set; }
@@ -146,6 +152,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_location_id")]
         public ListLocationId? ListLocationId { get; set; }
 
+        [JsonProperty("list_medium")]
+        public ListMedium? ListMedium { get; set; }
+
         [JsonProperty("list_member_id")]
         public ListMemberId? ListMemberId { get; set; }
 
@@ -182,6 +191,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_project_id")]
         public ListProjectId? ListProjectId { get; set; }
 
+        [JsonProperty("list_property_id")]
+        public ListPropertyId? ListPropertyId { get; set; }
+
         [JsonProperty("list_query")]
         public ListQuery? ListQuery { get; set; }
 
@@ -200,6 +212,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_saleschannel_id")]
         public ListSaleschannelId? ListSaleschannelId { get; set; }
 
+        [JsonProperty("list_session_id")]
+        public ListSessionId? ListSessionId { get; set; }
+
         [JsonProperty("list_shipment_id")]
         public ListShipmentId? ListShipmentId { get; set; }
 
@@ -215,6 +230,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_sort_by_updated_at")]
         public ListSortByUpdatedAt? ListSortByUpdatedAt { get; set; }
 
+        [JsonProperty("list_source")]
+        public ListSource? ListSource { get; set; }
+
         [JsonProperty("list_space_id")]
         public ListSpaceId? ListSpaceId { get; set; }
 
@@ -226,6 +244,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_student_id")]
         public ListStudentId? ListStudentId { get; set; }
+
+        [JsonProperty("list_table_id")]
+        public ListTableId? ListTableId { get; set; }
 
         [JsonProperty("list_task_id")]
         public ListTaskId? ListTaskId { get; set; }
@@ -251,6 +272,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_user_mentioned_id")]
         public ListUserMentionedId? ListUserMentionedId { get; set; }
 
+        [JsonProperty("list_visitor_id")]
+        public ListVisitorId? ListVisitorId { get; set; }
+
         [JsonProperty("methods")]
         public Dictionary<string, bool>? Methods { get; set; }
 
@@ -268,6 +292,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("native_webhook_course_id")]
         public NativeWebhookCourseId? NativeWebhookCourseId { get; set; }
+
+        [JsonProperty("native_webhook_database_id")]
+        public NativeWebhookDatabaseId? NativeWebhookDatabaseId { get; set; }
 
         [JsonProperty("native_webhook_event_id")]
         public NativeWebhookEventId? NativeWebhookEventId { get; set; }
@@ -296,11 +323,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_project_id")]
         public NativeWebhookProjectId? NativeWebhookProjectId { get; set; }
 
+        [JsonProperty("native_webhook_property_id")]
+        public NativeWebhookPropertyId? NativeWebhookPropertyId { get; set; }
+
+        [JsonProperty("native_webhook_session_id")]
+        public NativeWebhookSessionId? NativeWebhookSessionId { get; set; }
+
         [JsonProperty("native_webhook_shipment_id")]
         public NativeWebhookShipmentId? NativeWebhookShipmentId { get; set; }
 
         [JsonProperty("native_webhook_student_id")]
         public NativeWebhookStudentId? NativeWebhookStudentId { get; set; }
+
+        [JsonProperty("native_webhook_table_id")]
+        public NativeWebhookTableId? NativeWebhookTableId { get; set; }
 
         [JsonProperty("native_webhook_task_id")]
         public NativeWebhookTaskId? NativeWebhookTaskId { get; set; }
@@ -310,6 +346,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("native_webhook_type")]
         public NativeWebhookType? NativeWebhookType { get; set; }
+
+        [JsonProperty("native_webhook_visitor_id")]
+        public NativeWebhookVisitorId? NativeWebhookVisitorId { get; set; }
 
         [JsonProperty("outbound_fields")]
         public Dictionary<string, string>? OutboundFields { get; set; }
@@ -389,6 +428,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_customer_id")]
         public VirtualWebhookCustomerId? VirtualWebhookCustomerId { get; set; }
 
+        [JsonProperty("virtual_webhook_database_id")]
+        public VirtualWebhookDatabaseId? VirtualWebhookDatabaseId { get; set; }
+
         [JsonProperty("virtual_webhook_deal_id")]
         public VirtualWebhookDealId? VirtualWebhookDealId { get; set; }
 
@@ -467,6 +509,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_project_id")]
         public VirtualWebhookProjectId? VirtualWebhookProjectId { get; set; }
 
+        [JsonProperty("virtual_webhook_property_id")]
+        public VirtualWebhookPropertyId? VirtualWebhookPropertyId { get; set; }
+
         [JsonProperty("virtual_webhook_reference")]
         public VirtualWebhookReference? VirtualWebhookReference { get; set; }
 
@@ -475,6 +520,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_saleschannel_id")]
         public VirtualWebhookSaleschannelId? VirtualWebhookSaleschannelId { get; set; }
+
+        [JsonProperty("virtual_webhook_session_id")]
+        public VirtualWebhookSessionId? VirtualWebhookSessionId { get; set; }
 
         [JsonProperty("virtual_webhook_shipment_id")]
         public VirtualWebhookShipmentId? VirtualWebhookShipmentId { get; set; }
@@ -490,6 +538,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_student_id")]
         public VirtualWebhookStudentId? VirtualWebhookStudentId { get; set; }
+
+        [JsonProperty("virtual_webhook_table_id")]
+        public VirtualWebhookTableId? VirtualWebhookTableId { get; set; }
 
         [JsonProperty("virtual_webhook_task_id")]
         public VirtualWebhookTaskId? VirtualWebhookTaskId { get; set; }
@@ -511,6 +562,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_user_mentioned_id")]
         public VirtualWebhookUserMentionedId? VirtualWebhookUserMentionedId { get; set; }
+
+        [JsonProperty("virtual_webhook_visitor_id")]
+        public VirtualWebhookVisitorId? VirtualWebhookVisitorId { get; set; }
 
         [JsonProperty("webhook_events")]
         public PropertyIntegrationSupportWebhookEvents? WebhookEvents { get; set; }

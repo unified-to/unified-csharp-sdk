@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetAccountingCashflow](#getaccountingcashflow) - Retrieve a cashflow
-* [ListAccountingCashflows](#listaccountingcashflows) - List all cashflows
+* [GetAccountingCashflow2](#getaccountingcashflow2) - Retrieve a cashflow
+* [ListAccountingCashflows2](#listaccountingcashflows2) - List all cashflows
 
-## GetAccountingCashflow
+## GetAccountingCashflow2
 
 Retrieve a cashflow
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Cashflow.GetAccountingCashflowAsync(
+var res = await sdk.Cashflow.GetAccountingCashflow2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Cashflow.GetAccountingCashflowAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Cashflow                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAccountingCashflowQueryParamFields](../../Models/Requests/GetAccountingCashflowQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingCashflow2QueryParamFields](../../Models/Requests/GetAccountingCashflow2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingCashflowResponse](../../Models/Requests/GetAccountingCashflowResponse.md)**
+**[GetAccountingCashflow2Response](../../Models/Requests/GetAccountingCashflow2Response.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Cashflow.GetAccountingCashflowAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingCashflows
+## ListAccountingCashflows2
 
 List all cashflows
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingCashflowsRequest req = new ListAccountingCashflowsRequest() {
+ListAccountingCashflows2Request req = new ListAccountingCashflows2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Cashflow.ListAccountingCashflowsAsync(req);
+var res = await sdk.Cashflow.ListAccountingCashflows2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListAccountingCashflowsRequest](../../Models/Requests/ListAccountingCashflowsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListAccountingCashflows2Request](../../Models/Requests/ListAccountingCashflows2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[ListAccountingCashflowsResponse](../../Models/Requests/ListAccountingCashflowsResponse.md)**
+**[ListAccountingCashflows2Response](../../Models/Requests/ListAccountingCashflows2Response.md)**
 
 ### Errors
 

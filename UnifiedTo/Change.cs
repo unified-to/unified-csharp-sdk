@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a change
         /// </summary>
-        Task<GetTaskChangeResponse> GetTaskChangeAsync(string connectionId, string id, List<GetTaskChangeQueryParamFields>? fields = null, string? raw = null);
+        Task<GetTaskChange2Response> GetTaskChange2Async(string connectionId, string id, List<GetTaskChange2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all changes
         /// </summary>
-        Task<ListTaskChangesResponse> ListTaskChangesAsync(ListTaskChangesRequest request);
+        Task<ListTaskChanges2Response> ListTaskChanges2Async(ListTaskChanges2Request request);
     }
 
     public class Change: IChange
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetTaskChangeResponse> GetTaskChangeAsync(string connectionId, string id, List<GetTaskChangeQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetTaskChange2Response> GetTaskChange2Async(string connectionId, string id, List<GetTaskChange2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetTaskChangeRequest()
+            var request = new GetTaskChange2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTaskChange", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTaskChange2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskChange>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetTaskChangeResponse()
+                    var response = new GetTaskChange2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListTaskChangesResponse> ListTaskChangesAsync(ListTaskChangesRequest request)
+        public async Task<ListTaskChanges2Response> ListTaskChanges2Async(ListTaskChanges2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/change", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTaskChanges", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTaskChanges2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<TaskChange>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListTaskChangesResponse()
+                    var response = new ListTaskChanges2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -55,7 +55,7 @@ namespace UnifiedTo.Models.Components
         public string? FirstName { get; set; }
 
         [JsonProperty("gender")]
-        public Gender? Gender { get; set; }
+        public EnrichPersonGender? Gender { get; set; }
 
         [JsonProperty("github_url")]
         public string? GithubUrl { get; set; }

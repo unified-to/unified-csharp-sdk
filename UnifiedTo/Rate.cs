@@ -28,14 +28,14 @@ namespace UnifiedTo
         /// <summary>
         /// Create a rate
         /// </summary>
-        Task<CreateShippingRateResponse> CreateShippingRateAsync(ShippingRate shippingRate, string connectionId, List<CreateShippingRateQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateShippingRate2Response> CreateShippingRate2Async(ShippingRate shippingRate, string connectionId, List<CreateShippingRate2QueryParamFields>? fields = null, string? raw = null);
     }
 
     public class Rate: IRate
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -44,9 +44,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateShippingRateResponse> CreateShippingRateAsync(ShippingRate shippingRate, string connectionId, List<CreateShippingRateQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateShippingRate2Response> CreateShippingRate2Async(ShippingRate shippingRate, string connectionId, List<CreateShippingRate2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateShippingRateRequest()
+            var request = new CreateShippingRate2Request()
             {
                 ShippingRate = shippingRate,
                 ConnectionId = connectionId,
@@ -70,7 +70,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingRate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createShippingRate2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -111,7 +111,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingRate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateShippingRateResponse()
+                    var response = new CreateShippingRate2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

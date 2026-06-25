@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create an ad
         /// </summary>
-        Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<CreateAdsAdQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAdsAd2Response> CreateAdsAd2Async(AdsAd adsAd, string connectionId, List<CreateAdsAd2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an ad
         /// </summary>
-        Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<GetAdsAdQueryParamFields>? fields = null, string? raw = null);
+        Task<GetAdsAd2Response> GetAdsAd2Async(string connectionId, string id, List<GetAdsAd2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all ads
         /// </summary>
-        Task<ListAdsAdsResponse> ListAdsAdsAsync(ListAdsAdsRequest request);
+        Task<ListAdsAds2Response> ListAdsAds2Async(ListAdsAds2Request request);
 
         /// <summary>
         /// Update an ad
         /// </summary>
-        Task<PatchAdsAdResponse> PatchAdsAdAsync(PatchAdsAdRequest request);
+        Task<PatchAdsAd2Response> PatchAdsAd2Async(PatchAdsAd2Request request);
 
         /// <summary>
         /// Remove an ad
         /// </summary>
-        Task<RemoveAdsAdResponse> RemoveAdsAdAsync(string connectionId, string id);
+        Task<RemoveAdsAd2Response> RemoveAdsAd2Async(string connectionId, string id);
 
         /// <summary>
         /// Update an ad
         /// </summary>
-        Task<UpdateAdsAdResponse> UpdateAdsAdAsync(UpdateAdsAdRequest request);
+        Task<UpdateAdsAd2Response> UpdateAdsAd2Async(UpdateAdsAd2Request request);
     }
 
     public class Ad: IAd
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<CreateAdsAdQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAdsAd2Response> CreateAdsAd2Async(AdsAd adsAd, string connectionId, List<CreateAdsAd2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAdsAdRequest()
+            var request = new CreateAdsAd2Request()
             {
                 AdsAd = adsAd,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsAd", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsAd2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsAd>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAdsAdResponse()
+                    var response = new CreateAdsAd2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<GetAdsAdQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAdsAd2Response> GetAdsAd2Async(string connectionId, string id, List<GetAdsAd2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAdsAdRequest()
+            var request = new GetAdsAd2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsAd", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsAd2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsAd>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAdsAdResponse()
+                    var response = new GetAdsAd2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAdsAdsResponse> ListAdsAdsAsync(ListAdsAdsRequest request)
+        public async Task<ListAdsAds2Response> ListAdsAds2Async(ListAdsAds2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/ad", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsAds", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsAds2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AdsAd>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAdsAdsResponse()
+                    var response = new ListAdsAds2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAdsAdResponse> PatchAdsAdAsync(PatchAdsAdRequest request)
+        public async Task<PatchAdsAd2Response> PatchAdsAd2Async(PatchAdsAd2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/ad/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsAd", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsAd2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsAd>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAdsAdResponse()
+                    var response = new PatchAdsAd2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAdsAdResponse> RemoveAdsAdAsync(string connectionId, string id)
+        public async Task<RemoveAdsAd2Response> RemoveAdsAd2Async(string connectionId, string id)
         {
-            var request = new RemoveAdsAdRequest()
+            var request = new RemoveAdsAd2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsAd", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsAd2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAdsAdResponse()
+                return new RemoveAdsAd2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAdsAdResponse()
+                return new RemoveAdsAd2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAdsAdResponse> UpdateAdsAdAsync(UpdateAdsAdRequest request)
+        public async Task<UpdateAdsAd2Response> UpdateAdsAd2Async(UpdateAdsAd2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/ad/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsAd", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsAd2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsAd>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAdsAdResponse()
+                    var response = new UpdateAdsAd2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

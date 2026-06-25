@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateVerificationRequest](#createverificationrequest) - Create a request
-* [GetVerificationRequest](#getverificationrequest) - Retrieve a request
-* [ListVerificationRequests](#listverificationrequests) - List all requests
-* [PatchVerificationRequest](#patchverificationrequest) - Update a request
-* [RemoveVerificationRequest](#removeverificationrequest) - Remove a request
-* [UpdateVerificationRequest](#updateverificationrequest) - Update a request
+* [CreateVerificationRequest2](#createverificationrequest2) - Create a request
+* [GetVerificationRequest2](#getverificationrequest2) - Retrieve a request
+* [ListVerificationRequests2](#listverificationrequests2) - List all requests
+* [PatchVerificationRequest2](#patchverificationrequest2) - Update a request
+* [RemoveVerificationRequest2](#removeverificationrequest2) - Remove a request
+* [UpdateVerificationRequest2](#updateverificationrequest2) - Update a request
 
-## CreateVerificationRequest
+## CreateVerificationRequest2
 
 Create a request
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Request.CreateVerificationRequestAsync(
+var res = await sdk.Request.CreateVerificationRequest2Async(
     verificationRequest: new VerificationRequest() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Request.CreateVerificationRequestAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `VerificationRequest`                                                                                                                            | [VerificationRequest](../../Models/Components/VerificationRequest.md)                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateVerificationRequestQueryParamFields](../../Models/Requests/CreateVerificationRequestQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateVerificationRequest2QueryParamFields](../../Models/Requests/CreateVerificationRequest2QueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateVerificationRequestResponse](../../Models/Requests/CreateVerificationRequestResponse.md)**
+**[CreateVerificationRequest2Response](../../Models/Requests/CreateVerificationRequest2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Request.CreateVerificationRequestAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetVerificationRequest
+## GetVerificationRequest2
 
 Retrieve a request
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Request.GetVerificationRequestAsync(
+var res = await sdk.Request.GetVerificationRequest2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Request.GetVerificationRequestAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Request                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetVerificationRequestQueryParamFields](../../Models/Requests/GetVerificationRequestQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetVerificationRequest2QueryParamFields](../../Models/Requests/GetVerificationRequest2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetVerificationRequestResponse](../../Models/Requests/GetVerificationRequestResponse.md)**
+**[GetVerificationRequest2Response](../../Models/Requests/GetVerificationRequest2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Request.GetVerificationRequestAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListVerificationRequests
+## ListVerificationRequests2
 
 List all requests
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListVerificationRequestsRequest req = new ListVerificationRequestsRequest() {
+ListVerificationRequests2Request req = new ListVerificationRequests2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Request.ListVerificationRequestsAsync(req);
+var res = await sdk.Request.ListVerificationRequests2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [ListVerificationRequestsRequest](../../Models/Requests/ListVerificationRequestsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [ListVerificationRequests2Request](../../Models/Requests/ListVerificationRequests2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[ListVerificationRequestsResponse](../../Models/Requests/ListVerificationRequestsResponse.md)**
+**[ListVerificationRequests2Response](../../Models/Requests/ListVerificationRequests2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Request.ListVerificationRequestsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchVerificationRequest
+## PatchVerificationRequest2
 
 Update a request
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchVerificationRequestRequest req = new PatchVerificationRequestRequest() {
+PatchVerificationRequest2Request req = new PatchVerificationRequest2Request() {
     VerificationRequest = new VerificationRequest() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Request.PatchVerificationRequestAsync(req);
+var res = await sdk.Request.PatchVerificationRequest2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [PatchVerificationRequestRequest](../../Models/Requests/PatchVerificationRequestRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [PatchVerificationRequest2Request](../../Models/Requests/PatchVerificationRequest2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[PatchVerificationRequestResponse](../../Models/Requests/PatchVerificationRequestResponse.md)**
+**[PatchVerificationRequest2Response](../../Models/Requests/PatchVerificationRequest2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Request.PatchVerificationRequestAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveVerificationRequest
+## RemoveVerificationRequest2
 
 Remove a request
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Request.RemoveVerificationRequestAsync(
+var res = await sdk.Request.RemoveVerificationRequest2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Request.RemoveVerificationRequestAsync(
 
 ### Response
 
-**[RemoveVerificationRequestResponse](../../Models/Requests/RemoveVerificationRequestResponse.md)**
+**[RemoveVerificationRequest2Response](../../Models/Requests/RemoveVerificationRequest2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Request.RemoveVerificationRequestAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateVerificationRequest
+## UpdateVerificationRequest2
 
 Update a request
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateVerificationRequestRequest req = new UpdateVerificationRequestRequest() {
+UpdateVerificationRequest2Request req = new UpdateVerificationRequest2Request() {
     VerificationRequest = new VerificationRequest() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Request.UpdateVerificationRequestAsync(req);
+var res = await sdk.Request.UpdateVerificationRequest2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [UpdateVerificationRequestRequest](../../Models/Requests/UpdateVerificationRequestRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [UpdateVerificationRequest2Request](../../Models/Requests/UpdateVerificationRequest2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[UpdateVerificationRequestResponse](../../Models/Requests/UpdateVerificationRequestResponse.md)**
+**[UpdateVerificationRequest2Response](../../Models/Requests/UpdateVerificationRequest2Response.md)**
 
 ### Errors
 

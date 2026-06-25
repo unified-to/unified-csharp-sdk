@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAtsScorecard](#createatsscorecard) - Create a scorecard
-* [GetAtsScorecard](#getatsscorecard) - Retrieve a scorecard
-* [ListAtsScorecards](#listatsscorecards) - List all scorecards
-* [PatchAtsScorecard](#patchatsscorecard) - Update a scorecard
-* [RemoveAtsScorecard](#removeatsscorecard) - Remove a scorecard
-* [UpdateAtsScorecard](#updateatsscorecard) - Update a scorecard
+* [CreateAtsScorecard2](#createatsscorecard2) - Create a scorecard
+* [GetAtsScorecard2](#getatsscorecard2) - Retrieve a scorecard
+* [ListAtsScorecards2](#listatsscorecards2) - List all scorecards
+* [PatchAtsScorecard2](#patchatsscorecard2) - Update a scorecard
+* [RemoveAtsScorecard2](#removeatsscorecard2) - Remove a scorecard
+* [UpdateAtsScorecard2](#updateatsscorecard2) - Update a scorecard
 
-## CreateAtsScorecard
+## CreateAtsScorecard2
 
 Create a scorecard
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Scorecard.CreateAtsScorecardAsync(
+var res = await sdk.Scorecard.CreateAtsScorecard2Async(
     atsScorecard: new AtsScorecard() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsScorecard`                                                                                                                                   | [AtsScorecard](../../Models/Components/AtsScorecard.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsScorecardQueryParamFields](../../Models/Requests/CreateAtsScorecardQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsScorecard2QueryParamFields](../../Models/Requests/CreateAtsScorecard2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsScorecardResponse](../../Models/Requests/CreateAtsScorecardResponse.md)**
+**[CreateAtsScorecard2Response](../../Models/Requests/CreateAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsScorecard
+## GetAtsScorecard2
 
 Retrieve a scorecard
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Scorecard.GetAtsScorecardAsync(
+var res = await sdk.Scorecard.GetAtsScorecard2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Scorecard                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetAtsScorecardQueryParamFields](../../Models/Requests/GetAtsScorecardQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsScorecard2QueryParamFields](../../Models/Requests/GetAtsScorecard2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsScorecardResponse](../../Models/Requests/GetAtsScorecardResponse.md)**
+**[GetAtsScorecard2Response](../../Models/Requests/GetAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsScorecards
+## ListAtsScorecards2
 
 List all scorecards
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsScorecardsRequest req = new ListAtsScorecardsRequest() {
+ListAtsScorecards2Request req = new ListAtsScorecards2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Scorecard.ListAtsScorecardsAsync(req);
+var res = await sdk.Scorecard.ListAtsScorecards2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAtsScorecardsRequest](../../Models/Requests/ListAtsScorecardsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListAtsScorecards2Request](../../Models/Requests/ListAtsScorecards2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListAtsScorecardsResponse](../../Models/Requests/ListAtsScorecardsResponse.md)**
+**[ListAtsScorecards2Response](../../Models/Requests/ListAtsScorecards2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Scorecard.ListAtsScorecardsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsScorecard
+## PatchAtsScorecard2
 
 Update a scorecard
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
+PatchAtsScorecard2Request req = new PatchAtsScorecard2Request() {
     AtsScorecard = new AtsScorecard() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Scorecard.PatchAtsScorecardAsync(req);
+var res = await sdk.Scorecard.PatchAtsScorecard2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAtsScorecardRequest](../../Models/Requests/PatchAtsScorecardRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchAtsScorecard2Request](../../Models/Requests/PatchAtsScorecard2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchAtsScorecardResponse](../../Models/Requests/PatchAtsScorecardResponse.md)**
+**[PatchAtsScorecard2Response](../../Models/Requests/PatchAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Scorecard.PatchAtsScorecardAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsScorecard
+## RemoveAtsScorecard2
 
 Remove a scorecard
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
+var res = await sdk.Scorecard.RemoveAtsScorecard2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
 
 ### Response
 
-**[RemoveAtsScorecardResponse](../../Models/Requests/RemoveAtsScorecardResponse.md)**
+**[RemoveAtsScorecard2Response](../../Models/Requests/RemoveAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsScorecard
+## UpdateAtsScorecard2
 
 Update a scorecard
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
+UpdateAtsScorecard2Request req = new UpdateAtsScorecard2Request() {
     AtsScorecard = new AtsScorecard() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Scorecard.UpdateAtsScorecardAsync(req);
+var res = await sdk.Scorecard.UpdateAtsScorecard2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAtsScorecardRequest](../../Models/Requests/UpdateAtsScorecardRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateAtsScorecard2Request](../../Models/Requests/UpdateAtsScorecard2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateAtsScorecardResponse](../../Models/Requests/UpdateAtsScorecardResponse.md)**
+**[UpdateAtsScorecard2Response](../../Models/Requests/UpdateAtsScorecard2Response.md)**
 
 ### Errors
 

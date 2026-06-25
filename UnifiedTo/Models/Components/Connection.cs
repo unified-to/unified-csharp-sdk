@@ -27,18 +27,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("auth")]
         public PropertyConnectionAuth? Auth { get; set; }
 
-        [JsonProperty("auth_aws_arn")]
-        public string? AuthAwsArn { get; set; }
-
-        [JsonProperty("auth_azure_keyvault_id")]
-        public string? AuthAzureKeyvaultId { get; set; }
-
-        [JsonProperty("auth_gcp_secret_name")]
-        public string? AuthGcpSecretName { get; set; }
-
-        [JsonProperty("auth_hashi_vault_path")]
-        public string? AuthHashiVaultPath { get; set; }
-
         /// <summary>
         /// The Integration categories that this connection supports
         /// </summary>

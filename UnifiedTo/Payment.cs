@@ -28,119 +28,119 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null);
+        Task<CreatePaymentLink2Response> CreatePaymentLink2Async(PaymentLink paymentLink, string connectionId, List<CreatePaymentLink2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a payment
         /// </summary>
-        Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<CreatePaymentPaymentQueryParamFields>? fields = null, string? raw = null);
+        Task<CreatePaymentPayment2Response> CreatePaymentPayment2Async(PaymentPayment paymentPayment, string connectionId, List<CreatePaymentPayment2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a subscription
         /// </summary>
-        Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<CreatePaymentSubscriptionQueryParamFields>? fields = null, string? raw = null);
+        Task<CreatePaymentSubscription2Response> CreatePaymentSubscription2Async(PaymentSubscription paymentSubscription, string connectionId, List<CreatePaymentSubscription2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null);
+        Task<GetPaymentLink2Response> GetPaymentLink2Async(string connectionId, string id, List<GetPaymentLink2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payment
         /// </summary>
-        Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<GetPaymentPaymentQueryParamFields>? fields = null, string? raw = null);
+        Task<GetPaymentPayment2Response> GetPaymentPayment2Async(string connectionId, string id, List<GetPaymentPayment2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payout
         /// </summary>
-        Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<GetPaymentPayoutQueryParamFields>? fields = null, string? raw = null);
+        Task<GetPaymentPayout2Response> GetPaymentPayout2Async(string connectionId, string id, List<GetPaymentPayout2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a refund
         /// </summary>
-        Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<GetPaymentRefundQueryParamFields>? fields = null, string? raw = null);
+        Task<GetPaymentRefund2Response> GetPaymentRefund2Async(string connectionId, string id, List<GetPaymentRefund2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a subscription
         /// </summary>
-        Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<GetPaymentSubscriptionQueryParamFields>? fields = null, string? raw = null);
+        Task<GetPaymentSubscription2Response> GetPaymentSubscription2Async(string connectionId, string id, List<GetPaymentSubscription2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all links
         /// </summary>
-        Task<ListPaymentLinksResponse> ListPaymentLinksAsync(ListPaymentLinksRequest request);
+        Task<ListPaymentLinks2Response> ListPaymentLinks2Async(ListPaymentLinks2Request request);
 
         /// <summary>
         /// List all payments
         /// </summary>
-        Task<ListPaymentPaymentsResponse> ListPaymentPaymentsAsync(ListPaymentPaymentsRequest request);
+        Task<ListPaymentPayments2Response> ListPaymentPayments2Async(ListPaymentPayments2Request request);
 
         /// <summary>
         /// List all payouts
         /// </summary>
-        Task<ListPaymentPayoutsResponse> ListPaymentPayoutsAsync(ListPaymentPayoutsRequest request);
+        Task<ListPaymentPayouts2Response> ListPaymentPayouts2Async(ListPaymentPayouts2Request request);
 
         /// <summary>
         /// List all refunds
         /// </summary>
-        Task<ListPaymentRefundsResponse> ListPaymentRefundsAsync(ListPaymentRefundsRequest request);
+        Task<ListPaymentRefunds2Response> ListPaymentRefunds2Async(ListPaymentRefunds2Request request);
 
         /// <summary>
         /// List all subscriptions
         /// </summary>
-        Task<ListPaymentSubscriptionsResponse> ListPaymentSubscriptionsAsync(ListPaymentSubscriptionsRequest request);
+        Task<ListPaymentSubscriptions2Response> ListPaymentSubscriptions2Async(ListPaymentSubscriptions2Request request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request);
+        Task<PatchPaymentLink2Response> PatchPaymentLink2Async(PatchPaymentLink2Request request);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PatchPaymentPaymentRequest request);
+        Task<PatchPaymentPayment2Response> PatchPaymentPayment2Async(PatchPaymentPayment2Request request);
 
         /// <summary>
         /// Update a subscription
         /// </summary>
-        Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PatchPaymentSubscriptionRequest request);
+        Task<PatchPaymentSubscription2Response> PatchPaymentSubscription2Async(PatchPaymentSubscription2Request request);
 
         /// <summary>
         /// Remove a link
         /// </summary>
-        Task<RemovePaymentLinkResponse> RemovePaymentLinkAsync(string connectionId, string id);
+        Task<RemovePaymentLink2Response> RemovePaymentLink2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a payment
         /// </summary>
-        Task<RemovePaymentPaymentResponse> RemovePaymentPaymentAsync(string connectionId, string id);
+        Task<RemovePaymentPayment2Response> RemovePaymentPayment2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a subscription
         /// </summary>
-        Task<RemovePaymentSubscriptionResponse> RemovePaymentSubscriptionAsync(string connectionId, string id);
+        Task<RemovePaymentSubscription2Response> RemovePaymentSubscription2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request);
+        Task<UpdatePaymentLink2Response> UpdatePaymentLink2Async(UpdatePaymentLink2Request request);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(UpdatePaymentPaymentRequest request);
+        Task<UpdatePaymentPayment2Response> UpdatePaymentPayment2Async(UpdatePaymentPayment2Request request);
 
         /// <summary>
         /// Update a subscription
         /// </summary>
-        Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(UpdatePaymentSubscriptionRequest request);
+        Task<UpdatePaymentSubscription2Response> UpdatePaymentSubscription2Async(UpdatePaymentSubscription2Request request);
     }
 
     public class Payment: IPayment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -149,9 +149,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreatePaymentLink2Response> CreatePaymentLink2Async(PaymentLink paymentLink, string connectionId, List<CreatePaymentLink2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreatePaymentLinkRequest()
+            var request = new CreatePaymentLink2Request()
             {
                 PaymentLink = paymentLink,
                 ConnectionId = connectionId,
@@ -175,7 +175,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -216,7 +216,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreatePaymentLinkResponse()
+                    var response = new CreatePaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -240,9 +240,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<CreatePaymentPaymentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreatePaymentPayment2Response> CreatePaymentPayment2Async(PaymentPayment paymentPayment, string connectionId, List<CreatePaymentPayment2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreatePaymentPaymentRequest()
+            var request = new CreatePaymentPayment2Request()
             {
                 PaymentPayment = paymentPayment,
                 ConnectionId = connectionId,
@@ -266,7 +266,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentPayment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentPayment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -307,7 +307,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentPayment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreatePaymentPaymentResponse()
+                    var response = new CreatePaymentPayment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -331,9 +331,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<CreatePaymentSubscriptionQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreatePaymentSubscription2Response> CreatePaymentSubscription2Async(PaymentSubscription paymentSubscription, string connectionId, List<CreatePaymentSubscription2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreatePaymentSubscriptionRequest()
+            var request = new CreatePaymentSubscription2Request()
             {
                 PaymentSubscription = paymentSubscription,
                 ConnectionId = connectionId,
@@ -357,7 +357,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentSubscription", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentSubscription2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -398,7 +398,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentSubscription>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreatePaymentSubscriptionResponse()
+                    var response = new CreatePaymentSubscription2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -422,9 +422,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetPaymentLink2Response> GetPaymentLink2Async(string connectionId, string id, List<GetPaymentLink2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetPaymentLinkRequest()
+            var request = new GetPaymentLink2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -442,7 +442,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -483,7 +483,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetPaymentLinkResponse()
+                    var response = new GetPaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -507,9 +507,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<GetPaymentPaymentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetPaymentPayment2Response> GetPaymentPayment2Async(string connectionId, string id, List<GetPaymentPayment2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetPaymentPaymentRequest()
+            var request = new GetPaymentPayment2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -527,7 +527,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentPayment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentPayment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -568,7 +568,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentPayment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetPaymentPaymentResponse()
+                    var response = new GetPaymentPayment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -592,9 +592,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<GetPaymentPayoutQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetPaymentPayout2Response> GetPaymentPayout2Async(string connectionId, string id, List<GetPaymentPayout2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetPaymentPayoutRequest()
+            var request = new GetPaymentPayout2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -612,7 +612,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentPayout", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentPayout2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -653,7 +653,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentPayout>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetPaymentPayoutResponse()
+                    var response = new GetPaymentPayout2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -677,9 +677,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<GetPaymentRefundQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetPaymentRefund2Response> GetPaymentRefund2Async(string connectionId, string id, List<GetPaymentRefund2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetPaymentRefundRequest()
+            var request = new GetPaymentRefund2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -697,7 +697,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentRefund", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentRefund2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -738,7 +738,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentRefund>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetPaymentRefundResponse()
+                    var response = new GetPaymentRefund2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -762,9 +762,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<GetPaymentSubscriptionQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetPaymentSubscription2Response> GetPaymentSubscription2Async(string connectionId, string id, List<GetPaymentSubscription2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetPaymentSubscriptionRequest()
+            var request = new GetPaymentSubscription2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -782,7 +782,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentSubscription", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentSubscription2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -823,7 +823,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentSubscription>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetPaymentSubscriptionResponse()
+                    var response = new GetPaymentSubscription2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -847,7 +847,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListPaymentLinksResponse> ListPaymentLinksAsync(ListPaymentLinksRequest request)
+        public async Task<ListPaymentLinks2Response> ListPaymentLinks2Async(ListPaymentLinks2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link", request);
@@ -860,7 +860,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentLinks", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentLinks2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -901,7 +901,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<PaymentLink>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListPaymentLinksResponse()
+                    var response = new ListPaymentLinks2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -925,7 +925,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListPaymentPaymentsResponse> ListPaymentPaymentsAsync(ListPaymentPaymentsRequest request)
+        public async Task<ListPaymentPayments2Response> ListPaymentPayments2Async(ListPaymentPayments2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payment", request);
@@ -938,7 +938,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentPayments", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentPayments2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -979,7 +979,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<PaymentPayment>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListPaymentPaymentsResponse()
+                    var response = new ListPaymentPayments2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1003,7 +1003,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListPaymentPayoutsResponse> ListPaymentPayoutsAsync(ListPaymentPayoutsRequest request)
+        public async Task<ListPaymentPayouts2Response> ListPaymentPayouts2Async(ListPaymentPayouts2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payout", request);
@@ -1016,7 +1016,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentPayouts", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentPayouts2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1057,7 +1057,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<PaymentPayout>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListPaymentPayoutsResponse()
+                    var response = new ListPaymentPayouts2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1081,7 +1081,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListPaymentRefundsResponse> ListPaymentRefundsAsync(ListPaymentRefundsRequest request)
+        public async Task<ListPaymentRefunds2Response> ListPaymentRefunds2Async(ListPaymentRefunds2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/refund", request);
@@ -1094,7 +1094,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentRefunds", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentRefunds2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1135,7 +1135,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<PaymentRefund>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListPaymentRefundsResponse()
+                    var response = new ListPaymentRefunds2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1159,7 +1159,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListPaymentSubscriptionsResponse> ListPaymentSubscriptionsAsync(ListPaymentSubscriptionsRequest request)
+        public async Task<ListPaymentSubscriptions2Response> ListPaymentSubscriptions2Async(ListPaymentSubscriptions2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/subscription", request);
@@ -1172,7 +1172,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentSubscriptions", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentSubscriptions2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1213,7 +1213,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<PaymentSubscription>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListPaymentSubscriptionsResponse()
+                    var response = new ListPaymentSubscriptions2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1237,7 +1237,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request)
+        public async Task<PatchPaymentLink2Response> PatchPaymentLink2Async(PatchPaymentLink2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
@@ -1256,7 +1256,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1297,7 +1297,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchPaymentLinkResponse()
+                    var response = new PatchPaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1321,7 +1321,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PatchPaymentPaymentRequest request)
+        public async Task<PatchPaymentPayment2Response> PatchPaymentPayment2Async(PatchPaymentPayment2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payment/{id}", request);
@@ -1340,7 +1340,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentPayment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentPayment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1381,7 +1381,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentPayment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchPaymentPaymentResponse()
+                    var response = new PatchPaymentPayment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1405,7 +1405,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PatchPaymentSubscriptionRequest request)
+        public async Task<PatchPaymentSubscription2Response> PatchPaymentSubscription2Async(PatchPaymentSubscription2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/subscription/{id}", request);
@@ -1424,7 +1424,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentSubscription", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentSubscription2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1465,7 +1465,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentSubscription>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchPaymentSubscriptionResponse()
+                    var response = new PatchPaymentSubscription2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1489,9 +1489,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemovePaymentLinkResponse> RemovePaymentLinkAsync(string connectionId, string id)
+        public async Task<RemovePaymentLink2Response> RemovePaymentLink2Async(string connectionId, string id)
         {
-            var request = new RemovePaymentLinkRequest()
+            var request = new RemovePaymentLink2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1507,7 +1507,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1545,7 +1545,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemovePaymentLinkResponse()
+                return new RemovePaymentLink2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1562,7 +1562,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemovePaymentLinkResponse()
+                return new RemovePaymentLink2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1571,9 +1571,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemovePaymentPaymentResponse> RemovePaymentPaymentAsync(string connectionId, string id)
+        public async Task<RemovePaymentPayment2Response> RemovePaymentPayment2Async(string connectionId, string id)
         {
-            var request = new RemovePaymentPaymentRequest()
+            var request = new RemovePaymentPayment2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1589,7 +1589,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentPayment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentPayment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1627,7 +1627,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemovePaymentPaymentResponse()
+                return new RemovePaymentPayment2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1644,7 +1644,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemovePaymentPaymentResponse()
+                return new RemovePaymentPayment2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1653,9 +1653,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemovePaymentSubscriptionResponse> RemovePaymentSubscriptionAsync(string connectionId, string id)
+        public async Task<RemovePaymentSubscription2Response> RemovePaymentSubscription2Async(string connectionId, string id)
         {
-            var request = new RemovePaymentSubscriptionRequest()
+            var request = new RemovePaymentSubscription2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1671,7 +1671,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentSubscription", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentSubscription2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1709,7 +1709,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemovePaymentSubscriptionResponse()
+                return new RemovePaymentSubscription2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1726,7 +1726,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemovePaymentSubscriptionResponse()
+                return new RemovePaymentSubscription2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1735,7 +1735,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request)
+        public async Task<UpdatePaymentLink2Response> UpdatePaymentLink2Async(UpdatePaymentLink2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
@@ -1754,7 +1754,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1795,7 +1795,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdatePaymentLinkResponse()
+                    var response = new UpdatePaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1819,7 +1819,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(UpdatePaymentPaymentRequest request)
+        public async Task<UpdatePaymentPayment2Response> UpdatePaymentPayment2Async(UpdatePaymentPayment2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payment/{id}", request);
@@ -1838,7 +1838,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentPayment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentPayment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1879,7 +1879,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentPayment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdatePaymentPaymentResponse()
+                    var response = new UpdatePaymentPayment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1903,7 +1903,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(UpdatePaymentSubscriptionRequest request)
+        public async Task<UpdatePaymentSubscription2Response> UpdatePaymentSubscription2Async(UpdatePaymentSubscription2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/subscription/{id}", request);
@@ -1922,7 +1922,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentSubscription", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentSubscription2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1963,7 +1963,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentSubscription>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdatePaymentSubscriptionResponse()
+                    var response = new UpdatePaymentSubscription2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

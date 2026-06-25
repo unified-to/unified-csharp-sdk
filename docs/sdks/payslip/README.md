@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
-* [ListHrisPayslips](#listhrispayslips) - List all payslips
+* [GetHrisPayslip2](#gethrispayslip2) - Retrieve a payslip
+* [ListHrisPayslips2](#listhrispayslips2) - List all payslips
 
-## GetHrisPayslip
+## GetHrisPayslip2
 
 Retrieve a payslip
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payslip.GetHrisPayslipAsync(
+var res = await sdk.Payslip.GetHrisPayslip2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Payslip.GetHrisPayslipAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Payslip                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetHrisPayslipQueryParamFields](../../Models/Requests/GetHrisPayslipQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisPayslip2QueryParamFields](../../Models/Requests/GetHrisPayslip2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisPayslipResponse](../../Models/Requests/GetHrisPayslipResponse.md)**
+**[GetHrisPayslip2Response](../../Models/Requests/GetHrisPayslip2Response.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Payslip.GetHrisPayslipAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisPayslips
+## ListHrisPayslips2
 
 List all payslips
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisPayslipsRequest req = new ListHrisPayslipsRequest() {
+ListHrisPayslips2Request req = new ListHrisPayslips2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Payslip.ListHrisPayslipsAsync(req);
+var res = await sdk.Payslip.ListHrisPayslips2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListHrisPayslipsRequest](../../Models/Requests/ListHrisPayslipsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisPayslips2Request](../../Models/Requests/ListHrisPayslips2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListHrisPayslipsResponse](../../Models/Requests/ListHrisPayslipsResponse.md)**
+**[ListHrisPayslips2Response](../../Models/Requests/ListHrisPayslips2Response.md)**
 
 ### Errors
 

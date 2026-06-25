@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingBill](#createaccountingbill) - Create a bill
-* [GetAccountingBill](#getaccountingbill) - Retrieve a bill
-* [ListAccountingBills](#listaccountingbills) - List all bills
-* [PatchAccountingBill](#patchaccountingbill) - Update a bill
-* [RemoveAccountingBill](#removeaccountingbill) - Remove a bill
-* [UpdateAccountingBill](#updateaccountingbill) - Update a bill
+* [CreateAccountingBill2](#createaccountingbill2) - Create a bill
+* [GetAccountingBill2](#getaccountingbill2) - Retrieve a bill
+* [ListAccountingBills2](#listaccountingbills2) - List all bills
+* [PatchAccountingBill2](#patchaccountingbill2) - Update a bill
+* [RemoveAccountingBill2](#removeaccountingbill2) - Remove a bill
+* [UpdateAccountingBill2](#updateaccountingbill2) - Update a bill
 
-## CreateAccountingBill
+## CreateAccountingBill2
 
 Create a bill
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Bill.CreateAccountingBillAsync(
+var res = await sdk.Bill.CreateAccountingBill2Async(
     accountingBill: new AccountingBill() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Bill.CreateAccountingBillAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingBill`                                                                                                                                 | [AccountingBill](../../Models/Components/AccountingBill.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingBillQueryParamFields](../../Models/Requests/CreateAccountingBillQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingBill2QueryParamFields](../../Models/Requests/CreateAccountingBill2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingBillResponse](../../Models/Requests/CreateAccountingBillResponse.md)**
+**[CreateAccountingBill2Response](../../Models/Requests/CreateAccountingBill2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Bill.CreateAccountingBillAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingBill
+## GetAccountingBill2
 
 Retrieve a bill
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Bill.GetAccountingBillAsync(
+var res = await sdk.Bill.GetAccountingBill2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Bill.GetAccountingBillAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Bill                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetAccountingBillQueryParamFields](../../Models/Requests/GetAccountingBillQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingBill2QueryParamFields](../../Models/Requests/GetAccountingBill2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingBillResponse](../../Models/Requests/GetAccountingBillResponse.md)**
+**[GetAccountingBill2Response](../../Models/Requests/GetAccountingBill2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Bill.GetAccountingBillAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingBills
+## ListAccountingBills2
 
 List all bills
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingBillsRequest req = new ListAccountingBillsRequest() {
+ListAccountingBills2Request req = new ListAccountingBills2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Bill.ListAccountingBillsAsync(req);
+var res = await sdk.Bill.ListAccountingBills2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListAccountingBillsRequest](../../Models/Requests/ListAccountingBillsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListAccountingBills2Request](../../Models/Requests/ListAccountingBills2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListAccountingBillsResponse](../../Models/Requests/ListAccountingBillsResponse.md)**
+**[ListAccountingBills2Response](../../Models/Requests/ListAccountingBills2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Bill.ListAccountingBillsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingBill
+## PatchAccountingBill2
 
 Update a bill
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
+PatchAccountingBill2Request req = new PatchAccountingBill2Request() {
     AccountingBill = new AccountingBill() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Bill.PatchAccountingBillAsync(req);
+var res = await sdk.Bill.PatchAccountingBill2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchAccountingBillRequest](../../Models/Requests/PatchAccountingBillRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchAccountingBill2Request](../../Models/Requests/PatchAccountingBill2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchAccountingBillResponse](../../Models/Requests/PatchAccountingBillResponse.md)**
+**[PatchAccountingBill2Response](../../Models/Requests/PatchAccountingBill2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Bill.PatchAccountingBillAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingBill
+## RemoveAccountingBill2
 
 Remove a bill
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Bill.RemoveAccountingBillAsync(
+var res = await sdk.Bill.RemoveAccountingBill2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Bill.RemoveAccountingBillAsync(
 
 ### Response
 
-**[RemoveAccountingBillResponse](../../Models/Requests/RemoveAccountingBillResponse.md)**
+**[RemoveAccountingBill2Response](../../Models/Requests/RemoveAccountingBill2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Bill.RemoveAccountingBillAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingBill
+## UpdateAccountingBill2
 
 Update a bill
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
+UpdateAccountingBill2Request req = new UpdateAccountingBill2Request() {
     AccountingBill = new AccountingBill() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Bill.UpdateAccountingBillAsync(req);
+var res = await sdk.Bill.UpdateAccountingBill2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateAccountingBillRequest](../../Models/Requests/UpdateAccountingBillRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateAccountingBill2Request](../../Models/Requests/UpdateAccountingBill2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateAccountingBillResponse](../../Models/Requests/UpdateAccountingBillResponse.md)**
+**[UpdateAccountingBill2Response](../../Models/Requests/UpdateAccountingBill2Response.md)**
 
 ### Errors
 

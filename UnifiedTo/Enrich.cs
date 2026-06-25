@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve enrichment information for a company
         /// </summary>
-        Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(string connectionId, string? domain = null, string? name = null);
+        Task<ListEnrichCompanies2Response> ListEnrichCompanies2Async(string connectionId, string? domain = null, string? name = null);
 
         /// <summary>
         /// Retrieve enrichment information for a person
         /// </summary>
-        Task<ListEnrichPeopleResponse> ListEnrichPeopleAsync(ListEnrichPeopleRequest request);
+        Task<ListEnrichPeople2Response> ListEnrichPeople2Async(ListEnrichPeople2Request request);
     }
 
     public class Enrich: IEnrich
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(string connectionId, string? domain = null, string? name = null)
+        public async Task<ListEnrichCompanies2Response> ListEnrichCompanies2Async(string connectionId, string? domain = null, string? name = null)
         {
-            var request = new ListEnrichCompaniesRequest()
+            var request = new ListEnrichCompanies2Request()
             {
                 ConnectionId = connectionId,
                 Domain = domain,
@@ -68,7 +68,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listEnrichCompanies", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listEnrichCompanies2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -109,7 +109,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<EnrichCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListEnrichCompaniesResponse()
+                    var response = new ListEnrichCompanies2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -133,7 +133,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListEnrichPeopleResponse> ListEnrichPeopleAsync(ListEnrichPeopleRequest request)
+        public async Task<ListEnrichPeople2Response> ListEnrichPeople2Async(ListEnrichPeople2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/enrich/{connection_id}/person", request);
@@ -146,7 +146,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listEnrichPeople", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listEnrichPeople2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -187,7 +187,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<EnrichPerson>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListEnrichPeopleResponse()
+                    var response = new ListEnrichPeople2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

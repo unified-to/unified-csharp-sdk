@@ -28,29 +28,29 @@ namespace UnifiedTo
         /// <summary>
         /// Create an embedding
         /// </summary>
-        Task<CreateGenaiEmbeddingResponse> CreateGenaiEmbeddingAsync(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbeddingQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateGenaiEmbedding2Response> CreateGenaiEmbedding2Async(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbedding2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a prompt
         /// </summary>
-        Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPromptQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateGenaiPrompt2Response> CreateGenaiPrompt2Async(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPrompt2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a model
         /// </summary>
-        Task<GetGenaiModelResponse> GetGenaiModelAsync(string connectionId, string id, List<GetGenaiModelQueryParamFields>? fields = null, string? raw = null);
+        Task<GetGenaiModel2Response> GetGenaiModel2Async(string connectionId, string id, List<GetGenaiModel2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all models
         /// </summary>
-        Task<ListGenaiModelsResponse> ListGenaiModelsAsync(ListGenaiModelsRequest request);
+        Task<ListGenaiModels2Response> ListGenaiModels2Async(ListGenaiModels2Request request);
     }
 
     public class Genai: IGenai
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -59,9 +59,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateGenaiEmbeddingResponse> CreateGenaiEmbeddingAsync(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbeddingQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateGenaiEmbedding2Response> CreateGenaiEmbedding2Async(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbedding2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateGenaiEmbeddingRequest()
+            var request = new CreateGenaiEmbedding2Request()
             {
                 GenaiEmbedding = genaiEmbedding,
                 ConnectionId = connectionId,
@@ -85,7 +85,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiEmbedding", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiEmbedding2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -126,7 +126,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<GenaiEmbedding>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateGenaiEmbeddingResponse()
+                    var response = new CreateGenaiEmbedding2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -150,9 +150,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPromptQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateGenaiPrompt2Response> CreateGenaiPrompt2Async(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPrompt2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateGenaiPromptRequest()
+            var request = new CreateGenaiPrompt2Request()
             {
                 GenaiPrompt = genaiPrompt,
                 ConnectionId = connectionId,
@@ -176,7 +176,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiPrompt", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiPrompt2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -217,7 +217,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<GenaiPrompt>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateGenaiPromptResponse()
+                    var response = new CreateGenaiPrompt2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -241,9 +241,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetGenaiModelResponse> GetGenaiModelAsync(string connectionId, string id, List<GetGenaiModelQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetGenaiModel2Response> GetGenaiModel2Async(string connectionId, string id, List<GetGenaiModel2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetGenaiModelRequest()
+            var request = new GetGenaiModel2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -261,7 +261,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getGenaiModel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getGenaiModel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -302,7 +302,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<GenaiModel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetGenaiModelResponse()
+                    var response = new GetGenaiModel2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -326,7 +326,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListGenaiModelsResponse> ListGenaiModelsAsync(ListGenaiModelsRequest request)
+        public async Task<ListGenaiModels2Response> ListGenaiModels2Async(ListGenaiModels2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/genai/{connection_id}/model", request);
@@ -339,7 +339,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listGenaiModels", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listGenaiModels2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -380,7 +380,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<GenaiModel>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListGenaiModelsResponse()
+                    var response = new ListGenaiModels2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

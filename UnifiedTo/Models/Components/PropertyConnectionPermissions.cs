@@ -467,6 +467,22 @@ namespace UnifiedTo.Models.Components
         AdsTargetRead,
         [JsonProperty("ads_promoted_read")]
         AdsPromotedRead,
+        [JsonProperty("analytics_property_read")]
+        AnalyticsPropertyRead,
+        [JsonProperty("analytics_property_write")]
+        AnalyticsPropertyWrite,
+        [JsonProperty("analytics_event_read")]
+        AnalyticsEventRead,
+        [JsonProperty("analytics_event_write")]
+        AnalyticsEventWrite,
+        [JsonProperty("analytics_session_read")]
+        AnalyticsSessionRead,
+        [JsonProperty("analytics_visitor_read")]
+        AnalyticsVisitorRead,
+        [JsonProperty("analytics_visitor_write")]
+        AnalyticsVisitorWrite,
+        [JsonProperty("analytics_report_read")]
+        AnalyticsReportRead,
         [JsonProperty("forms_form_read")]
         FormsFormRead,
         [JsonProperty("forms_form_write")]
@@ -519,6 +535,22 @@ namespace UnifiedTo.Models.Components
         ClubsEventRead,
         [JsonProperty("clubs_event_write")]
         ClubsEventWrite,
+        [JsonProperty("datastore_database_read")]
+        DatastoreDatabaseRead,
+        [JsonProperty("datastore_database_write")]
+        DatastoreDatabaseWrite,
+        [JsonProperty("datastore_table_read")]
+        DatastoreTableRead,
+        [JsonProperty("datastore_table_write")]
+        DatastoreTableWrite,
+        [JsonProperty("datastore_record_read")]
+        DatastoreRecordRead,
+        [JsonProperty("datastore_record_write")]
+        DatastoreRecordWrite,
+        [JsonProperty("datastore_query_read")]
+        DatastoreQueryRead,
+        [JsonProperty("datastore_query_write")]
+        DatastoreQueryWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account
         /// </summary>
-        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<Fields>? fields = null, string? raw = null);
+        Task<CreateAccountingAccount2Response> CreateAccountingAccount2Async(AccountingAccount accountingAccount, string connectionId, List<Fields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an account
         /// </summary>
-        Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingAccount2Response> GetAccountingAccount2Async(string connectionId, string id, List<QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all accounts
         /// </summary>
-        Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsRequest request);
+        Task<ListAccountingAccounts2Response> ListAccountingAccounts2Async(ListAccountingAccounts2Request request);
 
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(PatchAccountingAccountRequest request);
+        Task<PatchAccountingAccount2Response> PatchAccountingAccount2Async(PatchAccountingAccount2Request request);
 
         /// <summary>
         /// Remove an account
         /// </summary>
-        Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(string connectionId, string id);
+        Task<RemoveAccountingAccount2Response> RemoveAccountingAccount2Async(string connectionId, string id);
 
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(UpdateAccountingAccountRequest request);
+        Task<UpdateAccountingAccount2Response> UpdateAccountingAccount2Async(UpdateAccountingAccount2Request request);
     }
 
     public class Account: IAccount
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<Fields>? fields = null, string? raw = null)
+        public async Task<CreateAccountingAccount2Response> CreateAccountingAccount2Async(AccountingAccount accountingAccount, string connectionId, List<Fields>? fields = null, string? raw = null)
         {
-            var request = new CreateAccountingAccountRequest()
+            var request = new CreateAccountingAccount2Request()
             {
                 AccountingAccount = accountingAccount,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingAccount", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingAccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingAccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAccountingAccountResponse()
+                    var response = new CreateAccountingAccount2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingAccount2Response> GetAccountingAccount2Async(string connectionId, string id, List<QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingAccountRequest()
+            var request = new GetAccountingAccount2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingAccount", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingAccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingAccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingAccountResponse()
+                    var response = new GetAccountingAccount2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsRequest request)
+        public async Task<ListAccountingAccounts2Response> ListAccountingAccounts2Async(ListAccountingAccounts2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingAccounts", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingAccounts2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingAccount>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingAccountsResponse()
+                    var response = new ListAccountingAccounts2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(PatchAccountingAccountRequest request)
+        public async Task<PatchAccountingAccount2Response> PatchAccountingAccount2Async(PatchAccountingAccount2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingAccount", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingAccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingAccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAccountingAccountResponse()
+                    var response = new PatchAccountingAccount2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(string connectionId, string id)
+        public async Task<RemoveAccountingAccount2Response> RemoveAccountingAccount2Async(string connectionId, string id)
         {
-            var request = new RemoveAccountingAccountRequest()
+            var request = new RemoveAccountingAccount2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingAccount", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingAccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAccountingAccountResponse()
+                return new RemoveAccountingAccount2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAccountingAccountResponse()
+                return new RemoveAccountingAccount2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(UpdateAccountingAccountRequest request)
+        public async Task<UpdateAccountingAccount2Response> UpdateAccountingAccount2Async(UpdateAccountingAccount2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingAccount", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingAccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingAccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAccountingAccountResponse()
+                    var response = new UpdateAccountingAccount2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

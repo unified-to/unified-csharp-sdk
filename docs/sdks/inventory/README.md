@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateCommerceInventory](#createcommerceinventory) - Create an inventory
-* [GetCommerceInventory](#getcommerceinventory) - Retrieve an inventory
-* [ListCommerceInventories](#listcommerceinventories) - List all inventories
-* [PatchCommerceInventory](#patchcommerceinventory) - Update an inventory
-* [RemoveCommerceInventory](#removecommerceinventory) - Remove an inventory
-* [UpdateCommerceInventory](#updatecommerceinventory) - Update an inventory
+* [CreateCommerceInventory2](#createcommerceinventory2) - Create an inventory
+* [GetCommerceInventory2](#getcommerceinventory2) - Retrieve an inventory
+* [ListCommerceInventories2](#listcommerceinventories2) - List all inventories
+* [PatchCommerceInventory2](#patchcommerceinventory2) - Update an inventory
+* [RemoveCommerceInventory2](#removecommerceinventory2) - Remove an inventory
+* [UpdateCommerceInventory2](#updatecommerceinventory2) - Update an inventory
 
-## CreateCommerceInventory
+## CreateCommerceInventory2
 
 Create an inventory
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Inventory.CreateCommerceInventoryAsync(
+var res = await sdk.Inventory.CreateCommerceInventory2Async(
     commerceInventory: new CommerceInventory() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceInventory`                                                                                                                              | [CommerceInventory](../../Models/Components/CommerceInventory.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceInventoryQueryParamFields](../../Models/Requests/CreateCommerceInventoryQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceInventory2QueryParamFields](../../Models/Requests/CreateCommerceInventory2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceInventoryResponse](../../Models/Requests/CreateCommerceInventoryResponse.md)**
+**[CreateCommerceInventory2Response](../../Models/Requests/CreateCommerceInventory2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceInventory
+## GetCommerceInventory2
 
 Retrieve an inventory
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Inventory.GetCommerceInventoryAsync(
+var res = await sdk.Inventory.GetCommerceInventory2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Inventory                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetCommerceInventoryQueryParamFields](../../Models/Requests/GetCommerceInventoryQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceInventory2QueryParamFields](../../Models/Requests/GetCommerceInventory2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceInventoryResponse](../../Models/Requests/GetCommerceInventoryResponse.md)**
+**[GetCommerceInventory2Response](../../Models/Requests/GetCommerceInventory2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceInventories
+## ListCommerceInventories2
 
 List all inventories
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
+ListCommerceInventories2Request req = new ListCommerceInventories2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
+var res = await sdk.Inventory.ListCommerceInventories2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListCommerceInventoriesRequest](../../Models/Requests/ListCommerceInventoriesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListCommerceInventories2Request](../../Models/Requests/ListCommerceInventories2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[ListCommerceInventoriesResponse](../../Models/Requests/ListCommerceInventoriesResponse.md)**
+**[ListCommerceInventories2Response](../../Models/Requests/ListCommerceInventories2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceInventory
+## PatchCommerceInventory2
 
 Update an inventory
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
+PatchCommerceInventory2Request req = new PatchCommerceInventory2Request() {
     CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Inventory.PatchCommerceInventoryAsync(req);
+var res = await sdk.Inventory.PatchCommerceInventory2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchCommerceInventoryRequest](../../Models/Requests/PatchCommerceInventoryRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchCommerceInventory2Request](../../Models/Requests/PatchCommerceInventory2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[PatchCommerceInventoryResponse](../../Models/Requests/PatchCommerceInventoryResponse.md)**
+**[PatchCommerceInventory2Response](../../Models/Requests/PatchCommerceInventory2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceInventory
+## RemoveCommerceInventory2
 
 Remove an inventory
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
+var res = await sdk.Inventory.RemoveCommerceInventory2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 
 ### Response
 
-**[RemoveCommerceInventoryResponse](../../Models/Requests/RemoveCommerceInventoryResponse.md)**
+**[RemoveCommerceInventory2Response](../../Models/Requests/RemoveCommerceInventory2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceInventory
+## UpdateCommerceInventory2
 
 Update an inventory
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
+UpdateCommerceInventory2Request req = new UpdateCommerceInventory2Request() {
     CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Inventory.UpdateCommerceInventoryAsync(req);
+var res = await sdk.Inventory.UpdateCommerceInventory2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateCommerceInventoryRequest](../../Models/Requests/UpdateCommerceInventoryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [UpdateCommerceInventory2Request](../../Models/Requests/UpdateCommerceInventory2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[UpdateCommerceInventoryResponse](../../Models/Requests/UpdateCommerceInventoryResponse.md)**
+**[UpdateCommerceInventory2Response](../../Models/Requests/UpdateCommerceInventory2Response.md)**
 
 ### Errors
 

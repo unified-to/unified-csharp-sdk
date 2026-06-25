@@ -33,6 +33,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        [JsonProperty("fees")]
+        public List<AccountingFee>? Fees { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

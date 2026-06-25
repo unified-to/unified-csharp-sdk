@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateTicketingNote](#createticketingnote) - Create a note
-* [GetTicketingNote](#getticketingnote) - Retrieve a note
-* [ListTicketingNotes](#listticketingnotes) - List all notes
-* [PatchTicketingNote](#patchticketingnote) - Update a note
-* [RemoveTicketingNote](#removeticketingnote) - Remove a note
-* [UpdateTicketingNote](#updateticketingnote) - Update a note
+* [CreateTicketingNote2](#createticketingnote2) - Create a note
+* [GetTicketingNote2](#getticketingnote2) - Retrieve a note
+* [ListTicketingNotes2](#listticketingnotes2) - List all notes
+* [PatchTicketingNote2](#patchticketingnote2) - Update a note
+* [RemoveTicketingNote2](#removeticketingnote2) - Remove a note
+* [UpdateTicketingNote2](#updateticketingnote2) - Update a note
 
-## CreateTicketingNote
+## CreateTicketingNote2
 
 Create a note
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Note.CreateTicketingNoteAsync(
+var res = await sdk.Note.CreateTicketingNote2Async(
     ticketingNote: new TicketingNote() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `TicketingNote`                                                                                                                                  | [TicketingNote](../../Models/Components/TicketingNote.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateTicketingNoteQueryParamFields](../../Models/Requests/CreateTicketingNoteQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateTicketingNote2QueryParamFields](../../Models/Requests/CreateTicketingNote2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateTicketingNoteResponse](../../Models/Requests/CreateTicketingNoteResponse.md)**
+**[CreateTicketingNote2Response](../../Models/Requests/CreateTicketingNote2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetTicketingNote
+## GetTicketingNote2
 
 Retrieve a note
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Note.GetTicketingNoteAsync(
+var res = await sdk.Note.GetTicketingNote2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Note.GetTicketingNoteAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Note                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetTicketingNoteQueryParamFields](../../Models/Requests/GetTicketingNoteQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTicketingNote2QueryParamFields](../../Models/Requests/GetTicketingNote2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTicketingNoteResponse](../../Models/Requests/GetTicketingNoteResponse.md)**
+**[GetTicketingNote2Response](../../Models/Requests/GetTicketingNote2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Note.GetTicketingNoteAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTicketingNotes
+## ListTicketingNotes2
 
 List all notes
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListTicketingNotesRequest req = new ListTicketingNotesRequest() {
+ListTicketingNotes2Request req = new ListTicketingNotes2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Note.ListTicketingNotesAsync(req);
+var res = await sdk.Note.ListTicketingNotes2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListTicketingNotesRequest](../../Models/Requests/ListTicketingNotesRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListTicketingNotes2Request](../../Models/Requests/ListTicketingNotes2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListTicketingNotesResponse](../../Models/Requests/ListTicketingNotesResponse.md)**
+**[ListTicketingNotes2Response](../../Models/Requests/ListTicketingNotes2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Note.ListTicketingNotesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchTicketingNote
+## PatchTicketingNote2
 
 Update a note
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
+PatchTicketingNote2Request req = new PatchTicketingNote2Request() {
     TicketingNote = new TicketingNote() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Note.PatchTicketingNoteAsync(req);
+var res = await sdk.Note.PatchTicketingNote2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [PatchTicketingNoteRequest](../../Models/Requests/PatchTicketingNoteRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchTicketingNote2Request](../../Models/Requests/PatchTicketingNote2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchTicketingNoteResponse](../../Models/Requests/PatchTicketingNoteResponse.md)**
+**[PatchTicketingNote2Response](../../Models/Requests/PatchTicketingNote2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Note.PatchTicketingNoteAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveTicketingNote
+## RemoveTicketingNote2
 
 Remove a note
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Note.RemoveTicketingNoteAsync(
+var res = await sdk.Note.RemoveTicketingNote2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Note.RemoveTicketingNoteAsync(
 
 ### Response
 
-**[RemoveTicketingNoteResponse](../../Models/Requests/RemoveTicketingNoteResponse.md)**
+**[RemoveTicketingNote2Response](../../Models/Requests/RemoveTicketingNote2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Note.RemoveTicketingNoteAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateTicketingNote
+## UpdateTicketingNote2
 
 Update a note
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
+UpdateTicketingNote2Request req = new UpdateTicketingNote2Request() {
     TicketingNote = new TicketingNote() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Note.UpdateTicketingNoteAsync(req);
+var res = await sdk.Note.UpdateTicketingNote2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [UpdateTicketingNoteRequest](../../Models/Requests/UpdateTicketingNoteRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateTicketingNote2Request](../../Models/Requests/UpdateTicketingNote2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateTicketingNoteResponse](../../Models/Requests/UpdateTicketingNoteResponse.md)**
+**[UpdateTicketingNote2Response](../../Models/Requests/UpdateTicketingNote2Response.md)**
 
 ### Errors
 

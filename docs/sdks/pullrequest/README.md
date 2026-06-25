@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateRepoPullrequest](#createrepopullrequest) - Create a pullrequest
-* [GetRepoPullrequest](#getrepopullrequest) - Retrieve a pullrequest
-* [ListRepoPullrequests](#listrepopullrequests) - List all pullrequests
-* [PatchRepoPullrequest](#patchrepopullrequest) - Update a pullrequest
-* [RemoveRepoPullrequest](#removerepopullrequest) - Remove a pullrequest
-* [UpdateRepoPullrequest](#updaterepopullrequest) - Update a pullrequest
+* [CreateRepoPullrequest2](#createrepopullrequest2) - Create a pullrequest
+* [GetRepoPullrequest2](#getrepopullrequest2) - Retrieve a pullrequest
+* [ListRepoPullrequests2](#listrepopullrequests2) - List all pullrequests
+* [PatchRepoPullrequest2](#patchrepopullrequest2) - Update a pullrequest
+* [RemoveRepoPullrequest2](#removerepopullrequest2) - Remove a pullrequest
+* [UpdateRepoPullrequest2](#updaterepopullrequest2) - Update a pullrequest
 
-## CreateRepoPullrequest
+## CreateRepoPullrequest2
 
 Create a pullrequest
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
+var res = await sdk.Pullrequest.CreateRepoPullrequest2Async(
     repoPullrequest: new RepoPullrequest() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `RepoPullrequest`                                                                                                                                | [RepoPullrequest](../../Models/Components/RepoPullrequest.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateRepoPullrequestQueryParamFields](../../Models/Requests/CreateRepoPullrequestQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateRepoPullrequest2QueryParamFields](../../Models/Requests/CreateRepoPullrequest2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateRepoPullrequestResponse](../../Models/Requests/CreateRepoPullrequestResponse.md)**
+**[CreateRepoPullrequest2Response](../../Models/Requests/CreateRepoPullrequest2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetRepoPullrequest
+## GetRepoPullrequest2
 
 Retrieve a pullrequest
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Pullrequest.GetRepoPullrequestAsync(
+var res = await sdk.Pullrequest.GetRepoPullrequest2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Pullrequest.GetRepoPullrequestAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Pullrequest                                                                                                                            |
-| `Fields`                                                                                                                                         | List<[GetRepoPullrequestQueryParamFields](../../Models/Requests/GetRepoPullrequestQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetRepoPullrequest2QueryParamFields](../../Models/Requests/GetRepoPullrequest2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetRepoPullrequestResponse](../../Models/Requests/GetRepoPullrequestResponse.md)**
+**[GetRepoPullrequest2Response](../../Models/Requests/GetRepoPullrequest2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Pullrequest.GetRepoPullrequestAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListRepoPullrequests
+## ListRepoPullrequests2
 
 List all pullrequests
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListRepoPullrequestsRequest req = new ListRepoPullrequestsRequest() {
+ListRepoPullrequests2Request req = new ListRepoPullrequests2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Pullrequest.ListRepoPullrequestsAsync(req);
+var res = await sdk.Pullrequest.ListRepoPullrequests2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListRepoPullrequestsRequest](../../Models/Requests/ListRepoPullrequestsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListRepoPullrequests2Request](../../Models/Requests/ListRepoPullrequests2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListRepoPullrequestsResponse](../../Models/Requests/ListRepoPullrequestsResponse.md)**
+**[ListRepoPullrequests2Response](../../Models/Requests/ListRepoPullrequests2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Pullrequest.ListRepoPullrequestsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchRepoPullrequest
+## PatchRepoPullrequest2
 
 Update a pullrequest
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
+PatchRepoPullrequest2Request req = new PatchRepoPullrequest2Request() {
     RepoPullrequest = new RepoPullrequest() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Pullrequest.PatchRepoPullrequestAsync(req);
+var res = await sdk.Pullrequest.PatchRepoPullrequest2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchRepoPullrequestRequest](../../Models/Requests/PatchRepoPullrequestRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchRepoPullrequest2Request](../../Models/Requests/PatchRepoPullrequest2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchRepoPullrequestResponse](../../Models/Requests/PatchRepoPullrequestResponse.md)**
+**[PatchRepoPullrequest2Response](../../Models/Requests/PatchRepoPullrequest2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Pullrequest.PatchRepoPullrequestAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveRepoPullrequest
+## RemoveRepoPullrequest2
 
 Remove a pullrequest
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Pullrequest.RemoveRepoPullrequestAsync(
+var res = await sdk.Pullrequest.RemoveRepoPullrequest2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Pullrequest.RemoveRepoPullrequestAsync(
 
 ### Response
 
-**[RemoveRepoPullrequestResponse](../../Models/Requests/RemoveRepoPullrequestResponse.md)**
+**[RemoveRepoPullrequest2Response](../../Models/Requests/RemoveRepoPullrequest2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Pullrequest.RemoveRepoPullrequestAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateRepoPullrequest
+## UpdateRepoPullrequest2
 
 Update a pullrequest
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
+UpdateRepoPullrequest2Request req = new UpdateRepoPullrequest2Request() {
     RepoPullrequest = new RepoPullrequest() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Pullrequest.UpdateRepoPullrequestAsync(req);
+var res = await sdk.Pullrequest.UpdateRepoPullrequest2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdateRepoPullrequestRequest](../../Models/Requests/UpdateRepoPullrequestRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateRepoPullrequest2Request](../../Models/Requests/UpdateRepoPullrequest2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateRepoPullrequestResponse](../../Models/Requests/UpdateRepoPullrequestResponse.md)**
+**[UpdateRepoPullrequest2Response](../../Models/Requests/UpdateRepoPullrequest2Response.md)**
 
 ### Errors
 

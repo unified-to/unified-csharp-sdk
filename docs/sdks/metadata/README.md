@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateMetadataMetadata](#createmetadatametadata) - Create a metadata
-* [GetMetadataMetadata](#getmetadatametadata) - Retrieve a metadata
-* [ListMetadataMetadatas](#listmetadatametadatas) - List all metadatas
-* [PatchMetadataMetadata](#patchmetadatametadata) - Update a metadata
-* [RemoveMetadataMetadata](#removemetadatametadata) - Remove a metadata
-* [UpdateMetadataMetadata](#updatemetadatametadata) - Update a metadata
+* [CreateMetadataMetadata2](#createmetadatametadata2) - Create a metadata
+* [GetMetadataMetadata2](#getmetadatametadata2) - Retrieve a metadata
+* [ListMetadataMetadatas2](#listmetadatametadatas2) - List all metadatas
+* [PatchMetadataMetadata2](#patchmetadatametadata2) - Update a metadata
+* [RemoveMetadataMetadata2](#removemetadatametadata2) - Remove a metadata
+* [UpdateMetadataMetadata2](#updatemetadatametadata2) - Update a metadata
 
-## CreateMetadataMetadata
+## CreateMetadataMetadata2
 
 Create a metadata
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.CreateMetadataMetadataAsync(
+var res = await sdk.Metadata.CreateMetadataMetadata2Async(
     metadataMetadata: new MetadataMetadata() {
         Name = "<value>",
         ObjectType = "<value>",
@@ -43,12 +43,12 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `MetadataMetadata`                                                                                                                               | [MetadataMetadata](../../Models/Components/MetadataMetadata.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateMetadataMetadataQueryParamFields](../../Models/Requests/CreateMetadataMetadataQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateMetadataMetadata2QueryParamFields](../../Models/Requests/CreateMetadataMetadata2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateMetadataMetadataResponse](../../Models/Requests/CreateMetadataMetadataResponse.md)**
+**[CreateMetadataMetadata2Response](../../Models/Requests/CreateMetadataMetadata2Response.md)**
 
 ### Errors
 
@@ -56,7 +56,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetMetadataMetadata
+## GetMetadataMetadata2
 
 Retrieve a metadata
 
@@ -70,7 +70,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.GetMetadataMetadataAsync(
+var res = await sdk.Metadata.GetMetadataMetadata2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -84,12 +84,12 @@ var res = await sdk.Metadata.GetMetadataMetadataAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Metadata                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetMetadataMetadataQueryParamFields](../../Models/Requests/GetMetadataMetadataQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetMetadataMetadata2QueryParamFields](../../Models/Requests/GetMetadataMetadata2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetMetadataMetadataResponse](../../Models/Requests/GetMetadataMetadataResponse.md)**
+**[GetMetadataMetadata2Response](../../Models/Requests/GetMetadataMetadata2Response.md)**
 
 ### Errors
 
@@ -97,7 +97,7 @@ var res = await sdk.Metadata.GetMetadataMetadataAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMetadataMetadatas
+## ListMetadataMetadatas2
 
 List all metadatas
 
@@ -112,24 +112,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMetadataMetadatasRequest req = new ListMetadataMetadatasRequest() {
+ListMetadataMetadatas2Request req = new ListMetadataMetadatas2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Metadata.ListMetadataMetadatasAsync(req);
+var res = await sdk.Metadata.ListMetadataMetadatas2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListMetadataMetadatasRequest](../../Models/Requests/ListMetadataMetadatasRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListMetadataMetadatas2Request](../../Models/Requests/ListMetadataMetadatas2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListMetadataMetadatasResponse](../../Models/Requests/ListMetadataMetadatasResponse.md)**
+**[ListMetadataMetadatas2Response](../../Models/Requests/ListMetadataMetadatas2Response.md)**
 
 ### Errors
 
@@ -137,7 +137,7 @@ var res = await sdk.Metadata.ListMetadataMetadatasAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchMetadataMetadata
+## PatchMetadataMetadata2
 
 Update a metadata
 
@@ -152,7 +152,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
+PatchMetadataMetadata2Request req = new PatchMetadataMetadata2Request() {
     MetadataMetadata = new MetadataMetadata() {
         Name = "<value>",
         ObjectType = "<value>",
@@ -161,20 +161,20 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Metadata.PatchMetadataMetadataAsync(req);
+var res = await sdk.Metadata.PatchMetadataMetadata2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchMetadataMetadataRequest](../../Models/Requests/PatchMetadataMetadataRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchMetadataMetadata2Request](../../Models/Requests/PatchMetadataMetadata2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchMetadataMetadataResponse](../../Models/Requests/PatchMetadataMetadataResponse.md)**
+**[PatchMetadataMetadata2Response](../../Models/Requests/PatchMetadataMetadata2Response.md)**
 
 ### Errors
 
@@ -182,7 +182,7 @@ var res = await sdk.Metadata.PatchMetadataMetadataAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveMetadataMetadata
+## RemoveMetadataMetadata2
 
 Remove a metadata
 
@@ -196,7 +196,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.RemoveMetadataMetadataAsync(
+var res = await sdk.Metadata.RemoveMetadataMetadata2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -213,7 +213,7 @@ var res = await sdk.Metadata.RemoveMetadataMetadataAsync(
 
 ### Response
 
-**[RemoveMetadataMetadataResponse](../../Models/Requests/RemoveMetadataMetadataResponse.md)**
+**[RemoveMetadataMetadata2Response](../../Models/Requests/RemoveMetadataMetadata2Response.md)**
 
 ### Errors
 
@@ -221,7 +221,7 @@ var res = await sdk.Metadata.RemoveMetadataMetadataAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateMetadataMetadata
+## UpdateMetadataMetadata2
 
 Update a metadata
 
@@ -236,7 +236,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
+UpdateMetadataMetadata2Request req = new UpdateMetadataMetadata2Request() {
     MetadataMetadata = new MetadataMetadata() {
         Name = "<value>",
         ObjectType = "<value>",
@@ -245,20 +245,20 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Metadata.UpdateMetadataMetadataAsync(req);
+var res = await sdk.Metadata.UpdateMetadataMetadata2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateMetadataMetadataRequest](../../Models/Requests/UpdateMetadataMetadataRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateMetadataMetadata2Request](../../Models/Requests/UpdateMetadataMetadata2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateMetadataMetadataResponse](../../Models/Requests/UpdateMetadataMetadataResponse.md)**
+**[UpdateMetadataMetadata2Response](../../Models/Requests/UpdateMetadataMetadata2Response.md)**
 
 ### Errors
 

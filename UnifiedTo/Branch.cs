@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a branch
         /// </summary>
-        Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<CreateRepoBranchQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateRepoBranch2Response> CreateRepoBranch2Async(RepoBranch repoBranch, string connectionId, List<CreateRepoBranch2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a branch
         /// </summary>
-        Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<GetRepoBranchQueryParamFields>? fields = null, string? raw = null);
+        Task<GetRepoBranch2Response> GetRepoBranch2Async(string connectionId, string id, List<GetRepoBranch2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all branches
         /// </summary>
-        Task<ListRepoBranchesResponse> ListRepoBranchesAsync(ListRepoBranchesRequest request);
+        Task<ListRepoBranches2Response> ListRepoBranches2Async(ListRepoBranches2Request request);
 
         /// <summary>
         /// Update a branch
         /// </summary>
-        Task<PatchRepoBranchResponse> PatchRepoBranchAsync(PatchRepoBranchRequest request);
+        Task<PatchRepoBranch2Response> PatchRepoBranch2Async(PatchRepoBranch2Request request);
 
         /// <summary>
         /// Remove a branch
         /// </summary>
-        Task<RemoveRepoBranchResponse> RemoveRepoBranchAsync(string connectionId, string id);
+        Task<RemoveRepoBranch2Response> RemoveRepoBranch2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a branch
         /// </summary>
-        Task<UpdateRepoBranchResponse> UpdateRepoBranchAsync(UpdateRepoBranchRequest request);
+        Task<UpdateRepoBranch2Response> UpdateRepoBranch2Async(UpdateRepoBranch2Request request);
     }
 
     public class Branch: IBranch
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<CreateRepoBranchQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateRepoBranch2Response> CreateRepoBranch2Async(RepoBranch repoBranch, string connectionId, List<CreateRepoBranch2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateRepoBranchRequest()
+            var request = new CreateRepoBranch2Request()
             {
                 RepoBranch = repoBranch,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createRepoBranch", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createRepoBranch2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoBranch>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateRepoBranchResponse()
+                    var response = new CreateRepoBranch2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<GetRepoBranchQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetRepoBranch2Response> GetRepoBranch2Async(string connectionId, string id, List<GetRepoBranch2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetRepoBranchRequest()
+            var request = new GetRepoBranch2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getRepoBranch", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getRepoBranch2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoBranch>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetRepoBranchResponse()
+                    var response = new GetRepoBranch2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListRepoBranchesResponse> ListRepoBranchesAsync(ListRepoBranchesRequest request)
+        public async Task<ListRepoBranches2Response> ListRepoBranches2Async(ListRepoBranches2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/branch", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listRepoBranches", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listRepoBranches2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<RepoBranch>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListRepoBranchesResponse()
+                    var response = new ListRepoBranches2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoBranchResponse> PatchRepoBranchAsync(PatchRepoBranchRequest request)
+        public async Task<PatchRepoBranch2Response> PatchRepoBranch2Async(PatchRepoBranch2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/branch/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchRepoBranch", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchRepoBranch2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoBranch>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchRepoBranchResponse()
+                    var response = new PatchRepoBranch2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveRepoBranchResponse> RemoveRepoBranchAsync(string connectionId, string id)
+        public async Task<RemoveRepoBranch2Response> RemoveRepoBranch2Async(string connectionId, string id)
         {
-            var request = new RemoveRepoBranchRequest()
+            var request = new RemoveRepoBranch2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeRepoBranch", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeRepoBranch2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveRepoBranchResponse()
+                return new RemoveRepoBranch2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveRepoBranchResponse()
+                return new RemoveRepoBranch2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateRepoBranchResponse> UpdateRepoBranchAsync(UpdateRepoBranchRequest request)
+        public async Task<UpdateRepoBranch2Response> UpdateRepoBranch2Async(UpdateRepoBranch2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/branch/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateRepoBranch", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateRepoBranch2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoBranch>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateRepoBranchResponse()
+                    var response = new UpdateRepoBranch2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

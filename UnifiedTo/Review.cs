@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a review
         /// </summary>
-        Task<CreateCommerceReviewResponse> CreateCommerceReviewAsync(CommerceReview commerceReview, string connectionId, List<CreateCommerceReviewQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCommerceReview2Response> CreateCommerceReview2Async(CommerceReview commerceReview, string connectionId, List<CreateCommerceReview2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a review
         /// </summary>
-        Task<GetCommerceReviewResponse> GetCommerceReviewAsync(string connectionId, string id, List<GetCommerceReviewQueryParamFields>? fields = null, string? raw = null);
+        Task<GetCommerceReview2Response> GetCommerceReview2Async(string connectionId, string id, List<GetCommerceReview2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all reviews
         /// </summary>
-        Task<ListCommerceReviewsResponse> ListCommerceReviewsAsync(ListCommerceReviewsRequest request);
+        Task<ListCommerceReviews2Response> ListCommerceReviews2Async(ListCommerceReviews2Request request);
 
         /// <summary>
         /// Update a review
         /// </summary>
-        Task<PatchCommerceReviewResponse> PatchCommerceReviewAsync(PatchCommerceReviewRequest request);
+        Task<PatchCommerceReview2Response> PatchCommerceReview2Async(PatchCommerceReview2Request request);
 
         /// <summary>
         /// Remove a review
         /// </summary>
-        Task<RemoveCommerceReviewResponse> RemoveCommerceReviewAsync(string connectionId, string id);
+        Task<RemoveCommerceReview2Response> RemoveCommerceReview2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a review
         /// </summary>
-        Task<UpdateCommerceReviewResponse> UpdateCommerceReviewAsync(UpdateCommerceReviewRequest request);
+        Task<UpdateCommerceReview2Response> UpdateCommerceReview2Async(UpdateCommerceReview2Request request);
     }
 
     public class Review: IReview
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceReviewResponse> CreateCommerceReviewAsync(CommerceReview commerceReview, string connectionId, List<CreateCommerceReviewQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCommerceReview2Response> CreateCommerceReview2Async(CommerceReview commerceReview, string connectionId, List<CreateCommerceReview2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCommerceReviewRequest()
+            var request = new CreateCommerceReview2Request()
             {
                 CommerceReview = commerceReview,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceReview", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceReview2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceReview>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCommerceReviewResponse()
+                    var response = new CreateCommerceReview2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceReviewResponse> GetCommerceReviewAsync(string connectionId, string id, List<GetCommerceReviewQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCommerceReview2Response> GetCommerceReview2Async(string connectionId, string id, List<GetCommerceReview2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCommerceReviewRequest()
+            var request = new GetCommerceReview2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceReview", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceReview2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceReview>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCommerceReviewResponse()
+                    var response = new GetCommerceReview2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCommerceReviewsResponse> ListCommerceReviewsAsync(ListCommerceReviewsRequest request)
+        public async Task<ListCommerceReviews2Response> ListCommerceReviews2Async(ListCommerceReviews2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/review", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceReviews", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceReviews2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CommerceReview>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCommerceReviewsResponse()
+                    var response = new ListCommerceReviews2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceReviewResponse> PatchCommerceReviewAsync(PatchCommerceReviewRequest request)
+        public async Task<PatchCommerceReview2Response> PatchCommerceReview2Async(PatchCommerceReview2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/review/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceReview", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceReview2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceReview>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCommerceReviewResponse()
+                    var response = new PatchCommerceReview2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCommerceReviewResponse> RemoveCommerceReviewAsync(string connectionId, string id)
+        public async Task<RemoveCommerceReview2Response> RemoveCommerceReview2Async(string connectionId, string id)
         {
-            var request = new RemoveCommerceReviewRequest()
+            var request = new RemoveCommerceReview2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceReview", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceReview2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCommerceReviewResponse()
+                return new RemoveCommerceReview2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCommerceReviewResponse()
+                return new RemoveCommerceReview2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceReviewResponse> UpdateCommerceReviewAsync(UpdateCommerceReviewRequest request)
+        public async Task<UpdateCommerceReview2Response> UpdateCommerceReview2Async(UpdateCommerceReview2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/review/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceReview", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceReview2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceReview>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCommerceReviewResponse()
+                    var response = new UpdateCommerceReview2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

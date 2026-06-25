@@ -28,69 +28,69 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document
         /// </summary>
-        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<CreateAtsDocumentQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAtsDocument2Response> CreateAtsDocument2Async(AtsDocument atsDocument, string connectionId, List<CreateAtsDocument2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a document
         /// </summary>
-        Task<CreateSigningDocumentResponse> CreateSigningDocumentAsync(SigningDocument signingDocument, string connectionId, List<CreateSigningDocumentQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateSigningDocument2Response> CreateSigningDocument2Async(SigningDocument signingDocument, string connectionId, List<CreateSigningDocument2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a document
         /// </summary>
-        Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<GetAtsDocumentQueryParamFields>? fields = null, string? raw = null);
+        Task<GetAtsDocument2Response> GetAtsDocument2Async(string connectionId, string id, List<GetAtsDocument2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a document
         /// </summary>
-        Task<GetSigningDocumentResponse> GetSigningDocumentAsync(string connectionId, string id, List<GetSigningDocumentQueryParamFields>? fields = null, string? raw = null);
+        Task<GetSigningDocument2Response> GetSigningDocument2Async(string connectionId, string id, List<GetSigningDocument2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all documents
         /// </summary>
-        Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsRequest request);
+        Task<ListAtsDocuments2Response> ListAtsDocuments2Async(ListAtsDocuments2Request request);
 
         /// <summary>
         /// List all documents
         /// </summary>
-        Task<ListSigningDocumentsResponse> ListSigningDocumentsAsync(ListSigningDocumentsRequest request);
+        Task<ListSigningDocuments2Response> ListSigningDocuments2Async(ListSigningDocuments2Request request);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(PatchAtsDocumentRequest request);
+        Task<PatchAtsDocument2Response> PatchAtsDocument2Async(PatchAtsDocument2Request request);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<PatchSigningDocumentResponse> PatchSigningDocumentAsync(PatchSigningDocumentRequest request);
+        Task<PatchSigningDocument2Response> PatchSigningDocument2Async(PatchSigningDocument2Request request);
 
         /// <summary>
         /// Remove a document
         /// </summary>
-        Task<RemoveAtsDocumentResponse> RemoveAtsDocumentAsync(string connectionId, string id);
+        Task<RemoveAtsDocument2Response> RemoveAtsDocument2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a document
         /// </summary>
-        Task<RemoveSigningDocumentResponse> RemoveSigningDocumentAsync(string connectionId, string id);
+        Task<RemoveSigningDocument2Response> RemoveSigningDocument2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(UpdateAtsDocumentRequest request);
+        Task<UpdateAtsDocument2Response> UpdateAtsDocument2Async(UpdateAtsDocument2Request request);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<UpdateSigningDocumentResponse> UpdateSigningDocumentAsync(UpdateSigningDocumentRequest request);
+        Task<UpdateSigningDocument2Response> UpdateSigningDocument2Async(UpdateSigningDocument2Request request);
     }
 
     public class Document: IDocument
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -99,9 +99,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<CreateAtsDocumentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAtsDocument2Response> CreateAtsDocument2Async(AtsDocument atsDocument, string connectionId, List<CreateAtsDocument2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAtsDocumentRequest()
+            var request = new CreateAtsDocument2Request()
             {
                 AtsDocument = atsDocument,
                 ConnectionId = connectionId,
@@ -125,7 +125,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -166,7 +166,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAtsDocumentResponse()
+                    var response = new CreateAtsDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -190,9 +190,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateSigningDocumentResponse> CreateSigningDocumentAsync(SigningDocument signingDocument, string connectionId, List<CreateSigningDocumentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateSigningDocument2Response> CreateSigningDocument2Async(SigningDocument signingDocument, string connectionId, List<CreateSigningDocument2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateSigningDocumentRequest()
+            var request = new CreateSigningDocument2Request()
             {
                 SigningDocument = signingDocument,
                 ConnectionId = connectionId,
@@ -216,7 +216,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createSigningDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createSigningDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -257,7 +257,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateSigningDocumentResponse()
+                    var response = new CreateSigningDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -281,9 +281,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<GetAtsDocumentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAtsDocument2Response> GetAtsDocument2Async(string connectionId, string id, List<GetAtsDocument2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAtsDocumentRequest()
+            var request = new GetAtsDocument2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -301,7 +301,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAtsDocumentResponse()
+                    var response = new GetAtsDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -366,9 +366,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetSigningDocumentResponse> GetSigningDocumentAsync(string connectionId, string id, List<GetSigningDocumentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetSigningDocument2Response> GetSigningDocument2Async(string connectionId, string id, List<GetSigningDocument2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetSigningDocumentRequest()
+            var request = new GetSigningDocument2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -386,7 +386,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getSigningDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getSigningDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -427,7 +427,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetSigningDocumentResponse()
+                    var response = new GetSigningDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -451,7 +451,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsRequest request)
+        public async Task<ListAtsDocuments2Response> ListAtsDocuments2Async(ListAtsDocuments2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document", request);
@@ -464,7 +464,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsDocuments", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsDocuments2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -505,7 +505,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AtsDocument>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAtsDocumentsResponse()
+                    var response = new ListAtsDocuments2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -529,7 +529,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListSigningDocumentsResponse> ListSigningDocumentsAsync(ListSigningDocumentsRequest request)
+        public async Task<ListSigningDocuments2Response> ListSigningDocuments2Async(ListSigningDocuments2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/signing/{connection_id}/document", request);
@@ -542,7 +542,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listSigningDocuments", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listSigningDocuments2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -583,7 +583,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<SigningDocument>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListSigningDocumentsResponse()
+                    var response = new ListSigningDocuments2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -607,7 +607,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(PatchAtsDocumentRequest request)
+        public async Task<PatchAtsDocument2Response> PatchAtsDocument2Async(PatchAtsDocument2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
@@ -626,7 +626,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -667,7 +667,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAtsDocumentResponse()
+                    var response = new PatchAtsDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -691,7 +691,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchSigningDocumentResponse> PatchSigningDocumentAsync(PatchSigningDocumentRequest request)
+        public async Task<PatchSigningDocument2Response> PatchSigningDocument2Async(PatchSigningDocument2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/signing/{connection_id}/document/{id}", request);
@@ -710,7 +710,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchSigningDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchSigningDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -751,7 +751,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchSigningDocumentResponse()
+                    var response = new PatchSigningDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -775,9 +775,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAtsDocumentResponse> RemoveAtsDocumentAsync(string connectionId, string id)
+        public async Task<RemoveAtsDocument2Response> RemoveAtsDocument2Async(string connectionId, string id)
         {
-            var request = new RemoveAtsDocumentRequest()
+            var request = new RemoveAtsDocument2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -793,7 +793,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -831,7 +831,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAtsDocumentResponse()
+                return new RemoveAtsDocument2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -848,7 +848,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAtsDocumentResponse()
+                return new RemoveAtsDocument2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -857,9 +857,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveSigningDocumentResponse> RemoveSigningDocumentAsync(string connectionId, string id)
+        public async Task<RemoveSigningDocument2Response> RemoveSigningDocument2Async(string connectionId, string id)
         {
-            var request = new RemoveSigningDocumentRequest()
+            var request = new RemoveSigningDocument2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -875,7 +875,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeSigningDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeSigningDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -913,7 +913,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveSigningDocumentResponse()
+                return new RemoveSigningDocument2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -930,7 +930,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveSigningDocumentResponse()
+                return new RemoveSigningDocument2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -939,7 +939,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(UpdateAtsDocumentRequest request)
+        public async Task<UpdateAtsDocument2Response> UpdateAtsDocument2Async(UpdateAtsDocument2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
@@ -958,7 +958,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -999,7 +999,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAtsDocumentResponse()
+                    var response = new UpdateAtsDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1023,7 +1023,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateSigningDocumentResponse> UpdateSigningDocumentAsync(UpdateSigningDocumentRequest request)
+        public async Task<UpdateSigningDocument2Response> UpdateSigningDocument2Async(UpdateSigningDocument2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/signing/{connection_id}/document/{id}", request);
@@ -1042,7 +1042,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateSigningDocument", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateSigningDocument2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1083,7 +1083,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningDocument>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateSigningDocumentResponse()
+                    var response = new UpdateSigningDocument2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

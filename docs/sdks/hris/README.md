@@ -5,70 +5,70 @@
 
 ### Available Operations
 
-* [CreateHrisBankaccount](#createhrisbankaccount) - Create a bankaccount
-* [CreateHrisBenefit](#createhrisbenefit) - Create a benefit
-* [CreateHrisCompany](#createhriscompany) - Create a company
-* [CreateHrisDeduction](#createhrisdeduction) - Create a deduction
-* [CreateHrisDevice](#createhrisdevice) - Create a device
-* [CreateHrisEmployee](#createhrisemployee) - Create an employee
-* [CreateHrisGroup](#createhrisgroup) - Create a group
-* [CreateHrisLocation](#createhrislocation) - Create a location
-* [CreateHrisTimeoff](#createhristimeoff) - Create a timeoff
-* [CreateHrisTimeshift](#createhristimeshift) - Create a timeshift
-* [GetHrisBankaccount](#gethrisbankaccount) - Retrieve a bankaccount
-* [GetHrisBenefit](#gethrisbenefit) - Retrieve a benefit
-* [GetHrisCompany](#gethriscompany) - Retrieve a company
-* [GetHrisDeduction](#gethrisdeduction) - Retrieve a deduction
-* [GetHrisDevice](#gethrisdevice) - Retrieve a device
-* [GetHrisEmployee](#gethrisemployee) - Retrieve an employee
-* [GetHrisGroup](#gethrisgroup) - Retrieve a group
-* [GetHrisLocation](#gethrislocation) - Retrieve a location
-* [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
-* [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
-* [GetHrisTimeshift](#gethristimeshift) - Retrieve a timeshift
-* [ListHrisBankaccounts](#listhrisbankaccounts) - List all bankaccounts
-* [ListHrisBenefits](#listhrisbenefits) - List all benefits
-* [ListHrisCompanies](#listhriscompanies) - List all companies
-* [ListHrisDeductions](#listhrisdeductions) - List all deductions
-* [ListHrisDevices](#listhrisdevices) - List all devices
-* [ListHrisEmployees](#listhrisemployees) - List all employees
-* [ListHrisGroups](#listhrisgroups) - List all groups
-* [ListHrisLocations](#listhrislocations) - List all locations
-* [ListHrisPayslips](#listhrispayslips) - List all payslips
-* [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
-* [ListHrisTimeshifts](#listhristimeshifts) - List all timeshifts
-* [PatchHrisBankaccount](#patchhrisbankaccount) - Update a bankaccount
-* [PatchHrisBenefit](#patchhrisbenefit) - Update a benefit
-* [PatchHrisCompany](#patchhriscompany) - Update a company
-* [PatchHrisDeduction](#patchhrisdeduction) - Update a deduction
-* [PatchHrisDevice](#patchhrisdevice) - Update a device
-* [PatchHrisEmployee](#patchhrisemployee) - Update an employee
-* [PatchHrisGroup](#patchhrisgroup) - Update a group
-* [PatchHrisLocation](#patchhrislocation) - Update a location
-* [PatchHrisTimeoff](#patchhristimeoff) - Update a timeoff
-* [PatchHrisTimeshift](#patchhristimeshift) - Update a timeshift
-* [RemoveHrisBankaccount](#removehrisbankaccount) - Remove a bankaccount
-* [RemoveHrisBenefit](#removehrisbenefit) - Remove a benefit
-* [RemoveHrisCompany](#removehriscompany) - Remove a company
-* [RemoveHrisDeduction](#removehrisdeduction) - Remove a deduction
-* [RemoveHrisDevice](#removehrisdevice) - Remove a device
-* [RemoveHrisEmployee](#removehrisemployee) - Remove an employee
-* [RemoveHrisGroup](#removehrisgroup) - Remove a group
-* [RemoveHrisLocation](#removehrislocation) - Remove a location
-* [RemoveHrisTimeoff](#removehristimeoff) - Remove a timeoff
-* [RemoveHrisTimeshift](#removehristimeshift) - Remove a timeshift
-* [UpdateHrisBankaccount](#updatehrisbankaccount) - Update a bankaccount
-* [UpdateHrisBenefit](#updatehrisbenefit) - Update a benefit
-* [UpdateHrisCompany](#updatehriscompany) - Update a company
-* [UpdateHrisDeduction](#updatehrisdeduction) - Update a deduction
-* [UpdateHrisDevice](#updatehrisdevice) - Update a device
-* [UpdateHrisEmployee](#updatehrisemployee) - Update an employee
-* [UpdateHrisGroup](#updatehrisgroup) - Update a group
-* [UpdateHrisLocation](#updatehrislocation) - Update a location
-* [UpdateHrisTimeoff](#updatehristimeoff) - Update a timeoff
-* [UpdateHrisTimeshift](#updatehristimeshift) - Update a timeshift
+* [CreateHrisBankaccount2](#createhrisbankaccount2) - Create a bankaccount
+* [CreateHrisBenefit2](#createhrisbenefit2) - Create a benefit
+* [CreateHrisCompany2](#createhriscompany2) - Create a company
+* [CreateHrisDeduction2](#createhrisdeduction2) - Create a deduction
+* [CreateHrisDevice2](#createhrisdevice2) - Create a device
+* [CreateHrisEmployee2](#createhrisemployee2) - Create an employee
+* [CreateHrisGroup2](#createhrisgroup2) - Create a group
+* [CreateHrisLocation2](#createhrislocation2) - Create a location
+* [CreateHrisTimeoff2](#createhristimeoff2) - Create a timeoff
+* [CreateHrisTimeshift2](#createhristimeshift2) - Create a timeshift
+* [GetHrisBankaccount2](#gethrisbankaccount2) - Retrieve a bankaccount
+* [GetHrisBenefit2](#gethrisbenefit2) - Retrieve a benefit
+* [GetHrisCompany2](#gethriscompany2) - Retrieve a company
+* [GetHrisDeduction2](#gethrisdeduction2) - Retrieve a deduction
+* [GetHrisDevice2](#gethrisdevice2) - Retrieve a device
+* [GetHrisEmployee2](#gethrisemployee2) - Retrieve an employee
+* [GetHrisGroup2](#gethrisgroup2) - Retrieve a group
+* [GetHrisLocation2](#gethrislocation2) - Retrieve a location
+* [GetHrisPayslip2](#gethrispayslip2) - Retrieve a payslip
+* [GetHrisTimeoff2](#gethristimeoff2) - Retrieve a timeoff
+* [GetHrisTimeshift2](#gethristimeshift2) - Retrieve a timeshift
+* [ListHrisBankaccounts2](#listhrisbankaccounts2) - List all bankaccounts
+* [ListHrisBenefits2](#listhrisbenefits2) - List all benefits
+* [ListHrisCompanies2](#listhriscompanies2) - List all companies
+* [ListHrisDeductions2](#listhrisdeductions2) - List all deductions
+* [ListHrisDevices2](#listhrisdevices2) - List all devices
+* [ListHrisEmployees2](#listhrisemployees2) - List all employees
+* [ListHrisGroups2](#listhrisgroups2) - List all groups
+* [ListHrisLocations2](#listhrislocations2) - List all locations
+* [ListHrisPayslips2](#listhrispayslips2) - List all payslips
+* [ListHrisTimeoffs2](#listhristimeoffs2) - List all timeoffs
+* [ListHrisTimeshifts2](#listhristimeshifts2) - List all timeshifts
+* [PatchHrisBankaccount2](#patchhrisbankaccount2) - Update a bankaccount
+* [PatchHrisBenefit2](#patchhrisbenefit2) - Update a benefit
+* [PatchHrisCompany2](#patchhriscompany2) - Update a company
+* [PatchHrisDeduction2](#patchhrisdeduction2) - Update a deduction
+* [PatchHrisDevice2](#patchhrisdevice2) - Update a device
+* [PatchHrisEmployee2](#patchhrisemployee2) - Update an employee
+* [PatchHrisGroup2](#patchhrisgroup2) - Update a group
+* [PatchHrisLocation2](#patchhrislocation2) - Update a location
+* [PatchHrisTimeoff2](#patchhristimeoff2) - Update a timeoff
+* [PatchHrisTimeshift2](#patchhristimeshift2) - Update a timeshift
+* [RemoveHrisBankaccount2](#removehrisbankaccount2) - Remove a bankaccount
+* [RemoveHrisBenefit2](#removehrisbenefit2) - Remove a benefit
+* [RemoveHrisCompany2](#removehriscompany2) - Remove a company
+* [RemoveHrisDeduction2](#removehrisdeduction2) - Remove a deduction
+* [RemoveHrisDevice2](#removehrisdevice2) - Remove a device
+* [RemoveHrisEmployee2](#removehrisemployee2) - Remove an employee
+* [RemoveHrisGroup2](#removehrisgroup2) - Remove a group
+* [RemoveHrisLocation2](#removehrislocation2) - Remove a location
+* [RemoveHrisTimeoff2](#removehristimeoff2) - Remove a timeoff
+* [RemoveHrisTimeshift2](#removehristimeshift2) - Remove a timeshift
+* [UpdateHrisBankaccount2](#updatehrisbankaccount2) - Update a bankaccount
+* [UpdateHrisBenefit2](#updatehrisbenefit2) - Update a benefit
+* [UpdateHrisCompany2](#updatehriscompany2) - Update a company
+* [UpdateHrisDeduction2](#updatehrisdeduction2) - Update a deduction
+* [UpdateHrisDevice2](#updatehrisdevice2) - Update a device
+* [UpdateHrisEmployee2](#updatehrisemployee2) - Update an employee
+* [UpdateHrisGroup2](#updatehrisgroup2) - Update a group
+* [UpdateHrisLocation2](#updatehrislocation2) - Update a location
+* [UpdateHrisTimeoff2](#updatehristimeoff2) - Update a timeoff
+* [UpdateHrisTimeshift2](#updatehristimeshift2) - Update a timeshift
 
-## CreateHrisBankaccount
+## CreateHrisBankaccount2
 
 Create a bankaccount
 
@@ -82,7 +82,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisBankaccountAsync(
+var res = await sdk.Hris.CreateHrisBankaccount2Async(
     hrisBankaccount: new HrisBankaccount() {},
     connectionId: "<id>"
 );
@@ -96,12 +96,12 @@ var res = await sdk.Hris.CreateHrisBankaccountAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisBankaccount`                                                                                                                                | [HrisBankaccount](../../Models/Components/HrisBankaccount.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisBankaccountQueryParamFields](../../Models/Requests/CreateHrisBankaccountQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisBankaccount2QueryParamFields](../../Models/Requests/CreateHrisBankaccount2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisBankaccountResponse](../../Models/Requests/CreateHrisBankaccountResponse.md)**
+**[CreateHrisBankaccount2Response](../../Models/Requests/CreateHrisBankaccount2Response.md)**
 
 ### Errors
 
@@ -109,7 +109,7 @@ var res = await sdk.Hris.CreateHrisBankaccountAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisBenefit
+## CreateHrisBenefit2
 
 Create a benefit
 
@@ -123,7 +123,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisBenefitAsync(
+var res = await sdk.Hris.CreateHrisBenefit2Async(
     hrisBenefit: new HrisBenefit() {},
     connectionId: "<id>"
 );
@@ -137,12 +137,12 @@ var res = await sdk.Hris.CreateHrisBenefitAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisBenefit`                                                                                                                                    | [HrisBenefit](../../Models/Components/HrisBenefit.md)                                                                                            | :heavy_check_mark:                                                                                                                               | Company-wide benefit plans available to employees.                                                                                               |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisBenefitQueryParamFields](../../Models/Requests/CreateHrisBenefitQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisBenefit2QueryParamFields](../../Models/Requests/CreateHrisBenefit2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisBenefitResponse](../../Models/Requests/CreateHrisBenefitResponse.md)**
+**[CreateHrisBenefit2Response](../../Models/Requests/CreateHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -150,7 +150,7 @@ var res = await sdk.Hris.CreateHrisBenefitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisCompany
+## CreateHrisCompany2
 
 Create a company
 
@@ -164,7 +164,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisCompanyAsync(
+var res = await sdk.Hris.CreateHrisCompany2Async(
     hrisCompany: new HrisCompany() {},
     connectionId: "<id>"
 );
@@ -178,12 +178,12 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisCompany`                                                                                                                                    | [HrisCompany](../../Models/Components/HrisCompany.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisCompanyQueryParamFields](../../Models/Requests/CreateHrisCompanyQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisCompany2QueryParamFields](../../Models/Requests/CreateHrisCompany2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisCompanyResponse](../../Models/Requests/CreateHrisCompanyResponse.md)**
+**[CreateHrisCompany2Response](../../Models/Requests/CreateHrisCompany2Response.md)**
 
 ### Errors
 
@@ -191,7 +191,7 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisDeduction
+## CreateHrisDeduction2
 
 Create a deduction
 
@@ -205,7 +205,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisDeductionAsync(
+var res = await sdk.Hris.CreateHrisDeduction2Async(
     hrisDeduction: new HrisDeduction() {},
     connectionId: "<id>"
 );
@@ -219,12 +219,12 @@ var res = await sdk.Hris.CreateHrisDeductionAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisDeduction`                                                                                                                                  | [HrisDeduction](../../Models/Components/HrisDeduction.md)                                                                                        | :heavy_check_mark:                                                                                                                               | Employee-specific deduction/benefit enrolment.                                                                                                   |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisDeductionQueryParamFields](../../Models/Requests/CreateHrisDeductionQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisDeduction2QueryParamFields](../../Models/Requests/CreateHrisDeduction2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisDeductionResponse](../../Models/Requests/CreateHrisDeductionResponse.md)**
+**[CreateHrisDeduction2Response](../../Models/Requests/CreateHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -232,7 +232,7 @@ var res = await sdk.Hris.CreateHrisDeductionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisDevice
+## CreateHrisDevice2
 
 Create a device
 
@@ -246,7 +246,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisDeviceAsync(
+var res = await sdk.Hris.CreateHrisDevice2Async(
     hrisDevice: new HrisDevice() {},
     connectionId: "<id>"
 );
@@ -260,12 +260,12 @@ var res = await sdk.Hris.CreateHrisDeviceAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisDevice`                                                                                                                                     | [HrisDevice](../../Models/Components/HrisDevice.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisDeviceQueryParamFields](../../Models/Requests/CreateHrisDeviceQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisDevice2QueryParamFields](../../Models/Requests/CreateHrisDevice2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisDeviceResponse](../../Models/Requests/CreateHrisDeviceResponse.md)**
+**[CreateHrisDevice2Response](../../Models/Requests/CreateHrisDevice2Response.md)**
 
 ### Errors
 
@@ -273,7 +273,7 @@ var res = await sdk.Hris.CreateHrisDeviceAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisEmployee
+## CreateHrisEmployee2
 
 Create an employee
 
@@ -287,7 +287,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisEmployeeAsync(
+var res = await sdk.Hris.CreateHrisEmployee2Async(
     hrisEmployee: new HrisEmployee() {},
     connectionId: "<id>"
 );
@@ -301,12 +301,12 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisEmployee`                                                                                                                                   | [HrisEmployee](../../Models/Components/HrisEmployee.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisEmployeeQueryParamFields](../../Models/Requests/CreateHrisEmployeeQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisEmployee2QueryParamFields](../../Models/Requests/CreateHrisEmployee2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisEmployeeResponse](../../Models/Requests/CreateHrisEmployeeResponse.md)**
+**[CreateHrisEmployee2Response](../../Models/Requests/CreateHrisEmployee2Response.md)**
 
 ### Errors
 
@@ -314,7 +314,7 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisGroup
+## CreateHrisGroup2
 
 Create a group
 
@@ -328,7 +328,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisGroupAsync(
+var res = await sdk.Hris.CreateHrisGroup2Async(
     hrisGroup: new HrisGroup() {},
     connectionId: "<id>"
 );
@@ -342,12 +342,12 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisGroup`                                                                                                                                      | [HrisGroup](../../Models/Components/HrisGroup.md)                                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisGroupQueryParamFields](../../Models/Requests/CreateHrisGroupQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisGroup2QueryParamFields](../../Models/Requests/CreateHrisGroup2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisGroupResponse](../../Models/Requests/CreateHrisGroupResponse.md)**
+**[CreateHrisGroup2Response](../../Models/Requests/CreateHrisGroup2Response.md)**
 
 ### Errors
 
@@ -355,7 +355,7 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisLocation
+## CreateHrisLocation2
 
 Create a location
 
@@ -369,7 +369,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisLocationAsync(
+var res = await sdk.Hris.CreateHrisLocation2Async(
     hrisLocation: new HrisLocation() {},
     connectionId: "<id>"
 );
@@ -383,12 +383,12 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisLocation`                                                                                                                                   | [HrisLocation](../../Models/Components/HrisLocation.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisLocationQueryParamFields](../../Models/Requests/CreateHrisLocationQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisLocation2QueryParamFields](../../Models/Requests/CreateHrisLocation2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisLocationResponse](../../Models/Requests/CreateHrisLocationResponse.md)**
+**[CreateHrisLocation2Response](../../Models/Requests/CreateHrisLocation2Response.md)**
 
 ### Errors
 
@@ -396,7 +396,7 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisTimeoff
+## CreateHrisTimeoff2
 
 Create a timeoff
 
@@ -410,7 +410,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisTimeoffAsync(
+var res = await sdk.Hris.CreateHrisTimeoff2Async(
     hrisTimeoff: new HrisTimeoff() {
         UserId = "<id>",
     },
@@ -426,12 +426,12 @@ var res = await sdk.Hris.CreateHrisTimeoffAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisTimeoff`                                                                                                                                    | [HrisTimeoff](../../Models/Components/HrisTimeoff.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisTimeoffQueryParamFields](../../Models/Requests/CreateHrisTimeoffQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisTimeoff2QueryParamFields](../../Models/Requests/CreateHrisTimeoff2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisTimeoffResponse](../../Models/Requests/CreateHrisTimeoffResponse.md)**
+**[CreateHrisTimeoff2Response](../../Models/Requests/CreateHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -439,7 +439,7 @@ var res = await sdk.Hris.CreateHrisTimeoffAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisTimeshift
+## CreateHrisTimeshift2
 
 Create a timeshift
 
@@ -453,7 +453,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.CreateHrisTimeshiftAsync(
+var res = await sdk.Hris.CreateHrisTimeshift2Async(
     hrisTimeshift: new HrisTimeshift() {
         EmployeeUserId = "<id>",
     },
@@ -469,12 +469,12 @@ var res = await sdk.Hris.CreateHrisTimeshiftAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisTimeshift`                                                                                                                                  | [HrisTimeshift](../../Models/Components/HrisTimeshift.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisTimeshiftQueryParamFields](../../Models/Requests/CreateHrisTimeshiftQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisTimeshift2QueryParamFields](../../Models/Requests/CreateHrisTimeshift2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisTimeshiftResponse](../../Models/Requests/CreateHrisTimeshiftResponse.md)**
+**[CreateHrisTimeshift2Response](../../Models/Requests/CreateHrisTimeshift2Response.md)**
 
 ### Errors
 
@@ -482,7 +482,7 @@ var res = await sdk.Hris.CreateHrisTimeshiftAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisBankaccount
+## GetHrisBankaccount2
 
 Retrieve a bankaccount
 
@@ -496,7 +496,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisBankaccountAsync(
+var res = await sdk.Hris.GetHrisBankaccount2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -510,12 +510,12 @@ var res = await sdk.Hris.GetHrisBankaccountAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Bankaccount                                                                                                                            |
-| `Fields`                                                                                                                                         | List<[GetHrisBankaccountQueryParamFields](../../Models/Requests/GetHrisBankaccountQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisBankaccount2QueryParamFields](../../Models/Requests/GetHrisBankaccount2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisBankaccountResponse](../../Models/Requests/GetHrisBankaccountResponse.md)**
+**[GetHrisBankaccount2Response](../../Models/Requests/GetHrisBankaccount2Response.md)**
 
 ### Errors
 
@@ -523,7 +523,7 @@ var res = await sdk.Hris.GetHrisBankaccountAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisBenefit
+## GetHrisBenefit2
 
 Retrieve a benefit
 
@@ -537,7 +537,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisBenefitAsync(
+var res = await sdk.Hris.GetHrisBenefit2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -551,12 +551,12 @@ var res = await sdk.Hris.GetHrisBenefitAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Benefit                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetHrisBenefitQueryParamFields](../../Models/Requests/GetHrisBenefitQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisBenefit2QueryParamFields](../../Models/Requests/GetHrisBenefit2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisBenefitResponse](../../Models/Requests/GetHrisBenefitResponse.md)**
+**[GetHrisBenefit2Response](../../Models/Requests/GetHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -564,7 +564,7 @@ var res = await sdk.Hris.GetHrisBenefitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisCompany
+## GetHrisCompany2
 
 Retrieve a company
 
@@ -578,7 +578,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisCompanyAsync(
+var res = await sdk.Hris.GetHrisCompany2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -592,12 +592,12 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Company                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetHrisCompanyQueryParamFields](../../Models/Requests/GetHrisCompanyQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisCompany2QueryParamFields](../../Models/Requests/GetHrisCompany2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisCompanyResponse](../../Models/Requests/GetHrisCompanyResponse.md)**
+**[GetHrisCompany2Response](../../Models/Requests/GetHrisCompany2Response.md)**
 
 ### Errors
 
@@ -605,7 +605,7 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisDeduction
+## GetHrisDeduction2
 
 Retrieve a deduction
 
@@ -619,7 +619,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisDeductionAsync(
+var res = await sdk.Hris.GetHrisDeduction2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -633,12 +633,12 @@ var res = await sdk.Hris.GetHrisDeductionAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Deduction                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetHrisDeductionQueryParamFields](../../Models/Requests/GetHrisDeductionQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisDeduction2QueryParamFields](../../Models/Requests/GetHrisDeduction2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisDeductionResponse](../../Models/Requests/GetHrisDeductionResponse.md)**
+**[GetHrisDeduction2Response](../../Models/Requests/GetHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -646,7 +646,7 @@ var res = await sdk.Hris.GetHrisDeductionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisDevice
+## GetHrisDevice2
 
 Retrieve a device
 
@@ -660,7 +660,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisDeviceAsync(
+var res = await sdk.Hris.GetHrisDevice2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -674,12 +674,12 @@ var res = await sdk.Hris.GetHrisDeviceAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Device                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetHrisDeviceQueryParamFields](../../Models/Requests/GetHrisDeviceQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisDevice2QueryParamFields](../../Models/Requests/GetHrisDevice2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisDeviceResponse](../../Models/Requests/GetHrisDeviceResponse.md)**
+**[GetHrisDevice2Response](../../Models/Requests/GetHrisDevice2Response.md)**
 
 ### Errors
 
@@ -687,7 +687,7 @@ var res = await sdk.Hris.GetHrisDeviceAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisEmployee
+## GetHrisEmployee2
 
 Retrieve an employee
 
@@ -701,7 +701,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisEmployeeAsync(
+var res = await sdk.Hris.GetHrisEmployee2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -715,12 +715,12 @@ var res = await sdk.Hris.GetHrisEmployeeAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Employee                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetHrisEmployeeQueryParamFields](../../Models/Requests/GetHrisEmployeeQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisEmployee2QueryParamFields](../../Models/Requests/GetHrisEmployee2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisEmployeeResponse](../../Models/Requests/GetHrisEmployeeResponse.md)**
+**[GetHrisEmployee2Response](../../Models/Requests/GetHrisEmployee2Response.md)**
 
 ### Errors
 
@@ -728,7 +728,7 @@ var res = await sdk.Hris.GetHrisEmployeeAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisGroup
+## GetHrisGroup2
 
 Retrieve a group
 
@@ -742,7 +742,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisGroupAsync(
+var res = await sdk.Hris.GetHrisGroup2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -756,12 +756,12 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Group                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetHrisGroupQueryParamFields](../../Models/Requests/GetHrisGroupQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisGroup2QueryParamFields](../../Models/Requests/GetHrisGroup2QueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisGroupResponse](../../Models/Requests/GetHrisGroupResponse.md)**
+**[GetHrisGroup2Response](../../Models/Requests/GetHrisGroup2Response.md)**
 
 ### Errors
 
@@ -769,7 +769,7 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisLocation
+## GetHrisLocation2
 
 Retrieve a location
 
@@ -783,7 +783,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisLocationAsync(
+var res = await sdk.Hris.GetHrisLocation2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -797,12 +797,12 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetHrisLocationQueryParamFields](../../Models/Requests/GetHrisLocationQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisLocation2QueryParamFields](../../Models/Requests/GetHrisLocation2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
+**[GetHrisLocation2Response](../../Models/Requests/GetHrisLocation2Response.md)**
 
 ### Errors
 
@@ -810,7 +810,7 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisPayslip
+## GetHrisPayslip2
 
 Retrieve a payslip
 
@@ -824,7 +824,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisPayslipAsync(
+var res = await sdk.Hris.GetHrisPayslip2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -838,12 +838,12 @@ var res = await sdk.Hris.GetHrisPayslipAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Payslip                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetHrisPayslipQueryParamFields](../../Models/Requests/GetHrisPayslipQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisPayslip2QueryParamFields](../../Models/Requests/GetHrisPayslip2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisPayslipResponse](../../Models/Requests/GetHrisPayslipResponse.md)**
+**[GetHrisPayslip2Response](../../Models/Requests/GetHrisPayslip2Response.md)**
 
 ### Errors
 
@@ -851,7 +851,7 @@ var res = await sdk.Hris.GetHrisPayslipAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisTimeoff
+## GetHrisTimeoff2
 
 Retrieve a timeoff
 
@@ -865,7 +865,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisTimeoffAsync(
+var res = await sdk.Hris.GetHrisTimeoff2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -879,12 +879,12 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Timeoff                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetHrisTimeoffQueryParamFields](../../Models/Requests/GetHrisTimeoffQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisTimeoff2QueryParamFields](../../Models/Requests/GetHrisTimeoff2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisTimeoffResponse](../../Models/Requests/GetHrisTimeoffResponse.md)**
+**[GetHrisTimeoff2Response](../../Models/Requests/GetHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -892,7 +892,7 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisTimeshift
+## GetHrisTimeshift2
 
 Retrieve a timeshift
 
@@ -906,7 +906,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.GetHrisTimeshiftAsync(
+var res = await sdk.Hris.GetHrisTimeshift2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -920,12 +920,12 @@ var res = await sdk.Hris.GetHrisTimeshiftAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Timeshift                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetHrisTimeshiftQueryParamFields](../../Models/Requests/GetHrisTimeshiftQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisTimeshift2QueryParamFields](../../Models/Requests/GetHrisTimeshift2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisTimeshiftResponse](../../Models/Requests/GetHrisTimeshiftResponse.md)**
+**[GetHrisTimeshift2Response](../../Models/Requests/GetHrisTimeshift2Response.md)**
 
 ### Errors
 
@@ -933,7 +933,7 @@ var res = await sdk.Hris.GetHrisTimeshiftAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisBankaccounts
+## ListHrisBankaccounts2
 
 List all bankaccounts
 
@@ -948,24 +948,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisBankaccountsRequest req = new ListHrisBankaccountsRequest() {
+ListHrisBankaccounts2Request req = new ListHrisBankaccounts2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisBankaccountsAsync(req);
+var res = await sdk.Hris.ListHrisBankaccounts2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListHrisBankaccountsRequest](../../Models/Requests/ListHrisBankaccountsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListHrisBankaccounts2Request](../../Models/Requests/ListHrisBankaccounts2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListHrisBankaccountsResponse](../../Models/Requests/ListHrisBankaccountsResponse.md)**
+**[ListHrisBankaccounts2Response](../../Models/Requests/ListHrisBankaccounts2Response.md)**
 
 ### Errors
 
@@ -973,7 +973,7 @@ var res = await sdk.Hris.ListHrisBankaccountsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisBenefits
+## ListHrisBenefits2
 
 List all benefits
 
@@ -988,24 +988,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisBenefitsRequest req = new ListHrisBenefitsRequest() {
+ListHrisBenefits2Request req = new ListHrisBenefits2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisBenefitsAsync(req);
+var res = await sdk.Hris.ListHrisBenefits2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListHrisBenefitsRequest](../../Models/Requests/ListHrisBenefitsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisBenefits2Request](../../Models/Requests/ListHrisBenefits2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListHrisBenefitsResponse](../../Models/Requests/ListHrisBenefitsResponse.md)**
+**[ListHrisBenefits2Response](../../Models/Requests/ListHrisBenefits2Response.md)**
 
 ### Errors
 
@@ -1013,7 +1013,7 @@ var res = await sdk.Hris.ListHrisBenefitsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisCompanies
+## ListHrisCompanies2
 
 List all companies
 
@@ -1028,24 +1028,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisCompaniesRequest req = new ListHrisCompaniesRequest() {
+ListHrisCompanies2Request req = new ListHrisCompanies2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisCompaniesAsync(req);
+var res = await sdk.Hris.ListHrisCompanies2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListHrisCompaniesRequest](../../Models/Requests/ListHrisCompaniesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListHrisCompanies2Request](../../Models/Requests/ListHrisCompanies2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListHrisCompaniesResponse](../../Models/Requests/ListHrisCompaniesResponse.md)**
+**[ListHrisCompanies2Response](../../Models/Requests/ListHrisCompanies2Response.md)**
 
 ### Errors
 
@@ -1053,7 +1053,7 @@ var res = await sdk.Hris.ListHrisCompaniesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisDeductions
+## ListHrisDeductions2
 
 List all deductions
 
@@ -1068,24 +1068,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisDeductionsRequest req = new ListHrisDeductionsRequest() {
+ListHrisDeductions2Request req = new ListHrisDeductions2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisDeductionsAsync(req);
+var res = await sdk.Hris.ListHrisDeductions2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListHrisDeductionsRequest](../../Models/Requests/ListHrisDeductionsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListHrisDeductions2Request](../../Models/Requests/ListHrisDeductions2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListHrisDeductionsResponse](../../Models/Requests/ListHrisDeductionsResponse.md)**
+**[ListHrisDeductions2Response](../../Models/Requests/ListHrisDeductions2Response.md)**
 
 ### Errors
 
@@ -1093,7 +1093,7 @@ var res = await sdk.Hris.ListHrisDeductionsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisDevices
+## ListHrisDevices2
 
 List all devices
 
@@ -1108,24 +1108,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisDevicesRequest req = new ListHrisDevicesRequest() {
+ListHrisDevices2Request req = new ListHrisDevices2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisDevicesAsync(req);
+var res = await sdk.Hris.ListHrisDevices2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListHrisDevicesRequest](../../Models/Requests/ListHrisDevicesRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListHrisDevices2Request](../../Models/Requests/ListHrisDevices2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListHrisDevicesResponse](../../Models/Requests/ListHrisDevicesResponse.md)**
+**[ListHrisDevices2Response](../../Models/Requests/ListHrisDevices2Response.md)**
 
 ### Errors
 
@@ -1133,7 +1133,7 @@ var res = await sdk.Hris.ListHrisDevicesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisEmployees
+## ListHrisEmployees2
 
 List all employees
 
@@ -1148,24 +1148,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
+ListHrisEmployees2Request req = new ListHrisEmployees2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisEmployeesAsync(req);
+var res = await sdk.Hris.ListHrisEmployees2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListHrisEmployeesRequest](../../Models/Requests/ListHrisEmployeesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListHrisEmployees2Request](../../Models/Requests/ListHrisEmployees2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListHrisEmployeesResponse](../../Models/Requests/ListHrisEmployeesResponse.md)**
+**[ListHrisEmployees2Response](../../Models/Requests/ListHrisEmployees2Response.md)**
 
 ### Errors
 
@@ -1173,7 +1173,7 @@ var res = await sdk.Hris.ListHrisEmployeesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisGroups
+## ListHrisGroups2
 
 List all groups
 
@@ -1188,24 +1188,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
+ListHrisGroups2Request req = new ListHrisGroups2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisGroupsAsync(req);
+var res = await sdk.Hris.ListHrisGroups2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [ListHrisGroupsRequest](../../Models/Requests/ListHrisGroupsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListHrisGroups2Request](../../Models/Requests/ListHrisGroups2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListHrisGroupsResponse](../../Models/Requests/ListHrisGroupsResponse.md)**
+**[ListHrisGroups2Response](../../Models/Requests/ListHrisGroups2Response.md)**
 
 ### Errors
 
@@ -1213,7 +1213,7 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisLocations
+## ListHrisLocations2
 
 List all locations
 
@@ -1228,24 +1228,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisLocationsRequest req = new ListHrisLocationsRequest() {
+ListHrisLocations2Request req = new ListHrisLocations2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisLocationsAsync(req);
+var res = await sdk.Hris.ListHrisLocations2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListHrisLocationsRequest](../../Models/Requests/ListHrisLocationsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListHrisLocations2Request](../../Models/Requests/ListHrisLocations2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListHrisLocationsResponse](../../Models/Requests/ListHrisLocationsResponse.md)**
+**[ListHrisLocations2Response](../../Models/Requests/ListHrisLocations2Response.md)**
 
 ### Errors
 
@@ -1253,7 +1253,7 @@ var res = await sdk.Hris.ListHrisLocationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisPayslips
+## ListHrisPayslips2
 
 List all payslips
 
@@ -1268,24 +1268,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisPayslipsRequest req = new ListHrisPayslipsRequest() {
+ListHrisPayslips2Request req = new ListHrisPayslips2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisPayslipsAsync(req);
+var res = await sdk.Hris.ListHrisPayslips2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListHrisPayslipsRequest](../../Models/Requests/ListHrisPayslipsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisPayslips2Request](../../Models/Requests/ListHrisPayslips2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListHrisPayslipsResponse](../../Models/Requests/ListHrisPayslipsResponse.md)**
+**[ListHrisPayslips2Response](../../Models/Requests/ListHrisPayslips2Response.md)**
 
 ### Errors
 
@@ -1293,7 +1293,7 @@ var res = await sdk.Hris.ListHrisPayslipsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisTimeoffs
+## ListHrisTimeoffs2
 
 List all timeoffs
 
@@ -1308,24 +1308,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisTimeoffsRequest req = new ListHrisTimeoffsRequest() {
+ListHrisTimeoffs2Request req = new ListHrisTimeoffs2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
+var res = await sdk.Hris.ListHrisTimeoffs2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListHrisTimeoffsRequest](../../Models/Requests/ListHrisTimeoffsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisTimeoffs2Request](../../Models/Requests/ListHrisTimeoffs2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListHrisTimeoffsResponse](../../Models/Requests/ListHrisTimeoffsResponse.md)**
+**[ListHrisTimeoffs2Response](../../Models/Requests/ListHrisTimeoffs2Response.md)**
 
 ### Errors
 
@@ -1333,7 +1333,7 @@ var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisTimeshifts
+## ListHrisTimeshifts2
 
 List all timeshifts
 
@@ -1348,24 +1348,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisTimeshiftsRequest req = new ListHrisTimeshiftsRequest() {
+ListHrisTimeshifts2Request req = new ListHrisTimeshifts2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Hris.ListHrisTimeshiftsAsync(req);
+var res = await sdk.Hris.ListHrisTimeshifts2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListHrisTimeshiftsRequest](../../Models/Requests/ListHrisTimeshiftsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListHrisTimeshifts2Request](../../Models/Requests/ListHrisTimeshifts2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListHrisTimeshiftsResponse](../../Models/Requests/ListHrisTimeshiftsResponse.md)**
+**[ListHrisTimeshifts2Response](../../Models/Requests/ListHrisTimeshifts2Response.md)**
 
 ### Errors
 
@@ -1373,7 +1373,7 @@ var res = await sdk.Hris.ListHrisTimeshiftsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisBankaccount
+## PatchHrisBankaccount2
 
 Update a bankaccount
 
@@ -1388,26 +1388,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
+PatchHrisBankaccount2Request req = new PatchHrisBankaccount2Request() {
     HrisBankaccount = new HrisBankaccount() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisBankaccountAsync(req);
+var res = await sdk.Hris.PatchHrisBankaccount2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchHrisBankaccountRequest](../../Models/Requests/PatchHrisBankaccountRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchHrisBankaccount2Request](../../Models/Requests/PatchHrisBankaccount2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchHrisBankaccountResponse](../../Models/Requests/PatchHrisBankaccountResponse.md)**
+**[PatchHrisBankaccount2Response](../../Models/Requests/PatchHrisBankaccount2Response.md)**
 
 ### Errors
 
@@ -1415,7 +1415,7 @@ var res = await sdk.Hris.PatchHrisBankaccountAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisBenefit
+## PatchHrisBenefit2
 
 Update a benefit
 
@@ -1430,26 +1430,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
+PatchHrisBenefit2Request req = new PatchHrisBenefit2Request() {
     HrisBenefit = new HrisBenefit() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisBenefitAsync(req);
+var res = await sdk.Hris.PatchHrisBenefit2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchHrisBenefitRequest](../../Models/Requests/PatchHrisBenefitRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchHrisBenefit2Request](../../Models/Requests/PatchHrisBenefit2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchHrisBenefitResponse](../../Models/Requests/PatchHrisBenefitResponse.md)**
+**[PatchHrisBenefit2Response](../../Models/Requests/PatchHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -1457,7 +1457,7 @@ var res = await sdk.Hris.PatchHrisBenefitAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisCompany
+## PatchHrisCompany2
 
 Update a company
 
@@ -1472,26 +1472,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
+PatchHrisCompany2Request req = new PatchHrisCompany2Request() {
     HrisCompany = new HrisCompany() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisCompanyAsync(req);
+var res = await sdk.Hris.PatchHrisCompany2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchHrisCompanyRequest](../../Models/Requests/PatchHrisCompanyRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchHrisCompany2Request](../../Models/Requests/PatchHrisCompany2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchHrisCompanyResponse](../../Models/Requests/PatchHrisCompanyResponse.md)**
+**[PatchHrisCompany2Response](../../Models/Requests/PatchHrisCompany2Response.md)**
 
 ### Errors
 
@@ -1499,7 +1499,7 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisDeduction
+## PatchHrisDeduction2
 
 Update a deduction
 
@@ -1514,26 +1514,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
+PatchHrisDeduction2Request req = new PatchHrisDeduction2Request() {
     HrisDeduction = new HrisDeduction() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisDeductionAsync(req);
+var res = await sdk.Hris.PatchHrisDeduction2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [PatchHrisDeductionRequest](../../Models/Requests/PatchHrisDeductionRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchHrisDeduction2Request](../../Models/Requests/PatchHrisDeduction2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchHrisDeductionResponse](../../Models/Requests/PatchHrisDeductionResponse.md)**
+**[PatchHrisDeduction2Response](../../Models/Requests/PatchHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -1541,7 +1541,7 @@ var res = await sdk.Hris.PatchHrisDeductionAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisDevice
+## PatchHrisDevice2
 
 Update a device
 
@@ -1556,26 +1556,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
+PatchHrisDevice2Request req = new PatchHrisDevice2Request() {
     HrisDevice = new HrisDevice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisDeviceAsync(req);
+var res = await sdk.Hris.PatchHrisDevice2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [PatchHrisDeviceRequest](../../Models/Requests/PatchHrisDeviceRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchHrisDevice2Request](../../Models/Requests/PatchHrisDevice2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchHrisDeviceResponse](../../Models/Requests/PatchHrisDeviceResponse.md)**
+**[PatchHrisDevice2Response](../../Models/Requests/PatchHrisDevice2Response.md)**
 
 ### Errors
 
@@ -1583,7 +1583,7 @@ var res = await sdk.Hris.PatchHrisDeviceAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisEmployee
+## PatchHrisEmployee2
 
 Update an employee
 
@@ -1598,26 +1598,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
+PatchHrisEmployee2Request req = new PatchHrisEmployee2Request() {
     HrisEmployee = new HrisEmployee() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisEmployeeAsync(req);
+var res = await sdk.Hris.PatchHrisEmployee2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchHrisEmployeeRequest](../../Models/Requests/PatchHrisEmployeeRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchHrisEmployee2Request](../../Models/Requests/PatchHrisEmployee2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchHrisEmployeeResponse](../../Models/Requests/PatchHrisEmployeeResponse.md)**
+**[PatchHrisEmployee2Response](../../Models/Requests/PatchHrisEmployee2Response.md)**
 
 ### Errors
 
@@ -1625,7 +1625,7 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisGroup
+## PatchHrisGroup2
 
 Update a group
 
@@ -1640,26 +1640,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
+PatchHrisGroup2Request req = new PatchHrisGroup2Request() {
     HrisGroup = new HrisGroup() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisGroupAsync(req);
+var res = await sdk.Hris.PatchHrisGroup2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [PatchHrisGroupRequest](../../Models/Requests/PatchHrisGroupRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [PatchHrisGroup2Request](../../Models/Requests/PatchHrisGroup2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[PatchHrisGroupResponse](../../Models/Requests/PatchHrisGroupResponse.md)**
+**[PatchHrisGroup2Response](../../Models/Requests/PatchHrisGroup2Response.md)**
 
 ### Errors
 
@@ -1667,7 +1667,7 @@ var res = await sdk.Hris.PatchHrisGroupAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisLocation
+## PatchHrisLocation2
 
 Update a location
 
@@ -1682,26 +1682,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
+PatchHrisLocation2Request req = new PatchHrisLocation2Request() {
     HrisLocation = new HrisLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisLocationAsync(req);
+var res = await sdk.Hris.PatchHrisLocation2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchHrisLocationRequest](../../Models/Requests/PatchHrisLocationRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchHrisLocation2Request](../../Models/Requests/PatchHrisLocation2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchHrisLocationResponse](../../Models/Requests/PatchHrisLocationResponse.md)**
+**[PatchHrisLocation2Response](../../Models/Requests/PatchHrisLocation2Response.md)**
 
 ### Errors
 
@@ -1709,7 +1709,7 @@ var res = await sdk.Hris.PatchHrisLocationAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisTimeoff
+## PatchHrisTimeoff2
 
 Update a timeoff
 
@@ -1724,7 +1724,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
+PatchHrisTimeoff2Request req = new PatchHrisTimeoff2Request() {
     HrisTimeoff = new HrisTimeoff() {
         UserId = "<id>",
     },
@@ -1732,20 +1732,20 @@ PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisTimeoffAsync(req);
+var res = await sdk.Hris.PatchHrisTimeoff2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchHrisTimeoffRequest](../../Models/Requests/PatchHrisTimeoffRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchHrisTimeoff2Request](../../Models/Requests/PatchHrisTimeoff2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchHrisTimeoffResponse](../../Models/Requests/PatchHrisTimeoffResponse.md)**
+**[PatchHrisTimeoff2Response](../../Models/Requests/PatchHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -1753,7 +1753,7 @@ var res = await sdk.Hris.PatchHrisTimeoffAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisTimeshift
+## PatchHrisTimeshift2
 
 Update a timeshift
 
@@ -1768,7 +1768,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
+PatchHrisTimeshift2Request req = new PatchHrisTimeshift2Request() {
     HrisTimeshift = new HrisTimeshift() {
         EmployeeUserId = "<id>",
     },
@@ -1776,20 +1776,20 @@ PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Hris.PatchHrisTimeshiftAsync(req);
+var res = await sdk.Hris.PatchHrisTimeshift2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [PatchHrisTimeshiftRequest](../../Models/Requests/PatchHrisTimeshiftRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchHrisTimeshift2Request](../../Models/Requests/PatchHrisTimeshift2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchHrisTimeshiftResponse](../../Models/Requests/PatchHrisTimeshiftResponse.md)**
+**[PatchHrisTimeshift2Response](../../Models/Requests/PatchHrisTimeshift2Response.md)**
 
 ### Errors
 
@@ -1797,7 +1797,7 @@ var res = await sdk.Hris.PatchHrisTimeshiftAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisBankaccount
+## RemoveHrisBankaccount2
 
 Remove a bankaccount
 
@@ -1811,7 +1811,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisBankaccountAsync(
+var res = await sdk.Hris.RemoveHrisBankaccount2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1828,7 +1828,7 @@ var res = await sdk.Hris.RemoveHrisBankaccountAsync(
 
 ### Response
 
-**[RemoveHrisBankaccountResponse](../../Models/Requests/RemoveHrisBankaccountResponse.md)**
+**[RemoveHrisBankaccount2Response](../../Models/Requests/RemoveHrisBankaccount2Response.md)**
 
 ### Errors
 
@@ -1836,7 +1836,7 @@ var res = await sdk.Hris.RemoveHrisBankaccountAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisBenefit
+## RemoveHrisBenefit2
 
 Remove a benefit
 
@@ -1850,7 +1850,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisBenefitAsync(
+var res = await sdk.Hris.RemoveHrisBenefit2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1867,7 +1867,7 @@ var res = await sdk.Hris.RemoveHrisBenefitAsync(
 
 ### Response
 
-**[RemoveHrisBenefitResponse](../../Models/Requests/RemoveHrisBenefitResponse.md)**
+**[RemoveHrisBenefit2Response](../../Models/Requests/RemoveHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -1875,7 +1875,7 @@ var res = await sdk.Hris.RemoveHrisBenefitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisCompany
+## RemoveHrisCompany2
 
 Remove a company
 
@@ -1889,7 +1889,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisCompanyAsync(
+var res = await sdk.Hris.RemoveHrisCompany2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1906,7 +1906,7 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 
 ### Response
 
-**[RemoveHrisCompanyResponse](../../Models/Requests/RemoveHrisCompanyResponse.md)**
+**[RemoveHrisCompany2Response](../../Models/Requests/RemoveHrisCompany2Response.md)**
 
 ### Errors
 
@@ -1914,7 +1914,7 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisDeduction
+## RemoveHrisDeduction2
 
 Remove a deduction
 
@@ -1928,7 +1928,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisDeductionAsync(
+var res = await sdk.Hris.RemoveHrisDeduction2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1945,7 +1945,7 @@ var res = await sdk.Hris.RemoveHrisDeductionAsync(
 
 ### Response
 
-**[RemoveHrisDeductionResponse](../../Models/Requests/RemoveHrisDeductionResponse.md)**
+**[RemoveHrisDeduction2Response](../../Models/Requests/RemoveHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -1953,7 +1953,7 @@ var res = await sdk.Hris.RemoveHrisDeductionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisDevice
+## RemoveHrisDevice2
 
 Remove a device
 
@@ -1967,7 +1967,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisDeviceAsync(
+var res = await sdk.Hris.RemoveHrisDevice2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1984,7 +1984,7 @@ var res = await sdk.Hris.RemoveHrisDeviceAsync(
 
 ### Response
 
-**[RemoveHrisDeviceResponse](../../Models/Requests/RemoveHrisDeviceResponse.md)**
+**[RemoveHrisDevice2Response](../../Models/Requests/RemoveHrisDevice2Response.md)**
 
 ### Errors
 
@@ -1992,7 +1992,7 @@ var res = await sdk.Hris.RemoveHrisDeviceAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisEmployee
+## RemoveHrisEmployee2
 
 Remove an employee
 
@@ -2006,7 +2006,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisEmployeeAsync(
+var res = await sdk.Hris.RemoveHrisEmployee2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -2023,7 +2023,7 @@ var res = await sdk.Hris.RemoveHrisEmployeeAsync(
 
 ### Response
 
-**[RemoveHrisEmployeeResponse](../../Models/Requests/RemoveHrisEmployeeResponse.md)**
+**[RemoveHrisEmployee2Response](../../Models/Requests/RemoveHrisEmployee2Response.md)**
 
 ### Errors
 
@@ -2031,7 +2031,7 @@ var res = await sdk.Hris.RemoveHrisEmployeeAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisGroup
+## RemoveHrisGroup2
 
 Remove a group
 
@@ -2045,7 +2045,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisGroupAsync(
+var res = await sdk.Hris.RemoveHrisGroup2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -2062,7 +2062,7 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 
 ### Response
 
-**[RemoveHrisGroupResponse](../../Models/Requests/RemoveHrisGroupResponse.md)**
+**[RemoveHrisGroup2Response](../../Models/Requests/RemoveHrisGroup2Response.md)**
 
 ### Errors
 
@@ -2070,7 +2070,7 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisLocation
+## RemoveHrisLocation2
 
 Remove a location
 
@@ -2084,7 +2084,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisLocationAsync(
+var res = await sdk.Hris.RemoveHrisLocation2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -2101,7 +2101,7 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 
 ### Response
 
-**[RemoveHrisLocationResponse](../../Models/Requests/RemoveHrisLocationResponse.md)**
+**[RemoveHrisLocation2Response](../../Models/Requests/RemoveHrisLocation2Response.md)**
 
 ### Errors
 
@@ -2109,7 +2109,7 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisTimeoff
+## RemoveHrisTimeoff2
 
 Remove a timeoff
 
@@ -2123,7 +2123,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisTimeoffAsync(
+var res = await sdk.Hris.RemoveHrisTimeoff2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -2140,7 +2140,7 @@ var res = await sdk.Hris.RemoveHrisTimeoffAsync(
 
 ### Response
 
-**[RemoveHrisTimeoffResponse](../../Models/Requests/RemoveHrisTimeoffResponse.md)**
+**[RemoveHrisTimeoff2Response](../../Models/Requests/RemoveHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -2148,7 +2148,7 @@ var res = await sdk.Hris.RemoveHrisTimeoffAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisTimeshift
+## RemoveHrisTimeshift2
 
 Remove a timeshift
 
@@ -2162,7 +2162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Hris.RemoveHrisTimeshiftAsync(
+var res = await sdk.Hris.RemoveHrisTimeshift2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -2179,7 +2179,7 @@ var res = await sdk.Hris.RemoveHrisTimeshiftAsync(
 
 ### Response
 
-**[RemoveHrisTimeshiftResponse](../../Models/Requests/RemoveHrisTimeshiftResponse.md)**
+**[RemoveHrisTimeshift2Response](../../Models/Requests/RemoveHrisTimeshift2Response.md)**
 
 ### Errors
 
@@ -2187,7 +2187,7 @@ var res = await sdk.Hris.RemoveHrisTimeshiftAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisBankaccount
+## UpdateHrisBankaccount2
 
 Update a bankaccount
 
@@ -2202,26 +2202,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
+UpdateHrisBankaccount2Request req = new UpdateHrisBankaccount2Request() {
     HrisBankaccount = new HrisBankaccount() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisBankaccountAsync(req);
+var res = await sdk.Hris.UpdateHrisBankaccount2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdateHrisBankaccountRequest](../../Models/Requests/UpdateHrisBankaccountRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateHrisBankaccount2Request](../../Models/Requests/UpdateHrisBankaccount2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateHrisBankaccountResponse](../../Models/Requests/UpdateHrisBankaccountResponse.md)**
+**[UpdateHrisBankaccount2Response](../../Models/Requests/UpdateHrisBankaccount2Response.md)**
 
 ### Errors
 
@@ -2229,7 +2229,7 @@ var res = await sdk.Hris.UpdateHrisBankaccountAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisBenefit
+## UpdateHrisBenefit2
 
 Update a benefit
 
@@ -2244,26 +2244,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
+UpdateHrisBenefit2Request req = new UpdateHrisBenefit2Request() {
     HrisBenefit = new HrisBenefit() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisBenefitAsync(req);
+var res = await sdk.Hris.UpdateHrisBenefit2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateHrisBenefitRequest](../../Models/Requests/UpdateHrisBenefitRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateHrisBenefit2Request](../../Models/Requests/UpdateHrisBenefit2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateHrisBenefitResponse](../../Models/Requests/UpdateHrisBenefitResponse.md)**
+**[UpdateHrisBenefit2Response](../../Models/Requests/UpdateHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -2271,7 +2271,7 @@ var res = await sdk.Hris.UpdateHrisBenefitAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisCompany
+## UpdateHrisCompany2
 
 Update a company
 
@@ -2286,26 +2286,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
+UpdateHrisCompany2Request req = new UpdateHrisCompany2Request() {
     HrisCompany = new HrisCompany() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisCompanyAsync(req);
+var res = await sdk.Hris.UpdateHrisCompany2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateHrisCompanyRequest](../../Models/Requests/UpdateHrisCompanyRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateHrisCompany2Request](../../Models/Requests/UpdateHrisCompany2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateHrisCompanyResponse](../../Models/Requests/UpdateHrisCompanyResponse.md)**
+**[UpdateHrisCompany2Response](../../Models/Requests/UpdateHrisCompany2Response.md)**
 
 ### Errors
 
@@ -2313,7 +2313,7 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisDeduction
+## UpdateHrisDeduction2
 
 Update a deduction
 
@@ -2328,26 +2328,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
+UpdateHrisDeduction2Request req = new UpdateHrisDeduction2Request() {
     HrisDeduction = new HrisDeduction() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisDeductionAsync(req);
+var res = await sdk.Hris.UpdateHrisDeduction2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [UpdateHrisDeductionRequest](../../Models/Requests/UpdateHrisDeductionRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateHrisDeduction2Request](../../Models/Requests/UpdateHrisDeduction2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateHrisDeductionResponse](../../Models/Requests/UpdateHrisDeductionResponse.md)**
+**[UpdateHrisDeduction2Response](../../Models/Requests/UpdateHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -2355,7 +2355,7 @@ var res = await sdk.Hris.UpdateHrisDeductionAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisDevice
+## UpdateHrisDevice2
 
 Update a device
 
@@ -2370,26 +2370,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
+UpdateHrisDevice2Request req = new UpdateHrisDevice2Request() {
     HrisDevice = new HrisDevice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisDeviceAsync(req);
+var res = await sdk.Hris.UpdateHrisDevice2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [UpdateHrisDeviceRequest](../../Models/Requests/UpdateHrisDeviceRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateHrisDevice2Request](../../Models/Requests/UpdateHrisDevice2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateHrisDeviceResponse](../../Models/Requests/UpdateHrisDeviceResponse.md)**
+**[UpdateHrisDevice2Response](../../Models/Requests/UpdateHrisDevice2Response.md)**
 
 ### Errors
 
@@ -2397,7 +2397,7 @@ var res = await sdk.Hris.UpdateHrisDeviceAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisEmployee
+## UpdateHrisEmployee2
 
 Update an employee
 
@@ -2412,26 +2412,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
+UpdateHrisEmployee2Request req = new UpdateHrisEmployee2Request() {
     HrisEmployee = new HrisEmployee() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisEmployeeAsync(req);
+var res = await sdk.Hris.UpdateHrisEmployee2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateHrisEmployeeRequest](../../Models/Requests/UpdateHrisEmployeeRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateHrisEmployee2Request](../../Models/Requests/UpdateHrisEmployee2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateHrisEmployeeResponse](../../Models/Requests/UpdateHrisEmployeeResponse.md)**
+**[UpdateHrisEmployee2Response](../../Models/Requests/UpdateHrisEmployee2Response.md)**
 
 ### Errors
 
@@ -2439,7 +2439,7 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisGroup
+## UpdateHrisGroup2
 
 Update a group
 
@@ -2454,26 +2454,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
+UpdateHrisGroup2Request req = new UpdateHrisGroup2Request() {
     HrisGroup = new HrisGroup() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisGroupAsync(req);
+var res = await sdk.Hris.UpdateHrisGroup2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [UpdateHrisGroupRequest](../../Models/Requests/UpdateHrisGroupRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateHrisGroup2Request](../../Models/Requests/UpdateHrisGroup2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[UpdateHrisGroupResponse](../../Models/Requests/UpdateHrisGroupResponse.md)**
+**[UpdateHrisGroup2Response](../../Models/Requests/UpdateHrisGroup2Response.md)**
 
 ### Errors
 
@@ -2481,7 +2481,7 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisLocation
+## UpdateHrisLocation2
 
 Update a location
 
@@ -2496,26 +2496,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
+UpdateHrisLocation2Request req = new UpdateHrisLocation2Request() {
     HrisLocation = new HrisLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisLocationAsync(req);
+var res = await sdk.Hris.UpdateHrisLocation2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateHrisLocationRequest](../../Models/Requests/UpdateHrisLocationRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateHrisLocation2Request](../../Models/Requests/UpdateHrisLocation2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateHrisLocationResponse](../../Models/Requests/UpdateHrisLocationResponse.md)**
+**[UpdateHrisLocation2Response](../../Models/Requests/UpdateHrisLocation2Response.md)**
 
 ### Errors
 
@@ -2523,7 +2523,7 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisTimeoff
+## UpdateHrisTimeoff2
 
 Update a timeoff
 
@@ -2538,7 +2538,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
+UpdateHrisTimeoff2Request req = new UpdateHrisTimeoff2Request() {
     HrisTimeoff = new HrisTimeoff() {
         UserId = "<id>",
     },
@@ -2546,20 +2546,20 @@ UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisTimeoffAsync(req);
+var res = await sdk.Hris.UpdateHrisTimeoff2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateHrisTimeoffRequest](../../Models/Requests/UpdateHrisTimeoffRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateHrisTimeoff2Request](../../Models/Requests/UpdateHrisTimeoff2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateHrisTimeoffResponse](../../Models/Requests/UpdateHrisTimeoffResponse.md)**
+**[UpdateHrisTimeoff2Response](../../Models/Requests/UpdateHrisTimeoff2Response.md)**
 
 ### Errors
 
@@ -2567,7 +2567,7 @@ var res = await sdk.Hris.UpdateHrisTimeoffAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisTimeshift
+## UpdateHrisTimeshift2
 
 Update a timeshift
 
@@ -2582,7 +2582,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
+UpdateHrisTimeshift2Request req = new UpdateHrisTimeshift2Request() {
     HrisTimeshift = new HrisTimeshift() {
         EmployeeUserId = "<id>",
     },
@@ -2590,20 +2590,20 @@ UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     Id = "<id>",
 };
 
-var res = await sdk.Hris.UpdateHrisTimeshiftAsync(req);
+var res = await sdk.Hris.UpdateHrisTimeshift2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [UpdateHrisTimeshiftRequest](../../Models/Requests/UpdateHrisTimeshiftRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateHrisTimeshift2Request](../../Models/Requests/UpdateHrisTimeshift2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateHrisTimeshiftResponse](../../Models/Requests/UpdateHrisTimeshiftResponse.md)**
+**[UpdateHrisTimeshift2Response](../../Models/Requests/UpdateHrisTimeshift2Response.md)**
 
 ### Errors
 

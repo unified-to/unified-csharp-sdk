@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetSigningTemplate](#getsigningtemplate) - Retrieve a template
-* [ListSigningTemplates](#listsigningtemplates) - List all templates
+* [GetSigningTemplate2](#getsigningtemplate2) - Retrieve a template
+* [ListSigningTemplates2](#listsigningtemplates2) - List all templates
 
-## GetSigningTemplate
+## GetSigningTemplate2
 
 Retrieve a template
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Template.GetSigningTemplateAsync(
+var res = await sdk.Template.GetSigningTemplate2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Template.GetSigningTemplateAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Template                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetSigningTemplateQueryParamFields](../../Models/Requests/GetSigningTemplateQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetSigningTemplate2QueryParamFields](../../Models/Requests/GetSigningTemplate2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetSigningTemplateResponse](../../Models/Requests/GetSigningTemplateResponse.md)**
+**[GetSigningTemplate2Response](../../Models/Requests/GetSigningTemplate2Response.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Template.GetSigningTemplateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListSigningTemplates
+## ListSigningTemplates2
 
 List all templates
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListSigningTemplatesRequest req = new ListSigningTemplatesRequest() {
+ListSigningTemplates2Request req = new ListSigningTemplates2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Template.ListSigningTemplatesAsync(req);
+var res = await sdk.Template.ListSigningTemplates2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListSigningTemplatesRequest](../../Models/Requests/ListSigningTemplatesRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListSigningTemplates2Request](../../Models/Requests/ListSigningTemplates2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListSigningTemplatesResponse](../../Models/Requests/ListSigningTemplatesResponse.md)**
+**[ListSigningTemplates2Response](../../Models/Requests/ListSigningTemplates2Response.md)**
 
 ### Errors
 

@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateHrisDeduction](#createhrisdeduction) - Create a deduction
-* [GetHrisDeduction](#gethrisdeduction) - Retrieve a deduction
-* [ListHrisDeductions](#listhrisdeductions) - List all deductions
-* [PatchHrisDeduction](#patchhrisdeduction) - Update a deduction
-* [RemoveHrisDeduction](#removehrisdeduction) - Remove a deduction
-* [UpdateHrisDeduction](#updatehrisdeduction) - Update a deduction
+* [CreateHrisDeduction2](#createhrisdeduction2) - Create a deduction
+* [GetHrisDeduction2](#gethrisdeduction2) - Retrieve a deduction
+* [ListHrisDeductions2](#listhrisdeductions2) - List all deductions
+* [PatchHrisDeduction2](#patchhrisdeduction2) - Update a deduction
+* [RemoveHrisDeduction2](#removehrisdeduction2) - Remove a deduction
+* [UpdateHrisDeduction2](#updatehrisdeduction2) - Update a deduction
 
-## CreateHrisDeduction
+## CreateHrisDeduction2
 
 Create a deduction
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Deduction.CreateHrisDeductionAsync(
+var res = await sdk.Deduction.CreateHrisDeduction2Async(
     hrisDeduction: new HrisDeduction() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Deduction.CreateHrisDeductionAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisDeduction`                                                                                                                                  | [HrisDeduction](../../Models/Components/HrisDeduction.md)                                                                                        | :heavy_check_mark:                                                                                                                               | Employee-specific deduction/benefit enrolment.                                                                                                   |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisDeductionQueryParamFields](../../Models/Requests/CreateHrisDeductionQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisDeduction2QueryParamFields](../../Models/Requests/CreateHrisDeduction2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisDeductionResponse](../../Models/Requests/CreateHrisDeductionResponse.md)**
+**[CreateHrisDeduction2Response](../../Models/Requests/CreateHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Deduction.CreateHrisDeductionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisDeduction
+## GetHrisDeduction2
 
 Retrieve a deduction
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Deduction.GetHrisDeductionAsync(
+var res = await sdk.Deduction.GetHrisDeduction2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Deduction.GetHrisDeductionAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Deduction                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetHrisDeductionQueryParamFields](../../Models/Requests/GetHrisDeductionQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisDeduction2QueryParamFields](../../Models/Requests/GetHrisDeduction2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisDeductionResponse](../../Models/Requests/GetHrisDeductionResponse.md)**
+**[GetHrisDeduction2Response](../../Models/Requests/GetHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Deduction.GetHrisDeductionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisDeductions
+## ListHrisDeductions2
 
 List all deductions
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisDeductionsRequest req = new ListHrisDeductionsRequest() {
+ListHrisDeductions2Request req = new ListHrisDeductions2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Deduction.ListHrisDeductionsAsync(req);
+var res = await sdk.Deduction.ListHrisDeductions2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListHrisDeductionsRequest](../../Models/Requests/ListHrisDeductionsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListHrisDeductions2Request](../../Models/Requests/ListHrisDeductions2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListHrisDeductionsResponse](../../Models/Requests/ListHrisDeductionsResponse.md)**
+**[ListHrisDeductions2Response](../../Models/Requests/ListHrisDeductions2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Deduction.ListHrisDeductionsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisDeduction
+## PatchHrisDeduction2
 
 Update a deduction
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
+PatchHrisDeduction2Request req = new PatchHrisDeduction2Request() {
     HrisDeduction = new HrisDeduction() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Deduction.PatchHrisDeductionAsync(req);
+var res = await sdk.Deduction.PatchHrisDeduction2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [PatchHrisDeductionRequest](../../Models/Requests/PatchHrisDeductionRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchHrisDeduction2Request](../../Models/Requests/PatchHrisDeduction2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchHrisDeductionResponse](../../Models/Requests/PatchHrisDeductionResponse.md)**
+**[PatchHrisDeduction2Response](../../Models/Requests/PatchHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Deduction.PatchHrisDeductionAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisDeduction
+## RemoveHrisDeduction2
 
 Remove a deduction
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Deduction.RemoveHrisDeductionAsync(
+var res = await sdk.Deduction.RemoveHrisDeduction2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Deduction.RemoveHrisDeductionAsync(
 
 ### Response
 
-**[RemoveHrisDeductionResponse](../../Models/Requests/RemoveHrisDeductionResponse.md)**
+**[RemoveHrisDeduction2Response](../../Models/Requests/RemoveHrisDeduction2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Deduction.RemoveHrisDeductionAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisDeduction
+## UpdateHrisDeduction2
 
 Update a deduction
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
+UpdateHrisDeduction2Request req = new UpdateHrisDeduction2Request() {
     HrisDeduction = new HrisDeduction() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Deduction.UpdateHrisDeductionAsync(req);
+var res = await sdk.Deduction.UpdateHrisDeduction2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [UpdateHrisDeductionRequest](../../Models/Requests/UpdateHrisDeductionRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateHrisDeduction2Request](../../Models/Requests/UpdateHrisDeduction2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateHrisDeductionResponse](../../Models/Requests/UpdateHrisDeductionResponse.md)**
+**[UpdateHrisDeduction2Response](../../Models/Requests/UpdateHrisDeduction2Response.md)**
 
 ### Errors
 

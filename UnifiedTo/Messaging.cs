@@ -28,59 +28,59 @@ namespace UnifiedTo
         /// <summary>
         /// Create a message
         /// </summary>
-        Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<CreateMessagingMessageQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateMessagingMessage2Response> CreateMessagingMessage2Async(MessagingMessage messagingMessage, string connectionId, List<CreateMessagingMessage2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a channel
         /// </summary>
-        Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<GetMessagingChannelQueryParamFields>? fields = null, string? raw = null);
+        Task<GetMessagingChannel2Response> GetMessagingChannel2Async(string connectionId, string id, List<GetMessagingChannel2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a message
         /// </summary>
-        Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<GetMessagingMessageQueryParamFields>? fields = null, string? raw = null);
+        Task<GetMessagingMessage2Response> GetMessagingMessage2Async(string connectionId, string id, List<GetMessagingMessage2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all channels
         /// </summary>
-        Task<ListMessagingChannelsResponse> ListMessagingChannelsAsync(ListMessagingChannelsRequest request);
+        Task<ListMessagingChannels2Response> ListMessagingChannels2Async(ListMessagingChannels2Request request);
 
         /// <summary>
         /// List all messages
         /// </summary>
-        Task<ListMessagingMessagesResponse> ListMessagingMessagesAsync(ListMessagingMessagesRequest request);
+        Task<ListMessagingMessages2Response> ListMessagingMessages2Async(ListMessagingMessages2Request request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<PatchMessagingEventResponse> PatchMessagingEventAsync(PatchMessagingEventRequest request);
+        Task<PatchMessagingEvent2Response> PatchMessagingEvent2Async(PatchMessagingEvent2Request request);
 
         /// <summary>
         /// Update a message
         /// </summary>
-        Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(PatchMessagingMessageRequest request);
+        Task<PatchMessagingMessage2Response> PatchMessagingMessage2Async(PatchMessagingMessage2Request request);
 
         /// <summary>
         /// Remove a message
         /// </summary>
-        Task<RemoveMessagingMessageResponse> RemoveMessagingMessageAsync(string connectionId, string id);
+        Task<RemoveMessagingMessage2Response> RemoveMessagingMessage2Async(string connectionId, string id);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<UpdateMessagingEventResponse> UpdateMessagingEventAsync(UpdateMessagingEventRequest request);
+        Task<UpdateMessagingEvent2Response> UpdateMessagingEvent2Async(UpdateMessagingEvent2Request request);
 
         /// <summary>
         /// Update a message
         /// </summary>
-        Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(UpdateMessagingMessageRequest request);
+        Task<UpdateMessagingMessage2Response> UpdateMessagingMessage2Async(UpdateMessagingMessage2Request request);
     }
 
     public class Messaging: IMessaging
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -89,9 +89,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<CreateMessagingMessageQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateMessagingMessage2Response> CreateMessagingMessage2Async(MessagingMessage messagingMessage, string connectionId, List<CreateMessagingMessage2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateMessagingMessageRequest()
+            var request = new CreateMessagingMessage2Request()
             {
                 MessagingMessage = messagingMessage,
                 ConnectionId = connectionId,
@@ -115,7 +115,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createMessagingMessage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createMessagingMessage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -156,7 +156,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingMessage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateMessagingMessageResponse()
+                    var response = new CreateMessagingMessage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -180,9 +180,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<GetMessagingChannelQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetMessagingChannel2Response> GetMessagingChannel2Async(string connectionId, string id, List<GetMessagingChannel2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetMessagingChannelRequest()
+            var request = new GetMessagingChannel2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -200,7 +200,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMessagingChannel", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMessagingChannel2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -241,7 +241,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingChannel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetMessagingChannelResponse()
+                    var response = new GetMessagingChannel2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -265,9 +265,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<GetMessagingMessageQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetMessagingMessage2Response> GetMessagingMessage2Async(string connectionId, string id, List<GetMessagingMessage2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetMessagingMessageRequest()
+            var request = new GetMessagingMessage2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -285,7 +285,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMessagingMessage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMessagingMessage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -326,7 +326,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingMessage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetMessagingMessageResponse()
+                    var response = new GetMessagingMessage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -350,7 +350,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListMessagingChannelsResponse> ListMessagingChannelsAsync(ListMessagingChannelsRequest request)
+        public async Task<ListMessagingChannels2Response> ListMessagingChannels2Async(ListMessagingChannels2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/channel", request);
@@ -363,7 +363,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMessagingChannels", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMessagingChannels2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -404,7 +404,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<MessagingChannel>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListMessagingChannelsResponse()
+                    var response = new ListMessagingChannels2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -428,7 +428,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListMessagingMessagesResponse> ListMessagingMessagesAsync(ListMessagingMessagesRequest request)
+        public async Task<ListMessagingMessages2Response> ListMessagingMessages2Async(ListMessagingMessages2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message", request);
@@ -441,7 +441,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMessagingMessages", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMessagingMessages2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -482,7 +482,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<MessagingMessage>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListMessagingMessagesResponse()
+                    var response = new ListMessagingMessages2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -506,7 +506,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchMessagingEventResponse> PatchMessagingEventAsync(PatchMessagingEventRequest request)
+        public async Task<PatchMessagingEvent2Response> PatchMessagingEvent2Async(PatchMessagingEvent2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/event/{id}", request);
@@ -525,7 +525,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMessagingEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMessagingEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -566,7 +566,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchMessagingEventResponse()
+                    var response = new PatchMessagingEvent2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -590,7 +590,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(PatchMessagingMessageRequest request)
+        public async Task<PatchMessagingMessage2Response> PatchMessagingMessage2Async(PatchMessagingMessage2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message/{id}", request);
@@ -609,7 +609,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMessagingMessage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMessagingMessage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -650,7 +650,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingMessage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchMessagingMessageResponse()
+                    var response = new PatchMessagingMessage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -674,9 +674,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveMessagingMessageResponse> RemoveMessagingMessageAsync(string connectionId, string id)
+        public async Task<RemoveMessagingMessage2Response> RemoveMessagingMessage2Async(string connectionId, string id)
         {
-            var request = new RemoveMessagingMessageRequest()
+            var request = new RemoveMessagingMessage2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -692,7 +692,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeMessagingMessage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeMessagingMessage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -730,7 +730,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveMessagingMessageResponse()
+                return new RemoveMessagingMessage2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -747,7 +747,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveMessagingMessageResponse()
+                return new RemoveMessagingMessage2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -756,7 +756,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateMessagingEventResponse> UpdateMessagingEventAsync(UpdateMessagingEventRequest request)
+        public async Task<UpdateMessagingEvent2Response> UpdateMessagingEvent2Async(UpdateMessagingEvent2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/event/{id}", request);
@@ -775,7 +775,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMessagingEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMessagingEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -816,7 +816,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateMessagingEventResponse()
+                    var response = new UpdateMessagingEvent2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -840,7 +840,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(UpdateMessagingMessageRequest request)
+        public async Task<UpdateMessagingMessage2Response> UpdateMessagingMessage2Async(UpdateMessagingMessage2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message/{id}", request);
@@ -859,7 +859,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMessagingMessage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMessagingMessage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -900,7 +900,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingMessage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateMessagingMessageResponse()
+                    var response = new UpdateMessagingMessage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

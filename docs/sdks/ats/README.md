@@ -5,57 +5,57 @@
 
 ### Available Operations
 
-* [CreateAtsActivity](#createatsactivity) - Create an activity
-* [CreateAtsApplication](#createatsapplication) - Create an application
-* [CreateAtsCandidate](#createatscandidate) - Create a candidate
-* [CreateAtsCompany](#createatscompany) - Create a company
-* [CreateAtsDocument](#createatsdocument) - Create a document
-* [CreateAtsInterview](#createatsinterview) - Create an interview
-* [CreateAtsJob](#createatsjob) - Create a job
-* [CreateAtsScorecard](#createatsscorecard) - Create a scorecard
-* [GetAtsActivity](#getatsactivity) - Retrieve an activity
-* [GetAtsApplication](#getatsapplication) - Retrieve an application
-* [GetAtsCandidate](#getatscandidate) - Retrieve a candidate
-* [GetAtsCompany](#getatscompany) - Retrieve a company
-* [GetAtsDocument](#getatsdocument) - Retrieve a document
-* [GetAtsInterview](#getatsinterview) - Retrieve an interview
-* [GetAtsJob](#getatsjob) - Retrieve a job
-* [GetAtsScorecard](#getatsscorecard) - Retrieve a scorecard
-* [ListAtsActivities](#listatsactivities) - List all activities
-* [ListAtsApplications](#listatsapplications) - List all applications
-* [ListAtsApplicationstatuses](#listatsapplicationstatuses) - List all applicationstatuses
-* [ListAtsCandidates](#listatscandidates) - List all candidates
-* [ListAtsCompanies](#listatscompanies) - List all companies
-* [ListAtsDocuments](#listatsdocuments) - List all documents
-* [ListAtsInterviews](#listatsinterviews) - List all interviews
-* [ListAtsJobs](#listatsjobs) - List all jobs
-* [ListAtsScorecards](#listatsscorecards) - List all scorecards
-* [PatchAtsActivity](#patchatsactivity) - Update an activity
-* [PatchAtsApplication](#patchatsapplication) - Update an application
-* [PatchAtsCandidate](#patchatscandidate) - Update a candidate
-* [PatchAtsCompany](#patchatscompany) - Update a company
-* [PatchAtsDocument](#patchatsdocument) - Update a document
-* [PatchAtsInterview](#patchatsinterview) - Update an interview
-* [PatchAtsJob](#patchatsjob) - Update a job
-* [PatchAtsScorecard](#patchatsscorecard) - Update a scorecard
-* [RemoveAtsActivity](#removeatsactivity) - Remove an activity
-* [RemoveAtsApplication](#removeatsapplication) - Remove an application
-* [RemoveAtsCandidate](#removeatscandidate) - Remove a candidate
-* [RemoveAtsCompany](#removeatscompany) - Remove a company
-* [RemoveAtsDocument](#removeatsdocument) - Remove a document
-* [RemoveAtsInterview](#removeatsinterview) - Remove an interview
-* [RemoveAtsJob](#removeatsjob) - Remove a job
-* [RemoveAtsScorecard](#removeatsscorecard) - Remove a scorecard
-* [UpdateAtsActivity](#updateatsactivity) - Update an activity
-* [UpdateAtsApplication](#updateatsapplication) - Update an application
-* [UpdateAtsCandidate](#updateatscandidate) - Update a candidate
-* [UpdateAtsCompany](#updateatscompany) - Update a company
-* [UpdateAtsDocument](#updateatsdocument) - Update a document
-* [UpdateAtsInterview](#updateatsinterview) - Update an interview
-* [UpdateAtsJob](#updateatsjob) - Update a job
-* [UpdateAtsScorecard](#updateatsscorecard) - Update a scorecard
+* [CreateAtsActivity2](#createatsactivity2) - Create an activity
+* [CreateAtsApplication2](#createatsapplication2) - Create an application
+* [CreateAtsCandidate2](#createatscandidate2) - Create a candidate
+* [CreateAtsCompany2](#createatscompany2) - Create a company
+* [CreateAtsDocument2](#createatsdocument2) - Create a document
+* [CreateAtsInterview2](#createatsinterview2) - Create an interview
+* [CreateAtsJob2](#createatsjob2) - Create a job
+* [CreateAtsScorecard2](#createatsscorecard2) - Create a scorecard
+* [GetAtsActivity2](#getatsactivity2) - Retrieve an activity
+* [GetAtsApplication2](#getatsapplication2) - Retrieve an application
+* [GetAtsCandidate2](#getatscandidate2) - Retrieve a candidate
+* [GetAtsCompany2](#getatscompany2) - Retrieve a company
+* [GetAtsDocument2](#getatsdocument2) - Retrieve a document
+* [GetAtsInterview2](#getatsinterview2) - Retrieve an interview
+* [GetAtsJob2](#getatsjob2) - Retrieve a job
+* [GetAtsScorecard2](#getatsscorecard2) - Retrieve a scorecard
+* [ListAtsActivities2](#listatsactivities2) - List all activities
+* [ListAtsApplications2](#listatsapplications2) - List all applications
+* [ListAtsApplicationstatuses2](#listatsapplicationstatuses2) - List all applicationstatuses
+* [ListAtsCandidates2](#listatscandidates2) - List all candidates
+* [ListAtsCompanies2](#listatscompanies2) - List all companies
+* [ListAtsDocuments2](#listatsdocuments2) - List all documents
+* [ListAtsInterviews2](#listatsinterviews2) - List all interviews
+* [ListAtsJobs2](#listatsjobs2) - List all jobs
+* [ListAtsScorecards2](#listatsscorecards2) - List all scorecards
+* [PatchAtsActivity2](#patchatsactivity2) - Update an activity
+* [PatchAtsApplication2](#patchatsapplication2) - Update an application
+* [PatchAtsCandidate2](#patchatscandidate2) - Update a candidate
+* [PatchAtsCompany2](#patchatscompany2) - Update a company
+* [PatchAtsDocument2](#patchatsdocument2) - Update a document
+* [PatchAtsInterview2](#patchatsinterview2) - Update an interview
+* [PatchAtsJob2](#patchatsjob2) - Update a job
+* [PatchAtsScorecard2](#patchatsscorecard2) - Update a scorecard
+* [RemoveAtsActivity2](#removeatsactivity2) - Remove an activity
+* [RemoveAtsApplication2](#removeatsapplication2) - Remove an application
+* [RemoveAtsCandidate2](#removeatscandidate2) - Remove a candidate
+* [RemoveAtsCompany2](#removeatscompany2) - Remove a company
+* [RemoveAtsDocument2](#removeatsdocument2) - Remove a document
+* [RemoveAtsInterview2](#removeatsinterview2) - Remove an interview
+* [RemoveAtsJob2](#removeatsjob2) - Remove a job
+* [RemoveAtsScorecard2](#removeatsscorecard2) - Remove a scorecard
+* [UpdateAtsActivity2](#updateatsactivity2) - Update an activity
+* [UpdateAtsApplication2](#updateatsapplication2) - Update an application
+* [UpdateAtsCandidate2](#updateatscandidate2) - Update a candidate
+* [UpdateAtsCompany2](#updateatscompany2) - Update a company
+* [UpdateAtsDocument2](#updateatsdocument2) - Update a document
+* [UpdateAtsInterview2](#updateatsinterview2) - Update an interview
+* [UpdateAtsJob2](#updateatsjob2) - Update a job
+* [UpdateAtsScorecard2](#updateatsscorecard2) - Update a scorecard
 
-## CreateAtsActivity
+## CreateAtsActivity2
 
 Create an activity
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsActivityAsync(
+var res = await sdk.Ats.CreateAtsActivity2Async(
     atsActivity: new AtsActivity() {},
     connectionId: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsActivity`                                                                                                                                    | [AtsActivity](../../Models/Components/AtsActivity.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsActivityQueryParamFields](../../Models/Requests/CreateAtsActivityQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsActivity2QueryParamFields](../../Models/Requests/CreateAtsActivity2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsActivityResponse](../../Models/Requests/CreateAtsActivityResponse.md)**
+**[CreateAtsActivity2Response](../../Models/Requests/CreateAtsActivity2Response.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAtsApplication
+## CreateAtsApplication2
 
 Create an application
 
@@ -110,7 +110,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsApplicationAsync(
+var res = await sdk.Ats.CreateAtsApplication2Async(
     atsApplication: new AtsApplication() {},
     connectionId: "<id>"
 );
@@ -124,12 +124,12 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsApplication`                                                                                                                                 | [AtsApplication](../../Models/Components/AtsApplication.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsApplicationQueryParamFields](../../Models/Requests/CreateAtsApplicationQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsApplication2QueryParamFields](../../Models/Requests/CreateAtsApplication2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsApplicationResponse](../../Models/Requests/CreateAtsApplicationResponse.md)**
+**[CreateAtsApplication2Response](../../Models/Requests/CreateAtsApplication2Response.md)**
 
 ### Errors
 
@@ -137,7 +137,7 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAtsCandidate
+## CreateAtsCandidate2
 
 Create a candidate
 
@@ -151,7 +151,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsCandidateAsync(
+var res = await sdk.Ats.CreateAtsCandidate2Async(
     atsCandidate: new AtsCandidate() {},
     connectionId: "<id>"
 );
@@ -165,12 +165,12 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsCandidate`                                                                                                                                   | [AtsCandidate](../../Models/Components/AtsCandidate.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsCandidateQueryParamFields](../../Models/Requests/CreateAtsCandidateQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsCandidate2QueryParamFields](../../Models/Requests/CreateAtsCandidate2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsCandidateResponse](../../Models/Requests/CreateAtsCandidateResponse.md)**
+**[CreateAtsCandidate2Response](../../Models/Requests/CreateAtsCandidate2Response.md)**
 
 ### Errors
 
@@ -178,7 +178,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAtsCompany
+## CreateAtsCompany2
 
 Create a company
 
@@ -192,7 +192,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsCompanyAsync(
+var res = await sdk.Ats.CreateAtsCompany2Async(
     atsCompany: new AtsCompany() {},
     connectionId: "<id>"
 );
@@ -206,12 +206,12 @@ var res = await sdk.Ats.CreateAtsCompanyAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsCompany`                                                                                                                                     | [AtsCompany](../../Models/Components/AtsCompany.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsCompanyQueryParamFields](../../Models/Requests/CreateAtsCompanyQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsCompany2QueryParamFields](../../Models/Requests/CreateAtsCompany2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsCompanyResponse](../../Models/Requests/CreateAtsCompanyResponse.md)**
+**[CreateAtsCompany2Response](../../Models/Requests/CreateAtsCompany2Response.md)**
 
 ### Errors
 
@@ -219,7 +219,7 @@ var res = await sdk.Ats.CreateAtsCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAtsDocument
+## CreateAtsDocument2
 
 Create a document
 
@@ -233,7 +233,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsDocumentAsync(
+var res = await sdk.Ats.CreateAtsDocument2Async(
     atsDocument: new AtsDocument() {},
     connectionId: "<id>"
 );
@@ -247,12 +247,12 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsDocument`                                                                                                                                    | [AtsDocument](../../Models/Components/AtsDocument.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsDocumentQueryParamFields](../../Models/Requests/CreateAtsDocumentQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsDocument2QueryParamFields](../../Models/Requests/CreateAtsDocument2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsDocumentResponse](../../Models/Requests/CreateAtsDocumentResponse.md)**
+**[CreateAtsDocument2Response](../../Models/Requests/CreateAtsDocument2Response.md)**
 
 ### Errors
 
@@ -260,7 +260,7 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAtsInterview
+## CreateAtsInterview2
 
 Create an interview
 
@@ -274,7 +274,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsInterviewAsync(
+var res = await sdk.Ats.CreateAtsInterview2Async(
     atsInterview: new AtsInterview() {},
     connectionId: "<id>"
 );
@@ -288,12 +288,12 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsInterview`                                                                                                                                   | [AtsInterview](../../Models/Components/AtsInterview.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsInterviewQueryParamFields](../../Models/Requests/CreateAtsInterviewQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsInterview2QueryParamFields](../../Models/Requests/CreateAtsInterview2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsInterviewResponse](../../Models/Requests/CreateAtsInterviewResponse.md)**
+**[CreateAtsInterview2Response](../../Models/Requests/CreateAtsInterview2Response.md)**
 
 ### Errors
 
@@ -301,7 +301,7 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAtsJob
+## CreateAtsJob2
 
 Create a job
 
@@ -315,7 +315,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsJobAsync(
+var res = await sdk.Ats.CreateAtsJob2Async(
     atsJob: new AtsJob() {},
     connectionId: "<id>"
 );
@@ -329,12 +329,12 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsJob`                                                                                                                                         | [AtsJob](../../Models/Components/AtsJob.md)                                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsJobQueryParamFields](../../Models/Requests/CreateAtsJobQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsJob2QueryParamFields](../../Models/Requests/CreateAtsJob2QueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsJobResponse](../../Models/Requests/CreateAtsJobResponse.md)**
+**[CreateAtsJob2Response](../../Models/Requests/CreateAtsJob2Response.md)**
 
 ### Errors
 
@@ -342,7 +342,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAtsScorecard
+## CreateAtsScorecard2
 
 Create a scorecard
 
@@ -356,7 +356,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.CreateAtsScorecardAsync(
+var res = await sdk.Ats.CreateAtsScorecard2Async(
     atsScorecard: new AtsScorecard() {},
     connectionId: "<id>"
 );
@@ -370,12 +370,12 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsScorecard`                                                                                                                                   | [AtsScorecard](../../Models/Components/AtsScorecard.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsScorecardQueryParamFields](../../Models/Requests/CreateAtsScorecardQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsScorecard2QueryParamFields](../../Models/Requests/CreateAtsScorecard2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsScorecardResponse](../../Models/Requests/CreateAtsScorecardResponse.md)**
+**[CreateAtsScorecard2Response](../../Models/Requests/CreateAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -383,7 +383,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsActivity
+## GetAtsActivity2
 
 Retrieve an activity
 
@@ -397,7 +397,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsActivityAsync(
+var res = await sdk.Ats.GetAtsActivity2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -411,12 +411,12 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Activity                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAtsActivityQueryParamFields](../../Models/Requests/GetAtsActivityQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsActivity2QueryParamFields](../../Models/Requests/GetAtsActivity2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsActivityResponse](../../Models/Requests/GetAtsActivityResponse.md)**
+**[GetAtsActivity2Response](../../Models/Requests/GetAtsActivity2Response.md)**
 
 ### Errors
 
@@ -424,7 +424,7 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsApplication
+## GetAtsApplication2
 
 Retrieve an application
 
@@ -438,7 +438,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsApplicationAsync(
+var res = await sdk.Ats.GetAtsApplication2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -452,12 +452,12 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Application                                                                                                                            |
-| `Fields`                                                                                                                                         | List<[GetAtsApplicationQueryParamFields](../../Models/Requests/GetAtsApplicationQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsApplication2QueryParamFields](../../Models/Requests/GetAtsApplication2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsApplicationResponse](../../Models/Requests/GetAtsApplicationResponse.md)**
+**[GetAtsApplication2Response](../../Models/Requests/GetAtsApplication2Response.md)**
 
 ### Errors
 
@@ -465,7 +465,7 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsCandidate
+## GetAtsCandidate2
 
 Retrieve a candidate
 
@@ -479,7 +479,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsCandidateAsync(
+var res = await sdk.Ats.GetAtsCandidate2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -493,12 +493,12 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Candidate                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetAtsCandidateQueryParamFields](../../Models/Requests/GetAtsCandidateQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsCandidate2QueryParamFields](../../Models/Requests/GetAtsCandidate2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsCandidateResponse](../../Models/Requests/GetAtsCandidateResponse.md)**
+**[GetAtsCandidate2Response](../../Models/Requests/GetAtsCandidate2Response.md)**
 
 ### Errors
 
@@ -506,7 +506,7 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsCompany
+## GetAtsCompany2
 
 Retrieve a company
 
@@ -520,7 +520,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsCompanyAsync(
+var res = await sdk.Ats.GetAtsCompany2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -534,12 +534,12 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Company                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetAtsCompanyQueryParamFields](../../Models/Requests/GetAtsCompanyQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsCompany2QueryParamFields](../../Models/Requests/GetAtsCompany2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsCompanyResponse](../../Models/Requests/GetAtsCompanyResponse.md)**
+**[GetAtsCompany2Response](../../Models/Requests/GetAtsCompany2Response.md)**
 
 ### Errors
 
@@ -547,7 +547,7 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsDocument
+## GetAtsDocument2
 
 Retrieve a document
 
@@ -561,7 +561,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsDocumentAsync(
+var res = await sdk.Ats.GetAtsDocument2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -575,12 +575,12 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Document                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAtsDocumentQueryParamFields](../../Models/Requests/GetAtsDocumentQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsDocument2QueryParamFields](../../Models/Requests/GetAtsDocument2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsDocumentResponse](../../Models/Requests/GetAtsDocumentResponse.md)**
+**[GetAtsDocument2Response](../../Models/Requests/GetAtsDocument2Response.md)**
 
 ### Errors
 
@@ -588,7 +588,7 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsInterview
+## GetAtsInterview2
 
 Retrieve an interview
 
@@ -602,7 +602,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsInterviewAsync(
+var res = await sdk.Ats.GetAtsInterview2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -616,12 +616,12 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Interview                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetAtsInterviewQueryParamFields](../../Models/Requests/GetAtsInterviewQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsInterview2QueryParamFields](../../Models/Requests/GetAtsInterview2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsInterviewResponse](../../Models/Requests/GetAtsInterviewResponse.md)**
+**[GetAtsInterview2Response](../../Models/Requests/GetAtsInterview2Response.md)**
 
 ### Errors
 
@@ -629,7 +629,7 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsJob
+## GetAtsJob2
 
 Retrieve a job
 
@@ -643,7 +643,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsJobAsync(
+var res = await sdk.Ats.GetAtsJob2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -657,12 +657,12 @@ var res = await sdk.Ats.GetAtsJobAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Job                                                                                                                                    |
-| `Fields`                                                                                                                                         | List<[GetAtsJobQueryParamFields](../../Models/Requests/GetAtsJobQueryParamFields.md)>                                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsJob2QueryParamFields](../../Models/Requests/GetAtsJob2QueryParamFields.md)>                                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsJobResponse](../../Models/Requests/GetAtsJobResponse.md)**
+**[GetAtsJob2Response](../../Models/Requests/GetAtsJob2Response.md)**
 
 ### Errors
 
@@ -670,7 +670,7 @@ var res = await sdk.Ats.GetAtsJobAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsScorecard
+## GetAtsScorecard2
 
 Retrieve a scorecard
 
@@ -684,7 +684,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.GetAtsScorecardAsync(
+var res = await sdk.Ats.GetAtsScorecard2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -698,12 +698,12 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Scorecard                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetAtsScorecardQueryParamFields](../../Models/Requests/GetAtsScorecardQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsScorecard2QueryParamFields](../../Models/Requests/GetAtsScorecard2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsScorecardResponse](../../Models/Requests/GetAtsScorecardResponse.md)**
+**[GetAtsScorecard2Response](../../Models/Requests/GetAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -711,7 +711,7 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsActivities
+## ListAtsActivities2
 
 List all activities
 
@@ -726,24 +726,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsActivitiesRequest req = new ListAtsActivitiesRequest() {
+ListAtsActivities2Request req = new ListAtsActivities2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsActivitiesAsync(req);
+var res = await sdk.Ats.ListAtsActivities2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAtsActivitiesRequest](../../Models/Requests/ListAtsActivitiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListAtsActivities2Request](../../Models/Requests/ListAtsActivities2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
+**[ListAtsActivities2Response](../../Models/Requests/ListAtsActivities2Response.md)**
 
 ### Errors
 
@@ -751,7 +751,7 @@ var res = await sdk.Ats.ListAtsActivitiesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsApplications
+## ListAtsApplications2
 
 List all applications
 
@@ -766,24 +766,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsApplicationsRequest req = new ListAtsApplicationsRequest() {
+ListAtsApplications2Request req = new ListAtsApplications2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsApplicationsAsync(req);
+var res = await sdk.Ats.ListAtsApplications2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListAtsApplicationsRequest](../../Models/Requests/ListAtsApplicationsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListAtsApplications2Request](../../Models/Requests/ListAtsApplications2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListAtsApplicationsResponse](../../Models/Requests/ListAtsApplicationsResponse.md)**
+**[ListAtsApplications2Response](../../Models/Requests/ListAtsApplications2Response.md)**
 
 ### Errors
 
@@ -791,7 +791,7 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsApplicationstatuses
+## ListAtsApplicationstatuses2
 
 List all applicationstatuses
 
@@ -806,24 +806,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
+ListAtsApplicationstatuses2Request req = new ListAtsApplicationstatuses2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
+var res = await sdk.Ats.ListAtsApplicationstatuses2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [ListAtsApplicationstatusesRequest](../../Models/Requests/ListAtsApplicationstatusesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListAtsApplicationstatuses2Request](../../Models/Requests/ListAtsApplicationstatuses2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[ListAtsApplicationstatusesResponse](../../Models/Requests/ListAtsApplicationstatusesResponse.md)**
+**[ListAtsApplicationstatuses2Response](../../Models/Requests/ListAtsApplicationstatuses2Response.md)**
 
 ### Errors
 
@@ -831,7 +831,7 @@ var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsCandidates
+## ListAtsCandidates2
 
 List all candidates
 
@@ -846,24 +846,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsCandidatesRequest req = new ListAtsCandidatesRequest() {
+ListAtsCandidates2Request req = new ListAtsCandidates2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsCandidatesAsync(req);
+var res = await sdk.Ats.ListAtsCandidates2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAtsCandidatesRequest](../../Models/Requests/ListAtsCandidatesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListAtsCandidates2Request](../../Models/Requests/ListAtsCandidates2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListAtsCandidatesResponse](../../Models/Requests/ListAtsCandidatesResponse.md)**
+**[ListAtsCandidates2Response](../../Models/Requests/ListAtsCandidates2Response.md)**
 
 ### Errors
 
@@ -871,7 +871,7 @@ var res = await sdk.Ats.ListAtsCandidatesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsCompanies
+## ListAtsCompanies2
 
 List all companies
 
@@ -886,24 +886,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
+ListAtsCompanies2Request req = new ListAtsCompanies2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsCompaniesAsync(req);
+var res = await sdk.Ats.ListAtsCompanies2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListAtsCompaniesRequest](../../Models/Requests/ListAtsCompaniesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListAtsCompanies2Request](../../Models/Requests/ListAtsCompanies2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListAtsCompaniesResponse](../../Models/Requests/ListAtsCompaniesResponse.md)**
+**[ListAtsCompanies2Response](../../Models/Requests/ListAtsCompanies2Response.md)**
 
 ### Errors
 
@@ -911,7 +911,7 @@ var res = await sdk.Ats.ListAtsCompaniesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsDocuments
+## ListAtsDocuments2
 
 List all documents
 
@@ -926,24 +926,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsDocumentsRequest req = new ListAtsDocumentsRequest() {
+ListAtsDocuments2Request req = new ListAtsDocuments2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsDocumentsAsync(req);
+var res = await sdk.Ats.ListAtsDocuments2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListAtsDocumentsRequest](../../Models/Requests/ListAtsDocumentsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListAtsDocuments2Request](../../Models/Requests/ListAtsDocuments2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListAtsDocumentsResponse](../../Models/Requests/ListAtsDocumentsResponse.md)**
+**[ListAtsDocuments2Response](../../Models/Requests/ListAtsDocuments2Response.md)**
 
 ### Errors
 
@@ -951,7 +951,7 @@ var res = await sdk.Ats.ListAtsDocumentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsInterviews
+## ListAtsInterviews2
 
 List all interviews
 
@@ -966,24 +966,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsInterviewsRequest req = new ListAtsInterviewsRequest() {
+ListAtsInterviews2Request req = new ListAtsInterviews2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsInterviewsAsync(req);
+var res = await sdk.Ats.ListAtsInterviews2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAtsInterviewsRequest](../../Models/Requests/ListAtsInterviewsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListAtsInterviews2Request](../../Models/Requests/ListAtsInterviews2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListAtsInterviewsResponse](../../Models/Requests/ListAtsInterviewsResponse.md)**
+**[ListAtsInterviews2Response](../../Models/Requests/ListAtsInterviews2Response.md)**
 
 ### Errors
 
@@ -991,7 +991,7 @@ var res = await sdk.Ats.ListAtsInterviewsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsJobs
+## ListAtsJobs2
 
 List all jobs
 
@@ -1006,24 +1006,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsJobsRequest req = new ListAtsJobsRequest() {
+ListAtsJobs2Request req = new ListAtsJobs2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsJobsAsync(req);
+var res = await sdk.Ats.ListAtsJobs2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `request`                                                         | [ListAtsJobsRequest](../../Models/Requests/ListAtsJobsRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListAtsJobs2Request](../../Models/Requests/ListAtsJobs2Request.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
-**[ListAtsJobsResponse](../../Models/Requests/ListAtsJobsResponse.md)**
+**[ListAtsJobs2Response](../../Models/Requests/ListAtsJobs2Response.md)**
 
 ### Errors
 
@@ -1031,7 +1031,7 @@ var res = await sdk.Ats.ListAtsJobsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsScorecards
+## ListAtsScorecards2
 
 List all scorecards
 
@@ -1046,24 +1046,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsScorecardsRequest req = new ListAtsScorecardsRequest() {
+ListAtsScorecards2Request req = new ListAtsScorecards2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ats.ListAtsScorecardsAsync(req);
+var res = await sdk.Ats.ListAtsScorecards2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAtsScorecardsRequest](../../Models/Requests/ListAtsScorecardsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListAtsScorecards2Request](../../Models/Requests/ListAtsScorecards2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListAtsScorecardsResponse](../../Models/Requests/ListAtsScorecardsResponse.md)**
+**[ListAtsScorecards2Response](../../Models/Requests/ListAtsScorecards2Response.md)**
 
 ### Errors
 
@@ -1071,7 +1071,7 @@ var res = await sdk.Ats.ListAtsScorecardsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsActivity
+## PatchAtsActivity2
 
 Update an activity
 
@@ -1086,26 +1086,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
+PatchAtsActivity2Request req = new PatchAtsActivity2Request() {
     AtsActivity = new AtsActivity() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsActivityAsync(req);
+var res = await sdk.Ats.PatchAtsActivity2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchAtsActivityRequest](../../Models/Requests/PatchAtsActivityRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchAtsActivity2Request](../../Models/Requests/PatchAtsActivity2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchAtsActivityResponse](../../Models/Requests/PatchAtsActivityResponse.md)**
+**[PatchAtsActivity2Response](../../Models/Requests/PatchAtsActivity2Response.md)**
 
 ### Errors
 
@@ -1113,7 +1113,7 @@ var res = await sdk.Ats.PatchAtsActivityAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsApplication
+## PatchAtsApplication2
 
 Update an application
 
@@ -1128,26 +1128,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
+PatchAtsApplication2Request req = new PatchAtsApplication2Request() {
     AtsApplication = new AtsApplication() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsApplicationAsync(req);
+var res = await sdk.Ats.PatchAtsApplication2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchAtsApplicationRequest](../../Models/Requests/PatchAtsApplicationRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchAtsApplication2Request](../../Models/Requests/PatchAtsApplication2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchAtsApplicationResponse](../../Models/Requests/PatchAtsApplicationResponse.md)**
+**[PatchAtsApplication2Response](../../Models/Requests/PatchAtsApplication2Response.md)**
 
 ### Errors
 
@@ -1155,7 +1155,7 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsCandidate
+## PatchAtsCandidate2
 
 Update a candidate
 
@@ -1170,26 +1170,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
+PatchAtsCandidate2Request req = new PatchAtsCandidate2Request() {
     AtsCandidate = new AtsCandidate() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsCandidateAsync(req);
+var res = await sdk.Ats.PatchAtsCandidate2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAtsCandidateRequest](../../Models/Requests/PatchAtsCandidateRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchAtsCandidate2Request](../../Models/Requests/PatchAtsCandidate2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchAtsCandidateResponse](../../Models/Requests/PatchAtsCandidateResponse.md)**
+**[PatchAtsCandidate2Response](../../Models/Requests/PatchAtsCandidate2Response.md)**
 
 ### Errors
 
@@ -1197,7 +1197,7 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsCompany
+## PatchAtsCompany2
 
 Update a company
 
@@ -1212,26 +1212,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
+PatchAtsCompany2Request req = new PatchAtsCompany2Request() {
     AtsCompany = new AtsCompany() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsCompanyAsync(req);
+var res = await sdk.Ats.PatchAtsCompany2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [PatchAtsCompanyRequest](../../Models/Requests/PatchAtsCompanyRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchAtsCompany2Request](../../Models/Requests/PatchAtsCompany2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchAtsCompanyResponse](../../Models/Requests/PatchAtsCompanyResponse.md)**
+**[PatchAtsCompany2Response](../../Models/Requests/PatchAtsCompany2Response.md)**
 
 ### Errors
 
@@ -1239,7 +1239,7 @@ var res = await sdk.Ats.PatchAtsCompanyAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsDocument
+## PatchAtsDocument2
 
 Update a document
 
@@ -1254,26 +1254,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
+PatchAtsDocument2Request req = new PatchAtsDocument2Request() {
     AtsDocument = new AtsDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsDocumentAsync(req);
+var res = await sdk.Ats.PatchAtsDocument2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchAtsDocumentRequest](../../Models/Requests/PatchAtsDocumentRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchAtsDocument2Request](../../Models/Requests/PatchAtsDocument2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchAtsDocumentResponse](../../Models/Requests/PatchAtsDocumentResponse.md)**
+**[PatchAtsDocument2Response](../../Models/Requests/PatchAtsDocument2Response.md)**
 
 ### Errors
 
@@ -1281,7 +1281,7 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsInterview
+## PatchAtsInterview2
 
 Update an interview
 
@@ -1296,26 +1296,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
+PatchAtsInterview2Request req = new PatchAtsInterview2Request() {
     AtsInterview = new AtsInterview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsInterviewAsync(req);
+var res = await sdk.Ats.PatchAtsInterview2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAtsInterviewRequest](../../Models/Requests/PatchAtsInterviewRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchAtsInterview2Request](../../Models/Requests/PatchAtsInterview2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchAtsInterviewResponse](../../Models/Requests/PatchAtsInterviewResponse.md)**
+**[PatchAtsInterview2Response](../../Models/Requests/PatchAtsInterview2Response.md)**
 
 ### Errors
 
@@ -1323,7 +1323,7 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsJob
+## PatchAtsJob2
 
 Update a job
 
@@ -1338,26 +1338,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsJobRequest req = new PatchAtsJobRequest() {
+PatchAtsJob2Request req = new PatchAtsJob2Request() {
     AtsJob = new AtsJob() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsJobAsync(req);
+var res = await sdk.Ats.PatchAtsJob2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `request`                                                         | [PatchAtsJobRequest](../../Models/Requests/PatchAtsJobRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [PatchAtsJob2Request](../../Models/Requests/PatchAtsJob2Request.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
-**[PatchAtsJobResponse](../../Models/Requests/PatchAtsJobResponse.md)**
+**[PatchAtsJob2Response](../../Models/Requests/PatchAtsJob2Response.md)**
 
 ### Errors
 
@@ -1365,7 +1365,7 @@ var res = await sdk.Ats.PatchAtsJobAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsScorecard
+## PatchAtsScorecard2
 
 Update a scorecard
 
@@ -1380,26 +1380,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
+PatchAtsScorecard2Request req = new PatchAtsScorecard2Request() {
     AtsScorecard = new AtsScorecard() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.PatchAtsScorecardAsync(req);
+var res = await sdk.Ats.PatchAtsScorecard2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAtsScorecardRequest](../../Models/Requests/PatchAtsScorecardRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchAtsScorecard2Request](../../Models/Requests/PatchAtsScorecard2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchAtsScorecardResponse](../../Models/Requests/PatchAtsScorecardResponse.md)**
+**[PatchAtsScorecard2Response](../../Models/Requests/PatchAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -1407,7 +1407,7 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsActivity
+## RemoveAtsActivity2
 
 Remove an activity
 
@@ -1421,7 +1421,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsActivityAsync(
+var res = await sdk.Ats.RemoveAtsActivity2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1438,7 +1438,7 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 
 ### Response
 
-**[RemoveAtsActivityResponse](../../Models/Requests/RemoveAtsActivityResponse.md)**
+**[RemoveAtsActivity2Response](../../Models/Requests/RemoveAtsActivity2Response.md)**
 
 ### Errors
 
@@ -1446,7 +1446,7 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsApplication
+## RemoveAtsApplication2
 
 Remove an application
 
@@ -1460,7 +1460,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsApplicationAsync(
+var res = await sdk.Ats.RemoveAtsApplication2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1477,7 +1477,7 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 
 ### Response
 
-**[RemoveAtsApplicationResponse](../../Models/Requests/RemoveAtsApplicationResponse.md)**
+**[RemoveAtsApplication2Response](../../Models/Requests/RemoveAtsApplication2Response.md)**
 
 ### Errors
 
@@ -1485,7 +1485,7 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsCandidate
+## RemoveAtsCandidate2
 
 Remove a candidate
 
@@ -1499,7 +1499,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsCandidateAsync(
+var res = await sdk.Ats.RemoveAtsCandidate2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1516,7 +1516,7 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 
 ### Response
 
-**[RemoveAtsCandidateResponse](../../Models/Requests/RemoveAtsCandidateResponse.md)**
+**[RemoveAtsCandidate2Response](../../Models/Requests/RemoveAtsCandidate2Response.md)**
 
 ### Errors
 
@@ -1524,7 +1524,7 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsCompany
+## RemoveAtsCompany2
 
 Remove a company
 
@@ -1538,7 +1538,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsCompanyAsync(
+var res = await sdk.Ats.RemoveAtsCompany2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1555,7 +1555,7 @@ var res = await sdk.Ats.RemoveAtsCompanyAsync(
 
 ### Response
 
-**[RemoveAtsCompanyResponse](../../Models/Requests/RemoveAtsCompanyResponse.md)**
+**[RemoveAtsCompany2Response](../../Models/Requests/RemoveAtsCompany2Response.md)**
 
 ### Errors
 
@@ -1563,7 +1563,7 @@ var res = await sdk.Ats.RemoveAtsCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsDocument
+## RemoveAtsDocument2
 
 Remove a document
 
@@ -1577,7 +1577,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsDocumentAsync(
+var res = await sdk.Ats.RemoveAtsDocument2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1594,7 +1594,7 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 
 ### Response
 
-**[RemoveAtsDocumentResponse](../../Models/Requests/RemoveAtsDocumentResponse.md)**
+**[RemoveAtsDocument2Response](../../Models/Requests/RemoveAtsDocument2Response.md)**
 
 ### Errors
 
@@ -1602,7 +1602,7 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsInterview
+## RemoveAtsInterview2
 
 Remove an interview
 
@@ -1616,7 +1616,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsInterviewAsync(
+var res = await sdk.Ats.RemoveAtsInterview2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1633,7 +1633,7 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 
 ### Response
 
-**[RemoveAtsInterviewResponse](../../Models/Requests/RemoveAtsInterviewResponse.md)**
+**[RemoveAtsInterview2Response](../../Models/Requests/RemoveAtsInterview2Response.md)**
 
 ### Errors
 
@@ -1641,7 +1641,7 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsJob
+## RemoveAtsJob2
 
 Remove a job
 
@@ -1655,7 +1655,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsJobAsync(
+var res = await sdk.Ats.RemoveAtsJob2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1672,7 +1672,7 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 
 ### Response
 
-**[RemoveAtsJobResponse](../../Models/Requests/RemoveAtsJobResponse.md)**
+**[RemoveAtsJob2Response](../../Models/Requests/RemoveAtsJob2Response.md)**
 
 ### Errors
 
@@ -1680,7 +1680,7 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsScorecard
+## RemoveAtsScorecard2
 
 Remove a scorecard
 
@@ -1694,7 +1694,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ats.RemoveAtsScorecardAsync(
+var res = await sdk.Ats.RemoveAtsScorecard2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1711,7 +1711,7 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 
 ### Response
 
-**[RemoveAtsScorecardResponse](../../Models/Requests/RemoveAtsScorecardResponse.md)**
+**[RemoveAtsScorecard2Response](../../Models/Requests/RemoveAtsScorecard2Response.md)**
 
 ### Errors
 
@@ -1719,7 +1719,7 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsActivity
+## UpdateAtsActivity2
 
 Update an activity
 
@@ -1734,26 +1734,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
+UpdateAtsActivity2Request req = new UpdateAtsActivity2Request() {
     AtsActivity = new AtsActivity() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsActivityAsync(req);
+var res = await sdk.Ats.UpdateAtsActivity2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateAtsActivityRequest](../../Models/Requests/UpdateAtsActivityRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateAtsActivity2Request](../../Models/Requests/UpdateAtsActivity2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateAtsActivityResponse](../../Models/Requests/UpdateAtsActivityResponse.md)**
+**[UpdateAtsActivity2Response](../../Models/Requests/UpdateAtsActivity2Response.md)**
 
 ### Errors
 
@@ -1761,7 +1761,7 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsApplication
+## UpdateAtsApplication2
 
 Update an application
 
@@ -1776,26 +1776,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
+UpdateAtsApplication2Request req = new UpdateAtsApplication2Request() {
     AtsApplication = new AtsApplication() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsApplicationAsync(req);
+var res = await sdk.Ats.UpdateAtsApplication2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateAtsApplicationRequest](../../Models/Requests/UpdateAtsApplicationRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateAtsApplication2Request](../../Models/Requests/UpdateAtsApplication2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateAtsApplicationResponse](../../Models/Requests/UpdateAtsApplicationResponse.md)**
+**[UpdateAtsApplication2Response](../../Models/Requests/UpdateAtsApplication2Response.md)**
 
 ### Errors
 
@@ -1803,7 +1803,7 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsCandidate
+## UpdateAtsCandidate2
 
 Update a candidate
 
@@ -1818,26 +1818,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
+UpdateAtsCandidate2Request req = new UpdateAtsCandidate2Request() {
     AtsCandidate = new AtsCandidate() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsCandidateAsync(req);
+var res = await sdk.Ats.UpdateAtsCandidate2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAtsCandidateRequest](../../Models/Requests/UpdateAtsCandidateRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateAtsCandidate2Request](../../Models/Requests/UpdateAtsCandidate2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateAtsCandidateResponse](../../Models/Requests/UpdateAtsCandidateResponse.md)**
+**[UpdateAtsCandidate2Response](../../Models/Requests/UpdateAtsCandidate2Response.md)**
 
 ### Errors
 
@@ -1845,7 +1845,7 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsCompany
+## UpdateAtsCompany2
 
 Update a company
 
@@ -1860,26 +1860,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
+UpdateAtsCompany2Request req = new UpdateAtsCompany2Request() {
     AtsCompany = new AtsCompany() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsCompanyAsync(req);
+var res = await sdk.Ats.UpdateAtsCompany2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [UpdateAtsCompanyRequest](../../Models/Requests/UpdateAtsCompanyRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateAtsCompany2Request](../../Models/Requests/UpdateAtsCompany2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateAtsCompanyResponse](../../Models/Requests/UpdateAtsCompanyResponse.md)**
+**[UpdateAtsCompany2Response](../../Models/Requests/UpdateAtsCompany2Response.md)**
 
 ### Errors
 
@@ -1887,7 +1887,7 @@ var res = await sdk.Ats.UpdateAtsCompanyAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsDocument
+## UpdateAtsDocument2
 
 Update a document
 
@@ -1902,26 +1902,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
+UpdateAtsDocument2Request req = new UpdateAtsDocument2Request() {
     AtsDocument = new AtsDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsDocumentAsync(req);
+var res = await sdk.Ats.UpdateAtsDocument2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateAtsDocumentRequest](../../Models/Requests/UpdateAtsDocumentRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateAtsDocument2Request](../../Models/Requests/UpdateAtsDocument2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateAtsDocumentResponse](../../Models/Requests/UpdateAtsDocumentResponse.md)**
+**[UpdateAtsDocument2Response](../../Models/Requests/UpdateAtsDocument2Response.md)**
 
 ### Errors
 
@@ -1929,7 +1929,7 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsInterview
+## UpdateAtsInterview2
 
 Update an interview
 
@@ -1944,26 +1944,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
+UpdateAtsInterview2Request req = new UpdateAtsInterview2Request() {
     AtsInterview = new AtsInterview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsInterviewAsync(req);
+var res = await sdk.Ats.UpdateAtsInterview2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAtsInterviewRequest](../../Models/Requests/UpdateAtsInterviewRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateAtsInterview2Request](../../Models/Requests/UpdateAtsInterview2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateAtsInterviewResponse](../../Models/Requests/UpdateAtsInterviewResponse.md)**
+**[UpdateAtsInterview2Response](../../Models/Requests/UpdateAtsInterview2Response.md)**
 
 ### Errors
 
@@ -1971,7 +1971,7 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsJob
+## UpdateAtsJob2
 
 Update a job
 
@@ -1986,26 +1986,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
+UpdateAtsJob2Request req = new UpdateAtsJob2Request() {
     AtsJob = new AtsJob() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsJobAsync(req);
+var res = await sdk.Ats.UpdateAtsJob2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [UpdateAtsJobRequest](../../Models/Requests/UpdateAtsJobRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [UpdateAtsJob2Request](../../Models/Requests/UpdateAtsJob2Request.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
-**[UpdateAtsJobResponse](../../Models/Requests/UpdateAtsJobResponse.md)**
+**[UpdateAtsJob2Response](../../Models/Requests/UpdateAtsJob2Response.md)**
 
 ### Errors
 
@@ -2013,7 +2013,7 @@ var res = await sdk.Ats.UpdateAtsJobAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsScorecard
+## UpdateAtsScorecard2
 
 Update a scorecard
 
@@ -2028,26 +2028,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
+UpdateAtsScorecard2Request req = new UpdateAtsScorecard2Request() {
     AtsScorecard = new AtsScorecard() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ats.UpdateAtsScorecardAsync(req);
+var res = await sdk.Ats.UpdateAtsScorecard2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAtsScorecardRequest](../../Models/Requests/UpdateAtsScorecardRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateAtsScorecard2Request](../../Models/Requests/UpdateAtsScorecard2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateAtsScorecardResponse](../../Models/Requests/UpdateAtsScorecardResponse.md)**
+**[UpdateAtsScorecard2Response](../../Models/Requests/UpdateAtsScorecard2Response.md)**
 
 ### Errors
 

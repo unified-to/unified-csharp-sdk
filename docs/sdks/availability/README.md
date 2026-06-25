@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [ListCommerceAvailabilities](#listcommerceavailabilities) - List all availabilities
+* [ListCommerceAvailabilities2](#listcommerceavailabilities2) - List all availabilities
 
-## ListCommerceAvailabilities
+## ListCommerceAvailabilities2
 
 List all availabilities
 
@@ -22,24 +22,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceAvailabilitiesRequest req = new ListCommerceAvailabilitiesRequest() {
+ListCommerceAvailabilities2Request req = new ListCommerceAvailabilities2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Availability.ListCommerceAvailabilitiesAsync(req);
+var res = await sdk.Availability.ListCommerceAvailabilities2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [ListCommerceAvailabilitiesRequest](../../Models/Requests/ListCommerceAvailabilitiesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListCommerceAvailabilities2Request](../../Models/Requests/ListCommerceAvailabilities2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[ListCommerceAvailabilitiesResponse](../../Models/Requests/ListCommerceAvailabilitiesResponse.md)**
+**[ListCommerceAvailabilities2Response](../../Models/Requests/ListCommerceAvailabilities2Response.md)**
 
 ### Errors
 

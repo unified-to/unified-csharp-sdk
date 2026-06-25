@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateHrisBenefit](#createhrisbenefit) - Create a benefit
-* [GetHrisBenefit](#gethrisbenefit) - Retrieve a benefit
-* [ListHrisBenefits](#listhrisbenefits) - List all benefits
-* [PatchHrisBenefit](#patchhrisbenefit) - Update a benefit
-* [RemoveHrisBenefit](#removehrisbenefit) - Remove a benefit
-* [UpdateHrisBenefit](#updatehrisbenefit) - Update a benefit
+* [CreateHrisBenefit2](#createhrisbenefit2) - Create a benefit
+* [GetHrisBenefit2](#gethrisbenefit2) - Retrieve a benefit
+* [ListHrisBenefits2](#listhrisbenefits2) - List all benefits
+* [PatchHrisBenefit2](#patchhrisbenefit2) - Update a benefit
+* [RemoveHrisBenefit2](#removehrisbenefit2) - Remove a benefit
+* [UpdateHrisBenefit2](#updatehrisbenefit2) - Update a benefit
 
-## CreateHrisBenefit
+## CreateHrisBenefit2
 
 Create a benefit
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Benefit.CreateHrisBenefitAsync(
+var res = await sdk.Benefit.CreateHrisBenefit2Async(
     hrisBenefit: new HrisBenefit() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Benefit.CreateHrisBenefitAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisBenefit`                                                                                                                                    | [HrisBenefit](../../Models/Components/HrisBenefit.md)                                                                                            | :heavy_check_mark:                                                                                                                               | Company-wide benefit plans available to employees.                                                                                               |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisBenefitQueryParamFields](../../Models/Requests/CreateHrisBenefitQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisBenefit2QueryParamFields](../../Models/Requests/CreateHrisBenefit2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisBenefitResponse](../../Models/Requests/CreateHrisBenefitResponse.md)**
+**[CreateHrisBenefit2Response](../../Models/Requests/CreateHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Benefit.CreateHrisBenefitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisBenefit
+## GetHrisBenefit2
 
 Retrieve a benefit
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Benefit.GetHrisBenefitAsync(
+var res = await sdk.Benefit.GetHrisBenefit2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Benefit.GetHrisBenefitAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Benefit                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetHrisBenefitQueryParamFields](../../Models/Requests/GetHrisBenefitQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisBenefit2QueryParamFields](../../Models/Requests/GetHrisBenefit2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisBenefitResponse](../../Models/Requests/GetHrisBenefitResponse.md)**
+**[GetHrisBenefit2Response](../../Models/Requests/GetHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Benefit.GetHrisBenefitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisBenefits
+## ListHrisBenefits2
 
 List all benefits
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisBenefitsRequest req = new ListHrisBenefitsRequest() {
+ListHrisBenefits2Request req = new ListHrisBenefits2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Benefit.ListHrisBenefitsAsync(req);
+var res = await sdk.Benefit.ListHrisBenefits2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListHrisBenefitsRequest](../../Models/Requests/ListHrisBenefitsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisBenefits2Request](../../Models/Requests/ListHrisBenefits2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListHrisBenefitsResponse](../../Models/Requests/ListHrisBenefitsResponse.md)**
+**[ListHrisBenefits2Response](../../Models/Requests/ListHrisBenefits2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Benefit.ListHrisBenefitsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisBenefit
+## PatchHrisBenefit2
 
 Update a benefit
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
+PatchHrisBenefit2Request req = new PatchHrisBenefit2Request() {
     HrisBenefit = new HrisBenefit() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Benefit.PatchHrisBenefitAsync(req);
+var res = await sdk.Benefit.PatchHrisBenefit2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchHrisBenefitRequest](../../Models/Requests/PatchHrisBenefitRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchHrisBenefit2Request](../../Models/Requests/PatchHrisBenefit2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchHrisBenefitResponse](../../Models/Requests/PatchHrisBenefitResponse.md)**
+**[PatchHrisBenefit2Response](../../Models/Requests/PatchHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Benefit.PatchHrisBenefitAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisBenefit
+## RemoveHrisBenefit2
 
 Remove a benefit
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Benefit.RemoveHrisBenefitAsync(
+var res = await sdk.Benefit.RemoveHrisBenefit2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Benefit.RemoveHrisBenefitAsync(
 
 ### Response
 
-**[RemoveHrisBenefitResponse](../../Models/Requests/RemoveHrisBenefitResponse.md)**
+**[RemoveHrisBenefit2Response](../../Models/Requests/RemoveHrisBenefit2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Benefit.RemoveHrisBenefitAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisBenefit
+## UpdateHrisBenefit2
 
 Update a benefit
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
+UpdateHrisBenefit2Request req = new UpdateHrisBenefit2Request() {
     HrisBenefit = new HrisBenefit() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Benefit.UpdateHrisBenefitAsync(req);
+var res = await sdk.Benefit.UpdateHrisBenefit2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateHrisBenefitRequest](../../Models/Requests/UpdateHrisBenefitRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateHrisBenefit2Request](../../Models/Requests/UpdateHrisBenefit2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateHrisBenefitResponse](../../Models/Requests/UpdateHrisBenefitResponse.md)**
+**[UpdateHrisBenefit2Response](../../Models/Requests/UpdateHrisBenefit2Response.md)**
 
 ### Errors
 

@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("original_status")]
         public string? OriginalStatus { get; set; }
 
+        [JsonProperty("original_substatus")]
+        public string? OriginalSubstatus { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

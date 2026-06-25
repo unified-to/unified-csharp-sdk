@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a trialbalance
         /// </summary>
-        Task<GetAccountingTrialbalanceResponse> GetAccountingTrialbalanceAsync(string connectionId, string id, List<GetAccountingTrialbalanceQueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingTrialbalance2Response> GetAccountingTrialbalance2Async(string connectionId, string id, List<GetAccountingTrialbalance2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all trialbalances
         /// </summary>
-        Task<ListAccountingTrialbalancesResponse> ListAccountingTrialbalancesAsync(ListAccountingTrialbalancesRequest request);
+        Task<ListAccountingTrialbalances2Response> ListAccountingTrialbalances2Async(ListAccountingTrialbalances2Request request);
     }
 
     public class Trialbalance: ITrialbalance
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetAccountingTrialbalanceResponse> GetAccountingTrialbalanceAsync(string connectionId, string id, List<GetAccountingTrialbalanceQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingTrialbalance2Response> GetAccountingTrialbalance2Async(string connectionId, string id, List<GetAccountingTrialbalance2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingTrialbalanceRequest()
+            var request = new GetAccountingTrialbalance2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingTrialbalance", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingTrialbalance2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingTrialbalance>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingTrialbalanceResponse()
+                    var response = new GetAccountingTrialbalance2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingTrialbalancesResponse> ListAccountingTrialbalancesAsync(ListAccountingTrialbalancesRequest request)
+        public async Task<ListAccountingTrialbalances2Response> ListAccountingTrialbalances2Async(ListAccountingTrialbalances2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/trialbalance", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingTrialbalances", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingTrialbalances2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingTrialbalance>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingTrialbalancesResponse()
+                    var response = new ListAccountingTrialbalances2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

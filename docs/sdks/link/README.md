@@ -5,20 +5,20 @@
 
 ### Available Operations
 
-* [CreateCalendarLink](#createcalendarlink) - Create a link
-* [CreatePaymentLink](#createpaymentlink) - Create a link
-* [GetCalendarLink](#getcalendarlink) - Retrieve a link
-* [GetPaymentLink](#getpaymentlink) - Retrieve a link
-* [ListCalendarLinks](#listcalendarlinks) - List all links
-* [ListPaymentLinks](#listpaymentlinks) - List all links
-* [PatchCalendarLink](#patchcalendarlink) - Update a link
-* [PatchPaymentLink](#patchpaymentlink) - Update a link
-* [RemoveCalendarLink](#removecalendarlink) - Remove a link
-* [RemovePaymentLink](#removepaymentlink) - Remove a link
-* [UpdateCalendarLink](#updatecalendarlink) - Update a link
-* [UpdatePaymentLink](#updatepaymentlink) - Update a link
+* [CreateCalendarLink2](#createcalendarlink2) - Create a link
+* [CreatePaymentLink2](#createpaymentlink2) - Create a link
+* [GetCalendarLink2](#getcalendarlink2) - Retrieve a link
+* [GetPaymentLink2](#getpaymentlink2) - Retrieve a link
+* [ListCalendarLinks2](#listcalendarlinks2) - List all links
+* [ListPaymentLinks2](#listpaymentlinks2) - List all links
+* [PatchCalendarLink2](#patchcalendarlink2) - Update a link
+* [PatchPaymentLink2](#patchpaymentlink2) - Update a link
+* [RemoveCalendarLink2](#removecalendarlink2) - Remove a link
+* [RemovePaymentLink2](#removepaymentlink2) - Remove a link
+* [UpdateCalendarLink2](#updatecalendarlink2) - Update a link
+* [UpdatePaymentLink2](#updatepaymentlink2) - Update a link
 
-## CreateCalendarLink
+## CreateCalendarLink2
 
 Create a link
 
@@ -32,9 +32,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Link.CreateCalendarLinkAsync(
+var res = await sdk.Link.CreateCalendarLink2Async(
     calendarLink: new CalendarLink() {
-        Url = "https://misguided-thongs.info",
+        Url = "https://prestigious-fort.name/",
     },
     connectionId: "<id>"
 );
@@ -48,12 +48,12 @@ var res = await sdk.Link.CreateCalendarLinkAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CalendarLink`                                                                                                                                   | [CalendarLink](../../Models/Components/CalendarLink.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCalendarLinkQueryParamFields](../../Models/Requests/CreateCalendarLinkQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCalendarLink2QueryParamFields](../../Models/Requests/CreateCalendarLink2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCalendarLinkResponse](../../Models/Requests/CreateCalendarLinkResponse.md)**
+**[CreateCalendarLink2Response](../../Models/Requests/CreateCalendarLink2Response.md)**
 
 ### Errors
 
@@ -61,7 +61,7 @@ var res = await sdk.Link.CreateCalendarLinkAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreatePaymentLink
+## CreatePaymentLink2
 
 Create a link
 
@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Link.CreatePaymentLinkAsync(
+var res = await sdk.Link.CreatePaymentLink2Async(
     paymentLink: new PaymentLink() {},
     connectionId: "<id>"
 );
@@ -89,12 +89,12 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `PaymentLink`                                                                                                                                    | [PaymentLink](../../Models/Components/PaymentLink.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreatePaymentLinkQueryParamFields](../../Models/Requests/CreatePaymentLinkQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreatePaymentLink2QueryParamFields](../../Models/Requests/CreatePaymentLink2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreatePaymentLinkResponse](../../Models/Requests/CreatePaymentLinkResponse.md)**
+**[CreatePaymentLink2Response](../../Models/Requests/CreatePaymentLink2Response.md)**
 
 ### Errors
 
@@ -102,7 +102,7 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCalendarLink
+## GetCalendarLink2
 
 Retrieve a link
 
@@ -116,7 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Link.GetCalendarLinkAsync(
+var res = await sdk.Link.GetCalendarLink2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -130,12 +130,12 @@ var res = await sdk.Link.GetCalendarLinkAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Link                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetCalendarLinkQueryParamFields](../../Models/Requests/GetCalendarLinkQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCalendarLink2QueryParamFields](../../Models/Requests/GetCalendarLink2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCalendarLinkResponse](../../Models/Requests/GetCalendarLinkResponse.md)**
+**[GetCalendarLink2Response](../../Models/Requests/GetCalendarLink2Response.md)**
 
 ### Errors
 
@@ -143,7 +143,7 @@ var res = await sdk.Link.GetCalendarLinkAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetPaymentLink
+## GetPaymentLink2
 
 Retrieve a link
 
@@ -157,7 +157,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Link.GetPaymentLinkAsync(
+var res = await sdk.Link.GetPaymentLink2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -171,12 +171,12 @@ var res = await sdk.Link.GetPaymentLinkAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Link                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetPaymentLinkQueryParamFields](../../Models/Requests/GetPaymentLinkQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPaymentLink2QueryParamFields](../../Models/Requests/GetPaymentLink2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetPaymentLinkResponse](../../Models/Requests/GetPaymentLinkResponse.md)**
+**[GetPaymentLink2Response](../../Models/Requests/GetPaymentLink2Response.md)**
 
 ### Errors
 
@@ -184,7 +184,7 @@ var res = await sdk.Link.GetPaymentLinkAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCalendarLinks
+## ListCalendarLinks2
 
 List all links
 
@@ -199,259 +199,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarLinksRequest req = new ListCalendarLinksRequest() {
+ListCalendarLinks2Request req = new ListCalendarLinks2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Link.ListCalendarLinksAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListCalendarLinksRequest](../../Models/Requests/ListCalendarLinksRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
-
-### Response
-
-**[ListCalendarLinksResponse](../../Models/Requests/ListCalendarLinksResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListPaymentLinks
-
-List all links
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListPaymentLinksRequest req = new ListPaymentLinksRequest() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Link.ListPaymentLinksAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListPaymentLinksRequest](../../Models/Requests/ListPaymentLinksRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
-
-### Response
-
-**[ListPaymentLinksResponse](../../Models/Requests/ListPaymentLinksResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchCalendarLink
-
-Update a link
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchCalendarLinkRequest req = new PatchCalendarLinkRequest() {
-    CalendarLink = new CalendarLink() {
-        Url = "https://warm-hexagon.name/",
-    },
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Link.PatchCalendarLinkAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchCalendarLinkRequest](../../Models/Requests/PatchCalendarLinkRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
-
-### Response
-
-**[PatchCalendarLinkResponse](../../Models/Requests/PatchCalendarLinkResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchPaymentLink
-
-Update a link
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
-    PaymentLink = new PaymentLink() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Link.PatchPaymentLinkAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchPaymentLinkRequest](../../Models/Requests/PatchPaymentLinkRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
-
-### Response
-
-**[PatchPaymentLinkResponse](../../Models/Requests/PatchPaymentLinkResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## RemoveCalendarLink
-
-Remove a link
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Link.RemoveCalendarLinkAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Link       |
-
-### Response
-
-**[RemoveCalendarLinkResponse](../../Models/Requests/RemoveCalendarLinkResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## RemovePaymentLink
-
-Remove a link
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Link.RemovePaymentLinkAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Link       |
-
-### Response
-
-**[RemovePaymentLinkResponse](../../Models/Requests/RemovePaymentLinkResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## UpdateCalendarLink
-
-Update a link
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-UpdateCalendarLinkRequest req = new UpdateCalendarLinkRequest() {
-    CalendarLink = new CalendarLink() {
-        Url = "https://partial-hydrocarbon.info",
-    },
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Link.UpdateCalendarLinkAsync(req);
+var res = await sdk.Link.ListCalendarLinks2Async(req);
 
 // handle response
 ```
@@ -460,11 +212,11 @@ var res = await sdk.Link.UpdateCalendarLinkAsync(req);
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateCalendarLinkRequest](../../Models/Requests/UpdateCalendarLinkRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| `request`                                                                       | [ListCalendarLinks2Request](../../Models/Requests/ListCalendarLinks2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateCalendarLinkResponse](../../Models/Requests/UpdateCalendarLinkResponse.md)**
+**[ListCalendarLinks2Response](../../Models/Requests/ListCalendarLinks2Response.md)**
 
 ### Errors
 
@@ -472,7 +224,47 @@ var res = await sdk.Link.UpdateCalendarLinkAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdatePaymentLink
+## ListPaymentLinks2
+
+List all links
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListPaymentLinks2Request req = new ListPaymentLinks2Request() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Link.ListPaymentLinks2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListPaymentLinks2Request](../../Models/Requests/ListPaymentLinks2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListPaymentLinks2Response](../../Models/Requests/ListPaymentLinks2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchCalendarLink2
 
 Update a link
 
@@ -487,13 +279,57 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
+PatchCalendarLink2Request req = new PatchCalendarLink2Request() {
+    CalendarLink = new CalendarLink() {
+        Url = "https://probable-accelerator.info",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Link.PatchCalendarLink2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchCalendarLink2Request](../../Models/Requests/PatchCalendarLink2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[PatchCalendarLink2Response](../../Models/Requests/PatchCalendarLink2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchPaymentLink2
+
+Update a link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchPaymentLink2Request req = new PatchPaymentLink2Request() {
     PaymentLink = new PaymentLink() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Link.UpdatePaymentLinkAsync(req);
+var res = await sdk.Link.PatchPaymentLink2Async(req);
 
 // handle response
 ```
@@ -502,11 +338,175 @@ var res = await sdk.Link.UpdatePaymentLinkAsync(req);
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdatePaymentLinkRequest](../../Models/Requests/UpdatePaymentLinkRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| `request`                                                                     | [PatchPaymentLink2Request](../../Models/Requests/PatchPaymentLink2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdatePaymentLinkResponse](../../Models/Requests/UpdatePaymentLinkResponse.md)**
+**[PatchPaymentLink2Response](../../Models/Requests/PatchPaymentLink2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveCalendarLink2
+
+Remove a link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Link.RemoveCalendarLink2Async(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Link       |
+
+### Response
+
+**[RemoveCalendarLink2Response](../../Models/Requests/RemoveCalendarLink2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemovePaymentLink2
+
+Remove a link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Link.RemovePaymentLink2Async(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Link       |
+
+### Response
+
+**[RemovePaymentLink2Response](../../Models/Requests/RemovePaymentLink2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateCalendarLink2
+
+Update a link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateCalendarLink2Request req = new UpdateCalendarLink2Request() {
+    CalendarLink = new CalendarLink() {
+        Url = "https://soupy-extension.net/",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Link.UpdateCalendarLink2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateCalendarLink2Request](../../Models/Requests/UpdateCalendarLink2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[UpdateCalendarLink2Response](../../Models/Requests/UpdateCalendarLink2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdatePaymentLink2
+
+Update a link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdatePaymentLink2Request req = new UpdatePaymentLink2Request() {
+    PaymentLink = new PaymentLink() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Link.UpdatePaymentLink2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdatePaymentLink2Request](../../Models/Requests/UpdatePaymentLink2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[UpdatePaymentLink2Response](../../Models/Requests/UpdatePaymentLink2Response.md)**
 
 ### Errors
 

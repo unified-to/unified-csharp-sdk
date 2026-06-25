@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAtsInterview](#createatsinterview) - Create an interview
-* [GetAtsInterview](#getatsinterview) - Retrieve an interview
-* [ListAtsInterviews](#listatsinterviews) - List all interviews
-* [PatchAtsInterview](#patchatsinterview) - Update an interview
-* [RemoveAtsInterview](#removeatsinterview) - Remove an interview
-* [UpdateAtsInterview](#updateatsinterview) - Update an interview
+* [CreateAtsInterview2](#createatsinterview2) - Create an interview
+* [GetAtsInterview2](#getatsinterview2) - Retrieve an interview
+* [ListAtsInterviews2](#listatsinterviews2) - List all interviews
+* [PatchAtsInterview2](#patchatsinterview2) - Update an interview
+* [RemoveAtsInterview2](#removeatsinterview2) - Remove an interview
+* [UpdateAtsInterview2](#updateatsinterview2) - Update an interview
 
-## CreateAtsInterview
+## CreateAtsInterview2
 
 Create an interview
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Interview.CreateAtsInterviewAsync(
+var res = await sdk.Interview.CreateAtsInterview2Async(
     atsInterview: new AtsInterview() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsInterview`                                                                                                                                   | [AtsInterview](../../Models/Components/AtsInterview.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsInterviewQueryParamFields](../../Models/Requests/CreateAtsInterviewQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsInterview2QueryParamFields](../../Models/Requests/CreateAtsInterview2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsInterviewResponse](../../Models/Requests/CreateAtsInterviewResponse.md)**
+**[CreateAtsInterview2Response](../../Models/Requests/CreateAtsInterview2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsInterview
+## GetAtsInterview2
 
 Retrieve an interview
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Interview.GetAtsInterviewAsync(
+var res = await sdk.Interview.GetAtsInterview2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Interview.GetAtsInterviewAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Interview                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetAtsInterviewQueryParamFields](../../Models/Requests/GetAtsInterviewQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsInterview2QueryParamFields](../../Models/Requests/GetAtsInterview2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsInterviewResponse](../../Models/Requests/GetAtsInterviewResponse.md)**
+**[GetAtsInterview2Response](../../Models/Requests/GetAtsInterview2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Interview.GetAtsInterviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsInterviews
+## ListAtsInterviews2
 
 List all interviews
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsInterviewsRequest req = new ListAtsInterviewsRequest() {
+ListAtsInterviews2Request req = new ListAtsInterviews2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Interview.ListAtsInterviewsAsync(req);
+var res = await sdk.Interview.ListAtsInterviews2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAtsInterviewsRequest](../../Models/Requests/ListAtsInterviewsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListAtsInterviews2Request](../../Models/Requests/ListAtsInterviews2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListAtsInterviewsResponse](../../Models/Requests/ListAtsInterviewsResponse.md)**
+**[ListAtsInterviews2Response](../../Models/Requests/ListAtsInterviews2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Interview.ListAtsInterviewsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsInterview
+## PatchAtsInterview2
 
 Update an interview
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
+PatchAtsInterview2Request req = new PatchAtsInterview2Request() {
     AtsInterview = new AtsInterview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Interview.PatchAtsInterviewAsync(req);
+var res = await sdk.Interview.PatchAtsInterview2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAtsInterviewRequest](../../Models/Requests/PatchAtsInterviewRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchAtsInterview2Request](../../Models/Requests/PatchAtsInterview2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchAtsInterviewResponse](../../Models/Requests/PatchAtsInterviewResponse.md)**
+**[PatchAtsInterview2Response](../../Models/Requests/PatchAtsInterview2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Interview.PatchAtsInterviewAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsInterview
+## RemoveAtsInterview2
 
 Remove an interview
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Interview.RemoveAtsInterviewAsync(
+var res = await sdk.Interview.RemoveAtsInterview2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 
 ### Response
 
-**[RemoveAtsInterviewResponse](../../Models/Requests/RemoveAtsInterviewResponse.md)**
+**[RemoveAtsInterview2Response](../../Models/Requests/RemoveAtsInterview2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsInterview
+## UpdateAtsInterview2
 
 Update an interview
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
+UpdateAtsInterview2Request req = new UpdateAtsInterview2Request() {
     AtsInterview = new AtsInterview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Interview.UpdateAtsInterviewAsync(req);
+var res = await sdk.Interview.UpdateAtsInterview2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAtsInterviewRequest](../../Models/Requests/UpdateAtsInterviewRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateAtsInterview2Request](../../Models/Requests/UpdateAtsInterview2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateAtsInterviewResponse](../../Models/Requests/UpdateAtsInterviewResponse.md)**
+**[UpdateAtsInterview2Response](../../Models/Requests/UpdateAtsInterview2Response.md)**
 
 ### Errors
 

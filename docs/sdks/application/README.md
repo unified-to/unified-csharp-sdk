@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAtsApplication](#createatsapplication) - Create an application
-* [GetAtsApplication](#getatsapplication) - Retrieve an application
-* [ListAtsApplications](#listatsapplications) - List all applications
-* [PatchAtsApplication](#patchatsapplication) - Update an application
-* [RemoveAtsApplication](#removeatsapplication) - Remove an application
-* [UpdateAtsApplication](#updateatsapplication) - Update an application
+* [CreateAtsApplication2](#createatsapplication2) - Create an application
+* [GetAtsApplication2](#getatsapplication2) - Retrieve an application
+* [ListAtsApplications2](#listatsapplications2) - List all applications
+* [PatchAtsApplication2](#patchatsapplication2) - Update an application
+* [RemoveAtsApplication2](#removeatsapplication2) - Remove an application
+* [UpdateAtsApplication2](#updateatsapplication2) - Update an application
 
-## CreateAtsApplication
+## CreateAtsApplication2
 
 Create an application
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Application.CreateAtsApplicationAsync(
+var res = await sdk.Application.CreateAtsApplication2Async(
     atsApplication: new AtsApplication() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsApplication`                                                                                                                                 | [AtsApplication](../../Models/Components/AtsApplication.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsApplicationQueryParamFields](../../Models/Requests/CreateAtsApplicationQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsApplication2QueryParamFields](../../Models/Requests/CreateAtsApplication2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsApplicationResponse](../../Models/Requests/CreateAtsApplicationResponse.md)**
+**[CreateAtsApplication2Response](../../Models/Requests/CreateAtsApplication2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsApplication
+## GetAtsApplication2
 
 Retrieve an application
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Application.GetAtsApplicationAsync(
+var res = await sdk.Application.GetAtsApplication2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Application.GetAtsApplicationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Application                                                                                                                            |
-| `Fields`                                                                                                                                         | List<[GetAtsApplicationQueryParamFields](../../Models/Requests/GetAtsApplicationQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsApplication2QueryParamFields](../../Models/Requests/GetAtsApplication2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsApplicationResponse](../../Models/Requests/GetAtsApplicationResponse.md)**
+**[GetAtsApplication2Response](../../Models/Requests/GetAtsApplication2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Application.GetAtsApplicationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsApplications
+## ListAtsApplications2
 
 List all applications
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsApplicationsRequest req = new ListAtsApplicationsRequest() {
+ListAtsApplications2Request req = new ListAtsApplications2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Application.ListAtsApplicationsAsync(req);
+var res = await sdk.Application.ListAtsApplications2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListAtsApplicationsRequest](../../Models/Requests/ListAtsApplicationsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListAtsApplications2Request](../../Models/Requests/ListAtsApplications2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListAtsApplicationsResponse](../../Models/Requests/ListAtsApplicationsResponse.md)**
+**[ListAtsApplications2Response](../../Models/Requests/ListAtsApplications2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Application.ListAtsApplicationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsApplication
+## PatchAtsApplication2
 
 Update an application
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
+PatchAtsApplication2Request req = new PatchAtsApplication2Request() {
     AtsApplication = new AtsApplication() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Application.PatchAtsApplicationAsync(req);
+var res = await sdk.Application.PatchAtsApplication2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchAtsApplicationRequest](../../Models/Requests/PatchAtsApplicationRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchAtsApplication2Request](../../Models/Requests/PatchAtsApplication2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchAtsApplicationResponse](../../Models/Requests/PatchAtsApplicationResponse.md)**
+**[PatchAtsApplication2Response](../../Models/Requests/PatchAtsApplication2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Application.PatchAtsApplicationAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsApplication
+## RemoveAtsApplication2
 
 Remove an application
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Application.RemoveAtsApplicationAsync(
+var res = await sdk.Application.RemoveAtsApplication2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Application.RemoveAtsApplicationAsync(
 
 ### Response
 
-**[RemoveAtsApplicationResponse](../../Models/Requests/RemoveAtsApplicationResponse.md)**
+**[RemoveAtsApplication2Response](../../Models/Requests/RemoveAtsApplication2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Application.RemoveAtsApplicationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsApplication
+## UpdateAtsApplication2
 
 Update an application
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
+UpdateAtsApplication2Request req = new UpdateAtsApplication2Request() {
     AtsApplication = new AtsApplication() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Application.UpdateAtsApplicationAsync(req);
+var res = await sdk.Application.UpdateAtsApplication2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateAtsApplicationRequest](../../Models/Requests/UpdateAtsApplicationRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateAtsApplication2Request](../../Models/Requests/UpdateAtsApplication2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateAtsApplicationResponse](../../Models/Requests/UpdateAtsApplicationResponse.md)**
+**[UpdateAtsApplication2Response](../../Models/Requests/UpdateAtsApplication2Response.md)**
 
 ### Errors
 

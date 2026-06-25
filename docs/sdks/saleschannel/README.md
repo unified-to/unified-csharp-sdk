@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateCommerceSaleschannel](#createcommercesaleschannel) - Create a saleschannel
-* [GetCommerceSaleschannel](#getcommercesaleschannel) - Retrieve a saleschannel
-* [ListCommerceSaleschannels](#listcommercesaleschannels) - List all saleschannels
-* [PatchCommerceSaleschannel](#patchcommercesaleschannel) - Update a saleschannel
-* [RemoveCommerceSaleschannel](#removecommercesaleschannel) - Remove a saleschannel
-* [UpdateCommerceSaleschannel](#updatecommercesaleschannel) - Update a saleschannel
+* [CreateCommerceSaleschannel2](#createcommercesaleschannel2) - Create a saleschannel
+* [GetCommerceSaleschannel2](#getcommercesaleschannel2) - Retrieve a saleschannel
+* [ListCommerceSaleschannels2](#listcommercesaleschannels2) - List all saleschannels
+* [PatchCommerceSaleschannel2](#patchcommercesaleschannel2) - Update a saleschannel
+* [RemoveCommerceSaleschannel2](#removecommercesaleschannel2) - Remove a saleschannel
+* [UpdateCommerceSaleschannel2](#updatecommercesaleschannel2) - Update a saleschannel
 
-## CreateCommerceSaleschannel
+## CreateCommerceSaleschannel2
 
 Create a saleschannel
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Saleschannel.CreateCommerceSaleschannelAsync(
+var res = await sdk.Saleschannel.CreateCommerceSaleschannel2Async(
     commerceSaleschannel: new CommerceSaleschannel() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Saleschannel.CreateCommerceSaleschannelAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceSaleschannel`                                                                                                                           | [CommerceSaleschannel](../../Models/Components/CommerceSaleschannel.md)                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceSaleschannelQueryParamFields](../../Models/Requests/CreateCommerceSaleschannelQueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceSaleschannel2QueryParamFields](../../Models/Requests/CreateCommerceSaleschannel2QueryParamFields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceSaleschannelResponse](../../Models/Requests/CreateCommerceSaleschannelResponse.md)**
+**[CreateCommerceSaleschannel2Response](../../Models/Requests/CreateCommerceSaleschannel2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Saleschannel.CreateCommerceSaleschannelAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceSaleschannel
+## GetCommerceSaleschannel2
 
 Retrieve a saleschannel
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Saleschannel.GetCommerceSaleschannelAsync(
+var res = await sdk.Saleschannel.GetCommerceSaleschannel2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Saleschannel.GetCommerceSaleschannelAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Saleschannel                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetCommerceSaleschannelQueryParamFields](../../Models/Requests/GetCommerceSaleschannelQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceSaleschannel2QueryParamFields](../../Models/Requests/GetCommerceSaleschannel2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceSaleschannelResponse](../../Models/Requests/GetCommerceSaleschannelResponse.md)**
+**[GetCommerceSaleschannel2Response](../../Models/Requests/GetCommerceSaleschannel2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Saleschannel.GetCommerceSaleschannelAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceSaleschannels
+## ListCommerceSaleschannels2
 
 List all saleschannels
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceSaleschannelsRequest req = new ListCommerceSaleschannelsRequest() {
+ListCommerceSaleschannels2Request req = new ListCommerceSaleschannels2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Saleschannel.ListCommerceSaleschannelsAsync(req);
+var res = await sdk.Saleschannel.ListCommerceSaleschannels2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [ListCommerceSaleschannelsRequest](../../Models/Requests/ListCommerceSaleschannelsRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListCommerceSaleschannels2Request](../../Models/Requests/ListCommerceSaleschannels2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[ListCommerceSaleschannelsResponse](../../Models/Requests/ListCommerceSaleschannelsResponse.md)**
+**[ListCommerceSaleschannels2Response](../../Models/Requests/ListCommerceSaleschannels2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Saleschannel.ListCommerceSaleschannelsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceSaleschannel
+## PatchCommerceSaleschannel2
 
 Update a saleschannel
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceSaleschannelRequest req = new PatchCommerceSaleschannelRequest() {
+PatchCommerceSaleschannel2Request req = new PatchCommerceSaleschannel2Request() {
     CommerceSaleschannel = new CommerceSaleschannel() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Saleschannel.PatchCommerceSaleschannelAsync(req);
+var res = await sdk.Saleschannel.PatchCommerceSaleschannel2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [PatchCommerceSaleschannelRequest](../../Models/Requests/PatchCommerceSaleschannelRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [PatchCommerceSaleschannel2Request](../../Models/Requests/PatchCommerceSaleschannel2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[PatchCommerceSaleschannelResponse](../../Models/Requests/PatchCommerceSaleschannelResponse.md)**
+**[PatchCommerceSaleschannel2Response](../../Models/Requests/PatchCommerceSaleschannel2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Saleschannel.PatchCommerceSaleschannelAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceSaleschannel
+## RemoveCommerceSaleschannel2
 
 Remove a saleschannel
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Saleschannel.RemoveCommerceSaleschannelAsync(
+var res = await sdk.Saleschannel.RemoveCommerceSaleschannel2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Saleschannel.RemoveCommerceSaleschannelAsync(
 
 ### Response
 
-**[RemoveCommerceSaleschannelResponse](../../Models/Requests/RemoveCommerceSaleschannelResponse.md)**
+**[RemoveCommerceSaleschannel2Response](../../Models/Requests/RemoveCommerceSaleschannel2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Saleschannel.RemoveCommerceSaleschannelAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceSaleschannel
+## UpdateCommerceSaleschannel2
 
 Update a saleschannel
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceSaleschannelRequest req = new UpdateCommerceSaleschannelRequest() {
+UpdateCommerceSaleschannel2Request req = new UpdateCommerceSaleschannel2Request() {
     CommerceSaleschannel = new CommerceSaleschannel() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Saleschannel.UpdateCommerceSaleschannelAsync(req);
+var res = await sdk.Saleschannel.UpdateCommerceSaleschannel2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [UpdateCommerceSaleschannelRequest](../../Models/Requests/UpdateCommerceSaleschannelRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [UpdateCommerceSaleschannel2Request](../../Models/Requests/UpdateCommerceSaleschannel2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[UpdateCommerceSaleschannelResponse](../../Models/Requests/UpdateCommerceSaleschannelResponse.md)**
+**[UpdateCommerceSaleschannel2Response](../../Models/Requests/UpdateCommerceSaleschannel2Response.md)**
 
 ### Errors
 

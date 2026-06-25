@@ -10,8 +10,8 @@
 | `Expandable`      | EXPANDABLE        |
 | `Video`           | VIDEO             |
 | `Native`          | NATIVE            |
-| `Image`           | IMAGE             |
 | `Audio`           | AUDIO             |
-| `Document`        | DOCUMENT          |
 | `PublisherHosted` | PUBLISHER_HOSTED  |
 | `AssetBased`      | ASSET_BASED       |
+| `Image`           | IMAGE             |
+| `Document`        | DOCUMENT          |

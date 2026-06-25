@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a candidate
         /// </summary>
-        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<CreateAtsCandidateQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAtsCandidate2Response> CreateAtsCandidate2Async(AtsCandidate atsCandidate, string connectionId, List<CreateAtsCandidate2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a candidate
         /// </summary>
-        Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<GetAtsCandidateQueryParamFields>? fields = null, string? raw = null);
+        Task<GetAtsCandidate2Response> GetAtsCandidate2Async(string connectionId, string id, List<GetAtsCandidate2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all candidates
         /// </summary>
-        Task<ListAtsCandidatesResponse> ListAtsCandidatesAsync(ListAtsCandidatesRequest request);
+        Task<ListAtsCandidates2Response> ListAtsCandidates2Async(ListAtsCandidates2Request request);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(PatchAtsCandidateRequest request);
+        Task<PatchAtsCandidate2Response> PatchAtsCandidate2Async(PatchAtsCandidate2Request request);
 
         /// <summary>
         /// Remove a candidate
         /// </summary>
-        Task<RemoveAtsCandidateResponse> RemoveAtsCandidateAsync(string connectionId, string id);
+        Task<RemoveAtsCandidate2Response> RemoveAtsCandidate2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(UpdateAtsCandidateRequest request);
+        Task<UpdateAtsCandidate2Response> UpdateAtsCandidate2Async(UpdateAtsCandidate2Request request);
     }
 
     public class Candidate: ICandidate
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<CreateAtsCandidateQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAtsCandidate2Response> CreateAtsCandidate2Async(AtsCandidate atsCandidate, string connectionId, List<CreateAtsCandidate2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAtsCandidateRequest()
+            var request = new CreateAtsCandidate2Request()
             {
                 AtsCandidate = atsCandidate,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsCandidate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsCandidate2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCandidate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAtsCandidateResponse()
+                    var response = new CreateAtsCandidate2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<GetAtsCandidateQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAtsCandidate2Response> GetAtsCandidate2Async(string connectionId, string id, List<GetAtsCandidate2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAtsCandidateRequest()
+            var request = new GetAtsCandidate2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsCandidate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsCandidate2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCandidate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAtsCandidateResponse()
+                    var response = new GetAtsCandidate2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAtsCandidatesResponse> ListAtsCandidatesAsync(ListAtsCandidatesRequest request)
+        public async Task<ListAtsCandidates2Response> ListAtsCandidates2Async(ListAtsCandidates2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsCandidates", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsCandidates2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AtsCandidate>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAtsCandidatesResponse()
+                    var response = new ListAtsCandidates2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(PatchAtsCandidateRequest request)
+        public async Task<PatchAtsCandidate2Response> PatchAtsCandidate2Async(PatchAtsCandidate2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsCandidate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsCandidate2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCandidate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAtsCandidateResponse()
+                    var response = new PatchAtsCandidate2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAtsCandidateResponse> RemoveAtsCandidateAsync(string connectionId, string id)
+        public async Task<RemoveAtsCandidate2Response> RemoveAtsCandidate2Async(string connectionId, string id)
         {
-            var request = new RemoveAtsCandidateRequest()
+            var request = new RemoveAtsCandidate2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsCandidate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsCandidate2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAtsCandidateResponse()
+                return new RemoveAtsCandidate2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAtsCandidateResponse()
+                return new RemoveAtsCandidate2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(UpdateAtsCandidateRequest request)
+        public async Task<UpdateAtsCandidate2Response> UpdateAtsCandidate2Async(UpdateAtsCandidate2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsCandidate", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsCandidate2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCandidate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAtsCandidateResponse()
+                    var response = new UpdateAtsCandidate2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

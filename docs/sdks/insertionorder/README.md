@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAdsInsertionorder](#createadsinsertionorder) - Create an insertionorder
-* [GetAdsInsertionorder](#getadsinsertionorder) - Retrieve an insertionorder
-* [ListAdsInsertionorders](#listadsinsertionorders) - List all insertionorders
-* [PatchAdsInsertionorder](#patchadsinsertionorder) - Update an insertionorder
-* [RemoveAdsInsertionorder](#removeadsinsertionorder) - Remove an insertionorder
-* [UpdateAdsInsertionorder](#updateadsinsertionorder) - Update an insertionorder
+* [CreateAdsInsertionorder2](#createadsinsertionorder2) - Create an insertionorder
+* [GetAdsInsertionorder2](#getadsinsertionorder2) - Retrieve an insertionorder
+* [ListAdsInsertionorders2](#listadsinsertionorders2) - List all insertionorders
+* [PatchAdsInsertionorder2](#patchadsinsertionorder2) - Update an insertionorder
+* [RemoveAdsInsertionorder2](#removeadsinsertionorder2) - Remove an insertionorder
+* [UpdateAdsInsertionorder2](#updateadsinsertionorder2) - Update an insertionorder
 
-## CreateAdsInsertionorder
+## CreateAdsInsertionorder2
 
 Create an insertionorder
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
+var res = await sdk.Insertionorder.CreateAdsInsertionorder2Async(
     adsInsertionorder: new AdsInsertionorder() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AdsInsertionorder`                                                                                                                              | [AdsInsertionorder](../../Models/Components/AdsInsertionorder.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAdsInsertionorderQueryParamFields](../../Models/Requests/CreateAdsInsertionorderQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAdsInsertionorder2QueryParamFields](../../Models/Requests/CreateAdsInsertionorder2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAdsInsertionorderResponse](../../Models/Requests/CreateAdsInsertionorderResponse.md)**
+**[CreateAdsInsertionorder2Response](../../Models/Requests/CreateAdsInsertionorder2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAdsInsertionorder
+## GetAdsInsertionorder2
 
 Retrieve an insertionorder
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Insertionorder.GetAdsInsertionorderAsync(
+var res = await sdk.Insertionorder.GetAdsInsertionorder2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Insertionorder.GetAdsInsertionorderAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Insertionorder                                                                                                                         |
-| `Fields`                                                                                                                                         | List<[GetAdsInsertionorderQueryParamFields](../../Models/Requests/GetAdsInsertionorderQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAdsInsertionorder2QueryParamFields](../../Models/Requests/GetAdsInsertionorder2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAdsInsertionorderResponse](../../Models/Requests/GetAdsInsertionorderResponse.md)**
+**[GetAdsInsertionorder2Response](../../Models/Requests/GetAdsInsertionorder2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Insertionorder.GetAdsInsertionorderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAdsInsertionorders
+## ListAdsInsertionorders2
 
 List all insertionorders
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAdsInsertionordersRequest req = new ListAdsInsertionordersRequest() {
+ListAdsInsertionorders2Request req = new ListAdsInsertionorders2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Insertionorder.ListAdsInsertionordersAsync(req);
+var res = await sdk.Insertionorder.ListAdsInsertionorders2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListAdsInsertionordersRequest](../../Models/Requests/ListAdsInsertionordersRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListAdsInsertionorders2Request](../../Models/Requests/ListAdsInsertionorders2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[ListAdsInsertionordersResponse](../../Models/Requests/ListAdsInsertionordersResponse.md)**
+**[ListAdsInsertionorders2Response](../../Models/Requests/ListAdsInsertionorders2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Insertionorder.ListAdsInsertionordersAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAdsInsertionorder
+## PatchAdsInsertionorder2
 
 Update an insertionorder
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
+PatchAdsInsertionorder2Request req = new PatchAdsInsertionorder2Request() {
     AdsInsertionorder = new AdsInsertionorder() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Insertionorder.PatchAdsInsertionorderAsync(req);
+var res = await sdk.Insertionorder.PatchAdsInsertionorder2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchAdsInsertionorderRequest](../../Models/Requests/PatchAdsInsertionorderRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchAdsInsertionorder2Request](../../Models/Requests/PatchAdsInsertionorder2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[PatchAdsInsertionorderResponse](../../Models/Requests/PatchAdsInsertionorderResponse.md)**
+**[PatchAdsInsertionorder2Response](../../Models/Requests/PatchAdsInsertionorder2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Insertionorder.PatchAdsInsertionorderAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAdsInsertionorder
+## RemoveAdsInsertionorder2
 
 Remove an insertionorder
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Insertionorder.RemoveAdsInsertionorderAsync(
+var res = await sdk.Insertionorder.RemoveAdsInsertionorder2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Insertionorder.RemoveAdsInsertionorderAsync(
 
 ### Response
 
-**[RemoveAdsInsertionorderResponse](../../Models/Requests/RemoveAdsInsertionorderResponse.md)**
+**[RemoveAdsInsertionorder2Response](../../Models/Requests/RemoveAdsInsertionorder2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Insertionorder.RemoveAdsInsertionorderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAdsInsertionorder
+## UpdateAdsInsertionorder2
 
 Update an insertionorder
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
+UpdateAdsInsertionorder2Request req = new UpdateAdsInsertionorder2Request() {
     AdsInsertionorder = new AdsInsertionorder() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Insertionorder.UpdateAdsInsertionorderAsync(req);
+var res = await sdk.Insertionorder.UpdateAdsInsertionorder2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateAdsInsertionorderRequest](../../Models/Requests/UpdateAdsInsertionorderRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [UpdateAdsInsertionorder2Request](../../Models/Requests/UpdateAdsInsertionorder2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[UpdateAdsInsertionorderResponse](../../Models/Requests/UpdateAdsInsertionorderResponse.md)**
+**[UpdateAdsInsertionorder2Response](../../Models/Requests/UpdateAdsInsertionorder2Response.md)**
 
 ### Errors
 

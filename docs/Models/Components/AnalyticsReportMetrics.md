@@ -1,0 +1,11 @@
+# AnalyticsReportMetrics
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `Dimension`                                                                         | [Dimension](../../Models/Components/Dimension.md)                                   | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `DimensionValue`                                                                    | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Type`                                                                              | [AnalyticsReportMetricsType](../../Models/Components/AnalyticsReportMetricsType.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Value`                                                                             | *double*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |

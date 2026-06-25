@@ -3,7 +3,10 @@
 
 ## Values
 
-| Name     | Value    |
-| -------- | -------- |
-| `Male`   | MALE     |
-| `Female` | FEMALE   |
+| Name        | Value       |
+| ----------- | ----------- |
+| `Male`      | MALE        |
+| `Female`    | FEMALE      |
+| `Intersex`  | INTERSEX    |
+| `Trans`     | TRANS       |
+| `NonBinary` | NON_BINARY  |

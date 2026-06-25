@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetAccountingProfitloss](#getaccountingprofitloss) - Retrieve a profitloss
-* [ListAccountingProfitlosses](#listaccountingprofitlosses) - List all profitlosses
+* [GetAccountingProfitloss2](#getaccountingprofitloss2) - Retrieve a profitloss
+* [ListAccountingProfitlosses2](#listaccountingprofitlosses2) - List all profitlosses
 
-## GetAccountingProfitloss
+## GetAccountingProfitloss2
 
 Retrieve a profitloss
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Profitloss.GetAccountingProfitlossAsync(
+var res = await sdk.Profitloss.GetAccountingProfitloss2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Profitloss.GetAccountingProfitlossAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Profitloss                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetAccountingProfitlossQueryParamFields](../../Models/Requests/GetAccountingProfitlossQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingProfitloss2QueryParamFields](../../Models/Requests/GetAccountingProfitloss2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingProfitlossResponse](../../Models/Requests/GetAccountingProfitlossResponse.md)**
+**[GetAccountingProfitloss2Response](../../Models/Requests/GetAccountingProfitloss2Response.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Profitloss.GetAccountingProfitlossAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingProfitlosses
+## ListAccountingProfitlosses2
 
 List all profitlosses
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingProfitlossesRequest req = new ListAccountingProfitlossesRequest() {
+ListAccountingProfitlosses2Request req = new ListAccountingProfitlosses2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Profitloss.ListAccountingProfitlossesAsync(req);
+var res = await sdk.Profitloss.ListAccountingProfitlosses2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [ListAccountingProfitlossesRequest](../../Models/Requests/ListAccountingProfitlossesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListAccountingProfitlosses2Request](../../Models/Requests/ListAccountingProfitlosses2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[ListAccountingProfitlossesResponse](../../Models/Requests/ListAccountingProfitlossesResponse.md)**
+**[ListAccountingProfitlosses2Response](../../Models/Requests/ListAccountingProfitlosses2Response.md)**
 
 ### Errors
 

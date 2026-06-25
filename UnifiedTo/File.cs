@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a file
         /// </summary>
-        Task<CreateStorageFileResponse> CreateStorageFileAsync(StorageFile storageFile, string connectionId, List<CreateStorageFileQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateStorageFile2Response> CreateStorageFile2Async(StorageFile storageFile, string connectionId, List<CreateStorageFile2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a file
         /// </summary>
-        Task<GetStorageFileResponse> GetStorageFileAsync(string connectionId, string id, List<GetStorageFileQueryParamFields>? fields = null, string? raw = null);
+        Task<GetStorageFile2Response> GetStorageFile2Async(string connectionId, string id, List<GetStorageFile2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all files
         /// </summary>
-        Task<ListStorageFilesResponse> ListStorageFilesAsync(ListStorageFilesRequest request);
+        Task<ListStorageFiles2Response> ListStorageFiles2Async(ListStorageFiles2Request request);
 
         /// <summary>
         /// Update a file
         /// </summary>
-        Task<PatchStorageFileResponse> PatchStorageFileAsync(PatchStorageFileRequest request);
+        Task<PatchStorageFile2Response> PatchStorageFile2Async(PatchStorageFile2Request request);
 
         /// <summary>
         /// Remove a file
         /// </summary>
-        Task<RemoveStorageFileResponse> RemoveStorageFileAsync(string connectionId, string id);
+        Task<RemoveStorageFile2Response> RemoveStorageFile2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a file
         /// </summary>
-        Task<UpdateStorageFileResponse> UpdateStorageFileAsync(UpdateStorageFileRequest request);
+        Task<UpdateStorageFile2Response> UpdateStorageFile2Async(UpdateStorageFile2Request request);
     }
 
     public class File: IFile
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateStorageFileResponse> CreateStorageFileAsync(StorageFile storageFile, string connectionId, List<CreateStorageFileQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateStorageFile2Response> CreateStorageFile2Async(StorageFile storageFile, string connectionId, List<CreateStorageFile2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateStorageFileRequest()
+            var request = new CreateStorageFile2Request()
             {
                 StorageFile = storageFile,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createStorageFile", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createStorageFile2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<StorageFile>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateStorageFileResponse()
+                    var response = new CreateStorageFile2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetStorageFileResponse> GetStorageFileAsync(string connectionId, string id, List<GetStorageFileQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetStorageFile2Response> GetStorageFile2Async(string connectionId, string id, List<GetStorageFile2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetStorageFileRequest()
+            var request = new GetStorageFile2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getStorageFile", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getStorageFile2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<StorageFile>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetStorageFileResponse()
+                    var response = new GetStorageFile2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListStorageFilesResponse> ListStorageFilesAsync(ListStorageFilesRequest request)
+        public async Task<ListStorageFiles2Response> ListStorageFiles2Async(ListStorageFiles2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/storage/{connection_id}/file", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listStorageFiles", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listStorageFiles2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<StorageFile>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListStorageFilesResponse()
+                    var response = new ListStorageFiles2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchStorageFileResponse> PatchStorageFileAsync(PatchStorageFileRequest request)
+        public async Task<PatchStorageFile2Response> PatchStorageFile2Async(PatchStorageFile2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/storage/{connection_id}/file/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchStorageFile", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchStorageFile2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<StorageFile>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchStorageFileResponse()
+                    var response = new PatchStorageFile2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveStorageFileResponse> RemoveStorageFileAsync(string connectionId, string id)
+        public async Task<RemoveStorageFile2Response> RemoveStorageFile2Async(string connectionId, string id)
         {
-            var request = new RemoveStorageFileRequest()
+            var request = new RemoveStorageFile2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeStorageFile", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeStorageFile2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveStorageFileResponse()
+                return new RemoveStorageFile2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveStorageFileResponse()
+                return new RemoveStorageFile2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateStorageFileResponse> UpdateStorageFileAsync(UpdateStorageFileRequest request)
+        public async Task<UpdateStorageFile2Response> UpdateStorageFile2Async(UpdateStorageFile2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/storage/{connection_id}/file/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateStorageFile", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateStorageFile2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<StorageFile>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateStorageFileResponse()
+                    var response = new UpdateStorageFile2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

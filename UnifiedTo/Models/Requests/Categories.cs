@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Requests
         Verification,
         [JsonProperty("ads")]
         Ads,
+        [JsonProperty("analytics")]
+        Analytics,
         [JsonProperty("forms")]
         Forms,
         [JsonProperty("shipping")]
@@ -73,6 +75,8 @@ namespace UnifiedTo.Models.Requests
         Signing,
         [JsonProperty("clubs")]
         Clubs,
+        [JsonProperty("datastore")]
+        Datastore,
     }
 
     public static class CategoriesExtension

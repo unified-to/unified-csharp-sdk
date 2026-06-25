@@ -28,14 +28,14 @@ namespace UnifiedTo
         /// <summary>
         /// List all applicationstatuses
         /// </summary>
-        Task<ListAtsApplicationstatusesResponse> ListAtsApplicationstatusesAsync(ListAtsApplicationstatusesRequest request);
+        Task<ListAtsApplicationstatuses2Response> ListAtsApplicationstatuses2Async(ListAtsApplicationstatuses2Request request);
     }
 
     public class Applicationstatus: IApplicationstatus
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -44,7 +44,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<ListAtsApplicationstatusesResponse> ListAtsApplicationstatusesAsync(ListAtsApplicationstatusesRequest request)
+        public async Task<ListAtsApplicationstatuses2Response> ListAtsApplicationstatuses2Async(ListAtsApplicationstatuses2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/applicationstatus", request);
@@ -57,7 +57,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsApplicationstatuses", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsApplicationstatuses2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -98,7 +98,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AtsStatus>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAtsApplicationstatusesResponse()
+                    var response = new ListAtsApplicationstatuses2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

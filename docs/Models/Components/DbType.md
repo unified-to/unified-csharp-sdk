@@ -3,11 +3,12 @@
 
 ## Values
 
-| Name       | Value      |
-| ---------- | ---------- |
-| `Mongodb`  | mongodb    |
-| `Mysql`    | mysql      |
-| `Postgres` | postgres   |
-| `Mssql`    | mssql      |
-| `Mariadb`  | mariadb    |
-| `Supabase` | supabase   |
+| Name        | Value       |
+| ----------- | ----------- |
+| `Mongodb`   | mongodb     |
+| `Mysql`     | mysql       |
+| `Postgres`  | postgres    |
+| `Mssql`     | mssql       |
+| `Mariadb`   | mariadb     |
+| `Supabase`  | supabase    |
+| `Snowflake` | snowflake   |

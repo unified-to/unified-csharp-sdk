@@ -28,69 +28,69 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<CreateCalendarLinkQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCalendarLink2Response> CreateCalendarLink2Async(CalendarLink calendarLink, string connectionId, List<CreateCalendarLink2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null);
+        Task<CreatePaymentLink2Response> CreatePaymentLink2Async(PaymentLink paymentLink, string connectionId, List<CreatePaymentLink2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<GetCalendarLinkQueryParamFields>? fields = null, string? raw = null);
+        Task<GetCalendarLink2Response> GetCalendarLink2Async(string connectionId, string id, List<GetCalendarLink2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null);
+        Task<GetPaymentLink2Response> GetPaymentLink2Async(string connectionId, string id, List<GetPaymentLink2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all links
         /// </summary>
-        Task<ListCalendarLinksResponse> ListCalendarLinksAsync(ListCalendarLinksRequest request);
+        Task<ListCalendarLinks2Response> ListCalendarLinks2Async(ListCalendarLinks2Request request);
 
         /// <summary>
         /// List all links
         /// </summary>
-        Task<ListPaymentLinksResponse> ListPaymentLinksAsync(ListPaymentLinksRequest request);
+        Task<ListPaymentLinks2Response> ListPaymentLinks2Async(ListPaymentLinks2Request request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(PatchCalendarLinkRequest request);
+        Task<PatchCalendarLink2Response> PatchCalendarLink2Async(PatchCalendarLink2Request request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request);
+        Task<PatchPaymentLink2Response> PatchPaymentLink2Async(PatchPaymentLink2Request request);
 
         /// <summary>
         /// Remove a link
         /// </summary>
-        Task<RemoveCalendarLinkResponse> RemoveCalendarLinkAsync(string connectionId, string id);
+        Task<RemoveCalendarLink2Response> RemoveCalendarLink2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a link
         /// </summary>
-        Task<RemovePaymentLinkResponse> RemovePaymentLinkAsync(string connectionId, string id);
+        Task<RemovePaymentLink2Response> RemovePaymentLink2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(UpdateCalendarLinkRequest request);
+        Task<UpdateCalendarLink2Response> UpdateCalendarLink2Async(UpdateCalendarLink2Request request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request);
+        Task<UpdatePaymentLink2Response> UpdatePaymentLink2Async(UpdatePaymentLink2Request request);
     }
 
     public class Link: ILink
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -99,9 +99,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<CreateCalendarLinkQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCalendarLink2Response> CreateCalendarLink2Async(CalendarLink calendarLink, string connectionId, List<CreateCalendarLink2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCalendarLinkRequest()
+            var request = new CreateCalendarLink2Request()
             {
                 CalendarLink = calendarLink,
                 ConnectionId = connectionId,
@@ -125,7 +125,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCalendarLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCalendarLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -166,7 +166,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCalendarLinkResponse()
+                    var response = new CreateCalendarLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -190,9 +190,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreatePaymentLink2Response> CreatePaymentLink2Async(PaymentLink paymentLink, string connectionId, List<CreatePaymentLink2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreatePaymentLinkRequest()
+            var request = new CreatePaymentLink2Request()
             {
                 PaymentLink = paymentLink,
                 ConnectionId = connectionId,
@@ -216,7 +216,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -257,7 +257,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreatePaymentLinkResponse()
+                    var response = new CreatePaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -281,9 +281,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<GetCalendarLinkQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCalendarLink2Response> GetCalendarLink2Async(string connectionId, string id, List<GetCalendarLink2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCalendarLinkRequest()
+            var request = new GetCalendarLink2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -301,7 +301,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCalendarLinkResponse()
+                    var response = new GetCalendarLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -366,9 +366,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetPaymentLink2Response> GetPaymentLink2Async(string connectionId, string id, List<GetPaymentLink2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetPaymentLinkRequest()
+            var request = new GetPaymentLink2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -386,7 +386,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getPaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -427,7 +427,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetPaymentLinkResponse()
+                    var response = new GetPaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -451,7 +451,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCalendarLinksResponse> ListCalendarLinksAsync(ListCalendarLinksRequest request)
+        public async Task<ListCalendarLinks2Response> ListCalendarLinks2Async(ListCalendarLinks2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link", request);
@@ -464,7 +464,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarLinks", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarLinks2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -505,7 +505,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CalendarLink>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCalendarLinksResponse()
+                    var response = new ListCalendarLinks2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -529,7 +529,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListPaymentLinksResponse> ListPaymentLinksAsync(ListPaymentLinksRequest request)
+        public async Task<ListPaymentLinks2Response> ListPaymentLinks2Async(ListPaymentLinks2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link", request);
@@ -542,7 +542,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentLinks", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPaymentLinks2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -583,7 +583,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<PaymentLink>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListPaymentLinksResponse()
+                    var response = new ListPaymentLinks2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -607,7 +607,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(PatchCalendarLinkRequest request)
+        public async Task<PatchCalendarLink2Response> PatchCalendarLink2Async(PatchCalendarLink2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
@@ -626,7 +626,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCalendarLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCalendarLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -667,7 +667,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCalendarLinkResponse()
+                    var response = new PatchCalendarLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -691,7 +691,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request)
+        public async Task<PatchPaymentLink2Response> PatchPaymentLink2Async(PatchPaymentLink2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
@@ -710,7 +710,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -751,7 +751,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchPaymentLinkResponse()
+                    var response = new PatchPaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -775,9 +775,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCalendarLinkResponse> RemoveCalendarLinkAsync(string connectionId, string id)
+        public async Task<RemoveCalendarLink2Response> RemoveCalendarLink2Async(string connectionId, string id)
         {
-            var request = new RemoveCalendarLinkRequest()
+            var request = new RemoveCalendarLink2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -793,7 +793,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCalendarLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCalendarLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -831,7 +831,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCalendarLinkResponse()
+                return new RemoveCalendarLink2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -848,7 +848,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCalendarLinkResponse()
+                return new RemoveCalendarLink2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -857,9 +857,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemovePaymentLinkResponse> RemovePaymentLinkAsync(string connectionId, string id)
+        public async Task<RemovePaymentLink2Response> RemovePaymentLink2Async(string connectionId, string id)
         {
-            var request = new RemovePaymentLinkRequest()
+            var request = new RemovePaymentLink2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -875,7 +875,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -913,7 +913,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemovePaymentLinkResponse()
+                return new RemovePaymentLink2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -930,7 +930,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemovePaymentLinkResponse()
+                return new RemovePaymentLink2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -939,7 +939,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(UpdateCalendarLinkRequest request)
+        public async Task<UpdateCalendarLink2Response> UpdateCalendarLink2Async(UpdateCalendarLink2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
@@ -958,7 +958,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCalendarLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCalendarLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -999,7 +999,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCalendarLinkResponse()
+                    var response = new UpdateCalendarLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1023,7 +1023,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request)
+        public async Task<UpdatePaymentLink2Response> UpdatePaymentLink2Async(UpdatePaymentLink2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
@@ -1042,7 +1042,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentLink", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePaymentLink2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1083,7 +1083,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<PaymentLink>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdatePaymentLinkResponse()
+                    var response = new UpdatePaymentLink2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

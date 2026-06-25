@@ -28,59 +28,59 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an activity
         /// </summary>
-        Task<GetClubsActivityResponse> GetClubsActivityAsync(string connectionId, string id, List<GetClubsActivityQueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsActivity2Response> GetClubsActivity2Async(string connectionId, string id, List<GetClubsActivity2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetClubsEventResponse> GetClubsEventAsync(string connectionId, string id, List<GetClubsEventQueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsEvent2Response> GetClubsEvent2Async(string connectionId, string id, List<GetClubsEvent2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetClubsGroupResponse> GetClubsGroupAsync(string connectionId, string id, List<GetClubsGroupQueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsGroup2Response> GetClubsGroup2Async(string connectionId, string id, List<GetClubsGroup2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetClubsLocationResponse> GetClubsLocationAsync(string connectionId, string id, List<GetClubsLocationQueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsLocation2Response> GetClubsLocation2Async(string connectionId, string id, List<GetClubsLocation2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a member
         /// </summary>
-        Task<GetClubsMemberResponse> GetClubsMemberAsync(string connectionId, string id, List<GetClubsMemberQueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsMember2Response> GetClubsMember2Async(string connectionId, string id, List<GetClubsMember2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all activities
         /// </summary>
-        Task<ListClubsActivitiesResponse> ListClubsActivitiesAsync(ListClubsActivitiesRequest request);
+        Task<ListClubsActivities2Response> ListClubsActivities2Async(ListClubsActivities2Request request);
 
         /// <summary>
         /// List all events
         /// </summary>
-        Task<ListClubsEventsResponse> ListClubsEventsAsync(ListClubsEventsRequest request);
+        Task<ListClubsEvents2Response> ListClubsEvents2Async(ListClubsEvents2Request request);
 
         /// <summary>
         /// List all groups
         /// </summary>
-        Task<ListClubsGroupsResponse> ListClubsGroupsAsync(ListClubsGroupsRequest request);
+        Task<ListClubsGroups2Response> ListClubsGroups2Async(ListClubsGroups2Request request);
 
         /// <summary>
         /// List all locations
         /// </summary>
-        Task<ListClubsLocationsResponse> ListClubsLocationsAsync(ListClubsLocationsRequest request);
+        Task<ListClubsLocations2Response> ListClubsLocations2Async(ListClubsLocations2Request request);
 
         /// <summary>
         /// List all members
         /// </summary>
-        Task<ListClubsMembersResponse> ListClubsMembersAsync(ListClubsMembersRequest request);
+        Task<ListClubsMembers2Response> ListClubsMembers2Async(ListClubsMembers2Request request);
     }
 
     public class Clubs: IClubs
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -89,9 +89,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetClubsActivityResponse> GetClubsActivityAsync(string connectionId, string id, List<GetClubsActivityQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsActivity2Response> GetClubsActivity2Async(string connectionId, string id, List<GetClubsActivity2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsActivityRequest()
+            var request = new GetClubsActivity2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -109,7 +109,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsActivity", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsActivity2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -150,7 +150,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsActivity>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsActivityResponse()
+                    var response = new GetClubsActivity2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -174,9 +174,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetClubsEventResponse> GetClubsEventAsync(string connectionId, string id, List<GetClubsEventQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsEvent2Response> GetClubsEvent2Async(string connectionId, string id, List<GetClubsEvent2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsEventRequest()
+            var request = new GetClubsEvent2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -194,7 +194,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -235,7 +235,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsEventResponse()
+                    var response = new GetClubsEvent2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -259,9 +259,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetClubsGroupResponse> GetClubsGroupAsync(string connectionId, string id, List<GetClubsGroupQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsGroup2Response> GetClubsGroup2Async(string connectionId, string id, List<GetClubsGroup2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsGroupRequest()
+            var request = new GetClubsGroup2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -279,7 +279,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -320,7 +320,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsGroupResponse()
+                    var response = new GetClubsGroup2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -344,9 +344,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetClubsLocationResponse> GetClubsLocationAsync(string connectionId, string id, List<GetClubsLocationQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsLocation2Response> GetClubsLocation2Async(string connectionId, string id, List<GetClubsLocation2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsLocationRequest()
+            var request = new GetClubsLocation2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -364,7 +364,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -405,7 +405,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsLocationResponse()
+                    var response = new GetClubsLocation2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -429,9 +429,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetClubsMemberResponse> GetClubsMemberAsync(string connectionId, string id, List<GetClubsMemberQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsMember2Response> GetClubsMember2Async(string connectionId, string id, List<GetClubsMember2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsMemberRequest()
+            var request = new GetClubsMember2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -449,7 +449,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsMember", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsMember2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -490,7 +490,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsMember>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsMemberResponse()
+                    var response = new GetClubsMember2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -514,7 +514,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsActivitiesResponse> ListClubsActivitiesAsync(ListClubsActivitiesRequest request)
+        public async Task<ListClubsActivities2Response> ListClubsActivities2Async(ListClubsActivities2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/activity", request);
@@ -527,7 +527,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsActivities", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsActivities2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -568,7 +568,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsActivity>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsActivitiesResponse()
+                    var response = new ListClubsActivities2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -592,7 +592,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsEventsResponse> ListClubsEventsAsync(ListClubsEventsRequest request)
+        public async Task<ListClubsEvents2Response> ListClubsEvents2Async(ListClubsEvents2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/event", request);
@@ -605,7 +605,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsEvents", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsEvents2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -646,7 +646,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsEvent>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsEventsResponse()
+                    var response = new ListClubsEvents2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -670,7 +670,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsGroupsResponse> ListClubsGroupsAsync(ListClubsGroupsRequest request)
+        public async Task<ListClubsGroups2Response> ListClubsGroups2Async(ListClubsGroups2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/group", request);
@@ -683,7 +683,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsGroups", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsGroups2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -724,7 +724,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsGroup>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsGroupsResponse()
+                    var response = new ListClubsGroups2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -748,7 +748,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsLocationsResponse> ListClubsLocationsAsync(ListClubsLocationsRequest request)
+        public async Task<ListClubsLocations2Response> ListClubsLocations2Async(ListClubsLocations2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/location", request);
@@ -761,7 +761,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsLocations", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsLocations2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -802,7 +802,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsLocation>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsLocationsResponse()
+                    var response = new ListClubsLocations2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -826,7 +826,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsMembersResponse> ListClubsMembersAsync(ListClubsMembersRequest request)
+        public async Task<ListClubsMembers2Response> ListClubsMembers2Async(ListClubsMembers2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/member", request);
@@ -839,7 +839,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsMembers", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsMembers2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -880,7 +880,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsMember>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsMembersResponse()
+                    var response = new ListClubsMembers2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

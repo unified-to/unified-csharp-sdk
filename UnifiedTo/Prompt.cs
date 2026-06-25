@@ -28,14 +28,14 @@ namespace UnifiedTo
         /// <summary>
         /// Create a prompt
         /// </summary>
-        Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPromptQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateGenaiPrompt2Response> CreateGenaiPrompt2Async(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPrompt2QueryParamFields>? fields = null, string? raw = null);
     }
 
     public class Prompt: IPrompt
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -44,9 +44,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPromptQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateGenaiPrompt2Response> CreateGenaiPrompt2Async(GenaiPrompt genaiPrompt, string connectionId, List<CreateGenaiPrompt2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateGenaiPromptRequest()
+            var request = new CreateGenaiPrompt2Request()
             {
                 GenaiPrompt = genaiPrompt,
                 ConnectionId = connectionId,
@@ -70,7 +70,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiPrompt", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiPrompt2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -111,7 +111,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<GenaiPrompt>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateGenaiPromptResponse()
+                    var response = new CreateGenaiPrompt2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

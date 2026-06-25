@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
-* [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
-* [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
-* [PatchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
-* [RemoveAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
-* [UpdateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
+* [CreateAccountingTaxrate2](#createaccountingtaxrate2) - Create a taxrate
+* [GetAccountingTaxrate2](#getaccountingtaxrate2) - Retrieve a taxrate
+* [ListAccountingTaxrates2](#listaccountingtaxrates2) - List all taxrates
+* [PatchAccountingTaxrate2](#patchaccountingtaxrate2) - Update a taxrate
+* [RemoveAccountingTaxrate2](#removeaccountingtaxrate2) - Remove a taxrate
+* [UpdateAccountingTaxrate2](#updateaccountingtaxrate2) - Update a taxrate
 
-## CreateAccountingTaxrate
+## CreateAccountingTaxrate2
 
 Create a taxrate
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
+var res = await sdk.Taxrate.CreateAccountingTaxrate2Async(
     accountingTaxrate: new AccountingTaxrate() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingTaxrate`                                                                                                                              | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingTaxrateQueryParamFields](../../Models/Requests/CreateAccountingTaxrateQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingTaxrate2QueryParamFields](../../Models/Requests/CreateAccountingTaxrate2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingTaxrateResponse](../../Models/Requests/CreateAccountingTaxrateResponse.md)**
+**[CreateAccountingTaxrate2Response](../../Models/Requests/CreateAccountingTaxrate2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingTaxrate
+## GetAccountingTaxrate2
 
 Retrieve a taxrate
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
+var res = await sdk.Taxrate.GetAccountingTaxrate2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Taxrate                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetAccountingTaxrateQueryParamFields](../../Models/Requests/GetAccountingTaxrateQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingTaxrate2QueryParamFields](../../Models/Requests/GetAccountingTaxrate2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingTaxrateResponse](../../Models/Requests/GetAccountingTaxrateResponse.md)**
+**[GetAccountingTaxrate2Response](../../Models/Requests/GetAccountingTaxrate2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingTaxrates
+## ListAccountingTaxrates2
 
 List all taxrates
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
+ListAccountingTaxrates2Request req = new ListAccountingTaxrates2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
+var res = await sdk.Taxrate.ListAccountingTaxrates2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListAccountingTaxratesRequest](../../Models/Requests/ListAccountingTaxratesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListAccountingTaxrates2Request](../../Models/Requests/ListAccountingTaxrates2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[ListAccountingTaxratesResponse](../../Models/Requests/ListAccountingTaxratesResponse.md)**
+**[ListAccountingTaxrates2Response](../../Models/Requests/ListAccountingTaxrates2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingTaxrate
+## PatchAccountingTaxrate2
 
 Update a taxrate
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
+PatchAccountingTaxrate2Request req = new PatchAccountingTaxrate2Request() {
     AccountingTaxrate = new AccountingTaxrate() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(req);
+var res = await sdk.Taxrate.PatchAccountingTaxrate2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchAccountingTaxrateRequest](../../Models/Requests/PatchAccountingTaxrateRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchAccountingTaxrate2Request](../../Models/Requests/PatchAccountingTaxrate2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[PatchAccountingTaxrateResponse](../../Models/Requests/PatchAccountingTaxrateResponse.md)**
+**[PatchAccountingTaxrate2Response](../../Models/Requests/PatchAccountingTaxrate2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingTaxrate
+## RemoveAccountingTaxrate2
 
 Remove a taxrate
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
+var res = await sdk.Taxrate.RemoveAccountingTaxrate2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 
 ### Response
 
-**[RemoveAccountingTaxrateResponse](../../Models/Requests/RemoveAccountingTaxrateResponse.md)**
+**[RemoveAccountingTaxrate2Response](../../Models/Requests/RemoveAccountingTaxrate2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingTaxrate
+## UpdateAccountingTaxrate2
 
 Update a taxrate
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
+UpdateAccountingTaxrate2Request req = new UpdateAccountingTaxrate2Request() {
     AccountingTaxrate = new AccountingTaxrate() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(req);
+var res = await sdk.Taxrate.UpdateAccountingTaxrate2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateAccountingTaxrateRequest](../../Models/Requests/UpdateAccountingTaxrateRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [UpdateAccountingTaxrate2Request](../../Models/Requests/UpdateAccountingTaxrate2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[UpdateAccountingTaxrateResponse](../../Models/Requests/UpdateAccountingTaxrateResponse.md)**
+**[UpdateAccountingTaxrate2Response](../../Models/Requests/UpdateAccountingTaxrate2Response.md)**
 
 ### Errors
 

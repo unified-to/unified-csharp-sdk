@@ -33,6 +33,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        [JsonProperty("summary")]
+        public string? Summary { get; set; }
+
+        [JsonProperty("summary_download_url")]
+        public string? SummaryDownloadUrl { get; set; }
+
         [JsonProperty("transcript_download_url")]
         public string? TranscriptDownloadUrl { get; set; }
 

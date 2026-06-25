@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a profitloss
         /// </summary>
-        Task<GetAccountingProfitlossResponse> GetAccountingProfitlossAsync(string connectionId, string id, List<GetAccountingProfitlossQueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingProfitloss2Response> GetAccountingProfitloss2Async(string connectionId, string id, List<GetAccountingProfitloss2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all profitlosses
         /// </summary>
-        Task<ListAccountingProfitlossesResponse> ListAccountingProfitlossesAsync(ListAccountingProfitlossesRequest request);
+        Task<ListAccountingProfitlosses2Response> ListAccountingProfitlosses2Async(ListAccountingProfitlosses2Request request);
     }
 
     public class Profitloss: IProfitloss
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetAccountingProfitlossResponse> GetAccountingProfitlossAsync(string connectionId, string id, List<GetAccountingProfitlossQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingProfitloss2Response> GetAccountingProfitloss2Async(string connectionId, string id, List<GetAccountingProfitloss2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingProfitlossRequest()
+            var request = new GetAccountingProfitloss2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingProfitloss", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingProfitloss2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingProfitloss>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingProfitlossResponse()
+                    var response = new GetAccountingProfitloss2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingProfitlossesResponse> ListAccountingProfitlossesAsync(ListAccountingProfitlossesRequest request)
+        public async Task<ListAccountingProfitlosses2Response> ListAccountingProfitlosses2Async(ListAccountingProfitlosses2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/profitloss", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingProfitlosses", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingProfitlosses2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingProfitloss>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingProfitlossesResponse()
+                    var response = new ListAccountingProfitlosses2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

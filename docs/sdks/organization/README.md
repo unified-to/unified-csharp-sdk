@@ -5,22 +5,22 @@
 
 ### Available Operations
 
-* [CreateAdsOrganization](#createadsorganization) - Create an organization
-* [CreateRepoOrganization](#createrepoorganization) - Create an organization
-* [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
-* [GetAdsOrganization](#getadsorganization) - Retrieve an organization
-* [GetRepoOrganization](#getrepoorganization) - Retrieve an organization
-* [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
-* [ListAdsOrganizations](#listadsorganizations) - List all organizations
-* [ListRepoOrganizations](#listrepoorganizations) - List all organizations
-* [PatchAdsOrganization](#patchadsorganization) - Update an organization
-* [PatchRepoOrganization](#patchrepoorganization) - Update an organization
-* [RemoveAdsOrganization](#removeadsorganization) - Remove an organization
-* [RemoveRepoOrganization](#removerepoorganization) - Remove an organization
-* [UpdateAdsOrganization](#updateadsorganization) - Update an organization
-* [UpdateRepoOrganization](#updaterepoorganization) - Update an organization
+* [CreateAdsOrganization2](#createadsorganization2) - Create an organization
+* [CreateRepoOrganization2](#createrepoorganization2) - Create an organization
+* [GetAccountingOrganization2](#getaccountingorganization2) - Retrieve an organization
+* [GetAdsOrganization2](#getadsorganization2) - Retrieve an organization
+* [GetRepoOrganization2](#getrepoorganization2) - Retrieve an organization
+* [ListAccountingOrganizations2](#listaccountingorganizations2) - List all organizations
+* [ListAdsOrganizations2](#listadsorganizations2) - List all organizations
+* [ListRepoOrganizations2](#listrepoorganizations2) - List all organizations
+* [PatchAdsOrganization2](#patchadsorganization2) - Update an organization
+* [PatchRepoOrganization2](#patchrepoorganization2) - Update an organization
+* [RemoveAdsOrganization2](#removeadsorganization2) - Remove an organization
+* [RemoveRepoOrganization2](#removerepoorganization2) - Remove an organization
+* [UpdateAdsOrganization2](#updateadsorganization2) - Update an organization
+* [UpdateRepoOrganization2](#updaterepoorganization2) - Update an organization
 
-## CreateAdsOrganization
+## CreateAdsOrganization2
 
 Create an organization
 
@@ -34,7 +34,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Organization.CreateAdsOrganizationAsync(
+var res = await sdk.Organization.CreateAdsOrganization2Async(
     adsOrganization: new AdsOrganization() {},
     connectionId: "<id>"
 );
@@ -48,12 +48,12 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AdsOrganization`                                                                                                                                | [AdsOrganization](../../Models/Components/AdsOrganization.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAdsOrganizationQueryParamFields](../../Models/Requests/CreateAdsOrganizationQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAdsOrganization2QueryParamFields](../../Models/Requests/CreateAdsOrganization2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAdsOrganizationResponse](../../Models/Requests/CreateAdsOrganizationResponse.md)**
+**[CreateAdsOrganization2Response](../../Models/Requests/CreateAdsOrganization2Response.md)**
 
 ### Errors
 
@@ -61,7 +61,7 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateRepoOrganization
+## CreateRepoOrganization2
 
 Create an organization
 
@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Organization.CreateRepoOrganizationAsync(
+var res = await sdk.Organization.CreateRepoOrganization2Async(
     repoOrganization: new RepoOrganization() {},
     connectionId: "<id>"
 );
@@ -89,12 +89,12 @@ var res = await sdk.Organization.CreateRepoOrganizationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `RepoOrganization`                                                                                                                               | [RepoOrganization](../../Models/Components/RepoOrganization.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateRepoOrganizationQueryParamFields](../../Models/Requests/CreateRepoOrganizationQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateRepoOrganization2QueryParamFields](../../Models/Requests/CreateRepoOrganization2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateRepoOrganizationResponse](../../Models/Requests/CreateRepoOrganizationResponse.md)**
+**[CreateRepoOrganization2Response](../../Models/Requests/CreateRepoOrganization2Response.md)**
 
 ### Errors
 
@@ -102,7 +102,7 @@ var res = await sdk.Organization.CreateRepoOrganizationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingOrganization
+## GetAccountingOrganization2
 
 Retrieve an organization
 
@@ -116,7 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Organization.GetAccountingOrganizationAsync(
+var res = await sdk.Organization.GetAccountingOrganization2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -130,12 +130,12 @@ var res = await sdk.Organization.GetAccountingOrganizationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Organization                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetAccountingOrganizationQueryParamFields](../../Models/Requests/GetAccountingOrganizationQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingOrganization2QueryParamFields](../../Models/Requests/GetAccountingOrganization2QueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingOrganizationResponse](../../Models/Requests/GetAccountingOrganizationResponse.md)**
+**[GetAccountingOrganization2Response](../../Models/Requests/GetAccountingOrganization2Response.md)**
 
 ### Errors
 
@@ -143,7 +143,7 @@ var res = await sdk.Organization.GetAccountingOrganizationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAdsOrganization
+## GetAdsOrganization2
 
 Retrieve an organization
 
@@ -157,7 +157,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Organization.GetAdsOrganizationAsync(
+var res = await sdk.Organization.GetAdsOrganization2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -171,12 +171,12 @@ var res = await sdk.Organization.GetAdsOrganizationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Organization                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetAdsOrganizationQueryParamFields](../../Models/Requests/GetAdsOrganizationQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAdsOrganization2QueryParamFields](../../Models/Requests/GetAdsOrganization2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAdsOrganizationResponse](../../Models/Requests/GetAdsOrganizationResponse.md)**
+**[GetAdsOrganization2Response](../../Models/Requests/GetAdsOrganization2Response.md)**
 
 ### Errors
 
@@ -184,7 +184,7 @@ var res = await sdk.Organization.GetAdsOrganizationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetRepoOrganization
+## GetRepoOrganization2
 
 Retrieve an organization
 
@@ -198,7 +198,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Organization.GetRepoOrganizationAsync(
+var res = await sdk.Organization.GetRepoOrganization2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -212,12 +212,12 @@ var res = await sdk.Organization.GetRepoOrganizationAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Organization                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetRepoOrganizationQueryParamFields](../../Models/Requests/GetRepoOrganizationQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetRepoOrganization2QueryParamFields](../../Models/Requests/GetRepoOrganization2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetRepoOrganizationResponse](../../Models/Requests/GetRepoOrganizationResponse.md)**
+**[GetRepoOrganization2Response](../../Models/Requests/GetRepoOrganization2Response.md)**
 
 ### Errors
 
@@ -225,7 +225,7 @@ var res = await sdk.Organization.GetRepoOrganizationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingOrganizations
+## ListAccountingOrganizations2
 
 List all organizations
 
@@ -240,24 +240,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
+ListAccountingOrganizations2Request req = new ListAccountingOrganizations2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);
+var res = await sdk.Organization.ListAccountingOrganizations2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `request`                                                                                         | [ListAccountingOrganizationsRequest](../../Models/Requests/ListAccountingOrganizationsRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [ListAccountingOrganizations2Request](../../Models/Requests/ListAccountingOrganizations2Request.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
 
 ### Response
 
-**[ListAccountingOrganizationsResponse](../../Models/Requests/ListAccountingOrganizationsResponse.md)**
+**[ListAccountingOrganizations2Response](../../Models/Requests/ListAccountingOrganizations2Response.md)**
 
 ### Errors
 
@@ -265,7 +265,7 @@ var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAdsOrganizations
+## ListAdsOrganizations2
 
 List all organizations
 
@@ -280,24 +280,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAdsOrganizationsRequest req = new ListAdsOrganizationsRequest() {
+ListAdsOrganizations2Request req = new ListAdsOrganizations2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Organization.ListAdsOrganizationsAsync(req);
+var res = await sdk.Organization.ListAdsOrganizations2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListAdsOrganizationsRequest](../../Models/Requests/ListAdsOrganizationsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListAdsOrganizations2Request](../../Models/Requests/ListAdsOrganizations2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListAdsOrganizationsResponse](../../Models/Requests/ListAdsOrganizationsResponse.md)**
+**[ListAdsOrganizations2Response](../../Models/Requests/ListAdsOrganizations2Response.md)**
 
 ### Errors
 
@@ -305,7 +305,7 @@ var res = await sdk.Organization.ListAdsOrganizationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListRepoOrganizations
+## ListRepoOrganizations2
 
 List all organizations
 
@@ -320,257 +320,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListRepoOrganizationsRequest req = new ListRepoOrganizationsRequest() {
+ListRepoOrganizations2Request req = new ListRepoOrganizations2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Organization.ListRepoOrganizationsAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListRepoOrganizationsRequest](../../Models/Requests/ListRepoOrganizationsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
-
-### Response
-
-**[ListRepoOrganizationsResponse](../../Models/Requests/ListRepoOrganizationsResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchAdsOrganization
-
-Update an organization
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
-    AdsOrganization = new AdsOrganization() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Organization.PatchAdsOrganizationAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchAdsOrganizationRequest](../../Models/Requests/PatchAdsOrganizationRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
-
-### Response
-
-**[PatchAdsOrganizationResponse](../../Models/Requests/PatchAdsOrganizationResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchRepoOrganization
-
-Update an organization
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchRepoOrganizationRequest req = new PatchRepoOrganizationRequest() {
-    RepoOrganization = new RepoOrganization() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Organization.PatchRepoOrganizationAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchRepoOrganizationRequest](../../Models/Requests/PatchRepoOrganizationRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
-
-### Response
-
-**[PatchRepoOrganizationResponse](../../Models/Requests/PatchRepoOrganizationResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## RemoveAdsOrganization
-
-Remove an organization
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Organization.RemoveAdsOrganizationAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `ConnectionId`         | *string*               | :heavy_check_mark:     | ID of the connection   |
-| `Id`                   | *string*               | :heavy_check_mark:     | ID of the Organization |
-
-### Response
-
-**[RemoveAdsOrganizationResponse](../../Models/Requests/RemoveAdsOrganizationResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## RemoveRepoOrganization
-
-Remove an organization
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Organization.RemoveRepoOrganizationAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter              | Type                   | Required               | Description            |
-| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
-| `ConnectionId`         | *string*               | :heavy_check_mark:     | ID of the connection   |
-| `Id`                   | *string*               | :heavy_check_mark:     | ID of the Organization |
-
-### Response
-
-**[RemoveRepoOrganizationResponse](../../Models/Requests/RemoveRepoOrganizationResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## UpdateAdsOrganization
-
-Update an organization
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
-    AdsOrganization = new AdsOrganization() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Organization.UpdateAdsOrganizationAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdateAdsOrganizationRequest](../../Models/Requests/UpdateAdsOrganizationRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
-
-### Response
-
-**[UpdateAdsOrganizationResponse](../../Models/Requests/UpdateAdsOrganizationResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## UpdateRepoOrganization
-
-Update an organization
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-UpdateRepoOrganizationRequest req = new UpdateRepoOrganizationRequest() {
-    RepoOrganization = new RepoOrganization() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Organization.UpdateRepoOrganizationAsync(req);
+var res = await sdk.Organization.ListRepoOrganizations2Async(req);
 
 // handle response
 ```
@@ -579,11 +333,257 @@ var res = await sdk.Organization.UpdateRepoOrganizationAsync(req);
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateRepoOrganizationRequest](../../Models/Requests/UpdateRepoOrganizationRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| `request`                                                                               | [ListRepoOrganizations2Request](../../Models/Requests/ListRepoOrganizations2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateRepoOrganizationResponse](../../Models/Requests/UpdateRepoOrganizationResponse.md)**
+**[ListRepoOrganizations2Response](../../Models/Requests/ListRepoOrganizations2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchAdsOrganization2
+
+Update an organization
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAdsOrganization2Request req = new PatchAdsOrganization2Request() {
+    AdsOrganization = new AdsOrganization() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Organization.PatchAdsOrganization2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchAdsOrganization2Request](../../Models/Requests/PatchAdsOrganization2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[PatchAdsOrganization2Response](../../Models/Requests/PatchAdsOrganization2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchRepoOrganization2
+
+Update an organization
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchRepoOrganization2Request req = new PatchRepoOrganization2Request() {
+    RepoOrganization = new RepoOrganization() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Organization.PatchRepoOrganization2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchRepoOrganization2Request](../../Models/Requests/PatchRepoOrganization2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[PatchRepoOrganization2Response](../../Models/Requests/PatchRepoOrganization2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveAdsOrganization2
+
+Remove an organization
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Organization.RemoveAdsOrganization2Async(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `ConnectionId`         | *string*               | :heavy_check_mark:     | ID of the connection   |
+| `Id`                   | *string*               | :heavy_check_mark:     | ID of the Organization |
+
+### Response
+
+**[RemoveAdsOrganization2Response](../../Models/Requests/RemoveAdsOrganization2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveRepoOrganization2
+
+Remove an organization
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Organization.RemoveRepoOrganization2Async(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `ConnectionId`         | *string*               | :heavy_check_mark:     | ID of the connection   |
+| `Id`                   | *string*               | :heavy_check_mark:     | ID of the Organization |
+
+### Response
+
+**[RemoveRepoOrganization2Response](../../Models/Requests/RemoveRepoOrganization2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAdsOrganization2
+
+Update an organization
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAdsOrganization2Request req = new UpdateAdsOrganization2Request() {
+    AdsOrganization = new AdsOrganization() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Organization.UpdateAdsOrganization2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateAdsOrganization2Request](../../Models/Requests/UpdateAdsOrganization2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[UpdateAdsOrganization2Response](../../Models/Requests/UpdateAdsOrganization2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateRepoOrganization2
+
+Update an organization
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateRepoOrganization2Request req = new UpdateRepoOrganization2Request() {
+    RepoOrganization = new RepoOrganization() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Organization.UpdateRepoOrganization2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateRepoOrganization2Request](../../Models/Requests/UpdateRepoOrganization2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[UpdateRepoOrganization2Response](../../Models/Requests/UpdateRepoOrganization2Response.md)**
 
 ### Errors
 

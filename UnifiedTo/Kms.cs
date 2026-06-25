@@ -28,99 +28,99 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<CreateKmsCommentQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateKmsComment2Response> CreateKmsComment2Async(KmsComment kmsComment, string connectionId, List<CreateKmsComment2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a page
         /// </summary>
-        Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<CreateKmsPageQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateKmsPage2Response> CreateKmsPage2Async(KmsPage kmsPage, string connectionId, List<CreateKmsPage2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a space
         /// </summary>
-        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<CreateKmsSpaceQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateKmsSpace2Response> CreateKmsSpace2Async(KmsSpace kmsSpace, string connectionId, List<CreateKmsSpace2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<GetKmsCommentQueryParamFields>? fields = null, string? raw = null);
+        Task<GetKmsComment2Response> GetKmsComment2Async(string connectionId, string id, List<GetKmsComment2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a page
         /// </summary>
-        Task<GetKmsPageResponse> GetKmsPageAsync(string connectionId, string id, List<GetKmsPageQueryParamFields>? fields = null, string? raw = null);
+        Task<GetKmsPage2Response> GetKmsPage2Async(string connectionId, string id, List<GetKmsPage2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a space
         /// </summary>
-        Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<GetKmsSpaceQueryParamFields>? fields = null, string? raw = null);
+        Task<GetKmsSpace2Response> GetKmsSpace2Async(string connectionId, string id, List<GetKmsSpace2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all comments
         /// </summary>
-        Task<ListKmsCommentsResponse> ListKmsCommentsAsync(ListKmsCommentsRequest request);
+        Task<ListKmsComments2Response> ListKmsComments2Async(ListKmsComments2Request request);
 
         /// <summary>
         /// List all pages
         /// </summary>
-        Task<ListKmsPagesResponse> ListKmsPagesAsync(ListKmsPagesRequest request);
+        Task<ListKmsPages2Response> ListKmsPages2Async(ListKmsPages2Request request);
 
         /// <summary>
         /// List all spaces
         /// </summary>
-        Task<ListKmsSpacesResponse> ListKmsSpacesAsync(ListKmsSpacesRequest request);
+        Task<ListKmsSpaces2Response> ListKmsSpaces2Async(ListKmsSpaces2Request request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request);
+        Task<PatchKmsComment2Response> PatchKmsComment2Async(PatchKmsComment2Request request);
 
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<PatchKmsPageResponse> PatchKmsPageAsync(PatchKmsPageRequest request);
+        Task<PatchKmsPage2Response> PatchKmsPage2Async(PatchKmsPage2Request request);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(PatchKmsSpaceRequest request);
+        Task<PatchKmsSpace2Response> PatchKmsSpace2Async(PatchKmsSpace2Request request);
 
         /// <summary>
         /// Remove a comment
         /// </summary>
-        Task<RemoveKmsCommentResponse> RemoveKmsCommentAsync(string connectionId, string id);
+        Task<RemoveKmsComment2Response> RemoveKmsComment2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a page
         /// </summary>
-        Task<RemoveKmsPageResponse> RemoveKmsPageAsync(string connectionId, string id);
+        Task<RemoveKmsPage2Response> RemoveKmsPage2Async(string connectionId, string id);
 
         /// <summary>
         /// Remove a space
         /// </summary>
-        Task<RemoveKmsSpaceResponse> RemoveKmsSpaceAsync(string connectionId, string id);
+        Task<RemoveKmsSpace2Response> RemoveKmsSpace2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request);
+        Task<UpdateKmsComment2Response> UpdateKmsComment2Async(UpdateKmsComment2Request request);
 
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<UpdateKmsPageResponse> UpdateKmsPageAsync(UpdateKmsPageRequest request);
+        Task<UpdateKmsPage2Response> UpdateKmsPage2Async(UpdateKmsPage2Request request);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(UpdateKmsSpaceRequest request);
+        Task<UpdateKmsSpace2Response> UpdateKmsSpace2Async(UpdateKmsSpace2Request request);
     }
 
     public class Kms: IKms
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -129,9 +129,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<CreateKmsCommentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateKmsComment2Response> CreateKmsComment2Async(KmsComment kmsComment, string connectionId, List<CreateKmsComment2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateKmsCommentRequest()
+            var request = new CreateKmsComment2Request()
             {
                 KmsComment = kmsComment,
                 ConnectionId = connectionId,
@@ -155,7 +155,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -196,7 +196,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateKmsCommentResponse()
+                    var response = new CreateKmsComment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -220,9 +220,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<CreateKmsPageQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateKmsPage2Response> CreateKmsPage2Async(KmsPage kmsPage, string connectionId, List<CreateKmsPage2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateKmsPageRequest()
+            var request = new CreateKmsPage2Request()
             {
                 KmsPage = kmsPage,
                 ConnectionId = connectionId,
@@ -246,7 +246,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsPage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsPage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -287,7 +287,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsPage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateKmsPageResponse()
+                    var response = new CreateKmsPage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -311,9 +311,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<CreateKmsSpaceQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateKmsSpace2Response> CreateKmsSpace2Async(KmsSpace kmsSpace, string connectionId, List<CreateKmsSpace2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateKmsSpaceRequest()
+            var request = new CreateKmsSpace2Request()
             {
                 KmsSpace = kmsSpace,
                 ConnectionId = connectionId,
@@ -337,7 +337,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsSpace", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsSpace2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -378,7 +378,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsSpace>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateKmsSpaceResponse()
+                    var response = new CreateKmsSpace2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -402,9 +402,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<GetKmsCommentQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetKmsComment2Response> GetKmsComment2Async(string connectionId, string id, List<GetKmsComment2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetKmsCommentRequest()
+            var request = new GetKmsComment2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -422,7 +422,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetKmsCommentResponse()
+                    var response = new GetKmsComment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -487,9 +487,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsPageResponse> GetKmsPageAsync(string connectionId, string id, List<GetKmsPageQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetKmsPage2Response> GetKmsPage2Async(string connectionId, string id, List<GetKmsPage2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetKmsPageRequest()
+            var request = new GetKmsPage2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -507,7 +507,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsPage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsPage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -548,7 +548,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsPage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetKmsPageResponse()
+                    var response = new GetKmsPage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -572,9 +572,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<GetKmsSpaceQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetKmsSpace2Response> GetKmsSpace2Async(string connectionId, string id, List<GetKmsSpace2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetKmsSpaceRequest()
+            var request = new GetKmsSpace2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -592,7 +592,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsSpace", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsSpace2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -633,7 +633,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsSpace>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetKmsSpaceResponse()
+                    var response = new GetKmsSpace2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -657,7 +657,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListKmsCommentsResponse> ListKmsCommentsAsync(ListKmsCommentsRequest request)
+        public async Task<ListKmsComments2Response> ListKmsComments2Async(ListKmsComments2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment", request);
@@ -670,7 +670,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsComments", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsComments2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -711,7 +711,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<KmsComment>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListKmsCommentsResponse()
+                    var response = new ListKmsComments2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -735,7 +735,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListKmsPagesResponse> ListKmsPagesAsync(ListKmsPagesRequest request)
+        public async Task<ListKmsPages2Response> ListKmsPages2Async(ListKmsPages2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page", request);
@@ -748,7 +748,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsPages", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsPages2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -789,7 +789,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<KmsPage>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListKmsPagesResponse()
+                    var response = new ListKmsPages2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -813,7 +813,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListKmsSpacesResponse> ListKmsSpacesAsync(ListKmsSpacesRequest request)
+        public async Task<ListKmsSpaces2Response> ListKmsSpaces2Async(ListKmsSpaces2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space", request);
@@ -826,7 +826,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsSpaces", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsSpaces2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -867,7 +867,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<KmsSpace>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListKmsSpacesResponse()
+                    var response = new ListKmsSpaces2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -891,7 +891,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request)
+        public async Task<PatchKmsComment2Response> PatchKmsComment2Async(PatchKmsComment2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
@@ -910,7 +910,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -951,7 +951,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchKmsCommentResponse()
+                    var response = new PatchKmsComment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -975,7 +975,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsPageResponse> PatchKmsPageAsync(PatchKmsPageRequest request)
+        public async Task<PatchKmsPage2Response> PatchKmsPage2Async(PatchKmsPage2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page/{id}", request);
@@ -994,7 +994,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsPage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsPage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1035,7 +1035,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsPage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchKmsPageResponse()
+                    var response = new PatchKmsPage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1059,7 +1059,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(PatchKmsSpaceRequest request)
+        public async Task<PatchKmsSpace2Response> PatchKmsSpace2Async(PatchKmsSpace2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space/{id}", request);
@@ -1078,7 +1078,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsSpace", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsSpace2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1119,7 +1119,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsSpace>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchKmsSpaceResponse()
+                    var response = new PatchKmsSpace2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1143,9 +1143,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveKmsCommentResponse> RemoveKmsCommentAsync(string connectionId, string id)
+        public async Task<RemoveKmsComment2Response> RemoveKmsComment2Async(string connectionId, string id)
         {
-            var request = new RemoveKmsCommentRequest()
+            var request = new RemoveKmsComment2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1161,7 +1161,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1199,7 +1199,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveKmsCommentResponse()
+                return new RemoveKmsComment2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1216,7 +1216,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveKmsCommentResponse()
+                return new RemoveKmsComment2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1225,9 +1225,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveKmsPageResponse> RemoveKmsPageAsync(string connectionId, string id)
+        public async Task<RemoveKmsPage2Response> RemoveKmsPage2Async(string connectionId, string id)
         {
-            var request = new RemoveKmsPageRequest()
+            var request = new RemoveKmsPage2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1243,7 +1243,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsPage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsPage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1281,7 +1281,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveKmsPageResponse()
+                return new RemoveKmsPage2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1298,7 +1298,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveKmsPageResponse()
+                return new RemoveKmsPage2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1307,9 +1307,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveKmsSpaceResponse> RemoveKmsSpaceAsync(string connectionId, string id)
+        public async Task<RemoveKmsSpace2Response> RemoveKmsSpace2Async(string connectionId, string id)
         {
-            var request = new RemoveKmsSpaceRequest()
+            var request = new RemoveKmsSpace2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1325,7 +1325,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsSpace", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsSpace2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1363,7 +1363,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveKmsSpaceResponse()
+                return new RemoveKmsSpace2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1380,7 +1380,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveKmsSpaceResponse()
+                return new RemoveKmsSpace2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1389,7 +1389,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request)
+        public async Task<UpdateKmsComment2Response> UpdateKmsComment2Async(UpdateKmsComment2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
@@ -1408,7 +1408,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1449,7 +1449,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateKmsCommentResponse()
+                    var response = new UpdateKmsComment2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1473,7 +1473,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateKmsPageResponse> UpdateKmsPageAsync(UpdateKmsPageRequest request)
+        public async Task<UpdateKmsPage2Response> UpdateKmsPage2Async(UpdateKmsPage2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page/{id}", request);
@@ -1492,7 +1492,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsPage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsPage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1533,7 +1533,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsPage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateKmsPageResponse()
+                    var response = new UpdateKmsPage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1557,7 +1557,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(UpdateKmsSpaceRequest request)
+        public async Task<UpdateKmsSpace2Response> UpdateKmsSpace2Async(UpdateKmsSpace2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space/{id}", request);
@@ -1576,7 +1576,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsSpace", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsSpace2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1617,7 +1617,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsSpace>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateKmsSpaceResponse()
+                    var response = new UpdateKmsSpace2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

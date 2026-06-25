@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a balancesheet
         /// </summary>
-        Task<GetAccountingBalancesheetResponse> GetAccountingBalancesheetAsync(string connectionId, string id, List<GetAccountingBalancesheetQueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingBalancesheet2Response> GetAccountingBalancesheet2Async(string connectionId, string id, List<GetAccountingBalancesheet2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all balancesheets
         /// </summary>
-        Task<ListAccountingBalancesheetsResponse> ListAccountingBalancesheetsAsync(ListAccountingBalancesheetsRequest request);
+        Task<ListAccountingBalancesheets2Response> ListAccountingBalancesheets2Async(ListAccountingBalancesheets2Request request);
     }
 
     public class Balancesheet: IBalancesheet
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetAccountingBalancesheetResponse> GetAccountingBalancesheetAsync(string connectionId, string id, List<GetAccountingBalancesheetQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingBalancesheet2Response> GetAccountingBalancesheet2Async(string connectionId, string id, List<GetAccountingBalancesheet2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingBalancesheetRequest()
+            var request = new GetAccountingBalancesheet2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingBalancesheet", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingBalancesheet2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingBalancesheet>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingBalancesheetResponse()
+                    var response = new GetAccountingBalancesheet2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingBalancesheetsResponse> ListAccountingBalancesheetsAsync(ListAccountingBalancesheetsRequest request)
+        public async Task<ListAccountingBalancesheets2Response> ListAccountingBalancesheets2Async(ListAccountingBalancesheets2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/balancesheet", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingBalancesheets", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingBalancesheets2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingBalancesheet>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingBalancesheetsResponse()
+                    var response = new ListAccountingBalancesheets2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

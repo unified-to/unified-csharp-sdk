@@ -28,49 +28,49 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough POST
         /// </summary>
-        Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
+        Task<CreatePassthrough2JsonResponse> CreatePassthrough2JsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough POST
         /// </summary>
-        Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
+        Task<CreatePassthrough2RawResponse> CreatePassthrough2RawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough GET
         /// </summary>
-        Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path, Dictionary<string, object>? query = null);
+        Task<ListPassthroughs2Response> ListPassthroughs2Async(string connectionId, string path, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
+        Task<PatchPassthrough2JsonResponse> PatchPassthrough2JsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
+        Task<PatchPassthrough2RawResponse> PatchPassthrough2RawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough DELETE
         /// </summary>
-        Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path, Dictionary<string, object>? query = null);
+        Task<RemovePassthrough2Response> RemovePassthrough2Async(string connectionId, string path, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
+        Task<UpdatePassthrough2JsonResponse> UpdatePassthrough2JsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
+        Task<UpdatePassthrough2RawResponse> UpdatePassthrough2RawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
     }
 
     public class Passthrough: IPassthrough
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,9 +79,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
+        public async Task<CreatePassthrough2JsonResponse> CreatePassthrough2JsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
         {
-            var request = new CreatePassthroughJsonRequest()
+            var request = new CreatePassthrough2JsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -105,7 +105,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough_json", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough2_json", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -143,7 +143,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new CreatePassthroughJsonResponse()
+                return new CreatePassthrough2JsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -152,7 +152,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new CreatePassthroughJsonResponse()
+                return new CreatePassthrough2JsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -172,7 +172,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreatePassthroughJsonResponse()
+                    var response = new CreatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -183,7 +183,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new CreatePassthroughJsonResponse()
+                    var response = new CreatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -194,7 +194,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new CreatePassthroughJsonResponse()
+                    var response = new CreatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -205,7 +205,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new CreatePassthroughJsonResponse()
+                    var response = new CreatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -216,7 +216,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new CreatePassthroughJsonResponse()
+                    var response = new CreatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -230,9 +230,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
+        public async Task<CreatePassthrough2RawResponse> CreatePassthrough2RawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
         {
-            var request = new CreatePassthroughRawRequest()
+            var request = new CreatePassthrough2RawRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -256,7 +256,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough2_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -294,7 +294,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new CreatePassthroughRawResponse()
+                return new CreatePassthrough2RawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -303,7 +303,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new CreatePassthroughRawResponse()
+                return new CreatePassthrough2RawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreatePassthroughRawResponse()
+                    var response = new CreatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -334,7 +334,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new CreatePassthroughRawResponse()
+                    var response = new CreatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -345,7 +345,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new CreatePassthroughRawResponse()
+                    var response = new CreatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -356,7 +356,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new CreatePassthroughRawResponse()
+                    var response = new CreatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -367,7 +367,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new CreatePassthroughRawResponse()
+                    var response = new CreatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -381,9 +381,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path, Dictionary<string, object>? query = null)
+        public async Task<ListPassthroughs2Response> ListPassthroughs2Async(string connectionId, string path, Dictionary<string, object>? query = null)
         {
-            var request = new ListPassthroughsRequest()
+            var request = new ListPassthroughs2Request()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -400,7 +400,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPassthroughs", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPassthroughs2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -438,7 +438,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new ListPassthroughsResponse()
+                return new ListPassthroughs2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -447,7 +447,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new ListPassthroughsResponse()
+                return new ListPassthroughs2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -467,7 +467,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListPassthroughsResponse()
+                    var response = new ListPassthroughs2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -478,7 +478,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new ListPassthroughsResponse()
+                    var response = new ListPassthroughs2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new ListPassthroughsResponse()
+                    var response = new ListPassthroughs2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -500,7 +500,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new ListPassthroughsResponse()
+                    var response = new ListPassthroughs2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -511,7 +511,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new ListPassthroughsResponse()
+                    var response = new ListPassthroughs2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -525,9 +525,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
+        public async Task<PatchPassthrough2JsonResponse> PatchPassthrough2JsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
         {
-            var request = new PatchPassthroughJsonRequest()
+            var request = new PatchPassthrough2JsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -551,7 +551,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough_json", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough2_json", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -589,7 +589,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new PatchPassthroughJsonResponse()
+                return new PatchPassthrough2JsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -598,7 +598,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new PatchPassthroughJsonResponse()
+                return new PatchPassthrough2JsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -618,7 +618,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchPassthroughJsonResponse()
+                    var response = new PatchPassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -629,7 +629,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new PatchPassthroughJsonResponse()
+                    var response = new PatchPassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -640,7 +640,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new PatchPassthroughJsonResponse()
+                    var response = new PatchPassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -651,7 +651,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new PatchPassthroughJsonResponse()
+                    var response = new PatchPassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -662,7 +662,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new PatchPassthroughJsonResponse()
+                    var response = new PatchPassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -676,9 +676,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
+        public async Task<PatchPassthrough2RawResponse> PatchPassthrough2RawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
         {
-            var request = new PatchPassthroughRawRequest()
+            var request = new PatchPassthrough2RawRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -702,7 +702,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough2_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -740,7 +740,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new PatchPassthroughRawResponse()
+                return new PatchPassthrough2RawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -749,7 +749,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new PatchPassthroughRawResponse()
+                return new PatchPassthrough2RawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -769,7 +769,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchPassthroughRawResponse()
+                    var response = new PatchPassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -780,7 +780,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new PatchPassthroughRawResponse()
+                    var response = new PatchPassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -791,7 +791,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new PatchPassthroughRawResponse()
+                    var response = new PatchPassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -802,7 +802,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new PatchPassthroughRawResponse()
+                    var response = new PatchPassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -813,7 +813,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new PatchPassthroughRawResponse()
+                    var response = new PatchPassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -827,9 +827,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path, Dictionary<string, object>? query = null)
+        public async Task<RemovePassthrough2Response> RemovePassthrough2Async(string connectionId, string path, Dictionary<string, object>? query = null)
         {
-            var request = new RemovePassthroughRequest()
+            var request = new RemovePassthrough2Request()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -846,7 +846,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePassthrough", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePassthrough2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -884,7 +884,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new RemovePassthroughResponse()
+                return new RemovePassthrough2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -893,7 +893,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new RemovePassthroughResponse()
+                return new RemovePassthrough2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -913,7 +913,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new RemovePassthroughResponse()
+                    var response = new RemovePassthrough2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -924,7 +924,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new RemovePassthroughResponse()
+                    var response = new RemovePassthrough2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -935,7 +935,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new RemovePassthroughResponse()
+                    var response = new RemovePassthrough2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -946,7 +946,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new RemovePassthroughResponse()
+                    var response = new RemovePassthrough2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -957,7 +957,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new RemovePassthroughResponse()
+                    var response = new RemovePassthrough2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -971,9 +971,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
+        public async Task<UpdatePassthrough2JsonResponse> UpdatePassthrough2JsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
         {
-            var request = new UpdatePassthroughJsonRequest()
+            var request = new UpdatePassthrough2JsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -997,7 +997,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough_json", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough2_json", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1035,7 +1035,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new UpdatePassthroughJsonResponse()
+                return new UpdatePassthrough2JsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1044,7 +1044,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new UpdatePassthroughJsonResponse()
+                return new UpdatePassthrough2JsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1064,7 +1064,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdatePassthroughJsonResponse()
+                    var response = new UpdatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1075,7 +1075,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new UpdatePassthroughJsonResponse()
+                    var response = new UpdatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1086,7 +1086,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new UpdatePassthroughJsonResponse()
+                    var response = new UpdatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1097,7 +1097,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new UpdatePassthroughJsonResponse()
+                    var response = new UpdatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1108,7 +1108,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new UpdatePassthroughJsonResponse()
+                    var response = new UpdatePassthrough2JsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1122,9 +1122,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
+        public async Task<UpdatePassthrough2RawResponse> UpdatePassthrough2RawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
         {
-            var request = new UpdatePassthroughRawRequest()
+            var request = new UpdatePassthrough2RawRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -1148,7 +1148,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough2_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1186,7 +1186,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
-                return new UpdatePassthroughRawResponse()
+                return new UpdatePassthrough2RawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1195,7 +1195,7 @@ namespace UnifiedTo
             }
             else if(responseStatusCode == 304)
             {                
-                return new UpdatePassthroughRawResponse()
+                return new UpdatePassthrough2RawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1215,7 +1215,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdatePassthroughRawResponse()
+                    var response = new UpdatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1226,7 +1226,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("application/xml", contentType))
                 {
-                    var response = new UpdatePassthroughRawResponse()
+                    var response = new UpdatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1237,7 +1237,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/csv", contentType))
                 {
-                    var response = new UpdatePassthroughRawResponse()
+                    var response = new UpdatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1248,7 +1248,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new UpdatePassthroughRawResponse()
+                    var response = new UpdatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1259,7 +1259,7 @@ namespace UnifiedTo
                 }
                 else if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
-                    var response = new UpdatePassthroughRawResponse()
+                    var response = new UpdatePassthrough2RawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

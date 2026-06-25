@@ -28,29 +28,34 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a report
         /// </summary>
-        Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<GetAccountingReportQueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingReport2Response> GetAccountingReport2Async(string connectionId, string id, List<GetAccountingReport2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all reports
         /// </summary>
-        Task<ListAccountingReportsResponse> ListAccountingReportsAsync(ListAccountingReportsRequest request);
+        Task<ListAccountingReports2Response> ListAccountingReports2Async(ListAccountingReports2Request request);
 
         /// <summary>
         /// List all reports
         /// </summary>
-        Task<ListAdsReportsResponse> ListAdsReportsAsync(ListAdsReportsRequest request);
+        Task<ListAdsReports2Response> ListAdsReports2Async(ListAdsReports2Request request);
 
         /// <summary>
         /// List all reports
         /// </summary>
-        Task<ListMartechReportsResponse> ListMartechReportsAsync(ListMartechReportsRequest request);
+        Task<ListAnalyticsReports2Response> ListAnalyticsReports2Async(ListAnalyticsReports2Request request);
+
+        /// <summary>
+        /// List all reports
+        /// </summary>
+        Task<ListMartechReports2Response> ListMartechReports2Async(ListMartechReports2Request request);
     }
 
     public class Report: IReport
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -59,9 +64,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<GetAccountingReportQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingReport2Response> GetAccountingReport2Async(string connectionId, string id, List<GetAccountingReport2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingReportRequest()
+            var request = new GetAccountingReport2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -79,7 +84,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingReport", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingReport2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -120,7 +125,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingReport>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingReportResponse()
+                    var response = new GetAccountingReport2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -144,7 +149,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingReportsResponse> ListAccountingReportsAsync(ListAccountingReportsRequest request)
+        public async Task<ListAccountingReports2Response> ListAccountingReports2Async(ListAccountingReports2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/report", request);
@@ -157,7 +162,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingReports", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingReports2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -198,7 +203,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingReport>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingReportsResponse()
+                    var response = new ListAccountingReports2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -222,7 +227,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAdsReportsResponse> ListAdsReportsAsync(ListAdsReportsRequest request)
+        public async Task<ListAdsReports2Response> ListAdsReports2Async(ListAdsReports2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/report", request);
@@ -235,7 +240,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsReports", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsReports2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -276,7 +281,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AdsReport>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAdsReportsResponse()
+                    var response = new ListAdsReports2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -300,7 +305,85 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListMartechReportsResponse> ListMartechReportsAsync(ListMartechReportsRequest request)
+        public async Task<ListAnalyticsReports2Response> ListAnalyticsReports2Async(ListAnalyticsReports2Request request)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/report", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsReports2", new List<string> {  }, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsReport>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new ListAnalyticsReports2Response()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AnalyticsReports = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+        }
+
+        public async Task<ListMartechReports2Response> ListMartechReports2Async(ListMartechReports2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/report", request);
@@ -313,7 +396,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMartechReports", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMartechReports2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -354,7 +437,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<MarketingReport>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListMartechReportsResponse()
+                    var response = new ListMartechReports2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

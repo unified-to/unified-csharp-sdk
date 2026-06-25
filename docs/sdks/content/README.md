@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateLmsContent](#createlmscontent) - Create a content
-* [GetLmsContent](#getlmscontent) - Retrieve a content
-* [ListLmsContents](#listlmscontents) - List all contents
-* [PatchLmsContent](#patchlmscontent) - Update a content
-* [RemoveLmsContent](#removelmscontent) - Remove a content
-* [UpdateLmsContent](#updatelmscontent) - Update a content
+* [CreateLmsContent2](#createlmscontent2) - Create a content
+* [GetLmsContent2](#getlmscontent2) - Retrieve a content
+* [ListLmsContents2](#listlmscontents2) - List all contents
+* [PatchLmsContent2](#patchlmscontent2) - Update a content
+* [RemoveLmsContent2](#removelmscontent2) - Remove a content
+* [UpdateLmsContent2](#updatelmscontent2) - Update a content
 
-## CreateLmsContent
+## CreateLmsContent2
 
 Create a content
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Content.CreateLmsContentAsync(
+var res = await sdk.Content.CreateLmsContent2Async(
     lmsContent: new LmsContent() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Content.CreateLmsContentAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `LmsContent`                                                                                                                                     | [LmsContent](../../Models/Components/LmsContent.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateLmsContentQueryParamFields](../../Models/Requests/CreateLmsContentQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateLmsContent2QueryParamFields](../../Models/Requests/CreateLmsContent2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateLmsContentResponse](../../Models/Requests/CreateLmsContentResponse.md)**
+**[CreateLmsContent2Response](../../Models/Requests/CreateLmsContent2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Content.CreateLmsContentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetLmsContent
+## GetLmsContent2
 
 Retrieve a content
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Content.GetLmsContentAsync(
+var res = await sdk.Content.GetLmsContent2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Content.GetLmsContentAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Content                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetLmsContentQueryParamFields](../../Models/Requests/GetLmsContentQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetLmsContent2QueryParamFields](../../Models/Requests/GetLmsContent2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetLmsContentResponse](../../Models/Requests/GetLmsContentResponse.md)**
+**[GetLmsContent2Response](../../Models/Requests/GetLmsContent2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Content.GetLmsContentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListLmsContents
+## ListLmsContents2
 
 List all contents
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListLmsContentsRequest req = new ListLmsContentsRequest() {
+ListLmsContents2Request req = new ListLmsContents2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Content.ListLmsContentsAsync(req);
+var res = await sdk.Content.ListLmsContents2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListLmsContentsRequest](../../Models/Requests/ListLmsContentsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListLmsContents2Request](../../Models/Requests/ListLmsContents2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListLmsContentsResponse](../../Models/Requests/ListLmsContentsResponse.md)**
+**[ListLmsContents2Response](../../Models/Requests/ListLmsContents2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Content.ListLmsContentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchLmsContent
+## PatchLmsContent2
 
 Update a content
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchLmsContentRequest req = new PatchLmsContentRequest() {
+PatchLmsContent2Request req = new PatchLmsContent2Request() {
     LmsContent = new LmsContent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Content.PatchLmsContentAsync(req);
+var res = await sdk.Content.PatchLmsContent2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [PatchLmsContentRequest](../../Models/Requests/PatchLmsContentRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchLmsContent2Request](../../Models/Requests/PatchLmsContent2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchLmsContentResponse](../../Models/Requests/PatchLmsContentResponse.md)**
+**[PatchLmsContent2Response](../../Models/Requests/PatchLmsContent2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Content.PatchLmsContentAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveLmsContent
+## RemoveLmsContent2
 
 Remove a content
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Content.RemoveLmsContentAsync(
+var res = await sdk.Content.RemoveLmsContent2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Content.RemoveLmsContentAsync(
 
 ### Response
 
-**[RemoveLmsContentResponse](../../Models/Requests/RemoveLmsContentResponse.md)**
+**[RemoveLmsContent2Response](../../Models/Requests/RemoveLmsContent2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Content.RemoveLmsContentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateLmsContent
+## UpdateLmsContent2
 
 Update a content
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
+UpdateLmsContent2Request req = new UpdateLmsContent2Request() {
     LmsContent = new LmsContent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Content.UpdateLmsContentAsync(req);
+var res = await sdk.Content.UpdateLmsContent2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [UpdateLmsContentRequest](../../Models/Requests/UpdateLmsContentRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateLmsContent2Request](../../Models/Requests/UpdateLmsContent2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateLmsContentResponse](../../Models/Requests/UpdateLmsContentResponse.md)**
+**[UpdateLmsContent2Response](../../Models/Requests/UpdateLmsContent2Response.md)**
 
 ### Errors
 

@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateStorageFile](#createstoragefile) - Create a file
-* [GetStorageFile](#getstoragefile) - Retrieve a file
-* [ListStorageFiles](#liststoragefiles) - List all files
-* [PatchStorageFile](#patchstoragefile) - Update a file
-* [RemoveStorageFile](#removestoragefile) - Remove a file
-* [UpdateStorageFile](#updatestoragefile) - Update a file
+* [CreateStorageFile2](#createstoragefile2) - Create a file
+* [GetStorageFile2](#getstoragefile2) - Retrieve a file
+* [ListStorageFiles2](#liststoragefiles2) - List all files
+* [PatchStorageFile2](#patchstoragefile2) - Update a file
+* [RemoveStorageFile2](#removestoragefile2) - Remove a file
+* [UpdateStorageFile2](#updatestoragefile2) - Update a file
 
-## CreateStorageFile
+## CreateStorageFile2
 
 Create a file
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Storage.CreateStorageFileAsync(
+var res = await sdk.Storage.CreateStorageFile2Async(
     storageFile: new StorageFile() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `StorageFile`                                                                                                                                    | [StorageFile](../../Models/Components/StorageFile.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateStorageFileQueryParamFields](../../Models/Requests/CreateStorageFileQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateStorageFile2QueryParamFields](../../Models/Requests/CreateStorageFile2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateStorageFileResponse](../../Models/Requests/CreateStorageFileResponse.md)**
+**[CreateStorageFile2Response](../../Models/Requests/CreateStorageFile2Response.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetStorageFile
+## GetStorageFile2
 
 Retrieve a file
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Storage.GetStorageFileAsync(
+var res = await sdk.Storage.GetStorageFile2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Storage.GetStorageFileAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the File                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetStorageFileQueryParamFields](../../Models/Requests/GetStorageFileQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetStorageFile2QueryParamFields](../../Models/Requests/GetStorageFile2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetStorageFileResponse](../../Models/Requests/GetStorageFileResponse.md)**
+**[GetStorageFile2Response](../../Models/Requests/GetStorageFile2Response.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Storage.GetStorageFileAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListStorageFiles
+## ListStorageFiles2
 
 List all files
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListStorageFilesRequest req = new ListStorageFilesRequest() {
+ListStorageFiles2Request req = new ListStorageFiles2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Storage.ListStorageFilesAsync(req);
+var res = await sdk.Storage.ListStorageFiles2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListStorageFilesRequest](../../Models/Requests/ListStorageFilesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListStorageFiles2Request](../../Models/Requests/ListStorageFiles2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListStorageFilesResponse](../../Models/Requests/ListStorageFilesResponse.md)**
+**[ListStorageFiles2Response](../../Models/Requests/ListStorageFiles2Response.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Storage.ListStorageFilesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchStorageFile
+## PatchStorageFile2
 
 Update a file
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchStorageFileRequest req = new PatchStorageFileRequest() {
+PatchStorageFile2Request req = new PatchStorageFile2Request() {
     StorageFile = new StorageFile() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Storage.PatchStorageFileAsync(req);
+var res = await sdk.Storage.PatchStorageFile2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchStorageFileRequest](../../Models/Requests/PatchStorageFileRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchStorageFile2Request](../../Models/Requests/PatchStorageFile2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchStorageFileResponse](../../Models/Requests/PatchStorageFileResponse.md)**
+**[PatchStorageFile2Response](../../Models/Requests/PatchStorageFile2Response.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Storage.PatchStorageFileAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveStorageFile
+## RemoveStorageFile2
 
 Remove a file
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Storage.RemoveStorageFileAsync(
+var res = await sdk.Storage.RemoveStorageFile2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Storage.RemoveStorageFileAsync(
 
 ### Response
 
-**[RemoveStorageFileResponse](../../Models/Requests/RemoveStorageFileResponse.md)**
+**[RemoveStorageFile2Response](../../Models/Requests/RemoveStorageFile2Response.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Storage.RemoveStorageFileAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateStorageFile
+## UpdateStorageFile2
 
 Update a file
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateStorageFileRequest req = new UpdateStorageFileRequest() {
+UpdateStorageFile2Request req = new UpdateStorageFile2Request() {
     StorageFile = new StorageFile() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Storage.UpdateStorageFileAsync(req);
+var res = await sdk.Storage.UpdateStorageFile2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateStorageFileRequest](../../Models/Requests/UpdateStorageFileRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateStorageFile2Request](../../Models/Requests/UpdateStorageFile2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateStorageFileResponse](../../Models/Requests/UpdateStorageFileResponse.md)**
+**[UpdateStorageFile2Response](../../Models/Requests/UpdateStorageFile2Response.md)**
 
 ### Errors
 

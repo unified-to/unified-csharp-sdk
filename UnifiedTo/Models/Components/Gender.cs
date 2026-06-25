@@ -19,6 +19,12 @@ namespace UnifiedTo.Models.Components
         Male,
         [JsonProperty("FEMALE")]
         Female,
+        [JsonProperty("INTERSEX")]
+        Intersex,
+        [JsonProperty("TRANS")]
+        Trans,
+        [JsonProperty("NON_BINARY")]
+        NonBinary,
     }
 
     public static class GenderExtension

@@ -23,14 +23,14 @@ namespace UnifiedTo.Models.Components
         Paused,
         [JsonProperty("ARCHIVED")]
         Archived,
-        [JsonProperty("PROCESSING")]
-        Processing,
-        [JsonProperty("PROCESSING_FAILED")]
-        ProcessingFailed,
         [JsonProperty("DRAFT")]
         Draft,
         [JsonProperty("SCHEDULED_FOR_DELETION")]
         ScheduledForDeletion,
+        [JsonProperty("PROCESSING")]
+        Processing,
+        [JsonProperty("PROCESSING_FAILED")]
+        ProcessingFailed,
     }
 
     public static class AdsGroupStatusExtension

@@ -33,6 +33,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("duration")]
+        public double? Duration { get; set; }
+
+        [JsonProperty("duration_type")]
+        public DurationType? DurationType { get; set; }
+
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 

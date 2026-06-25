@@ -28,49 +28,49 @@ namespace UnifiedTo
         /// <summary>
         /// Create a request
         /// </summary>
-        Task<CreateVerificationRequestResponse> CreateVerificationRequestAsync(VerificationRequest verificationRequest, string connectionId, List<CreateVerificationRequestQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateVerificationRequest2Response> CreateVerificationRequest2Async(VerificationRequest verificationRequest, string connectionId, List<CreateVerificationRequest2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a package
         /// </summary>
-        Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<GetVerificationPackageQueryParamFields>? fields = null, string? raw = null);
+        Task<GetVerificationPackage2Response> GetVerificationPackage2Async(string connectionId, string id, List<GetVerificationPackage2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a request
         /// </summary>
-        Task<GetVerificationRequestResponse> GetVerificationRequestAsync(string connectionId, string id, List<GetVerificationRequestQueryParamFields>? fields = null, string? raw = null);
+        Task<GetVerificationRequest2Response> GetVerificationRequest2Async(string connectionId, string id, List<GetVerificationRequest2QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all packages
         /// </summary>
-        Task<ListVerificationPackagesResponse> ListVerificationPackagesAsync(ListVerificationPackagesRequest request);
+        Task<ListVerificationPackages2Response> ListVerificationPackages2Async(ListVerificationPackages2Request request);
 
         /// <summary>
         /// List all requests
         /// </summary>
-        Task<ListVerificationRequestsResponse> ListVerificationRequestsAsync(ListVerificationRequestsRequest request);
+        Task<ListVerificationRequests2Response> ListVerificationRequests2Async(ListVerificationRequests2Request request);
 
         /// <summary>
         /// Update a request
         /// </summary>
-        Task<PatchVerificationRequestResponse> PatchVerificationRequestAsync(PatchVerificationRequestRequest request);
+        Task<PatchVerificationRequest2Response> PatchVerificationRequest2Async(PatchVerificationRequest2Request request);
 
         /// <summary>
         /// Remove a request
         /// </summary>
-        Task<RemoveVerificationRequestResponse> RemoveVerificationRequestAsync(string connectionId, string id);
+        Task<RemoveVerificationRequest2Response> RemoveVerificationRequest2Async(string connectionId, string id);
 
         /// <summary>
         /// Update a request
         /// </summary>
-        Task<UpdateVerificationRequestResponse> UpdateVerificationRequestAsync(UpdateVerificationRequestRequest request);
+        Task<UpdateVerificationRequest2Response> UpdateVerificationRequest2Async(UpdateVerificationRequest2Request request);
     }
 
     public class Verification: IVerification
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.79";
+        private const string _sdkVersion = "0.130.80";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,9 +79,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateVerificationRequestResponse> CreateVerificationRequestAsync(VerificationRequest verificationRequest, string connectionId, List<CreateVerificationRequestQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateVerificationRequest2Response> CreateVerificationRequest2Async(VerificationRequest verificationRequest, string connectionId, List<CreateVerificationRequest2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateVerificationRequestRequest()
+            var request = new CreateVerificationRequest2Request()
             {
                 VerificationRequest = verificationRequest,
                 ConnectionId = connectionId,
@@ -105,7 +105,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createVerificationRequest", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createVerificationRequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -146,7 +146,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<VerificationRequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateVerificationRequestResponse()
+                    var response = new CreateVerificationRequest2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -170,9 +170,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<GetVerificationPackageQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetVerificationPackage2Response> GetVerificationPackage2Async(string connectionId, string id, List<GetVerificationPackage2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetVerificationPackageRequest()
+            var request = new GetVerificationPackage2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -190,7 +190,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getVerificationPackage", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getVerificationPackage2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -231,7 +231,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<VerificationPackage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetVerificationPackageResponse()
+                    var response = new GetVerificationPackage2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -255,9 +255,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetVerificationRequestResponse> GetVerificationRequestAsync(string connectionId, string id, List<GetVerificationRequestQueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetVerificationRequest2Response> GetVerificationRequest2Async(string connectionId, string id, List<GetVerificationRequest2QueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetVerificationRequestRequest()
+            var request = new GetVerificationRequest2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -275,7 +275,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getVerificationRequest", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getVerificationRequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -316,7 +316,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<VerificationRequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetVerificationRequestResponse()
+                    var response = new GetVerificationRequest2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -340,7 +340,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListVerificationPackagesResponse> ListVerificationPackagesAsync(ListVerificationPackagesRequest request)
+        public async Task<ListVerificationPackages2Response> ListVerificationPackages2Async(ListVerificationPackages2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/verification/{connection_id}/package", request);
@@ -353,7 +353,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listVerificationPackages", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listVerificationPackages2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -394,7 +394,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<VerificationPackage>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListVerificationPackagesResponse()
+                    var response = new ListVerificationPackages2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -418,7 +418,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListVerificationRequestsResponse> ListVerificationRequestsAsync(ListVerificationRequestsRequest request)
+        public async Task<ListVerificationRequests2Response> ListVerificationRequests2Async(ListVerificationRequests2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/verification/{connection_id}/request", request);
@@ -431,7 +431,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listVerificationRequests", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listVerificationRequests2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -472,7 +472,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<VerificationRequest>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListVerificationRequestsResponse()
+                    var response = new ListVerificationRequests2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -496,7 +496,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchVerificationRequestResponse> PatchVerificationRequestAsync(PatchVerificationRequestRequest request)
+        public async Task<PatchVerificationRequest2Response> PatchVerificationRequest2Async(PatchVerificationRequest2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/verification/{connection_id}/request/{id}", request);
@@ -515,7 +515,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchVerificationRequest", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchVerificationRequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -556,7 +556,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<VerificationRequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchVerificationRequestResponse()
+                    var response = new PatchVerificationRequest2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -580,9 +580,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveVerificationRequestResponse> RemoveVerificationRequestAsync(string connectionId, string id)
+        public async Task<RemoveVerificationRequest2Response> RemoveVerificationRequest2Async(string connectionId, string id)
         {
-            var request = new RemoveVerificationRequestRequest()
+            var request = new RemoveVerificationRequest2Request()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -598,7 +598,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeVerificationRequest", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeVerificationRequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -636,7 +636,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveVerificationRequestResponse()
+                return new RemoveVerificationRequest2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -653,7 +653,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveVerificationRequestResponse()
+                return new RemoveVerificationRequest2Response()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -662,7 +662,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateVerificationRequestResponse> UpdateVerificationRequestAsync(UpdateVerificationRequestRequest request)
+        public async Task<UpdateVerificationRequest2Response> UpdateVerificationRequest2Async(UpdateVerificationRequest2Request request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/verification/{connection_id}/request/{id}", request);
@@ -681,7 +681,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateVerificationRequest", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateVerificationRequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -722,7 +722,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<VerificationRequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateVerificationRequestResponse()
+                    var response = new UpdateVerificationRequest2Response()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

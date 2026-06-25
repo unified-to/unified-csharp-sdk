@@ -5,20 +5,20 @@
 
 ### Available Operations
 
-* [CreateAccountingCategory](#createaccountingcategory) - Create a category
-* [CreateTicketingCategory](#createticketingcategory) - Create a category
-* [GetAccountingCategory](#getaccountingcategory) - Retrieve a category
-* [GetTicketingCategory](#getticketingcategory) - Retrieve a category
-* [ListAccountingCategories](#listaccountingcategories) - List all categories
-* [ListTicketingCategories](#listticketingcategories) - List all categories
-* [PatchAccountingCategory](#patchaccountingcategory) - Update a category
-* [PatchTicketingCategory](#patchticketingcategory) - Update a category
-* [RemoveAccountingCategory](#removeaccountingcategory) - Remove a category
-* [RemoveTicketingCategory](#removeticketingcategory) - Remove a category
-* [UpdateAccountingCategory](#updateaccountingcategory) - Update a category
-* [UpdateTicketingCategory](#updateticketingcategory) - Update a category
+* [CreateAccountingCategory2](#createaccountingcategory2) - Create a category
+* [CreateTicketingCategory2](#createticketingcategory2) - Create a category
+* [GetAccountingCategory2](#getaccountingcategory2) - Retrieve a category
+* [GetTicketingCategory2](#getticketingcategory2) - Retrieve a category
+* [ListAccountingCategories2](#listaccountingcategories2) - List all categories
+* [ListTicketingCategories2](#listticketingcategories2) - List all categories
+* [PatchAccountingCategory2](#patchaccountingcategory2) - Update a category
+* [PatchTicketingCategory2](#patchticketingcategory2) - Update a category
+* [RemoveAccountingCategory2](#removeaccountingcategory2) - Remove a category
+* [RemoveTicketingCategory2](#removeticketingcategory2) - Remove a category
+* [UpdateAccountingCategory2](#updateaccountingcategory2) - Update a category
+* [UpdateTicketingCategory2](#updateticketingcategory2) - Update a category
 
-## CreateAccountingCategory
+## CreateAccountingCategory2
 
 Create a category
 
@@ -32,7 +32,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Category.CreateAccountingCategoryAsync(
+var res = await sdk.Category.CreateAccountingCategory2Async(
     accountingCategory: new AccountingCategory() {},
     connectionId: "<id>"
 );
@@ -46,12 +46,12 @@ var res = await sdk.Category.CreateAccountingCategoryAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingCategory`                                                                                                                             | [AccountingCategory](../../Models/Components/AccountingCategory.md)                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingCategoryQueryParamFields](../../Models/Requests/CreateAccountingCategoryQueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingCategory2QueryParamFields](../../Models/Requests/CreateAccountingCategory2QueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingCategoryResponse](../../Models/Requests/CreateAccountingCategoryResponse.md)**
+**[CreateAccountingCategory2Response](../../Models/Requests/CreateAccountingCategory2Response.md)**
 
 ### Errors
 
@@ -59,7 +59,7 @@ var res = await sdk.Category.CreateAccountingCategoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateTicketingCategory
+## CreateTicketingCategory2
 
 Create a category
 
@@ -73,7 +73,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Category.CreateTicketingCategoryAsync(
+var res = await sdk.Category.CreateTicketingCategory2Async(
     ticketingCategory: new TicketingCategory() {},
     connectionId: "<id>"
 );
@@ -87,12 +87,12 @@ var res = await sdk.Category.CreateTicketingCategoryAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `TicketingCategory`                                                                                                                              | [TicketingCategory](../../Models/Components/TicketingCategory.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateTicketingCategoryQueryParamFields](../../Models/Requests/CreateTicketingCategoryQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateTicketingCategory2QueryParamFields](../../Models/Requests/CreateTicketingCategory2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateTicketingCategoryResponse](../../Models/Requests/CreateTicketingCategoryResponse.md)**
+**[CreateTicketingCategory2Response](../../Models/Requests/CreateTicketingCategory2Response.md)**
 
 ### Errors
 
@@ -100,7 +100,7 @@ var res = await sdk.Category.CreateTicketingCategoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingCategory
+## GetAccountingCategory2
 
 Retrieve a category
 
@@ -114,7 +114,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Category.GetAccountingCategoryAsync(
+var res = await sdk.Category.GetAccountingCategory2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -128,12 +128,12 @@ var res = await sdk.Category.GetAccountingCategoryAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Category                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAccountingCategoryQueryParamFields](../../Models/Requests/GetAccountingCategoryQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingCategory2QueryParamFields](../../Models/Requests/GetAccountingCategory2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingCategoryResponse](../../Models/Requests/GetAccountingCategoryResponse.md)**
+**[GetAccountingCategory2Response](../../Models/Requests/GetAccountingCategory2Response.md)**
 
 ### Errors
 
@@ -141,7 +141,7 @@ var res = await sdk.Category.GetAccountingCategoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetTicketingCategory
+## GetTicketingCategory2
 
 Retrieve a category
 
@@ -155,7 +155,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Category.GetTicketingCategoryAsync(
+var res = await sdk.Category.GetTicketingCategory2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -169,12 +169,12 @@ var res = await sdk.Category.GetTicketingCategoryAsync(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Category                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetTicketingCategoryQueryParamFields](../../Models/Requests/GetTicketingCategoryQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTicketingCategory2QueryParamFields](../../Models/Requests/GetTicketingCategory2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTicketingCategoryResponse](../../Models/Requests/GetTicketingCategoryResponse.md)**
+**[GetTicketingCategory2Response](../../Models/Requests/GetTicketingCategory2Response.md)**
 
 ### Errors
 
@@ -182,7 +182,7 @@ var res = await sdk.Category.GetTicketingCategoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingCategories
+## ListAccountingCategories2
 
 List all categories
 
@@ -197,11 +197,51 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingCategoriesRequest req = new ListAccountingCategoriesRequest() {
+ListAccountingCategories2Request req = new ListAccountingCategories2Request() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Category.ListAccountingCategoriesAsync(req);
+var res = await sdk.Category.ListAccountingCategories2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [ListAccountingCategories2Request](../../Models/Requests/ListAccountingCategories2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+
+### Response
+
+**[ListAccountingCategories2Response](../../Models/Requests/ListAccountingCategories2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListTicketingCategories2
+
+List all categories
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListTicketingCategories2Request req = new ListTicketingCategories2Request() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Category.ListTicketingCategories2Async(req);
 
 // handle response
 ```
@@ -210,11 +250,11 @@ var res = await sdk.Category.ListAccountingCategoriesAsync(req);
 
 | Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [ListAccountingCategoriesRequest](../../Models/Requests/ListAccountingCategoriesRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| `request`                                                                                   | [ListTicketingCategories2Request](../../Models/Requests/ListTicketingCategories2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[ListAccountingCategoriesResponse](../../Models/Requests/ListAccountingCategoriesResponse.md)**
+**[ListTicketingCategories2Response](../../Models/Requests/ListTicketingCategories2Response.md)**
 
 ### Errors
 
@@ -222,47 +262,7 @@ var res = await sdk.Category.ListAccountingCategoriesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTicketingCategories
-
-List all categories
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListTicketingCategoriesRequest req = new ListTicketingCategoriesRequest() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Category.ListTicketingCategoriesAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListTicketingCategoriesRequest](../../Models/Requests/ListTicketingCategoriesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
-
-### Response
-
-**[ListTicketingCategoriesResponse](../../Models/Requests/ListTicketingCategoriesResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchAccountingCategory
+## PatchAccountingCategory2
 
 Update a category
 
@@ -277,26 +277,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
+PatchAccountingCategory2Request req = new PatchAccountingCategory2Request() {
     AccountingCategory = new AccountingCategory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Category.PatchAccountingCategoryAsync(req);
+var res = await sdk.Category.PatchAccountingCategory2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchAccountingCategoryRequest](../../Models/Requests/PatchAccountingCategoryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [PatchAccountingCategory2Request](../../Models/Requests/PatchAccountingCategory2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[PatchAccountingCategoryResponse](../../Models/Requests/PatchAccountingCategoryResponse.md)**
+**[PatchAccountingCategory2Response](../../Models/Requests/PatchAccountingCategory2Response.md)**
 
 ### Errors
 
@@ -304,7 +304,7 @@ var res = await sdk.Category.PatchAccountingCategoryAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchTicketingCategory
+## PatchTicketingCategory2
 
 Update a category
 
@@ -319,26 +319,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
+PatchTicketingCategory2Request req = new PatchTicketingCategory2Request() {
     TicketingCategory = new TicketingCategory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Category.PatchTicketingCategoryAsync(req);
+var res = await sdk.Category.PatchTicketingCategory2Async(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchTicketingCategoryRequest](../../Models/Requests/PatchTicketingCategoryRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchTicketingCategory2Request](../../Models/Requests/PatchTicketingCategory2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[PatchTicketingCategoryResponse](../../Models/Requests/PatchTicketingCategoryResponse.md)**
+**[PatchTicketingCategory2Response](../../Models/Requests/PatchTicketingCategory2Response.md)**
 
 ### Errors
 
@@ -346,7 +346,7 @@ var res = await sdk.Category.PatchTicketingCategoryAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingCategory
+## RemoveAccountingCategory2
 
 Remove a category
 
@@ -360,7 +360,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Category.RemoveAccountingCategoryAsync(
+var res = await sdk.Category.RemoveAccountingCategory2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -377,7 +377,7 @@ var res = await sdk.Category.RemoveAccountingCategoryAsync(
 
 ### Response
 
-**[RemoveAccountingCategoryResponse](../../Models/Requests/RemoveAccountingCategoryResponse.md)**
+**[RemoveAccountingCategory2Response](../../Models/Requests/RemoveAccountingCategory2Response.md)**
 
 ### Errors
 
@@ -385,7 +385,7 @@ var res = await sdk.Category.RemoveAccountingCategoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveTicketingCategory
+## RemoveTicketingCategory2
 
 Remove a category
 
@@ -399,7 +399,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Category.RemoveTicketingCategoryAsync(
+var res = await sdk.Category.RemoveTicketingCategory2Async(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -416,7 +416,7 @@ var res = await sdk.Category.RemoveTicketingCategoryAsync(
 
 ### Response
 
-**[RemoveTicketingCategoryResponse](../../Models/Requests/RemoveTicketingCategoryResponse.md)**
+**[RemoveTicketingCategory2Response](../../Models/Requests/RemoveTicketingCategory2Response.md)**
 
 ### Errors
 
@@ -424,7 +424,7 @@ var res = await sdk.Category.RemoveTicketingCategoryAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingCategory
+## UpdateAccountingCategory2
 
 Update a category
 
@@ -439,13 +439,55 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
+UpdateAccountingCategory2Request req = new UpdateAccountingCategory2Request() {
     AccountingCategory = new AccountingCategory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Category.UpdateAccountingCategoryAsync(req);
+var res = await sdk.Category.UpdateAccountingCategory2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [UpdateAccountingCategory2Request](../../Models/Requests/UpdateAccountingCategory2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+
+### Response
+
+**[UpdateAccountingCategory2Response](../../Models/Requests/UpdateAccountingCategory2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateTicketingCategory2
+
+Update a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateTicketingCategory2Request req = new UpdateTicketingCategory2Request() {
+    TicketingCategory = new TicketingCategory() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Category.UpdateTicketingCategory2Async(req);
 
 // handle response
 ```
@@ -454,53 +496,11 @@ var res = await sdk.Category.UpdateAccountingCategoryAsync(req);
 
 | Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateAccountingCategoryRequest](../../Models/Requests/UpdateAccountingCategoryRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| `request`                                                                                   | [UpdateTicketingCategory2Request](../../Models/Requests/UpdateTicketingCategory2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[UpdateAccountingCategoryResponse](../../Models/Requests/UpdateAccountingCategoryResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## UpdateTicketingCategory
-
-Update a category
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
-    TicketingCategory = new TicketingCategory() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Category.UpdateTicketingCategoryAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateTicketingCategoryRequest](../../Models/Requests/UpdateTicketingCategoryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
-
-### Response
-
-**[UpdateTicketingCategoryResponse](../../Models/Requests/UpdateTicketingCategoryResponse.md)**
+**[UpdateTicketingCategory2Response](../../Models/Requests/UpdateTicketingCategory2Response.md)**
 
 ### Errors
 
