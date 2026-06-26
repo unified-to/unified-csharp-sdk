@@ -173,6 +173,7 @@ namespace UnifiedTo
         public ILogin Login { get; }
         public IIssue Issue { get; }
         public IWebhook Webhook { get; }
+        public ISecretsmanager Secretsmanager { get; }
         public IVerification Verification { get; }
         public IRequest Request { get; }
     }
@@ -188,7 +189,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.80";
+        private const string _sdkVersion = "0.130.81";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -337,6 +338,7 @@ namespace UnifiedTo
         public ILogin Login { get; private set; }
         public IIssue Issue { get; private set; }
         public IWebhook Webhook { get; private set; }
+        public ISecretsmanager Secretsmanager { get; private set; }
         public IVerification Verification { get; private set; }
         public IRequest Request { get; private set; }
 
@@ -636,6 +638,8 @@ namespace UnifiedTo
             Issue = new Issue(SDKConfiguration);
 
             Webhook = new Webhook(SDKConfiguration);
+
+            Secretsmanager = new Secretsmanager(SDKConfiguration);
 
             Verification = new Verification(SDKConfiguration);
 
@@ -975,6 +979,8 @@ namespace UnifiedTo
             Issue = new Issue(SDKConfiguration);
 
             Webhook = new Webhook(SDKConfiguration);
+
+            Secretsmanager = new Secretsmanager(SDKConfiguration);
 
             Verification = new Verification(SDKConfiguration);
 

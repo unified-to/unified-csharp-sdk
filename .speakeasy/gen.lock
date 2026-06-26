@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: c3bf9a4edbf195d7a0df4f685b85df77
+  docChecksum: e80047cabd365ca694ea12fcbaf92665
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.80
-  configChecksum: 97bf32fb6390be912464176db50650ae
+  releaseVersion: 0.130.81
+  configChecksum: 495edaea1e81b6c8478307b1e847e1c5
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -912,6 +912,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/SearchLinkedinurl.cs
   - UnifiedTo/Models/Components/SearchName.cs
   - UnifiedTo/Models/Components/SearchTwitter.cs
+  - UnifiedTo/Models/Components/SecretsManager.cs
+  - UnifiedTo/Models/Components/SecretsManagerType.cs
   - UnifiedTo/Models/Components/Security.cs
   - UnifiedTo/Models/Components/SexualOrientation.cs
   - UnifiedTo/Models/Components/ShippingCarrier.cs
@@ -1393,6 +1395,7 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateUnifiedEnvironmentResponse.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/CreateUnifiedWorkspaceSecretsmanagerResponse.cs
   - UnifiedTo/Models/Requests/CreateVerificationRequest2QueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateVerificationRequest2Request.cs
   - UnifiedTo/Models/Requests/CreateVerificationRequest2Response.cs
@@ -1792,6 +1795,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetUnifiedIssueResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/GetUnifiedWorkspaceSecretsmanagerRequest.cs
+  - UnifiedTo/Models/Requests/GetUnifiedWorkspaceSecretsmanagerResponse.cs
   - UnifiedTo/Models/Requests/GetVerificationPackage2QueryParamFields.cs
   - UnifiedTo/Models/Requests/GetVerificationPackage2Request.cs
   - UnifiedTo/Models/Requests/GetVerificationPackage2Response.cs
@@ -2220,6 +2225,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedIssuesResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedWorkspaceSecretsmanagersRequest.cs
+  - UnifiedTo/Models/Requests/ListUnifiedWorkspaceSecretsmanagersResponse.cs
   - UnifiedTo/Models/Requests/ListVerificationPackages2QueryParamFields.cs
   - UnifiedTo/Models/Requests/ListVerificationPackages2Request.cs
   - UnifiedTo/Models/Requests/ListVerificationPackages2Response.cs
@@ -2762,6 +2769,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveUnifiedEnvironmentResponse.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerRequest.cs
+  - UnifiedTo/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerResponse.cs
   - UnifiedTo/Models/Requests/RemoveVerificationRequest2Request.cs
   - UnifiedTo/Models/Requests/RemoveVerificationRequest2Response.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccount2QueryParamFields.cs
@@ -3120,6 +3129,7 @@ generatedFiles:
   - UnifiedTo/Salesorder.cs
   - UnifiedTo/Scim.cs
   - UnifiedTo/Scorecard.cs
+  - UnifiedTo/Secretsmanager.cs
   - UnifiedTo/Session.cs
   - UnifiedTo/Shipment.cs
   - UnifiedTo/Shipping.cs
@@ -3961,6 +3971,8 @@ generatedFiles:
   - docs/Models/Components/SearchLinkedinurl.md
   - docs/Models/Components/SearchName.md
   - docs/Models/Components/SearchTwitter.md
+  - docs/Models/Components/SecretsManager.md
+  - docs/Models/Components/SecretsManagerType.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/SexualOrientation.md
   - docs/Models/Components/ShippingCarrier.md
@@ -4441,6 +4453,7 @@ generatedFiles:
   - docs/Models/Requests/CreateUnifiedEnvironmentResponse.md
   - docs/Models/Requests/CreateUnifiedWebhookRequest.md
   - docs/Models/Requests/CreateUnifiedWebhookResponse.md
+  - docs/Models/Requests/CreateUnifiedWorkspaceSecretsmanagerResponse.md
   - docs/Models/Requests/CreateVerificationRequest2QueryParamFields.md
   - docs/Models/Requests/CreateVerificationRequest2Request.md
   - docs/Models/Requests/CreateVerificationRequest2Response.md
@@ -4840,6 +4853,8 @@ generatedFiles:
   - docs/Models/Requests/GetUnifiedIssueResponse.md
   - docs/Models/Requests/GetUnifiedWebhookRequest.md
   - docs/Models/Requests/GetUnifiedWebhookResponse.md
+  - docs/Models/Requests/GetUnifiedWorkspaceSecretsmanagerRequest.md
+  - docs/Models/Requests/GetUnifiedWorkspaceSecretsmanagerResponse.md
   - docs/Models/Requests/GetVerificationPackage2QueryParamFields.md
   - docs/Models/Requests/GetVerificationPackage2Request.md
   - docs/Models/Requests/GetVerificationPackage2Response.md
@@ -5268,6 +5283,8 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedIssuesResponse.md
   - docs/Models/Requests/ListUnifiedWebhooksRequest.md
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
+  - docs/Models/Requests/ListUnifiedWorkspaceSecretsmanagersRequest.md
+  - docs/Models/Requests/ListUnifiedWorkspaceSecretsmanagersResponse.md
   - docs/Models/Requests/ListVerificationPackages2QueryParamFields.md
   - docs/Models/Requests/ListVerificationPackages2Request.md
   - docs/Models/Requests/ListVerificationPackages2Response.md
@@ -5810,6 +5827,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveUnifiedEnvironmentResponse.md
   - docs/Models/Requests/RemoveUnifiedWebhookRequest.md
   - docs/Models/Requests/RemoveUnifiedWebhookResponse.md
+  - docs/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerRequest.md
+  - docs/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerResponse.md
   - docs/Models/Requests/RemoveVerificationRequest2Request.md
   - docs/Models/Requests/RemoveVerificationRequest2Response.md
   - docs/Models/Requests/UpdateAccountingAccount2QueryParamFields.md
@@ -6253,6 +6272,7 @@ generatedFiles:
   - docs/sdks/salesorder/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
+  - docs/sdks/secretsmanager/README.md
   - docs/sdks/session/README.md
   - docs/sdks/shipment/README.md
   - docs/sdks/shipping/README.md
@@ -18834,6 +18854,31 @@ examples:
       responses:
         "200":
           application/json: {}
+  createUnifiedWorkspaceSecretsmanager:
+    speakeasy-default-create-unified-workspace-secretsmanager:
+      requestBody:
+        application/json: {"auth": {}, "name": "<value>", "type": "hashicorp"}
+      responses:
+        "200":
+          application/json: {"auth": {"key": "<value>", "key1": "<value>"}, "name": "<value>", "type": "gcp"}
+  getUnifiedWorkspaceSecretsmanager:
+    speakeasy-default-get-unified-workspace-secretsmanager:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"auth": {"key": "<value>"}, "name": "<value>", "type": "gcp"}
+  listUnifiedWorkspaceSecretsmanagers:
+    speakeasy-default-list-unified-workspace-secretsmanagers:
+      responses:
+        "200":
+          application/json: [{"auth": {"key": "<value>"}, "name": "<value>", "type": "hashicorp"}]
+  removeUnifiedWorkspaceSecretsmanager:
+    speakeasy-default-remove-unified-workspace-secretsmanager:
+      parameters:
+        path:
+          id: "<id>"
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -21676,6 +21721,10 @@ trackedFiles:
     id: e243e133ec5c
     last_write_checksum: sha1:7a4ea38efc895df52cad27ad3903d146d32bc339
     pristine_git_object: 5ee2c01a26025ac3c40fabc995241549f172b462
+  UnifiedTo/Models/Components/SecretsManager.cs:
+    last_write_checksum: sha1:1614df59373e5921eb4d2844c64da4415a862ab4
+  UnifiedTo/Models/Components/SecretsManagerType.cs:
+    last_write_checksum: sha1:046ca46f9f8d78c5e59bbd53447076d65ead3cbf
   UnifiedTo/Models/Components/Security.cs:
     id: 1a5173af07e4
     last_write_checksum: sha1:a57ce35927a76cd57171f9f4bb790b44285cbcb4
@@ -22856,6 +22905,8 @@ trackedFiles:
     id: 16f2a563fb61
     last_write_checksum: sha1:064526cd1a06352af02ca20875f5a737b9913abc
     pristine_git_object: acfb4c4687a6dfea92c815466d2d4a837d8f340d
+  UnifiedTo/Models/Requests/CreateUnifiedWorkspaceSecretsmanagerResponse.cs:
+    last_write_checksum: sha1:098d849b40bad433719955847bcca1f4ffd00f3c
   UnifiedTo/Models/Requests/CreateVerificationRequest2QueryParamFields.cs:
     last_write_checksum: sha1:08f28c47e032a546fc1395df8c51a84928e0d184
   UnifiedTo/Models/Requests/CreateVerificationRequest2Request.cs:
@@ -23686,6 +23737,10 @@ trackedFiles:
     id: d19dd4a07227
     last_write_checksum: sha1:d67f0fd244a1acbf71eddf4967116cc87f8dc9e5
     pristine_git_object: 60ea6a186fcc6a4c912c2ba62ceef273bc189bc5
+  UnifiedTo/Models/Requests/GetUnifiedWorkspaceSecretsmanagerRequest.cs:
+    last_write_checksum: sha1:f55ff33656c77c8bf99d7edfde2ff001f5acd9b3
+  UnifiedTo/Models/Requests/GetUnifiedWorkspaceSecretsmanagerResponse.cs:
+    last_write_checksum: sha1:8a084d008beaaa16879017c0a8c93129f418ed77
   UnifiedTo/Models/Requests/GetVerificationPackage2QueryParamFields.cs:
     last_write_checksum: sha1:46e4fd9d832de9b7ec68d44c30d9dd40f3ce4b1a
   UnifiedTo/Models/Requests/GetVerificationPackage2Request.cs:
@@ -24578,6 +24633,10 @@ trackedFiles:
     id: 9bf9cc0d4242
     last_write_checksum: sha1:ebb95967c13a0da3054d5c138244b52c1513113d
     pristine_git_object: b2cb3e64d2ae2a6011f3bed6123cacd4629dbefc
+  UnifiedTo/Models/Requests/ListUnifiedWorkspaceSecretsmanagersRequest.cs:
+    last_write_checksum: sha1:5ac9db6835770faec13d91c7c2b3ecf18059430b
+  UnifiedTo/Models/Requests/ListUnifiedWorkspaceSecretsmanagersResponse.cs:
+    last_write_checksum: sha1:8ae5227fdbe865499058a8e3be1a6735de383237
   UnifiedTo/Models/Requests/ListVerificationPackages2QueryParamFields.cs:
     last_write_checksum: sha1:dd5a0a28f7dff7a454c0266f22bc8ebbc09f43f6
   UnifiedTo/Models/Requests/ListVerificationPackages2Request.cs:
@@ -25704,6 +25763,10 @@ trackedFiles:
     id: a9482298b620
     last_write_checksum: sha1:c9dee8e23f2112fd07bf580674180234500950a0
     pristine_git_object: 70888531408f269973eef176caf04083cf6c6397
+  UnifiedTo/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerRequest.cs:
+    last_write_checksum: sha1:ca8fbe9a928cb1bb9812d3142bcc5b40b2ea1e4f
+  UnifiedTo/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerResponse.cs:
+    last_write_checksum: sha1:6b6606041135af51542d1e2a47318475516d2666
   UnifiedTo/Models/Requests/RemoveVerificationRequest2Request.cs:
     last_write_checksum: sha1:11d6ad5ee315f843dd7a32fd23f57bcbf84f2f48
   UnifiedTo/Models/Requests/RemoveVerificationRequest2Response.cs:
@@ -26496,6 +26559,8 @@ trackedFiles:
     id: 36e1b31e42db
     last_write_checksum: sha1:c2ff0754a0dc3c439ea2d1056664170451e89023
     pristine_git_object: ba26acb9d3cabb1ef350d113c2681e26e60f5248
+  UnifiedTo/Secretsmanager.cs:
+    last_write_checksum: sha1:7f3d8ffea746c59c07243b6e2066c72f1a8b3989
   UnifiedTo/Session.cs:
     last_write_checksum: sha1:c41ed75cc293328962a9693fd0885194ec23313f
   UnifiedTo/Shipment.cs:
@@ -26570,7 +26635,7 @@ trackedFiles:
     pristine_git_object: dfeab568bc8e6b449efbb64c44d6b067c0f9cf5c
   UnifiedTo/Unified.cs:
     id: 099e70cced74
-    last_write_checksum: sha1:0e71493c4dc71abcd3ca8d2ef33fdaa9a30ba6cc
+    last_write_checksum: sha1:ab8d3ab52ec2921b79a699503b3437408847fb0c
     pristine_git_object: 430cf6d0a2882d64973490c67760a6eeaa8e6ec0
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
@@ -26578,7 +26643,7 @@ trackedFiles:
     pristine_git_object: 883792bc149f1152a8331b8e409d591075c3a6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
-    last_write_checksum: sha1:216747d05318f4321908140633024b61e17b0757
+    last_write_checksum: sha1:ec1e5c79abfcb86a84c18beb8c206f2510dc9673
     pristine_git_object: b2dbc023c5e4be2a5de721c2bbc9330db399f4bd
   UnifiedTo/User.cs:
     id: 603e44ffd153
@@ -29174,6 +29239,10 @@ trackedFiles:
     id: aa9a78ebaa2b
     last_write_checksum: sha1:2634e6815bf506ce17a22754d87c7ebdbe3624bd
     pristine_git_object: cc3bd76d13714d85adbbcef98944c677da883751
+  docs/Models/Components/SecretsManager.md:
+    last_write_checksum: sha1:b384c3b5fd222304b804bf20e1f3fc3b797dc453
+  docs/Models/Components/SecretsManagerType.md:
+    last_write_checksum: sha1:dd0643fbfe69a23aed0d796005b6133314a36f04
   docs/Models/Components/Security.md:
     id: 7bcd54fda13a
     last_write_checksum: sha1:e12612e66d7f9552b2a04bf5e784e03883955321
@@ -30342,6 +30411,8 @@ trackedFiles:
     id: e2afbe796d99
     last_write_checksum: sha1:eae45fd47ab8dae631276cb39ccad3f562f09737
     pristine_git_object: 67953393c72d08a74d9737204a7693d7a8711df3
+  docs/Models/Requests/CreateUnifiedWorkspaceSecretsmanagerResponse.md:
+    last_write_checksum: sha1:108a6d1ea12ff2b6660182c1322959465ccfb685
   docs/Models/Requests/CreateVerificationRequest2QueryParamFields.md:
     last_write_checksum: sha1:1be3607c87d10d0c7b794e459f643e1de2b57105
   docs/Models/Requests/CreateVerificationRequest2Request.md:
@@ -31172,6 +31243,10 @@ trackedFiles:
     id: 2222e71235f6
     last_write_checksum: sha1:6ac925ac76aec78cd0d2b8cec83fc192146b956b
     pristine_git_object: 7d2f46f8a0f0f3f9db4303f6d7723bc866ca4c47
+  docs/Models/Requests/GetUnifiedWorkspaceSecretsmanagerRequest.md:
+    last_write_checksum: sha1:731ef84abcfa3731a7b535262d092c8e7a4cffc3
+  docs/Models/Requests/GetUnifiedWorkspaceSecretsmanagerResponse.md:
+    last_write_checksum: sha1:e01be18ed26d20311d627b92127e585c131cfad4
   docs/Models/Requests/GetVerificationPackage2QueryParamFields.md:
     last_write_checksum: sha1:33fe83561876cb788eb382b0a3a3933c5fed0313
   docs/Models/Requests/GetVerificationPackage2Request.md:
@@ -32064,6 +32139,10 @@ trackedFiles:
     id: 9040e4e091d4
     last_write_checksum: sha1:b2e4ad63f48545e3c0bafef493a71e781f86d593
     pristine_git_object: da420cd466df099977dbb4f2de83768ecc24686d
+  docs/Models/Requests/ListUnifiedWorkspaceSecretsmanagersRequest.md:
+    last_write_checksum: sha1:78b2881793e63e20197266df793073e6915f5a4c
+  docs/Models/Requests/ListUnifiedWorkspaceSecretsmanagersResponse.md:
+    last_write_checksum: sha1:cdc810a460df56b4d824ce3cb450df245627db22
   docs/Models/Requests/ListVerificationPackages2QueryParamFields.md:
     last_write_checksum: sha1:bfa59fde998db802f5def9d6997e1070c5fcd5e4
   docs/Models/Requests/ListVerificationPackages2Request.md:
@@ -33190,6 +33269,10 @@ trackedFiles:
     id: 2e9778f82887
     last_write_checksum: sha1:8d2519e4295c7cf7d79e1b1c58eeaca72a3d9e7b
     pristine_git_object: d6db49bc76bae0328b76ba0a9cb83277f36563c6
+  docs/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerRequest.md:
+    last_write_checksum: sha1:610615fa9f7951628b74edb82ece75edbeec754a
+  docs/Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerResponse.md:
+    last_write_checksum: sha1:efedf4af61ac220dff87aeb47790d7cab92ad3f0
   docs/Models/Requests/RemoveVerificationRequest2Request.md:
     last_write_checksum: sha1:dc2b7419197cb72c079965baf5bf9804615549b1
   docs/Models/Requests/RemoveVerificationRequest2Response.md:
@@ -34286,6 +34369,8 @@ trackedFiles:
     id: c2a30ae6874b
     last_write_checksum: sha1:a40181c4c5ca590cd05c87cb5adbba53f7e60bc1
     pristine_git_object: 608e3d488b68bc058b622858554c21a9db6d204c
+  docs/sdks/secretsmanager/README.md:
+    last_write_checksum: sha1:8a05f7c43914d9c398cb473ed6da9d3a9a2485b7
   docs/sdks/session/README.md:
     last_write_checksum: sha1:79870963e6f54dda39222ff6def16a3cd05c94b7
   docs/sdks/shipment/README.md:
@@ -34360,7 +34445,7 @@ trackedFiles:
     pristine_git_object: 24ea4e2caca437c8ffe9a225794780a05b5d463e
   docs/sdks/unified/README.md:
     id: e15cc6babd27
-    last_write_checksum: sha1:0d4165b4d4cd0be52ff55598efdc91b9e30c9106
+    last_write_checksum: sha1:678b1c65690b1127a6c2cd3b407aeedae83647ec
     pristine_git_object: 3d7e3740914c1605779a45b8baa954521d2baa04
   docs/sdks/user/README.md:
     id: 437dd7dc6e30

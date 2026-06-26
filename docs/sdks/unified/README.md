@@ -8,11 +8,13 @@
 * [CreateUnifiedConnection](#createunifiedconnection) - Create connection
 * [CreateUnifiedEnvironment](#createunifiedenvironment) - Create new environments
 * [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
+* [CreateUnifiedWorkspaceSecretsmanager](#createunifiedworkspacesecretsmanager) - Create secrets manager
 * [GetUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [GetUnifiedConnection](#getunifiedconnection) - Retrieve connection
 * [GetUnifiedIntegrationAuth](#getunifiedintegrationauth) - Authorize new connection
 * [GetUnifiedIssue](#getunifiedissue) - Retrieve support issue
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
+* [GetUnifiedWorkspaceSecretsmanager](#getunifiedworkspacesecretsmanager) - Retrieve secrets manager
 * [ListUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
 * [ListUnifiedConnections](#listunifiedconnections) - List all connections
 * [ListUnifiedEnvironments](#listunifiedenvironments) - Returns all environments
@@ -20,12 +22,14 @@
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 * [ListUnifiedIssues](#listunifiedissues) - List support issues
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
+* [ListUnifiedWorkspaceSecretsmanagers](#listunifiedworkspacesecretsmanagers) - List secrets managers
 * [PatchUnifiedConnection](#patchunifiedconnection) - Update connection
 * [PatchUnifiedWebhook](#patchunifiedwebhook) - Update webhook subscription
 * [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedConnection](#removeunifiedconnection) - Remove connection
 * [RemoveUnifiedEnvironment](#removeunifiedenvironment) - Remove an environment
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
+* [RemoveUnifiedWorkspaceSecretsmanager](#removeunifiedworkspacesecretsmanager) - Remove secrets manager
 * [UpdateUnifiedConnection](#updateunifiedconnection) - Update connection
 * [UpdateUnifiedWebhook](#updateunifiedwebhook) - Update webhook subscription
 * [UpdateUnifiedWebhookTrigger](#updateunifiedwebhooktrigger) - Trigger webhook
@@ -145,6 +149,50 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(webhook: new Models.Compon
 ### Response
 
 **[CreateUnifiedWebhookResponse](../../Models/Requests/CreateUnifiedWebhookResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateUnifiedWorkspaceSecretsmanager
+
+Create secrets manager
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+SecretsManager req = new SecretsManager() {
+    Auth = new Dictionary<string, string>() {
+
+    },
+    Name = "<value>",
+    Type = SecretsManagerType.Hashicorp,
+};
+
+var res = await sdk.Unified.CreateUnifiedWorkspaceSecretsmanagerAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `request`                                                   | [SecretsManager](../../Models/Components/SecretsManager.md) | :heavy_check_mark:                                          | The request object to use for the request.                  |
+
+### Response
+
+**[CreateUnifiedWorkspaceSecretsmanagerResponse](../../Models/Requests/CreateUnifiedWorkspaceSecretsmanagerResponse.md)**
 
 ### Errors
 
@@ -326,6 +374,41 @@ var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<id>");
 ### Response
 
 **[GetUnifiedWebhookResponse](../../Models/Requests/GetUnifiedWebhookResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetUnifiedWorkspaceSecretsmanager
+
+Retrieve secrets manager
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Unified.GetUnifiedWorkspaceSecretsmanagerAsync(id: "<id>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                | Type                     | Required                 | Description              |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `Id`                     | *string*                 | :heavy_check_mark:       | ID of the Secretsmanager |
+
+### Response
+
+**[GetUnifiedWorkspaceSecretsmanagerResponse](../../Models/Requests/GetUnifiedWorkspaceSecretsmanagerResponse.md)**
 
 ### Errors
 
@@ -592,6 +675,44 @@ var res = await sdk.Unified.ListUnifiedWebhooksAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListUnifiedWorkspaceSecretsmanagers
+
+List secrets managers
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListUnifiedWorkspaceSecretsmanagersRequest req = ;
+
+var res = await sdk.Unified.ListUnifiedWorkspaceSecretsmanagersAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                         | [ListUnifiedWorkspaceSecretsmanagersRequest](../../Models/Requests/ListUnifiedWorkspaceSecretsmanagersRequest.md) | :heavy_check_mark:                                                                                                | The request object to use for the request.                                                                        |
+
+### Response
+
+**[ListUnifiedWorkspaceSecretsmanagersResponse](../../Models/Requests/ListUnifiedWorkspaceSecretsmanagersResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchUnifiedConnection
 
 Update connection
@@ -816,6 +937,41 @@ var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<id>");
 ### Response
 
 **[RemoveUnifiedWebhookResponse](../../Models/Requests/RemoveUnifiedWebhookResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveUnifiedWorkspaceSecretsmanager
+
+Remove secrets manager
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Unified.RemoveUnifiedWorkspaceSecretsmanagerAsync(id: "<id>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                | Type                     | Required                 | Description              |
+| ------------------------ | ------------------------ | ------------------------ | ------------------------ |
+| `Id`                     | *string*                 | :heavy_check_mark:       | ID of the Secretsmanager |
+
+### Response
+
+**[RemoveUnifiedWorkspaceSecretsmanagerResponse](../../Models/Requests/RemoveUnifiedWorkspaceSecretsmanagerResponse.md)**
 
 ### Errors
 
