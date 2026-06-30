@@ -18,9 +18,6 @@ namespace UnifiedTo.Models.Components
     public class TicketingTicket
     {
 
-        [JsonProperty("category")]
-        public string? Category { get; set; }
-
         [JsonProperty("category_id")]
         public string? CategoryId { get; set; }
 
@@ -35,6 +32,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("description")]
         public string? Description { get; set; }
+
+        [JsonProperty("due_at")]
+        public DateTime? DueAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }

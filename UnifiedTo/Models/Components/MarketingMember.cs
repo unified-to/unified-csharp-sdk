@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
     public class MarketingMember
     {
 
+        [JsonProperty("company")]
+        public string? Company { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

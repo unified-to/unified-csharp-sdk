@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: e80047cabd365ca694ea12fcbaf92665
+  docChecksum: 0ab332c4c2b7f7b52bec30489a92cd2f
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.81
-  configChecksum: 495edaea1e81b6c8478307b1e847e1c5
+  releaseVersion: 0.130.82
+  configChecksum: 3e78b4e001d776b9b0302a69026a0aa5
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -20773,7 +20773,7 @@ trackedFiles:
     pristine_git_object: ad2dbaef0e211fa29b250240751e402a5bf14459
   UnifiedTo/Models/Components/MarketingMember.cs:
     id: 125c5309be96
-    last_write_checksum: sha1:d985ac6f56f43960ad73f23fb3912e7bb4b17488
+    last_write_checksum: sha1:f8750272026ff8e63d0615b45f76f92107608494
     pristine_git_object: 91bb6a8f2c2ef781fa79a003e8d9804c619c76fa
   UnifiedTo/Models/Components/MarketingMemberStatus.cs:
     last_write_checksum: sha1:1071f1a49ecff0e10015a9a1236dda527d71bb5f
@@ -21903,7 +21903,7 @@ trackedFiles:
     pristine_git_object: 720efefa33476a45824428345a998a7c22abc3f7
   UnifiedTo/Models/Components/TicketingTicket.cs:
     id: cf681f041640
-    last_write_checksum: sha1:bf9c4db5e7ba6bdece5c3dcc2cd67626511886c7
+    last_write_checksum: sha1:4af08099c859d01867393590980c9a8a94118882
     pristine_git_object: 2ce6338ed44072d2d68ce9776386925e2970c6fe
   UnifiedTo/Models/Components/TicketingTicketStatus.cs:
     id: 3b21b888c641
@@ -22704,7 +22704,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateMartechList2Response.cs:
     last_write_checksum: sha1:dd0e1b32bb8aae8a7f04849eaa241160d203863b
   UnifiedTo/Models/Requests/CreateMartechMember2QueryParamFields.cs:
-    last_write_checksum: sha1:a0352cc2f4155ae4e9a6d393ed86ec0f208b7cd1
+    last_write_checksum: sha1:2f4b36e54f9b35f6be92a07c8d9596539cf939d3
   UnifiedTo/Models/Requests/CreateMartechMember2Request.cs:
     last_write_checksum: sha1:a379ed7b37967c6e45fce666b9495f8efdc516e7
   UnifiedTo/Models/Requests/CreateMartechMember2Response.cs:
@@ -22866,7 +22866,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateTicketingNote2Response.cs:
     last_write_checksum: sha1:f3155dbae5445ecd1fd89662b3fab2a8d34b5265
   UnifiedTo/Models/Requests/CreateTicketingTicket2QueryParamFields.cs:
-    last_write_checksum: sha1:fbb8233ae2bcb192a8898821329f4b992a2fec17
+    last_write_checksum: sha1:90c778f2e56cc8f97a3f0f0a5c5e0731d7ec4653
   UnifiedTo/Models/Requests/CreateTicketingTicket2Request.cs:
     last_write_checksum: sha1:62efd13df6157193659d72bed71932d78817510b
   UnifiedTo/Models/Requests/CreateTicketingTicket2Response.cs:
@@ -23470,7 +23470,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetMartechList2Response.cs:
     last_write_checksum: sha1:11e267547072f53ec9b090f9758fc9938aeca7ce
   UnifiedTo/Models/Requests/GetMartechMember2QueryParamFields.cs:
-    last_write_checksum: sha1:e828d61710d835af96f25a75108b0f2ab714a9f0
+    last_write_checksum: sha1:af5f99aee46e93185fc5d4674d7fc7c04f62047c
   UnifiedTo/Models/Requests/GetMartechMember2Request.cs:
     last_write_checksum: sha1:15e012aec2f3deb4baef4fd2f60f99d31998f608
   UnifiedTo/Models/Requests/GetMartechMember2Response.cs:
@@ -23660,7 +23660,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetTicketingNote2Response.cs:
     last_write_checksum: sha1:1c5d31e2441fbcfd0414f37d74a3599bb93d6848
   UnifiedTo/Models/Requests/GetTicketingTicket2QueryParamFields.cs:
-    last_write_checksum: sha1:d043ec181713e7253635436be93b022a9600faa6
+    last_write_checksum: sha1:cb354ab86a554cbb869fdfc76e2d54ade54c3d45
   UnifiedTo/Models/Requests/GetTicketingTicket2Request.cs:
     last_write_checksum: sha1:fbacbb44a1c47603e784b4ea2d808e339dc40167
   UnifiedTo/Models/Requests/GetTicketingTicket2Response.cs:
@@ -24348,7 +24348,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListMartechLists2Response.cs:
     last_write_checksum: sha1:657e9b6a2290dba5b108c58004d2dc62b629830c
   UnifiedTo/Models/Requests/ListMartechMembers2QueryParamFields.cs:
-    last_write_checksum: sha1:cd83e19f516a402f26608063f38248cddae09c65
+    last_write_checksum: sha1:65762b0706fd0a0a67f7d539de0906b7b52b4f8d
   UnifiedTo/Models/Requests/ListMartechMembers2Request.cs:
     last_write_checksum: sha1:f8cd585684f6f6ee3bb970098055fe040bf221d7
   UnifiedTo/Models/Requests/ListMartechMembers2Response.cs:
@@ -24548,7 +24548,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListTicketingNotes2Response.cs:
     last_write_checksum: sha1:d227332be5b53ebe89b5fcc0f59877f584eb45d8
   UnifiedTo/Models/Requests/ListTicketingTickets2QueryParamFields.cs:
-    last_write_checksum: sha1:78d23b5866334c900eca75ce052361cbecdb460e
+    last_write_checksum: sha1:249eee387039ffd1c10507ea8190cdbe87790382
   UnifiedTo/Models/Requests/ListTicketingTickets2Request.cs:
     last_write_checksum: sha1:40ce8b46ad20ba78dc433a7eb75a30bb005cbe1b
   UnifiedTo/Models/Requests/ListTicketingTickets2Response.cs:
@@ -25098,7 +25098,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchMartechList2Response.cs:
     last_write_checksum: sha1:2b29969544d9671eae4b7f978c7d2ab697b3ce05
   UnifiedTo/Models/Requests/PatchMartechMember2QueryParamFields.cs:
-    last_write_checksum: sha1:d9e2be15cf73fb844e90a5e222eb845bb890ed8c
+    last_write_checksum: sha1:3f93a79c45a548ada3d79e0f57a00e6278f3bee7
   UnifiedTo/Models/Requests/PatchMartechMember2Request.cs:
     last_write_checksum: sha1:89f17667060007bc0e3b4a11696a5df2ede59136
   UnifiedTo/Models/Requests/PatchMartechMember2Response.cs:
@@ -25260,7 +25260,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchTicketingNote2Response.cs:
     last_write_checksum: sha1:7bcd8c2aabbc55aeace468fe847110e896f9f496
   UnifiedTo/Models/Requests/PatchTicketingTicket2QueryParamFields.cs:
-    last_write_checksum: sha1:9d133bc0353af6a452c4d80238f7d44c68029cd2
+    last_write_checksum: sha1:bab6bf0077eac6cfc700ea306885bad2a932685c
   UnifiedTo/Models/Requests/PatchTicketingTicket2Request.cs:
     last_write_checksum: sha1:9fc8dd8f3c09d12b276f6ee3a53d00a1d72759b2
   UnifiedTo/Models/Requests/PatchTicketingTicket2Response.cs:
@@ -26220,7 +26220,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateMartechList2Response.cs:
     last_write_checksum: sha1:fe17e87ca9b835716bd171cbc56a02b8667fdf1d
   UnifiedTo/Models/Requests/UpdateMartechMember2QueryParamFields.cs:
-    last_write_checksum: sha1:1f937f5be06668557b0a1de0d6b2e8c302b728b1
+    last_write_checksum: sha1:2214621f057b833ca40801f82622cccf5171c227
   UnifiedTo/Models/Requests/UpdateMartechMember2Request.cs:
     last_write_checksum: sha1:26616a690fde9a6d52e06f011feb1e3b50e2328c
   UnifiedTo/Models/Requests/UpdateMartechMember2Response.cs:
@@ -26382,7 +26382,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateTicketingNote2Response.cs:
     last_write_checksum: sha1:43fb00f302cb3597c6db8b73294bdf762d63c42e
   UnifiedTo/Models/Requests/UpdateTicketingTicket2QueryParamFields.cs:
-    last_write_checksum: sha1:2b92cc166509cd8d3fbf46262ae6e21d81b54766
+    last_write_checksum: sha1:0aabf604c53e482964ac42db4e8be02e31f83f5e
   UnifiedTo/Models/Requests/UpdateTicketingTicket2Request.cs:
     last_write_checksum: sha1:9aed6b5f54e80ca1e89d402c491228a037b7f09f
   UnifiedTo/Models/Requests/UpdateTicketingTicket2Response.cs:
@@ -26541,7 +26541,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:b8039e89d7d6be3511617544f06fc5f6edc36f75
+    last_write_checksum: sha1:b33549633042332f4ef3136a33cd2959ed9b0982
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -26659,7 +26659,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:61bb66b65c93f1b4d3368e754d22e859d20e90b5
+    last_write_checksum: sha1:57caaa653432e7babd690ccc8a23f941369a9ba8
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -28291,7 +28291,7 @@ trackedFiles:
     pristine_git_object: 6a631457074f0b29c523ea08c183f19e04736a5c
   docs/Models/Components/MarketingMember.md:
     id: bcfe23bd96e4
-    last_write_checksum: sha1:693505715c67f0c31ccd69093412e1ce26671138
+    last_write_checksum: sha1:ffeef0120708f2ad5d7bdd1bef3f2c017e490d6b
     pristine_git_object: 149de9736ca70390f0836a2ed007abb8526a82f9
   docs/Models/Components/MarketingMemberStatus.md:
     last_write_checksum: sha1:9385d27ad2f34ab397cc14410a1e222c7179d550
@@ -29421,7 +29421,7 @@ trackedFiles:
     pristine_git_object: 29f07ddb927e2251478534fe5a76890fea622b5e
   docs/Models/Components/TicketingTicket.md:
     id: 1853b5ed42c1
-    last_write_checksum: sha1:3787c74a58cfbf2b971641fbc63d6f79a6cf3f40
+    last_write_checksum: sha1:066c249022fda75afb7f1976fba52a13c15ef3b6
     pristine_git_object: cfc46ea8b2bbe1b10c660e8ee4b0766731d156b7
   docs/Models/Components/TicketingTicketStatus.md:
     id: 8bfa5d2bf1f7
@@ -30210,7 +30210,7 @@ trackedFiles:
   docs/Models/Requests/CreateMartechList2Response.md:
     last_write_checksum: sha1:07970bd78b63f256a2149ddee0e4a0ced6324bb9
   docs/Models/Requests/CreateMartechMember2QueryParamFields.md:
-    last_write_checksum: sha1:6a81041e48c21d2f10e22f886a23cc7e413058c1
+    last_write_checksum: sha1:602da9f55f9ca64ffc3d92ec26a94dfd5b4e9c91
   docs/Models/Requests/CreateMartechMember2Request.md:
     last_write_checksum: sha1:51893a72608822423e983516348ceead8073a7ed
   docs/Models/Requests/CreateMartechMember2Response.md:
@@ -30372,7 +30372,7 @@ trackedFiles:
   docs/Models/Requests/CreateTicketingNote2Response.md:
     last_write_checksum: sha1:7b056e962c75fdd913d9d84f444bce103156acd3
   docs/Models/Requests/CreateTicketingTicket2QueryParamFields.md:
-    last_write_checksum: sha1:e07f255eef327c0975fb51579f067865e1bbe259
+    last_write_checksum: sha1:51a2aaaf021d4a5d90960ad59d55f5fdb2f7076b
   docs/Models/Requests/CreateTicketingTicket2Request.md:
     last_write_checksum: sha1:0fad9fb4dae56b6e216f404deb87c18ab2a01e3f
   docs/Models/Requests/CreateTicketingTicket2Response.md:
@@ -30976,7 +30976,7 @@ trackedFiles:
   docs/Models/Requests/GetMartechList2Response.md:
     last_write_checksum: sha1:9579ace789ada80dad6051fa001816096ac5146c
   docs/Models/Requests/GetMartechMember2QueryParamFields.md:
-    last_write_checksum: sha1:bc5df696412dfc8628ded90b3ae603be67635332
+    last_write_checksum: sha1:eb094d0f88c57b75fc59b5d5d91a8e91b2e3a36a
   docs/Models/Requests/GetMartechMember2Request.md:
     last_write_checksum: sha1:6a4f87f3d523d49ec6fabaf7dead5128c5d2a7ac
   docs/Models/Requests/GetMartechMember2Response.md:
@@ -31166,7 +31166,7 @@ trackedFiles:
   docs/Models/Requests/GetTicketingNote2Response.md:
     last_write_checksum: sha1:b2840c5fb5fb9dc394bec63440252d8c58817955
   docs/Models/Requests/GetTicketingTicket2QueryParamFields.md:
-    last_write_checksum: sha1:ddfa56b74352ca77964366b5ffc3730fdb20c14e
+    last_write_checksum: sha1:1de2d0b4ab8603479c9a6148d5f7a532f08acf93
   docs/Models/Requests/GetTicketingTicket2Request.md:
     last_write_checksum: sha1:e238e272cc80a52b2d894e54cab127e309908728
   docs/Models/Requests/GetTicketingTicket2Response.md:
@@ -31854,7 +31854,7 @@ trackedFiles:
   docs/Models/Requests/ListMartechLists2Response.md:
     last_write_checksum: sha1:b1306456b095a5af8b876792b5f22db6229cb13b
   docs/Models/Requests/ListMartechMembers2QueryParamFields.md:
-    last_write_checksum: sha1:aea70f01c9b9ad9d180b34b7113a530eb85a8699
+    last_write_checksum: sha1:ab4e93397bad74628f65cc69417b63ec4001469c
   docs/Models/Requests/ListMartechMembers2Request.md:
     last_write_checksum: sha1:bdd34a3de33d7c84016dc2760466f5a55701a40b
   docs/Models/Requests/ListMartechMembers2Response.md:
@@ -32054,7 +32054,7 @@ trackedFiles:
   docs/Models/Requests/ListTicketingNotes2Response.md:
     last_write_checksum: sha1:afb7fe9faba6b84fa0077965552e36d7448346f6
   docs/Models/Requests/ListTicketingTickets2QueryParamFields.md:
-    last_write_checksum: sha1:a360f0b0a7869ba679b4663566e8c75fe2fe9b1b
+    last_write_checksum: sha1:6836bcb01cbad19206b5d95af568d812f09e52f2
   docs/Models/Requests/ListTicketingTickets2Request.md:
     last_write_checksum: sha1:cd84e0ee74f2b7c124614b1687dd8a78f17706e8
   docs/Models/Requests/ListTicketingTickets2Response.md:
@@ -32604,7 +32604,7 @@ trackedFiles:
   docs/Models/Requests/PatchMartechList2Response.md:
     last_write_checksum: sha1:5a80be40baeacf8e1a6d97cc598d15e69312586f
   docs/Models/Requests/PatchMartechMember2QueryParamFields.md:
-    last_write_checksum: sha1:68485a037b8f9b64b4ccdc38dc639165ff4b0b90
+    last_write_checksum: sha1:2c65a711b76130c3be1ae352b9ea352ddce9b137
   docs/Models/Requests/PatchMartechMember2Request.md:
     last_write_checksum: sha1:d26c415e0bee00336474addc0db94dfc4e96e11d
   docs/Models/Requests/PatchMartechMember2Response.md:
@@ -32766,7 +32766,7 @@ trackedFiles:
   docs/Models/Requests/PatchTicketingNote2Response.md:
     last_write_checksum: sha1:b8023cfe7874d287884c36320f51b56ae7543ca7
   docs/Models/Requests/PatchTicketingTicket2QueryParamFields.md:
-    last_write_checksum: sha1:f627bc3084cf0d755db965079e464fbec90bf833
+    last_write_checksum: sha1:5ffe2f770b1dd246404fb6e01cc4811f8c72bf7f
   docs/Models/Requests/PatchTicketingTicket2Request.md:
     last_write_checksum: sha1:31ce0112b77f15ed1832cc34cfa9f96f9a0b32e4
   docs/Models/Requests/PatchTicketingTicket2Response.md:
@@ -33726,7 +33726,7 @@ trackedFiles:
   docs/Models/Requests/UpdateMartechList2Response.md:
     last_write_checksum: sha1:6bd69bc2f301846da7f0a7cadc92cd56c6849acb
   docs/Models/Requests/UpdateMartechMember2QueryParamFields.md:
-    last_write_checksum: sha1:99075b266c8bf4b22c5fa06debfa94873736e363
+    last_write_checksum: sha1:88e8b22070e7bc70d45493d5ff4fc6eaa59abe6e
   docs/Models/Requests/UpdateMartechMember2Request.md:
     last_write_checksum: sha1:442223c349767ca5036211ea6ab37a8151bb7f1b
   docs/Models/Requests/UpdateMartechMember2Response.md:
@@ -33888,7 +33888,7 @@ trackedFiles:
   docs/Models/Requests/UpdateTicketingNote2Response.md:
     last_write_checksum: sha1:e377082bbb159224b12f970f826c8ecac83ef4e2
   docs/Models/Requests/UpdateTicketingTicket2QueryParamFields.md:
-    last_write_checksum: sha1:30b3393de907278f002188ba0ed5addc79ddd0c1
+    last_write_checksum: sha1:611e026824795bee021064100d3c7c99dc190665
   docs/Models/Requests/UpdateTicketingTicket2Request.md:
     last_write_checksum: sha1:4df7573b6a59a2b7dfe2e8adceeef2e3735f29fe
   docs/Models/Requests/UpdateTicketingTicket2Response.md:

@@ -27,6 +27,8 @@ namespace UnifiedTo.Models.Requests
         FirstName,
         [JsonProperty("last_name")]
         LastName,
+        [JsonProperty("company")]
+        Company,
         [JsonProperty("emails")]
         Emails,
         [JsonProperty("list_ids")]

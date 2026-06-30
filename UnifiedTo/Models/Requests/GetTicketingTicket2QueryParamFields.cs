@@ -35,8 +35,6 @@ namespace UnifiedTo.Models.Requests
         Priority,
         [JsonProperty("category_id")]
         CategoryId,
-        [JsonProperty("category")]
-        Category,
         [JsonProperty("source")]
         Source,
         [JsonProperty("source_ref")]
@@ -47,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("url")]
         Url,
+        [JsonProperty("due_at")]
+        DueAt,
         [JsonProperty("raw")]
         Raw,
     }
