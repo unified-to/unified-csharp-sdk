@@ -57,6 +57,7 @@
 | `CrmEvent`                | crm_event                 |
 | `CrmLead`                 | crm_lead                  |
 | `CrmPipeline`             | crm_pipeline              |
+| `CrmPicklist`             | crm_picklist              |
 | `HrisEmployee`            | hris_employee             |
 | `HrisGroup`               | hris_group                |
 | `HrisPayslip`             | hris_payslip              |

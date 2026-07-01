@@ -179,6 +179,10 @@ namespace UnifiedTo.Models.Components
         AbsoluteTopImpressionShare,
         [JsonProperty("TOP_IMPRESSION_SHARE")]
         TopImpressionShare,
+        [JsonProperty("ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT")]
+        AbsoluteTopImpressionRatePercent,
+        [JsonProperty("TOP_IMPRESSION_RATE_PERCENT")]
+        TopImpressionRatePercent,
         [JsonProperty("VIDEO_FULLSCREENS")]
         VideoFullscreens,
         [JsonProperty("VIDEO_PAUSES")]
@@ -245,12 +249,6 @@ namespace UnifiedTo.Models.Components
         NotMeasurableImpressions,
         [JsonProperty("NOT_VIEWABLE_IMPRESSIONS")]
         NotViewableImpressions,
-        [JsonProperty("PUBLISHER_PLATFORM")]
-        PublisherPlatform,
-        [JsonProperty("PLATFORM_POSITION")]
-        PlatformPosition,
-        [JsonProperty("IMPRESSION_DEVICE")]
-        ImpressionDevice,
         [JsonProperty("1D_VIEW")]
         OneDVIEW,
         [JsonProperty("1D_CLICK")]

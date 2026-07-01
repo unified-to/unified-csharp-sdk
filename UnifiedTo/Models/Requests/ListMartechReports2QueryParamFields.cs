@@ -63,6 +63,12 @@ namespace UnifiedTo.Models.Requests
         LastClickAt,
         [JsonProperty("links")]
         Links,
+        [JsonProperty("human_opens_total")]
+        HumanOpensTotal,
+        [JsonProperty("human_unique_opens")]
+        HumanUniqueOpens,
+        [JsonProperty("human_open_rate")]
+        HumanOpenRate,
         [JsonProperty("raw")]
         Raw,
     }

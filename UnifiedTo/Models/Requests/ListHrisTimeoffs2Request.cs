@@ -70,6 +70,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
         public string? StartGte { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
+        public string? Type { get; set; }
+
         /// <summary>
         /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>

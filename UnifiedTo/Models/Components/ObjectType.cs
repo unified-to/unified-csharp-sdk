@@ -119,6 +119,8 @@ namespace UnifiedTo.Models.Components
         CrmLead,
         [JsonProperty("crm_pipeline")]
         CrmPipeline,
+        [JsonProperty("crm_picklist")]
+        CrmPicklist,
         [JsonProperty("hris_employee")]
         HrisEmployee,
         [JsonProperty("hris_group")]

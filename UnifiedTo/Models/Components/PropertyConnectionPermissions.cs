@@ -211,6 +211,8 @@ namespace UnifiedTo.Models.Components
         CrmPipelineRead,
         [JsonProperty("crm_pipeline_write")]
         CrmPipelineWrite,
+        [JsonProperty("crm_picklist_read")]
+        CrmPicklistRead,
         [JsonProperty("martech_list_read")]
         MartechListRead,
         [JsonProperty("martech_list_write")]

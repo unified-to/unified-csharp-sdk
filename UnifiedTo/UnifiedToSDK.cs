@@ -92,6 +92,7 @@ namespace UnifiedTo
         public ICrm Crm { get; }
         public IDeal Deal { get; }
         public ILead Lead { get; }
+        public IPicklist Picklist { get; }
         public IPipeline Pipeline { get; }
         public IDatastore Datastore { get; }
         public IDatabase Database { get; }
@@ -189,7 +190,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.82";
+        private const string _sdkVersion = "0.130.83";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -257,6 +258,7 @@ namespace UnifiedTo
         public ICrm Crm { get; private set; }
         public IDeal Deal { get; private set; }
         public ILead Lead { get; private set; }
+        public IPicklist Picklist { get; private set; }
         public IPipeline Pipeline { get; private set; }
         public IDatastore Datastore { get; private set; }
         public IDatabase Database { get; private set; }
@@ -476,6 +478,8 @@ namespace UnifiedTo
             Deal = new Deal(SDKConfiguration);
 
             Lead = new Lead(SDKConfiguration);
+
+            Picklist = new Picklist(SDKConfiguration);
 
             Pipeline = new Pipeline(SDKConfiguration);
 
@@ -817,6 +821,8 @@ namespace UnifiedTo
             Deal = new Deal(SDKConfiguration);
 
             Lead = new Lead(SDKConfiguration);
+
+            Picklist = new Picklist(SDKConfiguration);
 
             Pipeline = new Pipeline(SDKConfiguration);
 

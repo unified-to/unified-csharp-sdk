@@ -29,6 +29,6 @@ namespace UnifiedTo.Models.Components
         public AdsReportMetricsType? Type { get; set; }
 
         [JsonProperty("value")]
-        public Value? Value { get; set; }
+        public double? Value { get; set; }
     }
 }

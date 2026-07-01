@@ -22,6 +22,7 @@
 * [ListCrmDeals2](#listcrmdeals2) - List all deals
 * [ListCrmEvents2](#listcrmevents2) - List all events
 * [ListCrmLeads2](#listcrmleads2) - List all leads
+* [ListCrmPicklists2](#listcrmpicklists2) - List all picklists
 * [ListCrmPipelines2](#listcrmpipelines2) - List all pipelines
 * [PatchCrmCompany2](#patchcrmcompany2) - Update a company
 * [PatchCrmContact2](#patchcrmcontact2) - Update a contact
@@ -727,6 +728,46 @@ var res = await sdk.Crm.ListCrmLeads2Async(req);
 ### Response
 
 **[ListCrmLeads2Response](../../Models/Requests/ListCrmLeads2Response.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListCrmPicklists2
+
+List all picklists
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCrmPicklists2Request req = new ListCrmPicklists2Request() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Crm.ListCrmPicklists2Async(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListCrmPicklists2Request](../../Models/Requests/ListCrmPicklists2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListCrmPicklists2Response](../../Models/Requests/ListCrmPicklists2Response.md)**
 
 ### Errors
 

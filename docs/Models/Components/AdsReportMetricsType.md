@@ -87,6 +87,8 @@
 | `CrossDeviceConversions`             | CROSS_DEVICE_CONVERSIONS             |
 | `AbsoluteTopImpressionShare`         | ABSOLUTE_TOP_IMPRESSION_SHARE        |
 | `TopImpressionShare`                 | TOP_IMPRESSION_SHARE                 |
+| `AbsoluteTopImpressionRatePercent`   | ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT |
+| `TopImpressionRatePercent`           | TOP_IMPRESSION_RATE_PERCENT          |
 | `VideoFullscreens`                   | VIDEO_FULLSCREENS                    |
 | `VideoPauses`                        | VIDEO_PAUSES                         |
 | `VideoMutes`                         | VIDEO_MUTES                          |
@@ -120,9 +122,6 @@
 | `ActiveViewVisible10S`               | ACTIVE_VIEW_VISIBLE_10S              |
 | `NotMeasurableImpressions`           | NOT_MEASURABLE_IMPRESSIONS           |
 | `NotViewableImpressions`             | NOT_VIEWABLE_IMPRESSIONS             |
-| `PublisherPlatform`                  | PUBLISHER_PLATFORM                   |
-| `PlatformPosition`                   | PLATFORM_POSITION                    |
-| `ImpressionDevice`                   | IMPRESSION_DEVICE                    |
 | `OneDVIEW`                           | 1D_VIEW                              |
 | `OneDCLICK`                          | 1D_CLICK                             |
 | `SevenDVIEW`                         | 7D_VIEW                              |

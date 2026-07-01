@@ -29,4 +29,7 @@
 | `ClickRate`              | click_rate               |
 | `LastClickAt`            | last_click_at            |
 | `Links`                  | links                    |
+| `HumanOpensTotal`        | human_opens_total        |
+| `HumanUniqueOpens`       | human_unique_opens       |
+| `HumanOpenRate`          | human_open_rate          |
 | `Raw`                    | raw                      |

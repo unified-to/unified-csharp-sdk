@@ -681,6 +681,7 @@ var res = await sdk.Accounting.CreateAccountingAccount2Async(
 * [ListCrmDeals2](docs/sdks/crm/README.md#listcrmdeals2) - List all deals
 * [ListCrmEvents2](docs/sdks/crm/README.md#listcrmevents2) - List all events
 * [ListCrmLeads2](docs/sdks/crm/README.md#listcrmleads2) - List all leads
+* [ListCrmPicklists2](docs/sdks/crm/README.md#listcrmpicklists2) - List all picklists
 * [ListCrmPipelines2](docs/sdks/crm/README.md#listcrmpipelines2) - List all pipelines
 * [PatchCrmCompany2](docs/sdks/crm/README.md#patchcrmcompany2) - Update a company
 * [PatchCrmContact2](docs/sdks/crm/README.md#patchcrmcontact2) - Update a contact
@@ -1358,6 +1359,10 @@ var res = await sdk.Accounting.CreateAccountingAccount2Async(
 ### [Person](docs/sdks/person/README.md)
 
 * [ListEnrichPeople2](docs/sdks/person/README.md#listenrichpeople2) - Retrieve enrichment information for a person
+
+### [Picklist](docs/sdks/picklist/README.md)
+
+* [ListCrmPicklists2](docs/sdks/picklist/README.md#listcrmpicklists2) - List all picklists
 
 ### [Pipeline](docs/sdks/pipeline/README.md)
 

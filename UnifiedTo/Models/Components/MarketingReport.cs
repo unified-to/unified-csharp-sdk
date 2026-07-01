@@ -45,6 +45,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("hard_bounces")]
         public double? HardBounces { get; set; }
 
+        [JsonProperty("human_open_rate")]
+        public double? HumanOpenRate { get; set; }
+
+        [JsonProperty("human_opens_total")]
+        public double? HumanOpensTotal { get; set; }
+
+        [JsonProperty("human_unique_opens")]
+        public double? HumanUniqueOpens { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
