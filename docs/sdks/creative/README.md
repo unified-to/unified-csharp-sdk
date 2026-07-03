@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAdsCreative2](#createadscreative2) - Create a creative
-* [GetAdsCreative2](#getadscreative2) - Retrieve a creative
-* [ListAdsCreatives2](#listadscreatives2) - List all creatives
-* [PatchAdsCreative2](#patchadscreative2) - Update a creative
-* [RemoveAdsCreative2](#removeadscreative2) - Remove a creative
-* [UpdateAdsCreative2](#updateadscreative2) - Update a creative
+* [CreateAdsCreative](#createadscreative) - Create a creative
+* [GetAdsCreative](#getadscreative) - Retrieve a creative
+* [ListAdsCreatives](#listadscreatives) - List all creatives
+* [PatchAdsCreative](#patchadscreative) - Update a creative
+* [RemoveAdsCreative](#removeadscreative) - Remove a creative
+* [UpdateAdsCreative](#updateadscreative) - Update a creative
 
-## CreateAdsCreative2
+## CreateAdsCreative
 
 Create a creative
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Creative.CreateAdsCreative2Async(
+var res = await sdk.Creative.CreateAdsCreativeAsync(
     adsCreative: new AdsCreative() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Creative.CreateAdsCreative2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AdsCreative`                                                                                                                                    | [AdsCreative](../../Models/Components/AdsCreative.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAdsCreative2QueryParamFields](../../Models/Requests/CreateAdsCreative2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAdsCreativeQueryParamFields](../../Models/Requests/CreateAdsCreativeQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAdsCreative2Response](../../Models/Requests/CreateAdsCreative2Response.md)**
+**[CreateAdsCreativeResponse](../../Models/Requests/CreateAdsCreativeResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Creative.CreateAdsCreative2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAdsCreative2
+## GetAdsCreative
 
 Retrieve a creative
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Creative.GetAdsCreative2Async(
+var res = await sdk.Creative.GetAdsCreativeAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Creative.GetAdsCreative2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Creative                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAdsCreative2QueryParamFields](../../Models/Requests/GetAdsCreative2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAdsCreativeQueryParamFields](../../Models/Requests/GetAdsCreativeQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAdsCreative2Response](../../Models/Requests/GetAdsCreative2Response.md)**
+**[GetAdsCreativeResponse](../../Models/Requests/GetAdsCreativeResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Creative.GetAdsCreative2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAdsCreatives2
+## ListAdsCreatives
 
 List all creatives
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAdsCreatives2Request req = new ListAdsCreatives2Request() {
+ListAdsCreativesRequest req = new ListAdsCreativesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Creative.ListAdsCreatives2Async(req);
+var res = await sdk.Creative.ListAdsCreativesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAdsCreatives2Request](../../Models/Requests/ListAdsCreatives2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListAdsCreativesRequest](../../Models/Requests/ListAdsCreativesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListAdsCreatives2Response](../../Models/Requests/ListAdsCreatives2Response.md)**
+**[ListAdsCreativesResponse](../../Models/Requests/ListAdsCreativesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Creative.ListAdsCreatives2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAdsCreative2
+## PatchAdsCreative
 
 Update a creative
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAdsCreative2Request req = new PatchAdsCreative2Request() {
+PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Creative.PatchAdsCreative2Async(req);
+var res = await sdk.Creative.PatchAdsCreativeAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAdsCreative2Request](../../Models/Requests/PatchAdsCreative2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchAdsCreativeRequest](../../Models/Requests/PatchAdsCreativeRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchAdsCreative2Response](../../Models/Requests/PatchAdsCreative2Response.md)**
+**[PatchAdsCreativeResponse](../../Models/Requests/PatchAdsCreativeResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Creative.PatchAdsCreative2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAdsCreative2
+## RemoveAdsCreative
 
 Remove a creative
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Creative.RemoveAdsCreative2Async(
+var res = await sdk.Creative.RemoveAdsCreativeAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Creative.RemoveAdsCreative2Async(
 
 ### Response
 
-**[RemoveAdsCreative2Response](../../Models/Requests/RemoveAdsCreative2Response.md)**
+**[RemoveAdsCreativeResponse](../../Models/Requests/RemoveAdsCreativeResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Creative.RemoveAdsCreative2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAdsCreative2
+## UpdateAdsCreative
 
 Update a creative
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAdsCreative2Request req = new UpdateAdsCreative2Request() {
+UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
     AdsCreative = new AdsCreative() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Creative.UpdateAdsCreative2Async(req);
+var res = await sdk.Creative.UpdateAdsCreativeAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAdsCreative2Request](../../Models/Requests/UpdateAdsCreative2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateAdsCreativeRequest](../../Models/Requests/UpdateAdsCreativeRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateAdsCreative2Response](../../Models/Requests/UpdateAdsCreative2Response.md)**
+**[UpdateAdsCreativeResponse](../../Models/Requests/UpdateAdsCreativeResponse.md)**
 
 ### Errors
 

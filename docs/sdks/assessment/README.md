@@ -5,16 +5,16 @@
 
 ### Available Operations
 
-* [CreateAssessmentPackage2](#createassessmentpackage2) - Create an assessment package
-* [GetAssessmentPackage2](#getassessmentpackage2) - Get an assessment package
-* [ListAssessmentPackages2](#listassessmentpackages2) - List assessment packages
-* [PatchAssessmentOrder2](#patchassessmentorder2) - Update an order
-* [PatchAssessmentPackage2](#patchassessmentpackage2) - Update an assessment package
-* [RemoveAssessmentPackage2](#removeassessmentpackage2) - Delete an assessment package
-* [UpdateAssessmentOrder2](#updateassessmentorder2) - Update an order
-* [UpdateAssessmentPackage2](#updateassessmentpackage2) - Update an assessment package
+* [CreateAssessmentPackage](#createassessmentpackage) - Create an assessment package
+* [GetAssessmentPackage](#getassessmentpackage) - Get an assessment package
+* [ListAssessmentPackages](#listassessmentpackages) - List assessment packages
+* [PatchAssessmentOrder](#patchassessmentorder) - Update an order
+* [PatchAssessmentPackage](#patchassessmentpackage) - Update an assessment package
+* [RemoveAssessmentPackage](#removeassessmentpackage) - Delete an assessment package
+* [UpdateAssessmentOrder](#updateassessmentorder) - Update an order
+* [UpdateAssessmentPackage](#updateassessmentpackage) - Update an assessment package
 
-## CreateAssessmentPackage2
+## CreateAssessmentPackage
 
 Create an assessment package
 
@@ -28,9 +28,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Assessment.CreateAssessmentPackage2Async(
+var res = await sdk.Assessment.CreateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.VideoInterview,
+        Type = AssessmentPackageType.ReferenceCheck,
     },
     connectionId: "<id>"
 );
@@ -47,7 +47,7 @@ var res = await sdk.Assessment.CreateAssessmentPackage2Async(
 
 ### Response
 
-**[CreateAssessmentPackage2Response](../../Models/Requests/CreateAssessmentPackage2Response.md)**
+**[CreateAssessmentPackageResponse](../../Models/Requests/CreateAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Assessment.CreateAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAssessmentPackage2
+## GetAssessmentPackage
 
 Get an assessment package
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Assessment.GetAssessmentPackage2Async(
+var res = await sdk.Assessment.GetAssessmentPackageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -86,7 +86,7 @@ var res = await sdk.Assessment.GetAssessmentPackage2Async(
 
 ### Response
 
-**[GetAssessmentPackage2Response](../../Models/Requests/GetAssessmentPackage2Response.md)**
+**[GetAssessmentPackageResponse](../../Models/Requests/GetAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Assessment.GetAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAssessmentPackages2
+## ListAssessmentPackages
 
 List assessment packages
 
@@ -108,7 +108,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Assessment.ListAssessmentPackages2Async(connectionId: "<id>");
+var res = await sdk.Assessment.ListAssessmentPackagesAsync(connectionId: "<id>");
 
 // handle response
 ```
@@ -123,7 +123,7 @@ var res = await sdk.Assessment.ListAssessmentPackages2Async(connectionId: "<id>"
 
 ### Response
 
-**[ListAssessmentPackages2Response](../../Models/Requests/ListAssessmentPackages2Response.md)**
+**[ListAssessmentPackagesResponse](../../Models/Requests/ListAssessmentPackagesResponse.md)**
 
 ### Errors
 
@@ -131,7 +131,7 @@ var res = await sdk.Assessment.ListAssessmentPackages2Async(connectionId: "<id>"
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAssessmentOrder2
+## PatchAssessmentOrder
 
 Update an order
 
@@ -146,7 +146,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAssessmentOrder2Request req = new PatchAssessmentOrder2Request() {
+PatchAssessmentOrderRequest req = new PatchAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
         WorkspaceId = "<id>",
@@ -155,20 +155,20 @@ PatchAssessmentOrder2Request req = new PatchAssessmentOrder2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Assessment.PatchAssessmentOrder2Async(req);
+var res = await sdk.Assessment.PatchAssessmentOrderAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchAssessmentOrder2Request](../../Models/Requests/PatchAssessmentOrder2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchAssessmentOrderRequest](../../Models/Requests/PatchAssessmentOrderRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchAssessmentOrder2Response](../../Models/Requests/PatchAssessmentOrder2Response.md)**
+**[PatchAssessmentOrderResponse](../../Models/Requests/PatchAssessmentOrderResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Assessment.PatchAssessmentOrder2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAssessmentPackage2
+## PatchAssessmentPackage
 
 Update an assessment package
 
@@ -190,9 +190,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Assessment.PatchAssessmentPackage2Async(
+var res = await sdk.Assessment.PatchAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.Other,
+        Type = AssessmentPackageType.BackgroundCheck,
     },
     connectionId: "<id>",
     id: "<id>"
@@ -211,7 +211,7 @@ var res = await sdk.Assessment.PatchAssessmentPackage2Async(
 
 ### Response
 
-**[PatchAssessmentPackage2Response](../../Models/Requests/PatchAssessmentPackage2Response.md)**
+**[PatchAssessmentPackageResponse](../../Models/Requests/PatchAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -219,7 +219,7 @@ var res = await sdk.Assessment.PatchAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAssessmentPackage2
+## RemoveAssessmentPackage
 
 Delete an assessment package
 
@@ -233,7 +233,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Assessment.RemoveAssessmentPackage2Async(
+var res = await sdk.Assessment.RemoveAssessmentPackageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -250,7 +250,7 @@ var res = await sdk.Assessment.RemoveAssessmentPackage2Async(
 
 ### Response
 
-**[RemoveAssessmentPackage2Response](../../Models/Requests/RemoveAssessmentPackage2Response.md)**
+**[RemoveAssessmentPackageResponse](../../Models/Requests/RemoveAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -258,7 +258,7 @@ var res = await sdk.Assessment.RemoveAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAssessmentOrder2
+## UpdateAssessmentOrder
 
 Update an order
 
@@ -273,7 +273,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAssessmentOrder2Request req = new UpdateAssessmentOrder2Request() {
+UpdateAssessmentOrderRequest req = new UpdateAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
         WorkspaceId = "<id>",
@@ -282,20 +282,20 @@ UpdateAssessmentOrder2Request req = new UpdateAssessmentOrder2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Assessment.UpdateAssessmentOrder2Async(req);
+var res = await sdk.Assessment.UpdateAssessmentOrderAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateAssessmentOrder2Request](../../Models/Requests/UpdateAssessmentOrder2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateAssessmentOrderRequest](../../Models/Requests/UpdateAssessmentOrderRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateAssessmentOrder2Response](../../Models/Requests/UpdateAssessmentOrder2Response.md)**
+**[UpdateAssessmentOrderResponse](../../Models/Requests/UpdateAssessmentOrderResponse.md)**
 
 ### Errors
 
@@ -303,7 +303,7 @@ var res = await sdk.Assessment.UpdateAssessmentOrder2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAssessmentPackage2
+## UpdateAssessmentPackage
 
 Update an assessment package
 
@@ -317,7 +317,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Assessment.UpdateAssessmentPackage2Async(
+var res = await sdk.Assessment.UpdateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
         Type = AssessmentPackageType.Other,
     },
@@ -338,7 +338,7 @@ var res = await sdk.Assessment.UpdateAssessmentPackage2Async(
 
 ### Response
 
-**[UpdateAssessmentPackage2Response](../../Models/Requests/UpdateAssessmentPackage2Response.md)**
+**[UpdateAssessmentPackageResponse](../../Models/Requests/UpdateAssessmentPackageResponse.md)**
 
 ### Errors
 

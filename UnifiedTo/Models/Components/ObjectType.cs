@@ -27,6 +27,8 @@ namespace UnifiedTo.Models.Components
         AccountingInvoice,
         [JsonProperty("accounting_bill")]
         AccountingBill,
+        [JsonProperty("accounting_vendorcredit")]
+        AccountingVendorcredit,
         [JsonProperty("accounting_creditmemo")]
         AccountingCreditmemo,
         [JsonProperty("accounting_taxrate")]

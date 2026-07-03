@@ -5,28 +5,28 @@
 
 ### Available Operations
 
-* [CreateAdsGroup2](#createadsgroup2) - Create a group
-* [CreateHrisGroup2](#createhrisgroup2) - Create a group
+* [CreateAdsGroup](#createadsgroup) - Create a group
+* [CreateHrisGroup](#createhrisgroup) - Create a group
 * [CreateScimGroups](#createscimgroups) - Create group
-* [GetAdsGroup2](#getadsgroup2) - Retrieve a group
-* [GetClubsGroup2](#getclubsgroup2) - Retrieve a group
-* [GetHrisGroup2](#gethrisgroup2) - Retrieve a group
+* [GetAdsGroup](#getadsgroup) - Retrieve a group
+* [GetClubsGroup](#getclubsgroup) - Retrieve a group
+* [GetHrisGroup](#gethrisgroup) - Retrieve a group
 * [GetScimGroups](#getscimgroups) - Get group
-* [ListAdsGroups2](#listadsgroups2) - List all groups
-* [ListClubsGroups2](#listclubsgroups2) - List all groups
-* [ListHrisGroups2](#listhrisgroups2) - List all groups
+* [ListAdsGroups](#listadsgroups) - List all groups
+* [ListClubsGroups](#listclubsgroups) - List all groups
+* [ListHrisGroups](#listhrisgroups) - List all groups
 * [ListScimGroups](#listscimgroups) - List groups
-* [PatchAdsGroup2](#patchadsgroup2) - Update a group
-* [PatchHrisGroup2](#patchhrisgroup2) - Update a group
+* [PatchAdsGroup](#patchadsgroup) - Update a group
+* [PatchHrisGroup](#patchhrisgroup) - Update a group
 * [PatchScimGroups](#patchscimgroups) - Update group
-* [RemoveAdsGroup2](#removeadsgroup2) - Remove a group
-* [RemoveHrisGroup2](#removehrisgroup2) - Remove a group
+* [RemoveAdsGroup](#removeadsgroup) - Remove a group
+* [RemoveHrisGroup](#removehrisgroup) - Remove a group
 * [RemoveScimGroups](#removescimgroups) - Delete group
-* [UpdateAdsGroup2](#updateadsgroup2) - Update a group
-* [UpdateHrisGroup2](#updatehrisgroup2) - Update a group
+* [UpdateAdsGroup](#updateadsgroup) - Update a group
+* [UpdateHrisGroup](#updatehrisgroup) - Update a group
 * [UpdateScimGroups](#updatescimgroups) - Update group
 
-## CreateAdsGroup2
+## CreateAdsGroup
 
 Create a group
 
@@ -40,7 +40,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Group.CreateAdsGroup2Async(
+var res = await sdk.Group.CreateAdsGroupAsync(
     adsGroup: new AdsGroup() {},
     connectionId: "<id>"
 );
@@ -54,12 +54,12 @@ var res = await sdk.Group.CreateAdsGroup2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AdsGroup`                                                                                                                                       | [AdsGroup](../../Models/Components/AdsGroup.md)                                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAdsGroup2QueryParamFields](../../Models/Requests/CreateAdsGroup2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAdsGroupQueryParamFields](../../Models/Requests/CreateAdsGroupQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAdsGroup2Response](../../Models/Requests/CreateAdsGroup2Response.md)**
+**[CreateAdsGroupResponse](../../Models/Requests/CreateAdsGroupResponse.md)**
 
 ### Errors
 
@@ -67,7 +67,7 @@ var res = await sdk.Group.CreateAdsGroup2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisGroup2
+## CreateHrisGroup
 
 Create a group
 
@@ -81,7 +81,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Group.CreateHrisGroup2Async(
+var res = await sdk.Group.CreateHrisGroupAsync(
     hrisGroup: new HrisGroup() {},
     connectionId: "<id>"
 );
@@ -95,12 +95,12 @@ var res = await sdk.Group.CreateHrisGroup2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisGroup`                                                                                                                                      | [HrisGroup](../../Models/Components/HrisGroup.md)                                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisGroup2QueryParamFields](../../Models/Requests/CreateHrisGroup2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisGroupQueryParamFields](../../Models/Requests/CreateHrisGroupQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisGroup2Response](../../Models/Requests/CreateHrisGroup2Response.md)**
+**[CreateHrisGroupResponse](../../Models/Requests/CreateHrisGroupResponse.md)**
 
 ### Errors
 
@@ -149,7 +149,7 @@ var res = await sdk.Group.CreateScimGroupsAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAdsGroup2
+## GetAdsGroup
 
 Retrieve a group
 
@@ -163,7 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Group.GetAdsGroup2Async(
+var res = await sdk.Group.GetAdsGroupAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -177,12 +177,12 @@ var res = await sdk.Group.GetAdsGroup2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Group                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetAdsGroup2QueryParamFields](../../Models/Requests/GetAdsGroup2QueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAdsGroupQueryParamFields](../../Models/Requests/GetAdsGroupQueryParamFields.md)>                                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAdsGroup2Response](../../Models/Requests/GetAdsGroup2Response.md)**
+**[GetAdsGroupResponse](../../Models/Requests/GetAdsGroupResponse.md)**
 
 ### Errors
 
@@ -190,7 +190,7 @@ var res = await sdk.Group.GetAdsGroup2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsGroup2
+## GetClubsGroup
 
 Retrieve a group
 
@@ -204,7 +204,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Group.GetClubsGroup2Async(
+var res = await sdk.Group.GetClubsGroupAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -218,12 +218,12 @@ var res = await sdk.Group.GetClubsGroup2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Group                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetClubsGroup2QueryParamFields](../../Models/Requests/GetClubsGroup2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsGroupQueryParamFields](../../Models/Requests/GetClubsGroupQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsGroup2Response](../../Models/Requests/GetClubsGroup2Response.md)**
+**[GetClubsGroupResponse](../../Models/Requests/GetClubsGroupResponse.md)**
 
 ### Errors
 
@@ -231,7 +231,7 @@ var res = await sdk.Group.GetClubsGroup2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisGroup2
+## GetHrisGroup
 
 Retrieve a group
 
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Group.GetHrisGroup2Async(
+var res = await sdk.Group.GetHrisGroupAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -259,12 +259,12 @@ var res = await sdk.Group.GetHrisGroup2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Group                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetHrisGroup2QueryParamFields](../../Models/Requests/GetHrisGroup2QueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisGroupQueryParamFields](../../Models/Requests/GetHrisGroupQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisGroup2Response](../../Models/Requests/GetHrisGroup2Response.md)**
+**[GetHrisGroupResponse](../../Models/Requests/GetHrisGroupResponse.md)**
 
 ### Errors
 
@@ -311,7 +311,7 @@ var res = await sdk.Group.GetScimGroupsAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAdsGroups2
+## ListAdsGroups
 
 List all groups
 
@@ -326,24 +326,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAdsGroups2Request req = new ListAdsGroups2Request() {
+ListAdsGroupsRequest req = new ListAdsGroupsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Group.ListAdsGroups2Async(req);
+var res = await sdk.Group.ListAdsGroupsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [ListAdsGroups2Request](../../Models/Requests/ListAdsGroups2Request.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [ListAdsGroupsRequest](../../Models/Requests/ListAdsGroupsRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
-**[ListAdsGroups2Response](../../Models/Requests/ListAdsGroups2Response.md)**
+**[ListAdsGroupsResponse](../../Models/Requests/ListAdsGroupsResponse.md)**
 
 ### Errors
 
@@ -351,7 +351,7 @@ var res = await sdk.Group.ListAdsGroups2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsGroups2
+## ListClubsGroups
 
 List all groups
 
@@ -366,51 +366,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsGroups2Request req = new ListClubsGroups2Request() {
+ListClubsGroupsRequest req = new ListClubsGroupsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Group.ListClubsGroups2Async(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListClubsGroups2Request](../../Models/Requests/ListClubsGroups2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
-
-### Response
-
-**[ListClubsGroups2Response](../../Models/Requests/ListClubsGroups2Response.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListHrisGroups2
-
-List all groups
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListHrisGroups2Request req = new ListHrisGroups2Request() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Group.ListHrisGroups2Async(req);
+var res = await sdk.Group.ListClubsGroupsAsync(req);
 
 // handle response
 ```
@@ -419,11 +379,51 @@ var res = await sdk.Group.ListHrisGroups2Async(req);
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListHrisGroups2Request](../../Models/Requests/ListHrisGroups2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| `request`                                                                 | [ListClubsGroupsRequest](../../Models/Requests/ListClubsGroupsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListHrisGroups2Response](../../Models/Requests/ListHrisGroups2Response.md)**
+**[ListClubsGroupsResponse](../../Models/Requests/ListClubsGroupsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHrisGroups
+
+List all groups
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Group.ListHrisGroupsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [ListHrisGroupsRequest](../../Models/Requests/ListHrisGroupsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+
+### Response
+
+**[ListHrisGroupsResponse](../../Models/Requests/ListHrisGroupsResponse.md)**
 
 ### Errors
 
@@ -471,7 +471,7 @@ var res = await sdk.Group.ListScimGroupsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAdsGroup2
+## PatchAdsGroup
 
 Update a group
 
@@ -486,13 +486,55 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAdsGroup2Request req = new PatchAdsGroup2Request() {
+PatchAdsGroupRequest req = new PatchAdsGroupRequest() {
     AdsGroup = new AdsGroup() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Group.PatchAdsGroup2Async(req);
+var res = await sdk.Group.PatchAdsGroupAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [PatchAdsGroupRequest](../../Models/Requests/PatchAdsGroupRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+
+### Response
+
+**[PatchAdsGroupResponse](../../Models/Requests/PatchAdsGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchHrisGroup
+
+Update a group
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
+    HrisGroup = new HrisGroup() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Group.PatchHrisGroupAsync(req);
 
 // handle response
 ```
@@ -501,53 +543,11 @@ var res = await sdk.Group.PatchAdsGroup2Async(req);
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [PatchAdsGroup2Request](../../Models/Requests/PatchAdsGroup2Request.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| `request`                                                               | [PatchHrisGroupRequest](../../Models/Requests/PatchHrisGroupRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 
-**[PatchAdsGroup2Response](../../Models/Requests/PatchAdsGroup2Response.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## PatchHrisGroup2
-
-Update a group
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-PatchHrisGroup2Request req = new PatchHrisGroup2Request() {
-    HrisGroup = new HrisGroup() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Group.PatchHrisGroup2Async(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [PatchHrisGroup2Request](../../Models/Requests/PatchHrisGroup2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
-
-### Response
-
-**[PatchHrisGroup2Response](../../Models/Requests/PatchHrisGroup2Response.md)**
+**[PatchHrisGroupResponse](../../Models/Requests/PatchHrisGroupResponse.md)**
 
 ### Errors
 
@@ -598,7 +598,7 @@ var res = await sdk.Group.PatchScimGroupsAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAdsGroup2
+## RemoveAdsGroup
 
 Remove a group
 
@@ -612,7 +612,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Group.RemoveAdsGroup2Async(
+var res = await sdk.Group.RemoveAdsGroupAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -629,7 +629,7 @@ var res = await sdk.Group.RemoveAdsGroup2Async(
 
 ### Response
 
-**[RemoveAdsGroup2Response](../../Models/Requests/RemoveAdsGroup2Response.md)**
+**[RemoveAdsGroupResponse](../../Models/Requests/RemoveAdsGroupResponse.md)**
 
 ### Errors
 
@@ -637,7 +637,7 @@ var res = await sdk.Group.RemoveAdsGroup2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisGroup2
+## RemoveHrisGroup
 
 Remove a group
 
@@ -651,7 +651,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Group.RemoveHrisGroup2Async(
+var res = await sdk.Group.RemoveHrisGroupAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -668,7 +668,7 @@ var res = await sdk.Group.RemoveHrisGroup2Async(
 
 ### Response
 
-**[RemoveHrisGroup2Response](../../Models/Requests/RemoveHrisGroup2Response.md)**
+**[RemoveHrisGroupResponse](../../Models/Requests/RemoveHrisGroupResponse.md)**
 
 ### Errors
 
@@ -715,7 +715,7 @@ var res = await sdk.Group.RemoveScimGroupsAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAdsGroup2
+## UpdateAdsGroup
 
 Update a group
 
@@ -730,13 +730,55 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAdsGroup2Request req = new UpdateAdsGroup2Request() {
+UpdateAdsGroupRequest req = new UpdateAdsGroupRequest() {
     AdsGroup = new AdsGroup() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Group.UpdateAdsGroup2Async(req);
+var res = await sdk.Group.UpdateAdsGroupAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [UpdateAdsGroupRequest](../../Models/Requests/UpdateAdsGroupRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+
+### Response
+
+**[UpdateAdsGroupResponse](../../Models/Requests/UpdateAdsGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateHrisGroup
+
+Update a group
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
+    HrisGroup = new HrisGroup() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Group.UpdateHrisGroupAsync(req);
 
 // handle response
 ```
@@ -745,53 +787,11 @@ var res = await sdk.Group.UpdateAdsGroup2Async(req);
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [UpdateAdsGroup2Request](../../Models/Requests/UpdateAdsGroup2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| `request`                                                                 | [UpdateHrisGroupRequest](../../Models/Requests/UpdateHrisGroupRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[UpdateAdsGroup2Response](../../Models/Requests/UpdateAdsGroup2Response.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## UpdateHrisGroup2
-
-Update a group
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-UpdateHrisGroup2Request req = new UpdateHrisGroup2Request() {
-    HrisGroup = new HrisGroup() {},
-    ConnectionId = "<id>",
-    Id = "<id>",
-};
-
-var res = await sdk.Group.UpdateHrisGroup2Async(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [UpdateHrisGroup2Request](../../Models/Requests/UpdateHrisGroup2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
-
-### Response
-
-**[UpdateHrisGroup2Response](../../Models/Requests/UpdateHrisGroup2Response.md)**
+**[UpdateHrisGroupResponse](../../Models/Requests/UpdateHrisGroupResponse.md)**
 
 ### Errors
 

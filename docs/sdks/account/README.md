@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingAccount2](#createaccountingaccount2) - Create an account
-* [GetAccountingAccount2](#getaccountingaccount2) - Retrieve an account
-* [ListAccountingAccounts2](#listaccountingaccounts2) - List all accounts
-* [PatchAccountingAccount2](#patchaccountingaccount2) - Update an account
-* [RemoveAccountingAccount2](#removeaccountingaccount2) - Remove an account
-* [UpdateAccountingAccount2](#updateaccountingaccount2) - Update an account
+* [CreateAccountingAccount](#createaccountingaccount) - Create an account
+* [GetAccountingAccount](#getaccountingaccount) - Retrieve an account
+* [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
+* [PatchAccountingAccount](#patchaccountingaccount) - Update an account
+* [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
+* [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
 
-## CreateAccountingAccount2
+## CreateAccountingAccount
 
 Create an account
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Account.CreateAccountingAccount2Async(
+var res = await sdk.Account.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {},
     connectionId: "<id>"
 );
@@ -45,7 +45,7 @@ var res = await sdk.Account.CreateAccountingAccount2Async(
 
 ### Response
 
-**[CreateAccountingAccount2Response](../../Models/Requests/CreateAccountingAccount2Response.md)**
+**[CreateAccountingAccountResponse](../../Models/Requests/CreateAccountingAccountResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Account.CreateAccountingAccount2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingAccount2
+## GetAccountingAccount
 
 Retrieve an account
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Account.GetAccountingAccount2Async(
+var res = await sdk.Account.GetAccountingAccountAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -86,7 +86,7 @@ var res = await sdk.Account.GetAccountingAccount2Async(
 
 ### Response
 
-**[GetAccountingAccount2Response](../../Models/Requests/GetAccountingAccount2Response.md)**
+**[GetAccountingAccountResponse](../../Models/Requests/GetAccountingAccountResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Account.GetAccountingAccount2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingAccounts2
+## ListAccountingAccounts
 
 List all accounts
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingAccounts2Request req = new ListAccountingAccounts2Request() {
+ListAccountingAccountsRequest req = new ListAccountingAccountsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Account.ListAccountingAccounts2Async(req);
+var res = await sdk.Account.ListAccountingAccountsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListAccountingAccounts2Request](../../Models/Requests/ListAccountingAccounts2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingAccountsRequest](../../Models/Requests/ListAccountingAccountsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListAccountingAccounts2Response](../../Models/Requests/ListAccountingAccounts2Response.md)**
+**[ListAccountingAccountsResponse](../../Models/Requests/ListAccountingAccountsResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Account.ListAccountingAccounts2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingAccount2
+## PatchAccountingAccount
 
 Update an account
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingAccount2Request req = new PatchAccountingAccount2Request() {
+PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
     AccountingAccount = new AccountingAccount() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Account.PatchAccountingAccount2Async(req);
+var res = await sdk.Account.PatchAccountingAccountAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchAccountingAccount2Request](../../Models/Requests/PatchAccountingAccount2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchAccountingAccountRequest](../../Models/Requests/PatchAccountingAccountRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchAccountingAccount2Response](../../Models/Requests/PatchAccountingAccount2Response.md)**
+**[PatchAccountingAccountResponse](../../Models/Requests/PatchAccountingAccountResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Account.PatchAccountingAccount2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingAccount2
+## RemoveAccountingAccount
 
 Remove an account
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Account.RemoveAccountingAccount2Async(
+var res = await sdk.Account.RemoveAccountingAccountAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Account.RemoveAccountingAccount2Async(
 
 ### Response
 
-**[RemoveAccountingAccount2Response](../../Models/Requests/RemoveAccountingAccount2Response.md)**
+**[RemoveAccountingAccountResponse](../../Models/Requests/RemoveAccountingAccountResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Account.RemoveAccountingAccount2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingAccount2
+## UpdateAccountingAccount
 
 Update an account
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingAccount2Request req = new UpdateAccountingAccount2Request() {
+UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
     AccountingAccount = new AccountingAccount() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Account.UpdateAccountingAccount2Async(req);
+var res = await sdk.Account.UpdateAccountingAccountAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateAccountingAccount2Request](../../Models/Requests/UpdateAccountingAccount2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateAccountingAccountRequest](../../Models/Requests/UpdateAccountingAccountRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateAccountingAccount2Response](../../Models/Requests/UpdateAccountingAccount2Response.md)**
+**[UpdateAccountingAccountResponse](../../Models/Requests/UpdateAccountingAccountResponse.md)**
 
 ### Errors
 

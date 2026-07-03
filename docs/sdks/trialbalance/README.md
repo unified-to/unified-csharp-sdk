@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetAccountingTrialbalance2](#getaccountingtrialbalance2) - Retrieve a trialbalance
-* [ListAccountingTrialbalances2](#listaccountingtrialbalances2) - List all trialbalances
+* [GetAccountingTrialbalance](#getaccountingtrialbalance) - Retrieve a trialbalance
+* [ListAccountingTrialbalances](#listaccountingtrialbalances) - List all trialbalances
 
-## GetAccountingTrialbalance2
+## GetAccountingTrialbalance
 
 Retrieve a trialbalance
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Trialbalance.GetAccountingTrialbalance2Async(
+var res = await sdk.Trialbalance.GetAccountingTrialbalanceAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Trialbalance.GetAccountingTrialbalance2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Trialbalance                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetAccountingTrialbalance2QueryParamFields](../../Models/Requests/GetAccountingTrialbalance2QueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingTrialbalanceQueryParamFields](../../Models/Requests/GetAccountingTrialbalanceQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingTrialbalance2Response](../../Models/Requests/GetAccountingTrialbalance2Response.md)**
+**[GetAccountingTrialbalanceResponse](../../Models/Requests/GetAccountingTrialbalanceResponse.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Trialbalance.GetAccountingTrialbalance2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingTrialbalances2
+## ListAccountingTrialbalances
 
 List all trialbalances
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingTrialbalances2Request req = new ListAccountingTrialbalances2Request() {
+ListAccountingTrialbalancesRequest req = new ListAccountingTrialbalancesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Trialbalance.ListAccountingTrialbalances2Async(req);
+var res = await sdk.Trialbalance.ListAccountingTrialbalancesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `request`                                                                                           | [ListAccountingTrialbalances2Request](../../Models/Requests/ListAccountingTrialbalances2Request.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListAccountingTrialbalancesRequest](../../Models/Requests/ListAccountingTrialbalancesRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[ListAccountingTrialbalances2Response](../../Models/Requests/ListAccountingTrialbalances2Response.md)**
+**[ListAccountingTrialbalancesResponse](../../Models/Requests/ListAccountingTrialbalancesResponse.md)**
 
 ### Errors
 

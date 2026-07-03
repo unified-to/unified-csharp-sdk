@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create an item
         /// </summary>
-        Task<CreateCommerceItem2Response> CreateCommerceItem2Async(CommerceItem commerceItem, string connectionId, List<CreateCommerceItem2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<CreateCommerceItemQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an item
         /// </summary>
-        Task<GetCommerceItem2Response> GetCommerceItem2Async(string connectionId, string id, List<GetCommerceItem2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<GetCommerceItemQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all items
         /// </summary>
-        Task<ListCommerceItems2Response> ListCommerceItems2Async(ListCommerceItems2Request request);
+        Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest request);
 
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<PatchCommerceItem2Response> PatchCommerceItem2Async(PatchCommerceItem2Request request);
+        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(PatchCommerceItemRequest request);
 
         /// <summary>
         /// Remove an item
         /// </summary>
-        Task<RemoveCommerceItem2Response> RemoveCommerceItem2Async(string connectionId, string id);
+        Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<UpdateCommerceItem2Response> UpdateCommerceItem2Async(UpdateCommerceItem2Request request);
+        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(UpdateCommerceItemRequest request);
     }
 
     public class Item: IItem
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceItem2Response> CreateCommerceItem2Async(CommerceItem commerceItem, string connectionId, List<CreateCommerceItem2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<CreateCommerceItemQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCommerceItem2Request()
+            var request = new CreateCommerceItemRequest()
             {
                 CommerceItem = commerceItem,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceItem2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceItem", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCommerceItem2Response()
+                    var response = new CreateCommerceItemResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceItem2Response> GetCommerceItem2Async(string connectionId, string id, List<GetCommerceItem2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<GetCommerceItemQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCommerceItem2Request()
+            var request = new GetCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceItem2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceItem", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCommerceItem2Response()
+                    var response = new GetCommerceItemResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCommerceItems2Response> ListCommerceItems2Async(ListCommerceItems2Request request)
+        public async Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceItems2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceItems", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CommerceItem>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCommerceItems2Response()
+                    var response = new ListCommerceItemsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceItem2Response> PatchCommerceItem2Async(PatchCommerceItem2Request request)
+        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(PatchCommerceItemRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceItem2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceItem", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCommerceItem2Response()
+                    var response = new PatchCommerceItemResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCommerceItem2Response> RemoveCommerceItem2Async(string connectionId, string id)
+        public async Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id)
         {
-            var request = new RemoveCommerceItem2Request()
+            var request = new RemoveCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceItem2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceItem", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCommerceItem2Response()
+                return new RemoveCommerceItemResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCommerceItem2Response()
+                return new RemoveCommerceItemResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceItem2Response> UpdateCommerceItem2Async(UpdateCommerceItem2Request request)
+        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(UpdateCommerceItemRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceItem2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceItem", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCommerceItem2Response()
+                    var response = new UpdateCommerceItemResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

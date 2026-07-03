@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateHrisTimeshift2](#createhristimeshift2) - Create a timeshift
-* [GetHrisTimeshift2](#gethristimeshift2) - Retrieve a timeshift
-* [ListHrisTimeshifts2](#listhristimeshifts2) - List all timeshifts
-* [PatchHrisTimeshift2](#patchhristimeshift2) - Update a timeshift
-* [RemoveHrisTimeshift2](#removehristimeshift2) - Remove a timeshift
-* [UpdateHrisTimeshift2](#updatehristimeshift2) - Update a timeshift
+* [CreateHrisTimeshift](#createhristimeshift) - Create a timeshift
+* [GetHrisTimeshift](#gethristimeshift) - Retrieve a timeshift
+* [ListHrisTimeshifts](#listhristimeshifts) - List all timeshifts
+* [PatchHrisTimeshift](#patchhristimeshift) - Update a timeshift
+* [RemoveHrisTimeshift](#removehristimeshift) - Remove a timeshift
+* [UpdateHrisTimeshift](#updatehristimeshift) - Update a timeshift
 
-## CreateHrisTimeshift2
+## CreateHrisTimeshift
 
 Create a timeshift
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Timeshift.CreateHrisTimeshift2Async(
+var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
         EmployeeUserId = "<id>",
     },
@@ -42,12 +42,12 @@ var res = await sdk.Timeshift.CreateHrisTimeshift2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisTimeshift`                                                                                                                                  | [HrisTimeshift](../../Models/Components/HrisTimeshift.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisTimeshift2QueryParamFields](../../Models/Requests/CreateHrisTimeshift2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisTimeshiftQueryParamFields](../../Models/Requests/CreateHrisTimeshiftQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisTimeshift2Response](../../Models/Requests/CreateHrisTimeshift2Response.md)**
+**[CreateHrisTimeshiftResponse](../../Models/Requests/CreateHrisTimeshiftResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Timeshift.CreateHrisTimeshift2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisTimeshift2
+## GetHrisTimeshift
 
 Retrieve a timeshift
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Timeshift.GetHrisTimeshift2Async(
+var res = await sdk.Timeshift.GetHrisTimeshiftAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Timeshift.GetHrisTimeshift2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Timeshift                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetHrisTimeshift2QueryParamFields](../../Models/Requests/GetHrisTimeshift2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisTimeshiftQueryParamFields](../../Models/Requests/GetHrisTimeshiftQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisTimeshift2Response](../../Models/Requests/GetHrisTimeshift2Response.md)**
+**[GetHrisTimeshiftResponse](../../Models/Requests/GetHrisTimeshiftResponse.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Timeshift.GetHrisTimeshift2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListHrisTimeshifts2
+## ListHrisTimeshifts
 
 List all timeshifts
 
@@ -111,24 +111,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListHrisTimeshifts2Request req = new ListHrisTimeshifts2Request() {
+ListHrisTimeshiftsRequest req = new ListHrisTimeshiftsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Timeshift.ListHrisTimeshifts2Async(req);
+var res = await sdk.Timeshift.ListHrisTimeshiftsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListHrisTimeshifts2Request](../../Models/Requests/ListHrisTimeshifts2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListHrisTimeshiftsRequest](../../Models/Requests/ListHrisTimeshiftsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListHrisTimeshifts2Response](../../Models/Requests/ListHrisTimeshifts2Response.md)**
+**[ListHrisTimeshiftsResponse](../../Models/Requests/ListHrisTimeshiftsResponse.md)**
 
 ### Errors
 
@@ -136,7 +136,7 @@ var res = await sdk.Timeshift.ListHrisTimeshifts2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisTimeshift2
+## PatchHrisTimeshift
 
 Update a timeshift
 
@@ -151,7 +151,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisTimeshift2Request req = new PatchHrisTimeshift2Request() {
+PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
         EmployeeUserId = "<id>",
     },
@@ -159,20 +159,20 @@ PatchHrisTimeshift2Request req = new PatchHrisTimeshift2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Timeshift.PatchHrisTimeshift2Async(req);
+var res = await sdk.Timeshift.PatchHrisTimeshiftAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchHrisTimeshift2Request](../../Models/Requests/PatchHrisTimeshift2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchHrisTimeshiftRequest](../../Models/Requests/PatchHrisTimeshiftRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchHrisTimeshift2Response](../../Models/Requests/PatchHrisTimeshift2Response.md)**
+**[PatchHrisTimeshiftResponse](../../Models/Requests/PatchHrisTimeshiftResponse.md)**
 
 ### Errors
 
@@ -180,7 +180,7 @@ var res = await sdk.Timeshift.PatchHrisTimeshift2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisTimeshift2
+## RemoveHrisTimeshift
 
 Remove a timeshift
 
@@ -194,7 +194,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Timeshift.RemoveHrisTimeshift2Async(
+var res = await sdk.Timeshift.RemoveHrisTimeshiftAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -211,7 +211,7 @@ var res = await sdk.Timeshift.RemoveHrisTimeshift2Async(
 
 ### Response
 
-**[RemoveHrisTimeshift2Response](../../Models/Requests/RemoveHrisTimeshift2Response.md)**
+**[RemoveHrisTimeshiftResponse](../../Models/Requests/RemoveHrisTimeshiftResponse.md)**
 
 ### Errors
 
@@ -219,7 +219,7 @@ var res = await sdk.Timeshift.RemoveHrisTimeshift2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisTimeshift2
+## UpdateHrisTimeshift
 
 Update a timeshift
 
@@ -234,7 +234,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisTimeshift2Request req = new UpdateHrisTimeshift2Request() {
+UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
         EmployeeUserId = "<id>",
     },
@@ -242,20 +242,20 @@ UpdateHrisTimeshift2Request req = new UpdateHrisTimeshift2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Timeshift.UpdateHrisTimeshift2Async(req);
+var res = await sdk.Timeshift.UpdateHrisTimeshiftAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateHrisTimeshift2Request](../../Models/Requests/UpdateHrisTimeshift2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateHrisTimeshiftRequest](../../Models/Requests/UpdateHrisTimeshiftRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateHrisTimeshift2Response](../../Models/Requests/UpdateHrisTimeshift2Response.md)**
+**[UpdateHrisTimeshiftResponse](../../Models/Requests/UpdateHrisTimeshiftResponse.md)**
 
 ### Errors
 

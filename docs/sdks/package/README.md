@@ -5,16 +5,16 @@
 
 ### Available Operations
 
-* [CreateAssessmentPackage2](#createassessmentpackage2) - Create an assessment package
-* [GetAssessmentPackage2](#getassessmentpackage2) - Get an assessment package
-* [GetVerificationPackage2](#getverificationpackage2) - Retrieve a package
-* [ListAssessmentPackages2](#listassessmentpackages2) - List assessment packages
-* [ListVerificationPackages2](#listverificationpackages2) - List all packages
-* [PatchAssessmentPackage2](#patchassessmentpackage2) - Update an assessment package
-* [RemoveAssessmentPackage2](#removeassessmentpackage2) - Delete an assessment package
-* [UpdateAssessmentPackage2](#updateassessmentpackage2) - Update an assessment package
+* [CreateAssessmentPackage](#createassessmentpackage) - Create an assessment package
+* [GetAssessmentPackage](#getassessmentpackage) - Get an assessment package
+* [GetVerificationPackage](#getverificationpackage) - Retrieve a package
+* [ListAssessmentPackages](#listassessmentpackages) - List assessment packages
+* [ListVerificationPackages](#listverificationpackages) - List all packages
+* [PatchAssessmentPackage](#patchassessmentpackage) - Update an assessment package
+* [RemoveAssessmentPackage](#removeassessmentpackage) - Delete an assessment package
+* [UpdateAssessmentPackage](#updateassessmentpackage) - Update an assessment package
 
-## CreateAssessmentPackage2
+## CreateAssessmentPackage
 
 Create an assessment package
 
@@ -28,9 +28,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Package.CreateAssessmentPackage2Async(
+var res = await sdk.Package.CreateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.VideoInterview,
+        Type = AssessmentPackageType.ReferenceCheck,
     },
     connectionId: "<id>"
 );
@@ -47,7 +47,7 @@ var res = await sdk.Package.CreateAssessmentPackage2Async(
 
 ### Response
 
-**[CreateAssessmentPackage2Response](../../Models/Requests/CreateAssessmentPackage2Response.md)**
+**[CreateAssessmentPackageResponse](../../Models/Requests/CreateAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Package.CreateAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAssessmentPackage2
+## GetAssessmentPackage
 
 Get an assessment package
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Package.GetAssessmentPackage2Async(
+var res = await sdk.Package.GetAssessmentPackageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -86,7 +86,7 @@ var res = await sdk.Package.GetAssessmentPackage2Async(
 
 ### Response
 
-**[GetAssessmentPackage2Response](../../Models/Requests/GetAssessmentPackage2Response.md)**
+**[GetAssessmentPackageResponse](../../Models/Requests/GetAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Package.GetAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetVerificationPackage2
+## GetVerificationPackage
 
 Retrieve a package
 
@@ -108,7 +108,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Package.GetVerificationPackage2Async(
+var res = await sdk.Package.GetVerificationPackageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -122,12 +122,12 @@ var res = await sdk.Package.GetVerificationPackage2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Package                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetVerificationPackage2QueryParamFields](../../Models/Requests/GetVerificationPackage2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetVerificationPackageQueryParamFields](../../Models/Requests/GetVerificationPackageQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetVerificationPackage2Response](../../Models/Requests/GetVerificationPackage2Response.md)**
+**[GetVerificationPackageResponse](../../Models/Requests/GetVerificationPackageResponse.md)**
 
 ### Errors
 
@@ -135,7 +135,7 @@ var res = await sdk.Package.GetVerificationPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAssessmentPackages2
+## ListAssessmentPackages
 
 List assessment packages
 
@@ -149,7 +149,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Package.ListAssessmentPackages2Async(connectionId: "<id>");
+var res = await sdk.Package.ListAssessmentPackagesAsync(connectionId: "<id>");
 
 // handle response
 ```
@@ -164,7 +164,7 @@ var res = await sdk.Package.ListAssessmentPackages2Async(connectionId: "<id>");
 
 ### Response
 
-**[ListAssessmentPackages2Response](../../Models/Requests/ListAssessmentPackages2Response.md)**
+**[ListAssessmentPackagesResponse](../../Models/Requests/ListAssessmentPackagesResponse.md)**
 
 ### Errors
 
@@ -172,7 +172,7 @@ var res = await sdk.Package.ListAssessmentPackages2Async(connectionId: "<id>");
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListVerificationPackages2
+## ListVerificationPackages
 
 List all packages
 
@@ -187,24 +187,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListVerificationPackages2Request req = new ListVerificationPackages2Request() {
+ListVerificationPackagesRequest req = new ListVerificationPackagesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Package.ListVerificationPackages2Async(req);
+var res = await sdk.Package.ListVerificationPackagesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [ListVerificationPackages2Request](../../Models/Requests/ListVerificationPackages2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListVerificationPackagesRequest](../../Models/Requests/ListVerificationPackagesRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[ListVerificationPackages2Response](../../Models/Requests/ListVerificationPackages2Response.md)**
+**[ListVerificationPackagesResponse](../../Models/Requests/ListVerificationPackagesResponse.md)**
 
 ### Errors
 
@@ -212,7 +212,7 @@ var res = await sdk.Package.ListVerificationPackages2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAssessmentPackage2
+## PatchAssessmentPackage
 
 Update an assessment package
 
@@ -226,9 +226,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Package.PatchAssessmentPackage2Async(
+var res = await sdk.Package.PatchAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.Other,
+        Type = AssessmentPackageType.BackgroundCheck,
     },
     connectionId: "<id>",
     id: "<id>"
@@ -247,7 +247,7 @@ var res = await sdk.Package.PatchAssessmentPackage2Async(
 
 ### Response
 
-**[PatchAssessmentPackage2Response](../../Models/Requests/PatchAssessmentPackage2Response.md)**
+**[PatchAssessmentPackageResponse](../../Models/Requests/PatchAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -255,7 +255,7 @@ var res = await sdk.Package.PatchAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAssessmentPackage2
+## RemoveAssessmentPackage
 
 Delete an assessment package
 
@@ -269,7 +269,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Package.RemoveAssessmentPackage2Async(
+var res = await sdk.Package.RemoveAssessmentPackageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -286,7 +286,7 @@ var res = await sdk.Package.RemoveAssessmentPackage2Async(
 
 ### Response
 
-**[RemoveAssessmentPackage2Response](../../Models/Requests/RemoveAssessmentPackage2Response.md)**
+**[RemoveAssessmentPackageResponse](../../Models/Requests/RemoveAssessmentPackageResponse.md)**
 
 ### Errors
 
@@ -294,7 +294,7 @@ var res = await sdk.Package.RemoveAssessmentPackage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAssessmentPackage2
+## UpdateAssessmentPackage
 
 Update an assessment package
 
@@ -308,7 +308,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Package.UpdateAssessmentPackage2Async(
+var res = await sdk.Package.UpdateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
         Type = AssessmentPackageType.Other,
     },
@@ -329,7 +329,7 @@ var res = await sdk.Package.UpdateAssessmentPackage2Async(
 
 ### Response
 
-**[UpdateAssessmentPackage2Response](../../Models/Requests/UpdateAssessmentPackage2Response.md)**
+**[UpdateAssessmentPackageResponse](../../Models/Requests/UpdateAssessmentPackageResponse.md)**
 
 ### Errors
 

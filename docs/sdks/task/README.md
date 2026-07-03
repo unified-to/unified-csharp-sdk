@@ -5,28 +5,28 @@
 
 ### Available Operations
 
-* [CreateTaskComment2](#createtaskcomment2) - Create a comment
-* [CreateTaskProject2](#createtaskproject2) - Create a project
-* [CreateTaskTask2](#createtasktask2) - Create a task
-* [GetTaskChange2](#gettaskchange2) - Retrieve a change
-* [GetTaskComment2](#gettaskcomment2) - Retrieve a comment
-* [GetTaskProject2](#gettaskproject2) - Retrieve a project
-* [GetTaskTask2](#gettasktask2) - Retrieve a task
-* [ListTaskChanges2](#listtaskchanges2) - List all changes
-* [ListTaskComments2](#listtaskcomments2) - List all comments
-* [ListTaskProjects2](#listtaskprojects2) - List all projects
-* [ListTaskTasks2](#listtasktasks2) - List all tasks
-* [PatchTaskComment2](#patchtaskcomment2) - Update a comment
-* [PatchTaskProject2](#patchtaskproject2) - Update a project
-* [PatchTaskTask2](#patchtasktask2) - Update a task
-* [RemoveTaskComment2](#removetaskcomment2) - Remove a comment
-* [RemoveTaskProject2](#removetaskproject2) - Remove a project
-* [RemoveTaskTask2](#removetasktask2) - Remove a task
-* [UpdateTaskComment2](#updatetaskcomment2) - Update a comment
-* [UpdateTaskProject2](#updatetaskproject2) - Update a project
-* [UpdateTaskTask2](#updatetasktask2) - Update a task
+* [CreateTaskComment](#createtaskcomment) - Create a comment
+* [CreateTaskProject](#createtaskproject) - Create a project
+* [CreateTaskTask](#createtasktask) - Create a task
+* [GetTaskChange](#gettaskchange) - Retrieve a change
+* [GetTaskComment](#gettaskcomment) - Retrieve a comment
+* [GetTaskProject](#gettaskproject) - Retrieve a project
+* [GetTaskTask](#gettasktask) - Retrieve a task
+* [ListTaskChanges](#listtaskchanges) - List all changes
+* [ListTaskComments](#listtaskcomments) - List all comments
+* [ListTaskProjects](#listtaskprojects) - List all projects
+* [ListTaskTasks](#listtasktasks) - List all tasks
+* [PatchTaskComment](#patchtaskcomment) - Update a comment
+* [PatchTaskProject](#patchtaskproject) - Update a project
+* [PatchTaskTask](#patchtasktask) - Update a task
+* [RemoveTaskComment](#removetaskcomment) - Remove a comment
+* [RemoveTaskProject](#removetaskproject) - Remove a project
+* [RemoveTaskTask](#removetasktask) - Remove a task
+* [UpdateTaskComment](#updatetaskcomment) - Update a comment
+* [UpdateTaskProject](#updatetaskproject) - Update a project
+* [UpdateTaskTask](#updatetasktask) - Update a task
 
-## CreateTaskComment2
+## CreateTaskComment
 
 Create a comment
 
@@ -40,7 +40,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.CreateTaskComment2Async(
+var res = await sdk.Task.CreateTaskCommentAsync(
     taskComment: new TaskComment() {},
     connectionId: "<id>"
 );
@@ -54,12 +54,12 @@ var res = await sdk.Task.CreateTaskComment2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `TaskComment`                                                                                                                                    | [TaskComment](../../Models/Components/TaskComment.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateTaskComment2QueryParamFields](../../Models/Requests/CreateTaskComment2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateTaskCommentQueryParamFields](../../Models/Requests/CreateTaskCommentQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateTaskComment2Response](../../Models/Requests/CreateTaskComment2Response.md)**
+**[CreateTaskCommentResponse](../../Models/Requests/CreateTaskCommentResponse.md)**
 
 ### Errors
 
@@ -67,7 +67,7 @@ var res = await sdk.Task.CreateTaskComment2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateTaskProject2
+## CreateTaskProject
 
 Create a project
 
@@ -81,7 +81,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.CreateTaskProject2Async(
+var res = await sdk.Task.CreateTaskProjectAsync(
     taskProject: new TaskProject() {},
     connectionId: "<id>"
 );
@@ -95,12 +95,12 @@ var res = await sdk.Task.CreateTaskProject2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `TaskProject`                                                                                                                                    | [TaskProject](../../Models/Components/TaskProject.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateTaskProject2QueryParamFields](../../Models/Requests/CreateTaskProject2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateTaskProjectQueryParamFields](../../Models/Requests/CreateTaskProjectQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateTaskProject2Response](../../Models/Requests/CreateTaskProject2Response.md)**
+**[CreateTaskProjectResponse](../../Models/Requests/CreateTaskProjectResponse.md)**
 
 ### Errors
 
@@ -108,7 +108,7 @@ var res = await sdk.Task.CreateTaskProject2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateTaskTask2
+## CreateTaskTask
 
 Create a task
 
@@ -122,7 +122,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.CreateTaskTask2Async(
+var res = await sdk.Task.CreateTaskTaskAsync(
     taskTask: new TaskTask() {},
     connectionId: "<id>"
 );
@@ -136,12 +136,12 @@ var res = await sdk.Task.CreateTaskTask2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `TaskTask`                                                                                                                                       | [TaskTask](../../Models/Components/TaskTask.md)                                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateTaskTask2QueryParamFields](../../Models/Requests/CreateTaskTask2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateTaskTaskQueryParamFields](../../Models/Requests/CreateTaskTaskQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateTaskTask2Response](../../Models/Requests/CreateTaskTask2Response.md)**
+**[CreateTaskTaskResponse](../../Models/Requests/CreateTaskTaskResponse.md)**
 
 ### Errors
 
@@ -149,7 +149,7 @@ var res = await sdk.Task.CreateTaskTask2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetTaskChange2
+## GetTaskChange
 
 Retrieve a change
 
@@ -163,7 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.GetTaskChange2Async(
+var res = await sdk.Task.GetTaskChangeAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -177,12 +177,12 @@ var res = await sdk.Task.GetTaskChange2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Change                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetTaskChange2QueryParamFields](../../Models/Requests/GetTaskChange2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTaskChangeQueryParamFields](../../Models/Requests/GetTaskChangeQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTaskChange2Response](../../Models/Requests/GetTaskChange2Response.md)**
+**[GetTaskChangeResponse](../../Models/Requests/GetTaskChangeResponse.md)**
 
 ### Errors
 
@@ -190,7 +190,7 @@ var res = await sdk.Task.GetTaskChange2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetTaskComment2
+## GetTaskComment
 
 Retrieve a comment
 
@@ -204,7 +204,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.GetTaskComment2Async(
+var res = await sdk.Task.GetTaskCommentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -218,12 +218,12 @@ var res = await sdk.Task.GetTaskComment2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Comment                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetTaskComment2QueryParamFields](../../Models/Requests/GetTaskComment2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTaskCommentQueryParamFields](../../Models/Requests/GetTaskCommentQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTaskComment2Response](../../Models/Requests/GetTaskComment2Response.md)**
+**[GetTaskCommentResponse](../../Models/Requests/GetTaskCommentResponse.md)**
 
 ### Errors
 
@@ -231,7 +231,7 @@ var res = await sdk.Task.GetTaskComment2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetTaskProject2
+## GetTaskProject
 
 Retrieve a project
 
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.GetTaskProject2Async(
+var res = await sdk.Task.GetTaskProjectAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -259,12 +259,12 @@ var res = await sdk.Task.GetTaskProject2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Project                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetTaskProject2QueryParamFields](../../Models/Requests/GetTaskProject2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTaskProjectQueryParamFields](../../Models/Requests/GetTaskProjectQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTaskProject2Response](../../Models/Requests/GetTaskProject2Response.md)**
+**[GetTaskProjectResponse](../../Models/Requests/GetTaskProjectResponse.md)**
 
 ### Errors
 
@@ -272,7 +272,7 @@ var res = await sdk.Task.GetTaskProject2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetTaskTask2
+## GetTaskTask
 
 Retrieve a task
 
@@ -286,7 +286,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.GetTaskTask2Async(
+var res = await sdk.Task.GetTaskTaskAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -300,12 +300,12 @@ var res = await sdk.Task.GetTaskTask2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Task                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetTaskTask2QueryParamFields](../../Models/Requests/GetTaskTask2QueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTaskTaskQueryParamFields](../../Models/Requests/GetTaskTaskQueryParamFields.md)>                                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTaskTask2Response](../../Models/Requests/GetTaskTask2Response.md)**
+**[GetTaskTaskResponse](../../Models/Requests/GetTaskTaskResponse.md)**
 
 ### Errors
 
@@ -313,7 +313,7 @@ var res = await sdk.Task.GetTaskTask2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTaskChanges2
+## ListTaskChanges
 
 List all changes
 
@@ -328,24 +328,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListTaskChanges2Request req = new ListTaskChanges2Request() {
+ListTaskChangesRequest req = new ListTaskChangesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Task.ListTaskChanges2Async(req);
+var res = await sdk.Task.ListTaskChangesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListTaskChanges2Request](../../Models/Requests/ListTaskChanges2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListTaskChangesRequest](../../Models/Requests/ListTaskChangesRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListTaskChanges2Response](../../Models/Requests/ListTaskChanges2Response.md)**
+**[ListTaskChangesResponse](../../Models/Requests/ListTaskChangesResponse.md)**
 
 ### Errors
 
@@ -353,7 +353,7 @@ var res = await sdk.Task.ListTaskChanges2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTaskComments2
+## ListTaskComments
 
 List all comments
 
@@ -368,24 +368,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListTaskComments2Request req = new ListTaskComments2Request() {
+ListTaskCommentsRequest req = new ListTaskCommentsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Task.ListTaskComments2Async(req);
+var res = await sdk.Task.ListTaskCommentsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListTaskComments2Request](../../Models/Requests/ListTaskComments2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListTaskCommentsRequest](../../Models/Requests/ListTaskCommentsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListTaskComments2Response](../../Models/Requests/ListTaskComments2Response.md)**
+**[ListTaskCommentsResponse](../../Models/Requests/ListTaskCommentsResponse.md)**
 
 ### Errors
 
@@ -393,7 +393,7 @@ var res = await sdk.Task.ListTaskComments2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTaskProjects2
+## ListTaskProjects
 
 List all projects
 
@@ -408,24 +408,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListTaskProjects2Request req = new ListTaskProjects2Request() {
+ListTaskProjectsRequest req = new ListTaskProjectsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Task.ListTaskProjects2Async(req);
+var res = await sdk.Task.ListTaskProjectsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListTaskProjects2Request](../../Models/Requests/ListTaskProjects2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListTaskProjectsRequest](../../Models/Requests/ListTaskProjectsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListTaskProjects2Response](../../Models/Requests/ListTaskProjects2Response.md)**
+**[ListTaskProjectsResponse](../../Models/Requests/ListTaskProjectsResponse.md)**
 
 ### Errors
 
@@ -433,7 +433,7 @@ var res = await sdk.Task.ListTaskProjects2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTaskTasks2
+## ListTaskTasks
 
 List all tasks
 
@@ -448,24 +448,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListTaskTasks2Request req = new ListTaskTasks2Request() {
+ListTaskTasksRequest req = new ListTaskTasksRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Task.ListTaskTasks2Async(req);
+var res = await sdk.Task.ListTaskTasksAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [ListTaskTasks2Request](../../Models/Requests/ListTaskTasks2Request.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [ListTaskTasksRequest](../../Models/Requests/ListTaskTasksRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
-**[ListTaskTasks2Response](../../Models/Requests/ListTaskTasks2Response.md)**
+**[ListTaskTasksResponse](../../Models/Requests/ListTaskTasksResponse.md)**
 
 ### Errors
 
@@ -473,7 +473,7 @@ var res = await sdk.Task.ListTaskTasks2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchTaskComment2
+## PatchTaskComment
 
 Update a comment
 
@@ -488,26 +488,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchTaskComment2Request req = new PatchTaskComment2Request() {
+PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
     TaskComment = new TaskComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Task.PatchTaskComment2Async(req);
+var res = await sdk.Task.PatchTaskCommentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchTaskComment2Request](../../Models/Requests/PatchTaskComment2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchTaskCommentRequest](../../Models/Requests/PatchTaskCommentRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchTaskComment2Response](../../Models/Requests/PatchTaskComment2Response.md)**
+**[PatchTaskCommentResponse](../../Models/Requests/PatchTaskCommentResponse.md)**
 
 ### Errors
 
@@ -515,7 +515,7 @@ var res = await sdk.Task.PatchTaskComment2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchTaskProject2
+## PatchTaskProject
 
 Update a project
 
@@ -530,26 +530,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchTaskProject2Request req = new PatchTaskProject2Request() {
+PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
     TaskProject = new TaskProject() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Task.PatchTaskProject2Async(req);
+var res = await sdk.Task.PatchTaskProjectAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchTaskProject2Request](../../Models/Requests/PatchTaskProject2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchTaskProjectRequest](../../Models/Requests/PatchTaskProjectRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchTaskProject2Response](../../Models/Requests/PatchTaskProject2Response.md)**
+**[PatchTaskProjectResponse](../../Models/Requests/PatchTaskProjectResponse.md)**
 
 ### Errors
 
@@ -557,7 +557,7 @@ var res = await sdk.Task.PatchTaskProject2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchTaskTask2
+## PatchTaskTask
 
 Update a task
 
@@ -572,26 +572,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchTaskTask2Request req = new PatchTaskTask2Request() {
+PatchTaskTaskRequest req = new PatchTaskTaskRequest() {
     TaskTask = new TaskTask() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Task.PatchTaskTask2Async(req);
+var res = await sdk.Task.PatchTaskTaskAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [PatchTaskTask2Request](../../Models/Requests/PatchTaskTask2Request.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [PatchTaskTaskRequest](../../Models/Requests/PatchTaskTaskRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
-**[PatchTaskTask2Response](../../Models/Requests/PatchTaskTask2Response.md)**
+**[PatchTaskTaskResponse](../../Models/Requests/PatchTaskTaskResponse.md)**
 
 ### Errors
 
@@ -599,7 +599,7 @@ var res = await sdk.Task.PatchTaskTask2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveTaskComment2
+## RemoveTaskComment
 
 Remove a comment
 
@@ -613,7 +613,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.RemoveTaskComment2Async(
+var res = await sdk.Task.RemoveTaskCommentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -630,7 +630,7 @@ var res = await sdk.Task.RemoveTaskComment2Async(
 
 ### Response
 
-**[RemoveTaskComment2Response](../../Models/Requests/RemoveTaskComment2Response.md)**
+**[RemoveTaskCommentResponse](../../Models/Requests/RemoveTaskCommentResponse.md)**
 
 ### Errors
 
@@ -638,7 +638,7 @@ var res = await sdk.Task.RemoveTaskComment2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveTaskProject2
+## RemoveTaskProject
 
 Remove a project
 
@@ -652,7 +652,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.RemoveTaskProject2Async(
+var res = await sdk.Task.RemoveTaskProjectAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -669,7 +669,7 @@ var res = await sdk.Task.RemoveTaskProject2Async(
 
 ### Response
 
-**[RemoveTaskProject2Response](../../Models/Requests/RemoveTaskProject2Response.md)**
+**[RemoveTaskProjectResponse](../../Models/Requests/RemoveTaskProjectResponse.md)**
 
 ### Errors
 
@@ -677,7 +677,7 @@ var res = await sdk.Task.RemoveTaskProject2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveTaskTask2
+## RemoveTaskTask
 
 Remove a task
 
@@ -691,7 +691,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Task.RemoveTaskTask2Async(
+var res = await sdk.Task.RemoveTaskTaskAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -708,7 +708,7 @@ var res = await sdk.Task.RemoveTaskTask2Async(
 
 ### Response
 
-**[RemoveTaskTask2Response](../../Models/Requests/RemoveTaskTask2Response.md)**
+**[RemoveTaskTaskResponse](../../Models/Requests/RemoveTaskTaskResponse.md)**
 
 ### Errors
 
@@ -716,7 +716,7 @@ var res = await sdk.Task.RemoveTaskTask2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateTaskComment2
+## UpdateTaskComment
 
 Update a comment
 
@@ -731,26 +731,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateTaskComment2Request req = new UpdateTaskComment2Request() {
+UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
     TaskComment = new TaskComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Task.UpdateTaskComment2Async(req);
+var res = await sdk.Task.UpdateTaskCommentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateTaskComment2Request](../../Models/Requests/UpdateTaskComment2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateTaskCommentRequest](../../Models/Requests/UpdateTaskCommentRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateTaskComment2Response](../../Models/Requests/UpdateTaskComment2Response.md)**
+**[UpdateTaskCommentResponse](../../Models/Requests/UpdateTaskCommentResponse.md)**
 
 ### Errors
 
@@ -758,7 +758,7 @@ var res = await sdk.Task.UpdateTaskComment2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateTaskProject2
+## UpdateTaskProject
 
 Update a project
 
@@ -773,26 +773,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateTaskProject2Request req = new UpdateTaskProject2Request() {
+UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
     TaskProject = new TaskProject() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Task.UpdateTaskProject2Async(req);
+var res = await sdk.Task.UpdateTaskProjectAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateTaskProject2Request](../../Models/Requests/UpdateTaskProject2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateTaskProjectRequest](../../Models/Requests/UpdateTaskProjectRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateTaskProject2Response](../../Models/Requests/UpdateTaskProject2Response.md)**
+**[UpdateTaskProjectResponse](../../Models/Requests/UpdateTaskProjectResponse.md)**
 
 ### Errors
 
@@ -800,7 +800,7 @@ var res = await sdk.Task.UpdateTaskProject2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateTaskTask2
+## UpdateTaskTask
 
 Update a task
 
@@ -815,26 +815,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateTaskTask2Request req = new UpdateTaskTask2Request() {
+UpdateTaskTaskRequest req = new UpdateTaskTaskRequest() {
     TaskTask = new TaskTask() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Task.UpdateTaskTask2Async(req);
+var res = await sdk.Task.UpdateTaskTaskAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [UpdateTaskTask2Request](../../Models/Requests/UpdateTaskTask2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [UpdateTaskTaskRequest](../../Models/Requests/UpdateTaskTaskRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 
-**[UpdateTaskTask2Response](../../Models/Requests/UpdateTaskTask2Response.md)**
+**[UpdateTaskTaskResponse](../../Models/Requests/UpdateTaskTaskResponse.md)**
 
 ### Errors
 

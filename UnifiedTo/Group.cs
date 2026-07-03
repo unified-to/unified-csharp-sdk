@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateAdsGroup2Response> CreateAdsGroup2Async(AdsGroup adsGroup, string connectionId, List<CreateAdsGroup2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<CreateAdsGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateHrisGroup2Response> CreateHrisGroup2Async(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroup2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create group
@@ -43,17 +43,17 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetAdsGroup2Response> GetAdsGroup2Async(string connectionId, string id, List<GetAdsGroup2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<GetAdsGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetClubsGroup2Response> GetClubsGroup2Async(string connectionId, string id, List<GetClubsGroup2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsGroupResponse> GetClubsGroupAsync(string connectionId, string id, List<GetClubsGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetHrisGroup2Response> GetHrisGroup2Async(string connectionId, string id, List<GetHrisGroup2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Get group
@@ -63,17 +63,17 @@ namespace UnifiedTo
         /// <summary>
         /// List all groups
         /// </summary>
-        Task<ListAdsGroups2Response> ListAdsGroups2Async(ListAdsGroups2Request request);
+        Task<ListAdsGroupsResponse> ListAdsGroupsAsync(ListAdsGroupsRequest request);
 
         /// <summary>
         /// List all groups
         /// </summary>
-        Task<ListClubsGroups2Response> ListClubsGroups2Async(ListClubsGroups2Request request);
+        Task<ListClubsGroupsResponse> ListClubsGroupsAsync(ListClubsGroupsRequest request);
 
         /// <summary>
         /// List all groups
         /// </summary>
-        Task<ListHrisGroups2Response> ListHrisGroups2Async(ListHrisGroups2Request request);
+        Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request);
 
         /// <summary>
         /// List groups
@@ -83,12 +83,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<PatchAdsGroup2Response> PatchAdsGroup2Async(PatchAdsGroup2Request request);
+        Task<PatchAdsGroupResponse> PatchAdsGroupAsync(PatchAdsGroupRequest request);
 
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<PatchHrisGroup2Response> PatchHrisGroup2Async(PatchHrisGroup2Request request);
+        Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupRequest request);
 
         /// <summary>
         /// Update group
@@ -98,12 +98,12 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a group
         /// </summary>
-        Task<RemoveAdsGroup2Response> RemoveAdsGroup2Async(string connectionId, string id);
+        Task<RemoveAdsGroupResponse> RemoveAdsGroupAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a group
         /// </summary>
-        Task<RemoveHrisGroup2Response> RemoveHrisGroup2Async(string connectionId, string id);
+        Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(string connectionId, string id);
 
         /// <summary>
         /// Delete group
@@ -113,12 +113,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<UpdateAdsGroup2Response> UpdateAdsGroup2Async(UpdateAdsGroup2Request request);
+        Task<UpdateAdsGroupResponse> UpdateAdsGroupAsync(UpdateAdsGroupRequest request);
 
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<UpdateHrisGroup2Response> UpdateHrisGroup2Async(UpdateHrisGroup2Request request);
+        Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupRequest request);
 
         /// <summary>
         /// Update group
@@ -130,7 +130,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -139,9 +139,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAdsGroup2Response> CreateAdsGroup2Async(AdsGroup adsGroup, string connectionId, List<CreateAdsGroup2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<CreateAdsGroupQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAdsGroup2Request()
+            var request = new CreateAdsGroupRequest()
             {
                 AdsGroup = adsGroup,
                 ConnectionId = connectionId,
@@ -165,7 +165,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -206,7 +206,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAdsGroup2Response()
+                    var response = new CreateAdsGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -230,9 +230,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisGroup2Response> CreateHrisGroup2Async(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroup2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisGroup2Request()
+            var request = new CreateHrisGroupRequest()
             {
                 HrisGroup = hrisGroup,
                 ConnectionId = connectionId,
@@ -256,7 +256,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -297,7 +297,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisGroup2Response()
+                    var response = new CreateHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -410,9 +410,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsGroup2Response> GetAdsGroup2Async(string connectionId, string id, List<GetAdsGroup2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<GetAdsGroupQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAdsGroup2Request()
+            var request = new GetAdsGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -430,7 +430,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -471,7 +471,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAdsGroup2Response()
+                    var response = new GetAdsGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -495,9 +495,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetClubsGroup2Response> GetClubsGroup2Async(string connectionId, string id, List<GetClubsGroup2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsGroupResponse> GetClubsGroupAsync(string connectionId, string id, List<GetClubsGroupQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsGroup2Request()
+            var request = new GetClubsGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -515,7 +515,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -556,7 +556,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsGroup2Response()
+                    var response = new GetClubsGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -580,9 +580,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisGroup2Response> GetHrisGroup2Async(string connectionId, string id, List<GetHrisGroup2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisGroup2Request()
+            var request = new GetHrisGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -600,7 +600,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -641,7 +641,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisGroup2Response()
+                    var response = new GetHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -748,7 +748,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAdsGroups2Response> ListAdsGroups2Async(ListAdsGroups2Request request)
+        public async Task<ListAdsGroupsResponse> ListAdsGroupsAsync(ListAdsGroupsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/group", request);
@@ -761,7 +761,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsGroups2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsGroups", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -802,7 +802,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AdsGroup>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAdsGroups2Response()
+                    var response = new ListAdsGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -826,7 +826,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsGroups2Response> ListClubsGroups2Async(ListClubsGroups2Request request)
+        public async Task<ListClubsGroupsResponse> ListClubsGroupsAsync(ListClubsGroupsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/group", request);
@@ -839,7 +839,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsGroups2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsGroups", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -880,7 +880,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsGroup>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsGroups2Response()
+                    var response = new ListClubsGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -904,7 +904,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisGroups2Response> ListHrisGroups2Async(ListHrisGroups2Request request)
+        public async Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group", request);
@@ -917,7 +917,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisGroups2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisGroups", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -958,7 +958,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisGroup>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisGroups2Response()
+                    var response = new ListHrisGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1060,7 +1060,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAdsGroup2Response> PatchAdsGroup2Async(PatchAdsGroup2Request request)
+        public async Task<PatchAdsGroupResponse> PatchAdsGroupAsync(PatchAdsGroupRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/group/{id}", request);
@@ -1079,7 +1079,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1120,7 +1120,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAdsGroup2Response()
+                    var response = new PatchAdsGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1144,7 +1144,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisGroup2Response> PatchHrisGroup2Async(PatchHrisGroup2Request request)
+        public async Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group/{id}", request);
@@ -1163,7 +1163,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1204,7 +1204,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisGroup2Response()
+                    var response = new PatchHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1318,9 +1318,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAdsGroup2Response> RemoveAdsGroup2Async(string connectionId, string id)
+        public async Task<RemoveAdsGroupResponse> RemoveAdsGroupAsync(string connectionId, string id)
         {
-            var request = new RemoveAdsGroup2Request()
+            var request = new RemoveAdsGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1336,7 +1336,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1374,7 +1374,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAdsGroup2Response()
+                return new RemoveAdsGroupResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1391,7 +1391,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAdsGroup2Response()
+                return new RemoveAdsGroupResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1400,9 +1400,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisGroup2Response> RemoveHrisGroup2Async(string connectionId, string id)
+        public async Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisGroup2Request()
+            var request = new RemoveHrisGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1418,7 +1418,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1456,7 +1456,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisGroup2Response()
+                return new RemoveHrisGroupResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1473,7 +1473,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisGroup2Response()
+                return new RemoveHrisGroupResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1564,7 +1564,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAdsGroup2Response> UpdateAdsGroup2Async(UpdateAdsGroup2Request request)
+        public async Task<UpdateAdsGroupResponse> UpdateAdsGroupAsync(UpdateAdsGroupRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/group/{id}", request);
@@ -1583,7 +1583,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1624,7 +1624,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAdsGroup2Response()
+                    var response = new UpdateAdsGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1648,7 +1648,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisGroup2Response> UpdateHrisGroup2Async(UpdateHrisGroup2Request request)
+        public async Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group/{id}", request);
@@ -1667,7 +1667,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1708,7 +1708,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisGroup2Response()
+                    var response = new UpdateHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

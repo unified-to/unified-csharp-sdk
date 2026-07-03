@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingPurchaseorder2](#createaccountingpurchaseorder2) - Create a purchaseorder
-* [GetAccountingPurchaseorder2](#getaccountingpurchaseorder2) - Retrieve a purchaseorder
-* [ListAccountingPurchaseorders2](#listaccountingpurchaseorders2) - List all purchaseorders
-* [PatchAccountingPurchaseorder2](#patchaccountingpurchaseorder2) - Update a purchaseorder
-* [RemoveAccountingPurchaseorder2](#removeaccountingpurchaseorder2) - Remove a purchaseorder
-* [UpdateAccountingPurchaseorder2](#updateaccountingpurchaseorder2) - Update a purchaseorder
+* [CreateAccountingPurchaseorder](#createaccountingpurchaseorder) - Create a purchaseorder
+* [GetAccountingPurchaseorder](#getaccountingpurchaseorder) - Retrieve a purchaseorder
+* [ListAccountingPurchaseorders](#listaccountingpurchaseorders) - List all purchaseorders
+* [PatchAccountingPurchaseorder](#patchaccountingpurchaseorder) - Update a purchaseorder
+* [RemoveAccountingPurchaseorder](#removeaccountingpurchaseorder) - Remove a purchaseorder
+* [UpdateAccountingPurchaseorder](#updateaccountingpurchaseorder) - Update a purchaseorder
 
-## CreateAccountingPurchaseorder2
+## CreateAccountingPurchaseorder
 
 Create a purchaseorder
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Purchaseorder.CreateAccountingPurchaseorder2Async(
+var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
     accountingPurchaseorder: new AccountingPurchaseorder() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Purchaseorder.CreateAccountingPurchaseorder2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingPurchaseorder`                                                                                                                        | [AccountingPurchaseorder](../../Models/Components/AccountingPurchaseorder.md)                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingPurchaseorder2QueryParamFields](../../Models/Requests/CreateAccountingPurchaseorder2QueryParamFields.md)>                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingPurchaseorderQueryParamFields](../../Models/Requests/CreateAccountingPurchaseorderQueryParamFields.md)>                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingPurchaseorder2Response](../../Models/Requests/CreateAccountingPurchaseorder2Response.md)**
+**[CreateAccountingPurchaseorderResponse](../../Models/Requests/CreateAccountingPurchaseorderResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Purchaseorder.CreateAccountingPurchaseorder2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingPurchaseorder2
+## GetAccountingPurchaseorder
 
 Retrieve a purchaseorder
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Purchaseorder.GetAccountingPurchaseorder2Async(
+var res = await sdk.Purchaseorder.GetAccountingPurchaseorderAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Purchaseorder.GetAccountingPurchaseorder2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Purchaseorder                                                                                                                          |
-| `Fields`                                                                                                                                         | List<[GetAccountingPurchaseorder2QueryParamFields](../../Models/Requests/GetAccountingPurchaseorder2QueryParamFields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingPurchaseorderQueryParamFields](../../Models/Requests/GetAccountingPurchaseorderQueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingPurchaseorder2Response](../../Models/Requests/GetAccountingPurchaseorder2Response.md)**
+**[GetAccountingPurchaseorderResponse](../../Models/Requests/GetAccountingPurchaseorderResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Purchaseorder.GetAccountingPurchaseorder2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingPurchaseorders2
+## ListAccountingPurchaseorders
 
 List all purchaseorders
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingPurchaseorders2Request req = new ListAccountingPurchaseorders2Request() {
+ListAccountingPurchaseordersRequest req = new ListAccountingPurchaseordersRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Purchaseorder.ListAccountingPurchaseorders2Async(req);
+var res = await sdk.Purchaseorder.ListAccountingPurchaseordersAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `request`                                                                                             | [ListAccountingPurchaseorders2Request](../../Models/Requests/ListAccountingPurchaseorders2Request.md) | :heavy_check_mark:                                                                                    | The request object to use for the request.                                                            |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [ListAccountingPurchaseordersRequest](../../Models/Requests/ListAccountingPurchaseordersRequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
 
 ### Response
 
-**[ListAccountingPurchaseorders2Response](../../Models/Requests/ListAccountingPurchaseorders2Response.md)**
+**[ListAccountingPurchaseordersResponse](../../Models/Requests/ListAccountingPurchaseordersResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Purchaseorder.ListAccountingPurchaseorders2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingPurchaseorder2
+## PatchAccountingPurchaseorder
 
 Update a purchaseorder
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingPurchaseorder2Request req = new PatchAccountingPurchaseorder2Request() {
+PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderRequest() {
     AccountingPurchaseorder = new AccountingPurchaseorder() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Purchaseorder.PatchAccountingPurchaseorder2Async(req);
+var res = await sdk.Purchaseorder.PatchAccountingPurchaseorderAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
-| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| `request`                                                                                             | [PatchAccountingPurchaseorder2Request](../../Models/Requests/PatchAccountingPurchaseorder2Request.md) | :heavy_check_mark:                                                                                    | The request object to use for the request.                                                            |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [PatchAccountingPurchaseorderRequest](../../Models/Requests/PatchAccountingPurchaseorderRequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
 
 ### Response
 
-**[PatchAccountingPurchaseorder2Response](../../Models/Requests/PatchAccountingPurchaseorder2Response.md)**
+**[PatchAccountingPurchaseorderResponse](../../Models/Requests/PatchAccountingPurchaseorderResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Purchaseorder.PatchAccountingPurchaseorder2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingPurchaseorder2
+## RemoveAccountingPurchaseorder
 
 Remove a purchaseorder
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Purchaseorder.RemoveAccountingPurchaseorder2Async(
+var res = await sdk.Purchaseorder.RemoveAccountingPurchaseorderAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Purchaseorder.RemoveAccountingPurchaseorder2Async(
 
 ### Response
 
-**[RemoveAccountingPurchaseorder2Response](../../Models/Requests/RemoveAccountingPurchaseorder2Response.md)**
+**[RemoveAccountingPurchaseorderResponse](../../Models/Requests/RemoveAccountingPurchaseorderResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Purchaseorder.RemoveAccountingPurchaseorder2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingPurchaseorder2
+## UpdateAccountingPurchaseorder
 
 Update a purchaseorder
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingPurchaseorder2Request req = new UpdateAccountingPurchaseorder2Request() {
+UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequest() {
     AccountingPurchaseorder = new AccountingPurchaseorder() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Purchaseorder.UpdateAccountingPurchaseorder2Async(req);
+var res = await sdk.Purchaseorder.UpdateAccountingPurchaseorderAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                               | [UpdateAccountingPurchaseorder2Request](../../Models/Requests/UpdateAccountingPurchaseorder2Request.md) | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `request`                                                                                             | [UpdateAccountingPurchaseorderRequest](../../Models/Requests/UpdateAccountingPurchaseorderRequest.md) | :heavy_check_mark:                                                                                    | The request object to use for the request.                                                            |
 
 ### Response
 
-**[UpdateAccountingPurchaseorder2Response](../../Models/Requests/UpdateAccountingPurchaseorder2Response.md)**
+**[UpdateAccountingPurchaseorderResponse](../../Models/Requests/UpdateAccountingPurchaseorderResponse.md)**
 
 ### Errors
 

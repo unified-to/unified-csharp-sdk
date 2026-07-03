@@ -28,104 +28,104 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateAnalyticsEvent2Response> CreateAnalyticsEvent2Async(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAnalyticsEventResponse> CreateAnalyticsEventAsync(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCalendarEvent2Response> CreateCalendarEvent2Async(CalendarEvent calendarEvent, string connectionId, List<CreateCalendarEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<CreateCalendarEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCrmEvent2Response> CreateCrmEvent2Async(CrmEvent crmEvent, string connectionId, List<CreateCrmEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<CreateCrmEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetAnalyticsEvent2Response> GetAnalyticsEvent2Async(string connectionId, string id, List<GetAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAnalyticsEventResponse> GetAnalyticsEventAsync(string connectionId, string id, List<GetAnalyticsEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetCalendarEvent2Response> GetCalendarEvent2Async(string connectionId, string id, List<GetCalendarEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<GetCalendarEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetClubsEvent2Response> GetClubsEvent2Async(string connectionId, string id, List<GetClubsEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetClubsEventResponse> GetClubsEventAsync(string connectionId, string id, List<GetClubsEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetCrmEvent2Response> GetCrmEvent2Async(string connectionId, string id, List<GetCrmEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<GetCrmEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all events
         /// </summary>
-        Task<ListAnalyticsEvents2Response> ListAnalyticsEvents2Async(ListAnalyticsEvents2Request request);
+        Task<ListAnalyticsEventsResponse> ListAnalyticsEventsAsync(ListAnalyticsEventsRequest request);
 
         /// <summary>
         /// List all events
         /// </summary>
-        Task<ListCalendarEvents2Response> ListCalendarEvents2Async(ListCalendarEvents2Request request);
+        Task<ListCalendarEventsResponse> ListCalendarEventsAsync(ListCalendarEventsRequest request);
 
         /// <summary>
         /// List all events
         /// </summary>
-        Task<ListClubsEvents2Response> ListClubsEvents2Async(ListClubsEvents2Request request);
+        Task<ListClubsEventsResponse> ListClubsEventsAsync(ListClubsEventsRequest request);
 
         /// <summary>
         /// List all events
         /// </summary>
-        Task<ListCrmEvents2Response> ListCrmEvents2Async(ListCrmEvents2Request request);
+        Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<PatchCalendarEvent2Response> PatchCalendarEvent2Async(PatchCalendarEvent2Request request);
+        Task<PatchCalendarEventResponse> PatchCalendarEventAsync(PatchCalendarEventRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<PatchCrmEvent2Response> PatchCrmEvent2Async(PatchCrmEvent2Request request);
+        Task<PatchCrmEventResponse> PatchCrmEventAsync(PatchCrmEventRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<PatchMessagingEvent2Response> PatchMessagingEvent2Async(PatchMessagingEvent2Request request);
+        Task<PatchMessagingEventResponse> PatchMessagingEventAsync(PatchMessagingEventRequest request);
 
         /// <summary>
         /// Remove an event
         /// </summary>
-        Task<RemoveCalendarEvent2Response> RemoveCalendarEvent2Async(string connectionId, string id);
+        Task<RemoveCalendarEventResponse> RemoveCalendarEventAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove an event
         /// </summary>
-        Task<RemoveCrmEvent2Response> RemoveCrmEvent2Async(string connectionId, string id);
+        Task<RemoveCrmEventResponse> RemoveCrmEventAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<UpdateCalendarEvent2Response> UpdateCalendarEvent2Async(UpdateCalendarEvent2Request request);
+        Task<UpdateCalendarEventResponse> UpdateCalendarEventAsync(UpdateCalendarEventRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<UpdateCrmEvent2Response> UpdateCrmEvent2Async(UpdateCrmEvent2Request request);
+        Task<UpdateCrmEventResponse> UpdateCrmEventAsync(UpdateCrmEventRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<UpdateMessagingEvent2Response> UpdateMessagingEvent2Async(UpdateMessagingEvent2Request request);
+        Task<UpdateMessagingEventResponse> UpdateMessagingEventAsync(UpdateMessagingEventRequest request);
     }
 
     public class Event: IEvent
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -134,9 +134,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAnalyticsEvent2Response> CreateAnalyticsEvent2Async(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAnalyticsEventResponse> CreateAnalyticsEventAsync(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAnalyticsEvent2Request()
+            var request = new CreateAnalyticsEventRequest()
             {
                 AnalyticsEvent = analyticsEvent,
                 ConnectionId = connectionId,
@@ -160,7 +160,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -201,7 +201,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAnalyticsEvent2Response()
+                    var response = new CreateAnalyticsEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -225,9 +225,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCalendarEvent2Response> CreateCalendarEvent2Async(CalendarEvent calendarEvent, string connectionId, List<CreateCalendarEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<CreateCalendarEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCalendarEvent2Request()
+            var request = new CreateCalendarEventRequest()
             {
                 CalendarEvent = calendarEvent,
                 ConnectionId = connectionId,
@@ -251,7 +251,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCalendarEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCalendarEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -292,7 +292,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCalendarEvent2Response()
+                    var response = new CreateCalendarEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -316,9 +316,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmEvent2Response> CreateCrmEvent2Async(CrmEvent crmEvent, string connectionId, List<CreateCrmEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<CreateCrmEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCrmEvent2Request()
+            var request = new CreateCrmEventRequest()
             {
                 CrmEvent = crmEvent,
                 ConnectionId = connectionId,
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCrmEvent2Response()
+                    var response = new CreateCrmEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAnalyticsEvent2Response> GetAnalyticsEvent2Async(string connectionId, string id, List<GetAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAnalyticsEventResponse> GetAnalyticsEventAsync(string connectionId, string id, List<GetAnalyticsEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAnalyticsEvent2Request()
+            var request = new GetAnalyticsEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -427,7 +427,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -468,7 +468,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAnalyticsEvent2Response()
+                    var response = new GetAnalyticsEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -492,9 +492,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarEvent2Response> GetCalendarEvent2Async(string connectionId, string id, List<GetCalendarEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<GetCalendarEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCalendarEvent2Request()
+            var request = new GetCalendarEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -512,7 +512,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -553,7 +553,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCalendarEvent2Response()
+                    var response = new GetCalendarEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -577,9 +577,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetClubsEvent2Response> GetClubsEvent2Async(string connectionId, string id, List<GetClubsEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetClubsEventResponse> GetClubsEventAsync(string connectionId, string id, List<GetClubsEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetClubsEvent2Request()
+            var request = new GetClubsEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -597,7 +597,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getClubsEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -638,7 +638,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ClubsEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetClubsEvent2Response()
+                    var response = new GetClubsEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -662,9 +662,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmEvent2Response> GetCrmEvent2Async(string connectionId, string id, List<GetCrmEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<GetCrmEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCrmEvent2Request()
+            var request = new GetCrmEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -682,7 +682,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -723,7 +723,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCrmEvent2Response()
+                    var response = new GetCrmEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -747,7 +747,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAnalyticsEvents2Response> ListAnalyticsEvents2Async(ListAnalyticsEvents2Request request)
+        public async Task<ListAnalyticsEventsResponse> ListAnalyticsEventsAsync(ListAnalyticsEventsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/event", request);
@@ -760,7 +760,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsEvents2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsEvents", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -801,7 +801,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsEvent>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAnalyticsEvents2Response()
+                    var response = new ListAnalyticsEventsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -825,7 +825,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCalendarEvents2Response> ListCalendarEvents2Async(ListCalendarEvents2Request request)
+        public async Task<ListCalendarEventsResponse> ListCalendarEventsAsync(ListCalendarEventsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/event", request);
@@ -838,7 +838,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarEvents2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarEvents", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -879,7 +879,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CalendarEvent>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCalendarEvents2Response()
+                    var response = new ListCalendarEventsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -903,7 +903,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListClubsEvents2Response> ListClubsEvents2Async(ListClubsEvents2Request request)
+        public async Task<ListClubsEventsResponse> ListClubsEventsAsync(ListClubsEventsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/clubs/{connection_id}/event", request);
@@ -916,7 +916,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsEvents2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listClubsEvents", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -957,7 +957,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ClubsEvent>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListClubsEvents2Response()
+                    var response = new ListClubsEventsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -981,7 +981,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCrmEvents2Response> ListCrmEvents2Async(ListCrmEvents2Request request)
+        public async Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event", request);
@@ -994,7 +994,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmEvents2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmEvents", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1035,7 +1035,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CrmEvent>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCrmEvents2Response()
+                    var response = new ListCrmEventsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1059,7 +1059,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCalendarEvent2Response> PatchCalendarEvent2Async(PatchCalendarEvent2Request request)
+        public async Task<PatchCalendarEventResponse> PatchCalendarEventAsync(PatchCalendarEventRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/event/{id}", request);
@@ -1078,7 +1078,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCalendarEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCalendarEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1119,7 +1119,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCalendarEvent2Response()
+                    var response = new PatchCalendarEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1143,7 +1143,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmEvent2Response> PatchCrmEvent2Async(PatchCrmEvent2Request request)
+        public async Task<PatchCrmEventResponse> PatchCrmEventAsync(PatchCrmEventRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
@@ -1162,7 +1162,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1203,7 +1203,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCrmEvent2Response()
+                    var response = new PatchCrmEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1227,7 +1227,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchMessagingEvent2Response> PatchMessagingEvent2Async(PatchMessagingEvent2Request request)
+        public async Task<PatchMessagingEventResponse> PatchMessagingEventAsync(PatchMessagingEventRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/event/{id}", request);
@@ -1246,7 +1246,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMessagingEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMessagingEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1287,7 +1287,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchMessagingEvent2Response()
+                    var response = new PatchMessagingEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1311,9 +1311,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCalendarEvent2Response> RemoveCalendarEvent2Async(string connectionId, string id)
+        public async Task<RemoveCalendarEventResponse> RemoveCalendarEventAsync(string connectionId, string id)
         {
-            var request = new RemoveCalendarEvent2Request()
+            var request = new RemoveCalendarEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1329,7 +1329,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCalendarEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCalendarEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1367,7 +1367,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCalendarEvent2Response()
+                return new RemoveCalendarEventResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1384,7 +1384,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCalendarEvent2Response()
+                return new RemoveCalendarEventResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1393,9 +1393,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveCrmEvent2Response> RemoveCrmEvent2Async(string connectionId, string id)
+        public async Task<RemoveCrmEventResponse> RemoveCrmEventAsync(string connectionId, string id)
         {
-            var request = new RemoveCrmEvent2Request()
+            var request = new RemoveCrmEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1411,7 +1411,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1449,7 +1449,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCrmEvent2Response()
+                return new RemoveCrmEventResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1466,7 +1466,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCrmEvent2Response()
+                return new RemoveCrmEventResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1475,7 +1475,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCalendarEvent2Response> UpdateCalendarEvent2Async(UpdateCalendarEvent2Request request)
+        public async Task<UpdateCalendarEventResponse> UpdateCalendarEventAsync(UpdateCalendarEventRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/event/{id}", request);
@@ -1494,7 +1494,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCalendarEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCalendarEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1535,7 +1535,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCalendarEvent2Response()
+                    var response = new UpdateCalendarEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1559,7 +1559,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmEvent2Response> UpdateCrmEvent2Async(UpdateCrmEvent2Request request)
+        public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(UpdateCrmEventRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
@@ -1578,7 +1578,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1619,7 +1619,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCrmEvent2Response()
+                    var response = new UpdateCrmEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1643,7 +1643,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateMessagingEvent2Response> UpdateMessagingEvent2Async(UpdateMessagingEvent2Request request)
+        public async Task<UpdateMessagingEventResponse> UpdateMessagingEventAsync(UpdateMessagingEventRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/event/{id}", request);
@@ -1662,7 +1662,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMessagingEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMessagingEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1703,7 +1703,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MessagingEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateMessagingEvent2Response()
+                    var response = new UpdateMessagingEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

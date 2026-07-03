@@ -5,57 +5,57 @@
 
 ### Available Operations
 
-* [CreateCommerceCollection2](#createcommercecollection2) - Create a collection
-* [CreateCommerceInventory2](#createcommerceinventory2) - Create an inventory
-* [CreateCommerceItem2](#createcommerceitem2) - Create an item
-* [CreateCommerceItemvariant2](#createcommerceitemvariant2) - Create an itemvariant
-* [CreateCommerceLocation2](#createcommercelocation2) - Create a location
-* [CreateCommerceReservation2](#createcommercereservation2) - Create a reservation
-* [CreateCommerceReview2](#createcommercereview2) - Create a review
-* [CreateCommerceSaleschannel2](#createcommercesaleschannel2) - Create a saleschannel
-* [GetCommerceCollection2](#getcommercecollection2) - Retrieve a collection
-* [GetCommerceInventory2](#getcommerceinventory2) - Retrieve an inventory
-* [GetCommerceItem2](#getcommerceitem2) - Retrieve an item
-* [GetCommerceItemvariant2](#getcommerceitemvariant2) - Retrieve an itemvariant
-* [GetCommerceLocation2](#getcommercelocation2) - Retrieve a location
-* [GetCommerceReservation2](#getcommercereservation2) - Retrieve a reservation
-* [GetCommerceReview2](#getcommercereview2) - Retrieve a review
-* [GetCommerceSaleschannel2](#getcommercesaleschannel2) - Retrieve a saleschannel
-* [ListCommerceAvailabilities2](#listcommerceavailabilities2) - List all availabilities
-* [ListCommerceCollections2](#listcommercecollections2) - List all collections
-* [ListCommerceInventories2](#listcommerceinventories2) - List all inventories
-* [ListCommerceItems2](#listcommerceitems2) - List all items
-* [ListCommerceItemvariants2](#listcommerceitemvariants2) - List all itemvariants
-* [ListCommerceLocations2](#listcommercelocations2) - List all locations
-* [ListCommerceReservations2](#listcommercereservations2) - List all reservations
-* [ListCommerceReviews2](#listcommercereviews2) - List all reviews
-* [ListCommerceSaleschannels2](#listcommercesaleschannels2) - List all saleschannels
-* [PatchCommerceCollection2](#patchcommercecollection2) - Update a collection
-* [PatchCommerceInventory2](#patchcommerceinventory2) - Update an inventory
-* [PatchCommerceItem2](#patchcommerceitem2) - Update an item
-* [PatchCommerceItemvariant2](#patchcommerceitemvariant2) - Update an itemvariant
-* [PatchCommerceLocation2](#patchcommercelocation2) - Update a location
-* [PatchCommerceReservation2](#patchcommercereservation2) - Update a reservation
-* [PatchCommerceReview2](#patchcommercereview2) - Update a review
-* [PatchCommerceSaleschannel2](#patchcommercesaleschannel2) - Update a saleschannel
-* [RemoveCommerceCollection2](#removecommercecollection2) - Remove a collection
-* [RemoveCommerceInventory2](#removecommerceinventory2) - Remove an inventory
-* [RemoveCommerceItem2](#removecommerceitem2) - Remove an item
-* [RemoveCommerceItemvariant2](#removecommerceitemvariant2) - Remove an itemvariant
-* [RemoveCommerceLocation2](#removecommercelocation2) - Remove a location
-* [RemoveCommerceReservation2](#removecommercereservation2) - Remove a reservation
-* [RemoveCommerceReview2](#removecommercereview2) - Remove a review
-* [RemoveCommerceSaleschannel2](#removecommercesaleschannel2) - Remove a saleschannel
-* [UpdateCommerceCollection2](#updatecommercecollection2) - Update a collection
-* [UpdateCommerceInventory2](#updatecommerceinventory2) - Update an inventory
-* [UpdateCommerceItem2](#updatecommerceitem2) - Update an item
-* [UpdateCommerceItemvariant2](#updatecommerceitemvariant2) - Update an itemvariant
-* [UpdateCommerceLocation2](#updatecommercelocation2) - Update a location
-* [UpdateCommerceReservation2](#updatecommercereservation2) - Update a reservation
-* [UpdateCommerceReview2](#updatecommercereview2) - Update a review
-* [UpdateCommerceSaleschannel2](#updatecommercesaleschannel2) - Update a saleschannel
+* [CreateCommerceCollection](#createcommercecollection) - Create a collection
+* [CreateCommerceInventory](#createcommerceinventory) - Create an inventory
+* [CreateCommerceItem](#createcommerceitem) - Create an item
+* [CreateCommerceItemvariant](#createcommerceitemvariant) - Create an itemvariant
+* [CreateCommerceLocation](#createcommercelocation) - Create a location
+* [CreateCommerceReservation](#createcommercereservation) - Create a reservation
+* [CreateCommerceReview](#createcommercereview) - Create a review
+* [CreateCommerceSaleschannel](#createcommercesaleschannel) - Create a saleschannel
+* [GetCommerceCollection](#getcommercecollection) - Retrieve a collection
+* [GetCommerceInventory](#getcommerceinventory) - Retrieve an inventory
+* [GetCommerceItem](#getcommerceitem) - Retrieve an item
+* [GetCommerceItemvariant](#getcommerceitemvariant) - Retrieve an itemvariant
+* [GetCommerceLocation](#getcommercelocation) - Retrieve a location
+* [GetCommerceReservation](#getcommercereservation) - Retrieve a reservation
+* [GetCommerceReview](#getcommercereview) - Retrieve a review
+* [GetCommerceSaleschannel](#getcommercesaleschannel) - Retrieve a saleschannel
+* [ListCommerceAvailabilities](#listcommerceavailabilities) - List all availabilities
+* [ListCommerceCollections](#listcommercecollections) - List all collections
+* [ListCommerceInventories](#listcommerceinventories) - List all inventories
+* [ListCommerceItems](#listcommerceitems) - List all items
+* [ListCommerceItemvariants](#listcommerceitemvariants) - List all itemvariants
+* [ListCommerceLocations](#listcommercelocations) - List all locations
+* [ListCommerceReservations](#listcommercereservations) - List all reservations
+* [ListCommerceReviews](#listcommercereviews) - List all reviews
+* [ListCommerceSaleschannels](#listcommercesaleschannels) - List all saleschannels
+* [PatchCommerceCollection](#patchcommercecollection) - Update a collection
+* [PatchCommerceInventory](#patchcommerceinventory) - Update an inventory
+* [PatchCommerceItem](#patchcommerceitem) - Update an item
+* [PatchCommerceItemvariant](#patchcommerceitemvariant) - Update an itemvariant
+* [PatchCommerceLocation](#patchcommercelocation) - Update a location
+* [PatchCommerceReservation](#patchcommercereservation) - Update a reservation
+* [PatchCommerceReview](#patchcommercereview) - Update a review
+* [PatchCommerceSaleschannel](#patchcommercesaleschannel) - Update a saleschannel
+* [RemoveCommerceCollection](#removecommercecollection) - Remove a collection
+* [RemoveCommerceInventory](#removecommerceinventory) - Remove an inventory
+* [RemoveCommerceItem](#removecommerceitem) - Remove an item
+* [RemoveCommerceItemvariant](#removecommerceitemvariant) - Remove an itemvariant
+* [RemoveCommerceLocation](#removecommercelocation) - Remove a location
+* [RemoveCommerceReservation](#removecommercereservation) - Remove a reservation
+* [RemoveCommerceReview](#removecommercereview) - Remove a review
+* [RemoveCommerceSaleschannel](#removecommercesaleschannel) - Remove a saleschannel
+* [UpdateCommerceCollection](#updatecommercecollection) - Update a collection
+* [UpdateCommerceInventory](#updatecommerceinventory) - Update an inventory
+* [UpdateCommerceItem](#updatecommerceitem) - Update an item
+* [UpdateCommerceItemvariant](#updatecommerceitemvariant) - Update an itemvariant
+* [UpdateCommerceLocation](#updatecommercelocation) - Update a location
+* [UpdateCommerceReservation](#updatecommercereservation) - Update a reservation
+* [UpdateCommerceReview](#updatecommercereview) - Update a review
+* [UpdateCommerceSaleschannel](#updatecommercesaleschannel) - Update a saleschannel
 
-## CreateCommerceCollection2
+## CreateCommerceCollection
 
 Create a collection
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceCollection2Async(
+var res = await sdk.Commerce.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         Name = "<value>",
     },
@@ -85,12 +85,12 @@ var res = await sdk.Commerce.CreateCommerceCollection2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceCollection`                                                                                                                             | [CommerceCollection](../../Models/Components/CommerceCollection.md)                                                                              | :heavy_check_mark:                                                                                                                               | A collection of items/products/services                                                                                                          |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceCollection2QueryParamFields](../../Models/Requests/CreateCommerceCollection2QueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceCollectionQueryParamFields](../../Models/Requests/CreateCommerceCollectionQueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceCollection2Response](../../Models/Requests/CreateCommerceCollection2Response.md)**
+**[CreateCommerceCollectionResponse](../../Models/Requests/CreateCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -98,7 +98,7 @@ var res = await sdk.Commerce.CreateCommerceCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCommerceInventory2
+## CreateCommerceInventory
 
 Create an inventory
 
@@ -112,7 +112,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceInventory2Async(
+var res = await sdk.Commerce.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {},
     connectionId: "<id>"
 );
@@ -126,12 +126,12 @@ var res = await sdk.Commerce.CreateCommerceInventory2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceInventory`                                                                                                                              | [CommerceInventory](../../Models/Components/CommerceInventory.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceInventory2QueryParamFields](../../Models/Requests/CreateCommerceInventory2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceInventoryQueryParamFields](../../Models/Requests/CreateCommerceInventoryQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceInventory2Response](../../Models/Requests/CreateCommerceInventory2Response.md)**
+**[CreateCommerceInventoryResponse](../../Models/Requests/CreateCommerceInventoryResponse.md)**
 
 ### Errors
 
@@ -139,7 +139,7 @@ var res = await sdk.Commerce.CreateCommerceInventory2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCommerceItem2
+## CreateCommerceItem
 
 Create an item
 
@@ -153,7 +153,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceItem2Async(
+var res = await sdk.Commerce.CreateCommerceItemAsync(
     commerceItem: new CommerceItem() {},
     connectionId: "<id>"
 );
@@ -167,12 +167,12 @@ var res = await sdk.Commerce.CreateCommerceItem2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceItem`                                                                                                                                   | [CommerceItem](../../Models/Components/CommerceItem.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceItem2QueryParamFields](../../Models/Requests/CreateCommerceItem2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceItemQueryParamFields](../../Models/Requests/CreateCommerceItemQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceItem2Response](../../Models/Requests/CreateCommerceItem2Response.md)**
+**[CreateCommerceItemResponse](../../Models/Requests/CreateCommerceItemResponse.md)**
 
 ### Errors
 
@@ -180,7 +180,7 @@ var res = await sdk.Commerce.CreateCommerceItem2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCommerceItemvariant2
+## CreateCommerceItemvariant
 
 Create an itemvariant
 
@@ -194,7 +194,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceItemvariant2Async(
+var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
     commerceItemvariant: new CommerceItemvariant() {},
     connectionId: "<id>"
 );
@@ -208,12 +208,12 @@ var res = await sdk.Commerce.CreateCommerceItemvariant2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceItemvariant`                                                                                                                            | [CommerceItemvariant](../../Models/Components/CommerceItemvariant.md)                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceItemvariant2QueryParamFields](../../Models/Requests/CreateCommerceItemvariant2QueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceItemvariantQueryParamFields](../../Models/Requests/CreateCommerceItemvariantQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceItemvariant2Response](../../Models/Requests/CreateCommerceItemvariant2Response.md)**
+**[CreateCommerceItemvariantResponse](../../Models/Requests/CreateCommerceItemvariantResponse.md)**
 
 ### Errors
 
@@ -221,7 +221,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariant2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCommerceLocation2
+## CreateCommerceLocation
 
 Create a location
 
@@ -235,7 +235,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceLocation2Async(
+var res = await sdk.Commerce.CreateCommerceLocationAsync(
     commerceLocation: new CommerceLocation() {},
     connectionId: "<id>"
 );
@@ -249,12 +249,12 @@ var res = await sdk.Commerce.CreateCommerceLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceLocation`                                                                                                                               | [CommerceLocation](../../Models/Components/CommerceLocation.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceLocation2QueryParamFields](../../Models/Requests/CreateCommerceLocation2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceLocationQueryParamFields](../../Models/Requests/CreateCommerceLocationQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceLocation2Response](../../Models/Requests/CreateCommerceLocation2Response.md)**
+**[CreateCommerceLocationResponse](../../Models/Requests/CreateCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -262,7 +262,7 @@ var res = await sdk.Commerce.CreateCommerceLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCommerceReservation2
+## CreateCommerceReservation
 
 Create a reservation
 
@@ -276,7 +276,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceReservation2Async(
+var res = await sdk.Commerce.CreateCommerceReservationAsync(
     commerceReservation: new CommerceReservation() {},
     connectionId: "<id>"
 );
@@ -290,12 +290,12 @@ var res = await sdk.Commerce.CreateCommerceReservation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceReservation`                                                                                                                            | [CommerceReservation](../../Models/Components/CommerceReservation.md)                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceReservation2QueryParamFields](../../Models/Requests/CreateCommerceReservation2QueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceReservationQueryParamFields](../../Models/Requests/CreateCommerceReservationQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceReservation2Response](../../Models/Requests/CreateCommerceReservation2Response.md)**
+**[CreateCommerceReservationResponse](../../Models/Requests/CreateCommerceReservationResponse.md)**
 
 ### Errors
 
@@ -303,7 +303,7 @@ var res = await sdk.Commerce.CreateCommerceReservation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCommerceReview2
+## CreateCommerceReview
 
 Create a review
 
@@ -317,7 +317,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceReview2Async(
+var res = await sdk.Commerce.CreateCommerceReviewAsync(
     commerceReview: new CommerceReview() {},
     connectionId: "<id>"
 );
@@ -331,12 +331,12 @@ var res = await sdk.Commerce.CreateCommerceReview2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceReview`                                                                                                                                 | [CommerceReview](../../Models/Components/CommerceReview.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceReview2QueryParamFields](../../Models/Requests/CreateCommerceReview2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceReviewQueryParamFields](../../Models/Requests/CreateCommerceReviewQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceReview2Response](../../Models/Requests/CreateCommerceReview2Response.md)**
+**[CreateCommerceReviewResponse](../../Models/Requests/CreateCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -344,7 +344,7 @@ var res = await sdk.Commerce.CreateCommerceReview2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCommerceSaleschannel2
+## CreateCommerceSaleschannel
 
 Create a saleschannel
 
@@ -358,7 +358,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.CreateCommerceSaleschannel2Async(
+var res = await sdk.Commerce.CreateCommerceSaleschannelAsync(
     commerceSaleschannel: new CommerceSaleschannel() {},
     connectionId: "<id>"
 );
@@ -372,12 +372,12 @@ var res = await sdk.Commerce.CreateCommerceSaleschannel2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceSaleschannel`                                                                                                                           | [CommerceSaleschannel](../../Models/Components/CommerceSaleschannel.md)                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceSaleschannel2QueryParamFields](../../Models/Requests/CreateCommerceSaleschannel2QueryParamFields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceSaleschannelQueryParamFields](../../Models/Requests/CreateCommerceSaleschannelQueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceSaleschannel2Response](../../Models/Requests/CreateCommerceSaleschannel2Response.md)**
+**[CreateCommerceSaleschannelResponse](../../Models/Requests/CreateCommerceSaleschannelResponse.md)**
 
 ### Errors
 
@@ -385,7 +385,7 @@ var res = await sdk.Commerce.CreateCommerceSaleschannel2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceCollection2
+## GetCommerceCollection
 
 Retrieve a collection
 
@@ -399,7 +399,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceCollection2Async(
+var res = await sdk.Commerce.GetCommerceCollectionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -413,12 +413,12 @@ var res = await sdk.Commerce.GetCommerceCollection2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Collection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetCommerceCollection2QueryParamFields](../../Models/Requests/GetCommerceCollection2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceCollectionQueryParamFields](../../Models/Requests/GetCommerceCollectionQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceCollection2Response](../../Models/Requests/GetCommerceCollection2Response.md)**
+**[GetCommerceCollectionResponse](../../Models/Requests/GetCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -426,7 +426,7 @@ var res = await sdk.Commerce.GetCommerceCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceInventory2
+## GetCommerceInventory
 
 Retrieve an inventory
 
@@ -440,7 +440,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceInventory2Async(
+var res = await sdk.Commerce.GetCommerceInventoryAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -454,12 +454,12 @@ var res = await sdk.Commerce.GetCommerceInventory2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Inventory                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetCommerceInventory2QueryParamFields](../../Models/Requests/GetCommerceInventory2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceInventoryQueryParamFields](../../Models/Requests/GetCommerceInventoryQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceInventory2Response](../../Models/Requests/GetCommerceInventory2Response.md)**
+**[GetCommerceInventoryResponse](../../Models/Requests/GetCommerceInventoryResponse.md)**
 
 ### Errors
 
@@ -467,7 +467,7 @@ var res = await sdk.Commerce.GetCommerceInventory2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceItem2
+## GetCommerceItem
 
 Retrieve an item
 
@@ -481,7 +481,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceItem2Async(
+var res = await sdk.Commerce.GetCommerceItemAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -495,12 +495,12 @@ var res = await sdk.Commerce.GetCommerceItem2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Item                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetCommerceItem2QueryParamFields](../../Models/Requests/GetCommerceItem2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceItemQueryParamFields](../../Models/Requests/GetCommerceItemQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceItem2Response](../../Models/Requests/GetCommerceItem2Response.md)**
+**[GetCommerceItemResponse](../../Models/Requests/GetCommerceItemResponse.md)**
 
 ### Errors
 
@@ -508,7 +508,7 @@ var res = await sdk.Commerce.GetCommerceItem2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceItemvariant2
+## GetCommerceItemvariant
 
 Retrieve an itemvariant
 
@@ -522,7 +522,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceItemvariant2Async(
+var res = await sdk.Commerce.GetCommerceItemvariantAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -536,12 +536,12 @@ var res = await sdk.Commerce.GetCommerceItemvariant2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Itemvariant                                                                                                                            |
-| `Fields`                                                                                                                                         | List<[GetCommerceItemvariant2QueryParamFields](../../Models/Requests/GetCommerceItemvariant2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceItemvariantQueryParamFields](../../Models/Requests/GetCommerceItemvariantQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceItemvariant2Response](../../Models/Requests/GetCommerceItemvariant2Response.md)**
+**[GetCommerceItemvariantResponse](../../Models/Requests/GetCommerceItemvariantResponse.md)**
 
 ### Errors
 
@@ -549,7 +549,7 @@ var res = await sdk.Commerce.GetCommerceItemvariant2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceLocation2
+## GetCommerceLocation
 
 Retrieve a location
 
@@ -563,7 +563,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceLocation2Async(
+var res = await sdk.Commerce.GetCommerceLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -577,12 +577,12 @@ var res = await sdk.Commerce.GetCommerceLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetCommerceLocation2QueryParamFields](../../Models/Requests/GetCommerceLocation2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceLocationQueryParamFields](../../Models/Requests/GetCommerceLocationQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceLocation2Response](../../Models/Requests/GetCommerceLocation2Response.md)**
+**[GetCommerceLocationResponse](../../Models/Requests/GetCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -590,7 +590,7 @@ var res = await sdk.Commerce.GetCommerceLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceReservation2
+## GetCommerceReservation
 
 Retrieve a reservation
 
@@ -604,7 +604,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceReservation2Async(
+var res = await sdk.Commerce.GetCommerceReservationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -618,12 +618,12 @@ var res = await sdk.Commerce.GetCommerceReservation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Reservation                                                                                                                            |
-| `Fields`                                                                                                                                         | List<[GetCommerceReservation2QueryParamFields](../../Models/Requests/GetCommerceReservation2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceReservationQueryParamFields](../../Models/Requests/GetCommerceReservationQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceReservation2Response](../../Models/Requests/GetCommerceReservation2Response.md)**
+**[GetCommerceReservationResponse](../../Models/Requests/GetCommerceReservationResponse.md)**
 
 ### Errors
 
@@ -631,7 +631,7 @@ var res = await sdk.Commerce.GetCommerceReservation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceReview2
+## GetCommerceReview
 
 Retrieve a review
 
@@ -645,7 +645,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceReview2Async(
+var res = await sdk.Commerce.GetCommerceReviewAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -659,12 +659,12 @@ var res = await sdk.Commerce.GetCommerceReview2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Review                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetCommerceReview2QueryParamFields](../../Models/Requests/GetCommerceReview2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceReviewQueryParamFields](../../Models/Requests/GetCommerceReviewQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceReview2Response](../../Models/Requests/GetCommerceReview2Response.md)**
+**[GetCommerceReviewResponse](../../Models/Requests/GetCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -672,7 +672,7 @@ var res = await sdk.Commerce.GetCommerceReview2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceSaleschannel2
+## GetCommerceSaleschannel
 
 Retrieve a saleschannel
 
@@ -686,7 +686,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.GetCommerceSaleschannel2Async(
+var res = await sdk.Commerce.GetCommerceSaleschannelAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -700,12 +700,12 @@ var res = await sdk.Commerce.GetCommerceSaleschannel2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Saleschannel                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetCommerceSaleschannel2QueryParamFields](../../Models/Requests/GetCommerceSaleschannel2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceSaleschannelQueryParamFields](../../Models/Requests/GetCommerceSaleschannelQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceSaleschannel2Response](../../Models/Requests/GetCommerceSaleschannel2Response.md)**
+**[GetCommerceSaleschannelResponse](../../Models/Requests/GetCommerceSaleschannelResponse.md)**
 
 ### Errors
 
@@ -713,7 +713,7 @@ var res = await sdk.Commerce.GetCommerceSaleschannel2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceAvailabilities2
+## ListCommerceAvailabilities
 
 List all availabilities
 
@@ -728,24 +728,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceAvailabilities2Request req = new ListCommerceAvailabilities2Request() {
+ListCommerceAvailabilitiesRequest req = new ListCommerceAvailabilitiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceAvailabilities2Async(req);
+var res = await sdk.Commerce.ListCommerceAvailabilitiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `request`                                                                                         | [ListCommerceAvailabilities2Request](../../Models/Requests/ListCommerceAvailabilities2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListCommerceAvailabilitiesRequest](../../Models/Requests/ListCommerceAvailabilitiesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[ListCommerceAvailabilities2Response](../../Models/Requests/ListCommerceAvailabilities2Response.md)**
+**[ListCommerceAvailabilitiesResponse](../../Models/Requests/ListCommerceAvailabilitiesResponse.md)**
 
 ### Errors
 
@@ -753,7 +753,7 @@ var res = await sdk.Commerce.ListCommerceAvailabilities2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceCollections2
+## ListCommerceCollections
 
 List all collections
 
@@ -768,24 +768,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceCollections2Request req = new ListCommerceCollections2Request() {
+ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceCollections2Async(req);
+var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [ListCommerceCollections2Request](../../Models/Requests/ListCommerceCollections2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListCommerceCollectionsRequest](../../Models/Requests/ListCommerceCollectionsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[ListCommerceCollections2Response](../../Models/Requests/ListCommerceCollections2Response.md)**
+**[ListCommerceCollectionsResponse](../../Models/Requests/ListCommerceCollectionsResponse.md)**
 
 ### Errors
 
@@ -793,7 +793,7 @@ var res = await sdk.Commerce.ListCommerceCollections2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceInventories2
+## ListCommerceInventories
 
 List all inventories
 
@@ -808,24 +808,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceInventories2Request req = new ListCommerceInventories2Request() {
+ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceInventories2Async(req);
+var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [ListCommerceInventories2Request](../../Models/Requests/ListCommerceInventories2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListCommerceInventoriesRequest](../../Models/Requests/ListCommerceInventoriesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[ListCommerceInventories2Response](../../Models/Requests/ListCommerceInventories2Response.md)**
+**[ListCommerceInventoriesResponse](../../Models/Requests/ListCommerceInventoriesResponse.md)**
 
 ### Errors
 
@@ -833,7 +833,7 @@ var res = await sdk.Commerce.ListCommerceInventories2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceItems2
+## ListCommerceItems
 
 List all items
 
@@ -848,24 +848,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceItems2Request req = new ListCommerceItems2Request() {
+ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceItems2Async(req);
+var res = await sdk.Commerce.ListCommerceItemsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListCommerceItems2Request](../../Models/Requests/ListCommerceItems2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListCommerceItemsRequest](../../Models/Requests/ListCommerceItemsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListCommerceItems2Response](../../Models/Requests/ListCommerceItems2Response.md)**
+**[ListCommerceItemsResponse](../../Models/Requests/ListCommerceItemsResponse.md)**
 
 ### Errors
 
@@ -873,7 +873,7 @@ var res = await sdk.Commerce.ListCommerceItems2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceItemvariants2
+## ListCommerceItemvariants
 
 List all itemvariants
 
@@ -888,24 +888,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceItemvariants2Request req = new ListCommerceItemvariants2Request() {
+ListCommerceItemvariantsRequest req = new ListCommerceItemvariantsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceItemvariants2Async(req);
+var res = await sdk.Commerce.ListCommerceItemvariantsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [ListCommerceItemvariants2Request](../../Models/Requests/ListCommerceItemvariants2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListCommerceItemvariantsRequest](../../Models/Requests/ListCommerceItemvariantsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[ListCommerceItemvariants2Response](../../Models/Requests/ListCommerceItemvariants2Response.md)**
+**[ListCommerceItemvariantsResponse](../../Models/Requests/ListCommerceItemvariantsResponse.md)**
 
 ### Errors
 
@@ -913,7 +913,7 @@ var res = await sdk.Commerce.ListCommerceItemvariants2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceLocations2
+## ListCommerceLocations
 
 List all locations
 
@@ -928,24 +928,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceLocations2Request req = new ListCommerceLocations2Request() {
+ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceLocations2Async(req);
+var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListCommerceLocations2Request](../../Models/Requests/ListCommerceLocations2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListCommerceLocationsRequest](../../Models/Requests/ListCommerceLocationsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListCommerceLocations2Response](../../Models/Requests/ListCommerceLocations2Response.md)**
+**[ListCommerceLocationsResponse](../../Models/Requests/ListCommerceLocationsResponse.md)**
 
 ### Errors
 
@@ -953,7 +953,7 @@ var res = await sdk.Commerce.ListCommerceLocations2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceReservations2
+## ListCommerceReservations
 
 List all reservations
 
@@ -968,24 +968,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceReservations2Request req = new ListCommerceReservations2Request() {
+ListCommerceReservationsRequest req = new ListCommerceReservationsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceReservations2Async(req);
+var res = await sdk.Commerce.ListCommerceReservationsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [ListCommerceReservations2Request](../../Models/Requests/ListCommerceReservations2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListCommerceReservationsRequest](../../Models/Requests/ListCommerceReservationsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[ListCommerceReservations2Response](../../Models/Requests/ListCommerceReservations2Response.md)**
+**[ListCommerceReservationsResponse](../../Models/Requests/ListCommerceReservationsResponse.md)**
 
 ### Errors
 
@@ -993,7 +993,7 @@ var res = await sdk.Commerce.ListCommerceReservations2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceReviews2
+## ListCommerceReviews
 
 List all reviews
 
@@ -1008,24 +1008,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceReviews2Request req = new ListCommerceReviews2Request() {
+ListCommerceReviewsRequest req = new ListCommerceReviewsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceReviews2Async(req);
+var res = await sdk.Commerce.ListCommerceReviewsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListCommerceReviews2Request](../../Models/Requests/ListCommerceReviews2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListCommerceReviewsRequest](../../Models/Requests/ListCommerceReviewsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListCommerceReviews2Response](../../Models/Requests/ListCommerceReviews2Response.md)**
+**[ListCommerceReviewsResponse](../../Models/Requests/ListCommerceReviewsResponse.md)**
 
 ### Errors
 
@@ -1033,7 +1033,7 @@ var res = await sdk.Commerce.ListCommerceReviews2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceSaleschannels2
+## ListCommerceSaleschannels
 
 List all saleschannels
 
@@ -1048,24 +1048,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceSaleschannels2Request req = new ListCommerceSaleschannels2Request() {
+ListCommerceSaleschannelsRequest req = new ListCommerceSaleschannelsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Commerce.ListCommerceSaleschannels2Async(req);
+var res = await sdk.Commerce.ListCommerceSaleschannelsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [ListCommerceSaleschannels2Request](../../Models/Requests/ListCommerceSaleschannels2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [ListCommerceSaleschannelsRequest](../../Models/Requests/ListCommerceSaleschannelsRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[ListCommerceSaleschannels2Response](../../Models/Requests/ListCommerceSaleschannels2Response.md)**
+**[ListCommerceSaleschannelsResponse](../../Models/Requests/ListCommerceSaleschannelsResponse.md)**
 
 ### Errors
 
@@ -1073,7 +1073,7 @@ var res = await sdk.Commerce.ListCommerceSaleschannels2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceCollection2
+## PatchCommerceCollection
 
 Update a collection
 
@@ -1088,7 +1088,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceCollection2Request req = new PatchCommerceCollection2Request() {
+PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         Name = "<value>",
     },
@@ -1096,20 +1096,20 @@ PatchCommerceCollection2Request req = new PatchCommerceCollection2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceCollection2Async(req);
+var res = await sdk.Commerce.PatchCommerceCollectionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [PatchCommerceCollection2Request](../../Models/Requests/PatchCommerceCollection2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchCommerceCollectionRequest](../../Models/Requests/PatchCommerceCollectionRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[PatchCommerceCollection2Response](../../Models/Requests/PatchCommerceCollection2Response.md)**
+**[PatchCommerceCollectionResponse](../../Models/Requests/PatchCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -1117,7 +1117,7 @@ var res = await sdk.Commerce.PatchCommerceCollection2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceInventory2
+## PatchCommerceInventory
 
 Update an inventory
 
@@ -1132,26 +1132,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceInventory2Request req = new PatchCommerceInventory2Request() {
+PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceInventory2Async(req);
+var res = await sdk.Commerce.PatchCommerceInventoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchCommerceInventory2Request](../../Models/Requests/PatchCommerceInventory2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchCommerceInventoryRequest](../../Models/Requests/PatchCommerceInventoryRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchCommerceInventory2Response](../../Models/Requests/PatchCommerceInventory2Response.md)**
+**[PatchCommerceInventoryResponse](../../Models/Requests/PatchCommerceInventoryResponse.md)**
 
 ### Errors
 
@@ -1159,7 +1159,7 @@ var res = await sdk.Commerce.PatchCommerceInventory2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceItem2
+## PatchCommerceItem
 
 Update an item
 
@@ -1174,26 +1174,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceItem2Request req = new PatchCommerceItem2Request() {
+PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
     CommerceItem = new CommerceItem() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceItem2Async(req);
+var res = await sdk.Commerce.PatchCommerceItemAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [PatchCommerceItem2Request](../../Models/Requests/PatchCommerceItem2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchCommerceItemRequest](../../Models/Requests/PatchCommerceItemRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchCommerceItem2Response](../../Models/Requests/PatchCommerceItem2Response.md)**
+**[PatchCommerceItemResponse](../../Models/Requests/PatchCommerceItemResponse.md)**
 
 ### Errors
 
@@ -1201,7 +1201,7 @@ var res = await sdk.Commerce.PatchCommerceItem2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceItemvariant2
+## PatchCommerceItemvariant
 
 Update an itemvariant
 
@@ -1216,26 +1216,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceItemvariant2Request req = new PatchCommerceItemvariant2Request() {
+PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
     CommerceItemvariant = new CommerceItemvariant() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceItemvariant2Async(req);
+var res = await sdk.Commerce.PatchCommerceItemvariantAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [PatchCommerceItemvariant2Request](../../Models/Requests/PatchCommerceItemvariant2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [PatchCommerceItemvariantRequest](../../Models/Requests/PatchCommerceItemvariantRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[PatchCommerceItemvariant2Response](../../Models/Requests/PatchCommerceItemvariant2Response.md)**
+**[PatchCommerceItemvariantResponse](../../Models/Requests/PatchCommerceItemvariantResponse.md)**
 
 ### Errors
 
@@ -1243,7 +1243,7 @@ var res = await sdk.Commerce.PatchCommerceItemvariant2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceLocation2
+## PatchCommerceLocation
 
 Update a location
 
@@ -1258,26 +1258,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceLocation2Request req = new PatchCommerceLocation2Request() {
+PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
     CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceLocation2Async(req);
+var res = await sdk.Commerce.PatchCommerceLocationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchCommerceLocation2Request](../../Models/Requests/PatchCommerceLocation2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchCommerceLocationRequest](../../Models/Requests/PatchCommerceLocationRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchCommerceLocation2Response](../../Models/Requests/PatchCommerceLocation2Response.md)**
+**[PatchCommerceLocationResponse](../../Models/Requests/PatchCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -1285,7 +1285,7 @@ var res = await sdk.Commerce.PatchCommerceLocation2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceReservation2
+## PatchCommerceReservation
 
 Update a reservation
 
@@ -1300,26 +1300,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceReservation2Request req = new PatchCommerceReservation2Request() {
+PatchCommerceReservationRequest req = new PatchCommerceReservationRequest() {
     CommerceReservation = new CommerceReservation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceReservation2Async(req);
+var res = await sdk.Commerce.PatchCommerceReservationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [PatchCommerceReservation2Request](../../Models/Requests/PatchCommerceReservation2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [PatchCommerceReservationRequest](../../Models/Requests/PatchCommerceReservationRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[PatchCommerceReservation2Response](../../Models/Requests/PatchCommerceReservation2Response.md)**
+**[PatchCommerceReservationResponse](../../Models/Requests/PatchCommerceReservationResponse.md)**
 
 ### Errors
 
@@ -1327,7 +1327,7 @@ var res = await sdk.Commerce.PatchCommerceReservation2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceReview2
+## PatchCommerceReview
 
 Update a review
 
@@ -1342,26 +1342,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceReview2Request req = new PatchCommerceReview2Request() {
+PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
     CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceReview2Async(req);
+var res = await sdk.Commerce.PatchCommerceReviewAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchCommerceReview2Request](../../Models/Requests/PatchCommerceReview2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchCommerceReviewRequest](../../Models/Requests/PatchCommerceReviewRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchCommerceReview2Response](../../Models/Requests/PatchCommerceReview2Response.md)**
+**[PatchCommerceReviewResponse](../../Models/Requests/PatchCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -1369,7 +1369,7 @@ var res = await sdk.Commerce.PatchCommerceReview2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceSaleschannel2
+## PatchCommerceSaleschannel
 
 Update a saleschannel
 
@@ -1384,26 +1384,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceSaleschannel2Request req = new PatchCommerceSaleschannel2Request() {
+PatchCommerceSaleschannelRequest req = new PatchCommerceSaleschannelRequest() {
     CommerceSaleschannel = new CommerceSaleschannel() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.PatchCommerceSaleschannel2Async(req);
+var res = await sdk.Commerce.PatchCommerceSaleschannelAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [PatchCommerceSaleschannel2Request](../../Models/Requests/PatchCommerceSaleschannel2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [PatchCommerceSaleschannelRequest](../../Models/Requests/PatchCommerceSaleschannelRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[PatchCommerceSaleschannel2Response](../../Models/Requests/PatchCommerceSaleschannel2Response.md)**
+**[PatchCommerceSaleschannelResponse](../../Models/Requests/PatchCommerceSaleschannelResponse.md)**
 
 ### Errors
 
@@ -1411,7 +1411,7 @@ var res = await sdk.Commerce.PatchCommerceSaleschannel2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceCollection2
+## RemoveCommerceCollection
 
 Remove a collection
 
@@ -1425,7 +1425,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceCollection2Async(
+var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1442,7 +1442,7 @@ var res = await sdk.Commerce.RemoveCommerceCollection2Async(
 
 ### Response
 
-**[RemoveCommerceCollection2Response](../../Models/Requests/RemoveCommerceCollection2Response.md)**
+**[RemoveCommerceCollectionResponse](../../Models/Requests/RemoveCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -1450,7 +1450,7 @@ var res = await sdk.Commerce.RemoveCommerceCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceInventory2
+## RemoveCommerceInventory
 
 Remove an inventory
 
@@ -1464,7 +1464,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceInventory2Async(
+var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1481,7 +1481,7 @@ var res = await sdk.Commerce.RemoveCommerceInventory2Async(
 
 ### Response
 
-**[RemoveCommerceInventory2Response](../../Models/Requests/RemoveCommerceInventory2Response.md)**
+**[RemoveCommerceInventoryResponse](../../Models/Requests/RemoveCommerceInventoryResponse.md)**
 
 ### Errors
 
@@ -1489,7 +1489,7 @@ var res = await sdk.Commerce.RemoveCommerceInventory2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceItem2
+## RemoveCommerceItem
 
 Remove an item
 
@@ -1503,7 +1503,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceItem2Async(
+var res = await sdk.Commerce.RemoveCommerceItemAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1520,7 +1520,7 @@ var res = await sdk.Commerce.RemoveCommerceItem2Async(
 
 ### Response
 
-**[RemoveCommerceItem2Response](../../Models/Requests/RemoveCommerceItem2Response.md)**
+**[RemoveCommerceItemResponse](../../Models/Requests/RemoveCommerceItemResponse.md)**
 
 ### Errors
 
@@ -1528,7 +1528,7 @@ var res = await sdk.Commerce.RemoveCommerceItem2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceItemvariant2
+## RemoveCommerceItemvariant
 
 Remove an itemvariant
 
@@ -1542,7 +1542,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceItemvariant2Async(
+var res = await sdk.Commerce.RemoveCommerceItemvariantAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1559,7 +1559,7 @@ var res = await sdk.Commerce.RemoveCommerceItemvariant2Async(
 
 ### Response
 
-**[RemoveCommerceItemvariant2Response](../../Models/Requests/RemoveCommerceItemvariant2Response.md)**
+**[RemoveCommerceItemvariantResponse](../../Models/Requests/RemoveCommerceItemvariantResponse.md)**
 
 ### Errors
 
@@ -1567,7 +1567,7 @@ var res = await sdk.Commerce.RemoveCommerceItemvariant2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceLocation2
+## RemoveCommerceLocation
 
 Remove a location
 
@@ -1581,7 +1581,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceLocation2Async(
+var res = await sdk.Commerce.RemoveCommerceLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1598,7 +1598,7 @@ var res = await sdk.Commerce.RemoveCommerceLocation2Async(
 
 ### Response
 
-**[RemoveCommerceLocation2Response](../../Models/Requests/RemoveCommerceLocation2Response.md)**
+**[RemoveCommerceLocationResponse](../../Models/Requests/RemoveCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -1606,7 +1606,7 @@ var res = await sdk.Commerce.RemoveCommerceLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceReservation2
+## RemoveCommerceReservation
 
 Remove a reservation
 
@@ -1620,7 +1620,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceReservation2Async(
+var res = await sdk.Commerce.RemoveCommerceReservationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1637,7 +1637,7 @@ var res = await sdk.Commerce.RemoveCommerceReservation2Async(
 
 ### Response
 
-**[RemoveCommerceReservation2Response](../../Models/Requests/RemoveCommerceReservation2Response.md)**
+**[RemoveCommerceReservationResponse](../../Models/Requests/RemoveCommerceReservationResponse.md)**
 
 ### Errors
 
@@ -1645,7 +1645,7 @@ var res = await sdk.Commerce.RemoveCommerceReservation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceReview2
+## RemoveCommerceReview
 
 Remove a review
 
@@ -1659,7 +1659,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceReview2Async(
+var res = await sdk.Commerce.RemoveCommerceReviewAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1676,7 +1676,7 @@ var res = await sdk.Commerce.RemoveCommerceReview2Async(
 
 ### Response
 
-**[RemoveCommerceReview2Response](../../Models/Requests/RemoveCommerceReview2Response.md)**
+**[RemoveCommerceReviewResponse](../../Models/Requests/RemoveCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -1684,7 +1684,7 @@ var res = await sdk.Commerce.RemoveCommerceReview2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceSaleschannel2
+## RemoveCommerceSaleschannel
 
 Remove a saleschannel
 
@@ -1698,7 +1698,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Commerce.RemoveCommerceSaleschannel2Async(
+var res = await sdk.Commerce.RemoveCommerceSaleschannelAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -1715,7 +1715,7 @@ var res = await sdk.Commerce.RemoveCommerceSaleschannel2Async(
 
 ### Response
 
-**[RemoveCommerceSaleschannel2Response](../../Models/Requests/RemoveCommerceSaleschannel2Response.md)**
+**[RemoveCommerceSaleschannelResponse](../../Models/Requests/RemoveCommerceSaleschannelResponse.md)**
 
 ### Errors
 
@@ -1723,7 +1723,7 @@ var res = await sdk.Commerce.RemoveCommerceSaleschannel2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceCollection2
+## UpdateCommerceCollection
 
 Update a collection
 
@@ -1738,7 +1738,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceCollection2Request req = new UpdateCommerceCollection2Request() {
+UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         Name = "<value>",
     },
@@ -1746,20 +1746,20 @@ UpdateCommerceCollection2Request req = new UpdateCommerceCollection2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceCollection2Async(req);
+var res = await sdk.Commerce.UpdateCommerceCollectionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [UpdateCommerceCollection2Request](../../Models/Requests/UpdateCommerceCollection2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [UpdateCommerceCollectionRequest](../../Models/Requests/UpdateCommerceCollectionRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[UpdateCommerceCollection2Response](../../Models/Requests/UpdateCommerceCollection2Response.md)**
+**[UpdateCommerceCollectionResponse](../../Models/Requests/UpdateCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -1767,7 +1767,7 @@ var res = await sdk.Commerce.UpdateCommerceCollection2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceInventory2
+## UpdateCommerceInventory
 
 Update an inventory
 
@@ -1782,26 +1782,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceInventory2Request req = new UpdateCommerceInventory2Request() {
+UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceInventory2Async(req);
+var res = await sdk.Commerce.UpdateCommerceInventoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateCommerceInventory2Request](../../Models/Requests/UpdateCommerceInventory2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateCommerceInventoryRequest](../../Models/Requests/UpdateCommerceInventoryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateCommerceInventory2Response](../../Models/Requests/UpdateCommerceInventory2Response.md)**
+**[UpdateCommerceInventoryResponse](../../Models/Requests/UpdateCommerceInventoryResponse.md)**
 
 ### Errors
 
@@ -1809,7 +1809,7 @@ var res = await sdk.Commerce.UpdateCommerceInventory2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceItem2
+## UpdateCommerceItem
 
 Update an item
 
@@ -1824,26 +1824,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceItem2Request req = new UpdateCommerceItem2Request() {
+UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
     CommerceItem = new CommerceItem() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceItem2Async(req);
+var res = await sdk.Commerce.UpdateCommerceItemAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [UpdateCommerceItem2Request](../../Models/Requests/UpdateCommerceItem2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateCommerceItemRequest](../../Models/Requests/UpdateCommerceItemRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateCommerceItem2Response](../../Models/Requests/UpdateCommerceItem2Response.md)**
+**[UpdateCommerceItemResponse](../../Models/Requests/UpdateCommerceItemResponse.md)**
 
 ### Errors
 
@@ -1851,7 +1851,7 @@ var res = await sdk.Commerce.UpdateCommerceItem2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceItemvariant2
+## UpdateCommerceItemvariant
 
 Update an itemvariant
 
@@ -1866,26 +1866,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceItemvariant2Request req = new UpdateCommerceItemvariant2Request() {
+UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
     CommerceItemvariant = new CommerceItemvariant() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceItemvariant2Async(req);
+var res = await sdk.Commerce.UpdateCommerceItemvariantAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [UpdateCommerceItemvariant2Request](../../Models/Requests/UpdateCommerceItemvariant2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [UpdateCommerceItemvariantRequest](../../Models/Requests/UpdateCommerceItemvariantRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[UpdateCommerceItemvariant2Response](../../Models/Requests/UpdateCommerceItemvariant2Response.md)**
+**[UpdateCommerceItemvariantResponse](../../Models/Requests/UpdateCommerceItemvariantResponse.md)**
 
 ### Errors
 
@@ -1893,7 +1893,7 @@ var res = await sdk.Commerce.UpdateCommerceItemvariant2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceLocation2
+## UpdateCommerceLocation
 
 Update a location
 
@@ -1908,26 +1908,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceLocation2Request req = new UpdateCommerceLocation2Request() {
+UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
     CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceLocation2Async(req);
+var res = await sdk.Commerce.UpdateCommerceLocationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateCommerceLocation2Request](../../Models/Requests/UpdateCommerceLocation2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateCommerceLocationRequest](../../Models/Requests/UpdateCommerceLocationRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateCommerceLocation2Response](../../Models/Requests/UpdateCommerceLocation2Response.md)**
+**[UpdateCommerceLocationResponse](../../Models/Requests/UpdateCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -1935,7 +1935,7 @@ var res = await sdk.Commerce.UpdateCommerceLocation2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceReservation2
+## UpdateCommerceReservation
 
 Update a reservation
 
@@ -1950,26 +1950,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceReservation2Request req = new UpdateCommerceReservation2Request() {
+UpdateCommerceReservationRequest req = new UpdateCommerceReservationRequest() {
     CommerceReservation = new CommerceReservation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceReservation2Async(req);
+var res = await sdk.Commerce.UpdateCommerceReservationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [UpdateCommerceReservation2Request](../../Models/Requests/UpdateCommerceReservation2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [UpdateCommerceReservationRequest](../../Models/Requests/UpdateCommerceReservationRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[UpdateCommerceReservation2Response](../../Models/Requests/UpdateCommerceReservation2Response.md)**
+**[UpdateCommerceReservationResponse](../../Models/Requests/UpdateCommerceReservationResponse.md)**
 
 ### Errors
 
@@ -1977,7 +1977,7 @@ var res = await sdk.Commerce.UpdateCommerceReservation2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceReview2
+## UpdateCommerceReview
 
 Update a review
 
@@ -1992,26 +1992,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceReview2Request req = new UpdateCommerceReview2Request() {
+UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
     CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceReview2Async(req);
+var res = await sdk.Commerce.UpdateCommerceReviewAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdateCommerceReview2Request](../../Models/Requests/UpdateCommerceReview2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateCommerceReviewRequest](../../Models/Requests/UpdateCommerceReviewRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateCommerceReview2Response](../../Models/Requests/UpdateCommerceReview2Response.md)**
+**[UpdateCommerceReviewResponse](../../Models/Requests/UpdateCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -2019,7 +2019,7 @@ var res = await sdk.Commerce.UpdateCommerceReview2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceSaleschannel2
+## UpdateCommerceSaleschannel
 
 Update a saleschannel
 
@@ -2034,26 +2034,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceSaleschannel2Request req = new UpdateCommerceSaleschannel2Request() {
+UpdateCommerceSaleschannelRequest req = new UpdateCommerceSaleschannelRequest() {
     CommerceSaleschannel = new CommerceSaleschannel() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Commerce.UpdateCommerceSaleschannel2Async(req);
+var res = await sdk.Commerce.UpdateCommerceSaleschannelAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `request`                                                                                         | [UpdateCommerceSaleschannel2Request](../../Models/Requests/UpdateCommerceSaleschannel2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [UpdateCommerceSaleschannelRequest](../../Models/Requests/UpdateCommerceSaleschannelRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[UpdateCommerceSaleschannel2Response](../../Models/Requests/UpdateCommerceSaleschannel2Response.md)**
+**[UpdateCommerceSaleschannelResponse](../../Models/Requests/UpdateCommerceSaleschannelResponse.md)**
 
 ### Errors
 

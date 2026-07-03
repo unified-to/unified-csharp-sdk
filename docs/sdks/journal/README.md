@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingJournal2](#createaccountingjournal2) - Create a journal
-* [GetAccountingJournal2](#getaccountingjournal2) - Retrieve a journal
-* [ListAccountingJournals2](#listaccountingjournals2) - List all journals
-* [PatchAccountingJournal2](#patchaccountingjournal2) - Update a journal
-* [RemoveAccountingJournal2](#removeaccountingjournal2) - Remove a journal
-* [UpdateAccountingJournal2](#updateaccountingjournal2) - Update a journal
+* [CreateAccountingJournal](#createaccountingjournal) - Create a journal
+* [GetAccountingJournal](#getaccountingjournal) - Retrieve a journal
+* [ListAccountingJournals](#listaccountingjournals) - List all journals
+* [PatchAccountingJournal](#patchaccountingjournal) - Update a journal
+* [RemoveAccountingJournal](#removeaccountingjournal) - Remove a journal
+* [UpdateAccountingJournal](#updateaccountingjournal) - Update a journal
 
-## CreateAccountingJournal2
+## CreateAccountingJournal
 
 Create a journal
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Journal.CreateAccountingJournal2Async(
+var res = await sdk.Journal.CreateAccountingJournalAsync(
     accountingJournal: new AccountingJournal() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Journal.CreateAccountingJournal2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingJournal`                                                                                                                              | [AccountingJournal](../../Models/Components/AccountingJournal.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingJournal2QueryParamFields](../../Models/Requests/CreateAccountingJournal2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingJournalQueryParamFields](../../Models/Requests/CreateAccountingJournalQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingJournal2Response](../../Models/Requests/CreateAccountingJournal2Response.md)**
+**[CreateAccountingJournalResponse](../../Models/Requests/CreateAccountingJournalResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Journal.CreateAccountingJournal2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingJournal2
+## GetAccountingJournal
 
 Retrieve a journal
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Journal.GetAccountingJournal2Async(
+var res = await sdk.Journal.GetAccountingJournalAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Journal.GetAccountingJournal2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Journal                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetAccountingJournal2QueryParamFields](../../Models/Requests/GetAccountingJournal2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingJournalQueryParamFields](../../Models/Requests/GetAccountingJournalQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingJournal2Response](../../Models/Requests/GetAccountingJournal2Response.md)**
+**[GetAccountingJournalResponse](../../Models/Requests/GetAccountingJournalResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Journal.GetAccountingJournal2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingJournals2
+## ListAccountingJournals
 
 List all journals
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingJournals2Request req = new ListAccountingJournals2Request() {
+ListAccountingJournalsRequest req = new ListAccountingJournalsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Journal.ListAccountingJournals2Async(req);
+var res = await sdk.Journal.ListAccountingJournalsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListAccountingJournals2Request](../../Models/Requests/ListAccountingJournals2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingJournalsRequest](../../Models/Requests/ListAccountingJournalsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListAccountingJournals2Response](../../Models/Requests/ListAccountingJournals2Response.md)**
+**[ListAccountingJournalsResponse](../../Models/Requests/ListAccountingJournalsResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Journal.ListAccountingJournals2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingJournal2
+## PatchAccountingJournal
 
 Update a journal
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingJournal2Request req = new PatchAccountingJournal2Request() {
+PatchAccountingJournalRequest req = new PatchAccountingJournalRequest() {
     AccountingJournal = new AccountingJournal() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Journal.PatchAccountingJournal2Async(req);
+var res = await sdk.Journal.PatchAccountingJournalAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchAccountingJournal2Request](../../Models/Requests/PatchAccountingJournal2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchAccountingJournalRequest](../../Models/Requests/PatchAccountingJournalRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchAccountingJournal2Response](../../Models/Requests/PatchAccountingJournal2Response.md)**
+**[PatchAccountingJournalResponse](../../Models/Requests/PatchAccountingJournalResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Journal.PatchAccountingJournal2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingJournal2
+## RemoveAccountingJournal
 
 Remove a journal
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Journal.RemoveAccountingJournal2Async(
+var res = await sdk.Journal.RemoveAccountingJournalAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Journal.RemoveAccountingJournal2Async(
 
 ### Response
 
-**[RemoveAccountingJournal2Response](../../Models/Requests/RemoveAccountingJournal2Response.md)**
+**[RemoveAccountingJournalResponse](../../Models/Requests/RemoveAccountingJournalResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Journal.RemoveAccountingJournal2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingJournal2
+## UpdateAccountingJournal
 
 Update a journal
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingJournal2Request req = new UpdateAccountingJournal2Request() {
+UpdateAccountingJournalRequest req = new UpdateAccountingJournalRequest() {
     AccountingJournal = new AccountingJournal() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Journal.UpdateAccountingJournal2Async(req);
+var res = await sdk.Journal.UpdateAccountingJournalAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateAccountingJournal2Request](../../Models/Requests/UpdateAccountingJournal2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateAccountingJournalRequest](../../Models/Requests/UpdateAccountingJournalRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateAccountingJournal2Response](../../Models/Requests/UpdateAccountingJournal2Response.md)**
+**[UpdateAccountingJournalResponse](../../Models/Requests/UpdateAccountingJournalResponse.md)**
 
 ### Errors
 

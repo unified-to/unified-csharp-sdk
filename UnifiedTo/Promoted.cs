@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a promoted
         /// </summary>
-        Task<GetAdsPromoted2Response> GetAdsPromoted2Async(string connectionId, string id, List<GetAdsPromoted2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAdsPromotedResponse> GetAdsPromotedAsync(string connectionId, string id, List<GetAdsPromotedQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all promoteds
         /// </summary>
-        Task<ListAdsPromoteds2Response> ListAdsPromoteds2Async(ListAdsPromoteds2Request request);
+        Task<ListAdsPromotedsResponse> ListAdsPromotedsAsync(ListAdsPromotedsRequest request);
     }
 
     public class Promoted: IPromoted
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetAdsPromoted2Response> GetAdsPromoted2Async(string connectionId, string id, List<GetAdsPromoted2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAdsPromotedResponse> GetAdsPromotedAsync(string connectionId, string id, List<GetAdsPromotedQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAdsPromoted2Request()
+            var request = new GetAdsPromotedRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsPromoted2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsPromoted", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsPromoted>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAdsPromoted2Response()
+                    var response = new GetAdsPromotedResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAdsPromoteds2Response> ListAdsPromoteds2Async(ListAdsPromoteds2Request request)
+        public async Task<ListAdsPromotedsResponse> ListAdsPromotedsAsync(ListAdsPromotedsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/promoted", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsPromoteds2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsPromoteds", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AdsPromoted>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAdsPromoteds2Response()
+                    var response = new ListAdsPromotedsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAnalyticsProperty2](#createanalyticsproperty2) - Create a property
-* [GetAnalyticsProperty2](#getanalyticsproperty2) - Retrieve a property
-* [ListAnalyticsProperties2](#listanalyticsproperties2) - List all properties
-* [PatchAnalyticsProperty2](#patchanalyticsproperty2) - Update a property
-* [RemoveAnalyticsProperty2](#removeanalyticsproperty2) - Remove a property
-* [UpdateAnalyticsProperty2](#updateanalyticsproperty2) - Update a property
+* [CreateAnalyticsProperty](#createanalyticsproperty) - Create a property
+* [GetAnalyticsProperty](#getanalyticsproperty) - Retrieve a property
+* [ListAnalyticsProperties](#listanalyticsproperties) - List all properties
+* [PatchAnalyticsProperty](#patchanalyticsproperty) - Update a property
+* [RemoveAnalyticsProperty](#removeanalyticsproperty) - Remove a property
+* [UpdateAnalyticsProperty](#updateanalyticsproperty) - Update a property
 
-## CreateAnalyticsProperty2
+## CreateAnalyticsProperty
 
 Create a property
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Property.CreateAnalyticsProperty2Async(
+var res = await sdk.Property.CreateAnalyticsPropertyAsync(
     analyticsProperty: new AnalyticsProperty() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Property.CreateAnalyticsProperty2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AnalyticsProperty`                                                                                                                              | [AnalyticsProperty](../../Models/Components/AnalyticsProperty.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAnalyticsProperty2QueryParamFields](../../Models/Requests/CreateAnalyticsProperty2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAnalyticsPropertyQueryParamFields](../../Models/Requests/CreateAnalyticsPropertyQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAnalyticsProperty2Response](../../Models/Requests/CreateAnalyticsProperty2Response.md)**
+**[CreateAnalyticsPropertyResponse](../../Models/Requests/CreateAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Property.CreateAnalyticsProperty2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAnalyticsProperty2
+## GetAnalyticsProperty
 
 Retrieve a property
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Property.GetAnalyticsProperty2Async(
+var res = await sdk.Property.GetAnalyticsPropertyAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Property.GetAnalyticsProperty2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Property                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAnalyticsProperty2QueryParamFields](../../Models/Requests/GetAnalyticsProperty2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAnalyticsPropertyQueryParamFields](../../Models/Requests/GetAnalyticsPropertyQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAnalyticsProperty2Response](../../Models/Requests/GetAnalyticsProperty2Response.md)**
+**[GetAnalyticsPropertyResponse](../../Models/Requests/GetAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Property.GetAnalyticsProperty2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAnalyticsProperties2
+## ListAnalyticsProperties
 
 List all properties
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAnalyticsProperties2Request req = new ListAnalyticsProperties2Request() {
+ListAnalyticsPropertiesRequest req = new ListAnalyticsPropertiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Property.ListAnalyticsProperties2Async(req);
+var res = await sdk.Property.ListAnalyticsPropertiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [ListAnalyticsProperties2Request](../../Models/Requests/ListAnalyticsProperties2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListAnalyticsPropertiesRequest](../../Models/Requests/ListAnalyticsPropertiesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[ListAnalyticsProperties2Response](../../Models/Requests/ListAnalyticsProperties2Response.md)**
+**[ListAnalyticsPropertiesResponse](../../Models/Requests/ListAnalyticsPropertiesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Property.ListAnalyticsProperties2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAnalyticsProperty2
+## PatchAnalyticsProperty
 
 Update a property
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAnalyticsProperty2Request req = new PatchAnalyticsProperty2Request() {
+PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Property.PatchAnalyticsProperty2Async(req);
+var res = await sdk.Property.PatchAnalyticsPropertyAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchAnalyticsProperty2Request](../../Models/Requests/PatchAnalyticsProperty2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchAnalyticsPropertyRequest](../../Models/Requests/PatchAnalyticsPropertyRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchAnalyticsProperty2Response](../../Models/Requests/PatchAnalyticsProperty2Response.md)**
+**[PatchAnalyticsPropertyResponse](../../Models/Requests/PatchAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Property.PatchAnalyticsProperty2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAnalyticsProperty2
+## RemoveAnalyticsProperty
 
 Remove a property
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Property.RemoveAnalyticsProperty2Async(
+var res = await sdk.Property.RemoveAnalyticsPropertyAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Property.RemoveAnalyticsProperty2Async(
 
 ### Response
 
-**[RemoveAnalyticsProperty2Response](../../Models/Requests/RemoveAnalyticsProperty2Response.md)**
+**[RemoveAnalyticsPropertyResponse](../../Models/Requests/RemoveAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Property.RemoveAnalyticsProperty2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAnalyticsProperty2
+## UpdateAnalyticsProperty
 
 Update a property
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAnalyticsProperty2Request req = new UpdateAnalyticsProperty2Request() {
+UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Property.UpdateAnalyticsProperty2Async(req);
+var res = await sdk.Property.UpdateAnalyticsPropertyAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateAnalyticsProperty2Request](../../Models/Requests/UpdateAnalyticsProperty2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateAnalyticsPropertyRequest](../../Models/Requests/UpdateAnalyticsPropertyRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateAnalyticsProperty2Response](../../Models/Requests/UpdateAnalyticsProperty2Response.md)**
+**[UpdateAnalyticsPropertyResponse](../../Models/Requests/UpdateAnalyticsPropertyResponse.md)**
 
 ### Errors
 

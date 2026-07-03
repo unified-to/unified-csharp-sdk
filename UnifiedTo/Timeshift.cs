@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a timeshift
         /// </summary>
-        Task<CreateHrisTimeshift2Response> CreateHrisTimeshift2Async(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshift2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshiftQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a timeshift
         /// </summary>
-        Task<GetHrisTimeshift2Response> GetHrisTimeshift2Async(string connectionId, string id, List<GetHrisTimeshift2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<GetHrisTimeshiftQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all timeshifts
         /// </summary>
-        Task<ListHrisTimeshifts2Response> ListHrisTimeshifts2Async(ListHrisTimeshifts2Request request);
+        Task<ListHrisTimeshiftsResponse> ListHrisTimeshiftsAsync(ListHrisTimeshiftsRequest request);
 
         /// <summary>
         /// Update a timeshift
         /// </summary>
-        Task<PatchHrisTimeshift2Response> PatchHrisTimeshift2Async(PatchHrisTimeshift2Request request);
+        Task<PatchHrisTimeshiftResponse> PatchHrisTimeshiftAsync(PatchHrisTimeshiftRequest request);
 
         /// <summary>
         /// Remove a timeshift
         /// </summary>
-        Task<RemoveHrisTimeshift2Response> RemoveHrisTimeshift2Async(string connectionId, string id);
+        Task<RemoveHrisTimeshiftResponse> RemoveHrisTimeshiftAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a timeshift
         /// </summary>
-        Task<UpdateHrisTimeshift2Response> UpdateHrisTimeshift2Async(UpdateHrisTimeshift2Request request);
+        Task<UpdateHrisTimeshiftResponse> UpdateHrisTimeshiftAsync(UpdateHrisTimeshiftRequest request);
     }
 
     public class Timeshift: ITimeshift
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisTimeshift2Response> CreateHrisTimeshift2Async(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshift2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshiftQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisTimeshift2Request()
+            var request = new CreateHrisTimeshiftRequest()
             {
                 HrisTimeshift = hrisTimeshift,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisTimeshift2Response()
+                    var response = new CreateHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisTimeshift2Response> GetHrisTimeshift2Async(string connectionId, string id, List<GetHrisTimeshift2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<GetHrisTimeshiftQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisTimeshift2Request()
+            var request = new GetHrisTimeshiftRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisTimeshift2Response()
+                    var response = new GetHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisTimeshifts2Response> ListHrisTimeshifts2Async(ListHrisTimeshifts2Request request)
+        public async Task<ListHrisTimeshiftsResponse> ListHrisTimeshiftsAsync(ListHrisTimeshiftsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeshift", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeshifts2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeshifts", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisTimeshift>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisTimeshifts2Response()
+                    var response = new ListHrisTimeshiftsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisTimeshift2Response> PatchHrisTimeshift2Async(PatchHrisTimeshift2Request request)
+        public async Task<PatchHrisTimeshiftResponse> PatchHrisTimeshiftAsync(PatchHrisTimeshiftRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeshift/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisTimeshift2Response()
+                    var response = new PatchHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisTimeshift2Response> RemoveHrisTimeshift2Async(string connectionId, string id)
+        public async Task<RemoveHrisTimeshiftResponse> RemoveHrisTimeshiftAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisTimeshift2Request()
+            var request = new RemoveHrisTimeshiftRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisTimeshift2Response()
+                return new RemoveHrisTimeshiftResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisTimeshift2Response()
+                return new RemoveHrisTimeshiftResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisTimeshift2Response> UpdateHrisTimeshift2Async(UpdateHrisTimeshift2Request request)
+        public async Task<UpdateHrisTimeshiftResponse> UpdateHrisTimeshiftAsync(UpdateHrisTimeshiftRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeshift/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisTimeshift2Response()
+                    var response = new UpdateHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

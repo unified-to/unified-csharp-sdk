@@ -5,13 +5,13 @@
 
 ### Available Operations
 
-* [GetAccountingReport2](#getaccountingreport2) - Retrieve a report
-* [ListAccountingReports2](#listaccountingreports2) - List all reports
-* [ListAdsReports2](#listadsreports2) - List all reports
-* [ListAnalyticsReports2](#listanalyticsreports2) - List all reports
-* [ListMartechReports2](#listmartechreports2) - List all reports
+* [GetAccountingReport](#getaccountingreport) - Retrieve a report
+* [ListAccountingReports](#listaccountingreports) - List all reports
+* [ListAdsReports](#listadsreports) - List all reports
+* [ListAnalyticsReports](#listanalyticsreports) - List all reports
+* [ListMartechReports](#listmartechreports) - List all reports
 
-## GetAccountingReport2
+## GetAccountingReport
 
 Retrieve a report
 
@@ -25,7 +25,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Report.GetAccountingReport2Async(
+var res = await sdk.Report.GetAccountingReportAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -39,12 +39,12 @@ var res = await sdk.Report.GetAccountingReport2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Report                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetAccountingReport2QueryParamFields](../../Models/Requests/GetAccountingReport2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingReportQueryParamFields](../../Models/Requests/GetAccountingReportQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingReport2Response](../../Models/Requests/GetAccountingReport2Response.md)**
+**[GetAccountingReportResponse](../../Models/Requests/GetAccountingReportResponse.md)**
 
 ### Errors
 
@@ -52,7 +52,7 @@ var res = await sdk.Report.GetAccountingReport2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingReports2
+## ListAccountingReports
 
 List all reports
 
@@ -67,91 +67,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingReports2Request req = new ListAccountingReports2Request() {
+ListAccountingReportsRequest req = new ListAccountingReportsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Report.ListAccountingReports2Async(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListAccountingReports2Request](../../Models/Requests/ListAccountingReports2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
-
-### Response
-
-**[ListAccountingReports2Response](../../Models/Requests/ListAccountingReports2Response.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListAdsReports2
-
-List all reports
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListAdsReports2Request req = new ListAdsReports2Request() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Report.ListAdsReports2Async(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListAdsReports2Request](../../Models/Requests/ListAdsReports2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
-
-### Response
-
-**[ListAdsReports2Response](../../Models/Requests/ListAdsReports2Response.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListAnalyticsReports2
-
-List all reports
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListAnalyticsReports2Request req = new ListAnalyticsReports2Request() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Report.ListAnalyticsReports2Async(req);
+var res = await sdk.Report.ListAccountingReportsAsync(req);
 
 // handle response
 ```
@@ -160,11 +80,11 @@ var res = await sdk.Report.ListAnalyticsReports2Async(req);
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListAnalyticsReports2Request](../../Models/Requests/ListAnalyticsReports2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| `request`                                                                             | [ListAccountingReportsRequest](../../Models/Requests/ListAccountingReportsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListAnalyticsReports2Response](../../Models/Requests/ListAnalyticsReports2Response.md)**
+**[ListAccountingReportsResponse](../../Models/Requests/ListAccountingReportsResponse.md)**
 
 ### Errors
 
@@ -172,7 +92,7 @@ var res = await sdk.Report.ListAnalyticsReports2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMartechReports2
+## ListAdsReports
 
 List all reports
 
@@ -187,24 +107,104 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMartechReports2Request req = new ListMartechReports2Request() {
+ListAdsReportsRequest req = new ListAdsReportsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Report.ListMartechReports2Async(req);
+var res = await sdk.Report.ListAdsReportsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListMartechReports2Request](../../Models/Requests/ListMartechReports2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [ListAdsReportsRequest](../../Models/Requests/ListAdsReportsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 
-**[ListMartechReports2Response](../../Models/Requests/ListMartechReports2Response.md)**
+**[ListAdsReportsResponse](../../Models/Requests/ListAdsReportsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListAnalyticsReports
+
+List all reports
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAnalyticsReportsRequest req = new ListAnalyticsReportsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Report.ListAnalyticsReportsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListAnalyticsReportsRequest](../../Models/Requests/ListAnalyticsReportsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[ListAnalyticsReportsResponse](../../Models/Requests/ListAnalyticsReportsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListMartechReports
+
+List all reports
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListMartechReportsRequest req = new ListMartechReportsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Report.ListMartechReportsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListMartechReportsRequest](../../Models/Requests/ListMartechReportsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[ListMartechReportsResponse](../../Models/Requests/ListMartechReportsResponse.md)**
 
 ### Errors
 

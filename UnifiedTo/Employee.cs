@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create an employee
         /// </summary>
-        Task<CreateHrisEmployee2Response> CreateHrisEmployee2Async(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployee2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployeeQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an employee
         /// </summary>
-        Task<GetHrisEmployee2Response> GetHrisEmployee2Async(string connectionId, string id, List<GetHrisEmployee2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<GetHrisEmployeeQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all employees
         /// </summary>
-        Task<ListHrisEmployees2Response> ListHrisEmployees2Async(ListHrisEmployees2Request request);
+        Task<ListHrisEmployeesResponse> ListHrisEmployeesAsync(ListHrisEmployeesRequest request);
 
         /// <summary>
         /// Update an employee
         /// </summary>
-        Task<PatchHrisEmployee2Response> PatchHrisEmployee2Async(PatchHrisEmployee2Request request);
+        Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(PatchHrisEmployeeRequest request);
 
         /// <summary>
         /// Remove an employee
         /// </summary>
-        Task<RemoveHrisEmployee2Response> RemoveHrisEmployee2Async(string connectionId, string id);
+        Task<RemoveHrisEmployeeResponse> RemoveHrisEmployeeAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an employee
         /// </summary>
-        Task<UpdateHrisEmployee2Response> UpdateHrisEmployee2Async(UpdateHrisEmployee2Request request);
+        Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(UpdateHrisEmployeeRequest request);
     }
 
     public class Employee: IEmployee
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisEmployee2Response> CreateHrisEmployee2Async(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployee2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployeeQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisEmployee2Request()
+            var request = new CreateHrisEmployeeRequest()
             {
                 HrisEmployee = hrisEmployee,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisEmployee2Response()
+                    var response = new CreateHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisEmployee2Response> GetHrisEmployee2Async(string connectionId, string id, List<GetHrisEmployee2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<GetHrisEmployeeQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisEmployee2Request()
+            var request = new GetHrisEmployeeRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisEmployee2Response()
+                    var response = new GetHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisEmployees2Response> ListHrisEmployees2Async(ListHrisEmployees2Request request)
+        public async Task<ListHrisEmployeesResponse> ListHrisEmployeesAsync(ListHrisEmployeesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisEmployees2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisEmployees", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisEmployee>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisEmployees2Response()
+                    var response = new ListHrisEmployeesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisEmployee2Response> PatchHrisEmployee2Async(PatchHrisEmployee2Request request)
+        public async Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(PatchHrisEmployeeRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisEmployee2Response()
+                    var response = new PatchHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisEmployee2Response> RemoveHrisEmployee2Async(string connectionId, string id)
+        public async Task<RemoveHrisEmployeeResponse> RemoveHrisEmployeeAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisEmployee2Request()
+            var request = new RemoveHrisEmployeeRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisEmployee2Response()
+                return new RemoveHrisEmployeeResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisEmployee2Response()
+                return new RemoveHrisEmployeeResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisEmployee2Response> UpdateHrisEmployee2Async(UpdateHrisEmployee2Request request)
+        public async Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(UpdateHrisEmployeeRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisEmployee2Response()
+                    var response = new UpdateHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

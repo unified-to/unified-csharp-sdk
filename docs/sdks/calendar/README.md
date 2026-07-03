@@ -5,35 +5,35 @@
 
 ### Available Operations
 
-* [CreateCalendarCalendar2](#createcalendarcalendar2) - Create a calendar
-* [CreateCalendarEvent2](#createcalendarevent2) - Create an event
-* [CreateCalendarLink2](#createcalendarlink2) - Create a link
-* [CreateCalendarWebinar2](#createcalendarwebinar2) - Create a webinar
-* [GetCalendarCalendar2](#getcalendarcalendar2) - Retrieve a calendar
-* [GetCalendarEvent2](#getcalendarevent2) - Retrieve an event
-* [GetCalendarLink2](#getcalendarlink2) - Retrieve a link
-* [GetCalendarRecording2](#getcalendarrecording2) - Retrieve a recording
-* [GetCalendarWebinar2](#getcalendarwebinar2) - Retrieve a webinar
-* [ListCalendarBusies2](#listcalendarbusies2) - List all busies
-* [ListCalendarCalendars2](#listcalendarcalendars2) - List all calendars
-* [ListCalendarEvents2](#listcalendarevents2) - List all events
-* [ListCalendarLinks2](#listcalendarlinks2) - List all links
-* [ListCalendarRecordings2](#listcalendarrecordings2) - List all recordings
-* [ListCalendarWebinars2](#listcalendarwebinars2) - List all webinars
-* [PatchCalendarCalendar2](#patchcalendarcalendar2) - Update a calendar
-* [PatchCalendarEvent2](#patchcalendarevent2) - Update an event
-* [PatchCalendarLink2](#patchcalendarlink2) - Update a link
-* [PatchCalendarWebinar2](#patchcalendarwebinar2) - Update a webinar
-* [RemoveCalendarCalendar2](#removecalendarcalendar2) - Remove a calendar
-* [RemoveCalendarEvent2](#removecalendarevent2) - Remove an event
-* [RemoveCalendarLink2](#removecalendarlink2) - Remove a link
-* [RemoveCalendarWebinar2](#removecalendarwebinar2) - Remove a webinar
-* [UpdateCalendarCalendar2](#updatecalendarcalendar2) - Update a calendar
-* [UpdateCalendarEvent2](#updatecalendarevent2) - Update an event
-* [UpdateCalendarLink2](#updatecalendarlink2) - Update a link
-* [UpdateCalendarWebinar2](#updatecalendarwebinar2) - Update a webinar
+* [CreateCalendarCalendar](#createcalendarcalendar) - Create a calendar
+* [CreateCalendarEvent](#createcalendarevent) - Create an event
+* [CreateCalendarLink](#createcalendarlink) - Create a link
+* [CreateCalendarWebinar](#createcalendarwebinar) - Create a webinar
+* [GetCalendarCalendar](#getcalendarcalendar) - Retrieve a calendar
+* [GetCalendarEvent](#getcalendarevent) - Retrieve an event
+* [GetCalendarLink](#getcalendarlink) - Retrieve a link
+* [GetCalendarRecording](#getcalendarrecording) - Retrieve a recording
+* [GetCalendarWebinar](#getcalendarwebinar) - Retrieve a webinar
+* [ListCalendarBusies](#listcalendarbusies) - List all busies
+* [ListCalendarCalendars](#listcalendarcalendars) - List all calendars
+* [ListCalendarEvents](#listcalendarevents) - List all events
+* [ListCalendarLinks](#listcalendarlinks) - List all links
+* [ListCalendarRecordings](#listcalendarrecordings) - List all recordings
+* [ListCalendarWebinars](#listcalendarwebinars) - List all webinars
+* [PatchCalendarCalendar](#patchcalendarcalendar) - Update a calendar
+* [PatchCalendarEvent](#patchcalendarevent) - Update an event
+* [PatchCalendarLink](#patchcalendarlink) - Update a link
+* [PatchCalendarWebinar](#patchcalendarwebinar) - Update a webinar
+* [RemoveCalendarCalendar](#removecalendarcalendar) - Remove a calendar
+* [RemoveCalendarEvent](#removecalendarevent) - Remove an event
+* [RemoveCalendarLink](#removecalendarlink) - Remove a link
+* [RemoveCalendarWebinar](#removecalendarwebinar) - Remove a webinar
+* [UpdateCalendarCalendar](#updatecalendarcalendar) - Update a calendar
+* [UpdateCalendarEvent](#updatecalendarevent) - Update an event
+* [UpdateCalendarLink](#updatecalendarlink) - Update a link
+* [UpdateCalendarWebinar](#updatecalendarwebinar) - Update a webinar
 
-## CreateCalendarCalendar2
+## CreateCalendarCalendar
 
 Create a calendar
 
@@ -47,7 +47,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.CreateCalendarCalendar2Async(
+var res = await sdk.Calendar.CreateCalendarCalendarAsync(
     calendarCalendar: new CalendarCalendar() {},
     connectionId: "<id>"
 );
@@ -61,12 +61,12 @@ var res = await sdk.Calendar.CreateCalendarCalendar2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CalendarCalendar`                                                                                                                               | [CalendarCalendar](../../Models/Components/CalendarCalendar.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCalendarCalendar2QueryParamFields](../../Models/Requests/CreateCalendarCalendar2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCalendarCalendarQueryParamFields](../../Models/Requests/CreateCalendarCalendarQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCalendarCalendar2Response](../../Models/Requests/CreateCalendarCalendar2Response.md)**
+**[CreateCalendarCalendarResponse](../../Models/Requests/CreateCalendarCalendarResponse.md)**
 
 ### Errors
 
@@ -74,7 +74,7 @@ var res = await sdk.Calendar.CreateCalendarCalendar2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCalendarEvent2
+## CreateCalendarEvent
 
 Create an event
 
@@ -88,7 +88,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.CreateCalendarEvent2Async(
+var res = await sdk.Calendar.CreateCalendarEventAsync(
     calendarEvent: new CalendarEvent() {},
     connectionId: "<id>"
 );
@@ -102,12 +102,12 @@ var res = await sdk.Calendar.CreateCalendarEvent2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CalendarEvent`                                                                                                                                  | [CalendarEvent](../../Models/Components/CalendarEvent.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCalendarEvent2QueryParamFields](../../Models/Requests/CreateCalendarEvent2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCalendarEventQueryParamFields](../../Models/Requests/CreateCalendarEventQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCalendarEvent2Response](../../Models/Requests/CreateCalendarEvent2Response.md)**
+**[CreateCalendarEventResponse](../../Models/Requests/CreateCalendarEventResponse.md)**
 
 ### Errors
 
@@ -115,7 +115,7 @@ var res = await sdk.Calendar.CreateCalendarEvent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCalendarLink2
+## CreateCalendarLink
 
 Create a link
 
@@ -129,9 +129,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.CreateCalendarLink2Async(
+var res = await sdk.Calendar.CreateCalendarLinkAsync(
     calendarLink: new CalendarLink() {
-        Url = "https://prestigious-fort.name/",
+        Url = "https://misguided-thongs.info",
     },
     connectionId: "<id>"
 );
@@ -145,12 +145,12 @@ var res = await sdk.Calendar.CreateCalendarLink2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CalendarLink`                                                                                                                                   | [CalendarLink](../../Models/Components/CalendarLink.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCalendarLink2QueryParamFields](../../Models/Requests/CreateCalendarLink2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCalendarLinkQueryParamFields](../../Models/Requests/CreateCalendarLinkQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCalendarLink2Response](../../Models/Requests/CreateCalendarLink2Response.md)**
+**[CreateCalendarLinkResponse](../../Models/Requests/CreateCalendarLinkResponse.md)**
 
 ### Errors
 
@@ -158,7 +158,7 @@ var res = await sdk.Calendar.CreateCalendarLink2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateCalendarWebinar2
+## CreateCalendarWebinar
 
 Create a webinar
 
@@ -172,7 +172,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.CreateCalendarWebinar2Async(
+var res = await sdk.Calendar.CreateCalendarWebinarAsync(
     calendarWebinar: new CalendarWebinar() {},
     connectionId: "<id>"
 );
@@ -186,12 +186,12 @@ var res = await sdk.Calendar.CreateCalendarWebinar2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CalendarWebinar`                                                                                                                                | [CalendarWebinar](../../Models/Components/CalendarWebinar.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCalendarWebinar2QueryParamFields](../../Models/Requests/CreateCalendarWebinar2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCalendarWebinarQueryParamFields](../../Models/Requests/CreateCalendarWebinarQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCalendarWebinar2Response](../../Models/Requests/CreateCalendarWebinar2Response.md)**
+**[CreateCalendarWebinarResponse](../../Models/Requests/CreateCalendarWebinarResponse.md)**
 
 ### Errors
 
@@ -199,7 +199,7 @@ var res = await sdk.Calendar.CreateCalendarWebinar2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCalendarCalendar2
+## GetCalendarCalendar
 
 Retrieve a calendar
 
@@ -213,7 +213,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.GetCalendarCalendar2Async(
+var res = await sdk.Calendar.GetCalendarCalendarAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -227,12 +227,12 @@ var res = await sdk.Calendar.GetCalendarCalendar2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Calendar                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetCalendarCalendar2QueryParamFields](../../Models/Requests/GetCalendarCalendar2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCalendarCalendarQueryParamFields](../../Models/Requests/GetCalendarCalendarQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCalendarCalendar2Response](../../Models/Requests/GetCalendarCalendar2Response.md)**
+**[GetCalendarCalendarResponse](../../Models/Requests/GetCalendarCalendarResponse.md)**
 
 ### Errors
 
@@ -240,7 +240,7 @@ var res = await sdk.Calendar.GetCalendarCalendar2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCalendarEvent2
+## GetCalendarEvent
 
 Retrieve an event
 
@@ -254,7 +254,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.GetCalendarEvent2Async(
+var res = await sdk.Calendar.GetCalendarEventAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -268,12 +268,12 @@ var res = await sdk.Calendar.GetCalendarEvent2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Event                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetCalendarEvent2QueryParamFields](../../Models/Requests/GetCalendarEvent2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCalendarEventQueryParamFields](../../Models/Requests/GetCalendarEventQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCalendarEvent2Response](../../Models/Requests/GetCalendarEvent2Response.md)**
+**[GetCalendarEventResponse](../../Models/Requests/GetCalendarEventResponse.md)**
 
 ### Errors
 
@@ -281,7 +281,7 @@ var res = await sdk.Calendar.GetCalendarEvent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCalendarLink2
+## GetCalendarLink
 
 Retrieve a link
 
@@ -295,7 +295,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.GetCalendarLink2Async(
+var res = await sdk.Calendar.GetCalendarLinkAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -309,12 +309,12 @@ var res = await sdk.Calendar.GetCalendarLink2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Link                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetCalendarLink2QueryParamFields](../../Models/Requests/GetCalendarLink2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCalendarLinkQueryParamFields](../../Models/Requests/GetCalendarLinkQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCalendarLink2Response](../../Models/Requests/GetCalendarLink2Response.md)**
+**[GetCalendarLinkResponse](../../Models/Requests/GetCalendarLinkResponse.md)**
 
 ### Errors
 
@@ -322,7 +322,7 @@ var res = await sdk.Calendar.GetCalendarLink2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCalendarRecording2
+## GetCalendarRecording
 
 Retrieve a recording
 
@@ -336,7 +336,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.GetCalendarRecording2Async(
+var res = await sdk.Calendar.GetCalendarRecordingAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -350,12 +350,12 @@ var res = await sdk.Calendar.GetCalendarRecording2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Recording                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetCalendarRecording2QueryParamFields](../../Models/Requests/GetCalendarRecording2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCalendarRecordingQueryParamFields](../../Models/Requests/GetCalendarRecordingQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCalendarRecording2Response](../../Models/Requests/GetCalendarRecording2Response.md)**
+**[GetCalendarRecordingResponse](../../Models/Requests/GetCalendarRecordingResponse.md)**
 
 ### Errors
 
@@ -363,7 +363,7 @@ var res = await sdk.Calendar.GetCalendarRecording2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCalendarWebinar2
+## GetCalendarWebinar
 
 Retrieve a webinar
 
@@ -377,7 +377,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.GetCalendarWebinar2Async(
+var res = await sdk.Calendar.GetCalendarWebinarAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -391,12 +391,12 @@ var res = await sdk.Calendar.GetCalendarWebinar2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Webinar                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetCalendarWebinar2QueryParamFields](../../Models/Requests/GetCalendarWebinar2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCalendarWebinarQueryParamFields](../../Models/Requests/GetCalendarWebinarQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCalendarWebinar2Response](../../Models/Requests/GetCalendarWebinar2Response.md)**
+**[GetCalendarWebinarResponse](../../Models/Requests/GetCalendarWebinarResponse.md)**
 
 ### Errors
 
@@ -404,7 +404,7 @@ var res = await sdk.Calendar.GetCalendarWebinar2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCalendarBusies2
+## ListCalendarBusies
 
 List all busies
 
@@ -419,24 +419,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarBusies2Request req = new ListCalendarBusies2Request() {
+ListCalendarBusiesRequest req = new ListCalendarBusiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Calendar.ListCalendarBusies2Async(req);
+var res = await sdk.Calendar.ListCalendarBusiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListCalendarBusies2Request](../../Models/Requests/ListCalendarBusies2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListCalendarBusiesRequest](../../Models/Requests/ListCalendarBusiesRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListCalendarBusies2Response](../../Models/Requests/ListCalendarBusies2Response.md)**
+**[ListCalendarBusiesResponse](../../Models/Requests/ListCalendarBusiesResponse.md)**
 
 ### Errors
 
@@ -444,7 +444,7 @@ var res = await sdk.Calendar.ListCalendarBusies2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCalendarCalendars2
+## ListCalendarCalendars
 
 List all calendars
 
@@ -459,24 +459,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarCalendars2Request req = new ListCalendarCalendars2Request() {
+ListCalendarCalendarsRequest req = new ListCalendarCalendarsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Calendar.ListCalendarCalendars2Async(req);
+var res = await sdk.Calendar.ListCalendarCalendarsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListCalendarCalendars2Request](../../Models/Requests/ListCalendarCalendars2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListCalendarCalendarsRequest](../../Models/Requests/ListCalendarCalendarsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListCalendarCalendars2Response](../../Models/Requests/ListCalendarCalendars2Response.md)**
+**[ListCalendarCalendarsResponse](../../Models/Requests/ListCalendarCalendarsResponse.md)**
 
 ### Errors
 
@@ -484,7 +484,7 @@ var res = await sdk.Calendar.ListCalendarCalendars2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCalendarEvents2
+## ListCalendarEvents
 
 List all events
 
@@ -499,24 +499,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarEvents2Request req = new ListCalendarEvents2Request() {
+ListCalendarEventsRequest req = new ListCalendarEventsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Calendar.ListCalendarEvents2Async(req);
+var res = await sdk.Calendar.ListCalendarEventsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListCalendarEvents2Request](../../Models/Requests/ListCalendarEvents2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListCalendarEventsRequest](../../Models/Requests/ListCalendarEventsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListCalendarEvents2Response](../../Models/Requests/ListCalendarEvents2Response.md)**
+**[ListCalendarEventsResponse](../../Models/Requests/ListCalendarEventsResponse.md)**
 
 ### Errors
 
@@ -524,7 +524,7 @@ var res = await sdk.Calendar.ListCalendarEvents2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCalendarLinks2
+## ListCalendarLinks
 
 List all links
 
@@ -539,24 +539,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarLinks2Request req = new ListCalendarLinks2Request() {
+ListCalendarLinksRequest req = new ListCalendarLinksRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Calendar.ListCalendarLinks2Async(req);
+var res = await sdk.Calendar.ListCalendarLinksAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListCalendarLinks2Request](../../Models/Requests/ListCalendarLinks2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListCalendarLinksRequest](../../Models/Requests/ListCalendarLinksRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListCalendarLinks2Response](../../Models/Requests/ListCalendarLinks2Response.md)**
+**[ListCalendarLinksResponse](../../Models/Requests/ListCalendarLinksResponse.md)**
 
 ### Errors
 
@@ -564,7 +564,7 @@ var res = await sdk.Calendar.ListCalendarLinks2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCalendarRecordings2
+## ListCalendarRecordings
 
 List all recordings
 
@@ -579,24 +579,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarRecordings2Request req = new ListCalendarRecordings2Request() {
+ListCalendarRecordingsRequest req = new ListCalendarRecordingsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Calendar.ListCalendarRecordings2Async(req);
+var res = await sdk.Calendar.ListCalendarRecordingsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListCalendarRecordings2Request](../../Models/Requests/ListCalendarRecordings2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListCalendarRecordingsRequest](../../Models/Requests/ListCalendarRecordingsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListCalendarRecordings2Response](../../Models/Requests/ListCalendarRecordings2Response.md)**
+**[ListCalendarRecordingsResponse](../../Models/Requests/ListCalendarRecordingsResponse.md)**
 
 ### Errors
 
@@ -604,7 +604,7 @@ var res = await sdk.Calendar.ListCalendarRecordings2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCalendarWebinars2
+## ListCalendarWebinars
 
 List all webinars
 
@@ -619,24 +619,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarWebinars2Request req = new ListCalendarWebinars2Request() {
+ListCalendarWebinarsRequest req = new ListCalendarWebinarsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Calendar.ListCalendarWebinars2Async(req);
+var res = await sdk.Calendar.ListCalendarWebinarsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListCalendarWebinars2Request](../../Models/Requests/ListCalendarWebinars2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListCalendarWebinarsRequest](../../Models/Requests/ListCalendarWebinarsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListCalendarWebinars2Response](../../Models/Requests/ListCalendarWebinars2Response.md)**
+**[ListCalendarWebinarsResponse](../../Models/Requests/ListCalendarWebinarsResponse.md)**
 
 ### Errors
 
@@ -644,7 +644,7 @@ var res = await sdk.Calendar.ListCalendarWebinars2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCalendarCalendar2
+## PatchCalendarCalendar
 
 Update a calendar
 
@@ -659,26 +659,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCalendarCalendar2Request req = new PatchCalendarCalendar2Request() {
+PatchCalendarCalendarRequest req = new PatchCalendarCalendarRequest() {
     CalendarCalendar = new CalendarCalendar() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.PatchCalendarCalendar2Async(req);
+var res = await sdk.Calendar.PatchCalendarCalendarAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchCalendarCalendar2Request](../../Models/Requests/PatchCalendarCalendar2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchCalendarCalendarRequest](../../Models/Requests/PatchCalendarCalendarRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchCalendarCalendar2Response](../../Models/Requests/PatchCalendarCalendar2Response.md)**
+**[PatchCalendarCalendarResponse](../../Models/Requests/PatchCalendarCalendarResponse.md)**
 
 ### Errors
 
@@ -686,7 +686,7 @@ var res = await sdk.Calendar.PatchCalendarCalendar2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCalendarEvent2
+## PatchCalendarEvent
 
 Update an event
 
@@ -701,26 +701,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCalendarEvent2Request req = new PatchCalendarEvent2Request() {
+PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
     CalendarEvent = new CalendarEvent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.PatchCalendarEvent2Async(req);
+var res = await sdk.Calendar.PatchCalendarEventAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchCalendarEvent2Request](../../Models/Requests/PatchCalendarEvent2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchCalendarEventRequest](../../Models/Requests/PatchCalendarEventRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchCalendarEvent2Response](../../Models/Requests/PatchCalendarEvent2Response.md)**
+**[PatchCalendarEventResponse](../../Models/Requests/PatchCalendarEventResponse.md)**
 
 ### Errors
 
@@ -728,7 +728,7 @@ var res = await sdk.Calendar.PatchCalendarEvent2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCalendarLink2
+## PatchCalendarLink
 
 Update a link
 
@@ -743,28 +743,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCalendarLink2Request req = new PatchCalendarLink2Request() {
+PatchCalendarLinkRequest req = new PatchCalendarLinkRequest() {
     CalendarLink = new CalendarLink() {
-        Url = "https://probable-accelerator.info",
+        Url = "https://warm-hexagon.name/",
     },
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.PatchCalendarLink2Async(req);
+var res = await sdk.Calendar.PatchCalendarLinkAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [PatchCalendarLink2Request](../../Models/Requests/PatchCalendarLink2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchCalendarLinkRequest](../../Models/Requests/PatchCalendarLinkRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchCalendarLink2Response](../../Models/Requests/PatchCalendarLink2Response.md)**
+**[PatchCalendarLinkResponse](../../Models/Requests/PatchCalendarLinkResponse.md)**
 
 ### Errors
 
@@ -772,7 +772,7 @@ var res = await sdk.Calendar.PatchCalendarLink2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCalendarWebinar2
+## PatchCalendarWebinar
 
 Update a webinar
 
@@ -787,26 +787,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCalendarWebinar2Request req = new PatchCalendarWebinar2Request() {
+PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.PatchCalendarWebinar2Async(req);
+var res = await sdk.Calendar.PatchCalendarWebinarAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchCalendarWebinar2Request](../../Models/Requests/PatchCalendarWebinar2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchCalendarWebinarRequest](../../Models/Requests/PatchCalendarWebinarRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchCalendarWebinar2Response](../../Models/Requests/PatchCalendarWebinar2Response.md)**
+**[PatchCalendarWebinarResponse](../../Models/Requests/PatchCalendarWebinarResponse.md)**
 
 ### Errors
 
@@ -814,7 +814,7 @@ var res = await sdk.Calendar.PatchCalendarWebinar2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCalendarCalendar2
+## RemoveCalendarCalendar
 
 Remove a calendar
 
@@ -828,7 +828,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.RemoveCalendarCalendar2Async(
+var res = await sdk.Calendar.RemoveCalendarCalendarAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -845,7 +845,7 @@ var res = await sdk.Calendar.RemoveCalendarCalendar2Async(
 
 ### Response
 
-**[RemoveCalendarCalendar2Response](../../Models/Requests/RemoveCalendarCalendar2Response.md)**
+**[RemoveCalendarCalendarResponse](../../Models/Requests/RemoveCalendarCalendarResponse.md)**
 
 ### Errors
 
@@ -853,7 +853,7 @@ var res = await sdk.Calendar.RemoveCalendarCalendar2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCalendarEvent2
+## RemoveCalendarEvent
 
 Remove an event
 
@@ -867,7 +867,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.RemoveCalendarEvent2Async(
+var res = await sdk.Calendar.RemoveCalendarEventAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -884,7 +884,7 @@ var res = await sdk.Calendar.RemoveCalendarEvent2Async(
 
 ### Response
 
-**[RemoveCalendarEvent2Response](../../Models/Requests/RemoveCalendarEvent2Response.md)**
+**[RemoveCalendarEventResponse](../../Models/Requests/RemoveCalendarEventResponse.md)**
 
 ### Errors
 
@@ -892,7 +892,7 @@ var res = await sdk.Calendar.RemoveCalendarEvent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCalendarLink2
+## RemoveCalendarLink
 
 Remove a link
 
@@ -906,7 +906,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.RemoveCalendarLink2Async(
+var res = await sdk.Calendar.RemoveCalendarLinkAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -923,7 +923,7 @@ var res = await sdk.Calendar.RemoveCalendarLink2Async(
 
 ### Response
 
-**[RemoveCalendarLink2Response](../../Models/Requests/RemoveCalendarLink2Response.md)**
+**[RemoveCalendarLinkResponse](../../Models/Requests/RemoveCalendarLinkResponse.md)**
 
 ### Errors
 
@@ -931,7 +931,7 @@ var res = await sdk.Calendar.RemoveCalendarLink2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCalendarWebinar2
+## RemoveCalendarWebinar
 
 Remove a webinar
 
@@ -945,7 +945,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Calendar.RemoveCalendarWebinar2Async(
+var res = await sdk.Calendar.RemoveCalendarWebinarAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -962,7 +962,7 @@ var res = await sdk.Calendar.RemoveCalendarWebinar2Async(
 
 ### Response
 
-**[RemoveCalendarWebinar2Response](../../Models/Requests/RemoveCalendarWebinar2Response.md)**
+**[RemoveCalendarWebinarResponse](../../Models/Requests/RemoveCalendarWebinarResponse.md)**
 
 ### Errors
 
@@ -970,7 +970,7 @@ var res = await sdk.Calendar.RemoveCalendarWebinar2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCalendarCalendar2
+## UpdateCalendarCalendar
 
 Update a calendar
 
@@ -985,26 +985,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCalendarCalendar2Request req = new UpdateCalendarCalendar2Request() {
+UpdateCalendarCalendarRequest req = new UpdateCalendarCalendarRequest() {
     CalendarCalendar = new CalendarCalendar() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.UpdateCalendarCalendar2Async(req);
+var res = await sdk.Calendar.UpdateCalendarCalendarAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateCalendarCalendar2Request](../../Models/Requests/UpdateCalendarCalendar2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateCalendarCalendarRequest](../../Models/Requests/UpdateCalendarCalendarRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateCalendarCalendar2Response](../../Models/Requests/UpdateCalendarCalendar2Response.md)**
+**[UpdateCalendarCalendarResponse](../../Models/Requests/UpdateCalendarCalendarResponse.md)**
 
 ### Errors
 
@@ -1012,7 +1012,7 @@ var res = await sdk.Calendar.UpdateCalendarCalendar2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCalendarEvent2
+## UpdateCalendarEvent
 
 Update an event
 
@@ -1027,26 +1027,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCalendarEvent2Request req = new UpdateCalendarEvent2Request() {
+UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
     CalendarEvent = new CalendarEvent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.UpdateCalendarEvent2Async(req);
+var res = await sdk.Calendar.UpdateCalendarEventAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateCalendarEvent2Request](../../Models/Requests/UpdateCalendarEvent2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateCalendarEventRequest](../../Models/Requests/UpdateCalendarEventRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateCalendarEvent2Response](../../Models/Requests/UpdateCalendarEvent2Response.md)**
+**[UpdateCalendarEventResponse](../../Models/Requests/UpdateCalendarEventResponse.md)**
 
 ### Errors
 
@@ -1054,7 +1054,7 @@ var res = await sdk.Calendar.UpdateCalendarEvent2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCalendarLink2
+## UpdateCalendarLink
 
 Update a link
 
@@ -1069,28 +1069,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCalendarLink2Request req = new UpdateCalendarLink2Request() {
+UpdateCalendarLinkRequest req = new UpdateCalendarLinkRequest() {
     CalendarLink = new CalendarLink() {
-        Url = "https://soupy-extension.net/",
+        Url = "https://partial-hydrocarbon.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.UpdateCalendarLink2Async(req);
+var res = await sdk.Calendar.UpdateCalendarLinkAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [UpdateCalendarLink2Request](../../Models/Requests/UpdateCalendarLink2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateCalendarLinkRequest](../../Models/Requests/UpdateCalendarLinkRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateCalendarLink2Response](../../Models/Requests/UpdateCalendarLink2Response.md)**
+**[UpdateCalendarLinkResponse](../../Models/Requests/UpdateCalendarLinkResponse.md)**
 
 ### Errors
 
@@ -1098,7 +1098,7 @@ var res = await sdk.Calendar.UpdateCalendarLink2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCalendarWebinar2
+## UpdateCalendarWebinar
 
 Update a webinar
 
@@ -1113,26 +1113,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCalendarWebinar2Request req = new UpdateCalendarWebinar2Request() {
+UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Calendar.UpdateCalendarWebinar2Async(req);
+var res = await sdk.Calendar.UpdateCalendarWebinarAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateCalendarWebinar2Request](../../Models/Requests/UpdateCalendarWebinar2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateCalendarWebinarRequest](../../Models/Requests/UpdateCalendarWebinarRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateCalendarWebinar2Response](../../Models/Requests/UpdateCalendarWebinar2Response.md)**
+**[UpdateCalendarWebinarResponse](../../Models/Requests/UpdateCalendarWebinarResponse.md)**
 
 ### Errors
 

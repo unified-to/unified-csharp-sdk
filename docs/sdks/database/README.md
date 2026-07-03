@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateDatastoreDatabase2](#createdatastoredatabase2) - Create a database
-* [GetDatastoreDatabase2](#getdatastoredatabase2) - Retrieve a database
-* [ListDatastoreDatabases2](#listdatastoredatabases2) - List all databases
-* [PatchDatastoreDatabase2](#patchdatastoredatabase2) - Update a database
-* [RemoveDatastoreDatabase2](#removedatastoredatabase2) - Remove a database
-* [UpdateDatastoreDatabase2](#updatedatastoredatabase2) - Update a database
+* [CreateDatastoreDatabase](#createdatastoredatabase) - Create a database
+* [GetDatastoreDatabase](#getdatastoredatabase) - Retrieve a database
+* [ListDatastoreDatabases](#listdatastoredatabases) - List all databases
+* [PatchDatastoreDatabase](#patchdatastoredatabase) - Update a database
+* [RemoveDatastoreDatabase](#removedatastoredatabase) - Remove a database
+* [UpdateDatastoreDatabase](#updatedatastoredatabase) - Update a database
 
-## CreateDatastoreDatabase2
+## CreateDatastoreDatabase
 
 Create a database
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Database.CreateDatastoreDatabase2Async(
+var res = await sdk.Database.CreateDatastoreDatabaseAsync(
     datastoreDatabase: new DatastoreDatabase() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Database.CreateDatastoreDatabase2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `DatastoreDatabase`                                                                                                                              | [DatastoreDatabase](../../Models/Components/DatastoreDatabase.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateDatastoreDatabase2QueryParamFields](../../Models/Requests/CreateDatastoreDatabase2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateDatastoreDatabaseQueryParamFields](../../Models/Requests/CreateDatastoreDatabaseQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateDatastoreDatabase2Response](../../Models/Requests/CreateDatastoreDatabase2Response.md)**
+**[CreateDatastoreDatabaseResponse](../../Models/Requests/CreateDatastoreDatabaseResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Database.CreateDatastoreDatabase2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetDatastoreDatabase2
+## GetDatastoreDatabase
 
 Retrieve a database
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Database.GetDatastoreDatabase2Async(
+var res = await sdk.Database.GetDatastoreDatabaseAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Database.GetDatastoreDatabase2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Database                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetDatastoreDatabase2QueryParamFields](../../Models/Requests/GetDatastoreDatabase2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetDatastoreDatabaseQueryParamFields](../../Models/Requests/GetDatastoreDatabaseQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetDatastoreDatabase2Response](../../Models/Requests/GetDatastoreDatabase2Response.md)**
+**[GetDatastoreDatabaseResponse](../../Models/Requests/GetDatastoreDatabaseResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Database.GetDatastoreDatabase2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListDatastoreDatabases2
+## ListDatastoreDatabases
 
 List all databases
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListDatastoreDatabases2Request req = new ListDatastoreDatabases2Request() {
+ListDatastoreDatabasesRequest req = new ListDatastoreDatabasesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Database.ListDatastoreDatabases2Async(req);
+var res = await sdk.Database.ListDatastoreDatabasesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListDatastoreDatabases2Request](../../Models/Requests/ListDatastoreDatabases2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListDatastoreDatabasesRequest](../../Models/Requests/ListDatastoreDatabasesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListDatastoreDatabases2Response](../../Models/Requests/ListDatastoreDatabases2Response.md)**
+**[ListDatastoreDatabasesResponse](../../Models/Requests/ListDatastoreDatabasesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Database.ListDatastoreDatabases2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchDatastoreDatabase2
+## PatchDatastoreDatabase
 
 Update a database
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchDatastoreDatabase2Request req = new PatchDatastoreDatabase2Request() {
+PatchDatastoreDatabaseRequest req = new PatchDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Database.PatchDatastoreDatabase2Async(req);
+var res = await sdk.Database.PatchDatastoreDatabaseAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchDatastoreDatabase2Request](../../Models/Requests/PatchDatastoreDatabase2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchDatastoreDatabaseRequest](../../Models/Requests/PatchDatastoreDatabaseRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchDatastoreDatabase2Response](../../Models/Requests/PatchDatastoreDatabase2Response.md)**
+**[PatchDatastoreDatabaseResponse](../../Models/Requests/PatchDatastoreDatabaseResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Database.PatchDatastoreDatabase2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveDatastoreDatabase2
+## RemoveDatastoreDatabase
 
 Remove a database
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Database.RemoveDatastoreDatabase2Async(
+var res = await sdk.Database.RemoveDatastoreDatabaseAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Database.RemoveDatastoreDatabase2Async(
 
 ### Response
 
-**[RemoveDatastoreDatabase2Response](../../Models/Requests/RemoveDatastoreDatabase2Response.md)**
+**[RemoveDatastoreDatabaseResponse](../../Models/Requests/RemoveDatastoreDatabaseResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Database.RemoveDatastoreDatabase2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateDatastoreDatabase2
+## UpdateDatastoreDatabase
 
 Update a database
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateDatastoreDatabase2Request req = new UpdateDatastoreDatabase2Request() {
+UpdateDatastoreDatabaseRequest req = new UpdateDatastoreDatabaseRequest() {
     DatastoreDatabase = new DatastoreDatabase() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Database.UpdateDatastoreDatabase2Async(req);
+var res = await sdk.Database.UpdateDatastoreDatabaseAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateDatastoreDatabase2Request](../../Models/Requests/UpdateDatastoreDatabase2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateDatastoreDatabaseRequest](../../Models/Requests/UpdateDatastoreDatabaseRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateDatastoreDatabase2Response](../../Models/Requests/UpdateDatastoreDatabase2Response.md)**
+**[UpdateDatastoreDatabaseResponse](../../Models/Requests/UpdateDatastoreDatabaseResponse.md)**
 
 ### Errors
 

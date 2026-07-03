@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateRepoBranch2](#createrepobranch2) - Create a branch
-* [GetRepoBranch2](#getrepobranch2) - Retrieve a branch
-* [ListRepoBranches2](#listrepobranches2) - List all branches
-* [PatchRepoBranch2](#patchrepobranch2) - Update a branch
-* [RemoveRepoBranch2](#removerepobranch2) - Remove a branch
-* [UpdateRepoBranch2](#updaterepobranch2) - Update a branch
+* [CreateRepoBranch](#createrepobranch) - Create a branch
+* [GetRepoBranch](#getrepobranch) - Retrieve a branch
+* [ListRepoBranches](#listrepobranches) - List all branches
+* [PatchRepoBranch](#patchrepobranch) - Update a branch
+* [RemoveRepoBranch](#removerepobranch) - Remove a branch
+* [UpdateRepoBranch](#updaterepobranch) - Update a branch
 
-## CreateRepoBranch2
+## CreateRepoBranch
 
 Create a branch
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Branch.CreateRepoBranch2Async(
+var res = await sdk.Branch.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
@@ -43,12 +43,12 @@ var res = await sdk.Branch.CreateRepoBranch2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `RepoBranch`                                                                                                                                     | [RepoBranch](../../Models/Components/RepoBranch.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateRepoBranch2QueryParamFields](../../Models/Requests/CreateRepoBranch2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateRepoBranchQueryParamFields](../../Models/Requests/CreateRepoBranchQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateRepoBranch2Response](../../Models/Requests/CreateRepoBranch2Response.md)**
+**[CreateRepoBranchResponse](../../Models/Requests/CreateRepoBranchResponse.md)**
 
 ### Errors
 
@@ -56,7 +56,7 @@ var res = await sdk.Branch.CreateRepoBranch2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetRepoBranch2
+## GetRepoBranch
 
 Retrieve a branch
 
@@ -70,7 +70,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Branch.GetRepoBranch2Async(
+var res = await sdk.Branch.GetRepoBranchAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -84,12 +84,12 @@ var res = await sdk.Branch.GetRepoBranch2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Branch                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetRepoBranch2QueryParamFields](../../Models/Requests/GetRepoBranch2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetRepoBranchQueryParamFields](../../Models/Requests/GetRepoBranchQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetRepoBranch2Response](../../Models/Requests/GetRepoBranch2Response.md)**
+**[GetRepoBranchResponse](../../Models/Requests/GetRepoBranchResponse.md)**
 
 ### Errors
 
@@ -97,7 +97,7 @@ var res = await sdk.Branch.GetRepoBranch2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListRepoBranches2
+## ListRepoBranches
 
 List all branches
 
@@ -112,24 +112,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListRepoBranches2Request req = new ListRepoBranches2Request() {
+ListRepoBranchesRequest req = new ListRepoBranchesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Branch.ListRepoBranches2Async(req);
+var res = await sdk.Branch.ListRepoBranchesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListRepoBranches2Request](../../Models/Requests/ListRepoBranches2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListRepoBranchesRequest](../../Models/Requests/ListRepoBranchesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListRepoBranches2Response](../../Models/Requests/ListRepoBranches2Response.md)**
+**[ListRepoBranchesResponse](../../Models/Requests/ListRepoBranchesResponse.md)**
 
 ### Errors
 
@@ -137,7 +137,7 @@ var res = await sdk.Branch.ListRepoBranches2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchRepoBranch2
+## PatchRepoBranch
 
 Update a branch
 
@@ -152,7 +152,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchRepoBranch2Request req = new PatchRepoBranch2Request() {
+PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
@@ -161,20 +161,20 @@ PatchRepoBranch2Request req = new PatchRepoBranch2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Branch.PatchRepoBranch2Async(req);
+var res = await sdk.Branch.PatchRepoBranchAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchRepoBranch2Request](../../Models/Requests/PatchRepoBranch2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [PatchRepoBranchRequest](../../Models/Requests/PatchRepoBranchRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[PatchRepoBranch2Response](../../Models/Requests/PatchRepoBranch2Response.md)**
+**[PatchRepoBranchResponse](../../Models/Requests/PatchRepoBranchResponse.md)**
 
 ### Errors
 
@@ -182,7 +182,7 @@ var res = await sdk.Branch.PatchRepoBranch2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveRepoBranch2
+## RemoveRepoBranch
 
 Remove a branch
 
@@ -196,7 +196,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Branch.RemoveRepoBranch2Async(
+var res = await sdk.Branch.RemoveRepoBranchAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -213,7 +213,7 @@ var res = await sdk.Branch.RemoveRepoBranch2Async(
 
 ### Response
 
-**[RemoveRepoBranch2Response](../../Models/Requests/RemoveRepoBranch2Response.md)**
+**[RemoveRepoBranchResponse](../../Models/Requests/RemoveRepoBranchResponse.md)**
 
 ### Errors
 
@@ -221,7 +221,7 @@ var res = await sdk.Branch.RemoveRepoBranch2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateRepoBranch2
+## UpdateRepoBranch
 
 Update a branch
 
@@ -236,7 +236,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateRepoBranch2Request req = new UpdateRepoBranch2Request() {
+UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
@@ -245,20 +245,20 @@ UpdateRepoBranch2Request req = new UpdateRepoBranch2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Branch.UpdateRepoBranch2Async(req);
+var res = await sdk.Branch.UpdateRepoBranchAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateRepoBranch2Request](../../Models/Requests/UpdateRepoBranch2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateRepoBranchRequest](../../Models/Requests/UpdateRepoBranchRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[UpdateRepoBranch2Response](../../Models/Requests/UpdateRepoBranch2Response.md)**
+**[UpdateRepoBranchResponse](../../Models/Requests/UpdateRepoBranchResponse.md)**
 
 ### Errors
 

@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetShippingCarrier2](#getshippingcarrier2) - Retrieve a carrier
-* [ListShippingCarriers2](#listshippingcarriers2) - List all carriers
+* [GetShippingCarrier](#getshippingcarrier) - Retrieve a carrier
+* [ListShippingCarriers](#listshippingcarriers) - List all carriers
 
-## GetShippingCarrier2
+## GetShippingCarrier
 
 Retrieve a carrier
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Carrier.GetShippingCarrier2Async(
+var res = await sdk.Carrier.GetShippingCarrierAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Carrier.GetShippingCarrier2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Carrier                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetShippingCarrier2QueryParamFields](../../Models/Requests/GetShippingCarrier2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetShippingCarrierQueryParamFields](../../Models/Requests/GetShippingCarrierQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetShippingCarrier2Response](../../Models/Requests/GetShippingCarrier2Response.md)**
+**[GetShippingCarrierResponse](../../Models/Requests/GetShippingCarrierResponse.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Carrier.GetShippingCarrier2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListShippingCarriers2
+## ListShippingCarriers
 
 List all carriers
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListShippingCarriers2Request req = new ListShippingCarriers2Request() {
+ListShippingCarriersRequest req = new ListShippingCarriersRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Carrier.ListShippingCarriers2Async(req);
+var res = await sdk.Carrier.ListShippingCarriersAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListShippingCarriers2Request](../../Models/Requests/ListShippingCarriers2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListShippingCarriersRequest](../../Models/Requests/ListShippingCarriersRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListShippingCarriers2Response](../../Models/Requests/ListShippingCarriers2Response.md)**
+**[ListShippingCarriersResponse](../../Models/Requests/ListShippingCarriersResponse.md)**
 
 ### Errors
 

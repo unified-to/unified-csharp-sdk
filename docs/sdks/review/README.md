@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateCommerceReview2](#createcommercereview2) - Create a review
-* [GetCommerceReview2](#getcommercereview2) - Retrieve a review
-* [ListCommerceReviews2](#listcommercereviews2) - List all reviews
-* [PatchCommerceReview2](#patchcommercereview2) - Update a review
-* [RemoveCommerceReview2](#removecommercereview2) - Remove a review
-* [UpdateCommerceReview2](#updatecommercereview2) - Update a review
+* [CreateCommerceReview](#createcommercereview) - Create a review
+* [GetCommerceReview](#getcommercereview) - Retrieve a review
+* [ListCommerceReviews](#listcommercereviews) - List all reviews
+* [PatchCommerceReview](#patchcommercereview) - Update a review
+* [RemoveCommerceReview](#removecommercereview) - Remove a review
+* [UpdateCommerceReview](#updatecommercereview) - Update a review
 
-## CreateCommerceReview2
+## CreateCommerceReview
 
 Create a review
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Review.CreateCommerceReview2Async(
+var res = await sdk.Review.CreateCommerceReviewAsync(
     commerceReview: new CommerceReview() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Review.CreateCommerceReview2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceReview`                                                                                                                                 | [CommerceReview](../../Models/Components/CommerceReview.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceReview2QueryParamFields](../../Models/Requests/CreateCommerceReview2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceReviewQueryParamFields](../../Models/Requests/CreateCommerceReviewQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceReview2Response](../../Models/Requests/CreateCommerceReview2Response.md)**
+**[CreateCommerceReviewResponse](../../Models/Requests/CreateCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Review.CreateCommerceReview2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceReview2
+## GetCommerceReview
 
 Retrieve a review
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Review.GetCommerceReview2Async(
+var res = await sdk.Review.GetCommerceReviewAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Review.GetCommerceReview2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Review                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetCommerceReview2QueryParamFields](../../Models/Requests/GetCommerceReview2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceReviewQueryParamFields](../../Models/Requests/GetCommerceReviewQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceReview2Response](../../Models/Requests/GetCommerceReview2Response.md)**
+**[GetCommerceReviewResponse](../../Models/Requests/GetCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Review.GetCommerceReview2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceReviews2
+## ListCommerceReviews
 
 List all reviews
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceReviews2Request req = new ListCommerceReviews2Request() {
+ListCommerceReviewsRequest req = new ListCommerceReviewsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Review.ListCommerceReviews2Async(req);
+var res = await sdk.Review.ListCommerceReviewsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListCommerceReviews2Request](../../Models/Requests/ListCommerceReviews2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListCommerceReviewsRequest](../../Models/Requests/ListCommerceReviewsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListCommerceReviews2Response](../../Models/Requests/ListCommerceReviews2Response.md)**
+**[ListCommerceReviewsResponse](../../Models/Requests/ListCommerceReviewsResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Review.ListCommerceReviews2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceReview2
+## PatchCommerceReview
 
 Update a review
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceReview2Request req = new PatchCommerceReview2Request() {
+PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
     CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Review.PatchCommerceReview2Async(req);
+var res = await sdk.Review.PatchCommerceReviewAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchCommerceReview2Request](../../Models/Requests/PatchCommerceReview2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchCommerceReviewRequest](../../Models/Requests/PatchCommerceReviewRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchCommerceReview2Response](../../Models/Requests/PatchCommerceReview2Response.md)**
+**[PatchCommerceReviewResponse](../../Models/Requests/PatchCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Review.PatchCommerceReview2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceReview2
+## RemoveCommerceReview
 
 Remove a review
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Review.RemoveCommerceReview2Async(
+var res = await sdk.Review.RemoveCommerceReviewAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Review.RemoveCommerceReview2Async(
 
 ### Response
 
-**[RemoveCommerceReview2Response](../../Models/Requests/RemoveCommerceReview2Response.md)**
+**[RemoveCommerceReviewResponse](../../Models/Requests/RemoveCommerceReviewResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Review.RemoveCommerceReview2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceReview2
+## UpdateCommerceReview
 
 Update a review
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceReview2Request req = new UpdateCommerceReview2Request() {
+UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
     CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Review.UpdateCommerceReview2Async(req);
+var res = await sdk.Review.UpdateCommerceReviewAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdateCommerceReview2Request](../../Models/Requests/UpdateCommerceReview2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateCommerceReviewRequest](../../Models/Requests/UpdateCommerceReviewRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateCommerceReview2Response](../../Models/Requests/UpdateCommerceReview2Response.md)**
+**[UpdateCommerceReviewResponse](../../Models/Requests/UpdateCommerceReviewResponse.md)**
 
 ### Errors
 

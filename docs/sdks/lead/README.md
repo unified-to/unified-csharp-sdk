@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateCrmLead2](#createcrmlead2) - Create a lead
-* [GetCrmLead2](#getcrmlead2) - Retrieve a lead
-* [ListCrmLeads2](#listcrmleads2) - List all leads
-* [PatchCrmLead2](#patchcrmlead2) - Update a lead
-* [RemoveCrmLead2](#removecrmlead2) - Remove a lead
-* [UpdateCrmLead2](#updatecrmlead2) - Update a lead
+* [CreateCrmLead](#createcrmlead) - Create a lead
+* [GetCrmLead](#getcrmlead) - Retrieve a lead
+* [ListCrmLeads](#listcrmleads) - List all leads
+* [PatchCrmLead](#patchcrmlead) - Update a lead
+* [RemoveCrmLead](#removecrmlead) - Remove a lead
+* [UpdateCrmLead](#updatecrmlead) - Update a lead
 
-## CreateCrmLead2
+## CreateCrmLead
 
 Create a lead
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Lead.CreateCrmLead2Async(
+var res = await sdk.Lead.CreateCrmLeadAsync(
     crmLead: new CrmLead() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Lead.CreateCrmLead2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CrmLead`                                                                                                                                        | [CrmLead](../../Models/Components/CrmLead.md)                                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCrmLead2QueryParamFields](../../Models/Requests/CreateCrmLead2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCrmLeadQueryParamFields](../../Models/Requests/CreateCrmLeadQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCrmLead2Response](../../Models/Requests/CreateCrmLead2Response.md)**
+**[CreateCrmLeadResponse](../../Models/Requests/CreateCrmLeadResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Lead.CreateCrmLead2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCrmLead2
+## GetCrmLead
 
 Retrieve a lead
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Lead.GetCrmLead2Async(
+var res = await sdk.Lead.GetCrmLeadAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Lead.GetCrmLead2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Lead                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetCrmLead2QueryParamFields](../../Models/Requests/GetCrmLead2QueryParamFields.md)>                                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCrmLeadQueryParamFields](../../Models/Requests/GetCrmLeadQueryParamFields.md)>                                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCrmLead2Response](../../Models/Requests/GetCrmLead2Response.md)**
+**[GetCrmLeadResponse](../../Models/Requests/GetCrmLeadResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Lead.GetCrmLead2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCrmLeads2
+## ListCrmLeads
 
 List all leads
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCrmLeads2Request req = new ListCrmLeads2Request() {
+ListCrmLeadsRequest req = new ListCrmLeadsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Lead.ListCrmLeads2Async(req);
+var res = await sdk.Lead.ListCrmLeadsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `request`                                                             | [ListCrmLeads2Request](../../Models/Requests/ListCrmLeads2Request.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListCrmLeadsRequest](../../Models/Requests/ListCrmLeadsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
-**[ListCrmLeads2Response](../../Models/Requests/ListCrmLeads2Response.md)**
+**[ListCrmLeadsResponse](../../Models/Requests/ListCrmLeadsResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Lead.ListCrmLeads2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCrmLead2
+## PatchCrmLead
 
 Update a lead
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCrmLead2Request req = new PatchCrmLead2Request() {
+PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
     CrmLead = new CrmLead() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Lead.PatchCrmLead2Async(req);
+var res = await sdk.Lead.PatchCrmLeadAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `request`                                                             | [PatchCrmLead2Request](../../Models/Requests/PatchCrmLead2Request.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [PatchCrmLeadRequest](../../Models/Requests/PatchCrmLeadRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
-**[PatchCrmLead2Response](../../Models/Requests/PatchCrmLead2Response.md)**
+**[PatchCrmLeadResponse](../../Models/Requests/PatchCrmLeadResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Lead.PatchCrmLead2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCrmLead2
+## RemoveCrmLead
 
 Remove a lead
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Lead.RemoveCrmLead2Async(
+var res = await sdk.Lead.RemoveCrmLeadAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Lead.RemoveCrmLead2Async(
 
 ### Response
 
-**[RemoveCrmLead2Response](../../Models/Requests/RemoveCrmLead2Response.md)**
+**[RemoveCrmLeadResponse](../../Models/Requests/RemoveCrmLeadResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Lead.RemoveCrmLead2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCrmLead2
+## UpdateCrmLead
 
 Update a lead
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCrmLead2Request req = new UpdateCrmLead2Request() {
+UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
     CrmLead = new CrmLead() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Lead.UpdateCrmLead2Async(req);
+var res = await sdk.Lead.UpdateCrmLeadAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [UpdateCrmLead2Request](../../Models/Requests/UpdateCrmLead2Request.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [UpdateCrmLeadRequest](../../Models/Requests/UpdateCrmLeadRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
-**[UpdateCrmLead2Response](../../Models/Requests/UpdateCrmLead2Response.md)**
+**[UpdateCrmLeadResponse](../../Models/Requests/UpdateCrmLeadResponse.md)**
 
 ### Errors
 

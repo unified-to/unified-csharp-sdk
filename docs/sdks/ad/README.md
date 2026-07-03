@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAdsAd2](#createadsad2) - Create an ad
-* [GetAdsAd2](#getadsad2) - Retrieve an ad
-* [ListAdsAds2](#listadsads2) - List all ads
-* [PatchAdsAd2](#patchadsad2) - Update an ad
-* [RemoveAdsAd2](#removeadsad2) - Remove an ad
-* [UpdateAdsAd2](#updateadsad2) - Update an ad
+* [CreateAdsAd](#createadsad) - Create an ad
+* [GetAdsAd](#getadsad) - Retrieve an ad
+* [ListAdsAds](#listadsads) - List all ads
+* [PatchAdsAd](#patchadsad) - Update an ad
+* [RemoveAdsAd](#removeadsad) - Remove an ad
+* [UpdateAdsAd](#updateadsad) - Update an ad
 
-## CreateAdsAd2
+## CreateAdsAd
 
 Create an ad
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ad.CreateAdsAd2Async(
+var res = await sdk.Ad.CreateAdsAdAsync(
     adsAd: new AdsAd() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Ad.CreateAdsAd2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AdsAd`                                                                                                                                          | [AdsAd](../../Models/Components/AdsAd.md)                                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAdsAd2QueryParamFields](../../Models/Requests/CreateAdsAd2QueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAdsAdQueryParamFields](../../Models/Requests/CreateAdsAdQueryParamFields.md)>                                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAdsAd2Response](../../Models/Requests/CreateAdsAd2Response.md)**
+**[CreateAdsAdResponse](../../Models/Requests/CreateAdsAdResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Ad.CreateAdsAd2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAdsAd2
+## GetAdsAd
 
 Retrieve an ad
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ad.GetAdsAd2Async(
+var res = await sdk.Ad.GetAdsAdAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Ad.GetAdsAd2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Ad                                                                                                                                     |
-| `Fields`                                                                                                                                         | List<[GetAdsAd2QueryParamFields](../../Models/Requests/GetAdsAd2QueryParamFields.md)>                                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAdsAdQueryParamFields](../../Models/Requests/GetAdsAdQueryParamFields.md)>                                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAdsAd2Response](../../Models/Requests/GetAdsAd2Response.md)**
+**[GetAdsAdResponse](../../Models/Requests/GetAdsAdResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Ad.GetAdsAd2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAdsAds2
+## ListAdsAds
 
 List all ads
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAdsAds2Request req = new ListAdsAds2Request() {
+ListAdsAdsRequest req = new ListAdsAdsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Ad.ListAdsAds2Async(req);
+var res = await sdk.Ad.ListAdsAdsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `request`                                                         | [ListAdsAds2Request](../../Models/Requests/ListAdsAds2Request.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `request`                                                       | [ListAdsAdsRequest](../../Models/Requests/ListAdsAdsRequest.md) | :heavy_check_mark:                                              | The request object to use for the request.                      |
 
 ### Response
 
-**[ListAdsAds2Response](../../Models/Requests/ListAdsAds2Response.md)**
+**[ListAdsAdsResponse](../../Models/Requests/ListAdsAdsResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Ad.ListAdsAds2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAdsAd2
+## PatchAdsAd
 
 Update an ad
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAdsAd2Request req = new PatchAdsAd2Request() {
+PatchAdsAdRequest req = new PatchAdsAdRequest() {
     AdsAd = new AdsAd() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ad.PatchAdsAd2Async(req);
+var res = await sdk.Ad.PatchAdsAdAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `request`                                                         | [PatchAdsAd2Request](../../Models/Requests/PatchAdsAd2Request.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `request`                                                       | [PatchAdsAdRequest](../../Models/Requests/PatchAdsAdRequest.md) | :heavy_check_mark:                                              | The request object to use for the request.                      |
 
 ### Response
 
-**[PatchAdsAd2Response](../../Models/Requests/PatchAdsAd2Response.md)**
+**[PatchAdsAdResponse](../../Models/Requests/PatchAdsAdResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Ad.PatchAdsAd2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAdsAd2
+## RemoveAdsAd
 
 Remove an ad
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Ad.RemoveAdsAd2Async(
+var res = await sdk.Ad.RemoveAdsAdAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Ad.RemoveAdsAd2Async(
 
 ### Response
 
-**[RemoveAdsAd2Response](../../Models/Requests/RemoveAdsAd2Response.md)**
+**[RemoveAdsAdResponse](../../Models/Requests/RemoveAdsAdResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Ad.RemoveAdsAd2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAdsAd2
+## UpdateAdsAd
 
 Update an ad
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAdsAd2Request req = new UpdateAdsAd2Request() {
+UpdateAdsAdRequest req = new UpdateAdsAdRequest() {
     AdsAd = new AdsAd() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Ad.UpdateAdsAd2Async(req);
+var res = await sdk.Ad.UpdateAdsAdAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [UpdateAdsAd2Request](../../Models/Requests/UpdateAdsAd2Request.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `request`                                                         | [UpdateAdsAdRequest](../../Models/Requests/UpdateAdsAdRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
 ### Response
 
-**[UpdateAdsAd2Response](../../Models/Requests/UpdateAdsAd2Response.md)**
+**[UpdateAdsAdResponse](../../Models/Requests/UpdateAdsAdResponse.md)**
 
 ### Errors
 

@@ -28,14 +28,14 @@ namespace UnifiedTo
         /// <summary>
         /// List all picklists
         /// </summary>
-        Task<ListCrmPicklists2Response> ListCrmPicklists2Async(ListCrmPicklists2Request request);
+        Task<ListCrmPicklistsResponse> ListCrmPicklistsAsync(ListCrmPicklistsRequest request);
     }
 
     public class Picklist: IPicklist
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -44,7 +44,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<ListCrmPicklists2Response> ListCrmPicklists2Async(ListCrmPicklists2Request request)
+        public async Task<ListCrmPicklistsResponse> ListCrmPicklistsAsync(ListCrmPicklistsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/picklist", request);
@@ -57,7 +57,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmPicklists2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmPicklists", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -98,7 +98,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CrmPicklist>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCrmPicklists2Response()
+                    var response = new ListCrmPicklistsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

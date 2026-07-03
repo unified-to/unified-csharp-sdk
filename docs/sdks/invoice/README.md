@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingInvoice2](#createaccountinginvoice2) - Create an invoice
-* [GetAccountingInvoice2](#getaccountinginvoice2) - Retrieve an invoice
-* [ListAccountingInvoices2](#listaccountinginvoices2) - List all invoices
-* [PatchAccountingInvoice2](#patchaccountinginvoice2) - Update an invoice
-* [RemoveAccountingInvoice2](#removeaccountinginvoice2) - Remove an invoice
-* [UpdateAccountingInvoice2](#updateaccountinginvoice2) - Update an invoice
+* [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
+* [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
+* [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
+* [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
+* [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
+* [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 
-## CreateAccountingInvoice2
+## CreateAccountingInvoice
 
 Create an invoice
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Invoice.CreateAccountingInvoice2Async(
+var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
     accountingInvoice: new AccountingInvoice() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Invoice.CreateAccountingInvoice2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingInvoice`                                                                                                                              | [AccountingInvoice](../../Models/Components/AccountingInvoice.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingInvoice2QueryParamFields](../../Models/Requests/CreateAccountingInvoice2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingInvoiceQueryParamFields](../../Models/Requests/CreateAccountingInvoiceQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingInvoice2Response](../../Models/Requests/CreateAccountingInvoice2Response.md)**
+**[CreateAccountingInvoiceResponse](../../Models/Requests/CreateAccountingInvoiceResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Invoice.CreateAccountingInvoice2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingInvoice2
+## GetAccountingInvoice
 
 Retrieve an invoice
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Invoice.GetAccountingInvoice2Async(
+var res = await sdk.Invoice.GetAccountingInvoiceAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Invoice.GetAccountingInvoice2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Invoice                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetAccountingInvoice2QueryParamFields](../../Models/Requests/GetAccountingInvoice2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingInvoiceQueryParamFields](../../Models/Requests/GetAccountingInvoiceQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingInvoice2Response](../../Models/Requests/GetAccountingInvoice2Response.md)**
+**[GetAccountingInvoiceResponse](../../Models/Requests/GetAccountingInvoiceResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Invoice.GetAccountingInvoice2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingInvoices2
+## ListAccountingInvoices
 
 List all invoices
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingInvoices2Request req = new ListAccountingInvoices2Request() {
+ListAccountingInvoicesRequest req = new ListAccountingInvoicesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Invoice.ListAccountingInvoices2Async(req);
+var res = await sdk.Invoice.ListAccountingInvoicesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListAccountingInvoices2Request](../../Models/Requests/ListAccountingInvoices2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingInvoicesRequest](../../Models/Requests/ListAccountingInvoicesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListAccountingInvoices2Response](../../Models/Requests/ListAccountingInvoices2Response.md)**
+**[ListAccountingInvoicesResponse](../../Models/Requests/ListAccountingInvoicesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Invoice.ListAccountingInvoices2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingInvoice2
+## PatchAccountingInvoice
 
 Update an invoice
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingInvoice2Request req = new PatchAccountingInvoice2Request() {
+PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
     AccountingInvoice = new AccountingInvoice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Invoice.PatchAccountingInvoice2Async(req);
+var res = await sdk.Invoice.PatchAccountingInvoiceAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchAccountingInvoice2Request](../../Models/Requests/PatchAccountingInvoice2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchAccountingInvoiceRequest](../../Models/Requests/PatchAccountingInvoiceRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchAccountingInvoice2Response](../../Models/Requests/PatchAccountingInvoice2Response.md)**
+**[PatchAccountingInvoiceResponse](../../Models/Requests/PatchAccountingInvoiceResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Invoice.PatchAccountingInvoice2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingInvoice2
+## RemoveAccountingInvoice
 
 Remove an invoice
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Invoice.RemoveAccountingInvoice2Async(
+var res = await sdk.Invoice.RemoveAccountingInvoiceAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Invoice.RemoveAccountingInvoice2Async(
 
 ### Response
 
-**[RemoveAccountingInvoice2Response](../../Models/Requests/RemoveAccountingInvoice2Response.md)**
+**[RemoveAccountingInvoiceResponse](../../Models/Requests/RemoveAccountingInvoiceResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Invoice.RemoveAccountingInvoice2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingInvoice2
+## UpdateAccountingInvoice
 
 Update an invoice
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingInvoice2Request req = new UpdateAccountingInvoice2Request() {
+UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
     AccountingInvoice = new AccountingInvoice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Invoice.UpdateAccountingInvoice2Async(req);
+var res = await sdk.Invoice.UpdateAccountingInvoiceAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateAccountingInvoice2Request](../../Models/Requests/UpdateAccountingInvoice2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateAccountingInvoiceRequest](../../Models/Requests/UpdateAccountingInvoiceRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateAccountingInvoice2Response](../../Models/Requests/UpdateAccountingInvoice2Response.md)**
+**[UpdateAccountingInvoiceResponse](../../Models/Requests/UpdateAccountingInvoiceResponse.md)**
 
 ### Errors
 

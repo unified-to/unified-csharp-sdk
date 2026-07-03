@@ -5,27 +5,27 @@
 
 ### Available Operations
 
-* [CreateMartechCampaign2](#createmartechcampaign2) - Create a campaign
-* [CreateMartechList2](#createmartechlist2) - Create a list
-* [CreateMartechMember2](#createmartechmember2) - Create a member
-* [GetMartechCampaign2](#getmartechcampaign2) - Retrieve a campaign
-* [GetMartechList2](#getmartechlist2) - Retrieve a list
-* [GetMartechMember2](#getmartechmember2) - Retrieve a member
-* [ListMartechCampaigns2](#listmartechcampaigns2) - List all campaigns
-* [ListMartechLists2](#listmartechlists2) - List all lists
-* [ListMartechMembers2](#listmartechmembers2) - List all members
-* [ListMartechReports2](#listmartechreports2) - List all reports
-* [PatchMartechCampaign2](#patchmartechcampaign2) - Update a campaign
-* [PatchMartechList2](#patchmartechlist2) - Update a list
-* [PatchMartechMember2](#patchmartechmember2) - Update a member
-* [RemoveMartechCampaign2](#removemartechcampaign2) - Remove a campaign
-* [RemoveMartechList2](#removemartechlist2) - Remove a list
-* [RemoveMartechMember2](#removemartechmember2) - Remove a member
-* [UpdateMartechCampaign2](#updatemartechcampaign2) - Update a campaign
-* [UpdateMartechList2](#updatemartechlist2) - Update a list
-* [UpdateMartechMember2](#updatemartechmember2) - Update a member
+* [CreateMartechCampaign](#createmartechcampaign) - Create a campaign
+* [CreateMartechList](#createmartechlist) - Create a list
+* [CreateMartechMember](#createmartechmember) - Create a member
+* [GetMartechCampaign](#getmartechcampaign) - Retrieve a campaign
+* [GetMartechList](#getmartechlist) - Retrieve a list
+* [GetMartechMember](#getmartechmember) - Retrieve a member
+* [ListMartechCampaigns](#listmartechcampaigns) - List all campaigns
+* [ListMartechLists](#listmartechlists) - List all lists
+* [ListMartechMembers](#listmartechmembers) - List all members
+* [ListMartechReports](#listmartechreports) - List all reports
+* [PatchMartechCampaign](#patchmartechcampaign) - Update a campaign
+* [PatchMartechList](#patchmartechlist) - Update a list
+* [PatchMartechMember](#patchmartechmember) - Update a member
+* [RemoveMartechCampaign](#removemartechcampaign) - Remove a campaign
+* [RemoveMartechList](#removemartechlist) - Remove a list
+* [RemoveMartechMember](#removemartechmember) - Remove a member
+* [UpdateMartechCampaign](#updatemartechcampaign) - Update a campaign
+* [UpdateMartechList](#updatemartechlist) - Update a list
+* [UpdateMartechMember](#updatemartechmember) - Update a member
 
-## CreateMartechCampaign2
+## CreateMartechCampaign
 
 Create a campaign
 
@@ -39,7 +39,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.CreateMartechCampaign2Async(
+var res = await sdk.Martech.CreateMartechCampaignAsync(
     marketingCampaign: new MarketingCampaign() {},
     connectionId: "<id>"
 );
@@ -53,12 +53,12 @@ var res = await sdk.Martech.CreateMartechCampaign2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `MarketingCampaign`                                                                                                                              | [MarketingCampaign](../../Models/Components/MarketingCampaign.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateMartechCampaign2QueryParamFields](../../Models/Requests/CreateMartechCampaign2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateMartechCampaignQueryParamFields](../../Models/Requests/CreateMartechCampaignQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateMartechCampaign2Response](../../Models/Requests/CreateMartechCampaign2Response.md)**
+**[CreateMartechCampaignResponse](../../Models/Requests/CreateMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -66,7 +66,7 @@ var res = await sdk.Martech.CreateMartechCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateMartechList2
+## CreateMartechList
 
 Create a list
 
@@ -80,7 +80,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.CreateMartechList2Async(
+var res = await sdk.Martech.CreateMartechListAsync(
     marketingList: new MarketingList() {},
     connectionId: "<id>"
 );
@@ -94,12 +94,12 @@ var res = await sdk.Martech.CreateMartechList2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `MarketingList`                                                                                                                                  | [MarketingList](../../Models/Components/MarketingList.md)                                                                                        | :heavy_check_mark:                                                                                                                               | Mailing List                                                                                                                                     |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateMartechList2QueryParamFields](../../Models/Requests/CreateMartechList2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateMartechListQueryParamFields](../../Models/Requests/CreateMartechListQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateMartechList2Response](../../Models/Requests/CreateMartechList2Response.md)**
+**[CreateMartechListResponse](../../Models/Requests/CreateMartechListResponse.md)**
 
 ### Errors
 
@@ -107,7 +107,7 @@ var res = await sdk.Martech.CreateMartechList2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateMartechMember2
+## CreateMartechMember
 
 Create a member
 
@@ -121,7 +121,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.CreateMartechMember2Async(
+var res = await sdk.Martech.CreateMartechMemberAsync(
     marketingMember: new MarketingMember() {},
     connectionId: "<id>"
 );
@@ -135,12 +135,12 @@ var res = await sdk.Martech.CreateMartechMember2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `MarketingMember`                                                                                                                                | [MarketingMember](../../Models/Components/MarketingMember.md)                                                                                    | :heavy_check_mark:                                                                                                                               | A member represents a person                                                                                                                     |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateMartechMember2QueryParamFields](../../Models/Requests/CreateMartechMember2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateMartechMemberQueryParamFields](../../Models/Requests/CreateMartechMemberQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateMartechMember2Response](../../Models/Requests/CreateMartechMember2Response.md)**
+**[CreateMartechMemberResponse](../../Models/Requests/CreateMartechMemberResponse.md)**
 
 ### Errors
 
@@ -148,7 +148,7 @@ var res = await sdk.Martech.CreateMartechMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetMartechCampaign2
+## GetMartechCampaign
 
 Retrieve a campaign
 
@@ -162,7 +162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.GetMartechCampaign2Async(
+var res = await sdk.Martech.GetMartechCampaignAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -176,12 +176,12 @@ var res = await sdk.Martech.GetMartechCampaign2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Campaign                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetMartechCampaign2QueryParamFields](../../Models/Requests/GetMartechCampaign2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetMartechCampaignQueryParamFields](../../Models/Requests/GetMartechCampaignQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetMartechCampaign2Response](../../Models/Requests/GetMartechCampaign2Response.md)**
+**[GetMartechCampaignResponse](../../Models/Requests/GetMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -189,7 +189,7 @@ var res = await sdk.Martech.GetMartechCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetMartechList2
+## GetMartechList
 
 Retrieve a list
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.GetMartechList2Async(
+var res = await sdk.Martech.GetMartechListAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -217,12 +217,12 @@ var res = await sdk.Martech.GetMartechList2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the List                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetMartechList2QueryParamFields](../../Models/Requests/GetMartechList2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetMartechListQueryParamFields](../../Models/Requests/GetMartechListQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetMartechList2Response](../../Models/Requests/GetMartechList2Response.md)**
+**[GetMartechListResponse](../../Models/Requests/GetMartechListResponse.md)**
 
 ### Errors
 
@@ -230,7 +230,7 @@ var res = await sdk.Martech.GetMartechList2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetMartechMember2
+## GetMartechMember
 
 Retrieve a member
 
@@ -244,7 +244,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.GetMartechMember2Async(
+var res = await sdk.Martech.GetMartechMemberAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -258,12 +258,12 @@ var res = await sdk.Martech.GetMartechMember2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Member                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetMartechMember2QueryParamFields](../../Models/Requests/GetMartechMember2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetMartechMemberQueryParamFields](../../Models/Requests/GetMartechMemberQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetMartechMember2Response](../../Models/Requests/GetMartechMember2Response.md)**
+**[GetMartechMemberResponse](../../Models/Requests/GetMartechMemberResponse.md)**
 
 ### Errors
 
@@ -271,7 +271,7 @@ var res = await sdk.Martech.GetMartechMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMartechCampaigns2
+## ListMartechCampaigns
 
 List all campaigns
 
@@ -286,24 +286,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMartechCampaigns2Request req = new ListMartechCampaigns2Request() {
+ListMartechCampaignsRequest req = new ListMartechCampaignsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Martech.ListMartechCampaigns2Async(req);
+var res = await sdk.Martech.ListMartechCampaignsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListMartechCampaigns2Request](../../Models/Requests/ListMartechCampaigns2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListMartechCampaignsRequest](../../Models/Requests/ListMartechCampaignsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListMartechCampaigns2Response](../../Models/Requests/ListMartechCampaigns2Response.md)**
+**[ListMartechCampaignsResponse](../../Models/Requests/ListMartechCampaignsResponse.md)**
 
 ### Errors
 
@@ -311,7 +311,7 @@ var res = await sdk.Martech.ListMartechCampaigns2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMartechLists2
+## ListMartechLists
 
 List all lists
 
@@ -326,24 +326,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMartechLists2Request req = new ListMartechLists2Request() {
+ListMartechListsRequest req = new ListMartechListsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Martech.ListMartechLists2Async(req);
+var res = await sdk.Martech.ListMartechListsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListMartechLists2Request](../../Models/Requests/ListMartechLists2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListMartechListsRequest](../../Models/Requests/ListMartechListsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListMartechLists2Response](../../Models/Requests/ListMartechLists2Response.md)**
+**[ListMartechListsResponse](../../Models/Requests/ListMartechListsResponse.md)**
 
 ### Errors
 
@@ -351,7 +351,7 @@ var res = await sdk.Martech.ListMartechLists2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMartechMembers2
+## ListMartechMembers
 
 List all members
 
@@ -366,24 +366,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMartechMembers2Request req = new ListMartechMembers2Request() {
+ListMartechMembersRequest req = new ListMartechMembersRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Martech.ListMartechMembers2Async(req);
+var res = await sdk.Martech.ListMartechMembersAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListMartechMembers2Request](../../Models/Requests/ListMartechMembers2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListMartechMembersRequest](../../Models/Requests/ListMartechMembersRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListMartechMembers2Response](../../Models/Requests/ListMartechMembers2Response.md)**
+**[ListMartechMembersResponse](../../Models/Requests/ListMartechMembersResponse.md)**
 
 ### Errors
 
@@ -391,7 +391,7 @@ var res = await sdk.Martech.ListMartechMembers2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMartechReports2
+## ListMartechReports
 
 List all reports
 
@@ -406,24 +406,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMartechReports2Request req = new ListMartechReports2Request() {
+ListMartechReportsRequest req = new ListMartechReportsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Martech.ListMartechReports2Async(req);
+var res = await sdk.Martech.ListMartechReportsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListMartechReports2Request](../../Models/Requests/ListMartechReports2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListMartechReportsRequest](../../Models/Requests/ListMartechReportsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListMartechReports2Response](../../Models/Requests/ListMartechReports2Response.md)**
+**[ListMartechReportsResponse](../../Models/Requests/ListMartechReportsResponse.md)**
 
 ### Errors
 
@@ -431,7 +431,7 @@ var res = await sdk.Martech.ListMartechReports2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchMartechCampaign2
+## PatchMartechCampaign
 
 Update a campaign
 
@@ -446,26 +446,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchMartechCampaign2Request req = new PatchMartechCampaign2Request() {
+PatchMartechCampaignRequest req = new PatchMartechCampaignRequest() {
     MarketingCampaign = new MarketingCampaign() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Martech.PatchMartechCampaign2Async(req);
+var res = await sdk.Martech.PatchMartechCampaignAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchMartechCampaign2Request](../../Models/Requests/PatchMartechCampaign2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchMartechCampaignRequest](../../Models/Requests/PatchMartechCampaignRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchMartechCampaign2Response](../../Models/Requests/PatchMartechCampaign2Response.md)**
+**[PatchMartechCampaignResponse](../../Models/Requests/PatchMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -473,7 +473,7 @@ var res = await sdk.Martech.PatchMartechCampaign2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchMartechList2
+## PatchMartechList
 
 Update a list
 
@@ -488,26 +488,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchMartechList2Request req = new PatchMartechList2Request() {
+PatchMartechListRequest req = new PatchMartechListRequest() {
     MarketingList = new MarketingList() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Martech.PatchMartechList2Async(req);
+var res = await sdk.Martech.PatchMartechListAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchMartechList2Request](../../Models/Requests/PatchMartechList2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchMartechListRequest](../../Models/Requests/PatchMartechListRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchMartechList2Response](../../Models/Requests/PatchMartechList2Response.md)**
+**[PatchMartechListResponse](../../Models/Requests/PatchMartechListResponse.md)**
 
 ### Errors
 
@@ -515,7 +515,7 @@ var res = await sdk.Martech.PatchMartechList2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchMartechMember2
+## PatchMartechMember
 
 Update a member
 
@@ -530,26 +530,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchMartechMember2Request req = new PatchMartechMember2Request() {
+PatchMartechMemberRequest req = new PatchMartechMemberRequest() {
     MarketingMember = new MarketingMember() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Martech.PatchMartechMember2Async(req);
+var res = await sdk.Martech.PatchMartechMemberAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchMartechMember2Request](../../Models/Requests/PatchMartechMember2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchMartechMemberRequest](../../Models/Requests/PatchMartechMemberRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchMartechMember2Response](../../Models/Requests/PatchMartechMember2Response.md)**
+**[PatchMartechMemberResponse](../../Models/Requests/PatchMartechMemberResponse.md)**
 
 ### Errors
 
@@ -557,7 +557,7 @@ var res = await sdk.Martech.PatchMartechMember2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveMartechCampaign2
+## RemoveMartechCampaign
 
 Remove a campaign
 
@@ -571,7 +571,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.RemoveMartechCampaign2Async(
+var res = await sdk.Martech.RemoveMartechCampaignAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -588,7 +588,7 @@ var res = await sdk.Martech.RemoveMartechCampaign2Async(
 
 ### Response
 
-**[RemoveMartechCampaign2Response](../../Models/Requests/RemoveMartechCampaign2Response.md)**
+**[RemoveMartechCampaignResponse](../../Models/Requests/RemoveMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -596,7 +596,7 @@ var res = await sdk.Martech.RemoveMartechCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveMartechList2
+## RemoveMartechList
 
 Remove a list
 
@@ -610,7 +610,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.RemoveMartechList2Async(
+var res = await sdk.Martech.RemoveMartechListAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -627,7 +627,7 @@ var res = await sdk.Martech.RemoveMartechList2Async(
 
 ### Response
 
-**[RemoveMartechList2Response](../../Models/Requests/RemoveMartechList2Response.md)**
+**[RemoveMartechListResponse](../../Models/Requests/RemoveMartechListResponse.md)**
 
 ### Errors
 
@@ -635,7 +635,7 @@ var res = await sdk.Martech.RemoveMartechList2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveMartechMember2
+## RemoveMartechMember
 
 Remove a member
 
@@ -649,7 +649,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Martech.RemoveMartechMember2Async(
+var res = await sdk.Martech.RemoveMartechMemberAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -666,7 +666,7 @@ var res = await sdk.Martech.RemoveMartechMember2Async(
 
 ### Response
 
-**[RemoveMartechMember2Response](../../Models/Requests/RemoveMartechMember2Response.md)**
+**[RemoveMartechMemberResponse](../../Models/Requests/RemoveMartechMemberResponse.md)**
 
 ### Errors
 
@@ -674,7 +674,7 @@ var res = await sdk.Martech.RemoveMartechMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateMartechCampaign2
+## UpdateMartechCampaign
 
 Update a campaign
 
@@ -689,26 +689,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateMartechCampaign2Request req = new UpdateMartechCampaign2Request() {
+UpdateMartechCampaignRequest req = new UpdateMartechCampaignRequest() {
     MarketingCampaign = new MarketingCampaign() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Martech.UpdateMartechCampaign2Async(req);
+var res = await sdk.Martech.UpdateMartechCampaignAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateMartechCampaign2Request](../../Models/Requests/UpdateMartechCampaign2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateMartechCampaignRequest](../../Models/Requests/UpdateMartechCampaignRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateMartechCampaign2Response](../../Models/Requests/UpdateMartechCampaign2Response.md)**
+**[UpdateMartechCampaignResponse](../../Models/Requests/UpdateMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -716,7 +716,7 @@ var res = await sdk.Martech.UpdateMartechCampaign2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateMartechList2
+## UpdateMartechList
 
 Update a list
 
@@ -731,26 +731,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateMartechList2Request req = new UpdateMartechList2Request() {
+UpdateMartechListRequest req = new UpdateMartechListRequest() {
     MarketingList = new MarketingList() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Martech.UpdateMartechList2Async(req);
+var res = await sdk.Martech.UpdateMartechListAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateMartechList2Request](../../Models/Requests/UpdateMartechList2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateMartechListRequest](../../Models/Requests/UpdateMartechListRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateMartechList2Response](../../Models/Requests/UpdateMartechList2Response.md)**
+**[UpdateMartechListResponse](../../Models/Requests/UpdateMartechListResponse.md)**
 
 ### Errors
 
@@ -758,7 +758,7 @@ var res = await sdk.Martech.UpdateMartechList2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateMartechMember2
+## UpdateMartechMember
 
 Update a member
 
@@ -773,26 +773,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateMartechMember2Request req = new UpdateMartechMember2Request() {
+UpdateMartechMemberRequest req = new UpdateMartechMemberRequest() {
     MarketingMember = new MarketingMember() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Martech.UpdateMartechMember2Async(req);
+var res = await sdk.Martech.UpdateMartechMemberAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateMartechMember2Request](../../Models/Requests/UpdateMartechMember2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateMartechMemberRequest](../../Models/Requests/UpdateMartechMemberRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateMartechMember2Response](../../Models/Requests/UpdateMartechMember2Response.md)**
+**[UpdateMartechMemberResponse](../../Models/Requests/UpdateMartechMemberResponse.md)**
 
 ### Errors
 

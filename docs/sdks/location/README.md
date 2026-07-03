@@ -5,22 +5,22 @@
 
 ### Available Operations
 
-* [CreateCommerceLocation2](#createcommercelocation2) - Create a location
-* [CreateHrisLocation2](#createhrislocation2) - Create a location
-* [GetClubsLocation2](#getclubslocation2) - Retrieve a location
-* [GetCommerceLocation2](#getcommercelocation2) - Retrieve a location
-* [GetHrisLocation2](#gethrislocation2) - Retrieve a location
-* [ListClubsLocations2](#listclubslocations2) - List all locations
-* [ListCommerceLocations2](#listcommercelocations2) - List all locations
-* [ListHrisLocations2](#listhrislocations2) - List all locations
-* [PatchCommerceLocation2](#patchcommercelocation2) - Update a location
-* [PatchHrisLocation2](#patchhrislocation2) - Update a location
-* [RemoveCommerceLocation2](#removecommercelocation2) - Remove a location
-* [RemoveHrisLocation2](#removehrislocation2) - Remove a location
-* [UpdateCommerceLocation2](#updatecommercelocation2) - Update a location
-* [UpdateHrisLocation2](#updatehrislocation2) - Update a location
+* [CreateCommerceLocation](#createcommercelocation) - Create a location
+* [CreateHrisLocation](#createhrislocation) - Create a location
+* [GetClubsLocation](#getclubslocation) - Retrieve a location
+* [GetCommerceLocation](#getcommercelocation) - Retrieve a location
+* [GetHrisLocation](#gethrislocation) - Retrieve a location
+* [ListClubsLocations](#listclubslocations) - List all locations
+* [ListCommerceLocations](#listcommercelocations) - List all locations
+* [ListHrisLocations](#listhrislocations) - List all locations
+* [PatchCommerceLocation](#patchcommercelocation) - Update a location
+* [PatchHrisLocation](#patchhrislocation) - Update a location
+* [RemoveCommerceLocation](#removecommercelocation) - Remove a location
+* [RemoveHrisLocation](#removehrislocation) - Remove a location
+* [UpdateCommerceLocation](#updatecommercelocation) - Update a location
+* [UpdateHrisLocation](#updatehrislocation) - Update a location
 
-## CreateCommerceLocation2
+## CreateCommerceLocation
 
 Create a location
 
@@ -34,7 +34,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Location.CreateCommerceLocation2Async(
+var res = await sdk.Location.CreateCommerceLocationAsync(
     commerceLocation: new CommerceLocation() {},
     connectionId: "<id>"
 );
@@ -48,12 +48,12 @@ var res = await sdk.Location.CreateCommerceLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceLocation`                                                                                                                               | [CommerceLocation](../../Models/Components/CommerceLocation.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceLocation2QueryParamFields](../../Models/Requests/CreateCommerceLocation2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceLocationQueryParamFields](../../Models/Requests/CreateCommerceLocationQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceLocation2Response](../../Models/Requests/CreateCommerceLocation2Response.md)**
+**[CreateCommerceLocationResponse](../../Models/Requests/CreateCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -61,7 +61,7 @@ var res = await sdk.Location.CreateCommerceLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateHrisLocation2
+## CreateHrisLocation
 
 Create a location
 
@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Location.CreateHrisLocation2Async(
+var res = await sdk.Location.CreateHrisLocationAsync(
     hrisLocation: new HrisLocation() {},
     connectionId: "<id>"
 );
@@ -89,12 +89,12 @@ var res = await sdk.Location.CreateHrisLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `HrisLocation`                                                                                                                                   | [HrisLocation](../../Models/Components/HrisLocation.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateHrisLocation2QueryParamFields](../../Models/Requests/CreateHrisLocation2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateHrisLocationQueryParamFields](../../Models/Requests/CreateHrisLocationQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateHrisLocation2Response](../../Models/Requests/CreateHrisLocation2Response.md)**
+**[CreateHrisLocationResponse](../../Models/Requests/CreateHrisLocationResponse.md)**
 
 ### Errors
 
@@ -102,7 +102,7 @@ var res = await sdk.Location.CreateHrisLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsLocation2
+## GetClubsLocation
 
 Retrieve a location
 
@@ -116,7 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Location.GetClubsLocation2Async(
+var res = await sdk.Location.GetClubsLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -130,12 +130,12 @@ var res = await sdk.Location.GetClubsLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetClubsLocation2QueryParamFields](../../Models/Requests/GetClubsLocation2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsLocationQueryParamFields](../../Models/Requests/GetClubsLocationQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsLocation2Response](../../Models/Requests/GetClubsLocation2Response.md)**
+**[GetClubsLocationResponse](../../Models/Requests/GetClubsLocationResponse.md)**
 
 ### Errors
 
@@ -143,7 +143,7 @@ var res = await sdk.Location.GetClubsLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceLocation2
+## GetCommerceLocation
 
 Retrieve a location
 
@@ -157,7 +157,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Location.GetCommerceLocation2Async(
+var res = await sdk.Location.GetCommerceLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -171,12 +171,12 @@ var res = await sdk.Location.GetCommerceLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetCommerceLocation2QueryParamFields](../../Models/Requests/GetCommerceLocation2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceLocationQueryParamFields](../../Models/Requests/GetCommerceLocationQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceLocation2Response](../../Models/Requests/GetCommerceLocation2Response.md)**
+**[GetCommerceLocationResponse](../../Models/Requests/GetCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -184,7 +184,7 @@ var res = await sdk.Location.GetCommerceLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetHrisLocation2
+## GetHrisLocation
 
 Retrieve a location
 
@@ -198,7 +198,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Location.GetHrisLocation2Async(
+var res = await sdk.Location.GetHrisLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -212,12 +212,12 @@ var res = await sdk.Location.GetHrisLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetHrisLocation2QueryParamFields](../../Models/Requests/GetHrisLocation2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetHrisLocationQueryParamFields](../../Models/Requests/GetHrisLocationQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetHrisLocation2Response](../../Models/Requests/GetHrisLocation2Response.md)**
+**[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
 
 ### Errors
 
@@ -225,7 +225,7 @@ var res = await sdk.Location.GetHrisLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsLocations2
+## ListClubsLocations
 
 List all locations
 
@@ -240,91 +240,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsLocations2Request req = new ListClubsLocations2Request() {
+ListClubsLocationsRequest req = new ListClubsLocationsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Location.ListClubsLocations2Async(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListClubsLocations2Request](../../Models/Requests/ListClubsLocations2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
-
-### Response
-
-**[ListClubsLocations2Response](../../Models/Requests/ListClubsLocations2Response.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListCommerceLocations2
-
-List all locations
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListCommerceLocations2Request req = new ListCommerceLocations2Request() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Location.ListCommerceLocations2Async(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListCommerceLocations2Request](../../Models/Requests/ListCommerceLocations2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
-
-### Response
-
-**[ListCommerceLocations2Response](../../Models/Requests/ListCommerceLocations2Response.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListHrisLocations2
-
-List all locations
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListHrisLocations2Request req = new ListHrisLocations2Request() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Location.ListHrisLocations2Async(req);
+var res = await sdk.Location.ListClubsLocationsAsync(req);
 
 // handle response
 ```
@@ -333,11 +253,11 @@ var res = await sdk.Location.ListHrisLocations2Async(req);
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListHrisLocations2Request](../../Models/Requests/ListHrisLocations2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| `request`                                                                       | [ListClubsLocationsRequest](../../Models/Requests/ListClubsLocationsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListHrisLocations2Response](../../Models/Requests/ListHrisLocations2Response.md)**
+**[ListClubsLocationsResponse](../../Models/Requests/ListClubsLocationsResponse.md)**
 
 ### Errors
 
@@ -345,7 +265,87 @@ var res = await sdk.Location.ListHrisLocations2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceLocation2
+## ListCommerceLocations
+
+List all locations
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Location.ListCommerceLocationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListCommerceLocationsRequest](../../Models/Requests/ListCommerceLocationsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[ListCommerceLocationsResponse](../../Models/Requests/ListCommerceLocationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHrisLocations
+
+List all locations
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisLocationsRequest req = new ListHrisLocationsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Location.ListHrisLocationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisLocationsRequest](../../Models/Requests/ListHrisLocationsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListHrisLocationsResponse](../../Models/Requests/ListHrisLocationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchCommerceLocation
 
 Update a location
 
@@ -360,26 +360,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceLocation2Request req = new PatchCommerceLocation2Request() {
+PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
     CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Location.PatchCommerceLocation2Async(req);
+var res = await sdk.Location.PatchCommerceLocationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchCommerceLocation2Request](../../Models/Requests/PatchCommerceLocation2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchCommerceLocationRequest](../../Models/Requests/PatchCommerceLocationRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchCommerceLocation2Response](../../Models/Requests/PatchCommerceLocation2Response.md)**
+**[PatchCommerceLocationResponse](../../Models/Requests/PatchCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -387,7 +387,7 @@ var res = await sdk.Location.PatchCommerceLocation2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchHrisLocation2
+## PatchHrisLocation
 
 Update a location
 
@@ -402,26 +402,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchHrisLocation2Request req = new PatchHrisLocation2Request() {
+PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
     HrisLocation = new HrisLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Location.PatchHrisLocation2Async(req);
+var res = await sdk.Location.PatchHrisLocationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [PatchHrisLocation2Request](../../Models/Requests/PatchHrisLocation2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchHrisLocationRequest](../../Models/Requests/PatchHrisLocationRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[PatchHrisLocation2Response](../../Models/Requests/PatchHrisLocation2Response.md)**
+**[PatchHrisLocationResponse](../../Models/Requests/PatchHrisLocationResponse.md)**
 
 ### Errors
 
@@ -429,7 +429,7 @@ var res = await sdk.Location.PatchHrisLocation2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceLocation2
+## RemoveCommerceLocation
 
 Remove a location
 
@@ -443,7 +443,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Location.RemoveCommerceLocation2Async(
+var res = await sdk.Location.RemoveCommerceLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -460,7 +460,7 @@ var res = await sdk.Location.RemoveCommerceLocation2Async(
 
 ### Response
 
-**[RemoveCommerceLocation2Response](../../Models/Requests/RemoveCommerceLocation2Response.md)**
+**[RemoveCommerceLocationResponse](../../Models/Requests/RemoveCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -468,7 +468,7 @@ var res = await sdk.Location.RemoveCommerceLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveHrisLocation2
+## RemoveHrisLocation
 
 Remove a location
 
@@ -482,7 +482,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Location.RemoveHrisLocation2Async(
+var res = await sdk.Location.RemoveHrisLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -499,7 +499,7 @@ var res = await sdk.Location.RemoveHrisLocation2Async(
 
 ### Response
 
-**[RemoveHrisLocation2Response](../../Models/Requests/RemoveHrisLocation2Response.md)**
+**[RemoveHrisLocationResponse](../../Models/Requests/RemoveHrisLocationResponse.md)**
 
 ### Errors
 
@@ -507,7 +507,7 @@ var res = await sdk.Location.RemoveHrisLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceLocation2
+## UpdateCommerceLocation
 
 Update a location
 
@@ -522,26 +522,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceLocation2Request req = new UpdateCommerceLocation2Request() {
+UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
     CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Location.UpdateCommerceLocation2Async(req);
+var res = await sdk.Location.UpdateCommerceLocationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateCommerceLocation2Request](../../Models/Requests/UpdateCommerceLocation2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateCommerceLocationRequest](../../Models/Requests/UpdateCommerceLocationRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateCommerceLocation2Response](../../Models/Requests/UpdateCommerceLocation2Response.md)**
+**[UpdateCommerceLocationResponse](../../Models/Requests/UpdateCommerceLocationResponse.md)**
 
 ### Errors
 
@@ -549,7 +549,7 @@ var res = await sdk.Location.UpdateCommerceLocation2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateHrisLocation2
+## UpdateHrisLocation
 
 Update a location
 
@@ -564,26 +564,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateHrisLocation2Request req = new UpdateHrisLocation2Request() {
+UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
     HrisLocation = new HrisLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Location.UpdateHrisLocation2Async(req);
+var res = await sdk.Location.UpdateHrisLocationAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [UpdateHrisLocation2Request](../../Models/Requests/UpdateHrisLocation2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateHrisLocationRequest](../../Models/Requests/UpdateHrisLocationRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[UpdateHrisLocation2Response](../../Models/Requests/UpdateHrisLocation2Response.md)**
+**[UpdateHrisLocationResponse](../../Models/Requests/UpdateHrisLocationResponse.md)**
 
 ### Errors
 

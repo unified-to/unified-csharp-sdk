@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankaccount
         /// </summary>
-        Task<CreateHrisBankaccount2Response> CreateHrisBankaccount2Async(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccount2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisBankaccountResponse> CreateHrisBankaccountAsync(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccountQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a bankaccount
         /// </summary>
-        Task<GetHrisBankaccount2Response> GetHrisBankaccount2Async(string connectionId, string id, List<GetHrisBankaccount2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisBankaccountResponse> GetHrisBankaccountAsync(string connectionId, string id, List<GetHrisBankaccountQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all bankaccounts
         /// </summary>
-        Task<ListHrisBankaccounts2Response> ListHrisBankaccounts2Async(ListHrisBankaccounts2Request request);
+        Task<ListHrisBankaccountsResponse> ListHrisBankaccountsAsync(ListHrisBankaccountsRequest request);
 
         /// <summary>
         /// Update a bankaccount
         /// </summary>
-        Task<PatchHrisBankaccount2Response> PatchHrisBankaccount2Async(PatchHrisBankaccount2Request request);
+        Task<PatchHrisBankaccountResponse> PatchHrisBankaccountAsync(PatchHrisBankaccountRequest request);
 
         /// <summary>
         /// Remove a bankaccount
         /// </summary>
-        Task<RemoveHrisBankaccount2Response> RemoveHrisBankaccount2Async(string connectionId, string id);
+        Task<RemoveHrisBankaccountResponse> RemoveHrisBankaccountAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a bankaccount
         /// </summary>
-        Task<UpdateHrisBankaccount2Response> UpdateHrisBankaccount2Async(UpdateHrisBankaccount2Request request);
+        Task<UpdateHrisBankaccountResponse> UpdateHrisBankaccountAsync(UpdateHrisBankaccountRequest request);
     }
 
     public class Bankaccount: IBankaccount
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisBankaccount2Response> CreateHrisBankaccount2Async(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccount2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisBankaccountResponse> CreateHrisBankaccountAsync(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccountQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisBankaccount2Request()
+            var request = new CreateHrisBankaccountRequest()
             {
                 HrisBankaccount = hrisBankaccount,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisBankaccount2Response()
+                    var response = new CreateHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisBankaccount2Response> GetHrisBankaccount2Async(string connectionId, string id, List<GetHrisBankaccount2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisBankaccountResponse> GetHrisBankaccountAsync(string connectionId, string id, List<GetHrisBankaccountQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisBankaccount2Request()
+            var request = new GetHrisBankaccountRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisBankaccount2Response()
+                    var response = new GetHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisBankaccounts2Response> ListHrisBankaccounts2Async(ListHrisBankaccounts2Request request)
+        public async Task<ListHrisBankaccountsResponse> ListHrisBankaccountsAsync(ListHrisBankaccountsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/bankaccount", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBankaccounts2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBankaccounts", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisBankaccount>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisBankaccounts2Response()
+                    var response = new ListHrisBankaccountsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisBankaccount2Response> PatchHrisBankaccount2Async(PatchHrisBankaccount2Request request)
+        public async Task<PatchHrisBankaccountResponse> PatchHrisBankaccountAsync(PatchHrisBankaccountRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/bankaccount/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisBankaccount2Response()
+                    var response = new PatchHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisBankaccount2Response> RemoveHrisBankaccount2Async(string connectionId, string id)
+        public async Task<RemoveHrisBankaccountResponse> RemoveHrisBankaccountAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisBankaccount2Request()
+            var request = new RemoveHrisBankaccountRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisBankaccount2Response()
+                return new RemoveHrisBankaccountResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisBankaccount2Response()
+                return new RemoveHrisBankaccountResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisBankaccount2Response> UpdateHrisBankaccount2Async(UpdateHrisBankaccount2Request request)
+        public async Task<UpdateHrisBankaccountResponse> UpdateHrisBankaccountAsync(UpdateHrisBankaccountRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/bankaccount/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisBankaccount2Response()
+                    var response = new UpdateHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

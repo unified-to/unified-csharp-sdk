@@ -28,99 +28,99 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateKmsComment2Response> CreateKmsComment2Async(KmsComment kmsComment, string connectionId, List<CreateKmsComment2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<CreateKmsCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateTaskComment2Response> CreateTaskComment2Async(TaskComment taskComment, string connectionId, List<CreateTaskComment2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<CreateTaskCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateUcComment2Response> CreateUcComment2Async(UcComment ucComment, string connectionId, List<CreateUcComment2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<CreateUcCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetKmsComment2Response> GetKmsComment2Async(string connectionId, string id, List<GetKmsComment2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<GetKmsCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetTaskComment2Response> GetTaskComment2Async(string connectionId, string id, List<GetTaskComment2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<GetTaskCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetUcComment2Response> GetUcComment2Async(string connectionId, string id, List<GetUcComment2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<GetUcCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all comments
         /// </summary>
-        Task<ListKmsComments2Response> ListKmsComments2Async(ListKmsComments2Request request);
+        Task<ListKmsCommentsResponse> ListKmsCommentsAsync(ListKmsCommentsRequest request);
 
         /// <summary>
         /// List all comments
         /// </summary>
-        Task<ListTaskComments2Response> ListTaskComments2Async(ListTaskComments2Request request);
+        Task<ListTaskCommentsResponse> ListTaskCommentsAsync(ListTaskCommentsRequest request);
 
         /// <summary>
         /// List all comments
         /// </summary>
-        Task<ListUcComments2Response> ListUcComments2Async(ListUcComments2Request request);
+        Task<ListUcCommentsResponse> ListUcCommentsAsync(ListUcCommentsRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchKmsComment2Response> PatchKmsComment2Async(PatchKmsComment2Request request);
+        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchTaskComment2Response> PatchTaskComment2Async(PatchTaskComment2Request request);
+        Task<PatchTaskCommentResponse> PatchTaskCommentAsync(PatchTaskCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchUcComment2Response> PatchUcComment2Async(PatchUcComment2Request request);
+        Task<PatchUcCommentResponse> PatchUcCommentAsync(PatchUcCommentRequest request);
 
         /// <summary>
         /// Remove a comment
         /// </summary>
-        Task<RemoveKmsComment2Response> RemoveKmsComment2Async(string connectionId, string id);
+        Task<RemoveKmsCommentResponse> RemoveKmsCommentAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a comment
         /// </summary>
-        Task<RemoveTaskComment2Response> RemoveTaskComment2Async(string connectionId, string id);
+        Task<RemoveTaskCommentResponse> RemoveTaskCommentAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a comment
         /// </summary>
-        Task<RemoveUcComment2Response> RemoveUcComment2Async(string connectionId, string id);
+        Task<RemoveUcCommentResponse> RemoveUcCommentAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateKmsComment2Response> UpdateKmsComment2Async(UpdateKmsComment2Request request);
+        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateTaskComment2Response> UpdateTaskComment2Async(UpdateTaskComment2Request request);
+        Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(UpdateTaskCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateUcComment2Response> UpdateUcComment2Async(UpdateUcComment2Request request);
+        Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UpdateUcCommentRequest request);
     }
 
     public class Comment: IComment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -129,9 +129,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsComment2Response> CreateKmsComment2Async(KmsComment kmsComment, string connectionId, List<CreateKmsComment2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<CreateKmsCommentQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateKmsComment2Request()
+            var request = new CreateKmsCommentRequest()
             {
                 KmsComment = kmsComment,
                 ConnectionId = connectionId,
@@ -155,7 +155,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -196,7 +196,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateKmsComment2Response()
+                    var response = new CreateKmsCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -220,9 +220,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTaskComment2Response> CreateTaskComment2Async(TaskComment taskComment, string connectionId, List<CreateTaskComment2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<CreateTaskCommentQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateTaskComment2Request()
+            var request = new CreateTaskCommentRequest()
             {
                 TaskComment = taskComment,
                 ConnectionId = connectionId,
@@ -246,7 +246,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createTaskComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createTaskComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -287,7 +287,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateTaskComment2Response()
+                    var response = new CreateTaskCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -311,9 +311,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcComment2Response> CreateUcComment2Async(UcComment ucComment, string connectionId, List<CreateUcComment2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<CreateUcCommentQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateUcComment2Request()
+            var request = new CreateUcCommentRequest()
             {
                 UcComment = ucComment,
                 ConnectionId = connectionId,
@@ -337,7 +337,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUcComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUcComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -378,7 +378,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateUcComment2Response()
+                    var response = new CreateUcCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -402,9 +402,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsComment2Response> GetKmsComment2Async(string connectionId, string id, List<GetKmsComment2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<GetKmsCommentQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetKmsComment2Request()
+            var request = new GetKmsCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -422,7 +422,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetKmsComment2Response()
+                    var response = new GetKmsCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -487,9 +487,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTaskComment2Response> GetTaskComment2Async(string connectionId, string id, List<GetTaskComment2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<GetTaskCommentQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetTaskComment2Request()
+            var request = new GetTaskCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -507,7 +507,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTaskComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTaskComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -548,7 +548,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetTaskComment2Response()
+                    var response = new GetTaskCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -572,9 +572,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcComment2Response> GetUcComment2Async(string connectionId, string id, List<GetUcComment2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<GetUcCommentQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetUcComment2Request()
+            var request = new GetUcCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -592,7 +592,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -633,7 +633,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetUcComment2Response()
+                    var response = new GetUcCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -657,7 +657,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListKmsComments2Response> ListKmsComments2Async(ListKmsComments2Request request)
+        public async Task<ListKmsCommentsResponse> ListKmsCommentsAsync(ListKmsCommentsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment", request);
@@ -670,7 +670,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsComments2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listKmsComments", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -711,7 +711,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<KmsComment>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListKmsComments2Response()
+                    var response = new ListKmsCommentsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -735,7 +735,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListTaskComments2Response> ListTaskComments2Async(ListTaskComments2Request request)
+        public async Task<ListTaskCommentsResponse> ListTaskCommentsAsync(ListTaskCommentsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment", request);
@@ -748,7 +748,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTaskComments2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTaskComments", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -789,7 +789,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<TaskComment>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListTaskComments2Response()
+                    var response = new ListTaskCommentsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -813,7 +813,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListUcComments2Response> ListUcComments2Async(ListUcComments2Request request)
+        public async Task<ListUcCommentsResponse> ListUcCommentsAsync(ListUcCommentsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment", request);
@@ -826,7 +826,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcComments2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcComments", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -867,7 +867,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<UcComment>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListUcComments2Response()
+                    var response = new ListUcCommentsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -891,7 +891,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsComment2Response> PatchKmsComment2Async(PatchKmsComment2Request request)
+        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
@@ -910,7 +910,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -951,7 +951,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchKmsComment2Response()
+                    var response = new PatchKmsCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -975,7 +975,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTaskComment2Response> PatchTaskComment2Async(PatchTaskComment2Request request)
+        public async Task<PatchTaskCommentResponse> PatchTaskCommentAsync(PatchTaskCommentRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
@@ -994,7 +994,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchTaskComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchTaskComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1035,7 +1035,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchTaskComment2Response()
+                    var response = new PatchTaskCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1059,7 +1059,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcComment2Response> PatchUcComment2Async(PatchUcComment2Request request)
+        public async Task<PatchUcCommentResponse> PatchUcCommentAsync(PatchUcCommentRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
@@ -1078,7 +1078,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchUcComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchUcComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1119,7 +1119,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchUcComment2Response()
+                    var response = new PatchUcCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1143,9 +1143,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveKmsComment2Response> RemoveKmsComment2Async(string connectionId, string id)
+        public async Task<RemoveKmsCommentResponse> RemoveKmsCommentAsync(string connectionId, string id)
         {
-            var request = new RemoveKmsComment2Request()
+            var request = new RemoveKmsCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1161,7 +1161,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1199,7 +1199,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveKmsComment2Response()
+                return new RemoveKmsCommentResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1216,7 +1216,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveKmsComment2Response()
+                return new RemoveKmsCommentResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1225,9 +1225,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveTaskComment2Response> RemoveTaskComment2Async(string connectionId, string id)
+        public async Task<RemoveTaskCommentResponse> RemoveTaskCommentAsync(string connectionId, string id)
         {
-            var request = new RemoveTaskComment2Request()
+            var request = new RemoveTaskCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1243,7 +1243,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeTaskComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeTaskComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1281,7 +1281,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveTaskComment2Response()
+                return new RemoveTaskCommentResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1298,7 +1298,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveTaskComment2Response()
+                return new RemoveTaskCommentResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1307,9 +1307,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveUcComment2Response> RemoveUcComment2Async(string connectionId, string id)
+        public async Task<RemoveUcCommentResponse> RemoveUcCommentAsync(string connectionId, string id)
         {
-            var request = new RemoveUcComment2Request()
+            var request = new RemoveUcCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1325,7 +1325,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUcComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUcComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1363,7 +1363,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveUcComment2Response()
+                return new RemoveUcCommentResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1380,7 +1380,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveUcComment2Response()
+                return new RemoveUcCommentResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1389,7 +1389,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsComment2Response> UpdateKmsComment2Async(UpdateKmsComment2Request request)
+        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
@@ -1408,7 +1408,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateKmsComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1449,7 +1449,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<KmsComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateKmsComment2Response()
+                    var response = new UpdateKmsCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1473,7 +1473,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateTaskComment2Response> UpdateTaskComment2Async(UpdateTaskComment2Request request)
+        public async Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(UpdateTaskCommentRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
@@ -1492,7 +1492,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateTaskComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateTaskComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1533,7 +1533,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateTaskComment2Response()
+                    var response = new UpdateTaskCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1557,7 +1557,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateUcComment2Response> UpdateUcComment2Async(UpdateUcComment2Request request)
+        public async Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UpdateUcCommentRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
@@ -1576,7 +1576,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateUcComment2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateUcComment", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1617,7 +1617,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcComment>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateUcComment2Response()
+                    var response = new UpdateUcCommentResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

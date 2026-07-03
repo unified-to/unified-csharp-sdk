@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a database
         /// </summary>
-        Task<CreateDatastoreDatabase2Response> CreateDatastoreDatabase2Async(DatastoreDatabase datastoreDatabase, string connectionId, List<CreateDatastoreDatabase2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateDatastoreDatabaseResponse> CreateDatastoreDatabaseAsync(DatastoreDatabase datastoreDatabase, string connectionId, List<CreateDatastoreDatabaseQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a database
         /// </summary>
-        Task<GetDatastoreDatabase2Response> GetDatastoreDatabase2Async(string connectionId, string id, List<GetDatastoreDatabase2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetDatastoreDatabaseResponse> GetDatastoreDatabaseAsync(string connectionId, string id, List<GetDatastoreDatabaseQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all databases
         /// </summary>
-        Task<ListDatastoreDatabases2Response> ListDatastoreDatabases2Async(ListDatastoreDatabases2Request request);
+        Task<ListDatastoreDatabasesResponse> ListDatastoreDatabasesAsync(ListDatastoreDatabasesRequest request);
 
         /// <summary>
         /// Update a database
         /// </summary>
-        Task<PatchDatastoreDatabase2Response> PatchDatastoreDatabase2Async(PatchDatastoreDatabase2Request request);
+        Task<PatchDatastoreDatabaseResponse> PatchDatastoreDatabaseAsync(PatchDatastoreDatabaseRequest request);
 
         /// <summary>
         /// Remove a database
         /// </summary>
-        Task<RemoveDatastoreDatabase2Response> RemoveDatastoreDatabase2Async(string connectionId, string id);
+        Task<RemoveDatastoreDatabaseResponse> RemoveDatastoreDatabaseAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a database
         /// </summary>
-        Task<UpdateDatastoreDatabase2Response> UpdateDatastoreDatabase2Async(UpdateDatastoreDatabase2Request request);
+        Task<UpdateDatastoreDatabaseResponse> UpdateDatastoreDatabaseAsync(UpdateDatastoreDatabaseRequest request);
     }
 
     public class Database: IDatabase
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateDatastoreDatabase2Response> CreateDatastoreDatabase2Async(DatastoreDatabase datastoreDatabase, string connectionId, List<CreateDatastoreDatabase2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateDatastoreDatabaseResponse> CreateDatastoreDatabaseAsync(DatastoreDatabase datastoreDatabase, string connectionId, List<CreateDatastoreDatabaseQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateDatastoreDatabase2Request()
+            var request = new CreateDatastoreDatabaseRequest()
             {
                 DatastoreDatabase = datastoreDatabase,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createDatastoreDatabase2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createDatastoreDatabase", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<DatastoreDatabase>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateDatastoreDatabase2Response()
+                    var response = new CreateDatastoreDatabaseResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetDatastoreDatabase2Response> GetDatastoreDatabase2Async(string connectionId, string id, List<GetDatastoreDatabase2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetDatastoreDatabaseResponse> GetDatastoreDatabaseAsync(string connectionId, string id, List<GetDatastoreDatabaseQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetDatastoreDatabase2Request()
+            var request = new GetDatastoreDatabaseRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getDatastoreDatabase2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getDatastoreDatabase", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<DatastoreDatabase>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetDatastoreDatabase2Response()
+                    var response = new GetDatastoreDatabaseResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListDatastoreDatabases2Response> ListDatastoreDatabases2Async(ListDatastoreDatabases2Request request)
+        public async Task<ListDatastoreDatabasesResponse> ListDatastoreDatabasesAsync(ListDatastoreDatabasesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/datastore/{connection_id}/database", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listDatastoreDatabases2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listDatastoreDatabases", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<DatastoreDatabase>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListDatastoreDatabases2Response()
+                    var response = new ListDatastoreDatabasesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchDatastoreDatabase2Response> PatchDatastoreDatabase2Async(PatchDatastoreDatabase2Request request)
+        public async Task<PatchDatastoreDatabaseResponse> PatchDatastoreDatabaseAsync(PatchDatastoreDatabaseRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/datastore/{connection_id}/database/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchDatastoreDatabase2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchDatastoreDatabase", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<DatastoreDatabase>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchDatastoreDatabase2Response()
+                    var response = new PatchDatastoreDatabaseResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveDatastoreDatabase2Response> RemoveDatastoreDatabase2Async(string connectionId, string id)
+        public async Task<RemoveDatastoreDatabaseResponse> RemoveDatastoreDatabaseAsync(string connectionId, string id)
         {
-            var request = new RemoveDatastoreDatabase2Request()
+            var request = new RemoveDatastoreDatabaseRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeDatastoreDatabase2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeDatastoreDatabase", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveDatastoreDatabase2Response()
+                return new RemoveDatastoreDatabaseResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveDatastoreDatabase2Response()
+                return new RemoveDatastoreDatabaseResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateDatastoreDatabase2Response> UpdateDatastoreDatabase2Async(UpdateDatastoreDatabase2Request request)
+        public async Task<UpdateDatastoreDatabaseResponse> UpdateDatastoreDatabaseAsync(UpdateDatastoreDatabaseRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/datastore/{connection_id}/database/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateDatastoreDatabase2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateDatastoreDatabase", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<DatastoreDatabase>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateDatastoreDatabase2Response()
+                    var response = new UpdateDatastoreDatabaseResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

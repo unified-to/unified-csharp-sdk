@@ -28,104 +28,104 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateAtsCompany2Response> CreateAtsCompany2Async(AtsCompany atsCompany, string connectionId, List<CreateAtsCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<CreateAtsCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompany2Response> CreateCrmCompany2Async(CrmCompany crmCompany, string connectionId, List<CreateCrmCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<CreateCrmCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateHrisCompany2Response> CreateHrisCompany2Async(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetAtsCompany2Response> GetAtsCompany2Async(string connectionId, string id, List<GetAtsCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<GetAtsCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetCrmCompany2Response> GetCrmCompany2Async(string connectionId, string id, List<GetCrmCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<GetCrmCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetHrisCompany2Response> GetHrisCompany2Async(string connectionId, string id, List<GetHrisCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all companies
         /// </summary>
-        Task<ListAtsCompanies2Response> ListAtsCompanies2Async(ListAtsCompanies2Request request);
+        Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest request);
 
         /// <summary>
         /// List all companies
         /// </summary>
-        Task<ListCrmCompanies2Response> ListCrmCompanies2Async(ListCrmCompanies2Request request);
+        Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesRequest request);
 
         /// <summary>
         /// Retrieve enrichment information for a company
         /// </summary>
-        Task<ListEnrichCompanies2Response> ListEnrichCompanies2Async(string connectionId, string? domain = null, string? name = null);
+        Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(string connectionId, string? domain = null, string? name = null);
 
         /// <summary>
         /// List all companies
         /// </summary>
-        Task<ListHrisCompanies2Response> ListHrisCompanies2Async(ListHrisCompanies2Request request);
+        Task<ListHrisCompaniesResponse> ListHrisCompaniesAsync(ListHrisCompaniesRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchAtsCompany2Response> PatchAtsCompany2Async(PatchAtsCompany2Request request);
+        Task<PatchAtsCompanyResponse> PatchAtsCompanyAsync(PatchAtsCompanyRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchCrmCompany2Response> PatchCrmCompany2Async(PatchCrmCompany2Request request);
+        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanyRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchHrisCompany2Response> PatchHrisCompany2Async(PatchHrisCompany2Request request);
+        Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(PatchHrisCompanyRequest request);
 
         /// <summary>
         /// Remove a company
         /// </summary>
-        Task<RemoveAtsCompany2Response> RemoveAtsCompany2Async(string connectionId, string id);
+        Task<RemoveAtsCompanyResponse> RemoveAtsCompanyAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a company
         /// </summary>
-        Task<RemoveCrmCompany2Response> RemoveCrmCompany2Async(string connectionId, string id);
+        Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a company
         /// </summary>
-        Task<RemoveHrisCompany2Response> RemoveHrisCompany2Async(string connectionId, string id);
+        Task<RemoveHrisCompanyResponse> RemoveHrisCompanyAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateAtsCompany2Response> UpdateAtsCompany2Async(UpdateAtsCompany2Request request);
+        Task<UpdateAtsCompanyResponse> UpdateAtsCompanyAsync(UpdateAtsCompanyRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateCrmCompany2Response> UpdateCrmCompany2Async(UpdateCrmCompany2Request request);
+        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanyRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateHrisCompany2Response> UpdateHrisCompany2Async(UpdateHrisCompany2Request request);
+        Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(UpdateHrisCompanyRequest request);
     }
 
     public class Company: ICompany
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -134,9 +134,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsCompany2Response> CreateAtsCompany2Async(AtsCompany atsCompany, string connectionId, List<CreateAtsCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<CreateAtsCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAtsCompany2Request()
+            var request = new CreateAtsCompanyRequest()
             {
                 AtsCompany = atsCompany,
                 ConnectionId = connectionId,
@@ -160,7 +160,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -201,7 +201,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAtsCompany2Response()
+                    var response = new CreateAtsCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -225,9 +225,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmCompany2Response> CreateCrmCompany2Async(CrmCompany crmCompany, string connectionId, List<CreateCrmCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<CreateCrmCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCrmCompany2Request()
+            var request = new CreateCrmCompanyRequest()
             {
                 CrmCompany = crmCompany,
                 ConnectionId = connectionId,
@@ -251,7 +251,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -292,7 +292,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCrmCompany2Response()
+                    var response = new CreateCrmCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -316,9 +316,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisCompany2Response> CreateHrisCompany2Async(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisCompany2Request()
+            var request = new CreateHrisCompanyRequest()
             {
                 HrisCompany = hrisCompany,
                 ConnectionId = connectionId,
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisCompany2Response()
+                    var response = new CreateHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCompany2Response> GetAtsCompany2Async(string connectionId, string id, List<GetAtsCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<GetAtsCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAtsCompany2Request()
+            var request = new GetAtsCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -427,7 +427,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -468,7 +468,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAtsCompany2Response()
+                    var response = new GetAtsCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -492,9 +492,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmCompany2Response> GetCrmCompany2Async(string connectionId, string id, List<GetCrmCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<GetCrmCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCrmCompany2Request()
+            var request = new GetCrmCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -512,7 +512,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -553,7 +553,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCrmCompany2Response()
+                    var response = new GetCrmCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -577,9 +577,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisCompany2Response> GetHrisCompany2Async(string connectionId, string id, List<GetHrisCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisCompany2Request()
+            var request = new GetHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -597,7 +597,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -638,7 +638,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisCompany2Response()
+                    var response = new GetHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -662,7 +662,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAtsCompanies2Response> ListAtsCompanies2Async(ListAtsCompanies2Request request)
+        public async Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company", request);
@@ -675,7 +675,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsCompanies2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsCompanies", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -716,7 +716,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AtsCompany>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAtsCompanies2Response()
+                    var response = new ListAtsCompaniesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -740,7 +740,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCrmCompanies2Response> ListCrmCompanies2Async(ListCrmCompanies2Request request)
+        public async Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company", request);
@@ -753,7 +753,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmCompanies2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmCompanies", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -794,7 +794,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CrmCompany>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCrmCompanies2Response()
+                    var response = new ListCrmCompaniesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -818,9 +818,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListEnrichCompanies2Response> ListEnrichCompanies2Async(string connectionId, string? domain = null, string? name = null)
+        public async Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(string connectionId, string? domain = null, string? name = null)
         {
-            var request = new ListEnrichCompanies2Request()
+            var request = new ListEnrichCompaniesRequest()
             {
                 ConnectionId = connectionId,
                 Domain = domain,
@@ -837,7 +837,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listEnrichCompanies2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listEnrichCompanies", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -878,7 +878,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<EnrichCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListEnrichCompanies2Response()
+                    var response = new ListEnrichCompaniesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -902,7 +902,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisCompanies2Response> ListHrisCompanies2Async(ListHrisCompanies2Request request)
+        public async Task<ListHrisCompaniesResponse> ListHrisCompaniesAsync(ListHrisCompaniesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company", request);
@@ -915,7 +915,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisCompanies2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisCompanies", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -956,7 +956,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisCompany>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisCompanies2Response()
+                    var response = new ListHrisCompaniesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -980,7 +980,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsCompany2Response> PatchAtsCompany2Async(PatchAtsCompany2Request request)
+        public async Task<PatchAtsCompanyResponse> PatchAtsCompanyAsync(PatchAtsCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company/{id}", request);
@@ -999,7 +999,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1040,7 +1040,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAtsCompany2Response()
+                    var response = new PatchAtsCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1064,7 +1064,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmCompany2Response> PatchCrmCompany2Async(PatchCrmCompany2Request request)
+        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
@@ -1083,7 +1083,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1124,7 +1124,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCrmCompany2Response()
+                    var response = new PatchCrmCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1148,7 +1148,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisCompany2Response> PatchHrisCompany2Async(PatchHrisCompany2Request request)
+        public async Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(PatchHrisCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
@@ -1167,7 +1167,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1208,7 +1208,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisCompany2Response()
+                    var response = new PatchHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1232,9 +1232,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAtsCompany2Response> RemoveAtsCompany2Async(string connectionId, string id)
+        public async Task<RemoveAtsCompanyResponse> RemoveAtsCompanyAsync(string connectionId, string id)
         {
-            var request = new RemoveAtsCompany2Request()
+            var request = new RemoveAtsCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1250,7 +1250,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1288,7 +1288,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAtsCompany2Response()
+                return new RemoveAtsCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1305,7 +1305,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAtsCompany2Response()
+                return new RemoveAtsCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1314,9 +1314,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveCrmCompany2Response> RemoveCrmCompany2Async(string connectionId, string id)
+        public async Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(string connectionId, string id)
         {
-            var request = new RemoveCrmCompany2Request()
+            var request = new RemoveCrmCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1332,7 +1332,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1370,7 +1370,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCrmCompany2Response()
+                return new RemoveCrmCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1387,7 +1387,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCrmCompany2Response()
+                return new RemoveCrmCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1396,9 +1396,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisCompany2Response> RemoveHrisCompany2Async(string connectionId, string id)
+        public async Task<RemoveHrisCompanyResponse> RemoveHrisCompanyAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisCompany2Request()
+            var request = new RemoveHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1414,7 +1414,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1452,7 +1452,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisCompany2Response()
+                return new RemoveHrisCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1469,7 +1469,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisCompany2Response()
+                return new RemoveHrisCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1478,7 +1478,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsCompany2Response> UpdateAtsCompany2Async(UpdateAtsCompany2Request request)
+        public async Task<UpdateAtsCompanyResponse> UpdateAtsCompanyAsync(UpdateAtsCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company/{id}", request);
@@ -1497,7 +1497,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1538,7 +1538,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAtsCompany2Response()
+                    var response = new UpdateAtsCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1562,7 +1562,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmCompany2Response> UpdateCrmCompany2Async(UpdateCrmCompany2Request request)
+        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
@@ -1581,7 +1581,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1622,7 +1622,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCrmCompany2Response()
+                    var response = new UpdateCrmCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1646,7 +1646,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisCompany2Response> UpdateHrisCompany2Async(UpdateHrisCompany2Request request)
+        public async Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(UpdateHrisCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
@@ -1665,7 +1665,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1706,7 +1706,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisCompany2Response()
+                    var response = new UpdateHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project
         /// </summary>
-        Task<CreateTaskProject2Response> CreateTaskProject2Async(TaskProject taskProject, string connectionId, List<CreateTaskProject2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateTaskProjectResponse> CreateTaskProjectAsync(TaskProject taskProject, string connectionId, List<CreateTaskProjectQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a project
         /// </summary>
-        Task<GetTaskProject2Response> GetTaskProject2Async(string connectionId, string id, List<GetTaskProject2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetTaskProjectResponse> GetTaskProjectAsync(string connectionId, string id, List<GetTaskProjectQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all projects
         /// </summary>
-        Task<ListTaskProjects2Response> ListTaskProjects2Async(ListTaskProjects2Request request);
+        Task<ListTaskProjectsResponse> ListTaskProjectsAsync(ListTaskProjectsRequest request);
 
         /// <summary>
         /// Update a project
         /// </summary>
-        Task<PatchTaskProject2Response> PatchTaskProject2Async(PatchTaskProject2Request request);
+        Task<PatchTaskProjectResponse> PatchTaskProjectAsync(PatchTaskProjectRequest request);
 
         /// <summary>
         /// Remove a project
         /// </summary>
-        Task<RemoveTaskProject2Response> RemoveTaskProject2Async(string connectionId, string id);
+        Task<RemoveTaskProjectResponse> RemoveTaskProjectAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a project
         /// </summary>
-        Task<UpdateTaskProject2Response> UpdateTaskProject2Async(UpdateTaskProject2Request request);
+        Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(UpdateTaskProjectRequest request);
     }
 
     public class Project: IProject
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTaskProject2Response> CreateTaskProject2Async(TaskProject taskProject, string connectionId, List<CreateTaskProject2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateTaskProjectResponse> CreateTaskProjectAsync(TaskProject taskProject, string connectionId, List<CreateTaskProjectQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateTaskProject2Request()
+            var request = new CreateTaskProjectRequest()
             {
                 TaskProject = taskProject,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createTaskProject2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createTaskProject", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskProject>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateTaskProject2Response()
+                    var response = new CreateTaskProjectResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTaskProject2Response> GetTaskProject2Async(string connectionId, string id, List<GetTaskProject2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetTaskProjectResponse> GetTaskProjectAsync(string connectionId, string id, List<GetTaskProjectQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetTaskProject2Request()
+            var request = new GetTaskProjectRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTaskProject2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTaskProject", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskProject>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetTaskProject2Response()
+                    var response = new GetTaskProjectResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListTaskProjects2Response> ListTaskProjects2Async(ListTaskProjects2Request request)
+        public async Task<ListTaskProjectsResponse> ListTaskProjectsAsync(ListTaskProjectsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTaskProjects2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTaskProjects", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<TaskProject>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListTaskProjects2Response()
+                    var response = new ListTaskProjectsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTaskProject2Response> PatchTaskProject2Async(PatchTaskProject2Request request)
+        public async Task<PatchTaskProjectResponse> PatchTaskProjectAsync(PatchTaskProjectRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchTaskProject2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchTaskProject", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskProject>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchTaskProject2Response()
+                    var response = new PatchTaskProjectResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveTaskProject2Response> RemoveTaskProject2Async(string connectionId, string id)
+        public async Task<RemoveTaskProjectResponse> RemoveTaskProjectAsync(string connectionId, string id)
         {
-            var request = new RemoveTaskProject2Request()
+            var request = new RemoveTaskProjectRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeTaskProject2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeTaskProject", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveTaskProject2Response()
+                return new RemoveTaskProjectResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveTaskProject2Response()
+                return new RemoveTaskProjectResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateTaskProject2Response> UpdateTaskProject2Async(UpdateTaskProject2Request request)
+        public async Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(UpdateTaskProjectRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateTaskProject2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateTaskProject", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TaskProject>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateTaskProject2Response()
+                    var response = new UpdateTaskProjectResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

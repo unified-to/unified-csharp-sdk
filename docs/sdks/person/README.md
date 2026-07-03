@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [ListEnrichPeople2](#listenrichpeople2) - Retrieve enrichment information for a person
+* [ListEnrichPeople](#listenrichpeople) - Retrieve enrichment information for a person
 
-## ListEnrichPeople2
+## ListEnrichPeople
 
 Retrieve enrichment information for a person
 
@@ -22,24 +22,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListEnrichPeople2Request req = new ListEnrichPeople2Request() {
+ListEnrichPeopleRequest req = new ListEnrichPeopleRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Person.ListEnrichPeople2Async(req);
+var res = await sdk.Person.ListEnrichPeopleAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListEnrichPeople2Request](../../Models/Requests/ListEnrichPeople2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListEnrichPeopleRequest](../../Models/Requests/ListEnrichPeopleRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListEnrichPeople2Response](../../Models/Requests/ListEnrichPeople2Response.md)**
+**[ListEnrichPeopleResponse](../../Models/Requests/ListEnrichPeopleResponse.md)**
 
 ### Errors
 

@@ -35,6 +35,10 @@ namespace UnifiedTo.Models.Components
         AccountingBillRead,
         [JsonProperty("accounting_bill_write")]
         AccountingBillWrite,
+        [JsonProperty("accounting_vendorcredit_read")]
+        AccountingVendorcreditRead,
+        [JsonProperty("accounting_vendorcredit_write")]
+        AccountingVendorcreditWrite,
         [JsonProperty("accounting_creditmemo_read")]
         AccountingCreditmemoRead,
         [JsonProperty("accounting_creditmemo_write")]

@@ -5,20 +5,20 @@
 
 ### Available Operations
 
-* [CreateAdsCampaign2](#createadscampaign2) - Create a campaign
-* [CreateMartechCampaign2](#createmartechcampaign2) - Create a campaign
-* [GetAdsCampaign2](#getadscampaign2) - Retrieve a campaign
-* [GetMartechCampaign2](#getmartechcampaign2) - Retrieve a campaign
-* [ListAdsCampaigns2](#listadscampaigns2) - List all campaigns
-* [ListMartechCampaigns2](#listmartechcampaigns2) - List all campaigns
-* [PatchAdsCampaign2](#patchadscampaign2) - Update a campaign
-* [PatchMartechCampaign2](#patchmartechcampaign2) - Update a campaign
-* [RemoveAdsCampaign2](#removeadscampaign2) - Remove a campaign
-* [RemoveMartechCampaign2](#removemartechcampaign2) - Remove a campaign
-* [UpdateAdsCampaign2](#updateadscampaign2) - Update a campaign
-* [UpdateMartechCampaign2](#updatemartechcampaign2) - Update a campaign
+* [CreateAdsCampaign](#createadscampaign) - Create a campaign
+* [CreateMartechCampaign](#createmartechcampaign) - Create a campaign
+* [GetAdsCampaign](#getadscampaign) - Retrieve a campaign
+* [GetMartechCampaign](#getmartechcampaign) - Retrieve a campaign
+* [ListAdsCampaigns](#listadscampaigns) - List all campaigns
+* [ListMartechCampaigns](#listmartechcampaigns) - List all campaigns
+* [PatchAdsCampaign](#patchadscampaign) - Update a campaign
+* [PatchMartechCampaign](#patchmartechcampaign) - Update a campaign
+* [RemoveAdsCampaign](#removeadscampaign) - Remove a campaign
+* [RemoveMartechCampaign](#removemartechcampaign) - Remove a campaign
+* [UpdateAdsCampaign](#updateadscampaign) - Update a campaign
+* [UpdateMartechCampaign](#updatemartechcampaign) - Update a campaign
 
-## CreateAdsCampaign2
+## CreateAdsCampaign
 
 Create a campaign
 
@@ -32,7 +32,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Campaign.CreateAdsCampaign2Async(
+var res = await sdk.Campaign.CreateAdsCampaignAsync(
     adsCampaign: new AdsCampaign() {},
     connectionId: "<id>"
 );
@@ -46,12 +46,12 @@ var res = await sdk.Campaign.CreateAdsCampaign2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AdsCampaign`                                                                                                                                    | [AdsCampaign](../../Models/Components/AdsCampaign.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAdsCampaign2QueryParamFields](../../Models/Requests/CreateAdsCampaign2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAdsCampaignQueryParamFields](../../Models/Requests/CreateAdsCampaignQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAdsCampaign2Response](../../Models/Requests/CreateAdsCampaign2Response.md)**
+**[CreateAdsCampaignResponse](../../Models/Requests/CreateAdsCampaignResponse.md)**
 
 ### Errors
 
@@ -59,7 +59,7 @@ var res = await sdk.Campaign.CreateAdsCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateMartechCampaign2
+## CreateMartechCampaign
 
 Create a campaign
 
@@ -73,7 +73,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Campaign.CreateMartechCampaign2Async(
+var res = await sdk.Campaign.CreateMartechCampaignAsync(
     marketingCampaign: new MarketingCampaign() {},
     connectionId: "<id>"
 );
@@ -87,12 +87,12 @@ var res = await sdk.Campaign.CreateMartechCampaign2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `MarketingCampaign`                                                                                                                              | [MarketingCampaign](../../Models/Components/MarketingCampaign.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateMartechCampaign2QueryParamFields](../../Models/Requests/CreateMartechCampaign2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateMartechCampaignQueryParamFields](../../Models/Requests/CreateMartechCampaignQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateMartechCampaign2Response](../../Models/Requests/CreateMartechCampaign2Response.md)**
+**[CreateMartechCampaignResponse](../../Models/Requests/CreateMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -100,7 +100,7 @@ var res = await sdk.Campaign.CreateMartechCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAdsCampaign2
+## GetAdsCampaign
 
 Retrieve a campaign
 
@@ -114,7 +114,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Campaign.GetAdsCampaign2Async(
+var res = await sdk.Campaign.GetAdsCampaignAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -128,12 +128,12 @@ var res = await sdk.Campaign.GetAdsCampaign2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Campaign                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAdsCampaign2QueryParamFields](../../Models/Requests/GetAdsCampaign2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAdsCampaignQueryParamFields](../../Models/Requests/GetAdsCampaignQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAdsCampaign2Response](../../Models/Requests/GetAdsCampaign2Response.md)**
+**[GetAdsCampaignResponse](../../Models/Requests/GetAdsCampaignResponse.md)**
 
 ### Errors
 
@@ -141,7 +141,7 @@ var res = await sdk.Campaign.GetAdsCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetMartechCampaign2
+## GetMartechCampaign
 
 Retrieve a campaign
 
@@ -155,7 +155,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Campaign.GetMartechCampaign2Async(
+var res = await sdk.Campaign.GetMartechCampaignAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -169,12 +169,12 @@ var res = await sdk.Campaign.GetMartechCampaign2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Campaign                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetMartechCampaign2QueryParamFields](../../Models/Requests/GetMartechCampaign2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetMartechCampaignQueryParamFields](../../Models/Requests/GetMartechCampaignQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetMartechCampaign2Response](../../Models/Requests/GetMartechCampaign2Response.md)**
+**[GetMartechCampaignResponse](../../Models/Requests/GetMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -182,7 +182,7 @@ var res = await sdk.Campaign.GetMartechCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAdsCampaigns2
+## ListAdsCampaigns
 
 List all campaigns
 
@@ -197,24 +197,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAdsCampaigns2Request req = new ListAdsCampaigns2Request() {
+ListAdsCampaignsRequest req = new ListAdsCampaignsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Campaign.ListAdsCampaigns2Async(req);
+var res = await sdk.Campaign.ListAdsCampaignsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAdsCampaigns2Request](../../Models/Requests/ListAdsCampaigns2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListAdsCampaignsRequest](../../Models/Requests/ListAdsCampaignsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListAdsCampaigns2Response](../../Models/Requests/ListAdsCampaigns2Response.md)**
+**[ListAdsCampaignsResponse](../../Models/Requests/ListAdsCampaignsResponse.md)**
 
 ### Errors
 
@@ -222,7 +222,7 @@ var res = await sdk.Campaign.ListAdsCampaigns2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMartechCampaigns2
+## ListMartechCampaigns
 
 List all campaigns
 
@@ -237,24 +237,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMartechCampaigns2Request req = new ListMartechCampaigns2Request() {
+ListMartechCampaignsRequest req = new ListMartechCampaignsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Campaign.ListMartechCampaigns2Async(req);
+var res = await sdk.Campaign.ListMartechCampaignsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListMartechCampaigns2Request](../../Models/Requests/ListMartechCampaigns2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListMartechCampaignsRequest](../../Models/Requests/ListMartechCampaignsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListMartechCampaigns2Response](../../Models/Requests/ListMartechCampaigns2Response.md)**
+**[ListMartechCampaignsResponse](../../Models/Requests/ListMartechCampaignsResponse.md)**
 
 ### Errors
 
@@ -262,7 +262,7 @@ var res = await sdk.Campaign.ListMartechCampaigns2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAdsCampaign2
+## PatchAdsCampaign
 
 Update a campaign
 
@@ -277,26 +277,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAdsCampaign2Request req = new PatchAdsCampaign2Request() {
+PatchAdsCampaignRequest req = new PatchAdsCampaignRequest() {
     AdsCampaign = new AdsCampaign() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Campaign.PatchAdsCampaign2Async(req);
+var res = await sdk.Campaign.PatchAdsCampaignAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAdsCampaign2Request](../../Models/Requests/PatchAdsCampaign2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchAdsCampaignRequest](../../Models/Requests/PatchAdsCampaignRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchAdsCampaign2Response](../../Models/Requests/PatchAdsCampaign2Response.md)**
+**[PatchAdsCampaignResponse](../../Models/Requests/PatchAdsCampaignResponse.md)**
 
 ### Errors
 
@@ -304,7 +304,7 @@ var res = await sdk.Campaign.PatchAdsCampaign2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchMartechCampaign2
+## PatchMartechCampaign
 
 Update a campaign
 
@@ -319,26 +319,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchMartechCampaign2Request req = new PatchMartechCampaign2Request() {
+PatchMartechCampaignRequest req = new PatchMartechCampaignRequest() {
     MarketingCampaign = new MarketingCampaign() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Campaign.PatchMartechCampaign2Async(req);
+var res = await sdk.Campaign.PatchMartechCampaignAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchMartechCampaign2Request](../../Models/Requests/PatchMartechCampaign2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchMartechCampaignRequest](../../Models/Requests/PatchMartechCampaignRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchMartechCampaign2Response](../../Models/Requests/PatchMartechCampaign2Response.md)**
+**[PatchMartechCampaignResponse](../../Models/Requests/PatchMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -346,7 +346,7 @@ var res = await sdk.Campaign.PatchMartechCampaign2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAdsCampaign2
+## RemoveAdsCampaign
 
 Remove a campaign
 
@@ -360,7 +360,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Campaign.RemoveAdsCampaign2Async(
+var res = await sdk.Campaign.RemoveAdsCampaignAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -377,7 +377,7 @@ var res = await sdk.Campaign.RemoveAdsCampaign2Async(
 
 ### Response
 
-**[RemoveAdsCampaign2Response](../../Models/Requests/RemoveAdsCampaign2Response.md)**
+**[RemoveAdsCampaignResponse](../../Models/Requests/RemoveAdsCampaignResponse.md)**
 
 ### Errors
 
@@ -385,7 +385,7 @@ var res = await sdk.Campaign.RemoveAdsCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveMartechCampaign2
+## RemoveMartechCampaign
 
 Remove a campaign
 
@@ -399,7 +399,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Campaign.RemoveMartechCampaign2Async(
+var res = await sdk.Campaign.RemoveMartechCampaignAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -416,7 +416,7 @@ var res = await sdk.Campaign.RemoveMartechCampaign2Async(
 
 ### Response
 
-**[RemoveMartechCampaign2Response](../../Models/Requests/RemoveMartechCampaign2Response.md)**
+**[RemoveMartechCampaignResponse](../../Models/Requests/RemoveMartechCampaignResponse.md)**
 
 ### Errors
 
@@ -424,7 +424,7 @@ var res = await sdk.Campaign.RemoveMartechCampaign2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAdsCampaign2
+## UpdateAdsCampaign
 
 Update a campaign
 
@@ -439,26 +439,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAdsCampaign2Request req = new UpdateAdsCampaign2Request() {
+UpdateAdsCampaignRequest req = new UpdateAdsCampaignRequest() {
     AdsCampaign = new AdsCampaign() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Campaign.UpdateAdsCampaign2Async(req);
+var res = await sdk.Campaign.UpdateAdsCampaignAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAdsCampaign2Request](../../Models/Requests/UpdateAdsCampaign2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateAdsCampaignRequest](../../Models/Requests/UpdateAdsCampaignRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateAdsCampaign2Response](../../Models/Requests/UpdateAdsCampaign2Response.md)**
+**[UpdateAdsCampaignResponse](../../Models/Requests/UpdateAdsCampaignResponse.md)**
 
 ### Errors
 
@@ -466,7 +466,7 @@ var res = await sdk.Campaign.UpdateAdsCampaign2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateMartechCampaign2
+## UpdateMartechCampaign
 
 Update a campaign
 
@@ -481,26 +481,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateMartechCampaign2Request req = new UpdateMartechCampaign2Request() {
+UpdateMartechCampaignRequest req = new UpdateMartechCampaignRequest() {
     MarketingCampaign = new MarketingCampaign() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Campaign.UpdateMartechCampaign2Async(req);
+var res = await sdk.Campaign.UpdateMartechCampaignAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateMartechCampaign2Request](../../Models/Requests/UpdateMartechCampaign2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateMartechCampaignRequest](../../Models/Requests/UpdateMartechCampaignRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateMartechCampaign2Response](../../Models/Requests/UpdateMartechCampaign2Response.md)**
+**[UpdateMartechCampaignResponse](../../Models/Requests/UpdateMartechCampaignResponse.md)**
 
 ### Errors
 

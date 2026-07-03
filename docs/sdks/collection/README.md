@@ -5,20 +5,20 @@
 
 ### Available Operations
 
-* [CreateCommerceCollection2](#createcommercecollection2) - Create a collection
-* [CreateLmsCollection2](#createlmscollection2) - Create a collection
-* [GetCommerceCollection2](#getcommercecollection2) - Retrieve a collection
-* [GetLmsCollection2](#getlmscollection2) - Retrieve a collection
-* [ListCommerceCollections2](#listcommercecollections2) - List all collections
-* [ListLmsCollections2](#listlmscollections2) - List all collections
-* [PatchCommerceCollection2](#patchcommercecollection2) - Update a collection
-* [PatchLmsCollection2](#patchlmscollection2) - Update a collection
-* [RemoveCommerceCollection2](#removecommercecollection2) - Remove a collection
-* [RemoveLmsCollection2](#removelmscollection2) - Remove a collection
-* [UpdateCommerceCollection2](#updatecommercecollection2) - Update a collection
-* [UpdateLmsCollection2](#updatelmscollection2) - Update a collection
+* [CreateCommerceCollection](#createcommercecollection) - Create a collection
+* [CreateLmsCollection](#createlmscollection) - Create a collection
+* [GetCommerceCollection](#getcommercecollection) - Retrieve a collection
+* [GetLmsCollection](#getlmscollection) - Retrieve a collection
+* [ListCommerceCollections](#listcommercecollections) - List all collections
+* [ListLmsCollections](#listlmscollections) - List all collections
+* [PatchCommerceCollection](#patchcommercecollection) - Update a collection
+* [PatchLmsCollection](#patchlmscollection) - Update a collection
+* [RemoveCommerceCollection](#removecommercecollection) - Remove a collection
+* [RemoveLmsCollection](#removelmscollection) - Remove a collection
+* [UpdateCommerceCollection](#updatecommercecollection) - Update a collection
+* [UpdateLmsCollection](#updatelmscollection) - Update a collection
 
-## CreateCommerceCollection2
+## CreateCommerceCollection
 
 Create a collection
 
@@ -32,7 +32,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Collection.CreateCommerceCollection2Async(
+var res = await sdk.Collection.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         Name = "<value>",
     },
@@ -48,12 +48,12 @@ var res = await sdk.Collection.CreateCommerceCollection2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `CommerceCollection`                                                                                                                             | [CommerceCollection](../../Models/Components/CommerceCollection.md)                                                                              | :heavy_check_mark:                                                                                                                               | A collection of items/products/services                                                                                                          |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateCommerceCollection2QueryParamFields](../../Models/Requests/CreateCommerceCollection2QueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateCommerceCollectionQueryParamFields](../../Models/Requests/CreateCommerceCollectionQueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateCommerceCollection2Response](../../Models/Requests/CreateCommerceCollection2Response.md)**
+**[CreateCommerceCollectionResponse](../../Models/Requests/CreateCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -61,7 +61,7 @@ var res = await sdk.Collection.CreateCommerceCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateLmsCollection2
+## CreateLmsCollection
 
 Create a collection
 
@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Collection.CreateLmsCollection2Async(
+var res = await sdk.Collection.CreateLmsCollectionAsync(
     lmsCollection: new LmsCollection() {},
     connectionId: "<id>"
 );
@@ -89,12 +89,12 @@ var res = await sdk.Collection.CreateLmsCollection2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `LmsCollection`                                                                                                                                  | [LmsCollection](../../Models/Components/LmsCollection.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateLmsCollection2QueryParamFields](../../Models/Requests/CreateLmsCollection2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateLmsCollectionQueryParamFields](../../Models/Requests/CreateLmsCollectionQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateLmsCollection2Response](../../Models/Requests/CreateLmsCollection2Response.md)**
+**[CreateLmsCollectionResponse](../../Models/Requests/CreateLmsCollectionResponse.md)**
 
 ### Errors
 
@@ -102,7 +102,7 @@ var res = await sdk.Collection.CreateLmsCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceCollection2
+## GetCommerceCollection
 
 Retrieve a collection
 
@@ -116,7 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Collection.GetCommerceCollection2Async(
+var res = await sdk.Collection.GetCommerceCollectionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -130,12 +130,12 @@ var res = await sdk.Collection.GetCommerceCollection2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Collection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetCommerceCollection2QueryParamFields](../../Models/Requests/GetCommerceCollection2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetCommerceCollectionQueryParamFields](../../Models/Requests/GetCommerceCollectionQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetCommerceCollection2Response](../../Models/Requests/GetCommerceCollection2Response.md)**
+**[GetCommerceCollectionResponse](../../Models/Requests/GetCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -143,7 +143,7 @@ var res = await sdk.Collection.GetCommerceCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetLmsCollection2
+## GetLmsCollection
 
 Retrieve a collection
 
@@ -157,7 +157,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Collection.GetLmsCollection2Async(
+var res = await sdk.Collection.GetLmsCollectionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -171,12 +171,12 @@ var res = await sdk.Collection.GetLmsCollection2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Collection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetLmsCollection2QueryParamFields](../../Models/Requests/GetLmsCollection2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetLmsCollectionQueryParamFields](../../Models/Requests/GetLmsCollectionQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetLmsCollection2Response](../../Models/Requests/GetLmsCollection2Response.md)**
+**[GetLmsCollectionResponse](../../Models/Requests/GetLmsCollectionResponse.md)**
 
 ### Errors
 
@@ -184,7 +184,7 @@ var res = await sdk.Collection.GetLmsCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceCollections2
+## ListCommerceCollections
 
 List all collections
 
@@ -199,24 +199,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceCollections2Request req = new ListCommerceCollections2Request() {
+ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Collection.ListCommerceCollections2Async(req);
+var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [ListCommerceCollections2Request](../../Models/Requests/ListCommerceCollections2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListCommerceCollectionsRequest](../../Models/Requests/ListCommerceCollectionsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[ListCommerceCollections2Response](../../Models/Requests/ListCommerceCollections2Response.md)**
+**[ListCommerceCollectionsResponse](../../Models/Requests/ListCommerceCollectionsResponse.md)**
 
 ### Errors
 
@@ -224,7 +224,7 @@ var res = await sdk.Collection.ListCommerceCollections2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListLmsCollections2
+## ListLmsCollections
 
 List all collections
 
@@ -239,24 +239,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListLmsCollections2Request req = new ListLmsCollections2Request() {
+ListLmsCollectionsRequest req = new ListLmsCollectionsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Collection.ListLmsCollections2Async(req);
+var res = await sdk.Collection.ListLmsCollectionsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListLmsCollections2Request](../../Models/Requests/ListLmsCollections2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListLmsCollectionsRequest](../../Models/Requests/ListLmsCollectionsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListLmsCollections2Response](../../Models/Requests/ListLmsCollections2Response.md)**
+**[ListLmsCollectionsResponse](../../Models/Requests/ListLmsCollectionsResponse.md)**
 
 ### Errors
 
@@ -264,7 +264,7 @@ var res = await sdk.Collection.ListLmsCollections2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceCollection2
+## PatchCommerceCollection
 
 Update a collection
 
@@ -279,7 +279,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchCommerceCollection2Request req = new PatchCommerceCollection2Request() {
+PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         Name = "<value>",
     },
@@ -287,20 +287,20 @@ PatchCommerceCollection2Request req = new PatchCommerceCollection2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Collection.PatchCommerceCollection2Async(req);
+var res = await sdk.Collection.PatchCommerceCollectionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [PatchCommerceCollection2Request](../../Models/Requests/PatchCommerceCollection2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchCommerceCollectionRequest](../../Models/Requests/PatchCommerceCollectionRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[PatchCommerceCollection2Response](../../Models/Requests/PatchCommerceCollection2Response.md)**
+**[PatchCommerceCollectionResponse](../../Models/Requests/PatchCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -308,7 +308,7 @@ var res = await sdk.Collection.PatchCommerceCollection2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchLmsCollection2
+## PatchLmsCollection
 
 Update a collection
 
@@ -323,26 +323,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchLmsCollection2Request req = new PatchLmsCollection2Request() {
+PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Collection.PatchLmsCollection2Async(req);
+var res = await sdk.Collection.PatchLmsCollectionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchLmsCollection2Request](../../Models/Requests/PatchLmsCollection2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchLmsCollectionRequest](../../Models/Requests/PatchLmsCollectionRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchLmsCollection2Response](../../Models/Requests/PatchLmsCollection2Response.md)**
+**[PatchLmsCollectionResponse](../../Models/Requests/PatchLmsCollectionResponse.md)**
 
 ### Errors
 
@@ -350,7 +350,7 @@ var res = await sdk.Collection.PatchLmsCollection2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceCollection2
+## RemoveCommerceCollection
 
 Remove a collection
 
@@ -364,7 +364,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Collection.RemoveCommerceCollection2Async(
+var res = await sdk.Collection.RemoveCommerceCollectionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -381,7 +381,7 @@ var res = await sdk.Collection.RemoveCommerceCollection2Async(
 
 ### Response
 
-**[RemoveCommerceCollection2Response](../../Models/Requests/RemoveCommerceCollection2Response.md)**
+**[RemoveCommerceCollectionResponse](../../Models/Requests/RemoveCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -389,7 +389,7 @@ var res = await sdk.Collection.RemoveCommerceCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveLmsCollection2
+## RemoveLmsCollection
 
 Remove a collection
 
@@ -403,7 +403,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Collection.RemoveLmsCollection2Async(
+var res = await sdk.Collection.RemoveLmsCollectionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -420,7 +420,7 @@ var res = await sdk.Collection.RemoveLmsCollection2Async(
 
 ### Response
 
-**[RemoveLmsCollection2Response](../../Models/Requests/RemoveLmsCollection2Response.md)**
+**[RemoveLmsCollectionResponse](../../Models/Requests/RemoveLmsCollectionResponse.md)**
 
 ### Errors
 
@@ -428,7 +428,7 @@ var res = await sdk.Collection.RemoveLmsCollection2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceCollection2
+## UpdateCommerceCollection
 
 Update a collection
 
@@ -443,7 +443,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateCommerceCollection2Request req = new UpdateCommerceCollection2Request() {
+UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         Name = "<value>",
     },
@@ -451,20 +451,20 @@ UpdateCommerceCollection2Request req = new UpdateCommerceCollection2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Collection.UpdateCommerceCollection2Async(req);
+var res = await sdk.Collection.UpdateCommerceCollectionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [UpdateCommerceCollection2Request](../../Models/Requests/UpdateCommerceCollection2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [UpdateCommerceCollectionRequest](../../Models/Requests/UpdateCommerceCollectionRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[UpdateCommerceCollection2Response](../../Models/Requests/UpdateCommerceCollection2Response.md)**
+**[UpdateCommerceCollectionResponse](../../Models/Requests/UpdateCommerceCollectionResponse.md)**
 
 ### Errors
 
@@ -472,7 +472,7 @@ var res = await sdk.Collection.UpdateCommerceCollection2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateLmsCollection2
+## UpdateLmsCollection
 
 Update a collection
 
@@ -487,26 +487,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateLmsCollection2Request req = new UpdateLmsCollection2Request() {
+UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Collection.UpdateLmsCollection2Async(req);
+var res = await sdk.Collection.UpdateLmsCollectionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateLmsCollection2Request](../../Models/Requests/UpdateLmsCollection2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateLmsCollectionRequest](../../Models/Requests/UpdateLmsCollectionRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateLmsCollection2Response](../../Models/Requests/UpdateLmsCollection2Response.md)**
+**[UpdateLmsCollectionResponse](../../Models/Requests/UpdateLmsCollectionResponse.md)**
 
 ### Errors
 

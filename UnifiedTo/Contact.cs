@@ -28,99 +28,99 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContact2Response> CreateAccountingContact2Async(AccountingContact accountingContact, string connectionId, List<CreateAccountingContact2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<CreateAccountingContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateCrmContact2Response> CreateCrmContact2Async(CrmContact crmContact, string connectionId, List<CreateCrmContact2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<CreateCrmContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContact2Response> CreateUcContact2Async(UcContact ucContact, string connectionId, List<CreateUcContact2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<CreateUcContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetAccountingContact2Response> GetAccountingContact2Async(string connectionId, string id, List<GetAccountingContact2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<GetAccountingContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetCrmContact2Response> GetCrmContact2Async(string connectionId, string id, List<GetCrmContact2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<GetCrmContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetUcContact2Response> GetUcContact2Async(string connectionId, string id, List<GetUcContact2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<GetUcContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListAccountingContacts2Response> ListAccountingContacts2Async(ListAccountingContacts2Request request);
+        Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListCrmContacts2Response> ListCrmContacts2Async(ListCrmContacts2Request request);
+        Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest request);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListUcContacts2Response> ListUcContacts2Async(ListUcContacts2Request request);
+        Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchAccountingContact2Response> PatchAccountingContact2Async(PatchAccountingContact2Request request);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchCrmContact2Response> PatchCrmContact2Async(PatchCrmContact2Request request);
+        Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchUcContact2Response> PatchUcContact2Async(PatchUcContact2Request request);
+        Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactRequest request);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveAccountingContact2Response> RemoveAccountingContact2Async(string connectionId, string id);
+        Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveCrmContact2Response> RemoveCrmContact2Async(string connectionId, string id);
+        Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveUcContact2Response> RemoveUcContact2Async(string connectionId, string id);
+        Task<RemoveUcContactResponse> RemoveUcContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateAccountingContact2Response> UpdateAccountingContact2Async(UpdateAccountingContact2Request request);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateCrmContact2Response> UpdateCrmContact2Async(UpdateCrmContact2Request request);
+        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateUcContact2Response> UpdateUcContact2Async(UpdateUcContact2Request request);
+        Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactRequest request);
     }
 
     public class Contact: IContact
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -129,9 +129,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingContact2Response> CreateAccountingContact2Async(AccountingContact accountingContact, string connectionId, List<CreateAccountingContact2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<CreateAccountingContactQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAccountingContact2Request()
+            var request = new CreateAccountingContactRequest()
             {
                 AccountingContact = accountingContact,
                 ConnectionId = connectionId,
@@ -155,7 +155,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -196,7 +196,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAccountingContact2Response()
+                    var response = new CreateAccountingContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -220,9 +220,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmContact2Response> CreateCrmContact2Async(CrmContact crmContact, string connectionId, List<CreateCrmContact2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<CreateCrmContactQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCrmContact2Request()
+            var request = new CreateCrmContactRequest()
             {
                 CrmContact = crmContact,
                 ConnectionId = connectionId,
@@ -246,7 +246,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -287,7 +287,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCrmContact2Response()
+                    var response = new CreateCrmContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -311,9 +311,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcContact2Response> CreateUcContact2Async(UcContact ucContact, string connectionId, List<CreateUcContact2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<CreateUcContactQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateUcContact2Request()
+            var request = new CreateUcContactRequest()
             {
                 UcContact = ucContact,
                 ConnectionId = connectionId,
@@ -337,7 +337,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUcContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUcContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -378,7 +378,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateUcContact2Response()
+                    var response = new CreateUcContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -402,9 +402,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingContact2Response> GetAccountingContact2Async(string connectionId, string id, List<GetAccountingContact2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<GetAccountingContactQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingContact2Request()
+            var request = new GetAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -422,7 +422,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingContact2Response()
+                    var response = new GetAccountingContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -487,9 +487,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmContact2Response> GetCrmContact2Async(string connectionId, string id, List<GetCrmContact2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<GetCrmContactQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCrmContact2Request()
+            var request = new GetCrmContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -507,7 +507,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -548,7 +548,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCrmContact2Response()
+                    var response = new GetCrmContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -572,9 +572,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcContact2Response> GetUcContact2Async(string connectionId, string id, List<GetUcContact2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<GetUcContactQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetUcContact2Request()
+            var request = new GetUcContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -592,7 +592,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUcContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -633,7 +633,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetUcContact2Response()
+                    var response = new GetUcContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -657,7 +657,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingContacts2Response> ListAccountingContacts2Async(ListAccountingContacts2Request request)
+        public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
@@ -670,7 +670,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingContacts2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingContacts", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -711,7 +711,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingContact>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingContacts2Response()
+                    var response = new ListAccountingContactsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -735,7 +735,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCrmContacts2Response> ListCrmContacts2Async(ListCrmContacts2Request request)
+        public async Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact", request);
@@ -748,7 +748,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmContacts2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmContacts", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -789,7 +789,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CrmContact>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCrmContacts2Response()
+                    var response = new ListCrmContactsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -813,7 +813,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListUcContacts2Response> ListUcContacts2Async(ListUcContacts2Request request)
+        public async Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact", request);
@@ -826,7 +826,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcContacts2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUcContacts", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -867,7 +867,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<UcContact>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListUcContacts2Response()
+                    var response = new ListUcContactsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -891,7 +891,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingContact2Response> PatchAccountingContact2Async(PatchAccountingContact2Request request)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
@@ -910,7 +910,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -951,7 +951,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAccountingContact2Response()
+                    var response = new PatchAccountingContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -975,7 +975,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmContact2Response> PatchCrmContact2Async(PatchCrmContact2Request request)
+        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
@@ -994,7 +994,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1035,7 +1035,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCrmContact2Response()
+                    var response = new PatchCrmContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1059,7 +1059,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcContact2Response> PatchUcContact2Async(PatchUcContact2Request request)
+        public async Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
@@ -1078,7 +1078,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchUcContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchUcContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1119,7 +1119,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchUcContact2Response()
+                    var response = new PatchUcContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1143,9 +1143,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAccountingContact2Response> RemoveAccountingContact2Async(string connectionId, string id)
+        public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id)
         {
-            var request = new RemoveAccountingContact2Request()
+            var request = new RemoveAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1161,7 +1161,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1199,7 +1199,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAccountingContact2Response()
+                return new RemoveAccountingContactResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1216,7 +1216,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAccountingContact2Response()
+                return new RemoveAccountingContactResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1225,9 +1225,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveCrmContact2Response> RemoveCrmContact2Async(string connectionId, string id)
+        public async Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id)
         {
-            var request = new RemoveCrmContact2Request()
+            var request = new RemoveCrmContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1243,7 +1243,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1281,7 +1281,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCrmContact2Response()
+                return new RemoveCrmContactResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1298,7 +1298,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCrmContact2Response()
+                return new RemoveCrmContactResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1307,9 +1307,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveUcContact2Response> RemoveUcContact2Async(string connectionId, string id)
+        public async Task<RemoveUcContactResponse> RemoveUcContactAsync(string connectionId, string id)
         {
-            var request = new RemoveUcContact2Request()
+            var request = new RemoveUcContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1325,7 +1325,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUcContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUcContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1363,7 +1363,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveUcContact2Response()
+                return new RemoveUcContactResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1380,7 +1380,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveUcContact2Response()
+                return new RemoveUcContactResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1389,7 +1389,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingContact2Response> UpdateAccountingContact2Async(UpdateAccountingContact2Request request)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
@@ -1408,7 +1408,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1449,7 +1449,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAccountingContact2Response()
+                    var response = new UpdateAccountingContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1473,7 +1473,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmContact2Response> UpdateCrmContact2Async(UpdateCrmContact2Request request)
+        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
@@ -1492,7 +1492,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1533,7 +1533,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCrmContact2Response()
+                    var response = new UpdateCrmContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1557,7 +1557,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateUcContact2Response> UpdateUcContact2Async(UpdateUcContact2Request request)
+        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
@@ -1576,7 +1576,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateUcContact2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateUcContact", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1617,7 +1617,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<UcContact>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateUcContact2Response()
+                    var response = new UpdateUcContactResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

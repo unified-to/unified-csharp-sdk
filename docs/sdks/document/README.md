@@ -5,20 +5,20 @@
 
 ### Available Operations
 
-* [CreateAtsDocument2](#createatsdocument2) - Create a document
-* [CreateSigningDocument2](#createsigningdocument2) - Create a document
-* [GetAtsDocument2](#getatsdocument2) - Retrieve a document
-* [GetSigningDocument2](#getsigningdocument2) - Retrieve a document
-* [ListAtsDocuments2](#listatsdocuments2) - List all documents
-* [ListSigningDocuments2](#listsigningdocuments2) - List all documents
-* [PatchAtsDocument2](#patchatsdocument2) - Update a document
-* [PatchSigningDocument2](#patchsigningdocument2) - Update a document
-* [RemoveAtsDocument2](#removeatsdocument2) - Remove a document
-* [RemoveSigningDocument2](#removesigningdocument2) - Remove a document
-* [UpdateAtsDocument2](#updateatsdocument2) - Update a document
-* [UpdateSigningDocument2](#updatesigningdocument2) - Update a document
+* [CreateAtsDocument](#createatsdocument) - Create a document
+* [CreateSigningDocument](#createsigningdocument) - Create a document
+* [GetAtsDocument](#getatsdocument) - Retrieve a document
+* [GetSigningDocument](#getsigningdocument) - Retrieve a document
+* [ListAtsDocuments](#listatsdocuments) - List all documents
+* [ListSigningDocuments](#listsigningdocuments) - List all documents
+* [PatchAtsDocument](#patchatsdocument) - Update a document
+* [PatchSigningDocument](#patchsigningdocument) - Update a document
+* [RemoveAtsDocument](#removeatsdocument) - Remove a document
+* [RemoveSigningDocument](#removesigningdocument) - Remove a document
+* [UpdateAtsDocument](#updateatsdocument) - Update a document
+* [UpdateSigningDocument](#updatesigningdocument) - Update a document
 
-## CreateAtsDocument2
+## CreateAtsDocument
 
 Create a document
 
@@ -32,7 +32,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Document.CreateAtsDocument2Async(
+var res = await sdk.Document.CreateAtsDocumentAsync(
     atsDocument: new AtsDocument() {},
     connectionId: "<id>"
 );
@@ -46,12 +46,12 @@ var res = await sdk.Document.CreateAtsDocument2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsDocument`                                                                                                                                    | [AtsDocument](../../Models/Components/AtsDocument.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsDocument2QueryParamFields](../../Models/Requests/CreateAtsDocument2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsDocumentQueryParamFields](../../Models/Requests/CreateAtsDocumentQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsDocument2Response](../../Models/Requests/CreateAtsDocument2Response.md)**
+**[CreateAtsDocumentResponse](../../Models/Requests/CreateAtsDocumentResponse.md)**
 
 ### Errors
 
@@ -59,7 +59,7 @@ var res = await sdk.Document.CreateAtsDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateSigningDocument2
+## CreateSigningDocument
 
 Create a document
 
@@ -73,7 +73,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Document.CreateSigningDocument2Async(
+var res = await sdk.Document.CreateSigningDocumentAsync(
     signingDocument: new SigningDocument() {},
     connectionId: "<id>"
 );
@@ -87,12 +87,12 @@ var res = await sdk.Document.CreateSigningDocument2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `SigningDocument`                                                                                                                                | [SigningDocument](../../Models/Components/SigningDocument.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateSigningDocument2QueryParamFields](../../Models/Requests/CreateSigningDocument2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateSigningDocumentQueryParamFields](../../Models/Requests/CreateSigningDocumentQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateSigningDocument2Response](../../Models/Requests/CreateSigningDocument2Response.md)**
+**[CreateSigningDocumentResponse](../../Models/Requests/CreateSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -100,7 +100,7 @@ var res = await sdk.Document.CreateSigningDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsDocument2
+## GetAtsDocument
 
 Retrieve a document
 
@@ -114,7 +114,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Document.GetAtsDocument2Async(
+var res = await sdk.Document.GetAtsDocumentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -128,12 +128,12 @@ var res = await sdk.Document.GetAtsDocument2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Document                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAtsDocument2QueryParamFields](../../Models/Requests/GetAtsDocument2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsDocumentQueryParamFields](../../Models/Requests/GetAtsDocumentQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsDocument2Response](../../Models/Requests/GetAtsDocument2Response.md)**
+**[GetAtsDocumentResponse](../../Models/Requests/GetAtsDocumentResponse.md)**
 
 ### Errors
 
@@ -141,7 +141,7 @@ var res = await sdk.Document.GetAtsDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetSigningDocument2
+## GetSigningDocument
 
 Retrieve a document
 
@@ -155,7 +155,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Document.GetSigningDocument2Async(
+var res = await sdk.Document.GetSigningDocumentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -169,12 +169,12 @@ var res = await sdk.Document.GetSigningDocument2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Document                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetSigningDocument2QueryParamFields](../../Models/Requests/GetSigningDocument2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetSigningDocumentQueryParamFields](../../Models/Requests/GetSigningDocumentQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetSigningDocument2Response](../../Models/Requests/GetSigningDocument2Response.md)**
+**[GetSigningDocumentResponse](../../Models/Requests/GetSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -182,7 +182,7 @@ var res = await sdk.Document.GetSigningDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsDocuments2
+## ListAtsDocuments
 
 List all documents
 
@@ -197,24 +197,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsDocuments2Request req = new ListAtsDocuments2Request() {
+ListAtsDocumentsRequest req = new ListAtsDocumentsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Document.ListAtsDocuments2Async(req);
+var res = await sdk.Document.ListAtsDocumentsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListAtsDocuments2Request](../../Models/Requests/ListAtsDocuments2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListAtsDocumentsRequest](../../Models/Requests/ListAtsDocumentsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListAtsDocuments2Response](../../Models/Requests/ListAtsDocuments2Response.md)**
+**[ListAtsDocumentsResponse](../../Models/Requests/ListAtsDocumentsResponse.md)**
 
 ### Errors
 
@@ -222,7 +222,7 @@ var res = await sdk.Document.ListAtsDocuments2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListSigningDocuments2
+## ListSigningDocuments
 
 List all documents
 
@@ -237,24 +237,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListSigningDocuments2Request req = new ListSigningDocuments2Request() {
+ListSigningDocumentsRequest req = new ListSigningDocumentsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Document.ListSigningDocuments2Async(req);
+var res = await sdk.Document.ListSigningDocumentsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListSigningDocuments2Request](../../Models/Requests/ListSigningDocuments2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListSigningDocumentsRequest](../../Models/Requests/ListSigningDocumentsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListSigningDocuments2Response](../../Models/Requests/ListSigningDocuments2Response.md)**
+**[ListSigningDocumentsResponse](../../Models/Requests/ListSigningDocumentsResponse.md)**
 
 ### Errors
 
@@ -262,7 +262,7 @@ var res = await sdk.Document.ListSigningDocuments2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsDocument2
+## PatchAtsDocument
 
 Update a document
 
@@ -277,26 +277,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsDocument2Request req = new PatchAtsDocument2Request() {
+PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
     AtsDocument = new AtsDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Document.PatchAtsDocument2Async(req);
+var res = await sdk.Document.PatchAtsDocumentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAtsDocument2Request](../../Models/Requests/PatchAtsDocument2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchAtsDocumentRequest](../../Models/Requests/PatchAtsDocumentRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchAtsDocument2Response](../../Models/Requests/PatchAtsDocument2Response.md)**
+**[PatchAtsDocumentResponse](../../Models/Requests/PatchAtsDocumentResponse.md)**
 
 ### Errors
 
@@ -304,7 +304,7 @@ var res = await sdk.Document.PatchAtsDocument2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchSigningDocument2
+## PatchSigningDocument
 
 Update a document
 
@@ -319,26 +319,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchSigningDocument2Request req = new PatchSigningDocument2Request() {
+PatchSigningDocumentRequest req = new PatchSigningDocumentRequest() {
     SigningDocument = new SigningDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Document.PatchSigningDocument2Async(req);
+var res = await sdk.Document.PatchSigningDocumentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchSigningDocument2Request](../../Models/Requests/PatchSigningDocument2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchSigningDocumentRequest](../../Models/Requests/PatchSigningDocumentRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchSigningDocument2Response](../../Models/Requests/PatchSigningDocument2Response.md)**
+**[PatchSigningDocumentResponse](../../Models/Requests/PatchSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -346,7 +346,7 @@ var res = await sdk.Document.PatchSigningDocument2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsDocument2
+## RemoveAtsDocument
 
 Remove a document
 
@@ -360,7 +360,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Document.RemoveAtsDocument2Async(
+var res = await sdk.Document.RemoveAtsDocumentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -377,7 +377,7 @@ var res = await sdk.Document.RemoveAtsDocument2Async(
 
 ### Response
 
-**[RemoveAtsDocument2Response](../../Models/Requests/RemoveAtsDocument2Response.md)**
+**[RemoveAtsDocumentResponse](../../Models/Requests/RemoveAtsDocumentResponse.md)**
 
 ### Errors
 
@@ -385,7 +385,7 @@ var res = await sdk.Document.RemoveAtsDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveSigningDocument2
+## RemoveSigningDocument
 
 Remove a document
 
@@ -399,7 +399,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Document.RemoveSigningDocument2Async(
+var res = await sdk.Document.RemoveSigningDocumentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -416,7 +416,7 @@ var res = await sdk.Document.RemoveSigningDocument2Async(
 
 ### Response
 
-**[RemoveSigningDocument2Response](../../Models/Requests/RemoveSigningDocument2Response.md)**
+**[RemoveSigningDocumentResponse](../../Models/Requests/RemoveSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -424,7 +424,7 @@ var res = await sdk.Document.RemoveSigningDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsDocument2
+## UpdateAtsDocument
 
 Update a document
 
@@ -439,26 +439,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsDocument2Request req = new UpdateAtsDocument2Request() {
+UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
     AtsDocument = new AtsDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Document.UpdateAtsDocument2Async(req);
+var res = await sdk.Document.UpdateAtsDocumentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAtsDocument2Request](../../Models/Requests/UpdateAtsDocument2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateAtsDocumentRequest](../../Models/Requests/UpdateAtsDocumentRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateAtsDocument2Response](../../Models/Requests/UpdateAtsDocument2Response.md)**
+**[UpdateAtsDocumentResponse](../../Models/Requests/UpdateAtsDocumentResponse.md)**
 
 ### Errors
 
@@ -466,7 +466,7 @@ var res = await sdk.Document.UpdateAtsDocument2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateSigningDocument2
+## UpdateSigningDocument
 
 Update a document
 
@@ -481,26 +481,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateSigningDocument2Request req = new UpdateSigningDocument2Request() {
+UpdateSigningDocumentRequest req = new UpdateSigningDocumentRequest() {
     SigningDocument = new SigningDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Document.UpdateSigningDocument2Async(req);
+var res = await sdk.Document.UpdateSigningDocumentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateSigningDocument2Request](../../Models/Requests/UpdateSigningDocument2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateSigningDocumentRequest](../../Models/Requests/UpdateSigningDocumentRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateSigningDocument2Response](../../Models/Requests/UpdateSigningDocument2Response.md)**
+**[UpdateSigningDocumentResponse](../../Models/Requests/UpdateSigningDocumentResponse.md)**
 
 ### Errors
 

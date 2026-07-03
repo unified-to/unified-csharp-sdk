@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deal
         /// </summary>
-        Task<CreateCrmDeal2Response> CreateCrmDeal2Async(CrmDeal crmDeal, string connectionId, List<CreateCrmDeal2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<CreateCrmDealQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a deal
         /// </summary>
-        Task<GetCrmDeal2Response> GetCrmDeal2Async(string connectionId, string id, List<GetCrmDeal2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<GetCrmDealQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all deals
         /// </summary>
-        Task<ListCrmDeals2Response> ListCrmDeals2Async(ListCrmDeals2Request request);
+        Task<ListCrmDealsResponse> ListCrmDealsAsync(ListCrmDealsRequest request);
 
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<PatchCrmDeal2Response> PatchCrmDeal2Async(PatchCrmDeal2Request request);
+        Task<PatchCrmDealResponse> PatchCrmDealAsync(PatchCrmDealRequest request);
 
         /// <summary>
         /// Remove a deal
         /// </summary>
-        Task<RemoveCrmDeal2Response> RemoveCrmDeal2Async(string connectionId, string id);
+        Task<RemoveCrmDealResponse> RemoveCrmDealAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<UpdateCrmDeal2Response> UpdateCrmDeal2Async(UpdateCrmDeal2Request request);
+        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(UpdateCrmDealRequest request);
     }
 
     public class Deal: IDeal
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmDeal2Response> CreateCrmDeal2Async(CrmDeal crmDeal, string connectionId, List<CreateCrmDeal2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<CreateCrmDealQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCrmDeal2Request()
+            var request = new CreateCrmDealRequest()
             {
                 CrmDeal = crmDeal,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmDeal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmDeal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCrmDeal2Response()
+                    var response = new CreateCrmDealResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmDeal2Response> GetCrmDeal2Async(string connectionId, string id, List<GetCrmDeal2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<GetCrmDealQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCrmDeal2Request()
+            var request = new GetCrmDealRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmDeal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmDeal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCrmDeal2Response()
+                    var response = new GetCrmDealResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCrmDeals2Response> ListCrmDeals2Async(ListCrmDeals2Request request)
+        public async Task<ListCrmDealsResponse> ListCrmDealsAsync(ListCrmDealsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmDeals2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmDeals", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CrmDeal>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCrmDeals2Response()
+                    var response = new ListCrmDealsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmDeal2Response> PatchCrmDeal2Async(PatchCrmDeal2Request request)
+        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(PatchCrmDealRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmDeal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmDeal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCrmDeal2Response()
+                    var response = new PatchCrmDealResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCrmDeal2Response> RemoveCrmDeal2Async(string connectionId, string id)
+        public async Task<RemoveCrmDealResponse> RemoveCrmDealAsync(string connectionId, string id)
         {
-            var request = new RemoveCrmDeal2Request()
+            var request = new RemoveCrmDealRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmDeal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmDeal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCrmDeal2Response()
+                return new RemoveCrmDealResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCrmDeal2Response()
+                return new RemoveCrmDealResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmDeal2Response> UpdateCrmDeal2Async(UpdateCrmDeal2Request request)
+        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(UpdateCrmDealRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmDeal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmDeal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCrmDeal2Response()
+                    var response = new UpdateCrmDealResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

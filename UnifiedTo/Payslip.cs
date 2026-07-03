@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payslip
         /// </summary>
-        Task<GetHrisPayslip2Response> GetHrisPayslip2Async(string connectionId, string id, List<GetHrisPayslip2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<GetHrisPayslipQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all payslips
         /// </summary>
-        Task<ListHrisPayslips2Response> ListHrisPayslips2Async(ListHrisPayslips2Request request);
+        Task<ListHrisPayslipsResponse> ListHrisPayslipsAsync(ListHrisPayslipsRequest request);
     }
 
     public class Payslip: IPayslip
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetHrisPayslip2Response> GetHrisPayslip2Async(string connectionId, string id, List<GetHrisPayslip2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<GetHrisPayslipQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisPayslip2Request()
+            var request = new GetHrisPayslipRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisPayslip2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisPayslip", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisPayslip>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisPayslip2Response()
+                    var response = new GetHrisPayslipResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisPayslips2Response> ListHrisPayslips2Async(ListHrisPayslips2Request request)
+        public async Task<ListHrisPayslipsResponse> ListHrisPayslipsAsync(ListHrisPayslipsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/payslip", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisPayslips2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisPayslips", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisPayslip>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisPayslips2Response()
+                    var response = new ListHrisPayslipsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

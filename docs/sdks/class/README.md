@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateLmsClass2](#createlmsclass2) - Create a class
-* [GetLmsClass2](#getlmsclass2) - Retrieve a class
-* [ListLmsClasses2](#listlmsclasses2) - List all classes
-* [PatchLmsClass2](#patchlmsclass2) - Update a class
-* [RemoveLmsClass2](#removelmsclass2) - Remove a class
-* [UpdateLmsClass2](#updatelmsclass2) - Update a class
+* [CreateLmsClass](#createlmsclass) - Create a class
+* [GetLmsClass](#getlmsclass) - Retrieve a class
+* [ListLmsClasses](#listlmsclasses) - List all classes
+* [PatchLmsClass](#patchlmsclass) - Update a class
+* [RemoveLmsClass](#removelmsclass) - Remove a class
+* [UpdateLmsClass](#updatelmsclass) - Update a class
 
-## CreateLmsClass2
+## CreateLmsClass
 
 Create a class
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Class.CreateLmsClass2Async(
+var res = await sdk.Class.CreateLmsClassAsync(
     lmsClass: new LmsClass() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Class.CreateLmsClass2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `LmsClass`                                                                                                                                       | [LmsClass](../../Models/Components/LmsClass.md)                                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateLmsClass2QueryParamFields](../../Models/Requests/CreateLmsClass2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateLmsClassQueryParamFields](../../Models/Requests/CreateLmsClassQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateLmsClass2Response](../../Models/Requests/CreateLmsClass2Response.md)**
+**[CreateLmsClassResponse](../../Models/Requests/CreateLmsClassResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Class.CreateLmsClass2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetLmsClass2
+## GetLmsClass
 
 Retrieve a class
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Class.GetLmsClass2Async(
+var res = await sdk.Class.GetLmsClassAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Class.GetLmsClass2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Class                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetLmsClass2QueryParamFields](../../Models/Requests/GetLmsClass2QueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetLmsClassQueryParamFields](../../Models/Requests/GetLmsClassQueryParamFields.md)>                                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetLmsClass2Response](../../Models/Requests/GetLmsClass2Response.md)**
+**[GetLmsClassResponse](../../Models/Requests/GetLmsClassResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Class.GetLmsClass2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListLmsClasses2
+## ListLmsClasses
 
 List all classes
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListLmsClasses2Request req = new ListLmsClasses2Request() {
+ListLmsClassesRequest req = new ListLmsClassesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Class.ListLmsClasses2Async(req);
+var res = await sdk.Class.ListLmsClassesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListLmsClasses2Request](../../Models/Requests/ListLmsClasses2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [ListLmsClassesRequest](../../Models/Requests/ListLmsClassesRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 
-**[ListLmsClasses2Response](../../Models/Requests/ListLmsClasses2Response.md)**
+**[ListLmsClassesResponse](../../Models/Requests/ListLmsClassesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Class.ListLmsClasses2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchLmsClass2
+## PatchLmsClass
 
 Update a class
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchLmsClass2Request req = new PatchLmsClass2Request() {
+PatchLmsClassRequest req = new PatchLmsClassRequest() {
     LmsClass = new LmsClass() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Class.PatchLmsClass2Async(req);
+var res = await sdk.Class.PatchLmsClassAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [PatchLmsClass2Request](../../Models/Requests/PatchLmsClass2Request.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [PatchLmsClassRequest](../../Models/Requests/PatchLmsClassRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
-**[PatchLmsClass2Response](../../Models/Requests/PatchLmsClass2Response.md)**
+**[PatchLmsClassResponse](../../Models/Requests/PatchLmsClassResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Class.PatchLmsClass2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveLmsClass2
+## RemoveLmsClass
 
 Remove a class
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Class.RemoveLmsClass2Async(
+var res = await sdk.Class.RemoveLmsClassAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Class.RemoveLmsClass2Async(
 
 ### Response
 
-**[RemoveLmsClass2Response](../../Models/Requests/RemoveLmsClass2Response.md)**
+**[RemoveLmsClassResponse](../../Models/Requests/RemoveLmsClassResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Class.RemoveLmsClass2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateLmsClass2
+## UpdateLmsClass
 
 Update a class
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateLmsClass2Request req = new UpdateLmsClass2Request() {
+UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
     LmsClass = new LmsClass() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Class.UpdateLmsClass2Async(req);
+var res = await sdk.Class.UpdateLmsClassAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [UpdateLmsClass2Request](../../Models/Requests/UpdateLmsClass2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [UpdateLmsClassRequest](../../Models/Requests/UpdateLmsClassRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 
-**[UpdateLmsClass2Response](../../Models/Requests/UpdateLmsClass2Response.md)**
+**[UpdateLmsClassResponse](../../Models/Requests/UpdateLmsClassResponse.md)**
 
 ### Errors
 

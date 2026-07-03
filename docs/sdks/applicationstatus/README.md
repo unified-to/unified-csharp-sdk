@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [ListAtsApplicationstatuses2](#listatsapplicationstatuses2) - List all applicationstatuses
+* [ListAtsApplicationstatuses](#listatsapplicationstatuses) - List all applicationstatuses
 
-## ListAtsApplicationstatuses2
+## ListAtsApplicationstatuses
 
 List all applicationstatuses
 
@@ -22,24 +22,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsApplicationstatuses2Request req = new ListAtsApplicationstatuses2Request() {
+ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Applicationstatus.ListAtsApplicationstatuses2Async(req);
+var res = await sdk.Applicationstatus.ListAtsApplicationstatusesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `request`                                                                                         | [ListAtsApplicationstatuses2Request](../../Models/Requests/ListAtsApplicationstatuses2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListAtsApplicationstatusesRequest](../../Models/Requests/ListAtsApplicationstatusesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[ListAtsApplicationstatuses2Response](../../Models/Requests/ListAtsApplicationstatuses2Response.md)**
+**[ListAtsApplicationstatusesResponse](../../Models/Requests/ListAtsApplicationstatusesResponse.md)**
 
 ### Errors
 

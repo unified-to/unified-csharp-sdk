@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateMessagingMessage2](#createmessagingmessage2) - Create a message
-* [GetMessagingMessage2](#getmessagingmessage2) - Retrieve a message
-* [ListMessagingMessages2](#listmessagingmessages2) - List all messages
-* [PatchMessagingMessage2](#patchmessagingmessage2) - Update a message
-* [RemoveMessagingMessage2](#removemessagingmessage2) - Remove a message
-* [UpdateMessagingMessage2](#updatemessagingmessage2) - Update a message
+* [CreateMessagingMessage](#createmessagingmessage) - Create a message
+* [GetMessagingMessage](#getmessagingmessage) - Retrieve a message
+* [ListMessagingMessages](#listmessagingmessages) - List all messages
+* [PatchMessagingMessage](#patchmessagingmessage) - Update a message
+* [RemoveMessagingMessage](#removemessagingmessage) - Remove a message
+* [UpdateMessagingMessage](#updatemessagingmessage) - Update a message
 
-## CreateMessagingMessage2
+## CreateMessagingMessage
 
 Create a message
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Message.CreateMessagingMessage2Async(
+var res = await sdk.Message.CreateMessagingMessageAsync(
     messagingMessage: new MessagingMessage() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Message.CreateMessagingMessage2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `MessagingMessage`                                                                                                                               | [MessagingMessage](../../Models/Components/MessagingMessage.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateMessagingMessage2QueryParamFields](../../Models/Requests/CreateMessagingMessage2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateMessagingMessageQueryParamFields](../../Models/Requests/CreateMessagingMessageQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateMessagingMessage2Response](../../Models/Requests/CreateMessagingMessage2Response.md)**
+**[CreateMessagingMessageResponse](../../Models/Requests/CreateMessagingMessageResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Message.CreateMessagingMessage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetMessagingMessage2
+## GetMessagingMessage
 
 Retrieve a message
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Message.GetMessagingMessage2Async(
+var res = await sdk.Message.GetMessagingMessageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Message.GetMessagingMessage2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Message                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetMessagingMessage2QueryParamFields](../../Models/Requests/GetMessagingMessage2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetMessagingMessageQueryParamFields](../../Models/Requests/GetMessagingMessageQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetMessagingMessage2Response](../../Models/Requests/GetMessagingMessage2Response.md)**
+**[GetMessagingMessageResponse](../../Models/Requests/GetMessagingMessageResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Message.GetMessagingMessage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMessagingMessages2
+## ListMessagingMessages
 
 List all messages
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMessagingMessages2Request req = new ListMessagingMessages2Request() {
+ListMessagingMessagesRequest req = new ListMessagingMessagesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Message.ListMessagingMessages2Async(req);
+var res = await sdk.Message.ListMessagingMessagesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListMessagingMessages2Request](../../Models/Requests/ListMessagingMessages2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListMessagingMessagesRequest](../../Models/Requests/ListMessagingMessagesRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListMessagingMessages2Response](../../Models/Requests/ListMessagingMessages2Response.md)**
+**[ListMessagingMessagesResponse](../../Models/Requests/ListMessagingMessagesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Message.ListMessagingMessages2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchMessagingMessage2
+## PatchMessagingMessage
 
 Update a message
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchMessagingMessage2Request req = new PatchMessagingMessage2Request() {
+PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Message.PatchMessagingMessage2Async(req);
+var res = await sdk.Message.PatchMessagingMessageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchMessagingMessage2Request](../../Models/Requests/PatchMessagingMessage2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchMessagingMessageRequest](../../Models/Requests/PatchMessagingMessageRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchMessagingMessage2Response](../../Models/Requests/PatchMessagingMessage2Response.md)**
+**[PatchMessagingMessageResponse](../../Models/Requests/PatchMessagingMessageResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Message.PatchMessagingMessage2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveMessagingMessage2
+## RemoveMessagingMessage
 
 Remove a message
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Message.RemoveMessagingMessage2Async(
+var res = await sdk.Message.RemoveMessagingMessageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Message.RemoveMessagingMessage2Async(
 
 ### Response
 
-**[RemoveMessagingMessage2Response](../../Models/Requests/RemoveMessagingMessage2Response.md)**
+**[RemoveMessagingMessageResponse](../../Models/Requests/RemoveMessagingMessageResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Message.RemoveMessagingMessage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateMessagingMessage2
+## UpdateMessagingMessage
 
 Update a message
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateMessagingMessage2Request req = new UpdateMessagingMessage2Request() {
+UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Message.UpdateMessagingMessage2Async(req);
+var res = await sdk.Message.UpdateMessagingMessageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateMessagingMessage2Request](../../Models/Requests/UpdateMessagingMessage2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateMessagingMessageRequest](../../Models/Requests/UpdateMessagingMessageRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateMessagingMessage2Response](../../Models/Requests/UpdateMessagingMessage2Response.md)**
+**[UpdateMessagingMessageResponse](../../Models/Requests/UpdateMessagingMessageResponse.md)**
 
 ### Errors
 

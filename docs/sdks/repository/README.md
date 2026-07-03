@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateRepoRepository2](#createreporepository2) - Create a repository
-* [GetRepoRepository2](#getreporepository2) - Retrieve a repository
-* [ListRepoRepositories2](#listreporepositories2) - List all repositories
-* [PatchRepoRepository2](#patchreporepository2) - Update a repository
-* [RemoveRepoRepository2](#removereporepository2) - Remove a repository
-* [UpdateRepoRepository2](#updatereporepository2) - Update a repository
+* [CreateRepoRepository](#createreporepository) - Create a repository
+* [GetRepoRepository](#getreporepository) - Retrieve a repository
+* [ListRepoRepositories](#listreporepositories) - List all repositories
+* [PatchRepoRepository](#patchreporepository) - Update a repository
+* [RemoveRepoRepository](#removereporepository) - Remove a repository
+* [UpdateRepoRepository](#updatereporepository) - Update a repository
 
-## CreateRepoRepository2
+## CreateRepoRepository
 
 Create a repository
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Repository.CreateRepoRepository2Async(
+var res = await sdk.Repository.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
@@ -42,12 +42,12 @@ var res = await sdk.Repository.CreateRepoRepository2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `RepoRepository`                                                                                                                                 | [RepoRepository](../../Models/Components/RepoRepository.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateRepoRepository2QueryParamFields](../../Models/Requests/CreateRepoRepository2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateRepoRepositoryQueryParamFields](../../Models/Requests/CreateRepoRepositoryQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateRepoRepository2Response](../../Models/Requests/CreateRepoRepository2Response.md)**
+**[CreateRepoRepositoryResponse](../../Models/Requests/CreateRepoRepositoryResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Repository.CreateRepoRepository2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetRepoRepository2
+## GetRepoRepository
 
 Retrieve a repository
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Repository.GetRepoRepository2Async(
+var res = await sdk.Repository.GetRepoRepositoryAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Repository.GetRepoRepository2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Repository                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetRepoRepository2QueryParamFields](../../Models/Requests/GetRepoRepository2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetRepoRepositoryQueryParamFields](../../Models/Requests/GetRepoRepositoryQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetRepoRepository2Response](../../Models/Requests/GetRepoRepository2Response.md)**
+**[GetRepoRepositoryResponse](../../Models/Requests/GetRepoRepositoryResponse.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Repository.GetRepoRepository2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListRepoRepositories2
+## ListRepoRepositories
 
 List all repositories
 
@@ -111,24 +111,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListRepoRepositories2Request req = new ListRepoRepositories2Request() {
+ListRepoRepositoriesRequest req = new ListRepoRepositoriesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Repository.ListRepoRepositories2Async(req);
+var res = await sdk.Repository.ListRepoRepositoriesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListRepoRepositories2Request](../../Models/Requests/ListRepoRepositories2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListRepoRepositoriesRequest](../../Models/Requests/ListRepoRepositoriesRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListRepoRepositories2Response](../../Models/Requests/ListRepoRepositories2Response.md)**
+**[ListRepoRepositoriesResponse](../../Models/Requests/ListRepoRepositoriesResponse.md)**
 
 ### Errors
 
@@ -136,7 +136,7 @@ var res = await sdk.Repository.ListRepoRepositories2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchRepoRepository2
+## PatchRepoRepository
 
 Update a repository
 
@@ -151,7 +151,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchRepoRepository2Request req = new PatchRepoRepository2Request() {
+PatchRepoRepositoryRequest req = new PatchRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         Name = "<value>",
     },
@@ -159,20 +159,20 @@ PatchRepoRepository2Request req = new PatchRepoRepository2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Repository.PatchRepoRepository2Async(req);
+var res = await sdk.Repository.PatchRepoRepositoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchRepoRepository2Request](../../Models/Requests/PatchRepoRepository2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchRepoRepositoryRequest](../../Models/Requests/PatchRepoRepositoryRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchRepoRepository2Response](../../Models/Requests/PatchRepoRepository2Response.md)**
+**[PatchRepoRepositoryResponse](../../Models/Requests/PatchRepoRepositoryResponse.md)**
 
 ### Errors
 
@@ -180,7 +180,7 @@ var res = await sdk.Repository.PatchRepoRepository2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveRepoRepository2
+## RemoveRepoRepository
 
 Remove a repository
 
@@ -194,7 +194,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Repository.RemoveRepoRepository2Async(
+var res = await sdk.Repository.RemoveRepoRepositoryAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -211,7 +211,7 @@ var res = await sdk.Repository.RemoveRepoRepository2Async(
 
 ### Response
 
-**[RemoveRepoRepository2Response](../../Models/Requests/RemoveRepoRepository2Response.md)**
+**[RemoveRepoRepositoryResponse](../../Models/Requests/RemoveRepoRepositoryResponse.md)**
 
 ### Errors
 
@@ -219,7 +219,7 @@ var res = await sdk.Repository.RemoveRepoRepository2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateRepoRepository2
+## UpdateRepoRepository
 
 Update a repository
 
@@ -234,7 +234,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateRepoRepository2Request req = new UpdateRepoRepository2Request() {
+UpdateRepoRepositoryRequest req = new UpdateRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
         Name = "<value>",
     },
@@ -242,20 +242,20 @@ UpdateRepoRepository2Request req = new UpdateRepoRepository2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Repository.UpdateRepoRepository2Async(req);
+var res = await sdk.Repository.UpdateRepoRepositoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdateRepoRepository2Request](../../Models/Requests/UpdateRepoRepository2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateRepoRepositoryRequest](../../Models/Requests/UpdateRepoRepositoryRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateRepoRepository2Response](../../Models/Requests/UpdateRepoRepository2Response.md)**
+**[UpdateRepoRepositoryResponse](../../Models/Requests/UpdateRepoRepositoryResponse.md)**
 
 ### Errors
 

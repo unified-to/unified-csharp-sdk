@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pullrequest
         /// </summary>
-        Task<CreateRepoPullrequest2Response> CreateRepoPullrequest2Async(RepoPullrequest repoPullrequest, string connectionId, List<CreateRepoPullrequest2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<CreateRepoPullrequestQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a pullrequest
         /// </summary>
-        Task<GetRepoPullrequest2Response> GetRepoPullrequest2Async(string connectionId, string id, List<GetRepoPullrequest2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<GetRepoPullrequestQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all pullrequests
         /// </summary>
-        Task<ListRepoPullrequests2Response> ListRepoPullrequests2Async(ListRepoPullrequests2Request request);
+        Task<ListRepoPullrequestsResponse> ListRepoPullrequestsAsync(ListRepoPullrequestsRequest request);
 
         /// <summary>
         /// Update a pullrequest
         /// </summary>
-        Task<PatchRepoPullrequest2Response> PatchRepoPullrequest2Async(PatchRepoPullrequest2Request request);
+        Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(PatchRepoPullrequestRequest request);
 
         /// <summary>
         /// Remove a pullrequest
         /// </summary>
-        Task<RemoveRepoPullrequest2Response> RemoveRepoPullrequest2Async(string connectionId, string id);
+        Task<RemoveRepoPullrequestResponse> RemoveRepoPullrequestAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a pullrequest
         /// </summary>
-        Task<UpdateRepoPullrequest2Response> UpdateRepoPullrequest2Async(UpdateRepoPullrequest2Request request);
+        Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(UpdateRepoPullrequestRequest request);
     }
 
     public class Pullrequest: IPullrequest
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoPullrequest2Response> CreateRepoPullrequest2Async(RepoPullrequest repoPullrequest, string connectionId, List<CreateRepoPullrequest2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<CreateRepoPullrequestQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateRepoPullrequest2Request()
+            var request = new CreateRepoPullrequestRequest()
             {
                 RepoPullrequest = repoPullrequest,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createRepoPullrequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createRepoPullrequest", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoPullrequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateRepoPullrequest2Response()
+                    var response = new CreateRepoPullrequestResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoPullrequest2Response> GetRepoPullrequest2Async(string connectionId, string id, List<GetRepoPullrequest2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<GetRepoPullrequestQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetRepoPullrequest2Request()
+            var request = new GetRepoPullrequestRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getRepoPullrequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getRepoPullrequest", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoPullrequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetRepoPullrequest2Response()
+                    var response = new GetRepoPullrequestResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListRepoPullrequests2Response> ListRepoPullrequests2Async(ListRepoPullrequests2Request request)
+        public async Task<ListRepoPullrequestsResponse> ListRepoPullrequestsAsync(ListRepoPullrequestsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/pullrequest", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listRepoPullrequests2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listRepoPullrequests", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<RepoPullrequest>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListRepoPullrequests2Response()
+                    var response = new ListRepoPullrequestsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoPullrequest2Response> PatchRepoPullrequest2Async(PatchRepoPullrequest2Request request)
+        public async Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(PatchRepoPullrequestRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/pullrequest/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchRepoPullrequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchRepoPullrequest", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoPullrequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchRepoPullrequest2Response()
+                    var response = new PatchRepoPullrequestResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveRepoPullrequest2Response> RemoveRepoPullrequest2Async(string connectionId, string id)
+        public async Task<RemoveRepoPullrequestResponse> RemoveRepoPullrequestAsync(string connectionId, string id)
         {
-            var request = new RemoveRepoPullrequest2Request()
+            var request = new RemoveRepoPullrequestRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeRepoPullrequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeRepoPullrequest", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveRepoPullrequest2Response()
+                return new RemoveRepoPullrequestResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveRepoPullrequest2Response()
+                return new RemoveRepoPullrequestResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateRepoPullrequest2Response> UpdateRepoPullrequest2Async(UpdateRepoPullrequest2Request request)
+        public async Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(UpdateRepoPullrequestRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/pullrequest/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateRepoPullrequest2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateRepoPullrequest", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoPullrequest>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateRepoPullrequest2Response()
+                    var response = new UpdateRepoPullrequestResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

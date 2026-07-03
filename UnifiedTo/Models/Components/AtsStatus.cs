@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("job_id")]
+        public string? JobId { get; set; }
+
         [JsonProperty("original_status")]
         public string? OriginalStatus { get; set; }
 

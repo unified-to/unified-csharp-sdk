@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create an insertionorder
         /// </summary>
-        Task<CreateAdsInsertionorder2Response> CreateAdsInsertionorder2Async(AdsInsertionorder adsInsertionorder, string connectionId, List<CreateAdsInsertionorder2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAdsInsertionorderResponse> CreateAdsInsertionorderAsync(AdsInsertionorder adsInsertionorder, string connectionId, List<CreateAdsInsertionorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an insertionorder
         /// </summary>
-        Task<GetAdsInsertionorder2Response> GetAdsInsertionorder2Async(string connectionId, string id, List<GetAdsInsertionorder2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAdsInsertionorderResponse> GetAdsInsertionorderAsync(string connectionId, string id, List<GetAdsInsertionorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all insertionorders
         /// </summary>
-        Task<ListAdsInsertionorders2Response> ListAdsInsertionorders2Async(ListAdsInsertionorders2Request request);
+        Task<ListAdsInsertionordersResponse> ListAdsInsertionordersAsync(ListAdsInsertionordersRequest request);
 
         /// <summary>
         /// Update an insertionorder
         /// </summary>
-        Task<PatchAdsInsertionorder2Response> PatchAdsInsertionorder2Async(PatchAdsInsertionorder2Request request);
+        Task<PatchAdsInsertionorderResponse> PatchAdsInsertionorderAsync(PatchAdsInsertionorderRequest request);
 
         /// <summary>
         /// Remove an insertionorder
         /// </summary>
-        Task<RemoveAdsInsertionorder2Response> RemoveAdsInsertionorder2Async(string connectionId, string id);
+        Task<RemoveAdsInsertionorderResponse> RemoveAdsInsertionorderAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an insertionorder
         /// </summary>
-        Task<UpdateAdsInsertionorder2Response> UpdateAdsInsertionorder2Async(UpdateAdsInsertionorder2Request request);
+        Task<UpdateAdsInsertionorderResponse> UpdateAdsInsertionorderAsync(UpdateAdsInsertionorderRequest request);
     }
 
     public class Insertionorder: IInsertionorder
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAdsInsertionorder2Response> CreateAdsInsertionorder2Async(AdsInsertionorder adsInsertionorder, string connectionId, List<CreateAdsInsertionorder2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAdsInsertionorderResponse> CreateAdsInsertionorderAsync(AdsInsertionorder adsInsertionorder, string connectionId, List<CreateAdsInsertionorderQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAdsInsertionorder2Request()
+            var request = new CreateAdsInsertionorderRequest()
             {
                 AdsInsertionorder = adsInsertionorder,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsInsertionorder2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsInsertionorder", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsInsertionorder>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAdsInsertionorder2Response()
+                    var response = new CreateAdsInsertionorderResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsInsertionorder2Response> GetAdsInsertionorder2Async(string connectionId, string id, List<GetAdsInsertionorder2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAdsInsertionorderResponse> GetAdsInsertionorderAsync(string connectionId, string id, List<GetAdsInsertionorderQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAdsInsertionorder2Request()
+            var request = new GetAdsInsertionorderRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsInsertionorder2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsInsertionorder", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsInsertionorder>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAdsInsertionorder2Response()
+                    var response = new GetAdsInsertionorderResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAdsInsertionorders2Response> ListAdsInsertionorders2Async(ListAdsInsertionorders2Request request)
+        public async Task<ListAdsInsertionordersResponse> ListAdsInsertionordersAsync(ListAdsInsertionordersRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/insertionorder", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsInsertionorders2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsInsertionorders", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AdsInsertionorder>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAdsInsertionorders2Response()
+                    var response = new ListAdsInsertionordersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAdsInsertionorder2Response> PatchAdsInsertionorder2Async(PatchAdsInsertionorder2Request request)
+        public async Task<PatchAdsInsertionorderResponse> PatchAdsInsertionorderAsync(PatchAdsInsertionorderRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/insertionorder/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsInsertionorder2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsInsertionorder", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsInsertionorder>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAdsInsertionorder2Response()
+                    var response = new PatchAdsInsertionorderResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAdsInsertionorder2Response> RemoveAdsInsertionorder2Async(string connectionId, string id)
+        public async Task<RemoveAdsInsertionorderResponse> RemoveAdsInsertionorderAsync(string connectionId, string id)
         {
-            var request = new RemoveAdsInsertionorder2Request()
+            var request = new RemoveAdsInsertionorderRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsInsertionorder2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsInsertionorder", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAdsInsertionorder2Response()
+                return new RemoveAdsInsertionorderResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAdsInsertionorder2Response()
+                return new RemoveAdsInsertionorderResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAdsInsertionorder2Response> UpdateAdsInsertionorder2Async(UpdateAdsInsertionorder2Request request)
+        public async Task<UpdateAdsInsertionorderResponse> UpdateAdsInsertionorderAsync(UpdateAdsInsertionorderRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/insertionorder/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsInsertionorder2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsInsertionorder", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsInsertionorder>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAdsInsertionorder2Response()
+                    var response = new UpdateAdsInsertionorderResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

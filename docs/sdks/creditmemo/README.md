@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateAccountingCreditmemo2](#createaccountingcreditmemo2) - Create a creditmemo
-* [GetAccountingCreditmemo2](#getaccountingcreditmemo2) - Retrieve a creditmemo
-* [ListAccountingCreditmemoes2](#listaccountingcreditmemoes2) - List all creditmemoes
-* [PatchAccountingCreditmemo2](#patchaccountingcreditmemo2) - Update a creditmemo
-* [RemoveAccountingCreditmemo2](#removeaccountingcreditmemo2) - Remove a creditmemo
-* [UpdateAccountingCreditmemo2](#updateaccountingcreditmemo2) - Update a creditmemo
+* [CreateAccountingCreditmemo](#createaccountingcreditmemo) - Create a creditmemo
+* [GetAccountingCreditmemo](#getaccountingcreditmemo) - Retrieve a creditmemo
+* [ListAccountingCreditmemoes](#listaccountingcreditmemoes) - List all creditmemoes
+* [PatchAccountingCreditmemo](#patchaccountingcreditmemo) - Update a creditmemo
+* [RemoveAccountingCreditmemo](#removeaccountingcreditmemo) - Remove a creditmemo
+* [UpdateAccountingCreditmemo](#updateaccountingcreditmemo) - Update a creditmemo
 
-## CreateAccountingCreditmemo2
+## CreateAccountingCreditmemo
 
 Create a creditmemo
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Creditmemo.CreateAccountingCreditmemo2Async(
+var res = await sdk.Creditmemo.CreateAccountingCreditmemoAsync(
     accountingCreditmemo: new AccountingCreditmemo() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Creditmemo.CreateAccountingCreditmemo2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AccountingCreditmemo`                                                                                                                           | [AccountingCreditmemo](../../Models/Components/AccountingCreditmemo.md)                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAccountingCreditmemo2QueryParamFields](../../Models/Requests/CreateAccountingCreditmemo2QueryParamFields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAccountingCreditmemoQueryParamFields](../../Models/Requests/CreateAccountingCreditmemoQueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAccountingCreditmemo2Response](../../Models/Requests/CreateAccountingCreditmemo2Response.md)**
+**[CreateAccountingCreditmemoResponse](../../Models/Requests/CreateAccountingCreditmemoResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Creditmemo.CreateAccountingCreditmemo2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingCreditmemo2
+## GetAccountingCreditmemo
 
 Retrieve a creditmemo
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Creditmemo.GetAccountingCreditmemo2Async(
+var res = await sdk.Creditmemo.GetAccountingCreditmemoAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Creditmemo.GetAccountingCreditmemo2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Creditmemo                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetAccountingCreditmemo2QueryParamFields](../../Models/Requests/GetAccountingCreditmemo2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingCreditmemoQueryParamFields](../../Models/Requests/GetAccountingCreditmemoQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingCreditmemo2Response](../../Models/Requests/GetAccountingCreditmemo2Response.md)**
+**[GetAccountingCreditmemoResponse](../../Models/Requests/GetAccountingCreditmemoResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Creditmemo.GetAccountingCreditmemo2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingCreditmemoes2
+## ListAccountingCreditmemoes
 
 List all creditmemoes
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingCreditmemoes2Request req = new ListAccountingCreditmemoes2Request() {
+ListAccountingCreditmemoesRequest req = new ListAccountingCreditmemoesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Creditmemo.ListAccountingCreditmemoes2Async(req);
+var res = await sdk.Creditmemo.ListAccountingCreditmemoesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `request`                                                                                         | [ListAccountingCreditmemoes2Request](../../Models/Requests/ListAccountingCreditmemoes2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListAccountingCreditmemoesRequest](../../Models/Requests/ListAccountingCreditmemoesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[ListAccountingCreditmemoes2Response](../../Models/Requests/ListAccountingCreditmemoes2Response.md)**
+**[ListAccountingCreditmemoesResponse](../../Models/Requests/ListAccountingCreditmemoesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Creditmemo.ListAccountingCreditmemoes2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAccountingCreditmemo2
+## PatchAccountingCreditmemo
 
 Update a creditmemo
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAccountingCreditmemo2Request req = new PatchAccountingCreditmemo2Request() {
+PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
     AccountingCreditmemo = new AccountingCreditmemo() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Creditmemo.PatchAccountingCreditmemo2Async(req);
+var res = await sdk.Creditmemo.PatchAccountingCreditmemoAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [PatchAccountingCreditmemo2Request](../../Models/Requests/PatchAccountingCreditmemo2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [PatchAccountingCreditmemoRequest](../../Models/Requests/PatchAccountingCreditmemoRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[PatchAccountingCreditmemo2Response](../../Models/Requests/PatchAccountingCreditmemo2Response.md)**
+**[PatchAccountingCreditmemoResponse](../../Models/Requests/PatchAccountingCreditmemoResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Creditmemo.PatchAccountingCreditmemo2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAccountingCreditmemo2
+## RemoveAccountingCreditmemo
 
 Remove a creditmemo
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Creditmemo.RemoveAccountingCreditmemo2Async(
+var res = await sdk.Creditmemo.RemoveAccountingCreditmemoAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Creditmemo.RemoveAccountingCreditmemo2Async(
 
 ### Response
 
-**[RemoveAccountingCreditmemo2Response](../../Models/Requests/RemoveAccountingCreditmemo2Response.md)**
+**[RemoveAccountingCreditmemoResponse](../../Models/Requests/RemoveAccountingCreditmemoResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Creditmemo.RemoveAccountingCreditmemo2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAccountingCreditmemo2
+## UpdateAccountingCreditmemo
 
 Update a creditmemo
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAccountingCreditmemo2Request req = new UpdateAccountingCreditmemo2Request() {
+UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() {
     AccountingCreditmemo = new AccountingCreditmemo() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Creditmemo.UpdateAccountingCreditmemo2Async(req);
+var res = await sdk.Creditmemo.UpdateAccountingCreditmemoAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `request`                                                                                         | [UpdateAccountingCreditmemo2Request](../../Models/Requests/UpdateAccountingCreditmemo2Request.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [UpdateAccountingCreditmemoRequest](../../Models/Requests/UpdateAccountingCreditmemoRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
 ### Response
 
-**[UpdateAccountingCreditmemo2Response](../../Models/Requests/UpdateAccountingCreditmemo2Response.md)**
+**[UpdateAccountingCreditmemoResponse](../../Models/Requests/UpdateAccountingCreditmemoResponse.md)**
 
 ### Errors
 

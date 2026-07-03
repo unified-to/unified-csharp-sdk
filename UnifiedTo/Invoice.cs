@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create an invoice
         /// </summary>
-        Task<CreateAccountingInvoice2Response> CreateAccountingInvoice2Async(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoice2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoiceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an invoice
         /// </summary>
-        Task<GetAccountingInvoice2Response> GetAccountingInvoice2Async(string connectionId, string id, List<GetAccountingInvoice2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<GetAccountingInvoiceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all invoices
         /// </summary>
-        Task<ListAccountingInvoices2Response> ListAccountingInvoices2Async(ListAccountingInvoices2Request request);
+        Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest request);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<PatchAccountingInvoice2Response> PatchAccountingInvoice2Async(PatchAccountingInvoice2Request request);
+        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceRequest request);
 
         /// <summary>
         /// Remove an invoice
         /// </summary>
-        Task<RemoveAccountingInvoice2Response> RemoveAccountingInvoice2Async(string connectionId, string id);
+        Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<UpdateAccountingInvoice2Response> UpdateAccountingInvoice2Async(UpdateAccountingInvoice2Request request);
+        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceRequest request);
     }
 
     public class Invoice: IInvoice
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingInvoice2Response> CreateAccountingInvoice2Async(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoice2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoiceQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAccountingInvoice2Request()
+            var request = new CreateAccountingInvoiceRequest()
             {
                 AccountingInvoice = accountingInvoice,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingInvoice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingInvoice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingInvoice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAccountingInvoice2Response()
+                    var response = new CreateAccountingInvoiceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingInvoice2Response> GetAccountingInvoice2Async(string connectionId, string id, List<GetAccountingInvoice2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<GetAccountingInvoiceQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingInvoice2Request()
+            var request = new GetAccountingInvoiceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingInvoice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingInvoice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingInvoice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingInvoice2Response()
+                    var response = new GetAccountingInvoiceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingInvoices2Response> ListAccountingInvoices2Async(ListAccountingInvoices2Request request)
+        public async Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingInvoices2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingInvoices", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingInvoice>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingInvoices2Response()
+                    var response = new ListAccountingInvoicesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingInvoice2Response> PatchAccountingInvoice2Async(PatchAccountingInvoice2Request request)
+        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingInvoice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingInvoice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingInvoice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAccountingInvoice2Response()
+                    var response = new PatchAccountingInvoiceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAccountingInvoice2Response> RemoveAccountingInvoice2Async(string connectionId, string id)
+        public async Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(string connectionId, string id)
         {
-            var request = new RemoveAccountingInvoice2Request()
+            var request = new RemoveAccountingInvoiceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingInvoice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingInvoice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAccountingInvoice2Response()
+                return new RemoveAccountingInvoiceResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAccountingInvoice2Response()
+                return new RemoveAccountingInvoiceResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingInvoice2Response> UpdateAccountingInvoice2Async(UpdateAccountingInvoice2Request request)
+        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingInvoice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingInvoice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingInvoice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAccountingInvoice2Response()
+                    var response = new UpdateAccountingInvoiceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

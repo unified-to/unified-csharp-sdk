@@ -5,26 +5,26 @@
 
 ### Available Operations
 
-* [CreateAnalyticsEvent2](#createanalyticsevent2) - Create an event
-* [CreateAnalyticsProperty2](#createanalyticsproperty2) - Create a property
-* [CreateAnalyticsVisitor2](#createanalyticsvisitor2) - Create a visitor
-* [GetAnalyticsEvent2](#getanalyticsevent2) - Retrieve an event
-* [GetAnalyticsProperty2](#getanalyticsproperty2) - Retrieve a property
-* [GetAnalyticsSession2](#getanalyticssession2) - Retrieve a session
-* [GetAnalyticsVisitor2](#getanalyticsvisitor2) - Retrieve a visitor
-* [ListAnalyticsEvents2](#listanalyticsevents2) - List all events
-* [ListAnalyticsProperties2](#listanalyticsproperties2) - List all properties
-* [ListAnalyticsReports2](#listanalyticsreports2) - List all reports
-* [ListAnalyticsSessions2](#listanalyticssessions2) - List all sessions
-* [ListAnalyticsVisitors2](#listanalyticsvisitors2) - List all visitors
-* [PatchAnalyticsProperty2](#patchanalyticsproperty2) - Update a property
-* [PatchAnalyticsVisitor2](#patchanalyticsvisitor2) - Update a visitor
-* [RemoveAnalyticsProperty2](#removeanalyticsproperty2) - Remove a property
-* [RemoveAnalyticsVisitor2](#removeanalyticsvisitor2) - Remove a visitor
-* [UpdateAnalyticsProperty2](#updateanalyticsproperty2) - Update a property
-* [UpdateAnalyticsVisitor2](#updateanalyticsvisitor2) - Update a visitor
+* [CreateAnalyticsEvent](#createanalyticsevent) - Create an event
+* [CreateAnalyticsProperty](#createanalyticsproperty) - Create a property
+* [CreateAnalyticsVisitor](#createanalyticsvisitor) - Create a visitor
+* [GetAnalyticsEvent](#getanalyticsevent) - Retrieve an event
+* [GetAnalyticsProperty](#getanalyticsproperty) - Retrieve a property
+* [GetAnalyticsSession](#getanalyticssession) - Retrieve a session
+* [GetAnalyticsVisitor](#getanalyticsvisitor) - Retrieve a visitor
+* [ListAnalyticsEvents](#listanalyticsevents) - List all events
+* [ListAnalyticsProperties](#listanalyticsproperties) - List all properties
+* [ListAnalyticsReports](#listanalyticsreports) - List all reports
+* [ListAnalyticsSessions](#listanalyticssessions) - List all sessions
+* [ListAnalyticsVisitors](#listanalyticsvisitors) - List all visitors
+* [PatchAnalyticsProperty](#patchanalyticsproperty) - Update a property
+* [PatchAnalyticsVisitor](#patchanalyticsvisitor) - Update a visitor
+* [RemoveAnalyticsProperty](#removeanalyticsproperty) - Remove a property
+* [RemoveAnalyticsVisitor](#removeanalyticsvisitor) - Remove a visitor
+* [UpdateAnalyticsProperty](#updateanalyticsproperty) - Update a property
+* [UpdateAnalyticsVisitor](#updateanalyticsvisitor) - Update a visitor
 
-## CreateAnalyticsEvent2
+## CreateAnalyticsEvent
 
 Create an event
 
@@ -38,7 +38,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.CreateAnalyticsEvent2Async(
+var res = await sdk.Analytics.CreateAnalyticsEventAsync(
     analyticsEvent: new AnalyticsEvent() {},
     connectionId: "<id>"
 );
@@ -52,12 +52,12 @@ var res = await sdk.Analytics.CreateAnalyticsEvent2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AnalyticsEvent`                                                                                                                                 | [AnalyticsEvent](../../Models/Components/AnalyticsEvent.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAnalyticsEvent2QueryParamFields](../../Models/Requests/CreateAnalyticsEvent2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAnalyticsEventQueryParamFields](../../Models/Requests/CreateAnalyticsEventQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAnalyticsEvent2Response](../../Models/Requests/CreateAnalyticsEvent2Response.md)**
+**[CreateAnalyticsEventResponse](../../Models/Requests/CreateAnalyticsEventResponse.md)**
 
 ### Errors
 
@@ -65,7 +65,7 @@ var res = await sdk.Analytics.CreateAnalyticsEvent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAnalyticsProperty2
+## CreateAnalyticsProperty
 
 Create a property
 
@@ -79,7 +79,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.CreateAnalyticsProperty2Async(
+var res = await sdk.Analytics.CreateAnalyticsPropertyAsync(
     analyticsProperty: new AnalyticsProperty() {},
     connectionId: "<id>"
 );
@@ -93,12 +93,12 @@ var res = await sdk.Analytics.CreateAnalyticsProperty2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AnalyticsProperty`                                                                                                                              | [AnalyticsProperty](../../Models/Components/AnalyticsProperty.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAnalyticsProperty2QueryParamFields](../../Models/Requests/CreateAnalyticsProperty2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAnalyticsPropertyQueryParamFields](../../Models/Requests/CreateAnalyticsPropertyQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAnalyticsProperty2Response](../../Models/Requests/CreateAnalyticsProperty2Response.md)**
+**[CreateAnalyticsPropertyResponse](../../Models/Requests/CreateAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -106,7 +106,7 @@ var res = await sdk.Analytics.CreateAnalyticsProperty2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateAnalyticsVisitor2
+## CreateAnalyticsVisitor
 
 Create a visitor
 
@@ -120,7 +120,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.CreateAnalyticsVisitor2Async(
+var res = await sdk.Analytics.CreateAnalyticsVisitorAsync(
     analyticsVisitor: new AnalyticsVisitor() {},
     connectionId: "<id>"
 );
@@ -134,12 +134,12 @@ var res = await sdk.Analytics.CreateAnalyticsVisitor2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AnalyticsVisitor`                                                                                                                               | [AnalyticsVisitor](../../Models/Components/AnalyticsVisitor.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAnalyticsVisitor2QueryParamFields](../../Models/Requests/CreateAnalyticsVisitor2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAnalyticsVisitorQueryParamFields](../../Models/Requests/CreateAnalyticsVisitorQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAnalyticsVisitor2Response](../../Models/Requests/CreateAnalyticsVisitor2Response.md)**
+**[CreateAnalyticsVisitorResponse](../../Models/Requests/CreateAnalyticsVisitorResponse.md)**
 
 ### Errors
 
@@ -147,7 +147,7 @@ var res = await sdk.Analytics.CreateAnalyticsVisitor2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAnalyticsEvent2
+## GetAnalyticsEvent
 
 Retrieve an event
 
@@ -161,7 +161,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.GetAnalyticsEvent2Async(
+var res = await sdk.Analytics.GetAnalyticsEventAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -175,12 +175,12 @@ var res = await sdk.Analytics.GetAnalyticsEvent2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Event                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetAnalyticsEvent2QueryParamFields](../../Models/Requests/GetAnalyticsEvent2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAnalyticsEventQueryParamFields](../../Models/Requests/GetAnalyticsEventQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAnalyticsEvent2Response](../../Models/Requests/GetAnalyticsEvent2Response.md)**
+**[GetAnalyticsEventResponse](../../Models/Requests/GetAnalyticsEventResponse.md)**
 
 ### Errors
 
@@ -188,7 +188,7 @@ var res = await sdk.Analytics.GetAnalyticsEvent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAnalyticsProperty2
+## GetAnalyticsProperty
 
 Retrieve a property
 
@@ -202,7 +202,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.GetAnalyticsProperty2Async(
+var res = await sdk.Analytics.GetAnalyticsPropertyAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -216,12 +216,12 @@ var res = await sdk.Analytics.GetAnalyticsProperty2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Property                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAnalyticsProperty2QueryParamFields](../../Models/Requests/GetAnalyticsProperty2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAnalyticsPropertyQueryParamFields](../../Models/Requests/GetAnalyticsPropertyQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAnalyticsProperty2Response](../../Models/Requests/GetAnalyticsProperty2Response.md)**
+**[GetAnalyticsPropertyResponse](../../Models/Requests/GetAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -229,7 +229,7 @@ var res = await sdk.Analytics.GetAnalyticsProperty2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAnalyticsSession2
+## GetAnalyticsSession
 
 Retrieve a session
 
@@ -243,7 +243,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.GetAnalyticsSession2Async(
+var res = await sdk.Analytics.GetAnalyticsSessionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -257,12 +257,12 @@ var res = await sdk.Analytics.GetAnalyticsSession2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Session                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetAnalyticsSession2QueryParamFields](../../Models/Requests/GetAnalyticsSession2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAnalyticsSessionQueryParamFields](../../Models/Requests/GetAnalyticsSessionQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAnalyticsSession2Response](../../Models/Requests/GetAnalyticsSession2Response.md)**
+**[GetAnalyticsSessionResponse](../../Models/Requests/GetAnalyticsSessionResponse.md)**
 
 ### Errors
 
@@ -270,7 +270,7 @@ var res = await sdk.Analytics.GetAnalyticsSession2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAnalyticsVisitor2
+## GetAnalyticsVisitor
 
 Retrieve a visitor
 
@@ -284,7 +284,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.GetAnalyticsVisitor2Async(
+var res = await sdk.Analytics.GetAnalyticsVisitorAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -298,12 +298,12 @@ var res = await sdk.Analytics.GetAnalyticsVisitor2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Visitor                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetAnalyticsVisitor2QueryParamFields](../../Models/Requests/GetAnalyticsVisitor2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAnalyticsVisitorQueryParamFields](../../Models/Requests/GetAnalyticsVisitorQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAnalyticsVisitor2Response](../../Models/Requests/GetAnalyticsVisitor2Response.md)**
+**[GetAnalyticsVisitorResponse](../../Models/Requests/GetAnalyticsVisitorResponse.md)**
 
 ### Errors
 
@@ -311,7 +311,7 @@ var res = await sdk.Analytics.GetAnalyticsVisitor2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAnalyticsEvents2
+## ListAnalyticsEvents
 
 List all events
 
@@ -326,24 +326,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAnalyticsEvents2Request req = new ListAnalyticsEvents2Request() {
+ListAnalyticsEventsRequest req = new ListAnalyticsEventsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Analytics.ListAnalyticsEvents2Async(req);
+var res = await sdk.Analytics.ListAnalyticsEventsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListAnalyticsEvents2Request](../../Models/Requests/ListAnalyticsEvents2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListAnalyticsEventsRequest](../../Models/Requests/ListAnalyticsEventsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListAnalyticsEvents2Response](../../Models/Requests/ListAnalyticsEvents2Response.md)**
+**[ListAnalyticsEventsResponse](../../Models/Requests/ListAnalyticsEventsResponse.md)**
 
 ### Errors
 
@@ -351,7 +351,7 @@ var res = await sdk.Analytics.ListAnalyticsEvents2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAnalyticsProperties2
+## ListAnalyticsProperties
 
 List all properties
 
@@ -366,24 +366,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAnalyticsProperties2Request req = new ListAnalyticsProperties2Request() {
+ListAnalyticsPropertiesRequest req = new ListAnalyticsPropertiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Analytics.ListAnalyticsProperties2Async(req);
+var res = await sdk.Analytics.ListAnalyticsPropertiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [ListAnalyticsProperties2Request](../../Models/Requests/ListAnalyticsProperties2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListAnalyticsPropertiesRequest](../../Models/Requests/ListAnalyticsPropertiesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[ListAnalyticsProperties2Response](../../Models/Requests/ListAnalyticsProperties2Response.md)**
+**[ListAnalyticsPropertiesResponse](../../Models/Requests/ListAnalyticsPropertiesResponse.md)**
 
 ### Errors
 
@@ -391,7 +391,7 @@ var res = await sdk.Analytics.ListAnalyticsProperties2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAnalyticsReports2
+## ListAnalyticsReports
 
 List all reports
 
@@ -406,24 +406,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAnalyticsReports2Request req = new ListAnalyticsReports2Request() {
+ListAnalyticsReportsRequest req = new ListAnalyticsReportsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Analytics.ListAnalyticsReports2Async(req);
+var res = await sdk.Analytics.ListAnalyticsReportsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListAnalyticsReports2Request](../../Models/Requests/ListAnalyticsReports2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListAnalyticsReportsRequest](../../Models/Requests/ListAnalyticsReportsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListAnalyticsReports2Response](../../Models/Requests/ListAnalyticsReports2Response.md)**
+**[ListAnalyticsReportsResponse](../../Models/Requests/ListAnalyticsReportsResponse.md)**
 
 ### Errors
 
@@ -431,7 +431,7 @@ var res = await sdk.Analytics.ListAnalyticsReports2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAnalyticsSessions2
+## ListAnalyticsSessions
 
 List all sessions
 
@@ -446,24 +446,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAnalyticsSessions2Request req = new ListAnalyticsSessions2Request() {
+ListAnalyticsSessionsRequest req = new ListAnalyticsSessionsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Analytics.ListAnalyticsSessions2Async(req);
+var res = await sdk.Analytics.ListAnalyticsSessionsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListAnalyticsSessions2Request](../../Models/Requests/ListAnalyticsSessions2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListAnalyticsSessionsRequest](../../Models/Requests/ListAnalyticsSessionsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListAnalyticsSessions2Response](../../Models/Requests/ListAnalyticsSessions2Response.md)**
+**[ListAnalyticsSessionsResponse](../../Models/Requests/ListAnalyticsSessionsResponse.md)**
 
 ### Errors
 
@@ -471,7 +471,7 @@ var res = await sdk.Analytics.ListAnalyticsSessions2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAnalyticsVisitors2
+## ListAnalyticsVisitors
 
 List all visitors
 
@@ -486,24 +486,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAnalyticsVisitors2Request req = new ListAnalyticsVisitors2Request() {
+ListAnalyticsVisitorsRequest req = new ListAnalyticsVisitorsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Analytics.ListAnalyticsVisitors2Async(req);
+var res = await sdk.Analytics.ListAnalyticsVisitorsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListAnalyticsVisitors2Request](../../Models/Requests/ListAnalyticsVisitors2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListAnalyticsVisitorsRequest](../../Models/Requests/ListAnalyticsVisitorsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListAnalyticsVisitors2Response](../../Models/Requests/ListAnalyticsVisitors2Response.md)**
+**[ListAnalyticsVisitorsResponse](../../Models/Requests/ListAnalyticsVisitorsResponse.md)**
 
 ### Errors
 
@@ -511,7 +511,7 @@ var res = await sdk.Analytics.ListAnalyticsVisitors2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAnalyticsProperty2
+## PatchAnalyticsProperty
 
 Update a property
 
@@ -526,26 +526,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAnalyticsProperty2Request req = new PatchAnalyticsProperty2Request() {
+PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Analytics.PatchAnalyticsProperty2Async(req);
+var res = await sdk.Analytics.PatchAnalyticsPropertyAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchAnalyticsProperty2Request](../../Models/Requests/PatchAnalyticsProperty2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchAnalyticsPropertyRequest](../../Models/Requests/PatchAnalyticsPropertyRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchAnalyticsProperty2Response](../../Models/Requests/PatchAnalyticsProperty2Response.md)**
+**[PatchAnalyticsPropertyResponse](../../Models/Requests/PatchAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -553,7 +553,7 @@ var res = await sdk.Analytics.PatchAnalyticsProperty2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAnalyticsVisitor2
+## PatchAnalyticsVisitor
 
 Update a visitor
 
@@ -568,26 +568,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAnalyticsVisitor2Request req = new PatchAnalyticsVisitor2Request() {
+PatchAnalyticsVisitorRequest req = new PatchAnalyticsVisitorRequest() {
     AnalyticsVisitor = new AnalyticsVisitor() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Analytics.PatchAnalyticsVisitor2Async(req);
+var res = await sdk.Analytics.PatchAnalyticsVisitorAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchAnalyticsVisitor2Request](../../Models/Requests/PatchAnalyticsVisitor2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchAnalyticsVisitorRequest](../../Models/Requests/PatchAnalyticsVisitorRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchAnalyticsVisitor2Response](../../Models/Requests/PatchAnalyticsVisitor2Response.md)**
+**[PatchAnalyticsVisitorResponse](../../Models/Requests/PatchAnalyticsVisitorResponse.md)**
 
 ### Errors
 
@@ -595,7 +595,7 @@ var res = await sdk.Analytics.PatchAnalyticsVisitor2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAnalyticsProperty2
+## RemoveAnalyticsProperty
 
 Remove a property
 
@@ -609,7 +609,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.RemoveAnalyticsProperty2Async(
+var res = await sdk.Analytics.RemoveAnalyticsPropertyAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -626,7 +626,7 @@ var res = await sdk.Analytics.RemoveAnalyticsProperty2Async(
 
 ### Response
 
-**[RemoveAnalyticsProperty2Response](../../Models/Requests/RemoveAnalyticsProperty2Response.md)**
+**[RemoveAnalyticsPropertyResponse](../../Models/Requests/RemoveAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -634,7 +634,7 @@ var res = await sdk.Analytics.RemoveAnalyticsProperty2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAnalyticsVisitor2
+## RemoveAnalyticsVisitor
 
 Remove a visitor
 
@@ -648,7 +648,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Analytics.RemoveAnalyticsVisitor2Async(
+var res = await sdk.Analytics.RemoveAnalyticsVisitorAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -665,7 +665,7 @@ var res = await sdk.Analytics.RemoveAnalyticsVisitor2Async(
 
 ### Response
 
-**[RemoveAnalyticsVisitor2Response](../../Models/Requests/RemoveAnalyticsVisitor2Response.md)**
+**[RemoveAnalyticsVisitorResponse](../../Models/Requests/RemoveAnalyticsVisitorResponse.md)**
 
 ### Errors
 
@@ -673,7 +673,7 @@ var res = await sdk.Analytics.RemoveAnalyticsVisitor2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAnalyticsProperty2
+## UpdateAnalyticsProperty
 
 Update a property
 
@@ -688,26 +688,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAnalyticsProperty2Request req = new UpdateAnalyticsProperty2Request() {
+UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Analytics.UpdateAnalyticsProperty2Async(req);
+var res = await sdk.Analytics.UpdateAnalyticsPropertyAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateAnalyticsProperty2Request](../../Models/Requests/UpdateAnalyticsProperty2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateAnalyticsPropertyRequest](../../Models/Requests/UpdateAnalyticsPropertyRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateAnalyticsProperty2Response](../../Models/Requests/UpdateAnalyticsProperty2Response.md)**
+**[UpdateAnalyticsPropertyResponse](../../Models/Requests/UpdateAnalyticsPropertyResponse.md)**
 
 ### Errors
 
@@ -715,7 +715,7 @@ var res = await sdk.Analytics.UpdateAnalyticsProperty2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAnalyticsVisitor2
+## UpdateAnalyticsVisitor
 
 Update a visitor
 
@@ -730,26 +730,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAnalyticsVisitor2Request req = new UpdateAnalyticsVisitor2Request() {
+UpdateAnalyticsVisitorRequest req = new UpdateAnalyticsVisitorRequest() {
     AnalyticsVisitor = new AnalyticsVisitor() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Analytics.UpdateAnalyticsVisitor2Async(req);
+var res = await sdk.Analytics.UpdateAnalyticsVisitorAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateAnalyticsVisitor2Request](../../Models/Requests/UpdateAnalyticsVisitor2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateAnalyticsVisitorRequest](../../Models/Requests/UpdateAnalyticsVisitorRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateAnalyticsVisitor2Response](../../Models/Requests/UpdateAnalyticsVisitor2Response.md)**
+**[UpdateAnalyticsVisitorResponse](../../Models/Requests/UpdateAnalyticsVisitorResponse.md)**
 
 ### Errors
 

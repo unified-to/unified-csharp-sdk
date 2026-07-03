@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateTicketingCustomer2](#createticketingcustomer2) - Create a customer
-* [GetTicketingCustomer2](#getticketingcustomer2) - Retrieve a customer
-* [ListTicketingCustomers2](#listticketingcustomers2) - List all customers
-* [PatchTicketingCustomer2](#patchticketingcustomer2) - Update a customer
-* [RemoveTicketingCustomer2](#removeticketingcustomer2) - Remove a customer
-* [UpdateTicketingCustomer2](#updateticketingcustomer2) - Update a customer
+* [CreateTicketingCustomer](#createticketingcustomer) - Create a customer
+* [GetTicketingCustomer](#getticketingcustomer) - Retrieve a customer
+* [ListTicketingCustomers](#listticketingcustomers) - List all customers
+* [PatchTicketingCustomer](#patchticketingcustomer) - Update a customer
+* [RemoveTicketingCustomer](#removeticketingcustomer) - Remove a customer
+* [UpdateTicketingCustomer](#updateticketingcustomer) - Update a customer
 
-## CreateTicketingCustomer2
+## CreateTicketingCustomer
 
 Create a customer
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Customer.CreateTicketingCustomer2Async(
+var res = await sdk.Customer.CreateTicketingCustomerAsync(
     ticketingCustomer: new TicketingCustomer() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Customer.CreateTicketingCustomer2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `TicketingCustomer`                                                                                                                              | [TicketingCustomer](../../Models/Components/TicketingCustomer.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateTicketingCustomer2QueryParamFields](../../Models/Requests/CreateTicketingCustomer2QueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateTicketingCustomerQueryParamFields](../../Models/Requests/CreateTicketingCustomerQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateTicketingCustomer2Response](../../Models/Requests/CreateTicketingCustomer2Response.md)**
+**[CreateTicketingCustomerResponse](../../Models/Requests/CreateTicketingCustomerResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Customer.CreateTicketingCustomer2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetTicketingCustomer2
+## GetTicketingCustomer
 
 Retrieve a customer
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Customer.GetTicketingCustomer2Async(
+var res = await sdk.Customer.GetTicketingCustomerAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Customer.GetTicketingCustomer2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Customer                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetTicketingCustomer2QueryParamFields](../../Models/Requests/GetTicketingCustomer2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTicketingCustomerQueryParamFields](../../Models/Requests/GetTicketingCustomerQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTicketingCustomer2Response](../../Models/Requests/GetTicketingCustomer2Response.md)**
+**[GetTicketingCustomerResponse](../../Models/Requests/GetTicketingCustomerResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Customer.GetTicketingCustomer2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTicketingCustomers2
+## ListTicketingCustomers
 
 List all customers
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListTicketingCustomers2Request req = new ListTicketingCustomers2Request() {
+ListTicketingCustomersRequest req = new ListTicketingCustomersRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Customer.ListTicketingCustomers2Async(req);
+var res = await sdk.Customer.ListTicketingCustomersAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListTicketingCustomers2Request](../../Models/Requests/ListTicketingCustomers2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListTicketingCustomersRequest](../../Models/Requests/ListTicketingCustomersRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListTicketingCustomers2Response](../../Models/Requests/ListTicketingCustomers2Response.md)**
+**[ListTicketingCustomersResponse](../../Models/Requests/ListTicketingCustomersResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Customer.ListTicketingCustomers2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchTicketingCustomer2
+## PatchTicketingCustomer
 
 Update a customer
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchTicketingCustomer2Request req = new PatchTicketingCustomer2Request() {
+PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
     TicketingCustomer = new TicketingCustomer() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Customer.PatchTicketingCustomer2Async(req);
+var res = await sdk.Customer.PatchTicketingCustomerAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [PatchTicketingCustomer2Request](../../Models/Requests/PatchTicketingCustomer2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchTicketingCustomerRequest](../../Models/Requests/PatchTicketingCustomerRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[PatchTicketingCustomer2Response](../../Models/Requests/PatchTicketingCustomer2Response.md)**
+**[PatchTicketingCustomerResponse](../../Models/Requests/PatchTicketingCustomerResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Customer.PatchTicketingCustomer2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveTicketingCustomer2
+## RemoveTicketingCustomer
 
 Remove a customer
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Customer.RemoveTicketingCustomer2Async(
+var res = await sdk.Customer.RemoveTicketingCustomerAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Customer.RemoveTicketingCustomer2Async(
 
 ### Response
 
-**[RemoveTicketingCustomer2Response](../../Models/Requests/RemoveTicketingCustomer2Response.md)**
+**[RemoveTicketingCustomerResponse](../../Models/Requests/RemoveTicketingCustomerResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Customer.RemoveTicketingCustomer2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateTicketingCustomer2
+## UpdateTicketingCustomer
 
 Update a customer
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateTicketingCustomer2Request req = new UpdateTicketingCustomer2Request() {
+UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
     TicketingCustomer = new TicketingCustomer() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Customer.UpdateTicketingCustomer2Async(req);
+var res = await sdk.Customer.UpdateTicketingCustomerAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `request`                                                                                   | [UpdateTicketingCustomer2Request](../../Models/Requests/UpdateTicketingCustomer2Request.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateTicketingCustomerRequest](../../Models/Requests/UpdateTicketingCustomerRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 
-**[UpdateTicketingCustomer2Response](../../Models/Requests/UpdateTicketingCustomer2Response.md)**
+**[UpdateTicketingCustomerResponse](../../Models/Requests/UpdateTicketingCustomerResponse.md)**
 
 ### Errors
 

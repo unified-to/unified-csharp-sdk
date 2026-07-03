@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a carrier
         /// </summary>
-        Task<GetShippingCarrier2Response> GetShippingCarrier2Async(string connectionId, string id, List<GetShippingCarrier2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetShippingCarrierResponse> GetShippingCarrierAsync(string connectionId, string id, List<GetShippingCarrierQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all carriers
         /// </summary>
-        Task<ListShippingCarriers2Response> ListShippingCarriers2Async(ListShippingCarriers2Request request);
+        Task<ListShippingCarriersResponse> ListShippingCarriersAsync(ListShippingCarriersRequest request);
     }
 
     public class Carrier: ICarrier
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetShippingCarrier2Response> GetShippingCarrier2Async(string connectionId, string id, List<GetShippingCarrier2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetShippingCarrierResponse> GetShippingCarrierAsync(string connectionId, string id, List<GetShippingCarrierQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetShippingCarrier2Request()
+            var request = new GetShippingCarrierRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingCarrier2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getShippingCarrier", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<ShippingCarrier>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetShippingCarrier2Response()
+                    var response = new GetShippingCarrierResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListShippingCarriers2Response> ListShippingCarriers2Async(ListShippingCarriers2Request request)
+        public async Task<ListShippingCarriersResponse> ListShippingCarriersAsync(ListShippingCarriersRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/shipping/{connection_id}/carrier", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingCarriers2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listShippingCarriers", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<ShippingCarrier>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListShippingCarriers2Response()
+                    var response = new ListShippingCarriersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

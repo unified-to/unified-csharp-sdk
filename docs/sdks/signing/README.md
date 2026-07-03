@@ -5,22 +5,22 @@
 
 ### Available Operations
 
-* [CreateSigningDocument2](#createsigningdocument2) - Create a document
-* [CreateSigningSignatory2](#createsigningsignatory2) - Create a signatory
-* [GetSigningDocument2](#getsigningdocument2) - Retrieve a document
-* [GetSigningSignatory2](#getsigningsignatory2) - Retrieve a signatory
-* [GetSigningTemplate2](#getsigningtemplate2) - Retrieve a template
-* [ListSigningDocuments2](#listsigningdocuments2) - List all documents
-* [ListSigningSignatories2](#listsigningsignatories2) - List all signatories
-* [ListSigningTemplates2](#listsigningtemplates2) - List all templates
-* [PatchSigningDocument2](#patchsigningdocument2) - Update a document
-* [PatchSigningSignatory2](#patchsigningsignatory2) - Update a signatory
-* [RemoveSigningDocument2](#removesigningdocument2) - Remove a document
-* [RemoveSigningSignatory2](#removesigningsignatory2) - Remove a signatory
-* [UpdateSigningDocument2](#updatesigningdocument2) - Update a document
-* [UpdateSigningSignatory2](#updatesigningsignatory2) - Update a signatory
+* [CreateSigningDocument](#createsigningdocument) - Create a document
+* [CreateSigningSignatory](#createsigningsignatory) - Create a signatory
+* [GetSigningDocument](#getsigningdocument) - Retrieve a document
+* [GetSigningSignatory](#getsigningsignatory) - Retrieve a signatory
+* [GetSigningTemplate](#getsigningtemplate) - Retrieve a template
+* [ListSigningDocuments](#listsigningdocuments) - List all documents
+* [ListSigningSignatories](#listsigningsignatories) - List all signatories
+* [ListSigningTemplates](#listsigningtemplates) - List all templates
+* [PatchSigningDocument](#patchsigningdocument) - Update a document
+* [PatchSigningSignatory](#patchsigningsignatory) - Update a signatory
+* [RemoveSigningDocument](#removesigningdocument) - Remove a document
+* [RemoveSigningSignatory](#removesigningsignatory) - Remove a signatory
+* [UpdateSigningDocument](#updatesigningdocument) - Update a document
+* [UpdateSigningSignatory](#updatesigningsignatory) - Update a signatory
 
-## CreateSigningDocument2
+## CreateSigningDocument
 
 Create a document
 
@@ -34,7 +34,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Signing.CreateSigningDocument2Async(
+var res = await sdk.Signing.CreateSigningDocumentAsync(
     signingDocument: new SigningDocument() {},
     connectionId: "<id>"
 );
@@ -48,12 +48,12 @@ var res = await sdk.Signing.CreateSigningDocument2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `SigningDocument`                                                                                                                                | [SigningDocument](../../Models/Components/SigningDocument.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateSigningDocument2QueryParamFields](../../Models/Requests/CreateSigningDocument2QueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateSigningDocumentQueryParamFields](../../Models/Requests/CreateSigningDocumentQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateSigningDocument2Response](../../Models/Requests/CreateSigningDocument2Response.md)**
+**[CreateSigningDocumentResponse](../../Models/Requests/CreateSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -61,7 +61,7 @@ var res = await sdk.Signing.CreateSigningDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateSigningSignatory2
+## CreateSigningSignatory
 
 Create a signatory
 
@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Signing.CreateSigningSignatory2Async(
+var res = await sdk.Signing.CreateSigningSignatoryAsync(
     signingSignatory: new SigningSignatory() {},
     connectionId: "<id>"
 );
@@ -89,12 +89,12 @@ var res = await sdk.Signing.CreateSigningSignatory2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `SigningSignatory`                                                                                                                               | [SigningSignatory](../../Models/Components/SigningSignatory.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateSigningSignatory2QueryParamFields](../../Models/Requests/CreateSigningSignatory2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateSigningSignatoryQueryParamFields](../../Models/Requests/CreateSigningSignatoryQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateSigningSignatory2Response](../../Models/Requests/CreateSigningSignatory2Response.md)**
+**[CreateSigningSignatoryResponse](../../Models/Requests/CreateSigningSignatoryResponse.md)**
 
 ### Errors
 
@@ -102,7 +102,7 @@ var res = await sdk.Signing.CreateSigningSignatory2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetSigningDocument2
+## GetSigningDocument
 
 Retrieve a document
 
@@ -116,7 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Signing.GetSigningDocument2Async(
+var res = await sdk.Signing.GetSigningDocumentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -130,12 +130,12 @@ var res = await sdk.Signing.GetSigningDocument2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Document                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetSigningDocument2QueryParamFields](../../Models/Requests/GetSigningDocument2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetSigningDocumentQueryParamFields](../../Models/Requests/GetSigningDocumentQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetSigningDocument2Response](../../Models/Requests/GetSigningDocument2Response.md)**
+**[GetSigningDocumentResponse](../../Models/Requests/GetSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -143,7 +143,7 @@ var res = await sdk.Signing.GetSigningDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetSigningSignatory2
+## GetSigningSignatory
 
 Retrieve a signatory
 
@@ -157,7 +157,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Signing.GetSigningSignatory2Async(
+var res = await sdk.Signing.GetSigningSignatoryAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -171,12 +171,12 @@ var res = await sdk.Signing.GetSigningSignatory2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Signatory                                                                                                                              |
-| `Fields`                                                                                                                                         | List<[GetSigningSignatory2QueryParamFields](../../Models/Requests/GetSigningSignatory2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetSigningSignatoryQueryParamFields](../../Models/Requests/GetSigningSignatoryQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetSigningSignatory2Response](../../Models/Requests/GetSigningSignatory2Response.md)**
+**[GetSigningSignatoryResponse](../../Models/Requests/GetSigningSignatoryResponse.md)**
 
 ### Errors
 
@@ -184,7 +184,7 @@ var res = await sdk.Signing.GetSigningSignatory2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetSigningTemplate2
+## GetSigningTemplate
 
 Retrieve a template
 
@@ -198,7 +198,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Signing.GetSigningTemplate2Async(
+var res = await sdk.Signing.GetSigningTemplateAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -212,12 +212,12 @@ var res = await sdk.Signing.GetSigningTemplate2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Template                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetSigningTemplate2QueryParamFields](../../Models/Requests/GetSigningTemplate2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetSigningTemplateQueryParamFields](../../Models/Requests/GetSigningTemplateQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetSigningTemplate2Response](../../Models/Requests/GetSigningTemplate2Response.md)**
+**[GetSigningTemplateResponse](../../Models/Requests/GetSigningTemplateResponse.md)**
 
 ### Errors
 
@@ -225,7 +225,7 @@ var res = await sdk.Signing.GetSigningTemplate2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListSigningDocuments2
+## ListSigningDocuments
 
 List all documents
 
@@ -240,24 +240,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListSigningDocuments2Request req = new ListSigningDocuments2Request() {
+ListSigningDocumentsRequest req = new ListSigningDocumentsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Signing.ListSigningDocuments2Async(req);
+var res = await sdk.Signing.ListSigningDocumentsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListSigningDocuments2Request](../../Models/Requests/ListSigningDocuments2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListSigningDocumentsRequest](../../Models/Requests/ListSigningDocumentsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListSigningDocuments2Response](../../Models/Requests/ListSigningDocuments2Response.md)**
+**[ListSigningDocumentsResponse](../../Models/Requests/ListSigningDocumentsResponse.md)**
 
 ### Errors
 
@@ -265,7 +265,7 @@ var res = await sdk.Signing.ListSigningDocuments2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListSigningSignatories2
+## ListSigningSignatories
 
 List all signatories
 
@@ -280,24 +280,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListSigningSignatories2Request req = new ListSigningSignatories2Request() {
+ListSigningSignatoriesRequest req = new ListSigningSignatoriesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Signing.ListSigningSignatories2Async(req);
+var res = await sdk.Signing.ListSigningSignatoriesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListSigningSignatories2Request](../../Models/Requests/ListSigningSignatories2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListSigningSignatoriesRequest](../../Models/Requests/ListSigningSignatoriesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[ListSigningSignatories2Response](../../Models/Requests/ListSigningSignatories2Response.md)**
+**[ListSigningSignatoriesResponse](../../Models/Requests/ListSigningSignatoriesResponse.md)**
 
 ### Errors
 
@@ -305,7 +305,7 @@ var res = await sdk.Signing.ListSigningSignatories2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListSigningTemplates2
+## ListSigningTemplates
 
 List all templates
 
@@ -320,24 +320,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListSigningTemplates2Request req = new ListSigningTemplates2Request() {
+ListSigningTemplatesRequest req = new ListSigningTemplatesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Signing.ListSigningTemplates2Async(req);
+var res = await sdk.Signing.ListSigningTemplatesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListSigningTemplates2Request](../../Models/Requests/ListSigningTemplates2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListSigningTemplatesRequest](../../Models/Requests/ListSigningTemplatesRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListSigningTemplates2Response](../../Models/Requests/ListSigningTemplates2Response.md)**
+**[ListSigningTemplatesResponse](../../Models/Requests/ListSigningTemplatesResponse.md)**
 
 ### Errors
 
@@ -345,7 +345,7 @@ var res = await sdk.Signing.ListSigningTemplates2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchSigningDocument2
+## PatchSigningDocument
 
 Update a document
 
@@ -360,26 +360,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchSigningDocument2Request req = new PatchSigningDocument2Request() {
+PatchSigningDocumentRequest req = new PatchSigningDocumentRequest() {
     SigningDocument = new SigningDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Signing.PatchSigningDocument2Async(req);
+var res = await sdk.Signing.PatchSigningDocumentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [PatchSigningDocument2Request](../../Models/Requests/PatchSigningDocument2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchSigningDocumentRequest](../../Models/Requests/PatchSigningDocumentRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[PatchSigningDocument2Response](../../Models/Requests/PatchSigningDocument2Response.md)**
+**[PatchSigningDocumentResponse](../../Models/Requests/PatchSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -387,7 +387,7 @@ var res = await sdk.Signing.PatchSigningDocument2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchSigningSignatory2
+## PatchSigningSignatory
 
 Update a signatory
 
@@ -402,26 +402,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchSigningSignatory2Request req = new PatchSigningSignatory2Request() {
+PatchSigningSignatoryRequest req = new PatchSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Signing.PatchSigningSignatory2Async(req);
+var res = await sdk.Signing.PatchSigningSignatoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [PatchSigningSignatory2Request](../../Models/Requests/PatchSigningSignatory2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchSigningSignatoryRequest](../../Models/Requests/PatchSigningSignatoryRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[PatchSigningSignatory2Response](../../Models/Requests/PatchSigningSignatory2Response.md)**
+**[PatchSigningSignatoryResponse](../../Models/Requests/PatchSigningSignatoryResponse.md)**
 
 ### Errors
 
@@ -429,7 +429,7 @@ var res = await sdk.Signing.PatchSigningSignatory2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveSigningDocument2
+## RemoveSigningDocument
 
 Remove a document
 
@@ -443,7 +443,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Signing.RemoveSigningDocument2Async(
+var res = await sdk.Signing.RemoveSigningDocumentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -460,7 +460,7 @@ var res = await sdk.Signing.RemoveSigningDocument2Async(
 
 ### Response
 
-**[RemoveSigningDocument2Response](../../Models/Requests/RemoveSigningDocument2Response.md)**
+**[RemoveSigningDocumentResponse](../../Models/Requests/RemoveSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -468,7 +468,7 @@ var res = await sdk.Signing.RemoveSigningDocument2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveSigningSignatory2
+## RemoveSigningSignatory
 
 Remove a signatory
 
@@ -482,7 +482,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Signing.RemoveSigningSignatory2Async(
+var res = await sdk.Signing.RemoveSigningSignatoryAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -499,7 +499,7 @@ var res = await sdk.Signing.RemoveSigningSignatory2Async(
 
 ### Response
 
-**[RemoveSigningSignatory2Response](../../Models/Requests/RemoveSigningSignatory2Response.md)**
+**[RemoveSigningSignatoryResponse](../../Models/Requests/RemoveSigningSignatoryResponse.md)**
 
 ### Errors
 
@@ -507,7 +507,7 @@ var res = await sdk.Signing.RemoveSigningSignatory2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateSigningDocument2
+## UpdateSigningDocument
 
 Update a document
 
@@ -522,26 +522,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateSigningDocument2Request req = new UpdateSigningDocument2Request() {
+UpdateSigningDocumentRequest req = new UpdateSigningDocumentRequest() {
     SigningDocument = new SigningDocument() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Signing.UpdateSigningDocument2Async(req);
+var res = await sdk.Signing.UpdateSigningDocumentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [UpdateSigningDocument2Request](../../Models/Requests/UpdateSigningDocument2Request.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateSigningDocumentRequest](../../Models/Requests/UpdateSigningDocumentRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[UpdateSigningDocument2Response](../../Models/Requests/UpdateSigningDocument2Response.md)**
+**[UpdateSigningDocumentResponse](../../Models/Requests/UpdateSigningDocumentResponse.md)**
 
 ### Errors
 
@@ -549,7 +549,7 @@ var res = await sdk.Signing.UpdateSigningDocument2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateSigningSignatory2
+## UpdateSigningSignatory
 
 Update a signatory
 
@@ -564,26 +564,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateSigningSignatory2Request req = new UpdateSigningSignatory2Request() {
+UpdateSigningSignatoryRequest req = new UpdateSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Signing.UpdateSigningSignatory2Async(req);
+var res = await sdk.Signing.UpdateSigningSignatoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [UpdateSigningSignatory2Request](../../Models/Requests/UpdateSigningSignatory2Request.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateSigningSignatoryRequest](../../Models/Requests/UpdateSigningSignatoryRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
-**[UpdateSigningSignatory2Response](../../Models/Requests/UpdateSigningSignatory2Response.md)**
+**[UpdateSigningSignatoryResponse](../../Models/Requests/UpdateSigningSignatoryResponse.md)**
 
 ### Errors
 

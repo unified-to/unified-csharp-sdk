@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a template
         /// </summary>
-        Task<GetSigningTemplate2Response> GetSigningTemplate2Async(string connectionId, string id, List<GetSigningTemplate2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetSigningTemplateResponse> GetSigningTemplateAsync(string connectionId, string id, List<GetSigningTemplateQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all templates
         /// </summary>
-        Task<ListSigningTemplates2Response> ListSigningTemplates2Async(ListSigningTemplates2Request request);
+        Task<ListSigningTemplatesResponse> ListSigningTemplatesAsync(ListSigningTemplatesRequest request);
     }
 
     public class Template: ITemplate
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetSigningTemplate2Response> GetSigningTemplate2Async(string connectionId, string id, List<GetSigningTemplate2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetSigningTemplateResponse> GetSigningTemplateAsync(string connectionId, string id, List<GetSigningTemplateQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetSigningTemplate2Request()
+            var request = new GetSigningTemplateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getSigningTemplate2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getSigningTemplate", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<SigningTemplate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetSigningTemplate2Response()
+                    var response = new GetSigningTemplateResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListSigningTemplates2Response> ListSigningTemplates2Async(ListSigningTemplates2Request request)
+        public async Task<ListSigningTemplatesResponse> ListSigningTemplatesAsync(ListSigningTemplatesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/signing/{connection_id}/template", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listSigningTemplates2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listSigningTemplates", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<SigningTemplate>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListSigningTemplates2Response()
+                    var response = new ListSigningTemplatesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

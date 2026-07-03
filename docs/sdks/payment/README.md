@@ -5,30 +5,30 @@
 
 ### Available Operations
 
-* [CreatePaymentLink2](#createpaymentlink2) - Create a link
-* [CreatePaymentPayment2](#createpaymentpayment2) - Create a payment
-* [CreatePaymentSubscription2](#createpaymentsubscription2) - Create a subscription
-* [GetPaymentLink2](#getpaymentlink2) - Retrieve a link
-* [GetPaymentPayment2](#getpaymentpayment2) - Retrieve a payment
-* [GetPaymentPayout2](#getpaymentpayout2) - Retrieve a payout
-* [GetPaymentRefund2](#getpaymentrefund2) - Retrieve a refund
-* [GetPaymentSubscription2](#getpaymentsubscription2) - Retrieve a subscription
-* [ListPaymentLinks2](#listpaymentlinks2) - List all links
-* [ListPaymentPayments2](#listpaymentpayments2) - List all payments
-* [ListPaymentPayouts2](#listpaymentpayouts2) - List all payouts
-* [ListPaymentRefunds2](#listpaymentrefunds2) - List all refunds
-* [ListPaymentSubscriptions2](#listpaymentsubscriptions2) - List all subscriptions
-* [PatchPaymentLink2](#patchpaymentlink2) - Update a link
-* [PatchPaymentPayment2](#patchpaymentpayment2) - Update a payment
-* [PatchPaymentSubscription2](#patchpaymentsubscription2) - Update a subscription
-* [RemovePaymentLink2](#removepaymentlink2) - Remove a link
-* [RemovePaymentPayment2](#removepaymentpayment2) - Remove a payment
-* [RemovePaymentSubscription2](#removepaymentsubscription2) - Remove a subscription
-* [UpdatePaymentLink2](#updatepaymentlink2) - Update a link
-* [UpdatePaymentPayment2](#updatepaymentpayment2) - Update a payment
-* [UpdatePaymentSubscription2](#updatepaymentsubscription2) - Update a subscription
+* [CreatePaymentLink](#createpaymentlink) - Create a link
+* [CreatePaymentPayment](#createpaymentpayment) - Create a payment
+* [CreatePaymentSubscription](#createpaymentsubscription) - Create a subscription
+* [GetPaymentLink](#getpaymentlink) - Retrieve a link
+* [GetPaymentPayment](#getpaymentpayment) - Retrieve a payment
+* [GetPaymentPayout](#getpaymentpayout) - Retrieve a payout
+* [GetPaymentRefund](#getpaymentrefund) - Retrieve a refund
+* [GetPaymentSubscription](#getpaymentsubscription) - Retrieve a subscription
+* [ListPaymentLinks](#listpaymentlinks) - List all links
+* [ListPaymentPayments](#listpaymentpayments) - List all payments
+* [ListPaymentPayouts](#listpaymentpayouts) - List all payouts
+* [ListPaymentRefunds](#listpaymentrefunds) - List all refunds
+* [ListPaymentSubscriptions](#listpaymentsubscriptions) - List all subscriptions
+* [PatchPaymentLink](#patchpaymentlink) - Update a link
+* [PatchPaymentPayment](#patchpaymentpayment) - Update a payment
+* [PatchPaymentSubscription](#patchpaymentsubscription) - Update a subscription
+* [RemovePaymentLink](#removepaymentlink) - Remove a link
+* [RemovePaymentPayment](#removepaymentpayment) - Remove a payment
+* [RemovePaymentSubscription](#removepaymentsubscription) - Remove a subscription
+* [UpdatePaymentLink](#updatepaymentlink) - Update a link
+* [UpdatePaymentPayment](#updatepaymentpayment) - Update a payment
+* [UpdatePaymentSubscription](#updatepaymentsubscription) - Update a subscription
 
-## CreatePaymentLink2
+## CreatePaymentLink
 
 Create a link
 
@@ -42,7 +42,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.CreatePaymentLink2Async(
+var res = await sdk.Payment.CreatePaymentLinkAsync(
     paymentLink: new PaymentLink() {},
     connectionId: "<id>"
 );
@@ -56,12 +56,12 @@ var res = await sdk.Payment.CreatePaymentLink2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `PaymentLink`                                                                                                                                    | [PaymentLink](../../Models/Components/PaymentLink.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreatePaymentLink2QueryParamFields](../../Models/Requests/CreatePaymentLink2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreatePaymentLinkQueryParamFields](../../Models/Requests/CreatePaymentLinkQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreatePaymentLink2Response](../../Models/Requests/CreatePaymentLink2Response.md)**
+**[CreatePaymentLinkResponse](../../Models/Requests/CreatePaymentLinkResponse.md)**
 
 ### Errors
 
@@ -69,7 +69,7 @@ var res = await sdk.Payment.CreatePaymentLink2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreatePaymentPayment2
+## CreatePaymentPayment
 
 Create a payment
 
@@ -83,7 +83,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.CreatePaymentPayment2Async(
+var res = await sdk.Payment.CreatePaymentPaymentAsync(
     paymentPayment: new PaymentPayment() {},
     connectionId: "<id>"
 );
@@ -97,12 +97,12 @@ var res = await sdk.Payment.CreatePaymentPayment2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `PaymentPayment`                                                                                                                                 | [PaymentPayment](../../Models/Components/PaymentPayment.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreatePaymentPayment2QueryParamFields](../../Models/Requests/CreatePaymentPayment2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreatePaymentPaymentQueryParamFields](../../Models/Requests/CreatePaymentPaymentQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreatePaymentPayment2Response](../../Models/Requests/CreatePaymentPayment2Response.md)**
+**[CreatePaymentPaymentResponse](../../Models/Requests/CreatePaymentPaymentResponse.md)**
 
 ### Errors
 
@@ -110,7 +110,7 @@ var res = await sdk.Payment.CreatePaymentPayment2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreatePaymentSubscription2
+## CreatePaymentSubscription
 
 Create a subscription
 
@@ -124,7 +124,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.CreatePaymentSubscription2Async(
+var res = await sdk.Payment.CreatePaymentSubscriptionAsync(
     paymentSubscription: new PaymentSubscription() {},
     connectionId: "<id>"
 );
@@ -138,12 +138,12 @@ var res = await sdk.Payment.CreatePaymentSubscription2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `PaymentSubscription`                                                                                                                            | [PaymentSubscription](../../Models/Components/PaymentSubscription.md)                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreatePaymentSubscription2QueryParamFields](../../Models/Requests/CreatePaymentSubscription2QueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreatePaymentSubscriptionQueryParamFields](../../Models/Requests/CreatePaymentSubscriptionQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreatePaymentSubscription2Response](../../Models/Requests/CreatePaymentSubscription2Response.md)**
+**[CreatePaymentSubscriptionResponse](../../Models/Requests/CreatePaymentSubscriptionResponse.md)**
 
 ### Errors
 
@@ -151,7 +151,7 @@ var res = await sdk.Payment.CreatePaymentSubscription2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetPaymentLink2
+## GetPaymentLink
 
 Retrieve a link
 
@@ -165,7 +165,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.GetPaymentLink2Async(
+var res = await sdk.Payment.GetPaymentLinkAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -179,12 +179,12 @@ var res = await sdk.Payment.GetPaymentLink2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Link                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetPaymentLink2QueryParamFields](../../Models/Requests/GetPaymentLink2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPaymentLinkQueryParamFields](../../Models/Requests/GetPaymentLinkQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetPaymentLink2Response](../../Models/Requests/GetPaymentLink2Response.md)**
+**[GetPaymentLinkResponse](../../Models/Requests/GetPaymentLinkResponse.md)**
 
 ### Errors
 
@@ -192,7 +192,7 @@ var res = await sdk.Payment.GetPaymentLink2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetPaymentPayment2
+## GetPaymentPayment
 
 Retrieve a payment
 
@@ -206,7 +206,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.GetPaymentPayment2Async(
+var res = await sdk.Payment.GetPaymentPaymentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -220,12 +220,12 @@ var res = await sdk.Payment.GetPaymentPayment2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Payment                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetPaymentPayment2QueryParamFields](../../Models/Requests/GetPaymentPayment2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPaymentPaymentQueryParamFields](../../Models/Requests/GetPaymentPaymentQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetPaymentPayment2Response](../../Models/Requests/GetPaymentPayment2Response.md)**
+**[GetPaymentPaymentResponse](../../Models/Requests/GetPaymentPaymentResponse.md)**
 
 ### Errors
 
@@ -233,7 +233,7 @@ var res = await sdk.Payment.GetPaymentPayment2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetPaymentPayout2
+## GetPaymentPayout
 
 Retrieve a payout
 
@@ -247,7 +247,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.GetPaymentPayout2Async(
+var res = await sdk.Payment.GetPaymentPayoutAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -261,12 +261,12 @@ var res = await sdk.Payment.GetPaymentPayout2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Payout                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetPaymentPayout2QueryParamFields](../../Models/Requests/GetPaymentPayout2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPaymentPayoutQueryParamFields](../../Models/Requests/GetPaymentPayoutQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetPaymentPayout2Response](../../Models/Requests/GetPaymentPayout2Response.md)**
+**[GetPaymentPayoutResponse](../../Models/Requests/GetPaymentPayoutResponse.md)**
 
 ### Errors
 
@@ -274,7 +274,7 @@ var res = await sdk.Payment.GetPaymentPayout2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetPaymentRefund2
+## GetPaymentRefund
 
 Retrieve a refund
 
@@ -288,7 +288,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.GetPaymentRefund2Async(
+var res = await sdk.Payment.GetPaymentRefundAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -302,12 +302,12 @@ var res = await sdk.Payment.GetPaymentRefund2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Refund                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetPaymentRefund2QueryParamFields](../../Models/Requests/GetPaymentRefund2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPaymentRefundQueryParamFields](../../Models/Requests/GetPaymentRefundQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetPaymentRefund2Response](../../Models/Requests/GetPaymentRefund2Response.md)**
+**[GetPaymentRefundResponse](../../Models/Requests/GetPaymentRefundResponse.md)**
 
 ### Errors
 
@@ -315,7 +315,7 @@ var res = await sdk.Payment.GetPaymentRefund2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetPaymentSubscription2
+## GetPaymentSubscription
 
 Retrieve a subscription
 
@@ -329,7 +329,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.GetPaymentSubscription2Async(
+var res = await sdk.Payment.GetPaymentSubscriptionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -343,12 +343,12 @@ var res = await sdk.Payment.GetPaymentSubscription2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Subscription                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetPaymentSubscription2QueryParamFields](../../Models/Requests/GetPaymentSubscription2QueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPaymentSubscriptionQueryParamFields](../../Models/Requests/GetPaymentSubscriptionQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetPaymentSubscription2Response](../../Models/Requests/GetPaymentSubscription2Response.md)**
+**[GetPaymentSubscriptionResponse](../../Models/Requests/GetPaymentSubscriptionResponse.md)**
 
 ### Errors
 
@@ -356,7 +356,7 @@ var res = await sdk.Payment.GetPaymentSubscription2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListPaymentLinks2
+## ListPaymentLinks
 
 List all links
 
@@ -371,24 +371,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListPaymentLinks2Request req = new ListPaymentLinks2Request() {
+ListPaymentLinksRequest req = new ListPaymentLinksRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Payment.ListPaymentLinks2Async(req);
+var res = await sdk.Payment.ListPaymentLinksAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListPaymentLinks2Request](../../Models/Requests/ListPaymentLinks2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListPaymentLinksRequest](../../Models/Requests/ListPaymentLinksRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListPaymentLinks2Response](../../Models/Requests/ListPaymentLinks2Response.md)**
+**[ListPaymentLinksResponse](../../Models/Requests/ListPaymentLinksResponse.md)**
 
 ### Errors
 
@@ -396,7 +396,7 @@ var res = await sdk.Payment.ListPaymentLinks2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListPaymentPayments2
+## ListPaymentPayments
 
 List all payments
 
@@ -411,24 +411,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListPaymentPayments2Request req = new ListPaymentPayments2Request() {
+ListPaymentPaymentsRequest req = new ListPaymentPaymentsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Payment.ListPaymentPayments2Async(req);
+var res = await sdk.Payment.ListPaymentPaymentsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListPaymentPayments2Request](../../Models/Requests/ListPaymentPayments2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListPaymentPaymentsRequest](../../Models/Requests/ListPaymentPaymentsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListPaymentPayments2Response](../../Models/Requests/ListPaymentPayments2Response.md)**
+**[ListPaymentPaymentsResponse](../../Models/Requests/ListPaymentPaymentsResponse.md)**
 
 ### Errors
 
@@ -436,7 +436,7 @@ var res = await sdk.Payment.ListPaymentPayments2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListPaymentPayouts2
+## ListPaymentPayouts
 
 List all payouts
 
@@ -451,24 +451,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListPaymentPayouts2Request req = new ListPaymentPayouts2Request() {
+ListPaymentPayoutsRequest req = new ListPaymentPayoutsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Payment.ListPaymentPayouts2Async(req);
+var res = await sdk.Payment.ListPaymentPayoutsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListPaymentPayouts2Request](../../Models/Requests/ListPaymentPayouts2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListPaymentPayoutsRequest](../../Models/Requests/ListPaymentPayoutsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListPaymentPayouts2Response](../../Models/Requests/ListPaymentPayouts2Response.md)**
+**[ListPaymentPayoutsResponse](../../Models/Requests/ListPaymentPayoutsResponse.md)**
 
 ### Errors
 
@@ -476,7 +476,7 @@ var res = await sdk.Payment.ListPaymentPayouts2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListPaymentRefunds2
+## ListPaymentRefunds
 
 List all refunds
 
@@ -491,24 +491,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListPaymentRefunds2Request req = new ListPaymentRefunds2Request() {
+ListPaymentRefundsRequest req = new ListPaymentRefundsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Payment.ListPaymentRefunds2Async(req);
+var res = await sdk.Payment.ListPaymentRefundsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListPaymentRefunds2Request](../../Models/Requests/ListPaymentRefunds2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListPaymentRefundsRequest](../../Models/Requests/ListPaymentRefundsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListPaymentRefunds2Response](../../Models/Requests/ListPaymentRefunds2Response.md)**
+**[ListPaymentRefundsResponse](../../Models/Requests/ListPaymentRefundsResponse.md)**
 
 ### Errors
 
@@ -516,7 +516,7 @@ var res = await sdk.Payment.ListPaymentRefunds2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListPaymentSubscriptions2
+## ListPaymentSubscriptions
 
 List all subscriptions
 
@@ -531,24 +531,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListPaymentSubscriptions2Request req = new ListPaymentSubscriptions2Request() {
+ListPaymentSubscriptionsRequest req = new ListPaymentSubscriptionsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Payment.ListPaymentSubscriptions2Async(req);
+var res = await sdk.Payment.ListPaymentSubscriptionsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [ListPaymentSubscriptions2Request](../../Models/Requests/ListPaymentSubscriptions2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListPaymentSubscriptionsRequest](../../Models/Requests/ListPaymentSubscriptionsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[ListPaymentSubscriptions2Response](../../Models/Requests/ListPaymentSubscriptions2Response.md)**
+**[ListPaymentSubscriptionsResponse](../../Models/Requests/ListPaymentSubscriptionsResponse.md)**
 
 ### Errors
 
@@ -556,7 +556,7 @@ var res = await sdk.Payment.ListPaymentSubscriptions2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchPaymentLink2
+## PatchPaymentLink
 
 Update a link
 
@@ -571,26 +571,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchPaymentLink2Request req = new PatchPaymentLink2Request() {
+PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
     PaymentLink = new PaymentLink() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Payment.PatchPaymentLink2Async(req);
+var res = await sdk.Payment.PatchPaymentLinkAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchPaymentLink2Request](../../Models/Requests/PatchPaymentLink2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchPaymentLinkRequest](../../Models/Requests/PatchPaymentLinkRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchPaymentLink2Response](../../Models/Requests/PatchPaymentLink2Response.md)**
+**[PatchPaymentLinkResponse](../../Models/Requests/PatchPaymentLinkResponse.md)**
 
 ### Errors
 
@@ -598,7 +598,7 @@ var res = await sdk.Payment.PatchPaymentLink2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchPaymentPayment2
+## PatchPaymentPayment
 
 Update a payment
 
@@ -613,26 +613,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchPaymentPayment2Request req = new PatchPaymentPayment2Request() {
+PatchPaymentPaymentRequest req = new PatchPaymentPaymentRequest() {
     PaymentPayment = new PaymentPayment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Payment.PatchPaymentPayment2Async(req);
+var res = await sdk.Payment.PatchPaymentPaymentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchPaymentPayment2Request](../../Models/Requests/PatchPaymentPayment2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchPaymentPaymentRequest](../../Models/Requests/PatchPaymentPaymentRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchPaymentPayment2Response](../../Models/Requests/PatchPaymentPayment2Response.md)**
+**[PatchPaymentPaymentResponse](../../Models/Requests/PatchPaymentPaymentResponse.md)**
 
 ### Errors
 
@@ -640,7 +640,7 @@ var res = await sdk.Payment.PatchPaymentPayment2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchPaymentSubscription2
+## PatchPaymentSubscription
 
 Update a subscription
 
@@ -655,26 +655,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchPaymentSubscription2Request req = new PatchPaymentSubscription2Request() {
+PatchPaymentSubscriptionRequest req = new PatchPaymentSubscriptionRequest() {
     PaymentSubscription = new PaymentSubscription() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Payment.PatchPaymentSubscription2Async(req);
+var res = await sdk.Payment.PatchPaymentSubscriptionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
-| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `request`                                                                                     | [PatchPaymentSubscription2Request](../../Models/Requests/PatchPaymentSubscription2Request.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [PatchPaymentSubscriptionRequest](../../Models/Requests/PatchPaymentSubscriptionRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
 
 ### Response
 
-**[PatchPaymentSubscription2Response](../../Models/Requests/PatchPaymentSubscription2Response.md)**
+**[PatchPaymentSubscriptionResponse](../../Models/Requests/PatchPaymentSubscriptionResponse.md)**
 
 ### Errors
 
@@ -682,7 +682,7 @@ var res = await sdk.Payment.PatchPaymentSubscription2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemovePaymentLink2
+## RemovePaymentLink
 
 Remove a link
 
@@ -696,7 +696,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.RemovePaymentLink2Async(
+var res = await sdk.Payment.RemovePaymentLinkAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -713,7 +713,7 @@ var res = await sdk.Payment.RemovePaymentLink2Async(
 
 ### Response
 
-**[RemovePaymentLink2Response](../../Models/Requests/RemovePaymentLink2Response.md)**
+**[RemovePaymentLinkResponse](../../Models/Requests/RemovePaymentLinkResponse.md)**
 
 ### Errors
 
@@ -721,7 +721,7 @@ var res = await sdk.Payment.RemovePaymentLink2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemovePaymentPayment2
+## RemovePaymentPayment
 
 Remove a payment
 
@@ -735,7 +735,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.RemovePaymentPayment2Async(
+var res = await sdk.Payment.RemovePaymentPaymentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -752,7 +752,7 @@ var res = await sdk.Payment.RemovePaymentPayment2Async(
 
 ### Response
 
-**[RemovePaymentPayment2Response](../../Models/Requests/RemovePaymentPayment2Response.md)**
+**[RemovePaymentPaymentResponse](../../Models/Requests/RemovePaymentPaymentResponse.md)**
 
 ### Errors
 
@@ -760,7 +760,7 @@ var res = await sdk.Payment.RemovePaymentPayment2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemovePaymentSubscription2
+## RemovePaymentSubscription
 
 Remove a subscription
 
@@ -774,7 +774,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Payment.RemovePaymentSubscription2Async(
+var res = await sdk.Payment.RemovePaymentSubscriptionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -791,7 +791,7 @@ var res = await sdk.Payment.RemovePaymentSubscription2Async(
 
 ### Response
 
-**[RemovePaymentSubscription2Response](../../Models/Requests/RemovePaymentSubscription2Response.md)**
+**[RemovePaymentSubscriptionResponse](../../Models/Requests/RemovePaymentSubscriptionResponse.md)**
 
 ### Errors
 
@@ -799,7 +799,7 @@ var res = await sdk.Payment.RemovePaymentSubscription2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdatePaymentLink2
+## UpdatePaymentLink
 
 Update a link
 
@@ -814,26 +814,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdatePaymentLink2Request req = new UpdatePaymentLink2Request() {
+UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
     PaymentLink = new PaymentLink() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Payment.UpdatePaymentLink2Async(req);
+var res = await sdk.Payment.UpdatePaymentLinkAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdatePaymentLink2Request](../../Models/Requests/UpdatePaymentLink2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdatePaymentLinkRequest](../../Models/Requests/UpdatePaymentLinkRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdatePaymentLink2Response](../../Models/Requests/UpdatePaymentLink2Response.md)**
+**[UpdatePaymentLinkResponse](../../Models/Requests/UpdatePaymentLinkResponse.md)**
 
 ### Errors
 
@@ -841,7 +841,7 @@ var res = await sdk.Payment.UpdatePaymentLink2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdatePaymentPayment2
+## UpdatePaymentPayment
 
 Update a payment
 
@@ -856,26 +856,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdatePaymentPayment2Request req = new UpdatePaymentPayment2Request() {
+UpdatePaymentPaymentRequest req = new UpdatePaymentPaymentRequest() {
     PaymentPayment = new PaymentPayment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Payment.UpdatePaymentPayment2Async(req);
+var res = await sdk.Payment.UpdatePaymentPaymentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdatePaymentPayment2Request](../../Models/Requests/UpdatePaymentPayment2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdatePaymentPaymentRequest](../../Models/Requests/UpdatePaymentPaymentRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdatePaymentPayment2Response](../../Models/Requests/UpdatePaymentPayment2Response.md)**
+**[UpdatePaymentPaymentResponse](../../Models/Requests/UpdatePaymentPaymentResponse.md)**
 
 ### Errors
 
@@ -883,7 +883,7 @@ var res = await sdk.Payment.UpdatePaymentPayment2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdatePaymentSubscription2
+## UpdatePaymentSubscription
 
 Update a subscription
 
@@ -898,26 +898,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdatePaymentSubscription2Request req = new UpdatePaymentSubscription2Request() {
+UpdatePaymentSubscriptionRequest req = new UpdatePaymentSubscriptionRequest() {
     PaymentSubscription = new PaymentSubscription() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Payment.UpdatePaymentSubscription2Async(req);
+var res = await sdk.Payment.UpdatePaymentSubscriptionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [UpdatePaymentSubscription2Request](../../Models/Requests/UpdatePaymentSubscription2Request.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [UpdatePaymentSubscriptionRequest](../../Models/Requests/UpdatePaymentSubscriptionRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
 ### Response
 
-**[UpdatePaymentSubscription2Response](../../Models/Requests/UpdatePaymentSubscription2Response.md)**
+**[UpdatePaymentSubscriptionResponse](../../Models/Requests/UpdatePaymentSubscriptionResponse.md)**
 
 ### Errors
 

@@ -28,319 +28,319 @@ namespace UnifiedTo
         /// <summary>
         /// Create a bankaccount
         /// </summary>
-        Task<CreateHrisBankaccount2Response> CreateHrisBankaccount2Async(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccount2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisBankaccountResponse> CreateHrisBankaccountAsync(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccountQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a benefit
         /// </summary>
-        Task<CreateHrisBenefit2Response> CreateHrisBenefit2Async(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefit2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefitQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateHrisCompany2Response> CreateHrisCompany2Async(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a deduction
         /// </summary>
-        Task<CreateHrisDeduction2Response> CreateHrisDeduction2Async(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeduction2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeductionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a device
         /// </summary>
-        Task<CreateHrisDevice2Response> CreateHrisDevice2Async(HrisDevice hrisDevice, string connectionId, List<CreateHrisDevice2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<CreateHrisDeviceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an employee
         /// </summary>
-        Task<CreateHrisEmployee2Response> CreateHrisEmployee2Async(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployee2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployeeQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateHrisGroup2Response> CreateHrisGroup2Async(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroup2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateHrisLocation2Response> CreateHrisLocation2Async(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocation2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a timeoff
         /// </summary>
-        Task<CreateHrisTimeoff2Response> CreateHrisTimeoff2Async(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoff2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisTimeoffResponse> CreateHrisTimeoffAsync(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoffQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a timeshift
         /// </summary>
-        Task<CreateHrisTimeshift2Response> CreateHrisTimeshift2Async(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshift2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshiftQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a bankaccount
         /// </summary>
-        Task<GetHrisBankaccount2Response> GetHrisBankaccount2Async(string connectionId, string id, List<GetHrisBankaccount2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisBankaccountResponse> GetHrisBankaccountAsync(string connectionId, string id, List<GetHrisBankaccountQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a benefit
         /// </summary>
-        Task<GetHrisBenefit2Response> GetHrisBenefit2Async(string connectionId, string id, List<GetHrisBenefit2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<GetHrisBenefitQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetHrisCompany2Response> GetHrisCompany2Async(string connectionId, string id, List<GetHrisCompany2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a deduction
         /// </summary>
-        Task<GetHrisDeduction2Response> GetHrisDeduction2Async(string connectionId, string id, List<GetHrisDeduction2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<GetHrisDeductionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a device
         /// </summary>
-        Task<GetHrisDevice2Response> GetHrisDevice2Async(string connectionId, string id, List<GetHrisDevice2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<GetHrisDeviceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an employee
         /// </summary>
-        Task<GetHrisEmployee2Response> GetHrisEmployee2Async(string connectionId, string id, List<GetHrisEmployee2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<GetHrisEmployeeQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetHrisGroup2Response> GetHrisGroup2Async(string connectionId, string id, List<GetHrisGroup2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetHrisLocation2Response> GetHrisLocation2Async(string connectionId, string id, List<GetHrisLocation2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payslip
         /// </summary>
-        Task<GetHrisPayslip2Response> GetHrisPayslip2Async(string connectionId, string id, List<GetHrisPayslip2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<GetHrisPayslipQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a timeoff
         /// </summary>
-        Task<GetHrisTimeoff2Response> GetHrisTimeoff2Async(string connectionId, string id, List<GetHrisTimeoff2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<GetHrisTimeoffQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a timeshift
         /// </summary>
-        Task<GetHrisTimeshift2Response> GetHrisTimeshift2Async(string connectionId, string id, List<GetHrisTimeshift2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<GetHrisTimeshiftQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all bankaccounts
         /// </summary>
-        Task<ListHrisBankaccounts2Response> ListHrisBankaccounts2Async(ListHrisBankaccounts2Request request);
+        Task<ListHrisBankaccountsResponse> ListHrisBankaccountsAsync(ListHrisBankaccountsRequest request);
 
         /// <summary>
         /// List all benefits
         /// </summary>
-        Task<ListHrisBenefits2Response> ListHrisBenefits2Async(ListHrisBenefits2Request request);
+        Task<ListHrisBenefitsResponse> ListHrisBenefitsAsync(ListHrisBenefitsRequest request);
 
         /// <summary>
         /// List all companies
         /// </summary>
-        Task<ListHrisCompanies2Response> ListHrisCompanies2Async(ListHrisCompanies2Request request);
+        Task<ListHrisCompaniesResponse> ListHrisCompaniesAsync(ListHrisCompaniesRequest request);
 
         /// <summary>
         /// List all deductions
         /// </summary>
-        Task<ListHrisDeductions2Response> ListHrisDeductions2Async(ListHrisDeductions2Request request);
+        Task<ListHrisDeductionsResponse> ListHrisDeductionsAsync(ListHrisDeductionsRequest request);
 
         /// <summary>
         /// List all devices
         /// </summary>
-        Task<ListHrisDevices2Response> ListHrisDevices2Async(ListHrisDevices2Request request);
+        Task<ListHrisDevicesResponse> ListHrisDevicesAsync(ListHrisDevicesRequest request);
 
         /// <summary>
         /// List all employees
         /// </summary>
-        Task<ListHrisEmployees2Response> ListHrisEmployees2Async(ListHrisEmployees2Request request);
+        Task<ListHrisEmployeesResponse> ListHrisEmployeesAsync(ListHrisEmployeesRequest request);
 
         /// <summary>
         /// List all groups
         /// </summary>
-        Task<ListHrisGroups2Response> ListHrisGroups2Async(ListHrisGroups2Request request);
+        Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request);
 
         /// <summary>
         /// List all locations
         /// </summary>
-        Task<ListHrisLocations2Response> ListHrisLocations2Async(ListHrisLocations2Request request);
+        Task<ListHrisLocationsResponse> ListHrisLocationsAsync(ListHrisLocationsRequest request);
 
         /// <summary>
         /// List all payslips
         /// </summary>
-        Task<ListHrisPayslips2Response> ListHrisPayslips2Async(ListHrisPayslips2Request request);
+        Task<ListHrisPayslipsResponse> ListHrisPayslipsAsync(ListHrisPayslipsRequest request);
 
         /// <summary>
         /// List all timeoffs
         /// </summary>
-        Task<ListHrisTimeoffs2Response> ListHrisTimeoffs2Async(ListHrisTimeoffs2Request request);
+        Task<ListHrisTimeoffsResponse> ListHrisTimeoffsAsync(ListHrisTimeoffsRequest request);
 
         /// <summary>
         /// List all timeshifts
         /// </summary>
-        Task<ListHrisTimeshifts2Response> ListHrisTimeshifts2Async(ListHrisTimeshifts2Request request);
+        Task<ListHrisTimeshiftsResponse> ListHrisTimeshiftsAsync(ListHrisTimeshiftsRequest request);
 
         /// <summary>
         /// Update a bankaccount
         /// </summary>
-        Task<PatchHrisBankaccount2Response> PatchHrisBankaccount2Async(PatchHrisBankaccount2Request request);
+        Task<PatchHrisBankaccountResponse> PatchHrisBankaccountAsync(PatchHrisBankaccountRequest request);
 
         /// <summary>
         /// Update a benefit
         /// </summary>
-        Task<PatchHrisBenefit2Response> PatchHrisBenefit2Async(PatchHrisBenefit2Request request);
+        Task<PatchHrisBenefitResponse> PatchHrisBenefitAsync(PatchHrisBenefitRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchHrisCompany2Response> PatchHrisCompany2Async(PatchHrisCompany2Request request);
+        Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(PatchHrisCompanyRequest request);
 
         /// <summary>
         /// Update a deduction
         /// </summary>
-        Task<PatchHrisDeduction2Response> PatchHrisDeduction2Async(PatchHrisDeduction2Request request);
+        Task<PatchHrisDeductionResponse> PatchHrisDeductionAsync(PatchHrisDeductionRequest request);
 
         /// <summary>
         /// Update a device
         /// </summary>
-        Task<PatchHrisDevice2Response> PatchHrisDevice2Async(PatchHrisDevice2Request request);
+        Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(PatchHrisDeviceRequest request);
 
         /// <summary>
         /// Update an employee
         /// </summary>
-        Task<PatchHrisEmployee2Response> PatchHrisEmployee2Async(PatchHrisEmployee2Request request);
+        Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(PatchHrisEmployeeRequest request);
 
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<PatchHrisGroup2Response> PatchHrisGroup2Async(PatchHrisGroup2Request request);
+        Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupRequest request);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchHrisLocation2Response> PatchHrisLocation2Async(PatchHrisLocation2Request request);
+        Task<PatchHrisLocationResponse> PatchHrisLocationAsync(PatchHrisLocationRequest request);
 
         /// <summary>
         /// Update a timeoff
         /// </summary>
-        Task<PatchHrisTimeoff2Response> PatchHrisTimeoff2Async(PatchHrisTimeoff2Request request);
+        Task<PatchHrisTimeoffResponse> PatchHrisTimeoffAsync(PatchHrisTimeoffRequest request);
 
         /// <summary>
         /// Update a timeshift
         /// </summary>
-        Task<PatchHrisTimeshift2Response> PatchHrisTimeshift2Async(PatchHrisTimeshift2Request request);
+        Task<PatchHrisTimeshiftResponse> PatchHrisTimeshiftAsync(PatchHrisTimeshiftRequest request);
 
         /// <summary>
         /// Remove a bankaccount
         /// </summary>
-        Task<RemoveHrisBankaccount2Response> RemoveHrisBankaccount2Async(string connectionId, string id);
+        Task<RemoveHrisBankaccountResponse> RemoveHrisBankaccountAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a benefit
         /// </summary>
-        Task<RemoveHrisBenefit2Response> RemoveHrisBenefit2Async(string connectionId, string id);
+        Task<RemoveHrisBenefitResponse> RemoveHrisBenefitAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a company
         /// </summary>
-        Task<RemoveHrisCompany2Response> RemoveHrisCompany2Async(string connectionId, string id);
+        Task<RemoveHrisCompanyResponse> RemoveHrisCompanyAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a deduction
         /// </summary>
-        Task<RemoveHrisDeduction2Response> RemoveHrisDeduction2Async(string connectionId, string id);
+        Task<RemoveHrisDeductionResponse> RemoveHrisDeductionAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a device
         /// </summary>
-        Task<RemoveHrisDevice2Response> RemoveHrisDevice2Async(string connectionId, string id);
+        Task<RemoveHrisDeviceResponse> RemoveHrisDeviceAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove an employee
         /// </summary>
-        Task<RemoveHrisEmployee2Response> RemoveHrisEmployee2Async(string connectionId, string id);
+        Task<RemoveHrisEmployeeResponse> RemoveHrisEmployeeAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a group
         /// </summary>
-        Task<RemoveHrisGroup2Response> RemoveHrisGroup2Async(string connectionId, string id);
+        Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a location
         /// </summary>
-        Task<RemoveHrisLocation2Response> RemoveHrisLocation2Async(string connectionId, string id);
+        Task<RemoveHrisLocationResponse> RemoveHrisLocationAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a timeoff
         /// </summary>
-        Task<RemoveHrisTimeoff2Response> RemoveHrisTimeoff2Async(string connectionId, string id);
+        Task<RemoveHrisTimeoffResponse> RemoveHrisTimeoffAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a timeshift
         /// </summary>
-        Task<RemoveHrisTimeshift2Response> RemoveHrisTimeshift2Async(string connectionId, string id);
+        Task<RemoveHrisTimeshiftResponse> RemoveHrisTimeshiftAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a bankaccount
         /// </summary>
-        Task<UpdateHrisBankaccount2Response> UpdateHrisBankaccount2Async(UpdateHrisBankaccount2Request request);
+        Task<UpdateHrisBankaccountResponse> UpdateHrisBankaccountAsync(UpdateHrisBankaccountRequest request);
 
         /// <summary>
         /// Update a benefit
         /// </summary>
-        Task<UpdateHrisBenefit2Response> UpdateHrisBenefit2Async(UpdateHrisBenefit2Request request);
+        Task<UpdateHrisBenefitResponse> UpdateHrisBenefitAsync(UpdateHrisBenefitRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateHrisCompany2Response> UpdateHrisCompany2Async(UpdateHrisCompany2Request request);
+        Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(UpdateHrisCompanyRequest request);
 
         /// <summary>
         /// Update a deduction
         /// </summary>
-        Task<UpdateHrisDeduction2Response> UpdateHrisDeduction2Async(UpdateHrisDeduction2Request request);
+        Task<UpdateHrisDeductionResponse> UpdateHrisDeductionAsync(UpdateHrisDeductionRequest request);
 
         /// <summary>
         /// Update a device
         /// </summary>
-        Task<UpdateHrisDevice2Response> UpdateHrisDevice2Async(UpdateHrisDevice2Request request);
+        Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(UpdateHrisDeviceRequest request);
 
         /// <summary>
         /// Update an employee
         /// </summary>
-        Task<UpdateHrisEmployee2Response> UpdateHrisEmployee2Async(UpdateHrisEmployee2Request request);
+        Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(UpdateHrisEmployeeRequest request);
 
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<UpdateHrisGroup2Response> UpdateHrisGroup2Async(UpdateHrisGroup2Request request);
+        Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupRequest request);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateHrisLocation2Response> UpdateHrisLocation2Async(UpdateHrisLocation2Request request);
+        Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(UpdateHrisLocationRequest request);
 
         /// <summary>
         /// Update a timeoff
         /// </summary>
-        Task<UpdateHrisTimeoff2Response> UpdateHrisTimeoff2Async(UpdateHrisTimeoff2Request request);
+        Task<UpdateHrisTimeoffResponse> UpdateHrisTimeoffAsync(UpdateHrisTimeoffRequest request);
 
         /// <summary>
         /// Update a timeshift
         /// </summary>
-        Task<UpdateHrisTimeshift2Response> UpdateHrisTimeshift2Async(UpdateHrisTimeshift2Request request);
+        Task<UpdateHrisTimeshiftResponse> UpdateHrisTimeshiftAsync(UpdateHrisTimeshiftRequest request);
     }
 
     public class Hris: IHris
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -349,9 +349,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisBankaccount2Response> CreateHrisBankaccount2Async(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccount2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisBankaccountResponse> CreateHrisBankaccountAsync(HrisBankaccount hrisBankaccount, string connectionId, List<CreateHrisBankaccountQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisBankaccount2Request()
+            var request = new CreateHrisBankaccountRequest()
             {
                 HrisBankaccount = hrisBankaccount,
                 ConnectionId = connectionId,
@@ -375,7 +375,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -416,7 +416,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisBankaccount2Response()
+                    var response = new CreateHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -440,9 +440,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisBenefit2Response> CreateHrisBenefit2Async(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefit2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefitQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisBenefit2Request()
+            var request = new CreateHrisBenefitRequest()
             {
                 HrisBenefit = hrisBenefit,
                 ConnectionId = connectionId,
@@ -466,7 +466,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -507,7 +507,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisBenefit2Response()
+                    var response = new CreateHrisBenefitResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -531,9 +531,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisCompany2Response> CreateHrisCompany2Async(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisCompany2Request()
+            var request = new CreateHrisCompanyRequest()
             {
                 HrisCompany = hrisCompany,
                 ConnectionId = connectionId,
@@ -557,7 +557,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -598,7 +598,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisCompany2Response()
+                    var response = new CreateHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -622,9 +622,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisDeduction2Response> CreateHrisDeduction2Async(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeduction2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeductionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisDeduction2Request()
+            var request = new CreateHrisDeductionRequest()
             {
                 HrisDeduction = hrisDeduction,
                 ConnectionId = connectionId,
@@ -648,7 +648,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -689,7 +689,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisDeduction2Response()
+                    var response = new CreateHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -713,9 +713,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisDevice2Response> CreateHrisDevice2Async(HrisDevice hrisDevice, string connectionId, List<CreateHrisDevice2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<CreateHrisDeviceQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisDevice2Request()
+            var request = new CreateHrisDeviceRequest()
             {
                 HrisDevice = hrisDevice,
                 ConnectionId = connectionId,
@@ -739,7 +739,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -780,7 +780,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisDevice2Response()
+                    var response = new CreateHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -804,9 +804,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisEmployee2Response> CreateHrisEmployee2Async(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployee2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployeeQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisEmployee2Request()
+            var request = new CreateHrisEmployeeRequest()
             {
                 HrisEmployee = hrisEmployee,
                 ConnectionId = connectionId,
@@ -830,7 +830,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -871,7 +871,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisEmployee2Response()
+                    var response = new CreateHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -895,9 +895,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisGroup2Response> CreateHrisGroup2Async(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroup2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisGroup2Request()
+            var request = new CreateHrisGroupRequest()
             {
                 HrisGroup = hrisGroup,
                 ConnectionId = connectionId,
@@ -921,7 +921,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -962,7 +962,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisGroup2Response()
+                    var response = new CreateHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -986,9 +986,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisLocation2Response> CreateHrisLocation2Async(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocation2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisLocation2Request()
+            var request = new CreateHrisLocationRequest()
             {
                 HrisLocation = hrisLocation,
                 ConnectionId = connectionId,
@@ -1012,7 +1012,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1053,7 +1053,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisLocation2Response()
+                    var response = new CreateHrisLocationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1077,9 +1077,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisTimeoff2Response> CreateHrisTimeoff2Async(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoff2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisTimeoffResponse> CreateHrisTimeoffAsync(HrisTimeoff hrisTimeoff, string connectionId, List<CreateHrisTimeoffQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisTimeoff2Request()
+            var request = new CreateHrisTimeoffRequest()
             {
                 HrisTimeoff = hrisTimeoff,
                 ConnectionId = connectionId,
@@ -1103,7 +1103,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1144,7 +1144,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisTimeoff2Response()
+                    var response = new CreateHrisTimeoffResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1168,9 +1168,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisTimeshift2Response> CreateHrisTimeshift2Async(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshift2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshiftQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisTimeshift2Request()
+            var request = new CreateHrisTimeshiftRequest()
             {
                 HrisTimeshift = hrisTimeshift,
                 ConnectionId = connectionId,
@@ -1194,7 +1194,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1235,7 +1235,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisTimeshift2Response()
+                    var response = new CreateHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1259,9 +1259,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisBankaccount2Response> GetHrisBankaccount2Async(string connectionId, string id, List<GetHrisBankaccount2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisBankaccountResponse> GetHrisBankaccountAsync(string connectionId, string id, List<GetHrisBankaccountQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisBankaccount2Request()
+            var request = new GetHrisBankaccountRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1279,7 +1279,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1320,7 +1320,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisBankaccount2Response()
+                    var response = new GetHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1344,9 +1344,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisBenefit2Response> GetHrisBenefit2Async(string connectionId, string id, List<GetHrisBenefit2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<GetHrisBenefitQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisBenefit2Request()
+            var request = new GetHrisBenefitRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1364,7 +1364,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1405,7 +1405,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisBenefit2Response()
+                    var response = new GetHrisBenefitResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1429,9 +1429,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisCompany2Response> GetHrisCompany2Async(string connectionId, string id, List<GetHrisCompany2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisCompany2Request()
+            var request = new GetHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1449,7 +1449,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1490,7 +1490,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisCompany2Response()
+                    var response = new GetHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1514,9 +1514,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisDeduction2Response> GetHrisDeduction2Async(string connectionId, string id, List<GetHrisDeduction2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<GetHrisDeductionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisDeduction2Request()
+            var request = new GetHrisDeductionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1534,7 +1534,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1575,7 +1575,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisDeduction2Response()
+                    var response = new GetHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1599,9 +1599,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisDevice2Response> GetHrisDevice2Async(string connectionId, string id, List<GetHrisDevice2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<GetHrisDeviceQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisDevice2Request()
+            var request = new GetHrisDeviceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1619,7 +1619,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1660,7 +1660,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisDevice2Response()
+                    var response = new GetHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1684,9 +1684,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisEmployee2Response> GetHrisEmployee2Async(string connectionId, string id, List<GetHrisEmployee2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<GetHrisEmployeeQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisEmployee2Request()
+            var request = new GetHrisEmployeeRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1704,7 +1704,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1745,7 +1745,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisEmployee2Response()
+                    var response = new GetHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1769,9 +1769,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisGroup2Response> GetHrisGroup2Async(string connectionId, string id, List<GetHrisGroup2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisGroup2Request()
+            var request = new GetHrisGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1789,7 +1789,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1830,7 +1830,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisGroup2Response()
+                    var response = new GetHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1854,9 +1854,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisLocation2Response> GetHrisLocation2Async(string connectionId, string id, List<GetHrisLocation2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisLocation2Request()
+            var request = new GetHrisLocationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1874,7 +1874,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1915,7 +1915,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisLocation2Response()
+                    var response = new GetHrisLocationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1939,9 +1939,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisPayslip2Response> GetHrisPayslip2Async(string connectionId, string id, List<GetHrisPayslip2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<GetHrisPayslipQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisPayslip2Request()
+            var request = new GetHrisPayslipRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1959,7 +1959,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisPayslip2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisPayslip", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2000,7 +2000,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisPayslip>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisPayslip2Response()
+                    var response = new GetHrisPayslipResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2024,9 +2024,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisTimeoff2Response> GetHrisTimeoff2Async(string connectionId, string id, List<GetHrisTimeoff2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<GetHrisTimeoffQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisTimeoff2Request()
+            var request = new GetHrisTimeoffRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -2044,7 +2044,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2085,7 +2085,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisTimeoff2Response()
+                    var response = new GetHrisTimeoffResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2109,9 +2109,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisTimeshift2Response> GetHrisTimeshift2Async(string connectionId, string id, List<GetHrisTimeshift2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<GetHrisTimeshiftQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisTimeshift2Request()
+            var request = new GetHrisTimeshiftRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -2129,7 +2129,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2170,7 +2170,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisTimeshift2Response()
+                    var response = new GetHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2194,7 +2194,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisBankaccounts2Response> ListHrisBankaccounts2Async(ListHrisBankaccounts2Request request)
+        public async Task<ListHrisBankaccountsResponse> ListHrisBankaccountsAsync(ListHrisBankaccountsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/bankaccount", request);
@@ -2207,7 +2207,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBankaccounts2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBankaccounts", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2248,7 +2248,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisBankaccount>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisBankaccounts2Response()
+                    var response = new ListHrisBankaccountsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2272,7 +2272,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisBenefits2Response> ListHrisBenefits2Async(ListHrisBenefits2Request request)
+        public async Task<ListHrisBenefitsResponse> ListHrisBenefitsAsync(ListHrisBenefitsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/benefit", request);
@@ -2285,7 +2285,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBenefits2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisBenefits", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2326,7 +2326,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisBenefit>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisBenefits2Response()
+                    var response = new ListHrisBenefitsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2350,7 +2350,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisCompanies2Response> ListHrisCompanies2Async(ListHrisCompanies2Request request)
+        public async Task<ListHrisCompaniesResponse> ListHrisCompaniesAsync(ListHrisCompaniesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company", request);
@@ -2363,7 +2363,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisCompanies2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisCompanies", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2404,7 +2404,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisCompany>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisCompanies2Response()
+                    var response = new ListHrisCompaniesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2428,7 +2428,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisDeductions2Response> ListHrisDeductions2Async(ListHrisDeductions2Request request)
+        public async Task<ListHrisDeductionsResponse> ListHrisDeductionsAsync(ListHrisDeductionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/deduction", request);
@@ -2441,7 +2441,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDeductions2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDeductions", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2482,7 +2482,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisDeduction>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisDeductions2Response()
+                    var response = new ListHrisDeductionsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2506,7 +2506,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisDevices2Response> ListHrisDevices2Async(ListHrisDevices2Request request)
+        public async Task<ListHrisDevicesResponse> ListHrisDevicesAsync(ListHrisDevicesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device", request);
@@ -2519,7 +2519,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDevices2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDevices", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2560,7 +2560,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisDevice>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisDevices2Response()
+                    var response = new ListHrisDevicesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2584,7 +2584,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisEmployees2Response> ListHrisEmployees2Async(ListHrisEmployees2Request request)
+        public async Task<ListHrisEmployeesResponse> ListHrisEmployeesAsync(ListHrisEmployeesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee", request);
@@ -2597,7 +2597,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisEmployees2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisEmployees", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2638,7 +2638,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisEmployee>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisEmployees2Response()
+                    var response = new ListHrisEmployeesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2662,7 +2662,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisGroups2Response> ListHrisGroups2Async(ListHrisGroups2Request request)
+        public async Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group", request);
@@ -2675,7 +2675,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisGroups2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisGroups", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2716,7 +2716,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisGroup>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisGroups2Response()
+                    var response = new ListHrisGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2740,7 +2740,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisLocations2Response> ListHrisLocations2Async(ListHrisLocations2Request request)
+        public async Task<ListHrisLocationsResponse> ListHrisLocationsAsync(ListHrisLocationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location", request);
@@ -2753,7 +2753,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisLocations2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisLocations", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2794,7 +2794,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisLocation>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisLocations2Response()
+                    var response = new ListHrisLocationsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2818,7 +2818,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisPayslips2Response> ListHrisPayslips2Async(ListHrisPayslips2Request request)
+        public async Task<ListHrisPayslipsResponse> ListHrisPayslipsAsync(ListHrisPayslipsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/payslip", request);
@@ -2831,7 +2831,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisPayslips2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisPayslips", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2872,7 +2872,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisPayslip>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisPayslips2Response()
+                    var response = new ListHrisPayslipsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2896,7 +2896,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisTimeoffs2Response> ListHrisTimeoffs2Async(ListHrisTimeoffs2Request request)
+        public async Task<ListHrisTimeoffsResponse> ListHrisTimeoffsAsync(ListHrisTimeoffsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff", request);
@@ -2909,7 +2909,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeoffs2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeoffs", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2950,7 +2950,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisTimeoff>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisTimeoffs2Response()
+                    var response = new ListHrisTimeoffsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -2974,7 +2974,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisTimeshifts2Response> ListHrisTimeshifts2Async(ListHrisTimeshifts2Request request)
+        public async Task<ListHrisTimeshiftsResponse> ListHrisTimeshiftsAsync(ListHrisTimeshiftsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeshift", request);
@@ -2987,7 +2987,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeshifts2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisTimeshifts", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3028,7 +3028,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisTimeshift>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisTimeshifts2Response()
+                    var response = new ListHrisTimeshiftsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3052,7 +3052,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisBankaccount2Response> PatchHrisBankaccount2Async(PatchHrisBankaccount2Request request)
+        public async Task<PatchHrisBankaccountResponse> PatchHrisBankaccountAsync(PatchHrisBankaccountRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/bankaccount/{id}", request);
@@ -3071,7 +3071,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3112,7 +3112,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisBankaccount2Response()
+                    var response = new PatchHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3136,7 +3136,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisBenefit2Response> PatchHrisBenefit2Async(PatchHrisBenefit2Request request)
+        public async Task<PatchHrisBenefitResponse> PatchHrisBenefitAsync(PatchHrisBenefitRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/benefit/{id}", request);
@@ -3155,7 +3155,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3196,7 +3196,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisBenefit2Response()
+                    var response = new PatchHrisBenefitResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3220,7 +3220,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisCompany2Response> PatchHrisCompany2Async(PatchHrisCompany2Request request)
+        public async Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(PatchHrisCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
@@ -3239,7 +3239,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3280,7 +3280,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisCompany2Response()
+                    var response = new PatchHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3304,7 +3304,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisDeduction2Response> PatchHrisDeduction2Async(PatchHrisDeduction2Request request)
+        public async Task<PatchHrisDeductionResponse> PatchHrisDeductionAsync(PatchHrisDeductionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/deduction/{id}", request);
@@ -3323,7 +3323,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3364,7 +3364,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisDeduction2Response()
+                    var response = new PatchHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3388,7 +3388,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisDevice2Response> PatchHrisDevice2Async(PatchHrisDevice2Request request)
+        public async Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(PatchHrisDeviceRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device/{id}", request);
@@ -3407,7 +3407,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3448,7 +3448,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisDevice2Response()
+                    var response = new PatchHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3472,7 +3472,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisEmployee2Response> PatchHrisEmployee2Async(PatchHrisEmployee2Request request)
+        public async Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(PatchHrisEmployeeRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee/{id}", request);
@@ -3491,7 +3491,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3532,7 +3532,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisEmployee2Response()
+                    var response = new PatchHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3556,7 +3556,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisGroup2Response> PatchHrisGroup2Async(PatchHrisGroup2Request request)
+        public async Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group/{id}", request);
@@ -3575,7 +3575,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3616,7 +3616,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisGroup2Response()
+                    var response = new PatchHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3640,7 +3640,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisLocation2Response> PatchHrisLocation2Async(PatchHrisLocation2Request request)
+        public async Task<PatchHrisLocationResponse> PatchHrisLocationAsync(PatchHrisLocationRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
@@ -3659,7 +3659,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3700,7 +3700,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisLocation2Response()
+                    var response = new PatchHrisLocationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3724,7 +3724,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisTimeoff2Response> PatchHrisTimeoff2Async(PatchHrisTimeoff2Request request)
+        public async Task<PatchHrisTimeoffResponse> PatchHrisTimeoffAsync(PatchHrisTimeoffRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff/{id}", request);
@@ -3743,7 +3743,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3784,7 +3784,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisTimeoff2Response()
+                    var response = new PatchHrisTimeoffResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3808,7 +3808,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisTimeshift2Response> PatchHrisTimeshift2Async(PatchHrisTimeshift2Request request)
+        public async Task<PatchHrisTimeshiftResponse> PatchHrisTimeshiftAsync(PatchHrisTimeshiftRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeshift/{id}", request);
@@ -3827,7 +3827,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3868,7 +3868,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisTimeshift2Response()
+                    var response = new PatchHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -3892,9 +3892,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisBankaccount2Response> RemoveHrisBankaccount2Async(string connectionId, string id)
+        public async Task<RemoveHrisBankaccountResponse> RemoveHrisBankaccountAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisBankaccount2Request()
+            var request = new RemoveHrisBankaccountRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -3910,7 +3910,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -3948,7 +3948,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisBankaccount2Response()
+                return new RemoveHrisBankaccountResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -3965,7 +3965,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisBankaccount2Response()
+                return new RemoveHrisBankaccountResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -3974,9 +3974,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisBenefit2Response> RemoveHrisBenefit2Async(string connectionId, string id)
+        public async Task<RemoveHrisBenefitResponse> RemoveHrisBenefitAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisBenefit2Request()
+            var request = new RemoveHrisBenefitRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -3992,7 +3992,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4030,7 +4030,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisBenefit2Response()
+                return new RemoveHrisBenefitResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4047,7 +4047,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisBenefit2Response()
+                return new RemoveHrisBenefitResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4056,9 +4056,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisCompany2Response> RemoveHrisCompany2Async(string connectionId, string id)
+        public async Task<RemoveHrisCompanyResponse> RemoveHrisCompanyAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisCompany2Request()
+            var request = new RemoveHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4074,7 +4074,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4112,7 +4112,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisCompany2Response()
+                return new RemoveHrisCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4129,7 +4129,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisCompany2Response()
+                return new RemoveHrisCompanyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4138,9 +4138,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisDeduction2Response> RemoveHrisDeduction2Async(string connectionId, string id)
+        public async Task<RemoveHrisDeductionResponse> RemoveHrisDeductionAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisDeduction2Request()
+            var request = new RemoveHrisDeductionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4156,7 +4156,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4194,7 +4194,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisDeduction2Response()
+                return new RemoveHrisDeductionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4211,7 +4211,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisDeduction2Response()
+                return new RemoveHrisDeductionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4220,9 +4220,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisDevice2Response> RemoveHrisDevice2Async(string connectionId, string id)
+        public async Task<RemoveHrisDeviceResponse> RemoveHrisDeviceAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisDevice2Request()
+            var request = new RemoveHrisDeviceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4238,7 +4238,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4276,7 +4276,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisDevice2Response()
+                return new RemoveHrisDeviceResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4293,7 +4293,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisDevice2Response()
+                return new RemoveHrisDeviceResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4302,9 +4302,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisEmployee2Response> RemoveHrisEmployee2Async(string connectionId, string id)
+        public async Task<RemoveHrisEmployeeResponse> RemoveHrisEmployeeAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisEmployee2Request()
+            var request = new RemoveHrisEmployeeRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4320,7 +4320,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4358,7 +4358,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisEmployee2Response()
+                return new RemoveHrisEmployeeResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4375,7 +4375,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisEmployee2Response()
+                return new RemoveHrisEmployeeResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4384,9 +4384,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisGroup2Response> RemoveHrisGroup2Async(string connectionId, string id)
+        public async Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisGroup2Request()
+            var request = new RemoveHrisGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4402,7 +4402,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4440,7 +4440,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisGroup2Response()
+                return new RemoveHrisGroupResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4457,7 +4457,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisGroup2Response()
+                return new RemoveHrisGroupResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4466,9 +4466,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisLocation2Response> RemoveHrisLocation2Async(string connectionId, string id)
+        public async Task<RemoveHrisLocationResponse> RemoveHrisLocationAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisLocation2Request()
+            var request = new RemoveHrisLocationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4484,7 +4484,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4522,7 +4522,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisLocation2Response()
+                return new RemoveHrisLocationResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4539,7 +4539,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisLocation2Response()
+                return new RemoveHrisLocationResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4548,9 +4548,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisTimeoff2Response> RemoveHrisTimeoff2Async(string connectionId, string id)
+        public async Task<RemoveHrisTimeoffResponse> RemoveHrisTimeoffAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisTimeoff2Request()
+            var request = new RemoveHrisTimeoffRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4566,7 +4566,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4604,7 +4604,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisTimeoff2Response()
+                return new RemoveHrisTimeoffResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4621,7 +4621,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisTimeoff2Response()
+                return new RemoveHrisTimeoffResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4630,9 +4630,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveHrisTimeshift2Response> RemoveHrisTimeshift2Async(string connectionId, string id)
+        public async Task<RemoveHrisTimeshiftResponse> RemoveHrisTimeshiftAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisTimeshift2Request()
+            var request = new RemoveHrisTimeshiftRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -4648,7 +4648,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4686,7 +4686,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisTimeshift2Response()
+                return new RemoveHrisTimeshiftResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4703,7 +4703,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisTimeshift2Response()
+                return new RemoveHrisTimeshiftResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -4712,7 +4712,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisBankaccount2Response> UpdateHrisBankaccount2Async(UpdateHrisBankaccount2Request request)
+        public async Task<UpdateHrisBankaccountResponse> UpdateHrisBankaccountAsync(UpdateHrisBankaccountRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/bankaccount/{id}", request);
@@ -4731,7 +4731,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBankaccount2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBankaccount", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4772,7 +4772,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBankaccount>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisBankaccount2Response()
+                    var response = new UpdateHrisBankaccountResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -4796,7 +4796,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisBenefit2Response> UpdateHrisBenefit2Async(UpdateHrisBenefit2Request request)
+        public async Task<UpdateHrisBenefitResponse> UpdateHrisBenefitAsync(UpdateHrisBenefitRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/benefit/{id}", request);
@@ -4815,7 +4815,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBenefit2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisBenefit", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4856,7 +4856,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisBenefit>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisBenefit2Response()
+                    var response = new UpdateHrisBenefitResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -4880,7 +4880,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisCompany2Response> UpdateHrisCompany2Async(UpdateHrisCompany2Request request)
+        public async Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(UpdateHrisCompanyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
@@ -4899,7 +4899,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisCompany2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisCompany", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -4940,7 +4940,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisCompany2Response()
+                    var response = new UpdateHrisCompanyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -4964,7 +4964,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisDeduction2Response> UpdateHrisDeduction2Async(UpdateHrisDeduction2Request request)
+        public async Task<UpdateHrisDeductionResponse> UpdateHrisDeductionAsync(UpdateHrisDeductionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/deduction/{id}", request);
@@ -4983,7 +4983,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -5024,7 +5024,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisDeduction2Response()
+                    var response = new UpdateHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -5048,7 +5048,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisDevice2Response> UpdateHrisDevice2Async(UpdateHrisDevice2Request request)
+        public async Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(UpdateHrisDeviceRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device/{id}", request);
@@ -5067,7 +5067,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -5108,7 +5108,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisDevice2Response()
+                    var response = new UpdateHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -5132,7 +5132,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisEmployee2Response> UpdateHrisEmployee2Async(UpdateHrisEmployee2Request request)
+        public async Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(UpdateHrisEmployeeRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee/{id}", request);
@@ -5151,7 +5151,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisEmployee2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisEmployee", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -5192,7 +5192,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisEmployee>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisEmployee2Response()
+                    var response = new UpdateHrisEmployeeResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -5216,7 +5216,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisGroup2Response> UpdateHrisGroup2Async(UpdateHrisGroup2Request request)
+        public async Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group/{id}", request);
@@ -5235,7 +5235,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisGroup2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisGroup", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -5276,7 +5276,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisGroup2Response()
+                    var response = new UpdateHrisGroupResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -5300,7 +5300,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisLocation2Response> UpdateHrisLocation2Async(UpdateHrisLocation2Request request)
+        public async Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(UpdateHrisLocationRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
@@ -5319,7 +5319,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisLocation2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisLocation", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -5360,7 +5360,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisLocation2Response()
+                    var response = new UpdateHrisLocationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -5384,7 +5384,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisTimeoff2Response> UpdateHrisTimeoff2Async(UpdateHrisTimeoff2Request request)
+        public async Task<UpdateHrisTimeoffResponse> UpdateHrisTimeoffAsync(UpdateHrisTimeoffRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff/{id}", request);
@@ -5403,7 +5403,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeoff2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeoff", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -5444,7 +5444,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisTimeoff2Response()
+                    var response = new UpdateHrisTimeoffResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -5468,7 +5468,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisTimeshift2Response> UpdateHrisTimeshift2Async(UpdateHrisTimeshift2Request request)
+        public async Task<UpdateHrisTimeshiftResponse> UpdateHrisTimeshiftAsync(UpdateHrisTimeshiftRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeshift/{id}", request);
@@ -5487,7 +5487,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeshift2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisTimeshift", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -5528,7 +5528,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisTimeshift>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisTimeshift2Response()
+                    var response = new UpdateHrisTimeshiftResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

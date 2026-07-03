@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a ticket
         /// </summary>
-        Task<CreateTicketingTicket2Response> CreateTicketingTicket2Async(TicketingTicket ticketingTicket, string connectionId, List<CreateTicketingTicket2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateTicketingTicketResponse> CreateTicketingTicketAsync(TicketingTicket ticketingTicket, string connectionId, List<CreateTicketingTicketQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a ticket
         /// </summary>
-        Task<GetTicketingTicket2Response> GetTicketingTicket2Async(string connectionId, string id, List<GetTicketingTicket2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetTicketingTicketResponse> GetTicketingTicketAsync(string connectionId, string id, List<GetTicketingTicketQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all tickets
         /// </summary>
-        Task<ListTicketingTickets2Response> ListTicketingTickets2Async(ListTicketingTickets2Request request);
+        Task<ListTicketingTicketsResponse> ListTicketingTicketsAsync(ListTicketingTicketsRequest request);
 
         /// <summary>
         /// Update a ticket
         /// </summary>
-        Task<PatchTicketingTicket2Response> PatchTicketingTicket2Async(PatchTicketingTicket2Request request);
+        Task<PatchTicketingTicketResponse> PatchTicketingTicketAsync(PatchTicketingTicketRequest request);
 
         /// <summary>
         /// Remove a ticket
         /// </summary>
-        Task<RemoveTicketingTicket2Response> RemoveTicketingTicket2Async(string connectionId, string id);
+        Task<RemoveTicketingTicketResponse> RemoveTicketingTicketAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a ticket
         /// </summary>
-        Task<UpdateTicketingTicket2Response> UpdateTicketingTicket2Async(UpdateTicketingTicket2Request request);
+        Task<UpdateTicketingTicketResponse> UpdateTicketingTicketAsync(UpdateTicketingTicketRequest request);
     }
 
     public class Ticket: ITicket
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTicketingTicket2Response> CreateTicketingTicket2Async(TicketingTicket ticketingTicket, string connectionId, List<CreateTicketingTicket2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateTicketingTicketResponse> CreateTicketingTicketAsync(TicketingTicket ticketingTicket, string connectionId, List<CreateTicketingTicketQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateTicketingTicket2Request()
+            var request = new CreateTicketingTicketRequest()
             {
                 TicketingTicket = ticketingTicket,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createTicketingTicket2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createTicketingTicket", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TicketingTicket>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateTicketingTicket2Response()
+                    var response = new CreateTicketingTicketResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTicketingTicket2Response> GetTicketingTicket2Async(string connectionId, string id, List<GetTicketingTicket2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetTicketingTicketResponse> GetTicketingTicketAsync(string connectionId, string id, List<GetTicketingTicketQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetTicketingTicket2Request()
+            var request = new GetTicketingTicketRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTicketingTicket2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getTicketingTicket", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TicketingTicket>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetTicketingTicket2Response()
+                    var response = new GetTicketingTicketResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListTicketingTickets2Response> ListTicketingTickets2Async(ListTicketingTickets2Request request)
+        public async Task<ListTicketingTicketsResponse> ListTicketingTicketsAsync(ListTicketingTicketsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/ticket", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTicketingTickets2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listTicketingTickets", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<TicketingTicket>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListTicketingTickets2Response()
+                    var response = new ListTicketingTicketsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTicketingTicket2Response> PatchTicketingTicket2Async(PatchTicketingTicket2Request request)
+        public async Task<PatchTicketingTicketResponse> PatchTicketingTicketAsync(PatchTicketingTicketRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/ticket/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchTicketingTicket2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchTicketingTicket", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TicketingTicket>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchTicketingTicket2Response()
+                    var response = new PatchTicketingTicketResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveTicketingTicket2Response> RemoveTicketingTicket2Async(string connectionId, string id)
+        public async Task<RemoveTicketingTicketResponse> RemoveTicketingTicketAsync(string connectionId, string id)
         {
-            var request = new RemoveTicketingTicket2Request()
+            var request = new RemoveTicketingTicketRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeTicketingTicket2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeTicketingTicket", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveTicketingTicket2Response()
+                return new RemoveTicketingTicketResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveTicketingTicket2Response()
+                return new RemoveTicketingTicketResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateTicketingTicket2Response> UpdateTicketingTicket2Async(UpdateTicketingTicket2Request request)
+        public async Task<UpdateTicketingTicketResponse> UpdateTicketingTicketAsync(UpdateTicketingTicketRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/ticket/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateTicketingTicket2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateTicketingTicket", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<TicketingTicket>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateTicketingTicket2Response()
+                    var response = new UpdateTicketingTicketResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

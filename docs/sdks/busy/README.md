@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [ListCalendarBusies2](#listcalendarbusies2) - List all busies
+* [ListCalendarBusies](#listcalendarbusies) - List all busies
 
-## ListCalendarBusies2
+## ListCalendarBusies
 
 List all busies
 
@@ -22,24 +22,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCalendarBusies2Request req = new ListCalendarBusies2Request() {
+ListCalendarBusiesRequest req = new ListCalendarBusiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Busy.ListCalendarBusies2Async(req);
+var res = await sdk.Busy.ListCalendarBusiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListCalendarBusies2Request](../../Models/Requests/ListCalendarBusies2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListCalendarBusiesRequest](../../Models/Requests/ListCalendarBusiesRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListCalendarBusies2Response](../../Models/Requests/ListCalendarBusies2Response.md)**
+**[ListCalendarBusiesResponse](../../Models/Requests/ListCalendarBusiesResponse.md)**
 
 ### Errors
 

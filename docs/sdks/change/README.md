@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetTaskChange2](#gettaskchange2) - Retrieve a change
-* [ListTaskChanges2](#listtaskchanges2) - List all changes
+* [GetTaskChange](#gettaskchange) - Retrieve a change
+* [ListTaskChanges](#listtaskchanges) - List all changes
 
-## GetTaskChange2
+## GetTaskChange
 
 Retrieve a change
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Change.GetTaskChange2Async(
+var res = await sdk.Change.GetTaskChangeAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Change.GetTaskChange2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Change                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetTaskChange2QueryParamFields](../../Models/Requests/GetTaskChange2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetTaskChangeQueryParamFields](../../Models/Requests/GetTaskChangeQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetTaskChange2Response](../../Models/Requests/GetTaskChange2Response.md)**
+**[GetTaskChangeResponse](../../Models/Requests/GetTaskChangeResponse.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Change.GetTaskChange2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListTaskChanges2
+## ListTaskChanges
 
 List all changes
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListTaskChanges2Request req = new ListTaskChanges2Request() {
+ListTaskChangesRequest req = new ListTaskChangesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Change.ListTaskChanges2Async(req);
+var res = await sdk.Change.ListTaskChangesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListTaskChanges2Request](../../Models/Requests/ListTaskChanges2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListTaskChangesRequest](../../Models/Requests/ListTaskChangesRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListTaskChanges2Response](../../Models/Requests/ListTaskChanges2Response.md)**
+**[ListTaskChangesResponse](../../Models/Requests/ListTaskChangesResponse.md)**
 
 ### Errors
 

@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateDatastoreTable2](#createdatastoretable2) - Create a table
-* [GetDatastoreTable2](#getdatastoretable2) - Retrieve a table
-* [ListDatastoreTables2](#listdatastoretables2) - List all tables
-* [PatchDatastoreTable2](#patchdatastoretable2) - Update a table
-* [RemoveDatastoreTable2](#removedatastoretable2) - Remove a table
-* [UpdateDatastoreTable2](#updatedatastoretable2) - Update a table
+* [CreateDatastoreTable](#createdatastoretable) - Create a table
+* [GetDatastoreTable](#getdatastoretable) - Retrieve a table
+* [ListDatastoreTables](#listdatastoretables) - List all tables
+* [PatchDatastoreTable](#patchdatastoretable) - Update a table
+* [RemoveDatastoreTable](#removedatastoretable) - Remove a table
+* [UpdateDatastoreTable](#updatedatastoretable) - Update a table
 
-## CreateDatastoreTable2
+## CreateDatastoreTable
 
 Create a table
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Table.CreateDatastoreTable2Async(
+var res = await sdk.Table.CreateDatastoreTableAsync(
     datastoreTable: new DatastoreTable() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Table.CreateDatastoreTable2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `DatastoreTable`                                                                                                                                 | [DatastoreTable](../../Models/Components/DatastoreTable.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateDatastoreTable2QueryParamFields](../../Models/Requests/CreateDatastoreTable2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateDatastoreTableQueryParamFields](../../Models/Requests/CreateDatastoreTableQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateDatastoreTable2Response](../../Models/Requests/CreateDatastoreTable2Response.md)**
+**[CreateDatastoreTableResponse](../../Models/Requests/CreateDatastoreTableResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Table.CreateDatastoreTable2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetDatastoreTable2
+## GetDatastoreTable
 
 Retrieve a table
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Table.GetDatastoreTable2Async(
+var res = await sdk.Table.GetDatastoreTableAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Table.GetDatastoreTable2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Table                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetDatastoreTable2QueryParamFields](../../Models/Requests/GetDatastoreTable2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetDatastoreTableQueryParamFields](../../Models/Requests/GetDatastoreTableQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetDatastoreTable2Response](../../Models/Requests/GetDatastoreTable2Response.md)**
+**[GetDatastoreTableResponse](../../Models/Requests/GetDatastoreTableResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Table.GetDatastoreTable2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListDatastoreTables2
+## ListDatastoreTables
 
 List all tables
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListDatastoreTables2Request req = new ListDatastoreTables2Request() {
+ListDatastoreTablesRequest req = new ListDatastoreTablesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Table.ListDatastoreTables2Async(req);
+var res = await sdk.Table.ListDatastoreTablesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListDatastoreTables2Request](../../Models/Requests/ListDatastoreTables2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListDatastoreTablesRequest](../../Models/Requests/ListDatastoreTablesRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListDatastoreTables2Response](../../Models/Requests/ListDatastoreTables2Response.md)**
+**[ListDatastoreTablesResponse](../../Models/Requests/ListDatastoreTablesResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Table.ListDatastoreTables2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchDatastoreTable2
+## PatchDatastoreTable
 
 Update a table
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchDatastoreTable2Request req = new PatchDatastoreTable2Request() {
+PatchDatastoreTableRequest req = new PatchDatastoreTableRequest() {
     DatastoreTable = new DatastoreTable() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Table.PatchDatastoreTable2Async(req);
+var res = await sdk.Table.PatchDatastoreTableAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [PatchDatastoreTable2Request](../../Models/Requests/PatchDatastoreTable2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchDatastoreTableRequest](../../Models/Requests/PatchDatastoreTableRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[PatchDatastoreTable2Response](../../Models/Requests/PatchDatastoreTable2Response.md)**
+**[PatchDatastoreTableResponse](../../Models/Requests/PatchDatastoreTableResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Table.PatchDatastoreTable2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveDatastoreTable2
+## RemoveDatastoreTable
 
 Remove a table
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Table.RemoveDatastoreTable2Async(
+var res = await sdk.Table.RemoveDatastoreTableAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Table.RemoveDatastoreTable2Async(
 
 ### Response
 
-**[RemoveDatastoreTable2Response](../../Models/Requests/RemoveDatastoreTable2Response.md)**
+**[RemoveDatastoreTableResponse](../../Models/Requests/RemoveDatastoreTableResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Table.RemoveDatastoreTable2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateDatastoreTable2
+## UpdateDatastoreTable
 
 Update a table
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateDatastoreTable2Request req = new UpdateDatastoreTable2Request() {
+UpdateDatastoreTableRequest req = new UpdateDatastoreTableRequest() {
     DatastoreTable = new DatastoreTable() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Table.UpdateDatastoreTable2Async(req);
+var res = await sdk.Table.UpdateDatastoreTableAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [UpdateDatastoreTable2Request](../../Models/Requests/UpdateDatastoreTable2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateDatastoreTableRequest](../../Models/Requests/UpdateDatastoreTableRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[UpdateDatastoreTable2Response](../../Models/Requests/UpdateDatastoreTable2Response.md)**
+**[UpdateDatastoreTableResponse](../../Models/Requests/UpdateDatastoreTableResponse.md)**
 
 ### Errors
 

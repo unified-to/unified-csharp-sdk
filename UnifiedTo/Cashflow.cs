@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a cashflow
         /// </summary>
-        Task<GetAccountingCashflow2Response> GetAccountingCashflow2Async(string connectionId, string id, List<GetAccountingCashflow2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingCashflowResponse> GetAccountingCashflowAsync(string connectionId, string id, List<GetAccountingCashflowQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all cashflows
         /// </summary>
-        Task<ListAccountingCashflows2Response> ListAccountingCashflows2Async(ListAccountingCashflows2Request request);
+        Task<ListAccountingCashflowsResponse> ListAccountingCashflowsAsync(ListAccountingCashflowsRequest request);
     }
 
     public class Cashflow: ICashflow
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetAccountingCashflow2Response> GetAccountingCashflow2Async(string connectionId, string id, List<GetAccountingCashflow2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingCashflowResponse> GetAccountingCashflowAsync(string connectionId, string id, List<GetAccountingCashflowQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingCashflow2Request()
+            var request = new GetAccountingCashflowRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingCashflow2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingCashflow", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingCashflow>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingCashflow2Response()
+                    var response = new GetAccountingCashflowResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingCashflows2Response> ListAccountingCashflows2Async(ListAccountingCashflows2Request request)
+        public async Task<ListAccountingCashflowsResponse> ListAccountingCashflowsAsync(ListAccountingCashflowsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/cashflow", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingCashflows2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingCashflows", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingCashflow>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingCashflows2Response()
+                    var response = new ListAccountingCashflowsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

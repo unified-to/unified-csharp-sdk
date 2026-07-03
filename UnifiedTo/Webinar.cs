@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a webinar
         /// </summary>
-        Task<CreateCalendarWebinar2Response> CreateCalendarWebinar2Async(CalendarWebinar calendarWebinar, string connectionId, List<CreateCalendarWebinar2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCalendarWebinarResponse> CreateCalendarWebinarAsync(CalendarWebinar calendarWebinar, string connectionId, List<CreateCalendarWebinarQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a webinar
         /// </summary>
-        Task<GetCalendarWebinar2Response> GetCalendarWebinar2Async(string connectionId, string id, List<GetCalendarWebinar2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCalendarWebinarResponse> GetCalendarWebinarAsync(string connectionId, string id, List<GetCalendarWebinarQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all webinars
         /// </summary>
-        Task<ListCalendarWebinars2Response> ListCalendarWebinars2Async(ListCalendarWebinars2Request request);
+        Task<ListCalendarWebinarsResponse> ListCalendarWebinarsAsync(ListCalendarWebinarsRequest request);
 
         /// <summary>
         /// Update a webinar
         /// </summary>
-        Task<PatchCalendarWebinar2Response> PatchCalendarWebinar2Async(PatchCalendarWebinar2Request request);
+        Task<PatchCalendarWebinarResponse> PatchCalendarWebinarAsync(PatchCalendarWebinarRequest request);
 
         /// <summary>
         /// Remove a webinar
         /// </summary>
-        Task<RemoveCalendarWebinar2Response> RemoveCalendarWebinar2Async(string connectionId, string id);
+        Task<RemoveCalendarWebinarResponse> RemoveCalendarWebinarAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a webinar
         /// </summary>
-        Task<UpdateCalendarWebinar2Response> UpdateCalendarWebinar2Async(UpdateCalendarWebinar2Request request);
+        Task<UpdateCalendarWebinarResponse> UpdateCalendarWebinarAsync(UpdateCalendarWebinarRequest request);
     }
 
     public class Webinar: IWebinar
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCalendarWebinar2Response> CreateCalendarWebinar2Async(CalendarWebinar calendarWebinar, string connectionId, List<CreateCalendarWebinar2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCalendarWebinarResponse> CreateCalendarWebinarAsync(CalendarWebinar calendarWebinar, string connectionId, List<CreateCalendarWebinarQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCalendarWebinar2Request()
+            var request = new CreateCalendarWebinarRequest()
             {
                 CalendarWebinar = calendarWebinar,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCalendarWebinar2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCalendarWebinar", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarWebinar>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCalendarWebinar2Response()
+                    var response = new CreateCalendarWebinarResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarWebinar2Response> GetCalendarWebinar2Async(string connectionId, string id, List<GetCalendarWebinar2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCalendarWebinarResponse> GetCalendarWebinarAsync(string connectionId, string id, List<GetCalendarWebinarQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCalendarWebinar2Request()
+            var request = new GetCalendarWebinarRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarWebinar2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCalendarWebinar", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarWebinar>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCalendarWebinar2Response()
+                    var response = new GetCalendarWebinarResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCalendarWebinars2Response> ListCalendarWebinars2Async(ListCalendarWebinars2Request request)
+        public async Task<ListCalendarWebinarsResponse> ListCalendarWebinarsAsync(ListCalendarWebinarsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/webinar", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarWebinars2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCalendarWebinars", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CalendarWebinar>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCalendarWebinars2Response()
+                    var response = new ListCalendarWebinarsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCalendarWebinar2Response> PatchCalendarWebinar2Async(PatchCalendarWebinar2Request request)
+        public async Task<PatchCalendarWebinarResponse> PatchCalendarWebinarAsync(PatchCalendarWebinarRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/webinar/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCalendarWebinar2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCalendarWebinar", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarWebinar>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCalendarWebinar2Response()
+                    var response = new PatchCalendarWebinarResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCalendarWebinar2Response> RemoveCalendarWebinar2Async(string connectionId, string id)
+        public async Task<RemoveCalendarWebinarResponse> RemoveCalendarWebinarAsync(string connectionId, string id)
         {
-            var request = new RemoveCalendarWebinar2Request()
+            var request = new RemoveCalendarWebinarRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCalendarWebinar2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCalendarWebinar", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCalendarWebinar2Response()
+                return new RemoveCalendarWebinarResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCalendarWebinar2Response()
+                return new RemoveCalendarWebinarResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCalendarWebinar2Response> UpdateCalendarWebinar2Async(UpdateCalendarWebinar2Request request)
+        public async Task<UpdateCalendarWebinarResponse> UpdateCalendarWebinarAsync(UpdateCalendarWebinarRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/webinar/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCalendarWebinar2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCalendarWebinar", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CalendarWebinar>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCalendarWebinar2Response()
+                    var response = new UpdateCalendarWebinarResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

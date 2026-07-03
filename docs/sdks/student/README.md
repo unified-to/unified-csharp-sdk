@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateLmsStudent2](#createlmsstudent2) - Create a student
-* [GetLmsStudent2](#getlmsstudent2) - Retrieve a student
-* [ListLmsStudents2](#listlmsstudents2) - List all students
-* [PatchLmsStudent2](#patchlmsstudent2) - Update a student
-* [RemoveLmsStudent2](#removelmsstudent2) - Remove a student
-* [UpdateLmsStudent2](#updatelmsstudent2) - Update a student
+* [CreateLmsStudent](#createlmsstudent) - Create a student
+* [GetLmsStudent](#getlmsstudent) - Retrieve a student
+* [ListLmsStudents](#listlmsstudents) - List all students
+* [PatchLmsStudent](#patchlmsstudent) - Update a student
+* [RemoveLmsStudent](#removelmsstudent) - Remove a student
+* [UpdateLmsStudent](#updatelmsstudent) - Update a student
 
-## CreateLmsStudent2
+## CreateLmsStudent
 
 Create a student
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Student.CreateLmsStudent2Async(
+var res = await sdk.Student.CreateLmsStudentAsync(
     lmsStudent: new LmsStudent() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Student.CreateLmsStudent2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `LmsStudent`                                                                                                                                     | [LmsStudent](../../Models/Components/LmsStudent.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateLmsStudent2QueryParamFields](../../Models/Requests/CreateLmsStudent2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateLmsStudentQueryParamFields](../../Models/Requests/CreateLmsStudentQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateLmsStudent2Response](../../Models/Requests/CreateLmsStudent2Response.md)**
+**[CreateLmsStudentResponse](../../Models/Requests/CreateLmsStudentResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Student.CreateLmsStudent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetLmsStudent2
+## GetLmsStudent
 
 Retrieve a student
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Student.GetLmsStudent2Async(
+var res = await sdk.Student.GetLmsStudentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Student.GetLmsStudent2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Student                                                                                                                                |
-| `Fields`                                                                                                                                         | List<[GetLmsStudent2QueryParamFields](../../Models/Requests/GetLmsStudent2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetLmsStudentQueryParamFields](../../Models/Requests/GetLmsStudentQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetLmsStudent2Response](../../Models/Requests/GetLmsStudent2Response.md)**
+**[GetLmsStudentResponse](../../Models/Requests/GetLmsStudentResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Student.GetLmsStudent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListLmsStudents2
+## ListLmsStudents
 
 List all students
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListLmsStudents2Request req = new ListLmsStudents2Request() {
+ListLmsStudentsRequest req = new ListLmsStudentsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Student.ListLmsStudents2Async(req);
+var res = await sdk.Student.ListLmsStudentsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListLmsStudents2Request](../../Models/Requests/ListLmsStudents2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListLmsStudentsRequest](../../Models/Requests/ListLmsStudentsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListLmsStudents2Response](../../Models/Requests/ListLmsStudents2Response.md)**
+**[ListLmsStudentsResponse](../../Models/Requests/ListLmsStudentsResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Student.ListLmsStudents2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchLmsStudent2
+## PatchLmsStudent
 
 Update a student
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchLmsStudent2Request req = new PatchLmsStudent2Request() {
+PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
     LmsStudent = new LmsStudent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Student.PatchLmsStudent2Async(req);
+var res = await sdk.Student.PatchLmsStudentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [PatchLmsStudent2Request](../../Models/Requests/PatchLmsStudent2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [PatchLmsStudentRequest](../../Models/Requests/PatchLmsStudentRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[PatchLmsStudent2Response](../../Models/Requests/PatchLmsStudent2Response.md)**
+**[PatchLmsStudentResponse](../../Models/Requests/PatchLmsStudentResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Student.PatchLmsStudent2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveLmsStudent2
+## RemoveLmsStudent
 
 Remove a student
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Student.RemoveLmsStudent2Async(
+var res = await sdk.Student.RemoveLmsStudentAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Student.RemoveLmsStudent2Async(
 
 ### Response
 
-**[RemoveLmsStudent2Response](../../Models/Requests/RemoveLmsStudent2Response.md)**
+**[RemoveLmsStudentResponse](../../Models/Requests/RemoveLmsStudentResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Student.RemoveLmsStudent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateLmsStudent2
+## UpdateLmsStudent
 
 Update a student
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateLmsStudent2Request req = new UpdateLmsStudent2Request() {
+UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
     LmsStudent = new LmsStudent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Student.UpdateLmsStudent2Async(req);
+var res = await sdk.Student.UpdateLmsStudentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [UpdateLmsStudent2Request](../../Models/Requests/UpdateLmsStudent2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateLmsStudentRequest](../../Models/Requests/UpdateLmsStudentRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[UpdateLmsStudent2Response](../../Models/Requests/UpdateLmsStudent2Response.md)**
+**[UpdateLmsStudentResponse](../../Models/Requests/UpdateLmsStudentResponse.md)**
 
 ### Errors
 

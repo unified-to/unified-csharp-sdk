@@ -5,18 +5,18 @@
 
 ### Available Operations
 
-* [GetClubsActivity2](#getclubsactivity2) - Retrieve an activity
-* [GetClubsEvent2](#getclubsevent2) - Retrieve an event
-* [GetClubsGroup2](#getclubsgroup2) - Retrieve a group
-* [GetClubsLocation2](#getclubslocation2) - Retrieve a location
-* [GetClubsMember2](#getclubsmember2) - Retrieve a member
-* [ListClubsActivities2](#listclubsactivities2) - List all activities
-* [ListClubsEvents2](#listclubsevents2) - List all events
-* [ListClubsGroups2](#listclubsgroups2) - List all groups
-* [ListClubsLocations2](#listclubslocations2) - List all locations
-* [ListClubsMembers2](#listclubsmembers2) - List all members
+* [GetClubsActivity](#getclubsactivity) - Retrieve an activity
+* [GetClubsEvent](#getclubsevent) - Retrieve an event
+* [GetClubsGroup](#getclubsgroup) - Retrieve a group
+* [GetClubsLocation](#getclubslocation) - Retrieve a location
+* [GetClubsMember](#getclubsmember) - Retrieve a member
+* [ListClubsActivities](#listclubsactivities) - List all activities
+* [ListClubsEvents](#listclubsevents) - List all events
+* [ListClubsGroups](#listclubsgroups) - List all groups
+* [ListClubsLocations](#listclubslocations) - List all locations
+* [ListClubsMembers](#listclubsmembers) - List all members
 
-## GetClubsActivity2
+## GetClubsActivity
 
 Retrieve an activity
 
@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Clubs.GetClubsActivity2Async(
+var res = await sdk.Clubs.GetClubsActivityAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -44,12 +44,12 @@ var res = await sdk.Clubs.GetClubsActivity2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Activity                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetClubsActivity2QueryParamFields](../../Models/Requests/GetClubsActivity2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsActivityQueryParamFields](../../Models/Requests/GetClubsActivityQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsActivity2Response](../../Models/Requests/GetClubsActivity2Response.md)**
+**[GetClubsActivityResponse](../../Models/Requests/GetClubsActivityResponse.md)**
 
 ### Errors
 
@@ -57,7 +57,7 @@ var res = await sdk.Clubs.GetClubsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsEvent2
+## GetClubsEvent
 
 Retrieve an event
 
@@ -71,7 +71,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Clubs.GetClubsEvent2Async(
+var res = await sdk.Clubs.GetClubsEventAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -85,12 +85,12 @@ var res = await sdk.Clubs.GetClubsEvent2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Event                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetClubsEvent2QueryParamFields](../../Models/Requests/GetClubsEvent2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsEventQueryParamFields](../../Models/Requests/GetClubsEventQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsEvent2Response](../../Models/Requests/GetClubsEvent2Response.md)**
+**[GetClubsEventResponse](../../Models/Requests/GetClubsEventResponse.md)**
 
 ### Errors
 
@@ -98,7 +98,7 @@ var res = await sdk.Clubs.GetClubsEvent2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsGroup2
+## GetClubsGroup
 
 Retrieve a group
 
@@ -112,7 +112,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Clubs.GetClubsGroup2Async(
+var res = await sdk.Clubs.GetClubsGroupAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -126,12 +126,12 @@ var res = await sdk.Clubs.GetClubsGroup2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Group                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetClubsGroup2QueryParamFields](../../Models/Requests/GetClubsGroup2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsGroupQueryParamFields](../../Models/Requests/GetClubsGroupQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsGroup2Response](../../Models/Requests/GetClubsGroup2Response.md)**
+**[GetClubsGroupResponse](../../Models/Requests/GetClubsGroupResponse.md)**
 
 ### Errors
 
@@ -139,7 +139,7 @@ var res = await sdk.Clubs.GetClubsGroup2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsLocation2
+## GetClubsLocation
 
 Retrieve a location
 
@@ -153,7 +153,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Clubs.GetClubsLocation2Async(
+var res = await sdk.Clubs.GetClubsLocationAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -167,12 +167,12 @@ var res = await sdk.Clubs.GetClubsLocation2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetClubsLocation2QueryParamFields](../../Models/Requests/GetClubsLocation2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsLocationQueryParamFields](../../Models/Requests/GetClubsLocationQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsLocation2Response](../../Models/Requests/GetClubsLocation2Response.md)**
+**[GetClubsLocationResponse](../../Models/Requests/GetClubsLocationResponse.md)**
 
 ### Errors
 
@@ -180,7 +180,7 @@ var res = await sdk.Clubs.GetClubsLocation2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsMember2
+## GetClubsMember
 
 Retrieve a member
 
@@ -194,7 +194,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Clubs.GetClubsMember2Async(
+var res = await sdk.Clubs.GetClubsMemberAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -208,12 +208,12 @@ var res = await sdk.Clubs.GetClubsMember2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Member                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetClubsMember2QueryParamFields](../../Models/Requests/GetClubsMember2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsMemberQueryParamFields](../../Models/Requests/GetClubsMemberQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsMember2Response](../../Models/Requests/GetClubsMember2Response.md)**
+**[GetClubsMemberResponse](../../Models/Requests/GetClubsMemberResponse.md)**
 
 ### Errors
 
@@ -221,7 +221,7 @@ var res = await sdk.Clubs.GetClubsMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsActivities2
+## ListClubsActivities
 
 List all activities
 
@@ -236,24 +236,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsActivities2Request req = new ListClubsActivities2Request() {
+ListClubsActivitiesRequest req = new ListClubsActivitiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Clubs.ListClubsActivities2Async(req);
+var res = await sdk.Clubs.ListClubsActivitiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListClubsActivities2Request](../../Models/Requests/ListClubsActivities2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListClubsActivitiesRequest](../../Models/Requests/ListClubsActivitiesRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListClubsActivities2Response](../../Models/Requests/ListClubsActivities2Response.md)**
+**[ListClubsActivitiesResponse](../../Models/Requests/ListClubsActivitiesResponse.md)**
 
 ### Errors
 
@@ -261,7 +261,7 @@ var res = await sdk.Clubs.ListClubsActivities2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsEvents2
+## ListClubsEvents
 
 List all events
 
@@ -276,24 +276,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsEvents2Request req = new ListClubsEvents2Request() {
+ListClubsEventsRequest req = new ListClubsEventsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Clubs.ListClubsEvents2Async(req);
+var res = await sdk.Clubs.ListClubsEventsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListClubsEvents2Request](../../Models/Requests/ListClubsEvents2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListClubsEventsRequest](../../Models/Requests/ListClubsEventsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListClubsEvents2Response](../../Models/Requests/ListClubsEvents2Response.md)**
+**[ListClubsEventsResponse](../../Models/Requests/ListClubsEventsResponse.md)**
 
 ### Errors
 
@@ -301,7 +301,7 @@ var res = await sdk.Clubs.ListClubsEvents2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsGroups2
+## ListClubsGroups
 
 List all groups
 
@@ -316,24 +316,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsGroups2Request req = new ListClubsGroups2Request() {
+ListClubsGroupsRequest req = new ListClubsGroupsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Clubs.ListClubsGroups2Async(req);
+var res = await sdk.Clubs.ListClubsGroupsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListClubsGroups2Request](../../Models/Requests/ListClubsGroups2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListClubsGroupsRequest](../../Models/Requests/ListClubsGroupsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListClubsGroups2Response](../../Models/Requests/ListClubsGroups2Response.md)**
+**[ListClubsGroupsResponse](../../Models/Requests/ListClubsGroupsResponse.md)**
 
 ### Errors
 
@@ -341,7 +341,7 @@ var res = await sdk.Clubs.ListClubsGroups2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsLocations2
+## ListClubsLocations
 
 List all locations
 
@@ -356,24 +356,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsLocations2Request req = new ListClubsLocations2Request() {
+ListClubsLocationsRequest req = new ListClubsLocationsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Clubs.ListClubsLocations2Async(req);
+var res = await sdk.Clubs.ListClubsLocationsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListClubsLocations2Request](../../Models/Requests/ListClubsLocations2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListClubsLocationsRequest](../../Models/Requests/ListClubsLocationsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListClubsLocations2Response](../../Models/Requests/ListClubsLocations2Response.md)**
+**[ListClubsLocationsResponse](../../Models/Requests/ListClubsLocationsResponse.md)**
 
 ### Errors
 
@@ -381,7 +381,7 @@ var res = await sdk.Clubs.ListClubsLocations2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsMembers2
+## ListClubsMembers
 
 List all members
 
@@ -396,24 +396,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsMembers2Request req = new ListClubsMembers2Request() {
+ListClubsMembersRequest req = new ListClubsMembersRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Clubs.ListClubsMembers2Async(req);
+var res = await sdk.Clubs.ListClubsMembersAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListClubsMembers2Request](../../Models/Requests/ListClubsMembers2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListClubsMembersRequest](../../Models/Requests/ListClubsMembersRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListClubsMembers2Response](../../Models/Requests/ListClubsMembers2Response.md)**
+**[ListClubsMembersResponse](../../Models/Requests/ListClubsMembersResponse.md)**
 
 ### Errors
 

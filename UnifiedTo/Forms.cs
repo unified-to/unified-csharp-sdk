@@ -28,49 +28,49 @@ namespace UnifiedTo
         /// <summary>
         /// Create a form
         /// </summary>
-        Task<CreateFormsForm2Response> CreateFormsForm2Async(FormsForm formsForm, string connectionId, List<CreateFormsForm2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateFormsFormResponse> CreateFormsFormAsync(FormsForm formsForm, string connectionId, List<CreateFormsFormQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a form
         /// </summary>
-        Task<GetFormsForm2Response> GetFormsForm2Async(string connectionId, string id, List<GetFormsForm2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetFormsFormResponse> GetFormsFormAsync(string connectionId, string id, List<GetFormsFormQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a submission
         /// </summary>
-        Task<GetFormsSubmission2Response> GetFormsSubmission2Async(string connectionId, string id, List<GetFormsSubmission2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetFormsSubmissionResponse> GetFormsSubmissionAsync(string connectionId, string id, List<GetFormsSubmissionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all forms
         /// </summary>
-        Task<ListFormsForms2Response> ListFormsForms2Async(ListFormsForms2Request request);
+        Task<ListFormsFormsResponse> ListFormsFormsAsync(ListFormsFormsRequest request);
 
         /// <summary>
         /// List all submissions
         /// </summary>
-        Task<ListFormsSubmissions2Response> ListFormsSubmissions2Async(ListFormsSubmissions2Request request);
+        Task<ListFormsSubmissionsResponse> ListFormsSubmissionsAsync(ListFormsSubmissionsRequest request);
 
         /// <summary>
         /// Update a form
         /// </summary>
-        Task<PatchFormsForm2Response> PatchFormsForm2Async(PatchFormsForm2Request request);
+        Task<PatchFormsFormResponse> PatchFormsFormAsync(PatchFormsFormRequest request);
 
         /// <summary>
         /// Remove a form
         /// </summary>
-        Task<RemoveFormsForm2Response> RemoveFormsForm2Async(string connectionId, string id);
+        Task<RemoveFormsFormResponse> RemoveFormsFormAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a form
         /// </summary>
-        Task<UpdateFormsForm2Response> UpdateFormsForm2Async(UpdateFormsForm2Request request);
+        Task<UpdateFormsFormResponse> UpdateFormsFormAsync(UpdateFormsFormRequest request);
     }
 
     public class Forms: IForms
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,9 +79,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateFormsForm2Response> CreateFormsForm2Async(FormsForm formsForm, string connectionId, List<CreateFormsForm2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateFormsFormResponse> CreateFormsFormAsync(FormsForm formsForm, string connectionId, List<CreateFormsFormQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateFormsForm2Request()
+            var request = new CreateFormsFormRequest()
             {
                 FormsForm = formsForm,
                 ConnectionId = connectionId,
@@ -105,7 +105,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createFormsForm2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createFormsForm", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -146,7 +146,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<FormsForm>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateFormsForm2Response()
+                    var response = new CreateFormsFormResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -170,9 +170,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetFormsForm2Response> GetFormsForm2Async(string connectionId, string id, List<GetFormsForm2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetFormsFormResponse> GetFormsFormAsync(string connectionId, string id, List<GetFormsFormQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetFormsForm2Request()
+            var request = new GetFormsFormRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -190,7 +190,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getFormsForm2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getFormsForm", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -231,7 +231,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<FormsForm>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetFormsForm2Response()
+                    var response = new GetFormsFormResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -255,9 +255,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetFormsSubmission2Response> GetFormsSubmission2Async(string connectionId, string id, List<GetFormsSubmission2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetFormsSubmissionResponse> GetFormsSubmissionAsync(string connectionId, string id, List<GetFormsSubmissionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetFormsSubmission2Request()
+            var request = new GetFormsSubmissionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -275,7 +275,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getFormsSubmission2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getFormsSubmission", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -316,7 +316,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<FormsSubmission>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetFormsSubmission2Response()
+                    var response = new GetFormsSubmissionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -340,7 +340,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListFormsForms2Response> ListFormsForms2Async(ListFormsForms2Request request)
+        public async Task<ListFormsFormsResponse> ListFormsFormsAsync(ListFormsFormsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/forms/{connection_id}/form", request);
@@ -353,7 +353,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listFormsForms2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listFormsForms", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -394,7 +394,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<FormsForm>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListFormsForms2Response()
+                    var response = new ListFormsFormsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -418,7 +418,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListFormsSubmissions2Response> ListFormsSubmissions2Async(ListFormsSubmissions2Request request)
+        public async Task<ListFormsSubmissionsResponse> ListFormsSubmissionsAsync(ListFormsSubmissionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/forms/{connection_id}/submission", request);
@@ -431,7 +431,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listFormsSubmissions2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listFormsSubmissions", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -472,7 +472,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<FormsSubmission>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListFormsSubmissions2Response()
+                    var response = new ListFormsSubmissionsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -496,7 +496,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchFormsForm2Response> PatchFormsForm2Async(PatchFormsForm2Request request)
+        public async Task<PatchFormsFormResponse> PatchFormsFormAsync(PatchFormsFormRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/forms/{connection_id}/form/{id}", request);
@@ -515,7 +515,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchFormsForm2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchFormsForm", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -556,7 +556,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<FormsForm>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchFormsForm2Response()
+                    var response = new PatchFormsFormResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -580,9 +580,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveFormsForm2Response> RemoveFormsForm2Async(string connectionId, string id)
+        public async Task<RemoveFormsFormResponse> RemoveFormsFormAsync(string connectionId, string id)
         {
-            var request = new RemoveFormsForm2Request()
+            var request = new RemoveFormsFormRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -598,7 +598,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeFormsForm2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeFormsForm", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -636,7 +636,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveFormsForm2Response()
+                return new RemoveFormsFormResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -653,7 +653,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveFormsForm2Response()
+                return new RemoveFormsFormResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -662,7 +662,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateFormsForm2Response> UpdateFormsForm2Async(UpdateFormsForm2Request request)
+        public async Task<UpdateFormsFormResponse> UpdateFormsFormAsync(UpdateFormsFormRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/forms/{connection_id}/form/{id}", request);
@@ -681,7 +681,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateFormsForm2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateFormsForm", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -722,7 +722,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<FormsForm>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateFormsForm2Response()
+                    var response = new UpdateFormsFormResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

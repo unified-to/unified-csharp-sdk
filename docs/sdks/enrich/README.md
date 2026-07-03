@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [ListEnrichCompanies2](#listenrichcompanies2) - Retrieve enrichment information for a company
-* [ListEnrichPeople2](#listenrichpeople2) - Retrieve enrichment information for a person
+* [ListEnrichCompanies](#listenrichcompanies) - Retrieve enrichment information for a company
+* [ListEnrichPeople](#listenrichpeople) - Retrieve enrichment information for a person
 
-## ListEnrichCompanies2
+## ListEnrichCompanies
 
 Retrieve enrichment information for a company
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Enrich.ListEnrichCompanies2Async(connectionId: "<id>");
+var res = await sdk.Enrich.ListEnrichCompaniesAsync(connectionId: "<id>");
 
 // handle response
 ```
@@ -37,7 +37,7 @@ var res = await sdk.Enrich.ListEnrichCompanies2Async(connectionId: "<id>");
 
 ### Response
 
-**[ListEnrichCompanies2Response](../../Models/Requests/ListEnrichCompanies2Response.md)**
+**[ListEnrichCompaniesResponse](../../Models/Requests/ListEnrichCompaniesResponse.md)**
 
 ### Errors
 
@@ -45,7 +45,7 @@ var res = await sdk.Enrich.ListEnrichCompanies2Async(connectionId: "<id>");
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListEnrichPeople2
+## ListEnrichPeople
 
 Retrieve enrichment information for a person
 
@@ -60,24 +60,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListEnrichPeople2Request req = new ListEnrichPeople2Request() {
+ListEnrichPeopleRequest req = new ListEnrichPeopleRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Enrich.ListEnrichPeople2Async(req);
+var res = await sdk.Enrich.ListEnrichPeopleAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListEnrichPeople2Request](../../Models/Requests/ListEnrichPeople2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListEnrichPeopleRequest](../../Models/Requests/ListEnrichPeopleRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListEnrichPeople2Response](../../Models/Requests/ListEnrichPeople2Response.md)**
+**[ListEnrichPeopleResponse](../../Models/Requests/ListEnrichPeopleResponse.md)**
 
 ### Errors
 

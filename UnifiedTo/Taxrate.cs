@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a taxrate
         /// </summary>
-        Task<CreateAccountingTaxrate2Response> CreateAccountingTaxrate2Async(AccountingTaxrate accountingTaxrate, string connectionId, List<CreateAccountingTaxrate2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<CreateAccountingTaxrateQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a taxrate
         /// </summary>
-        Task<GetAccountingTaxrate2Response> GetAccountingTaxrate2Async(string connectionId, string id, List<GetAccountingTaxrate2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<GetAccountingTaxrateQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all taxrates
         /// </summary>
-        Task<ListAccountingTaxrates2Response> ListAccountingTaxrates2Async(ListAccountingTaxrates2Request request);
+        Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest request);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<PatchAccountingTaxrate2Response> PatchAccountingTaxrate2Async(PatchAccountingTaxrate2Request request);
+        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(PatchAccountingTaxrateRequest request);
 
         /// <summary>
         /// Remove a taxrate
         /// </summary>
-        Task<RemoveAccountingTaxrate2Response> RemoveAccountingTaxrate2Async(string connectionId, string id);
+        Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<UpdateAccountingTaxrate2Response> UpdateAccountingTaxrate2Async(UpdateAccountingTaxrate2Request request);
+        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(UpdateAccountingTaxrateRequest request);
     }
 
     public class Taxrate: ITaxrate
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingTaxrate2Response> CreateAccountingTaxrate2Async(AccountingTaxrate accountingTaxrate, string connectionId, List<CreateAccountingTaxrate2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<CreateAccountingTaxrateQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAccountingTaxrate2Request()
+            var request = new CreateAccountingTaxrateRequest()
             {
                 AccountingTaxrate = accountingTaxrate,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingTaxrate2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingTaxrate", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAccountingTaxrate2Response()
+                    var response = new CreateAccountingTaxrateResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingTaxrate2Response> GetAccountingTaxrate2Async(string connectionId, string id, List<GetAccountingTaxrate2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<GetAccountingTaxrateQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingTaxrate2Request()
+            var request = new GetAccountingTaxrateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingTaxrate2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingTaxrate", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingTaxrate2Response()
+                    var response = new GetAccountingTaxrateResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingTaxrates2Response> ListAccountingTaxrates2Async(ListAccountingTaxrates2Request request)
+        public async Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingTaxrates2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingTaxrates", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingTaxrate>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingTaxrates2Response()
+                    var response = new ListAccountingTaxratesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingTaxrate2Response> PatchAccountingTaxrate2Async(PatchAccountingTaxrate2Request request)
+        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(PatchAccountingTaxrateRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingTaxrate2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingTaxrate", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAccountingTaxrate2Response()
+                    var response = new PatchAccountingTaxrateResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAccountingTaxrate2Response> RemoveAccountingTaxrate2Async(string connectionId, string id)
+        public async Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(string connectionId, string id)
         {
-            var request = new RemoveAccountingTaxrate2Request()
+            var request = new RemoveAccountingTaxrateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingTaxrate2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingTaxrate", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAccountingTaxrate2Response()
+                return new RemoveAccountingTaxrateResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAccountingTaxrate2Response()
+                return new RemoveAccountingTaxrateResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingTaxrate2Response> UpdateAccountingTaxrate2Async(UpdateAccountingTaxrate2Request request)
+        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(UpdateAccountingTaxrateRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingTaxrate2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingTaxrate", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAccountingTaxrate2Response()
+                    var response = new UpdateAccountingTaxrateResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

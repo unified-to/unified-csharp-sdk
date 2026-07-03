@@ -28,19 +28,19 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a session
         /// </summary>
-        Task<GetAnalyticsSession2Response> GetAnalyticsSession2Async(string connectionId, string id, List<GetAnalyticsSession2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAnalyticsSessionResponse> GetAnalyticsSessionAsync(string connectionId, string id, List<GetAnalyticsSessionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all sessions
         /// </summary>
-        Task<ListAnalyticsSessions2Response> ListAnalyticsSessions2Async(ListAnalyticsSessions2Request request);
+        Task<ListAnalyticsSessionsResponse> ListAnalyticsSessionsAsync(ListAnalyticsSessionsRequest request);
     }
 
     public class Session: ISession
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,9 +49,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetAnalyticsSession2Response> GetAnalyticsSession2Async(string connectionId, string id, List<GetAnalyticsSession2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAnalyticsSessionResponse> GetAnalyticsSessionAsync(string connectionId, string id, List<GetAnalyticsSessionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAnalyticsSession2Request()
+            var request = new GetAnalyticsSessionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -69,7 +69,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsSession2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsSession", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -110,7 +110,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsSession>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAnalyticsSession2Response()
+                    var response = new GetAnalyticsSessionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -134,7 +134,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAnalyticsSessions2Response> ListAnalyticsSessions2Async(ListAnalyticsSessions2Request request)
+        public async Task<ListAnalyticsSessionsResponse> ListAnalyticsSessionsAsync(ListAnalyticsSessionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/session", request);
@@ -147,7 +147,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsSessions2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsSessions", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -188,7 +188,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsSession>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAnalyticsSessions2Response()
+                    var response = new ListAnalyticsSessionsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

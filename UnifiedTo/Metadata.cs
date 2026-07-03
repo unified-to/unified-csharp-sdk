@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a metadata
         /// </summary>
-        Task<CreateMetadataMetadata2Response> CreateMetadataMetadata2Async(MetadataMetadata metadataMetadata, string connectionId, List<CreateMetadataMetadata2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateMetadataMetadataResponse> CreateMetadataMetadataAsync(MetadataMetadata metadataMetadata, string connectionId, List<CreateMetadataMetadataQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a metadata
         /// </summary>
-        Task<GetMetadataMetadata2Response> GetMetadataMetadata2Async(string connectionId, string id, List<GetMetadataMetadata2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetMetadataMetadataResponse> GetMetadataMetadataAsync(string connectionId, string id, List<GetMetadataMetadataQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all metadatas
         /// </summary>
-        Task<ListMetadataMetadatas2Response> ListMetadataMetadatas2Async(ListMetadataMetadatas2Request request);
+        Task<ListMetadataMetadatasResponse> ListMetadataMetadatasAsync(ListMetadataMetadatasRequest request);
 
         /// <summary>
         /// Update a metadata
         /// </summary>
-        Task<PatchMetadataMetadata2Response> PatchMetadataMetadata2Async(PatchMetadataMetadata2Request request);
+        Task<PatchMetadataMetadataResponse> PatchMetadataMetadataAsync(PatchMetadataMetadataRequest request);
 
         /// <summary>
         /// Remove a metadata
         /// </summary>
-        Task<RemoveMetadataMetadata2Response> RemoveMetadataMetadata2Async(string connectionId, string id);
+        Task<RemoveMetadataMetadataResponse> RemoveMetadataMetadataAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a metadata
         /// </summary>
-        Task<UpdateMetadataMetadata2Response> UpdateMetadataMetadata2Async(UpdateMetadataMetadata2Request request);
+        Task<UpdateMetadataMetadataResponse> UpdateMetadataMetadataAsync(UpdateMetadataMetadataRequest request);
     }
 
     public class Metadata: IMetadata
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMetadataMetadata2Response> CreateMetadataMetadata2Async(MetadataMetadata metadataMetadata, string connectionId, List<CreateMetadataMetadata2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateMetadataMetadataResponse> CreateMetadataMetadataAsync(MetadataMetadata metadataMetadata, string connectionId, List<CreateMetadataMetadataQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateMetadataMetadata2Request()
+            var request = new CreateMetadataMetadataRequest()
             {
                 MetadataMetadata = metadataMetadata,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createMetadataMetadata2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createMetadataMetadata", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateMetadataMetadata2Response()
+                    var response = new CreateMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMetadataMetadata2Response> GetMetadataMetadata2Async(string connectionId, string id, List<GetMetadataMetadata2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetMetadataMetadataResponse> GetMetadataMetadataAsync(string connectionId, string id, List<GetMetadataMetadataQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetMetadataMetadata2Request()
+            var request = new GetMetadataMetadataRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMetadataMetadata2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getMetadataMetadata", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetMetadataMetadata2Response()
+                    var response = new GetMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListMetadataMetadatas2Response> ListMetadataMetadatas2Async(ListMetadataMetadatas2Request request)
+        public async Task<ListMetadataMetadatasResponse> ListMetadataMetadatasAsync(ListMetadataMetadatasRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMetadataMetadatas2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listMetadataMetadatas", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<MetadataMetadata>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListMetadataMetadatas2Response()
+                    var response = new ListMetadataMetadatasResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchMetadataMetadata2Response> PatchMetadataMetadata2Async(PatchMetadataMetadata2Request request)
+        public async Task<PatchMetadataMetadataResponse> PatchMetadataMetadataAsync(PatchMetadataMetadataRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMetadataMetadata2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchMetadataMetadata", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchMetadataMetadata2Response()
+                    var response = new PatchMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveMetadataMetadata2Response> RemoveMetadataMetadata2Async(string connectionId, string id)
+        public async Task<RemoveMetadataMetadataResponse> RemoveMetadataMetadataAsync(string connectionId, string id)
         {
-            var request = new RemoveMetadataMetadata2Request()
+            var request = new RemoveMetadataMetadataRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeMetadataMetadata2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeMetadataMetadata", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveMetadataMetadata2Response()
+                return new RemoveMetadataMetadataResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveMetadataMetadata2Response()
+                return new RemoveMetadataMetadataResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateMetadataMetadata2Response> UpdateMetadataMetadata2Async(UpdateMetadataMetadata2Request request)
+        public async Task<UpdateMetadataMetadataResponse> UpdateMetadataMetadataAsync(UpdateMetadataMetadataRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMetadataMetadata2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateMetadataMetadata", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateMetadataMetadata2Response()
+                    var response = new UpdateMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

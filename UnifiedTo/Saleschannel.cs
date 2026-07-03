@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a saleschannel
         /// </summary>
-        Task<CreateCommerceSaleschannel2Response> CreateCommerceSaleschannel2Async(CommerceSaleschannel commerceSaleschannel, string connectionId, List<CreateCommerceSaleschannel2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCommerceSaleschannelResponse> CreateCommerceSaleschannelAsync(CommerceSaleschannel commerceSaleschannel, string connectionId, List<CreateCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a saleschannel
         /// </summary>
-        Task<GetCommerceSaleschannel2Response> GetCommerceSaleschannel2Async(string connectionId, string id, List<GetCommerceSaleschannel2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCommerceSaleschannelResponse> GetCommerceSaleschannelAsync(string connectionId, string id, List<GetCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all saleschannels
         /// </summary>
-        Task<ListCommerceSaleschannels2Response> ListCommerceSaleschannels2Async(ListCommerceSaleschannels2Request request);
+        Task<ListCommerceSaleschannelsResponse> ListCommerceSaleschannelsAsync(ListCommerceSaleschannelsRequest request);
 
         /// <summary>
         /// Update a saleschannel
         /// </summary>
-        Task<PatchCommerceSaleschannel2Response> PatchCommerceSaleschannel2Async(PatchCommerceSaleschannel2Request request);
+        Task<PatchCommerceSaleschannelResponse> PatchCommerceSaleschannelAsync(PatchCommerceSaleschannelRequest request);
 
         /// <summary>
         /// Remove a saleschannel
         /// </summary>
-        Task<RemoveCommerceSaleschannel2Response> RemoveCommerceSaleschannel2Async(string connectionId, string id);
+        Task<RemoveCommerceSaleschannelResponse> RemoveCommerceSaleschannelAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a saleschannel
         /// </summary>
-        Task<UpdateCommerceSaleschannel2Response> UpdateCommerceSaleschannel2Async(UpdateCommerceSaleschannel2Request request);
+        Task<UpdateCommerceSaleschannelResponse> UpdateCommerceSaleschannelAsync(UpdateCommerceSaleschannelRequest request);
     }
 
     public class Saleschannel: ISaleschannel
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceSaleschannel2Response> CreateCommerceSaleschannel2Async(CommerceSaleschannel commerceSaleschannel, string connectionId, List<CreateCommerceSaleschannel2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCommerceSaleschannelResponse> CreateCommerceSaleschannelAsync(CommerceSaleschannel commerceSaleschannel, string connectionId, List<CreateCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCommerceSaleschannel2Request()
+            var request = new CreateCommerceSaleschannelRequest()
             {
                 CommerceSaleschannel = commerceSaleschannel,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceSaleschannel2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceSaleschannel", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceSaleschannel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCommerceSaleschannel2Response()
+                    var response = new CreateCommerceSaleschannelResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceSaleschannel2Response> GetCommerceSaleschannel2Async(string connectionId, string id, List<GetCommerceSaleschannel2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCommerceSaleschannelResponse> GetCommerceSaleschannelAsync(string connectionId, string id, List<GetCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCommerceSaleschannel2Request()
+            var request = new GetCommerceSaleschannelRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceSaleschannel2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceSaleschannel", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceSaleschannel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCommerceSaleschannel2Response()
+                    var response = new GetCommerceSaleschannelResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCommerceSaleschannels2Response> ListCommerceSaleschannels2Async(ListCommerceSaleschannels2Request request)
+        public async Task<ListCommerceSaleschannelsResponse> ListCommerceSaleschannelsAsync(ListCommerceSaleschannelsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/saleschannel", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceSaleschannels2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceSaleschannels", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CommerceSaleschannel>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCommerceSaleschannels2Response()
+                    var response = new ListCommerceSaleschannelsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceSaleschannel2Response> PatchCommerceSaleschannel2Async(PatchCommerceSaleschannel2Request request)
+        public async Task<PatchCommerceSaleschannelResponse> PatchCommerceSaleschannelAsync(PatchCommerceSaleschannelRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/saleschannel/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceSaleschannel2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceSaleschannel", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceSaleschannel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCommerceSaleschannel2Response()
+                    var response = new PatchCommerceSaleschannelResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCommerceSaleschannel2Response> RemoveCommerceSaleschannel2Async(string connectionId, string id)
+        public async Task<RemoveCommerceSaleschannelResponse> RemoveCommerceSaleschannelAsync(string connectionId, string id)
         {
-            var request = new RemoveCommerceSaleschannel2Request()
+            var request = new RemoveCommerceSaleschannelRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceSaleschannel2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceSaleschannel", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCommerceSaleschannel2Response()
+                return new RemoveCommerceSaleschannelResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCommerceSaleschannel2Response()
+                return new RemoveCommerceSaleschannelResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceSaleschannel2Response> UpdateCommerceSaleschannel2Async(UpdateCommerceSaleschannel2Request request)
+        public async Task<UpdateCommerceSaleschannelResponse> UpdateCommerceSaleschannelAsync(UpdateCommerceSaleschannelRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/saleschannel/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceSaleschannel2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceSaleschannel", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceSaleschannel>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCommerceSaleschannel2Response()
+                    var response = new UpdateCommerceSaleschannelResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -28,14 +28,14 @@ namespace UnifiedTo
         /// <summary>
         /// Create an embedding
         /// </summary>
-        Task<CreateGenaiEmbedding2Response> CreateGenaiEmbedding2Async(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbedding2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateGenaiEmbeddingResponse> CreateGenaiEmbeddingAsync(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbeddingQueryParamFields>? fields = null, string? raw = null);
     }
 
     public class Embedding: IEmbedding
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -44,9 +44,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateGenaiEmbedding2Response> CreateGenaiEmbedding2Async(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbedding2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateGenaiEmbeddingResponse> CreateGenaiEmbeddingAsync(GenaiEmbedding genaiEmbedding, string connectionId, List<CreateGenaiEmbeddingQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateGenaiEmbedding2Request()
+            var request = new CreateGenaiEmbeddingRequest()
             {
                 GenaiEmbedding = genaiEmbedding,
                 ConnectionId = connectionId,
@@ -70,7 +70,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiEmbedding2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createGenaiEmbedding", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -111,7 +111,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<GenaiEmbedding>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateGenaiEmbedding2Response()
+                    var response = new CreateGenaiEmbeddingResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

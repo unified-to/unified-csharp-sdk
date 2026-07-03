@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [CreateDatastoreQuery2](#createdatastorequery2) - Create a query
+* [CreateDatastoreQuery](#createdatastorequery) - Create a query
 
-## CreateDatastoreQuery2
+## CreateDatastoreQuery
 
 Create a query
 
@@ -21,7 +21,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Query.CreateDatastoreQuery2Async(
+var res = await sdk.Query.CreateDatastoreQueryAsync(
     datastoreQuery: new DatastoreQuery() {},
     connectionId: "<id>"
 );
@@ -35,12 +35,12 @@ var res = await sdk.Query.CreateDatastoreQuery2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `DatastoreQuery`                                                                                                                                 | [DatastoreQuery](../../Models/Components/DatastoreQuery.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateDatastoreQuery2QueryParamFields](../../Models/Requests/CreateDatastoreQuery2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateDatastoreQueryQueryParamFields](../../Models/Requests/CreateDatastoreQueryQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateDatastoreQuery2Response](../../Models/Requests/CreateDatastoreQuery2Response.md)**
+**[CreateDatastoreQueryResponse](../../Models/Requests/CreateDatastoreQueryResponse.md)**
 
 ### Errors
 

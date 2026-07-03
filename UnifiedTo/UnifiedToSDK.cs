@@ -47,6 +47,7 @@ namespace UnifiedTo
         public ITaxrate Taxrate { get; }
         public ITransaction Transaction { get; }
         public ITrialbalance Trialbalance { get; }
+        public IVendorcredit Vendorcredit { get; }
         public IAds Ads { get; }
         public IAd Ad { get; }
         public ICampaign Campaign { get; }
@@ -190,7 +191,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -213,6 +214,7 @@ namespace UnifiedTo
         public ITaxrate Taxrate { get; private set; }
         public ITransaction Transaction { get; private set; }
         public ITrialbalance Trialbalance { get; private set; }
+        public IVendorcredit Vendorcredit { get; private set; }
         public IAds Ads { get; private set; }
         public IAd Ad { get; private set; }
         public ICampaign Campaign { get; private set; }
@@ -388,6 +390,8 @@ namespace UnifiedTo
             Transaction = new Transaction(SDKConfiguration);
 
             Trialbalance = new Trialbalance(SDKConfiguration);
+
+            Vendorcredit = new Vendorcredit(SDKConfiguration);
 
             Ads = new Ads(SDKConfiguration);
 
@@ -731,6 +735,8 @@ namespace UnifiedTo
             Transaction = new Transaction(SDKConfiguration);
 
             Trialbalance = new Trialbalance(SDKConfiguration);
+
+            Vendorcredit = new Vendorcredit(SDKConfiguration);
 
             Ads = new Ads(SDKConfiguration);
 

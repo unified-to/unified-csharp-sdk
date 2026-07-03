@@ -5,16 +5,16 @@
 
 ### Available Operations
 
-* [CreatePassthrough2Json](#createpassthrough2json) - Passthrough POST
-* [CreatePassthrough2Raw](#createpassthrough2raw) - Passthrough POST
-* [ListPassthroughs2](#listpassthroughs2) - Passthrough GET
-* [PatchPassthrough2Json](#patchpassthrough2json) - Passthrough PUT
-* [PatchPassthrough2Raw](#patchpassthrough2raw) - Passthrough PUT
-* [RemovePassthrough2](#removepassthrough2) - Passthrough DELETE
-* [UpdatePassthrough2Json](#updatepassthrough2json) - Passthrough PUT
-* [UpdatePassthrough2Raw](#updatepassthrough2raw) - Passthrough PUT
+* [CreatePassthroughJson](#createpassthroughjson) - Passthrough POST
+* [CreatePassthroughRaw](#createpassthroughraw) - Passthrough POST
+* [ListPassthroughs](#listpassthroughs) - Passthrough GET
+* [PatchPassthroughJson](#patchpassthroughjson) - Passthrough PUT
+* [PatchPassthroughRaw](#patchpassthroughraw) - Passthrough PUT
+* [RemovePassthrough](#removepassthrough) - Passthrough DELETE
+* [UpdatePassthroughJson](#updatepassthroughjson) - Passthrough PUT
+* [UpdatePassthroughRaw](#updatepassthroughraw) - Passthrough PUT
 
-## CreatePassthrough2Json
+## CreatePassthroughJson
 
 Passthrough POST
 
@@ -28,9 +28,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.CreatePassthrough2JsonAsync(
+var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/net"
+    path: "/var/log"
 );
 
 // handle response
@@ -47,7 +47,7 @@ var res = await sdk.Passthrough.CreatePassthrough2JsonAsync(
 
 ### Response
 
-**[CreatePassthrough2JsonResponse](../../Models/Requests/CreatePassthrough2JsonResponse.md)**
+**[CreatePassthroughJsonResponse](../../Models/Requests/CreatePassthroughJsonResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Passthrough.CreatePassthrough2JsonAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreatePassthrough2Raw
+## CreatePassthroughRaw
 
 Passthrough POST
 
@@ -69,9 +69,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.CreatePassthrough2RawAsync(
+var res = await sdk.Passthrough.CreatePassthroughRawAsync(
     connectionId: "<id>",
-    path: "/net"
+    path: "/var/log"
 );
 
 // handle response
@@ -88,7 +88,7 @@ var res = await sdk.Passthrough.CreatePassthrough2RawAsync(
 
 ### Response
 
-**[CreatePassthrough2RawResponse](../../Models/Requests/CreatePassthrough2RawResponse.md)**
+**[CreatePassthroughRawResponse](../../Models/Requests/CreatePassthroughRawResponse.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Passthrough.CreatePassthrough2RawAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListPassthroughs2
+## ListPassthroughs
 
 Passthrough GET
 
@@ -110,9 +110,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.ListPassthroughs2Async(
+var res = await sdk.Passthrough.ListPassthroughsAsync(
     connectionId: "<id>",
-    path: "/usr/local/src"
+    path: "/System"
 );
 
 // handle response
@@ -128,7 +128,7 @@ var res = await sdk.Passthrough.ListPassthroughs2Async(
 
 ### Response
 
-**[ListPassthroughs2Response](../../Models/Requests/ListPassthroughs2Response.md)**
+**[ListPassthroughsResponse](../../Models/Requests/ListPassthroughsResponse.md)**
 
 ### Errors
 
@@ -136,7 +136,7 @@ var res = await sdk.Passthrough.ListPassthroughs2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchPassthrough2Json
+## PatchPassthroughJson
 
 Passthrough PUT
 
@@ -150,9 +150,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.PatchPassthrough2JsonAsync(
+var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/usr/X11R6"
+    path: "/System"
 );
 
 // handle response
@@ -169,7 +169,7 @@ var res = await sdk.Passthrough.PatchPassthrough2JsonAsync(
 
 ### Response
 
-**[PatchPassthrough2JsonResponse](../../Models/Requests/PatchPassthrough2JsonResponse.md)**
+**[PatchPassthroughJsonResponse](../../Models/Requests/PatchPassthroughJsonResponse.md)**
 
 ### Errors
 
@@ -177,7 +177,7 @@ var res = await sdk.Passthrough.PatchPassthrough2JsonAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchPassthrough2Raw
+## PatchPassthroughRaw
 
 Passthrough PUT
 
@@ -191,9 +191,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.PatchPassthrough2RawAsync(
+var res = await sdk.Passthrough.PatchPassthroughRawAsync(
     connectionId: "<id>",
-    path: "/usr/X11R6"
+    path: "/System"
 );
 
 // handle response
@@ -210,7 +210,7 @@ var res = await sdk.Passthrough.PatchPassthrough2RawAsync(
 
 ### Response
 
-**[PatchPassthrough2RawResponse](../../Models/Requests/PatchPassthrough2RawResponse.md)**
+**[PatchPassthroughRawResponse](../../Models/Requests/PatchPassthroughRawResponse.md)**
 
 ### Errors
 
@@ -218,7 +218,7 @@ var res = await sdk.Passthrough.PatchPassthrough2RawAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemovePassthrough2
+## RemovePassthrough
 
 Passthrough DELETE
 
@@ -232,9 +232,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.RemovePassthrough2Async(
+var res = await sdk.Passthrough.RemovePassthroughAsync(
     connectionId: "<id>",
-    path: "/usr/include"
+    path: "/bin"
 );
 
 // handle response
@@ -250,7 +250,7 @@ var res = await sdk.Passthrough.RemovePassthrough2Async(
 
 ### Response
 
-**[RemovePassthrough2Response](../../Models/Requests/RemovePassthrough2Response.md)**
+**[RemovePassthroughResponse](../../Models/Requests/RemovePassthroughResponse.md)**
 
 ### Errors
 
@@ -258,7 +258,7 @@ var res = await sdk.Passthrough.RemovePassthrough2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdatePassthrough2Json
+## UpdatePassthroughJson
 
 Passthrough PUT
 
@@ -272,9 +272,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.UpdatePassthrough2JsonAsync(
+var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/home/user/dir"
+    path: "/var/tmp"
 );
 
 // handle response
@@ -291,7 +291,7 @@ var res = await sdk.Passthrough.UpdatePassthrough2JsonAsync(
 
 ### Response
 
-**[UpdatePassthrough2JsonResponse](../../Models/Requests/UpdatePassthrough2JsonResponse.md)**
+**[UpdatePassthroughJsonResponse](../../Models/Requests/UpdatePassthroughJsonResponse.md)**
 
 ### Errors
 
@@ -299,7 +299,7 @@ var res = await sdk.Passthrough.UpdatePassthrough2JsonAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdatePassthrough2Raw
+## UpdatePassthroughRaw
 
 Passthrough PUT
 
@@ -313,9 +313,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.UpdatePassthrough2RawAsync(
+var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
     connectionId: "<id>",
-    path: "/home/user/dir"
+    path: "/var/tmp"
 );
 
 // handle response
@@ -332,7 +332,7 @@ var res = await sdk.Passthrough.UpdatePassthrough2RawAsync(
 
 ### Response
 
-**[UpdatePassthrough2RawResponse](../../Models/Requests/UpdatePassthrough2RawResponse.md)**
+**[UpdatePassthroughRawResponse](../../Models/Requests/UpdatePassthroughRawResponse.md)**
 
 ### Errors
 

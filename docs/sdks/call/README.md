@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetUcCall2](#getuccall2) - Retrieve a call
-* [ListUcCalls2](#listuccalls2) - List all calls
+* [GetUcCall](#getuccall) - Retrieve a call
+* [ListUcCalls](#listuccalls) - List all calls
 
-## GetUcCall2
+## GetUcCall
 
 Retrieve a call
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Call.GetUcCall2Async(
+var res = await sdk.Call.GetUcCallAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Call.GetUcCall2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Call                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetUcCall2QueryParamFields](../../Models/Requests/GetUcCall2QueryParamFields.md)>                                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetUcCallQueryParamFields](../../Models/Requests/GetUcCallQueryParamFields.md)>                                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetUcCall2Response](../../Models/Requests/GetUcCall2Response.md)**
+**[GetUcCallResponse](../../Models/Requests/GetUcCallResponse.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Call.GetUcCall2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListUcCalls2
+## ListUcCalls
 
 List all calls
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUcCalls2Request req = new ListUcCalls2Request() {
+ListUcCallsRequest req = new ListUcCallsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Call.ListUcCalls2Async(req);
+var res = await sdk.Call.ListUcCallsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [ListUcCalls2Request](../../Models/Requests/ListUcCalls2Request.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `request`                                                         | [ListUcCallsRequest](../../Models/Requests/ListUcCallsRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
 ### Response
 
-**[ListUcCalls2Response](../../Models/Requests/ListUcCalls2Response.md)**
+**[ListUcCallsResponse](../../Models/Requests/ListUcCallsResponse.md)**
 
 ### Errors
 

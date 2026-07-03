@@ -28,69 +28,69 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection
         /// </summary>
-        Task<CreateCommerceCollection2Response> CreateCommerceCollection2Async(CommerceCollection commerceCollection, string connectionId, List<CreateCommerceCollection2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CommerceCollection commerceCollection, string connectionId, List<CreateCommerceCollectionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a collection
         /// </summary>
-        Task<CreateLmsCollection2Response> CreateLmsCollection2Async(LmsCollection lmsCollection, string connectionId, List<CreateLmsCollection2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateLmsCollectionResponse> CreateLmsCollectionAsync(LmsCollection lmsCollection, string connectionId, List<CreateLmsCollectionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a collection
         /// </summary>
-        Task<GetCommerceCollection2Response> GetCommerceCollection2Async(string connectionId, string id, List<GetCommerceCollection2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<GetCommerceCollectionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a collection
         /// </summary>
-        Task<GetLmsCollection2Response> GetLmsCollection2Async(string connectionId, string id, List<GetLmsCollection2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetLmsCollectionResponse> GetLmsCollectionAsync(string connectionId, string id, List<GetLmsCollectionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all collections
         /// </summary>
-        Task<ListCommerceCollections2Response> ListCommerceCollections2Async(ListCommerceCollections2Request request);
+        Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request);
 
         /// <summary>
         /// List all collections
         /// </summary>
-        Task<ListLmsCollections2Response> ListLmsCollections2Async(ListLmsCollections2Request request);
+        Task<ListLmsCollectionsResponse> ListLmsCollectionsAsync(ListLmsCollectionsRequest request);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<PatchCommerceCollection2Response> PatchCommerceCollection2Async(PatchCommerceCollection2Request request);
+        Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(PatchCommerceCollectionRequest request);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<PatchLmsCollection2Response> PatchLmsCollection2Async(PatchLmsCollection2Request request);
+        Task<PatchLmsCollectionResponse> PatchLmsCollectionAsync(PatchLmsCollectionRequest request);
 
         /// <summary>
         /// Remove a collection
         /// </summary>
-        Task<RemoveCommerceCollection2Response> RemoveCommerceCollection2Async(string connectionId, string id);
+        Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a collection
         /// </summary>
-        Task<RemoveLmsCollection2Response> RemoveLmsCollection2Async(string connectionId, string id);
+        Task<RemoveLmsCollectionResponse> RemoveLmsCollectionAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<UpdateCommerceCollection2Response> UpdateCommerceCollection2Async(UpdateCommerceCollection2Request request);
+        Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(UpdateCommerceCollectionRequest request);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<UpdateLmsCollection2Response> UpdateLmsCollection2Async(UpdateLmsCollection2Request request);
+        Task<UpdateLmsCollectionResponse> UpdateLmsCollectionAsync(UpdateLmsCollectionRequest request);
     }
 
     public class Collection: ICollection
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -99,9 +99,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceCollection2Response> CreateCommerceCollection2Async(CommerceCollection commerceCollection, string connectionId, List<CreateCommerceCollection2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CommerceCollection commerceCollection, string connectionId, List<CreateCommerceCollectionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCommerceCollection2Request()
+            var request = new CreateCommerceCollectionRequest()
             {
                 CommerceCollection = commerceCollection,
                 ConnectionId = connectionId,
@@ -125,7 +125,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCommerceCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -166,7 +166,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCommerceCollection2Response()
+                    var response = new CreateCommerceCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -190,9 +190,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsCollection2Response> CreateLmsCollection2Async(LmsCollection lmsCollection, string connectionId, List<CreateLmsCollection2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateLmsCollectionResponse> CreateLmsCollectionAsync(LmsCollection lmsCollection, string connectionId, List<CreateLmsCollectionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateLmsCollection2Request()
+            var request = new CreateLmsCollectionRequest()
             {
                 LmsCollection = lmsCollection,
                 ConnectionId = connectionId,
@@ -216,7 +216,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createLmsCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createLmsCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -257,7 +257,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateLmsCollection2Response()
+                    var response = new CreateLmsCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -281,9 +281,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceCollection2Response> GetCommerceCollection2Async(string connectionId, string id, List<GetCommerceCollection2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<GetCommerceCollectionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCommerceCollection2Request()
+            var request = new GetCommerceCollectionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -301,7 +301,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCommerceCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCommerceCollection2Response()
+                    var response = new GetCommerceCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -366,9 +366,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsCollection2Response> GetLmsCollection2Async(string connectionId, string id, List<GetLmsCollection2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetLmsCollectionResponse> GetLmsCollectionAsync(string connectionId, string id, List<GetLmsCollectionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetLmsCollection2Request()
+            var request = new GetLmsCollectionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -386,7 +386,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getLmsCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getLmsCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -427,7 +427,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetLmsCollection2Response()
+                    var response = new GetLmsCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -451,7 +451,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCommerceCollections2Response> ListCommerceCollections2Async(ListCommerceCollections2Request request)
+        public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection", request);
@@ -464,7 +464,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceCollections2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCommerceCollections", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -505,7 +505,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CommerceCollection>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCommerceCollections2Response()
+                    var response = new ListCommerceCollectionsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -529,7 +529,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListLmsCollections2Response> ListLmsCollections2Async(ListLmsCollections2Request request)
+        public async Task<ListLmsCollectionsResponse> ListLmsCollectionsAsync(ListLmsCollectionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/collection", request);
@@ -542,7 +542,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listLmsCollections2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listLmsCollections", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -583,7 +583,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<LmsCollection>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListLmsCollections2Response()
+                    var response = new ListLmsCollectionsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -607,7 +607,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceCollection2Response> PatchCommerceCollection2Async(PatchCommerceCollection2Request request)
+        public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(PatchCommerceCollectionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
@@ -626,7 +626,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCommerceCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -667,7 +667,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCommerceCollection2Response()
+                    var response = new PatchCommerceCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -691,7 +691,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsCollection2Response> PatchLmsCollection2Async(PatchLmsCollection2Request request)
+        public async Task<PatchLmsCollectionResponse> PatchLmsCollectionAsync(PatchLmsCollectionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/collection/{id}", request);
@@ -710,7 +710,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchLmsCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchLmsCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -751,7 +751,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchLmsCollection2Response()
+                    var response = new PatchLmsCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -775,9 +775,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCommerceCollection2Response> RemoveCommerceCollection2Async(string connectionId, string id)
+        public async Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id)
         {
-            var request = new RemoveCommerceCollection2Request()
+            var request = new RemoveCommerceCollectionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -793,7 +793,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCommerceCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -831,7 +831,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCommerceCollection2Response()
+                return new RemoveCommerceCollectionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -848,7 +848,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCommerceCollection2Response()
+                return new RemoveCommerceCollectionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -857,9 +857,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveLmsCollection2Response> RemoveLmsCollection2Async(string connectionId, string id)
+        public async Task<RemoveLmsCollectionResponse> RemoveLmsCollectionAsync(string connectionId, string id)
         {
-            var request = new RemoveLmsCollection2Request()
+            var request = new RemoveLmsCollectionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -875,7 +875,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeLmsCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeLmsCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -913,7 +913,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveLmsCollection2Response()
+                return new RemoveLmsCollectionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -930,7 +930,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveLmsCollection2Response()
+                return new RemoveLmsCollectionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -939,7 +939,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceCollection2Response> UpdateCommerceCollection2Async(UpdateCommerceCollection2Request request)
+        public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(UpdateCommerceCollectionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
@@ -958,7 +958,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCommerceCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -999,7 +999,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCommerceCollection2Response()
+                    var response = new UpdateCommerceCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1023,7 +1023,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateLmsCollection2Response> UpdateLmsCollection2Async(UpdateLmsCollection2Request request)
+        public async Task<UpdateLmsCollectionResponse> UpdateLmsCollectionAsync(UpdateLmsCollectionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/collection/{id}", request);
@@ -1042,7 +1042,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateLmsCollection2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateLmsCollection", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1083,7 +1083,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsCollection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateLmsCollection2Response()
+                    var response = new UpdateLmsCollectionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -28,14 +28,14 @@ namespace UnifiedTo
         /// <summary>
         /// Create a query
         /// </summary>
-        Task<CreateDatastoreQuery2Response> CreateDatastoreQuery2Async(DatastoreQuery datastoreQuery, string connectionId, List<CreateDatastoreQuery2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateDatastoreQueryResponse> CreateDatastoreQueryAsync(DatastoreQuery datastoreQuery, string connectionId, List<CreateDatastoreQueryQueryParamFields>? fields = null, string? raw = null);
     }
 
     public class Query: IQuery
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -44,9 +44,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateDatastoreQuery2Response> CreateDatastoreQuery2Async(DatastoreQuery datastoreQuery, string connectionId, List<CreateDatastoreQuery2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateDatastoreQueryResponse> CreateDatastoreQueryAsync(DatastoreQuery datastoreQuery, string connectionId, List<CreateDatastoreQueryQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateDatastoreQuery2Request()
+            var request = new CreateDatastoreQueryRequest()
             {
                 DatastoreQuery = datastoreQuery,
                 ConnectionId = connectionId,
@@ -70,7 +70,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createDatastoreQuery2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createDatastoreQuery", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -111,7 +111,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<DatastoreQuery>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateDatastoreQuery2Response()
+                    var response = new CreateDatastoreQueryResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

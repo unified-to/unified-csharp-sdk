@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a device
         /// </summary>
-        Task<CreateHrisDevice2Response> CreateHrisDevice2Async(HrisDevice hrisDevice, string connectionId, List<CreateHrisDevice2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<CreateHrisDeviceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a device
         /// </summary>
-        Task<GetHrisDevice2Response> GetHrisDevice2Async(string connectionId, string id, List<GetHrisDevice2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<GetHrisDeviceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all devices
         /// </summary>
-        Task<ListHrisDevices2Response> ListHrisDevices2Async(ListHrisDevices2Request request);
+        Task<ListHrisDevicesResponse> ListHrisDevicesAsync(ListHrisDevicesRequest request);
 
         /// <summary>
         /// Update a device
         /// </summary>
-        Task<PatchHrisDevice2Response> PatchHrisDevice2Async(PatchHrisDevice2Request request);
+        Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(PatchHrisDeviceRequest request);
 
         /// <summary>
         /// Remove a device
         /// </summary>
-        Task<RemoveHrisDevice2Response> RemoveHrisDevice2Async(string connectionId, string id);
+        Task<RemoveHrisDeviceResponse> RemoveHrisDeviceAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a device
         /// </summary>
-        Task<UpdateHrisDevice2Response> UpdateHrisDevice2Async(UpdateHrisDevice2Request request);
+        Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(UpdateHrisDeviceRequest request);
     }
 
     public class Device: IDevice
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisDevice2Response> CreateHrisDevice2Async(HrisDevice hrisDevice, string connectionId, List<CreateHrisDevice2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<CreateHrisDeviceQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisDevice2Request()
+            var request = new CreateHrisDeviceRequest()
             {
                 HrisDevice = hrisDevice,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisDevice2Response()
+                    var response = new CreateHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisDevice2Response> GetHrisDevice2Async(string connectionId, string id, List<GetHrisDevice2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<GetHrisDeviceQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisDevice2Request()
+            var request = new GetHrisDeviceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisDevice2Response()
+                    var response = new GetHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisDevices2Response> ListHrisDevices2Async(ListHrisDevices2Request request)
+        public async Task<ListHrisDevicesResponse> ListHrisDevicesAsync(ListHrisDevicesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDevices2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDevices", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisDevice>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisDevices2Response()
+                    var response = new ListHrisDevicesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisDevice2Response> PatchHrisDevice2Async(PatchHrisDevice2Request request)
+        public async Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(PatchHrisDeviceRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisDevice2Response()
+                    var response = new PatchHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisDevice2Response> RemoveHrisDevice2Async(string connectionId, string id)
+        public async Task<RemoveHrisDeviceResponse> RemoveHrisDeviceAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisDevice2Request()
+            var request = new RemoveHrisDeviceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisDevice2Response()
+                return new RemoveHrisDeviceResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisDevice2Response()
+                return new RemoveHrisDeviceResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisDevice2Response> UpdateHrisDevice2Async(UpdateHrisDevice2Request request)
+        public async Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(UpdateHrisDeviceRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDevice2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDevice", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDevice>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisDevice2Response()
+                    var response = new UpdateHrisDeviceResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetAccountingBalancesheet2](#getaccountingbalancesheet2) - Retrieve a balancesheet
-* [ListAccountingBalancesheets2](#listaccountingbalancesheets2) - List all balancesheets
+* [GetAccountingBalancesheet](#getaccountingbalancesheet) - Retrieve a balancesheet
+* [ListAccountingBalancesheets](#listaccountingbalancesheets) - List all balancesheets
 
-## GetAccountingBalancesheet2
+## GetAccountingBalancesheet
 
 Retrieve a balancesheet
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Balancesheet.GetAccountingBalancesheet2Async(
+var res = await sdk.Balancesheet.GetAccountingBalancesheetAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Balancesheet.GetAccountingBalancesheet2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Balancesheet                                                                                                                           |
-| `Fields`                                                                                                                                         | List<[GetAccountingBalancesheet2QueryParamFields](../../Models/Requests/GetAccountingBalancesheet2QueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAccountingBalancesheetQueryParamFields](../../Models/Requests/GetAccountingBalancesheetQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAccountingBalancesheet2Response](../../Models/Requests/GetAccountingBalancesheet2Response.md)**
+**[GetAccountingBalancesheetResponse](../../Models/Requests/GetAccountingBalancesheetResponse.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Balancesheet.GetAccountingBalancesheet2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAccountingBalancesheets2
+## ListAccountingBalancesheets
 
 List all balancesheets
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAccountingBalancesheets2Request req = new ListAccountingBalancesheets2Request() {
+ListAccountingBalancesheetsRequest req = new ListAccountingBalancesheetsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Balancesheet.ListAccountingBalancesheets2Async(req);
+var res = await sdk.Balancesheet.ListAccountingBalancesheetsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `request`                                                                                           | [ListAccountingBalancesheets2Request](../../Models/Requests/ListAccountingBalancesheets2Request.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListAccountingBalancesheetsRequest](../../Models/Requests/ListAccountingBalancesheetsRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
 ### Response
 
-**[ListAccountingBalancesheets2Response](../../Models/Requests/ListAccountingBalancesheets2Response.md)**
+**[ListAccountingBalancesheetsResponse](../../Models/Requests/ListAccountingBalancesheetsResponse.md)**
 
 ### Errors
 

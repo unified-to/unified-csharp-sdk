@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create an instructor
         /// </summary>
-        Task<CreateLmsInstructor2Response> CreateLmsInstructor2Async(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructor2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an instructor
         /// </summary>
-        Task<GetLmsInstructor2Response> GetLmsInstructor2Async(string connectionId, string id, List<GetLmsInstructor2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<GetLmsInstructorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all instructors
         /// </summary>
-        Task<ListLmsInstructors2Response> ListLmsInstructors2Async(ListLmsInstructors2Request request);
+        Task<ListLmsInstructorsResponse> ListLmsInstructorsAsync(ListLmsInstructorsRequest request);
 
         /// <summary>
         /// Update an instructor
         /// </summary>
-        Task<PatchLmsInstructor2Response> PatchLmsInstructor2Async(PatchLmsInstructor2Request request);
+        Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(PatchLmsInstructorRequest request);
 
         /// <summary>
         /// Remove an instructor
         /// </summary>
-        Task<RemoveLmsInstructor2Response> RemoveLmsInstructor2Async(string connectionId, string id);
+        Task<RemoveLmsInstructorResponse> RemoveLmsInstructorAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an instructor
         /// </summary>
-        Task<UpdateLmsInstructor2Response> UpdateLmsInstructor2Async(UpdateLmsInstructor2Request request);
+        Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(UpdateLmsInstructorRequest request);
     }
 
     public class Instructor: IInstructor
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateLmsInstructor2Response> CreateLmsInstructor2Async(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructor2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructorQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateLmsInstructor2Request()
+            var request = new CreateLmsInstructorRequest()
             {
                 LmsInstructor = lmsInstructor,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createLmsInstructor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createLmsInstructor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsInstructor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateLmsInstructor2Response()
+                    var response = new CreateLmsInstructorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsInstructor2Response> GetLmsInstructor2Async(string connectionId, string id, List<GetLmsInstructor2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<GetLmsInstructorQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetLmsInstructor2Request()
+            var request = new GetLmsInstructorRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getLmsInstructor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getLmsInstructor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsInstructor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetLmsInstructor2Response()
+                    var response = new GetLmsInstructorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListLmsInstructors2Response> ListLmsInstructors2Async(ListLmsInstructors2Request request)
+        public async Task<ListLmsInstructorsResponse> ListLmsInstructorsAsync(ListLmsInstructorsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/instructor", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listLmsInstructors2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listLmsInstructors", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<LmsInstructor>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListLmsInstructors2Response()
+                    var response = new ListLmsInstructorsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsInstructor2Response> PatchLmsInstructor2Async(PatchLmsInstructor2Request request)
+        public async Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(PatchLmsInstructorRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/instructor/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchLmsInstructor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchLmsInstructor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsInstructor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchLmsInstructor2Response()
+                    var response = new PatchLmsInstructorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveLmsInstructor2Response> RemoveLmsInstructor2Async(string connectionId, string id)
+        public async Task<RemoveLmsInstructorResponse> RemoveLmsInstructorAsync(string connectionId, string id)
         {
-            var request = new RemoveLmsInstructor2Request()
+            var request = new RemoveLmsInstructorRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeLmsInstructor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeLmsInstructor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveLmsInstructor2Response()
+                return new RemoveLmsInstructorResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveLmsInstructor2Response()
+                return new RemoveLmsInstructorResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateLmsInstructor2Response> UpdateLmsInstructor2Async(UpdateLmsInstructor2Request request)
+        public async Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(UpdateLmsInstructorRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/instructor/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateLmsInstructor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateLmsInstructor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<LmsInstructor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateLmsInstructor2Response()
+                    var response = new UpdateLmsInstructorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

@@ -28,79 +28,79 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization
         /// </summary>
-        Task<CreateAdsOrganization2Response> CreateAdsOrganization2Async(AdsOrganization adsOrganization, string connectionId, List<CreateAdsOrganization2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAdsOrganizationResponse> CreateAdsOrganizationAsync(AdsOrganization adsOrganization, string connectionId, List<CreateAdsOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an organization
         /// </summary>
-        Task<CreateRepoOrganization2Response> CreateRepoOrganization2Async(RepoOrganization repoOrganization, string connectionId, List<CreateRepoOrganization2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<CreateRepoOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAccountingOrganization2Response> GetAccountingOrganization2Async(string connectionId, string id, List<GetAccountingOrganization2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<GetAccountingOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAdsOrganization2Response> GetAdsOrganization2Async(string connectionId, string id, List<GetAdsOrganization2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAdsOrganizationResponse> GetAdsOrganizationAsync(string connectionId, string id, List<GetAdsOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetRepoOrganization2Response> GetRepoOrganization2Async(string connectionId, string id, List<GetRepoOrganization2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<GetRepoOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all organizations
         /// </summary>
-        Task<ListAccountingOrganizations2Response> ListAccountingOrganizations2Async(ListAccountingOrganizations2Request request);
+        Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request);
 
         /// <summary>
         /// List all organizations
         /// </summary>
-        Task<ListAdsOrganizations2Response> ListAdsOrganizations2Async(ListAdsOrganizations2Request request);
+        Task<ListAdsOrganizationsResponse> ListAdsOrganizationsAsync(ListAdsOrganizationsRequest request);
 
         /// <summary>
         /// List all organizations
         /// </summary>
-        Task<ListRepoOrganizations2Response> ListRepoOrganizations2Async(ListRepoOrganizations2Request request);
+        Task<ListRepoOrganizationsResponse> ListRepoOrganizationsAsync(ListRepoOrganizationsRequest request);
 
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<PatchAdsOrganization2Response> PatchAdsOrganization2Async(PatchAdsOrganization2Request request);
+        Task<PatchAdsOrganizationResponse> PatchAdsOrganizationAsync(PatchAdsOrganizationRequest request);
 
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<PatchRepoOrganization2Response> PatchRepoOrganization2Async(PatchRepoOrganization2Request request);
+        Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(PatchRepoOrganizationRequest request);
 
         /// <summary>
         /// Remove an organization
         /// </summary>
-        Task<RemoveAdsOrganization2Response> RemoveAdsOrganization2Async(string connectionId, string id);
+        Task<RemoveAdsOrganizationResponse> RemoveAdsOrganizationAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove an organization
         /// </summary>
-        Task<RemoveRepoOrganization2Response> RemoveRepoOrganization2Async(string connectionId, string id);
+        Task<RemoveRepoOrganizationResponse> RemoveRepoOrganizationAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<UpdateAdsOrganization2Response> UpdateAdsOrganization2Async(UpdateAdsOrganization2Request request);
+        Task<UpdateAdsOrganizationResponse> UpdateAdsOrganizationAsync(UpdateAdsOrganizationRequest request);
 
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<UpdateRepoOrganization2Response> UpdateRepoOrganization2Async(UpdateRepoOrganization2Request request);
+        Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(UpdateRepoOrganizationRequest request);
     }
 
     public class Organization: IOrganization
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -109,9 +109,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAdsOrganization2Response> CreateAdsOrganization2Async(AdsOrganization adsOrganization, string connectionId, List<CreateAdsOrganization2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAdsOrganizationResponse> CreateAdsOrganizationAsync(AdsOrganization adsOrganization, string connectionId, List<CreateAdsOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAdsOrganization2Request()
+            var request = new CreateAdsOrganizationRequest()
             {
                 AdsOrganization = adsOrganization,
                 ConnectionId = connectionId,
@@ -135,7 +135,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAdsOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -176,7 +176,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAdsOrganization2Response()
+                    var response = new CreateAdsOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -200,9 +200,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoOrganization2Response> CreateRepoOrganization2Async(RepoOrganization repoOrganization, string connectionId, List<CreateRepoOrganization2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<CreateRepoOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateRepoOrganization2Request()
+            var request = new CreateRepoOrganizationRequest()
             {
                 RepoOrganization = repoOrganization,
                 ConnectionId = connectionId,
@@ -226,7 +226,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createRepoOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createRepoOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -267,7 +267,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateRepoOrganization2Response()
+                    var response = new CreateRepoOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -291,9 +291,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingOrganization2Response> GetAccountingOrganization2Async(string connectionId, string id, List<GetAccountingOrganization2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<GetAccountingOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingOrganization2Request()
+            var request = new GetAccountingOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -311,7 +311,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -352,7 +352,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingOrganization2Response()
+                    var response = new GetAccountingOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -376,9 +376,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsOrganization2Response> GetAdsOrganization2Async(string connectionId, string id, List<GetAdsOrganization2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAdsOrganizationResponse> GetAdsOrganizationAsync(string connectionId, string id, List<GetAdsOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAdsOrganization2Request()
+            var request = new GetAdsOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -396,7 +396,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAdsOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -437,7 +437,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAdsOrganization2Response()
+                    var response = new GetAdsOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -461,9 +461,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoOrganization2Response> GetRepoOrganization2Async(string connectionId, string id, List<GetRepoOrganization2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<GetRepoOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetRepoOrganization2Request()
+            var request = new GetRepoOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -481,7 +481,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getRepoOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getRepoOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -522,7 +522,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetRepoOrganization2Response()
+                    var response = new GetRepoOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -546,7 +546,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingOrganizations2Response> ListAccountingOrganizations2Async(ListAccountingOrganizations2Request request)
+        public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization", request);
@@ -559,7 +559,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingOrganizations2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingOrganizations", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -600,7 +600,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingOrganization>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingOrganizations2Response()
+                    var response = new ListAccountingOrganizationsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -624,7 +624,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAdsOrganizations2Response> ListAdsOrganizations2Async(ListAdsOrganizations2Request request)
+        public async Task<ListAdsOrganizationsResponse> ListAdsOrganizationsAsync(ListAdsOrganizationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/organization", request);
@@ -637,7 +637,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsOrganizations2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAdsOrganizations", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -678,7 +678,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AdsOrganization>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAdsOrganizations2Response()
+                    var response = new ListAdsOrganizationsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -702,7 +702,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListRepoOrganizations2Response> ListRepoOrganizations2Async(ListRepoOrganizations2Request request)
+        public async Task<ListRepoOrganizationsResponse> ListRepoOrganizationsAsync(ListRepoOrganizationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization", request);
@@ -715,7 +715,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listRepoOrganizations2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listRepoOrganizations", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -756,7 +756,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<RepoOrganization>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListRepoOrganizations2Response()
+                    var response = new ListRepoOrganizationsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -780,7 +780,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAdsOrganization2Response> PatchAdsOrganization2Async(PatchAdsOrganization2Request request)
+        public async Task<PatchAdsOrganizationResponse> PatchAdsOrganizationAsync(PatchAdsOrganizationRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/organization/{id}", request);
@@ -799,7 +799,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAdsOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -840,7 +840,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAdsOrganization2Response()
+                    var response = new PatchAdsOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -864,7 +864,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoOrganization2Response> PatchRepoOrganization2Async(PatchRepoOrganization2Request request)
+        public async Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(PatchRepoOrganizationRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
@@ -883,7 +883,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchRepoOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchRepoOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -924,7 +924,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchRepoOrganization2Response()
+                    var response = new PatchRepoOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -948,9 +948,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAdsOrganization2Response> RemoveAdsOrganization2Async(string connectionId, string id)
+        public async Task<RemoveAdsOrganizationResponse> RemoveAdsOrganizationAsync(string connectionId, string id)
         {
-            var request = new RemoveAdsOrganization2Request()
+            var request = new RemoveAdsOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -966,7 +966,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAdsOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1004,7 +1004,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAdsOrganization2Response()
+                return new RemoveAdsOrganizationResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1021,7 +1021,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAdsOrganization2Response()
+                return new RemoveAdsOrganizationResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1030,9 +1030,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveRepoOrganization2Response> RemoveRepoOrganization2Async(string connectionId, string id)
+        public async Task<RemoveRepoOrganizationResponse> RemoveRepoOrganizationAsync(string connectionId, string id)
         {
-            var request = new RemoveRepoOrganization2Request()
+            var request = new RemoveRepoOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1048,7 +1048,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeRepoOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeRepoOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1086,7 +1086,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveRepoOrganization2Response()
+                return new RemoveRepoOrganizationResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1103,7 +1103,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveRepoOrganization2Response()
+                return new RemoveRepoOrganizationResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1112,7 +1112,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAdsOrganization2Response> UpdateAdsOrganization2Async(UpdateAdsOrganization2Request request)
+        public async Task<UpdateAdsOrganizationResponse> UpdateAdsOrganizationAsync(UpdateAdsOrganizationRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ads/{connection_id}/organization/{id}", request);
@@ -1131,7 +1131,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAdsOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1172,7 +1172,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AdsOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAdsOrganization2Response()
+                    var response = new UpdateAdsOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1196,7 +1196,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateRepoOrganization2Response> UpdateRepoOrganization2Async(UpdateRepoOrganization2Request request)
+        public async Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(UpdateRepoOrganizationRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
@@ -1215,7 +1215,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateRepoOrganization2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateRepoOrganization", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1256,7 +1256,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<RepoOrganization>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateRepoOrganization2Response()
+                    var response = new UpdateRepoOrganizationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

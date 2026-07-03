@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateShippingLabel2](#createshippinglabel2) - Create a label
-* [GetShippingLabel2](#getshippinglabel2) - Retrieve a label
-* [ListShippingLabels2](#listshippinglabels2) - List all labels
-* [PatchShippingLabel2](#patchshippinglabel2) - Update a label
-* [RemoveShippingLabel2](#removeshippinglabel2) - Remove a label
-* [UpdateShippingLabel2](#updateshippinglabel2) - Update a label
+* [CreateShippingLabel](#createshippinglabel) - Create a label
+* [GetShippingLabel](#getshippinglabel) - Retrieve a label
+* [ListShippingLabels](#listshippinglabels) - List all labels
+* [PatchShippingLabel](#patchshippinglabel) - Update a label
+* [RemoveShippingLabel](#removeshippinglabel) - Remove a label
+* [UpdateShippingLabel](#updateshippinglabel) - Update a label
 
-## CreateShippingLabel2
+## CreateShippingLabel
 
 Create a label
 
@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Label.CreateShippingLabel2Async(
+var res = await sdk.Label.CreateShippingLabelAsync(
     shippingLabel: new ShippingLabel() {},
     connectionId: "<id>"
 );
@@ -40,12 +40,12 @@ var res = await sdk.Label.CreateShippingLabel2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ShippingLabel`                                                                                                                                  | [ShippingLabel](../../Models/Components/ShippingLabel.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateShippingLabel2QueryParamFields](../../Models/Requests/CreateShippingLabel2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateShippingLabelQueryParamFields](../../Models/Requests/CreateShippingLabelQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateShippingLabel2Response](../../Models/Requests/CreateShippingLabel2Response.md)**
+**[CreateShippingLabelResponse](../../Models/Requests/CreateShippingLabelResponse.md)**
 
 ### Errors
 
@@ -53,7 +53,7 @@ var res = await sdk.Label.CreateShippingLabel2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetShippingLabel2
+## GetShippingLabel
 
 Retrieve a label
 
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Label.GetShippingLabel2Async(
+var res = await sdk.Label.GetShippingLabelAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -81,12 +81,12 @@ var res = await sdk.Label.GetShippingLabel2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Label                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetShippingLabel2QueryParamFields](../../Models/Requests/GetShippingLabel2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetShippingLabelQueryParamFields](../../Models/Requests/GetShippingLabelQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetShippingLabel2Response](../../Models/Requests/GetShippingLabel2Response.md)**
+**[GetShippingLabelResponse](../../Models/Requests/GetShippingLabelResponse.md)**
 
 ### Errors
 
@@ -94,7 +94,7 @@ var res = await sdk.Label.GetShippingLabel2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListShippingLabels2
+## ListShippingLabels
 
 List all labels
 
@@ -109,24 +109,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListShippingLabels2Request req = new ListShippingLabels2Request() {
+ListShippingLabelsRequest req = new ListShippingLabelsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Label.ListShippingLabels2Async(req);
+var res = await sdk.Label.ListShippingLabelsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListShippingLabels2Request](../../Models/Requests/ListShippingLabels2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListShippingLabelsRequest](../../Models/Requests/ListShippingLabelsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListShippingLabels2Response](../../Models/Requests/ListShippingLabels2Response.md)**
+**[ListShippingLabelsResponse](../../Models/Requests/ListShippingLabelsResponse.md)**
 
 ### Errors
 
@@ -134,7 +134,7 @@ var res = await sdk.Label.ListShippingLabels2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchShippingLabel2
+## PatchShippingLabel
 
 Update a label
 
@@ -149,26 +149,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchShippingLabel2Request req = new PatchShippingLabel2Request() {
+PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Label.PatchShippingLabel2Async(req);
+var res = await sdk.Label.PatchShippingLabelAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchShippingLabel2Request](../../Models/Requests/PatchShippingLabel2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchShippingLabelRequest](../../Models/Requests/PatchShippingLabelRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchShippingLabel2Response](../../Models/Requests/PatchShippingLabel2Response.md)**
+**[PatchShippingLabelResponse](../../Models/Requests/PatchShippingLabelResponse.md)**
 
 ### Errors
 
@@ -176,7 +176,7 @@ var res = await sdk.Label.PatchShippingLabel2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveShippingLabel2
+## RemoveShippingLabel
 
 Remove a label
 
@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Label.RemoveShippingLabel2Async(
+var res = await sdk.Label.RemoveShippingLabelAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -207,7 +207,7 @@ var res = await sdk.Label.RemoveShippingLabel2Async(
 
 ### Response
 
-**[RemoveShippingLabel2Response](../../Models/Requests/RemoveShippingLabel2Response.md)**
+**[RemoveShippingLabelResponse](../../Models/Requests/RemoveShippingLabelResponse.md)**
 
 ### Errors
 
@@ -215,7 +215,7 @@ var res = await sdk.Label.RemoveShippingLabel2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateShippingLabel2
+## UpdateShippingLabel
 
 Update a label
 
@@ -230,26 +230,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateShippingLabel2Request req = new UpdateShippingLabel2Request() {
+UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Label.UpdateShippingLabel2Async(req);
+var res = await sdk.Label.UpdateShippingLabelAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateShippingLabel2Request](../../Models/Requests/UpdateShippingLabel2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateShippingLabelRequest](../../Models/Requests/UpdateShippingLabelRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateShippingLabel2Response](../../Models/Requests/UpdateShippingLabel2Response.md)**
+**[UpdateShippingLabelResponse](../../Models/Requests/UpdateShippingLabelResponse.md)**
 
 ### Errors
 

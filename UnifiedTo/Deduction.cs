@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deduction
         /// </summary>
-        Task<CreateHrisDeduction2Response> CreateHrisDeduction2Async(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeduction2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeductionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a deduction
         /// </summary>
-        Task<GetHrisDeduction2Response> GetHrisDeduction2Async(string connectionId, string id, List<GetHrisDeduction2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<GetHrisDeductionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all deductions
         /// </summary>
-        Task<ListHrisDeductions2Response> ListHrisDeductions2Async(ListHrisDeductions2Request request);
+        Task<ListHrisDeductionsResponse> ListHrisDeductionsAsync(ListHrisDeductionsRequest request);
 
         /// <summary>
         /// Update a deduction
         /// </summary>
-        Task<PatchHrisDeduction2Response> PatchHrisDeduction2Async(PatchHrisDeduction2Request request);
+        Task<PatchHrisDeductionResponse> PatchHrisDeductionAsync(PatchHrisDeductionRequest request);
 
         /// <summary>
         /// Remove a deduction
         /// </summary>
-        Task<RemoveHrisDeduction2Response> RemoveHrisDeduction2Async(string connectionId, string id);
+        Task<RemoveHrisDeductionResponse> RemoveHrisDeductionAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a deduction
         /// </summary>
-        Task<UpdateHrisDeduction2Response> UpdateHrisDeduction2Async(UpdateHrisDeduction2Request request);
+        Task<UpdateHrisDeductionResponse> UpdateHrisDeductionAsync(UpdateHrisDeductionRequest request);
     }
 
     public class Deduction: IDeduction
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisDeduction2Response> CreateHrisDeduction2Async(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeduction2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeductionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateHrisDeduction2Request()
+            var request = new CreateHrisDeductionRequest()
             {
                 HrisDeduction = hrisDeduction,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateHrisDeduction2Response()
+                    var response = new CreateHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisDeduction2Response> GetHrisDeduction2Async(string connectionId, string id, List<GetHrisDeduction2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<GetHrisDeductionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetHrisDeduction2Request()
+            var request = new GetHrisDeductionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetHrisDeduction2Response()
+                    var response = new GetHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListHrisDeductions2Response> ListHrisDeductions2Async(ListHrisDeductions2Request request)
+        public async Task<ListHrisDeductionsResponse> ListHrisDeductionsAsync(ListHrisDeductionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/deduction", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDeductions2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listHrisDeductions", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisDeduction>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListHrisDeductions2Response()
+                    var response = new ListHrisDeductionsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisDeduction2Response> PatchHrisDeduction2Async(PatchHrisDeduction2Request request)
+        public async Task<PatchHrisDeductionResponse> PatchHrisDeductionAsync(PatchHrisDeductionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/deduction/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchHrisDeduction2Response()
+                    var response = new PatchHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveHrisDeduction2Response> RemoveHrisDeduction2Async(string connectionId, string id)
+        public async Task<RemoveHrisDeductionResponse> RemoveHrisDeductionAsync(string connectionId, string id)
         {
-            var request = new RemoveHrisDeduction2Request()
+            var request = new RemoveHrisDeductionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveHrisDeduction2Response()
+                return new RemoveHrisDeductionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveHrisDeduction2Response()
+                return new RemoveHrisDeductionResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisDeduction2Response> UpdateHrisDeduction2Async(UpdateHrisDeduction2Request request)
+        public async Task<UpdateHrisDeductionResponse> UpdateHrisDeductionAsync(UpdateHrisDeductionRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/deduction/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDeduction2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateHrisDeduction", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<HrisDeduction>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateHrisDeduction2Response()
+                    var response = new UpdateHrisDeductionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

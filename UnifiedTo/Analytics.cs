@@ -28,99 +28,99 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateAnalyticsEvent2Response> CreateAnalyticsEvent2Async(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAnalyticsEventResponse> CreateAnalyticsEventAsync(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a property
         /// </summary>
-        Task<CreateAnalyticsProperty2Response> CreateAnalyticsProperty2Async(AnalyticsProperty analyticsProperty, string connectionId, List<CreateAnalyticsProperty2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAnalyticsPropertyResponse> CreateAnalyticsPropertyAsync(AnalyticsProperty analyticsProperty, string connectionId, List<CreateAnalyticsPropertyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a visitor
         /// </summary>
-        Task<CreateAnalyticsVisitor2Response> CreateAnalyticsVisitor2Async(AnalyticsVisitor analyticsVisitor, string connectionId, List<CreateAnalyticsVisitor2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAnalyticsVisitorResponse> CreateAnalyticsVisitorAsync(AnalyticsVisitor analyticsVisitor, string connectionId, List<CreateAnalyticsVisitorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetAnalyticsEvent2Response> GetAnalyticsEvent2Async(string connectionId, string id, List<GetAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAnalyticsEventResponse> GetAnalyticsEventAsync(string connectionId, string id, List<GetAnalyticsEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a property
         /// </summary>
-        Task<GetAnalyticsProperty2Response> GetAnalyticsProperty2Async(string connectionId, string id, List<GetAnalyticsProperty2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAnalyticsPropertyResponse> GetAnalyticsPropertyAsync(string connectionId, string id, List<GetAnalyticsPropertyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a session
         /// </summary>
-        Task<GetAnalyticsSession2Response> GetAnalyticsSession2Async(string connectionId, string id, List<GetAnalyticsSession2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAnalyticsSessionResponse> GetAnalyticsSessionAsync(string connectionId, string id, List<GetAnalyticsSessionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a visitor
         /// </summary>
-        Task<GetAnalyticsVisitor2Response> GetAnalyticsVisitor2Async(string connectionId, string id, List<GetAnalyticsVisitor2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAnalyticsVisitorResponse> GetAnalyticsVisitorAsync(string connectionId, string id, List<GetAnalyticsVisitorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all events
         /// </summary>
-        Task<ListAnalyticsEvents2Response> ListAnalyticsEvents2Async(ListAnalyticsEvents2Request request);
+        Task<ListAnalyticsEventsResponse> ListAnalyticsEventsAsync(ListAnalyticsEventsRequest request);
 
         /// <summary>
         /// List all properties
         /// </summary>
-        Task<ListAnalyticsProperties2Response> ListAnalyticsProperties2Async(ListAnalyticsProperties2Request request);
+        Task<ListAnalyticsPropertiesResponse> ListAnalyticsPropertiesAsync(ListAnalyticsPropertiesRequest request);
 
         /// <summary>
         /// List all reports
         /// </summary>
-        Task<ListAnalyticsReports2Response> ListAnalyticsReports2Async(ListAnalyticsReports2Request request);
+        Task<ListAnalyticsReportsResponse> ListAnalyticsReportsAsync(ListAnalyticsReportsRequest request);
 
         /// <summary>
         /// List all sessions
         /// </summary>
-        Task<ListAnalyticsSessions2Response> ListAnalyticsSessions2Async(ListAnalyticsSessions2Request request);
+        Task<ListAnalyticsSessionsResponse> ListAnalyticsSessionsAsync(ListAnalyticsSessionsRequest request);
 
         /// <summary>
         /// List all visitors
         /// </summary>
-        Task<ListAnalyticsVisitors2Response> ListAnalyticsVisitors2Async(ListAnalyticsVisitors2Request request);
+        Task<ListAnalyticsVisitorsResponse> ListAnalyticsVisitorsAsync(ListAnalyticsVisitorsRequest request);
 
         /// <summary>
         /// Update a property
         /// </summary>
-        Task<PatchAnalyticsProperty2Response> PatchAnalyticsProperty2Async(PatchAnalyticsProperty2Request request);
+        Task<PatchAnalyticsPropertyResponse> PatchAnalyticsPropertyAsync(PatchAnalyticsPropertyRequest request);
 
         /// <summary>
         /// Update a visitor
         /// </summary>
-        Task<PatchAnalyticsVisitor2Response> PatchAnalyticsVisitor2Async(PatchAnalyticsVisitor2Request request);
+        Task<PatchAnalyticsVisitorResponse> PatchAnalyticsVisitorAsync(PatchAnalyticsVisitorRequest request);
 
         /// <summary>
         /// Remove a property
         /// </summary>
-        Task<RemoveAnalyticsProperty2Response> RemoveAnalyticsProperty2Async(string connectionId, string id);
+        Task<RemoveAnalyticsPropertyResponse> RemoveAnalyticsPropertyAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a visitor
         /// </summary>
-        Task<RemoveAnalyticsVisitor2Response> RemoveAnalyticsVisitor2Async(string connectionId, string id);
+        Task<RemoveAnalyticsVisitorResponse> RemoveAnalyticsVisitorAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a property
         /// </summary>
-        Task<UpdateAnalyticsProperty2Response> UpdateAnalyticsProperty2Async(UpdateAnalyticsProperty2Request request);
+        Task<UpdateAnalyticsPropertyResponse> UpdateAnalyticsPropertyAsync(UpdateAnalyticsPropertyRequest request);
 
         /// <summary>
         /// Update a visitor
         /// </summary>
-        Task<UpdateAnalyticsVisitor2Response> UpdateAnalyticsVisitor2Async(UpdateAnalyticsVisitor2Request request);
+        Task<UpdateAnalyticsVisitorResponse> UpdateAnalyticsVisitorAsync(UpdateAnalyticsVisitorRequest request);
     }
 
     public class Analytics: IAnalytics
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -129,9 +129,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAnalyticsEvent2Response> CreateAnalyticsEvent2Async(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAnalyticsEventResponse> CreateAnalyticsEventAsync(AnalyticsEvent analyticsEvent, string connectionId, List<CreateAnalyticsEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAnalyticsEvent2Request()
+            var request = new CreateAnalyticsEventRequest()
             {
                 AnalyticsEvent = analyticsEvent,
                 ConnectionId = connectionId,
@@ -155,7 +155,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -196,7 +196,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAnalyticsEvent2Response()
+                    var response = new CreateAnalyticsEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -220,9 +220,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAnalyticsProperty2Response> CreateAnalyticsProperty2Async(AnalyticsProperty analyticsProperty, string connectionId, List<CreateAnalyticsProperty2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAnalyticsPropertyResponse> CreateAnalyticsPropertyAsync(AnalyticsProperty analyticsProperty, string connectionId, List<CreateAnalyticsPropertyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAnalyticsProperty2Request()
+            var request = new CreateAnalyticsPropertyRequest()
             {
                 AnalyticsProperty = analyticsProperty,
                 ConnectionId = connectionId,
@@ -246,7 +246,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsProperty2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsProperty", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -287,7 +287,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsProperty>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAnalyticsProperty2Response()
+                    var response = new CreateAnalyticsPropertyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -311,9 +311,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAnalyticsVisitor2Response> CreateAnalyticsVisitor2Async(AnalyticsVisitor analyticsVisitor, string connectionId, List<CreateAnalyticsVisitor2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAnalyticsVisitorResponse> CreateAnalyticsVisitorAsync(AnalyticsVisitor analyticsVisitor, string connectionId, List<CreateAnalyticsVisitorQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAnalyticsVisitor2Request()
+            var request = new CreateAnalyticsVisitorRequest()
             {
                 AnalyticsVisitor = analyticsVisitor,
                 ConnectionId = connectionId,
@@ -337,7 +337,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsVisitor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAnalyticsVisitor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -378,7 +378,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsVisitor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAnalyticsVisitor2Response()
+                    var response = new CreateAnalyticsVisitorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -402,9 +402,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAnalyticsEvent2Response> GetAnalyticsEvent2Async(string connectionId, string id, List<GetAnalyticsEvent2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAnalyticsEventResponse> GetAnalyticsEventAsync(string connectionId, string id, List<GetAnalyticsEventQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAnalyticsEvent2Request()
+            var request = new GetAnalyticsEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -422,7 +422,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsEvent2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsEvent", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsEvent>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAnalyticsEvent2Response()
+                    var response = new GetAnalyticsEventResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -487,9 +487,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAnalyticsProperty2Response> GetAnalyticsProperty2Async(string connectionId, string id, List<GetAnalyticsProperty2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAnalyticsPropertyResponse> GetAnalyticsPropertyAsync(string connectionId, string id, List<GetAnalyticsPropertyQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAnalyticsProperty2Request()
+            var request = new GetAnalyticsPropertyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -507,7 +507,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsProperty2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsProperty", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -548,7 +548,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsProperty>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAnalyticsProperty2Response()
+                    var response = new GetAnalyticsPropertyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -572,9 +572,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAnalyticsSession2Response> GetAnalyticsSession2Async(string connectionId, string id, List<GetAnalyticsSession2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAnalyticsSessionResponse> GetAnalyticsSessionAsync(string connectionId, string id, List<GetAnalyticsSessionQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAnalyticsSession2Request()
+            var request = new GetAnalyticsSessionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -592,7 +592,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsSession2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsSession", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -633,7 +633,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsSession>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAnalyticsSession2Response()
+                    var response = new GetAnalyticsSessionResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -657,9 +657,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAnalyticsVisitor2Response> GetAnalyticsVisitor2Async(string connectionId, string id, List<GetAnalyticsVisitor2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAnalyticsVisitorResponse> GetAnalyticsVisitorAsync(string connectionId, string id, List<GetAnalyticsVisitorQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAnalyticsVisitor2Request()
+            var request = new GetAnalyticsVisitorRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -677,7 +677,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsVisitor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAnalyticsVisitor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -718,7 +718,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsVisitor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAnalyticsVisitor2Response()
+                    var response = new GetAnalyticsVisitorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -742,7 +742,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAnalyticsEvents2Response> ListAnalyticsEvents2Async(ListAnalyticsEvents2Request request)
+        public async Task<ListAnalyticsEventsResponse> ListAnalyticsEventsAsync(ListAnalyticsEventsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/event", request);
@@ -755,7 +755,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsEvents2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsEvents", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -796,7 +796,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsEvent>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAnalyticsEvents2Response()
+                    var response = new ListAnalyticsEventsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -820,7 +820,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAnalyticsProperties2Response> ListAnalyticsProperties2Async(ListAnalyticsProperties2Request request)
+        public async Task<ListAnalyticsPropertiesResponse> ListAnalyticsPropertiesAsync(ListAnalyticsPropertiesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/property", request);
@@ -833,7 +833,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsProperties2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsProperties", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -874,7 +874,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsProperty>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAnalyticsProperties2Response()
+                    var response = new ListAnalyticsPropertiesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -898,7 +898,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAnalyticsReports2Response> ListAnalyticsReports2Async(ListAnalyticsReports2Request request)
+        public async Task<ListAnalyticsReportsResponse> ListAnalyticsReportsAsync(ListAnalyticsReportsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/report", request);
@@ -911,7 +911,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsReports2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsReports", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -952,7 +952,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsReport>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAnalyticsReports2Response()
+                    var response = new ListAnalyticsReportsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -976,7 +976,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAnalyticsSessions2Response> ListAnalyticsSessions2Async(ListAnalyticsSessions2Request request)
+        public async Task<ListAnalyticsSessionsResponse> ListAnalyticsSessionsAsync(ListAnalyticsSessionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/session", request);
@@ -989,7 +989,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsSessions2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsSessions", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1030,7 +1030,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsSession>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAnalyticsSessions2Response()
+                    var response = new ListAnalyticsSessionsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1054,7 +1054,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAnalyticsVisitors2Response> ListAnalyticsVisitors2Async(ListAnalyticsVisitors2Request request)
+        public async Task<ListAnalyticsVisitorsResponse> ListAnalyticsVisitorsAsync(ListAnalyticsVisitorsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/visitor", request);
@@ -1067,7 +1067,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsVisitors2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAnalyticsVisitors", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1108,7 +1108,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AnalyticsVisitor>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAnalyticsVisitors2Response()
+                    var response = new ListAnalyticsVisitorsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1132,7 +1132,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAnalyticsProperty2Response> PatchAnalyticsProperty2Async(PatchAnalyticsProperty2Request request)
+        public async Task<PatchAnalyticsPropertyResponse> PatchAnalyticsPropertyAsync(PatchAnalyticsPropertyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/property/{id}", request);
@@ -1151,7 +1151,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAnalyticsProperty2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAnalyticsProperty", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1192,7 +1192,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsProperty>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAnalyticsProperty2Response()
+                    var response = new PatchAnalyticsPropertyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1216,7 +1216,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAnalyticsVisitor2Response> PatchAnalyticsVisitor2Async(PatchAnalyticsVisitor2Request request)
+        public async Task<PatchAnalyticsVisitorResponse> PatchAnalyticsVisitorAsync(PatchAnalyticsVisitorRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/visitor/{id}", request);
@@ -1235,7 +1235,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAnalyticsVisitor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAnalyticsVisitor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1276,7 +1276,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsVisitor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAnalyticsVisitor2Response()
+                    var response = new PatchAnalyticsVisitorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1300,9 +1300,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAnalyticsProperty2Response> RemoveAnalyticsProperty2Async(string connectionId, string id)
+        public async Task<RemoveAnalyticsPropertyResponse> RemoveAnalyticsPropertyAsync(string connectionId, string id)
         {
-            var request = new RemoveAnalyticsProperty2Request()
+            var request = new RemoveAnalyticsPropertyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1318,7 +1318,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAnalyticsProperty2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAnalyticsProperty", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1356,7 +1356,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAnalyticsProperty2Response()
+                return new RemoveAnalyticsPropertyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1373,7 +1373,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAnalyticsProperty2Response()
+                return new RemoveAnalyticsPropertyResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1382,9 +1382,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemoveAnalyticsVisitor2Response> RemoveAnalyticsVisitor2Async(string connectionId, string id)
+        public async Task<RemoveAnalyticsVisitorResponse> RemoveAnalyticsVisitorAsync(string connectionId, string id)
         {
-            var request = new RemoveAnalyticsVisitor2Request()
+            var request = new RemoveAnalyticsVisitorRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -1400,7 +1400,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAnalyticsVisitor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAnalyticsVisitor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1438,7 +1438,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAnalyticsVisitor2Response()
+                return new RemoveAnalyticsVisitorResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1455,7 +1455,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAnalyticsVisitor2Response()
+                return new RemoveAnalyticsVisitorResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -1464,7 +1464,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAnalyticsProperty2Response> UpdateAnalyticsProperty2Async(UpdateAnalyticsProperty2Request request)
+        public async Task<UpdateAnalyticsPropertyResponse> UpdateAnalyticsPropertyAsync(UpdateAnalyticsPropertyRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/property/{id}", request);
@@ -1483,7 +1483,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAnalyticsProperty2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAnalyticsProperty", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1524,7 +1524,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsProperty>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAnalyticsProperty2Response()
+                    var response = new UpdateAnalyticsPropertyResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1548,7 +1548,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAnalyticsVisitor2Response> UpdateAnalyticsVisitor2Async(UpdateAnalyticsVisitor2Request request)
+        public async Task<UpdateAnalyticsVisitorResponse> UpdateAnalyticsVisitorAsync(UpdateAnalyticsVisitorRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/analytics/{connection_id}/visitor/{id}", request);
@@ -1567,7 +1567,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAnalyticsVisitor2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAnalyticsVisitor", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1608,7 +1608,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AnalyticsVisitor>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAnalyticsVisitor2Response()
+                    var response = new UpdateAnalyticsVisitorResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

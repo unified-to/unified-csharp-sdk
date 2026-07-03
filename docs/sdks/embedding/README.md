@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [CreateGenaiEmbedding2](#creategenaiembedding2) - Create an embedding
+* [CreateGenaiEmbedding](#creategenaiembedding) - Create an embedding
 
-## CreateGenaiEmbedding2
+## CreateGenaiEmbedding
 
 Create an embedding
 
@@ -21,7 +21,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Embedding.CreateGenaiEmbedding2Async(
+var res = await sdk.Embedding.CreateGenaiEmbeddingAsync(
     genaiEmbedding: new GenaiEmbedding() {},
     connectionId: "<id>"
 );
@@ -35,12 +35,12 @@ var res = await sdk.Embedding.CreateGenaiEmbedding2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `GenaiEmbedding`                                                                                                                                 | [GenaiEmbedding](../../Models/Components/GenaiEmbedding.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateGenaiEmbedding2QueryParamFields](../../Models/Requests/CreateGenaiEmbedding2QueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateGenaiEmbeddingQueryParamFields](../../Models/Requests/CreateGenaiEmbeddingQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateGenaiEmbedding2Response](../../Models/Requests/CreateGenaiEmbedding2Response.md)**
+**[CreateGenaiEmbeddingResponse](../../Models/Requests/CreateGenaiEmbeddingResponse.md)**
 
 ### Errors
 

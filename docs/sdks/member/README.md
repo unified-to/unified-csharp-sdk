@@ -5,16 +5,16 @@
 
 ### Available Operations
 
-* [CreateMartechMember2](#createmartechmember2) - Create a member
-* [GetClubsMember2](#getclubsmember2) - Retrieve a member
-* [GetMartechMember2](#getmartechmember2) - Retrieve a member
-* [ListClubsMembers2](#listclubsmembers2) - List all members
-* [ListMartechMembers2](#listmartechmembers2) - List all members
-* [PatchMartechMember2](#patchmartechmember2) - Update a member
-* [RemoveMartechMember2](#removemartechmember2) - Remove a member
-* [UpdateMartechMember2](#updatemartechmember2) - Update a member
+* [CreateMartechMember](#createmartechmember) - Create a member
+* [GetClubsMember](#getclubsmember) - Retrieve a member
+* [GetMartechMember](#getmartechmember) - Retrieve a member
+* [ListClubsMembers](#listclubsmembers) - List all members
+* [ListMartechMembers](#listmartechmembers) - List all members
+* [PatchMartechMember](#patchmartechmember) - Update a member
+* [RemoveMartechMember](#removemartechmember) - Remove a member
+* [UpdateMartechMember](#updatemartechmember) - Update a member
 
-## CreateMartechMember2
+## CreateMartechMember
 
 Create a member
 
@@ -28,7 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Member.CreateMartechMember2Async(
+var res = await sdk.Member.CreateMartechMemberAsync(
     marketingMember: new MarketingMember() {},
     connectionId: "<id>"
 );
@@ -42,12 +42,12 @@ var res = await sdk.Member.CreateMartechMember2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `MarketingMember`                                                                                                                                | [MarketingMember](../../Models/Components/MarketingMember.md)                                                                                    | :heavy_check_mark:                                                                                                                               | A member represents a person                                                                                                                     |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateMartechMember2QueryParamFields](../../Models/Requests/CreateMartechMember2QueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateMartechMemberQueryParamFields](../../Models/Requests/CreateMartechMemberQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateMartechMember2Response](../../Models/Requests/CreateMartechMember2Response.md)**
+**[CreateMartechMemberResponse](../../Models/Requests/CreateMartechMemberResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Member.CreateMartechMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsMember2
+## GetClubsMember
 
 Retrieve a member
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Member.GetClubsMember2Async(
+var res = await sdk.Member.GetClubsMemberAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Member.GetClubsMember2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Member                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetClubsMember2QueryParamFields](../../Models/Requests/GetClubsMember2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsMemberQueryParamFields](../../Models/Requests/GetClubsMemberQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsMember2Response](../../Models/Requests/GetClubsMember2Response.md)**
+**[GetClubsMemberResponse](../../Models/Requests/GetClubsMemberResponse.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Member.GetClubsMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetMartechMember2
+## GetMartechMember
 
 Retrieve a member
 
@@ -110,7 +110,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Member.GetMartechMember2Async(
+var res = await sdk.Member.GetMartechMemberAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -124,12 +124,12 @@ var res = await sdk.Member.GetMartechMember2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Member                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetMartechMember2QueryParamFields](../../Models/Requests/GetMartechMember2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetMartechMemberQueryParamFields](../../Models/Requests/GetMartechMemberQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetMartechMember2Response](../../Models/Requests/GetMartechMember2Response.md)**
+**[GetMartechMemberResponse](../../Models/Requests/GetMartechMemberResponse.md)**
 
 ### Errors
 
@@ -137,7 +137,7 @@ var res = await sdk.Member.GetMartechMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsMembers2
+## ListClubsMembers
 
 List all members
 
@@ -152,24 +152,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsMembers2Request req = new ListClubsMembers2Request() {
+ListClubsMembersRequest req = new ListClubsMembersRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Member.ListClubsMembers2Async(req);
+var res = await sdk.Member.ListClubsMembersAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListClubsMembers2Request](../../Models/Requests/ListClubsMembers2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListClubsMembersRequest](../../Models/Requests/ListClubsMembersRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListClubsMembers2Response](../../Models/Requests/ListClubsMembers2Response.md)**
+**[ListClubsMembersResponse](../../Models/Requests/ListClubsMembersResponse.md)**
 
 ### Errors
 
@@ -177,7 +177,7 @@ var res = await sdk.Member.ListClubsMembers2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListMartechMembers2
+## ListMartechMembers
 
 List all members
 
@@ -192,24 +192,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListMartechMembers2Request req = new ListMartechMembers2Request() {
+ListMartechMembersRequest req = new ListMartechMembersRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Member.ListMartechMembers2Async(req);
+var res = await sdk.Member.ListMartechMembersAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListMartechMembers2Request](../../Models/Requests/ListMartechMembers2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListMartechMembersRequest](../../Models/Requests/ListMartechMembersRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListMartechMembers2Response](../../Models/Requests/ListMartechMembers2Response.md)**
+**[ListMartechMembersResponse](../../Models/Requests/ListMartechMembersResponse.md)**
 
 ### Errors
 
@@ -217,7 +217,7 @@ var res = await sdk.Member.ListMartechMembers2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchMartechMember2
+## PatchMartechMember
 
 Update a member
 
@@ -232,26 +232,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchMartechMember2Request req = new PatchMartechMember2Request() {
+PatchMartechMemberRequest req = new PatchMartechMemberRequest() {
     MarketingMember = new MarketingMember() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Member.PatchMartechMember2Async(req);
+var res = await sdk.Member.PatchMartechMemberAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [PatchMartechMember2Request](../../Models/Requests/PatchMartechMember2Request.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchMartechMemberRequest](../../Models/Requests/PatchMartechMemberRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[PatchMartechMember2Response](../../Models/Requests/PatchMartechMember2Response.md)**
+**[PatchMartechMemberResponse](../../Models/Requests/PatchMartechMemberResponse.md)**
 
 ### Errors
 
@@ -259,7 +259,7 @@ var res = await sdk.Member.PatchMartechMember2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveMartechMember2
+## RemoveMartechMember
 
 Remove a member
 
@@ -273,7 +273,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Member.RemoveMartechMember2Async(
+var res = await sdk.Member.RemoveMartechMemberAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -290,7 +290,7 @@ var res = await sdk.Member.RemoveMartechMember2Async(
 
 ### Response
 
-**[RemoveMartechMember2Response](../../Models/Requests/RemoveMartechMember2Response.md)**
+**[RemoveMartechMemberResponse](../../Models/Requests/RemoveMartechMemberResponse.md)**
 
 ### Errors
 
@@ -298,7 +298,7 @@ var res = await sdk.Member.RemoveMartechMember2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateMartechMember2
+## UpdateMartechMember
 
 Update a member
 
@@ -313,26 +313,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateMartechMember2Request req = new UpdateMartechMember2Request() {
+UpdateMartechMemberRequest req = new UpdateMartechMemberRequest() {
     MarketingMember = new MarketingMember() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Member.UpdateMartechMember2Async(req);
+var res = await sdk.Member.UpdateMartechMemberAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [UpdateMartechMember2Request](../../Models/Requests/UpdateMartechMember2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateMartechMemberRequest](../../Models/Requests/UpdateMartechMemberRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[UpdateMartechMember2Response](../../Models/Requests/UpdateMartechMember2Response.md)**
+**[UpdateMartechMemberResponse](../../Models/Requests/UpdateMartechMemberResponse.md)**
 
 ### Errors
 

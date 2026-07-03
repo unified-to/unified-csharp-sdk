@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pipeline
         /// </summary>
-        Task<CreateCrmPipeline2Response> CreateCrmPipeline2Async(CrmPipeline crmPipeline, string connectionId, List<CreateCrmPipeline2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<CreateCrmPipelineQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a pipeline
         /// </summary>
-        Task<GetCrmPipeline2Response> GetCrmPipeline2Async(string connectionId, string id, List<GetCrmPipeline2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<GetCrmPipelineQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all pipelines
         /// </summary>
-        Task<ListCrmPipelines2Response> ListCrmPipelines2Async(ListCrmPipelines2Request request);
+        Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesRequest request);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<PatchCrmPipeline2Response> PatchCrmPipeline2Async(PatchCrmPipeline2Request request);
+        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineRequest request);
 
         /// <summary>
         /// Remove a pipeline
         /// </summary>
-        Task<RemoveCrmPipeline2Response> RemoveCrmPipeline2Async(string connectionId, string id);
+        Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<UpdateCrmPipeline2Response> UpdateCrmPipeline2Async(UpdateCrmPipeline2Request request);
+        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineRequest request);
     }
 
     public class Pipeline: IPipeline
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmPipeline2Response> CreateCrmPipeline2Async(CrmPipeline crmPipeline, string connectionId, List<CreateCrmPipeline2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<CreateCrmPipelineQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateCrmPipeline2Request()
+            var request = new CreateCrmPipelineRequest()
             {
                 CrmPipeline = crmPipeline,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmPipeline2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createCrmPipeline", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCrmPipeline2Response()
+                    var response = new CreateCrmPipelineResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmPipeline2Response> GetCrmPipeline2Async(string connectionId, string id, List<GetCrmPipeline2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<GetCrmPipelineQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetCrmPipeline2Request()
+            var request = new GetCrmPipelineRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmPipeline2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getCrmPipeline", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCrmPipeline2Response()
+                    var response = new GetCrmPipelineResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCrmPipelines2Response> ListCrmPipelines2Async(ListCrmPipelines2Request request)
+        public async Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmPipelines2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listCrmPipelines", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<CrmPipeline>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCrmPipelines2Response()
+                    var response = new ListCrmPipelinesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmPipeline2Response> PatchCrmPipeline2Async(PatchCrmPipeline2Request request)
+        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmPipeline2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchCrmPipeline", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCrmPipeline2Response()
+                    var response = new PatchCrmPipelineResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCrmPipeline2Response> RemoveCrmPipeline2Async(string connectionId, string id)
+        public async Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(string connectionId, string id)
         {
-            var request = new RemoveCrmPipeline2Request()
+            var request = new RemoveCrmPipelineRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmPipeline2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeCrmPipeline", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCrmPipeline2Response()
+                return new RemoveCrmPipelineResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCrmPipeline2Response()
+                return new RemoveCrmPipelineResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmPipeline2Response> UpdateCrmPipeline2Async(UpdateCrmPipeline2Request request)
+        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmPipeline2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateCrmPipeline", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCrmPipeline2Response()
+                    var response = new UpdateCrmPipelineResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

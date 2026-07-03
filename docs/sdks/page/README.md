@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateKmsPage2](#createkmspage2) - Create a page
-* [GetKmsPage2](#getkmspage2) - Retrieve a page
-* [ListKmsPages2](#listkmspages2) - List all pages
-* [PatchKmsPage2](#patchkmspage2) - Update a page
-* [RemoveKmsPage2](#removekmspage2) - Remove a page
-* [UpdateKmsPage2](#updatekmspage2) - Update a page
+* [CreateKmsPage](#createkmspage) - Create a page
+* [GetKmsPage](#getkmspage) - Retrieve a page
+* [ListKmsPages](#listkmspages) - List all pages
+* [PatchKmsPage](#patchkmspage) - Update a page
+* [RemoveKmsPage](#removekmspage) - Remove a page
+* [UpdateKmsPage](#updatekmspage) - Update a page
 
-## CreateKmsPage2
+## CreateKmsPage
 
 Create a page
 
@@ -26,9 +26,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Page.CreateKmsPage2Async(
+var res = await sdk.Page.CreateKmsPageAsync(
     kmsPage: new KmsPage() {
-        Type = KmsPageType.Other,
+        Type = KmsPageType.Text,
     },
     connectionId: "<id>"
 );
@@ -42,12 +42,12 @@ var res = await sdk.Page.CreateKmsPage2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `KmsPage`                                                                                                                                        | [KmsPage](../../Models/Components/KmsPage.md)                                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateKmsPage2QueryParamFields](../../Models/Requests/CreateKmsPage2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateKmsPageQueryParamFields](../../Models/Requests/CreateKmsPageQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateKmsPage2Response](../../Models/Requests/CreateKmsPage2Response.md)**
+**[CreateKmsPageResponse](../../Models/Requests/CreateKmsPageResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Page.CreateKmsPage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetKmsPage2
+## GetKmsPage
 
 Retrieve a page
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Page.GetKmsPage2Async(
+var res = await sdk.Page.GetKmsPageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Page.GetKmsPage2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Page                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetKmsPage2QueryParamFields](../../Models/Requests/GetKmsPage2QueryParamFields.md)>                                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetKmsPageQueryParamFields](../../Models/Requests/GetKmsPageQueryParamFields.md)>                                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetKmsPage2Response](../../Models/Requests/GetKmsPage2Response.md)**
+**[GetKmsPageResponse](../../Models/Requests/GetKmsPageResponse.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Page.GetKmsPage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListKmsPages2
+## ListKmsPages
 
 List all pages
 
@@ -111,24 +111,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListKmsPages2Request req = new ListKmsPages2Request() {
+ListKmsPagesRequest req = new ListKmsPagesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Page.ListKmsPages2Async(req);
+var res = await sdk.Page.ListKmsPagesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `request`                                                             | [ListKmsPages2Request](../../Models/Requests/ListKmsPages2Request.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListKmsPagesRequest](../../Models/Requests/ListKmsPagesRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
-**[ListKmsPages2Response](../../Models/Requests/ListKmsPages2Response.md)**
+**[ListKmsPagesResponse](../../Models/Requests/ListKmsPagesResponse.md)**
 
 ### Errors
 
@@ -136,7 +136,7 @@ var res = await sdk.Page.ListKmsPages2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchKmsPage2
+## PatchKmsPage
 
 Update a page
 
@@ -151,7 +151,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchKmsPage2Request req = new PatchKmsPage2Request() {
+PatchKmsPageRequest req = new PatchKmsPageRequest() {
     KmsPage = new KmsPage() {
         Type = KmsPageType.Other,
     },
@@ -159,20 +159,20 @@ PatchKmsPage2Request req = new PatchKmsPage2Request() {
     Id = "<id>",
 };
 
-var res = await sdk.Page.PatchKmsPage2Async(req);
+var res = await sdk.Page.PatchKmsPageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `request`                                                             | [PatchKmsPage2Request](../../Models/Requests/PatchKmsPage2Request.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [PatchKmsPageRequest](../../Models/Requests/PatchKmsPageRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
-**[PatchKmsPage2Response](../../Models/Requests/PatchKmsPage2Response.md)**
+**[PatchKmsPageResponse](../../Models/Requests/PatchKmsPageResponse.md)**
 
 ### Errors
 
@@ -180,7 +180,7 @@ var res = await sdk.Page.PatchKmsPage2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveKmsPage2
+## RemoveKmsPage
 
 Remove a page
 
@@ -194,7 +194,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Page.RemoveKmsPage2Async(
+var res = await sdk.Page.RemoveKmsPageAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -211,7 +211,7 @@ var res = await sdk.Page.RemoveKmsPage2Async(
 
 ### Response
 
-**[RemoveKmsPage2Response](../../Models/Requests/RemoveKmsPage2Response.md)**
+**[RemoveKmsPageResponse](../../Models/Requests/RemoveKmsPageResponse.md)**
 
 ### Errors
 
@@ -219,7 +219,7 @@ var res = await sdk.Page.RemoveKmsPage2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateKmsPage2
+## UpdateKmsPage
 
 Update a page
 
@@ -234,28 +234,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateKmsPage2Request req = new UpdateKmsPage2Request() {
+UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Type = KmsPageType.Markdown,
+        Type = KmsPageType.Other,
     },
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Page.UpdateKmsPage2Async(req);
+var res = await sdk.Page.UpdateKmsPageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| `request`                                                               | [UpdateKmsPage2Request](../../Models/Requests/UpdateKmsPage2Request.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [UpdateKmsPageRequest](../../Models/Requests/UpdateKmsPageRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
-**[UpdateKmsPage2Response](../../Models/Requests/UpdateKmsPage2Response.md)**
+**[UpdateKmsPageResponse](../../Models/Requests/UpdateKmsPageResponse.md)**
 
 ### Errors
 

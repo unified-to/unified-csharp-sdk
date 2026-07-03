@@ -28,49 +28,49 @@ namespace UnifiedTo
         /// <summary>
         /// Create an assessment package
         /// </summary>
-        Task<CreateAssessmentPackage2Response> CreateAssessmentPackage2Async(AssessmentPackage assessmentPackage, string connectionId);
+        Task<CreateAssessmentPackageResponse> CreateAssessmentPackageAsync(AssessmentPackage assessmentPackage, string connectionId);
 
         /// <summary>
         /// Get an assessment package
         /// </summary>
-        Task<GetAssessmentPackage2Response> GetAssessmentPackage2Async(string connectionId, string id);
+        Task<GetAssessmentPackageResponse> GetAssessmentPackageAsync(string connectionId, string id);
 
         /// <summary>
         /// List assessment packages
         /// </summary>
-        Task<ListAssessmentPackages2Response> ListAssessmentPackages2Async(string connectionId, double? limit = null, double? offset = null);
+        Task<ListAssessmentPackagesResponse> ListAssessmentPackagesAsync(string connectionId, double? limit = null, double? offset = null);
 
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<PatchAssessmentOrder2Response> PatchAssessmentOrder2Async(PatchAssessmentOrder2Request request);
+        Task<PatchAssessmentOrderResponse> PatchAssessmentOrderAsync(PatchAssessmentOrderRequest request);
 
         /// <summary>
         /// Update an assessment package
         /// </summary>
-        Task<PatchAssessmentPackage2Response> PatchAssessmentPackage2Async(AssessmentPackage assessmentPackage, string connectionId, string id);
+        Task<PatchAssessmentPackageResponse> PatchAssessmentPackageAsync(AssessmentPackage assessmentPackage, string connectionId, string id);
 
         /// <summary>
         /// Delete an assessment package
         /// </summary>
-        Task<RemoveAssessmentPackage2Response> RemoveAssessmentPackage2Async(string connectionId, string id);
+        Task<RemoveAssessmentPackageResponse> RemoveAssessmentPackageAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<UpdateAssessmentOrder2Response> UpdateAssessmentOrder2Async(UpdateAssessmentOrder2Request request);
+        Task<UpdateAssessmentOrderResponse> UpdateAssessmentOrderAsync(UpdateAssessmentOrderRequest request);
 
         /// <summary>
         /// Update an assessment package
         /// </summary>
-        Task<UpdateAssessmentPackage2Response> UpdateAssessmentPackage2Async(AssessmentPackage assessmentPackage, string connectionId, string id);
+        Task<UpdateAssessmentPackageResponse> UpdateAssessmentPackageAsync(AssessmentPackage assessmentPackage, string connectionId, string id);
     }
 
     public class Assessment: IAssessment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,9 +79,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAssessmentPackage2Response> CreateAssessmentPackage2Async(AssessmentPackage assessmentPackage, string connectionId)
+        public async Task<CreateAssessmentPackageResponse> CreateAssessmentPackageAsync(AssessmentPackage assessmentPackage, string connectionId)
         {
-            var request = new CreateAssessmentPackage2Request()
+            var request = new CreateAssessmentPackageRequest()
             {
                 AssessmentPackage = assessmentPackage,
                 ConnectionId = connectionId,
@@ -103,7 +103,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAssessmentPackage2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAssessmentPackage", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -144,7 +144,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AssessmentPackage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAssessmentPackage2Response()
+                    var response = new CreateAssessmentPackageResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -168,9 +168,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAssessmentPackage2Response> GetAssessmentPackage2Async(string connectionId, string id)
+        public async Task<GetAssessmentPackageResponse> GetAssessmentPackageAsync(string connectionId, string id)
         {
-            var request = new GetAssessmentPackage2Request()
+            var request = new GetAssessmentPackageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -186,7 +186,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAssessmentPackage2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAssessmentPackage", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -227,7 +227,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AssessmentPackage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAssessmentPackage2Response()
+                    var response = new GetAssessmentPackageResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -251,9 +251,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAssessmentPackages2Response> ListAssessmentPackages2Async(string connectionId, double? limit = null, double? offset = null)
+        public async Task<ListAssessmentPackagesResponse> ListAssessmentPackagesAsync(string connectionId, double? limit = null, double? offset = null)
         {
-            var request = new ListAssessmentPackages2Request()
+            var request = new ListAssessmentPackagesRequest()
             {
                 ConnectionId = connectionId,
                 Limit = limit,
@@ -270,7 +270,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAssessmentPackages2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAssessmentPackages", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -311,7 +311,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AssessmentPackage>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAssessmentPackages2Response()
+                    var response = new ListAssessmentPackagesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -335,7 +335,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAssessmentOrder2Response> PatchAssessmentOrder2Async(PatchAssessmentOrder2Request request)
+        public async Task<PatchAssessmentOrderResponse> PatchAssessmentOrderAsync(PatchAssessmentOrderRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/assessment/{connection_id}/order/{id}", request);
@@ -354,7 +354,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAssessmentOrder2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAssessmentOrder", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -395,7 +395,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AssessmentOrder>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAssessmentOrder2Response()
+                    var response = new PatchAssessmentOrderResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -419,9 +419,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAssessmentPackage2Response> PatchAssessmentPackage2Async(AssessmentPackage assessmentPackage, string connectionId, string id)
+        public async Task<PatchAssessmentPackageResponse> PatchAssessmentPackageAsync(AssessmentPackage assessmentPackage, string connectionId, string id)
         {
-            var request = new PatchAssessmentPackage2Request()
+            var request = new PatchAssessmentPackageRequest()
             {
                 AssessmentPackage = assessmentPackage,
                 ConnectionId = connectionId,
@@ -444,7 +444,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAssessmentPackage2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAssessmentPackage", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -485,7 +485,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AssessmentPackage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAssessmentPackage2Response()
+                    var response = new PatchAssessmentPackageResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -509,9 +509,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAssessmentPackage2Response> RemoveAssessmentPackage2Async(string connectionId, string id)
+        public async Task<RemoveAssessmentPackageResponse> RemoveAssessmentPackageAsync(string connectionId, string id)
         {
-            var request = new RemoveAssessmentPackage2Request()
+            var request = new RemoveAssessmentPackageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -527,7 +527,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAssessmentPackage2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAssessmentPackage", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -565,7 +565,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAssessmentPackage2Response()
+                return new RemoveAssessmentPackageResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -582,7 +582,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAssessmentPackage2Response()
+                return new RemoveAssessmentPackageResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -591,7 +591,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAssessmentOrder2Response> UpdateAssessmentOrder2Async(UpdateAssessmentOrder2Request request)
+        public async Task<UpdateAssessmentOrderResponse> UpdateAssessmentOrderAsync(UpdateAssessmentOrderRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/assessment/{connection_id}/order/{id}", request);
@@ -610,7 +610,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAssessmentOrder2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAssessmentOrder", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -651,7 +651,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AssessmentOrder>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAssessmentOrder2Response()
+                    var response = new UpdateAssessmentOrderResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -675,9 +675,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAssessmentPackage2Response> UpdateAssessmentPackage2Async(AssessmentPackage assessmentPackage, string connectionId, string id)
+        public async Task<UpdateAssessmentPackageResponse> UpdateAssessmentPackageAsync(AssessmentPackage assessmentPackage, string connectionId, string id)
         {
-            var request = new UpdateAssessmentPackage2Request()
+            var request = new UpdateAssessmentPackageRequest()
             {
                 AssessmentPackage = assessmentPackage,
                 ConnectionId = connectionId,
@@ -700,7 +700,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAssessmentPackage2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAssessmentPackage", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -741,7 +741,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AssessmentPackage>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAssessmentPackage2Response()
+                    var response = new UpdateAssessmentPackageResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

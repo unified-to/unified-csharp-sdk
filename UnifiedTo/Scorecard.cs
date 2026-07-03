@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecard2Response> CreateAtsScorecard2Async(AtsScorecard atsScorecard, string connectionId, List<CreateAtsScorecard2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<CreateAtsScorecardQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a scorecard
         /// </summary>
-        Task<GetAtsScorecard2Response> GetAtsScorecard2Async(string connectionId, string id, List<GetAtsScorecard2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<GetAtsScorecardQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all scorecards
         /// </summary>
-        Task<ListAtsScorecards2Response> ListAtsScorecards2Async(ListAtsScorecards2Request request);
+        Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsRequest request);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecard2Response> PatchAtsScorecard2Async(PatchAtsScorecard2Request request);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardRequest request);
 
         /// <summary>
         /// Remove a scorecard
         /// </summary>
-        Task<RemoveAtsScorecard2Response> RemoveAtsScorecard2Async(string connectionId, string id);
+        Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecard2Response> UpdateAtsScorecard2Async(UpdateAtsScorecard2Request request);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardRequest request);
     }
 
     public class Scorecard: IScorecard
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsScorecard2Response> CreateAtsScorecard2Async(AtsScorecard atsScorecard, string connectionId, List<CreateAtsScorecard2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<CreateAtsScorecardQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAtsScorecard2Request()
+            var request = new CreateAtsScorecardRequest()
             {
                 AtsScorecard = atsScorecard,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsScorecard2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAtsScorecard", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsScorecard>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAtsScorecard2Response()
+                    var response = new CreateAtsScorecardResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsScorecard2Response> GetAtsScorecard2Async(string connectionId, string id, List<GetAtsScorecard2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<GetAtsScorecardQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAtsScorecard2Request()
+            var request = new GetAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsScorecard2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAtsScorecard", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsScorecard>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAtsScorecard2Response()
+                    var response = new GetAtsScorecardResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAtsScorecards2Response> ListAtsScorecards2Async(ListAtsScorecards2Request request)
+        public async Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsScorecards2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAtsScorecards", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AtsScorecard>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAtsScorecards2Response()
+                    var response = new ListAtsScorecardsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsScorecard2Response> PatchAtsScorecard2Async(PatchAtsScorecard2Request request)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsScorecard2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAtsScorecard", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsScorecard>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAtsScorecard2Response()
+                    var response = new PatchAtsScorecardResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAtsScorecard2Response> RemoveAtsScorecard2Async(string connectionId, string id)
+        public async Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(string connectionId, string id)
         {
-            var request = new RemoveAtsScorecard2Request()
+            var request = new RemoveAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsScorecard2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAtsScorecard", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAtsScorecard2Response()
+                return new RemoveAtsScorecardResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAtsScorecard2Response()
+                return new RemoveAtsScorecardResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsScorecard2Response> UpdateAtsScorecard2Async(UpdateAtsScorecard2Request request)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsScorecard2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAtsScorecard", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AtsScorecard>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAtsScorecard2Response()
+                    var response = new UpdateAtsScorecardResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

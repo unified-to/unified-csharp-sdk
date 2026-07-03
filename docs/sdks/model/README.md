@@ -5,10 +5,10 @@
 
 ### Available Operations
 
-* [GetGenaiModel2](#getgenaimodel2) - Retrieve a model
-* [ListGenaiModels2](#listgenaimodels2) - List all models
+* [GetGenaiModel](#getgenaimodel) - Retrieve a model
+* [ListGenaiModels](#listgenaimodels) - List all models
 
-## GetGenaiModel2
+## GetGenaiModel
 
 Retrieve a model
 
@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Model.GetGenaiModel2Async(
+var res = await sdk.Model.GetGenaiModelAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -36,12 +36,12 @@ var res = await sdk.Model.GetGenaiModel2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Model                                                                                                                                  |
-| `Fields`                                                                                                                                         | List<[GetGenaiModel2QueryParamFields](../../Models/Requests/GetGenaiModel2QueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetGenaiModelQueryParamFields](../../Models/Requests/GetGenaiModelQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetGenaiModel2Response](../../Models/Requests/GetGenaiModel2Response.md)**
+**[GetGenaiModelResponse](../../Models/Requests/GetGenaiModelResponse.md)**
 
 ### Errors
 
@@ -49,7 +49,7 @@ var res = await sdk.Model.GetGenaiModel2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListGenaiModels2
+## ListGenaiModels
 
 List all models
 
@@ -64,24 +64,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListGenaiModels2Request req = new ListGenaiModels2Request() {
+ListGenaiModelsRequest req = new ListGenaiModelsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Model.ListGenaiModels2Async(req);
+var res = await sdk.Model.ListGenaiModelsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListGenaiModels2Request](../../Models/Requests/ListGenaiModels2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListGenaiModelsRequest](../../Models/Requests/ListGenaiModelsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[ListGenaiModels2Response](../../Models/Requests/ListGenaiModels2Response.md)**
+**[ListGenaiModelsResponse](../../Models/Requests/ListGenaiModelsResponse.md)**
 
 ### Errors
 

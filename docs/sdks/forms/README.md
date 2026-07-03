@@ -5,16 +5,16 @@
 
 ### Available Operations
 
-* [CreateFormsForm2](#createformsform2) - Create a form
-* [GetFormsForm2](#getformsform2) - Retrieve a form
-* [GetFormsSubmission2](#getformssubmission2) - Retrieve a submission
-* [ListFormsForms2](#listformsforms2) - List all forms
-* [ListFormsSubmissions2](#listformssubmissions2) - List all submissions
-* [PatchFormsForm2](#patchformsform2) - Update a form
-* [RemoveFormsForm2](#removeformsform2) - Remove a form
-* [UpdateFormsForm2](#updateformsform2) - Update a form
+* [CreateFormsForm](#createformsform) - Create a form
+* [GetFormsForm](#getformsform) - Retrieve a form
+* [GetFormsSubmission](#getformssubmission) - Retrieve a submission
+* [ListFormsForms](#listformsforms) - List all forms
+* [ListFormsSubmissions](#listformssubmissions) - List all submissions
+* [PatchFormsForm](#patchformsform) - Update a form
+* [RemoveFormsForm](#removeformsform) - Remove a form
+* [UpdateFormsForm](#updateformsform) - Update a form
 
-## CreateFormsForm2
+## CreateFormsForm
 
 Create a form
 
@@ -28,7 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Forms.CreateFormsForm2Async(
+var res = await sdk.Forms.CreateFormsFormAsync(
     formsForm: new FormsForm() {},
     connectionId: "<id>"
 );
@@ -42,12 +42,12 @@ var res = await sdk.Forms.CreateFormsForm2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `FormsForm`                                                                                                                                      | [FormsForm](../../Models/Components/FormsForm.md)                                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateFormsForm2QueryParamFields](../../Models/Requests/CreateFormsForm2QueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateFormsFormQueryParamFields](../../Models/Requests/CreateFormsFormQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateFormsForm2Response](../../Models/Requests/CreateFormsForm2Response.md)**
+**[CreateFormsFormResponse](../../Models/Requests/CreateFormsFormResponse.md)**
 
 ### Errors
 
@@ -55,7 +55,7 @@ var res = await sdk.Forms.CreateFormsForm2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetFormsForm2
+## GetFormsForm
 
 Retrieve a form
 
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Forms.GetFormsForm2Async(
+var res = await sdk.Forms.GetFormsFormAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -83,12 +83,12 @@ var res = await sdk.Forms.GetFormsForm2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Form                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetFormsForm2QueryParamFields](../../Models/Requests/GetFormsForm2QueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetFormsFormQueryParamFields](../../Models/Requests/GetFormsFormQueryParamFields.md)>                                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetFormsForm2Response](../../Models/Requests/GetFormsForm2Response.md)**
+**[GetFormsFormResponse](../../Models/Requests/GetFormsFormResponse.md)**
 
 ### Errors
 
@@ -96,7 +96,7 @@ var res = await sdk.Forms.GetFormsForm2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetFormsSubmission2
+## GetFormsSubmission
 
 Retrieve a submission
 
@@ -110,7 +110,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Forms.GetFormsSubmission2Async(
+var res = await sdk.Forms.GetFormsSubmissionAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -124,12 +124,12 @@ var res = await sdk.Forms.GetFormsSubmission2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Submission                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[GetFormsSubmission2QueryParamFields](../../Models/Requests/GetFormsSubmission2QueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetFormsSubmissionQueryParamFields](../../Models/Requests/GetFormsSubmissionQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetFormsSubmission2Response](../../Models/Requests/GetFormsSubmission2Response.md)**
+**[GetFormsSubmissionResponse](../../Models/Requests/GetFormsSubmissionResponse.md)**
 
 ### Errors
 
@@ -137,7 +137,7 @@ var res = await sdk.Forms.GetFormsSubmission2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListFormsForms2
+## ListFormsForms
 
 List all forms
 
@@ -152,24 +152,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListFormsForms2Request req = new ListFormsForms2Request() {
+ListFormsFormsRequest req = new ListFormsFormsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Forms.ListFormsForms2Async(req);
+var res = await sdk.Forms.ListFormsFormsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [ListFormsForms2Request](../../Models/Requests/ListFormsForms2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [ListFormsFormsRequest](../../Models/Requests/ListFormsFormsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 
-**[ListFormsForms2Response](../../Models/Requests/ListFormsForms2Response.md)**
+**[ListFormsFormsResponse](../../Models/Requests/ListFormsFormsResponse.md)**
 
 ### Errors
 
@@ -177,7 +177,7 @@ var res = await sdk.Forms.ListFormsForms2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListFormsSubmissions2
+## ListFormsSubmissions
 
 List all submissions
 
@@ -192,24 +192,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListFormsSubmissions2Request req = new ListFormsSubmissions2Request() {
+ListFormsSubmissionsRequest req = new ListFormsSubmissionsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Forms.ListFormsSubmissions2Async(req);
+var res = await sdk.Forms.ListFormsSubmissionsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListFormsSubmissions2Request](../../Models/Requests/ListFormsSubmissions2Request.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListFormsSubmissionsRequest](../../Models/Requests/ListFormsSubmissionsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
 ### Response
 
-**[ListFormsSubmissions2Response](../../Models/Requests/ListFormsSubmissions2Response.md)**
+**[ListFormsSubmissionsResponse](../../Models/Requests/ListFormsSubmissionsResponse.md)**
 
 ### Errors
 
@@ -217,7 +217,7 @@ var res = await sdk.Forms.ListFormsSubmissions2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchFormsForm2
+## PatchFormsForm
 
 Update a form
 
@@ -232,26 +232,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchFormsForm2Request req = new PatchFormsForm2Request() {
+PatchFormsFormRequest req = new PatchFormsFormRequest() {
     FormsForm = new FormsForm() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Forms.PatchFormsForm2Async(req);
+var res = await sdk.Forms.PatchFormsFormAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| `request`                                                                 | [PatchFormsForm2Request](../../Models/Requests/PatchFormsForm2Request.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [PatchFormsFormRequest](../../Models/Requests/PatchFormsFormRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 
-**[PatchFormsForm2Response](../../Models/Requests/PatchFormsForm2Response.md)**
+**[PatchFormsFormResponse](../../Models/Requests/PatchFormsFormResponse.md)**
 
 ### Errors
 
@@ -259,7 +259,7 @@ var res = await sdk.Forms.PatchFormsForm2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveFormsForm2
+## RemoveFormsForm
 
 Remove a form
 
@@ -273,7 +273,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Forms.RemoveFormsForm2Async(
+var res = await sdk.Forms.RemoveFormsFormAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -290,7 +290,7 @@ var res = await sdk.Forms.RemoveFormsForm2Async(
 
 ### Response
 
-**[RemoveFormsForm2Response](../../Models/Requests/RemoveFormsForm2Response.md)**
+**[RemoveFormsFormResponse](../../Models/Requests/RemoveFormsFormResponse.md)**
 
 ### Errors
 
@@ -298,7 +298,7 @@ var res = await sdk.Forms.RemoveFormsForm2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateFormsForm2
+## UpdateFormsForm
 
 Update a form
 
@@ -313,26 +313,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateFormsForm2Request req = new UpdateFormsForm2Request() {
+UpdateFormsFormRequest req = new UpdateFormsFormRequest() {
     FormsForm = new FormsForm() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Forms.UpdateFormsForm2Async(req);
+var res = await sdk.Forms.UpdateFormsFormAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [UpdateFormsForm2Request](../../Models/Requests/UpdateFormsForm2Request.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [UpdateFormsFormRequest](../../Models/Requests/UpdateFormsFormRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
-**[UpdateFormsForm2Response](../../Models/Requests/UpdateFormsForm2Response.md)**
+**[UpdateFormsFormResponse](../../Models/Requests/UpdateFormsFormResponse.md)**
 
 ### Errors
 

@@ -5,22 +5,22 @@
 
 ### Available Operations
 
-* [CreateAtsActivity2](#createatsactivity2) - Create an activity
-* [CreateLmsActivity2](#createlmsactivity2) - Create an activity
-* [GetAtsActivity2](#getatsactivity2) - Retrieve an activity
-* [GetClubsActivity2](#getclubsactivity2) - Retrieve an activity
-* [GetLmsActivity2](#getlmsactivity2) - Retrieve an activity
-* [ListAtsActivities2](#listatsactivities2) - List all activities
-* [ListClubsActivities2](#listclubsactivities2) - List all activities
-* [ListLmsActivities2](#listlmsactivities2) - List all activities
-* [PatchAtsActivity2](#patchatsactivity2) - Update an activity
-* [PatchLmsActivity2](#patchlmsactivity2) - Update an activity
-* [RemoveAtsActivity2](#removeatsactivity2) - Remove an activity
-* [RemoveLmsActivity2](#removelmsactivity2) - Remove an activity
-* [UpdateAtsActivity2](#updateatsactivity2) - Update an activity
-* [UpdateLmsActivity2](#updatelmsactivity2) - Update an activity
+* [CreateAtsActivity](#createatsactivity) - Create an activity
+* [CreateLmsActivity](#createlmsactivity) - Create an activity
+* [GetAtsActivity](#getatsactivity) - Retrieve an activity
+* [GetClubsActivity](#getclubsactivity) - Retrieve an activity
+* [GetLmsActivity](#getlmsactivity) - Retrieve an activity
+* [ListAtsActivities](#listatsactivities) - List all activities
+* [ListClubsActivities](#listclubsactivities) - List all activities
+* [ListLmsActivities](#listlmsactivities) - List all activities
+* [PatchAtsActivity](#patchatsactivity) - Update an activity
+* [PatchLmsActivity](#patchlmsactivity) - Update an activity
+* [RemoveAtsActivity](#removeatsactivity) - Remove an activity
+* [RemoveLmsActivity](#removelmsactivity) - Remove an activity
+* [UpdateAtsActivity](#updateatsactivity) - Update an activity
+* [UpdateLmsActivity](#updatelmsactivity) - Update an activity
 
-## CreateAtsActivity2
+## CreateAtsActivity
 
 Create an activity
 
@@ -34,7 +34,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Activity.CreateAtsActivity2Async(
+var res = await sdk.Activity.CreateAtsActivityAsync(
     atsActivity: new AtsActivity() {},
     connectionId: "<id>"
 );
@@ -48,12 +48,12 @@ var res = await sdk.Activity.CreateAtsActivity2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `AtsActivity`                                                                                                                                    | [AtsActivity](../../Models/Components/AtsActivity.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateAtsActivity2QueryParamFields](../../Models/Requests/CreateAtsActivity2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateAtsActivityQueryParamFields](../../Models/Requests/CreateAtsActivityQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateAtsActivity2Response](../../Models/Requests/CreateAtsActivity2Response.md)**
+**[CreateAtsActivityResponse](../../Models/Requests/CreateAtsActivityResponse.md)**
 
 ### Errors
 
@@ -61,7 +61,7 @@ var res = await sdk.Activity.CreateAtsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateLmsActivity2
+## CreateLmsActivity
 
 Create an activity
 
@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Activity.CreateLmsActivity2Async(
+var res = await sdk.Activity.CreateLmsActivityAsync(
     lmsActivity: new LmsActivity() {},
     connectionId: "<id>"
 );
@@ -89,12 +89,12 @@ var res = await sdk.Activity.CreateLmsActivity2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `LmsActivity`                                                                                                                                    | [LmsActivity](../../Models/Components/LmsActivity.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateLmsActivity2QueryParamFields](../../Models/Requests/CreateLmsActivity2QueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[CreateLmsActivityQueryParamFields](../../Models/Requests/CreateLmsActivityQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[CreateLmsActivity2Response](../../Models/Requests/CreateLmsActivity2Response.md)**
+**[CreateLmsActivityResponse](../../Models/Requests/CreateLmsActivityResponse.md)**
 
 ### Errors
 
@@ -102,7 +102,7 @@ var res = await sdk.Activity.CreateLmsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAtsActivity2
+## GetAtsActivity
 
 Retrieve an activity
 
@@ -116,7 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Activity.GetAtsActivity2Async(
+var res = await sdk.Activity.GetAtsActivityAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -130,12 +130,12 @@ var res = await sdk.Activity.GetAtsActivity2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Activity                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetAtsActivity2QueryParamFields](../../Models/Requests/GetAtsActivity2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetAtsActivityQueryParamFields](../../Models/Requests/GetAtsActivityQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetAtsActivity2Response](../../Models/Requests/GetAtsActivity2Response.md)**
+**[GetAtsActivityResponse](../../Models/Requests/GetAtsActivityResponse.md)**
 
 ### Errors
 
@@ -143,7 +143,7 @@ var res = await sdk.Activity.GetAtsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetClubsActivity2
+## GetClubsActivity
 
 Retrieve an activity
 
@@ -157,7 +157,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Activity.GetClubsActivity2Async(
+var res = await sdk.Activity.GetClubsActivityAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -171,12 +171,12 @@ var res = await sdk.Activity.GetClubsActivity2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Activity                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetClubsActivity2QueryParamFields](../../Models/Requests/GetClubsActivity2QueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetClubsActivityQueryParamFields](../../Models/Requests/GetClubsActivityQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetClubsActivity2Response](../../Models/Requests/GetClubsActivity2Response.md)**
+**[GetClubsActivityResponse](../../Models/Requests/GetClubsActivityResponse.md)**
 
 ### Errors
 
@@ -184,7 +184,7 @@ var res = await sdk.Activity.GetClubsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetLmsActivity2
+## GetLmsActivity
 
 Retrieve an activity
 
@@ -198,7 +198,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Activity.GetLmsActivity2Async(
+var res = await sdk.Activity.GetLmsActivityAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -212,12 +212,12 @@ var res = await sdk.Activity.GetLmsActivity2Async(
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Activity                                                                                                                               |
-| `Fields`                                                                                                                                         | List<[GetLmsActivity2QueryParamFields](../../Models/Requests/GetLmsActivity2QueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetLmsActivityQueryParamFields](../../Models/Requests/GetLmsActivityQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
-**[GetLmsActivity2Response](../../Models/Requests/GetLmsActivity2Response.md)**
+**[GetLmsActivityResponse](../../Models/Requests/GetLmsActivityResponse.md)**
 
 ### Errors
 
@@ -225,7 +225,7 @@ var res = await sdk.Activity.GetLmsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListAtsActivities2
+## ListAtsActivities
 
 List all activities
 
@@ -240,24 +240,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListAtsActivities2Request req = new ListAtsActivities2Request() {
+ListAtsActivitiesRequest req = new ListAtsActivitiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Activity.ListAtsActivities2Async(req);
+var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListAtsActivities2Request](../../Models/Requests/ListAtsActivities2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListAtsActivitiesRequest](../../Models/Requests/ListAtsActivitiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListAtsActivities2Response](../../Models/Requests/ListAtsActivities2Response.md)**
+**[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
 
 ### Errors
 
@@ -265,7 +265,7 @@ var res = await sdk.Activity.ListAtsActivities2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListClubsActivities2
+## ListClubsActivities
 
 List all activities
 
@@ -280,24 +280,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListClubsActivities2Request req = new ListClubsActivities2Request() {
+ListClubsActivitiesRequest req = new ListClubsActivitiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Activity.ListClubsActivities2Async(req);
+var res = await sdk.Activity.ListClubsActivitiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListClubsActivities2Request](../../Models/Requests/ListClubsActivities2Request.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListClubsActivitiesRequest](../../Models/Requests/ListClubsActivitiesRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 ### Response
 
-**[ListClubsActivities2Response](../../Models/Requests/ListClubsActivities2Response.md)**
+**[ListClubsActivitiesResponse](../../Models/Requests/ListClubsActivitiesResponse.md)**
 
 ### Errors
 
@@ -305,7 +305,7 @@ var res = await sdk.Activity.ListClubsActivities2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListLmsActivities2
+## ListLmsActivities
 
 List all activities
 
@@ -320,24 +320,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListLmsActivities2Request req = new ListLmsActivities2Request() {
+ListLmsActivitiesRequest req = new ListLmsActivitiesRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Activity.ListLmsActivities2Async(req);
+var res = await sdk.Activity.ListLmsActivitiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListLmsActivities2Request](../../Models/Requests/ListLmsActivities2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListLmsActivitiesRequest](../../Models/Requests/ListLmsActivitiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[ListLmsActivities2Response](../../Models/Requests/ListLmsActivities2Response.md)**
+**[ListLmsActivitiesResponse](../../Models/Requests/ListLmsActivitiesResponse.md)**
 
 ### Errors
 
@@ -345,7 +345,7 @@ var res = await sdk.Activity.ListLmsActivities2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchAtsActivity2
+## PatchAtsActivity
 
 Update an activity
 
@@ -360,26 +360,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchAtsActivity2Request req = new PatchAtsActivity2Request() {
+PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
     AtsActivity = new AtsActivity() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Activity.PatchAtsActivity2Async(req);
+var res = await sdk.Activity.PatchAtsActivityAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchAtsActivity2Request](../../Models/Requests/PatchAtsActivity2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchAtsActivityRequest](../../Models/Requests/PatchAtsActivityRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchAtsActivity2Response](../../Models/Requests/PatchAtsActivity2Response.md)**
+**[PatchAtsActivityResponse](../../Models/Requests/PatchAtsActivityResponse.md)**
 
 ### Errors
 
@@ -387,7 +387,7 @@ var res = await sdk.Activity.PatchAtsActivity2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchLmsActivity2
+## PatchLmsActivity
 
 Update an activity
 
@@ -402,26 +402,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-PatchLmsActivity2Request req = new PatchLmsActivity2Request() {
+PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
     LmsActivity = new LmsActivity() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Activity.PatchLmsActivity2Async(req);
+var res = await sdk.Activity.PatchLmsActivityAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [PatchLmsActivity2Request](../../Models/Requests/PatchLmsActivity2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchLmsActivityRequest](../../Models/Requests/PatchLmsActivityRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[PatchLmsActivity2Response](../../Models/Requests/PatchLmsActivity2Response.md)**
+**[PatchLmsActivityResponse](../../Models/Requests/PatchLmsActivityResponse.md)**
 
 ### Errors
 
@@ -429,7 +429,7 @@ var res = await sdk.Activity.PatchLmsActivity2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveAtsActivity2
+## RemoveAtsActivity
 
 Remove an activity
 
@@ -443,7 +443,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Activity.RemoveAtsActivity2Async(
+var res = await sdk.Activity.RemoveAtsActivityAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -460,7 +460,7 @@ var res = await sdk.Activity.RemoveAtsActivity2Async(
 
 ### Response
 
-**[RemoveAtsActivity2Response](../../Models/Requests/RemoveAtsActivity2Response.md)**
+**[RemoveAtsActivityResponse](../../Models/Requests/RemoveAtsActivityResponse.md)**
 
 ### Errors
 
@@ -468,7 +468,7 @@ var res = await sdk.Activity.RemoveAtsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveLmsActivity2
+## RemoveLmsActivity
 
 Remove an activity
 
@@ -482,7 +482,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Activity.RemoveLmsActivity2Async(
+var res = await sdk.Activity.RemoveLmsActivityAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -499,7 +499,7 @@ var res = await sdk.Activity.RemoveLmsActivity2Async(
 
 ### Response
 
-**[RemoveLmsActivity2Response](../../Models/Requests/RemoveLmsActivity2Response.md)**
+**[RemoveLmsActivityResponse](../../Models/Requests/RemoveLmsActivityResponse.md)**
 
 ### Errors
 
@@ -507,7 +507,7 @@ var res = await sdk.Activity.RemoveLmsActivity2Async(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateAtsActivity2
+## UpdateAtsActivity
 
 Update an activity
 
@@ -522,26 +522,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateAtsActivity2Request req = new UpdateAtsActivity2Request() {
+UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
     AtsActivity = new AtsActivity() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Activity.UpdateAtsActivity2Async(req);
+var res = await sdk.Activity.UpdateAtsActivityAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateAtsActivity2Request](../../Models/Requests/UpdateAtsActivity2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateAtsActivityRequest](../../Models/Requests/UpdateAtsActivityRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateAtsActivity2Response](../../Models/Requests/UpdateAtsActivity2Response.md)**
+**[UpdateAtsActivityResponse](../../Models/Requests/UpdateAtsActivityResponse.md)**
 
 ### Errors
 
@@ -549,7 +549,7 @@ var res = await sdk.Activity.UpdateAtsActivity2Async(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateLmsActivity2
+## UpdateLmsActivity
 
 Update an activity
 
@@ -564,26 +564,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-UpdateLmsActivity2Request req = new UpdateLmsActivity2Request() {
+UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
     LmsActivity = new LmsActivity() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
 
-var res = await sdk.Activity.UpdateLmsActivity2Async(req);
+var res = await sdk.Activity.UpdateLmsActivityAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [UpdateLmsActivity2Request](../../Models/Requests/UpdateLmsActivity2Request.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateLmsActivityRequest](../../Models/Requests/UpdateLmsActivityRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 ### Response
 
-**[UpdateLmsActivity2Response](../../Models/Requests/UpdateLmsActivity2Response.md)**
+**[UpdateLmsActivityResponse](../../Models/Requests/UpdateLmsActivityResponse.md)**
 
 ### Errors
 

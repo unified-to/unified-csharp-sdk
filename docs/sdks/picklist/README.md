@@ -5,9 +5,9 @@
 
 ### Available Operations
 
-* [ListCrmPicklists2](#listcrmpicklists2) - List all picklists
+* [ListCrmPicklists](#listcrmpicklists) - List all picklists
 
-## ListCrmPicklists2
+## ListCrmPicklists
 
 List all picklists
 
@@ -22,24 +22,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCrmPicklists2Request req = new ListCrmPicklists2Request() {
+ListCrmPicklistsRequest req = new ListCrmPicklistsRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Picklist.ListCrmPicklists2Async(req);
+var res = await sdk.Picklist.ListCrmPicklistsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListCrmPicklists2Request](../../Models/Requests/ListCrmPicklists2Request.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListCrmPicklistsRequest](../../Models/Requests/ListCrmPicklistsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
-**[ListCrmPicklists2Response](../../Models/Requests/ListCrmPicklists2Response.md)**
+**[ListCrmPicklistsResponse](../../Models/Requests/ListCrmPicklistsResponse.md)**
 
 ### Errors
 

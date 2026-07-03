@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a creditmemo
         /// </summary>
-        Task<CreateAccountingCreditmemo2Response> CreateAccountingCreditmemo2Async(AccountingCreditmemo accountingCreditmemo, string connectionId, List<CreateAccountingCreditmemo2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAccountingCreditmemoResponse> CreateAccountingCreditmemoAsync(AccountingCreditmemo accountingCreditmemo, string connectionId, List<CreateAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a creditmemo
         /// </summary>
-        Task<GetAccountingCreditmemo2Response> GetAccountingCreditmemo2Async(string connectionId, string id, List<GetAccountingCreditmemo2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingCreditmemoResponse> GetAccountingCreditmemoAsync(string connectionId, string id, List<GetAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all creditmemoes
         /// </summary>
-        Task<ListAccountingCreditmemoes2Response> ListAccountingCreditmemoes2Async(ListAccountingCreditmemoes2Request request);
+        Task<ListAccountingCreditmemoesResponse> ListAccountingCreditmemoesAsync(ListAccountingCreditmemoesRequest request);
 
         /// <summary>
         /// Update a creditmemo
         /// </summary>
-        Task<PatchAccountingCreditmemo2Response> PatchAccountingCreditmemo2Async(PatchAccountingCreditmemo2Request request);
+        Task<PatchAccountingCreditmemoResponse> PatchAccountingCreditmemoAsync(PatchAccountingCreditmemoRequest request);
 
         /// <summary>
         /// Remove a creditmemo
         /// </summary>
-        Task<RemoveAccountingCreditmemo2Response> RemoveAccountingCreditmemo2Async(string connectionId, string id);
+        Task<RemoveAccountingCreditmemoResponse> RemoveAccountingCreditmemoAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a creditmemo
         /// </summary>
-        Task<UpdateAccountingCreditmemo2Response> UpdateAccountingCreditmemo2Async(UpdateAccountingCreditmemo2Request request);
+        Task<UpdateAccountingCreditmemoResponse> UpdateAccountingCreditmemoAsync(UpdateAccountingCreditmemoRequest request);
     }
 
     public class Creditmemo: ICreditmemo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingCreditmemo2Response> CreateAccountingCreditmemo2Async(AccountingCreditmemo accountingCreditmemo, string connectionId, List<CreateAccountingCreditmemo2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAccountingCreditmemoResponse> CreateAccountingCreditmemoAsync(AccountingCreditmemo accountingCreditmemo, string connectionId, List<CreateAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAccountingCreditmemo2Request()
+            var request = new CreateAccountingCreditmemoRequest()
             {
                 AccountingCreditmemo = accountingCreditmemo,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingCreditmemo2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingCreditmemo", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingCreditmemo>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAccountingCreditmemo2Response()
+                    var response = new CreateAccountingCreditmemoResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingCreditmemo2Response> GetAccountingCreditmemo2Async(string connectionId, string id, List<GetAccountingCreditmemo2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingCreditmemoResponse> GetAccountingCreditmemoAsync(string connectionId, string id, List<GetAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingCreditmemo2Request()
+            var request = new GetAccountingCreditmemoRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingCreditmemo2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingCreditmemo", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingCreditmemo>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingCreditmemo2Response()
+                    var response = new GetAccountingCreditmemoResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingCreditmemoes2Response> ListAccountingCreditmemoes2Async(ListAccountingCreditmemoes2Request request)
+        public async Task<ListAccountingCreditmemoesResponse> ListAccountingCreditmemoesAsync(ListAccountingCreditmemoesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/creditmemo", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingCreditmemoes2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingCreditmemoes", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingCreditmemo>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingCreditmemoes2Response()
+                    var response = new ListAccountingCreditmemoesResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingCreditmemo2Response> PatchAccountingCreditmemo2Async(PatchAccountingCreditmemo2Request request)
+        public async Task<PatchAccountingCreditmemoResponse> PatchAccountingCreditmemoAsync(PatchAccountingCreditmemoRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/creditmemo/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingCreditmemo2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingCreditmemo", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingCreditmemo>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAccountingCreditmemo2Response()
+                    var response = new PatchAccountingCreditmemoResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAccountingCreditmemo2Response> RemoveAccountingCreditmemo2Async(string connectionId, string id)
+        public async Task<RemoveAccountingCreditmemoResponse> RemoveAccountingCreditmemoAsync(string connectionId, string id)
         {
-            var request = new RemoveAccountingCreditmemo2Request()
+            var request = new RemoveAccountingCreditmemoRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingCreditmemo2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingCreditmemo", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAccountingCreditmemo2Response()
+                return new RemoveAccountingCreditmemoResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAccountingCreditmemo2Response()
+                return new RemoveAccountingCreditmemoResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingCreditmemo2Response> UpdateAccountingCreditmemo2Async(UpdateAccountingCreditmemo2Request request)
+        public async Task<UpdateAccountingCreditmemoResponse> UpdateAccountingCreditmemoAsync(UpdateAccountingCreditmemoRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/creditmemo/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingCreditmemo2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingCreditmemo", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingCreditmemo>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAccountingCreditmemo2Response()
+                    var response = new UpdateAccountingCreditmemoResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

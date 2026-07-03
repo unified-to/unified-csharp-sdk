@@ -28,39 +28,39 @@ namespace UnifiedTo
         /// <summary>
         /// Create a journal
         /// </summary>
-        Task<CreateAccountingJournal2Response> CreateAccountingJournal2Async(AccountingJournal accountingJournal, string connectionId, List<CreateAccountingJournal2QueryParamFields>? fields = null, string? raw = null);
+        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<CreateAccountingJournalQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a journal
         /// </summary>
-        Task<GetAccountingJournal2Response> GetAccountingJournal2Async(string connectionId, string id, List<GetAccountingJournal2QueryParamFields>? fields = null, string? raw = null);
+        Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<GetAccountingJournalQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all journals
         /// </summary>
-        Task<ListAccountingJournals2Response> ListAccountingJournals2Async(ListAccountingJournals2Request request);
+        Task<ListAccountingJournalsResponse> ListAccountingJournalsAsync(ListAccountingJournalsRequest request);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<PatchAccountingJournal2Response> PatchAccountingJournal2Async(PatchAccountingJournal2Request request);
+        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(PatchAccountingJournalRequest request);
 
         /// <summary>
         /// Remove a journal
         /// </summary>
-        Task<RemoveAccountingJournal2Response> RemoveAccountingJournal2Async(string connectionId, string id);
+        Task<RemoveAccountingJournalResponse> RemoveAccountingJournalAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<UpdateAccountingJournal2Response> UpdateAccountingJournal2Async(UpdateAccountingJournal2Request request);
+        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(UpdateAccountingJournalRequest request);
     }
 
     public class Journal: IJournal
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.83";
+        private const string _sdkVersion = "0.130.84";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,9 +69,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingJournal2Response> CreateAccountingJournal2Async(AccountingJournal accountingJournal, string connectionId, List<CreateAccountingJournal2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<CreateAccountingJournalQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new CreateAccountingJournal2Request()
+            var request = new CreateAccountingJournalRequest()
             {
                 AccountingJournal = accountingJournal,
                 ConnectionId = connectionId,
@@ -95,7 +95,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingJournal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingJournal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -136,7 +136,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingJournal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateAccountingJournal2Response()
+                    var response = new CreateAccountingJournalResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -160,9 +160,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingJournal2Response> GetAccountingJournal2Async(string connectionId, string id, List<GetAccountingJournal2QueryParamFields>? fields = null, string? raw = null)
+        public async Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<GetAccountingJournalQueryParamFields>? fields = null, string? raw = null)
         {
-            var request = new GetAccountingJournal2Request()
+            var request = new GetAccountingJournalRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -180,7 +180,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingJournal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingJournal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingJournal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetAccountingJournal2Response()
+                    var response = new GetAccountingJournalResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -245,7 +245,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListAccountingJournals2Response> ListAccountingJournals2Async(ListAccountingJournals2Request request)
+        public async Task<ListAccountingJournalsResponse> ListAccountingJournalsAsync(ListAccountingJournalsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal", request);
@@ -258,7 +258,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingJournals2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingJournals", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<List<AccountingJournal>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListAccountingJournals2Response()
+                    var response = new ListAccountingJournalsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -323,7 +323,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingJournal2Response> PatchAccountingJournal2Async(PatchAccountingJournal2Request request)
+        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(PatchAccountingJournalRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingJournal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingJournal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -383,7 +383,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingJournal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchAccountingJournal2Response()
+                    var response = new PatchAccountingJournalResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -407,9 +407,9 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveAccountingJournal2Response> RemoveAccountingJournal2Async(string connectionId, string id)
+        public async Task<RemoveAccountingJournalResponse> RemoveAccountingJournalAsync(string connectionId, string id)
         {
-            var request = new RemoveAccountingJournal2Request()
+            var request = new RemoveAccountingJournalRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingJournal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingJournal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -463,7 +463,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveAccountingJournal2Response()
+                return new RemoveAccountingJournalResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -480,7 +480,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveAccountingJournal2Response()
+                return new RemoveAccountingJournalResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -489,7 +489,7 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingJournal2Response> UpdateAccountingJournal2Async(UpdateAccountingJournal2Request request)
+        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(UpdateAccountingJournalRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
@@ -508,7 +508,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingJournal2", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingJournal", new List<string> {  }, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -549,7 +549,7 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<AccountingJournal>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateAccountingJournal2Response()
+                    var response = new UpdateAccountingJournalResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
