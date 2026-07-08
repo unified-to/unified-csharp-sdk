@@ -33,14 +33,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("labels")]
         public List<string>? Labels { get; set; }
 
+        [JsonProperty("notes")]
+        public string? Notes { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("repo_id")]
         public string? RepoId { get; set; }
 
+        [JsonProperty("source_branch_id")]
+        public string? SourceBranchId { get; set; }
+
         [JsonProperty("status")]
         public RepoPullrequestStatus? Status { get; set; }
+
+        [JsonProperty("target_branch_id")]
+        public string? TargetBranchId { get; set; }
+
+        [JsonProperty("title")]
+        public string? Title { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

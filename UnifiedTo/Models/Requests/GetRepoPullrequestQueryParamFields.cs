@@ -25,6 +25,14 @@ namespace UnifiedTo.Models.Requests
         UserIds,
         [JsonProperty("repo_id")]
         RepoId,
+        [JsonProperty("title")]
+        Title,
+        [JsonProperty("notes")]
+        Notes,
+        [JsonProperty("target_branch_id")]
+        TargetBranchId,
+        [JsonProperty("source_branch_id")]
+        SourceBranchId,
         [JsonProperty("status")]
         Status,
         [JsonProperty("labels")]

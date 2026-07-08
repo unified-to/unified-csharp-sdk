@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 502f35e1ff844f424e389bb82875f82b
+  docChecksum: 36db861f05f44b7805fc4b06dc0cb471
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.84
-  configChecksum: 78f9f15b5111780f778df3d24fb379a2
+  releaseVersion: 0.130.85
+  configChecksum: 953b5a073d5d967bc5f6137f3baec9c3
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -147,6 +147,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingInvoice.cs
   - UnifiedTo/Models/Components/AccountingInvoicePaymentCollectionMethod.cs
   - UnifiedTo/Models/Components/AccountingInvoiceStatus.cs
+  - UnifiedTo/Models/Components/AccountingInvoiceTerm.cs
   - UnifiedTo/Models/Components/AccountingInvoiceType.cs
   - UnifiedTo/Models/Components/AccountingJournal.cs
   - UnifiedTo/Models/Components/AccountingJournalLineitem.cs
@@ -968,6 +969,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/Tax.cs
   - UnifiedTo/Models/Components/TaxExemption.cs
   - UnifiedTo/Models/Components/TaxesPaidBy.cs
+  - UnifiedTo/Models/Components/Term.cs
   - UnifiedTo/Models/Components/TicketingCategory.cs
   - UnifiedTo/Models/Components/TicketingCustomer.cs
   - UnifiedTo/Models/Components/TicketingEmail.cs
@@ -3231,6 +3233,7 @@ generatedFiles:
   - docs/Models/Components/AccountingInvoice.md
   - docs/Models/Components/AccountingInvoicePaymentCollectionMethod.md
   - docs/Models/Components/AccountingInvoiceStatus.md
+  - docs/Models/Components/AccountingInvoiceTerm.md
   - docs/Models/Components/AccountingInvoiceType.md
   - docs/Models/Components/AccountingJournal.md
   - docs/Models/Components/AccountingJournalLineitem.md
@@ -4052,6 +4055,7 @@ generatedFiles:
   - docs/Models/Components/Tax.md
   - docs/Models/Components/TaxExemption.md
   - docs/Models/Components/TaxesPaidBy.md
+  - docs/Models/Components/Term.md
   - docs/Models/Components/TicketingCategory.md
   - docs/Models/Components/TicketingCustomer.md
   - docs/Models/Components/TicketingEmail.md
@@ -19705,7 +19709,7 @@ trackedFiles:
     pristine_git_object: 5e145c05cf84d4d6bb4208d2f6cddbb88892f403
   UnifiedTo/Models/Components/AccountingBill.cs:
     id: 3fed16105cec
-    last_write_checksum: sha1:2388a1e249d54621d68a1ae76fa274efc0feb73b
+    last_write_checksum: sha1:67bf5e81c7ac8e3d4f7e7bdd232d5aec438b169e
     pristine_git_object: 53cb4bc3ae45989ce93d8c3dd7fc76bea22d9d99
   UnifiedTo/Models/Components/AccountingBillStatus.cs:
     id: 045af6d52f63
@@ -19769,7 +19773,7 @@ trackedFiles:
     last_write_checksum: sha1:c28bb4bbd6c9fa482e34a4d6f38d9d1bd3192c82
   UnifiedTo/Models/Components/AccountingInvoice.cs:
     id: 2b6c83eeb551
-    last_write_checksum: sha1:389fde33fa3771d453bb1e0ae5d2b4feb5681995
+    last_write_checksum: sha1:a622cbeb66bfe0d08f5cab80b9a34450a9c87103
     pristine_git_object: deb913665b869103e7f635f9c995caaa6c569427
   UnifiedTo/Models/Components/AccountingInvoicePaymentCollectionMethod.cs:
     id: d8dab968580c
@@ -19779,6 +19783,8 @@ trackedFiles:
     id: 90cb719e47cb
     last_write_checksum: sha1:9030cb8679af3c59b0aff34d17959c91b9c89df5
     pristine_git_object: f30c88fc7067b504fffa1731460329a58c3473c2
+  UnifiedTo/Models/Components/AccountingInvoiceTerm.cs:
+    last_write_checksum: sha1:b4f14f8ff68d3a5c6d4e363121f32d231bd08082
   UnifiedTo/Models/Components/AccountingInvoiceType.cs:
     id: f9d046d91a07
     last_write_checksum: sha1:c15d1fbf6dbd8e6160f80d2e5fdae5068682c53f
@@ -22045,7 +22051,7 @@ trackedFiles:
     pristine_git_object: 25c52ea8b87a36c021b407725958c418a8a1ceb3
   UnifiedTo/Models/Components/RepoCommit.cs:
     id: e691fdc9af0e
-    last_write_checksum: sha1:94a2bbda1700cd7669dad1c98e9c5f651cc73ea2
+    last_write_checksum: sha1:32ac290bb94b2e2e3d14c7d252ab693579b41bfa
     pristine_git_object: 28ffabbc84de2899b40059fac4ee5e0463334b82
   UnifiedTo/Models/Components/RepoOrganization.cs:
     id: a72d0f097f2d
@@ -22053,7 +22059,7 @@ trackedFiles:
     pristine_git_object: b5afdc91961bfeffdf5690b45d9ac57662df2314
   UnifiedTo/Models/Components/RepoPullrequest.cs:
     id: 7fac61e10105
-    last_write_checksum: sha1:a97bab6e90e3ba5ea31b56c58647085d5f09c38a
+    last_write_checksum: sha1:47d921dcd6ee7392097da23c24bf027103f9efb3
     pristine_git_object: 9ad6f7a0590491eaa928996bb1b6b00d556c6548
   UnifiedTo/Models/Components/RepoPullrequestStatus.cs:
     id: f2de97937265
@@ -22337,6 +22343,8 @@ trackedFiles:
     pristine_git_object: 7a763e932b89f20ac8c14f32f152b49c45d16019
   UnifiedTo/Models/Components/TaxesPaidBy.cs:
     last_write_checksum: sha1:ff68865cf2dcf6ec7bf1071544187f78f4db07f2
+  UnifiedTo/Models/Components/Term.cs:
+    last_write_checksum: sha1:817e95ec10ff43cc39fcb75d4ee732cd28218a9b
   UnifiedTo/Models/Components/TicketingCategory.cs:
     id: f1c7225da4f8
     last_write_checksum: sha1:dd9e9ac66036d3a9f8354cfd58bf9c2994902270
@@ -22708,7 +22716,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateAccountingAccountResponse.cs:
     last_write_checksum: sha1:4c40c684e7593aecb2777fc9a439de3bf9d04dcc
   UnifiedTo/Models/Requests/CreateAccountingBillQueryParamFields.cs:
-    last_write_checksum: sha1:2edb2ef766e55fd7bd4db1afbd53036fce51bfcb
+    last_write_checksum: sha1:916e315b83e7fa185ba38866eb2808ec5785b21b
   UnifiedTo/Models/Requests/CreateAccountingBillRequest.cs:
     last_write_checksum: sha1:3aeb52b8aaefaa487c3c4f8781dbd89cb569f561
   UnifiedTo/Models/Requests/CreateAccountingBillResponse.cs:
@@ -22738,7 +22746,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateAccountingExpenseResponse.cs:
     last_write_checksum: sha1:d373c098931009c6d099e46c00a7ec89bbce6850
   UnifiedTo/Models/Requests/CreateAccountingInvoiceQueryParamFields.cs:
-    last_write_checksum: sha1:d95e2f31aa489deca905b354e69b61192e5d00de
+    last_write_checksum: sha1:f522725df601987e995527d8b4bf5763c5792d24
   UnifiedTo/Models/Requests/CreateAccountingInvoiceRequest.cs:
     last_write_checksum: sha1:ad6375c2d5db5652b5ca92475277bf6c67c64f20
   UnifiedTo/Models/Requests/CreateAccountingInvoiceResponse.cs:
@@ -23224,7 +23232,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateRepoBranchResponse.cs:
     last_write_checksum: sha1:f7bfac09b862cf18f3e7adef123e42489f01a502
   UnifiedTo/Models/Requests/CreateRepoCommitQueryParamFields.cs:
-    last_write_checksum: sha1:4817c77ae6720e06b72fbe2b7097c2532a67b1d4
+    last_write_checksum: sha1:48ef0219634fad47c02a9fb461a700856e0c4772
   UnifiedTo/Models/Requests/CreateRepoCommitRequest.cs:
     last_write_checksum: sha1:2302c43c8df3eb73da8c49b2c77d46bd7e99d940
   UnifiedTo/Models/Requests/CreateRepoCommitResponse.cs:
@@ -23236,7 +23244,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateRepoOrganizationResponse.cs:
     last_write_checksum: sha1:a9bfb1e079ecd1e807732e584fe2b295ee749bb3
   UnifiedTo/Models/Requests/CreateRepoPullrequestQueryParamFields.cs:
-    last_write_checksum: sha1:c4d0631c4143f9bef5914336c9e03ea7d7d63896
+    last_write_checksum: sha1:e49f2e2fd3fe0a37252d2c90d9a0445f6243553e
   UnifiedTo/Models/Requests/CreateRepoPullrequestRequest.cs:
     last_write_checksum: sha1:c41993beff4d5aca34c12da86aa18c6f1cd7a543
   UnifiedTo/Models/Requests/CreateRepoPullrequestResponse.cs:
@@ -23396,7 +23404,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetAccountingBalancesheetResponse.cs:
     last_write_checksum: sha1:a75998efc9e5c65e66b5e7741492829c9d54e86b
   UnifiedTo/Models/Requests/GetAccountingBillQueryParamFields.cs:
-    last_write_checksum: sha1:76bb09bb20bae5564ad47f1d75eb4794afb9af41
+    last_write_checksum: sha1:8860f9fad586cb4eacefa45728c8ba5c2fc70f66
   UnifiedTo/Models/Requests/GetAccountingBillRequest.cs:
     last_write_checksum: sha1:e69f5ec781a393a78729343b907b028eccbdb726
   UnifiedTo/Models/Requests/GetAccountingBillResponse.cs:
@@ -23432,7 +23440,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetAccountingExpenseResponse.cs:
     last_write_checksum: sha1:a62941a8b76fd4ebad3c8ee9f7272718d2e81557
   UnifiedTo/Models/Requests/GetAccountingInvoiceQueryParamFields.cs:
-    last_write_checksum: sha1:7a2de76daba9a1c1405ea1f76cf692b56f5c37d7
+    last_write_checksum: sha1:bd3a7ab880c72748f261615b307f67dcc752bd84
   UnifiedTo/Models/Requests/GetAccountingInvoiceRequest.cs:
     last_write_checksum: sha1:7ec85ad09cabac9171338e9e4fdcef113f26e997
   UnifiedTo/Models/Requests/GetAccountingInvoiceResponse.cs:
@@ -24006,7 +24014,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetRepoBranchResponse.cs:
     last_write_checksum: sha1:0aea9cc5306c3284dd9ef2dbccac45a25187ceda
   UnifiedTo/Models/Requests/GetRepoCommitQueryParamFields.cs:
-    last_write_checksum: sha1:ce1890a874f9dc1b5ec0b41bb6169c4be472c390
+    last_write_checksum: sha1:ebbdc5ffc3ff3e6c5c1a84f9a2437d06bdbab94e
   UnifiedTo/Models/Requests/GetRepoCommitRequest.cs:
     last_write_checksum: sha1:38047c341ab2b4e6855f167c380cfeab1c67a852
   UnifiedTo/Models/Requests/GetRepoCommitResponse.cs:
@@ -24018,7 +24026,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetRepoOrganizationResponse.cs:
     last_write_checksum: sha1:a79408d48e7c1b8021e483d9ae1c5f6d8c36ef7b
   UnifiedTo/Models/Requests/GetRepoPullrequestQueryParamFields.cs:
-    last_write_checksum: sha1:8350623e8a8dba0812280b695ea4053877375197
+    last_write_checksum: sha1:574f347467152e59d705f9fb11d942241b3c44bb
   UnifiedTo/Models/Requests/GetRepoPullrequestRequest.cs:
     last_write_checksum: sha1:eb8692a4479bf03e278337a85dd1803456ff74c0
   UnifiedTo/Models/Requests/GetRepoPullrequestResponse.cs:
@@ -24242,7 +24250,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAccountingBalancesheetsResponse.cs:
     last_write_checksum: sha1:cd523768559e91431be494edd130909cef14b2e6
   UnifiedTo/Models/Requests/ListAccountingBillsQueryParamFields.cs:
-    last_write_checksum: sha1:617d248ebd243153d5ea7ce3d1f56f3bc2b4bb09
+    last_write_checksum: sha1:a5e75ff6d00439965aa6d9cc351e09bf2f362e03
   UnifiedTo/Models/Requests/ListAccountingBillsRequest.cs:
     last_write_checksum: sha1:93613785421b8e02e580a4c18bd901f2c82e4868
   UnifiedTo/Models/Requests/ListAccountingBillsResponse.cs:
@@ -24278,7 +24286,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAccountingExpensesResponse.cs:
     last_write_checksum: sha1:b0062d2934541153574adfeacfb8a2f550b98482
   UnifiedTo/Models/Requests/ListAccountingInvoicesQueryParamFields.cs:
-    last_write_checksum: sha1:acd65550918a98c1e222f7601b2f75ce9b446444
+    last_write_checksum: sha1:906f74b2c3cbc75ad7ab9b3b1641ebac454e8a82
   UnifiedTo/Models/Requests/ListAccountingInvoicesRequest.cs:
     last_write_checksum: sha1:0c037af2fd536e60cde172ffa47b483e97eed2cc
   UnifiedTo/Models/Requests/ListAccountingInvoicesResponse.cs:
@@ -24906,7 +24914,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListRepoBranchesResponse.cs:
     last_write_checksum: sha1:58abf81ede75b710472048aa630f833dae7960a4
   UnifiedTo/Models/Requests/ListRepoCommitsQueryParamFields.cs:
-    last_write_checksum: sha1:52e1d5ca23c603b78205d78c3012d0726fa88e9c
+    last_write_checksum: sha1:cbe7103e9b951902f44873492f41334cf456b139
   UnifiedTo/Models/Requests/ListRepoCommitsRequest.cs:
     last_write_checksum: sha1:426bead258aa14cc37beeca972457a25d32b9b3a
   UnifiedTo/Models/Requests/ListRepoCommitsResponse.cs:
@@ -24918,7 +24926,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListRepoOrganizationsResponse.cs:
     last_write_checksum: sha1:3250f86add0de4035483e3cbb710937001e17da1
   UnifiedTo/Models/Requests/ListRepoPullrequestsQueryParamFields.cs:
-    last_write_checksum: sha1:016423d6b45b9df5e29537b8d059474a9066a026
+    last_write_checksum: sha1:31894a6c29f2e4d2634e49389ab798f1dad76c85
   UnifiedTo/Models/Requests/ListRepoPullrequestsRequest.cs:
     last_write_checksum: sha1:3e3e11e026eec0ef004f2f7e54385ce3b7b3ce83
   UnifiedTo/Models/Requests/ListRepoPullrequestsResponse.cs:
@@ -25144,7 +25152,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchAccountingAccountResponse.cs:
     last_write_checksum: sha1:bdbf37834a2a039c11a85dda5b6c14dd4013c12f
   UnifiedTo/Models/Requests/PatchAccountingBillQueryParamFields.cs:
-    last_write_checksum: sha1:f46a8aa2795adeaa10150dca58d4de4b9bde722e
+    last_write_checksum: sha1:24315bbfaa3373ff02fb7cc9f50663a0a31ea064
   UnifiedTo/Models/Requests/PatchAccountingBillRequest.cs:
     last_write_checksum: sha1:70678a3c1a8260dfa0ce5fcd154c4e4c8ac74d45
   UnifiedTo/Models/Requests/PatchAccountingBillResponse.cs:
@@ -25174,7 +25182,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchAccountingExpenseResponse.cs:
     last_write_checksum: sha1:8ecd5da70989882ea6dfbb1b6f1a696cfe2dc58c
   UnifiedTo/Models/Requests/PatchAccountingInvoiceQueryParamFields.cs:
-    last_write_checksum: sha1:e8b53a84278e4c3469d657fcfbd02dcf40580d9f
+    last_write_checksum: sha1:64f2a586fafedda1db6bbe2b729b2c672f6fdacf
   UnifiedTo/Models/Requests/PatchAccountingInvoiceRequest.cs:
     last_write_checksum: sha1:d2e37285cdc99d828d01e92e32032cb136ac21d7
   UnifiedTo/Models/Requests/PatchAccountingInvoiceResponse.cs:
@@ -25648,7 +25656,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchRepoBranchResponse.cs:
     last_write_checksum: sha1:8e703d7cef0a3995d509b56f764ba867b5072a7b
   UnifiedTo/Models/Requests/PatchRepoCommitQueryParamFields.cs:
-    last_write_checksum: sha1:dc38dc6b47e64eacd1f603808368347a5bd8a8cb
+    last_write_checksum: sha1:dd43e18b4d4d06238548ff815157d5ffd4bcb41a
   UnifiedTo/Models/Requests/PatchRepoCommitRequest.cs:
     last_write_checksum: sha1:3f16168a9c2ffd506ea1eeb65a0acf489b11b0c3
   UnifiedTo/Models/Requests/PatchRepoCommitResponse.cs:
@@ -25660,7 +25668,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchRepoOrganizationResponse.cs:
     last_write_checksum: sha1:9f84006dcda492c3a0799eddfa2a08742cca29c3
   UnifiedTo/Models/Requests/PatchRepoPullrequestQueryParamFields.cs:
-    last_write_checksum: sha1:e2a8a2053ff29c3271d0bbb40ca12f7eb429b34a
+    last_write_checksum: sha1:f561af926397e908b72352f595b1192d82050fbe
   UnifiedTo/Models/Requests/PatchRepoPullrequestRequest.cs:
     last_write_checksum: sha1:6f4bafb445f6b9f1b75b843b7eb0942fc9cac018
   UnifiedTo/Models/Requests/PatchRepoPullrequestResponse.cs:
@@ -26276,7 +26284,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateAccountingAccountResponse.cs:
     last_write_checksum: sha1:bb0290e3cf6d284207f0215097c74ff1cd2467b5
   UnifiedTo/Models/Requests/UpdateAccountingBillQueryParamFields.cs:
-    last_write_checksum: sha1:2644eae9d4b86db032ee006a42c8dd22ccd8dccf
+    last_write_checksum: sha1:b76b6178e9f28de2d4ccd7972d0dc06c4b6d91ea
   UnifiedTo/Models/Requests/UpdateAccountingBillRequest.cs:
     last_write_checksum: sha1:5c118203dd53d9dbe2a0bdd86c94549d7dcbbcbe
   UnifiedTo/Models/Requests/UpdateAccountingBillResponse.cs:
@@ -26306,7 +26314,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateAccountingExpenseResponse.cs:
     last_write_checksum: sha1:e597a9bcf82a652a6e5be43b96659e961c94e6c6
   UnifiedTo/Models/Requests/UpdateAccountingInvoiceQueryParamFields.cs:
-    last_write_checksum: sha1:00a5900eac9e2937fb1f6762286aa1df233a32e5
+    last_write_checksum: sha1:c2704b7bcba196bd2d9dd75dd0a93431ab162cdc
   UnifiedTo/Models/Requests/UpdateAccountingInvoiceRequest.cs:
     last_write_checksum: sha1:969bad0104b642b81e3a0b70132edfa79c23fe2a
   UnifiedTo/Models/Requests/UpdateAccountingInvoiceResponse.cs:
@@ -26780,7 +26788,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateRepoBranchResponse.cs:
     last_write_checksum: sha1:f7098c09217b7a851a25744f11dec3a7429830be
   UnifiedTo/Models/Requests/UpdateRepoCommitQueryParamFields.cs:
-    last_write_checksum: sha1:1972771c13bc185650b6b694f45c32c61d23ca59
+    last_write_checksum: sha1:598c64d4b5d0d954e92e34adc54e487e88cfdf83
   UnifiedTo/Models/Requests/UpdateRepoCommitRequest.cs:
     last_write_checksum: sha1:9d397415042d0434b9138e0ede516ca0260b3afa
   UnifiedTo/Models/Requests/UpdateRepoCommitResponse.cs:
@@ -26792,7 +26800,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateRepoOrganizationResponse.cs:
     last_write_checksum: sha1:a64957759e1e8f3520b39ad4d3c873c89f2b8559
   UnifiedTo/Models/Requests/UpdateRepoPullrequestQueryParamFields.cs:
-    last_write_checksum: sha1:c3ae9c9ac87c6327696be19aca5df2b2b56c77f4
+    last_write_checksum: sha1:dfba368c565ee7e808cf7f184544f370572431b5
   UnifiedTo/Models/Requests/UpdateRepoPullrequestRequest.cs:
     last_write_checksum: sha1:e84253394646abc9ab4c5e36a67e09e95b0a244e
   UnifiedTo/Models/Requests/UpdateRepoPullrequestResponse.cs:
@@ -27047,7 +27055,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:fe5368e1c32a270239d344e48369f36baec6c83f
+    last_write_checksum: sha1:a106970e468e36fd0b9b0674683c4603c3fbe946
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -27165,7 +27173,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:80bb2a3c6b44f1742b44738d810f79a67cd27244
+    last_write_checksum: sha1:21501da2586ccffd698df1981bd0400f962685c2
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -27273,7 +27281,7 @@ trackedFiles:
     pristine_git_object: b3600df968a4406b0a053c161ac60873389bb9ae
   docs/Models/Components/AccountingBill.md:
     id: be8a4e72b5d5
-    last_write_checksum: sha1:2db18dd109c5db3a443fafa4105ec735b065d303
+    last_write_checksum: sha1:864ab24107d63486ed4dd7bee6d9b154abed228d
     pristine_git_object: d4793430b2cf837c99f29b91dbe82e5f2b7def77
   docs/Models/Components/AccountingBillStatus.md:
     id: ca51803234ad
@@ -27337,7 +27345,7 @@ trackedFiles:
     last_write_checksum: sha1:1ea4474284fed826b5d880748546d75bf876c3b2
   docs/Models/Components/AccountingInvoice.md:
     id: 70b36ab66721
-    last_write_checksum: sha1:43e8dee5a5c4ee01109ed5da5c21dfe1c5a27a06
+    last_write_checksum: sha1:28b44ce95c6c5b429b6e9c902d7d30495b7b4cc1
     pristine_git_object: 45486571763853036f05cb2c70f484c6c19e729a
   docs/Models/Components/AccountingInvoicePaymentCollectionMethod.md:
     id: 7c1ad394f411
@@ -27347,6 +27355,8 @@ trackedFiles:
     id: 072c4ca1908f
     last_write_checksum: sha1:8d08e3cd343f0a37b908b7735e8f1437e1e22fe3
     pristine_git_object: a43a64aa619b31a7af50d99dba93dbf5bf8525c4
+  docs/Models/Components/AccountingInvoiceTerm.md:
+    last_write_checksum: sha1:51368231b2676cca662b55b35aafb7e0e8cd9cf2
   docs/Models/Components/AccountingInvoiceType.md:
     id: a3713dc93626
     last_write_checksum: sha1:c8308d9d7a7b46b6f18e444ec64171d8567a13a3
@@ -29613,7 +29623,7 @@ trackedFiles:
     pristine_git_object: 615c6b2600aec26d41f24eb241a157d26b1b3e42
   docs/Models/Components/RepoCommit.md:
     id: c2b057971a61
-    last_write_checksum: sha1:4d0fe5b2db8bb9ae28c5f3ed9ab187ee0fbad7ae
+    last_write_checksum: sha1:f629b6c8d5c550b3b31f65ec9eb17e85483970e4
     pristine_git_object: 45575c78568b9e8a400129bed5967a87f4f96291
   docs/Models/Components/RepoOrganization.md:
     id: d6dc9f7c3b85
@@ -29621,7 +29631,7 @@ trackedFiles:
     pristine_git_object: 16740f107caceb30ecd360b05dd4d573d50c6b0b
   docs/Models/Components/RepoPullrequest.md:
     id: 668269d604fa
-    last_write_checksum: sha1:ecd59ae1f3108089c7d2675ef2555ac2c025cc69
+    last_write_checksum: sha1:19059b326b851f6b63968825bf5b3b16eb9bdd72
     pristine_git_object: 9514f511bf699bc8a34037fc656c25af5fe8c715
   docs/Models/Components/RepoPullrequestStatus.md:
     id: d346249a6c10
@@ -29905,6 +29915,8 @@ trackedFiles:
     pristine_git_object: 1838d2a02e455ad2392c72b5a5446ea495ce5aab
   docs/Models/Components/TaxesPaidBy.md:
     last_write_checksum: sha1:f956d5be37037bc5e5fd9c34c50c1d325fc0bcab
+  docs/Models/Components/Term.md:
+    last_write_checksum: sha1:b9d30b50c4203982006bf7a717b8f7ce8c4d7298
   docs/Models/Components/TicketingCategory.md:
     id: 0dec047a6619
     last_write_checksum: sha1:7dabaa5375001bbabdbc9bc8aa07a52c4b38ca8c
@@ -30264,7 +30276,7 @@ trackedFiles:
   docs/Models/Requests/CreateAccountingAccountResponse.md:
     last_write_checksum: sha1:c1c86a95de9385b9b4fc5221f96fa694d9e75c58
   docs/Models/Requests/CreateAccountingBillQueryParamFields.md:
-    last_write_checksum: sha1:ef172ea87a7fc8acce7e4429ec688dcfb3c00da8
+    last_write_checksum: sha1:12ab402683dd004c07e6e41a295d00faaa01220a
   docs/Models/Requests/CreateAccountingBillRequest.md:
     last_write_checksum: sha1:8967fd495ecac8c4880d0c298d0b00ea49e7e6ef
   docs/Models/Requests/CreateAccountingBillResponse.md:
@@ -30294,7 +30306,7 @@ trackedFiles:
   docs/Models/Requests/CreateAccountingExpenseResponse.md:
     last_write_checksum: sha1:1107c1b5e8f64e312fd8d44d57e4805f6b67de0d
   docs/Models/Requests/CreateAccountingInvoiceQueryParamFields.md:
-    last_write_checksum: sha1:39275b595fd129dfde9c5d8851e6ce91bfb51320
+    last_write_checksum: sha1:d931876067838f828723fda5010025ad68dc4e07
   docs/Models/Requests/CreateAccountingInvoiceRequest.md:
     last_write_checksum: sha1:5c497898568fa467777050b51515f21178b649ca
   docs/Models/Requests/CreateAccountingInvoiceResponse.md:
@@ -30780,7 +30792,7 @@ trackedFiles:
   docs/Models/Requests/CreateRepoBranchResponse.md:
     last_write_checksum: sha1:797ecac51f4a97e946cd9f0e4ea4f900de28d09f
   docs/Models/Requests/CreateRepoCommitQueryParamFields.md:
-    last_write_checksum: sha1:30a5757696da1383bdd5b7987a78549e922e7432
+    last_write_checksum: sha1:419f8f09f7f7f7110fccff900f8f6d866ec56f17
   docs/Models/Requests/CreateRepoCommitRequest.md:
     last_write_checksum: sha1:629834d3917ff105b2f2d2e35f8948466f56db62
   docs/Models/Requests/CreateRepoCommitResponse.md:
@@ -30792,7 +30804,7 @@ trackedFiles:
   docs/Models/Requests/CreateRepoOrganizationResponse.md:
     last_write_checksum: sha1:715547e0a1c8315be23062953b3be89cbc658983
   docs/Models/Requests/CreateRepoPullrequestQueryParamFields.md:
-    last_write_checksum: sha1:6d740f36940d1321e71cefe959315e3d4dd28bb1
+    last_write_checksum: sha1:1595daa815d73169b153bdac6a99d56c4ba34d07
   docs/Models/Requests/CreateRepoPullrequestRequest.md:
     last_write_checksum: sha1:c537a9df332f179ac912b79192c45896f0d6bdf1
   docs/Models/Requests/CreateRepoPullrequestResponse.md:
@@ -30952,7 +30964,7 @@ trackedFiles:
   docs/Models/Requests/GetAccountingBalancesheetResponse.md:
     last_write_checksum: sha1:b83dd83ee18bcba85af6ce93b64f6835f9e0def8
   docs/Models/Requests/GetAccountingBillQueryParamFields.md:
-    last_write_checksum: sha1:3a060137d1c7f26535b2139c8e7c0f7635dc19dc
+    last_write_checksum: sha1:4741e510146264e223ea330a27073ad649ae0cc3
   docs/Models/Requests/GetAccountingBillRequest.md:
     last_write_checksum: sha1:e6553fe3af12747c772c446d451a8641b3dd759c
   docs/Models/Requests/GetAccountingBillResponse.md:
@@ -30988,7 +31000,7 @@ trackedFiles:
   docs/Models/Requests/GetAccountingExpenseResponse.md:
     last_write_checksum: sha1:bd116033d31c222bd8ac36716020b8987915c1a7
   docs/Models/Requests/GetAccountingInvoiceQueryParamFields.md:
-    last_write_checksum: sha1:f00336914a4df361924a386f2f7f571c0e8c89b4
+    last_write_checksum: sha1:e6fafc52443f176ca33caaed87114e78b1b74399
   docs/Models/Requests/GetAccountingInvoiceRequest.md:
     last_write_checksum: sha1:ce6075beca3f23f5c81989a5cd4ed6ed3dde5572
   docs/Models/Requests/GetAccountingInvoiceResponse.md:
@@ -31562,7 +31574,7 @@ trackedFiles:
   docs/Models/Requests/GetRepoBranchResponse.md:
     last_write_checksum: sha1:7d2de69332d775b026236ad5ce90a78affce2531
   docs/Models/Requests/GetRepoCommitQueryParamFields.md:
-    last_write_checksum: sha1:78fc66c724842d6953aaef5c5a22ddcdca784fd3
+    last_write_checksum: sha1:07249f095ff2f8fdb28a1156465624b15ed360cc
   docs/Models/Requests/GetRepoCommitRequest.md:
     last_write_checksum: sha1:e9c3ff937d6992d4fc102d97f29602eec6f7c149
   docs/Models/Requests/GetRepoCommitResponse.md:
@@ -31574,7 +31586,7 @@ trackedFiles:
   docs/Models/Requests/GetRepoOrganizationResponse.md:
     last_write_checksum: sha1:3c9d26685f908044a88c512b9da8a277dc4470c2
   docs/Models/Requests/GetRepoPullrequestQueryParamFields.md:
-    last_write_checksum: sha1:33082c8b57b85461de80357addd010f66f858e2c
+    last_write_checksum: sha1:3d7326101c630c679e8eeaa7d85d17c034b620b0
   docs/Models/Requests/GetRepoPullrequestRequest.md:
     last_write_checksum: sha1:c6b2789df21284228aa9c8cdb1a854d8121552b4
   docs/Models/Requests/GetRepoPullrequestResponse.md:
@@ -31798,7 +31810,7 @@ trackedFiles:
   docs/Models/Requests/ListAccountingBalancesheetsResponse.md:
     last_write_checksum: sha1:ed2c3d685042de51c7459e6a79b7be8068ddcad9
   docs/Models/Requests/ListAccountingBillsQueryParamFields.md:
-    last_write_checksum: sha1:878d9699c84607de19e078528f04f010d2fe4f9d
+    last_write_checksum: sha1:78a7c94a323c6ba86bed4a93a36a3f880634a87f
   docs/Models/Requests/ListAccountingBillsRequest.md:
     last_write_checksum: sha1:8aaf9f5b46121b450a973943af8d87531f5e1902
   docs/Models/Requests/ListAccountingBillsResponse.md:
@@ -31834,7 +31846,7 @@ trackedFiles:
   docs/Models/Requests/ListAccountingExpensesResponse.md:
     last_write_checksum: sha1:ba31da8f3b8b6b7741137ca19c43637cb0a86631
   docs/Models/Requests/ListAccountingInvoicesQueryParamFields.md:
-    last_write_checksum: sha1:f6ec20592b0966180a91e5e6b9ba15f9b823a9ee
+    last_write_checksum: sha1:014621458c9a137caf1621aa3291c6d525516671
   docs/Models/Requests/ListAccountingInvoicesRequest.md:
     last_write_checksum: sha1:822d0b4603b7eb802316efbb85b7a93fd7656e38
   docs/Models/Requests/ListAccountingInvoicesResponse.md:
@@ -32462,7 +32474,7 @@ trackedFiles:
   docs/Models/Requests/ListRepoBranchesResponse.md:
     last_write_checksum: sha1:e835203fe786d8ac8895a78977c71f760edc4060
   docs/Models/Requests/ListRepoCommitsQueryParamFields.md:
-    last_write_checksum: sha1:6c6d4500c95a7dd35bc2c1e773955d5df624fa40
+    last_write_checksum: sha1:5f21d166136ef919463038a24d6ba9d0d570bd1c
   docs/Models/Requests/ListRepoCommitsRequest.md:
     last_write_checksum: sha1:8ec7b623e1321d0ecb56a725583d87aa8514ccf7
   docs/Models/Requests/ListRepoCommitsResponse.md:
@@ -32474,7 +32486,7 @@ trackedFiles:
   docs/Models/Requests/ListRepoOrganizationsResponse.md:
     last_write_checksum: sha1:2e2de581bec0a125eb85f804bb06165304bbbd6c
   docs/Models/Requests/ListRepoPullrequestsQueryParamFields.md:
-    last_write_checksum: sha1:4c5a75b513d861bc0924cdb16218d138606e091b
+    last_write_checksum: sha1:406d9fd90b51649d296a2c60e2d4bafc2c296225
   docs/Models/Requests/ListRepoPullrequestsRequest.md:
     last_write_checksum: sha1:b8509393da78868a0ee12af0174369bea58d6b0b
   docs/Models/Requests/ListRepoPullrequestsResponse.md:
@@ -32700,7 +32712,7 @@ trackedFiles:
   docs/Models/Requests/PatchAccountingAccountResponse.md:
     last_write_checksum: sha1:37262a78f06535cda7b8974dca8e989301af8a3e
   docs/Models/Requests/PatchAccountingBillQueryParamFields.md:
-    last_write_checksum: sha1:e7e2e1bdcd9c43fd0c3d63f8e3450a08fbb68735
+    last_write_checksum: sha1:7a890ddf3320e66f7340d96f7ec5e3591e68edac
   docs/Models/Requests/PatchAccountingBillRequest.md:
     last_write_checksum: sha1:fb01638351606b5b575676b0cfd3893606a4bf8e
   docs/Models/Requests/PatchAccountingBillResponse.md:
@@ -32730,7 +32742,7 @@ trackedFiles:
   docs/Models/Requests/PatchAccountingExpenseResponse.md:
     last_write_checksum: sha1:bae1d16df0d3575267c071f4673ddcda0ea0f378
   docs/Models/Requests/PatchAccountingInvoiceQueryParamFields.md:
-    last_write_checksum: sha1:748cf10d5caa31859e2775a5960080b5d6e7857d
+    last_write_checksum: sha1:1e5b4ef2a645d563997cc90b5a57ed84845dbd3f
   docs/Models/Requests/PatchAccountingInvoiceRequest.md:
     last_write_checksum: sha1:4e80a7448da27effbee95de142cd709af5453dc4
   docs/Models/Requests/PatchAccountingInvoiceResponse.md:
@@ -33204,7 +33216,7 @@ trackedFiles:
   docs/Models/Requests/PatchRepoBranchResponse.md:
     last_write_checksum: sha1:0b4c5c7cf01f41ec43565be538452f37c56735a1
   docs/Models/Requests/PatchRepoCommitQueryParamFields.md:
-    last_write_checksum: sha1:e9f7e38f313592ed04ac166196b8b7e851828107
+    last_write_checksum: sha1:5041c0619ac766c5c801a3eb0c27b65a0278ffbd
   docs/Models/Requests/PatchRepoCommitRequest.md:
     last_write_checksum: sha1:de33b7add124e776609d907b51f843ea982f5987
   docs/Models/Requests/PatchRepoCommitResponse.md:
@@ -33216,7 +33228,7 @@ trackedFiles:
   docs/Models/Requests/PatchRepoOrganizationResponse.md:
     last_write_checksum: sha1:8e6e3851e3b3c9f33beeb3d69bd989592eaf5d8c
   docs/Models/Requests/PatchRepoPullrequestQueryParamFields.md:
-    last_write_checksum: sha1:bc19eed90d77263472f3016dd6ff05b8f424adeb
+    last_write_checksum: sha1:590f8bfd14d950091eb73e2b0ba2a398b28a2492
   docs/Models/Requests/PatchRepoPullrequestRequest.md:
     last_write_checksum: sha1:9b4cf154ba089a89c3f2fb49d884a2f758515334
   docs/Models/Requests/PatchRepoPullrequestResponse.md:
@@ -33832,7 +33844,7 @@ trackedFiles:
   docs/Models/Requests/UpdateAccountingAccountResponse.md:
     last_write_checksum: sha1:f7e1e46b189178b31a4d9659f39db7c0bd152c0f
   docs/Models/Requests/UpdateAccountingBillQueryParamFields.md:
-    last_write_checksum: sha1:4b2d9e1728751305599821356f27aa8408b804c1
+    last_write_checksum: sha1:33af132a9daeef2576a79388129cebd73bb25a2d
   docs/Models/Requests/UpdateAccountingBillRequest.md:
     last_write_checksum: sha1:a9b5bbefa825a462ea9bb578b17c7560f8d50c43
   docs/Models/Requests/UpdateAccountingBillResponse.md:
@@ -33862,7 +33874,7 @@ trackedFiles:
   docs/Models/Requests/UpdateAccountingExpenseResponse.md:
     last_write_checksum: sha1:ae39ad83346e6b1c40e8a4ad2ac8f37fa8373b33
   docs/Models/Requests/UpdateAccountingInvoiceQueryParamFields.md:
-    last_write_checksum: sha1:8e746e0fb171dc8f4cb1c93fc54bb1287428e65e
+    last_write_checksum: sha1:083ab97b84c8d0f38e125048b08ec6ff2fc4a5d4
   docs/Models/Requests/UpdateAccountingInvoiceRequest.md:
     last_write_checksum: sha1:5c8d36c4726ee2c0cb73ad1631a373233b959981
   docs/Models/Requests/UpdateAccountingInvoiceResponse.md:
@@ -34336,7 +34348,7 @@ trackedFiles:
   docs/Models/Requests/UpdateRepoBranchResponse.md:
     last_write_checksum: sha1:93413801138fd889c64f1b2e45372d0c3b943859
   docs/Models/Requests/UpdateRepoCommitQueryParamFields.md:
-    last_write_checksum: sha1:d1f320040bc8351961c68d0971ec3ea0c0dbe018
+    last_write_checksum: sha1:e649bcfb8ab912ba7a50da1b45fd7e8d9f569860
   docs/Models/Requests/UpdateRepoCommitRequest.md:
     last_write_checksum: sha1:f9ff5595e9f92a3384c881ee65f7f4b839c8df21
   docs/Models/Requests/UpdateRepoCommitResponse.md:
@@ -34348,7 +34360,7 @@ trackedFiles:
   docs/Models/Requests/UpdateRepoOrganizationResponse.md:
     last_write_checksum: sha1:2b641cf80763b75e6b270cd112aebca3dfb2ac60
   docs/Models/Requests/UpdateRepoPullrequestQueryParamFields.md:
-    last_write_checksum: sha1:28767ad88febba675398c640c6492416a4c2e3b6
+    last_write_checksum: sha1:f511a5faa0cf16d3ddd7fcf5c7bc85d7d185d104
   docs/Models/Requests/UpdateRepoPullrequestRequest.md:
     last_write_checksum: sha1:f8aee73c5ce355a6dd0b444cbb5ec2332d6b75e2
   docs/Models/Requests/UpdateRepoPullrequestResponse.md:

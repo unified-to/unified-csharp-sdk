@@ -7,48 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace UnifiedTo.Models.Requests
+namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
     
-    public enum UpdateRepoCommitQueryParamFields
+    public enum AccountingInvoiceTerm
     {
-        [JsonProperty("id")]
-        Id,
-        [JsonProperty("created_at")]
-        CreatedAt,
-        [JsonProperty("updated_at")]
-        UpdatedAt,
-        [JsonProperty("user_id")]
-        UserId,
-        [JsonProperty("repo_id")]
-        RepoId,
-        [JsonProperty("message")]
-        Message,
-        [JsonProperty("branch_id")]
-        BranchId,
-        [JsonProperty("lines_added")]
-        LinesAdded,
-        [JsonProperty("lines_deleted")]
-        LinesDeleted,
-        [JsonProperty("lines_changed")]
-        LinesChanged,
-        [JsonProperty("raw")]
-        Raw,
+        [JsonProperty("ON_RECEIPT")]
+        OnReceipt,
+        [JsonProperty("NET_10")]
+        Net10,
+        [JsonProperty("NET_15")]
+        Net15,
+        [JsonProperty("NET_30")]
+        Net30,
+        [JsonProperty("NET_60")]
+        Net60,
     }
 
-    public static class UpdateRepoCommitQueryParamFieldsExtension
+    public static class AccountingInvoiceTermExtension
     {
-        public static string Value(this UpdateRepoCommitQueryParamFields value)
+        public static string Value(this AccountingInvoiceTerm value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static UpdateRepoCommitQueryParamFields ToEnum(this string value)
+        public static AccountingInvoiceTerm ToEnum(this string value)
         {
-            foreach(var field in typeof(UpdateRepoCommitQueryParamFields).GetFields())
+            foreach(var field in typeof(AccountingInvoiceTerm).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -61,14 +49,14 @@ namespace UnifiedTo.Models.Requests
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is UpdateRepoCommitQueryParamFields)
+                    if (enumVal is AccountingInvoiceTerm)
                     {
-                        return (UpdateRepoCommitQueryParamFields)enumVal;
+                        return (AccountingInvoiceTerm)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum UpdateRepoCommitQueryParamFields");
+            throw new Exception($"Unknown value {value} for enum AccountingInvoiceTerm");
         }
     }
 

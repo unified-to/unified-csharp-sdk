@@ -19,6 +19,8 @@ namespace UnifiedTo.Models.Requests
         Id,
         [JsonProperty("bill_number")]
         BillNumber,
+        [JsonProperty("term")]
+        Term,
         [JsonProperty("created_at")]
         CreatedAt,
         [JsonProperty("updated_at")]

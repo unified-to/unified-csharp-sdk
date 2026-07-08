@@ -26,6 +26,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("lines_added")]
+        public double? LinesAdded { get; set; }
+
+        [JsonProperty("lines_changed")]
+        public double? LinesChanged { get; set; }
+
+        [JsonProperty("lines_deleted")]
+        public double? LinesDeleted { get; set; }
+
         [JsonProperty("message")]
         public string? Message { get; set; }
 

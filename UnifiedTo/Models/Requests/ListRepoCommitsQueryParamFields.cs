@@ -29,6 +29,12 @@ namespace UnifiedTo.Models.Requests
         Message,
         [JsonProperty("branch_id")]
         BranchId,
+        [JsonProperty("lines_added")]
+        LinesAdded,
+        [JsonProperty("lines_deleted")]
+        LinesDeleted,
+        [JsonProperty("lines_changed")]
+        LinesChanged,
         [JsonProperty("raw")]
         Raw,
     }

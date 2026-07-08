@@ -55,6 +55,8 @@ namespace UnifiedTo.Models.Requests
         Notes,
         [JsonProperty("refund_reason")]
         RefundReason,
+        [JsonProperty("term")]
+        Term,
         [JsonProperty("lineitems")]
         Lineitems,
         [JsonProperty("status")]

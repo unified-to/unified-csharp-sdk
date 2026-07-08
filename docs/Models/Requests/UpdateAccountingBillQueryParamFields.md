@@ -7,6 +7,7 @@
 | ------------------------- | ------------------------- |
 | `Id`                      | id                        |
 | `BillNumber`              | bill_number               |
+| `Term`                    | term                      |
 | `CreatedAt`               | created_at                |
 | `UpdatedAt`               | updated_at                |
 | `DueAt`                   | due_at                    |
