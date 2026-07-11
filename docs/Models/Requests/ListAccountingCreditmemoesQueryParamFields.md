@@ -21,6 +21,7 @@
 | `BalanceAmount`           | balance_amount            |
 | `CreditmemoNumber`        | creditmemo_number         |
 | `ContactId`               | contact_id                |
+| `InvoiceId`               | invoice_id                |
 | `Currency`                | currency                  |
 | `Notes`                   | notes                     |
 | `RefundReason`            | refund_reason             |

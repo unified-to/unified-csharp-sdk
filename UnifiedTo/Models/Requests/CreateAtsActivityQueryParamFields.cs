@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         SubType,
         [JsonProperty("company_id")]
         CompanyId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

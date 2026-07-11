@@ -38,6 +38,12 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
+        /// The project ID to filter by (reference to TaskProject)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=project_id")]
+        public string? ProjectId { get; set; }
+
+        /// <summary>
         /// Query string to search. eg. email address or name
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]

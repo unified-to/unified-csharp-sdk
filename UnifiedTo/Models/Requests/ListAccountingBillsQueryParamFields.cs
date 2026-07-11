@@ -19,8 +19,6 @@ namespace UnifiedTo.Models.Requests
         Id,
         [JsonProperty("bill_number")]
         BillNumber,
-        [JsonProperty("term")]
-        Term,
         [JsonProperty("created_at")]
         CreatedAt,
         [JsonProperty("updated_at")]
@@ -71,6 +69,8 @@ namespace UnifiedTo.Models.Requests
         OrganizationId,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("term")]
+        Term,
     }
 
     public static class ListAccountingBillsQueryParamFieldsExtension

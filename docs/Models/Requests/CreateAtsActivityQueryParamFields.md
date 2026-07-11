@@ -24,4 +24,5 @@
 | `Bcc`           | bcc             |
 | `SubType`       | sub_type        |
 | `CompanyId`     | company_id      |
+| `Metadata`      | metadata        |
 | `Raw`           | raw             |

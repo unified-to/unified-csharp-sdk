@@ -47,6 +47,8 @@ namespace UnifiedTo.Models.Requests
         CreditmemoNumber,
         [JsonProperty("contact_id")]
         ContactId,
+        [JsonProperty("invoice_id")]
+        InvoiceId,
         [JsonProperty("currency")]
         Currency,
         [JsonProperty("notes")]

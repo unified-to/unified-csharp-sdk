@@ -60,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AtsMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

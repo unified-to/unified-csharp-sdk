@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("invoice_id")]
+        public string? InvoiceId { get; set; }
+
         [JsonProperty("lineitems")]
         public List<AccountingLineitem>? Lineitems { get; set; }
 
