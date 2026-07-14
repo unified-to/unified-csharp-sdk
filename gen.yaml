@@ -24,7 +24,7 @@ generation:
     allOfMergeStrategy: shallowMerge
   versioningStrategy: automatic
 csharp:
-  version: 0.130.86
+  version: 0.130.87
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
@@ -56,11 +56,13 @@ csharp:
   outputModelSuffix: output
   packageName: UnifiedTo
   packageTags: ""
+  presenceAwareJsonSerialization: false
   product: ""
   respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope
   sourceDirectory: ""
   targetFramework: dotnetVersion
+  unionStrategy: left-to-right
   useNodatime: true
 ruby:
   version: 0.0.1

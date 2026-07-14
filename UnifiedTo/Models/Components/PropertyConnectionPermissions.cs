@@ -293,6 +293,10 @@ namespace UnifiedTo.Models.Components
         HrisBankaccountRead,
         [JsonProperty("hris_bankaccount_write")]
         HrisBankaccountWrite,
+        [JsonProperty("hris_document_read")]
+        HrisDocumentRead,
+        [JsonProperty("hris_document_write")]
+        HrisDocumentWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
         [JsonProperty("uc_contact_read")]

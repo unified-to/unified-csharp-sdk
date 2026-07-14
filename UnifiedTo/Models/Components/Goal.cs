@@ -19,6 +19,8 @@ namespace UnifiedTo.Models.Components
         Unspecified,
         [JsonProperty("BRAND_AWARENESS")]
         BrandAwareness,
+        [JsonProperty("ENGAGEMENT")]
+        Engagement,
         [JsonProperty("REACH")]
         Reach,
         [JsonProperty("WEBSITE_TRAFFIC")]

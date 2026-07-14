@@ -32,4 +32,5 @@
 | `Attachments`             | attachments               |
 | `Send`                    | send                      |
 | `OrganizationId`          | organization_id           |
+| `ApplyAmount`             | apply_amount              |
 | `Raw`                     | raw                       |

@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class AccountingCreditmemo
     {
 
+        [JsonProperty("apply_amount")]
+        public double? ApplyAmount { get; set; }
+
         [JsonProperty("attachments")]
         public List<AccountingAttachment>? Attachments { get; set; }
 

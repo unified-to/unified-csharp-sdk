@@ -33,8 +33,12 @@ namespace UnifiedTo.Models.Requests
         Status,
         [JsonProperty("ad_type")]
         AdType,
+        [JsonProperty("advertiser_name")]
+        AdvertiserName,
         [JsonProperty("creative_ids")]
         CreativeIds,
+        [JsonProperty("logo_creative_id")]
+        LogoCreativeId,
         [JsonProperty("creative_asset_url")]
         CreativeAssetUrl,
         [JsonProperty("ad_copy")]

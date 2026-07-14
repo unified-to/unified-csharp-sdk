@@ -70,6 +70,7 @@
 | `HrisDeduction`           | hris_deduction            |
 | `HrisBenefit`             | hris_benefit              |
 | `HrisBankaccount`         | hris_bankaccount          |
+| `HrisDocument`            | hris_document             |
 | `MartechList`             | martech_list              |
 | `MartechMember`           | martech_member            |
 | `MartechCampaign`         | martech_campaign          |

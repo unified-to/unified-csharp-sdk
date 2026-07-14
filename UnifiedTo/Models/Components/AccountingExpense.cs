@@ -27,6 +27,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("approver_user_id")]
         public string? ApproverUserId { get; set; }
 
+        [JsonProperty("attachments")]
+        public List<AccountingAttachment>? Attachments { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 

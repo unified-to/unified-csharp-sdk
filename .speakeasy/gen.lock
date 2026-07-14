@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 765c9a8f026f994299cd84192f56c8b0
+  docChecksum: e58e7c5b7a4389898dcda6779b875038
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.86
-  configChecksum: 46d2c87aa6e23188c67c6999f2f66268
+  releaseVersion: 0.130.87
+  configChecksum: 79404909bec364c3e29eca78916796ab
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -425,6 +425,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisDeductionFrequency.cs
   - UnifiedTo/Models/Components/HrisDeductionType.cs
   - UnifiedTo/Models/Components/HrisDevice.cs
+  - UnifiedTo/Models/Components/HrisDocument.cs
+  - UnifiedTo/Models/Components/HrisDocumentType.cs
   - UnifiedTo/Models/Components/HrisEmail.cs
   - UnifiedTo/Models/Components/HrisEmailType.cs
   - UnifiedTo/Models/Components/HrisEmployee.cs
@@ -508,6 +510,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListExpand.cs
   - UnifiedTo/Models/Components/ListFormId.cs
   - UnifiedTo/Models/Components/ListFulltext.cs
+  - UnifiedTo/Models/Components/ListGoal.cs
   - UnifiedTo/Models/Components/ListGroupId.cs
   - UnifiedTo/Models/Components/ListInstructorId.cs
   - UnifiedTo/Models/Components/ListInterviewId.cs
@@ -1259,6 +1262,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateHrisDeviceQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisDeviceResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/CreateHrisDocumentRequest.cs
+  - UnifiedTo/Models/Requests/CreateHrisDocumentResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeResponse.cs
@@ -1634,6 +1640,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetHrisDeviceQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/GetHrisDeviceResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetHrisDocumentRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisDocumentResponse.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeResponse.cs
@@ -2063,6 +2072,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListHrisDevicesQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListHrisDevicesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisDevicesResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisDocumentsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListHrisDocumentsRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisDocumentsResponse.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesResponse.cs
@@ -2426,6 +2438,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchHrisDeviceQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisDeviceResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/PatchHrisDocumentRequest.cs
+  - UnifiedTo/Models/Requests/PatchHrisDocumentResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeResponse.cs
@@ -2693,6 +2708,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveHrisDeductionResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisDeviceResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisDocumentRequest.cs
+  - UnifiedTo/Models/Requests/RemoveHrisDocumentResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisGroupRequest.cs
@@ -2971,6 +2988,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateHrisDeviceQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisDeviceResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/UpdateHrisDocumentRequest.cs
+  - UnifiedTo/Models/Requests/UpdateHrisDocumentResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeResponse.cs
@@ -3511,6 +3531,8 @@ generatedFiles:
   - docs/Models/Components/HrisDeductionFrequency.md
   - docs/Models/Components/HrisDeductionType.md
   - docs/Models/Components/HrisDevice.md
+  - docs/Models/Components/HrisDocument.md
+  - docs/Models/Components/HrisDocumentType.md
   - docs/Models/Components/HrisEmail.md
   - docs/Models/Components/HrisEmailType.md
   - docs/Models/Components/HrisEmployee.md
@@ -3594,6 +3616,7 @@ generatedFiles:
   - docs/Models/Components/ListExpand.md
   - docs/Models/Components/ListFormId.md
   - docs/Models/Components/ListFulltext.md
+  - docs/Models/Components/ListGoal.md
   - docs/Models/Components/ListGroupId.md
   - docs/Models/Components/ListInstructorId.md
   - docs/Models/Components/ListInterviewId.md
@@ -4344,6 +4367,9 @@ generatedFiles:
   - docs/Models/Requests/CreateHrisDeviceQueryParamFields.md
   - docs/Models/Requests/CreateHrisDeviceRequest.md
   - docs/Models/Requests/CreateHrisDeviceResponse.md
+  - docs/Models/Requests/CreateHrisDocumentQueryParamFields.md
+  - docs/Models/Requests/CreateHrisDocumentRequest.md
+  - docs/Models/Requests/CreateHrisDocumentResponse.md
   - docs/Models/Requests/CreateHrisEmployeeQueryParamFields.md
   - docs/Models/Requests/CreateHrisEmployeeRequest.md
   - docs/Models/Requests/CreateHrisEmployeeResponse.md
@@ -4719,6 +4745,9 @@ generatedFiles:
   - docs/Models/Requests/GetHrisDeviceQueryParamFields.md
   - docs/Models/Requests/GetHrisDeviceRequest.md
   - docs/Models/Requests/GetHrisDeviceResponse.md
+  - docs/Models/Requests/GetHrisDocumentQueryParamFields.md
+  - docs/Models/Requests/GetHrisDocumentRequest.md
+  - docs/Models/Requests/GetHrisDocumentResponse.md
   - docs/Models/Requests/GetHrisEmployeeQueryParamFields.md
   - docs/Models/Requests/GetHrisEmployeeRequest.md
   - docs/Models/Requests/GetHrisEmployeeResponse.md
@@ -5148,6 +5177,9 @@ generatedFiles:
   - docs/Models/Requests/ListHrisDevicesQueryParamFields.md
   - docs/Models/Requests/ListHrisDevicesRequest.md
   - docs/Models/Requests/ListHrisDevicesResponse.md
+  - docs/Models/Requests/ListHrisDocumentsQueryParamFields.md
+  - docs/Models/Requests/ListHrisDocumentsRequest.md
+  - docs/Models/Requests/ListHrisDocumentsResponse.md
   - docs/Models/Requests/ListHrisEmployeesQueryParamFields.md
   - docs/Models/Requests/ListHrisEmployeesRequest.md
   - docs/Models/Requests/ListHrisEmployeesResponse.md
@@ -5511,6 +5543,9 @@ generatedFiles:
   - docs/Models/Requests/PatchHrisDeviceQueryParamFields.md
   - docs/Models/Requests/PatchHrisDeviceRequest.md
   - docs/Models/Requests/PatchHrisDeviceResponse.md
+  - docs/Models/Requests/PatchHrisDocumentQueryParamFields.md
+  - docs/Models/Requests/PatchHrisDocumentRequest.md
+  - docs/Models/Requests/PatchHrisDocumentResponse.md
   - docs/Models/Requests/PatchHrisEmployeeQueryParamFields.md
   - docs/Models/Requests/PatchHrisEmployeeRequest.md
   - docs/Models/Requests/PatchHrisEmployeeResponse.md
@@ -5778,6 +5813,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveHrisDeductionResponse.md
   - docs/Models/Requests/RemoveHrisDeviceRequest.md
   - docs/Models/Requests/RemoveHrisDeviceResponse.md
+  - docs/Models/Requests/RemoveHrisDocumentRequest.md
+  - docs/Models/Requests/RemoveHrisDocumentResponse.md
   - docs/Models/Requests/RemoveHrisEmployeeRequest.md
   - docs/Models/Requests/RemoveHrisEmployeeResponse.md
   - docs/Models/Requests/RemoveHrisGroupRequest.md
@@ -6056,6 +6093,9 @@ generatedFiles:
   - docs/Models/Requests/UpdateHrisDeviceQueryParamFields.md
   - docs/Models/Requests/UpdateHrisDeviceRequest.md
   - docs/Models/Requests/UpdateHrisDeviceResponse.md
+  - docs/Models/Requests/UpdateHrisDocumentQueryParamFields.md
+  - docs/Models/Requests/UpdateHrisDocumentRequest.md
+  - docs/Models/Requests/UpdateHrisDocumentResponse.md
   - docs/Models/Requests/UpdateHrisEmployeeQueryParamFields.md
   - docs/Models/Requests/UpdateHrisEmployeeRequest.md
   - docs/Models/Requests/UpdateHrisEmployeeResponse.md
@@ -19341,6 +19381,61 @@ examples:
       responses:
         "200":
           application/json: {}
+  createHrisDocument:
+    speakeasy-default-create-hris-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getHrisDocument:
+    speakeasy-default-get-hris-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listHrisDocuments:
+    speakeasy-default-list-hris-documents:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchHrisDocument:
+    speakeasy-default-patch-hris-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeHrisDocument:
+    speakeasy-default-remove-hris-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateHrisDocument:
+    speakeasy-default-update-hris-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -19533,7 +19628,7 @@ trackedFiles:
     pristine_git_object: 4e19d072507ab445b870eb28255c4bac265114e9
   UnifiedTo/Document.cs:
     id: 74c5ba2aec9d
-    last_write_checksum: sha1:d6338323c0555a52f0f9cc8fd0e55cbbc9a15678
+    last_write_checksum: sha1:253075fe6d3e5dfcf111ab71fb0affe8da90fc02
     pristine_git_object: fecf226eb095e61db2d45448fc4dfe741fecb7dc
   UnifiedTo/Embedding.cs:
     id: 5a43183766d3
@@ -19585,7 +19680,7 @@ trackedFiles:
     pristine_git_object: 1e8c7fdd97e05cfa97c7b4f812d92a03a9d3c8e6
   UnifiedTo/Hris.cs:
     id: ee509f497b6d
-    last_write_checksum: sha1:74c4e1c944032cc548c918cdab6b42d23c3fa3de
+    last_write_checksum: sha1:61c9ee67c1e846c35500eb6586883a11dc5e5fa5
     pristine_git_object: 6af287636856f38efb8e1b73f5d4b70eeee34612
   UnifiedTo/Insertionorder.cs:
     last_write_checksum: sha1:5ba10d7b970c97a872da3a6a89239e85e46412c7
@@ -19745,7 +19840,7 @@ trackedFiles:
     pristine_git_object: ddd3ab9a97428f5512ce25bc24a832bea6d70f4c
   UnifiedTo/Models/Components/AccountingCreditmemo.cs:
     id: 16db72d8630c
-    last_write_checksum: sha1:6fae2930fcd28c7c9d477c60e07bca5d8da28c4e
+    last_write_checksum: sha1:da8f188074bffa9e4d777379255b5812239c4045
     pristine_git_object: ce2120634ebd2ff989472ae715f5f2eca897640c
   UnifiedTo/Models/Components/AccountingCreditmemoPaymentCollectionMethod.cs:
     id: b522def0e609
@@ -19765,7 +19860,7 @@ trackedFiles:
     pristine_git_object: f11758bc9b3d7c8e121cbf9d80a12420a915e90d
   UnifiedTo/Models/Components/AccountingExpense.cs:
     id: acfef15544f1
-    last_write_checksum: sha1:7d3ef716f1c9a6a855ac841641ba81ea4cb5f0a1
+    last_write_checksum: sha1:1baff096c8a33d37cb5bf526bb2796e464a62343
     pristine_git_object: c61c184cff47f40e268521a6fd8a0f10733cc382
   UnifiedTo/Models/Components/AccountingFee.cs:
     last_write_checksum: sha1:02b9da372e98d77fece4fedf4b75d3daf4a8067a
@@ -19784,7 +19879,7 @@ trackedFiles:
     last_write_checksum: sha1:9030cb8679af3c59b0aff34d17959c91b9c89df5
     pristine_git_object: f30c88fc7067b504fffa1731460329a58c3473c2
   UnifiedTo/Models/Components/AccountingInvoiceTerm.cs:
-    last_write_checksum: sha1:b4f14f8ff68d3a5c6d4e363121f32d231bd08082
+    last_write_checksum: sha1:e2602c74ba417645185e83de645967b1b273153b
   UnifiedTo/Models/Components/AccountingInvoiceType.cs:
     id: f9d046d91a07
     last_write_checksum: sha1:c15d1fbf6dbd8e6160f80d2e5fdae5068682c53f
@@ -19898,7 +19993,7 @@ trackedFiles:
     last_write_checksum: sha1:ffd9cc33ac2150bcd1e20cbba5cdd1c984f8c0cf
     pristine_git_object: 55d5b31625d0dd72c7e492457778fd34bba89dda
   UnifiedTo/Models/Components/AccountingVendorcredit.cs:
-    last_write_checksum: sha1:609ebd5622fc2c2e2d9699beb5cf31767a45549d
+    last_write_checksum: sha1:83f3f24395a5292abf30c6f414078aeb42cae7ad
   UnifiedTo/Models/Components/AccountingVendorcreditStatus.cs:
     last_write_checksum: sha1:6f1ba8b0d0facd801b5901a1407e53450bec9539
   UnifiedTo/Models/Components/AdSchedule.cs:
@@ -19906,7 +20001,7 @@ trackedFiles:
   UnifiedTo/Models/Components/AdType.cs:
     last_write_checksum: sha1:296474d0be375d57c51d4952b3d54e9d6d4b1377
   UnifiedTo/Models/Components/AdsAd.cs:
-    last_write_checksum: sha1:f384f550d04f4ca0bec51408b43fd24a4fe90ae4
+    last_write_checksum: sha1:9b6e75fcf344191d9432f1c857de55989dc4cde5
   UnifiedTo/Models/Components/AdsAdStatus.cs:
     last_write_checksum: sha1:94a94fa45c934f3f67070261265ee7dc23c88d3a
   UnifiedTo/Models/Components/AdsCampaign.cs:
@@ -20622,7 +20717,7 @@ trackedFiles:
     last_write_checksum: sha1:79191b229941ef33744506186a4cb8b38fba1b59
     pristine_git_object: 9f6490d730e5fa085732692c9ef7fb3168830ce5
   UnifiedTo/Models/Components/Goal.cs:
-    last_write_checksum: sha1:87d0f9a64e00fc86f4f33018a4c5b1622223b503
+    last_write_checksum: sha1:4053f8cca9943bd4d4df5a41e8d487680c624ca2
   UnifiedTo/Models/Components/GroupType.cs:
     last_write_checksum: sha1:f68c49bda0a6ad4b2bfc577fcc54b32d002df54c
   UnifiedTo/Models/Components/HostingSource.cs:
@@ -20677,6 +20772,10 @@ trackedFiles:
     id: 2cff98a2a6c2
     last_write_checksum: sha1:5671ac90c2c3dca0c2508c679268a923e7c4a5a4
     pristine_git_object: 15a46a9a346aa573aefc188fdb3170140e4be063
+  UnifiedTo/Models/Components/HrisDocument.cs:
+    last_write_checksum: sha1:8f3179b84d2f575798c9d42117a2f07b7201aee8
+  UnifiedTo/Models/Components/HrisDocumentType.cs:
+    last_write_checksum: sha1:1b786490ad1d1f438a243d4b2af1db716acf00c5
   UnifiedTo/Models/Components/HrisEmail.cs:
     id: 8c4f752ec114
     last_write_checksum: sha1:6f9931d3f20a0000cd60d815f83e5b33206db08d
@@ -20817,7 +20916,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:477041c0d1886e8240c69f89337df5e567df06ce
+    last_write_checksum: sha1:370faf1c7d20e3539a2bbe3095d954704e4ea422
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -20983,6 +21082,8 @@ trackedFiles:
     last_write_checksum: sha1:7742ab4767424ba743d2e4f76f9b25a0487e77a5
   UnifiedTo/Models/Components/ListFulltext.cs:
     last_write_checksum: sha1:b8702ea769334c24953f472cf064398f5d435c40
+  UnifiedTo/Models/Components/ListGoal.cs:
+    last_write_checksum: sha1:004b7e1d62839370afb8da87c6f3d12b08b7242f
   UnifiedTo/Models/Components/ListGroupId.cs:
     last_write_checksum: sha1:09145e6ace1c6c8e1e2b6a69b2dbe04d6c0457fc
   UnifiedTo/Models/Components/ListInstructorId.cs:
@@ -21359,7 +21460,7 @@ trackedFiles:
     last_write_checksum: sha1:2600fee70f1e697d78687bf8756486885a2bc240
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:08d5cc9c184f2302310398c464e1d65ba8f1de21
+    last_write_checksum: sha1:95a0bbd7f2790790c93ecc3a7cbbb22e503e7228
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -21584,7 +21685,7 @@ trackedFiles:
   UnifiedTo/Models/Components/PropertyAdsInsertionorderPacingPeriod.cs:
     last_write_checksum: sha1:f17d39871065653599d622251ff3bb8e10e5a3be
   UnifiedTo/Models/Components/PropertyAdsReportMetricsAd.cs:
-    last_write_checksum: sha1:046e21c7a9befee725773def891c128e08a63404
+    last_write_checksum: sha1:cbb11ef97e7c21cfeec3e5520563c589df839638
   UnifiedTo/Models/Components/PropertyAdsReportMetricsAdAdType.cs:
     last_write_checksum: sha1:de9ddec6eef512d9528af41e1cc058cefd0362f0
   UnifiedTo/Models/Components/PropertyAdsReportMetricsAdStatus.cs:
@@ -21600,7 +21701,7 @@ trackedFiles:
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit.cs:
     last_write_checksum: sha1:5635bc275b40060d93025232b085a2170397f3c8
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignGoal.cs:
-    last_write_checksum: sha1:024ccac6e2659b7bb9d88703f35817b485ffdfcc
+    last_write_checksum: sha1:cc0dd4a045ace7c7d2384319b8ef76c7672132e1
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignStatus.cs:
     last_write_checksum: sha1:ce4b141e560ad9768ab49fe313271ee433a98e63
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignTargeting.cs:
@@ -21769,7 +21870,7 @@ trackedFiles:
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:91c86ca4997c266e969e90356a1c55fe9e655bea
+    last_write_checksum: sha1:7ed5db8e5ae84de23aa0576b99a97d2412d900a8
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -22344,7 +22445,7 @@ trackedFiles:
   UnifiedTo/Models/Components/TaxesPaidBy.cs:
     last_write_checksum: sha1:ff68865cf2dcf6ec7bf1071544187f78f4db07f2
   UnifiedTo/Models/Components/Term.cs:
-    last_write_checksum: sha1:817e95ec10ff43cc39fcb75d4ee732cd28218a9b
+    last_write_checksum: sha1:ac8c3741c36fbfe79caf96358bfed7fd16414996
   UnifiedTo/Models/Components/TicketingCategory.cs:
     id: f1c7225da4f8
     last_write_checksum: sha1:dd9e9ac66036d3a9f8354cfd58bf9c2994902270
@@ -22734,13 +22835,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateAccountingContactResponse.cs:
     last_write_checksum: sha1:b55a1dea13526cf10289e0fa805ee16934281a0d
   UnifiedTo/Models/Requests/CreateAccountingCreditmemoQueryParamFields.cs:
-    last_write_checksum: sha1:fb6f782783c48a57f12aaebbd05e4e696d9611f9
+    last_write_checksum: sha1:cbb752c0bbb95b38927370455c6eceab636527ea
   UnifiedTo/Models/Requests/CreateAccountingCreditmemoRequest.cs:
     last_write_checksum: sha1:8e6947e12e45278e63a7c3d2f3ba34e025fa86a5
   UnifiedTo/Models/Requests/CreateAccountingCreditmemoResponse.cs:
     last_write_checksum: sha1:c3f5841d8b9e99d949b8e29fadd478ac7d46c5a1
   UnifiedTo/Models/Requests/CreateAccountingExpenseQueryParamFields.cs:
-    last_write_checksum: sha1:284a53e46364761efc9634b3196817f47ac15038
+    last_write_checksum: sha1:82139978949fe7deeb0df1c78035abbf4773c44d
   UnifiedTo/Models/Requests/CreateAccountingExpenseRequest.cs:
     last_write_checksum: sha1:b9681cbd56c09c090d17ca09ebb5a4301f827a54
   UnifiedTo/Models/Requests/CreateAccountingExpenseResponse.cs:
@@ -22788,13 +22889,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateAccountingTransactionResponse.cs:
     last_write_checksum: sha1:07ef4aeefecfa647784a35cd9d1b6b0dafb971e1
   UnifiedTo/Models/Requests/CreateAccountingVendorcreditQueryParamFields.cs:
-    last_write_checksum: sha1:ea8913d7584f7479097fd0e063eeeb70007cecfb
+    last_write_checksum: sha1:f5f53c601b624a2fd8d59f850bbe2f49f703595f
   UnifiedTo/Models/Requests/CreateAccountingVendorcreditRequest.cs:
     last_write_checksum: sha1:300b052363ab137c7f0618b828d9ba74d1e8dc2d
   UnifiedTo/Models/Requests/CreateAccountingVendorcreditResponse.cs:
     last_write_checksum: sha1:51f476c4a574da2cbf7146b0370d795164efba5c
   UnifiedTo/Models/Requests/CreateAdsAdQueryParamFields.cs:
-    last_write_checksum: sha1:b502bb73505732a392ba68dae90c18d476bc3fb6
+    last_write_checksum: sha1:89abc83d3587d5f124981e695c93ff2c32f0a99f
   UnifiedTo/Models/Requests/CreateAdsAdRequest.cs:
     last_write_checksum: sha1:1e602fa86d38b893304ab9c8617d0f85ba80cc6d
   UnifiedTo/Models/Requests/CreateAdsAdResponse.cs:
@@ -23079,6 +23180,12 @@ trackedFiles:
     last_write_checksum: sha1:8cfb8ffaa6462b91844def76af021d8d76c67644
   UnifiedTo/Models/Requests/CreateHrisDeviceResponse.cs:
     last_write_checksum: sha1:df1933bfe989612033cf790e51cf8cbc278f7a94
+  UnifiedTo/Models/Requests/CreateHrisDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:e2f0ee13b046c820ebfc12d1fa262fa7b2150321
+  UnifiedTo/Models/Requests/CreateHrisDocumentRequest.cs:
+    last_write_checksum: sha1:a73d5d84fde40f4abf8189ce5ca6b9246105825b
+  UnifiedTo/Models/Requests/CreateHrisDocumentResponse.cs:
+    last_write_checksum: sha1:478e948052d6cf1fd8d8c800ae32acdfc1eec558
   UnifiedTo/Models/Requests/CreateHrisEmployeeQueryParamFields.cs:
     last_write_checksum: sha1:684e004c09277d4c424bafa1ba9a5cc8524563d1
   UnifiedTo/Models/Requests/CreateHrisEmployeeRequest.cs:
@@ -23428,13 +23535,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetAccountingContactResponse.cs:
     last_write_checksum: sha1:9b2645849c1d3bc77f5725d303e012745e707a47
   UnifiedTo/Models/Requests/GetAccountingCreditmemoQueryParamFields.cs:
-    last_write_checksum: sha1:aae31de2e7f103f45977f66d4a9f5025e1901c18
+    last_write_checksum: sha1:758187db4b9b75e4574540eb623312d30cc055e9
   UnifiedTo/Models/Requests/GetAccountingCreditmemoRequest.cs:
     last_write_checksum: sha1:c2a2d04c6bcd8d429e083b68d71d10f93cb40db2
   UnifiedTo/Models/Requests/GetAccountingCreditmemoResponse.cs:
     last_write_checksum: sha1:9135bb9d53cded510b0f4dc9c0822c9f6623dd26
   UnifiedTo/Models/Requests/GetAccountingExpenseQueryParamFields.cs:
-    last_write_checksum: sha1:50621d367f06b81e307ec9fe4cdfd26e2c0fe5f9
+    last_write_checksum: sha1:44463736541c4b2eaeb321aec316da972e81fdab
   UnifiedTo/Models/Requests/GetAccountingExpenseRequest.cs:
     last_write_checksum: sha1:b2ae02f5e439e394a079b85c5a51693866ad5d90
   UnifiedTo/Models/Requests/GetAccountingExpenseResponse.cs:
@@ -23506,13 +23613,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetAccountingTrialbalanceResponse.cs:
     last_write_checksum: sha1:43cfb0e2caf3aae149c71b764d352d7eb5574769
   UnifiedTo/Models/Requests/GetAccountingVendorcreditQueryParamFields.cs:
-    last_write_checksum: sha1:5344bc95b076f25268f070a220b48f4c4c3f6900
+    last_write_checksum: sha1:4d1e7b92ce5f1d5f605c170075a5ea2131d05a4f
   UnifiedTo/Models/Requests/GetAccountingVendorcreditRequest.cs:
     last_write_checksum: sha1:01b3fb468d9295fb296e5aa69275e09cbac66785
   UnifiedTo/Models/Requests/GetAccountingVendorcreditResponse.cs:
     last_write_checksum: sha1:c2ecd5aafcf50ddb21ade3aa1282dd15afe61246
   UnifiedTo/Models/Requests/GetAdsAdQueryParamFields.cs:
-    last_write_checksum: sha1:2aabbbb313412b68927d31862e7f7e67ce86c422
+    last_write_checksum: sha1:7e8812f0be48cb14126e57afb30788ae9487b624
   UnifiedTo/Models/Requests/GetAdsAdRequest.cs:
     last_write_checksum: sha1:f651522a05e3ed7a685d9e5870c2426a5371a2c5
   UnifiedTo/Models/Requests/GetAdsAdResponse.cs:
@@ -23845,6 +23952,12 @@ trackedFiles:
     last_write_checksum: sha1:431b15df38876df28325bc50d5326267af3f27cf
   UnifiedTo/Models/Requests/GetHrisDeviceResponse.cs:
     last_write_checksum: sha1:6a7e97c235cb405eb5d4768d32014e5283aa644d
+  UnifiedTo/Models/Requests/GetHrisDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:a19e70f930d611f5d581457dbe1e82e3924f6c9b
+  UnifiedTo/Models/Requests/GetHrisDocumentRequest.cs:
+    last_write_checksum: sha1:27d7b7c640a8d05d2b79f231319e2cfeac46881f
+  UnifiedTo/Models/Requests/GetHrisDocumentResponse.cs:
+    last_write_checksum: sha1:04fa50d04579e9ece351d24c96e626b28ca62341
   UnifiedTo/Models/Requests/GetHrisEmployeeQueryParamFields.cs:
     last_write_checksum: sha1:d6b1811149a69d668d3dc9f2afc30d7c9cd398f6
   UnifiedTo/Models/Requests/GetHrisEmployeeRequest.cs:
@@ -24274,13 +24387,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAccountingContactsResponse.cs:
     last_write_checksum: sha1:67cf4ef887556307e17fc313594d811c7dbd71df
   UnifiedTo/Models/Requests/ListAccountingCreditmemoesQueryParamFields.cs:
-    last_write_checksum: sha1:9e70f43132b862565fa00bbd0ba70a7eff1859ad
+    last_write_checksum: sha1:3f4df726289579ca13c18970d2922735ebaa480b
   UnifiedTo/Models/Requests/ListAccountingCreditmemoesRequest.cs:
     last_write_checksum: sha1:0a673d24259b2242839611ce8403fd16a60166aa
   UnifiedTo/Models/Requests/ListAccountingCreditmemoesResponse.cs:
     last_write_checksum: sha1:b23c5204299ac796f3a1a671287ef9be3c47d665
   UnifiedTo/Models/Requests/ListAccountingExpensesQueryParamFields.cs:
-    last_write_checksum: sha1:6253439fa0570432f4b2a68680042e95ff1de895
+    last_write_checksum: sha1:cbda2fae7f7e1c5b20f9af9b0f1bdd86e6c237f9
   UnifiedTo/Models/Requests/ListAccountingExpensesRequest.cs:
     last_write_checksum: sha1:3e4182bc84bfce0b915fc76ea4d76d16f212d251
   UnifiedTo/Models/Requests/ListAccountingExpensesResponse.cs:
@@ -24352,13 +24465,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAccountingTrialbalancesResponse.cs:
     last_write_checksum: sha1:4e1878fa3283724ab12a11d2af7b210af92bbf20
   UnifiedTo/Models/Requests/ListAccountingVendorcreditsQueryParamFields.cs:
-    last_write_checksum: sha1:a2c70bc2de918c77c903b56b1a5ab9903101154c
+    last_write_checksum: sha1:d606f2e21d858273a1bbfd60c1b4e0757c1b3db6
   UnifiedTo/Models/Requests/ListAccountingVendorcreditsRequest.cs:
     last_write_checksum: sha1:3ac6614457ad33271de8a0b5c3f110bdeb50d96a
   UnifiedTo/Models/Requests/ListAccountingVendorcreditsResponse.cs:
     last_write_checksum: sha1:850b5982af40c9b4b5c4c12aa46623adb6997d94
   UnifiedTo/Models/Requests/ListAdsAdsQueryParamFields.cs:
-    last_write_checksum: sha1:a7ea3a8baaa12807ed90eac98910a711357d50bc
+    last_write_checksum: sha1:2c66d03c8e8376d3487a1c7482a14e8a818981b0
   UnifiedTo/Models/Requests/ListAdsAdsRequest.cs:
     last_write_checksum: sha1:c9435ad7ed27c8ef5e30537df884204612945773
   UnifiedTo/Models/Requests/ListAdsAdsResponse.cs:
@@ -24366,7 +24479,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsCampaignsQueryParamFields.cs:
     last_write_checksum: sha1:c1f55d172e0932ac8bc8368da3f039e8af5b2fec
   UnifiedTo/Models/Requests/ListAdsCampaignsRequest.cs:
-    last_write_checksum: sha1:e59e5127f20e11f63b641afb42e47f87d7f212d0
+    last_write_checksum: sha1:637911df8e12141691647385fb16cdabd8416dda
   UnifiedTo/Models/Requests/ListAdsCampaignsResponse.cs:
     last_write_checksum: sha1:972ee8ab3dca9e04eaa0e91f440f6523aaf80a4f
   UnifiedTo/Models/Requests/ListAdsCreativesQueryParamFields.cs:
@@ -24735,6 +24848,12 @@ trackedFiles:
     last_write_checksum: sha1:113213028c07d5fa7d9fd6e16cde886f074d59e8
   UnifiedTo/Models/Requests/ListHrisDevicesResponse.cs:
     last_write_checksum: sha1:b9e17226f1c162266996cc5502deb5f55a05770e
+  UnifiedTo/Models/Requests/ListHrisDocumentsQueryParamFields.cs:
+    last_write_checksum: sha1:4b17705587041956ff2e8945333bcf0b558f842b
+  UnifiedTo/Models/Requests/ListHrisDocumentsRequest.cs:
+    last_write_checksum: sha1:3ef5cc88088077512b51bc9c786602722570107f
+  UnifiedTo/Models/Requests/ListHrisDocumentsResponse.cs:
+    last_write_checksum: sha1:d021cdfeecc3656ae5ff752c03a3dc5b98ee9f45
   UnifiedTo/Models/Requests/ListHrisEmployeesQueryParamFields.cs:
     last_write_checksum: sha1:699c7ba4e29e0d12cab72d7cd5535f8674fd7a4f
   UnifiedTo/Models/Requests/ListHrisEmployeesRequest.cs:
@@ -25170,13 +25289,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchAccountingContactResponse.cs:
     last_write_checksum: sha1:5958173cd3bf43251c8c6fae12b88750402d633f
   UnifiedTo/Models/Requests/PatchAccountingCreditmemoQueryParamFields.cs:
-    last_write_checksum: sha1:570c3718b074c52f713da39d5965bf285f9b75ad
+    last_write_checksum: sha1:623a018fefee4abac491cf673686ab0d47c3d7bd
   UnifiedTo/Models/Requests/PatchAccountingCreditmemoRequest.cs:
     last_write_checksum: sha1:a692f7d684a37a3ca98692cf8988399d373d2765
   UnifiedTo/Models/Requests/PatchAccountingCreditmemoResponse.cs:
     last_write_checksum: sha1:818eedc305f50e6b221ed9a45f0939f8bdbcf667
   UnifiedTo/Models/Requests/PatchAccountingExpenseQueryParamFields.cs:
-    last_write_checksum: sha1:e5234f093bd662c451c9b8d0713478a1f3075a38
+    last_write_checksum: sha1:cfb1c6d87a84febec66069542a8e05b2dee09424
   UnifiedTo/Models/Requests/PatchAccountingExpenseRequest.cs:
     last_write_checksum: sha1:75ddb877f1707172b3fb4f5cc2d2058b28d763e0
   UnifiedTo/Models/Requests/PatchAccountingExpenseResponse.cs:
@@ -25224,13 +25343,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchAccountingTransactionResponse.cs:
     last_write_checksum: sha1:f2dd70ad7e7bf06294c2a0a528f5f468c41527c9
   UnifiedTo/Models/Requests/PatchAccountingVendorcreditQueryParamFields.cs:
-    last_write_checksum: sha1:aebf787410d9bdb8742e3b4456e797f0dcefedcb
+    last_write_checksum: sha1:2e9be68df06b04d469dbe5f03d6f18b5b5d027d8
   UnifiedTo/Models/Requests/PatchAccountingVendorcreditRequest.cs:
     last_write_checksum: sha1:c74a80c2f2be9b481721c632513bb4db70f2a24c
   UnifiedTo/Models/Requests/PatchAccountingVendorcreditResponse.cs:
     last_write_checksum: sha1:4dce512726629de361cd7abe998f34f1f3ebe3ef
   UnifiedTo/Models/Requests/PatchAdsAdQueryParamFields.cs:
-    last_write_checksum: sha1:646af0e779e8e3749deeddc305b0412c1438c023
+    last_write_checksum: sha1:b1b4dd34537f1e68e91419f0742157a9f3421463
   UnifiedTo/Models/Requests/PatchAdsAdRequest.cs:
     last_write_checksum: sha1:950f9ac2f8c57006da05395225f47ec309e09892
   UnifiedTo/Models/Requests/PatchAdsAdResponse.cs:
@@ -25497,6 +25616,12 @@ trackedFiles:
     last_write_checksum: sha1:8bc10192ca7b86ee5c29d06b9afcdc7eb2fabb27
   UnifiedTo/Models/Requests/PatchHrisDeviceResponse.cs:
     last_write_checksum: sha1:5989eae68f7f80c4d990789e5d4520039ea74914
+  UnifiedTo/Models/Requests/PatchHrisDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:18ed531850725b5048d0c821de378b1238967384
+  UnifiedTo/Models/Requests/PatchHrisDocumentRequest.cs:
+    last_write_checksum: sha1:fc15aaa11a1d4b70735135f55e735ddcaf3f4a4f
+  UnifiedTo/Models/Requests/PatchHrisDocumentResponse.cs:
+    last_write_checksum: sha1:aa4f0d4f2e95986ac5af74b5b2cbcfc1f859cfd8
   UnifiedTo/Models/Requests/PatchHrisEmployeeQueryParamFields.cs:
     last_write_checksum: sha1:a4f7d69fd70db6a944ad6794e3a4d74cab394cd3
   UnifiedTo/Models/Requests/PatchHrisEmployeeRequest.cs:
@@ -26053,6 +26178,10 @@ trackedFiles:
     last_write_checksum: sha1:e5e21112295bebd72a24bd2d00cdb4b360d1787d
   UnifiedTo/Models/Requests/RemoveHrisDeviceResponse.cs:
     last_write_checksum: sha1:db432f46cc8ea7696dd028a4fdb2c67ac8e31cab
+  UnifiedTo/Models/Requests/RemoveHrisDocumentRequest.cs:
+    last_write_checksum: sha1:eaf1d7107d55ede3632755d39740e7c2a3747f5b
+  UnifiedTo/Models/Requests/RemoveHrisDocumentResponse.cs:
+    last_write_checksum: sha1:154a86350552a87992bd1d229607290d280ef43c
   UnifiedTo/Models/Requests/RemoveHrisEmployeeRequest.cs:
     last_write_checksum: sha1:e19745c6cf485bb424677c37073756ead930be5a
   UnifiedTo/Models/Requests/RemoveHrisEmployeeResponse.cs:
@@ -26302,13 +26431,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateAccountingContactResponse.cs:
     last_write_checksum: sha1:333ab8a35331ea765cca19d934e94e44eda6460e
   UnifiedTo/Models/Requests/UpdateAccountingCreditmemoQueryParamFields.cs:
-    last_write_checksum: sha1:eccbf345ed8a5d0559f7fde74a522fab913bdba9
+    last_write_checksum: sha1:5a64225db832e1ad1227c577c9ae620624fd0e8a
   UnifiedTo/Models/Requests/UpdateAccountingCreditmemoRequest.cs:
     last_write_checksum: sha1:532eedf02647978aed8d3724b4c9f933400227b5
   UnifiedTo/Models/Requests/UpdateAccountingCreditmemoResponse.cs:
     last_write_checksum: sha1:e260b66e5e0bc7c7e55a87a4109502467a2c1791
   UnifiedTo/Models/Requests/UpdateAccountingExpenseQueryParamFields.cs:
-    last_write_checksum: sha1:c109994b54dd6f4bcfe5d06276305391341d9bcb
+    last_write_checksum: sha1:78a64a6428867df80d7d848c949bea65f0942503
   UnifiedTo/Models/Requests/UpdateAccountingExpenseRequest.cs:
     last_write_checksum: sha1:2a50a37dd2628120ec27fcf867dfc98b79eade76
   UnifiedTo/Models/Requests/UpdateAccountingExpenseResponse.cs:
@@ -26356,13 +26485,13 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateAccountingTransactionResponse.cs:
     last_write_checksum: sha1:34501983f3b418d5ef2933dc828c019834513397
   UnifiedTo/Models/Requests/UpdateAccountingVendorcreditQueryParamFields.cs:
-    last_write_checksum: sha1:4b4c78cb5b8b90f4ac6447d8b59dd7864ae744fe
+    last_write_checksum: sha1:4011f1cff20470dc0b9460b7cff73f1d350fca1a
   UnifiedTo/Models/Requests/UpdateAccountingVendorcreditRequest.cs:
     last_write_checksum: sha1:10c55680f3165aebd3e1ec0af0397321877fd111
   UnifiedTo/Models/Requests/UpdateAccountingVendorcreditResponse.cs:
     last_write_checksum: sha1:90cbbf861bd1b48853c243198c278e628853a291
   UnifiedTo/Models/Requests/UpdateAdsAdQueryParamFields.cs:
-    last_write_checksum: sha1:e51b1d67c0ef4c0e3fbd45a21b6b69cd01f901c6
+    last_write_checksum: sha1:c5e69b90a66e9e552dc8c590cfaae0e21ccd9975
   UnifiedTo/Models/Requests/UpdateAdsAdRequest.cs:
     last_write_checksum: sha1:670fd40273ad299bb82ea7ff3231cd6f65485670
   UnifiedTo/Models/Requests/UpdateAdsAdResponse.cs:
@@ -26629,6 +26758,12 @@ trackedFiles:
     last_write_checksum: sha1:3eb3d9bfe77138d3c83b3bb41a56554b16744149
   UnifiedTo/Models/Requests/UpdateHrisDeviceResponse.cs:
     last_write_checksum: sha1:a8e25384e58a8fee6e769d71de70f92e37a74950
+  UnifiedTo/Models/Requests/UpdateHrisDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:e79828667c1d75d2787063a3e93879177dd70159
+  UnifiedTo/Models/Requests/UpdateHrisDocumentRequest.cs:
+    last_write_checksum: sha1:8fffa26dd59b80af7cda69e227f7031cd0368964
+  UnifiedTo/Models/Requests/UpdateHrisDocumentResponse.cs:
+    last_write_checksum: sha1:e2c605d25893d06ca94830bc8b2bb539e555d7e5
   UnifiedTo/Models/Requests/UpdateHrisEmployeeQueryParamFields.cs:
     last_write_checksum: sha1:c760f7bacd7d97794acfbf3f253e3aa7e360c640
   UnifiedTo/Models/Requests/UpdateHrisEmployeeRequest.cs:
@@ -27055,7 +27190,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:220c03bc52f5279e8ec87cbb8e7d1e26cf8cc3f7
+    last_write_checksum: sha1:7bcb2be094e807b2a1debc0fe6310b081c0766b9
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -27173,7 +27308,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:a451c76663b334be3b3f6838eb88c1ba6ce572fd
+    last_write_checksum: sha1:a19f8c832f23bb34d0b56badbeb80d4723ce117d
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -27317,7 +27452,7 @@ trackedFiles:
     pristine_git_object: f83d4daf1be5c8fce8e0054797f892a291833b48
   docs/Models/Components/AccountingCreditmemo.md:
     id: f0989e5e11e2
-    last_write_checksum: sha1:bee17089385daf582a40cf1265c9bcd37c1e95f8
+    last_write_checksum: sha1:2e07e434760a00c65b90ba887ee1477e1791f618
     pristine_git_object: 6bb4af9e870569e4e3ed861dd91b444f3cc3a8d5
   docs/Models/Components/AccountingCreditmemoPaymentCollectionMethod.md:
     id: 16deba503c99
@@ -27337,7 +27472,7 @@ trackedFiles:
     pristine_git_object: f31e18f925718d09f41d17d711f9fd331518f7e8
   docs/Models/Components/AccountingExpense.md:
     id: b2b079c3dc32
-    last_write_checksum: sha1:f6efb2d33745c1968bdea9c699d254797a113582
+    last_write_checksum: sha1:14262e54f88c5fa4483084938905bd8781901a49
     pristine_git_object: 3311d7239ecd42f6bf45cd4937d8e0936bea6d35
   docs/Models/Components/AccountingFee.md:
     last_write_checksum: sha1:d8b9a75ad6853460cc20686daa063eceb07c9295
@@ -27356,7 +27491,7 @@ trackedFiles:
     last_write_checksum: sha1:8d08e3cd343f0a37b908b7735e8f1437e1e22fe3
     pristine_git_object: a43a64aa619b31a7af50d99dba93dbf5bf8525c4
   docs/Models/Components/AccountingInvoiceTerm.md:
-    last_write_checksum: sha1:51368231b2676cca662b55b35aafb7e0e8cd9cf2
+    last_write_checksum: sha1:8d2322bf8f7b65334eaab1aa8232fcfca65b89bc
   docs/Models/Components/AccountingInvoiceType.md:
     id: a3713dc93626
     last_write_checksum: sha1:c8308d9d7a7b46b6f18e444ec64171d8567a13a3
@@ -27470,7 +27605,7 @@ trackedFiles:
     last_write_checksum: sha1:62ee3906ee24344cdfd857f1626d1e1c0cd977bc
     pristine_git_object: 8203c154a678ae274f435265bc1f4504ca843f04
   docs/Models/Components/AccountingVendorcredit.md:
-    last_write_checksum: sha1:72b8c3fbea8ec1061ea68097c322163d3d7a7927
+    last_write_checksum: sha1:cee83c94be9d71d7bfd1441044e4fe5332253f13
   docs/Models/Components/AccountingVendorcreditStatus.md:
     last_write_checksum: sha1:993b38f3370a3962173522518d31b545f83eab01
   docs/Models/Components/AdSchedule.md:
@@ -27478,7 +27613,7 @@ trackedFiles:
   docs/Models/Components/AdType.md:
     last_write_checksum: sha1:82c7374eb9a51adc3c3893ef006d969f69e9fdc1
   docs/Models/Components/AdsAd.md:
-    last_write_checksum: sha1:56b4c40aa302546239321e7d107d504bd399fda2
+    last_write_checksum: sha1:52304cbe62d078fe4c2998feff821fc5c457bde2
   docs/Models/Components/AdsAdStatus.md:
     last_write_checksum: sha1:ec4ecefa8439d6ac0cc4da009b8af1eff2ca79cc
   docs/Models/Components/AdsCampaign.md:
@@ -28194,7 +28329,7 @@ trackedFiles:
     last_write_checksum: sha1:199ca6c76249ae714f7fdc3c93b4f73e5f883a52
     pristine_git_object: 42928c802734549101ea810c164264a4c123d71e
   docs/Models/Components/Goal.md:
-    last_write_checksum: sha1:2d19ba14805579536cd07c16cb726b66c510d528
+    last_write_checksum: sha1:b50824f20baf9916fda04517393de0cebbe0369a
   docs/Models/Components/GroupType.md:
     last_write_checksum: sha1:db00607c6e535d1b009af186e91aa56354999384
   docs/Models/Components/HostingSource.md:
@@ -28249,6 +28384,10 @@ trackedFiles:
     id: 54123a54427e
     last_write_checksum: sha1:d6f5a6eba51daef4899357eb3601210b9b12e848
     pristine_git_object: f46793d52e06412f132dabfc4323e36c970e4433
+  docs/Models/Components/HrisDocument.md:
+    last_write_checksum: sha1:2ee910ed7878ec502b36fdc8b05bb9c6119ab835
+  docs/Models/Components/HrisDocumentType.md:
+    last_write_checksum: sha1:1346b2d641a0a38ac31b58773cf19057bbb3190e
   docs/Models/Components/HrisEmail.md:
     id: 137fb0d5d513
     last_write_checksum: sha1:113f1c87f65b36e5962aececdaac9bfe2088d094
@@ -28389,7 +28528,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:5edfc0549681ac0063514eef8b41e6545990d0cf
+    last_write_checksum: sha1:762f7f05b2da8484a121a2f2984df735c5fc3b32
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -28555,6 +28694,8 @@ trackedFiles:
     last_write_checksum: sha1:41a3883b0495b5364c2e407ea0ed8ff51be3e4e7
   docs/Models/Components/ListFulltext.md:
     last_write_checksum: sha1:5785937b5dedcead96c6da8011b397b15ad042c9
+  docs/Models/Components/ListGoal.md:
+    last_write_checksum: sha1:f668eade25361b927d9488d8f966f88945ffbfad
   docs/Models/Components/ListGroupId.md:
     last_write_checksum: sha1:6ff19144dd0b09fa17ccc11041a20226cdb5cd8b
   docs/Models/Components/ListInstructorId.md:
@@ -28931,7 +29072,7 @@ trackedFiles:
     last_write_checksum: sha1:1cad6af034766f255939e42484237ba47aed987a
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:686ad9a4fc201731c5522d755bcf3bc91cff7f74
+    last_write_checksum: sha1:b56d9b547e63942e848e8bc8db7ed13bb7ba350c
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -29156,7 +29297,7 @@ trackedFiles:
   docs/Models/Components/PropertyAdsInsertionorderPacingPeriod.md:
     last_write_checksum: sha1:6ef70406730121fc6de4651ab75c36051c5fd9fa
   docs/Models/Components/PropertyAdsReportMetricsAd.md:
-    last_write_checksum: sha1:f087dbe80d52e367360525b4a118ffc2a42f43b1
+    last_write_checksum: sha1:bc6ed8618908b4a11e5af85450d87b900decf339
   docs/Models/Components/PropertyAdsReportMetricsAdAdType.md:
     last_write_checksum: sha1:9a7e3c438d545bce679f134aaf418fe110382d61
   docs/Models/Components/PropertyAdsReportMetricsAdStatus.md:
@@ -29172,7 +29313,7 @@ trackedFiles:
   docs/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit.md:
     last_write_checksum: sha1:230332f9065b683f5ab6f91a613d0a6a0794b118
   docs/Models/Components/PropertyAdsReportMetricsCampaignGoal.md:
-    last_write_checksum: sha1:ca0b7e74b15292306b6a31416c51501e0690aa96
+    last_write_checksum: sha1:6d3e59129cf28ea234d0f4997c99bbd055434fa3
   docs/Models/Components/PropertyAdsReportMetricsCampaignStatus.md:
     last_write_checksum: sha1:ad705b6b5781edc664c4682e3db0a02649055eaf
   docs/Models/Components/PropertyAdsReportMetricsCampaignTargeting.md:
@@ -29341,7 +29482,7 @@ trackedFiles:
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:719b32d50993b9847841fcb262e7deb87fc0bd57
+    last_write_checksum: sha1:fd50dcc512bb00d8f4126ef824158db008746858
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
@@ -29916,7 +30057,7 @@ trackedFiles:
   docs/Models/Components/TaxesPaidBy.md:
     last_write_checksum: sha1:f956d5be37037bc5e5fd9c34c50c1d325fc0bcab
   docs/Models/Components/Term.md:
-    last_write_checksum: sha1:b9d30b50c4203982006bf7a717b8f7ce8c4d7298
+    last_write_checksum: sha1:6c4865fa52b5c3b152486010c1648a3b5477bec5
   docs/Models/Components/TicketingCategory.md:
     id: 0dec047a6619
     last_write_checksum: sha1:7dabaa5375001bbabdbc9bc8aa07a52c4b38ca8c
@@ -30294,13 +30435,13 @@ trackedFiles:
   docs/Models/Requests/CreateAccountingContactResponse.md:
     last_write_checksum: sha1:ff6c7f71139311feabd5afafda8603baedf09e2a
   docs/Models/Requests/CreateAccountingCreditmemoQueryParamFields.md:
-    last_write_checksum: sha1:9afc36d9a5bfe30d95dacff298326da13020b787
+    last_write_checksum: sha1:09af072668e42ea5e26aac14beb16345ff02edea
   docs/Models/Requests/CreateAccountingCreditmemoRequest.md:
     last_write_checksum: sha1:df25ef7b626ce52f567bc42785f1c6473a266d4e
   docs/Models/Requests/CreateAccountingCreditmemoResponse.md:
     last_write_checksum: sha1:3b5b8c785d22ff7cb38cbd41f65c212b1e98c9f7
   docs/Models/Requests/CreateAccountingExpenseQueryParamFields.md:
-    last_write_checksum: sha1:5c65559786c8da8fd368030b9fe154226716ec3f
+    last_write_checksum: sha1:84168ee1ee4842f4f6cd338148aaf427523675f4
   docs/Models/Requests/CreateAccountingExpenseRequest.md:
     last_write_checksum: sha1:fdc9151175580083121654b63b6dcec2856e4873
   docs/Models/Requests/CreateAccountingExpenseResponse.md:
@@ -30348,13 +30489,13 @@ trackedFiles:
   docs/Models/Requests/CreateAccountingTransactionResponse.md:
     last_write_checksum: sha1:be3ca0016db26c2c29697d580139aaccaeda115f
   docs/Models/Requests/CreateAccountingVendorcreditQueryParamFields.md:
-    last_write_checksum: sha1:2b21817f4dd0a06d16cda0a826826cb7592abc51
+    last_write_checksum: sha1:b0b7ec39e16c1168c4da5b08e2c8c206bd42b16b
   docs/Models/Requests/CreateAccountingVendorcreditRequest.md:
     last_write_checksum: sha1:7b1e9b9a899953ef66a713ac3820cce9ee07f3c2
   docs/Models/Requests/CreateAccountingVendorcreditResponse.md:
     last_write_checksum: sha1:d743219bc79a7d9af5f0d0a026dca958a81812ad
   docs/Models/Requests/CreateAdsAdQueryParamFields.md:
-    last_write_checksum: sha1:79ef802bd24684d7b3e61981c4dda0f6a7103dd3
+    last_write_checksum: sha1:1ac80882f060a9112532905fefbdb0b56a971c1b
   docs/Models/Requests/CreateAdsAdRequest.md:
     last_write_checksum: sha1:7e76c072732ab2f08e9e25f15347040c0d9e5911
   docs/Models/Requests/CreateAdsAdResponse.md:
@@ -30639,6 +30780,12 @@ trackedFiles:
     last_write_checksum: sha1:4d9179eab86fa8b2c9ff4539abd0d27e427eae95
   docs/Models/Requests/CreateHrisDeviceResponse.md:
     last_write_checksum: sha1:e26db692b9401fab5301218cc4b29f545fbb7bdd
+  docs/Models/Requests/CreateHrisDocumentQueryParamFields.md:
+    last_write_checksum: sha1:6f51d3fcf54e5261e10b6372261bdb2bdc7de3fc
+  docs/Models/Requests/CreateHrisDocumentRequest.md:
+    last_write_checksum: sha1:a853bb5af23add2be99bfbfb113e85bed1fe86b6
+  docs/Models/Requests/CreateHrisDocumentResponse.md:
+    last_write_checksum: sha1:3a6933e418ab282751ff17bdace1a46d907245a6
   docs/Models/Requests/CreateHrisEmployeeQueryParamFields.md:
     last_write_checksum: sha1:3020a4f014fe0a05c5c639c50cbc5214a8f161e9
   docs/Models/Requests/CreateHrisEmployeeRequest.md:
@@ -30988,13 +31135,13 @@ trackedFiles:
   docs/Models/Requests/GetAccountingContactResponse.md:
     last_write_checksum: sha1:b4bc11415af99e194b5b650d12d8fdcd953b4b10
   docs/Models/Requests/GetAccountingCreditmemoQueryParamFields.md:
-    last_write_checksum: sha1:dc7a023935ce25b91f0855fdd2ae8fb919618952
+    last_write_checksum: sha1:d64fa9e2bd87442e09573fdff06124d3a0656239
   docs/Models/Requests/GetAccountingCreditmemoRequest.md:
     last_write_checksum: sha1:4588835326ce0f21b73f9144f414fcedbd85e294
   docs/Models/Requests/GetAccountingCreditmemoResponse.md:
     last_write_checksum: sha1:2dbd9de2006854cb3f42719ff17a37458a6e1576
   docs/Models/Requests/GetAccountingExpenseQueryParamFields.md:
-    last_write_checksum: sha1:916fd7fb142d5e62c2a61f3b0381f11ae9aa3e13
+    last_write_checksum: sha1:a9d3398b4254ab2a9cae1aed3c7102008b128f82
   docs/Models/Requests/GetAccountingExpenseRequest.md:
     last_write_checksum: sha1:b1ca16f1eb6831a045fd17dc65aefe467484fb58
   docs/Models/Requests/GetAccountingExpenseResponse.md:
@@ -31066,13 +31213,13 @@ trackedFiles:
   docs/Models/Requests/GetAccountingTrialbalanceResponse.md:
     last_write_checksum: sha1:e9bc68d7041e8e10722f3a6a1b74806dbcdbcc1a
   docs/Models/Requests/GetAccountingVendorcreditQueryParamFields.md:
-    last_write_checksum: sha1:bfbedbfd5bf88b3daaef45ef57f347c15b2005ab
+    last_write_checksum: sha1:49ddacfab9b07a533e468ab46608d173a130cf22
   docs/Models/Requests/GetAccountingVendorcreditRequest.md:
     last_write_checksum: sha1:fa96fee696c875d28e61cec15ed3d7c5fe0b823a
   docs/Models/Requests/GetAccountingVendorcreditResponse.md:
     last_write_checksum: sha1:57b05cf159e62966b0495fb716a8b18924b36299
   docs/Models/Requests/GetAdsAdQueryParamFields.md:
-    last_write_checksum: sha1:3ee9af9744df576c5e7850b8e8bd9f873030a42b
+    last_write_checksum: sha1:551867fa49cfebf944396e6d9c60a5410b6f95a6
   docs/Models/Requests/GetAdsAdRequest.md:
     last_write_checksum: sha1:a1044fbe5d5ea3d28db1c2b791b89a43835cebb5
   docs/Models/Requests/GetAdsAdResponse.md:
@@ -31405,6 +31552,12 @@ trackedFiles:
     last_write_checksum: sha1:83f188504c5bf881a13a3da1ebfc07a686816082
   docs/Models/Requests/GetHrisDeviceResponse.md:
     last_write_checksum: sha1:08b3f68c230fb31d310949aeb04db1d2b752f9bf
+  docs/Models/Requests/GetHrisDocumentQueryParamFields.md:
+    last_write_checksum: sha1:7a5592c1b0288c02ea3bac711ecd6e82e3d122a3
+  docs/Models/Requests/GetHrisDocumentRequest.md:
+    last_write_checksum: sha1:87f5033a67477438e6a84f9f7ef95c596af42a10
+  docs/Models/Requests/GetHrisDocumentResponse.md:
+    last_write_checksum: sha1:209694db11a4a57432b4e7b4db3fa38ed58e8bdf
   docs/Models/Requests/GetHrisEmployeeQueryParamFields.md:
     last_write_checksum: sha1:a82a6a80f29592b7dd777980597e008508cff505
   docs/Models/Requests/GetHrisEmployeeRequest.md:
@@ -31834,13 +31987,13 @@ trackedFiles:
   docs/Models/Requests/ListAccountingContactsResponse.md:
     last_write_checksum: sha1:195d479278613ec787e9351a17952c54d3874e66
   docs/Models/Requests/ListAccountingCreditmemoesQueryParamFields.md:
-    last_write_checksum: sha1:c802e3ebf75d084215123548ae33b38f10aff877
+    last_write_checksum: sha1:ba00da9be852ff232b662d5ba4cea091ac9877b8
   docs/Models/Requests/ListAccountingCreditmemoesRequest.md:
     last_write_checksum: sha1:e0a9056c67ff4170de93127d2b001374197012f0
   docs/Models/Requests/ListAccountingCreditmemoesResponse.md:
     last_write_checksum: sha1:b38cfb05a45367fff5a93b071f337a9092945ab9
   docs/Models/Requests/ListAccountingExpensesQueryParamFields.md:
-    last_write_checksum: sha1:8b92b9874cc44591127fe4ba1d3184f19d7ddbb2
+    last_write_checksum: sha1:bb43578adb7ad013fa093e78a3b4ad3a7829b935
   docs/Models/Requests/ListAccountingExpensesRequest.md:
     last_write_checksum: sha1:3e96f10e710e19ef5c8d64272834f1ccdf5a4cb8
   docs/Models/Requests/ListAccountingExpensesResponse.md:
@@ -31912,13 +32065,13 @@ trackedFiles:
   docs/Models/Requests/ListAccountingTrialbalancesResponse.md:
     last_write_checksum: sha1:4a8c573fd4bf17c9922e661b5151f9e6b56fe47c
   docs/Models/Requests/ListAccountingVendorcreditsQueryParamFields.md:
-    last_write_checksum: sha1:60972bdb04ffc0294d655e9fcc51ab8830f0f61d
+    last_write_checksum: sha1:217096b596038eac5708ddc208f5a4b4a4dde554
   docs/Models/Requests/ListAccountingVendorcreditsRequest.md:
     last_write_checksum: sha1:366fb6bec8e4fa9786082850088034d9ae87e14e
   docs/Models/Requests/ListAccountingVendorcreditsResponse.md:
     last_write_checksum: sha1:dc1775a238dcd107b9637f513e5ee795b7b53f25
   docs/Models/Requests/ListAdsAdsQueryParamFields.md:
-    last_write_checksum: sha1:eaf92e5ea0f40892e87e74598708aa08f5d765b0
+    last_write_checksum: sha1:af10b88ebaaa86e7054d1de5bd85ff9d0b0dbe47
   docs/Models/Requests/ListAdsAdsRequest.md:
     last_write_checksum: sha1:8597cac3768888c74a4c5548a9e6ae30b3fd1d3a
   docs/Models/Requests/ListAdsAdsResponse.md:
@@ -31926,7 +32079,7 @@ trackedFiles:
   docs/Models/Requests/ListAdsCampaignsQueryParamFields.md:
     last_write_checksum: sha1:954a2f7c004e280de3160e336547eb4bce304823
   docs/Models/Requests/ListAdsCampaignsRequest.md:
-    last_write_checksum: sha1:e7369e485fbbbc02ad544a38798e2c81a9132514
+    last_write_checksum: sha1:58c93cdc40b394d28f088a2274c9215664b93206
   docs/Models/Requests/ListAdsCampaignsResponse.md:
     last_write_checksum: sha1:26579ef96c505bd48944c820693b7fe56ec01c93
   docs/Models/Requests/ListAdsCreativesQueryParamFields.md:
@@ -32295,6 +32448,12 @@ trackedFiles:
     last_write_checksum: sha1:678b0b751ae8db8915bd76255a0c2e53b32f530c
   docs/Models/Requests/ListHrisDevicesResponse.md:
     last_write_checksum: sha1:2483a7597fc3761b8fe6d439f0465da1312a347b
+  docs/Models/Requests/ListHrisDocumentsQueryParamFields.md:
+    last_write_checksum: sha1:47328ae826b3ec6735e6095349ff11a6965a5be8
+  docs/Models/Requests/ListHrisDocumentsRequest.md:
+    last_write_checksum: sha1:f24f2257498b96f85b2ce0ccbec802b61cb4be2d
+  docs/Models/Requests/ListHrisDocumentsResponse.md:
+    last_write_checksum: sha1:15c8a7238003f9a3357d97d4692ee50c2dfc02ac
   docs/Models/Requests/ListHrisEmployeesQueryParamFields.md:
     last_write_checksum: sha1:a7017cc00ff8b3b81f0d971b93cffa173b4c7cc2
   docs/Models/Requests/ListHrisEmployeesRequest.md:
@@ -32730,13 +32889,13 @@ trackedFiles:
   docs/Models/Requests/PatchAccountingContactResponse.md:
     last_write_checksum: sha1:d95741ed850790f43c9870a1d33776ecfbef7e78
   docs/Models/Requests/PatchAccountingCreditmemoQueryParamFields.md:
-    last_write_checksum: sha1:bf9ccf34343afe7f625233f3b4815118adbcea71
+    last_write_checksum: sha1:4b03c7ead8b5605ca20782a81d9ee8f67c092515
   docs/Models/Requests/PatchAccountingCreditmemoRequest.md:
     last_write_checksum: sha1:85d6a59146ae7acee98c360a1296530cbdb0554d
   docs/Models/Requests/PatchAccountingCreditmemoResponse.md:
     last_write_checksum: sha1:5fd7c97a21ace8f563ce16da9ffc775407928427
   docs/Models/Requests/PatchAccountingExpenseQueryParamFields.md:
-    last_write_checksum: sha1:1a3552a2be05e5a1435fa2fa589306677dcb0d89
+    last_write_checksum: sha1:7c26cfe5241f8d6ce8a01e5a31a8c8bc33a8ee20
   docs/Models/Requests/PatchAccountingExpenseRequest.md:
     last_write_checksum: sha1:8dfb897c65e1420b36375ebd73ab218603d477b5
   docs/Models/Requests/PatchAccountingExpenseResponse.md:
@@ -32784,13 +32943,13 @@ trackedFiles:
   docs/Models/Requests/PatchAccountingTransactionResponse.md:
     last_write_checksum: sha1:33b078242a2d5f4f6db2a9819f35ac13227282a8
   docs/Models/Requests/PatchAccountingVendorcreditQueryParamFields.md:
-    last_write_checksum: sha1:1bae2a39b84ddbe111f600f8e67385b11575fce4
+    last_write_checksum: sha1:9a8a93a52d34a7ed6b8dff80813268dc6b9c7d64
   docs/Models/Requests/PatchAccountingVendorcreditRequest.md:
     last_write_checksum: sha1:1a66110aa85fa3261a45227ef7c83d5b8b8c1c6b
   docs/Models/Requests/PatchAccountingVendorcreditResponse.md:
     last_write_checksum: sha1:7d5891864ed7192286bdbcb2d46d5440d09626f4
   docs/Models/Requests/PatchAdsAdQueryParamFields.md:
-    last_write_checksum: sha1:691555fd46aad71f8ff647d641881525d469be6c
+    last_write_checksum: sha1:b6bae95d8773ee010d44b71fd5b7b983dc169083
   docs/Models/Requests/PatchAdsAdRequest.md:
     last_write_checksum: sha1:924f23adbeffbcdb4f09d3cc74e9179f6aa6a549
   docs/Models/Requests/PatchAdsAdResponse.md:
@@ -33057,6 +33216,12 @@ trackedFiles:
     last_write_checksum: sha1:55cefffe6ee0fc480c3e05e561065f40b9ac3213
   docs/Models/Requests/PatchHrisDeviceResponse.md:
     last_write_checksum: sha1:83c28e59ffe7ec0a36b44ab50f300ce22fe7df51
+  docs/Models/Requests/PatchHrisDocumentQueryParamFields.md:
+    last_write_checksum: sha1:c09860ee7a45467c1ca95567a34367182b445277
+  docs/Models/Requests/PatchHrisDocumentRequest.md:
+    last_write_checksum: sha1:97a1b2c2d8eb8735ee9bd1b35e77ee7885ae3c68
+  docs/Models/Requests/PatchHrisDocumentResponse.md:
+    last_write_checksum: sha1:b4d5e213aba1b1fd255cc5a68ef15162285f9a66
   docs/Models/Requests/PatchHrisEmployeeQueryParamFields.md:
     last_write_checksum: sha1:d3af1874faa3f804bb11fe7a80f356f02bdb28d4
   docs/Models/Requests/PatchHrisEmployeeRequest.md:
@@ -33613,6 +33778,10 @@ trackedFiles:
     last_write_checksum: sha1:394d4428444ba1b1f1db90fc341531ec81ba6f3d
   docs/Models/Requests/RemoveHrisDeviceResponse.md:
     last_write_checksum: sha1:c680f7cd9ac9401722f2d54cd49ab61ce966d429
+  docs/Models/Requests/RemoveHrisDocumentRequest.md:
+    last_write_checksum: sha1:82ff369d23b91a9ad921100737fd9bc9c306df5b
+  docs/Models/Requests/RemoveHrisDocumentResponse.md:
+    last_write_checksum: sha1:be76ad42f68de5ed3ebdaea39bb5b455bf104353
   docs/Models/Requests/RemoveHrisEmployeeRequest.md:
     last_write_checksum: sha1:7fc3710b23f143a998f80d423a725fcf66cef74f
   docs/Models/Requests/RemoveHrisEmployeeResponse.md:
@@ -33862,13 +34031,13 @@ trackedFiles:
   docs/Models/Requests/UpdateAccountingContactResponse.md:
     last_write_checksum: sha1:1751543a2d4aa7e3ea3e8a8453a3b2b205f6d979
   docs/Models/Requests/UpdateAccountingCreditmemoQueryParamFields.md:
-    last_write_checksum: sha1:51c05e401edfdd7fbb9473afe521d77de90319e5
+    last_write_checksum: sha1:953a62f4f2f4309c5f70f800fbdfb59583ae8cdb
   docs/Models/Requests/UpdateAccountingCreditmemoRequest.md:
     last_write_checksum: sha1:a6f4a9395b12e0da2fb8c5f8267813e085972649
   docs/Models/Requests/UpdateAccountingCreditmemoResponse.md:
     last_write_checksum: sha1:0d0786b2b2943ab400152344a871b57215e0cf69
   docs/Models/Requests/UpdateAccountingExpenseQueryParamFields.md:
-    last_write_checksum: sha1:67645518ab76f7d8d1ad8d7bf211be3b3eb6a6e3
+    last_write_checksum: sha1:6fc5b2d56bd9ae8cb6fe7e074b0c1640cbb28472
   docs/Models/Requests/UpdateAccountingExpenseRequest.md:
     last_write_checksum: sha1:25508019c5f95167492f97fb784d3af544cbd6e9
   docs/Models/Requests/UpdateAccountingExpenseResponse.md:
@@ -33916,13 +34085,13 @@ trackedFiles:
   docs/Models/Requests/UpdateAccountingTransactionResponse.md:
     last_write_checksum: sha1:72ac7202e77bb9aad8f4013431a8863a336f29e6
   docs/Models/Requests/UpdateAccountingVendorcreditQueryParamFields.md:
-    last_write_checksum: sha1:3b316c79fa6e56c2d9d1c57f8ddf1ef72fa3f950
+    last_write_checksum: sha1:1548eeb124e3615a4205d6c37f0b6af658172a30
   docs/Models/Requests/UpdateAccountingVendorcreditRequest.md:
     last_write_checksum: sha1:478130df2cf62e74bb9a4734b630c8499d82c9c8
   docs/Models/Requests/UpdateAccountingVendorcreditResponse.md:
     last_write_checksum: sha1:4ba290b3e888ddf5e27fa6d44f7146fc9bce1364
   docs/Models/Requests/UpdateAdsAdQueryParamFields.md:
-    last_write_checksum: sha1:01ea4992264c53fbe3d7d15909256cf5dc5b00e1
+    last_write_checksum: sha1:051c57de09b114cffd1ab32be0f07ce5529cd11c
   docs/Models/Requests/UpdateAdsAdRequest.md:
     last_write_checksum: sha1:d8b7757610abbd224e4910836ecec7ac16d7db05
   docs/Models/Requests/UpdateAdsAdResponse.md:
@@ -34189,6 +34358,12 @@ trackedFiles:
     last_write_checksum: sha1:c2e3c46c62747bd932abcb1e3da9785db0fecd21
   docs/Models/Requests/UpdateHrisDeviceResponse.md:
     last_write_checksum: sha1:05c0a242b12cc8f5ecb0ae27fc879e04b86be2b3
+  docs/Models/Requests/UpdateHrisDocumentQueryParamFields.md:
+    last_write_checksum: sha1:f58e210c91f648a9362021fd4835bd73bd323ef1
+  docs/Models/Requests/UpdateHrisDocumentRequest.md:
+    last_write_checksum: sha1:11fe79d14b62be46b4036646aca9d3a3027f93b3
+  docs/Models/Requests/UpdateHrisDocumentResponse.md:
+    last_write_checksum: sha1:35543f76eba78fa757401204288746a75dd31c0e
   docs/Models/Requests/UpdateHrisEmployeeQueryParamFields.md:
     last_write_checksum: sha1:78221033552fb3fe55e85ab88791141f3cbb02ff
   docs/Models/Requests/UpdateHrisEmployeeRequest.md:
@@ -34675,7 +34850,7 @@ trackedFiles:
     pristine_git_object: d5cbe2e0d48f5bf31fa56782d2a6a5f7db3f1e32
   docs/sdks/document/README.md:
     id: 6a8c24b11248
-    last_write_checksum: sha1:e1ed40548a251de9e0cd78f2be479a8e4addf9a5
+    last_write_checksum: sha1:368f4e3ca5ed9ba8f9e15d5a36bf7499fa37eaf1
     pristine_git_object: 162147af4873e1a3eee41eef70e26edcffbaf2c4
   docs/sdks/embedding/README.md:
     id: 754ecfe69fc2
@@ -34719,7 +34894,7 @@ trackedFiles:
     pristine_git_object: 99cc06fb51a443fd99605c8cb7c23f796813735b
   docs/sdks/hris/README.md:
     id: 0baa868a038c
-    last_write_checksum: sha1:41c73a2d2d7dc234d096c322c5334f3fc54d0fcf
+    last_write_checksum: sha1:4989393bb0d50bd3185557e9c4caf92019afd081
     pristine_git_object: a882173f5be927d02855943c318fb98d8a5d4d85
   docs/sdks/insertionorder/README.md:
     last_write_checksum: sha1:c2e53f7d77df988a17ffc0260b8765d886bf1ff6

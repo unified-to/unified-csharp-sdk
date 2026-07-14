@@ -17,10 +17,16 @@ namespace UnifiedTo.Models.Components
     {
         [JsonProperty("ON_RECEIPT")]
         OnReceipt,
+        [JsonProperty("NET_7")]
+        Net7,
         [JsonProperty("NET_10")]
         Net10,
         [JsonProperty("NET_15")]
         Net15,
+        [JsonProperty("NET_20")]
+        Net20,
+        [JsonProperty("NET_25")]
+        Net25,
         [JsonProperty("NET_30")]
         Net30,
         [JsonProperty("NET_60")]

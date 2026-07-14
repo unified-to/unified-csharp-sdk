@@ -14,7 +14,9 @@
 | `OrganizationId`   | organization_id    |
 | `Status`           | status             |
 | `AdType`           | ad_type            |
+| `AdvertiserName`   | advertiser_name    |
 | `CreativeIds`      | creative_ids       |
+| `LogoCreativeId`   | logo_creative_id   |
 | `CreativeAssetUrl` | creative_asset_url |
 | `AdCopy`           | ad_copy            |
 | `Headline`         | headline           |

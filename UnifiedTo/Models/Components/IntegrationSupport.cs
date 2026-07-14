@@ -110,6 +110,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_fulltext")]
         public ListFulltext? ListFulltext { get; set; }
 
+        [JsonProperty("list_goal")]
+        public ListGoal? ListGoal { get; set; }
+
         [JsonProperty("list_group_id")]
         public ListGroupId? ListGroupId { get; set; }
 

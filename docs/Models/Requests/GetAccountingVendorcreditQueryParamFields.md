@@ -20,4 +20,5 @@
 | `Lineitems`      | lineitems        |
 | `Status`         | status           |
 | `OrganizationId` | organization_id  |
+| `ApplyAmount`    | apply_amount     |
 | `Raw`            | raw              |

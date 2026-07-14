@@ -49,10 +49,12 @@ namespace UnifiedTo.Models.Requests
         ApproverUserId,
         [JsonProperty("lineitems")]
         Lineitems,
-        [JsonProperty("raw")]
-        Raw,
+        [JsonProperty("attachments")]
+        Attachments,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class PatchAccountingExpenseQueryParamFieldsExtension

@@ -24,6 +24,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("ad_type")]
         public PropertyAdsReportMetricsAdAdType? AdType { get; set; }
 
+        [JsonProperty("advertiser_name")]
+        public string? AdvertiserName { get; set; }
+
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
@@ -56,6 +59,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("logo_creative_id")]
+        public string? LogoCreativeId { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        [JsonProperty("apply_amount")]
+        public double? ApplyAmount { get; set; }
+
         [JsonProperty("balance_amount")]
         public double? BalanceAmount { get; set; }
 

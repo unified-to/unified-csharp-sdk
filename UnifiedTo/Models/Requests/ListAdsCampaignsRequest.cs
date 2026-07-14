@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListAdsCampaignsQueryParamFields>? Fields { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=goal")]
+        public string? Goal { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
