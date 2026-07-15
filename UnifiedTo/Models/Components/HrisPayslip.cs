@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("paid_at")]
         public DateTime? PaidAt { get; set; }
 
+        [JsonProperty("payment_reference")]
+        public string? PaymentReference { get; set; }
+
         [JsonProperty("payment_type")]
         public PaymentType? PaymentType { get; set; }
 

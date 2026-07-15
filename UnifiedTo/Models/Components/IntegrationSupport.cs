@@ -209,6 +209,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_repo_id")]
         public ListRepoId? ListRepoId { get; set; }
 
+        [JsonProperty("list_role_id")]
+        public ListRoleId? ListRoleId { get; set; }
+
         [JsonProperty("list_root_id")]
         public ListRootId? ListRootId { get; set; }
 

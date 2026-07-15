@@ -116,6 +116,7 @@ namespace UnifiedTo
         public IDevice Device { get; }
         public IEmployee Employee { get; }
         public IPayslip Payslip { get; }
+        public ITaxonomy Taxonomy { get; }
         public ITimeoff Timeoff { get; }
         public ITimeshift Timeshift { get; }
         public IKms Kms { get; }
@@ -191,7 +192,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.87";
+        private const string _sdkVersion = "0.130.88";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -283,6 +284,7 @@ namespace UnifiedTo
         public IDevice Device { get; private set; }
         public IEmployee Employee { get; private set; }
         public IPayslip Payslip { get; private set; }
+        public ITaxonomy Taxonomy { get; private set; }
         public ITimeoff Timeoff { get; private set; }
         public ITimeshift Timeshift { get; private set; }
         public IKms Kms { get; private set; }
@@ -528,6 +530,8 @@ namespace UnifiedTo
             Employee = new Employee(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
+
+            Taxonomy = new Taxonomy(SDKConfiguration);
 
             Timeoff = new Timeoff(SDKConfiguration);
 
@@ -873,6 +877,8 @@ namespace UnifiedTo
             Employee = new Employee(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
+
+            Taxonomy = new Taxonomy(SDKConfiguration);
 
             Timeoff = new Timeoff(SDKConfiguration);
 

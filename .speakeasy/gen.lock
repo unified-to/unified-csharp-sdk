@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: e58e7c5b7a4389898dcda6779b875038
+  docChecksum: 37f0bcef1ef1eca49684f622cd72a3f4
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.87
-  configChecksum: 79404909bec364c3e29eca78916796ab
+  releaseVersion: 0.130.88
+  configChecksum: c407f06944b147f5efc2193e67d39246
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -448,6 +448,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisPayslip.cs
   - UnifiedTo/Models/Components/HrisPayslipDetail.cs
   - UnifiedTo/Models/Components/HrisPayslipDetailType.cs
+  - UnifiedTo/Models/Components/HrisTaxonomy.cs
+  - UnifiedTo/Models/Components/HrisTaxonomyType.cs
   - UnifiedTo/Models/Components/HrisTelephone.cs
   - UnifiedTo/Models/Components/HrisTelephoneType.cs
   - UnifiedTo/Models/Components/HrisTimeoff.cs
@@ -543,6 +545,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListRawFields.cs
   - UnifiedTo/Models/Components/ListReference.cs
   - UnifiedTo/Models/Components/ListRepoId.cs
+  - UnifiedTo/Models/Components/ListRoleId.cs
   - UnifiedTo/Models/Components/ListRootId.cs
   - UnifiedTo/Models/Components/ListSaleschannelId.cs
   - UnifiedTo/Models/Components/ListSessionId.cs
@@ -1655,6 +1658,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetHrisPayslipQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetHrisPayslipRequest.cs
   - UnifiedTo/Models/Requests/GetHrisPayslipResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisTaxonomyQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetHrisTaxonomyRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisTaxonomyResponse.cs
   - UnifiedTo/Models/Requests/GetHrisTimeoffQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetHrisTimeoffRequest.cs
   - UnifiedTo/Models/Requests/GetHrisTimeoffResponse.cs
@@ -2087,6 +2093,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListHrisPayslipsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListHrisPayslipsRequest.cs
   - UnifiedTo/Models/Requests/ListHrisPayslipsResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisTaxonomiesQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListHrisTaxonomiesRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisTaxonomiesResponse.cs
   - UnifiedTo/Models/Requests/ListHrisTimeoffsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListHrisTimeoffsRequest.cs
   - UnifiedTo/Models/Requests/ListHrisTimeoffsResponse.cs
@@ -3189,6 +3198,7 @@ generatedFiles:
   - UnifiedTo/Table.cs
   - UnifiedTo/Target.cs
   - UnifiedTo/Task.cs
+  - UnifiedTo/Taxonomy.cs
   - UnifiedTo/Taxrate.cs
   - UnifiedTo/Template.cs
   - UnifiedTo/Ticket.cs
@@ -3554,6 +3564,8 @@ generatedFiles:
   - docs/Models/Components/HrisPayslip.md
   - docs/Models/Components/HrisPayslipDetail.md
   - docs/Models/Components/HrisPayslipDetailType.md
+  - docs/Models/Components/HrisTaxonomy.md
+  - docs/Models/Components/HrisTaxonomyType.md
   - docs/Models/Components/HrisTelephone.md
   - docs/Models/Components/HrisTelephoneType.md
   - docs/Models/Components/HrisTimeoff.md
@@ -3649,6 +3661,7 @@ generatedFiles:
   - docs/Models/Components/ListRawFields.md
   - docs/Models/Components/ListReference.md
   - docs/Models/Components/ListRepoId.md
+  - docs/Models/Components/ListRoleId.md
   - docs/Models/Components/ListRootId.md
   - docs/Models/Components/ListSaleschannelId.md
   - docs/Models/Components/ListSessionId.md
@@ -4760,6 +4773,9 @@ generatedFiles:
   - docs/Models/Requests/GetHrisPayslipQueryParamFields.md
   - docs/Models/Requests/GetHrisPayslipRequest.md
   - docs/Models/Requests/GetHrisPayslipResponse.md
+  - docs/Models/Requests/GetHrisTaxonomyQueryParamFields.md
+  - docs/Models/Requests/GetHrisTaxonomyRequest.md
+  - docs/Models/Requests/GetHrisTaxonomyResponse.md
   - docs/Models/Requests/GetHrisTimeoffQueryParamFields.md
   - docs/Models/Requests/GetHrisTimeoffRequest.md
   - docs/Models/Requests/GetHrisTimeoffResponse.md
@@ -5192,6 +5208,9 @@ generatedFiles:
   - docs/Models/Requests/ListHrisPayslipsQueryParamFields.md
   - docs/Models/Requests/ListHrisPayslipsRequest.md
   - docs/Models/Requests/ListHrisPayslipsResponse.md
+  - docs/Models/Requests/ListHrisTaxonomiesQueryParamFields.md
+  - docs/Models/Requests/ListHrisTaxonomiesRequest.md
+  - docs/Models/Requests/ListHrisTaxonomiesResponse.md
   - docs/Models/Requests/ListHrisTimeoffsQueryParamFields.md
   - docs/Models/Requests/ListHrisTimeoffsRequest.md
   - docs/Models/Requests/ListHrisTimeoffsResponse.md
@@ -6379,6 +6398,7 @@ generatedFiles:
   - docs/sdks/table/README.md
   - docs/sdks/target/README.md
   - docs/sdks/task/README.md
+  - docs/sdks/taxonomy/README.md
   - docs/sdks/taxrate/README.md
   - docs/sdks/template/README.md
   - docs/sdks/ticket/README.md
@@ -19436,6 +19456,23 @@ examples:
       responses:
         "200":
           application/json: {}
+  getHrisTaxonomy:
+    speakeasy-default-get-hris-taxonomy:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listHrisTaxonomies:
+    speakeasy-default-list-hris-taxonomies:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -19680,7 +19717,7 @@ trackedFiles:
     pristine_git_object: 1e8c7fdd97e05cfa97c7b4f812d92a03a9d3c8e6
   UnifiedTo/Hris.cs:
     id: ee509f497b6d
-    last_write_checksum: sha1:61c9ee67c1e846c35500eb6586883a11dc5e5fa5
+    last_write_checksum: sha1:9a0f26a89cf586516cab3e32bcf902132be3cacc
     pristine_git_object: 6af287636856f38efb8e1b73f5d4b70eeee34612
   UnifiedTo/Insertionorder.cs:
     last_write_checksum: sha1:5ba10d7b970c97a872da3a6a89239e85e46412c7
@@ -20846,7 +20883,7 @@ trackedFiles:
     pristine_git_object: 4c8c5327f9c0253b034bb1ba0b3f221dbd3ed83b
   UnifiedTo/Models/Components/HrisPayslip.cs:
     id: 03c415c83c17
-    last_write_checksum: sha1:f9599a2bcb3d436d92c3c294890170368f02d208
+    last_write_checksum: sha1:c6679c3a8228a21a0c9cf64854d5c5df03eb43fa
     pristine_git_object: 30d14cdbde0b70dda14f28bd1687e19f68cc2590
   UnifiedTo/Models/Components/HrisPayslipDetail.cs:
     id: 67ae8b938e77
@@ -20856,6 +20893,10 @@ trackedFiles:
     id: 4be25db4acc0
     last_write_checksum: sha1:5f13ba961000750edda1c98895289546a97cc9cc
     pristine_git_object: 72cf8d7f3f4373fbfb0df9650a27bc888e2715e5
+  UnifiedTo/Models/Components/HrisTaxonomy.cs:
+    last_write_checksum: sha1:c65868211b851f53adb6daa24ceb9454688348c5
+  UnifiedTo/Models/Components/HrisTaxonomyType.cs:
+    last_write_checksum: sha1:717de3a7565299d346874d1e88a54398b0735b65
   UnifiedTo/Models/Components/HrisTelephone.cs:
     id: 8d6eaf84c0ad
     last_write_checksum: sha1:6fd26bd4e06f163ab844d0aa433b2033c3ca5c31
@@ -20916,7 +20957,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:370faf1c7d20e3539a2bbe3095d954704e4ea422
+    last_write_checksum: sha1:f4763e6f89f60b37b541c61a2fe748244996f293
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -21196,6 +21237,8 @@ trackedFiles:
     id: 59de81e50137
     last_write_checksum: sha1:f473f471829771757962404243287a75220bb1bf
     pristine_git_object: 70d8bfbee6e7bc01f65248d85eaaf6d01f901e88
+  UnifiedTo/Models/Components/ListRoleId.cs:
+    last_write_checksum: sha1:8d9fd65272e64360d0c9ff073f3d145978948c02
   UnifiedTo/Models/Components/ListRootId.cs:
     id: 784083c6f009
     last_write_checksum: sha1:df65ad130a9f48a0dc1f59c066d2a877bbb788b0
@@ -21460,7 +21503,7 @@ trackedFiles:
     last_write_checksum: sha1:2600fee70f1e697d78687bf8756486885a2bc240
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:95a0bbd7f2790790c93ecc3a7cbbb22e503e7228
+    last_write_checksum: sha1:9cfe666442838b5763d1e616002378fd6554a3c2
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -21870,7 +21913,7 @@ trackedFiles:
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:7ed5db8e5ae84de23aa0576b99a97d2412d900a8
+    last_write_checksum: sha1:64a1fcea9190dce6d486f147896fc2df8bad6d99
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -23977,11 +24020,17 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetHrisLocationResponse.cs:
     last_write_checksum: sha1:5bbf85ab2d7cd5fa02c6280e1f914ef7616a3189
   UnifiedTo/Models/Requests/GetHrisPayslipQueryParamFields.cs:
-    last_write_checksum: sha1:2488f2efe8189b3b034ed16f40746e48d9c374ad
+    last_write_checksum: sha1:d80fab0ca2d1ca294349d45e66491392257116ff
   UnifiedTo/Models/Requests/GetHrisPayslipRequest.cs:
     last_write_checksum: sha1:a0df487c80d8c59348b46f3568e3b160e8e7d536
   UnifiedTo/Models/Requests/GetHrisPayslipResponse.cs:
     last_write_checksum: sha1:dadc1291b096d26e59047864bf701196c030907e
+  UnifiedTo/Models/Requests/GetHrisTaxonomyQueryParamFields.cs:
+    last_write_checksum: sha1:cad3a8863760cd6f9d3085f17cdfd2af1ce9b6f1
+  UnifiedTo/Models/Requests/GetHrisTaxonomyRequest.cs:
+    last_write_checksum: sha1:e1a4953f34bc47ceb5428f7364e8c0031a581d11
+  UnifiedTo/Models/Requests/GetHrisTaxonomyResponse.cs:
+    last_write_checksum: sha1:bf1dc711b1a0ab3f3a6dd050aa15d0ff31ea5c89
   UnifiedTo/Models/Requests/GetHrisTimeoffQueryParamFields.cs:
     last_write_checksum: sha1:505f2321b0f74811d50c58734d0181b2c1490b8b
   UnifiedTo/Models/Requests/GetHrisTimeoffRequest.cs:
@@ -24873,11 +24922,17 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListHrisLocationsResponse.cs:
     last_write_checksum: sha1:a5220135a842c975f913f5b510952c15ac266330
   UnifiedTo/Models/Requests/ListHrisPayslipsQueryParamFields.cs:
-    last_write_checksum: sha1:a15030efa5c1b1472436929fafb86c8d28073253
+    last_write_checksum: sha1:5f63cbb1b00c016ca23e09eafca7554e36551176
   UnifiedTo/Models/Requests/ListHrisPayslipsRequest.cs:
     last_write_checksum: sha1:92d8074d6fe55d97570fef685833938d79842e01
   UnifiedTo/Models/Requests/ListHrisPayslipsResponse.cs:
     last_write_checksum: sha1:4a9cf208f72fa032cec76d1a16337544b30c94fe
+  UnifiedTo/Models/Requests/ListHrisTaxonomiesQueryParamFields.cs:
+    last_write_checksum: sha1:db25c26f82a821da98056cbfed5a2b2c3cf892d1
+  UnifiedTo/Models/Requests/ListHrisTaxonomiesRequest.cs:
+    last_write_checksum: sha1:7ca7cb49e817454b1083b029af7c003974e0fa8b
+  UnifiedTo/Models/Requests/ListHrisTaxonomiesResponse.cs:
+    last_write_checksum: sha1:90666095c92fabddeb7dca8c73c0c6d91fd103e1
   UnifiedTo/Models/Requests/ListHrisTimeoffsQueryParamFields.cs:
     last_write_checksum: sha1:0214ad2335ba33ee88553beb3aa832f09943d4fe
   UnifiedTo/Models/Requests/ListHrisTimeoffsRequest.cs:
@@ -27190,7 +27245,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:7bcb2be094e807b2a1debc0fe6310b081c0766b9
+    last_write_checksum: sha1:9d73bb1f42c80a8c532068505263222845e39b88
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -27246,6 +27301,8 @@ trackedFiles:
     id: c57fed442ad6
     last_write_checksum: sha1:44172ce418b71cd9b86320c11b21f9830edc25c7
     pristine_git_object: 1ae2fc58982db5ce4d18357de829f208d268c70d
+  UnifiedTo/Taxonomy.cs:
+    last_write_checksum: sha1:75b592d395bcc79b3944053bae377dcfc062f482
   UnifiedTo/Taxrate.cs:
     id: f72339d245f3
     last_write_checksum: sha1:21db6fe7c57131dfdeb8cb2c7c17a83f66d976a9
@@ -27292,7 +27349,7 @@ trackedFiles:
     pristine_git_object: 883792bc149f1152a8331b8e409d591075c3a6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
-    last_write_checksum: sha1:4b7ca8b2197f8bde8223d3c573f76ceeb4c57910
+    last_write_checksum: sha1:09b2d642625ce044ba89f103e785767c18452ab8
     pristine_git_object: b2dbc023c5e4be2a5de721c2bbc9330db399f4bd
   UnifiedTo/User.cs:
     id: 603e44ffd153
@@ -27308,7 +27365,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:a19f8c832f23bb34d0b56badbeb80d4723ce117d
+    last_write_checksum: sha1:2fea6725713e5114bdbd3572829079494b4b881d
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -28458,7 +28515,7 @@ trackedFiles:
     pristine_git_object: d91b5c3536a0f1ff2107b076bd8baf8d19530fa7
   docs/Models/Components/HrisPayslip.md:
     id: 9abce7b3ed8f
-    last_write_checksum: sha1:6ff2e0e52bc2dae65854ffbf9cea08ab2b45def8
+    last_write_checksum: sha1:b3b25a16547e138c2a36628f33ad4b6c1891de95
     pristine_git_object: 466c057342c676ab69e50724fee5929f1f8c2117
   docs/Models/Components/HrisPayslipDetail.md:
     id: b184ae6f2fbb
@@ -28468,6 +28525,10 @@ trackedFiles:
     id: 96f1bba0ab89
     last_write_checksum: sha1:30fb46247ec4a4cff129265004984a024c5f0dee
     pristine_git_object: e841b34236e7b1fb5f536caaed6aa5abac9cab6f
+  docs/Models/Components/HrisTaxonomy.md:
+    last_write_checksum: sha1:5d21447f9b5084ebcae4227b9aa499aada876f5e
+  docs/Models/Components/HrisTaxonomyType.md:
+    last_write_checksum: sha1:ec3103fd674e4a92fd4cd14bf3d7fd1f347541b3
   docs/Models/Components/HrisTelephone.md:
     id: a602126cbae7
     last_write_checksum: sha1:43216d73eec818547add76efe5d56f79431ad8e1
@@ -28528,7 +28589,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:762f7f05b2da8484a121a2f2984df735c5fc3b32
+    last_write_checksum: sha1:fc2b9437961a44fea09df5fbbf9142455f4cbd76
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -28808,6 +28869,8 @@ trackedFiles:
     id: e20e766c4bf4
     last_write_checksum: sha1:a5cb45cf76a5514629d5ff176ca26294186e98e2
     pristine_git_object: 31d54282c32ee8b71d798d6c30a303e3bd1d33bc
+  docs/Models/Components/ListRoleId.md:
+    last_write_checksum: sha1:c496c895ba3296bfffe61643b9f79fbe5300b633
   docs/Models/Components/ListRootId.md:
     id: da32ed006f3c
     last_write_checksum: sha1:d75c2914312f14fa422843c32186728d3e9130a8
@@ -29072,7 +29135,7 @@ trackedFiles:
     last_write_checksum: sha1:1cad6af034766f255939e42484237ba47aed987a
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:b56d9b547e63942e848e8bc8db7ed13bb7ba350c
+    last_write_checksum: sha1:4a7d6129b40a1af2419c16b79e5727bc0e641df8
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -29482,7 +29545,7 @@ trackedFiles:
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:fd50dcc512bb00d8f4126ef824158db008746858
+    last_write_checksum: sha1:a5aab933bfaa17c640a7748f1cd6956d42d51b43
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
@@ -31577,11 +31640,17 @@ trackedFiles:
   docs/Models/Requests/GetHrisLocationResponse.md:
     last_write_checksum: sha1:dec2b0775da077384430fcbf4a1efab4df71cae7
   docs/Models/Requests/GetHrisPayslipQueryParamFields.md:
-    last_write_checksum: sha1:9c15aa8471381d35f3fb630cd5c5c442d89d297d
+    last_write_checksum: sha1:60bdf58567de055ba0394ab3940d169bd610e66d
   docs/Models/Requests/GetHrisPayslipRequest.md:
     last_write_checksum: sha1:46fabf2ef40d6de678f4a125810e7333d070ffbc
   docs/Models/Requests/GetHrisPayslipResponse.md:
     last_write_checksum: sha1:e2721ff7557e0fafc57f4ebda93d3255dbdfafd6
+  docs/Models/Requests/GetHrisTaxonomyQueryParamFields.md:
+    last_write_checksum: sha1:90388c0741c163a96026cf0fd4289fd9d782567c
+  docs/Models/Requests/GetHrisTaxonomyRequest.md:
+    last_write_checksum: sha1:86b6f446201a694c2f83d72385d83a165a96ad62
+  docs/Models/Requests/GetHrisTaxonomyResponse.md:
+    last_write_checksum: sha1:b8cbaf44ff866a4414adff48dce9990441c585cc
   docs/Models/Requests/GetHrisTimeoffQueryParamFields.md:
     last_write_checksum: sha1:d2024a7b91279d04c0a03df348d0f4a251917b3a
   docs/Models/Requests/GetHrisTimeoffRequest.md:
@@ -32473,11 +32542,17 @@ trackedFiles:
   docs/Models/Requests/ListHrisLocationsResponse.md:
     last_write_checksum: sha1:836e45d67f70f9481926ef0f3707ca6f51afc72c
   docs/Models/Requests/ListHrisPayslipsQueryParamFields.md:
-    last_write_checksum: sha1:244fba66c13b22d33d228af85e21ddd2d701389a
+    last_write_checksum: sha1:787da45eda2c7bf6f748cee6d98c34872919f836
   docs/Models/Requests/ListHrisPayslipsRequest.md:
     last_write_checksum: sha1:a94e994346dd54f5a84953a391d7d682cf8636b0
   docs/Models/Requests/ListHrisPayslipsResponse.md:
     last_write_checksum: sha1:bb068a80ec9a58a74c6ee7dba2a6c1df4f22d7fe
+  docs/Models/Requests/ListHrisTaxonomiesQueryParamFields.md:
+    last_write_checksum: sha1:0c24e2fee4daf523a5d39e3677f073200a8312a6
+  docs/Models/Requests/ListHrisTaxonomiesRequest.md:
+    last_write_checksum: sha1:791c617bb63c9dcfbe5cc089dcc4ff57fb2adacf
+  docs/Models/Requests/ListHrisTaxonomiesResponse.md:
+    last_write_checksum: sha1:da8ed17755b3a3a891ca5ff0157c12cc62075c36
   docs/Models/Requests/ListHrisTimeoffsQueryParamFields.md:
     last_write_checksum: sha1:2722ed3695fdbd524025c963c525dd8372f6a30d
   docs/Models/Requests/ListHrisTimeoffsRequest.md:
@@ -34894,7 +34969,7 @@ trackedFiles:
     pristine_git_object: 99cc06fb51a443fd99605c8cb7c23f796813735b
   docs/sdks/hris/README.md:
     id: 0baa868a038c
-    last_write_checksum: sha1:4989393bb0d50bd3185557e9c4caf92019afd081
+    last_write_checksum: sha1:8ab57e793cb195576fb2ff5fe97ef36d9e404e0e
     pristine_git_object: a882173f5be927d02855943c318fb98d8a5d4d85
   docs/sdks/insertionorder/README.md:
     last_write_checksum: sha1:c2e53f7d77df988a17ffc0260b8765d886bf1ff6
@@ -35150,6 +35225,8 @@ trackedFiles:
     id: ae2d0d96ea1f
     last_write_checksum: sha1:b3a339309cf4da9aec233d9fde84e9a0f4eb2482
     pristine_git_object: 3e8a34f68ed1a7fd44ca5505d8878f79035f27de
+  docs/sdks/taxonomy/README.md:
+    last_write_checksum: sha1:00535e3e79587bf779bd45ea335f3b40a0c4ae14
   docs/sdks/taxrate/README.md:
     id: 626e6511cf80
     last_write_checksum: sha1:899a305983cd92d62ffe41bbc6dd6295db94f8ee

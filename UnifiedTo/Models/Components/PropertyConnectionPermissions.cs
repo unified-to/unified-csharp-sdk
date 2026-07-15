@@ -297,6 +297,10 @@ namespace UnifiedTo.Models.Components
         HrisDocumentRead,
         [JsonProperty("hris_document_write")]
         HrisDocumentWrite,
+        [JsonProperty("hris_taxonomy_read")]
+        HrisTaxonomyRead,
+        [JsonProperty("hris_taxonomy_write")]
+        HrisTaxonomyWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
         [JsonProperty("uc_contact_read")]

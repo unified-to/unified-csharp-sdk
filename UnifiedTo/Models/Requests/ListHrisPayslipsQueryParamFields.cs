@@ -25,6 +25,8 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("company_id")]
         CompanyId,
+        [JsonProperty("payment_reference")]
+        PaymentReference,
         [JsonProperty("payment_type")]
         PaymentType,
         [JsonProperty("paid_at")]
