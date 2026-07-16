@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=effective_status")]
+        public string? EffectiveStatus { get; set; }
+
         /// <summary>
         /// The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>

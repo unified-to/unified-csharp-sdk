@@ -11,6 +11,7 @@
 | `Name`                     | name                       |
 | `OrganizationId`           | organization_id            |
 | `Status`                   | status                     |
+| `EffectiveStatus`          | effective_status           |
 | `StartAt`                  | start_at                   |
 | `EndAt`                    | end_at                     |
 | `BudgetAmount`             | budget_amount              |

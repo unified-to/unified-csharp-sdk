@@ -39,6 +39,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        [JsonProperty("effective_status")]
+        public PropertyAdsReportMetricsCampaignEffectiveStatus? EffectiveStatus { get; set; }
+
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 

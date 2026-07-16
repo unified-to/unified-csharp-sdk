@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 37f0bcef1ef1eca49684f622cd72a3f4
+  docChecksum: 187dee688fb0a5b05b3100f79c0eab58
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.88
-  configChecksum: c407f06944b147f5efc2193e67d39246
+  releaseVersion: 0.130.89
+  configChecksum: 25c3d0ccd80a468c0764d81d99a6e942
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -378,6 +378,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/Dimension.cs
   - UnifiedTo/Models/Components/DurationType.cs
   - UnifiedTo/Models/Components/DutiesPaidBy.cs
+  - UnifiedTo/Models/Components/EffectiveStatus.cs
   - UnifiedTo/Models/Components/EmployerContributionType.cs
   - UnifiedTo/Models/Components/EmploymentStatus.cs
   - UnifiedTo/Models/Components/EmploymentType.cs
@@ -722,6 +723,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaign.cs
   - UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignAdvertisingChannelType.cs
   - UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignBudgetPeriod.cs
+  - UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignEffectiveStatus.cs
   - UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCap.cs
   - UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit.cs
   - UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignGoal.cs
@@ -3494,6 +3496,7 @@ generatedFiles:
   - docs/Models/Components/Dimension.md
   - docs/Models/Components/DurationType.md
   - docs/Models/Components/DutiesPaidBy.md
+  - docs/Models/Components/EffectiveStatus.md
   - docs/Models/Components/EmployerContributionType.md
   - docs/Models/Components/EmploymentStatus.md
   - docs/Models/Components/EmploymentType.md
@@ -3838,6 +3841,7 @@ generatedFiles:
   - docs/Models/Components/PropertyAdsReportMetricsCampaign.md
   - docs/Models/Components/PropertyAdsReportMetricsCampaignAdvertisingChannelType.md
   - docs/Models/Components/PropertyAdsReportMetricsCampaignBudgetPeriod.md
+  - docs/Models/Components/PropertyAdsReportMetricsCampaignEffectiveStatus.md
   - docs/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCap.md
   - docs/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit.md
   - docs/Models/Components/PropertyAdsReportMetricsCampaignGoal.md
@@ -20042,7 +20046,7 @@ trackedFiles:
   UnifiedTo/Models/Components/AdsAdStatus.cs:
     last_write_checksum: sha1:94a94fa45c934f3f67070261265ee7dc23c88d3a
   UnifiedTo/Models/Components/AdsCampaign.cs:
-    last_write_checksum: sha1:f418f1a30350a70d0d14eae4729eb15781d97528
+    last_write_checksum: sha1:9d114a6fecb45003faec97c7e3aa03f7394b1f04
   UnifiedTo/Models/Components/AdsCampaignStatus.cs:
     last_write_checksum: sha1:b42b9cf687cf03364a8ce7d1fdd54d65398bc14f
   UnifiedTo/Models/Components/AdsCreative.cs:
@@ -20643,6 +20647,8 @@ trackedFiles:
     last_write_checksum: sha1:651169bd7c4b627f7d2d47dcf0e22c28aaea94bc
   UnifiedTo/Models/Components/DutiesPaidBy.cs:
     last_write_checksum: sha1:a66f3fe788a075947e566f3800a0738c44fb61c3
+  UnifiedTo/Models/Components/EffectiveStatus.cs:
+    last_write_checksum: sha1:c2fdf2b4bab159cf46423c9d5004a874343280a5
   UnifiedTo/Models/Components/EmployerContributionType.cs:
     id: 518cb3095555
     last_write_checksum: sha1:2ad1ba51186aac71f9063990ff5c2989ea781ad2
@@ -21734,11 +21740,13 @@ trackedFiles:
   UnifiedTo/Models/Components/PropertyAdsReportMetricsAdStatus.cs:
     last_write_checksum: sha1:44cb9f3f2be42855bda30905c77dfb88808cd622
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaign.cs:
-    last_write_checksum: sha1:8c14da6a444841c719c10bbbd26aaaca9ce98043
+    last_write_checksum: sha1:a047c3cf291d08647276128c7f2611367f44d000
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignAdvertisingChannelType.cs:
     last_write_checksum: sha1:755ebba783a220a4bbba7a148b4f6d36085cf8f2
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignBudgetPeriod.cs:
     last_write_checksum: sha1:025ea874e5ec481efbc365ffafa58bcdf8c34bb1
+  UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignEffectiveStatus.cs:
+    last_write_checksum: sha1:92aff4e68cf9404e099ed3ad2534b1c8d53c6e38
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCap.cs:
     last_write_checksum: sha1:330df0f3097f824bf450f050e724d5be6acba7d0
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit.cs:
@@ -22944,7 +22952,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateAdsAdResponse.cs:
     last_write_checksum: sha1:17de729a25d1d3d9358605cb7e4785e32b02691c
   UnifiedTo/Models/Requests/CreateAdsCampaignQueryParamFields.cs:
-    last_write_checksum: sha1:6d804b8ffb27055b9926bb98b282133788fe079d
+    last_write_checksum: sha1:d1db66765cbb49a0d14cd14dd92ac0c69be54c9b
   UnifiedTo/Models/Requests/CreateAdsCampaignRequest.cs:
     last_write_checksum: sha1:8591a8bdd92a09af37f67e6352fb1302106dcf2f
   UnifiedTo/Models/Requests/CreateAdsCampaignResponse.cs:
@@ -23668,7 +23676,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetAdsAdResponse.cs:
     last_write_checksum: sha1:27257d2f9b5b7786ad3f32ca257ac3840b3e54b0
   UnifiedTo/Models/Requests/GetAdsCampaignQueryParamFields.cs:
-    last_write_checksum: sha1:f304ed34f574f0db7377b171ea7fc70b6b811f0c
+    last_write_checksum: sha1:fd4bba3ae39fe9b9d99049cf37d4227936682778
   UnifiedTo/Models/Requests/GetAdsCampaignRequest.cs:
     last_write_checksum: sha1:d1237fb6b23272cea4bc3df03e52684fcee1b679
   UnifiedTo/Models/Requests/GetAdsCampaignResponse.cs:
@@ -24526,9 +24534,9 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsAdsResponse.cs:
     last_write_checksum: sha1:ed029a89ef902f2d565005d3814c58de91460924
   UnifiedTo/Models/Requests/ListAdsCampaignsQueryParamFields.cs:
-    last_write_checksum: sha1:c1f55d172e0932ac8bc8368da3f039e8af5b2fec
+    last_write_checksum: sha1:3b35e26490161ff01c1b3d1890c171b013345dd0
   UnifiedTo/Models/Requests/ListAdsCampaignsRequest.cs:
-    last_write_checksum: sha1:637911df8e12141691647385fb16cdabd8416dda
+    last_write_checksum: sha1:9345e2b56c76b315b75682cfcf58a30b5f959aec
   UnifiedTo/Models/Requests/ListAdsCampaignsResponse.cs:
     last_write_checksum: sha1:972ee8ab3dca9e04eaa0e91f440f6523aaf80a4f
   UnifiedTo/Models/Requests/ListAdsCreativesQueryParamFields.cs:
@@ -25410,7 +25418,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchAdsAdResponse.cs:
     last_write_checksum: sha1:5e006a2125f42ccdfb28bbbe78ac3df401984507
   UnifiedTo/Models/Requests/PatchAdsCampaignQueryParamFields.cs:
-    last_write_checksum: sha1:d07342d844f62470ba2df41c88418f0613834a6c
+    last_write_checksum: sha1:08e491b41fbf83a65c8e64851e582351ec32f8bb
   UnifiedTo/Models/Requests/PatchAdsCampaignRequest.cs:
     last_write_checksum: sha1:3a2d90f19c8ae5c7f215520e990644cb26a8b792
   UnifiedTo/Models/Requests/PatchAdsCampaignResponse.cs:
@@ -26552,7 +26560,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateAdsAdResponse.cs:
     last_write_checksum: sha1:c7fa338f40eafdb00d8fb7a4631da0c9bd823de4
   UnifiedTo/Models/Requests/UpdateAdsCampaignQueryParamFields.cs:
-    last_write_checksum: sha1:bcdf6f05e1fc6c971db8f0cfac07c0988aeafd4c
+    last_write_checksum: sha1:99f7c1cf30899ff7b58e2a1289e192ef7e9b393f
   UnifiedTo/Models/Requests/UpdateAdsCampaignRequest.cs:
     last_write_checksum: sha1:3dfc204ddfd53c4a2a5db02b729c6269a75430fa
   UnifiedTo/Models/Requests/UpdateAdsCampaignResponse.cs:
@@ -27245,7 +27253,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:9d73bb1f42c80a8c532068505263222845e39b88
+    last_write_checksum: sha1:c86194a2f16a69cc35d55b77d0c28a9b1fd4f948
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -27365,7 +27373,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:2fea6725713e5114bdbd3572829079494b4b881d
+    last_write_checksum: sha1:1de85fcaf34285c07f90d0ff6bb31468a2eeec02
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -27674,7 +27682,7 @@ trackedFiles:
   docs/Models/Components/AdsAdStatus.md:
     last_write_checksum: sha1:ec4ecefa8439d6ac0cc4da009b8af1eff2ca79cc
   docs/Models/Components/AdsCampaign.md:
-    last_write_checksum: sha1:3afc6886e6b4533f955377b70634428ba72bd9a0
+    last_write_checksum: sha1:19134c53e7305ebc5282deeedb9ce714ca93a754
   docs/Models/Components/AdsCampaignStatus.md:
     last_write_checksum: sha1:db5e71a11d52eb79b82334bf79b3c84336d98f9d
   docs/Models/Components/AdsCreative.md:
@@ -28275,6 +28283,8 @@ trackedFiles:
     last_write_checksum: sha1:f7bc4922f6663be64b0caad03b2f6325662b5e82
   docs/Models/Components/DutiesPaidBy.md:
     last_write_checksum: sha1:578f64d7c5e8ab7113301c5659e9a81cafa267e3
+  docs/Models/Components/EffectiveStatus.md:
+    last_write_checksum: sha1:ed6e3e77996fd114c2bc7392b9ba63efb995f8da
   docs/Models/Components/EmployerContributionType.md:
     id: fc85b67067ae
     last_write_checksum: sha1:33cfeecf5a10b1633cdc690edcf39b8bf869ed52
@@ -29366,11 +29376,13 @@ trackedFiles:
   docs/Models/Components/PropertyAdsReportMetricsAdStatus.md:
     last_write_checksum: sha1:79e08b46e1ec065e36cb504bd491ab36bcc3e809
   docs/Models/Components/PropertyAdsReportMetricsCampaign.md:
-    last_write_checksum: sha1:a4646289e4aa5abc0467c26c6e5be4d7a13078dd
+    last_write_checksum: sha1:119a9e51f72c9211248b1cb3c5fcf8d4a9d3c09d
   docs/Models/Components/PropertyAdsReportMetricsCampaignAdvertisingChannelType.md:
     last_write_checksum: sha1:a734dc36a692bdc94305bc3b631f466f9b557d6c
   docs/Models/Components/PropertyAdsReportMetricsCampaignBudgetPeriod.md:
     last_write_checksum: sha1:c55917bacef8540fdb2c464003965fa0a6984f4b
+  docs/Models/Components/PropertyAdsReportMetricsCampaignEffectiveStatus.md:
+    last_write_checksum: sha1:48b8f2310f4e93619b59f89580caf858fd514589
   docs/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCap.md:
     last_write_checksum: sha1:2844a8d07e888a9bcd0c93218d99b7d0e6bf5e9a
   docs/Models/Components/PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit.md:
@@ -30564,7 +30576,7 @@ trackedFiles:
   docs/Models/Requests/CreateAdsAdResponse.md:
     last_write_checksum: sha1:017275caf0645bf5f13898ccc9fe1c051b4f8819
   docs/Models/Requests/CreateAdsCampaignQueryParamFields.md:
-    last_write_checksum: sha1:40af3430ef03a30e09650bbcd335ab0957994a96
+    last_write_checksum: sha1:e7d338ec554e346e79f19e9a782ed2fb91916046
   docs/Models/Requests/CreateAdsCampaignRequest.md:
     last_write_checksum: sha1:ee1d8ef14224331e8860057fa36d57adb48ff0ab
   docs/Models/Requests/CreateAdsCampaignResponse.md:
@@ -31288,7 +31300,7 @@ trackedFiles:
   docs/Models/Requests/GetAdsAdResponse.md:
     last_write_checksum: sha1:3703ae671568a0821f4ef7ec9133a44a44dc60f6
   docs/Models/Requests/GetAdsCampaignQueryParamFields.md:
-    last_write_checksum: sha1:0d63d37de372e8d7a6d247fea07aeaa47e3d7e70
+    last_write_checksum: sha1:e25e3146d324e88c2326fc3481b4780ae0f36351
   docs/Models/Requests/GetAdsCampaignRequest.md:
     last_write_checksum: sha1:f18f8be1cd13d99ecc36f39d810745f4c7e4ca13
   docs/Models/Requests/GetAdsCampaignResponse.md:
@@ -32146,9 +32158,9 @@ trackedFiles:
   docs/Models/Requests/ListAdsAdsResponse.md:
     last_write_checksum: sha1:ce45c955d39b246e4097d234622e1f70487fb6a7
   docs/Models/Requests/ListAdsCampaignsQueryParamFields.md:
-    last_write_checksum: sha1:954a2f7c004e280de3160e336547eb4bce304823
+    last_write_checksum: sha1:8bc329efdc95ae99c9b2035ced43f9383b118475
   docs/Models/Requests/ListAdsCampaignsRequest.md:
-    last_write_checksum: sha1:58c93cdc40b394d28f088a2274c9215664b93206
+    last_write_checksum: sha1:019857347a8c9671155f5e6adb9b7bf0f434deba
   docs/Models/Requests/ListAdsCampaignsResponse.md:
     last_write_checksum: sha1:26579ef96c505bd48944c820693b7fe56ec01c93
   docs/Models/Requests/ListAdsCreativesQueryParamFields.md:
@@ -33030,7 +33042,7 @@ trackedFiles:
   docs/Models/Requests/PatchAdsAdResponse.md:
     last_write_checksum: sha1:935d13a7b9f8cbabc14dc7f123614c06f9e42eb7
   docs/Models/Requests/PatchAdsCampaignQueryParamFields.md:
-    last_write_checksum: sha1:245e9c06a750bf15f7b712d0c828502730563184
+    last_write_checksum: sha1:7697df834b87c2a795580f5c54f715d22773c7d6
   docs/Models/Requests/PatchAdsCampaignRequest.md:
     last_write_checksum: sha1:2504dd8910c80dcf3cef29c9a1d45384437a3de4
   docs/Models/Requests/PatchAdsCampaignResponse.md:
@@ -34172,7 +34184,7 @@ trackedFiles:
   docs/Models/Requests/UpdateAdsAdResponse.md:
     last_write_checksum: sha1:2bd54f3411932c5ccc930b5f162823b1484282b1
   docs/Models/Requests/UpdateAdsCampaignQueryParamFields.md:
-    last_write_checksum: sha1:e8308cec2861644a530acf3cd4f9068038bb6a3d
+    last_write_checksum: sha1:c64836745ab2b6ed85d46974ab81f006ad9e0af6
   docs/Models/Requests/UpdateAdsCampaignRequest.md:
     last_write_checksum: sha1:de27729f3eb94ce0cf80b451e8ebde7ad6fb09b3
   docs/Models/Requests/UpdateAdsCampaignResponse.md:

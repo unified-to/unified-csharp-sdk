@@ -27,6 +27,8 @@ namespace UnifiedTo.Models.Requests
         OrganizationId,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("effective_status")]
+        EffectiveStatus,
         [JsonProperty("start_at")]
         StartAt,
         [JsonProperty("end_at")]
