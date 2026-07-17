@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 187dee688fb0a5b05b3100f79c0eab58
+  docChecksum: c20cc0103001f7589cc7477ec75e8585
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.89
-  configChecksum: 25c3d0ccd80a468c0764d81d99a6e942
+  releaseVersion: 0.130.90
+  configChecksum: 496adc73a5e05826b36042102234b550
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -508,6 +508,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListDealId.cs
   - UnifiedTo/Models/Components/ListDimension.cs
   - UnifiedTo/Models/Components/ListDocumentId.cs
+  - UnifiedTo/Models/Components/ListEffectiveStatus.cs
   - UnifiedTo/Models/Components/ListEndLt.cs
   - UnifiedTo/Models/Components/ListEventId.cs
   - UnifiedTo/Models/Components/ListExpand.cs
@@ -3626,6 +3627,7 @@ generatedFiles:
   - docs/Models/Components/ListDealId.md
   - docs/Models/Components/ListDimension.md
   - docs/Models/Components/ListDocumentId.md
+  - docs/Models/Components/ListEffectiveStatus.md
   - docs/Models/Components/ListEndLt.md
   - docs/Models/Components/ListEventId.md
   - docs/Models/Components/ListExpand.md
@@ -20963,7 +20965,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:f4763e6f89f60b37b541c61a2fe748244996f293
+    last_write_checksum: sha1:f59725b94d779b26898e79e80246e3fd6dc72790
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -21113,6 +21115,8 @@ trackedFiles:
     id: be2940b898e3
     last_write_checksum: sha1:a6bdcf5f992e4612a0f23c703f95d89cf4607764
     pristine_git_object: 6890af43e3e8db70bf69286cfbd70c2765d3db1c
+  UnifiedTo/Models/Components/ListEffectiveStatus.cs:
+    last_write_checksum: sha1:bd5c3820a984e7c87c7fbffbf6c18ad494a9a4b6
   UnifiedTo/Models/Components/ListEndLt.cs:
     id: cb7220e2aa48
     last_write_checksum: sha1:f9a78cd2ca04c42c955ea9f8587c6ce83a659b84
@@ -28599,7 +28603,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:fc2b9437961a44fea09df5fbbf9142455f4cbd76
+    last_write_checksum: sha1:c7c5155f9c5bda59ecf6b8f2a0fc3c87edb17d7f
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -28749,6 +28753,8 @@ trackedFiles:
     id: f58044b669dc
     last_write_checksum: sha1:cfa5f748940e37daca138b42c6124524ec0f9c5b
     pristine_git_object: bd4256225558305b46b5a44abb1bec777f257ef7
+  docs/Models/Components/ListEffectiveStatus.md:
+    last_write_checksum: sha1:d96c8c01162ba6d95aa138e363f1d3290c57e2e1
   docs/Models/Components/ListEndLt.md:
     id: adc12a86d35e
     last_write_checksum: sha1:4672ceca238b4b894ed207f3fbd19eba2008ab24

@@ -95,6 +95,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_document_id")]
         public ListDocumentId? ListDocumentId { get; set; }
 
+        [JsonProperty("list_effective_status")]
+        public ListEffectiveStatus? ListEffectiveStatus { get; set; }
+
         [JsonProperty("list_end_lt")]
         public ListEndLt? ListEndLt { get; set; }
 
