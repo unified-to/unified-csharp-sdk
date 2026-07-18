@@ -99,6 +99,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 
+        /// <summary>
+        /// references hris employees
+        /// </summary>
+        [JsonProperty("user_ids")]
+        public List<string>? UserIds { get; set; }
+
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }
     }

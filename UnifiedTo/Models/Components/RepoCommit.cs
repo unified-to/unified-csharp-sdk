@@ -38,6 +38,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("message")]
         public string? Message { get; set; }
 
+        [JsonProperty("pullrequest_ids")]
+        public List<string>? PullrequestIds { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

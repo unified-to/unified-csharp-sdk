@@ -14,6 +14,7 @@
 | `OrganizationId`       | organization_id        |
 | `InsertionorderId`     | insertionorder_id      |
 | `Status`               | status                 |
+| `EffectiveStatus`      | effective_status       |
 | `Targeting`            | targeting              |
 | `BidAmount`            | bid_amount             |
 | `BidStrategy`          | bid_strategy           |

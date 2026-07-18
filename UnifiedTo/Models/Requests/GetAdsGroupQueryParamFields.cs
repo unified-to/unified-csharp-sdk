@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         InsertionorderId,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("effective_status")]
+        EffectiveStatus,
         [JsonProperty("targeting")]
         Targeting,
         [JsonProperty("bid_amount")]

@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Message,
         [JsonProperty("branch_id")]
         BranchId,
+        [JsonProperty("pullrequest_ids")]
+        PullrequestIds,
         [JsonProperty("lines_added")]
         LinesAdded,
         [JsonProperty("lines_deleted")]

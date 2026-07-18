@@ -78,6 +78,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("rate_limit_description")]
         public string? RateLimitDescription { get; set; }
 
+        [JsonProperty("requires_cname")]
+        public bool? RequiresCname { get; set; }
+
         [JsonProperty("saml")]
         public Saml? Saml { get; set; }
 

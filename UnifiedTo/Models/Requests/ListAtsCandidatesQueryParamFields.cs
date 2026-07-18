@@ -55,6 +55,8 @@ namespace UnifiedTo.Models.Requests
         DateOfBirth,
         [JsonProperty("user_id")]
         UserId,
+        [JsonProperty("user_ids")]
+        UserIds,
         [JsonProperty("web_url")]
         WebUrl,
         [JsonProperty("experiences")]

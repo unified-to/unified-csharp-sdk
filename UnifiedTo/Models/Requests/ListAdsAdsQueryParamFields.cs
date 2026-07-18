@@ -37,8 +37,6 @@ namespace UnifiedTo.Models.Requests
         AdvertiserName,
         [JsonProperty("creative_ids")]
         CreativeIds,
-        [JsonProperty("logo_creative_id")]
-        LogoCreativeId,
         [JsonProperty("creative_asset_url")]
         CreativeAssetUrl,
         [JsonProperty("ad_copy")]
@@ -59,6 +57,8 @@ namespace UnifiedTo.Models.Requests
         Path2,
         [JsonProperty("promoted")]
         Promoted,
+        [JsonProperty("logo_creative_id")]
+        LogoCreativeId,
         [JsonProperty("raw")]
         Raw,
     }
