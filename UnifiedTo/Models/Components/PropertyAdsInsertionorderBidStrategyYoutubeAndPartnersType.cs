@@ -11,65 +11,82 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("MANUAL_CPV")]
-        ManualCpv,
-        [JsonProperty("MANUAL_CPM")]
-        ManualCpm,
-        [JsonProperty("TARGET_CPA")]
-        TargetCpa,
-        [JsonProperty("TARGET_CPM")]
-        TargetCpm,
-        [JsonProperty("RESERVE_CPM")]
-        ReserveCpm,
-        [JsonProperty("MAXIMIZE_LIFT")]
-        MaximizeLift,
-        [JsonProperty("MAXIMIZE_CONVERSIONS")]
-        MaximizeConversions,
-        [JsonProperty("TARGET_CPV")]
-        TargetCpv,
-        [JsonProperty("TARGET_ROAS")]
-        TargetRoas,
-        [JsonProperty("MAXIMIZE_CONVERSION_VALUE")]
-        MaximizeConversionValue,
-    }
 
-    public static class PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType : IEquatable<PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType>
     {
-        public static string Value(this PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType Unspecified = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("UNSPECIFIED");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType ManualCpv = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("MANUAL_CPV");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType ManualCpm = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("MANUAL_CPM");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType TargetCpa = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("TARGET_CPA");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType TargetCpm = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("TARGET_CPM");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType ReserveCpm = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("RESERVE_CPM");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType MaximizeLift = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("MAXIMIZE_LIFT");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType MaximizeConversions = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("MAXIMIZE_CONVERSIONS");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType TargetCpv = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("TARGET_CPV");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType TargetRoas = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("TARGET_ROAS");
+        public static readonly PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType MaximizeConversionValue = new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType("MAXIMIZE_CONVERSION_VALUE");
 
-        public static PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType> _knownValues =
+            new Dictionary <string, PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["MANUAL_CPV"] = ManualCpv,
+                ["MANUAL_CPM"] = ManualCpm,
+                ["TARGET_CPA"] = TargetCpa,
+                ["TARGET_CPM"] = TargetCpm,
+                ["RESERVE_CPM"] = ReserveCpm,
+                ["MAXIMIZE_LIFT"] = MaximizeLift,
+                ["MAXIMIZE_CONVERSIONS"] = MaximizeConversions,
+                ["TARGET_CPV"] = TargetCpv,
+                ["TARGET_ROAS"] = TargetRoas,
+                ["MAXIMIZE_CONVERSION_VALUE"] = MaximizeConversionValue
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType> _values =
+            new ConcurrentDictionary<string, PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType>(_knownValues);
 
-                    if (enumVal is PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType)
-                    {
-                        return (PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType");
+        private PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType(value));
+        }
+
+        public static implicit operator PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType propertyadsinsertionorderbidstrategyyoutubeandpartnerstype) => propertyadsinsertionorderbidstrategyyoutubeandpartnerstype.Value;
+
+        public static PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType);
+
+        public bool Equals(PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

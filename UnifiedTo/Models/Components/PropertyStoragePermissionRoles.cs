@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyStoragePermissionRoles
-    {
-        [JsonProperty("OWNER")]
-        Owner,
-        [JsonProperty("READ")]
-        Read,
-        [JsonProperty("WRITE")]
-        Write,
-    }
 
-    public static class PropertyStoragePermissionRolesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyStoragePermissionRoles : IEquatable<PropertyStoragePermissionRoles>
     {
-        public static string Value(this PropertyStoragePermissionRoles value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyStoragePermissionRoles Owner = new PropertyStoragePermissionRoles("OWNER");
+        public static readonly PropertyStoragePermissionRoles Read = new PropertyStoragePermissionRoles("READ");
+        public static readonly PropertyStoragePermissionRoles Write = new PropertyStoragePermissionRoles("WRITE");
 
-        public static PropertyStoragePermissionRoles ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyStoragePermissionRoles).GetFields())
+        private static readonly Dictionary <string, PropertyStoragePermissionRoles> _knownValues =
+            new Dictionary <string, PropertyStoragePermissionRoles> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["OWNER"] = Owner,
+                ["READ"] = Read,
+                ["WRITE"] = Write
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyStoragePermissionRoles> _values =
+            new ConcurrentDictionary<string, PropertyStoragePermissionRoles>(_knownValues);
 
-                    if (enumVal is PropertyStoragePermissionRoles)
-                    {
-                        return (PropertyStoragePermissionRoles)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyStoragePermissionRoles");
+        private PropertyStoragePermissionRoles(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyStoragePermissionRoles Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyStoragePermissionRoles(value));
+        }
+
+        public static implicit operator PropertyStoragePermissionRoles(string value) => Of(value);
+        public static implicit operator string(PropertyStoragePermissionRoles propertystoragepermissionroles) => propertystoragepermissionroles.Value;
+
+        public static PropertyStoragePermissionRoles[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyStoragePermissionRoles);
+
+        public bool Equals(PropertyStoragePermissionRoles? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

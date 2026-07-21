@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum BudgetUnit
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("IMPRESSIONS")]
-        Impressions,
-    }
 
-    public static class BudgetUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class BudgetUnit : IEquatable<BudgetUnit>
     {
-        public static string Value(this BudgetUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly BudgetUnit Unspecified = new BudgetUnit("UNSPECIFIED");
+        public static readonly BudgetUnit Currency = new BudgetUnit("CURRENCY");
+        public static readonly BudgetUnit Impressions = new BudgetUnit("IMPRESSIONS");
 
-        public static BudgetUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(BudgetUnit).GetFields())
+        private static readonly Dictionary <string, BudgetUnit> _knownValues =
+            new Dictionary <string, BudgetUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["CURRENCY"] = Currency,
+                ["IMPRESSIONS"] = Impressions
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, BudgetUnit> _values =
+            new ConcurrentDictionary<string, BudgetUnit>(_knownValues);
 
-                    if (enumVal is BudgetUnit)
-                    {
-                        return (BudgetUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum BudgetUnit");
+        private BudgetUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static BudgetUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new BudgetUnit(value));
+        }
+
+        public static implicit operator BudgetUnit(string value) => Of(value);
+        public static implicit operator string(BudgetUnit budgetunit) => budgetunit.Value;
+
+        public static BudgetUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as BudgetUnit);
+
+        public bool Equals(BudgetUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,18 +11,19 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A person object from an enrichment integration
+    /// A person object from an enrichment integration.
     /// </summary>
     public class EnrichPerson
     {
-
         /// <summary>
-        /// The address of the person
+        /// The address of the person.
         /// </summary>
         [JsonProperty("address")]
         public PropertyEnrichPersonAddress? Address { get; set; }
@@ -43,7 +44,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// An array of email addresses for this person
+        /// An array of email addresses for this person.
         /// </summary>
         [JsonProperty("emails")]
         public List<EnrichEmail>? Emails { get; set; }
@@ -82,7 +83,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
-        /// An array of telephones for this person
+        /// An array of telephones for this person.
         /// </summary>
         [JsonProperty("telephones")]
         public List<EnrichTelephone>? Telephones { get; set; }

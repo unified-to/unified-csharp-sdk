@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisTimeoffStatus
-    {
-        [JsonProperty("APPROVED")]
-        Approved,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("DENIED")]
-        Denied,
-    }
 
-    public static class HrisTimeoffStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisTimeoffStatus : IEquatable<HrisTimeoffStatus>
     {
-        public static string Value(this HrisTimeoffStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisTimeoffStatus Approved = new HrisTimeoffStatus("APPROVED");
+        public static readonly HrisTimeoffStatus Pending = new HrisTimeoffStatus("PENDING");
+        public static readonly HrisTimeoffStatus Denied = new HrisTimeoffStatus("DENIED");
 
-        public static HrisTimeoffStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisTimeoffStatus).GetFields())
+        private static readonly Dictionary <string, HrisTimeoffStatus> _knownValues =
+            new Dictionary <string, HrisTimeoffStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["APPROVED"] = Approved,
+                ["PENDING"] = Pending,
+                ["DENIED"] = Denied
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisTimeoffStatus> _values =
+            new ConcurrentDictionary<string, HrisTimeoffStatus>(_knownValues);
 
-                    if (enumVal is HrisTimeoffStatus)
-                    {
-                        return (HrisTimeoffStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisTimeoffStatus");
+        private HrisTimeoffStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisTimeoffStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisTimeoffStatus(value));
+        }
+
+        public static implicit operator HrisTimeoffStatus(string value) => Of(value);
+        public static implicit operator string(HrisTimeoffStatus hristimeoffstatus) => hristimeoffstatus.Value;
+
+        public static HrisTimeoffStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisTimeoffStatus);
+
+        public bool Equals(HrisTimeoffStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

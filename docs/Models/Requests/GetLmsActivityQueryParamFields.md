@@ -1,5 +1,13 @@
 # GetLmsActivityQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetLmsActivityQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PresenceType
-    {
-        [JsonProperty("PRESENCE")]
-        Presence,
-        [JsonProperty("PRESENCE_OR_INTEREST")]
-        PresenceOrInterest,
-    }
 
-    public static class PresenceTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PresenceType : IEquatable<PresenceType>
     {
-        public static string Value(this PresenceType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PresenceType Presence = new PresenceType("PRESENCE");
+        public static readonly PresenceType PresenceOrInterest = new PresenceType("PRESENCE_OR_INTEREST");
 
-        public static PresenceType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PresenceType).GetFields())
+        private static readonly Dictionary <string, PresenceType> _knownValues =
+            new Dictionary <string, PresenceType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PRESENCE"] = Presence,
+                ["PRESENCE_OR_INTEREST"] = PresenceOrInterest
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PresenceType> _values =
+            new ConcurrentDictionary<string, PresenceType>(_knownValues);
 
-                    if (enumVal is PresenceType)
-                    {
-                        return (PresenceType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PresenceType");
+        private PresenceType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PresenceType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PresenceType(value));
+        }
+
+        public static implicit operator PresenceType(string value) => Of(value);
+        public static implicit operator string(PresenceType presencetype) => presencetype.Value;
+
+        public static PresenceType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PresenceType);
+
+        public bool Equals(PresenceType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

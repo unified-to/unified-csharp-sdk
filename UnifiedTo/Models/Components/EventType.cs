@@ -11,75 +11,92 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EventType
-    {
-        [JsonProperty("PAGE_VIEW")]
-        PageView,
-        [JsonProperty("SCREEN_VIEW")]
-        ScreenView,
-        [JsonProperty("CLICK")]
-        Click,
-        [JsonProperty("FORM_SUBMIT")]
-        FormSubmit,
-        [JsonProperty("PURCHASE")]
-        Purchase,
-        [JsonProperty("SIGN_UP")]
-        SignUp,
-        [JsonProperty("LOGIN")]
-        Login,
-        [JsonProperty("LOGOUT")]
-        Logout,
-        [JsonProperty("SEARCH")]
-        Search,
-        [JsonProperty("VIDEO_PLAY")]
-        VideoPlay,
-        [JsonProperty("VIDEO_COMPLETE")]
-        VideoComplete,
-        [JsonProperty("FILE_DOWNLOAD")]
-        FileDownload,
-        [JsonProperty("SCROLL")]
-        Scroll,
-        [JsonProperty("SESSION_START")]
-        SessionStart,
-        [JsonProperty("FIRST_VISIT")]
-        FirstVisit,
-        [JsonProperty("CUSTOM")]
-        Custom,
-    }
 
-    public static class EventTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EventType : IEquatable<EventType>
     {
-        public static string Value(this EventType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EventType PageView = new EventType("PAGE_VIEW");
+        public static readonly EventType ScreenView = new EventType("SCREEN_VIEW");
+        public static readonly EventType Click = new EventType("CLICK");
+        public static readonly EventType FormSubmit = new EventType("FORM_SUBMIT");
+        public static readonly EventType Purchase = new EventType("PURCHASE");
+        public static readonly EventType SignUp = new EventType("SIGN_UP");
+        public static readonly EventType Login = new EventType("LOGIN");
+        public static readonly EventType Logout = new EventType("LOGOUT");
+        public static readonly EventType Search = new EventType("SEARCH");
+        public static readonly EventType VideoPlay = new EventType("VIDEO_PLAY");
+        public static readonly EventType VideoComplete = new EventType("VIDEO_COMPLETE");
+        public static readonly EventType FileDownload = new EventType("FILE_DOWNLOAD");
+        public static readonly EventType Scroll = new EventType("SCROLL");
+        public static readonly EventType SessionStart = new EventType("SESSION_START");
+        public static readonly EventType FirstVisit = new EventType("FIRST_VISIT");
+        public static readonly EventType Custom = new EventType("CUSTOM");
 
-        public static EventType ToEnum(this string value)
-        {
-            foreach(var field in typeof(EventType).GetFields())
+        private static readonly Dictionary <string, EventType> _knownValues =
+            new Dictionary <string, EventType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PAGE_VIEW"] = PageView,
+                ["SCREEN_VIEW"] = ScreenView,
+                ["CLICK"] = Click,
+                ["FORM_SUBMIT"] = FormSubmit,
+                ["PURCHASE"] = Purchase,
+                ["SIGN_UP"] = SignUp,
+                ["LOGIN"] = Login,
+                ["LOGOUT"] = Logout,
+                ["SEARCH"] = Search,
+                ["VIDEO_PLAY"] = VideoPlay,
+                ["VIDEO_COMPLETE"] = VideoComplete,
+                ["FILE_DOWNLOAD"] = FileDownload,
+                ["SCROLL"] = Scroll,
+                ["SESSION_START"] = SessionStart,
+                ["FIRST_VISIT"] = FirstVisit,
+                ["CUSTOM"] = Custom
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EventType> _values =
+            new ConcurrentDictionary<string, EventType>(_knownValues);
 
-                    if (enumVal is EventType)
-                    {
-                        return (EventType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EventType");
+        private EventType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EventType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EventType(value));
+        }
+
+        public static implicit operator EventType(string value) => Of(value);
+        public static implicit operator string(EventType eventtype) => eventtype.Value;
+
+        public static EventType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EventType);
+
+        public bool Equals(EventType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

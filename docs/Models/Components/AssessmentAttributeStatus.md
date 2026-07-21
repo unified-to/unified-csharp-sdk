@@ -1,5 +1,16 @@
 # AssessmentAttributeStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AssessmentAttributeStatus.Open;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AssessmentAttributeStatus.Of("custom_value");
+```
+
 
 ## Values
 

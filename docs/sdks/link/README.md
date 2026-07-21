@@ -1,5 +1,4 @@
 # Link
-(*Link*)
 
 ## Overview
 
@@ -24,6 +23,7 @@ Create a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCalendarLink" method="post" path="/calendar/{connection_id}/link" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -67,6 +67,7 @@ Create a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -108,6 +109,7 @@ Retrieve a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCalendarLink" method="get" path="/calendar/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -149,6 +151,7 @@ Retrieve a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentLink" method="get" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -190,6 +193,7 @@ List all links
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCalendarLinks" method="get" path="/calendar/{connection_id}/link" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -230,6 +234,7 @@ List all links
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentLinks" method="get" path="/payment/{connection_id}/link" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -270,6 +275,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCalendarLink" method="patch" path="/calendar/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -314,6 +320,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -356,6 +363,7 @@ Remove a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCalendarLink" method="delete" path="/calendar/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -395,6 +403,7 @@ Remove a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removePaymentLink" method="delete" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -434,6 +443,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCalendarLink" method="put" path="/calendar/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -478,6 +488,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

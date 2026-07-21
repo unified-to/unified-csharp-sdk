@@ -1,5 +1,13 @@
 # ListHrisTimeshiftsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListHrisTimeshiftsQueryParamFields.Id;
+```
+
 
 ## Values
 

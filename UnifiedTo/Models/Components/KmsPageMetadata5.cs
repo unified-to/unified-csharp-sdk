@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class KmsPageMetadata5Type
     {
         private KmsPageMetadata5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static KmsPageMetadata5Type KmsPageMetadata1 { get { return new KmsPageMetadata5Type("KmsPageMetadata_1"); } }
-        
+
         public static KmsPageMetadata5Type Str { get { return new KmsPageMetadata5Type("str"); } }
-        
+
         public static KmsPageMetadata5Type Number { get { return new KmsPageMetadata5Type("number"); } }
-        
+
         public static KmsPageMetadata5Type Boolean { get { return new KmsPageMetadata5Type("boolean"); } }
-        
-        public static KmsPageMetadata5Type Null { get { return new KmsPageMetadata5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(KmsPageMetadata5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for KmsPageMetadata5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(KmsPageMetadata5.KmsPageMetadata5Converter))]
-    public class KmsPageMetadata5 {
-        public KmsPageMetadata5(KmsPageMetadata5Type type) {
+    public class KmsPageMetadata5
+    {
+        public KmsPageMetadata5(KmsPageMetadata5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public KmsPageMetadata5Type Type { get; set; }
-
-
-        public static KmsPageMetadata5 CreateKmsPageMetadata1(KmsPageMetadata1 kmsPageMetadata1) {
+        public static KmsPageMetadata5 CreateKmsPageMetadata1(KmsPageMetadata1 kmsPageMetadata1)
+        {
             KmsPageMetadata5Type typ = KmsPageMetadata5Type.KmsPageMetadata1;
 
             KmsPageMetadata5 res = new KmsPageMetadata5(typ);
             res.KmsPageMetadata1 = kmsPageMetadata1;
             return res;
         }
-
-        public static KmsPageMetadata5 CreateStr(string str) {
+        public static KmsPageMetadata5 CreateStr(string str)
+        {
             KmsPageMetadata5Type typ = KmsPageMetadata5Type.Str;
 
             KmsPageMetadata5 res = new KmsPageMetadata5(typ);
             res.Str = str;
             return res;
         }
-
-        public static KmsPageMetadata5 CreateNumber(double number) {
+        public static KmsPageMetadata5 CreateNumber(double number)
+        {
             KmsPageMetadata5Type typ = KmsPageMetadata5Type.Number;
 
             KmsPageMetadata5 res = new KmsPageMetadata5(typ);
             res.Number = number;
             return res;
         }
-
-        public static KmsPageMetadata5 CreateBoolean(bool boolean) {
+        public static KmsPageMetadata5 CreateBoolean(bool boolean)
+        {
             KmsPageMetadata5Type typ = KmsPageMetadata5Type.Boolean;
 
             KmsPageMetadata5 res = new KmsPageMetadata5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static KmsPageMetadata5 CreateNull() {
-            KmsPageMetadata5Type typ = KmsPageMetadata5Type.Null;
-            return new KmsPageMetadata5(typ);
-        }
-
         public class KmsPageMetadata5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(KmsPageMetadata5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                KmsPageMetadata5 res = (KmsPageMetadata5)value;
-                if (KmsPageMetadata5Type.FromString(res.Type).Equals(KmsPageMetadata5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                KmsPageMetadata5 res = (KmsPageMetadata5)value;
+
                 if (res.KmsPageMetadata1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.KmsPageMetadata1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

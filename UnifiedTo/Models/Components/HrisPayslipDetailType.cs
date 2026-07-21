@@ -11,77 +11,94 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisPayslipDetailType
-    {
-        [JsonProperty("EARNING_SALARY")]
-        EarningSalary,
-        [JsonProperty("EARNING_OVERTIME")]
-        EarningOvertime,
-        [JsonProperty("EARNING_TIP")]
-        EarningTip,
-        [JsonProperty("EARNING_BONUS")]
-        EarningBonus,
-        [JsonProperty("EARNING_COMMISSION")]
-        EarningCommission,
-        [JsonProperty("EARNING_ADJUSTMENT")]
-        EarningAdjustment,
-        [JsonProperty("EARNING")]
-        Earning,
-        [JsonProperty("PRETAX_DEDUCTION")]
-        PretaxDeduction,
-        [JsonProperty("PRETAX_DEDUCTION_HEALTH_INSURANCE")]
-        PretaxDeductionHealthInsurance,
-        [JsonProperty("PRETAX_DEDUCTION_RETIREMENT")]
-        PretaxDeductionRetirement,
-        [JsonProperty("PRETAX_DEDUCTION_HRA")]
-        PretaxDeductionHra,
-        [JsonProperty("TAX_FEDERAL")]
-        TaxFederal,
-        [JsonProperty("TAX_REGION")]
-        TaxRegion,
-        [JsonProperty("TAX_LOCAL")]
-        TaxLocal,
-        [JsonProperty("POSTTAX_BENEFIT")]
-        PosttaxBenefit,
-        [JsonProperty("POSTTAX_GARNISHMENT")]
-        PosttaxGarnishment,
-        [JsonProperty("REIMBURSEMENT")]
-        Reimbursement,
-    }
 
-    public static class HrisPayslipDetailTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisPayslipDetailType : IEquatable<HrisPayslipDetailType>
     {
-        public static string Value(this HrisPayslipDetailType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisPayslipDetailType EarningSalary = new HrisPayslipDetailType("EARNING_SALARY");
+        public static readonly HrisPayslipDetailType EarningOvertime = new HrisPayslipDetailType("EARNING_OVERTIME");
+        public static readonly HrisPayslipDetailType EarningTip = new HrisPayslipDetailType("EARNING_TIP");
+        public static readonly HrisPayslipDetailType EarningBonus = new HrisPayslipDetailType("EARNING_BONUS");
+        public static readonly HrisPayslipDetailType EarningCommission = new HrisPayslipDetailType("EARNING_COMMISSION");
+        public static readonly HrisPayslipDetailType EarningAdjustment = new HrisPayslipDetailType("EARNING_ADJUSTMENT");
+        public static readonly HrisPayslipDetailType Earning = new HrisPayslipDetailType("EARNING");
+        public static readonly HrisPayslipDetailType PretaxDeduction = new HrisPayslipDetailType("PRETAX_DEDUCTION");
+        public static readonly HrisPayslipDetailType PretaxDeductionHealthInsurance = new HrisPayslipDetailType("PRETAX_DEDUCTION_HEALTH_INSURANCE");
+        public static readonly HrisPayslipDetailType PretaxDeductionRetirement = new HrisPayslipDetailType("PRETAX_DEDUCTION_RETIREMENT");
+        public static readonly HrisPayslipDetailType PretaxDeductionHra = new HrisPayslipDetailType("PRETAX_DEDUCTION_HRA");
+        public static readonly HrisPayslipDetailType TaxFederal = new HrisPayslipDetailType("TAX_FEDERAL");
+        public static readonly HrisPayslipDetailType TaxRegion = new HrisPayslipDetailType("TAX_REGION");
+        public static readonly HrisPayslipDetailType TaxLocal = new HrisPayslipDetailType("TAX_LOCAL");
+        public static readonly HrisPayslipDetailType PosttaxBenefit = new HrisPayslipDetailType("POSTTAX_BENEFIT");
+        public static readonly HrisPayslipDetailType PosttaxGarnishment = new HrisPayslipDetailType("POSTTAX_GARNISHMENT");
+        public static readonly HrisPayslipDetailType Reimbursement = new HrisPayslipDetailType("REIMBURSEMENT");
 
-        public static HrisPayslipDetailType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisPayslipDetailType).GetFields())
+        private static readonly Dictionary <string, HrisPayslipDetailType> _knownValues =
+            new Dictionary <string, HrisPayslipDetailType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["EARNING_SALARY"] = EarningSalary,
+                ["EARNING_OVERTIME"] = EarningOvertime,
+                ["EARNING_TIP"] = EarningTip,
+                ["EARNING_BONUS"] = EarningBonus,
+                ["EARNING_COMMISSION"] = EarningCommission,
+                ["EARNING_ADJUSTMENT"] = EarningAdjustment,
+                ["EARNING"] = Earning,
+                ["PRETAX_DEDUCTION"] = PretaxDeduction,
+                ["PRETAX_DEDUCTION_HEALTH_INSURANCE"] = PretaxDeductionHealthInsurance,
+                ["PRETAX_DEDUCTION_RETIREMENT"] = PretaxDeductionRetirement,
+                ["PRETAX_DEDUCTION_HRA"] = PretaxDeductionHra,
+                ["TAX_FEDERAL"] = TaxFederal,
+                ["TAX_REGION"] = TaxRegion,
+                ["TAX_LOCAL"] = TaxLocal,
+                ["POSTTAX_BENEFIT"] = PosttaxBenefit,
+                ["POSTTAX_GARNISHMENT"] = PosttaxGarnishment,
+                ["REIMBURSEMENT"] = Reimbursement
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisPayslipDetailType> _values =
+            new ConcurrentDictionary<string, HrisPayslipDetailType>(_knownValues);
 
-                    if (enumVal is HrisPayslipDetailType)
-                    {
-                        return (HrisPayslipDetailType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisPayslipDetailType");
+        private HrisPayslipDetailType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisPayslipDetailType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisPayslipDetailType(value));
+        }
+
+        public static implicit operator HrisPayslipDetailType(string value) => Of(value);
+        public static implicit operator string(HrisPayslipDetailType hrispayslipdetailtype) => hrispayslipdetailtype.Value;
+
+        public static HrisPayslipDetailType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisPayslipDetailType);
+
+        public bool Equals(HrisPayslipDetailType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

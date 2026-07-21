@@ -10,15 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Content targeting (keywords, topics, placements, video)
+    /// Content targeting (keywords, topics, placements, video).
     /// </summary>
     public class AdsKeyword
     {
-
         [JsonProperty("match_type")]
         public MatchType? MatchType { get; set; }
 

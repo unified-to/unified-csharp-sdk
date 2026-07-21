@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SexualOrientation
-    {
-        [JsonProperty("Queer")]
-        Queer,
-        [JsonProperty("Heterosexual")]
-        Heterosexual,
-        [JsonProperty("Straight")]
-        Straight,
-    }
 
-    public static class SexualOrientationExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SexualOrientation : IEquatable<SexualOrientation>
     {
-        public static string Value(this SexualOrientation value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SexualOrientation Queer = new SexualOrientation("Queer");
+        public static readonly SexualOrientation Heterosexual = new SexualOrientation("Heterosexual");
+        public static readonly SexualOrientation Straight = new SexualOrientation("Straight");
 
-        public static SexualOrientation ToEnum(this string value)
-        {
-            foreach(var field in typeof(SexualOrientation).GetFields())
+        private static readonly Dictionary <string, SexualOrientation> _knownValues =
+            new Dictionary <string, SexualOrientation> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["Queer"] = Queer,
+                ["Heterosexual"] = Heterosexual,
+                ["Straight"] = Straight
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SexualOrientation> _values =
+            new ConcurrentDictionary<string, SexualOrientation>(_knownValues);
 
-                    if (enumVal is SexualOrientation)
-                    {
-                        return (SexualOrientation)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SexualOrientation");
+        private SexualOrientation(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SexualOrientation Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SexualOrientation(value));
+        }
+
+        public static implicit operator SexualOrientation(string value) => Of(value);
+        public static implicit operator string(SexualOrientation sexualorientation) => sexualorientation.Value;
+
+        public static SexualOrientation[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SexualOrientation);
+
+        public bool Equals(SexualOrientation? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

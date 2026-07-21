@@ -14,13 +14,12 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A contact represents a person that optionally is associated with a call
+    /// A contact represents a person that optionally is associated with a call.
     /// </summary>
     public class UcContact
     {
-
         [JsonProperty("company")]
         public string? Company { get; set; }
 
@@ -28,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// An array of email addresses for this contact
+        /// An array of email addresses for this contact.
         /// </summary>
         [JsonProperty("emails")]
         public List<UcEmail>? Emails { get; set; }
@@ -49,7 +48,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
-        /// An array of telephones for this contact
+        /// An array of telephones for this contact.
         /// </summary>
         [JsonProperty("telephones")]
         public List<UcTelephone>? Telephones { get; set; }

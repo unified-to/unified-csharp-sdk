@@ -1,5 +1,4 @@
 # Message
-(*Message*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getMessagingMessage" method="get" path="/messaging/{connection_id}/message/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all messages
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMessagingMessages" method="get" path="/messaging/{connection_id}/message" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeMessagingMessage" method="delete" path="/messaging/{connection_id}/message/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a message
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -1,5 +1,13 @@
 # GetKmsPageQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetKmsPageQueryParamFields.Id;
+```
+
 
 ## Values
 

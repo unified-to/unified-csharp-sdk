@@ -1,5 +1,13 @@
 # ListCalendarCalendarsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListCalendarCalendarsQueryParamFields.Id;
+```
+
 
 ## Values
 

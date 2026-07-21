@@ -1,5 +1,13 @@
 # CreateCalendarWebinarQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateCalendarWebinarQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,4 @@
 # Unified
-(*Unified*)
 
 ## Overview
 
@@ -40,6 +39,7 @@ Used only to import existing customer credentials; use "Authorize new connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedConnection" method="post" path="/unified/connection" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -49,7 +49,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-Models.Components.Connection req = new Models.Components.Connection() {
+Models.Components.Connection req = new UnifiedTo.Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {},
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
@@ -84,6 +84,7 @@ Create new environments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedEnvironment" method="post" path="/unified/environment" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -122,6 +123,7 @@ The data payload received by your server is described at https://docs.unified.to
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedWebhook" method="post" path="/unified/webhook" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -130,9 +132,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.CreateUnifiedWebhookAsync(webhook: new Models.Components.Webhook() {
+var res = await sdk.Unified.CreateUnifiedWebhookAsync(webhook: new UnifiedTo.Models.Components.Webhook() {
     ConnectionId = "<id>",
-    Event = Event.Created,
+    Event = UnifiedTo.Models.Components.Event.Created,
     ObjectType = ObjectType.AtsScorecard,
 });
 
@@ -162,6 +164,7 @@ Create secrets manager
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedWorkspaceSecretsmanager" method="post" path="/unified/workspace/secretsmanager" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -206,6 +209,7 @@ Retrieve specific API Call by its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedApicall" method="get" path="/unified/apicall/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -241,6 +245,7 @@ Retrieve connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedConnection" method="get" path="/unified/connection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -276,6 +281,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedIntegrationAuth" method="get" path="/unified/integration/auth/{workspace_id}/{integration_type}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -317,6 +323,7 @@ Retrieve support issue
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedIssue" method="get" path="/unified/issue/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -352,6 +359,7 @@ Retrieve webhook by its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedWebhook" method="get" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -387,6 +395,7 @@ Retrieve secrets manager
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedWorkspaceSecretsmanager" method="get" path="/unified/workspace/secretsmanager/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -422,6 +431,7 @@ Returns API Calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedApicalls" method="get" path="/unified/apicall" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -431,7 +441,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedApicallsRequest req = ;
+ListUnifiedApicallsRequest? req = null;
 
 var res = await sdk.Unified.ListUnifiedApicallsAsync(req);
 
@@ -460,6 +470,7 @@ List all connections
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedConnections" method="get" path="/unified/connection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -469,7 +480,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedConnectionsRequest req = ;
+ListUnifiedConnectionsRequest? req = null;
 
 var res = await sdk.Unified.ListUnifiedConnectionsAsync(req);
 
@@ -498,6 +509,7 @@ Returns all environments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedEnvironments" method="get" path="/unified/environment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -527,6 +539,7 @@ No authentication required as this is to be used by front-end interface
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedIntegrationWorkspaces" method="get" path="/unified/integration/workspace/{workspace_id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -567,6 +580,7 @@ Returns all integrations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedIntegrations" method="get" path="/unified/integration" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -576,7 +590,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIntegrationsRequest req = ;
+ListUnifiedIntegrationsRequest? req = null;
 
 var res = await sdk.Unified.ListUnifiedIntegrationsAsync(req);
 
@@ -605,6 +619,7 @@ List support issues
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedIssues" method="get" path="/unified/issue" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -614,7 +629,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIssuesRequest req = ;
+ListUnifiedIssuesRequest? req = null;
 
 var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
 
@@ -643,6 +658,7 @@ Returns all registered webhooks
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedWebhooks" method="get" path="/unified/webhook" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -652,7 +668,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedWebhooksRequest req = ;
+ListUnifiedWebhooksRequest? req = null;
 
 var res = await sdk.Unified.ListUnifiedWebhooksAsync(req);
 
@@ -681,6 +697,7 @@ List secrets managers
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedWorkspaceSecretsmanagers" method="get" path="/unified/workspace/secretsmanager" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -690,7 +707,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedWorkspaceSecretsmanagersRequest req = ;
+ListUnifiedWorkspaceSecretsmanagersRequest? req = null;
 
 var res = await sdk.Unified.ListUnifiedWorkspaceSecretsmanagersAsync(req);
 
@@ -719,6 +736,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUnifiedConnection" method="patch" path="/unified/connection/{id}" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -729,7 +747,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
-    connection: new Models.Components.Connection() {
+    connection: new UnifiedTo.Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Storage,
         },
@@ -767,6 +785,7 @@ Update webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUnifiedWebhook" method="patch" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -776,9 +795,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.PatchUnifiedWebhookAsync(
-    webhook: new Models.Components.Webhook() {
+    webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Updated,
+        Event = UnifiedTo.Models.Components.Event.Updated,
         ObjectType = ObjectType.TicketingCustomer,
     },
     id: "<id>"
@@ -810,6 +829,7 @@ Trigger webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUnifiedWebhookTrigger" method="patch" path="/unified/webhook/{id}/trigger" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -845,6 +865,7 @@ Remove connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedConnection" method="delete" path="/unified/connection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -880,6 +901,7 @@ Remove an environment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedEnvironment" method="delete" path="/unified/environment/{env}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -915,6 +937,7 @@ Remove webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedWebhook" method="delete" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -950,6 +973,7 @@ Remove secrets manager
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedWorkspaceSecretsmanager" method="delete" path="/unified/workspace/secretsmanager/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -985,6 +1009,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUnifiedConnection" method="put" path="/unified/connection/{id}" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -995,7 +1020,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
-    connection: new Models.Components.Connection() {
+    connection: new UnifiedTo.Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {},
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
@@ -1032,6 +1057,7 @@ Update webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUnifiedWebhook" method="put" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1041,9 +1067,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
-    webhook: new Models.Components.Webhook() {
+    webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Deleted,
+        Event = UnifiedTo.Models.Components.Event.Deleted,
         ObjectType = ObjectType.MessagingChannel,
     },
     id: "<id>"
@@ -1075,6 +1101,7 @@ Trigger webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUnifiedWebhookTrigger" method="put" path="/unified/webhook/{id}/trigger" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

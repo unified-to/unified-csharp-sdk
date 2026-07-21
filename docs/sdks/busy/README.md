@@ -1,5 +1,4 @@
 # Busy
-(*Busy*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ List all busies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCalendarBusies" method="get" path="/calendar/{connection_id}/busy" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

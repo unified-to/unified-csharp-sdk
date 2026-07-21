@@ -11,15 +11,16 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AdsInsertionorder
     {
-
         /// <summary>
-        /// YOUTUBE_AND_PARTNERS
+        /// YOUTUBE_AND_PARTNERS.
         /// </summary>
         [JsonProperty("bid_strategy")]
         public PropertyAdsInsertionorderBidStrategy? BidStrategy { get; set; }

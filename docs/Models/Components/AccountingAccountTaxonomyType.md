@@ -1,5 +1,16 @@
 # AccountingAccountTaxonomyType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AccountingAccountTaxonomyType.Classification;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AccountingAccountTaxonomyType.Of("custom_value");
+```
+
 
 ## Values
 

@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     public class CrmStage
     {
-
         [JsonProperty("active")]
         public bool? Active { get; set; }
 

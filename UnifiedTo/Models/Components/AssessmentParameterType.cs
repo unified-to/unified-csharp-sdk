@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AssessmentParameterType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("MULTIPLE_CHOICE")]
-        MultipleChoice,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("FILE")]
-        File,
-    }
 
-    public static class AssessmentParameterTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AssessmentParameterType : IEquatable<AssessmentParameterType>
     {
-        public static string Value(this AssessmentParameterType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AssessmentParameterType Text = new AssessmentParameterType("TEXT");
+        public static readonly AssessmentParameterType Number = new AssessmentParameterType("NUMBER");
+        public static readonly AssessmentParameterType MultipleChoice = new AssessmentParameterType("MULTIPLE_CHOICE");
+        public static readonly AssessmentParameterType MultipleSelect = new AssessmentParameterType("MULTIPLE_SELECT");
+        public static readonly AssessmentParameterType Date = new AssessmentParameterType("DATE");
+        public static readonly AssessmentParameterType File = new AssessmentParameterType("FILE");
 
-        public static AssessmentParameterType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AssessmentParameterType).GetFields())
+        private static readonly Dictionary <string, AssessmentParameterType> _knownValues =
+            new Dictionary <string, AssessmentParameterType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["MULTIPLE_CHOICE"] = MultipleChoice,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["DATE"] = Date,
+                ["FILE"] = File
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AssessmentParameterType> _values =
+            new ConcurrentDictionary<string, AssessmentParameterType>(_knownValues);
 
-                    if (enumVal is AssessmentParameterType)
-                    {
-                        return (AssessmentParameterType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AssessmentParameterType");
+        private AssessmentParameterType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AssessmentParameterType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AssessmentParameterType(value));
+        }
+
+        public static implicit operator AssessmentParameterType(string value) => Of(value);
+        public static implicit operator string(AssessmentParameterType assessmentparametertype) => assessmentparametertype.Value;
+
+        public static AssessmentParameterType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AssessmentParameterType);
+
+        public bool Equals(AssessmentParameterType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

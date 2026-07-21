@@ -1,5 +1,13 @@
 # UpdateAccountingJournalQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingJournalQueryParamFields.Id;
+```
+
 
 ## Values
 

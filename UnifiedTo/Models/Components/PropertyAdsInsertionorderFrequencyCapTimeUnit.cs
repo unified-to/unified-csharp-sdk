@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsInsertionorderFrequencyCapTimeUnit
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("LIFETIME")]
-        Lifetime,
-        [JsonProperty("MONTHS")]
-        Months,
-        [JsonProperty("WEEKS")]
-        Weeks,
-        [JsonProperty("DAYS")]
-        Days,
-        [JsonProperty("HOURS")]
-        Hours,
-        [JsonProperty("MINUTES")]
-        Minutes,
-    }
 
-    public static class PropertyAdsInsertionorderFrequencyCapTimeUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsInsertionorderFrequencyCapTimeUnit : IEquatable<PropertyAdsInsertionorderFrequencyCapTimeUnit>
     {
-        public static string Value(this PropertyAdsInsertionorderFrequencyCapTimeUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsInsertionorderFrequencyCapTimeUnit Unspecified = new PropertyAdsInsertionorderFrequencyCapTimeUnit("UNSPECIFIED");
+        public static readonly PropertyAdsInsertionorderFrequencyCapTimeUnit Lifetime = new PropertyAdsInsertionorderFrequencyCapTimeUnit("LIFETIME");
+        public static readonly PropertyAdsInsertionorderFrequencyCapTimeUnit Months = new PropertyAdsInsertionorderFrequencyCapTimeUnit("MONTHS");
+        public static readonly PropertyAdsInsertionorderFrequencyCapTimeUnit Weeks = new PropertyAdsInsertionorderFrequencyCapTimeUnit("WEEKS");
+        public static readonly PropertyAdsInsertionorderFrequencyCapTimeUnit Days = new PropertyAdsInsertionorderFrequencyCapTimeUnit("DAYS");
+        public static readonly PropertyAdsInsertionorderFrequencyCapTimeUnit Hours = new PropertyAdsInsertionorderFrequencyCapTimeUnit("HOURS");
+        public static readonly PropertyAdsInsertionorderFrequencyCapTimeUnit Minutes = new PropertyAdsInsertionorderFrequencyCapTimeUnit("MINUTES");
 
-        public static PropertyAdsInsertionorderFrequencyCapTimeUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsInsertionorderFrequencyCapTimeUnit).GetFields())
+        private static readonly Dictionary <string, PropertyAdsInsertionorderFrequencyCapTimeUnit> _knownValues =
+            new Dictionary <string, PropertyAdsInsertionorderFrequencyCapTimeUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["LIFETIME"] = Lifetime,
+                ["MONTHS"] = Months,
+                ["WEEKS"] = Weeks,
+                ["DAYS"] = Days,
+                ["HOURS"] = Hours,
+                ["MINUTES"] = Minutes
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsInsertionorderFrequencyCapTimeUnit> _values =
+            new ConcurrentDictionary<string, PropertyAdsInsertionorderFrequencyCapTimeUnit>(_knownValues);
 
-                    if (enumVal is PropertyAdsInsertionorderFrequencyCapTimeUnit)
-                    {
-                        return (PropertyAdsInsertionorderFrequencyCapTimeUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsInsertionorderFrequencyCapTimeUnit");
+        private PropertyAdsInsertionorderFrequencyCapTimeUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsInsertionorderFrequencyCapTimeUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsInsertionorderFrequencyCapTimeUnit(value));
+        }
+
+        public static implicit operator PropertyAdsInsertionorderFrequencyCapTimeUnit(string value) => Of(value);
+        public static implicit operator string(PropertyAdsInsertionorderFrequencyCapTimeUnit propertyadsinsertionorderfrequencycaptimeunit) => propertyadsinsertionorderfrequencycaptimeunit.Value;
+
+        public static PropertyAdsInsertionorderFrequencyCapTimeUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsInsertionorderFrequencyCapTimeUnit);
+
+        public bool Equals(PropertyAdsInsertionorderFrequencyCapTimeUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

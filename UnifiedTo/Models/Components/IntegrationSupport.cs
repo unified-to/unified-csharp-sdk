@@ -10,13 +10,15 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class IntegrationSupport
     {
-
         [JsonProperty("from_webhook")]
         public FromWebhook? FromWebhook { get; set; }
 
@@ -363,7 +365,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, string>? OutboundFields { get; set; }
 
         /// <summary>
-        /// objects that we map from in the integration
+        /// objects that we map from in the integration.
         /// </summary>
         [JsonProperty("raw_objects")]
         public List<string>? RawObjects { get; set; }

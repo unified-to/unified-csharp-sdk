@@ -1,5 +1,16 @@
 # AccountingVendorcreditStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AccountingVendorcreditStatus.Draft;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AccountingVendorcreditStatus.Of("custom_value");
+```
+
 
 ## Values
 

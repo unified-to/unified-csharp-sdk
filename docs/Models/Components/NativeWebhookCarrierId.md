@@ -1,5 +1,16 @@
 # NativeWebhookCarrierId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = NativeWebhookCarrierId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = NativeWebhookCarrierId.Of("custom_value");
+```
+
 
 ## Values
 

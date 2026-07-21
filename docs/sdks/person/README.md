@@ -1,5 +1,4 @@
 # Person
-(*Person*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ Retrieve enrichment information for a person
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listEnrichPeople" method="get" path="/enrich/{connection_id}/person" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class CrmMetadata5Type
     {
         private CrmMetadata5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CrmMetadata5Type CrmMetadata1 { get { return new CrmMetadata5Type("CrmMetadata_1"); } }
-        
+
         public static CrmMetadata5Type Str { get { return new CrmMetadata5Type("str"); } }
-        
+
         public static CrmMetadata5Type Number { get { return new CrmMetadata5Type("number"); } }
-        
+
         public static CrmMetadata5Type Boolean { get { return new CrmMetadata5Type("boolean"); } }
-        
-        public static CrmMetadata5Type Null { get { return new CrmMetadata5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(CrmMetadata5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CrmMetadata5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CrmMetadata5.CrmMetadata5Converter))]
-    public class CrmMetadata5 {
-        public CrmMetadata5(CrmMetadata5Type type) {
+    public class CrmMetadata5
+    {
+        public CrmMetadata5(CrmMetadata5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public CrmMetadata5Type Type { get; set; }
-
-
-        public static CrmMetadata5 CreateCrmMetadata1(CrmMetadata1 crmMetadata1) {
+        public static CrmMetadata5 CreateCrmMetadata1(CrmMetadata1 crmMetadata1)
+        {
             CrmMetadata5Type typ = CrmMetadata5Type.CrmMetadata1;
 
             CrmMetadata5 res = new CrmMetadata5(typ);
             res.CrmMetadata1 = crmMetadata1;
             return res;
         }
-
-        public static CrmMetadata5 CreateStr(string str) {
+        public static CrmMetadata5 CreateStr(string str)
+        {
             CrmMetadata5Type typ = CrmMetadata5Type.Str;
 
             CrmMetadata5 res = new CrmMetadata5(typ);
             res.Str = str;
             return res;
         }
-
-        public static CrmMetadata5 CreateNumber(double number) {
+        public static CrmMetadata5 CreateNumber(double number)
+        {
             CrmMetadata5Type typ = CrmMetadata5Type.Number;
 
             CrmMetadata5 res = new CrmMetadata5(typ);
             res.Number = number;
             return res;
         }
-
-        public static CrmMetadata5 CreateBoolean(bool boolean) {
+        public static CrmMetadata5 CreateBoolean(bool boolean)
+        {
             CrmMetadata5Type typ = CrmMetadata5Type.Boolean;
 
             CrmMetadata5 res = new CrmMetadata5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static CrmMetadata5 CreateNull() {
-            CrmMetadata5Type typ = CrmMetadata5Type.Null;
-            return new CrmMetadata5(typ);
-        }
-
         public class CrmMetadata5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(CrmMetadata5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                CrmMetadata5 res = (CrmMetadata5)value;
-                if (CrmMetadata5Type.FromString(res.Type).Equals(CrmMetadata5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                CrmMetadata5 res = (CrmMetadata5)value;
+
                 if (res.CrmMetadata1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadata1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

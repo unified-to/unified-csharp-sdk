@@ -1,5 +1,13 @@
 # ListAnalyticsSessionsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAnalyticsSessionsQueryParamFields.Id;
+```
+
 
 ## Values
 

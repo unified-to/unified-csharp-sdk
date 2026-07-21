@@ -1,5 +1,13 @@
 # GetAccountingCashflowQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingCashflowQueryParamFields.Id;
+```
+
 
 ## Values
 

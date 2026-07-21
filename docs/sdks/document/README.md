@@ -1,5 +1,4 @@
 # Document
-(*Document*)
 
 ## Overview
 
@@ -30,6 +29,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -71,6 +71,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisDocument" method="post" path="/hris/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -112,6 +113,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -153,6 +155,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsDocument" method="get" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -194,6 +197,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisDocument" method="get" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -235,6 +239,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getSigningDocument" method="get" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -276,6 +281,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsDocuments" method="get" path="/ats/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -316,6 +322,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisDocuments" method="get" path="/hris/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -356,6 +363,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listSigningDocuments" method="get" path="/signing/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -396,6 +404,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -438,6 +447,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisDocument" method="patch" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -480,6 +490,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -522,6 +533,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsDocument" method="delete" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -561,6 +573,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisDocument" method="delete" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -600,6 +613,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeSigningDocument" method="delete" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -639,6 +653,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -681,6 +696,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisDocument" method="put" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -723,6 +739,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

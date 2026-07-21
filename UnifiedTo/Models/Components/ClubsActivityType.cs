@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ClubsActivityType
-    {
-        [JsonProperty("RUNNING")]
-        Running,
-        [JsonProperty("CYCLING")]
-        Cycling,
-        [JsonProperty("SWIMMING")]
-        Swimming,
-        [JsonProperty("TRIATHLON")]
-        Triathlon,
-        [JsonProperty("WALKING")]
-        Walking,
-        [JsonProperty("HIKING")]
-        Hiking,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class ClubsActivityTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ClubsActivityType : IEquatable<ClubsActivityType>
     {
-        public static string Value(this ClubsActivityType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ClubsActivityType Running = new ClubsActivityType("RUNNING");
+        public static readonly ClubsActivityType Cycling = new ClubsActivityType("CYCLING");
+        public static readonly ClubsActivityType Swimming = new ClubsActivityType("SWIMMING");
+        public static readonly ClubsActivityType Triathlon = new ClubsActivityType("TRIATHLON");
+        public static readonly ClubsActivityType Walking = new ClubsActivityType("WALKING");
+        public static readonly ClubsActivityType Hiking = new ClubsActivityType("HIKING");
+        public static readonly ClubsActivityType Other = new ClubsActivityType("OTHER");
 
-        public static ClubsActivityType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ClubsActivityType).GetFields())
+        private static readonly Dictionary <string, ClubsActivityType> _knownValues =
+            new Dictionary <string, ClubsActivityType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["RUNNING"] = Running,
+                ["CYCLING"] = Cycling,
+                ["SWIMMING"] = Swimming,
+                ["TRIATHLON"] = Triathlon,
+                ["WALKING"] = Walking,
+                ["HIKING"] = Hiking,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ClubsActivityType> _values =
+            new ConcurrentDictionary<string, ClubsActivityType>(_knownValues);
 
-                    if (enumVal is ClubsActivityType)
-                    {
-                        return (ClubsActivityType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ClubsActivityType");
+        private ClubsActivityType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ClubsActivityType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ClubsActivityType(value));
+        }
+
+        public static implicit operator ClubsActivityType(string value) => Of(value);
+        public static implicit operator string(ClubsActivityType clubsactivitytype) => clubsactivitytype.Value;
+
+        public static ClubsActivityType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ClubsActivityType);
+
+        public bool Equals(ClubsActivityType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

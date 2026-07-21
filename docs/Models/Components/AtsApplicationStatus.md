@@ -1,5 +1,16 @@
 # AtsApplicationStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AtsApplicationStatus.New;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AtsApplicationStatus.Of("custom_value");
+```
+
 
 ## Values
 

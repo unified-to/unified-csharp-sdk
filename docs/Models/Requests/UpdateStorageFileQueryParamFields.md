@@ -1,5 +1,13 @@
 # UpdateStorageFileQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateStorageFileQueryParamFields.Id;
+```
+
 
 ## Values
 

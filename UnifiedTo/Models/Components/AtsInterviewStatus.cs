@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AtsInterviewStatus
-    {
-        [JsonProperty("SCHEDULED")]
-        Scheduled,
-        [JsonProperty("AWAITING_FEEDBACK")]
-        AwaitingFeedback,
-        [JsonProperty("COMPLETE")]
-        Complete,
-        [JsonProperty("CANCELED")]
-        Canceled,
-        [JsonProperty("NEEDS_SCHEDULING")]
-        NeedsScheduling,
-    }
 
-    public static class AtsInterviewStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AtsInterviewStatus : IEquatable<AtsInterviewStatus>
     {
-        public static string Value(this AtsInterviewStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AtsInterviewStatus Scheduled = new AtsInterviewStatus("SCHEDULED");
+        public static readonly AtsInterviewStatus AwaitingFeedback = new AtsInterviewStatus("AWAITING_FEEDBACK");
+        public static readonly AtsInterviewStatus Complete = new AtsInterviewStatus("COMPLETE");
+        public static readonly AtsInterviewStatus Canceled = new AtsInterviewStatus("CANCELED");
+        public static readonly AtsInterviewStatus NeedsScheduling = new AtsInterviewStatus("NEEDS_SCHEDULING");
 
-        public static AtsInterviewStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AtsInterviewStatus).GetFields())
+        private static readonly Dictionary <string, AtsInterviewStatus> _knownValues =
+            new Dictionary <string, AtsInterviewStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SCHEDULED"] = Scheduled,
+                ["AWAITING_FEEDBACK"] = AwaitingFeedback,
+                ["COMPLETE"] = Complete,
+                ["CANCELED"] = Canceled,
+                ["NEEDS_SCHEDULING"] = NeedsScheduling
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AtsInterviewStatus> _values =
+            new ConcurrentDictionary<string, AtsInterviewStatus>(_knownValues);
 
-                    if (enumVal is AtsInterviewStatus)
-                    {
-                        return (AtsInterviewStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AtsInterviewStatus");
+        private AtsInterviewStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AtsInterviewStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AtsInterviewStatus(value));
+        }
+
+        public static implicit operator AtsInterviewStatus(string value) => Of(value);
+        public static implicit operator string(AtsInterviewStatus atsinterviewstatus) => atsinterviewstatus.Value;
+
+        public static AtsInterviewStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AtsInterviewStatus);
+
+        public bool Equals(AtsInterviewStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

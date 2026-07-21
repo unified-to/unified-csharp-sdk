@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class PropertyMessagingEventUser
     {
-
         [JsonProperty("id")]
         public string? Id { get; set; }
 

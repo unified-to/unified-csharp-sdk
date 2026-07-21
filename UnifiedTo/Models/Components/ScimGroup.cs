@@ -10,13 +10,15 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class ScimGroup
     {
-
         [JsonProperty("displayName")]
         public string DisplayName { get; set; } = default!;
 
@@ -30,7 +32,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// An array of members
+        /// An array of members.
         /// </summary>
         [JsonProperty("members")]
         public List<ScimGroupMember>? Members { get; set; }
@@ -39,7 +41,7 @@ namespace UnifiedTo.Models.Components
         public PropertyScimGroupMeta? Meta { get; set; }
 
         /// <summary>
-        /// Array of schema URIs
+        /// Array of schema URIs.
         /// </summary>
         [JsonProperty("schemas")]
         public List<PropertyScimGroupSchemas>? Schemas { get; set; }

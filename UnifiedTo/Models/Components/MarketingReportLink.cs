@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     public class MarketingReportLink
     {
-
         [JsonProperty("click_percentage")]
         public double? ClickPercentage { get; set; }
 

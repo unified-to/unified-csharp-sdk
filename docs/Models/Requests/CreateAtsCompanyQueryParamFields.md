@@ -1,5 +1,13 @@
 # CreateAtsCompanyQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateAtsCompanyQueryParamFields.Id;
+```
+
 
 ## Values
 

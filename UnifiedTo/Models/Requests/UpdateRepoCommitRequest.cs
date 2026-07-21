@@ -13,33 +13,32 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
-    
+
     public class UpdateRepoCommitRequest
     {
-
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public RepoCommit RepoCommit { get; set; } = default!;
 
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// Fields to return
+        /// Fields to return.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<UpdateRepoCommitQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// ID of the Commit
+        /// ID of the Commit.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar
+        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }

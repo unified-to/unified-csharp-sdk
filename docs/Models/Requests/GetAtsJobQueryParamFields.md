@@ -1,5 +1,13 @@
 # GetAtsJobQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAtsJobQueryParamFields.Id;
+```
+
 
 ## Values
 

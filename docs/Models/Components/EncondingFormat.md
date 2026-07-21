@@ -1,5 +1,16 @@
 # EncondingFormat
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = EncondingFormat.Float;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EncondingFormat.Of("custom_value");
+```
+
 
 ## Values
 

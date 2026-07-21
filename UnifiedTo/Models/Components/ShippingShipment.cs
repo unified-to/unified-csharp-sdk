@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class ShippingShipment
     {
-
         [JsonProperty("carrier_id")]
         public string? CarrierId { get; set; }
 
@@ -25,13 +26,13 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// Customs information
+        /// Customs information.
         /// </summary>
         [JsonProperty("customs")]
         public PropertyShippingShipmentCustoms? Customs { get; set; }
 
         /// <summary>
-        /// Origin address
+        /// Origin address.
         /// </summary>
         [JsonProperty("from_address")]
         public PropertyShippingShipmentFromAddress? FromAddress { get; set; }
@@ -40,7 +41,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// Insurance details
+        /// Insurance details.
         /// </summary>
         [JsonProperty("insurance")]
         public PropertyShippingShipmentInsurance? Insurance { get; set; }
@@ -70,7 +71,7 @@ namespace UnifiedTo.Models.Components
         public string? OriginalShipmentId { get; set; }
 
         /// <summary>
-        /// Array of packages in this shipment
+        /// Array of packages in this shipment.
         /// </summary>
         [JsonProperty("packages")]
         public List<ShippingPackage>? Packages { get; set; }
@@ -100,7 +101,7 @@ namespace UnifiedTo.Models.Components
         public string? ReferenceNumber { get; set; }
 
         /// <summary>
-        /// Return address (may differ from from_address)
+        /// Return address (may differ from from_address).
         /// </summary>
         [JsonProperty("return_address")]
         public PropertyShippingShipmentReturnAddress? ReturnAddress { get; set; }
@@ -121,7 +122,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? ShippedAt { get; set; }
 
         /// <summary>
-        /// Array of special instructions
+        /// Array of special instructions.
         /// </summary>
         [JsonProperty("special_instructions")]
         public List<string>? SpecialInstructions { get; set; }
@@ -130,7 +131,7 @@ namespace UnifiedTo.Models.Components
         public ShippingShipmentStatus? Status { get; set; }
 
         /// <summary>
-        /// Destination address
+        /// Destination address.
         /// </summary>
         [JsonProperty("to_address")]
         public PropertyShippingShipmentToAddress? ToAddress { get; set; }

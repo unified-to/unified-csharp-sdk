@@ -1,5 +1,13 @@
 # CreateUcCommentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateUcCommentQueryParamFields.Id;
+```
+
 
 ## Values
 

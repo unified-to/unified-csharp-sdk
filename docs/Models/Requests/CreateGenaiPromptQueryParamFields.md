@@ -1,5 +1,13 @@
 # CreateGenaiPromptQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateGenaiPromptQueryParamFields.ModelId;
+```
+
 
 ## Values
 

@@ -1,5 +1,4 @@
 # Session
-(*Session*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a session
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAnalyticsSession" method="get" path="/analytics/{connection_id}/session/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all sessions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsSessions" method="get" path="/analytics/{connection_id}/session" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

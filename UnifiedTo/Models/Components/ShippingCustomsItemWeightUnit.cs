@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ShippingCustomsItemWeightUnit
-    {
-        [JsonProperty("g")]
-        G,
-        [JsonProperty("kg")]
-        Kg,
-        [JsonProperty("oz")]
-        Oz,
-        [JsonProperty("lb")]
-        Lb,
-    }
 
-    public static class ShippingCustomsItemWeightUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ShippingCustomsItemWeightUnit : IEquatable<ShippingCustomsItemWeightUnit>
     {
-        public static string Value(this ShippingCustomsItemWeightUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ShippingCustomsItemWeightUnit G = new ShippingCustomsItemWeightUnit("g");
+        public static readonly ShippingCustomsItemWeightUnit Kg = new ShippingCustomsItemWeightUnit("kg");
+        public static readonly ShippingCustomsItemWeightUnit Oz = new ShippingCustomsItemWeightUnit("oz");
+        public static readonly ShippingCustomsItemWeightUnit Lb = new ShippingCustomsItemWeightUnit("lb");
 
-        public static ShippingCustomsItemWeightUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(ShippingCustomsItemWeightUnit).GetFields())
+        private static readonly Dictionary <string, ShippingCustomsItemWeightUnit> _knownValues =
+            new Dictionary <string, ShippingCustomsItemWeightUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["g"] = G,
+                ["kg"] = Kg,
+                ["oz"] = Oz,
+                ["lb"] = Lb
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ShippingCustomsItemWeightUnit> _values =
+            new ConcurrentDictionary<string, ShippingCustomsItemWeightUnit>(_knownValues);
 
-                    if (enumVal is ShippingCustomsItemWeightUnit)
-                    {
-                        return (ShippingCustomsItemWeightUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ShippingCustomsItemWeightUnit");
+        private ShippingCustomsItemWeightUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ShippingCustomsItemWeightUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ShippingCustomsItemWeightUnit(value));
+        }
+
+        public static implicit operator ShippingCustomsItemWeightUnit(string value) => Of(value);
+        public static implicit operator string(ShippingCustomsItemWeightUnit shippingcustomsitemweightunit) => shippingcustomsitemweightunit.Value;
+
+        public static ShippingCustomsItemWeightUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ShippingCustomsItemWeightUnit);
+
+        public bool Equals(ShippingCustomsItemWeightUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

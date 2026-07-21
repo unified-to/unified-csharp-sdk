@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Priority
-    {
-        [JsonProperty("HIGH")]
-        High,
-        [JsonProperty("MEDIUM")]
-        Medium,
-        [JsonProperty("LOW")]
-        Low,
-    }
 
-    public static class PriorityExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Priority : IEquatable<Priority>
     {
-        public static string Value(this Priority value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Priority High = new Priority("HIGH");
+        public static readonly Priority Medium = new Priority("MEDIUM");
+        public static readonly Priority Low = new Priority("LOW");
 
-        public static Priority ToEnum(this string value)
-        {
-            foreach(var field in typeof(Priority).GetFields())
+        private static readonly Dictionary <string, Priority> _knownValues =
+            new Dictionary <string, Priority> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["HIGH"] = High,
+                ["MEDIUM"] = Medium,
+                ["LOW"] = Low
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Priority> _values =
+            new ConcurrentDictionary<string, Priority>(_knownValues);
 
-                    if (enumVal is Priority)
-                    {
-                        return (Priority)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Priority");
+        private Priority(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Priority Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Priority(value));
+        }
+
+        public static implicit operator Priority(string value) => Of(value);
+        public static implicit operator string(Priority priority) => priority.Value;
+
+        public static Priority[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Priority);
+
+        public bool Equals(Priority? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

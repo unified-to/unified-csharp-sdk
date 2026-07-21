@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ScimGroupMemberType
-    {
-        [JsonProperty("User")]
-        User,
-        [JsonProperty("Group")]
-        Group,
-    }
 
-    public static class ScimGroupMemberTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ScimGroupMemberType : IEquatable<ScimGroupMemberType>
     {
-        public static string Value(this ScimGroupMemberType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ScimGroupMemberType User = new ScimGroupMemberType("User");
+        public static readonly ScimGroupMemberType Group = new ScimGroupMemberType("Group");
 
-        public static ScimGroupMemberType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ScimGroupMemberType).GetFields())
+        private static readonly Dictionary <string, ScimGroupMemberType> _knownValues =
+            new Dictionary <string, ScimGroupMemberType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["User"] = User,
+                ["Group"] = Group
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ScimGroupMemberType> _values =
+            new ConcurrentDictionary<string, ScimGroupMemberType>(_knownValues);
 
-                    if (enumVal is ScimGroupMemberType)
-                    {
-                        return (ScimGroupMemberType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ScimGroupMemberType");
+        private ScimGroupMemberType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ScimGroupMemberType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ScimGroupMemberType(value));
+        }
+
+        public static implicit operator ScimGroupMemberType(string value) => Of(value);
+        public static implicit operator string(ScimGroupMemberType scimgroupmembertype) => scimgroupmembertype.Value;
+
+        public static ScimGroupMemberType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ScimGroupMemberType);
+
+        public bool Equals(ScimGroupMemberType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

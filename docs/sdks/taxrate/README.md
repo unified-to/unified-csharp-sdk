@@ -1,5 +1,4 @@
 # Taxrate
-(*Taxrate*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingTaxrate" method="get" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all taxrates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingTaxrates" method="get" path="/accounting/{connection_id}/taxrate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingTaxrate" method="delete" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

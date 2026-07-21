@@ -13,10 +13,9 @@ namespace UnifiedTo.Models.Components
     using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class LmsActivity
     {
-
         [JsonProperty("assigned_grade")]
         public string? AssignedGrade { get; set; }
 

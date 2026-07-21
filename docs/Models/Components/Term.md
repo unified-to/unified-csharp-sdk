@@ -1,5 +1,16 @@
 # Term
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = Term.OnReceipt;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = Term.Of("custom_value");
+```
+
 
 ## Values
 

@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingFeeType
-    {
-        [JsonProperty("TAX")]
-        Tax,
-        [JsonProperty("DISCOUNT")]
-        Discount,
-        [JsonProperty("PROMOTION")]
-        Promotion,
-        [JsonProperty("SHIPPING")]
-        Shipping,
-        [JsonProperty("GIFT_WRAP")]
-        GiftWrap,
-        [JsonProperty("COD")]
-        Cod,
-        [JsonProperty("SURCHARGE")]
-        Surcharge,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class AccountingFeeTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingFeeType : IEquatable<AccountingFeeType>
     {
-        public static string Value(this AccountingFeeType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingFeeType Tax = new AccountingFeeType("TAX");
+        public static readonly AccountingFeeType Discount = new AccountingFeeType("DISCOUNT");
+        public static readonly AccountingFeeType Promotion = new AccountingFeeType("PROMOTION");
+        public static readonly AccountingFeeType Shipping = new AccountingFeeType("SHIPPING");
+        public static readonly AccountingFeeType GiftWrap = new AccountingFeeType("GIFT_WRAP");
+        public static readonly AccountingFeeType Cod = new AccountingFeeType("COD");
+        public static readonly AccountingFeeType Surcharge = new AccountingFeeType("SURCHARGE");
+        public static readonly AccountingFeeType Other = new AccountingFeeType("OTHER");
 
-        public static AccountingFeeType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingFeeType).GetFields())
+        private static readonly Dictionary <string, AccountingFeeType> _knownValues =
+            new Dictionary <string, AccountingFeeType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TAX"] = Tax,
+                ["DISCOUNT"] = Discount,
+                ["PROMOTION"] = Promotion,
+                ["SHIPPING"] = Shipping,
+                ["GIFT_WRAP"] = GiftWrap,
+                ["COD"] = Cod,
+                ["SURCHARGE"] = Surcharge,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingFeeType> _values =
+            new ConcurrentDictionary<string, AccountingFeeType>(_knownValues);
 
-                    if (enumVal is AccountingFeeType)
-                    {
-                        return (AccountingFeeType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingFeeType");
+        private AccountingFeeType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingFeeType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingFeeType(value));
+        }
+
+        public static implicit operator AccountingFeeType(string value) => Of(value);
+        public static implicit operator string(AccountingFeeType accountingfeetype) => accountingfeetype.Value;
+
+        public static AccountingFeeType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingFeeType);
+
+        public bool Equals(AccountingFeeType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum TaxesPaidBy
-    {
-        [JsonProperty("SENDER")]
-        Sender,
-        [JsonProperty("RECIPIENT")]
-        Recipient,
-        [JsonProperty("THIRD_PARTY")]
-        ThirdParty,
-    }
 
-    public static class TaxesPaidByExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class TaxesPaidBy : IEquatable<TaxesPaidBy>
     {
-        public static string Value(this TaxesPaidBy value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly TaxesPaidBy Sender = new TaxesPaidBy("SENDER");
+        public static readonly TaxesPaidBy Recipient = new TaxesPaidBy("RECIPIENT");
+        public static readonly TaxesPaidBy ThirdParty = new TaxesPaidBy("THIRD_PARTY");
 
-        public static TaxesPaidBy ToEnum(this string value)
-        {
-            foreach(var field in typeof(TaxesPaidBy).GetFields())
+        private static readonly Dictionary <string, TaxesPaidBy> _knownValues =
+            new Dictionary <string, TaxesPaidBy> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SENDER"] = Sender,
+                ["RECIPIENT"] = Recipient,
+                ["THIRD_PARTY"] = ThirdParty
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, TaxesPaidBy> _values =
+            new ConcurrentDictionary<string, TaxesPaidBy>(_knownValues);
 
-                    if (enumVal is TaxesPaidBy)
-                    {
-                        return (TaxesPaidBy)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum TaxesPaidBy");
+        private TaxesPaidBy(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static TaxesPaidBy Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new TaxesPaidBy(value));
+        }
+
+        public static implicit operator TaxesPaidBy(string value) => Of(value);
+        public static implicit operator string(TaxesPaidBy taxespaidby) => taxespaidby.Value;
+
+        public static TaxesPaidBy[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as TaxesPaidBy);
+
+        public bool Equals(TaxesPaidBy? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

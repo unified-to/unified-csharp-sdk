@@ -1,5 +1,16 @@
 # MarketingMemberStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = MarketingMemberStatus.Subscribed;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = MarketingMemberStatus.Of("custom_value");
+```
+
 
 ## Values
 

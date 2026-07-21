@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PaymentRefundStatus
-    {
-        [JsonProperty("SUCCEEDED")]
-        Succeeded,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("FAILED")]
-        Failed,
-        [JsonProperty("CANCELED")]
-        Canceled,
-    }
 
-    public static class PaymentRefundStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PaymentRefundStatus : IEquatable<PaymentRefundStatus>
     {
-        public static string Value(this PaymentRefundStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PaymentRefundStatus Succeeded = new PaymentRefundStatus("SUCCEEDED");
+        public static readonly PaymentRefundStatus Pending = new PaymentRefundStatus("PENDING");
+        public static readonly PaymentRefundStatus Failed = new PaymentRefundStatus("FAILED");
+        public static readonly PaymentRefundStatus Canceled = new PaymentRefundStatus("CANCELED");
 
-        public static PaymentRefundStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(PaymentRefundStatus).GetFields())
+        private static readonly Dictionary <string, PaymentRefundStatus> _knownValues =
+            new Dictionary <string, PaymentRefundStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SUCCEEDED"] = Succeeded,
+                ["PENDING"] = Pending,
+                ["FAILED"] = Failed,
+                ["CANCELED"] = Canceled
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PaymentRefundStatus> _values =
+            new ConcurrentDictionary<string, PaymentRefundStatus>(_knownValues);
 
-                    if (enumVal is PaymentRefundStatus)
-                    {
-                        return (PaymentRefundStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PaymentRefundStatus");
+        private PaymentRefundStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PaymentRefundStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PaymentRefundStatus(value));
+        }
+
+        public static implicit operator PaymentRefundStatus(string value) => Of(value);
+        public static implicit operator string(PaymentRefundStatus paymentrefundstatus) => paymentrefundstatus.Value;
+
+        public static PaymentRefundStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PaymentRefundStatus);
+
+        public bool Equals(PaymentRefundStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupTargetingContentVideoPositions
-    {
-        [JsonProperty("PREROLL")]
-        Preroll,
-        [JsonProperty("MIDROLL")]
-        Midroll,
-        [JsonProperty("POSTROLL")]
-        Postroll,
-        [JsonProperty("INSTREAM")]
-        Instream,
-        [JsonProperty("OUTSTREAM")]
-        Outstream,
-    }
 
-    public static class PropertyAdsReportMetricsGroupTargetingContentVideoPositionsExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupTargetingContentVideoPositions : IEquatable<PropertyAdsReportMetricsGroupTargetingContentVideoPositions>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupTargetingContentVideoPositions value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPositions Preroll = new PropertyAdsReportMetricsGroupTargetingContentVideoPositions("PREROLL");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPositions Midroll = new PropertyAdsReportMetricsGroupTargetingContentVideoPositions("MIDROLL");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPositions Postroll = new PropertyAdsReportMetricsGroupTargetingContentVideoPositions("POSTROLL");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPositions Instream = new PropertyAdsReportMetricsGroupTargetingContentVideoPositions("INSTREAM");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPositions Outstream = new PropertyAdsReportMetricsGroupTargetingContentVideoPositions("OUTSTREAM");
 
-        public static PropertyAdsReportMetricsGroupTargetingContentVideoPositions ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupTargetingContentVideoPositions).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupTargetingContentVideoPositions> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupTargetingContentVideoPositions> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PREROLL"] = Preroll,
+                ["MIDROLL"] = Midroll,
+                ["POSTROLL"] = Postroll,
+                ["INSTREAM"] = Instream,
+                ["OUTSTREAM"] = Outstream
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingContentVideoPositions> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingContentVideoPositions>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupTargetingContentVideoPositions)
-                    {
-                        return (PropertyAdsReportMetricsGroupTargetingContentVideoPositions)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupTargetingContentVideoPositions");
+        private PropertyAdsReportMetricsGroupTargetingContentVideoPositions(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupTargetingContentVideoPositions Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupTargetingContentVideoPositions(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupTargetingContentVideoPositions(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupTargetingContentVideoPositions propertyadsreportmetricsgrouptargetingcontentvideopositions) => propertyadsreportmetricsgrouptargetingcontentvideopositions.Value;
+
+        public static PropertyAdsReportMetricsGroupTargetingContentVideoPositions[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupTargetingContentVideoPositions);
+
+        public bool Equals(PropertyAdsReportMetricsGroupTargetingContentVideoPositions? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

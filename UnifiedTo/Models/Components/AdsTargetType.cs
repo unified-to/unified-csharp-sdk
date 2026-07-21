@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsTargetType
-    {
-        [JsonProperty("INTEREST")]
-        Interest,
-        [JsonProperty("BEHAVIOR")]
-        Behavior,
-        [JsonProperty("LOCALE")]
-        Locale,
-        [JsonProperty("COUNTRY")]
-        Country,
-        [JsonProperty("REGION")]
-        Region,
-        [JsonProperty("CITY")]
-        City,
-        [JsonProperty("ZIP")]
-        Zip,
-        [JsonProperty("US_DMA")]
-        UsDma,
-        [JsonProperty("TOPIC")]
-        Topic,
-        [JsonProperty("USER_LIST")]
-        UserList,
-        [JsonProperty("CARRIER")]
-        Carrier,
-        [JsonProperty("DEVICE_MODEL")]
-        DeviceModel,
-        [JsonProperty("OS_VERSION")]
-        OsVersion,
-    }
 
-    public static class AdsTargetTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsTargetType : IEquatable<AdsTargetType>
     {
-        public static string Value(this AdsTargetType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsTargetType Interest = new AdsTargetType("INTEREST");
+        public static readonly AdsTargetType Behavior = new AdsTargetType("BEHAVIOR");
+        public static readonly AdsTargetType Locale = new AdsTargetType("LOCALE");
+        public static readonly AdsTargetType Country = new AdsTargetType("COUNTRY");
+        public static readonly AdsTargetType Region = new AdsTargetType("REGION");
+        public static readonly AdsTargetType City = new AdsTargetType("CITY");
+        public static readonly AdsTargetType Zip = new AdsTargetType("ZIP");
+        public static readonly AdsTargetType UsDma = new AdsTargetType("US_DMA");
+        public static readonly AdsTargetType Topic = new AdsTargetType("TOPIC");
+        public static readonly AdsTargetType UserList = new AdsTargetType("USER_LIST");
+        public static readonly AdsTargetType Carrier = new AdsTargetType("CARRIER");
+        public static readonly AdsTargetType DeviceModel = new AdsTargetType("DEVICE_MODEL");
+        public static readonly AdsTargetType OsVersion = new AdsTargetType("OS_VERSION");
 
-        public static AdsTargetType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsTargetType).GetFields())
+        private static readonly Dictionary <string, AdsTargetType> _knownValues =
+            new Dictionary <string, AdsTargetType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["INTEREST"] = Interest,
+                ["BEHAVIOR"] = Behavior,
+                ["LOCALE"] = Locale,
+                ["COUNTRY"] = Country,
+                ["REGION"] = Region,
+                ["CITY"] = City,
+                ["ZIP"] = Zip,
+                ["US_DMA"] = UsDma,
+                ["TOPIC"] = Topic,
+                ["USER_LIST"] = UserList,
+                ["CARRIER"] = Carrier,
+                ["DEVICE_MODEL"] = DeviceModel,
+                ["OS_VERSION"] = OsVersion
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsTargetType> _values =
+            new ConcurrentDictionary<string, AdsTargetType>(_knownValues);
 
-                    if (enumVal is AdsTargetType)
-                    {
-                        return (AdsTargetType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsTargetType");
+        private AdsTargetType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsTargetType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsTargetType(value));
+        }
+
+        public static implicit operator AdsTargetType(string value) => Of(value);
+        public static implicit operator string(AdsTargetType adstargettype) => adstargettype.Value;
+
+        public static AdsTargetType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsTargetType);
+
+        public bool Equals(AdsTargetType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

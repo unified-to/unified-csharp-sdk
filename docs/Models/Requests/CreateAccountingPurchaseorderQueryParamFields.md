@@ -1,5 +1,13 @@
 # CreateAccountingPurchaseorderQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateAccountingPurchaseorderQueryParamFields.Id;
+```
+
 
 ## Values
 

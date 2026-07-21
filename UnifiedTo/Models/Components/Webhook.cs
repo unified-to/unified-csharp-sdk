@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// A webhook is used to POST new/updated information to your server.
     /// </summary>
     public class Webhook
     {
-
         [JsonProperty("checked_at")]
         public DateTime? CheckedAt { get; set; }
 
@@ -82,7 +83,7 @@ namespace UnifiedTo.Models.Components
         public double? PageMaxLimit { get; set; }
 
         /// <summary>
-        /// An array of the most revent virtual webhook runs
+        /// An array of the most revent virtual webhook runs.
         /// </summary>
         [JsonProperty("runs")]
         public List<string>? Runs { get; set; }

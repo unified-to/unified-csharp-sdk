@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class IntegrationSchemasSaml5Type
     {
         private IntegrationSchemasSaml5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IntegrationSchemasSaml5Type IntegrationSchemasSaml1 { get { return new IntegrationSchemasSaml5Type("Integration_Schemas_saml_1"); } }
-        
+
         public static IntegrationSchemasSaml5Type Str { get { return new IntegrationSchemasSaml5Type("str"); } }
-        
+
         public static IntegrationSchemasSaml5Type Number { get { return new IntegrationSchemasSaml5Type("number"); } }
-        
+
         public static IntegrationSchemasSaml5Type Boolean { get { return new IntegrationSchemasSaml5Type("boolean"); } }
-        
-        public static IntegrationSchemasSaml5Type Null { get { return new IntegrationSchemasSaml5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(IntegrationSchemasSaml5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for IntegrationSchemasSaml5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(IntegrationSchemasSaml5.IntegrationSchemasSaml5Converter))]
-    public class IntegrationSchemasSaml5 {
-        public IntegrationSchemasSaml5(IntegrationSchemasSaml5Type type) {
+    public class IntegrationSchemasSaml5
+    {
+        public IntegrationSchemasSaml5(IntegrationSchemasSaml5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public IntegrationSchemasSaml5Type Type { get; set; }
-
-
-        public static IntegrationSchemasSaml5 CreateIntegrationSchemasSaml1(IntegrationSchemasSaml1 integrationSchemasSaml1) {
+        public static IntegrationSchemasSaml5 CreateIntegrationSchemasSaml1(IntegrationSchemasSaml1 integrationSchemasSaml1)
+        {
             IntegrationSchemasSaml5Type typ = IntegrationSchemasSaml5Type.IntegrationSchemasSaml1;
 
             IntegrationSchemasSaml5 res = new IntegrationSchemasSaml5(typ);
             res.IntegrationSchemasSaml1 = integrationSchemasSaml1;
             return res;
         }
-
-        public static IntegrationSchemasSaml5 CreateStr(string str) {
+        public static IntegrationSchemasSaml5 CreateStr(string str)
+        {
             IntegrationSchemasSaml5Type typ = IntegrationSchemasSaml5Type.Str;
 
             IntegrationSchemasSaml5 res = new IntegrationSchemasSaml5(typ);
             res.Str = str;
             return res;
         }
-
-        public static IntegrationSchemasSaml5 CreateNumber(double number) {
+        public static IntegrationSchemasSaml5 CreateNumber(double number)
+        {
             IntegrationSchemasSaml5Type typ = IntegrationSchemasSaml5Type.Number;
 
             IntegrationSchemasSaml5 res = new IntegrationSchemasSaml5(typ);
             res.Number = number;
             return res;
         }
-
-        public static IntegrationSchemasSaml5 CreateBoolean(bool boolean) {
+        public static IntegrationSchemasSaml5 CreateBoolean(bool boolean)
+        {
             IntegrationSchemasSaml5Type typ = IntegrationSchemasSaml5Type.Boolean;
 
             IntegrationSchemasSaml5 res = new IntegrationSchemasSaml5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static IntegrationSchemasSaml5 CreateNull() {
-            IntegrationSchemasSaml5Type typ = IntegrationSchemasSaml5Type.Null;
-            return new IntegrationSchemasSaml5(typ);
-        }
-
         public class IntegrationSchemasSaml5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(IntegrationSchemasSaml5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                IntegrationSchemasSaml5 res = (IntegrationSchemasSaml5)value;
-                if (IntegrationSchemasSaml5Type.FromString(res.Type).Equals(IntegrationSchemasSaml5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                IntegrationSchemasSaml5 res = (IntegrationSchemasSaml5)value;
+
                 if (res.IntegrationSchemasSaml1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSaml1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

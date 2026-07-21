@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisCompensationType
-    {
-        [JsonProperty("SALARY")]
-        Salary,
-        [JsonProperty("BONUS")]
-        Bonus,
-        [JsonProperty("STOCK_OPTIONS")]
-        StockOptions,
-        [JsonProperty("EQUITY")]
-        Equity,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class HrisCompensationTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisCompensationType : IEquatable<HrisCompensationType>
     {
-        public static string Value(this HrisCompensationType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisCompensationType Salary = new HrisCompensationType("SALARY");
+        public static readonly HrisCompensationType Bonus = new HrisCompensationType("BONUS");
+        public static readonly HrisCompensationType StockOptions = new HrisCompensationType("STOCK_OPTIONS");
+        public static readonly HrisCompensationType Equity = new HrisCompensationType("EQUITY");
+        public static readonly HrisCompensationType Other = new HrisCompensationType("OTHER");
 
-        public static HrisCompensationType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisCompensationType).GetFields())
+        private static readonly Dictionary <string, HrisCompensationType> _knownValues =
+            new Dictionary <string, HrisCompensationType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SALARY"] = Salary,
+                ["BONUS"] = Bonus,
+                ["STOCK_OPTIONS"] = StockOptions,
+                ["EQUITY"] = Equity,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisCompensationType> _values =
+            new ConcurrentDictionary<string, HrisCompensationType>(_knownValues);
 
-                    if (enumVal is HrisCompensationType)
-                    {
-                        return (HrisCompensationType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisCompensationType");
+        private HrisCompensationType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisCompensationType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisCompensationType(value));
+        }
+
+        public static implicit operator HrisCompensationType(string value) => Of(value);
+        public static implicit operator string(HrisCompensationType hriscompensationtype) => hriscompensationtype.Value;
+
+        public static HrisCompensationType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisCompensationType);
+
+        public bool Equals(HrisCompensationType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

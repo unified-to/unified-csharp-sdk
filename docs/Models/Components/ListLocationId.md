@@ -1,5 +1,16 @@
 # ListLocationId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListLocationId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListLocationId.Of("custom_value");
+```
+
 
 ## Values
 

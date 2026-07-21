@@ -1,5 +1,4 @@
 # Deduction
-(*Deduction*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisDeduction" method="get" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all deductions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisDeductions" method="get" path="/hris/{connection_id}/deduction" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisDeduction" method="delete" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

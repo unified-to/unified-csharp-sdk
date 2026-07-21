@@ -11,593 +11,612 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyConnectionPermissions
-    {
-        [JsonProperty("accounting_account_read")]
-        AccountingAccountRead,
-        [JsonProperty("accounting_account_write")]
-        AccountingAccountWrite,
-        [JsonProperty("accounting_transaction_read")]
-        AccountingTransactionRead,
-        [JsonProperty("accounting_transaction_write")]
-        AccountingTransactionWrite,
-        [JsonProperty("accounting_journal_read")]
-        AccountingJournalRead,
-        [JsonProperty("accounting_journal_write")]
-        AccountingJournalWrite,
-        [JsonProperty("accounting_invoice_read")]
-        AccountingInvoiceRead,
-        [JsonProperty("accounting_invoice_write")]
-        AccountingInvoiceWrite,
-        [JsonProperty("accounting_bill_read")]
-        AccountingBillRead,
-        [JsonProperty("accounting_bill_write")]
-        AccountingBillWrite,
-        [JsonProperty("accounting_vendorcredit_read")]
-        AccountingVendorcreditRead,
-        [JsonProperty("accounting_vendorcredit_write")]
-        AccountingVendorcreditWrite,
-        [JsonProperty("accounting_creditmemo_read")]
-        AccountingCreditmemoRead,
-        [JsonProperty("accounting_creditmemo_write")]
-        AccountingCreditmemoWrite,
-        [JsonProperty("accounting_contact_read")]
-        AccountingContactRead,
-        [JsonProperty("accounting_contact_write")]
-        AccountingContactWrite,
-        [JsonProperty("accounting_expense_read")]
-        AccountingExpenseRead,
-        [JsonProperty("accounting_expense_write")]
-        AccountingExpenseWrite,
-        [JsonProperty("accounting_taxrate_read")]
-        AccountingTaxrateRead,
-        [JsonProperty("accounting_taxrate_write")]
-        AccountingTaxrateWrite,
-        [JsonProperty("accounting_organization_read")]
-        AccountingOrganizationRead,
-        [JsonProperty("accounting_order_read")]
-        AccountingOrderRead,
-        [JsonProperty("accounting_order_write")]
-        AccountingOrderWrite,
-        [JsonProperty("accounting_purchaseorder_read")]
-        AccountingPurchaseorderRead,
-        [JsonProperty("accounting_purchaseorder_write")]
-        AccountingPurchaseorderWrite,
-        [JsonProperty("accounting_salesorder_read")]
-        AccountingSalesorderRead,
-        [JsonProperty("accounting_salesorder_write")]
-        AccountingSalesorderWrite,
-        [JsonProperty("accounting_report_read")]
-        AccountingReportRead,
-        [JsonProperty("accounting_report_write")]
-        AccountingReportWrite,
-        [JsonProperty("accounting_trialbalance_read")]
-        AccountingTrialbalanceRead,
-        [JsonProperty("accounting_trialbalance_write")]
-        AccountingTrialbalanceWrite,
-        [JsonProperty("accounting_profitloss_read")]
-        AccountingProfitlossRead,
-        [JsonProperty("accounting_profitloss_write")]
-        AccountingProfitlossWrite,
-        [JsonProperty("accounting_balancesheet_read")]
-        AccountingBalancesheetRead,
-        [JsonProperty("accounting_balancesheet_write")]
-        AccountingBalancesheetWrite,
-        [JsonProperty("accounting_category_read")]
-        AccountingCategoryRead,
-        [JsonProperty("accounting_category_write")]
-        AccountingCategoryWrite,
-        [JsonProperty("payment_payment_read")]
-        PaymentPaymentRead,
-        [JsonProperty("payment_payment_write")]
-        PaymentPaymentWrite,
-        [JsonProperty("accounting_cashflow_read")]
-        AccountingCashflowRead,
-        [JsonProperty("accounting_cashflow_write")]
-        AccountingCashflowWrite,
-        [JsonProperty("payment_payout_read")]
-        PaymentPayoutRead,
-        [JsonProperty("payment_refund_read")]
-        PaymentRefundRead,
-        [JsonProperty("payment_link_read")]
-        PaymentLinkRead,
-        [JsonProperty("payment_link_write")]
-        PaymentLinkWrite,
-        [JsonProperty("payment_subscription_read")]
-        PaymentSubscriptionRead,
-        [JsonProperty("payment_subscription_write")]
-        PaymentSubscriptionWrite,
-        [JsonProperty("commerce_item_read")]
-        CommerceItemRead,
-        [JsonProperty("commerce_item_write")]
-        CommerceItemWrite,
-        [JsonProperty("commerce_collection_read")]
-        CommerceCollectionRead,
-        [JsonProperty("commerce_collection_write")]
-        CommerceCollectionWrite,
-        [JsonProperty("commerce_inventory_read")]
-        CommerceInventoryRead,
-        [JsonProperty("commerce_inventory_write")]
-        CommerceInventoryWrite,
-        [JsonProperty("commerce_location_read")]
-        CommerceLocationRead,
-        [JsonProperty("commerce_location_write")]
-        CommerceLocationWrite,
-        [JsonProperty("commerce_review_read")]
-        CommerceReviewRead,
-        [JsonProperty("commerce_review_write")]
-        CommerceReviewWrite,
-        [JsonProperty("commerce_saleschannel_read")]
-        CommerceSaleschannelRead,
-        [JsonProperty("commerce_saleschannel_write")]
-        CommerceSaleschannelWrite,
-        [JsonProperty("commerce_itemvariant_read")]
-        CommerceItemvariantRead,
-        [JsonProperty("commerce_itemvariant_write")]
-        CommerceItemvariantWrite,
-        [JsonProperty("commerce_reservation_read")]
-        CommerceReservationRead,
-        [JsonProperty("commerce_reservation_write")]
-        CommerceReservationWrite,
-        [JsonProperty("commerce_availability_read")]
-        CommerceAvailabilityRead,
-        [JsonProperty("commerce_availability_write")]
-        CommerceAvailabilityWrite,
-        [JsonProperty("verification_package_read")]
-        VerificationPackageRead,
-        [JsonProperty("verification_request_read")]
-        VerificationRequestRead,
-        [JsonProperty("verification_request_write")]
-        VerificationRequestWrite,
-        [JsonProperty("assessment_package_read")]
-        AssessmentPackageRead,
-        [JsonProperty("assessment_package_write")]
-        AssessmentPackageWrite,
-        [JsonProperty("assessment_order_write")]
-        AssessmentOrderWrite,
-        [JsonProperty("ats_activity_read")]
-        AtsActivityRead,
-        [JsonProperty("ats_activity_write")]
-        AtsActivityWrite,
-        [JsonProperty("ats_application_read")]
-        AtsApplicationRead,
-        [JsonProperty("ats_application_write")]
-        AtsApplicationWrite,
-        [JsonProperty("ats_applicationstatus_read")]
-        AtsApplicationstatusRead,
-        [JsonProperty("ats_candidate_read")]
-        AtsCandidateRead,
-        [JsonProperty("ats_candidate_write")]
-        AtsCandidateWrite,
-        [JsonProperty("ats_interview_read")]
-        AtsInterviewRead,
-        [JsonProperty("ats_interview_write")]
-        AtsInterviewWrite,
-        [JsonProperty("ats_job_read")]
-        AtsJobRead,
-        [JsonProperty("ats_job_write")]
-        AtsJobWrite,
-        [JsonProperty("ats_company_read")]
-        AtsCompanyRead,
-        [JsonProperty("ats_company_write")]
-        AtsCompanyWrite,
-        [JsonProperty("ats_document_read")]
-        AtsDocumentRead,
-        [JsonProperty("ats_document_write")]
-        AtsDocumentWrite,
-        [JsonProperty("ats_scorecard_read")]
-        AtsScorecardRead,
-        [JsonProperty("ats_scorecard_write")]
-        AtsScorecardWrite,
-        [JsonProperty("crm_company_read")]
-        CrmCompanyRead,
-        [JsonProperty("crm_company_write")]
-        CrmCompanyWrite,
-        [JsonProperty("crm_contact_read")]
-        CrmContactRead,
-        [JsonProperty("crm_contact_write")]
-        CrmContactWrite,
-        [JsonProperty("crm_deal_read")]
-        CrmDealRead,
-        [JsonProperty("crm_deal_write")]
-        CrmDealWrite,
-        [JsonProperty("crm_event_read")]
-        CrmEventRead,
-        [JsonProperty("crm_event_write")]
-        CrmEventWrite,
-        [JsonProperty("crm_lead_read")]
-        CrmLeadRead,
-        [JsonProperty("crm_lead_write")]
-        CrmLeadWrite,
-        [JsonProperty("crm_pipeline_read")]
-        CrmPipelineRead,
-        [JsonProperty("crm_pipeline_write")]
-        CrmPipelineWrite,
-        [JsonProperty("crm_picklist_read")]
-        CrmPicklistRead,
-        [JsonProperty("martech_list_read")]
-        MartechListRead,
-        [JsonProperty("martech_list_write")]
-        MartechListWrite,
-        [JsonProperty("martech_member_read")]
-        MartechMemberRead,
-        [JsonProperty("martech_member_write")]
-        MartechMemberWrite,
-        [JsonProperty("martech_campaign_read")]
-        MartechCampaignRead,
-        [JsonProperty("martech_campaign_write")]
-        MartechCampaignWrite,
-        [JsonProperty("martech_report_read")]
-        MartechReportRead,
-        [JsonProperty("martech_report_write")]
-        MartechReportWrite,
-        [JsonProperty("ticketing_customer_read")]
-        TicketingCustomerRead,
-        [JsonProperty("ticketing_customer_write")]
-        TicketingCustomerWrite,
-        [JsonProperty("ticketing_ticket_read")]
-        TicketingTicketRead,
-        [JsonProperty("ticketing_ticket_write")]
-        TicketingTicketWrite,
-        [JsonProperty("ticketing_note_read")]
-        TicketingNoteRead,
-        [JsonProperty("ticketing_note_write")]
-        TicketingNoteWrite,
-        [JsonProperty("ticketing_category_read")]
-        TicketingCategoryRead,
-        [JsonProperty("ticketing_category_write")]
-        TicketingCategoryWrite,
-        [JsonProperty("hris_employee_read")]
-        HrisEmployeeRead,
-        [JsonProperty("hris_employee_write")]
-        HrisEmployeeWrite,
-        [JsonProperty("hris_group_read")]
-        HrisGroupRead,
-        [JsonProperty("hris_group_write")]
-        HrisGroupWrite,
-        [JsonProperty("hris_payslip_read")]
-        HrisPayslipRead,
-        [JsonProperty("hris_payslip_write")]
-        HrisPayslipWrite,
-        [JsonProperty("hris_timeoff_read")]
-        HrisTimeoffRead,
-        [JsonProperty("hris_timeoff_write")]
-        HrisTimeoffWrite,
-        [JsonProperty("hris_timeshift_read")]
-        HrisTimeshiftRead,
-        [JsonProperty("hris_timeshift_write")]
-        HrisTimeshiftWrite,
-        [JsonProperty("hris_company_read")]
-        HrisCompanyRead,
-        [JsonProperty("hris_company_write")]
-        HrisCompanyWrite,
-        [JsonProperty("hris_location_read")]
-        HrisLocationRead,
-        [JsonProperty("hris_location_write")]
-        HrisLocationWrite,
-        [JsonProperty("hris_device_read")]
-        HrisDeviceRead,
-        [JsonProperty("hris_device_write")]
-        HrisDeviceWrite,
-        [JsonProperty("hris_deduction_read")]
-        HrisDeductionRead,
-        [JsonProperty("hris_deduction_write")]
-        HrisDeductionWrite,
-        [JsonProperty("hris_benefit_read")]
-        HrisBenefitRead,
-        [JsonProperty("hris_benefit_write")]
-        HrisBenefitWrite,
-        [JsonProperty("hris_bankaccount_read")]
-        HrisBankaccountRead,
-        [JsonProperty("hris_bankaccount_write")]
-        HrisBankaccountWrite,
-        [JsonProperty("hris_document_read")]
-        HrisDocumentRead,
-        [JsonProperty("hris_document_write")]
-        HrisDocumentWrite,
-        [JsonProperty("hris_taxonomy_read")]
-        HrisTaxonomyRead,
-        [JsonProperty("hris_taxonomy_write")]
-        HrisTaxonomyWrite,
-        [JsonProperty("uc_call_read")]
-        UcCallRead,
-        [JsonProperty("uc_contact_read")]
-        UcContactRead,
-        [JsonProperty("uc_contact_write")]
-        UcContactWrite,
-        [JsonProperty("uc_comment_read")]
-        UcCommentRead,
-        [JsonProperty("uc_comment_write")]
-        UcCommentWrite,
-        [JsonProperty("uc_recording_read")]
-        UcRecordingRead,
-        [JsonProperty("storage_file_read")]
-        StorageFileRead,
-        [JsonProperty("storage_file_write")]
-        StorageFileWrite,
-        [JsonProperty("webhook")]
-        Webhook,
-        [JsonProperty("genai_model_read")]
-        GenaiModelRead,
-        [JsonProperty("genai_prompt_read")]
-        GenaiPromptRead,
-        [JsonProperty("genai_prompt_write")]
-        GenaiPromptWrite,
-        [JsonProperty("genai_embedding_read")]
-        GenaiEmbeddingRead,
-        [JsonProperty("genai_embedding_write")]
-        GenaiEmbeddingWrite,
-        [JsonProperty("messaging_message_read")]
-        MessagingMessageRead,
-        [JsonProperty("messaging_message_write")]
-        MessagingMessageWrite,
-        [JsonProperty("messaging_channel_read")]
-        MessagingChannelRead,
-        [JsonProperty("messaging_event_read")]
-        MessagingEventRead,
-        [JsonProperty("messaging_event_write")]
-        MessagingEventWrite,
-        [JsonProperty("kms_space_read")]
-        KmsSpaceRead,
-        [JsonProperty("kms_space_write")]
-        KmsSpaceWrite,
-        [JsonProperty("kms_page_read")]
-        KmsPageRead,
-        [JsonProperty("kms_page_write")]
-        KmsPageWrite,
-        [JsonProperty("kms_comment_read")]
-        KmsCommentRead,
-        [JsonProperty("kms_comment_write")]
-        KmsCommentWrite,
-        [JsonProperty("task_project_read")]
-        TaskProjectRead,
-        [JsonProperty("task_project_write")]
-        TaskProjectWrite,
-        [JsonProperty("task_task_read")]
-        TaskTaskRead,
-        [JsonProperty("task_task_write")]
-        TaskTaskWrite,
-        [JsonProperty("task_change_read")]
-        TaskChangeRead,
-        [JsonProperty("task_comment_read")]
-        TaskCommentRead,
-        [JsonProperty("task_comment_write")]
-        TaskCommentWrite,
-        [JsonProperty("scim_users_read")]
-        ScimUsersRead,
-        [JsonProperty("scim_users_write")]
-        ScimUsersWrite,
-        [JsonProperty("scim_groups_read")]
-        ScimGroupsRead,
-        [JsonProperty("scim_groups_write")]
-        ScimGroupsWrite,
-        [JsonProperty("lms_course_read")]
-        LmsCourseRead,
-        [JsonProperty("lms_course_write")]
-        LmsCourseWrite,
-        [JsonProperty("lms_class_read")]
-        LmsClassRead,
-        [JsonProperty("lms_class_write")]
-        LmsClassWrite,
-        [JsonProperty("lms_student_read")]
-        LmsStudentRead,
-        [JsonProperty("lms_student_write")]
-        LmsStudentWrite,
-        [JsonProperty("lms_instructor_read")]
-        LmsInstructorRead,
-        [JsonProperty("lms_instructor_write")]
-        LmsInstructorWrite,
-        [JsonProperty("lms_content_read")]
-        LmsContentRead,
-        [JsonProperty("lms_content_write")]
-        LmsContentWrite,
-        [JsonProperty("lms_collection_read")]
-        LmsCollectionRead,
-        [JsonProperty("lms_collection_write")]
-        LmsCollectionWrite,
-        [JsonProperty("lms_activity_read")]
-        LmsActivityRead,
-        [JsonProperty("lms_activity_write")]
-        LmsActivityWrite,
-        [JsonProperty("repo_organization_read")]
-        RepoOrganizationRead,
-        [JsonProperty("repo_organization_write")]
-        RepoOrganizationWrite,
-        [JsonProperty("repo_repository_read")]
-        RepoRepositoryRead,
-        [JsonProperty("repo_repository_write")]
-        RepoRepositoryWrite,
-        [JsonProperty("repo_branch_read")]
-        RepoBranchRead,
-        [JsonProperty("repo_branch_write")]
-        RepoBranchWrite,
-        [JsonProperty("repo_commit_read")]
-        RepoCommitRead,
-        [JsonProperty("repo_commit_write")]
-        RepoCommitWrite,
-        [JsonProperty("repo_pullrequest_read")]
-        RepoPullrequestRead,
-        [JsonProperty("repo_pullrequest_write")]
-        RepoPullrequestWrite,
-        [JsonProperty("metadata_metadata_read")]
-        MetadataMetadataRead,
-        [JsonProperty("metadata_metadata_write")]
-        MetadataMetadataWrite,
-        [JsonProperty("calendar_calendar_read")]
-        CalendarCalendarRead,
-        [JsonProperty("calendar_calendar_write")]
-        CalendarCalendarWrite,
-        [JsonProperty("calendar_event_read")]
-        CalendarEventRead,
-        [JsonProperty("calendar_event_write")]
-        CalendarEventWrite,
-        [JsonProperty("calendar_busy_read")]
-        CalendarBusyRead,
-        [JsonProperty("calendar_link_read")]
-        CalendarLinkRead,
-        [JsonProperty("calendar_link_write")]
-        CalendarLinkWrite,
-        [JsonProperty("calendar_recording_read")]
-        CalendarRecordingRead,
-        [JsonProperty("calendar_recording_write")]
-        CalendarRecordingWrite,
-        [JsonProperty("calendar_webinar_read")]
-        CalendarWebinarRead,
-        [JsonProperty("calendar_webinar_write")]
-        CalendarWebinarWrite,
-        [JsonProperty("enrich_person_read")]
-        EnrichPersonRead,
-        [JsonProperty("enrich_company_read")]
-        EnrichCompanyRead,
-        [JsonProperty("ads_ad_read")]
-        AdsAdRead,
-        [JsonProperty("ads_ad_write")]
-        AdsAdWrite,
-        [JsonProperty("ads_campaign_read")]
-        AdsCampaignRead,
-        [JsonProperty("ads_campaign_write")]
-        AdsCampaignWrite,
-        [JsonProperty("ads_group_read")]
-        AdsGroupRead,
-        [JsonProperty("ads_group_write")]
-        AdsGroupWrite,
-        [JsonProperty("ads_report_read")]
-        AdsReportRead,
-        [JsonProperty("ads_organization_read")]
-        AdsOrganizationRead,
-        [JsonProperty("ads_organization_write")]
-        AdsOrganizationWrite,
-        [JsonProperty("ads_creative_read")]
-        AdsCreativeRead,
-        [JsonProperty("ads_creative_write")]
-        AdsCreativeWrite,
-        [JsonProperty("ads_insertionorder_read")]
-        AdsInsertionorderRead,
-        [JsonProperty("ads_insertionorder_write")]
-        AdsInsertionorderWrite,
-        [JsonProperty("ads_target_read")]
-        AdsTargetRead,
-        [JsonProperty("ads_promoted_read")]
-        AdsPromotedRead,
-        [JsonProperty("analytics_property_read")]
-        AnalyticsPropertyRead,
-        [JsonProperty("analytics_property_write")]
-        AnalyticsPropertyWrite,
-        [JsonProperty("analytics_event_read")]
-        AnalyticsEventRead,
-        [JsonProperty("analytics_event_write")]
-        AnalyticsEventWrite,
-        [JsonProperty("analytics_session_read")]
-        AnalyticsSessionRead,
-        [JsonProperty("analytics_visitor_read")]
-        AnalyticsVisitorRead,
-        [JsonProperty("analytics_visitor_write")]
-        AnalyticsVisitorWrite,
-        [JsonProperty("analytics_report_read")]
-        AnalyticsReportRead,
-        [JsonProperty("forms_form_read")]
-        FormsFormRead,
-        [JsonProperty("forms_form_write")]
-        FormsFormWrite,
-        [JsonProperty("forms_submission_read")]
-        FormsSubmissionRead,
-        [JsonProperty("forms_submission_write")]
-        FormsSubmissionWrite,
-        [JsonProperty("shipping_shipment_read")]
-        ShippingShipmentRead,
-        [JsonProperty("shipping_shipment_write")]
-        ShippingShipmentWrite,
-        [JsonProperty("shipping_label_read")]
-        ShippingLabelRead,
-        [JsonProperty("shipping_label_write")]
-        ShippingLabelWrite,
-        [JsonProperty("shipping_tracking_read")]
-        ShippingTrackingRead,
-        [JsonProperty("shipping_rate_read")]
-        ShippingRateRead,
-        [JsonProperty("shipping_carrier_read")]
-        ShippingCarrierRead,
-        [JsonProperty("signing_document_read")]
-        SigningDocumentRead,
-        [JsonProperty("signing_document_write")]
-        SigningDocumentWrite,
-        [JsonProperty("signing_signatory_read")]
-        SigningSignatoryRead,
-        [JsonProperty("signing_signatory_write")]
-        SigningSignatoryWrite,
-        [JsonProperty("signing_template_read")]
-        SigningTemplateRead,
-        [JsonProperty("clubs_group_read")]
-        ClubsGroupRead,
-        [JsonProperty("clubs_group_write")]
-        ClubsGroupWrite,
-        [JsonProperty("clubs_member_read")]
-        ClubsMemberRead,
-        [JsonProperty("clubs_member_write")]
-        ClubsMemberWrite,
-        [JsonProperty("clubs_activity_read")]
-        ClubsActivityRead,
-        [JsonProperty("clubs_activity_write")]
-        ClubsActivityWrite,
-        [JsonProperty("clubs_location_read")]
-        ClubsLocationRead,
-        [JsonProperty("clubs_location_write")]
-        ClubsLocationWrite,
-        [JsonProperty("clubs_event_read")]
-        ClubsEventRead,
-        [JsonProperty("clubs_event_write")]
-        ClubsEventWrite,
-        [JsonProperty("datastore_database_read")]
-        DatastoreDatabaseRead,
-        [JsonProperty("datastore_database_write")]
-        DatastoreDatabaseWrite,
-        [JsonProperty("datastore_table_read")]
-        DatastoreTableRead,
-        [JsonProperty("datastore_table_write")]
-        DatastoreTableWrite,
-        [JsonProperty("datastore_record_read")]
-        DatastoreRecordRead,
-        [JsonProperty("datastore_record_write")]
-        DatastoreRecordWrite,
-        [JsonProperty("datastore_query_read")]
-        DatastoreQueryRead,
-        [JsonProperty("datastore_query_write")]
-        DatastoreQueryWrite,
-    }
 
-    public static class PropertyConnectionPermissionsExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyConnectionPermissions : IEquatable<PropertyConnectionPermissions>
     {
-        public static string Value(this PropertyConnectionPermissions value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyConnectionPermissions AccountingAccountRead = new PropertyConnectionPermissions("accounting_account_read");
+        public static readonly PropertyConnectionPermissions AccountingAccountWrite = new PropertyConnectionPermissions("accounting_account_write");
+        public static readonly PropertyConnectionPermissions AccountingTransactionRead = new PropertyConnectionPermissions("accounting_transaction_read");
+        public static readonly PropertyConnectionPermissions AccountingTransactionWrite = new PropertyConnectionPermissions("accounting_transaction_write");
+        public static readonly PropertyConnectionPermissions AccountingJournalRead = new PropertyConnectionPermissions("accounting_journal_read");
+        public static readonly PropertyConnectionPermissions AccountingJournalWrite = new PropertyConnectionPermissions("accounting_journal_write");
+        public static readonly PropertyConnectionPermissions AccountingInvoiceRead = new PropertyConnectionPermissions("accounting_invoice_read");
+        public static readonly PropertyConnectionPermissions AccountingInvoiceWrite = new PropertyConnectionPermissions("accounting_invoice_write");
+        public static readonly PropertyConnectionPermissions AccountingBillRead = new PropertyConnectionPermissions("accounting_bill_read");
+        public static readonly PropertyConnectionPermissions AccountingBillWrite = new PropertyConnectionPermissions("accounting_bill_write");
+        public static readonly PropertyConnectionPermissions AccountingVendorcreditRead = new PropertyConnectionPermissions("accounting_vendorcredit_read");
+        public static readonly PropertyConnectionPermissions AccountingVendorcreditWrite = new PropertyConnectionPermissions("accounting_vendorcredit_write");
+        public static readonly PropertyConnectionPermissions AccountingCreditmemoRead = new PropertyConnectionPermissions("accounting_creditmemo_read");
+        public static readonly PropertyConnectionPermissions AccountingCreditmemoWrite = new PropertyConnectionPermissions("accounting_creditmemo_write");
+        public static readonly PropertyConnectionPermissions AccountingContactRead = new PropertyConnectionPermissions("accounting_contact_read");
+        public static readonly PropertyConnectionPermissions AccountingContactWrite = new PropertyConnectionPermissions("accounting_contact_write");
+        public static readonly PropertyConnectionPermissions AccountingExpenseRead = new PropertyConnectionPermissions("accounting_expense_read");
+        public static readonly PropertyConnectionPermissions AccountingExpenseWrite = new PropertyConnectionPermissions("accounting_expense_write");
+        public static readonly PropertyConnectionPermissions AccountingTaxrateRead = new PropertyConnectionPermissions("accounting_taxrate_read");
+        public static readonly PropertyConnectionPermissions AccountingTaxrateWrite = new PropertyConnectionPermissions("accounting_taxrate_write");
+        public static readonly PropertyConnectionPermissions AccountingOrganizationRead = new PropertyConnectionPermissions("accounting_organization_read");
+        public static readonly PropertyConnectionPermissions AccountingOrderRead = new PropertyConnectionPermissions("accounting_order_read");
+        public static readonly PropertyConnectionPermissions AccountingOrderWrite = new PropertyConnectionPermissions("accounting_order_write");
+        public static readonly PropertyConnectionPermissions AccountingPurchaseorderRead = new PropertyConnectionPermissions("accounting_purchaseorder_read");
+        public static readonly PropertyConnectionPermissions AccountingPurchaseorderWrite = new PropertyConnectionPermissions("accounting_purchaseorder_write");
+        public static readonly PropertyConnectionPermissions AccountingSalesorderRead = new PropertyConnectionPermissions("accounting_salesorder_read");
+        public static readonly PropertyConnectionPermissions AccountingSalesorderWrite = new PropertyConnectionPermissions("accounting_salesorder_write");
+        public static readonly PropertyConnectionPermissions AccountingReportRead = new PropertyConnectionPermissions("accounting_report_read");
+        public static readonly PropertyConnectionPermissions AccountingReportWrite = new PropertyConnectionPermissions("accounting_report_write");
+        public static readonly PropertyConnectionPermissions AccountingTrialbalanceRead = new PropertyConnectionPermissions("accounting_trialbalance_read");
+        public static readonly PropertyConnectionPermissions AccountingTrialbalanceWrite = new PropertyConnectionPermissions("accounting_trialbalance_write");
+        public static readonly PropertyConnectionPermissions AccountingProfitlossRead = new PropertyConnectionPermissions("accounting_profitloss_read");
+        public static readonly PropertyConnectionPermissions AccountingProfitlossWrite = new PropertyConnectionPermissions("accounting_profitloss_write");
+        public static readonly PropertyConnectionPermissions AccountingBalancesheetRead = new PropertyConnectionPermissions("accounting_balancesheet_read");
+        public static readonly PropertyConnectionPermissions AccountingBalancesheetWrite = new PropertyConnectionPermissions("accounting_balancesheet_write");
+        public static readonly PropertyConnectionPermissions AccountingCategoryRead = new PropertyConnectionPermissions("accounting_category_read");
+        public static readonly PropertyConnectionPermissions AccountingCategoryWrite = new PropertyConnectionPermissions("accounting_category_write");
+        public static readonly PropertyConnectionPermissions PaymentPaymentRead = new PropertyConnectionPermissions("payment_payment_read");
+        public static readonly PropertyConnectionPermissions PaymentPaymentWrite = new PropertyConnectionPermissions("payment_payment_write");
+        public static readonly PropertyConnectionPermissions AccountingCashflowRead = new PropertyConnectionPermissions("accounting_cashflow_read");
+        public static readonly PropertyConnectionPermissions AccountingCashflowWrite = new PropertyConnectionPermissions("accounting_cashflow_write");
+        public static readonly PropertyConnectionPermissions PaymentPayoutRead = new PropertyConnectionPermissions("payment_payout_read");
+        public static readonly PropertyConnectionPermissions PaymentRefundRead = new PropertyConnectionPermissions("payment_refund_read");
+        public static readonly PropertyConnectionPermissions PaymentLinkRead = new PropertyConnectionPermissions("payment_link_read");
+        public static readonly PropertyConnectionPermissions PaymentLinkWrite = new PropertyConnectionPermissions("payment_link_write");
+        public static readonly PropertyConnectionPermissions PaymentSubscriptionRead = new PropertyConnectionPermissions("payment_subscription_read");
+        public static readonly PropertyConnectionPermissions PaymentSubscriptionWrite = new PropertyConnectionPermissions("payment_subscription_write");
+        public static readonly PropertyConnectionPermissions CommerceItemRead = new PropertyConnectionPermissions("commerce_item_read");
+        public static readonly PropertyConnectionPermissions CommerceItemWrite = new PropertyConnectionPermissions("commerce_item_write");
+        public static readonly PropertyConnectionPermissions CommerceCollectionRead = new PropertyConnectionPermissions("commerce_collection_read");
+        public static readonly PropertyConnectionPermissions CommerceCollectionWrite = new PropertyConnectionPermissions("commerce_collection_write");
+        public static readonly PropertyConnectionPermissions CommerceInventoryRead = new PropertyConnectionPermissions("commerce_inventory_read");
+        public static readonly PropertyConnectionPermissions CommerceInventoryWrite = new PropertyConnectionPermissions("commerce_inventory_write");
+        public static readonly PropertyConnectionPermissions CommerceLocationRead = new PropertyConnectionPermissions("commerce_location_read");
+        public static readonly PropertyConnectionPermissions CommerceLocationWrite = new PropertyConnectionPermissions("commerce_location_write");
+        public static readonly PropertyConnectionPermissions CommerceReviewRead = new PropertyConnectionPermissions("commerce_review_read");
+        public static readonly PropertyConnectionPermissions CommerceReviewWrite = new PropertyConnectionPermissions("commerce_review_write");
+        public static readonly PropertyConnectionPermissions CommerceSaleschannelRead = new PropertyConnectionPermissions("commerce_saleschannel_read");
+        public static readonly PropertyConnectionPermissions CommerceSaleschannelWrite = new PropertyConnectionPermissions("commerce_saleschannel_write");
+        public static readonly PropertyConnectionPermissions CommerceItemvariantRead = new PropertyConnectionPermissions("commerce_itemvariant_read");
+        public static readonly PropertyConnectionPermissions CommerceItemvariantWrite = new PropertyConnectionPermissions("commerce_itemvariant_write");
+        public static readonly PropertyConnectionPermissions CommerceReservationRead = new PropertyConnectionPermissions("commerce_reservation_read");
+        public static readonly PropertyConnectionPermissions CommerceReservationWrite = new PropertyConnectionPermissions("commerce_reservation_write");
+        public static readonly PropertyConnectionPermissions CommerceAvailabilityRead = new PropertyConnectionPermissions("commerce_availability_read");
+        public static readonly PropertyConnectionPermissions CommerceAvailabilityWrite = new PropertyConnectionPermissions("commerce_availability_write");
+        public static readonly PropertyConnectionPermissions VerificationPackageRead = new PropertyConnectionPermissions("verification_package_read");
+        public static readonly PropertyConnectionPermissions VerificationRequestRead = new PropertyConnectionPermissions("verification_request_read");
+        public static readonly PropertyConnectionPermissions VerificationRequestWrite = new PropertyConnectionPermissions("verification_request_write");
+        public static readonly PropertyConnectionPermissions AssessmentPackageRead = new PropertyConnectionPermissions("assessment_package_read");
+        public static readonly PropertyConnectionPermissions AssessmentPackageWrite = new PropertyConnectionPermissions("assessment_package_write");
+        public static readonly PropertyConnectionPermissions AssessmentOrderWrite = new PropertyConnectionPermissions("assessment_order_write");
+        public static readonly PropertyConnectionPermissions AtsActivityRead = new PropertyConnectionPermissions("ats_activity_read");
+        public static readonly PropertyConnectionPermissions AtsActivityWrite = new PropertyConnectionPermissions("ats_activity_write");
+        public static readonly PropertyConnectionPermissions AtsApplicationRead = new PropertyConnectionPermissions("ats_application_read");
+        public static readonly PropertyConnectionPermissions AtsApplicationWrite = new PropertyConnectionPermissions("ats_application_write");
+        public static readonly PropertyConnectionPermissions AtsApplicationstatusRead = new PropertyConnectionPermissions("ats_applicationstatus_read");
+        public static readonly PropertyConnectionPermissions AtsCandidateRead = new PropertyConnectionPermissions("ats_candidate_read");
+        public static readonly PropertyConnectionPermissions AtsCandidateWrite = new PropertyConnectionPermissions("ats_candidate_write");
+        public static readonly PropertyConnectionPermissions AtsInterviewRead = new PropertyConnectionPermissions("ats_interview_read");
+        public static readonly PropertyConnectionPermissions AtsInterviewWrite = new PropertyConnectionPermissions("ats_interview_write");
+        public static readonly PropertyConnectionPermissions AtsJobRead = new PropertyConnectionPermissions("ats_job_read");
+        public static readonly PropertyConnectionPermissions AtsJobWrite = new PropertyConnectionPermissions("ats_job_write");
+        public static readonly PropertyConnectionPermissions AtsCompanyRead = new PropertyConnectionPermissions("ats_company_read");
+        public static readonly PropertyConnectionPermissions AtsCompanyWrite = new PropertyConnectionPermissions("ats_company_write");
+        public static readonly PropertyConnectionPermissions AtsDocumentRead = new PropertyConnectionPermissions("ats_document_read");
+        public static readonly PropertyConnectionPermissions AtsDocumentWrite = new PropertyConnectionPermissions("ats_document_write");
+        public static readonly PropertyConnectionPermissions AtsScorecardRead = new PropertyConnectionPermissions("ats_scorecard_read");
+        public static readonly PropertyConnectionPermissions AtsScorecardWrite = new PropertyConnectionPermissions("ats_scorecard_write");
+        public static readonly PropertyConnectionPermissions CrmCompanyRead = new PropertyConnectionPermissions("crm_company_read");
+        public static readonly PropertyConnectionPermissions CrmCompanyWrite = new PropertyConnectionPermissions("crm_company_write");
+        public static readonly PropertyConnectionPermissions CrmContactRead = new PropertyConnectionPermissions("crm_contact_read");
+        public static readonly PropertyConnectionPermissions CrmContactWrite = new PropertyConnectionPermissions("crm_contact_write");
+        public static readonly PropertyConnectionPermissions CrmDealRead = new PropertyConnectionPermissions("crm_deal_read");
+        public static readonly PropertyConnectionPermissions CrmDealWrite = new PropertyConnectionPermissions("crm_deal_write");
+        public static readonly PropertyConnectionPermissions CrmEventRead = new PropertyConnectionPermissions("crm_event_read");
+        public static readonly PropertyConnectionPermissions CrmEventWrite = new PropertyConnectionPermissions("crm_event_write");
+        public static readonly PropertyConnectionPermissions CrmLeadRead = new PropertyConnectionPermissions("crm_lead_read");
+        public static readonly PropertyConnectionPermissions CrmLeadWrite = new PropertyConnectionPermissions("crm_lead_write");
+        public static readonly PropertyConnectionPermissions CrmPipelineRead = new PropertyConnectionPermissions("crm_pipeline_read");
+        public static readonly PropertyConnectionPermissions CrmPipelineWrite = new PropertyConnectionPermissions("crm_pipeline_write");
+        public static readonly PropertyConnectionPermissions CrmPicklistRead = new PropertyConnectionPermissions("crm_picklist_read");
+        public static readonly PropertyConnectionPermissions MartechListRead = new PropertyConnectionPermissions("martech_list_read");
+        public static readonly PropertyConnectionPermissions MartechListWrite = new PropertyConnectionPermissions("martech_list_write");
+        public static readonly PropertyConnectionPermissions MartechMemberRead = new PropertyConnectionPermissions("martech_member_read");
+        public static readonly PropertyConnectionPermissions MartechMemberWrite = new PropertyConnectionPermissions("martech_member_write");
+        public static readonly PropertyConnectionPermissions MartechCampaignRead = new PropertyConnectionPermissions("martech_campaign_read");
+        public static readonly PropertyConnectionPermissions MartechCampaignWrite = new PropertyConnectionPermissions("martech_campaign_write");
+        public static readonly PropertyConnectionPermissions MartechReportRead = new PropertyConnectionPermissions("martech_report_read");
+        public static readonly PropertyConnectionPermissions MartechReportWrite = new PropertyConnectionPermissions("martech_report_write");
+        public static readonly PropertyConnectionPermissions TicketingCustomerRead = new PropertyConnectionPermissions("ticketing_customer_read");
+        public static readonly PropertyConnectionPermissions TicketingCustomerWrite = new PropertyConnectionPermissions("ticketing_customer_write");
+        public static readonly PropertyConnectionPermissions TicketingTicketRead = new PropertyConnectionPermissions("ticketing_ticket_read");
+        public static readonly PropertyConnectionPermissions TicketingTicketWrite = new PropertyConnectionPermissions("ticketing_ticket_write");
+        public static readonly PropertyConnectionPermissions TicketingNoteRead = new PropertyConnectionPermissions("ticketing_note_read");
+        public static readonly PropertyConnectionPermissions TicketingNoteWrite = new PropertyConnectionPermissions("ticketing_note_write");
+        public static readonly PropertyConnectionPermissions TicketingCategoryRead = new PropertyConnectionPermissions("ticketing_category_read");
+        public static readonly PropertyConnectionPermissions TicketingCategoryWrite = new PropertyConnectionPermissions("ticketing_category_write");
+        public static readonly PropertyConnectionPermissions HrisEmployeeRead = new PropertyConnectionPermissions("hris_employee_read");
+        public static readonly PropertyConnectionPermissions HrisEmployeeWrite = new PropertyConnectionPermissions("hris_employee_write");
+        public static readonly PropertyConnectionPermissions HrisGroupRead = new PropertyConnectionPermissions("hris_group_read");
+        public static readonly PropertyConnectionPermissions HrisGroupWrite = new PropertyConnectionPermissions("hris_group_write");
+        public static readonly PropertyConnectionPermissions HrisPayslipRead = new PropertyConnectionPermissions("hris_payslip_read");
+        public static readonly PropertyConnectionPermissions HrisPayslipWrite = new PropertyConnectionPermissions("hris_payslip_write");
+        public static readonly PropertyConnectionPermissions HrisTimeoffRead = new PropertyConnectionPermissions("hris_timeoff_read");
+        public static readonly PropertyConnectionPermissions HrisTimeoffWrite = new PropertyConnectionPermissions("hris_timeoff_write");
+        public static readonly PropertyConnectionPermissions HrisTimeshiftRead = new PropertyConnectionPermissions("hris_timeshift_read");
+        public static readonly PropertyConnectionPermissions HrisTimeshiftWrite = new PropertyConnectionPermissions("hris_timeshift_write");
+        public static readonly PropertyConnectionPermissions HrisCompanyRead = new PropertyConnectionPermissions("hris_company_read");
+        public static readonly PropertyConnectionPermissions HrisCompanyWrite = new PropertyConnectionPermissions("hris_company_write");
+        public static readonly PropertyConnectionPermissions HrisLocationRead = new PropertyConnectionPermissions("hris_location_read");
+        public static readonly PropertyConnectionPermissions HrisLocationWrite = new PropertyConnectionPermissions("hris_location_write");
+        public static readonly PropertyConnectionPermissions HrisDeviceRead = new PropertyConnectionPermissions("hris_device_read");
+        public static readonly PropertyConnectionPermissions HrisDeviceWrite = new PropertyConnectionPermissions("hris_device_write");
+        public static readonly PropertyConnectionPermissions HrisDeductionRead = new PropertyConnectionPermissions("hris_deduction_read");
+        public static readonly PropertyConnectionPermissions HrisDeductionWrite = new PropertyConnectionPermissions("hris_deduction_write");
+        public static readonly PropertyConnectionPermissions HrisBenefitRead = new PropertyConnectionPermissions("hris_benefit_read");
+        public static readonly PropertyConnectionPermissions HrisBenefitWrite = new PropertyConnectionPermissions("hris_benefit_write");
+        public static readonly PropertyConnectionPermissions HrisBankaccountRead = new PropertyConnectionPermissions("hris_bankaccount_read");
+        public static readonly PropertyConnectionPermissions HrisBankaccountWrite = new PropertyConnectionPermissions("hris_bankaccount_write");
+        public static readonly PropertyConnectionPermissions HrisDocumentRead = new PropertyConnectionPermissions("hris_document_read");
+        public static readonly PropertyConnectionPermissions HrisDocumentWrite = new PropertyConnectionPermissions("hris_document_write");
+        public static readonly PropertyConnectionPermissions HrisTaxonomyRead = new PropertyConnectionPermissions("hris_taxonomy_read");
+        public static readonly PropertyConnectionPermissions HrisTaxonomyWrite = new PropertyConnectionPermissions("hris_taxonomy_write");
+        public static readonly PropertyConnectionPermissions UcCallRead = new PropertyConnectionPermissions("uc_call_read");
+        public static readonly PropertyConnectionPermissions UcContactRead = new PropertyConnectionPermissions("uc_contact_read");
+        public static readonly PropertyConnectionPermissions UcContactWrite = new PropertyConnectionPermissions("uc_contact_write");
+        public static readonly PropertyConnectionPermissions UcCommentRead = new PropertyConnectionPermissions("uc_comment_read");
+        public static readonly PropertyConnectionPermissions UcCommentWrite = new PropertyConnectionPermissions("uc_comment_write");
+        public static readonly PropertyConnectionPermissions UcRecordingRead = new PropertyConnectionPermissions("uc_recording_read");
+        public static readonly PropertyConnectionPermissions StorageFileRead = new PropertyConnectionPermissions("storage_file_read");
+        public static readonly PropertyConnectionPermissions StorageFileWrite = new PropertyConnectionPermissions("storage_file_write");
+        public static readonly PropertyConnectionPermissions Webhook = new PropertyConnectionPermissions("webhook");
+        public static readonly PropertyConnectionPermissions GenaiModelRead = new PropertyConnectionPermissions("genai_model_read");
+        public static readonly PropertyConnectionPermissions GenaiPromptRead = new PropertyConnectionPermissions("genai_prompt_read");
+        public static readonly PropertyConnectionPermissions GenaiPromptWrite = new PropertyConnectionPermissions("genai_prompt_write");
+        public static readonly PropertyConnectionPermissions GenaiEmbeddingRead = new PropertyConnectionPermissions("genai_embedding_read");
+        public static readonly PropertyConnectionPermissions GenaiEmbeddingWrite = new PropertyConnectionPermissions("genai_embedding_write");
+        public static readonly PropertyConnectionPermissions MessagingMessageRead = new PropertyConnectionPermissions("messaging_message_read");
+        public static readonly PropertyConnectionPermissions MessagingMessageWrite = new PropertyConnectionPermissions("messaging_message_write");
+        public static readonly PropertyConnectionPermissions MessagingChannelRead = new PropertyConnectionPermissions("messaging_channel_read");
+        public static readonly PropertyConnectionPermissions MessagingChannelWrite = new PropertyConnectionPermissions("messaging_channel_write");
+        public static readonly PropertyConnectionPermissions MessagingEventRead = new PropertyConnectionPermissions("messaging_event_read");
+        public static readonly PropertyConnectionPermissions MessagingEventWrite = new PropertyConnectionPermissions("messaging_event_write");
+        public static readonly PropertyConnectionPermissions KmsSpaceRead = new PropertyConnectionPermissions("kms_space_read");
+        public static readonly PropertyConnectionPermissions KmsSpaceWrite = new PropertyConnectionPermissions("kms_space_write");
+        public static readonly PropertyConnectionPermissions KmsPageRead = new PropertyConnectionPermissions("kms_page_read");
+        public static readonly PropertyConnectionPermissions KmsPageWrite = new PropertyConnectionPermissions("kms_page_write");
+        public static readonly PropertyConnectionPermissions KmsCommentRead = new PropertyConnectionPermissions("kms_comment_read");
+        public static readonly PropertyConnectionPermissions KmsCommentWrite = new PropertyConnectionPermissions("kms_comment_write");
+        public static readonly PropertyConnectionPermissions TaskProjectRead = new PropertyConnectionPermissions("task_project_read");
+        public static readonly PropertyConnectionPermissions TaskProjectWrite = new PropertyConnectionPermissions("task_project_write");
+        public static readonly PropertyConnectionPermissions TaskTaskRead = new PropertyConnectionPermissions("task_task_read");
+        public static readonly PropertyConnectionPermissions TaskTaskWrite = new PropertyConnectionPermissions("task_task_write");
+        public static readonly PropertyConnectionPermissions TaskChangeRead = new PropertyConnectionPermissions("task_change_read");
+        public static readonly PropertyConnectionPermissions TaskCommentRead = new PropertyConnectionPermissions("task_comment_read");
+        public static readonly PropertyConnectionPermissions TaskCommentWrite = new PropertyConnectionPermissions("task_comment_write");
+        public static readonly PropertyConnectionPermissions ScimUsersRead = new PropertyConnectionPermissions("scim_users_read");
+        public static readonly PropertyConnectionPermissions ScimUsersWrite = new PropertyConnectionPermissions("scim_users_write");
+        public static readonly PropertyConnectionPermissions ScimGroupsRead = new PropertyConnectionPermissions("scim_groups_read");
+        public static readonly PropertyConnectionPermissions ScimGroupsWrite = new PropertyConnectionPermissions("scim_groups_write");
+        public static readonly PropertyConnectionPermissions LmsCourseRead = new PropertyConnectionPermissions("lms_course_read");
+        public static readonly PropertyConnectionPermissions LmsCourseWrite = new PropertyConnectionPermissions("lms_course_write");
+        public static readonly PropertyConnectionPermissions LmsClassRead = new PropertyConnectionPermissions("lms_class_read");
+        public static readonly PropertyConnectionPermissions LmsClassWrite = new PropertyConnectionPermissions("lms_class_write");
+        public static readonly PropertyConnectionPermissions LmsStudentRead = new PropertyConnectionPermissions("lms_student_read");
+        public static readonly PropertyConnectionPermissions LmsStudentWrite = new PropertyConnectionPermissions("lms_student_write");
+        public static readonly PropertyConnectionPermissions LmsInstructorRead = new PropertyConnectionPermissions("lms_instructor_read");
+        public static readonly PropertyConnectionPermissions LmsInstructorWrite = new PropertyConnectionPermissions("lms_instructor_write");
+        public static readonly PropertyConnectionPermissions LmsContentRead = new PropertyConnectionPermissions("lms_content_read");
+        public static readonly PropertyConnectionPermissions LmsContentWrite = new PropertyConnectionPermissions("lms_content_write");
+        public static readonly PropertyConnectionPermissions LmsCollectionRead = new PropertyConnectionPermissions("lms_collection_read");
+        public static readonly PropertyConnectionPermissions LmsCollectionWrite = new PropertyConnectionPermissions("lms_collection_write");
+        public static readonly PropertyConnectionPermissions LmsActivityRead = new PropertyConnectionPermissions("lms_activity_read");
+        public static readonly PropertyConnectionPermissions LmsActivityWrite = new PropertyConnectionPermissions("lms_activity_write");
+        public static readonly PropertyConnectionPermissions RepoOrganizationRead = new PropertyConnectionPermissions("repo_organization_read");
+        public static readonly PropertyConnectionPermissions RepoOrganizationWrite = new PropertyConnectionPermissions("repo_organization_write");
+        public static readonly PropertyConnectionPermissions RepoRepositoryRead = new PropertyConnectionPermissions("repo_repository_read");
+        public static readonly PropertyConnectionPermissions RepoRepositoryWrite = new PropertyConnectionPermissions("repo_repository_write");
+        public static readonly PropertyConnectionPermissions RepoBranchRead = new PropertyConnectionPermissions("repo_branch_read");
+        public static readonly PropertyConnectionPermissions RepoBranchWrite = new PropertyConnectionPermissions("repo_branch_write");
+        public static readonly PropertyConnectionPermissions RepoCommitRead = new PropertyConnectionPermissions("repo_commit_read");
+        public static readonly PropertyConnectionPermissions RepoCommitWrite = new PropertyConnectionPermissions("repo_commit_write");
+        public static readonly PropertyConnectionPermissions RepoPullrequestRead = new PropertyConnectionPermissions("repo_pullrequest_read");
+        public static readonly PropertyConnectionPermissions RepoPullrequestWrite = new PropertyConnectionPermissions("repo_pullrequest_write");
+        public static readonly PropertyConnectionPermissions MetadataMetadataRead = new PropertyConnectionPermissions("metadata_metadata_read");
+        public static readonly PropertyConnectionPermissions MetadataMetadataWrite = new PropertyConnectionPermissions("metadata_metadata_write");
+        public static readonly PropertyConnectionPermissions CalendarCalendarRead = new PropertyConnectionPermissions("calendar_calendar_read");
+        public static readonly PropertyConnectionPermissions CalendarCalendarWrite = new PropertyConnectionPermissions("calendar_calendar_write");
+        public static readonly PropertyConnectionPermissions CalendarEventRead = new PropertyConnectionPermissions("calendar_event_read");
+        public static readonly PropertyConnectionPermissions CalendarEventWrite = new PropertyConnectionPermissions("calendar_event_write");
+        public static readonly PropertyConnectionPermissions CalendarBusyRead = new PropertyConnectionPermissions("calendar_busy_read");
+        public static readonly PropertyConnectionPermissions CalendarLinkRead = new PropertyConnectionPermissions("calendar_link_read");
+        public static readonly PropertyConnectionPermissions CalendarLinkWrite = new PropertyConnectionPermissions("calendar_link_write");
+        public static readonly PropertyConnectionPermissions CalendarRecordingRead = new PropertyConnectionPermissions("calendar_recording_read");
+        public static readonly PropertyConnectionPermissions CalendarRecordingWrite = new PropertyConnectionPermissions("calendar_recording_write");
+        public static readonly PropertyConnectionPermissions CalendarWebinarRead = new PropertyConnectionPermissions("calendar_webinar_read");
+        public static readonly PropertyConnectionPermissions CalendarWebinarWrite = new PropertyConnectionPermissions("calendar_webinar_write");
+        public static readonly PropertyConnectionPermissions EnrichPersonRead = new PropertyConnectionPermissions("enrich_person_read");
+        public static readonly PropertyConnectionPermissions EnrichCompanyRead = new PropertyConnectionPermissions("enrich_company_read");
+        public static readonly PropertyConnectionPermissions AdsAdRead = new PropertyConnectionPermissions("ads_ad_read");
+        public static readonly PropertyConnectionPermissions AdsAdWrite = new PropertyConnectionPermissions("ads_ad_write");
+        public static readonly PropertyConnectionPermissions AdsCampaignRead = new PropertyConnectionPermissions("ads_campaign_read");
+        public static readonly PropertyConnectionPermissions AdsCampaignWrite = new PropertyConnectionPermissions("ads_campaign_write");
+        public static readonly PropertyConnectionPermissions AdsGroupRead = new PropertyConnectionPermissions("ads_group_read");
+        public static readonly PropertyConnectionPermissions AdsGroupWrite = new PropertyConnectionPermissions("ads_group_write");
+        public static readonly PropertyConnectionPermissions AdsReportRead = new PropertyConnectionPermissions("ads_report_read");
+        public static readonly PropertyConnectionPermissions AdsOrganizationRead = new PropertyConnectionPermissions("ads_organization_read");
+        public static readonly PropertyConnectionPermissions AdsOrganizationWrite = new PropertyConnectionPermissions("ads_organization_write");
+        public static readonly PropertyConnectionPermissions AdsCreativeRead = new PropertyConnectionPermissions("ads_creative_read");
+        public static readonly PropertyConnectionPermissions AdsCreativeWrite = new PropertyConnectionPermissions("ads_creative_write");
+        public static readonly PropertyConnectionPermissions AdsInsertionorderRead = new PropertyConnectionPermissions("ads_insertionorder_read");
+        public static readonly PropertyConnectionPermissions AdsInsertionorderWrite = new PropertyConnectionPermissions("ads_insertionorder_write");
+        public static readonly PropertyConnectionPermissions AdsTargetRead = new PropertyConnectionPermissions("ads_target_read");
+        public static readonly PropertyConnectionPermissions AdsPromotedRead = new PropertyConnectionPermissions("ads_promoted_read");
+        public static readonly PropertyConnectionPermissions AnalyticsPropertyRead = new PropertyConnectionPermissions("analytics_property_read");
+        public static readonly PropertyConnectionPermissions AnalyticsPropertyWrite = new PropertyConnectionPermissions("analytics_property_write");
+        public static readonly PropertyConnectionPermissions AnalyticsEventRead = new PropertyConnectionPermissions("analytics_event_read");
+        public static readonly PropertyConnectionPermissions AnalyticsEventWrite = new PropertyConnectionPermissions("analytics_event_write");
+        public static readonly PropertyConnectionPermissions AnalyticsSessionRead = new PropertyConnectionPermissions("analytics_session_read");
+        public static readonly PropertyConnectionPermissions AnalyticsVisitorRead = new PropertyConnectionPermissions("analytics_visitor_read");
+        public static readonly PropertyConnectionPermissions AnalyticsVisitorWrite = new PropertyConnectionPermissions("analytics_visitor_write");
+        public static readonly PropertyConnectionPermissions AnalyticsReportRead = new PropertyConnectionPermissions("analytics_report_read");
+        public static readonly PropertyConnectionPermissions FormsFormRead = new PropertyConnectionPermissions("forms_form_read");
+        public static readonly PropertyConnectionPermissions FormsFormWrite = new PropertyConnectionPermissions("forms_form_write");
+        public static readonly PropertyConnectionPermissions FormsSubmissionRead = new PropertyConnectionPermissions("forms_submission_read");
+        public static readonly PropertyConnectionPermissions FormsSubmissionWrite = new PropertyConnectionPermissions("forms_submission_write");
+        public static readonly PropertyConnectionPermissions ShippingShipmentRead = new PropertyConnectionPermissions("shipping_shipment_read");
+        public static readonly PropertyConnectionPermissions ShippingShipmentWrite = new PropertyConnectionPermissions("shipping_shipment_write");
+        public static readonly PropertyConnectionPermissions ShippingLabelRead = new PropertyConnectionPermissions("shipping_label_read");
+        public static readonly PropertyConnectionPermissions ShippingLabelWrite = new PropertyConnectionPermissions("shipping_label_write");
+        public static readonly PropertyConnectionPermissions ShippingTrackingRead = new PropertyConnectionPermissions("shipping_tracking_read");
+        public static readonly PropertyConnectionPermissions ShippingRateRead = new PropertyConnectionPermissions("shipping_rate_read");
+        public static readonly PropertyConnectionPermissions ShippingCarrierRead = new PropertyConnectionPermissions("shipping_carrier_read");
+        public static readonly PropertyConnectionPermissions SigningDocumentRead = new PropertyConnectionPermissions("signing_document_read");
+        public static readonly PropertyConnectionPermissions SigningDocumentWrite = new PropertyConnectionPermissions("signing_document_write");
+        public static readonly PropertyConnectionPermissions SigningSignatoryRead = new PropertyConnectionPermissions("signing_signatory_read");
+        public static readonly PropertyConnectionPermissions SigningSignatoryWrite = new PropertyConnectionPermissions("signing_signatory_write");
+        public static readonly PropertyConnectionPermissions SigningTemplateRead = new PropertyConnectionPermissions("signing_template_read");
+        public static readonly PropertyConnectionPermissions ClubsGroupRead = new PropertyConnectionPermissions("clubs_group_read");
+        public static readonly PropertyConnectionPermissions ClubsGroupWrite = new PropertyConnectionPermissions("clubs_group_write");
+        public static readonly PropertyConnectionPermissions ClubsMemberRead = new PropertyConnectionPermissions("clubs_member_read");
+        public static readonly PropertyConnectionPermissions ClubsMemberWrite = new PropertyConnectionPermissions("clubs_member_write");
+        public static readonly PropertyConnectionPermissions ClubsActivityRead = new PropertyConnectionPermissions("clubs_activity_read");
+        public static readonly PropertyConnectionPermissions ClubsActivityWrite = new PropertyConnectionPermissions("clubs_activity_write");
+        public static readonly PropertyConnectionPermissions ClubsLocationRead = new PropertyConnectionPermissions("clubs_location_read");
+        public static readonly PropertyConnectionPermissions ClubsLocationWrite = new PropertyConnectionPermissions("clubs_location_write");
+        public static readonly PropertyConnectionPermissions ClubsEventRead = new PropertyConnectionPermissions("clubs_event_read");
+        public static readonly PropertyConnectionPermissions ClubsEventWrite = new PropertyConnectionPermissions("clubs_event_write");
+        public static readonly PropertyConnectionPermissions DatastoreDatabaseRead = new PropertyConnectionPermissions("datastore_database_read");
+        public static readonly PropertyConnectionPermissions DatastoreDatabaseWrite = new PropertyConnectionPermissions("datastore_database_write");
+        public static readonly PropertyConnectionPermissions DatastoreTableRead = new PropertyConnectionPermissions("datastore_table_read");
+        public static readonly PropertyConnectionPermissions DatastoreTableWrite = new PropertyConnectionPermissions("datastore_table_write");
+        public static readonly PropertyConnectionPermissions DatastoreRecordRead = new PropertyConnectionPermissions("datastore_record_read");
+        public static readonly PropertyConnectionPermissions DatastoreRecordWrite = new PropertyConnectionPermissions("datastore_record_write");
+        public static readonly PropertyConnectionPermissions DatastoreQueryRead = new PropertyConnectionPermissions("datastore_query_read");
+        public static readonly PropertyConnectionPermissions DatastoreQueryWrite = new PropertyConnectionPermissions("datastore_query_write");
 
-        public static PropertyConnectionPermissions ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyConnectionPermissions).GetFields())
+        private static readonly Dictionary <string, PropertyConnectionPermissions> _knownValues =
+            new Dictionary <string, PropertyConnectionPermissions> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["accounting_account_read"] = AccountingAccountRead,
+                ["accounting_account_write"] = AccountingAccountWrite,
+                ["accounting_transaction_read"] = AccountingTransactionRead,
+                ["accounting_transaction_write"] = AccountingTransactionWrite,
+                ["accounting_journal_read"] = AccountingJournalRead,
+                ["accounting_journal_write"] = AccountingJournalWrite,
+                ["accounting_invoice_read"] = AccountingInvoiceRead,
+                ["accounting_invoice_write"] = AccountingInvoiceWrite,
+                ["accounting_bill_read"] = AccountingBillRead,
+                ["accounting_bill_write"] = AccountingBillWrite,
+                ["accounting_vendorcredit_read"] = AccountingVendorcreditRead,
+                ["accounting_vendorcredit_write"] = AccountingVendorcreditWrite,
+                ["accounting_creditmemo_read"] = AccountingCreditmemoRead,
+                ["accounting_creditmemo_write"] = AccountingCreditmemoWrite,
+                ["accounting_contact_read"] = AccountingContactRead,
+                ["accounting_contact_write"] = AccountingContactWrite,
+                ["accounting_expense_read"] = AccountingExpenseRead,
+                ["accounting_expense_write"] = AccountingExpenseWrite,
+                ["accounting_taxrate_read"] = AccountingTaxrateRead,
+                ["accounting_taxrate_write"] = AccountingTaxrateWrite,
+                ["accounting_organization_read"] = AccountingOrganizationRead,
+                ["accounting_order_read"] = AccountingOrderRead,
+                ["accounting_order_write"] = AccountingOrderWrite,
+                ["accounting_purchaseorder_read"] = AccountingPurchaseorderRead,
+                ["accounting_purchaseorder_write"] = AccountingPurchaseorderWrite,
+                ["accounting_salesorder_read"] = AccountingSalesorderRead,
+                ["accounting_salesorder_write"] = AccountingSalesorderWrite,
+                ["accounting_report_read"] = AccountingReportRead,
+                ["accounting_report_write"] = AccountingReportWrite,
+                ["accounting_trialbalance_read"] = AccountingTrialbalanceRead,
+                ["accounting_trialbalance_write"] = AccountingTrialbalanceWrite,
+                ["accounting_profitloss_read"] = AccountingProfitlossRead,
+                ["accounting_profitloss_write"] = AccountingProfitlossWrite,
+                ["accounting_balancesheet_read"] = AccountingBalancesheetRead,
+                ["accounting_balancesheet_write"] = AccountingBalancesheetWrite,
+                ["accounting_category_read"] = AccountingCategoryRead,
+                ["accounting_category_write"] = AccountingCategoryWrite,
+                ["payment_payment_read"] = PaymentPaymentRead,
+                ["payment_payment_write"] = PaymentPaymentWrite,
+                ["accounting_cashflow_read"] = AccountingCashflowRead,
+                ["accounting_cashflow_write"] = AccountingCashflowWrite,
+                ["payment_payout_read"] = PaymentPayoutRead,
+                ["payment_refund_read"] = PaymentRefundRead,
+                ["payment_link_read"] = PaymentLinkRead,
+                ["payment_link_write"] = PaymentLinkWrite,
+                ["payment_subscription_read"] = PaymentSubscriptionRead,
+                ["payment_subscription_write"] = PaymentSubscriptionWrite,
+                ["commerce_item_read"] = CommerceItemRead,
+                ["commerce_item_write"] = CommerceItemWrite,
+                ["commerce_collection_read"] = CommerceCollectionRead,
+                ["commerce_collection_write"] = CommerceCollectionWrite,
+                ["commerce_inventory_read"] = CommerceInventoryRead,
+                ["commerce_inventory_write"] = CommerceInventoryWrite,
+                ["commerce_location_read"] = CommerceLocationRead,
+                ["commerce_location_write"] = CommerceLocationWrite,
+                ["commerce_review_read"] = CommerceReviewRead,
+                ["commerce_review_write"] = CommerceReviewWrite,
+                ["commerce_saleschannel_read"] = CommerceSaleschannelRead,
+                ["commerce_saleschannel_write"] = CommerceSaleschannelWrite,
+                ["commerce_itemvariant_read"] = CommerceItemvariantRead,
+                ["commerce_itemvariant_write"] = CommerceItemvariantWrite,
+                ["commerce_reservation_read"] = CommerceReservationRead,
+                ["commerce_reservation_write"] = CommerceReservationWrite,
+                ["commerce_availability_read"] = CommerceAvailabilityRead,
+                ["commerce_availability_write"] = CommerceAvailabilityWrite,
+                ["verification_package_read"] = VerificationPackageRead,
+                ["verification_request_read"] = VerificationRequestRead,
+                ["verification_request_write"] = VerificationRequestWrite,
+                ["assessment_package_read"] = AssessmentPackageRead,
+                ["assessment_package_write"] = AssessmentPackageWrite,
+                ["assessment_order_write"] = AssessmentOrderWrite,
+                ["ats_activity_read"] = AtsActivityRead,
+                ["ats_activity_write"] = AtsActivityWrite,
+                ["ats_application_read"] = AtsApplicationRead,
+                ["ats_application_write"] = AtsApplicationWrite,
+                ["ats_applicationstatus_read"] = AtsApplicationstatusRead,
+                ["ats_candidate_read"] = AtsCandidateRead,
+                ["ats_candidate_write"] = AtsCandidateWrite,
+                ["ats_interview_read"] = AtsInterviewRead,
+                ["ats_interview_write"] = AtsInterviewWrite,
+                ["ats_job_read"] = AtsJobRead,
+                ["ats_job_write"] = AtsJobWrite,
+                ["ats_company_read"] = AtsCompanyRead,
+                ["ats_company_write"] = AtsCompanyWrite,
+                ["ats_document_read"] = AtsDocumentRead,
+                ["ats_document_write"] = AtsDocumentWrite,
+                ["ats_scorecard_read"] = AtsScorecardRead,
+                ["ats_scorecard_write"] = AtsScorecardWrite,
+                ["crm_company_read"] = CrmCompanyRead,
+                ["crm_company_write"] = CrmCompanyWrite,
+                ["crm_contact_read"] = CrmContactRead,
+                ["crm_contact_write"] = CrmContactWrite,
+                ["crm_deal_read"] = CrmDealRead,
+                ["crm_deal_write"] = CrmDealWrite,
+                ["crm_event_read"] = CrmEventRead,
+                ["crm_event_write"] = CrmEventWrite,
+                ["crm_lead_read"] = CrmLeadRead,
+                ["crm_lead_write"] = CrmLeadWrite,
+                ["crm_pipeline_read"] = CrmPipelineRead,
+                ["crm_pipeline_write"] = CrmPipelineWrite,
+                ["crm_picklist_read"] = CrmPicklistRead,
+                ["martech_list_read"] = MartechListRead,
+                ["martech_list_write"] = MartechListWrite,
+                ["martech_member_read"] = MartechMemberRead,
+                ["martech_member_write"] = MartechMemberWrite,
+                ["martech_campaign_read"] = MartechCampaignRead,
+                ["martech_campaign_write"] = MartechCampaignWrite,
+                ["martech_report_read"] = MartechReportRead,
+                ["martech_report_write"] = MartechReportWrite,
+                ["ticketing_customer_read"] = TicketingCustomerRead,
+                ["ticketing_customer_write"] = TicketingCustomerWrite,
+                ["ticketing_ticket_read"] = TicketingTicketRead,
+                ["ticketing_ticket_write"] = TicketingTicketWrite,
+                ["ticketing_note_read"] = TicketingNoteRead,
+                ["ticketing_note_write"] = TicketingNoteWrite,
+                ["ticketing_category_read"] = TicketingCategoryRead,
+                ["ticketing_category_write"] = TicketingCategoryWrite,
+                ["hris_employee_read"] = HrisEmployeeRead,
+                ["hris_employee_write"] = HrisEmployeeWrite,
+                ["hris_group_read"] = HrisGroupRead,
+                ["hris_group_write"] = HrisGroupWrite,
+                ["hris_payslip_read"] = HrisPayslipRead,
+                ["hris_payslip_write"] = HrisPayslipWrite,
+                ["hris_timeoff_read"] = HrisTimeoffRead,
+                ["hris_timeoff_write"] = HrisTimeoffWrite,
+                ["hris_timeshift_read"] = HrisTimeshiftRead,
+                ["hris_timeshift_write"] = HrisTimeshiftWrite,
+                ["hris_company_read"] = HrisCompanyRead,
+                ["hris_company_write"] = HrisCompanyWrite,
+                ["hris_location_read"] = HrisLocationRead,
+                ["hris_location_write"] = HrisLocationWrite,
+                ["hris_device_read"] = HrisDeviceRead,
+                ["hris_device_write"] = HrisDeviceWrite,
+                ["hris_deduction_read"] = HrisDeductionRead,
+                ["hris_deduction_write"] = HrisDeductionWrite,
+                ["hris_benefit_read"] = HrisBenefitRead,
+                ["hris_benefit_write"] = HrisBenefitWrite,
+                ["hris_bankaccount_read"] = HrisBankaccountRead,
+                ["hris_bankaccount_write"] = HrisBankaccountWrite,
+                ["hris_document_read"] = HrisDocumentRead,
+                ["hris_document_write"] = HrisDocumentWrite,
+                ["hris_taxonomy_read"] = HrisTaxonomyRead,
+                ["hris_taxonomy_write"] = HrisTaxonomyWrite,
+                ["uc_call_read"] = UcCallRead,
+                ["uc_contact_read"] = UcContactRead,
+                ["uc_contact_write"] = UcContactWrite,
+                ["uc_comment_read"] = UcCommentRead,
+                ["uc_comment_write"] = UcCommentWrite,
+                ["uc_recording_read"] = UcRecordingRead,
+                ["storage_file_read"] = StorageFileRead,
+                ["storage_file_write"] = StorageFileWrite,
+                ["webhook"] = Webhook,
+                ["genai_model_read"] = GenaiModelRead,
+                ["genai_prompt_read"] = GenaiPromptRead,
+                ["genai_prompt_write"] = GenaiPromptWrite,
+                ["genai_embedding_read"] = GenaiEmbeddingRead,
+                ["genai_embedding_write"] = GenaiEmbeddingWrite,
+                ["messaging_message_read"] = MessagingMessageRead,
+                ["messaging_message_write"] = MessagingMessageWrite,
+                ["messaging_channel_read"] = MessagingChannelRead,
+                ["messaging_channel_write"] = MessagingChannelWrite,
+                ["messaging_event_read"] = MessagingEventRead,
+                ["messaging_event_write"] = MessagingEventWrite,
+                ["kms_space_read"] = KmsSpaceRead,
+                ["kms_space_write"] = KmsSpaceWrite,
+                ["kms_page_read"] = KmsPageRead,
+                ["kms_page_write"] = KmsPageWrite,
+                ["kms_comment_read"] = KmsCommentRead,
+                ["kms_comment_write"] = KmsCommentWrite,
+                ["task_project_read"] = TaskProjectRead,
+                ["task_project_write"] = TaskProjectWrite,
+                ["task_task_read"] = TaskTaskRead,
+                ["task_task_write"] = TaskTaskWrite,
+                ["task_change_read"] = TaskChangeRead,
+                ["task_comment_read"] = TaskCommentRead,
+                ["task_comment_write"] = TaskCommentWrite,
+                ["scim_users_read"] = ScimUsersRead,
+                ["scim_users_write"] = ScimUsersWrite,
+                ["scim_groups_read"] = ScimGroupsRead,
+                ["scim_groups_write"] = ScimGroupsWrite,
+                ["lms_course_read"] = LmsCourseRead,
+                ["lms_course_write"] = LmsCourseWrite,
+                ["lms_class_read"] = LmsClassRead,
+                ["lms_class_write"] = LmsClassWrite,
+                ["lms_student_read"] = LmsStudentRead,
+                ["lms_student_write"] = LmsStudentWrite,
+                ["lms_instructor_read"] = LmsInstructorRead,
+                ["lms_instructor_write"] = LmsInstructorWrite,
+                ["lms_content_read"] = LmsContentRead,
+                ["lms_content_write"] = LmsContentWrite,
+                ["lms_collection_read"] = LmsCollectionRead,
+                ["lms_collection_write"] = LmsCollectionWrite,
+                ["lms_activity_read"] = LmsActivityRead,
+                ["lms_activity_write"] = LmsActivityWrite,
+                ["repo_organization_read"] = RepoOrganizationRead,
+                ["repo_organization_write"] = RepoOrganizationWrite,
+                ["repo_repository_read"] = RepoRepositoryRead,
+                ["repo_repository_write"] = RepoRepositoryWrite,
+                ["repo_branch_read"] = RepoBranchRead,
+                ["repo_branch_write"] = RepoBranchWrite,
+                ["repo_commit_read"] = RepoCommitRead,
+                ["repo_commit_write"] = RepoCommitWrite,
+                ["repo_pullrequest_read"] = RepoPullrequestRead,
+                ["repo_pullrequest_write"] = RepoPullrequestWrite,
+                ["metadata_metadata_read"] = MetadataMetadataRead,
+                ["metadata_metadata_write"] = MetadataMetadataWrite,
+                ["calendar_calendar_read"] = CalendarCalendarRead,
+                ["calendar_calendar_write"] = CalendarCalendarWrite,
+                ["calendar_event_read"] = CalendarEventRead,
+                ["calendar_event_write"] = CalendarEventWrite,
+                ["calendar_busy_read"] = CalendarBusyRead,
+                ["calendar_link_read"] = CalendarLinkRead,
+                ["calendar_link_write"] = CalendarLinkWrite,
+                ["calendar_recording_read"] = CalendarRecordingRead,
+                ["calendar_recording_write"] = CalendarRecordingWrite,
+                ["calendar_webinar_read"] = CalendarWebinarRead,
+                ["calendar_webinar_write"] = CalendarWebinarWrite,
+                ["enrich_person_read"] = EnrichPersonRead,
+                ["enrich_company_read"] = EnrichCompanyRead,
+                ["ads_ad_read"] = AdsAdRead,
+                ["ads_ad_write"] = AdsAdWrite,
+                ["ads_campaign_read"] = AdsCampaignRead,
+                ["ads_campaign_write"] = AdsCampaignWrite,
+                ["ads_group_read"] = AdsGroupRead,
+                ["ads_group_write"] = AdsGroupWrite,
+                ["ads_report_read"] = AdsReportRead,
+                ["ads_organization_read"] = AdsOrganizationRead,
+                ["ads_organization_write"] = AdsOrganizationWrite,
+                ["ads_creative_read"] = AdsCreativeRead,
+                ["ads_creative_write"] = AdsCreativeWrite,
+                ["ads_insertionorder_read"] = AdsInsertionorderRead,
+                ["ads_insertionorder_write"] = AdsInsertionorderWrite,
+                ["ads_target_read"] = AdsTargetRead,
+                ["ads_promoted_read"] = AdsPromotedRead,
+                ["analytics_property_read"] = AnalyticsPropertyRead,
+                ["analytics_property_write"] = AnalyticsPropertyWrite,
+                ["analytics_event_read"] = AnalyticsEventRead,
+                ["analytics_event_write"] = AnalyticsEventWrite,
+                ["analytics_session_read"] = AnalyticsSessionRead,
+                ["analytics_visitor_read"] = AnalyticsVisitorRead,
+                ["analytics_visitor_write"] = AnalyticsVisitorWrite,
+                ["analytics_report_read"] = AnalyticsReportRead,
+                ["forms_form_read"] = FormsFormRead,
+                ["forms_form_write"] = FormsFormWrite,
+                ["forms_submission_read"] = FormsSubmissionRead,
+                ["forms_submission_write"] = FormsSubmissionWrite,
+                ["shipping_shipment_read"] = ShippingShipmentRead,
+                ["shipping_shipment_write"] = ShippingShipmentWrite,
+                ["shipping_label_read"] = ShippingLabelRead,
+                ["shipping_label_write"] = ShippingLabelWrite,
+                ["shipping_tracking_read"] = ShippingTrackingRead,
+                ["shipping_rate_read"] = ShippingRateRead,
+                ["shipping_carrier_read"] = ShippingCarrierRead,
+                ["signing_document_read"] = SigningDocumentRead,
+                ["signing_document_write"] = SigningDocumentWrite,
+                ["signing_signatory_read"] = SigningSignatoryRead,
+                ["signing_signatory_write"] = SigningSignatoryWrite,
+                ["signing_template_read"] = SigningTemplateRead,
+                ["clubs_group_read"] = ClubsGroupRead,
+                ["clubs_group_write"] = ClubsGroupWrite,
+                ["clubs_member_read"] = ClubsMemberRead,
+                ["clubs_member_write"] = ClubsMemberWrite,
+                ["clubs_activity_read"] = ClubsActivityRead,
+                ["clubs_activity_write"] = ClubsActivityWrite,
+                ["clubs_location_read"] = ClubsLocationRead,
+                ["clubs_location_write"] = ClubsLocationWrite,
+                ["clubs_event_read"] = ClubsEventRead,
+                ["clubs_event_write"] = ClubsEventWrite,
+                ["datastore_database_read"] = DatastoreDatabaseRead,
+                ["datastore_database_write"] = DatastoreDatabaseWrite,
+                ["datastore_table_read"] = DatastoreTableRead,
+                ["datastore_table_write"] = DatastoreTableWrite,
+                ["datastore_record_read"] = DatastoreRecordRead,
+                ["datastore_record_write"] = DatastoreRecordWrite,
+                ["datastore_query_read"] = DatastoreQueryRead,
+                ["datastore_query_write"] = DatastoreQueryWrite
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyConnectionPermissions> _values =
+            new ConcurrentDictionary<string, PropertyConnectionPermissions>(_knownValues);
 
-                    if (enumVal is PropertyConnectionPermissions)
-                    {
-                        return (PropertyConnectionPermissions)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyConnectionPermissions");
+        private PropertyConnectionPermissions(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyConnectionPermissions Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyConnectionPermissions(value));
+        }
+
+        public static implicit operator PropertyConnectionPermissions(string value) => Of(value);
+        public static implicit operator string(PropertyConnectionPermissions propertyconnectionpermissions) => propertyconnectionpermissions.Value;
+
+        public static PropertyConnectionPermissions[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyConnectionPermissions);
+
+        public bool Equals(PropertyConnectionPermissions? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

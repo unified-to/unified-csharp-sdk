@@ -1,5 +1,4 @@
 # Apicall
-(*Apicall*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve specific API Call by its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedApicall" method="get" path="/unified/apicall/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -49,6 +49,7 @@ Returns API Calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedApicalls" method="get" path="/unified/apicall" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -58,7 +59,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedApicallsRequest req = ;
+ListUnifiedApicallsRequest? req = null;
 
 var res = await sdk.Apicall.ListUnifiedApicallsAsync(req);
 

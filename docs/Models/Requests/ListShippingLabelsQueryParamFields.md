@@ -1,5 +1,13 @@
 # ListShippingLabelsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListShippingLabelsQueryParamFields.Id;
+```
+
 
 ## Values
 

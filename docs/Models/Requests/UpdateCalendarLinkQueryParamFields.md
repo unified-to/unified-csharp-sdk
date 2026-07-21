@@ -1,5 +1,13 @@
 # UpdateCalendarLinkQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateCalendarLinkQueryParamFields.Id;
+```
+
 
 ## Values
 

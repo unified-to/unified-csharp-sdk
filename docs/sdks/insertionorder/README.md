@@ -1,5 +1,4 @@
 # Insertionorder
-(*Insertionorder*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsInsertionorder" method="get" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all insertionorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsInsertionorders" method="get" path="/ads/{connection_id}/insertionorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsInsertionorder" method="delete" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

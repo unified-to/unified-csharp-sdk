@@ -1,5 +1,13 @@
 # ListCrmCompaniesQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListCrmCompaniesQueryParamFields.Id;
+```
+
 
 ## Values
 

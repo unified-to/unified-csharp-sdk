@@ -1,5 +1,13 @@
 # GetAccountingTaxrateQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingTaxrateQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,16 @@
 # VirtualWebhookUpdatedGte
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookUpdatedGte.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookUpdatedGte.Of("custom_value");
+```
+
 
 ## Values
 

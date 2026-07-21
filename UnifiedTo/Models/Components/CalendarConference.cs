@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class CalendarConference
     {
-
         [JsonProperty("conference_identifier")]
         public string? ConferenceIdentifier { get; set; }
 

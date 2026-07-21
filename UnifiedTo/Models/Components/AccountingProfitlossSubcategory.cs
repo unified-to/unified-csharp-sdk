@@ -12,13 +12,12 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// @deprecated
+    /// @deprecated.
     /// </summary>
     public class AccountingProfitlossSubcategory
     {
-
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingReportType
-    {
-        [JsonProperty("TRIAL_BALANCE")]
-        TrialBalance,
-        [JsonProperty("BALANCE_SHEET")]
-        BalanceSheet,
-        [JsonProperty("PROFIT_AND_LOSS")]
-        ProfitAndLoss,
-    }
 
-    public static class AccountingReportTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingReportType : IEquatable<AccountingReportType>
     {
-        public static string Value(this AccountingReportType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingReportType TrialBalance = new AccountingReportType("TRIAL_BALANCE");
+        public static readonly AccountingReportType BalanceSheet = new AccountingReportType("BALANCE_SHEET");
+        public static readonly AccountingReportType ProfitAndLoss = new AccountingReportType("PROFIT_AND_LOSS");
 
-        public static AccountingReportType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingReportType).GetFields())
+        private static readonly Dictionary <string, AccountingReportType> _knownValues =
+            new Dictionary <string, AccountingReportType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TRIAL_BALANCE"] = TrialBalance,
+                ["BALANCE_SHEET"] = BalanceSheet,
+                ["PROFIT_AND_LOSS"] = ProfitAndLoss
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingReportType> _values =
+            new ConcurrentDictionary<string, AccountingReportType>(_knownValues);
 
-                    if (enumVal is AccountingReportType)
-                    {
-                        return (AccountingReportType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingReportType");
+        private AccountingReportType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingReportType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingReportType(value));
+        }
+
+        public static implicit operator AccountingReportType(string value) => Of(value);
+        public static implicit operator string(AccountingReportType accountingreporttype) => accountingreporttype.Value;
+
+        public static AccountingReportType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingReportType);
+
+        public bool Equals(AccountingReportType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

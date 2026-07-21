@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListDimension
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListDimensionExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListDimension : IEquatable<ListDimension>
     {
-        public static string Value(this ListDimension value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListDimension SupportedRequired = new ListDimension("supported-required");
+        public static readonly ListDimension Supported = new ListDimension("supported");
+        public static readonly ListDimension NotSupported = new ListDimension("not-supported");
 
-        public static ListDimension ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListDimension).GetFields())
+        private static readonly Dictionary <string, ListDimension> _knownValues =
+            new Dictionary <string, ListDimension> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListDimension> _values =
+            new ConcurrentDictionary<string, ListDimension>(_knownValues);
 
-                    if (enumVal is ListDimension)
-                    {
-                        return (ListDimension)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListDimension");
+        private ListDimension(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListDimension Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListDimension(value));
+        }
+
+        public static implicit operator ListDimension(string value) => Of(value);
+        public static implicit operator string(ListDimension listdimension) => listdimension.Value;
+
+        public static ListDimension[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListDimension);
+
+        public bool Equals(ListDimension? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

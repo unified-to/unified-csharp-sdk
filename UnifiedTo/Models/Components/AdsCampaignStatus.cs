@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsCampaignStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("SCHEDULED_FOR_DELETION")]
-        ScheduledForDeletion,
-        [JsonProperty("PROCESSING")]
-        Processing,
-        [JsonProperty("PROCESSING_FAILED")]
-        ProcessingFailed,
-    }
 
-    public static class AdsCampaignStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsCampaignStatus : IEquatable<AdsCampaignStatus>
     {
-        public static string Value(this AdsCampaignStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsCampaignStatus Unspecified = new AdsCampaignStatus("UNSPECIFIED");
+        public static readonly AdsCampaignStatus Active = new AdsCampaignStatus("ACTIVE");
+        public static readonly AdsCampaignStatus Paused = new AdsCampaignStatus("PAUSED");
+        public static readonly AdsCampaignStatus Archived = new AdsCampaignStatus("ARCHIVED");
+        public static readonly AdsCampaignStatus Draft = new AdsCampaignStatus("DRAFT");
+        public static readonly AdsCampaignStatus ScheduledForDeletion = new AdsCampaignStatus("SCHEDULED_FOR_DELETION");
+        public static readonly AdsCampaignStatus Processing = new AdsCampaignStatus("PROCESSING");
+        public static readonly AdsCampaignStatus ProcessingFailed = new AdsCampaignStatus("PROCESSING_FAILED");
 
-        public static AdsCampaignStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsCampaignStatus).GetFields())
+        private static readonly Dictionary <string, AdsCampaignStatus> _knownValues =
+            new Dictionary <string, AdsCampaignStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["ACTIVE"] = Active,
+                ["PAUSED"] = Paused,
+                ["ARCHIVED"] = Archived,
+                ["DRAFT"] = Draft,
+                ["SCHEDULED_FOR_DELETION"] = ScheduledForDeletion,
+                ["PROCESSING"] = Processing,
+                ["PROCESSING_FAILED"] = ProcessingFailed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsCampaignStatus> _values =
+            new ConcurrentDictionary<string, AdsCampaignStatus>(_knownValues);
 
-                    if (enumVal is AdsCampaignStatus)
-                    {
-                        return (AdsCampaignStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsCampaignStatus");
+        private AdsCampaignStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsCampaignStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsCampaignStatus(value));
+        }
+
+        public static implicit operator AdsCampaignStatus(string value) => Of(value);
+        public static implicit operator string(AdsCampaignStatus adscampaignstatus) => adscampaignstatus.Value;
+
+        public static AdsCampaignStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsCampaignStatus);
+
+        public bool Equals(AdsCampaignStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

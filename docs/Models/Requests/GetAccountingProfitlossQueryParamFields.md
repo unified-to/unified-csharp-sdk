@@ -1,5 +1,13 @@
 # GetAccountingProfitlossQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingProfitlossQueryParamFields.Id;
+```
+
 
 ## Values
 

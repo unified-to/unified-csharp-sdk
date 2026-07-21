@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class PropertyMessagingEventButton
     {
-
         [JsonProperty("icon")]
         public string? Icon { get; set; }
 

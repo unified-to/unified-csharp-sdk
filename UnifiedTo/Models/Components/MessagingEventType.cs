@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MessagingEventType
-    {
-        [JsonProperty("MESSAGE_RECEIVED")]
-        MessageReceived,
-        [JsonProperty("REACTION_ADDED")]
-        ReactionAdded,
-        [JsonProperty("REACTION_REMOVED")]
-        ReactionRemoved,
-        [JsonProperty("BUTTON_CLICK")]
-        ButtonClick,
-        [JsonProperty("APP_MENTION")]
-        AppMention,
-        [JsonProperty("CHANNEL_JOINED")]
-        ChannelJoined,
-        [JsonProperty("CHANNEL_LEFT")]
-        ChannelLeft,
-        [JsonProperty("CHANNEL_CREATED")]
-        ChannelCreated,
-        [JsonProperty("CHANNEL_DELETED")]
-        ChannelDeleted,
-        [JsonProperty("CHANNEL_RENAMED")]
-        ChannelRenamed,
-        [JsonProperty("USER_CREATED")]
-        UserCreated,
-        [JsonProperty("USER_DELETED")]
-        UserDeleted,
-        [JsonProperty("USER_UPDATED")]
-        UserUpdated,
-    }
 
-    public static class MessagingEventTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MessagingEventType : IEquatable<MessagingEventType>
     {
-        public static string Value(this MessagingEventType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MessagingEventType MessageReceived = new MessagingEventType("MESSAGE_RECEIVED");
+        public static readonly MessagingEventType ReactionAdded = new MessagingEventType("REACTION_ADDED");
+        public static readonly MessagingEventType ReactionRemoved = new MessagingEventType("REACTION_REMOVED");
+        public static readonly MessagingEventType ButtonClick = new MessagingEventType("BUTTON_CLICK");
+        public static readonly MessagingEventType AppMention = new MessagingEventType("APP_MENTION");
+        public static readonly MessagingEventType ChannelJoined = new MessagingEventType("CHANNEL_JOINED");
+        public static readonly MessagingEventType ChannelLeft = new MessagingEventType("CHANNEL_LEFT");
+        public static readonly MessagingEventType ChannelCreated = new MessagingEventType("CHANNEL_CREATED");
+        public static readonly MessagingEventType ChannelDeleted = new MessagingEventType("CHANNEL_DELETED");
+        public static readonly MessagingEventType ChannelRenamed = new MessagingEventType("CHANNEL_RENAMED");
+        public static readonly MessagingEventType UserCreated = new MessagingEventType("USER_CREATED");
+        public static readonly MessagingEventType UserDeleted = new MessagingEventType("USER_DELETED");
+        public static readonly MessagingEventType UserUpdated = new MessagingEventType("USER_UPDATED");
 
-        public static MessagingEventType ToEnum(this string value)
-        {
-            foreach(var field in typeof(MessagingEventType).GetFields())
+        private static readonly Dictionary <string, MessagingEventType> _knownValues =
+            new Dictionary <string, MessagingEventType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MESSAGE_RECEIVED"] = MessageReceived,
+                ["REACTION_ADDED"] = ReactionAdded,
+                ["REACTION_REMOVED"] = ReactionRemoved,
+                ["BUTTON_CLICK"] = ButtonClick,
+                ["APP_MENTION"] = AppMention,
+                ["CHANNEL_JOINED"] = ChannelJoined,
+                ["CHANNEL_LEFT"] = ChannelLeft,
+                ["CHANNEL_CREATED"] = ChannelCreated,
+                ["CHANNEL_DELETED"] = ChannelDeleted,
+                ["CHANNEL_RENAMED"] = ChannelRenamed,
+                ["USER_CREATED"] = UserCreated,
+                ["USER_DELETED"] = UserDeleted,
+                ["USER_UPDATED"] = UserUpdated
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MessagingEventType> _values =
+            new ConcurrentDictionary<string, MessagingEventType>(_knownValues);
 
-                    if (enumVal is MessagingEventType)
-                    {
-                        return (MessagingEventType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MessagingEventType");
+        private MessagingEventType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MessagingEventType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MessagingEventType(value));
+        }
+
+        public static implicit operator MessagingEventType(string value) => Of(value);
+        public static implicit operator string(MessagingEventType messagingeventtype) => messagingeventtype.Value;
+
+        public static MessagingEventType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MessagingEventType);
+
+        public bool Equals(MessagingEventType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

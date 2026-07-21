@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum GroupType
-    {
-        [JsonProperty("CASUAL_CLUB")]
-        CasualClub,
-        [JsonProperty("RACING_TEAM")]
-        RacingTeam,
-        [JsonProperty("SHOP")]
-        Shop,
-        [JsonProperty("COMPANY")]
-        Company,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class GroupTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class GroupType : IEquatable<GroupType>
     {
-        public static string Value(this GroupType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly GroupType CasualClub = new GroupType("CASUAL_CLUB");
+        public static readonly GroupType RacingTeam = new GroupType("RACING_TEAM");
+        public static readonly GroupType Shop = new GroupType("SHOP");
+        public static readonly GroupType Company = new GroupType("COMPANY");
+        public static readonly GroupType Other = new GroupType("OTHER");
 
-        public static GroupType ToEnum(this string value)
-        {
-            foreach(var field in typeof(GroupType).GetFields())
+        private static readonly Dictionary <string, GroupType> _knownValues =
+            new Dictionary <string, GroupType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["CASUAL_CLUB"] = CasualClub,
+                ["RACING_TEAM"] = RacingTeam,
+                ["SHOP"] = Shop,
+                ["COMPANY"] = Company,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, GroupType> _values =
+            new ConcurrentDictionary<string, GroupType>(_knownValues);
 
-                    if (enumVal is GroupType)
-                    {
-                        return (GroupType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum GroupType");
+        private GroupType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static GroupType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new GroupType(value));
+        }
+
+        public static implicit operator GroupType(string value) => Of(value);
+        public static implicit operator string(GroupType grouptype) => grouptype.Value;
+
+        public static GroupType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as GroupType);
+
+        public bool Equals(GroupType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,13 @@
 # UpdateDatastoreTableQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateDatastoreTableQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListSize
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListSizeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListSize : IEquatable<ListSize>
     {
-        public static string Value(this ListSize value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListSize SupportedRequired = new ListSize("supported-required");
+        public static readonly ListSize Supported = new ListSize("supported");
+        public static readonly ListSize NotSupported = new ListSize("not-supported");
 
-        public static ListSize ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListSize).GetFields())
+        private static readonly Dictionary <string, ListSize> _knownValues =
+            new Dictionary <string, ListSize> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListSize> _values =
+            new ConcurrentDictionary<string, ListSize>(_knownValues);
 
-                    if (enumVal is ListSize)
-                    {
-                        return (ListSize)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListSize");
+        private ListSize(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListSize Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListSize(value));
+        }
+
+        public static implicit operator ListSize(string value) => Of(value);
+        public static implicit operator string(ListSize listsize) => listsize.Value;
+
+        public static ListSize[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListSize);
+
+        public bool Equals(ListSize? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

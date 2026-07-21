@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum BudgetAllocationType
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("AUTOMATIC")]
-        Automatic,
-        [JsonProperty("FIXED")]
-        Fixed,
-        [JsonProperty("UNLIMITED")]
-        Unlimited,
-    }
 
-    public static class BudgetAllocationTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class BudgetAllocationType : IEquatable<BudgetAllocationType>
     {
-        public static string Value(this BudgetAllocationType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly BudgetAllocationType Unspecified = new BudgetAllocationType("UNSPECIFIED");
+        public static readonly BudgetAllocationType Automatic = new BudgetAllocationType("AUTOMATIC");
+        public static readonly BudgetAllocationType Fixed = new BudgetAllocationType("FIXED");
+        public static readonly BudgetAllocationType Unlimited = new BudgetAllocationType("UNLIMITED");
 
-        public static BudgetAllocationType ToEnum(this string value)
-        {
-            foreach(var field in typeof(BudgetAllocationType).GetFields())
+        private static readonly Dictionary <string, BudgetAllocationType> _knownValues =
+            new Dictionary <string, BudgetAllocationType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["AUTOMATIC"] = Automatic,
+                ["FIXED"] = Fixed,
+                ["UNLIMITED"] = Unlimited
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, BudgetAllocationType> _values =
+            new ConcurrentDictionary<string, BudgetAllocationType>(_knownValues);
 
-                    if (enumVal is BudgetAllocationType)
-                    {
-                        return (BudgetAllocationType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum BudgetAllocationType");
+        private BudgetAllocationType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static BudgetAllocationType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new BudgetAllocationType(value));
+        }
+
+        public static implicit operator BudgetAllocationType(string value) => Of(value);
+        public static implicit operator string(BudgetAllocationType budgetallocationtype) => budgetallocationtype.Value;
+
+        public static BudgetAllocationType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as BudgetAllocationType);
+
+        public bool Equals(BudgetAllocationType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

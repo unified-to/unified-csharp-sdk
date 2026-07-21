@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ClubsEventType
-    {
-        [JsonProperty("GAME")]
-        Game,
-        [JsonProperty("PRACTICE")]
-        Practice,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class ClubsEventTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ClubsEventType : IEquatable<ClubsEventType>
     {
-        public static string Value(this ClubsEventType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ClubsEventType Game = new ClubsEventType("GAME");
+        public static readonly ClubsEventType Practice = new ClubsEventType("PRACTICE");
+        public static readonly ClubsEventType Other = new ClubsEventType("OTHER");
 
-        public static ClubsEventType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ClubsEventType).GetFields())
+        private static readonly Dictionary <string, ClubsEventType> _knownValues =
+            new Dictionary <string, ClubsEventType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["GAME"] = Game,
+                ["PRACTICE"] = Practice,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ClubsEventType> _values =
+            new ConcurrentDictionary<string, ClubsEventType>(_knownValues);
 
-                    if (enumVal is ClubsEventType)
-                    {
-                        return (ClubsEventType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ClubsEventType");
+        private ClubsEventType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ClubsEventType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ClubsEventType(value));
+        }
+
+        public static implicit operator ClubsEventType(string value) => Of(value);
+        public static implicit operator string(ClubsEventType clubseventtype) => clubseventtype.Value;
+
+        public static ClubsEventType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ClubsEventType);
+
+        public bool Equals(ClubsEventType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

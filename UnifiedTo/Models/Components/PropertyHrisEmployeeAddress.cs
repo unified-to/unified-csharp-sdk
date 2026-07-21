@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class PropertyHrisEmployeeAddress
     {
-
         [JsonProperty("address1")]
         public string? Address1 { get; set; }
 

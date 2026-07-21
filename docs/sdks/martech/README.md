@@ -1,5 +1,4 @@
 # Martech
-(*Martech*)
 
 ## Overview
 
@@ -31,6 +30,7 @@ Create a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -72,6 +72,7 @@ Create a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -113,6 +114,7 @@ Create a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -154,6 +156,7 @@ Retrieve a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getMartechCampaign" method="get" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -195,6 +198,7 @@ Retrieve a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getMartechList" method="get" path="/martech/{connection_id}/list/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -236,6 +240,7 @@ Retrieve a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getMartechMember" method="get" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -277,6 +282,7 @@ List all campaigns
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMartechCampaigns" method="get" path="/martech/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -317,6 +323,7 @@ List all lists
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMartechLists" method="get" path="/martech/{connection_id}/list" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -357,6 +364,7 @@ List all members
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMartechMembers" method="get" path="/martech/{connection_id}/member" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -397,6 +405,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMartechReports" method="get" path="/martech/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -437,6 +446,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -479,6 +489,7 @@ Update a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -521,6 +532,7 @@ Update a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -563,6 +575,7 @@ Remove a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeMartechCampaign" method="delete" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -602,6 +615,7 @@ Remove a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeMartechList" method="delete" path="/martech/{connection_id}/list/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -641,6 +655,7 @@ Remove a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeMartechMember" method="delete" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -680,6 +695,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -722,6 +738,7 @@ Update a list
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -764,6 +781,7 @@ Update a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

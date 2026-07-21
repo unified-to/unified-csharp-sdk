@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class FiveType
     {
         private FiveType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static FiveType One { get { return new FiveType("1"); } }
-        
+
         public static FiveType Str { get { return new FiveType("str"); } }
-        
+
         public static FiveType Number { get { return new FiveType("number"); } }
-        
+
         public static FiveType Boolean { get { return new FiveType("boolean"); } }
-        
-        public static FiveType Null { get { return new FiveType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(FiveType v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for FiveType");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Five.FiveConverter))]
-    public class Five {
-        public Five(FiveType type) {
+    public class Five
+    {
+        public Five(FiveType type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public FiveType Type { get; set; }
-
-
-        public static Five CreateOne(One one) {
+        public static Five CreateOne(One one)
+        {
             FiveType typ = FiveType.One;
 
             Five res = new Five(typ);
             res.One = one;
             return res;
         }
-
-        public static Five CreateStr(string str) {
+        public static Five CreateStr(string str)
+        {
             FiveType typ = FiveType.Str;
 
             Five res = new Five(typ);
             res.Str = str;
             return res;
         }
-
-        public static Five CreateNumber(double number) {
+        public static Five CreateNumber(double number)
+        {
             FiveType typ = FiveType.Number;
 
             Five res = new Five(typ);
             res.Number = number;
             return res;
         }
-
-        public static Five CreateBoolean(bool boolean) {
+        public static Five CreateBoolean(bool boolean)
+        {
             FiveType typ = FiveType.Boolean;
 
             Five res = new Five(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Five CreateNull() {
-            FiveType typ = FiveType.Null;
-            return new Five(typ);
-        }
-
         public class FiveConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(Five);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                Five res = (Five)value;
-                if (FiveType.FromString(res.Type).Equals(FiveType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                Five res = (Five)value;
+
                 if (res.One != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.One));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

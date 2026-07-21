@@ -1,5 +1,4 @@
 # Property
-(*Property*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAnalyticsProperty" method="get" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all properties
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsProperties" method="get" path="/analytics/{connection_id}/property" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAnalyticsProperty" method="delete" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

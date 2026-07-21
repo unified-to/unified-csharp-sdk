@@ -1,5 +1,4 @@
 # Cashflow
-(*Cashflow*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a cashflow
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingCashflow" method="get" path="/accounting/{connection_id}/cashflow/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all cashflows
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingCashflows" method="get" path="/accounting/{connection_id}/cashflow" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

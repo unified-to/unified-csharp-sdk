@@ -1,5 +1,13 @@
 # GetAccountingBillQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingBillQueryParamFields.Id;
+```
+
 
 ## Values
 

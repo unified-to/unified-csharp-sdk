@@ -1,5 +1,4 @@
 # Order
-(*Order*)
 
 ## Overview
 
@@ -20,6 +19,7 @@ Create an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingOrder" method="get" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ List all orders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingOrders" method="get" path="/accounting/{connection_id}/order" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,6 +144,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -184,6 +187,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -229,6 +233,7 @@ Remove an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingOrder" method="delete" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -268,6 +273,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -310,6 +316,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

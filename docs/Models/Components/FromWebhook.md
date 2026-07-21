@@ -1,5 +1,16 @@
 # FromWebhook
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = FromWebhook.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = FromWebhook.Of("custom_value");
+```
+
 
 ## Values
 

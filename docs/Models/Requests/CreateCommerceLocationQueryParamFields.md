@@ -1,5 +1,13 @@
 # CreateCommerceLocationQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateCommerceLocationQueryParamFields.Id;
+```
+
 
 ## Values
 

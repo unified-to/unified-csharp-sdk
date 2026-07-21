@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum DutiesPaidBy
-    {
-        [JsonProperty("SENDER")]
-        Sender,
-        [JsonProperty("RECIPIENT")]
-        Recipient,
-        [JsonProperty("THIRD_PARTY")]
-        ThirdParty,
-    }
 
-    public static class DutiesPaidByExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class DutiesPaidBy : IEquatable<DutiesPaidBy>
     {
-        public static string Value(this DutiesPaidBy value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly DutiesPaidBy Sender = new DutiesPaidBy("SENDER");
+        public static readonly DutiesPaidBy Recipient = new DutiesPaidBy("RECIPIENT");
+        public static readonly DutiesPaidBy ThirdParty = new DutiesPaidBy("THIRD_PARTY");
 
-        public static DutiesPaidBy ToEnum(this string value)
-        {
-            foreach(var field in typeof(DutiesPaidBy).GetFields())
+        private static readonly Dictionary <string, DutiesPaidBy> _knownValues =
+            new Dictionary <string, DutiesPaidBy> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SENDER"] = Sender,
+                ["RECIPIENT"] = Recipient,
+                ["THIRD_PARTY"] = ThirdParty
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, DutiesPaidBy> _values =
+            new ConcurrentDictionary<string, DutiesPaidBy>(_knownValues);
 
-                    if (enumVal is DutiesPaidBy)
-                    {
-                        return (DutiesPaidBy)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum DutiesPaidBy");
+        private DutiesPaidBy(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static DutiesPaidBy Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new DutiesPaidBy(value));
+        }
+
+        public static implicit operator DutiesPaidBy(string value) => Of(value);
+        public static implicit operator string(DutiesPaidBy dutiespaidby) => dutiespaidby.Value;
+
+        public static DutiesPaidBy[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as DutiesPaidBy);
+
+        public bool Equals(DutiesPaidBy? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CalendarWebinarPanelistStatus
-    {
-        [JsonProperty("ACCEPTED")]
-        Accepted,
-        [JsonProperty("REJECTED")]
-        Rejected,
-        [JsonProperty("TENTATIVE")]
-        Tentative,
-    }
 
-    public static class CalendarWebinarPanelistStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CalendarWebinarPanelistStatus : IEquatable<CalendarWebinarPanelistStatus>
     {
-        public static string Value(this CalendarWebinarPanelistStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CalendarWebinarPanelistStatus Accepted = new CalendarWebinarPanelistStatus("ACCEPTED");
+        public static readonly CalendarWebinarPanelistStatus Rejected = new CalendarWebinarPanelistStatus("REJECTED");
+        public static readonly CalendarWebinarPanelistStatus Tentative = new CalendarWebinarPanelistStatus("TENTATIVE");
 
-        public static CalendarWebinarPanelistStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(CalendarWebinarPanelistStatus).GetFields())
+        private static readonly Dictionary <string, CalendarWebinarPanelistStatus> _knownValues =
+            new Dictionary <string, CalendarWebinarPanelistStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACCEPTED"] = Accepted,
+                ["REJECTED"] = Rejected,
+                ["TENTATIVE"] = Tentative
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CalendarWebinarPanelistStatus> _values =
+            new ConcurrentDictionary<string, CalendarWebinarPanelistStatus>(_knownValues);
 
-                    if (enumVal is CalendarWebinarPanelistStatus)
-                    {
-                        return (CalendarWebinarPanelistStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CalendarWebinarPanelistStatus");
+        private CalendarWebinarPanelistStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CalendarWebinarPanelistStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CalendarWebinarPanelistStatus(value));
+        }
+
+        public static implicit operator CalendarWebinarPanelistStatus(string value) => Of(value);
+        public static implicit operator string(CalendarWebinarPanelistStatus calendarwebinarpaneliststatus) => calendarwebinarpaneliststatus.Value;
+
+        public static CalendarWebinarPanelistStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CalendarWebinarPanelistStatus);
+
+        public bool Equals(CalendarWebinarPanelistStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

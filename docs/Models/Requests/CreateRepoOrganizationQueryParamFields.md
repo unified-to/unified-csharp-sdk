@@ -1,5 +1,13 @@
 # CreateRepoOrganizationQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateRepoOrganizationQueryParamFields.Id;
+```
+
 
 ## Values
 

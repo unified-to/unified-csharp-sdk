@@ -1,5 +1,4 @@
 # Template
-(*Template*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getSigningTemplate" method="get" path="/signing/{connection_id}/template/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listSigningTemplates" method="get" path="/signing/{connection_id}/template" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

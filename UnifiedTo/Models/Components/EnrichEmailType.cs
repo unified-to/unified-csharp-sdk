@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EnrichEmailType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class EnrichEmailTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EnrichEmailType : IEquatable<EnrichEmailType>
     {
-        public static string Value(this EnrichEmailType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EnrichEmailType Work = new EnrichEmailType("WORK");
+        public static readonly EnrichEmailType Home = new EnrichEmailType("HOME");
+        public static readonly EnrichEmailType Other = new EnrichEmailType("OTHER");
 
-        public static EnrichEmailType ToEnum(this string value)
-        {
-            foreach(var field in typeof(EnrichEmailType).GetFields())
+        private static readonly Dictionary <string, EnrichEmailType> _knownValues =
+            new Dictionary <string, EnrichEmailType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EnrichEmailType> _values =
+            new ConcurrentDictionary<string, EnrichEmailType>(_knownValues);
 
-                    if (enumVal is EnrichEmailType)
-                    {
-                        return (EnrichEmailType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EnrichEmailType");
+        private EnrichEmailType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EnrichEmailType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EnrichEmailType(value));
+        }
+
+        public static implicit operator EnrichEmailType(string value) => Of(value);
+        public static implicit operator string(EnrichEmailType enrichemailtype) => enrichemailtype.Value;
+
+        public static EnrichEmailType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EnrichEmailType);
+
+        public bool Equals(EnrichEmailType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum NativeWebhookProjectId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class NativeWebhookProjectIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class NativeWebhookProjectId : IEquatable<NativeWebhookProjectId>
     {
-        public static string Value(this NativeWebhookProjectId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly NativeWebhookProjectId SupportedRequired = new NativeWebhookProjectId("supported-required");
+        public static readonly NativeWebhookProjectId Supported = new NativeWebhookProjectId("supported");
+        public static readonly NativeWebhookProjectId NotSupported = new NativeWebhookProjectId("not-supported");
 
-        public static NativeWebhookProjectId ToEnum(this string value)
-        {
-            foreach(var field in typeof(NativeWebhookProjectId).GetFields())
+        private static readonly Dictionary <string, NativeWebhookProjectId> _knownValues =
+            new Dictionary <string, NativeWebhookProjectId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, NativeWebhookProjectId> _values =
+            new ConcurrentDictionary<string, NativeWebhookProjectId>(_knownValues);
 
-                    if (enumVal is NativeWebhookProjectId)
-                    {
-                        return (NativeWebhookProjectId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum NativeWebhookProjectId");
+        private NativeWebhookProjectId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static NativeWebhookProjectId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new NativeWebhookProjectId(value));
+        }
+
+        public static implicit operator NativeWebhookProjectId(string value) => Of(value);
+        public static implicit operator string(NativeWebhookProjectId nativewebhookprojectid) => nativewebhookprojectid.Value;
+
+        public static NativeWebhookProjectId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as NativeWebhookProjectId);
+
+        public bool Equals(NativeWebhookProjectId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType
-    {
-        [JsonProperty("PRESENCE")]
-        Presence,
-        [JsonProperty("PRESENCE_OR_INTEREST")]
-        PresenceOrInterest,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignTargetingGeographicPresenceTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType : IEquatable<PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType Presence = new PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType("PRESENCE");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType PresenceOrInterest = new PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType("PRESENCE_OR_INTEREST");
 
-        public static PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PRESENCE"] = Presence,
+                ["PRESENCE_OR_INTEREST"] = PresenceOrInterest
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType)
-                    {
-                        return (PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType");
+        private PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType propertyadsreportmetricscampaigntargetinggeographicpresencetype) => propertyadsreportmetricscampaigntargetinggeographicpresencetype.Value;
+
+        public static PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignTargetingGeographicPresenceType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -13,13 +13,12 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// @deprecated
+    /// @deprecated.
     /// </summary>
     public class AccountingProfitlossCategory
     {
-
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 

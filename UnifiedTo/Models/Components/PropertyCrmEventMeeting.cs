@@ -12,13 +12,12 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// The meeting object, when type = meeting
+    /// The meeting object, when type = meeting.
     /// </summary>
     public class PropertyCrmEventMeeting
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

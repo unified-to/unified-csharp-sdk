@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ContentsType
-    {
-        [JsonProperty("MERCHANDISE")]
-        Merchandise,
-        [JsonProperty("DOCUMENTS")]
-        Documents,
-        [JsonProperty("GIFT")]
-        Gift,
-        [JsonProperty("RETURNED_GOODS")]
-        ReturnedGoods,
-        [JsonProperty("SAMPLE")]
-        Sample,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class ContentsTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ContentsType : IEquatable<ContentsType>
     {
-        public static string Value(this ContentsType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ContentsType Merchandise = new ContentsType("MERCHANDISE");
+        public static readonly ContentsType Documents = new ContentsType("DOCUMENTS");
+        public static readonly ContentsType Gift = new ContentsType("GIFT");
+        public static readonly ContentsType ReturnedGoods = new ContentsType("RETURNED_GOODS");
+        public static readonly ContentsType Sample = new ContentsType("SAMPLE");
+        public static readonly ContentsType Other = new ContentsType("OTHER");
 
-        public static ContentsType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ContentsType).GetFields())
+        private static readonly Dictionary <string, ContentsType> _knownValues =
+            new Dictionary <string, ContentsType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MERCHANDISE"] = Merchandise,
+                ["DOCUMENTS"] = Documents,
+                ["GIFT"] = Gift,
+                ["RETURNED_GOODS"] = ReturnedGoods,
+                ["SAMPLE"] = Sample,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ContentsType> _values =
+            new ConcurrentDictionary<string, ContentsType>(_knownValues);
 
-                    if (enumVal is ContentsType)
-                    {
-                        return (ContentsType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ContentsType");
+        private ContentsType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ContentsType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ContentsType(value));
+        }
+
+        public static implicit operator ContentsType(string value) => Of(value);
+        public static implicit operator string(ContentsType contentstype) => contentstype.Value;
+
+        public static ContentsType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ContentsType);
+
+        public bool Equals(ContentsType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

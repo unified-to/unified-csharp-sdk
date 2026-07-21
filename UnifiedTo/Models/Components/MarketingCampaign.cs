@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class MarketingCampaign
     {
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -31,7 +32,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// Associated listaudience IDs
+        /// Associated listaudience IDs.
         /// </summary>
         [JsonProperty("list_ids")]
         public List<string>? ListIds { get; set; }

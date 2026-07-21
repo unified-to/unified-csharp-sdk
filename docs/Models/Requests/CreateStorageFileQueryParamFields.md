@@ -1,5 +1,13 @@
 # CreateStorageFileQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateStorageFileQueryParamFields.Id;
+```
+
 
 ## Values
 

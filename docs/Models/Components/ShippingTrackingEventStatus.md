@@ -1,5 +1,16 @@
 # ShippingTrackingEventStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ShippingTrackingEventStatus.Pending;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ShippingTrackingEventStatus.Of("custom_value");
+```
+
 
 ## Values
 

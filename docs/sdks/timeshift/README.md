@@ -1,5 +1,4 @@
 # Timeshift
-(*Timeshift*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisTimeshift" method="get" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ List all timeshifts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisTimeshifts" method="get" path="/hris/{connection_id}/timeshift" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,6 +144,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -186,6 +189,7 @@ Remove a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisTimeshift" method="delete" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -225,6 +229,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

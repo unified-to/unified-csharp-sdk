@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class ExtraDataType
     {
         private ExtraDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ExtraDataType MapOfAny { get { return new ExtraDataType("mapOfAny"); } }
-        
+
         public static ExtraDataType Str { get { return new ExtraDataType("str"); } }
-        
+
         public static ExtraDataType Number { get { return new ExtraDataType("number"); } }
-        
+
         public static ExtraDataType Boolean { get { return new ExtraDataType("boolean"); } }
-        
+
         public static ExtraDataType ArrayOf5 { get { return new ExtraDataType("arrayOf5"); } }
-        
-        public static ExtraDataType Null { get { return new ExtraDataType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(ExtraDataType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOf5": return ArrayOf5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for ExtraDataType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(ExtraData.ExtraDataConverter))]
-    public class ExtraData {
-        public ExtraData(ExtraDataType type) {
+    public class ExtraData
+    {
+        public ExtraData(ExtraDataType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<Five>? ArrayOf5 { get; set; }
 
         public ExtraDataType Type { get; set; }
-
-
-        public static ExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static ExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             ExtraDataType typ = ExtraDataType.MapOfAny;
 
             ExtraData res = new ExtraData(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static ExtraData CreateStr(string str) {
+        public static ExtraData CreateStr(string str)
+        {
             ExtraDataType typ = ExtraDataType.Str;
 
             ExtraData res = new ExtraData(typ);
             res.Str = str;
             return res;
         }
-
-        public static ExtraData CreateNumber(double number) {
+        public static ExtraData CreateNumber(double number)
+        {
             ExtraDataType typ = ExtraDataType.Number;
 
             ExtraData res = new ExtraData(typ);
             res.Number = number;
             return res;
         }
-
-        public static ExtraData CreateBoolean(bool boolean) {
+        public static ExtraData CreateBoolean(bool boolean)
+        {
             ExtraDataType typ = ExtraDataType.Boolean;
 
             ExtraData res = new ExtraData(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static ExtraData CreateArrayOf5(List<Five> arrayOf5) {
+        public static ExtraData CreateArrayOf5(List<Five> arrayOf5)
+        {
             ExtraDataType typ = ExtraDataType.ArrayOf5;
 
             ExtraData res = new ExtraData(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static ExtraData CreateNull() {
-            ExtraDataType typ = ExtraDataType.Null;
-            return new ExtraData(typ);
-        }
-
         public class ExtraDataConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(ExtraData);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                ExtraData res = (ExtraData)value;
-                if (ExtraDataType.FromString(res.Type).Equals(ExtraDataType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                ExtraData res = (ExtraData)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOf5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOf5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

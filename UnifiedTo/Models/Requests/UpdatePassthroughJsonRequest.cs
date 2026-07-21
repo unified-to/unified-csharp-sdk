@@ -11,18 +11,17 @@ namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class UpdatePassthroughJsonRequest
     {
-
         /// <summary>
-        /// integration-specific payload
+        /// integration-specific payload.
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public object? RequestBody { get; set; }
 
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;

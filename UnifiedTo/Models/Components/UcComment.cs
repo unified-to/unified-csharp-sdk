@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class UcComment
     {
-
         [JsonProperty("call_id")]
         public string? CallId { get; set; }
 

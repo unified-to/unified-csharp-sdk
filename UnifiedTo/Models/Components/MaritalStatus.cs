@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MaritalStatus
-    {
-        [JsonProperty("MARRIED")]
-        Married,
-        [JsonProperty("SINGLE")]
-        Single,
-    }
 
-    public static class MaritalStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MaritalStatus : IEquatable<MaritalStatus>
     {
-        public static string Value(this MaritalStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MaritalStatus Married = new MaritalStatus("MARRIED");
+        public static readonly MaritalStatus Single = new MaritalStatus("SINGLE");
 
-        public static MaritalStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(MaritalStatus).GetFields())
+        private static readonly Dictionary <string, MaritalStatus> _knownValues =
+            new Dictionary <string, MaritalStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MARRIED"] = Married,
+                ["SINGLE"] = Single
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MaritalStatus> _values =
+            new ConcurrentDictionary<string, MaritalStatus>(_knownValues);
 
-                    if (enumVal is MaritalStatus)
-                    {
-                        return (MaritalStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MaritalStatus");
+        private MaritalStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MaritalStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MaritalStatus(value));
+        }
+
+        public static implicit operator MaritalStatus(string value) => Of(value);
+        public static implicit operator string(MaritalStatus maritalstatus) => maritalstatus.Value;
+
+        public static MaritalStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MaritalStatus);
+
+        public bool Equals(MaritalStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsGroupStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsGroupStatus.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsGroupStatus.Of("custom_value");
+```
+
 
 ## Values
 

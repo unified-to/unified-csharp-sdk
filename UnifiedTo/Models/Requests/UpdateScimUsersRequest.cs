@@ -11,21 +11,20 @@ namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class UpdateScimUsersRequest
     {
-
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public ScimUser ScimUser { get; set; } = default!;
 
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// ID of the User
+        /// ID of the User.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

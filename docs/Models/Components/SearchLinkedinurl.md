@@ -1,5 +1,16 @@
 # SearchLinkedinurl
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = SearchLinkedinurl.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = SearchLinkedinurl.Of("custom_value");
+```
+
 
 ## Values
 

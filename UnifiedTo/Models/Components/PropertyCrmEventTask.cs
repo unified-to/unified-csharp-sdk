@@ -11,15 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// The task object, when type = task
+    /// The task object, when type = task.
     /// </summary>
     public class PropertyCrmEventTask
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

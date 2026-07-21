@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsGroupBidStrategyYoutubeAndPartnersType.Of("custom_value");
+```
+
 
 ## Values
 

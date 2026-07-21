@@ -1,5 +1,13 @@
 # PatchLmsActivityQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchLmsActivityQueryParamFields.Id;
+```
+
 
 ## Values
 

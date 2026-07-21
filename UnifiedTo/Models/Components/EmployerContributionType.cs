@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EmployerContributionType
-    {
-        [JsonProperty("PERCENTAGE")]
-        Percentage,
-        [JsonProperty("FIXED")]
-        Fixed,
-    }
 
-    public static class EmployerContributionTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EmployerContributionType : IEquatable<EmployerContributionType>
     {
-        public static string Value(this EmployerContributionType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EmployerContributionType Percentage = new EmployerContributionType("PERCENTAGE");
+        public static readonly EmployerContributionType Fixed = new EmployerContributionType("FIXED");
 
-        public static EmployerContributionType ToEnum(this string value)
-        {
-            foreach(var field in typeof(EmployerContributionType).GetFields())
+        private static readonly Dictionary <string, EmployerContributionType> _knownValues =
+            new Dictionary <string, EmployerContributionType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PERCENTAGE"] = Percentage,
+                ["FIXED"] = Fixed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EmployerContributionType> _values =
+            new ConcurrentDictionary<string, EmployerContributionType>(_knownValues);
 
-                    if (enumVal is EmployerContributionType)
-                    {
-                        return (EmployerContributionType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EmployerContributionType");
+        private EmployerContributionType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EmployerContributionType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EmployerContributionType(value));
+        }
+
+        public static implicit operator EmployerContributionType(string value) => Of(value);
+        public static implicit operator string(EmployerContributionType employercontributiontype) => employercontributiontype.Value;
+
+        public static EmployerContributionType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EmployerContributionType);
+
+        public bool Equals(EmployerContributionType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

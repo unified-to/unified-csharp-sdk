@@ -1,5 +1,16 @@
 # HrisGroupType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = HrisGroupType.Team;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisGroupType.Of("custom_value");
+```
+
 
 ## Values
 

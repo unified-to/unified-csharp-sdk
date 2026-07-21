@@ -1,5 +1,16 @@
 # PropertyHrisPayslipDeductionFrequency
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyHrisPayslipDeductionFrequency.OneTime;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyHrisPayslipDeductionFrequency.Of("custom_value");
+```
+
 
 ## Values
 

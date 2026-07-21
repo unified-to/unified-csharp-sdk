@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// Company-wide benefit plans available to employees.
     /// </summary>
     public class HrisBenefit
     {
-
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 

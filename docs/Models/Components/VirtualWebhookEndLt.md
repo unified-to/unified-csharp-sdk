@@ -1,5 +1,16 @@
 # VirtualWebhookEndLt
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookEndLt.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookEndLt.Of("custom_value");
+```
+
 
 ## Values
 

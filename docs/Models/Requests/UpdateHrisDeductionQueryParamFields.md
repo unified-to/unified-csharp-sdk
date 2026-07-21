@@ -1,5 +1,13 @@
 # UpdateHrisDeductionQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateHrisDeductionQueryParamFields.Id;
+```
+
 
 ## Values
 

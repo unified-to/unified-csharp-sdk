@@ -11,71 +11,88 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum DatastoreFieldType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-        [JsonProperty("EMAIL")]
-        Email,
-        [JsonProperty("PHONE")]
-        Phone,
-        [JsonProperty("LINKED_RECORD")]
-        LinkedRecord,
-        [JsonProperty("RELATION")]
-        Relation,
-    }
 
-    public static class DatastoreFieldTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class DatastoreFieldType : IEquatable<DatastoreFieldType>
     {
-        public static string Value(this DatastoreFieldType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly DatastoreFieldType Text = new DatastoreFieldType("TEXT");
+        public static readonly DatastoreFieldType Number = new DatastoreFieldType("NUMBER");
+        public static readonly DatastoreFieldType Date = new DatastoreFieldType("DATE");
+        public static readonly DatastoreFieldType Boolean = new DatastoreFieldType("BOOLEAN");
+        public static readonly DatastoreFieldType File = new DatastoreFieldType("FILE");
+        public static readonly DatastoreFieldType Textarea = new DatastoreFieldType("TEXTAREA");
+        public static readonly DatastoreFieldType SingleSelect = new DatastoreFieldType("SINGLE_SELECT");
+        public static readonly DatastoreFieldType MultipleSelect = new DatastoreFieldType("MULTIPLE_SELECT");
+        public static readonly DatastoreFieldType Currency = new DatastoreFieldType("CURRENCY");
+        public static readonly DatastoreFieldType Url = new DatastoreFieldType("URL");
+        public static readonly DatastoreFieldType Email = new DatastoreFieldType("EMAIL");
+        public static readonly DatastoreFieldType Phone = new DatastoreFieldType("PHONE");
+        public static readonly DatastoreFieldType LinkedRecord = new DatastoreFieldType("LINKED_RECORD");
+        public static readonly DatastoreFieldType Relation = new DatastoreFieldType("RELATION");
 
-        public static DatastoreFieldType ToEnum(this string value)
-        {
-            foreach(var field in typeof(DatastoreFieldType).GetFields())
+        private static readonly Dictionary <string, DatastoreFieldType> _knownValues =
+            new Dictionary <string, DatastoreFieldType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url,
+                ["EMAIL"] = Email,
+                ["PHONE"] = Phone,
+                ["LINKED_RECORD"] = LinkedRecord,
+                ["RELATION"] = Relation
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, DatastoreFieldType> _values =
+            new ConcurrentDictionary<string, DatastoreFieldType>(_knownValues);
 
-                    if (enumVal is DatastoreFieldType)
-                    {
-                        return (DatastoreFieldType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum DatastoreFieldType");
+        private DatastoreFieldType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static DatastoreFieldType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new DatastoreFieldType(value));
+        }
+
+        public static implicit operator DatastoreFieldType(string value) => Of(value);
+        public static implicit operator string(DatastoreFieldType datastorefieldtype) => datastorefieldtype.Value;
+
+        public static DatastoreFieldType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as DatastoreFieldType);
+
+        public bool Equals(DatastoreFieldType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

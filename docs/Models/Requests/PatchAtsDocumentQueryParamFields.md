@@ -1,5 +1,13 @@
 # PatchAtsDocumentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAtsDocumentQueryParamFields.Id;
+```
+
 
 ## Values
 

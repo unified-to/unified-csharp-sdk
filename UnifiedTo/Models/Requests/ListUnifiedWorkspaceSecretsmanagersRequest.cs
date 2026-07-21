@@ -10,10 +10,9 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class ListUnifiedWorkspaceSecretsmanagersRequest
     {
-
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 

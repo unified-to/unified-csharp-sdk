@@ -11,13 +11,12 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// job-post-specific address
+    /// job-post-specific address.
     /// </summary>
     public class PropertyAtsJobPostingAddress
     {
-
         [JsonProperty("address1")]
         public string? Address1 { get; set; }
 

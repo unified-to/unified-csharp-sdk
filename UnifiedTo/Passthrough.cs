@@ -24,63 +24,190 @@ namespace UnifiedTo
 
     public interface IPassthrough
     {
+        /// <summary>
+        /// Passthrough POST.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreatePassthroughJsonResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(
+            string connectionId,
+            string path,
+            object? requestBody = null,
+            Dictionary<string, object>? query = null
+        );
 
         /// <summary>
-        /// Passthrough POST
+        /// Passthrough POST.
         /// </summary>
-        Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreatePassthroughRawResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(
+            string connectionId,
+            string path,
+            byte[]? requestBody = null,
+            Dictionary<string, object>? query = null
+        );
 
         /// <summary>
-        /// Passthrough POST
+        /// Passthrough GET.
         /// </summary>
-        Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPassthroughsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListPassthroughsResponse> ListPassthroughsAsync(
+            string connectionId,
+            string path,
+            Dictionary<string, object>? query = null
+        );
 
         /// <summary>
-        /// Passthrough GET
+        /// Passthrough PUT.
         /// </summary>
-        Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path, Dictionary<string, object>? query = null);
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchPassthroughJsonResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(
+            string connectionId,
+            string path,
+            object? requestBody = null,
+            Dictionary<string, object>? query = null
+        );
 
         /// <summary>
-        /// Passthrough PUT
+        /// Passthrough PUT.
         /// </summary>
-        Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchPassthroughRawResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(
+            string connectionId,
+            string path,
+            byte[]? requestBody = null,
+            Dictionary<string, object>? query = null
+        );
 
         /// <summary>
-        /// Passthrough PUT
+        /// Passthrough DELETE.
         /// </summary>
-        Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="RemovePassthroughResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<RemovePassthroughResponse> RemovePassthroughAsync(
+            string connectionId,
+            string path,
+            Dictionary<string, object>? query = null
+        );
 
         /// <summary>
-        /// Passthrough DELETE
+        /// Passthrough PUT.
         /// </summary>
-        Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path, Dictionary<string, object>? query = null);
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdatePassthroughJsonResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(
+            string connectionId,
+            string path,
+            object? requestBody = null,
+            Dictionary<string, object>? query = null
+        );
 
         /// <summary>
-        /// Passthrough PUT
+        /// Passthrough PUT.
         /// </summary>
-        Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
-
-        /// <summary>
-        /// Passthrough PUT
-        /// </summary>
-        Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdatePassthroughRawResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(
+            string connectionId,
+            string path,
+            byte[]? requestBody = null,
+            Dictionary<string, object>? query = null
+        );
     }
 
     public class Passthrough: IPassthrough
     {
+        /// <summary>
+        /// SDK Configuration.
+        /// <see cref="SDKConfig"/>
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.91";
-        private const string _sdkGenVersion = "2.632.2";
-        private const string _openapiDocVersion = "1.0";
 
         public Passthrough(SDKConfig config)
         {
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
+        /// <summary>
+        /// Passthrough POST.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreatePassthroughJsonResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(
+            string connectionId,
+            string path,
+            object? requestBody = null,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new CreatePassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
@@ -88,11 +215,17 @@ namespace UnifiedTo
                 RequestBody = requestBody,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json", false, true);
             if (serializedBody != null)
@@ -105,7 +238,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough_json", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough_json", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -124,9 +257,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -142,41 +275,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new CreatePassthroughJsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new CreatePassthroughJsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new CreatePassthroughJsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -187,7 +333,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -198,7 +345,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -209,7 +357,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -220,18 +369,40 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
 
-        public async Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
+
+        /// <summary>
+        /// Passthrough POST.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreatePassthroughRawResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(
+            string connectionId,
+            string path,
+            byte[]? requestBody = null,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new CreatePassthroughRawRequest()
             {
                 ConnectionId = connectionId,
@@ -239,11 +410,17 @@ namespace UnifiedTo
                 RequestBody = requestBody,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "raw", false, true);
             if (serializedBody != null)
@@ -256,7 +433,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createPassthrough_raw", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -275,9 +452,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -293,41 +470,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new CreatePassthroughRawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new CreatePassthroughRawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new CreatePassthroughRawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -338,7 +528,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -349,7 +540,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -360,7 +552,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -371,36 +564,62 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
 
-        public async Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path, Dictionary<string, object>? query = null)
+
+        /// <summary>
+        /// Passthrough GET.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListPassthroughsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListPassthroughsResponse> ListPassthroughsAsync(
+            string connectionId,
+            string path,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new ListPassthroughsRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPassthroughs", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listPassthroughs", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -419,9 +638,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -437,41 +656,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new ListPassthroughsResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new ListPassthroughsResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new ListPassthroughsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -482,7 +714,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -493,7 +726,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -504,7 +738,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -515,18 +750,40 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
 
-        public async Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
+
+        /// <summary>
+        /// Passthrough PUT.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchPassthroughJsonResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(
+            string connectionId,
+            string path,
+            object? requestBody = null,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new PatchPassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
@@ -534,11 +791,17 @@ namespace UnifiedTo
                 RequestBody = requestBody,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json", false, true);
             if (serializedBody != null)
@@ -551,7 +814,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough_json", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough_json", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -570,9 +833,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -588,41 +851,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new PatchPassthroughJsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new PatchPassthroughJsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new PatchPassthroughJsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -633,7 +909,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -644,7 +921,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -655,7 +933,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -666,18 +945,40 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
 
-        public async Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
+
+        /// <summary>
+        /// Passthrough PUT.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchPassthroughRawResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(
+            string connectionId,
+            string path,
+            byte[]? requestBody = null,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new PatchPassthroughRawRequest()
             {
                 ConnectionId = connectionId,
@@ -685,11 +986,17 @@ namespace UnifiedTo
                 RequestBody = requestBody,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "raw", false, true);
             if (serializedBody != null)
@@ -702,7 +1009,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchPassthrough_raw", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -721,9 +1028,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -739,41 +1046,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new PatchPassthroughRawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new PatchPassthroughRawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new PatchPassthroughRawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -784,7 +1104,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -795,7 +1116,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -806,7 +1128,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -817,36 +1140,62 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
 
-        public async Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path, Dictionary<string, object>? query = null)
+
+        /// <summary>
+        /// Passthrough DELETE.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="RemovePassthroughResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<RemovePassthroughResponse> RemovePassthroughAsync(
+            string connectionId,
+            string path,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new RemovePassthroughRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             if (SDKConfiguration.SecuritySource != null)
             {
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePassthrough", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removePassthrough", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -865,9 +1214,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -883,41 +1232,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new RemovePassthroughResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new RemovePassthroughResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new RemovePassthroughResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -928,7 +1290,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -939,7 +1302,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -950,7 +1314,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -961,18 +1326,40 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
 
-        public async Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
+
+        /// <summary>
+        /// Passthrough PUT.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdatePassthroughJsonResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(
+            string connectionId,
+            string path,
+            object? requestBody = null,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new UpdatePassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
@@ -980,11 +1367,17 @@ namespace UnifiedTo
                 RequestBody = requestBody,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json", false, true);
             if (serializedBody != null)
@@ -997,7 +1390,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough_json", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough_json", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1016,9 +1409,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -1034,41 +1427,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new UpdatePassthroughJsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new UpdatePassthroughJsonResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new UpdatePassthroughJsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -1079,7 +1485,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -1090,7 +1497,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -1101,7 +1509,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -1112,18 +1521,40 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
 
-        public async Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
+
+        /// <summary>
+        /// Passthrough PUT.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="path">Description not available.</param>
+        /// <param name="requestBody">integration-specific payload.</param>
+        /// <param name="query">Description not available.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdatePassthroughRawResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="path"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(
+            string connectionId,
+            string path,
+            byte[]? requestBody = null,
+            Dictionary<string, object>? query = null
+        )
         {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (path == null) throw new ArgumentNullException(nameof(path));
+
             var request = new UpdatePassthroughRawRequest()
             {
                 ConnectionId = connectionId,
@@ -1131,11 +1562,17 @@ namespace UnifiedTo
                 RequestBody = requestBody,
                 Query = query,
             };
+
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json;q=1, text/csv;q=0.8, text/plain;q=0.6, application/xml;q=0.4, */*;q=0");
+            }
 
             var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "raw", false, true);
             if (serializedBody != null)
@@ -1148,7 +1585,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough_raw", new List<string> {  }, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updatePassthrough_raw", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1167,9 +1604,9 @@ namespace UnifiedTo
                     }
                 }
             }
-            catch (Exception error)
+            catch (Exception _hookError)
             {
-                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -1185,41 +1622,54 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(new List<int>{204, 205}.Contains(responseStatusCode))
-            {                
+            {
                 return new UpdatePassthroughRawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode == 304)
-            {                
+            {
                 return new UpdatePassthroughRawResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
-                    RawResponse = httpResponse
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
                 };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
             else
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    object obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<object>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into object.", httpResponse, httpResponseBody, ex);
+                    }
+
                     var response = new UpdatePassthroughRawResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationJsonAny = obj;
                     return response;
@@ -1230,7 +1680,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -1241,7 +1692,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -1252,7 +1704,8 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
@@ -1263,14 +1716,16 @@ namespace UnifiedTo
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
-                        RawResponse = httpResponse
+                        RawResponse = httpResponse,
+                        Headers = Utilities.CollectHeaders(httpResponse.Headers)
                     };
                     response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
-                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
             }
         }
+
     }
 }

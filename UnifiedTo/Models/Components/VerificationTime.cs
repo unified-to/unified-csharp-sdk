@@ -12,15 +12,14 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class VerificationTime
     {
-
         [JsonProperty("milliseconds")]
         public double? Milliseconds { get; set; }
 
         /// <summary>
-        /// {country}-{stateprovince/territory} or just {country} 2-digit ISO codes
+        /// {country}-{stateprovince/territory} or just {country} 2-digit ISO codes.
         /// </summary>
         [JsonProperty("valid_regions")]
         public List<string>? ValidRegions { get; set; }

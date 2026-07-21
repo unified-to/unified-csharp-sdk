@@ -1,5 +1,13 @@
 # PatchHrisDeductionQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchHrisDeductionQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class ScimRole
     {
-
         [JsonProperty("display")]
         public string? Display { get; set; }
 

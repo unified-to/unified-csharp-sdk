@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListSortByName
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListSortByNameExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListSortByName : IEquatable<ListSortByName>
     {
-        public static string Value(this ListSortByName value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListSortByName SupportedRequired = new ListSortByName("supported-required");
+        public static readonly ListSortByName Supported = new ListSortByName("supported");
+        public static readonly ListSortByName NotSupported = new ListSortByName("not-supported");
 
-        public static ListSortByName ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListSortByName).GetFields())
+        private static readonly Dictionary <string, ListSortByName> _knownValues =
+            new Dictionary <string, ListSortByName> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListSortByName> _values =
+            new ConcurrentDictionary<string, ListSortByName>(_knownValues);
 
-                    if (enumVal is ListSortByName)
-                    {
-                        return (ListSortByName)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListSortByName");
+        private ListSortByName(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListSortByName Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListSortByName(value));
+        }
+
+        public static implicit operator ListSortByName(string value) => Of(value);
+        public static implicit operator string(ListSortByName listsortbyname) => listsortbyname.Value;
+
+        public static ListSortByName[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListSortByName);
+
+        public bool Equals(ListSortByName? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

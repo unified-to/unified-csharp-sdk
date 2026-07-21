@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingCreditmemoPaymentCollectionMethod
-    {
-        [JsonProperty("send_invoice")]
-        SendInvoice,
-        [JsonProperty("charge_automatically")]
-        ChargeAutomatically,
-    }
 
-    public static class AccountingCreditmemoPaymentCollectionMethodExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingCreditmemoPaymentCollectionMethod : IEquatable<AccountingCreditmemoPaymentCollectionMethod>
     {
-        public static string Value(this AccountingCreditmemoPaymentCollectionMethod value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingCreditmemoPaymentCollectionMethod SendInvoice = new AccountingCreditmemoPaymentCollectionMethod("send_invoice");
+        public static readonly AccountingCreditmemoPaymentCollectionMethod ChargeAutomatically = new AccountingCreditmemoPaymentCollectionMethod("charge_automatically");
 
-        public static AccountingCreditmemoPaymentCollectionMethod ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingCreditmemoPaymentCollectionMethod).GetFields())
+        private static readonly Dictionary <string, AccountingCreditmemoPaymentCollectionMethod> _knownValues =
+            new Dictionary <string, AccountingCreditmemoPaymentCollectionMethod> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["send_invoice"] = SendInvoice,
+                ["charge_automatically"] = ChargeAutomatically
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingCreditmemoPaymentCollectionMethod> _values =
+            new ConcurrentDictionary<string, AccountingCreditmemoPaymentCollectionMethod>(_knownValues);
 
-                    if (enumVal is AccountingCreditmemoPaymentCollectionMethod)
-                    {
-                        return (AccountingCreditmemoPaymentCollectionMethod)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingCreditmemoPaymentCollectionMethod");
+        private AccountingCreditmemoPaymentCollectionMethod(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingCreditmemoPaymentCollectionMethod Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingCreditmemoPaymentCollectionMethod(value));
+        }
+
+        public static implicit operator AccountingCreditmemoPaymentCollectionMethod(string value) => Of(value);
+        public static implicit operator string(AccountingCreditmemoPaymentCollectionMethod accountingcreditmemopaymentcollectionmethod) => accountingcreditmemopaymentcollectionmethod.Value;
+
+        public static AccountingCreditmemoPaymentCollectionMethod[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingCreditmemoPaymentCollectionMethod);
+
+        public bool Equals(AccountingCreditmemoPaymentCollectionMethod? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

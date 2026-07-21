@@ -11,65 +11,82 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum TaxExemption
-    {
-        [JsonProperty("FEDERAL_GOV")]
-        FederalGov,
-        [JsonProperty("REGION_GOV")]
-        RegionGov,
-        [JsonProperty("LOCAL_GOV")]
-        LocalGov,
-        [JsonProperty("TRIBAL_GOV")]
-        TribalGov,
-        [JsonProperty("CHARITABLE_ORG")]
-        CharitableOrg,
-        [JsonProperty("RELIGIOUS_ORG")]
-        ReligiousOrg,
-        [JsonProperty("EDUCATIONAL_ORG")]
-        EducationalOrg,
-        [JsonProperty("MEDICAL_ORG")]
-        MedicalOrg,
-        [JsonProperty("RESALE")]
-        Resale,
-        [JsonProperty("FOREIGN")]
-        Foreign,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class TaxExemptionExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class TaxExemption : IEquatable<TaxExemption>
     {
-        public static string Value(this TaxExemption value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly TaxExemption FederalGov = new TaxExemption("FEDERAL_GOV");
+        public static readonly TaxExemption RegionGov = new TaxExemption("REGION_GOV");
+        public static readonly TaxExemption LocalGov = new TaxExemption("LOCAL_GOV");
+        public static readonly TaxExemption TribalGov = new TaxExemption("TRIBAL_GOV");
+        public static readonly TaxExemption CharitableOrg = new TaxExemption("CHARITABLE_ORG");
+        public static readonly TaxExemption ReligiousOrg = new TaxExemption("RELIGIOUS_ORG");
+        public static readonly TaxExemption EducationalOrg = new TaxExemption("EDUCATIONAL_ORG");
+        public static readonly TaxExemption MedicalOrg = new TaxExemption("MEDICAL_ORG");
+        public static readonly TaxExemption Resale = new TaxExemption("RESALE");
+        public static readonly TaxExemption Foreign = new TaxExemption("FOREIGN");
+        public static readonly TaxExemption Other = new TaxExemption("OTHER");
 
-        public static TaxExemption ToEnum(this string value)
-        {
-            foreach(var field in typeof(TaxExemption).GetFields())
+        private static readonly Dictionary <string, TaxExemption> _knownValues =
+            new Dictionary <string, TaxExemption> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FEDERAL_GOV"] = FederalGov,
+                ["REGION_GOV"] = RegionGov,
+                ["LOCAL_GOV"] = LocalGov,
+                ["TRIBAL_GOV"] = TribalGov,
+                ["CHARITABLE_ORG"] = CharitableOrg,
+                ["RELIGIOUS_ORG"] = ReligiousOrg,
+                ["EDUCATIONAL_ORG"] = EducationalOrg,
+                ["MEDICAL_ORG"] = MedicalOrg,
+                ["RESALE"] = Resale,
+                ["FOREIGN"] = Foreign,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, TaxExemption> _values =
+            new ConcurrentDictionary<string, TaxExemption>(_knownValues);
 
-                    if (enumVal is TaxExemption)
-                    {
-                        return (TaxExemption)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum TaxExemption");
+        private TaxExemption(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static TaxExemption Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new TaxExemption(value));
+        }
+
+        public static implicit operator TaxExemption(string value) => Of(value);
+        public static implicit operator string(TaxExemption taxexemption) => taxexemption.Value;
+
+        public static TaxExemption[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as TaxExemption);
+
+        public bool Equals(TaxExemption? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ResponseStatus
-    {
-        [JsonProperty("OPEN")]
-        Open,
-        [JsonProperty("IN_PROGRESS")]
-        InProgress,
-        [JsonProperty("COMPLETED")]
-        Completed,
-        [JsonProperty("FAILED")]
-        Failed,
-        [JsonProperty("REJECTED")]
-        Rejected,
-    }
 
-    public static class ResponseStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ResponseStatus : IEquatable<ResponseStatus>
     {
-        public static string Value(this ResponseStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ResponseStatus Open = new ResponseStatus("OPEN");
+        public static readonly ResponseStatus InProgress = new ResponseStatus("IN_PROGRESS");
+        public static readonly ResponseStatus Completed = new ResponseStatus("COMPLETED");
+        public static readonly ResponseStatus Failed = new ResponseStatus("FAILED");
+        public static readonly ResponseStatus Rejected = new ResponseStatus("REJECTED");
 
-        public static ResponseStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(ResponseStatus).GetFields())
+        private static readonly Dictionary <string, ResponseStatus> _knownValues =
+            new Dictionary <string, ResponseStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["OPEN"] = Open,
+                ["IN_PROGRESS"] = InProgress,
+                ["COMPLETED"] = Completed,
+                ["FAILED"] = Failed,
+                ["REJECTED"] = Rejected
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ResponseStatus> _values =
+            new ConcurrentDictionary<string, ResponseStatus>(_knownValues);
 
-                    if (enumVal is ResponseStatus)
-                    {
-                        return (ResponseStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ResponseStatus");
+        private ResponseStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ResponseStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ResponseStatus(value));
+        }
+
+        public static implicit operator ResponseStatus(string value) => Of(value);
+        public static implicit operator string(ResponseStatus responsestatus) => responsestatus.Value;
+
+        public static ResponseStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ResponseStatus);
+
+        public bool Equals(ResponseStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

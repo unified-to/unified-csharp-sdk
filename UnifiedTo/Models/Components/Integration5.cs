@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class Integration5Type
     {
         private Integration5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static Integration5Type Integration1 { get { return new Integration5Type("Integration_1"); } }
-        
+
         public static Integration5Type Str { get { return new Integration5Type("str"); } }
-        
+
         public static Integration5Type Number { get { return new Integration5Type("number"); } }
-        
+
         public static Integration5Type Boolean { get { return new Integration5Type("boolean"); } }
-        
-        public static Integration5Type Null { get { return new Integration5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(Integration5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for Integration5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Integration5.Integration5Converter))]
-    public class Integration5 {
-        public Integration5(Integration5Type type) {
+    public class Integration5
+    {
+        public Integration5(Integration5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public Integration5Type Type { get; set; }
-
-
-        public static Integration5 CreateIntegration1(Integration1 integration1) {
+        public static Integration5 CreateIntegration1(Integration1 integration1)
+        {
             Integration5Type typ = Integration5Type.Integration1;
 
             Integration5 res = new Integration5(typ);
             res.Integration1 = integration1;
             return res;
         }
-
-        public static Integration5 CreateStr(string str) {
+        public static Integration5 CreateStr(string str)
+        {
             Integration5Type typ = Integration5Type.Str;
 
             Integration5 res = new Integration5(typ);
             res.Str = str;
             return res;
         }
-
-        public static Integration5 CreateNumber(double number) {
+        public static Integration5 CreateNumber(double number)
+        {
             Integration5Type typ = Integration5Type.Number;
 
             Integration5 res = new Integration5(typ);
             res.Number = number;
             return res;
         }
-
-        public static Integration5 CreateBoolean(bool boolean) {
+        public static Integration5 CreateBoolean(bool boolean)
+        {
             Integration5Type typ = Integration5Type.Boolean;
 
             Integration5 res = new Integration5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Integration5 CreateNull() {
-            Integration5Type typ = Integration5Type.Null;
-            return new Integration5(typ);
-        }
-
         public class Integration5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(Integration5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                Integration5 res = (Integration5)value;
-                if (Integration5Type.FromString(res.Type).Equals(Integration5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                Integration5 res = (Integration5)value;
+
                 if (res.Integration1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Integration1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

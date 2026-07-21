@@ -14,10 +14,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class ShippingRateRate
     {
-
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
@@ -67,7 +66,7 @@ namespace UnifiedTo.Models.Components
         public string? RateSource { get; set; }
 
         /// <summary>
-        /// Additional charges
+        /// Additional charges.
         /// </summary>
         [JsonProperty("surcharges")]
         public List<ShippingRateSurcharge>? Surcharges { get; set; }

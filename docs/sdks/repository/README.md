@@ -1,5 +1,4 @@
 # Repository
-(*Repository*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoRepository" method="get" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ List all repositories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoRepositories" method="get" path="/repo/{connection_id}/repository" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,6 +144,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -186,6 +189,7 @@ Remove a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoRepository" method="delete" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -225,6 +229,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -1,5 +1,13 @@
 # ListAccountingJournalsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAccountingJournalsQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -13,13 +13,12 @@ namespace UnifiedTo.Models.Components
     using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// An authentication object that represents a specific authorized user&apos;s connection to an integration.
+    /// An authentication object that represents a specific authorized user's connection to an integration.
     /// </summary>
     public class PropertyConnectionAuth
     {
-
         [JsonProperty("access_token")]
         public string? AccessToken { get; set; }
 
@@ -69,7 +68,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         /// <summary>
-        /// When integration.auth_type = &quot;other&quot;, this field contains the authentication credentials in the same order as token_names
+        /// When integration.auth_type = "other", this field contains the authentication credentials in the same order as token_names.
         /// </summary>
         [JsonProperty("other_auth_info")]
         public List<string>? OtherAuthInfo { get; set; }

@@ -11,20 +11,25 @@ generation:
     requestResponseComponentNamesFeb2024: false
     securityFeb2025: false
     sharedErrorComponentsApr2025: false
-    nameOverrideFeb2026: false
     sharedNestedComponentsJan2026: false
+    nameOverrideFeb2026: false
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
-  baseServerURL: ""
-  flattenGlobalSecurity: true
-  persistentEdits: {}
-  requestBodyFieldName: ""
+    hoistGlobalSecurity: true
   schemas:
     allOfMergeStrategy: shallowMerge
+  requestBodyFieldName: ""
   versioningStrategy: automatic
+  persistentEdits: {}
+  tests:
+    generateTests: true
+    generateNewTests: false
+    skipResponseBodyAssertions: false
+  baseServerURL: ""
+  flattenGlobalSecurity: true
 csharp:
-  version: 0.130.91
+  version: 0.131.0
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError

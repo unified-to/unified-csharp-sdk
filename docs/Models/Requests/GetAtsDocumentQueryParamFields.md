@@ -1,5 +1,13 @@
 # GetAtsDocumentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAtsDocumentQueryParamFields.Id;
+```
+
 
 ## Values
 

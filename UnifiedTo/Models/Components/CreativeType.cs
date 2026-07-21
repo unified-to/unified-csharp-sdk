@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CreativeType
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("STANDARD")]
-        Standard,
-        [JsonProperty("EXPANDABLE")]
-        Expandable,
-        [JsonProperty("VIDEO")]
-        Video,
-        [JsonProperty("NATIVE")]
-        Native,
-        [JsonProperty("AUDIO")]
-        Audio,
-        [JsonProperty("PUBLISHER_HOSTED")]
-        PublisherHosted,
-        [JsonProperty("ASSET_BASED")]
-        AssetBased,
-        [JsonProperty("IMAGE")]
-        Image,
-        [JsonProperty("DOCUMENT")]
-        Document,
-    }
 
-    public static class CreativeTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CreativeType : IEquatable<CreativeType>
     {
-        public static string Value(this CreativeType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CreativeType Unspecified = new CreativeType("UNSPECIFIED");
+        public static readonly CreativeType Standard = new CreativeType("STANDARD");
+        public static readonly CreativeType Expandable = new CreativeType("EXPANDABLE");
+        public static readonly CreativeType Video = new CreativeType("VIDEO");
+        public static readonly CreativeType Native = new CreativeType("NATIVE");
+        public static readonly CreativeType Audio = new CreativeType("AUDIO");
+        public static readonly CreativeType PublisherHosted = new CreativeType("PUBLISHER_HOSTED");
+        public static readonly CreativeType AssetBased = new CreativeType("ASSET_BASED");
+        public static readonly CreativeType Image = new CreativeType("IMAGE");
+        public static readonly CreativeType Document = new CreativeType("DOCUMENT");
 
-        public static CreativeType ToEnum(this string value)
-        {
-            foreach(var field in typeof(CreativeType).GetFields())
+        private static readonly Dictionary <string, CreativeType> _knownValues =
+            new Dictionary <string, CreativeType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["STANDARD"] = Standard,
+                ["EXPANDABLE"] = Expandable,
+                ["VIDEO"] = Video,
+                ["NATIVE"] = Native,
+                ["AUDIO"] = Audio,
+                ["PUBLISHER_HOSTED"] = PublisherHosted,
+                ["ASSET_BASED"] = AssetBased,
+                ["IMAGE"] = Image,
+                ["DOCUMENT"] = Document
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CreativeType> _values =
+            new ConcurrentDictionary<string, CreativeType>(_knownValues);
 
-                    if (enumVal is CreativeType)
-                    {
-                        return (CreativeType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CreativeType");
+        private CreativeType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CreativeType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CreativeType(value));
+        }
+
+        public static implicit operator CreativeType(string value) => Of(value);
+        public static implicit operator string(CreativeType creativetype) => creativetype.Value;
+
+        public static CreativeType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CreativeType);
+
+        public bool Equals(CreativeType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

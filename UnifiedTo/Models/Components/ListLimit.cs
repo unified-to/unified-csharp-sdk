@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListLimit
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListLimitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListLimit : IEquatable<ListLimit>
     {
-        public static string Value(this ListLimit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListLimit SupportedRequired = new ListLimit("supported-required");
+        public static readonly ListLimit Supported = new ListLimit("supported");
+        public static readonly ListLimit NotSupported = new ListLimit("not-supported");
 
-        public static ListLimit ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListLimit).GetFields())
+        private static readonly Dictionary <string, ListLimit> _knownValues =
+            new Dictionary <string, ListLimit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListLimit> _values =
+            new ConcurrentDictionary<string, ListLimit>(_knownValues);
 
-                    if (enumVal is ListLimit)
-                    {
-                        return (ListLimit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListLimit");
+        private ListLimit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListLimit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListLimit(value));
+        }
+
+        public static implicit operator ListLimit(string value) => Of(value);
+        public static implicit operator string(ListLimit listlimit) => listlimit.Value;
+
+        public static ListLimit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListLimit);
+
+        public bool Equals(ListLimit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

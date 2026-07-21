@@ -11,75 +11,92 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisBenefitType
-    {
-        [JsonProperty("RETIREMENT")]
-        Retirement,
-        [JsonProperty("HEALTH")]
-        Health,
-        [JsonProperty("DENTAL")]
-        Dental,
-        [JsonProperty("VISION")]
-        Vision,
-        [JsonProperty("LIFE")]
-        Life,
-        [JsonProperty("HSA")]
-        Hsa,
-        [JsonProperty("FSA")]
-        Fsa,
-        [JsonProperty("SHORT_TERM_DISABILITY")]
-        ShortTermDisability,
-        [JsonProperty("LONG_TERM_DISABILITY")]
-        LongTermDisability,
-        [JsonProperty("WORKERS_COMP")]
-        WorkersComp,
-        [JsonProperty("HOUSING_STIPEND")]
-        HousingStipend,
-        [JsonProperty("EMPLOYER_TAX_CONTRIBUTION")]
-        EmployerTaxContribution,
-        [JsonProperty("GARNISHMENT")]
-        Garnishment,
-        [JsonProperty("LOAN_REPAYMENT")]
-        LoanRepayment,
-        [JsonProperty("CHARITABLE_CONTRIBUTION")]
-        CharitableContribution,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class HrisBenefitTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisBenefitType : IEquatable<HrisBenefitType>
     {
-        public static string Value(this HrisBenefitType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisBenefitType Retirement = new HrisBenefitType("RETIREMENT");
+        public static readonly HrisBenefitType Health = new HrisBenefitType("HEALTH");
+        public static readonly HrisBenefitType Dental = new HrisBenefitType("DENTAL");
+        public static readonly HrisBenefitType Vision = new HrisBenefitType("VISION");
+        public static readonly HrisBenefitType Life = new HrisBenefitType("LIFE");
+        public static readonly HrisBenefitType Hsa = new HrisBenefitType("HSA");
+        public static readonly HrisBenefitType Fsa = new HrisBenefitType("FSA");
+        public static readonly HrisBenefitType ShortTermDisability = new HrisBenefitType("SHORT_TERM_DISABILITY");
+        public static readonly HrisBenefitType LongTermDisability = new HrisBenefitType("LONG_TERM_DISABILITY");
+        public static readonly HrisBenefitType WorkersComp = new HrisBenefitType("WORKERS_COMP");
+        public static readonly HrisBenefitType HousingStipend = new HrisBenefitType("HOUSING_STIPEND");
+        public static readonly HrisBenefitType EmployerTaxContribution = new HrisBenefitType("EMPLOYER_TAX_CONTRIBUTION");
+        public static readonly HrisBenefitType Garnishment = new HrisBenefitType("GARNISHMENT");
+        public static readonly HrisBenefitType LoanRepayment = new HrisBenefitType("LOAN_REPAYMENT");
+        public static readonly HrisBenefitType CharitableContribution = new HrisBenefitType("CHARITABLE_CONTRIBUTION");
+        public static readonly HrisBenefitType Other = new HrisBenefitType("OTHER");
 
-        public static HrisBenefitType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisBenefitType).GetFields())
+        private static readonly Dictionary <string, HrisBenefitType> _knownValues =
+            new Dictionary <string, HrisBenefitType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["RETIREMENT"] = Retirement,
+                ["HEALTH"] = Health,
+                ["DENTAL"] = Dental,
+                ["VISION"] = Vision,
+                ["LIFE"] = Life,
+                ["HSA"] = Hsa,
+                ["FSA"] = Fsa,
+                ["SHORT_TERM_DISABILITY"] = ShortTermDisability,
+                ["LONG_TERM_DISABILITY"] = LongTermDisability,
+                ["WORKERS_COMP"] = WorkersComp,
+                ["HOUSING_STIPEND"] = HousingStipend,
+                ["EMPLOYER_TAX_CONTRIBUTION"] = EmployerTaxContribution,
+                ["GARNISHMENT"] = Garnishment,
+                ["LOAN_REPAYMENT"] = LoanRepayment,
+                ["CHARITABLE_CONTRIBUTION"] = CharitableContribution,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisBenefitType> _values =
+            new ConcurrentDictionary<string, HrisBenefitType>(_knownValues);
 
-                    if (enumVal is HrisBenefitType)
-                    {
-                        return (HrisBenefitType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisBenefitType");
+        private HrisBenefitType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisBenefitType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisBenefitType(value));
+        }
+
+        public static implicit operator HrisBenefitType(string value) => Of(value);
+        public static implicit operator string(HrisBenefitType hrisbenefittype) => hrisbenefittype.Value;
+
+        public static HrisBenefitType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisBenefitType);
+
+        public bool Equals(HrisBenefitType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

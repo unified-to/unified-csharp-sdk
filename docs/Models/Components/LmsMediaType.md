@@ -1,5 +1,16 @@
 # LmsMediaType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = LmsMediaType.Image;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = LmsMediaType.Of("custom_value");
+```
+
 
 ## Values
 

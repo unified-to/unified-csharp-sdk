@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ApiCallType
-    {
-        [JsonProperty("login")]
-        Login,
-        [JsonProperty("webhook")]
-        Webhook,
-        [JsonProperty("inbound")]
-        Inbound,
-        [JsonProperty("mcp")]
-        Mcp,
-    }
 
-    public static class ApiCallTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ApiCallType : IEquatable<ApiCallType>
     {
-        public static string Value(this ApiCallType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ApiCallType Login = new ApiCallType("login");
+        public static readonly ApiCallType Webhook = new ApiCallType("webhook");
+        public static readonly ApiCallType Inbound = new ApiCallType("inbound");
+        public static readonly ApiCallType Mcp = new ApiCallType("mcp");
 
-        public static ApiCallType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ApiCallType).GetFields())
+        private static readonly Dictionary <string, ApiCallType> _knownValues =
+            new Dictionary <string, ApiCallType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["login"] = Login,
+                ["webhook"] = Webhook,
+                ["inbound"] = Inbound,
+                ["mcp"] = Mcp
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ApiCallType> _values =
+            new ConcurrentDictionary<string, ApiCallType>(_knownValues);
 
-                    if (enumVal is ApiCallType)
-                    {
-                        return (ApiCallType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ApiCallType");
+        private ApiCallType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ApiCallType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ApiCallType(value));
+        }
+
+        public static implicit operator ApiCallType(string value) => Of(value);
+        public static implicit operator string(ApiCallType apicalltype) => apicalltype.Value;
+
+        public static ApiCallType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ApiCallType);
+
+        public bool Equals(ApiCallType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,13 @@
 # ListAdsTargetsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAdsTargetsQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class DatastoreFilter
     {
-
         [JsonProperty("condition")]
         public PropertyDatastoreFilterCondition Condition { get; set; } = default!;
 

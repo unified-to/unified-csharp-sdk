@@ -1,5 +1,16 @@
 # NativeWebhookTemplateId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = NativeWebhookTemplateId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = NativeWebhookTemplateId.Of("custom_value");
+```
+
 
 ## Values
 

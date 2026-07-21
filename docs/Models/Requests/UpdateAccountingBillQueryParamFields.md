@@ -1,5 +1,13 @@
 # UpdateAccountingBillQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingBillQueryParamFields.Id;
+```
+
 
 ## Values
 

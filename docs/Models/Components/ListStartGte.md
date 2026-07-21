@@ -1,5 +1,16 @@
 # ListStartGte
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListStartGte.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListStartGte.Of("custom_value");
+```
+
 
 ## Values
 

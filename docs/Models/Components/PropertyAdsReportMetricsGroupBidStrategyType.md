@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsGroupBidStrategyType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsGroupBidStrategyType.FixedBid;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsGroupBidStrategyType.Of("custom_value");
+```
+
 
 ## Values
 

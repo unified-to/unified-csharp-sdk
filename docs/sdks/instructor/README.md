@@ -1,5 +1,4 @@
 # Instructor
-(*Instructor*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getLmsInstructor" method="get" path="/lms/{connection_id}/instructor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all instructors
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listLmsInstructors" method="get" path="/lms/{connection_id}/instructor" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeLmsInstructor" method="delete" path="/lms/{connection_id}/instructor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update an instructor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

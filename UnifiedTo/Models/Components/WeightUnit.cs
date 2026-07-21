@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum WeightUnit
-    {
-        [JsonProperty("g")]
-        G,
-        [JsonProperty("kg")]
-        Kg,
-        [JsonProperty("oz")]
-        Oz,
-        [JsonProperty("lb")]
-        Lb,
-    }
 
-    public static class WeightUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class WeightUnit : IEquatable<WeightUnit>
     {
-        public static string Value(this WeightUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly WeightUnit G = new WeightUnit("g");
+        public static readonly WeightUnit Kg = new WeightUnit("kg");
+        public static readonly WeightUnit Oz = new WeightUnit("oz");
+        public static readonly WeightUnit Lb = new WeightUnit("lb");
 
-        public static WeightUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(WeightUnit).GetFields())
+        private static readonly Dictionary <string, WeightUnit> _knownValues =
+            new Dictionary <string, WeightUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["g"] = G,
+                ["kg"] = Kg,
+                ["oz"] = Oz,
+                ["lb"] = Lb
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, WeightUnit> _values =
+            new ConcurrentDictionary<string, WeightUnit>(_knownValues);
 
-                    if (enumVal is WeightUnit)
-                    {
-                        return (WeightUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum WeightUnit");
+        private WeightUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static WeightUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new WeightUnit(value));
+        }
+
+        public static implicit operator WeightUnit(string value) => Of(value);
+        public static implicit operator string(WeightUnit weightunit) => weightunit.Value;
+
+        public static WeightUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as WeightUnit);
+
+        public bool Equals(WeightUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

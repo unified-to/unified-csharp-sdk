@@ -1,5 +1,4 @@
 # Passthrough
-(*Passthrough*)
 
 ## Overview
 
@@ -20,6 +19,7 @@ Passthrough POST
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createPassthrough_json" method="post" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Passthrough POST
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createPassthrough_raw" method="post" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ Passthrough GET
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPassthroughs" method="get" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,6 +144,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchPassthrough_json" method="patch" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -183,6 +186,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchPassthrough_raw" method="patch" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -224,6 +228,7 @@ Passthrough DELETE
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removePassthrough" method="delete" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -264,6 +269,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updatePassthrough_json" method="put" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -305,6 +311,7 @@ Passthrough PUT
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updatePassthrough_raw" method="put" path="/passthrough/{connection_id}/{path}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

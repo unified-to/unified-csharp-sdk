@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     public class AdsInsertionorderBudgetSegment
     {
-
         [JsonProperty("budget_amount")]
         public double? BudgetAmount { get; set; }
 

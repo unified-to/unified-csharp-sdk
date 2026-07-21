@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsGroupBidStrategyType
-    {
-        [JsonProperty("FIXED_BID")]
-        FixedBid,
-        [JsonProperty("MAXIMIZE_SPEND")]
-        MaximizeSpend,
-        [JsonProperty("PERFORMANCE_GOAL")]
-        PerformanceGoal,
-        [JsonProperty("YOUTUBE_AND_PARTNERS")]
-        YoutubeAndPartners,
-    }
 
-    public static class PropertyAdsGroupBidStrategyTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsGroupBidStrategyType : IEquatable<PropertyAdsGroupBidStrategyType>
     {
-        public static string Value(this PropertyAdsGroupBidStrategyType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsGroupBidStrategyType FixedBid = new PropertyAdsGroupBidStrategyType("FIXED_BID");
+        public static readonly PropertyAdsGroupBidStrategyType MaximizeSpend = new PropertyAdsGroupBidStrategyType("MAXIMIZE_SPEND");
+        public static readonly PropertyAdsGroupBidStrategyType PerformanceGoal = new PropertyAdsGroupBidStrategyType("PERFORMANCE_GOAL");
+        public static readonly PropertyAdsGroupBidStrategyType YoutubeAndPartners = new PropertyAdsGroupBidStrategyType("YOUTUBE_AND_PARTNERS");
 
-        public static PropertyAdsGroupBidStrategyType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsGroupBidStrategyType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsGroupBidStrategyType> _knownValues =
+            new Dictionary <string, PropertyAdsGroupBidStrategyType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FIXED_BID"] = FixedBid,
+                ["MAXIMIZE_SPEND"] = MaximizeSpend,
+                ["PERFORMANCE_GOAL"] = PerformanceGoal,
+                ["YOUTUBE_AND_PARTNERS"] = YoutubeAndPartners
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsGroupBidStrategyType> _values =
+            new ConcurrentDictionary<string, PropertyAdsGroupBidStrategyType>(_knownValues);
 
-                    if (enumVal is PropertyAdsGroupBidStrategyType)
-                    {
-                        return (PropertyAdsGroupBidStrategyType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsGroupBidStrategyType");
+        private PropertyAdsGroupBidStrategyType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsGroupBidStrategyType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsGroupBidStrategyType(value));
+        }
+
+        public static implicit operator PropertyAdsGroupBidStrategyType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsGroupBidStrategyType propertyadsgroupbidstrategytype) => propertyadsgroupbidstrategytype.Value;
+
+        public static PropertyAdsGroupBidStrategyType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsGroupBidStrategyType);
+
+        public bool Equals(PropertyAdsGroupBidStrategyType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

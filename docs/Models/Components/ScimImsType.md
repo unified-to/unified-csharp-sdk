@@ -1,5 +1,16 @@
 # ScimImsType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ScimImsType.Aim;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ScimImsType.Of("custom_value");
+```
+
 
 ## Values
 

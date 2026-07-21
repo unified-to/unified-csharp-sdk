@@ -13,10 +13,9 @@ namespace UnifiedTo.Models.Components
     using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class RepoOrganization
     {
-
         [JsonProperty("avatar_url")]
         public string? AvatarUrl { get; set; }
 
@@ -39,7 +38,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// id values of the users/employees associated with this organization
+        /// id values of the users/employees associated with this organization.
         /// </summary>
         [JsonProperty("user_ids")]
         public List<string>? UserIds { get; set; }

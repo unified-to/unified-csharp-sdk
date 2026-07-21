@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// Employee-specific deduction/benefit enrolment.
     /// </summary>
     public class HrisDeduction
     {
-
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 

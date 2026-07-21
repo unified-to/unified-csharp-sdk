@@ -1,5 +1,4 @@
 # Group
-(*Group*)
 
 ## Overview
 
@@ -32,6 +31,7 @@ Create a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -73,6 +73,7 @@ Create a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -114,6 +115,7 @@ Create group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createScimGroups" method="post" path="/scim/{connection_id}/groups" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -155,6 +157,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsGroup" method="get" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -196,6 +199,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsGroup" method="get" path="/clubs/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -237,6 +241,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisGroup" method="get" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -278,6 +283,7 @@ Get group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getScimGroups" method="get" path="/scim/{connection_id}/groups/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -317,6 +323,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsGroups" method="get" path="/ads/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -357,6 +364,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsGroups" method="get" path="/clubs/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -397,6 +405,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisGroups" method="get" path="/hris/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -437,6 +446,7 @@ List groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listScimGroups" method="get" path="/scim/{connection_id}/groups" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -477,6 +487,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -519,6 +530,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -561,6 +573,7 @@ Update group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchScimGroups" method="patch" path="/scim/{connection_id}/groups/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -604,6 +617,7 @@ Remove a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsGroup" method="delete" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -643,6 +657,7 @@ Remove a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisGroup" method="delete" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -682,6 +697,7 @@ Delete group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeScimGroups" method="delete" path="/scim/{connection_id}/groups/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -721,6 +737,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -763,6 +780,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -805,6 +823,7 @@ Update group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateScimGroups" method="put" path="/scim/{connection_id}/groups/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

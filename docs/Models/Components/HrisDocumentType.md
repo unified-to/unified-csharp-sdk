@@ -1,5 +1,16 @@
 # HrisDocumentType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = HrisDocumentType.Contract;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisDocumentType.Of("custom_value");
+```
+
 
 ## Values
 

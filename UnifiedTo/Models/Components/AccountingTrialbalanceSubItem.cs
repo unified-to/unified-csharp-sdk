@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class AccountingTrialbalanceSubItem
     {
-
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 

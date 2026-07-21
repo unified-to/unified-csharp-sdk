@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CrmTelephoneType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-        [JsonProperty("FAX")]
-        Fax,
-        [JsonProperty("MOBILE")]
-        Mobile,
-    }
 
-    public static class CrmTelephoneTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CrmTelephoneType : IEquatable<CrmTelephoneType>
     {
-        public static string Value(this CrmTelephoneType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CrmTelephoneType Work = new CrmTelephoneType("WORK");
+        public static readonly CrmTelephoneType Home = new CrmTelephoneType("HOME");
+        public static readonly CrmTelephoneType Other = new CrmTelephoneType("OTHER");
+        public static readonly CrmTelephoneType Fax = new CrmTelephoneType("FAX");
+        public static readonly CrmTelephoneType Mobile = new CrmTelephoneType("MOBILE");
 
-        public static CrmTelephoneType ToEnum(this string value)
-        {
-            foreach(var field in typeof(CrmTelephoneType).GetFields())
+        private static readonly Dictionary <string, CrmTelephoneType> _knownValues =
+            new Dictionary <string, CrmTelephoneType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other,
+                ["FAX"] = Fax,
+                ["MOBILE"] = Mobile
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CrmTelephoneType> _values =
+            new ConcurrentDictionary<string, CrmTelephoneType>(_knownValues);
 
-                    if (enumVal is CrmTelephoneType)
-                    {
-                        return (CrmTelephoneType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CrmTelephoneType");
+        private CrmTelephoneType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CrmTelephoneType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CrmTelephoneType(value));
+        }
+
+        public static implicit operator CrmTelephoneType(string value) => Of(value);
+        public static implicit operator string(CrmTelephoneType crmtelephonetype) => crmtelephonetype.Value;
+
+        public static CrmTelephoneType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CrmTelephoneType);
+
+        public bool Equals(CrmTelephoneType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisDeductionFrequency
-    {
-        [JsonProperty("ONE_TIME")]
-        OneTime,
-        [JsonProperty("DAY")]
-        Day,
-        [JsonProperty("QUARTER")]
-        Quarter,
-        [JsonProperty("YEAR")]
-        Year,
-        [JsonProperty("HOUR")]
-        Hour,
-        [JsonProperty("MONTH")]
-        Month,
-        [JsonProperty("WEEK")]
-        Week,
-    }
 
-    public static class HrisDeductionFrequencyExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisDeductionFrequency : IEquatable<HrisDeductionFrequency>
     {
-        public static string Value(this HrisDeductionFrequency value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisDeductionFrequency OneTime = new HrisDeductionFrequency("ONE_TIME");
+        public static readonly HrisDeductionFrequency Day = new HrisDeductionFrequency("DAY");
+        public static readonly HrisDeductionFrequency Quarter = new HrisDeductionFrequency("QUARTER");
+        public static readonly HrisDeductionFrequency Year = new HrisDeductionFrequency("YEAR");
+        public static readonly HrisDeductionFrequency Hour = new HrisDeductionFrequency("HOUR");
+        public static readonly HrisDeductionFrequency Month = new HrisDeductionFrequency("MONTH");
+        public static readonly HrisDeductionFrequency Week = new HrisDeductionFrequency("WEEK");
 
-        public static HrisDeductionFrequency ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisDeductionFrequency).GetFields())
+        private static readonly Dictionary <string, HrisDeductionFrequency> _knownValues =
+            new Dictionary <string, HrisDeductionFrequency> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ONE_TIME"] = OneTime,
+                ["DAY"] = Day,
+                ["QUARTER"] = Quarter,
+                ["YEAR"] = Year,
+                ["HOUR"] = Hour,
+                ["MONTH"] = Month,
+                ["WEEK"] = Week
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisDeductionFrequency> _values =
+            new ConcurrentDictionary<string, HrisDeductionFrequency>(_knownValues);
 
-                    if (enumVal is HrisDeductionFrequency)
-                    {
-                        return (HrisDeductionFrequency)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisDeductionFrequency");
+        private HrisDeductionFrequency(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisDeductionFrequency Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisDeductionFrequency(value));
+        }
+
+        public static implicit operator HrisDeductionFrequency(string value) => Of(value);
+        public static implicit operator string(HrisDeductionFrequency hrisdeductionfrequency) => hrisdeductionfrequency.Value;
+
+        public static HrisDeductionFrequency[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisDeductionFrequency);
+
+        public bool Equals(HrisDeductionFrequency? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

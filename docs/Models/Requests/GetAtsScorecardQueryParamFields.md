@@ -1,5 +1,13 @@
 # GetAtsScorecardQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAtsScorecardQueryParamFields.Id;
+```
+
 
 ## Values
 

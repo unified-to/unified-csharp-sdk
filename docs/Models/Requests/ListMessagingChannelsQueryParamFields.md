@@ -1,5 +1,13 @@
 # ListMessagingChannelsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListMessagingChannelsQueryParamFields.Id;
+```
+
 
 ## Values
 

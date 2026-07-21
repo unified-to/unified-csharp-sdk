@@ -1,5 +1,16 @@
 # NativeWebhookTaskId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = NativeWebhookTaskId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = NativeWebhookTaskId.Of("custom_value");
+```
+
 
 ## Values
 

@@ -11,85 +11,102 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsInsertionorderKpiType
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("CPM")]
-        Cpm,
-        [JsonProperty("CPC")]
-        Cpc,
-        [JsonProperty("CPA")]
-        Cpa,
-        [JsonProperty("CTR")]
-        Ctr,
-        [JsonProperty("VIEWABILITY")]
-        Viewability,
-        [JsonProperty("CPIAVC")]
-        Cpiavc,
-        [JsonProperty("CPE")]
-        Cpe,
-        [JsonProperty("CPV")]
-        Cpv,
-        [JsonProperty("CLICK_CVR")]
-        ClickCvr,
-        [JsonProperty("IMPRESSION_CVR")]
-        ImpressionCvr,
-        [JsonProperty("VCPM")]
-        Vcpm,
-        [JsonProperty("VTR")]
-        Vtr,
-        [JsonProperty("AUDIO_COMPLETION_RATE")]
-        AudioCompletionRate,
-        [JsonProperty("VIDEO_COMPLETION_RATE")]
-        VideoCompletionRate,
-        [JsonProperty("CPCL")]
-        Cpcl,
-        [JsonProperty("CPCV")]
-        Cpcv,
-        [JsonProperty("TOS10")]
-        Tos10,
-        [JsonProperty("MAXIMIZE_PACING")]
-        MaximizePacing,
-        [JsonProperty("CUSTOM_IMPRESSION_VALUE_OVER_COST")]
-        CustomImpressionValueOverCost,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class PropertyAdsInsertionorderKpiTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsInsertionorderKpiType : IEquatable<PropertyAdsInsertionorderKpiType>
     {
-        public static string Value(this PropertyAdsInsertionorderKpiType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsInsertionorderKpiType Unspecified = new PropertyAdsInsertionorderKpiType("UNSPECIFIED");
+        public static readonly PropertyAdsInsertionorderKpiType Cpm = new PropertyAdsInsertionorderKpiType("CPM");
+        public static readonly PropertyAdsInsertionorderKpiType Cpc = new PropertyAdsInsertionorderKpiType("CPC");
+        public static readonly PropertyAdsInsertionorderKpiType Cpa = new PropertyAdsInsertionorderKpiType("CPA");
+        public static readonly PropertyAdsInsertionorderKpiType Ctr = new PropertyAdsInsertionorderKpiType("CTR");
+        public static readonly PropertyAdsInsertionorderKpiType Viewability = new PropertyAdsInsertionorderKpiType("VIEWABILITY");
+        public static readonly PropertyAdsInsertionorderKpiType Cpiavc = new PropertyAdsInsertionorderKpiType("CPIAVC");
+        public static readonly PropertyAdsInsertionorderKpiType Cpe = new PropertyAdsInsertionorderKpiType("CPE");
+        public static readonly PropertyAdsInsertionorderKpiType Cpv = new PropertyAdsInsertionorderKpiType("CPV");
+        public static readonly PropertyAdsInsertionorderKpiType ClickCvr = new PropertyAdsInsertionorderKpiType("CLICK_CVR");
+        public static readonly PropertyAdsInsertionorderKpiType ImpressionCvr = new PropertyAdsInsertionorderKpiType("IMPRESSION_CVR");
+        public static readonly PropertyAdsInsertionorderKpiType Vcpm = new PropertyAdsInsertionorderKpiType("VCPM");
+        public static readonly PropertyAdsInsertionorderKpiType Vtr = new PropertyAdsInsertionorderKpiType("VTR");
+        public static readonly PropertyAdsInsertionorderKpiType AudioCompletionRate = new PropertyAdsInsertionorderKpiType("AUDIO_COMPLETION_RATE");
+        public static readonly PropertyAdsInsertionorderKpiType VideoCompletionRate = new PropertyAdsInsertionorderKpiType("VIDEO_COMPLETION_RATE");
+        public static readonly PropertyAdsInsertionorderKpiType Cpcl = new PropertyAdsInsertionorderKpiType("CPCL");
+        public static readonly PropertyAdsInsertionorderKpiType Cpcv = new PropertyAdsInsertionorderKpiType("CPCV");
+        public static readonly PropertyAdsInsertionorderKpiType Tos10 = new PropertyAdsInsertionorderKpiType("TOS10");
+        public static readonly PropertyAdsInsertionorderKpiType MaximizePacing = new PropertyAdsInsertionorderKpiType("MAXIMIZE_PACING");
+        public static readonly PropertyAdsInsertionorderKpiType CustomImpressionValueOverCost = new PropertyAdsInsertionorderKpiType("CUSTOM_IMPRESSION_VALUE_OVER_COST");
+        public static readonly PropertyAdsInsertionorderKpiType Other = new PropertyAdsInsertionorderKpiType("OTHER");
 
-        public static PropertyAdsInsertionorderKpiType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsInsertionorderKpiType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsInsertionorderKpiType> _knownValues =
+            new Dictionary <string, PropertyAdsInsertionorderKpiType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["CPM"] = Cpm,
+                ["CPC"] = Cpc,
+                ["CPA"] = Cpa,
+                ["CTR"] = Ctr,
+                ["VIEWABILITY"] = Viewability,
+                ["CPIAVC"] = Cpiavc,
+                ["CPE"] = Cpe,
+                ["CPV"] = Cpv,
+                ["CLICK_CVR"] = ClickCvr,
+                ["IMPRESSION_CVR"] = ImpressionCvr,
+                ["VCPM"] = Vcpm,
+                ["VTR"] = Vtr,
+                ["AUDIO_COMPLETION_RATE"] = AudioCompletionRate,
+                ["VIDEO_COMPLETION_RATE"] = VideoCompletionRate,
+                ["CPCL"] = Cpcl,
+                ["CPCV"] = Cpcv,
+                ["TOS10"] = Tos10,
+                ["MAXIMIZE_PACING"] = MaximizePacing,
+                ["CUSTOM_IMPRESSION_VALUE_OVER_COST"] = CustomImpressionValueOverCost,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsInsertionorderKpiType> _values =
+            new ConcurrentDictionary<string, PropertyAdsInsertionorderKpiType>(_knownValues);
 
-                    if (enumVal is PropertyAdsInsertionorderKpiType)
-                    {
-                        return (PropertyAdsInsertionorderKpiType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsInsertionorderKpiType");
+        private PropertyAdsInsertionorderKpiType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsInsertionorderKpiType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsInsertionorderKpiType(value));
+        }
+
+        public static implicit operator PropertyAdsInsertionorderKpiType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsInsertionorderKpiType propertyadsinsertionorderkpitype) => propertyadsinsertionorderkpitype.Value;
+
+        public static PropertyAdsInsertionorderKpiType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsInsertionorderKpiType);
+
+        public bool Equals(PropertyAdsInsertionorderKpiType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,16 @@
 # VirtualWebhookChannelId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookChannelId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookChannelId.Of("custom_value");
+```
+
 
 ## Values
 

@@ -1,5 +1,16 @@
 # Goal
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = Goal.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = Goal.Of("custom_value");
+```
+
 
 ## Values
 

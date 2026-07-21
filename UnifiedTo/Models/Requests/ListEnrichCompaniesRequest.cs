@@ -10,24 +10,23 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class ListEnrichCompaniesRequest
     {
-
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// The domain of the company to search
+        /// The domain of the company to search.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=domain")]
         public string? Domain { get; set; }
 
         /// <summary>
-        /// The name of the company to search
+        /// The name of the company to search.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=name")]
         public string? Name { get; set; }

@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Goal
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("BRAND_AWARENESS")]
-        BrandAwareness,
-        [JsonProperty("ENGAGEMENT")]
-        Engagement,
-        [JsonProperty("REACH")]
-        Reach,
-        [JsonProperty("WEBSITE_TRAFFIC")]
-        WebsiteTraffic,
-        [JsonProperty("LEADS")]
-        Leads,
-        [JsonProperty("SALES")]
-        Sales,
-        [JsonProperty("APP_PROMOTION")]
-        AppPromotion,
-    }
 
-    public static class GoalExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Goal : IEquatable<Goal>
     {
-        public static string Value(this Goal value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Goal Unspecified = new Goal("UNSPECIFIED");
+        public static readonly Goal BrandAwareness = new Goal("BRAND_AWARENESS");
+        public static readonly Goal Engagement = new Goal("ENGAGEMENT");
+        public static readonly Goal Reach = new Goal("REACH");
+        public static readonly Goal WebsiteTraffic = new Goal("WEBSITE_TRAFFIC");
+        public static readonly Goal Leads = new Goal("LEADS");
+        public static readonly Goal Sales = new Goal("SALES");
+        public static readonly Goal AppPromotion = new Goal("APP_PROMOTION");
 
-        public static Goal ToEnum(this string value)
-        {
-            foreach(var field in typeof(Goal).GetFields())
+        private static readonly Dictionary <string, Goal> _knownValues =
+            new Dictionary <string, Goal> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["BRAND_AWARENESS"] = BrandAwareness,
+                ["ENGAGEMENT"] = Engagement,
+                ["REACH"] = Reach,
+                ["WEBSITE_TRAFFIC"] = WebsiteTraffic,
+                ["LEADS"] = Leads,
+                ["SALES"] = Sales,
+                ["APP_PROMOTION"] = AppPromotion
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Goal> _values =
+            new ConcurrentDictionary<string, Goal>(_knownValues);
 
-                    if (enumVal is Goal)
-                    {
-                        return (Goal)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Goal");
+        private Goal(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Goal Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Goal(value));
+        }
+
+        public static implicit operator Goal(string value) => Of(value);
+        public static implicit operator string(Goal goal) => goal.Value;
+
+        public static Goal[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Goal);
+
+        public bool Equals(Goal? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

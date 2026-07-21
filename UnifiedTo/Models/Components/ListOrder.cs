@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListOrder
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListOrderExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListOrder : IEquatable<ListOrder>
     {
-        public static string Value(this ListOrder value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListOrder SupportedRequired = new ListOrder("supported-required");
+        public static readonly ListOrder Supported = new ListOrder("supported");
+        public static readonly ListOrder NotSupported = new ListOrder("not-supported");
 
-        public static ListOrder ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListOrder).GetFields())
+        private static readonly Dictionary <string, ListOrder> _knownValues =
+            new Dictionary <string, ListOrder> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListOrder> _values =
+            new ConcurrentDictionary<string, ListOrder>(_knownValues);
 
-                    if (enumVal is ListOrder)
-                    {
-                        return (ListOrder)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListOrder");
+        private ListOrder(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListOrder Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListOrder(value));
+        }
+
+        public static implicit operator ListOrder(string value) => Of(value);
+        public static implicit operator string(ListOrder listorder) => listorder.Value;
+
+        public static ListOrder[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListOrder);
+
+        public bool Equals(ListOrder? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

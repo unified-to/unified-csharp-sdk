@@ -1,5 +1,16 @@
 # PropertyAdsInsertionorderKpiType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsInsertionorderKpiType.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsInsertionorderKpiType.Of("custom_value");
+```
+
 
 ## Values
 

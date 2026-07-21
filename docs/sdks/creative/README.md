@@ -1,5 +1,4 @@
 # Creative
-(*Creative*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsCreative" method="get" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all creatives
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsCreatives" method="get" path="/ads/{connection_id}/creative" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsCreative" method="delete" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

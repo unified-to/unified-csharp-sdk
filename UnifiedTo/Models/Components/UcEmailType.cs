@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum UcEmailType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class UcEmailTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class UcEmailType : IEquatable<UcEmailType>
     {
-        public static string Value(this UcEmailType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly UcEmailType Work = new UcEmailType("WORK");
+        public static readonly UcEmailType Home = new UcEmailType("HOME");
+        public static readonly UcEmailType Other = new UcEmailType("OTHER");
 
-        public static UcEmailType ToEnum(this string value)
-        {
-            foreach(var field in typeof(UcEmailType).GetFields())
+        private static readonly Dictionary <string, UcEmailType> _knownValues =
+            new Dictionary <string, UcEmailType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, UcEmailType> _values =
+            new ConcurrentDictionary<string, UcEmailType>(_knownValues);
 
-                    if (enumVal is UcEmailType)
-                    {
-                        return (UcEmailType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum UcEmailType");
+        private UcEmailType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static UcEmailType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new UcEmailType(value));
+        }
+
+        public static implicit operator UcEmailType(string value) => Of(value);
+        public static implicit operator string(UcEmailType ucemailtype) => ucemailtype.Value;
+
+        public static UcEmailType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as UcEmailType);
+
+        public bool Equals(UcEmailType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

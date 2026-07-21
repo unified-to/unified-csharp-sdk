@@ -1,5 +1,13 @@
 # PatchAtsActivityQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAtsActivityQueryParamFields.Id;
+```
+
 
 ## Values
 

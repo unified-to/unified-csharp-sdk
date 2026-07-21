@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsGroupTargetingGeographicPresenceType
-    {
-        [JsonProperty("PRESENCE")]
-        Presence,
-        [JsonProperty("PRESENCE_OR_INTEREST")]
-        PresenceOrInterest,
-    }
 
-    public static class PropertyAdsGroupTargetingGeographicPresenceTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsGroupTargetingGeographicPresenceType : IEquatable<PropertyAdsGroupTargetingGeographicPresenceType>
     {
-        public static string Value(this PropertyAdsGroupTargetingGeographicPresenceType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsGroupTargetingGeographicPresenceType Presence = new PropertyAdsGroupTargetingGeographicPresenceType("PRESENCE");
+        public static readonly PropertyAdsGroupTargetingGeographicPresenceType PresenceOrInterest = new PropertyAdsGroupTargetingGeographicPresenceType("PRESENCE_OR_INTEREST");
 
-        public static PropertyAdsGroupTargetingGeographicPresenceType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsGroupTargetingGeographicPresenceType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsGroupTargetingGeographicPresenceType> _knownValues =
+            new Dictionary <string, PropertyAdsGroupTargetingGeographicPresenceType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PRESENCE"] = Presence,
+                ["PRESENCE_OR_INTEREST"] = PresenceOrInterest
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsGroupTargetingGeographicPresenceType> _values =
+            new ConcurrentDictionary<string, PropertyAdsGroupTargetingGeographicPresenceType>(_knownValues);
 
-                    if (enumVal is PropertyAdsGroupTargetingGeographicPresenceType)
-                    {
-                        return (PropertyAdsGroupTargetingGeographicPresenceType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsGroupTargetingGeographicPresenceType");
+        private PropertyAdsGroupTargetingGeographicPresenceType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsGroupTargetingGeographicPresenceType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsGroupTargetingGeographicPresenceType(value));
+        }
+
+        public static implicit operator PropertyAdsGroupTargetingGeographicPresenceType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsGroupTargetingGeographicPresenceType propertyadsgrouptargetinggeographicpresencetype) => propertyadsgrouptargetinggeographicpresencetype.Value;
+
+        public static PropertyAdsGroupTargetingGeographicPresenceType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsGroupTargetingGeographicPresenceType);
+
+        public bool Equals(PropertyAdsGroupTargetingGeographicPresenceType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,16 @@
 # PropertyIntegrationCategories
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyIntegrationCategories.Passthrough;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyIntegrationCategories.Of("custom_value");
+```
+
 
 ## Values
 

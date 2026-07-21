@@ -1,5 +1,16 @@
 # SigningDocumentStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = SigningDocumentStatus.Draft;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = SigningDocumentStatus.Of("custom_value");
+```
+
 
 ## Values
 

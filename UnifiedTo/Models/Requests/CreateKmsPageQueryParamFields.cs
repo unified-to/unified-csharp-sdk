@@ -12,7 +12,7 @@ namespace UnifiedTo.Models.Requests
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     public enum CreateKmsPageQueryParamFields
     {
         [JsonProperty("id")]
@@ -77,5 +77,4 @@ namespace UnifiedTo.Models.Requests
             throw new Exception($"Unknown value {value} for enum CreateKmsPageQueryParamFields");
         }
     }
-
 }

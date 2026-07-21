@@ -10,13 +10,15 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class PropertyAdsReportMetricsCampaignTargetingContentVideo
     {
-
         [JsonProperty("durations")]
         public List<PropertyAdsReportMetricsCampaignTargetingContentVideoDurations>? Durations { get; set; }
 

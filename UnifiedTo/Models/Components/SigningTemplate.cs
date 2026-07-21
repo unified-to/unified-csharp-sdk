@@ -13,10 +13,9 @@ namespace UnifiedTo.Models.Components
     using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class SigningTemplate
     {
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

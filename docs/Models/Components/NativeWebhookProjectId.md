@@ -1,5 +1,16 @@
 # NativeWebhookProjectId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = NativeWebhookProjectId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = NativeWebhookProjectId.Of("custom_value");
+```
+
 
 ## Values
 

@@ -14,10 +14,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AccountingBalancesheet
     {
-
         [JsonProperty("assets")]
         public List<AccountingBalancesheetItem>? Assets { get; set; }
 

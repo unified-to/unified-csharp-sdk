@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum WebhookType
-    {
-        [JsonProperty("virtual")]
-        Virtual,
-        [JsonProperty("native")]
-        Native,
-    }
 
-    public static class WebhookTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class WebhookType : IEquatable<WebhookType>
     {
-        public static string Value(this WebhookType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly WebhookType Virtual = new WebhookType("virtual");
+        public static readonly WebhookType Native = new WebhookType("native");
 
-        public static WebhookType ToEnum(this string value)
-        {
-            foreach(var field in typeof(WebhookType).GetFields())
+        private static readonly Dictionary <string, WebhookType> _knownValues =
+            new Dictionary <string, WebhookType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["virtual"] = Virtual,
+                ["native"] = Native
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, WebhookType> _values =
+            new ConcurrentDictionary<string, WebhookType>(_knownValues);
 
-                    if (enumVal is WebhookType)
-                    {
-                        return (WebhookType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum WebhookType");
+        private WebhookType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static WebhookType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new WebhookType(value));
+        }
+
+        public static implicit operator WebhookType(string value) => Of(value);
+        public static implicit operator string(WebhookType webhooktype) => webhooktype.Value;
+
+        public static WebhookType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as WebhookType);
+
+        public bool Equals(WebhookType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

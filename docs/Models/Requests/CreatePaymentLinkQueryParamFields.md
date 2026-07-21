@@ -1,5 +1,13 @@
 # CreatePaymentLinkQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreatePaymentLinkQueryParamFields.Id;
+```
+
 
 ## Values
 

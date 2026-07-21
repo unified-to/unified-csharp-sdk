@@ -1,5 +1,13 @@
 # GetAccountingReportQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingReportQueryParamFields.Id;
+```
+
 
 ## Values
 

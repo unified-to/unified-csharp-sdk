@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AssessmentAttributeStatus
-    {
-        [JsonProperty("OPEN")]
-        Open,
-        [JsonProperty("IN_PROGRESS")]
-        InProgress,
-        [JsonProperty("COMPLETED")]
-        Completed,
-        [JsonProperty("FAILED")]
-        Failed,
-        [JsonProperty("REJECTED")]
-        Rejected,
-    }
 
-    public static class AssessmentAttributeStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AssessmentAttributeStatus : IEquatable<AssessmentAttributeStatus>
     {
-        public static string Value(this AssessmentAttributeStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AssessmentAttributeStatus Open = new AssessmentAttributeStatus("OPEN");
+        public static readonly AssessmentAttributeStatus InProgress = new AssessmentAttributeStatus("IN_PROGRESS");
+        public static readonly AssessmentAttributeStatus Completed = new AssessmentAttributeStatus("COMPLETED");
+        public static readonly AssessmentAttributeStatus Failed = new AssessmentAttributeStatus("FAILED");
+        public static readonly AssessmentAttributeStatus Rejected = new AssessmentAttributeStatus("REJECTED");
 
-        public static AssessmentAttributeStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AssessmentAttributeStatus).GetFields())
+        private static readonly Dictionary <string, AssessmentAttributeStatus> _knownValues =
+            new Dictionary <string, AssessmentAttributeStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["OPEN"] = Open,
+                ["IN_PROGRESS"] = InProgress,
+                ["COMPLETED"] = Completed,
+                ["FAILED"] = Failed,
+                ["REJECTED"] = Rejected
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AssessmentAttributeStatus> _values =
+            new ConcurrentDictionary<string, AssessmentAttributeStatus>(_knownValues);
 
-                    if (enumVal is AssessmentAttributeStatus)
-                    {
-                        return (AssessmentAttributeStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AssessmentAttributeStatus");
+        private AssessmentAttributeStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AssessmentAttributeStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AssessmentAttributeStatus(value));
+        }
+
+        public static implicit operator AssessmentAttributeStatus(string value) => Of(value);
+        public static implicit operator string(AssessmentAttributeStatus assessmentattributestatus) => assessmentattributestatus.Value;
+
+        public static AssessmentAttributeStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AssessmentAttributeStatus);
+
+        public bool Equals(AssessmentAttributeStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,4 @@
 # Webhook
-(*Webhook*)
 
 ## Overview
 
@@ -20,6 +19,7 @@ The data payload received by your server is described at https://docs.unified.to
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedWebhook" method="post" path="/unified/webhook" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -28,9 +28,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Webhook.CreateUnifiedWebhookAsync(webhook: new Models.Components.Webhook() {
+var res = await sdk.Webhook.CreateUnifiedWebhookAsync(webhook: new UnifiedTo.Models.Components.Webhook() {
     ConnectionId = "<id>",
-    Event = Event.Created,
+    Event = UnifiedTo.Models.Components.Event.Created,
     ObjectType = ObjectType.AtsScorecard,
 });
 
@@ -60,6 +60,7 @@ Retrieve webhook by its ID
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedWebhook" method="get" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -95,6 +96,7 @@ Returns all registered webhooks
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedWebhooks" method="get" path="/unified/webhook" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -104,7 +106,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedWebhooksRequest req = ;
+ListUnifiedWebhooksRequest? req = null;
 
 var res = await sdk.Webhook.ListUnifiedWebhooksAsync(req);
 
@@ -133,6 +135,7 @@ Update webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUnifiedWebhook" method="patch" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,9 +145,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
-    webhook: new Models.Components.Webhook() {
+    webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Updated,
+        Event = UnifiedTo.Models.Components.Event.Updated,
         ObjectType = ObjectType.TicketingCustomer,
     },
     id: "<id>"
@@ -176,6 +179,7 @@ Trigger webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUnifiedWebhookTrigger" method="patch" path="/unified/webhook/{id}/trigger" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -211,6 +215,7 @@ Remove webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedWebhook" method="delete" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -246,6 +251,7 @@ Update webhook subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUnifiedWebhook" method="put" path="/unified/webhook/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -255,9 +261,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
-    webhook: new Models.Components.Webhook() {
+    webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Deleted,
+        Event = UnifiedTo.Models.Components.Event.Deleted,
         ObjectType = ObjectType.MessagingChannel,
     },
     id: "<id>"
@@ -289,6 +295,7 @@ Trigger webhook
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUnifiedWebhookTrigger" method="put" path="/unified/webhook/{id}/trigger" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

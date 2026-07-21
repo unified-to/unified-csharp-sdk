@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SearchEmail
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class SearchEmailExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SearchEmail : IEquatable<SearchEmail>
     {
-        public static string Value(this SearchEmail value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SearchEmail SupportedRequired = new SearchEmail("supported-required");
+        public static readonly SearchEmail Supported = new SearchEmail("supported");
+        public static readonly SearchEmail NotSupported = new SearchEmail("not-supported");
 
-        public static SearchEmail ToEnum(this string value)
-        {
-            foreach(var field in typeof(SearchEmail).GetFields())
+        private static readonly Dictionary <string, SearchEmail> _knownValues =
+            new Dictionary <string, SearchEmail> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SearchEmail> _values =
+            new ConcurrentDictionary<string, SearchEmail>(_knownValues);
 
-                    if (enumVal is SearchEmail)
-                    {
-                        return (SearchEmail)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SearchEmail");
+        private SearchEmail(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SearchEmail Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SearchEmail(value));
+        }
+
+        public static implicit operator SearchEmail(string value) => Of(value);
+        public static implicit operator string(SearchEmail searchemail) => searchemail.Value;
+
+        public static SearchEmail[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SearchEmail);
+
+        public bool Equals(SearchEmail? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

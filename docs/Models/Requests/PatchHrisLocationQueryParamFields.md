@@ -1,5 +1,13 @@
 # PatchHrisLocationQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchHrisLocationQueryParamFields.Id;
+```
+
 
 ## Values
 

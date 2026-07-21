@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A member represents a person
+    /// A member represents a person.
     /// </summary>
     public class MarketingMember
     {
-
         [JsonProperty("company")]
         public string? Company { get; set; }
 
@@ -28,7 +29,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// An array of email addresses for this member
+        /// An array of email addresses for this member.
         /// </summary>
         [JsonProperty("emails")]
         public List<MarketingEmail>? Emails { get; set; }
@@ -43,7 +44,7 @@ namespace UnifiedTo.Models.Components
         public string? LastName { get; set; }
 
         /// <summary>
-        /// An array of list IDs associated with this member
+        /// An array of list IDs associated with this member.
         /// </summary>
         [JsonProperty("list_ids")]
         public List<string>? ListIds { get; set; }
@@ -58,7 +59,7 @@ namespace UnifiedTo.Models.Components
         public MarketingMemberStatus? Status { get; set; }
 
         /// <summary>
-        /// An array of tags associated with this member
+        /// An array of tags associated with this member.
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }

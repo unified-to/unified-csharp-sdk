@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class AssessmentPackageRegion
     {
-
         [JsonProperty("cost_amount")]
         public double? CostAmount { get; set; }
 
@@ -26,7 +25,7 @@ namespace UnifiedTo.Models.Components
         public double? ProcessingTime { get; set; }
 
         /// <summary>
-        /// Countryregion codes where this package is available ({country}-{state} or {country})
+        /// Countryregion codes where this package is available ({country}-{state} or {country}).
         /// </summary>
         [JsonProperty("regions")]
         public List<string>? Regions { get; set; }

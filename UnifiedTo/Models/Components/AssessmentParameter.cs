@@ -10,15 +10,17 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AssessmentParameter
     {
-
         /// <summary>
-        /// Valid file MIME types for FILE type
+        /// Valid file MIME types for FILE type.
         /// </summary>
         [JsonProperty("file_types")]
         public List<string>? FileTypes { get; set; }
@@ -33,7 +35,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         /// <summary>
-        /// Options for MULTIPLE_CHOICE and MULTIPLE_SELECT
+        /// Options for MULTIPLE_CHOICE and MULTIPLE_SELECT.
         /// </summary>
         [JsonProperty("options")]
         public List<string>? Options { get; set; }
@@ -45,7 +47,7 @@ namespace UnifiedTo.Models.Components
         public AssessmentParameterType? Type { get; set; }
 
         /// <summary>
-        /// Regions where this parameter is valid ({country}-{state} or {country})
+        /// Regions where this parameter is valid ({country}-{state} or {country}).
         /// </summary>
         [JsonProperty("valid_regions")]
         public List<string>? ValidRegions { get; set; }

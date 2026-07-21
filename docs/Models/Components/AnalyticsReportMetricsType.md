@@ -1,5 +1,16 @@
 # AnalyticsReportMetricsType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AnalyticsReportMetricsType.Users;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AnalyticsReportMetricsType.Of("custom_value");
+```
+
 
 ## Values
 

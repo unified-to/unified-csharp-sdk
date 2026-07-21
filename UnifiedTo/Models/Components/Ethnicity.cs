@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Ethnicity
-    {
-        [JsonProperty("Caucasian")]
-        Caucasian,
-        [JsonProperty("East Asian")]
-        EastAsian,
-        [JsonProperty("Middle Eastern")]
-        MiddleEastern,
-        [JsonProperty("Black")]
-        Black,
-        [JsonProperty("Biracial (South Asian & Caucasian)")]
-        BiracialSouthAsianAndCaucasian,
-        [JsonProperty("Filipino")]
-        Filipino,
-        [JsonProperty("South Asian")]
-        SouthAsian,
-        [JsonProperty("Indian")]
-        Indian,
-        [JsonProperty("White")]
-        White,
-        [JsonProperty("Asian")]
-        Asian,
-    }
 
-    public static class EthnicityExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Ethnicity : IEquatable<Ethnicity>
     {
-        public static string Value(this Ethnicity value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Ethnicity Caucasian = new Ethnicity("Caucasian");
+        public static readonly Ethnicity EastAsian = new Ethnicity("East Asian");
+        public static readonly Ethnicity MiddleEastern = new Ethnicity("Middle Eastern");
+        public static readonly Ethnicity Black = new Ethnicity("Black");
+        public static readonly Ethnicity BiracialSouthAsianAndCaucasian = new Ethnicity("Biracial (South Asian & Caucasian)");
+        public static readonly Ethnicity Filipino = new Ethnicity("Filipino");
+        public static readonly Ethnicity SouthAsian = new Ethnicity("South Asian");
+        public static readonly Ethnicity Indian = new Ethnicity("Indian");
+        public static readonly Ethnicity White = new Ethnicity("White");
+        public static readonly Ethnicity Asian = new Ethnicity("Asian");
 
-        public static Ethnicity ToEnum(this string value)
-        {
-            foreach(var field in typeof(Ethnicity).GetFields())
+        private static readonly Dictionary <string, Ethnicity> _knownValues =
+            new Dictionary <string, Ethnicity> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["Caucasian"] = Caucasian,
+                ["East Asian"] = EastAsian,
+                ["Middle Eastern"] = MiddleEastern,
+                ["Black"] = Black,
+                ["Biracial (South Asian & Caucasian)"] = BiracialSouthAsianAndCaucasian,
+                ["Filipino"] = Filipino,
+                ["South Asian"] = SouthAsian,
+                ["Indian"] = Indian,
+                ["White"] = White,
+                ["Asian"] = Asian
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Ethnicity> _values =
+            new ConcurrentDictionary<string, Ethnicity>(_knownValues);
 
-                    if (enumVal is Ethnicity)
-                    {
-                        return (Ethnicity)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Ethnicity");
+        private Ethnicity(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Ethnicity Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Ethnicity(value));
+        }
+
+        public static implicit operator Ethnicity(string value) => Of(value);
+        public static implicit operator string(Ethnicity ethnicity) => ethnicity.Value;
+
+        public static Ethnicity[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Ethnicity);
+
+        public bool Equals(Ethnicity? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

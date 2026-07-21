@@ -1,5 +1,4 @@
 # User
-(*User*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create user
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createScimUsers" method="post" path="/scim/{connection_id}/users" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Get user
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getScimUsers" method="get" path="/scim/{connection_id}/users/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -98,6 +99,7 @@ List users
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listScimUsers" method="get" path="/scim/{connection_id}/users" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -138,6 +140,7 @@ Update user
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchScimUsers" method="patch" path="/scim/{connection_id}/users/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -179,6 +182,7 @@ Delete user
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeScimUsers" method="delete" path="/scim/{connection_id}/users/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -218,6 +222,7 @@ Update user
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateScimUsers" method="put" path="/scim/{connection_id}/users/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

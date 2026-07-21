@@ -1,5 +1,13 @@
 # CreateShippingRateQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateShippingRateQueryParamFields.ShipmentId;
+```
+
 
 ## Values
 

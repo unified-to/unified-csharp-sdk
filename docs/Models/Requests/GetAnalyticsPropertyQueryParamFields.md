@@ -1,5 +1,13 @@
 # GetAnalyticsPropertyQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAnalyticsPropertyQueryParamFields.Id;
+```
+
 
 ## Values
 

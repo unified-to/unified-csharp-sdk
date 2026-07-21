@@ -11,293 +11,310 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsReportMetricsType
-    {
-        [JsonProperty("CLICKS")]
-        Clicks,
-        [JsonProperty("IMPRESSIONS")]
-        Impressions,
-        [JsonProperty("CONVERSIONS")]
-        Conversions,
-        [JsonProperty("COST")]
-        Cost,
-        [JsonProperty("CTR")]
-        Ctr,
-        [JsonProperty("CPC")]
-        Cpc,
-        [JsonProperty("CONVERSION_VALUE")]
-        ConversionValue,
-        [JsonProperty("CPA")]
-        Cpa,
-        [JsonProperty("ROAS")]
-        Roas,
-        [JsonProperty("CPM")]
-        Cpm,
-        [JsonProperty("ECPM")]
-        Ecpm,
-        [JsonProperty("ENGAGEMENT")]
-        Engagement,
-        [JsonProperty("VIDEO_COMPLETIONS")]
-        VideoCompletions,
-        [JsonProperty("VIDEO_VIEWS")]
-        VideoViews,
-        [JsonProperty("LEADS")]
-        Leads,
-        [JsonProperty("ENGAGEMENTS")]
-        Engagements,
-        [JsonProperty("SAVES")]
-        Saves,
-        [JsonProperty("LIKES")]
-        Likes,
-        [JsonProperty("SHARES")]
-        Shares,
-        [JsonProperty("COMMENTS")]
-        Comments,
-        [JsonProperty("FOLLOWS")]
-        Follows,
-        [JsonProperty("POST_CLICK_CONVERSIONS")]
-        PostClickConversions,
-        [JsonProperty("VIEW_THROUGH_CONVERSIONS")]
-        ViewThroughConversions,
-        [JsonProperty("ALL_CONVERSIONS")]
-        AllConversions,
-        [JsonProperty("ALL_CONVERSION_VALUE")]
-        AllConversionValue,
-        [JsonProperty("INTERACTIONS")]
-        Interactions,
-        [JsonProperty("REVENUE")]
-        Revenue,
-        [JsonProperty("MEDIA_COST")]
-        MediaCost,
-        [JsonProperty("TOTAL_MEDIA_COST")]
-        TotalMediaCost,
-        [JsonProperty("VIDEO_PLAYS")]
-        VideoPlays,
-        [JsonProperty("VIDEO_QUARTILE_25")]
-        VideoQuartile25,
-        [JsonProperty("VIDEO_QUARTILE_50")]
-        VideoQuartile50,
-        [JsonProperty("VIDEO_QUARTILE_75")]
-        VideoQuartile75,
-        [JsonProperty("VIDEO_QUARTILE_100")]
-        VideoQuartile100,
-        [JsonProperty("VIDEO_AVG_TIME_WATCHED")]
-        VideoAvgTimeWatched,
-        [JsonProperty("VIDEO_THRUPLAY")]
-        VideoThruplay,
-        [JsonProperty("VIEWABLE_IMPRESSIONS")]
-        ViewableImpressions,
-        [JsonProperty("MEASURABLE_IMPRESSIONS")]
-        MeasurableImpressions,
-        [JsonProperty("VIEWABILITY_RATE")]
-        ViewabilityRate,
-        [JsonProperty("BILLABLE_IMPRESSIONS")]
-        BillableImpressions,
-        [JsonProperty("DATA_FEES")]
-        DataFees,
-        [JsonProperty("PLATFORM_FEES")]
-        PlatformFees,
-        [JsonProperty("PROFIT")]
-        Profit,
-        [JsonProperty("LANDING_PAGE_CLICKS")]
-        LandingPageClicks,
-        [JsonProperty("LEAD_FORM_OPENS")]
-        LeadFormOpens,
-        [JsonProperty("AD_UNIT_CLICKS")]
-        AdUnitClicks,
-        [JsonProperty("CARD_CLICKS")]
-        CardClicks,
-        [JsonProperty("CARD_IMPRESSIONS")]
-        CardImpressions,
-        [JsonProperty("COMMENT_LIKES")]
-        CommentLikes,
-        [JsonProperty("COMPANY_PAGE_CLICKS")]
-        CompanyPageClicks,
-        [JsonProperty("ACTION_CLICKS")]
-        ActionClicks,
-        [JsonProperty("TEXT_URL_CLICKS")]
-        TextUrlClicks,
-        [JsonProperty("OTHER_ENGAGEMENTS")]
-        OtherEngagements,
-        [JsonProperty("OPENS")]
-        Opens,
-        [JsonProperty("TOTAL_ENGAGEMENTS")]
-        TotalEngagements,
-        [JsonProperty("UNIQUE_IMPRESSIONS")]
-        UniqueImpressions,
-        [JsonProperty("UNIQUE_CLICKS")]
-        UniqueClicks,
-        [JsonProperty("VIRAL_IMPRESSIONS")]
-        ViralImpressions,
-        [JsonProperty("VIRAL_CLICKS")]
-        ViralClicks,
-        [JsonProperty("VIRAL_LIKES")]
-        ViralLikes,
-        [JsonProperty("VIRAL_COMMENTS")]
-        ViralComments,
-        [JsonProperty("VIRAL_SHARES")]
-        ViralShares,
-        [JsonProperty("VIRAL_FOLLOWS")]
-        ViralFollows,
-        [JsonProperty("VIRAL_VIDEO_PLAYS")]
-        ViralVideoPlays,
-        [JsonProperty("VIRAL_VIDEO_VIEWS")]
-        ViralVideoViews,
-        [JsonProperty("VIRAL_VIDEO_COMPLETIONS")]
-        ViralVideoCompletions,
-        [JsonProperty("VIRAL_VIDEO_QUARTILE_25")]
-        ViralVideoQuartile25,
-        [JsonProperty("VIRAL_VIDEO_QUARTILE_50")]
-        ViralVideoQuartile50,
-        [JsonProperty("VIRAL_VIDEO_QUARTILE_75")]
-        ViralVideoQuartile75,
-        [JsonProperty("VIRAL_LEADS")]
-        ViralLeads,
-        [JsonProperty("VIRAL_LEAD_FORM_OPENS")]
-        ViralLeadFormOpens,
-        [JsonProperty("VIRAL_LANDING_PAGE_CLICKS")]
-        ViralLandingPageClicks,
-        [JsonProperty("VIRAL_CONVERSIONS")]
-        ViralConversions,
-        [JsonProperty("VIRAL_POST_CLICK_CONVERSIONS")]
-        ViralPostClickConversions,
-        [JsonProperty("VIRAL_VIEW_THROUGH_CONVERSIONS")]
-        ViralViewThroughConversions,
-        [JsonProperty("VIRAL_ENGAGEMENTS")]
-        ViralEngagements,
-        [JsonProperty("GMAIL_SECONDARY_CLICKS")]
-        GmailSecondaryClicks,
-        [JsonProperty("AVERAGE_CPV")]
-        AverageCpv,
-        [JsonProperty("VIDEO_VIEWS_FROM_SEARCH")]
-        VideoViewsFromSearch,
-        [JsonProperty("CROSS_DEVICE_CONVERSIONS")]
-        CrossDeviceConversions,
-        [JsonProperty("ABSOLUTE_TOP_IMPRESSION_SHARE")]
-        AbsoluteTopImpressionShare,
-        [JsonProperty("TOP_IMPRESSION_SHARE")]
-        TopImpressionShare,
-        [JsonProperty("ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT")]
-        AbsoluteTopImpressionRatePercent,
-        [JsonProperty("TOP_IMPRESSION_RATE_PERCENT")]
-        TopImpressionRatePercent,
-        [JsonProperty("VIDEO_FULLSCREENS")]
-        VideoFullscreens,
-        [JsonProperty("VIDEO_PAUSES")]
-        VideoPauses,
-        [JsonProperty("VIDEO_MUTES")]
-        VideoMutes,
-        [JsonProperty("VIDEO_SKIPS")]
-        VideoSkips,
-        [JsonProperty("COMPANION_CLICKS")]
-        CompanionClicks,
-        [JsonProperty("COMPANION_VIEWS")]
-        CompanionViews,
-        [JsonProperty("ACTIVE_VIEW_AVG_TIME")]
-        ActiveViewAvgTime,
-        [JsonProperty("ELIGIBLE_IMPRESSIONS")]
-        EligibleImpressions,
-        [JsonProperty("EARNED_VIEWS")]
-        EarnedViews,
-        [JsonProperty("UNIQUE_VIEWERS")]
-        UniqueViewers,
-        [JsonProperty("COST_USD")]
-        CostUsd,
-        [JsonProperty("VIRAL_CARD_CLICKS")]
-        ViralCardClicks,
-        [JsonProperty("VIRAL_CARD_IMPRESSIONS")]
-        ViralCardImpressions,
-        [JsonProperty("VIRAL_COMPANY_PAGE_CLICKS")]
-        ViralCompanyPageClicks,
-        [JsonProperty("VIRAL_VIDEO_FULLSCREENS")]
-        ViralVideoFullscreens,
-        [JsonProperty("VIRAL_OTHER_ENGAGEMENTS")]
-        ViralOtherEngagements,
-        [JsonProperty("LEAD_GEN_CONTACT_SHARES")]
-        LeadGenContactShares,
-        [JsonProperty("LEAD_GEN_INTERESTED_CLICKS")]
-        LeadGenInterestedClicks,
-        [JsonProperty("CM360_POST_CLICK_REVENUE")]
-        Cm360PostClickRevenue,
-        [JsonProperty("CM360_POST_VIEW_REVENUE")]
-        Cm360PostViewRevenue,
-        [JsonProperty("SCROLLS")]
-        Scrolls,
-        [JsonProperty("MEDIA_FEE_1")]
-        MediaFee1,
-        [JsonProperty("MEDIA_FEE_2")]
-        MediaFee2,
-        [JsonProperty("MEDIA_FEE_3")]
-        MediaFee3,
-        [JsonProperty("MEDIA_FEE_4")]
-        MediaFee4,
-        [JsonProperty("MEDIA_FEE_5")]
-        MediaFee5,
-        [JsonProperty("ACTIVE_VIEW_DIST_UNMEASURABLE")]
-        ActiveViewDistUnmeasurable,
-        [JsonProperty("ACTIVE_VIEW_DIST_UNVIEWABLE")]
-        ActiveViewDistUnviewable,
-        [JsonProperty("ACTIVE_VIEW_DIST_VIEWABLE")]
-        ActiveViewDistViewable,
-        [JsonProperty("ACTIVE_VIEW_AUDIBLE_VISIBLE_COMPLETE")]
-        ActiveViewAudibleVisibleComplete,
-        [JsonProperty("ACTIVE_VIEW_VISIBLE_10S")]
-        ActiveViewVisible10S,
-        [JsonProperty("NOT_MEASURABLE_IMPRESSIONS")]
-        NotMeasurableImpressions,
-        [JsonProperty("NOT_VIEWABLE_IMPRESSIONS")]
-        NotViewableImpressions,
-        [JsonProperty("1D_VIEW")]
-        OneDVIEW,
-        [JsonProperty("1D_CLICK")]
-        OneDCLICK,
-        [JsonProperty("7D_VIEW")]
-        SevenDVIEW,
-        [JsonProperty("7D_CLICK")]
-        SevenDCLICK,
-        [JsonProperty("14D_CLICK")]
-        FourteenDCLICK,
-        [JsonProperty("28D_VIEW")]
-        TwentyEightDVIEW,
-        [JsonProperty("28D_CLICK")]
-        TwentyEightDCLICK,
-        [JsonProperty("30D_CLICK")]
-        ThirtyDCLICK,
-    }
 
-    public static class AdsReportMetricsTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsReportMetricsType : IEquatable<AdsReportMetricsType>
     {
-        public static string Value(this AdsReportMetricsType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsReportMetricsType Clicks = new AdsReportMetricsType("CLICKS");
+        public static readonly AdsReportMetricsType Impressions = new AdsReportMetricsType("IMPRESSIONS");
+        public static readonly AdsReportMetricsType Conversions = new AdsReportMetricsType("CONVERSIONS");
+        public static readonly AdsReportMetricsType Cost = new AdsReportMetricsType("COST");
+        public static readonly AdsReportMetricsType Ctr = new AdsReportMetricsType("CTR");
+        public static readonly AdsReportMetricsType Cpc = new AdsReportMetricsType("CPC");
+        public static readonly AdsReportMetricsType ConversionValue = new AdsReportMetricsType("CONVERSION_VALUE");
+        public static readonly AdsReportMetricsType Cpa = new AdsReportMetricsType("CPA");
+        public static readonly AdsReportMetricsType Roas = new AdsReportMetricsType("ROAS");
+        public static readonly AdsReportMetricsType Cpm = new AdsReportMetricsType("CPM");
+        public static readonly AdsReportMetricsType Ecpm = new AdsReportMetricsType("ECPM");
+        public static readonly AdsReportMetricsType Engagement = new AdsReportMetricsType("ENGAGEMENT");
+        public static readonly AdsReportMetricsType VideoCompletions = new AdsReportMetricsType("VIDEO_COMPLETIONS");
+        public static readonly AdsReportMetricsType VideoViews = new AdsReportMetricsType("VIDEO_VIEWS");
+        public static readonly AdsReportMetricsType Leads = new AdsReportMetricsType("LEADS");
+        public static readonly AdsReportMetricsType Engagements = new AdsReportMetricsType("ENGAGEMENTS");
+        public static readonly AdsReportMetricsType Saves = new AdsReportMetricsType("SAVES");
+        public static readonly AdsReportMetricsType Likes = new AdsReportMetricsType("LIKES");
+        public static readonly AdsReportMetricsType Shares = new AdsReportMetricsType("SHARES");
+        public static readonly AdsReportMetricsType Comments = new AdsReportMetricsType("COMMENTS");
+        public static readonly AdsReportMetricsType Follows = new AdsReportMetricsType("FOLLOWS");
+        public static readonly AdsReportMetricsType PostClickConversions = new AdsReportMetricsType("POST_CLICK_CONVERSIONS");
+        public static readonly AdsReportMetricsType ViewThroughConversions = new AdsReportMetricsType("VIEW_THROUGH_CONVERSIONS");
+        public static readonly AdsReportMetricsType AllConversions = new AdsReportMetricsType("ALL_CONVERSIONS");
+        public static readonly AdsReportMetricsType AllConversionValue = new AdsReportMetricsType("ALL_CONVERSION_VALUE");
+        public static readonly AdsReportMetricsType Interactions = new AdsReportMetricsType("INTERACTIONS");
+        public static readonly AdsReportMetricsType Revenue = new AdsReportMetricsType("REVENUE");
+        public static readonly AdsReportMetricsType MediaCost = new AdsReportMetricsType("MEDIA_COST");
+        public static readonly AdsReportMetricsType TotalMediaCost = new AdsReportMetricsType("TOTAL_MEDIA_COST");
+        public static readonly AdsReportMetricsType VideoPlays = new AdsReportMetricsType("VIDEO_PLAYS");
+        public static readonly AdsReportMetricsType VideoQuartile25 = new AdsReportMetricsType("VIDEO_QUARTILE_25");
+        public static readonly AdsReportMetricsType VideoQuartile50 = new AdsReportMetricsType("VIDEO_QUARTILE_50");
+        public static readonly AdsReportMetricsType VideoQuartile75 = new AdsReportMetricsType("VIDEO_QUARTILE_75");
+        public static readonly AdsReportMetricsType VideoQuartile100 = new AdsReportMetricsType("VIDEO_QUARTILE_100");
+        public static readonly AdsReportMetricsType VideoAvgTimeWatched = new AdsReportMetricsType("VIDEO_AVG_TIME_WATCHED");
+        public static readonly AdsReportMetricsType VideoThruplay = new AdsReportMetricsType("VIDEO_THRUPLAY");
+        public static readonly AdsReportMetricsType ViewableImpressions = new AdsReportMetricsType("VIEWABLE_IMPRESSIONS");
+        public static readonly AdsReportMetricsType MeasurableImpressions = new AdsReportMetricsType("MEASURABLE_IMPRESSIONS");
+        public static readonly AdsReportMetricsType ViewabilityRate = new AdsReportMetricsType("VIEWABILITY_RATE");
+        public static readonly AdsReportMetricsType BillableImpressions = new AdsReportMetricsType("BILLABLE_IMPRESSIONS");
+        public static readonly AdsReportMetricsType DataFees = new AdsReportMetricsType("DATA_FEES");
+        public static readonly AdsReportMetricsType PlatformFees = new AdsReportMetricsType("PLATFORM_FEES");
+        public static readonly AdsReportMetricsType Profit = new AdsReportMetricsType("PROFIT");
+        public static readonly AdsReportMetricsType LandingPageClicks = new AdsReportMetricsType("LANDING_PAGE_CLICKS");
+        public static readonly AdsReportMetricsType LeadFormOpens = new AdsReportMetricsType("LEAD_FORM_OPENS");
+        public static readonly AdsReportMetricsType AdUnitClicks = new AdsReportMetricsType("AD_UNIT_CLICKS");
+        public static readonly AdsReportMetricsType CardClicks = new AdsReportMetricsType("CARD_CLICKS");
+        public static readonly AdsReportMetricsType CardImpressions = new AdsReportMetricsType("CARD_IMPRESSIONS");
+        public static readonly AdsReportMetricsType CommentLikes = new AdsReportMetricsType("COMMENT_LIKES");
+        public static readonly AdsReportMetricsType CompanyPageClicks = new AdsReportMetricsType("COMPANY_PAGE_CLICKS");
+        public static readonly AdsReportMetricsType ActionClicks = new AdsReportMetricsType("ACTION_CLICKS");
+        public static readonly AdsReportMetricsType TextUrlClicks = new AdsReportMetricsType("TEXT_URL_CLICKS");
+        public static readonly AdsReportMetricsType OtherEngagements = new AdsReportMetricsType("OTHER_ENGAGEMENTS");
+        public static readonly AdsReportMetricsType Opens = new AdsReportMetricsType("OPENS");
+        public static readonly AdsReportMetricsType TotalEngagements = new AdsReportMetricsType("TOTAL_ENGAGEMENTS");
+        public static readonly AdsReportMetricsType UniqueImpressions = new AdsReportMetricsType("UNIQUE_IMPRESSIONS");
+        public static readonly AdsReportMetricsType UniqueClicks = new AdsReportMetricsType("UNIQUE_CLICKS");
+        public static readonly AdsReportMetricsType ViralImpressions = new AdsReportMetricsType("VIRAL_IMPRESSIONS");
+        public static readonly AdsReportMetricsType ViralClicks = new AdsReportMetricsType("VIRAL_CLICKS");
+        public static readonly AdsReportMetricsType ViralLikes = new AdsReportMetricsType("VIRAL_LIKES");
+        public static readonly AdsReportMetricsType ViralComments = new AdsReportMetricsType("VIRAL_COMMENTS");
+        public static readonly AdsReportMetricsType ViralShares = new AdsReportMetricsType("VIRAL_SHARES");
+        public static readonly AdsReportMetricsType ViralFollows = new AdsReportMetricsType("VIRAL_FOLLOWS");
+        public static readonly AdsReportMetricsType ViralVideoPlays = new AdsReportMetricsType("VIRAL_VIDEO_PLAYS");
+        public static readonly AdsReportMetricsType ViralVideoViews = new AdsReportMetricsType("VIRAL_VIDEO_VIEWS");
+        public static readonly AdsReportMetricsType ViralVideoCompletions = new AdsReportMetricsType("VIRAL_VIDEO_COMPLETIONS");
+        public static readonly AdsReportMetricsType ViralVideoQuartile25 = new AdsReportMetricsType("VIRAL_VIDEO_QUARTILE_25");
+        public static readonly AdsReportMetricsType ViralVideoQuartile50 = new AdsReportMetricsType("VIRAL_VIDEO_QUARTILE_50");
+        public static readonly AdsReportMetricsType ViralVideoQuartile75 = new AdsReportMetricsType("VIRAL_VIDEO_QUARTILE_75");
+        public static readonly AdsReportMetricsType ViralLeads = new AdsReportMetricsType("VIRAL_LEADS");
+        public static readonly AdsReportMetricsType ViralLeadFormOpens = new AdsReportMetricsType("VIRAL_LEAD_FORM_OPENS");
+        public static readonly AdsReportMetricsType ViralLandingPageClicks = new AdsReportMetricsType("VIRAL_LANDING_PAGE_CLICKS");
+        public static readonly AdsReportMetricsType ViralConversions = new AdsReportMetricsType("VIRAL_CONVERSIONS");
+        public static readonly AdsReportMetricsType ViralPostClickConversions = new AdsReportMetricsType("VIRAL_POST_CLICK_CONVERSIONS");
+        public static readonly AdsReportMetricsType ViralViewThroughConversions = new AdsReportMetricsType("VIRAL_VIEW_THROUGH_CONVERSIONS");
+        public static readonly AdsReportMetricsType ViralEngagements = new AdsReportMetricsType("VIRAL_ENGAGEMENTS");
+        public static readonly AdsReportMetricsType GmailSecondaryClicks = new AdsReportMetricsType("GMAIL_SECONDARY_CLICKS");
+        public static readonly AdsReportMetricsType AverageCpv = new AdsReportMetricsType("AVERAGE_CPV");
+        public static readonly AdsReportMetricsType VideoViewsFromSearch = new AdsReportMetricsType("VIDEO_VIEWS_FROM_SEARCH");
+        public static readonly AdsReportMetricsType CrossDeviceConversions = new AdsReportMetricsType("CROSS_DEVICE_CONVERSIONS");
+        public static readonly AdsReportMetricsType AbsoluteTopImpressionShare = new AdsReportMetricsType("ABSOLUTE_TOP_IMPRESSION_SHARE");
+        public static readonly AdsReportMetricsType TopImpressionShare = new AdsReportMetricsType("TOP_IMPRESSION_SHARE");
+        public static readonly AdsReportMetricsType AbsoluteTopImpressionRatePercent = new AdsReportMetricsType("ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT");
+        public static readonly AdsReportMetricsType TopImpressionRatePercent = new AdsReportMetricsType("TOP_IMPRESSION_RATE_PERCENT");
+        public static readonly AdsReportMetricsType VideoFullscreens = new AdsReportMetricsType("VIDEO_FULLSCREENS");
+        public static readonly AdsReportMetricsType VideoPauses = new AdsReportMetricsType("VIDEO_PAUSES");
+        public static readonly AdsReportMetricsType VideoMutes = new AdsReportMetricsType("VIDEO_MUTES");
+        public static readonly AdsReportMetricsType VideoSkips = new AdsReportMetricsType("VIDEO_SKIPS");
+        public static readonly AdsReportMetricsType CompanionClicks = new AdsReportMetricsType("COMPANION_CLICKS");
+        public static readonly AdsReportMetricsType CompanionViews = new AdsReportMetricsType("COMPANION_VIEWS");
+        public static readonly AdsReportMetricsType ActiveViewAvgTime = new AdsReportMetricsType("ACTIVE_VIEW_AVG_TIME");
+        public static readonly AdsReportMetricsType EligibleImpressions = new AdsReportMetricsType("ELIGIBLE_IMPRESSIONS");
+        public static readonly AdsReportMetricsType EarnedViews = new AdsReportMetricsType("EARNED_VIEWS");
+        public static readonly AdsReportMetricsType UniqueViewers = new AdsReportMetricsType("UNIQUE_VIEWERS");
+        public static readonly AdsReportMetricsType CostUsd = new AdsReportMetricsType("COST_USD");
+        public static readonly AdsReportMetricsType ViralCardClicks = new AdsReportMetricsType("VIRAL_CARD_CLICKS");
+        public static readonly AdsReportMetricsType ViralCardImpressions = new AdsReportMetricsType("VIRAL_CARD_IMPRESSIONS");
+        public static readonly AdsReportMetricsType ViralCompanyPageClicks = new AdsReportMetricsType("VIRAL_COMPANY_PAGE_CLICKS");
+        public static readonly AdsReportMetricsType ViralVideoFullscreens = new AdsReportMetricsType("VIRAL_VIDEO_FULLSCREENS");
+        public static readonly AdsReportMetricsType ViralOtherEngagements = new AdsReportMetricsType("VIRAL_OTHER_ENGAGEMENTS");
+        public static readonly AdsReportMetricsType LeadGenContactShares = new AdsReportMetricsType("LEAD_GEN_CONTACT_SHARES");
+        public static readonly AdsReportMetricsType LeadGenInterestedClicks = new AdsReportMetricsType("LEAD_GEN_INTERESTED_CLICKS");
+        public static readonly AdsReportMetricsType Cm360PostClickRevenue = new AdsReportMetricsType("CM360_POST_CLICK_REVENUE");
+        public static readonly AdsReportMetricsType Cm360PostViewRevenue = new AdsReportMetricsType("CM360_POST_VIEW_REVENUE");
+        public static readonly AdsReportMetricsType Scrolls = new AdsReportMetricsType("SCROLLS");
+        public static readonly AdsReportMetricsType MediaFee1 = new AdsReportMetricsType("MEDIA_FEE_1");
+        public static readonly AdsReportMetricsType MediaFee2 = new AdsReportMetricsType("MEDIA_FEE_2");
+        public static readonly AdsReportMetricsType MediaFee3 = new AdsReportMetricsType("MEDIA_FEE_3");
+        public static readonly AdsReportMetricsType MediaFee4 = new AdsReportMetricsType("MEDIA_FEE_4");
+        public static readonly AdsReportMetricsType MediaFee5 = new AdsReportMetricsType("MEDIA_FEE_5");
+        public static readonly AdsReportMetricsType ActiveViewDistUnmeasurable = new AdsReportMetricsType("ACTIVE_VIEW_DIST_UNMEASURABLE");
+        public static readonly AdsReportMetricsType ActiveViewDistUnviewable = new AdsReportMetricsType("ACTIVE_VIEW_DIST_UNVIEWABLE");
+        public static readonly AdsReportMetricsType ActiveViewDistViewable = new AdsReportMetricsType("ACTIVE_VIEW_DIST_VIEWABLE");
+        public static readonly AdsReportMetricsType ActiveViewAudibleVisibleComplete = new AdsReportMetricsType("ACTIVE_VIEW_AUDIBLE_VISIBLE_COMPLETE");
+        public static readonly AdsReportMetricsType ActiveViewVisible10S = new AdsReportMetricsType("ACTIVE_VIEW_VISIBLE_10S");
+        public static readonly AdsReportMetricsType NotMeasurableImpressions = new AdsReportMetricsType("NOT_MEASURABLE_IMPRESSIONS");
+        public static readonly AdsReportMetricsType NotViewableImpressions = new AdsReportMetricsType("NOT_VIEWABLE_IMPRESSIONS");
+        public static readonly AdsReportMetricsType OneDVIEW = new AdsReportMetricsType("1D_VIEW");
+        public static readonly AdsReportMetricsType OneDCLICK = new AdsReportMetricsType("1D_CLICK");
+        public static readonly AdsReportMetricsType SevenDVIEW = new AdsReportMetricsType("7D_VIEW");
+        public static readonly AdsReportMetricsType SevenDCLICK = new AdsReportMetricsType("7D_CLICK");
+        public static readonly AdsReportMetricsType FourteenDCLICK = new AdsReportMetricsType("14D_CLICK");
+        public static readonly AdsReportMetricsType TwentyEightDVIEW = new AdsReportMetricsType("28D_VIEW");
+        public static readonly AdsReportMetricsType TwentyEightDCLICK = new AdsReportMetricsType("28D_CLICK");
+        public static readonly AdsReportMetricsType ThirtyDCLICK = new AdsReportMetricsType("30D_CLICK");
 
-        public static AdsReportMetricsType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsReportMetricsType).GetFields())
+        private static readonly Dictionary <string, AdsReportMetricsType> _knownValues =
+            new Dictionary <string, AdsReportMetricsType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["CLICKS"] = Clicks,
+                ["IMPRESSIONS"] = Impressions,
+                ["CONVERSIONS"] = Conversions,
+                ["COST"] = Cost,
+                ["CTR"] = Ctr,
+                ["CPC"] = Cpc,
+                ["CONVERSION_VALUE"] = ConversionValue,
+                ["CPA"] = Cpa,
+                ["ROAS"] = Roas,
+                ["CPM"] = Cpm,
+                ["ECPM"] = Ecpm,
+                ["ENGAGEMENT"] = Engagement,
+                ["VIDEO_COMPLETIONS"] = VideoCompletions,
+                ["VIDEO_VIEWS"] = VideoViews,
+                ["LEADS"] = Leads,
+                ["ENGAGEMENTS"] = Engagements,
+                ["SAVES"] = Saves,
+                ["LIKES"] = Likes,
+                ["SHARES"] = Shares,
+                ["COMMENTS"] = Comments,
+                ["FOLLOWS"] = Follows,
+                ["POST_CLICK_CONVERSIONS"] = PostClickConversions,
+                ["VIEW_THROUGH_CONVERSIONS"] = ViewThroughConversions,
+                ["ALL_CONVERSIONS"] = AllConversions,
+                ["ALL_CONVERSION_VALUE"] = AllConversionValue,
+                ["INTERACTIONS"] = Interactions,
+                ["REVENUE"] = Revenue,
+                ["MEDIA_COST"] = MediaCost,
+                ["TOTAL_MEDIA_COST"] = TotalMediaCost,
+                ["VIDEO_PLAYS"] = VideoPlays,
+                ["VIDEO_QUARTILE_25"] = VideoQuartile25,
+                ["VIDEO_QUARTILE_50"] = VideoQuartile50,
+                ["VIDEO_QUARTILE_75"] = VideoQuartile75,
+                ["VIDEO_QUARTILE_100"] = VideoQuartile100,
+                ["VIDEO_AVG_TIME_WATCHED"] = VideoAvgTimeWatched,
+                ["VIDEO_THRUPLAY"] = VideoThruplay,
+                ["VIEWABLE_IMPRESSIONS"] = ViewableImpressions,
+                ["MEASURABLE_IMPRESSIONS"] = MeasurableImpressions,
+                ["VIEWABILITY_RATE"] = ViewabilityRate,
+                ["BILLABLE_IMPRESSIONS"] = BillableImpressions,
+                ["DATA_FEES"] = DataFees,
+                ["PLATFORM_FEES"] = PlatformFees,
+                ["PROFIT"] = Profit,
+                ["LANDING_PAGE_CLICKS"] = LandingPageClicks,
+                ["LEAD_FORM_OPENS"] = LeadFormOpens,
+                ["AD_UNIT_CLICKS"] = AdUnitClicks,
+                ["CARD_CLICKS"] = CardClicks,
+                ["CARD_IMPRESSIONS"] = CardImpressions,
+                ["COMMENT_LIKES"] = CommentLikes,
+                ["COMPANY_PAGE_CLICKS"] = CompanyPageClicks,
+                ["ACTION_CLICKS"] = ActionClicks,
+                ["TEXT_URL_CLICKS"] = TextUrlClicks,
+                ["OTHER_ENGAGEMENTS"] = OtherEngagements,
+                ["OPENS"] = Opens,
+                ["TOTAL_ENGAGEMENTS"] = TotalEngagements,
+                ["UNIQUE_IMPRESSIONS"] = UniqueImpressions,
+                ["UNIQUE_CLICKS"] = UniqueClicks,
+                ["VIRAL_IMPRESSIONS"] = ViralImpressions,
+                ["VIRAL_CLICKS"] = ViralClicks,
+                ["VIRAL_LIKES"] = ViralLikes,
+                ["VIRAL_COMMENTS"] = ViralComments,
+                ["VIRAL_SHARES"] = ViralShares,
+                ["VIRAL_FOLLOWS"] = ViralFollows,
+                ["VIRAL_VIDEO_PLAYS"] = ViralVideoPlays,
+                ["VIRAL_VIDEO_VIEWS"] = ViralVideoViews,
+                ["VIRAL_VIDEO_COMPLETIONS"] = ViralVideoCompletions,
+                ["VIRAL_VIDEO_QUARTILE_25"] = ViralVideoQuartile25,
+                ["VIRAL_VIDEO_QUARTILE_50"] = ViralVideoQuartile50,
+                ["VIRAL_VIDEO_QUARTILE_75"] = ViralVideoQuartile75,
+                ["VIRAL_LEADS"] = ViralLeads,
+                ["VIRAL_LEAD_FORM_OPENS"] = ViralLeadFormOpens,
+                ["VIRAL_LANDING_PAGE_CLICKS"] = ViralLandingPageClicks,
+                ["VIRAL_CONVERSIONS"] = ViralConversions,
+                ["VIRAL_POST_CLICK_CONVERSIONS"] = ViralPostClickConversions,
+                ["VIRAL_VIEW_THROUGH_CONVERSIONS"] = ViralViewThroughConversions,
+                ["VIRAL_ENGAGEMENTS"] = ViralEngagements,
+                ["GMAIL_SECONDARY_CLICKS"] = GmailSecondaryClicks,
+                ["AVERAGE_CPV"] = AverageCpv,
+                ["VIDEO_VIEWS_FROM_SEARCH"] = VideoViewsFromSearch,
+                ["CROSS_DEVICE_CONVERSIONS"] = CrossDeviceConversions,
+                ["ABSOLUTE_TOP_IMPRESSION_SHARE"] = AbsoluteTopImpressionShare,
+                ["TOP_IMPRESSION_SHARE"] = TopImpressionShare,
+                ["ABSOLUTE_TOP_IMPRESSION_RATE_PERCENT"] = AbsoluteTopImpressionRatePercent,
+                ["TOP_IMPRESSION_RATE_PERCENT"] = TopImpressionRatePercent,
+                ["VIDEO_FULLSCREENS"] = VideoFullscreens,
+                ["VIDEO_PAUSES"] = VideoPauses,
+                ["VIDEO_MUTES"] = VideoMutes,
+                ["VIDEO_SKIPS"] = VideoSkips,
+                ["COMPANION_CLICKS"] = CompanionClicks,
+                ["COMPANION_VIEWS"] = CompanionViews,
+                ["ACTIVE_VIEW_AVG_TIME"] = ActiveViewAvgTime,
+                ["ELIGIBLE_IMPRESSIONS"] = EligibleImpressions,
+                ["EARNED_VIEWS"] = EarnedViews,
+                ["UNIQUE_VIEWERS"] = UniqueViewers,
+                ["COST_USD"] = CostUsd,
+                ["VIRAL_CARD_CLICKS"] = ViralCardClicks,
+                ["VIRAL_CARD_IMPRESSIONS"] = ViralCardImpressions,
+                ["VIRAL_COMPANY_PAGE_CLICKS"] = ViralCompanyPageClicks,
+                ["VIRAL_VIDEO_FULLSCREENS"] = ViralVideoFullscreens,
+                ["VIRAL_OTHER_ENGAGEMENTS"] = ViralOtherEngagements,
+                ["LEAD_GEN_CONTACT_SHARES"] = LeadGenContactShares,
+                ["LEAD_GEN_INTERESTED_CLICKS"] = LeadGenInterestedClicks,
+                ["CM360_POST_CLICK_REVENUE"] = Cm360PostClickRevenue,
+                ["CM360_POST_VIEW_REVENUE"] = Cm360PostViewRevenue,
+                ["SCROLLS"] = Scrolls,
+                ["MEDIA_FEE_1"] = MediaFee1,
+                ["MEDIA_FEE_2"] = MediaFee2,
+                ["MEDIA_FEE_3"] = MediaFee3,
+                ["MEDIA_FEE_4"] = MediaFee4,
+                ["MEDIA_FEE_5"] = MediaFee5,
+                ["ACTIVE_VIEW_DIST_UNMEASURABLE"] = ActiveViewDistUnmeasurable,
+                ["ACTIVE_VIEW_DIST_UNVIEWABLE"] = ActiveViewDistUnviewable,
+                ["ACTIVE_VIEW_DIST_VIEWABLE"] = ActiveViewDistViewable,
+                ["ACTIVE_VIEW_AUDIBLE_VISIBLE_COMPLETE"] = ActiveViewAudibleVisibleComplete,
+                ["ACTIVE_VIEW_VISIBLE_10S"] = ActiveViewVisible10S,
+                ["NOT_MEASURABLE_IMPRESSIONS"] = NotMeasurableImpressions,
+                ["NOT_VIEWABLE_IMPRESSIONS"] = NotViewableImpressions,
+                ["1D_VIEW"] = OneDVIEW,
+                ["1D_CLICK"] = OneDCLICK,
+                ["7D_VIEW"] = SevenDVIEW,
+                ["7D_CLICK"] = SevenDCLICK,
+                ["14D_CLICK"] = FourteenDCLICK,
+                ["28D_VIEW"] = TwentyEightDVIEW,
+                ["28D_CLICK"] = TwentyEightDCLICK,
+                ["30D_CLICK"] = ThirtyDCLICK
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsReportMetricsType> _values =
+            new ConcurrentDictionary<string, AdsReportMetricsType>(_knownValues);
 
-                    if (enumVal is AdsReportMetricsType)
-                    {
-                        return (AdsReportMetricsType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsReportMetricsType");
+        private AdsReportMetricsType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsReportMetricsType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsReportMetricsType(value));
+        }
+
+        public static implicit operator AdsReportMetricsType(string value) => Of(value);
+        public static implicit operator string(AdsReportMetricsType adsreportmetricstype) => adsreportmetricstype.Value;
+
+        public static AdsReportMetricsType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsReportMetricsType);
+
+        public bool Equals(AdsReportMetricsType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AtsDocumentType
-    {
-        [JsonProperty("RESUME")]
-        Resume,
-        [JsonProperty("COVER_LETTER")]
-        CoverLetter,
-        [JsonProperty("OFFER_PACKET")]
-        OfferPacket,
-        [JsonProperty("OFFER_LETTER")]
-        OfferLetter,
-        [JsonProperty("TAKE_HOME_TEST")]
-        TakeHomeTest,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class AtsDocumentTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AtsDocumentType : IEquatable<AtsDocumentType>
     {
-        public static string Value(this AtsDocumentType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AtsDocumentType Resume = new AtsDocumentType("RESUME");
+        public static readonly AtsDocumentType CoverLetter = new AtsDocumentType("COVER_LETTER");
+        public static readonly AtsDocumentType OfferPacket = new AtsDocumentType("OFFER_PACKET");
+        public static readonly AtsDocumentType OfferLetter = new AtsDocumentType("OFFER_LETTER");
+        public static readonly AtsDocumentType TakeHomeTest = new AtsDocumentType("TAKE_HOME_TEST");
+        public static readonly AtsDocumentType Other = new AtsDocumentType("OTHER");
 
-        public static AtsDocumentType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AtsDocumentType).GetFields())
+        private static readonly Dictionary <string, AtsDocumentType> _knownValues =
+            new Dictionary <string, AtsDocumentType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["RESUME"] = Resume,
+                ["COVER_LETTER"] = CoverLetter,
+                ["OFFER_PACKET"] = OfferPacket,
+                ["OFFER_LETTER"] = OfferLetter,
+                ["TAKE_HOME_TEST"] = TakeHomeTest,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AtsDocumentType> _values =
+            new ConcurrentDictionary<string, AtsDocumentType>(_knownValues);
 
-                    if (enumVal is AtsDocumentType)
-                    {
-                        return (AtsDocumentType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AtsDocumentType");
+        private AtsDocumentType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AtsDocumentType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AtsDocumentType(value));
+        }
+
+        public static implicit operator AtsDocumentType(string value) => Of(value);
+        public static implicit operator string(AtsDocumentType atsdocumenttype) => atsdocumenttype.Value;
+
+        public static AtsDocumentType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AtsDocumentType);
+
+        public bool Equals(AtsDocumentType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

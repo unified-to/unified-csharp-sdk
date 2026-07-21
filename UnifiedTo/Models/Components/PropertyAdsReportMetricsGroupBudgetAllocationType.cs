@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupBudgetAllocationType
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("AUTOMATIC")]
-        Automatic,
-        [JsonProperty("FIXED")]
-        Fixed,
-        [JsonProperty("UNLIMITED")]
-        Unlimited,
-    }
 
-    public static class PropertyAdsReportMetricsGroupBudgetAllocationTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupBudgetAllocationType : IEquatable<PropertyAdsReportMetricsGroupBudgetAllocationType>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupBudgetAllocationType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupBudgetAllocationType Unspecified = new PropertyAdsReportMetricsGroupBudgetAllocationType("UNSPECIFIED");
+        public static readonly PropertyAdsReportMetricsGroupBudgetAllocationType Automatic = new PropertyAdsReportMetricsGroupBudgetAllocationType("AUTOMATIC");
+        public static readonly PropertyAdsReportMetricsGroupBudgetAllocationType Fixed = new PropertyAdsReportMetricsGroupBudgetAllocationType("FIXED");
+        public static readonly PropertyAdsReportMetricsGroupBudgetAllocationType Unlimited = new PropertyAdsReportMetricsGroupBudgetAllocationType("UNLIMITED");
 
-        public static PropertyAdsReportMetricsGroupBudgetAllocationType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupBudgetAllocationType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupBudgetAllocationType> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupBudgetAllocationType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["AUTOMATIC"] = Automatic,
+                ["FIXED"] = Fixed,
+                ["UNLIMITED"] = Unlimited
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBudgetAllocationType> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBudgetAllocationType>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupBudgetAllocationType)
-                    {
-                        return (PropertyAdsReportMetricsGroupBudgetAllocationType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupBudgetAllocationType");
+        private PropertyAdsReportMetricsGroupBudgetAllocationType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupBudgetAllocationType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupBudgetAllocationType(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupBudgetAllocationType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupBudgetAllocationType propertyadsreportmetricsgroupbudgetallocationtype) => propertyadsreportmetricsgroupbudgetallocationtype.Value;
+
+        public static PropertyAdsReportMetricsGroupBudgetAllocationType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupBudgetAllocationType);
+
+        public bool Equals(PropertyAdsReportMetricsGroupBudgetAllocationType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

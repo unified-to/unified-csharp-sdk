@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class PropertyCrmEventPageView
     {
-
         [JsonProperty("average")]
         public double? Average { get; set; }
 

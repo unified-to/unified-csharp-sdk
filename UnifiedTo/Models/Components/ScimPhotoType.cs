@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ScimPhotoType
-    {
-        [JsonProperty("photo")]
-        Photo,
-        [JsonProperty("thumbnail")]
-        Thumbnail,
-    }
 
-    public static class ScimPhotoTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ScimPhotoType : IEquatable<ScimPhotoType>
     {
-        public static string Value(this ScimPhotoType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ScimPhotoType Photo = new ScimPhotoType("photo");
+        public static readonly ScimPhotoType Thumbnail = new ScimPhotoType("thumbnail");
 
-        public static ScimPhotoType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ScimPhotoType).GetFields())
+        private static readonly Dictionary <string, ScimPhotoType> _knownValues =
+            new Dictionary <string, ScimPhotoType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["photo"] = Photo,
+                ["thumbnail"] = Thumbnail
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ScimPhotoType> _values =
+            new ConcurrentDictionary<string, ScimPhotoType>(_knownValues);
 
-                    if (enumVal is ScimPhotoType)
-                    {
-                        return (ScimPhotoType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ScimPhotoType");
+        private ScimPhotoType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ScimPhotoType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ScimPhotoType(value));
+        }
+
+        public static implicit operator ScimPhotoType(string value) => Of(value);
+        public static implicit operator string(ScimPhotoType scimphototype) => scimphototype.Value;
+
+        public static ScimPhotoType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ScimPhotoType);
+
+        public bool Equals(ScimPhotoType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

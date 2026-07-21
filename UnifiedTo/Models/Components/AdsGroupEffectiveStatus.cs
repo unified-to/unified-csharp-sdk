@@ -11,65 +11,82 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsGroupEffectiveStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("SERVING")]
-        Serving,
-        [JsonProperty("LIMITED")]
-        Limited,
-        [JsonProperty("LEARNING")]
-        Learning,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("ENDED")]
-        Ended,
-        [JsonProperty("MISCONFIGURED")]
-        Misconfigured,
-        [JsonProperty("NOT_ELIGIBLE")]
-        NotEligible,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("REMOVED")]
-        Removed,
-    }
 
-    public static class AdsGroupEffectiveStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsGroupEffectiveStatus : IEquatable<AdsGroupEffectiveStatus>
     {
-        public static string Value(this AdsGroupEffectiveStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsGroupEffectiveStatus Unspecified = new AdsGroupEffectiveStatus("UNSPECIFIED");
+        public static readonly AdsGroupEffectiveStatus Serving = new AdsGroupEffectiveStatus("SERVING");
+        public static readonly AdsGroupEffectiveStatus Limited = new AdsGroupEffectiveStatus("LIMITED");
+        public static readonly AdsGroupEffectiveStatus Learning = new AdsGroupEffectiveStatus("LEARNING");
+        public static readonly AdsGroupEffectiveStatus Paused = new AdsGroupEffectiveStatus("PAUSED");
+        public static readonly AdsGroupEffectiveStatus Pending = new AdsGroupEffectiveStatus("PENDING");
+        public static readonly AdsGroupEffectiveStatus Ended = new AdsGroupEffectiveStatus("ENDED");
+        public static readonly AdsGroupEffectiveStatus Misconfigured = new AdsGroupEffectiveStatus("MISCONFIGURED");
+        public static readonly AdsGroupEffectiveStatus NotEligible = new AdsGroupEffectiveStatus("NOT_ELIGIBLE");
+        public static readonly AdsGroupEffectiveStatus Archived = new AdsGroupEffectiveStatus("ARCHIVED");
+        public static readonly AdsGroupEffectiveStatus Removed = new AdsGroupEffectiveStatus("REMOVED");
 
-        public static AdsGroupEffectiveStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsGroupEffectiveStatus).GetFields())
+        private static readonly Dictionary <string, AdsGroupEffectiveStatus> _knownValues =
+            new Dictionary <string, AdsGroupEffectiveStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["SERVING"] = Serving,
+                ["LIMITED"] = Limited,
+                ["LEARNING"] = Learning,
+                ["PAUSED"] = Paused,
+                ["PENDING"] = Pending,
+                ["ENDED"] = Ended,
+                ["MISCONFIGURED"] = Misconfigured,
+                ["NOT_ELIGIBLE"] = NotEligible,
+                ["ARCHIVED"] = Archived,
+                ["REMOVED"] = Removed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsGroupEffectiveStatus> _values =
+            new ConcurrentDictionary<string, AdsGroupEffectiveStatus>(_knownValues);
 
-                    if (enumVal is AdsGroupEffectiveStatus)
-                    {
-                        return (AdsGroupEffectiveStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsGroupEffectiveStatus");
+        private AdsGroupEffectiveStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsGroupEffectiveStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsGroupEffectiveStatus(value));
+        }
+
+        public static implicit operator AdsGroupEffectiveStatus(string value) => Of(value);
+        public static implicit operator string(AdsGroupEffectiveStatus adsgroupeffectivestatus) => adsgroupeffectivestatus.Value;
+
+        public static AdsGroupEffectiveStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsGroupEffectiveStatus);
+
+        public bool Equals(AdsGroupEffectiveStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

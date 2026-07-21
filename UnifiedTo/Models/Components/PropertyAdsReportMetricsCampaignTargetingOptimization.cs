@@ -10,15 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
+    /// Optimization (Meta: targeting_automation; Google: observation vs targeting mode).
     /// </summary>
     public class PropertyAdsReportMetricsCampaignTargetingOptimization
     {
-
         [JsonProperty("advantage_audience")]
         public bool? AdvantageAudience { get; set; }
 

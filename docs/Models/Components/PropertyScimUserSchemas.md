@@ -1,5 +1,16 @@
 # PropertyScimUserSchemas
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyScimUserSchemas.UrnIetfParamsScimSchemasCore20User;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyScimUserSchemas.Of("custom_value");
+```
+
 
 ## Values
 

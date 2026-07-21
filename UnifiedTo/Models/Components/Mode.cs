@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Mode
-    {
-        [JsonProperty("TARGETING")]
-        Targeting,
-        [JsonProperty("OBSERVATION")]
-        Observation,
-    }
 
-    public static class ModeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Mode : IEquatable<Mode>
     {
-        public static string Value(this Mode value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Mode Targeting = new Mode("TARGETING");
+        public static readonly Mode Observation = new Mode("OBSERVATION");
 
-        public static Mode ToEnum(this string value)
-        {
-            foreach(var field in typeof(Mode).GetFields())
+        private static readonly Dictionary <string, Mode> _knownValues =
+            new Dictionary <string, Mode> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TARGETING"] = Targeting,
+                ["OBSERVATION"] = Observation
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Mode> _values =
+            new ConcurrentDictionary<string, Mode>(_knownValues);
 
-                    if (enumVal is Mode)
-                    {
-                        return (Mode)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Mode");
+        private Mode(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Mode Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Mode(value));
+        }
+
+        public static implicit operator Mode(string value) => Of(value);
+        public static implicit operator string(Mode mode) => mode.Value;
+
+        public static Mode[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Mode);
+
+        public bool Equals(Mode? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes
-    {
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("RECENT")]
-        Recent,
-        [JsonProperty("TRAVEL")]
-        Travel,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes : IEquatable<PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes Home = new PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes("HOME");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes Recent = new PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes("RECENT");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes Travel = new PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes("TRAVEL");
 
-        public static PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["HOME"] = Home,
+                ["RECENT"] = Recent,
+                ["TRAVEL"] = Travel
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes)
-                    {
-                        return (PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes");
+        private PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes propertyadsreportmetricscampaigntargetinggeographiclocationtypes) => propertyadsreportmetricscampaigntargetinggeographiclocationtypes.Value;
+
+        public static PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignTargetingGeographicLocationTypes? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

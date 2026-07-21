@@ -1,5 +1,16 @@
 # EventType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = EventType.PageView;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EventType.Of("custom_value");
+```
+
 
 ## Values
 

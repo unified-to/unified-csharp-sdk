@@ -1,5 +1,16 @@
 # AdsAdStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AdsAdStatus.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AdsAdStatus.Of("custom_value");
+```
+
 
 ## Values
 

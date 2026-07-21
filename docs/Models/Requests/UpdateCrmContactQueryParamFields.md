@@ -1,5 +1,13 @@
 # UpdateCrmContactQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateCrmContactQueryParamFields.Id;
+```
+
 
 ## Values
 

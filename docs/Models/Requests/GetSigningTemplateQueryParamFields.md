@@ -1,5 +1,13 @@
 # GetSigningTemplateQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetSigningTemplateQueryParamFields.Id;
+```
+
 
 ## Values
 

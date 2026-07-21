@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum IntervalUnit
-    {
-        [JsonProperty("YEAR")]
-        Year,
-        [JsonProperty("MONTH")]
-        Month,
-        [JsonProperty("WEEK")]
-        Week,
-        [JsonProperty("DAY")]
-        Day,
-    }
 
-    public static class IntervalUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class IntervalUnit : IEquatable<IntervalUnit>
     {
-        public static string Value(this IntervalUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly IntervalUnit Year = new IntervalUnit("YEAR");
+        public static readonly IntervalUnit Month = new IntervalUnit("MONTH");
+        public static readonly IntervalUnit Week = new IntervalUnit("WEEK");
+        public static readonly IntervalUnit Day = new IntervalUnit("DAY");
 
-        public static IntervalUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(IntervalUnit).GetFields())
+        private static readonly Dictionary <string, IntervalUnit> _knownValues =
+            new Dictionary <string, IntervalUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["YEAR"] = Year,
+                ["MONTH"] = Month,
+                ["WEEK"] = Week,
+                ["DAY"] = Day
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, IntervalUnit> _values =
+            new ConcurrentDictionary<string, IntervalUnit>(_knownValues);
 
-                    if (enumVal is IntervalUnit)
-                    {
-                        return (IntervalUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum IntervalUnit");
+        private IntervalUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static IntervalUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new IntervalUnit(value));
+        }
+
+        public static implicit operator IntervalUnit(string value) => Of(value);
+        public static implicit operator string(IntervalUnit intervalunit) => intervalunit.Value;
+
+        public static IntervalUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as IntervalUnit);
+
+        public bool Equals(IntervalUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

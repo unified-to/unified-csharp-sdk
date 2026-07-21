@@ -1,5 +1,16 @@
 # ListReference
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListReference.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListReference.Of("custom_value");
+```
+
 
 ## Values
 

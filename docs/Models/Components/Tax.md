@@ -1,5 +1,16 @@
 # Tax
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = Tax.PreTax;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = Tax.Of("custom_value");
+```
+
 
 ## Values
 
@@ -9,4 +20,4 @@
 | `PostTax`    | POST_TAX     |
 | `Taxable`    | TAXABLE      |
 | `NonTaxable` | NON_TAXABLE  |
-| `Tax`        | TAX          |
+| `TaxValue`   | TAX          |

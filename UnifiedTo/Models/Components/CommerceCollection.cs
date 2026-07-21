@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A collection of items/products/services
+    /// A collection of items/products/services.
     /// </summary>
     public class CommerceCollection
     {
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

@@ -1,5 +1,13 @@
 # GetHrisLocationQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetHrisLocationQueryParamFields.Id;
+```
+
 
 ## Values
 

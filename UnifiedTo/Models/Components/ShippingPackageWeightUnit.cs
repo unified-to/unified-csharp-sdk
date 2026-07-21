@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ShippingPackageWeightUnit
-    {
-        [JsonProperty("g")]
-        G,
-        [JsonProperty("kg")]
-        Kg,
-        [JsonProperty("oz")]
-        Oz,
-        [JsonProperty("lb")]
-        Lb,
-    }
 
-    public static class ShippingPackageWeightUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ShippingPackageWeightUnit : IEquatable<ShippingPackageWeightUnit>
     {
-        public static string Value(this ShippingPackageWeightUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ShippingPackageWeightUnit G = new ShippingPackageWeightUnit("g");
+        public static readonly ShippingPackageWeightUnit Kg = new ShippingPackageWeightUnit("kg");
+        public static readonly ShippingPackageWeightUnit Oz = new ShippingPackageWeightUnit("oz");
+        public static readonly ShippingPackageWeightUnit Lb = new ShippingPackageWeightUnit("lb");
 
-        public static ShippingPackageWeightUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(ShippingPackageWeightUnit).GetFields())
+        private static readonly Dictionary <string, ShippingPackageWeightUnit> _knownValues =
+            new Dictionary <string, ShippingPackageWeightUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["g"] = G,
+                ["kg"] = Kg,
+                ["oz"] = Oz,
+                ["lb"] = Lb
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ShippingPackageWeightUnit> _values =
+            new ConcurrentDictionary<string, ShippingPackageWeightUnit>(_knownValues);
 
-                    if (enumVal is ShippingPackageWeightUnit)
-                    {
-                        return (ShippingPackageWeightUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ShippingPackageWeightUnit");
+        private ShippingPackageWeightUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ShippingPackageWeightUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ShippingPackageWeightUnit(value));
+        }
+
+        public static implicit operator ShippingPackageWeightUnit(string value) => Of(value);
+        public static implicit operator string(ShippingPackageWeightUnit shippingpackageweightunit) => shippingpackageweightunit.Value;
+
+        public static ShippingPackageWeightUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ShippingPackageWeightUnit);
+
+        public bool Equals(ShippingPackageWeightUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

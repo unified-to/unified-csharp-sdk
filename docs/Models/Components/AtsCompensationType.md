@@ -1,5 +1,16 @@
 # AtsCompensationType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AtsCompensationType.Salary;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AtsCompensationType.Of("custom_value");
+```
+
 
 ## Values
 

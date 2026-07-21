@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ClubsMemberMembershipStatus
-    {
-        [JsonProperty("MEMBER")]
-        Member,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("NONE")]
-        None,
-    }
 
-    public static class ClubsMemberMembershipStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ClubsMemberMembershipStatus : IEquatable<ClubsMemberMembershipStatus>
     {
-        public static string Value(this ClubsMemberMembershipStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ClubsMemberMembershipStatus Member = new ClubsMemberMembershipStatus("MEMBER");
+        public static readonly ClubsMemberMembershipStatus Pending = new ClubsMemberMembershipStatus("PENDING");
+        public static readonly ClubsMemberMembershipStatus None = new ClubsMemberMembershipStatus("NONE");
 
-        public static ClubsMemberMembershipStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(ClubsMemberMembershipStatus).GetFields())
+        private static readonly Dictionary <string, ClubsMemberMembershipStatus> _knownValues =
+            new Dictionary <string, ClubsMemberMembershipStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MEMBER"] = Member,
+                ["PENDING"] = Pending,
+                ["NONE"] = None
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ClubsMemberMembershipStatus> _values =
+            new ConcurrentDictionary<string, ClubsMemberMembershipStatus>(_knownValues);
 
-                    if (enumVal is ClubsMemberMembershipStatus)
-                    {
-                        return (ClubsMemberMembershipStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ClubsMemberMembershipStatus");
+        private ClubsMemberMembershipStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ClubsMemberMembershipStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ClubsMemberMembershipStatus(value));
+        }
+
+        public static implicit operator ClubsMemberMembershipStatus(string value) => Of(value);
+        public static implicit operator string(ClubsMemberMembershipStatus clubsmembermembershipstatus) => clubsmembermembershipstatus.Value;
+
+        public static ClubsMemberMembershipStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ClubsMemberMembershipStatus);
+
+        public bool Equals(ClubsMemberMembershipStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

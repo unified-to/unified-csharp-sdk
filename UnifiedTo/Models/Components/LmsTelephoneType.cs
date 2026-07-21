@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum LmsTelephoneType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-        [JsonProperty("FAX")]
-        Fax,
-        [JsonProperty("MOBILE")]
-        Mobile,
-    }
 
-    public static class LmsTelephoneTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class LmsTelephoneType : IEquatable<LmsTelephoneType>
     {
-        public static string Value(this LmsTelephoneType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly LmsTelephoneType Work = new LmsTelephoneType("WORK");
+        public static readonly LmsTelephoneType Home = new LmsTelephoneType("HOME");
+        public static readonly LmsTelephoneType Other = new LmsTelephoneType("OTHER");
+        public static readonly LmsTelephoneType Fax = new LmsTelephoneType("FAX");
+        public static readonly LmsTelephoneType Mobile = new LmsTelephoneType("MOBILE");
 
-        public static LmsTelephoneType ToEnum(this string value)
-        {
-            foreach(var field in typeof(LmsTelephoneType).GetFields())
+        private static readonly Dictionary <string, LmsTelephoneType> _knownValues =
+            new Dictionary <string, LmsTelephoneType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other,
+                ["FAX"] = Fax,
+                ["MOBILE"] = Mobile
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, LmsTelephoneType> _values =
+            new ConcurrentDictionary<string, LmsTelephoneType>(_knownValues);
 
-                    if (enumVal is LmsTelephoneType)
-                    {
-                        return (LmsTelephoneType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum LmsTelephoneType");
+        private LmsTelephoneType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static LmsTelephoneType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new LmsTelephoneType(value));
+        }
+
+        public static implicit operator LmsTelephoneType(string value) => Of(value);
+        public static implicit operator string(LmsTelephoneType lmstelephonetype) => lmstelephonetype.Value;
+
+        public static LmsTelephoneType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as LmsTelephoneType);
+
+        public bool Equals(LmsTelephoneType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

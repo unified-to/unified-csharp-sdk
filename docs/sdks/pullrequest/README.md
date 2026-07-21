@@ -1,5 +1,4 @@
 # Pullrequest
-(*Pullrequest*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoPullrequest" method="get" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all pullrequests
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoPullrequests" method="get" path="/repo/{connection_id}/pullrequest" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoPullrequest" method="delete" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

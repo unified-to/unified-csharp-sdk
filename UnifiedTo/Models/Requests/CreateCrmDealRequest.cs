@@ -13,30 +13,29 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
-    
+
     public class CreateCrmDealRequest
     {
-
         /// <summary>
-        /// A deal represents an opportunity with companies and/or contacts
+        /// A deal represents an opportunity with companies and/or contacts.
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public CrmDeal CrmDeal { get; set; } = default!;
 
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// Fields to return
+        /// Fields to return.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<CreateCrmDealQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar
+        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }

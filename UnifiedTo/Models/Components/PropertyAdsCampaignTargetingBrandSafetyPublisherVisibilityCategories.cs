@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories
-    {
-        [JsonProperty("limited")]
-        Limited,
-        [JsonProperty("standard")]
-        Standard,
-        [JsonProperty("expanded")]
-        Expanded,
-    }
 
-    public static class PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategoriesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories : IEquatable<PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories>
     {
-        public static string Value(this PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories Limited = new PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories("limited");
+        public static readonly PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories Standard = new PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories("standard");
+        public static readonly PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories Expanded = new PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories("expanded");
 
-        public static PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories).GetFields())
+        private static readonly Dictionary <string, PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories> _knownValues =
+            new Dictionary <string, PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["limited"] = Limited,
+                ["standard"] = Standard,
+                ["expanded"] = Expanded
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories> _values =
+            new ConcurrentDictionary<string, PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories>(_knownValues);
 
-                    if (enumVal is PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories)
-                    {
-                        return (PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories");
+        private PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories(value));
+        }
+
+        public static implicit operator PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories(string value) => Of(value);
+        public static implicit operator string(PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories propertyadscampaigntargetingbrandsafetypublishervisibilitycategories) => propertyadscampaigntargetingbrandsafetypublishervisibilitycategories.Value;
+
+        public static PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories);
+
+        public bool Equals(PropertyAdsCampaignTargetingBrandSafetyPublisherVisibilityCategories? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

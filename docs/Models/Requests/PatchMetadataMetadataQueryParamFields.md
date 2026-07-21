@@ -1,5 +1,13 @@
 # PatchMetadataMetadataQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchMetadataMetadataQueryParamFields.Id;
+```
+
 
 ## Values
 

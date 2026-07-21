@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisDeductionType
-    {
-        [JsonProperty("FIXED")]
-        Fixed,
-        [JsonProperty("PERCENTAGE")]
-        Percentage,
-    }
 
-    public static class HrisDeductionTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisDeductionType : IEquatable<HrisDeductionType>
     {
-        public static string Value(this HrisDeductionType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisDeductionType Fixed = new HrisDeductionType("FIXED");
+        public static readonly HrisDeductionType Percentage = new HrisDeductionType("PERCENTAGE");
 
-        public static HrisDeductionType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisDeductionType).GetFields())
+        private static readonly Dictionary <string, HrisDeductionType> _knownValues =
+            new Dictionary <string, HrisDeductionType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FIXED"] = Fixed,
+                ["PERCENTAGE"] = Percentage
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisDeductionType> _values =
+            new ConcurrentDictionary<string, HrisDeductionType>(_knownValues);
 
-                    if (enumVal is HrisDeductionType)
-                    {
-                        return (HrisDeductionType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisDeductionType");
+        private HrisDeductionType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisDeductionType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisDeductionType(value));
+        }
+
+        public static implicit operator HrisDeductionType(string value) => Of(value);
+        public static implicit operator string(HrisDeductionType hrisdeductiontype) => hrisdeductiontype.Value;
+
+        public static HrisDeductionType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisDeductionType);
+
+        public bool Equals(HrisDeductionType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

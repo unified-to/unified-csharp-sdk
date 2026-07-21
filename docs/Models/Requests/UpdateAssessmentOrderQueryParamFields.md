@@ -1,5 +1,13 @@
 # UpdateAssessmentOrderQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAssessmentOrderQueryParamFields.Id;
+```
+
 
 ## Values
 

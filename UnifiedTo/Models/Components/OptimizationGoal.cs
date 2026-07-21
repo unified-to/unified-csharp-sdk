@@ -11,67 +11,84 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum OptimizationGoal
-    {
-        [JsonProperty("REACH")]
-        Reach,
-        [JsonProperty("IMPRESSIONS")]
-        Impressions,
-        [JsonProperty("LINK_CLICKS")]
-        LinkClicks,
-        [JsonProperty("LANDING_PAGE_VIEWS")]
-        LandingPageViews,
-        [JsonProperty("CONVERSIONS")]
-        Conversions,
-        [JsonProperty("LEAD_GENERATION")]
-        LeadGeneration,
-        [JsonProperty("APP_INSTALLS")]
-        AppInstalls,
-        [JsonProperty("APP_ENGAGEMENT")]
-        AppEngagement,
-        [JsonProperty("VIDEO_VIEWS")]
-        VideoViews,
-        [JsonProperty("ENGAGEMENT")]
-        Engagement,
-        [JsonProperty("PAGE_LIKES")]
-        PageLikes,
-        [JsonProperty("MESSAGES")]
-        Messages,
-    }
 
-    public static class OptimizationGoalExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class OptimizationGoal : IEquatable<OptimizationGoal>
     {
-        public static string Value(this OptimizationGoal value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly OptimizationGoal Reach = new OptimizationGoal("REACH");
+        public static readonly OptimizationGoal Impressions = new OptimizationGoal("IMPRESSIONS");
+        public static readonly OptimizationGoal LinkClicks = new OptimizationGoal("LINK_CLICKS");
+        public static readonly OptimizationGoal LandingPageViews = new OptimizationGoal("LANDING_PAGE_VIEWS");
+        public static readonly OptimizationGoal Conversions = new OptimizationGoal("CONVERSIONS");
+        public static readonly OptimizationGoal LeadGeneration = new OptimizationGoal("LEAD_GENERATION");
+        public static readonly OptimizationGoal AppInstalls = new OptimizationGoal("APP_INSTALLS");
+        public static readonly OptimizationGoal AppEngagement = new OptimizationGoal("APP_ENGAGEMENT");
+        public static readonly OptimizationGoal VideoViews = new OptimizationGoal("VIDEO_VIEWS");
+        public static readonly OptimizationGoal Engagement = new OptimizationGoal("ENGAGEMENT");
+        public static readonly OptimizationGoal PageLikes = new OptimizationGoal("PAGE_LIKES");
+        public static readonly OptimizationGoal Messages = new OptimizationGoal("MESSAGES");
 
-        public static OptimizationGoal ToEnum(this string value)
-        {
-            foreach(var field in typeof(OptimizationGoal).GetFields())
+        private static readonly Dictionary <string, OptimizationGoal> _knownValues =
+            new Dictionary <string, OptimizationGoal> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["REACH"] = Reach,
+                ["IMPRESSIONS"] = Impressions,
+                ["LINK_CLICKS"] = LinkClicks,
+                ["LANDING_PAGE_VIEWS"] = LandingPageViews,
+                ["CONVERSIONS"] = Conversions,
+                ["LEAD_GENERATION"] = LeadGeneration,
+                ["APP_INSTALLS"] = AppInstalls,
+                ["APP_ENGAGEMENT"] = AppEngagement,
+                ["VIDEO_VIEWS"] = VideoViews,
+                ["ENGAGEMENT"] = Engagement,
+                ["PAGE_LIKES"] = PageLikes,
+                ["MESSAGES"] = Messages
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, OptimizationGoal> _values =
+            new ConcurrentDictionary<string, OptimizationGoal>(_knownValues);
 
-                    if (enumVal is OptimizationGoal)
-                    {
-                        return (OptimizationGoal)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum OptimizationGoal");
+        private OptimizationGoal(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static OptimizationGoal Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new OptimizationGoal(value));
+        }
+
+        public static implicit operator OptimizationGoal(string value) => Of(value);
+        public static implicit operator string(OptimizationGoal optimizationgoal) => optimizationgoal.Value;
+
+        public static OptimizationGoal[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as OptimizationGoal);
+
+        public bool Equals(OptimizationGoal? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

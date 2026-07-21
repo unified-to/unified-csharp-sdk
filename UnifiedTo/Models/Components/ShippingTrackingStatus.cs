@@ -11,71 +11,88 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ShippingTrackingStatus
-    {
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("PROCESSING")]
-        Processing,
-        [JsonProperty("IN_TRANSIT")]
-        InTransit,
-        [JsonProperty("DELIVERED")]
-        Delivered,
-        [JsonProperty("EXCEPTION")]
-        Exception,
-        [JsonProperty("CANCELLED")]
-        Cancelled,
-        [JsonProperty("LABEL_CREATED")]
-        LabelCreated,
-        [JsonProperty("PICKED_UP")]
-        PickedUp,
-        [JsonProperty("OUT_FOR_DELIVERY")]
-        OutForDelivery,
-        [JsonProperty("DELIVERY_ATTEMPTED")]
-        DeliveryAttempted,
-        [JsonProperty("RETURNED_TO_SENDER")]
-        ReturnedToSender,
-        [JsonProperty("HELD_AT_LOCATION")]
-        HeldAtLocation,
-        [JsonProperty("CUSTOMS_CLEARANCE")]
-        CustomsClearance,
-        [JsonProperty("EXCEPTION_RESOLVED")]
-        ExceptionResolved,
-    }
 
-    public static class ShippingTrackingStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ShippingTrackingStatus : IEquatable<ShippingTrackingStatus>
     {
-        public static string Value(this ShippingTrackingStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ShippingTrackingStatus Pending = new ShippingTrackingStatus("PENDING");
+        public static readonly ShippingTrackingStatus Processing = new ShippingTrackingStatus("PROCESSING");
+        public static readonly ShippingTrackingStatus InTransit = new ShippingTrackingStatus("IN_TRANSIT");
+        public static readonly ShippingTrackingStatus Delivered = new ShippingTrackingStatus("DELIVERED");
+        public static readonly ShippingTrackingStatus Exception = new ShippingTrackingStatus("EXCEPTION");
+        public static readonly ShippingTrackingStatus Cancelled = new ShippingTrackingStatus("CANCELLED");
+        public static readonly ShippingTrackingStatus LabelCreated = new ShippingTrackingStatus("LABEL_CREATED");
+        public static readonly ShippingTrackingStatus PickedUp = new ShippingTrackingStatus("PICKED_UP");
+        public static readonly ShippingTrackingStatus OutForDelivery = new ShippingTrackingStatus("OUT_FOR_DELIVERY");
+        public static readonly ShippingTrackingStatus DeliveryAttempted = new ShippingTrackingStatus("DELIVERY_ATTEMPTED");
+        public static readonly ShippingTrackingStatus ReturnedToSender = new ShippingTrackingStatus("RETURNED_TO_SENDER");
+        public static readonly ShippingTrackingStatus HeldAtLocation = new ShippingTrackingStatus("HELD_AT_LOCATION");
+        public static readonly ShippingTrackingStatus CustomsClearance = new ShippingTrackingStatus("CUSTOMS_CLEARANCE");
+        public static readonly ShippingTrackingStatus ExceptionResolved = new ShippingTrackingStatus("EXCEPTION_RESOLVED");
 
-        public static ShippingTrackingStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(ShippingTrackingStatus).GetFields())
+        private static readonly Dictionary <string, ShippingTrackingStatus> _knownValues =
+            new Dictionary <string, ShippingTrackingStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PENDING"] = Pending,
+                ["PROCESSING"] = Processing,
+                ["IN_TRANSIT"] = InTransit,
+                ["DELIVERED"] = Delivered,
+                ["EXCEPTION"] = Exception,
+                ["CANCELLED"] = Cancelled,
+                ["LABEL_CREATED"] = LabelCreated,
+                ["PICKED_UP"] = PickedUp,
+                ["OUT_FOR_DELIVERY"] = OutForDelivery,
+                ["DELIVERY_ATTEMPTED"] = DeliveryAttempted,
+                ["RETURNED_TO_SENDER"] = ReturnedToSender,
+                ["HELD_AT_LOCATION"] = HeldAtLocation,
+                ["CUSTOMS_CLEARANCE"] = CustomsClearance,
+                ["EXCEPTION_RESOLVED"] = ExceptionResolved
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ShippingTrackingStatus> _values =
+            new ConcurrentDictionary<string, ShippingTrackingStatus>(_knownValues);
 
-                    if (enumVal is ShippingTrackingStatus)
-                    {
-                        return (ShippingTrackingStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ShippingTrackingStatus");
+        private ShippingTrackingStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ShippingTrackingStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ShippingTrackingStatus(value));
+        }
+
+        public static implicit operator ShippingTrackingStatus(string value) => Of(value);
+        public static implicit operator string(ShippingTrackingStatus shippingtrackingstatus) => shippingtrackingstatus.Value;
+
+        public static ShippingTrackingStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ShippingTrackingStatus);
+
+        public bool Equals(ShippingTrackingStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

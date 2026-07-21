@@ -1,5 +1,4 @@
 # Company
-(*Company*)
 
 ## Overview
 
@@ -31,6 +30,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -72,6 +72,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -113,6 +114,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -154,6 +156,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsCompany" method="get" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -195,6 +198,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmCompany" method="get" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -236,6 +240,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisCompany" method="get" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -277,6 +282,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsCompanies" method="get" path="/ats/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -317,6 +323,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmCompanies" method="get" path="/crm/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -357,6 +364,7 @@ Retrieve enrichment information for a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listEnrichCompanies" method="get" path="/enrich/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -394,6 +402,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisCompanies" method="get" path="/hris/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -434,6 +443,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -476,6 +486,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -518,6 +529,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -560,6 +572,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsCompany" method="delete" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -599,6 +612,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmCompany" method="delete" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -638,6 +652,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisCompany" method="delete" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -677,6 +692,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -719,6 +735,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -761,6 +778,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

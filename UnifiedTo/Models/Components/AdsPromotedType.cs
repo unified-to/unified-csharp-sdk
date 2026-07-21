@@ -11,73 +11,90 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsPromotedType
-    {
-        [JsonProperty("PAGE_ID")]
-        PageId,
-        [JsonProperty("APP_ID")]
-        AppId,
-        [JsonProperty("STORE_URL")]
-        StoreUrl,
-        [JsonProperty("PIXEL_ID")]
-        PixelId,
-        [JsonProperty("CUSTOM_CONVERSION_ID")]
-        CustomConversionId,
-        [JsonProperty("CATALOG_ID")]
-        CatalogId,
-        [JsonProperty("PRODUCT_SET_ID")]
-        ProductSetId,
-        [JsonProperty("PRIORITIZED_SET_ID")]
-        PrioritizedSetId,
-        [JsonProperty("EVENT_ID")]
-        EventId,
-        [JsonProperty("OFFER_ID")]
-        OfferId,
-        [JsonProperty("LEAD_FORM_ID")]
-        LeadFormId,
-        [JsonProperty("MESSAGING_CHANNEL_ID")]
-        MessagingChannelId,
-        [JsonProperty("PRODUCT_ID")]
-        ProductId,
-        [JsonProperty("TWEET_ID")]
-        TweetId,
-        [JsonProperty("AD_GROUP_TYPE")]
-        AdGroupType,
-    }
 
-    public static class AdsPromotedTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsPromotedType : IEquatable<AdsPromotedType>
     {
-        public static string Value(this AdsPromotedType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsPromotedType PageId = new AdsPromotedType("PAGE_ID");
+        public static readonly AdsPromotedType AppId = new AdsPromotedType("APP_ID");
+        public static readonly AdsPromotedType StoreUrl = new AdsPromotedType("STORE_URL");
+        public static readonly AdsPromotedType PixelId = new AdsPromotedType("PIXEL_ID");
+        public static readonly AdsPromotedType CustomConversionId = new AdsPromotedType("CUSTOM_CONVERSION_ID");
+        public static readonly AdsPromotedType CatalogId = new AdsPromotedType("CATALOG_ID");
+        public static readonly AdsPromotedType ProductSetId = new AdsPromotedType("PRODUCT_SET_ID");
+        public static readonly AdsPromotedType PrioritizedSetId = new AdsPromotedType("PRIORITIZED_SET_ID");
+        public static readonly AdsPromotedType EventId = new AdsPromotedType("EVENT_ID");
+        public static readonly AdsPromotedType OfferId = new AdsPromotedType("OFFER_ID");
+        public static readonly AdsPromotedType LeadFormId = new AdsPromotedType("LEAD_FORM_ID");
+        public static readonly AdsPromotedType MessagingChannelId = new AdsPromotedType("MESSAGING_CHANNEL_ID");
+        public static readonly AdsPromotedType ProductId = new AdsPromotedType("PRODUCT_ID");
+        public static readonly AdsPromotedType TweetId = new AdsPromotedType("TWEET_ID");
+        public static readonly AdsPromotedType AdGroupType = new AdsPromotedType("AD_GROUP_TYPE");
 
-        public static AdsPromotedType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsPromotedType).GetFields())
+        private static readonly Dictionary <string, AdsPromotedType> _knownValues =
+            new Dictionary <string, AdsPromotedType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PAGE_ID"] = PageId,
+                ["APP_ID"] = AppId,
+                ["STORE_URL"] = StoreUrl,
+                ["PIXEL_ID"] = PixelId,
+                ["CUSTOM_CONVERSION_ID"] = CustomConversionId,
+                ["CATALOG_ID"] = CatalogId,
+                ["PRODUCT_SET_ID"] = ProductSetId,
+                ["PRIORITIZED_SET_ID"] = PrioritizedSetId,
+                ["EVENT_ID"] = EventId,
+                ["OFFER_ID"] = OfferId,
+                ["LEAD_FORM_ID"] = LeadFormId,
+                ["MESSAGING_CHANNEL_ID"] = MessagingChannelId,
+                ["PRODUCT_ID"] = ProductId,
+                ["TWEET_ID"] = TweetId,
+                ["AD_GROUP_TYPE"] = AdGroupType
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsPromotedType> _values =
+            new ConcurrentDictionary<string, AdsPromotedType>(_knownValues);
 
-                    if (enumVal is AdsPromotedType)
-                    {
-                        return (AdsPromotedType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsPromotedType");
+        private AdsPromotedType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsPromotedType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsPromotedType(value));
+        }
+
+        public static implicit operator AdsPromotedType(string value) => Of(value);
+        public static implicit operator string(AdsPromotedType adspromotedtype) => adspromotedtype.Value;
+
+        public static AdsPromotedType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsPromotedType);
+
+        public bool Equals(AdsPromotedType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

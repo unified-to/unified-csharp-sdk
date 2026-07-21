@@ -1,5 +1,16 @@
 # AdsGroupEffectiveStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AdsGroupEffectiveStatus.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AdsGroupEffectiveStatus.Of("custom_value");
+```
+
 
 ## Values
 

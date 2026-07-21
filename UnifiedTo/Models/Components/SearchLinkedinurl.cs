@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SearchLinkedinurl
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class SearchLinkedinurlExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SearchLinkedinurl : IEquatable<SearchLinkedinurl>
     {
-        public static string Value(this SearchLinkedinurl value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SearchLinkedinurl SupportedRequired = new SearchLinkedinurl("supported-required");
+        public static readonly SearchLinkedinurl Supported = new SearchLinkedinurl("supported");
+        public static readonly SearchLinkedinurl NotSupported = new SearchLinkedinurl("not-supported");
 
-        public static SearchLinkedinurl ToEnum(this string value)
-        {
-            foreach(var field in typeof(SearchLinkedinurl).GetFields())
+        private static readonly Dictionary <string, SearchLinkedinurl> _knownValues =
+            new Dictionary <string, SearchLinkedinurl> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SearchLinkedinurl> _values =
+            new ConcurrentDictionary<string, SearchLinkedinurl>(_knownValues);
 
-                    if (enumVal is SearchLinkedinurl)
-                    {
-                        return (SearchLinkedinurl)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SearchLinkedinurl");
+        private SearchLinkedinurl(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SearchLinkedinurl Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SearchLinkedinurl(value));
+        }
+
+        public static implicit operator SearchLinkedinurl(string value) => Of(value);
+        public static implicit operator string(SearchLinkedinurl searchlinkedinurl) => searchlinkedinurl.Value;
+
+        public static SearchLinkedinurl[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SearchLinkedinurl);
+
+        public bool Equals(SearchLinkedinurl? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum UcCallType
-    {
-        [JsonProperty("INBOUND")]
-        Inbound,
-        [JsonProperty("OUTBOUND")]
-        Outbound,
-    }
 
-    public static class UcCallTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class UcCallType : IEquatable<UcCallType>
     {
-        public static string Value(this UcCallType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly UcCallType Inbound = new UcCallType("INBOUND");
+        public static readonly UcCallType Outbound = new UcCallType("OUTBOUND");
 
-        public static UcCallType ToEnum(this string value)
-        {
-            foreach(var field in typeof(UcCallType).GetFields())
+        private static readonly Dictionary <string, UcCallType> _knownValues =
+            new Dictionary <string, UcCallType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["INBOUND"] = Inbound,
+                ["OUTBOUND"] = Outbound
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, UcCallType> _values =
+            new ConcurrentDictionary<string, UcCallType>(_knownValues);
 
-                    if (enumVal is UcCallType)
-                    {
-                        return (UcCallType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum UcCallType");
+        private UcCallType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static UcCallType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new UcCallType(value));
+        }
+
+        public static implicit operator UcCallType(string value) => Of(value);
+        public static implicit operator string(UcCallType uccalltype) => uccalltype.Value;
+
+        public static UcCallType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as UcCallType);
+
+        public bool Equals(UcCallType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

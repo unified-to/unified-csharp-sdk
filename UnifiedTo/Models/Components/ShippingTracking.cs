@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class ShippingTracking
     {
-
         [JsonProperty("actual_delivery_at")]
         public DateTime? ActualDeliveryAt { get; set; }
 
@@ -37,7 +38,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? EstimatedDelivery { get; set; }
 
         /// <summary>
-        /// Array of tracking events
+        /// Array of tracking events.
         /// </summary>
         [JsonProperty("events")]
         public List<ShippingTrackingEvent>? Events { get; set; }

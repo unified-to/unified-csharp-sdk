@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyCrmEventTaskStatus
-    {
-        [JsonProperty("COMPLETED")]
-        Completed,
-        [JsonProperty("NOT_STARTED")]
-        NotStarted,
-        [JsonProperty("WORK_IN_PROGRESS")]
-        WorkInProgress,
-        [JsonProperty("DEFERRED")]
-        Deferred,
-    }
 
-    public static class PropertyCrmEventTaskStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyCrmEventTaskStatus : IEquatable<PropertyCrmEventTaskStatus>
     {
-        public static string Value(this PropertyCrmEventTaskStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyCrmEventTaskStatus Completed = new PropertyCrmEventTaskStatus("COMPLETED");
+        public static readonly PropertyCrmEventTaskStatus NotStarted = new PropertyCrmEventTaskStatus("NOT_STARTED");
+        public static readonly PropertyCrmEventTaskStatus WorkInProgress = new PropertyCrmEventTaskStatus("WORK_IN_PROGRESS");
+        public static readonly PropertyCrmEventTaskStatus Deferred = new PropertyCrmEventTaskStatus("DEFERRED");
 
-        public static PropertyCrmEventTaskStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyCrmEventTaskStatus).GetFields())
+        private static readonly Dictionary <string, PropertyCrmEventTaskStatus> _knownValues =
+            new Dictionary <string, PropertyCrmEventTaskStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["COMPLETED"] = Completed,
+                ["NOT_STARTED"] = NotStarted,
+                ["WORK_IN_PROGRESS"] = WorkInProgress,
+                ["DEFERRED"] = Deferred
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyCrmEventTaskStatus> _values =
+            new ConcurrentDictionary<string, PropertyCrmEventTaskStatus>(_knownValues);
 
-                    if (enumVal is PropertyCrmEventTaskStatus)
-                    {
-                        return (PropertyCrmEventTaskStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyCrmEventTaskStatus");
+        private PropertyCrmEventTaskStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyCrmEventTaskStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyCrmEventTaskStatus(value));
+        }
+
+        public static implicit operator PropertyCrmEventTaskStatus(string value) => Of(value);
+        public static implicit operator string(PropertyCrmEventTaskStatus propertycrmeventtaskstatus) => propertycrmeventtaskstatus.Value;
+
+        public static PropertyCrmEventTaskStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyCrmEventTaskStatus);
+
+        public bool Equals(PropertyCrmEventTaskStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

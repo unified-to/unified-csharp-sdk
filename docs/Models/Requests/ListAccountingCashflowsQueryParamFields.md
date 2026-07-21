@@ -1,5 +1,13 @@
 # ListAccountingCashflowsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAccountingCashflowsQueryParamFields.Id;
+```
+
 
 ## Values
 

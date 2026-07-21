@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum RadiusUnit
-    {
-        [JsonProperty("MILES")]
-        Miles,
-        [JsonProperty("KILOMETERS")]
-        Kilometers,
-    }
 
-    public static class RadiusUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class RadiusUnit : IEquatable<RadiusUnit>
     {
-        public static string Value(this RadiusUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly RadiusUnit Miles = new RadiusUnit("MILES");
+        public static readonly RadiusUnit Kilometers = new RadiusUnit("KILOMETERS");
 
-        public static RadiusUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(RadiusUnit).GetFields())
+        private static readonly Dictionary <string, RadiusUnit> _knownValues =
+            new Dictionary <string, RadiusUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MILES"] = Miles,
+                ["KILOMETERS"] = Kilometers
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, RadiusUnit> _values =
+            new ConcurrentDictionary<string, RadiusUnit>(_knownValues);
 
-                    if (enumVal is RadiusUnit)
-                    {
-                        return (RadiusUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum RadiusUnit");
+        private RadiusUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static RadiusUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new RadiusUnit(value));
+        }
+
+        public static implicit operator RadiusUnit(string value) => Of(value);
+        public static implicit operator string(RadiusUnit radiusunit) => radiusunit.Value;
+
+        public static RadiusUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as RadiusUnit);
+
+        public bool Equals(RadiusUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// an organization.
     /// </summary>
     public class PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User
     {
-
         [JsonProperty("additionalManagers")]
         public List<ScimManager>? AdditionalManagers { get; set; }
 
@@ -55,7 +56,7 @@ namespace UnifiedTo.Models.Components
         public string? Location { get; set; }
 
         /// <summary>
-        /// &quot;id&quot; attribute of another User.
+        /// "id" attribute of another User.
         /// </summary>
         [JsonProperty("manager")]
         public PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager? Manager { get; set; }

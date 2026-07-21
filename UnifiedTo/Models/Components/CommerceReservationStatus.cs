@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CommerceReservationStatus
-    {
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("CONFIRMED")]
-        Confirmed,
-        [JsonProperty("CANCELLED")]
-        Cancelled,
-        [JsonProperty("NO_SHOW")]
-        NoShow,
-        [JsonProperty("COMPLETED")]
-        Completed,
-    }
 
-    public static class CommerceReservationStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CommerceReservationStatus : IEquatable<CommerceReservationStatus>
     {
-        public static string Value(this CommerceReservationStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CommerceReservationStatus Pending = new CommerceReservationStatus("PENDING");
+        public static readonly CommerceReservationStatus Confirmed = new CommerceReservationStatus("CONFIRMED");
+        public static readonly CommerceReservationStatus Cancelled = new CommerceReservationStatus("CANCELLED");
+        public static readonly CommerceReservationStatus NoShow = new CommerceReservationStatus("NO_SHOW");
+        public static readonly CommerceReservationStatus Completed = new CommerceReservationStatus("COMPLETED");
 
-        public static CommerceReservationStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(CommerceReservationStatus).GetFields())
+        private static readonly Dictionary <string, CommerceReservationStatus> _knownValues =
+            new Dictionary <string, CommerceReservationStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PENDING"] = Pending,
+                ["CONFIRMED"] = Confirmed,
+                ["CANCELLED"] = Cancelled,
+                ["NO_SHOW"] = NoShow,
+                ["COMPLETED"] = Completed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CommerceReservationStatus> _values =
+            new ConcurrentDictionary<string, CommerceReservationStatus>(_knownValues);
 
-                    if (enumVal is CommerceReservationStatus)
-                    {
-                        return (CommerceReservationStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CommerceReservationStatus");
+        private CommerceReservationStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CommerceReservationStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CommerceReservationStatus(value));
+        }
+
+        public static implicit operator CommerceReservationStatus(string value) => Of(value);
+        public static implicit operator string(CommerceReservationStatus commercereservationstatus) => commercereservationstatus.Value;
+
+        public static CommerceReservationStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CommerceReservationStatus);
+
+        public bool Equals(CommerceReservationStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,4 @@
 # Prompt
-(*Prompt*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ Create a prompt
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EnrichTelephoneType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-        [JsonProperty("FAX")]
-        Fax,
-        [JsonProperty("MOBILE")]
-        Mobile,
-    }
 
-    public static class EnrichTelephoneTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EnrichTelephoneType : IEquatable<EnrichTelephoneType>
     {
-        public static string Value(this EnrichTelephoneType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EnrichTelephoneType Work = new EnrichTelephoneType("WORK");
+        public static readonly EnrichTelephoneType Home = new EnrichTelephoneType("HOME");
+        public static readonly EnrichTelephoneType Other = new EnrichTelephoneType("OTHER");
+        public static readonly EnrichTelephoneType Fax = new EnrichTelephoneType("FAX");
+        public static readonly EnrichTelephoneType Mobile = new EnrichTelephoneType("MOBILE");
 
-        public static EnrichTelephoneType ToEnum(this string value)
-        {
-            foreach(var field in typeof(EnrichTelephoneType).GetFields())
+        private static readonly Dictionary <string, EnrichTelephoneType> _knownValues =
+            new Dictionary <string, EnrichTelephoneType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other,
+                ["FAX"] = Fax,
+                ["MOBILE"] = Mobile
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EnrichTelephoneType> _values =
+            new ConcurrentDictionary<string, EnrichTelephoneType>(_knownValues);
 
-                    if (enumVal is EnrichTelephoneType)
-                    {
-                        return (EnrichTelephoneType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EnrichTelephoneType");
+        private EnrichTelephoneType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EnrichTelephoneType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EnrichTelephoneType(value));
+        }
+
+        public static implicit operator EnrichTelephoneType(string value) => Of(value);
+        public static implicit operator string(EnrichTelephoneType enrichtelephonetype) => enrichtelephonetype.Value;
+
+        public static EnrichTelephoneType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EnrichTelephoneType);
+
+        public bool Equals(EnrichTelephoneType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

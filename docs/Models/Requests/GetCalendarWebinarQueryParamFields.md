@@ -1,5 +1,13 @@
 # GetCalendarWebinarQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetCalendarWebinarQueryParamFields.Id;
+```
+
 
 ## Values
 

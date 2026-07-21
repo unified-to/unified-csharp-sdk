@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsGroupBudgetUnit
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsGroupBudgetUnit.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsGroupBudgetUnit.Of("custom_value");
+```
+
 
 ## Values
 

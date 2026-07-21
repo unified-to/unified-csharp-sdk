@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyDatastoreQueryExpandFilterType
-    {
-        [JsonProperty("FILTER")]
-        Filter,
-        [JsonProperty("AND")]
-        And,
-        [JsonProperty("OR")]
-        Or,
-    }
 
-    public static class PropertyDatastoreQueryExpandFilterTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyDatastoreQueryExpandFilterType : IEquatable<PropertyDatastoreQueryExpandFilterType>
     {
-        public static string Value(this PropertyDatastoreQueryExpandFilterType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyDatastoreQueryExpandFilterType Filter = new PropertyDatastoreQueryExpandFilterType("FILTER");
+        public static readonly PropertyDatastoreQueryExpandFilterType And = new PropertyDatastoreQueryExpandFilterType("AND");
+        public static readonly PropertyDatastoreQueryExpandFilterType Or = new PropertyDatastoreQueryExpandFilterType("OR");
 
-        public static PropertyDatastoreQueryExpandFilterType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyDatastoreQueryExpandFilterType).GetFields())
+        private static readonly Dictionary <string, PropertyDatastoreQueryExpandFilterType> _knownValues =
+            new Dictionary <string, PropertyDatastoreQueryExpandFilterType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FILTER"] = Filter,
+                ["AND"] = And,
+                ["OR"] = Or
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyDatastoreQueryExpandFilterType> _values =
+            new ConcurrentDictionary<string, PropertyDatastoreQueryExpandFilterType>(_knownValues);
 
-                    if (enumVal is PropertyDatastoreQueryExpandFilterType)
-                    {
-                        return (PropertyDatastoreQueryExpandFilterType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyDatastoreQueryExpandFilterType");
+        private PropertyDatastoreQueryExpandFilterType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyDatastoreQueryExpandFilterType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyDatastoreQueryExpandFilterType(value));
+        }
+
+        public static implicit operator PropertyDatastoreQueryExpandFilterType(string value) => Of(value);
+        public static implicit operator string(PropertyDatastoreQueryExpandFilterType propertydatastorequeryexpandfiltertype) => propertydatastorequeryexpandfiltertype.Value;
+
+        public static PropertyDatastoreQueryExpandFilterType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyDatastoreQueryExpandFilterType);
+
+        public bool Equals(PropertyDatastoreQueryExpandFilterType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

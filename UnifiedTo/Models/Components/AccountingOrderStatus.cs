@@ -11,61 +11,78 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingOrderStatus
-    {
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("VOIDED")]
-        Voided,
-        [JsonProperty("AUTHORIZED")]
-        Authorized,
-        [JsonProperty("PAID")]
-        Paid,
-        [JsonProperty("PARTIALLY_PAID")]
-        PartiallyPaid,
-        [JsonProperty("PARTIALLY_REFUNDED")]
-        PartiallyRefunded,
-        [JsonProperty("REFUNDED")]
-        Refunded,
-        [JsonProperty("SUBMITTED")]
-        Submitted,
-        [JsonProperty("DELETED")]
-        Deleted,
-    }
 
-    public static class AccountingOrderStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingOrderStatus : IEquatable<AccountingOrderStatus>
     {
-        public static string Value(this AccountingOrderStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingOrderStatus Draft = new AccountingOrderStatus("DRAFT");
+        public static readonly AccountingOrderStatus Voided = new AccountingOrderStatus("VOIDED");
+        public static readonly AccountingOrderStatus Authorized = new AccountingOrderStatus("AUTHORIZED");
+        public static readonly AccountingOrderStatus Paid = new AccountingOrderStatus("PAID");
+        public static readonly AccountingOrderStatus PartiallyPaid = new AccountingOrderStatus("PARTIALLY_PAID");
+        public static readonly AccountingOrderStatus PartiallyRefunded = new AccountingOrderStatus("PARTIALLY_REFUNDED");
+        public static readonly AccountingOrderStatus Refunded = new AccountingOrderStatus("REFUNDED");
+        public static readonly AccountingOrderStatus Submitted = new AccountingOrderStatus("SUBMITTED");
+        public static readonly AccountingOrderStatus Deleted = new AccountingOrderStatus("DELETED");
 
-        public static AccountingOrderStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingOrderStatus).GetFields())
+        private static readonly Dictionary <string, AccountingOrderStatus> _knownValues =
+            new Dictionary <string, AccountingOrderStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DRAFT"] = Draft,
+                ["VOIDED"] = Voided,
+                ["AUTHORIZED"] = Authorized,
+                ["PAID"] = Paid,
+                ["PARTIALLY_PAID"] = PartiallyPaid,
+                ["PARTIALLY_REFUNDED"] = PartiallyRefunded,
+                ["REFUNDED"] = Refunded,
+                ["SUBMITTED"] = Submitted,
+                ["DELETED"] = Deleted
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingOrderStatus> _values =
+            new ConcurrentDictionary<string, AccountingOrderStatus>(_knownValues);
 
-                    if (enumVal is AccountingOrderStatus)
-                    {
-                        return (AccountingOrderStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingOrderStatus");
+        private AccountingOrderStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingOrderStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingOrderStatus(value));
+        }
+
+        public static implicit operator AccountingOrderStatus(string value) => Of(value);
+        public static implicit operator string(AccountingOrderStatus accountingorderstatus) => accountingorderstatus.Value;
+
+        public static AccountingOrderStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingOrderStatus);
+
+        public bool Equals(AccountingOrderStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

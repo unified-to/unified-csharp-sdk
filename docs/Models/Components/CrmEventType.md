@@ -1,5 +1,16 @@
 # CrmEventType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = CrmEventType.Note;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CrmEventType.Of("custom_value");
+```
+
 
 ## Values
 

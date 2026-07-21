@@ -1,5 +1,13 @@
 # PatchKmsSpaceQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchKmsSpaceQueryParamFields.Id;
+```
+
 
 ## Values
 

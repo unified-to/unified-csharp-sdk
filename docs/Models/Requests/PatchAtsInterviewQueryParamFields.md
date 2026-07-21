@@ -1,5 +1,13 @@
 # PatchAtsInterviewQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAtsInterviewQueryParamFields.Id;
+```
+
 
 ## Values
 

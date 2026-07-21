@@ -13,10 +13,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AccountingCashflowItem
     {
-
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
@@ -30,7 +29,7 @@ namespace UnifiedTo.Models.Components
         public List<AccountingCashflowItem>? SubItems { get; set; }
 
         /// <summary>
-        /// Optional linkage to transactions
+        /// Optional linkage to transactions.
         /// </summary>
         [JsonProperty("transaction_ids")]
         public List<string>? TransactionIds { get; set; }

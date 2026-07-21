@@ -1,5 +1,4 @@
 # Profitloss
-(*Profitloss*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a profitloss
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingProfitloss" method="get" path="/accounting/{connection_id}/profitloss/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all profitlosses
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingProfitlosses" method="get" path="/accounting/{connection_id}/profitloss" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

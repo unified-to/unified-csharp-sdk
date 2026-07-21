@@ -1,5 +1,16 @@
 # WeekStart
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = WeekStart.Su;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = WeekStart.Of("custom_value");
+```
+
 
 ## Values
 

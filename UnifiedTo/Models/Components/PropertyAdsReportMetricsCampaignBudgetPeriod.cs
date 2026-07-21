@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignBudgetPeriod
-    {
-        [JsonProperty("DAILY")]
-        Daily,
-        [JsonProperty("MONTHLY")]
-        Monthly,
-        [JsonProperty("TOTAL")]
-        Total,
-        [JsonProperty("LIFETIME")]
-        Lifetime,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignBudgetPeriodExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignBudgetPeriod : IEquatable<PropertyAdsReportMetricsCampaignBudgetPeriod>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignBudgetPeriod value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignBudgetPeriod Daily = new PropertyAdsReportMetricsCampaignBudgetPeriod("DAILY");
+        public static readonly PropertyAdsReportMetricsCampaignBudgetPeriod Monthly = new PropertyAdsReportMetricsCampaignBudgetPeriod("MONTHLY");
+        public static readonly PropertyAdsReportMetricsCampaignBudgetPeriod Total = new PropertyAdsReportMetricsCampaignBudgetPeriod("TOTAL");
+        public static readonly PropertyAdsReportMetricsCampaignBudgetPeriod Lifetime = new PropertyAdsReportMetricsCampaignBudgetPeriod("LIFETIME");
 
-        public static PropertyAdsReportMetricsCampaignBudgetPeriod ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignBudgetPeriod).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignBudgetPeriod> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignBudgetPeriod> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DAILY"] = Daily,
+                ["MONTHLY"] = Monthly,
+                ["TOTAL"] = Total,
+                ["LIFETIME"] = Lifetime
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignBudgetPeriod> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignBudgetPeriod>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignBudgetPeriod)
-                    {
-                        return (PropertyAdsReportMetricsCampaignBudgetPeriod)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignBudgetPeriod");
+        private PropertyAdsReportMetricsCampaignBudgetPeriod(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignBudgetPeriod Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignBudgetPeriod(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignBudgetPeriod(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignBudgetPeriod propertyadsreportmetricscampaignbudgetperiod) => propertyadsreportmetricscampaignbudgetperiod.Value;
+
+        public static PropertyAdsReportMetricsCampaignBudgetPeriod[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignBudgetPeriod);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignBudgetPeriod? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

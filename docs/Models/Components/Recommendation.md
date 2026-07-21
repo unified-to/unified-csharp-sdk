@@ -1,5 +1,16 @@
 # Recommendation
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = Recommendation.DefinitelyNo;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = Recommendation.Of("custom_value");
+```
+
 
 ## Values
 

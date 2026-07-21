@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupPacingPeriod
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("DAILY")]
-        Daily,
-        [JsonProperty("FLIGHT")]
-        Flight,
-    }
 
-    public static class PropertyAdsReportMetricsGroupPacingPeriodExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupPacingPeriod : IEquatable<PropertyAdsReportMetricsGroupPacingPeriod>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupPacingPeriod value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupPacingPeriod Unspecified = new PropertyAdsReportMetricsGroupPacingPeriod("UNSPECIFIED");
+        public static readonly PropertyAdsReportMetricsGroupPacingPeriod Daily = new PropertyAdsReportMetricsGroupPacingPeriod("DAILY");
+        public static readonly PropertyAdsReportMetricsGroupPacingPeriod Flight = new PropertyAdsReportMetricsGroupPacingPeriod("FLIGHT");
 
-        public static PropertyAdsReportMetricsGroupPacingPeriod ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupPacingPeriod).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupPacingPeriod> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupPacingPeriod> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["DAILY"] = Daily,
+                ["FLIGHT"] = Flight
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupPacingPeriod> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupPacingPeriod>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupPacingPeriod)
-                    {
-                        return (PropertyAdsReportMetricsGroupPacingPeriod)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupPacingPeriod");
+        private PropertyAdsReportMetricsGroupPacingPeriod(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupPacingPeriod Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupPacingPeriod(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupPacingPeriod(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupPacingPeriod propertyadsreportmetricsgrouppacingperiod) => propertyadsreportmetricsgrouppacingperiod.Value;
+
+        public static PropertyAdsReportMetricsGroupPacingPeriod[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupPacingPeriod);
+
+        public bool Equals(PropertyAdsReportMetricsGroupPacingPeriod? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

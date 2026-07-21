@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsGroupType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsGroupType.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsGroupType.Of("custom_value");
+```
+
 
 ## Values
 

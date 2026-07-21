@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum TaskMetadataFormat
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-    }
 
-    public static class TaskMetadataFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class TaskMetadataFormat : IEquatable<TaskMetadataFormat>
     {
-        public static string Value(this TaskMetadataFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly TaskMetadataFormat Text = new TaskMetadataFormat("TEXT");
+        public static readonly TaskMetadataFormat Number = new TaskMetadataFormat("NUMBER");
+        public static readonly TaskMetadataFormat Date = new TaskMetadataFormat("DATE");
+        public static readonly TaskMetadataFormat Boolean = new TaskMetadataFormat("BOOLEAN");
+        public static readonly TaskMetadataFormat File = new TaskMetadataFormat("FILE");
+        public static readonly TaskMetadataFormat Textarea = new TaskMetadataFormat("TEXTAREA");
+        public static readonly TaskMetadataFormat SingleSelect = new TaskMetadataFormat("SINGLE_SELECT");
+        public static readonly TaskMetadataFormat MultipleSelect = new TaskMetadataFormat("MULTIPLE_SELECT");
+        public static readonly TaskMetadataFormat Measurement = new TaskMetadataFormat("MEASUREMENT");
+        public static readonly TaskMetadataFormat Price = new TaskMetadataFormat("PRICE");
+        public static readonly TaskMetadataFormat YesNo = new TaskMetadataFormat("YES_NO");
+        public static readonly TaskMetadataFormat Currency = new TaskMetadataFormat("CURRENCY");
+        public static readonly TaskMetadataFormat Url = new TaskMetadataFormat("URL");
 
-        public static TaskMetadataFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(TaskMetadataFormat).GetFields())
+        private static readonly Dictionary <string, TaskMetadataFormat> _knownValues =
+            new Dictionary <string, TaskMetadataFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["MEASUREMENT"] = Measurement,
+                ["PRICE"] = Price,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, TaskMetadataFormat> _values =
+            new ConcurrentDictionary<string, TaskMetadataFormat>(_knownValues);
 
-                    if (enumVal is TaskMetadataFormat)
-                    {
-                        return (TaskMetadataFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum TaskMetadataFormat");
+        private TaskMetadataFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static TaskMetadataFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new TaskMetadataFormat(value));
+        }
+
+        public static implicit operator TaskMetadataFormat(string value) => Of(value);
+        public static implicit operator string(TaskMetadataFormat taskmetadataformat) => taskmetadataformat.Value;
+
+        public static TaskMetadataFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as TaskMetadataFormat);
+
+        public bool Equals(TaskMetadataFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

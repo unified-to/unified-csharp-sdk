@@ -1,5 +1,16 @@
 # PropertyCrmEventTaskStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyCrmEventTaskStatus.Completed;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyCrmEventTaskStatus.Of("custom_value");
+```
+
 
 ## Values
 

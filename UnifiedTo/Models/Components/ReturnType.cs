@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ReturnType
-    {
-        [JsonProperty("CUSTOMER")]
-        Customer,
-        [JsonProperty("VENDOR")]
-        Vendor,
-        [JsonProperty("WARRANTY")]
-        Warranty,
-        [JsonProperty("DEFECTIVE")]
-        Defective,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class ReturnTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ReturnType : IEquatable<ReturnType>
     {
-        public static string Value(this ReturnType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ReturnType Customer = new ReturnType("CUSTOMER");
+        public static readonly ReturnType Vendor = new ReturnType("VENDOR");
+        public static readonly ReturnType Warranty = new ReturnType("WARRANTY");
+        public static readonly ReturnType Defective = new ReturnType("DEFECTIVE");
+        public static readonly ReturnType Other = new ReturnType("OTHER");
 
-        public static ReturnType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ReturnType).GetFields())
+        private static readonly Dictionary <string, ReturnType> _knownValues =
+            new Dictionary <string, ReturnType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["CUSTOMER"] = Customer,
+                ["VENDOR"] = Vendor,
+                ["WARRANTY"] = Warranty,
+                ["DEFECTIVE"] = Defective,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ReturnType> _values =
+            new ConcurrentDictionary<string, ReturnType>(_knownValues);
 
-                    if (enumVal is ReturnType)
-                    {
-                        return (ReturnType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ReturnType");
+        private ReturnType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ReturnType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ReturnType(value));
+        }
+
+        public static implicit operator ReturnType(string value) => Of(value);
+        public static implicit operator string(ReturnType returntype) => returntype.Value;
+
+        public static ReturnType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ReturnType);
+
+        public bool Equals(ReturnType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,4 @@
 # Integration
-(*Integration*)
 
 ## Overview
 
@@ -15,6 +14,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedIntegrationAuth" method="get" path="/unified/integration/auth/{workspace_id}/{integration_type}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -56,6 +56,7 @@ No authentication required as this is to be used by front-end interface
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedIntegrationWorkspaces" method="get" path="/unified/integration/workspace/{workspace_id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -96,6 +97,7 @@ Returns all integrations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedIntegrations" method="get" path="/unified/integration" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -105,7 +107,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIntegrationsRequest req = ;
+ListUnifiedIntegrationsRequest? req = null;
 
 var res = await sdk.Integration.ListUnifiedIntegrationsAsync(req);
 

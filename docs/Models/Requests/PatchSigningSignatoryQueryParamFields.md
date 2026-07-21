@@ -1,5 +1,13 @@
 # PatchSigningSignatoryQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchSigningSignatoryQueryParamFields.Id;
+```
+
 
 ## Values
 

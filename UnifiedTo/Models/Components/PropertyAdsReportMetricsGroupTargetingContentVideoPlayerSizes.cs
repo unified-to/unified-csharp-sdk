@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes
-    {
-        [JsonProperty("SMALL")]
-        Small,
-        [JsonProperty("LARGE")]
-        Large,
-        [JsonProperty("HD")]
-        Hd,
-    }
 
-    public static class PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes : IEquatable<PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes Small = new PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes("SMALL");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes Large = new PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes("LARGE");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes Hd = new PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes("HD");
 
-        public static PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SMALL"] = Small,
+                ["LARGE"] = Large,
+                ["HD"] = Hd
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes)
-                    {
-                        return (PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes");
+        private PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes propertyadsreportmetricsgrouptargetingcontentvideoplayersizes) => propertyadsreportmetricsgrouptargetingcontentvideoplayersizes.Value;
+
+        public static PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes);
+
+        public bool Equals(PropertyAdsReportMetricsGroupTargetingContentVideoPlayerSizes? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

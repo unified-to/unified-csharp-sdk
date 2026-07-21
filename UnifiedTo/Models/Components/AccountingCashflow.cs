@@ -14,13 +14,12 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Sections
+    /// Sections.
     /// </summary>
     public class AccountingCashflow
     {
-
         [JsonProperty("cash_beginning_amount")]
         public double? CashBeginningAmount { get; set; }
 

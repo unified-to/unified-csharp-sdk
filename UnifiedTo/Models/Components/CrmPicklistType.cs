@@ -11,45 +11,62 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CrmPicklistType
-    {
-        [JsonProperty("INDUSTRY")]
-        Industry,
-    }
 
-    public static class CrmPicklistTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CrmPicklistType : IEquatable<CrmPicklistType>
     {
-        public static string Value(this CrmPicklistType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CrmPicklistType Industry = new CrmPicklistType("INDUSTRY");
 
-        public static CrmPicklistType ToEnum(this string value)
-        {
-            foreach(var field in typeof(CrmPicklistType).GetFields())
+        private static readonly Dictionary <string, CrmPicklistType> _knownValues =
+            new Dictionary <string, CrmPicklistType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["INDUSTRY"] = Industry
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CrmPicklistType> _values =
+            new ConcurrentDictionary<string, CrmPicklistType>(_knownValues);
 
-                    if (enumVal is CrmPicklistType)
-                    {
-                        return (CrmPicklistType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CrmPicklistType");
+        private CrmPicklistType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CrmPicklistType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CrmPicklistType(value));
+        }
+
+        public static implicit operator CrmPicklistType(string value) => Of(value);
+        public static implicit operator string(CrmPicklistType crmpicklisttype) => crmpicklisttype.Value;
+
+        public static CrmPicklistType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CrmPicklistType);
+
+        public bool Equals(CrmPicklistType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

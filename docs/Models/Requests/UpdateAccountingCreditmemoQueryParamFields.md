@@ -1,5 +1,13 @@
 # UpdateAccountingCreditmemoQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingCreditmemoQueryParamFields.Id;
+```
+
 
 ## Values
 

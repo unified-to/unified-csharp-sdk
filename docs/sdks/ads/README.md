@@ -1,5 +1,4 @@
 # Ads
-(*Ads*)
 
 ## Overview
 
@@ -53,6 +52,7 @@ Create an ad
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -94,6 +94,7 @@ Create a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -135,6 +136,7 @@ Create a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -176,6 +178,7 @@ Create a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -217,6 +220,7 @@ Create an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -258,6 +262,7 @@ Create an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -299,6 +304,7 @@ Retrieve an ad
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsAd" method="get" path="/ads/{connection_id}/ad/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -340,6 +346,7 @@ Retrieve a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsCampaign" method="get" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -381,6 +388,7 @@ Retrieve a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsCreative" method="get" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -422,6 +430,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsGroup" method="get" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -463,6 +472,7 @@ Retrieve an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsInsertionorder" method="get" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -504,6 +514,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsOrganization" method="get" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -545,6 +556,7 @@ Retrieve a promoted
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsPromoted" method="get" path="/ads/{connection_id}/promoted/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -586,6 +598,7 @@ Retrieve a target
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsTarget" method="get" path="/ads/{connection_id}/target/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -627,6 +640,7 @@ List all ads
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsAds" method="get" path="/ads/{connection_id}/ad" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -667,6 +681,7 @@ List all campaigns
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsCampaigns" method="get" path="/ads/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -707,6 +722,7 @@ List all creatives
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsCreatives" method="get" path="/ads/{connection_id}/creative" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -747,6 +763,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsGroups" method="get" path="/ads/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -787,6 +804,7 @@ List all insertionorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsInsertionorders" method="get" path="/ads/{connection_id}/insertionorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -827,6 +845,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsOrganizations" method="get" path="/ads/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -867,6 +886,7 @@ List all promoteds
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsPromoteds" method="get" path="/ads/{connection_id}/promoted" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -907,6 +927,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsReports" method="get" path="/ads/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -947,6 +968,7 @@ List all targets
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsTargets" method="get" path="/ads/{connection_id}/target" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -987,6 +1009,7 @@ Update an ad
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1029,6 +1052,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1071,6 +1095,7 @@ Update a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1113,6 +1138,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1155,6 +1181,7 @@ Update an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1197,6 +1224,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1239,6 +1267,7 @@ Remove an ad
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsAd" method="delete" path="/ads/{connection_id}/ad/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1278,6 +1307,7 @@ Remove a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsCampaign" method="delete" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1317,6 +1347,7 @@ Remove a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsCreative" method="delete" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1356,6 +1387,7 @@ Remove a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsGroup" method="delete" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1395,6 +1427,7 @@ Remove an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsInsertionorder" method="delete" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1434,6 +1467,7 @@ Remove an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsOrganization" method="delete" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1473,6 +1507,7 @@ Update an ad
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1515,6 +1550,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1557,6 +1593,7 @@ Update a creative
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1599,6 +1636,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1641,6 +1679,7 @@ Update an insertionorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1683,6 +1722,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

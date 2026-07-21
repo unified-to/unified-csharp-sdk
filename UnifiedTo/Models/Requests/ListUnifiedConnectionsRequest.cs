@@ -12,12 +12,11 @@ namespace UnifiedTo.Models.Requests
     using System.Collections.Generic;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
-    
+
     public class ListUnifiedConnectionsRequest
     {
-
         /// <summary>
-        /// Filter the results on these categories
+        /// Filter the results on these categories.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=categories")]
         public List<Categories>? Categories { get; set; }
@@ -26,7 +25,7 @@ namespace UnifiedTo.Models.Requests
         public string? Env { get; set; }
 
         /// <summary>
-        /// Filter the results to only those integrations for your user referenced by this value
+        /// Filter the results to only those integrations for your user referenced by this value.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=external_xref")]
         public string? ExternalXref { get; set; }
@@ -44,7 +43,7 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

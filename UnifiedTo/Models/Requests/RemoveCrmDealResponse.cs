@@ -13,24 +13,23 @@ namespace UnifiedTo.Models.Requests
     using System.Collections.Generic;
     using System.Net.Http;
     using UnifiedTo.Utils;
-    
+
     public class RemoveCrmDealResponse
     {
-
         /// <summary>
-        /// HTTP response content type for this operation
+        /// HTTP response content type for this operation.
         /// </summary>
         public string? ContentType { get; set; } = default!;
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        public Dictionary<string, List<string>> Headers { get; set; } = new Dictionary<string, List<string>>();
 
         /// <summary>
-        /// HTTP response status code for this operation
+        /// HTTP response status code for this operation.
         /// </summary>
         public int StatusCode { get; set; } = default!;
 
         /// <summary>
-        /// Raw HTTP response; suitable for custom response parsing
+        /// Raw HTTP response; suitable for custom response parsing.
         /// </summary>
         public HttpResponseMessage RawResponse { get; set; } = default!;
     }

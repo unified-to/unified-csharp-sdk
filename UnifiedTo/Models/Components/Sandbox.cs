@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class SandboxType
     {
         private SandboxType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static SandboxType MapOfAny { get { return new SandboxType("mapOfAny"); } }
-        
+
         public static SandboxType Str { get { return new SandboxType("str"); } }
-        
+
         public static SandboxType Number { get { return new SandboxType("number"); } }
-        
+
         public static SandboxType Boolean { get { return new SandboxType("boolean"); } }
-        
+
         public static SandboxType ArrayOfIntegrationSchemasSandbox5 { get { return new SandboxType("arrayOfIntegrationSchemasSandbox5"); } }
-        
-        public static SandboxType Null { get { return new SandboxType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(SandboxType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfIntegrationSchemasSandbox5": return ArrayOfIntegrationSchemasSandbox5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for SandboxType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Sandbox.SandboxConverter))]
-    public class Sandbox {
-        public Sandbox(SandboxType type) {
+    public class Sandbox
+    {
+        public Sandbox(SandboxType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<IntegrationSchemasSandbox5>? ArrayOfIntegrationSchemasSandbox5 { get; set; }
 
         public SandboxType Type { get; set; }
-
-
-        public static Sandbox CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static Sandbox CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             SandboxType typ = SandboxType.MapOfAny;
 
             Sandbox res = new Sandbox(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static Sandbox CreateStr(string str) {
+        public static Sandbox CreateStr(string str)
+        {
             SandboxType typ = SandboxType.Str;
 
             Sandbox res = new Sandbox(typ);
             res.Str = str;
             return res;
         }
-
-        public static Sandbox CreateNumber(double number) {
+        public static Sandbox CreateNumber(double number)
+        {
             SandboxType typ = SandboxType.Number;
 
             Sandbox res = new Sandbox(typ);
             res.Number = number;
             return res;
         }
-
-        public static Sandbox CreateBoolean(bool boolean) {
+        public static Sandbox CreateBoolean(bool boolean)
+        {
             SandboxType typ = SandboxType.Boolean;
 
             Sandbox res = new Sandbox(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static Sandbox CreateArrayOfIntegrationSchemasSandbox5(List<IntegrationSchemasSandbox5> arrayOfIntegrationSchemasSandbox5) {
+        public static Sandbox CreateArrayOfIntegrationSchemasSandbox5(List<IntegrationSchemasSandbox5> arrayOfIntegrationSchemasSandbox5)
+        {
             SandboxType typ = SandboxType.ArrayOfIntegrationSchemasSandbox5;
 
             Sandbox res = new Sandbox(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Sandbox CreateNull() {
-            SandboxType typ = SandboxType.Null;
-            return new Sandbox(typ);
-        }
-
         public class SandboxConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(Sandbox);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                Sandbox res = (Sandbox)value;
-                if (SandboxType.FromString(res.Type).Equals(SandboxType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                Sandbox res = (Sandbox)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfIntegrationSchemasSandbox5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegrationSchemasSandbox5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupTargetingContentVideoDurations
-    {
-        [JsonProperty("SHORT")]
-        Short,
-        [JsonProperty("MEDIUM")]
-        Medium,
-        [JsonProperty("LONG")]
-        Long,
-    }
 
-    public static class PropertyAdsReportMetricsGroupTargetingContentVideoDurationsExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupTargetingContentVideoDurations : IEquatable<PropertyAdsReportMetricsGroupTargetingContentVideoDurations>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupTargetingContentVideoDurations value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoDurations Short = new PropertyAdsReportMetricsGroupTargetingContentVideoDurations("SHORT");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoDurations Medium = new PropertyAdsReportMetricsGroupTargetingContentVideoDurations("MEDIUM");
+        public static readonly PropertyAdsReportMetricsGroupTargetingContentVideoDurations Long = new PropertyAdsReportMetricsGroupTargetingContentVideoDurations("LONG");
 
-        public static PropertyAdsReportMetricsGroupTargetingContentVideoDurations ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupTargetingContentVideoDurations).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupTargetingContentVideoDurations> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupTargetingContentVideoDurations> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SHORT"] = Short,
+                ["MEDIUM"] = Medium,
+                ["LONG"] = Long
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingContentVideoDurations> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingContentVideoDurations>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupTargetingContentVideoDurations)
-                    {
-                        return (PropertyAdsReportMetricsGroupTargetingContentVideoDurations)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupTargetingContentVideoDurations");
+        private PropertyAdsReportMetricsGroupTargetingContentVideoDurations(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupTargetingContentVideoDurations Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupTargetingContentVideoDurations(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupTargetingContentVideoDurations(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupTargetingContentVideoDurations propertyadsreportmetricsgrouptargetingcontentvideodurations) => propertyadsreportmetricsgrouptargetingcontentvideodurations.Value;
+
+        public static PropertyAdsReportMetricsGroupTargetingContentVideoDurations[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupTargetingContentVideoDurations);
+
+        public bool Equals(PropertyAdsReportMetricsGroupTargetingContentVideoDurations? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

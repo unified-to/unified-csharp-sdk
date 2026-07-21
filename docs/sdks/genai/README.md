@@ -1,5 +1,4 @@
 # Genai
-(*Genai*)
 
 ## Overview
 
@@ -16,6 +15,7 @@ Create an embedding
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -57,6 +57,7 @@ Create a prompt
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -98,6 +99,7 @@ Retrieve a model
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getGenaiModel" method="get" path="/genai/{connection_id}/model/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -139,6 +141,7 @@ List all models
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listGenaiModels" method="get" path="/genai/{connection_id}/model" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

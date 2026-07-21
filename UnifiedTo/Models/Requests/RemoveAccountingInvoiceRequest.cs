@@ -10,18 +10,17 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class RemoveAccountingInvoiceRequest
     {
-
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Invoice
+        /// ID of the Invoice.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

@@ -1,5 +1,13 @@
 # CreateAnalyticsVisitorQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateAnalyticsVisitorQueryParamFields.Id;
+```
+
 
 ## Values
 

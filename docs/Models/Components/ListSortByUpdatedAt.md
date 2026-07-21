@@ -1,5 +1,16 @@
 # ListSortByUpdatedAt
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListSortByUpdatedAt.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListSortByUpdatedAt.Of("custom_value");
+```
+
 
 ## Values
 

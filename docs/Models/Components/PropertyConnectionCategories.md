@@ -1,5 +1,16 @@
 # PropertyConnectionCategories
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyConnectionCategories.Passthrough;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyConnectionCategories.Of("custom_value");
+```
+
 
 ## Values
 

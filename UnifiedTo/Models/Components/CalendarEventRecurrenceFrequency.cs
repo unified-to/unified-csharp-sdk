@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CalendarEventRecurrenceFrequency
-    {
-        [JsonProperty("DAILY")]
-        Daily,
-        [JsonProperty("WEEKLY")]
-        Weekly,
-        [JsonProperty("MONTHLY")]
-        Monthly,
-        [JsonProperty("YEARLY")]
-        Yearly,
-    }
 
-    public static class CalendarEventRecurrenceFrequencyExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CalendarEventRecurrenceFrequency : IEquatable<CalendarEventRecurrenceFrequency>
     {
-        public static string Value(this CalendarEventRecurrenceFrequency value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CalendarEventRecurrenceFrequency Daily = new CalendarEventRecurrenceFrequency("DAILY");
+        public static readonly CalendarEventRecurrenceFrequency Weekly = new CalendarEventRecurrenceFrequency("WEEKLY");
+        public static readonly CalendarEventRecurrenceFrequency Monthly = new CalendarEventRecurrenceFrequency("MONTHLY");
+        public static readonly CalendarEventRecurrenceFrequency Yearly = new CalendarEventRecurrenceFrequency("YEARLY");
 
-        public static CalendarEventRecurrenceFrequency ToEnum(this string value)
-        {
-            foreach(var field in typeof(CalendarEventRecurrenceFrequency).GetFields())
+        private static readonly Dictionary <string, CalendarEventRecurrenceFrequency> _knownValues =
+            new Dictionary <string, CalendarEventRecurrenceFrequency> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DAILY"] = Daily,
+                ["WEEKLY"] = Weekly,
+                ["MONTHLY"] = Monthly,
+                ["YEARLY"] = Yearly
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CalendarEventRecurrenceFrequency> _values =
+            new ConcurrentDictionary<string, CalendarEventRecurrenceFrequency>(_knownValues);
 
-                    if (enumVal is CalendarEventRecurrenceFrequency)
-                    {
-                        return (CalendarEventRecurrenceFrequency)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CalendarEventRecurrenceFrequency");
+        private CalendarEventRecurrenceFrequency(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CalendarEventRecurrenceFrequency Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CalendarEventRecurrenceFrequency(value));
+        }
+
+        public static implicit operator CalendarEventRecurrenceFrequency(string value) => Of(value);
+        public static implicit operator string(CalendarEventRecurrenceFrequency calendareventrecurrencefrequency) => calendareventrecurrencefrequency.Value;
+
+        public static CalendarEventRecurrenceFrequency[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CalendarEventRecurrenceFrequency);
+
+        public bool Equals(CalendarEventRecurrenceFrequency? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

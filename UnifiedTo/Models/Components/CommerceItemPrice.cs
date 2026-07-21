@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class CommerceItemPrice
     {
-
         [JsonProperty("compare_at_price")]
         public double? CompareAtPrice { get; set; }
 

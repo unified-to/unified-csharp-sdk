@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// (home-vs-away competitors with scores). Distinct from the fitness-oriented IClubsActivity.
     /// </summary>
     public class ClubsEvent
     {
-
         [JsonProperty("away_score")]
         public double? AwayScore { get; set; }
 

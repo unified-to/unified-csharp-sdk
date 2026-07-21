@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum LocationType
-    {
-        [JsonProperty("RESTAURANT")]
-        Restaurant,
-        [JsonProperty("SALON")]
-        Salon,
-        [JsonProperty("WAREHOUSE")]
-        Warehouse,
-        [JsonProperty("STORE")]
-        Store,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class LocationTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class LocationType : IEquatable<LocationType>
     {
-        public static string Value(this LocationType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly LocationType Restaurant = new LocationType("RESTAURANT");
+        public static readonly LocationType Salon = new LocationType("SALON");
+        public static readonly LocationType Warehouse = new LocationType("WAREHOUSE");
+        public static readonly LocationType Store = new LocationType("STORE");
+        public static readonly LocationType Other = new LocationType("OTHER");
 
-        public static LocationType ToEnum(this string value)
-        {
-            foreach(var field in typeof(LocationType).GetFields())
+        private static readonly Dictionary <string, LocationType> _knownValues =
+            new Dictionary <string, LocationType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["RESTAURANT"] = Restaurant,
+                ["SALON"] = Salon,
+                ["WAREHOUSE"] = Warehouse,
+                ["STORE"] = Store,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, LocationType> _values =
+            new ConcurrentDictionary<string, LocationType>(_knownValues);
 
-                    if (enumVal is LocationType)
-                    {
-                        return (LocationType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum LocationType");
+        private LocationType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static LocationType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new LocationType(value));
+        }
+
+        public static implicit operator LocationType(string value) => Of(value);
+        public static implicit operator string(LocationType locationtype) => locationtype.Value;
+
+        public static LocationType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as LocationType);
+
+        public bool Equals(LocationType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

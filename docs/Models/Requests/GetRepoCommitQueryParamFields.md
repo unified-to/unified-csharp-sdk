@@ -1,5 +1,13 @@
 # GetRepoCommitQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetRepoCommitQueryParamFields.Id;
+```
+
 
 ## Values
 

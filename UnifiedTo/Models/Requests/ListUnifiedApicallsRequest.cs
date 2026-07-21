@@ -10,12 +10,11 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class ListUnifiedApicallsRequest
     {
-
         /// <summary>
-        /// Filter the results to just this integration
+        /// Filter the results to just this integration.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=connection_id")]
         public string? ConnectionId { get; set; }
@@ -24,25 +23,25 @@ namespace UnifiedTo.Models.Requests
         public string? Env { get; set; }
 
         /// <summary>
-        /// Filter the results for API Calls with errors
+        /// Filter the results for API Calls with errors.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=error")]
         public bool? Error { get; set; }
 
         /// <summary>
-        /// Filter the results to only those integrations for your user referenced by this value
+        /// Filter the results to only those integrations for your user referenced by this value.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=external_xref")]
         public string? ExternalXref { get; set; }
 
         /// <summary>
-        /// Filter the results to just this integration
+        /// Filter the results to just this integration.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=integration_type")]
         public string? IntegrationType { get; set; }
 
         /// <summary>
-        /// Filter the results for only billable API Calls
+        /// Filter the results for only billable API Calls.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=is_billable")]
         public bool? IsBillable { get; set; }
@@ -60,19 +59,19 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// Filter the results to just this type
+        /// Filter the results to just this type.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
         public string? Type { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }
 
         /// <summary>
-        /// Filter the results to just this webhook
+        /// Filter the results to just this webhook.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=webhook_id")]
         public string? WebhookId { get; set; }

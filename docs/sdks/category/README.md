@@ -1,5 +1,4 @@
 # Category
-(*Category*)
 
 ## Overview
 
@@ -24,6 +23,7 @@ Create a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -65,6 +65,7 @@ Create a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -106,6 +107,7 @@ Retrieve a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingCategory" method="get" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -147,6 +149,7 @@ Retrieve a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTicketingCategory" method="get" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -188,6 +191,7 @@ List all categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingCategories" method="get" path="/accounting/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -228,6 +232,7 @@ List all categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTicketingCategories" method="get" path="/ticketing/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -268,6 +273,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -310,6 +316,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -352,6 +359,7 @@ Remove a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingCategory" method="delete" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -391,6 +399,7 @@ Remove a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTicketingCategory" method="delete" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -430,6 +439,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -472,6 +482,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

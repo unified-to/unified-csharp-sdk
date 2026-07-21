@@ -1,5 +1,4 @@
 # Saleschannel
-(*Saleschannel*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceSaleschannel" method="get" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all saleschannels
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceSaleschannels" method="get" path="/commerce/{connection_id}/saleschannel" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceSaleschannel" method="delete" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -1,5 +1,13 @@
 # UpdateMessagingMessageQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateMessagingMessageQueryParamFields.Id;
+```
+
 
 ## Values
 

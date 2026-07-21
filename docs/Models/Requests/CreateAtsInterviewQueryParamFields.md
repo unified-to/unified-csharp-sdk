@@ -1,5 +1,13 @@
 # CreateAtsInterviewQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateAtsInterviewQueryParamFields.Id;
+```
+
 
 ## Values
 

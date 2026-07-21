@@ -1,5 +1,13 @@
 # UpdatePaymentPaymentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdatePaymentPaymentQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,16 @@
 # VirtualWebhookContactId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookContactId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookContactId.Of("custom_value");
+```
+
 
 ## Values
 

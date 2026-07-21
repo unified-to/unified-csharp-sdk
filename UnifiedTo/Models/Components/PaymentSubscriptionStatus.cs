@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PaymentSubscriptionStatus
-    {
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("INACTIVE")]
-        Inactive,
-        [JsonProperty("CANCELED")]
-        Canceled,
-        [JsonProperty("PAUSED")]
-        Paused,
-    }
 
-    public static class PaymentSubscriptionStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PaymentSubscriptionStatus : IEquatable<PaymentSubscriptionStatus>
     {
-        public static string Value(this PaymentSubscriptionStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PaymentSubscriptionStatus Active = new PaymentSubscriptionStatus("ACTIVE");
+        public static readonly PaymentSubscriptionStatus Inactive = new PaymentSubscriptionStatus("INACTIVE");
+        public static readonly PaymentSubscriptionStatus Canceled = new PaymentSubscriptionStatus("CANCELED");
+        public static readonly PaymentSubscriptionStatus Paused = new PaymentSubscriptionStatus("PAUSED");
 
-        public static PaymentSubscriptionStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(PaymentSubscriptionStatus).GetFields())
+        private static readonly Dictionary <string, PaymentSubscriptionStatus> _knownValues =
+            new Dictionary <string, PaymentSubscriptionStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACTIVE"] = Active,
+                ["INACTIVE"] = Inactive,
+                ["CANCELED"] = Canceled,
+                ["PAUSED"] = Paused
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PaymentSubscriptionStatus> _values =
+            new ConcurrentDictionary<string, PaymentSubscriptionStatus>(_knownValues);
 
-                    if (enumVal is PaymentSubscriptionStatus)
-                    {
-                        return (PaymentSubscriptionStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PaymentSubscriptionStatus");
+        private PaymentSubscriptionStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PaymentSubscriptionStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PaymentSubscriptionStatus(value));
+        }
+
+        public static implicit operator PaymentSubscriptionStatus(string value) => Of(value);
+        public static implicit operator string(PaymentSubscriptionStatus paymentsubscriptionstatus) => paymentsubscriptionstatus.Value;
+
+        public static PaymentSubscriptionStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PaymentSubscriptionStatus);
+
+        public bool Equals(PaymentSubscriptionStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

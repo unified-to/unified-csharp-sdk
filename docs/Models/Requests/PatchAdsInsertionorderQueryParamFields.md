@@ -1,5 +1,13 @@
 # PatchAdsInsertionorderQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAdsInsertionorderQueryParamFields.Id;
+```
+
 
 ## Values
 

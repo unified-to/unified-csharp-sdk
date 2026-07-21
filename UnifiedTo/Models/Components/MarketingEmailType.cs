@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MarketingEmailType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class MarketingEmailTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MarketingEmailType : IEquatable<MarketingEmailType>
     {
-        public static string Value(this MarketingEmailType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MarketingEmailType Work = new MarketingEmailType("WORK");
+        public static readonly MarketingEmailType Home = new MarketingEmailType("HOME");
+        public static readonly MarketingEmailType Other = new MarketingEmailType("OTHER");
 
-        public static MarketingEmailType ToEnum(this string value)
-        {
-            foreach(var field in typeof(MarketingEmailType).GetFields())
+        private static readonly Dictionary <string, MarketingEmailType> _knownValues =
+            new Dictionary <string, MarketingEmailType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MarketingEmailType> _values =
+            new ConcurrentDictionary<string, MarketingEmailType>(_knownValues);
 
-                    if (enumVal is MarketingEmailType)
-                    {
-                        return (MarketingEmailType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MarketingEmailType");
+        private MarketingEmailType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MarketingEmailType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MarketingEmailType(value));
+        }
+
+        public static implicit operator MarketingEmailType(string value) => Of(value);
+        public static implicit operator string(MarketingEmailType marketingemailtype) => marketingemailtype.Value;
+
+        public static MarketingEmailType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MarketingEmailType);
+
+        public bool Equals(MarketingEmailType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

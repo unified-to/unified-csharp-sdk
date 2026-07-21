@@ -1,5 +1,4 @@
 # Storage
-(*Storage*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createStorageFile" method="post" path="/storage/{connection_id}/file" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getStorageFile" method="get" path="/storage/{connection_id}/file/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all files
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listStorageFiles" method="get" path="/storage/{connection_id}/file" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchStorageFile" method="patch" path="/storage/{connection_id}/file/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeStorageFile" method="delete" path="/storage/{connection_id}/file/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a file
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateStorageFile" method="put" path="/storage/{connection_id}/file/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

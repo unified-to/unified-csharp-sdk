@@ -1,5 +1,13 @@
 # UpdateCommerceInventoryQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateCommerceInventoryQueryParamFields.Id;
+```
+
 
 ## Values
 

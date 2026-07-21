@@ -1,5 +1,16 @@
 # MetadataMetadataFormat
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = MetadataMetadataFormat.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = MetadataMetadataFormat.Of("custom_value");
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # GetHrisDocumentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetHrisDocumentQueryParamFields.Id;
+```
+
 
 ## Values
 

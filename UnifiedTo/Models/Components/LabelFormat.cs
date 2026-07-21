@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum LabelFormat
-    {
-        [JsonProperty("PDF")]
-        Pdf,
-        [JsonProperty("PNG")]
-        Png,
-        [JsonProperty("ZPL")]
-        Zpl,
-        [JsonProperty("EPL2")]
-        Epl2,
-        [JsonProperty("PDF_4X6")]
-        Pdf4X6,
-        [JsonProperty("PDF_4X8")]
-        Pdf4X8,
-        [JsonProperty("PNG_4X6")]
-        Png4X6,
-        [JsonProperty("PNG_4X8")]
-        Png4X8,
-    }
 
-    public static class LabelFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class LabelFormat : IEquatable<LabelFormat>
     {
-        public static string Value(this LabelFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly LabelFormat Pdf = new LabelFormat("PDF");
+        public static readonly LabelFormat Png = new LabelFormat("PNG");
+        public static readonly LabelFormat Zpl = new LabelFormat("ZPL");
+        public static readonly LabelFormat Epl2 = new LabelFormat("EPL2");
+        public static readonly LabelFormat Pdf4X6 = new LabelFormat("PDF_4X6");
+        public static readonly LabelFormat Pdf4X8 = new LabelFormat("PDF_4X8");
+        public static readonly LabelFormat Png4X6 = new LabelFormat("PNG_4X6");
+        public static readonly LabelFormat Png4X8 = new LabelFormat("PNG_4X8");
 
-        public static LabelFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(LabelFormat).GetFields())
+        private static readonly Dictionary <string, LabelFormat> _knownValues =
+            new Dictionary <string, LabelFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PDF"] = Pdf,
+                ["PNG"] = Png,
+                ["ZPL"] = Zpl,
+                ["EPL2"] = Epl2,
+                ["PDF_4X6"] = Pdf4X6,
+                ["PDF_4X8"] = Pdf4X8,
+                ["PNG_4X6"] = Png4X6,
+                ["PNG_4X8"] = Png4X8
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, LabelFormat> _values =
+            new ConcurrentDictionary<string, LabelFormat>(_knownValues);
 
-                    if (enumVal is LabelFormat)
-                    {
-                        return (LabelFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum LabelFormat");
+        private LabelFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static LabelFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new LabelFormat(value));
+        }
+
+        public static implicit operator LabelFormat(string value) => Of(value);
+        public static implicit operator string(LabelFormat labelformat) => labelformat.Value;
+
+        public static LabelFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as LabelFormat);
+
+        public bool Equals(LabelFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

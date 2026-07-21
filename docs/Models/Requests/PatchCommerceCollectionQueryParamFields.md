@@ -1,5 +1,13 @@
 # PatchCommerceCollectionQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCommerceCollectionQueryParamFields.Id;
+```
+
 
 ## Values
 

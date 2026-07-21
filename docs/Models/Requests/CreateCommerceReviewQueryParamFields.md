@@ -1,5 +1,13 @@
 # CreateCommerceReviewQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateCommerceReviewQueryParamFields.Id;
+```
+
 
 ## Values
 

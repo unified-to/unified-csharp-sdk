@@ -11,24 +11,23 @@ namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class PatchAssessmentPackageRequest
     {
-
         /// <summary>
-        /// Used by assessment providers to SUBMIT packages to ATS systems
+        /// Used by assessment providers to SUBMIT packages to ATS systems.
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public AssessmentPackage AssessmentPackage { get; set; } = default!;
 
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Package
+        /// ID of the Package.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

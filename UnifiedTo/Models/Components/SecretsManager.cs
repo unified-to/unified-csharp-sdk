@@ -11,15 +11,16 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class SecretsManager
     {
-
         /// <summary>
-        /// secrets-manager specific authentication values
+        /// secrets-manager specific authentication values.
         /// </summary>
         [JsonProperty("auth")]
         public Dictionary<string, string> Auth { get; set; } = default!;
@@ -28,7 +29,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// data-regions
+        /// data-regions.
         /// </summary>
         [JsonProperty("dcs")]
         public List<string>? Dcs { get; set; }

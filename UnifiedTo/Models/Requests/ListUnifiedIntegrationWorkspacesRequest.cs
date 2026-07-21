@@ -12,18 +12,17 @@ namespace UnifiedTo.Models.Requests
     using System.Collections.Generic;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
-    
+
     public class ListUnifiedIntegrationWorkspacesRequest
     {
-
         /// <summary>
-        /// Filter the results for only the workspace&apos;s active integrations
+        /// Filter the results for only the workspace's active integrations.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=active")]
         public bool? Active { get; set; }
 
         /// <summary>
-        /// Filter the results on these categories
+        /// Filter the results on these categories.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=categories")]
         public List<QueryParamCategories>? Categories { get; set; }
@@ -44,7 +43,7 @@ namespace UnifiedTo.Models.Requests
         public string? UpdatedGte { get; set; }
 
         /// <summary>
-        /// The ID of the workspace
+        /// The ID of the workspace.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=workspace_id")]
         public string WorkspaceId { get; set; } = default!;

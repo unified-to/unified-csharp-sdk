@@ -1,5 +1,4 @@
 # Journal
-(*Journal*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingJournal" method="get" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all journals
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingJournals" method="get" path="/accounting/{connection_id}/journal" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingJournal" method="delete" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

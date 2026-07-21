@@ -1,5 +1,4 @@
 # Forms
-(*Forms*)
 
 ## Overview
 
@@ -20,6 +19,7 @@ Create a form
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createFormsForm" method="post" path="/forms/{connection_id}/form" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a form
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getFormsForm" method="get" path="/forms/{connection_id}/form/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ Retrieve a submission
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getFormsSubmission" method="get" path="/forms/{connection_id}/submission/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -143,6 +145,7 @@ List all forms
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listFormsForms" method="get" path="/forms/{connection_id}/form" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -183,6 +186,7 @@ List all submissions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listFormsSubmissions" method="get" path="/forms/{connection_id}/submission" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -223,6 +227,7 @@ Update a form
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchFormsForm" method="patch" path="/forms/{connection_id}/form/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -265,6 +270,7 @@ Remove a form
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeFormsForm" method="delete" path="/forms/{connection_id}/form/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -304,6 +310,7 @@ Update a form
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateFormsForm" method="put" path="/forms/{connection_id}/form/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

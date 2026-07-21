@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class HrisMetadataSchemas5Type
     {
         private HrisMetadataSchemas5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisMetadataSchemas5Type HrisMetadataSchemas1 { get { return new HrisMetadataSchemas5Type("HrisMetadata_Schemas_1"); } }
-        
+
         public static HrisMetadataSchemas5Type Str { get { return new HrisMetadataSchemas5Type("str"); } }
-        
+
         public static HrisMetadataSchemas5Type Number { get { return new HrisMetadataSchemas5Type("number"); } }
-        
+
         public static HrisMetadataSchemas5Type Boolean { get { return new HrisMetadataSchemas5Type("boolean"); } }
-        
-        public static HrisMetadataSchemas5Type Null { get { return new HrisMetadataSchemas5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(HrisMetadataSchemas5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for HrisMetadataSchemas5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HrisMetadataSchemas5.HrisMetadataSchemas5Converter))]
-    public class HrisMetadataSchemas5 {
-        public HrisMetadataSchemas5(HrisMetadataSchemas5Type type) {
+    public class HrisMetadataSchemas5
+    {
+        public HrisMetadataSchemas5(HrisMetadataSchemas5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public HrisMetadataSchemas5Type Type { get; set; }
-
-
-        public static HrisMetadataSchemas5 CreateHrisMetadataSchemas1(HrisMetadataSchemas1 hrisMetadataSchemas1) {
+        public static HrisMetadataSchemas5 CreateHrisMetadataSchemas1(HrisMetadataSchemas1 hrisMetadataSchemas1)
+        {
             HrisMetadataSchemas5Type typ = HrisMetadataSchemas5Type.HrisMetadataSchemas1;
 
             HrisMetadataSchemas5 res = new HrisMetadataSchemas5(typ);
             res.HrisMetadataSchemas1 = hrisMetadataSchemas1;
             return res;
         }
-
-        public static HrisMetadataSchemas5 CreateStr(string str) {
+        public static HrisMetadataSchemas5 CreateStr(string str)
+        {
             HrisMetadataSchemas5Type typ = HrisMetadataSchemas5Type.Str;
 
             HrisMetadataSchemas5 res = new HrisMetadataSchemas5(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisMetadataSchemas5 CreateNumber(double number) {
+        public static HrisMetadataSchemas5 CreateNumber(double number)
+        {
             HrisMetadataSchemas5Type typ = HrisMetadataSchemas5Type.Number;
 
             HrisMetadataSchemas5 res = new HrisMetadataSchemas5(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisMetadataSchemas5 CreateBoolean(bool boolean) {
+        public static HrisMetadataSchemas5 CreateBoolean(bool boolean)
+        {
             HrisMetadataSchemas5Type typ = HrisMetadataSchemas5Type.Boolean;
 
             HrisMetadataSchemas5 res = new HrisMetadataSchemas5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static HrisMetadataSchemas5 CreateNull() {
-            HrisMetadataSchemas5Type typ = HrisMetadataSchemas5Type.Null;
-            return new HrisMetadataSchemas5(typ);
-        }
-
         public class HrisMetadataSchemas5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(HrisMetadataSchemas5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                HrisMetadataSchemas5 res = (HrisMetadataSchemas5)value;
-                if (HrisMetadataSchemas5Type.FromString(res.Type).Equals(HrisMetadataSchemas5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                HrisMetadataSchemas5 res = (HrisMetadataSchemas5)value;
+
                 if (res.HrisMetadataSchemas1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadataSchemas1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

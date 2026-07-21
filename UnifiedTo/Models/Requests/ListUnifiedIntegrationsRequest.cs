@@ -12,18 +12,17 @@ namespace UnifiedTo.Models.Requests
     using System.Collections.Generic;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
-    
+
     public class ListUnifiedIntegrationsRequest
     {
-
         /// <summary>
-        /// Filter the results for only the workspace&apos;s active integrations
+        /// Filter the results for only the workspace's active integrations.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=active")]
         public bool? Active { get; set; }
 
         /// <summary>
-        /// Filter the results on these categories
+        /// Filter the results on these categories.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=categories")]
         public List<ListUnifiedIntegrationsQueryParamCategories>? Categories { get; set; }
@@ -41,7 +40,7 @@ namespace UnifiedTo.Models.Requests
         public bool? Summary { get; set; }
 
         /// <summary>
-        /// Filter the results for only this integration type
+        /// Filter the results for only this integration type.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
         public string? Type { get; set; }

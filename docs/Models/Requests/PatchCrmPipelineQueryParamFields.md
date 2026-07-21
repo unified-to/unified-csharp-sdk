@@ -1,5 +1,13 @@
 # PatchCrmPipelineQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCrmPipelineQueryParamFields.Id;
+```
+
 
 ## Values
 

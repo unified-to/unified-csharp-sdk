@@ -1,5 +1,4 @@
 # Query
-(*Query*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ Create a query
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createDatastoreQuery" method="post" path="/datastore/{connection_id}/query" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

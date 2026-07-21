@@ -1,5 +1,16 @@
 # ContentsType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ContentsType.Merchandise;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ContentsType.Of("custom_value");
+```
+
 
 ## Values
 

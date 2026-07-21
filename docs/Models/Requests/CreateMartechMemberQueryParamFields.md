@@ -1,5 +1,13 @@
 # CreateMartechMemberQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateMartechMemberQueryParamFields.Id;
+```
+
 
 ## Values
 

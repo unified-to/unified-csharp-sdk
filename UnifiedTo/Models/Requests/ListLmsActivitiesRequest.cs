@@ -12,30 +12,29 @@ namespace UnifiedTo.Models.Requests
     using System.Collections.Generic;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
-    
+
     public class ListLmsActivitiesRequest
     {
-
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// The content ID to filter by
+        /// The content ID to filter by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=content_id")]
         public string? ContentId { get; set; }
 
         /// <summary>
-        /// The course ID to filter by (reference to Course)
+        /// The course ID to filter by (reference to Course).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=course_id")]
         public string? CourseId { get; set; }
 
         /// <summary>
-        /// Fields to return
+        /// Fields to return.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListLmsActivitiesQueryParamFields>? Fields { get; set; }
@@ -50,13 +49,13 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
-        /// Query string to search. eg. email address or name
+        /// Query string to search. eg. email address or name.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]
         public string? Query { get; set; }
 
         /// <summary>
-        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar
+        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
@@ -65,13 +64,13 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// The student ID to filter by (reference to LmsStudent)
+        /// The student ID to filter by (reference to LmsStudent).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=student_id")]
         public string? StudentId { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

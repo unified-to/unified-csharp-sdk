@@ -1,5 +1,4 @@
 # Environment
-(*Environment*)
 
 ## Overview
 
@@ -15,6 +14,7 @@ Create new environments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedEnvironment" method="post" path="/unified/environment" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -53,6 +53,7 @@ Returns all environments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedEnvironments" method="get" path="/unified/environment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -82,6 +83,7 @@ Remove an environment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedEnvironment" method="delete" path="/unified/environment/{env}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

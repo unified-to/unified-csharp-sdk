@@ -1,5 +1,16 @@
 # ListEventId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListEventId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListEventId.Of("custom_value");
+```
+
 
 ## Values
 

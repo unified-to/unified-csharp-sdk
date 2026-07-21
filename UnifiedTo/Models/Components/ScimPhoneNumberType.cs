@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ScimPhoneNumberType
-    {
-        [JsonProperty("work")]
-        Work,
-        [JsonProperty("home")]
-        Home,
-        [JsonProperty("other")]
-        Other,
-        [JsonProperty("mobile")]
-        Mobile,
-        [JsonProperty("fax")]
-        Fax,
-        [JsonProperty("pager")]
-        Pager,
-    }
 
-    public static class ScimPhoneNumberTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ScimPhoneNumberType : IEquatable<ScimPhoneNumberType>
     {
-        public static string Value(this ScimPhoneNumberType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ScimPhoneNumberType Work = new ScimPhoneNumberType("work");
+        public static readonly ScimPhoneNumberType Home = new ScimPhoneNumberType("home");
+        public static readonly ScimPhoneNumberType Other = new ScimPhoneNumberType("other");
+        public static readonly ScimPhoneNumberType Mobile = new ScimPhoneNumberType("mobile");
+        public static readonly ScimPhoneNumberType Fax = new ScimPhoneNumberType("fax");
+        public static readonly ScimPhoneNumberType Pager = new ScimPhoneNumberType("pager");
 
-        public static ScimPhoneNumberType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ScimPhoneNumberType).GetFields())
+        private static readonly Dictionary <string, ScimPhoneNumberType> _knownValues =
+            new Dictionary <string, ScimPhoneNumberType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["work"] = Work,
+                ["home"] = Home,
+                ["other"] = Other,
+                ["mobile"] = Mobile,
+                ["fax"] = Fax,
+                ["pager"] = Pager
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ScimPhoneNumberType> _values =
+            new ConcurrentDictionary<string, ScimPhoneNumberType>(_knownValues);
 
-                    if (enumVal is ScimPhoneNumberType)
-                    {
-                        return (ScimPhoneNumberType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ScimPhoneNumberType");
+        private ScimPhoneNumberType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ScimPhoneNumberType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ScimPhoneNumberType(value));
+        }
+
+        public static implicit operator ScimPhoneNumberType(string value) => Of(value);
+        public static implicit operator string(ScimPhoneNumberType scimphonenumbertype) => scimphonenumbertype.Value;
+
+        public static ScimPhoneNumberType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ScimPhoneNumberType);
+
+        public bool Equals(ScimPhoneNumberType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

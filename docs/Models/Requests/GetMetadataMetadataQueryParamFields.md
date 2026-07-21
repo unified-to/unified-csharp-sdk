@@ -1,5 +1,13 @@
 # GetMetadataMetadataQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetMetadataMetadataQueryParamFields.Id;
+```
+
 
 ## Values
 

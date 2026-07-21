@@ -1,5 +1,4 @@
 # Commerce
-(*Commerce*)
 
 ## Overview
 
@@ -61,6 +60,7 @@ Create a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -104,6 +104,7 @@ Create an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -145,6 +146,7 @@ Create an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceItem" method="post" path="/commerce/{connection_id}/item" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -186,6 +188,7 @@ Create an itemvariant
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceItemvariant" method="post" path="/commerce/{connection_id}/itemvariant" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -227,6 +230,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -268,6 +272,7 @@ Create a reservation
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceReservation" method="post" path="/commerce/{connection_id}/reservation" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -309,6 +314,7 @@ Create a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -350,6 +356,7 @@ Create a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -391,6 +398,7 @@ Retrieve a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceCollection" method="get" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -432,6 +440,7 @@ Retrieve an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceInventory" method="get" path="/commerce/{connection_id}/inventory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -473,6 +482,7 @@ Retrieve an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceItem" method="get" path="/commerce/{connection_id}/item/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -514,6 +524,7 @@ Retrieve an itemvariant
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceItemvariant" method="get" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -555,6 +566,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceLocation" method="get" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -596,6 +608,7 @@ Retrieve a reservation
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceReservation" method="get" path="/commerce/{connection_id}/reservation/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -637,6 +650,7 @@ Retrieve a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceReview" method="get" path="/commerce/{connection_id}/review/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -678,6 +692,7 @@ Retrieve a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceSaleschannel" method="get" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -719,6 +734,7 @@ List all availabilities
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceAvailabilities" method="get" path="/commerce/{connection_id}/availability" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -759,6 +775,7 @@ List all collections
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceCollections" method="get" path="/commerce/{connection_id}/collection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -799,6 +816,7 @@ List all inventories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceInventories" method="get" path="/commerce/{connection_id}/inventory" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -839,6 +857,7 @@ List all items
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceItems" method="get" path="/commerce/{connection_id}/item" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -879,6 +898,7 @@ List all itemvariants
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceItemvariants" method="get" path="/commerce/{connection_id}/itemvariant" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -919,6 +939,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceLocations" method="get" path="/commerce/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -959,6 +980,7 @@ List all reservations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceReservations" method="get" path="/commerce/{connection_id}/reservation" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -999,6 +1021,7 @@ List all reviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceReviews" method="get" path="/commerce/{connection_id}/review" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1039,6 +1062,7 @@ List all saleschannels
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceSaleschannels" method="get" path="/commerce/{connection_id}/saleschannel" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1079,6 +1103,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1123,6 +1148,7 @@ Update an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1165,6 +1191,7 @@ Update an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceItem" method="patch" path="/commerce/{connection_id}/item/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1207,6 +1234,7 @@ Update an itemvariant
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceItemvariant" method="patch" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1249,6 +1277,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1291,6 +1320,7 @@ Update a reservation
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceReservation" method="patch" path="/commerce/{connection_id}/reservation/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1333,6 +1363,7 @@ Update a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1375,6 +1406,7 @@ Update a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1417,6 +1449,7 @@ Remove a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceCollection" method="delete" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1456,6 +1489,7 @@ Remove an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceInventory" method="delete" path="/commerce/{connection_id}/inventory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1495,6 +1529,7 @@ Remove an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceItem" method="delete" path="/commerce/{connection_id}/item/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1534,6 +1569,7 @@ Remove an itemvariant
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceItemvariant" method="delete" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1573,6 +1609,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceLocation" method="delete" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1612,6 +1649,7 @@ Remove a reservation
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceReservation" method="delete" path="/commerce/{connection_id}/reservation/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1651,6 +1689,7 @@ Remove a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceReview" method="delete" path="/commerce/{connection_id}/review/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1690,6 +1729,7 @@ Remove a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceSaleschannel" method="delete" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1729,6 +1769,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1773,6 +1814,7 @@ Update an inventory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1815,6 +1857,7 @@ Update an item
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceItem" method="put" path="/commerce/{connection_id}/item/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1857,6 +1900,7 @@ Update an itemvariant
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceItemvariant" method="put" path="/commerce/{connection_id}/itemvariant/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1899,6 +1943,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1941,6 +1986,7 @@ Update a reservation
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceReservation" method="put" path="/commerce/{connection_id}/reservation/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1983,6 +2029,7 @@ Update a review
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2025,6 +2072,7 @@ Update a saleschannel
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

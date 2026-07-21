@@ -1,5 +1,13 @@
 # GetDatastoreTableQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetDatastoreTableQueryParamFields.Id;
+```
+
 
 ## Values
 

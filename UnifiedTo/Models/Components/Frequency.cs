@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Frequency
-    {
-        [JsonProperty("ONE_TIME")]
-        OneTime,
-        [JsonProperty("DAY")]
-        Day,
-        [JsonProperty("QUARTER")]
-        Quarter,
-        [JsonProperty("YEAR")]
-        Year,
-        [JsonProperty("HOUR")]
-        Hour,
-        [JsonProperty("MONTH")]
-        Month,
-        [JsonProperty("WEEK")]
-        Week,
-    }
 
-    public static class FrequencyExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Frequency : IEquatable<Frequency>
     {
-        public static string Value(this Frequency value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Frequency OneTime = new Frequency("ONE_TIME");
+        public static readonly Frequency Day = new Frequency("DAY");
+        public static readonly Frequency Quarter = new Frequency("QUARTER");
+        public static readonly Frequency Year = new Frequency("YEAR");
+        public static readonly Frequency Hour = new Frequency("HOUR");
+        public static readonly Frequency Month = new Frequency("MONTH");
+        public static readonly Frequency Week = new Frequency("WEEK");
 
-        public static Frequency ToEnum(this string value)
-        {
-            foreach(var field in typeof(Frequency).GetFields())
+        private static readonly Dictionary <string, Frequency> _knownValues =
+            new Dictionary <string, Frequency> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ONE_TIME"] = OneTime,
+                ["DAY"] = Day,
+                ["QUARTER"] = Quarter,
+                ["YEAR"] = Year,
+                ["HOUR"] = Hour,
+                ["MONTH"] = Month,
+                ["WEEK"] = Week
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Frequency> _values =
+            new ConcurrentDictionary<string, Frequency>(_knownValues);
 
-                    if (enumVal is Frequency)
-                    {
-                        return (Frequency)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Frequency");
+        private Frequency(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Frequency Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Frequency(value));
+        }
+
+        public static implicit operator Frequency(string value) => Of(value);
+        public static implicit operator string(Frequency frequency) => frequency.Value;
+
+        public static Frequency[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Frequency);
+
+        public bool Equals(Frequency? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

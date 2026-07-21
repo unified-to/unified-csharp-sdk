@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SigningSignatoryRole
-    {
-        [JsonProperty("SIGNER")]
-        Signer,
-        [JsonProperty("CC")]
-        Cc,
-        [JsonProperty("APPROVER")]
-        Approver,
-        [JsonProperty("IN_PERSON_SIGNER")]
-        InPersonSigner,
-        [JsonProperty("VIEWER")]
-        Viewer,
-    }
 
-    public static class SigningSignatoryRoleExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SigningSignatoryRole : IEquatable<SigningSignatoryRole>
     {
-        public static string Value(this SigningSignatoryRole value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SigningSignatoryRole Signer = new SigningSignatoryRole("SIGNER");
+        public static readonly SigningSignatoryRole Cc = new SigningSignatoryRole("CC");
+        public static readonly SigningSignatoryRole Approver = new SigningSignatoryRole("APPROVER");
+        public static readonly SigningSignatoryRole InPersonSigner = new SigningSignatoryRole("IN_PERSON_SIGNER");
+        public static readonly SigningSignatoryRole Viewer = new SigningSignatoryRole("VIEWER");
 
-        public static SigningSignatoryRole ToEnum(this string value)
-        {
-            foreach(var field in typeof(SigningSignatoryRole).GetFields())
+        private static readonly Dictionary <string, SigningSignatoryRole> _knownValues =
+            new Dictionary <string, SigningSignatoryRole> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SIGNER"] = Signer,
+                ["CC"] = Cc,
+                ["APPROVER"] = Approver,
+                ["IN_PERSON_SIGNER"] = InPersonSigner,
+                ["VIEWER"] = Viewer
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SigningSignatoryRole> _values =
+            new ConcurrentDictionary<string, SigningSignatoryRole>(_knownValues);
 
-                    if (enumVal is SigningSignatoryRole)
-                    {
-                        return (SigningSignatoryRole)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SigningSignatoryRole");
+        private SigningSignatoryRole(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SigningSignatoryRole Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SigningSignatoryRole(value));
+        }
+
+        public static implicit operator SigningSignatoryRole(string value) => Of(value);
+        public static implicit operator string(SigningSignatoryRole signingsignatoryrole) => signingsignatoryrole.Value;
+
+        public static SigningSignatoryRole[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SigningSignatoryRole);
+
+        public bool Equals(SigningSignatoryRole? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AtsCandidate
     {
-
         [JsonProperty("address")]
         public PropertyAtsCandidateAddress? Address { get; set; }
 
@@ -61,7 +62,7 @@ namespace UnifiedTo.Models.Components
         public string? LastName { get; set; }
 
         /// <summary>
-        /// URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.)
+        /// URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.).
         /// </summary>
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }
@@ -100,7 +101,7 @@ namespace UnifiedTo.Models.Components
         public string? UserId { get; set; }
 
         /// <summary>
-        /// references hris employees
+        /// references hris employees.
         /// </summary>
         [JsonProperty("user_ids")]
         public List<string>? UserIds { get; set; }

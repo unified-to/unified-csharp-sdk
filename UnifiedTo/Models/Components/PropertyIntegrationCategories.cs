@@ -11,105 +11,122 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyIntegrationCategories
-    {
-        [JsonProperty("passthrough")]
-        Passthrough,
-        [JsonProperty("hris")]
-        Hris,
-        [JsonProperty("ats")]
-        Ats,
-        [JsonProperty("auth")]
-        Auth,
-        [JsonProperty("crm")]
-        Crm,
-        [JsonProperty("enrich")]
-        Enrich,
-        [JsonProperty("martech")]
-        Martech,
-        [JsonProperty("ticketing")]
-        Ticketing,
-        [JsonProperty("uc")]
-        Uc,
-        [JsonProperty("accounting")]
-        Accounting,
-        [JsonProperty("storage")]
-        Storage,
-        [JsonProperty("commerce")]
-        Commerce,
-        [JsonProperty("payment")]
-        Payment,
-        [JsonProperty("genai")]
-        Genai,
-        [JsonProperty("messaging")]
-        Messaging,
-        [JsonProperty("kms")]
-        Kms,
-        [JsonProperty("task")]
-        Task,
-        [JsonProperty("scim")]
-        Scim,
-        [JsonProperty("lms")]
-        Lms,
-        [JsonProperty("repo")]
-        Repo,
-        [JsonProperty("metadata")]
-        Metadata,
-        [JsonProperty("calendar")]
-        Calendar,
-        [JsonProperty("verification")]
-        Verification,
-        [JsonProperty("ads")]
-        Ads,
-        [JsonProperty("analytics")]
-        Analytics,
-        [JsonProperty("forms")]
-        Forms,
-        [JsonProperty("shipping")]
-        Shipping,
-        [JsonProperty("assessment")]
-        Assessment,
-        [JsonProperty("signing")]
-        Signing,
-        [JsonProperty("clubs")]
-        Clubs,
-        [JsonProperty("datastore")]
-        Datastore,
-    }
 
-    public static class PropertyIntegrationCategoriesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyIntegrationCategories : IEquatable<PropertyIntegrationCategories>
     {
-        public static string Value(this PropertyIntegrationCategories value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyIntegrationCategories Passthrough = new PropertyIntegrationCategories("passthrough");
+        public static readonly PropertyIntegrationCategories Hris = new PropertyIntegrationCategories("hris");
+        public static readonly PropertyIntegrationCategories Ats = new PropertyIntegrationCategories("ats");
+        public static readonly PropertyIntegrationCategories Auth = new PropertyIntegrationCategories("auth");
+        public static readonly PropertyIntegrationCategories Crm = new PropertyIntegrationCategories("crm");
+        public static readonly PropertyIntegrationCategories Enrich = new PropertyIntegrationCategories("enrich");
+        public static readonly PropertyIntegrationCategories Martech = new PropertyIntegrationCategories("martech");
+        public static readonly PropertyIntegrationCategories Ticketing = new PropertyIntegrationCategories("ticketing");
+        public static readonly PropertyIntegrationCategories Uc = new PropertyIntegrationCategories("uc");
+        public static readonly PropertyIntegrationCategories Accounting = new PropertyIntegrationCategories("accounting");
+        public static readonly PropertyIntegrationCategories Storage = new PropertyIntegrationCategories("storage");
+        public static readonly PropertyIntegrationCategories Commerce = new PropertyIntegrationCategories("commerce");
+        public static readonly PropertyIntegrationCategories Payment = new PropertyIntegrationCategories("payment");
+        public static readonly PropertyIntegrationCategories Genai = new PropertyIntegrationCategories("genai");
+        public static readonly PropertyIntegrationCategories Messaging = new PropertyIntegrationCategories("messaging");
+        public static readonly PropertyIntegrationCategories Kms = new PropertyIntegrationCategories("kms");
+        public static readonly PropertyIntegrationCategories Task = new PropertyIntegrationCategories("task");
+        public static readonly PropertyIntegrationCategories Scim = new PropertyIntegrationCategories("scim");
+        public static readonly PropertyIntegrationCategories Lms = new PropertyIntegrationCategories("lms");
+        public static readonly PropertyIntegrationCategories Repo = new PropertyIntegrationCategories("repo");
+        public static readonly PropertyIntegrationCategories Metadata = new PropertyIntegrationCategories("metadata");
+        public static readonly PropertyIntegrationCategories Calendar = new PropertyIntegrationCategories("calendar");
+        public static readonly PropertyIntegrationCategories Verification = new PropertyIntegrationCategories("verification");
+        public static readonly PropertyIntegrationCategories Ads = new PropertyIntegrationCategories("ads");
+        public static readonly PropertyIntegrationCategories Analytics = new PropertyIntegrationCategories("analytics");
+        public static readonly PropertyIntegrationCategories Forms = new PropertyIntegrationCategories("forms");
+        public static readonly PropertyIntegrationCategories Shipping = new PropertyIntegrationCategories("shipping");
+        public static readonly PropertyIntegrationCategories Assessment = new PropertyIntegrationCategories("assessment");
+        public static readonly PropertyIntegrationCategories Signing = new PropertyIntegrationCategories("signing");
+        public static readonly PropertyIntegrationCategories Clubs = new PropertyIntegrationCategories("clubs");
+        public static readonly PropertyIntegrationCategories Datastore = new PropertyIntegrationCategories("datastore");
 
-        public static PropertyIntegrationCategories ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyIntegrationCategories).GetFields())
+        private static readonly Dictionary <string, PropertyIntegrationCategories> _knownValues =
+            new Dictionary <string, PropertyIntegrationCategories> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["passthrough"] = Passthrough,
+                ["hris"] = Hris,
+                ["ats"] = Ats,
+                ["auth"] = Auth,
+                ["crm"] = Crm,
+                ["enrich"] = Enrich,
+                ["martech"] = Martech,
+                ["ticketing"] = Ticketing,
+                ["uc"] = Uc,
+                ["accounting"] = Accounting,
+                ["storage"] = Storage,
+                ["commerce"] = Commerce,
+                ["payment"] = Payment,
+                ["genai"] = Genai,
+                ["messaging"] = Messaging,
+                ["kms"] = Kms,
+                ["task"] = Task,
+                ["scim"] = Scim,
+                ["lms"] = Lms,
+                ["repo"] = Repo,
+                ["metadata"] = Metadata,
+                ["calendar"] = Calendar,
+                ["verification"] = Verification,
+                ["ads"] = Ads,
+                ["analytics"] = Analytics,
+                ["forms"] = Forms,
+                ["shipping"] = Shipping,
+                ["assessment"] = Assessment,
+                ["signing"] = Signing,
+                ["clubs"] = Clubs,
+                ["datastore"] = Datastore
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyIntegrationCategories> _values =
+            new ConcurrentDictionary<string, PropertyIntegrationCategories>(_knownValues);
 
-                    if (enumVal is PropertyIntegrationCategories)
-                    {
-                        return (PropertyIntegrationCategories)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyIntegrationCategories");
+        private PropertyIntegrationCategories(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyIntegrationCategories Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyIntegrationCategories(value));
+        }
+
+        public static implicit operator PropertyIntegrationCategories(string value) => Of(value);
+        public static implicit operator string(PropertyIntegrationCategories propertyintegrationcategories) => propertyintegrationcategories.Value;
+
+        public static PropertyIntegrationCategories[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyIntegrationCategories);
+
+        public bool Equals(PropertyIntegrationCategories? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

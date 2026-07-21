@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdvertisingChannelType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("IMAGE")]
-        Image,
-        [JsonProperty("VIDEO")]
-        Video,
-        [JsonProperty("RESPONSIVE")]
-        Responsive,
-        [JsonProperty("SHOPPING")]
-        Shopping,
-        [JsonProperty("APP")]
-        App,
-        [JsonProperty("CALL")]
-        Call,
-        [JsonProperty("CAROUSEL")]
-        Carousel,
-        [JsonProperty("SOCIAL")]
-        Social,
-        [JsonProperty("DISPLAY")]
-        Display,
-        [JsonProperty("SEARCH")]
-        Search,
-        [JsonProperty("AUDIO")]
-        Audio,
-        [JsonProperty("YOUTUBE")]
-        Youtube,
-    }
 
-    public static class AdvertisingChannelTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdvertisingChannelType : IEquatable<AdvertisingChannelType>
     {
-        public static string Value(this AdvertisingChannelType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdvertisingChannelType Text = new AdvertisingChannelType("TEXT");
+        public static readonly AdvertisingChannelType Image = new AdvertisingChannelType("IMAGE");
+        public static readonly AdvertisingChannelType Video = new AdvertisingChannelType("VIDEO");
+        public static readonly AdvertisingChannelType Responsive = new AdvertisingChannelType("RESPONSIVE");
+        public static readonly AdvertisingChannelType Shopping = new AdvertisingChannelType("SHOPPING");
+        public static readonly AdvertisingChannelType App = new AdvertisingChannelType("APP");
+        public static readonly AdvertisingChannelType Call = new AdvertisingChannelType("CALL");
+        public static readonly AdvertisingChannelType Carousel = new AdvertisingChannelType("CAROUSEL");
+        public static readonly AdvertisingChannelType Social = new AdvertisingChannelType("SOCIAL");
+        public static readonly AdvertisingChannelType Display = new AdvertisingChannelType("DISPLAY");
+        public static readonly AdvertisingChannelType Search = new AdvertisingChannelType("SEARCH");
+        public static readonly AdvertisingChannelType Audio = new AdvertisingChannelType("AUDIO");
+        public static readonly AdvertisingChannelType Youtube = new AdvertisingChannelType("YOUTUBE");
 
-        public static AdvertisingChannelType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdvertisingChannelType).GetFields())
+        private static readonly Dictionary <string, AdvertisingChannelType> _knownValues =
+            new Dictionary <string, AdvertisingChannelType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["IMAGE"] = Image,
+                ["VIDEO"] = Video,
+                ["RESPONSIVE"] = Responsive,
+                ["SHOPPING"] = Shopping,
+                ["APP"] = App,
+                ["CALL"] = Call,
+                ["CAROUSEL"] = Carousel,
+                ["SOCIAL"] = Social,
+                ["DISPLAY"] = Display,
+                ["SEARCH"] = Search,
+                ["AUDIO"] = Audio,
+                ["YOUTUBE"] = Youtube
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdvertisingChannelType> _values =
+            new ConcurrentDictionary<string, AdvertisingChannelType>(_knownValues);
 
-                    if (enumVal is AdvertisingChannelType)
-                    {
-                        return (AdvertisingChannelType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdvertisingChannelType");
+        private AdvertisingChannelType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdvertisingChannelType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdvertisingChannelType(value));
+        }
+
+        public static implicit operator AdvertisingChannelType(string value) => Of(value);
+        public static implicit operator string(AdvertisingChannelType advertisingchanneltype) => advertisingchanneltype.Value;
+
+        public static AdvertisingChannelType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdvertisingChannelType);
+
+        public bool Equals(AdvertisingChannelType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

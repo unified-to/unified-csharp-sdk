@@ -11,71 +11,88 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CrmEventFormFieldType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("MULTIPLE_CHOICE")]
-        MultipleChoice,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("EMAIL")]
-        Email,
-        [JsonProperty("PHONE")]
-        Phone,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-    }
 
-    public static class CrmEventFormFieldTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CrmEventFormFieldType : IEquatable<CrmEventFormFieldType>
     {
-        public static string Value(this CrmEventFormFieldType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CrmEventFormFieldType Text = new CrmEventFormFieldType("TEXT");
+        public static readonly CrmEventFormFieldType Number = new CrmEventFormFieldType("NUMBER");
+        public static readonly CrmEventFormFieldType Date = new CrmEventFormFieldType("DATE");
+        public static readonly CrmEventFormFieldType Boolean = new CrmEventFormFieldType("BOOLEAN");
+        public static readonly CrmEventFormFieldType MultipleChoice = new CrmEventFormFieldType("MULTIPLE_CHOICE");
+        public static readonly CrmEventFormFieldType File = new CrmEventFormFieldType("FILE");
+        public static readonly CrmEventFormFieldType Textarea = new CrmEventFormFieldType("TEXTAREA");
+        public static readonly CrmEventFormFieldType SingleSelect = new CrmEventFormFieldType("SINGLE_SELECT");
+        public static readonly CrmEventFormFieldType MultipleSelect = new CrmEventFormFieldType("MULTIPLE_SELECT");
+        public static readonly CrmEventFormFieldType Email = new CrmEventFormFieldType("EMAIL");
+        public static readonly CrmEventFormFieldType Phone = new CrmEventFormFieldType("PHONE");
+        public static readonly CrmEventFormFieldType YesNo = new CrmEventFormFieldType("YES_NO");
+        public static readonly CrmEventFormFieldType Currency = new CrmEventFormFieldType("CURRENCY");
+        public static readonly CrmEventFormFieldType Url = new CrmEventFormFieldType("URL");
 
-        public static CrmEventFormFieldType ToEnum(this string value)
-        {
-            foreach(var field in typeof(CrmEventFormFieldType).GetFields())
+        private static readonly Dictionary <string, CrmEventFormFieldType> _knownValues =
+            new Dictionary <string, CrmEventFormFieldType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["MULTIPLE_CHOICE"] = MultipleChoice,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["EMAIL"] = Email,
+                ["PHONE"] = Phone,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CrmEventFormFieldType> _values =
+            new ConcurrentDictionary<string, CrmEventFormFieldType>(_knownValues);
 
-                    if (enumVal is CrmEventFormFieldType)
-                    {
-                        return (CrmEventFormFieldType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CrmEventFormFieldType");
+        private CrmEventFormFieldType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CrmEventFormFieldType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CrmEventFormFieldType(value));
+        }
+
+        public static implicit operator CrmEventFormFieldType(string value) => Of(value);
+        public static implicit operator string(CrmEventFormFieldType crmeventformfieldtype) => crmeventformfieldtype.Value;
+
+        public static CrmEventFormFieldType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CrmEventFormFieldType);
+
+        public bool Equals(CrmEventFormFieldType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

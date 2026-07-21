@@ -1,5 +1,13 @@
 # GetClubsGroupQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetClubsGroupQueryParamFields.Id;
+```
+
 
 ## Values
 

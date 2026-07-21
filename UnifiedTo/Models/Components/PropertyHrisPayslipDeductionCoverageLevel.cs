@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyHrisPayslipDeductionCoverageLevel
-    {
-        [JsonProperty("EMPLOYEE_ONLY")]
-        EmployeeOnly,
-        [JsonProperty("EMPLOYEE_SPOUSE")]
-        EmployeeSpouse,
-        [JsonProperty("EMPLOYEE_CHILD")]
-        EmployeeChild,
-        [JsonProperty("EMPLOYEE_CHILDREN")]
-        EmployeeChildren,
-        [JsonProperty("EMPLOYEE_FAMILY")]
-        EmployeeFamily,
-        [JsonProperty("FAMILY")]
-        Family,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class PropertyHrisPayslipDeductionCoverageLevelExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyHrisPayslipDeductionCoverageLevel : IEquatable<PropertyHrisPayslipDeductionCoverageLevel>
     {
-        public static string Value(this PropertyHrisPayslipDeductionCoverageLevel value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyHrisPayslipDeductionCoverageLevel EmployeeOnly = new PropertyHrisPayslipDeductionCoverageLevel("EMPLOYEE_ONLY");
+        public static readonly PropertyHrisPayslipDeductionCoverageLevel EmployeeSpouse = new PropertyHrisPayslipDeductionCoverageLevel("EMPLOYEE_SPOUSE");
+        public static readonly PropertyHrisPayslipDeductionCoverageLevel EmployeeChild = new PropertyHrisPayslipDeductionCoverageLevel("EMPLOYEE_CHILD");
+        public static readonly PropertyHrisPayslipDeductionCoverageLevel EmployeeChildren = new PropertyHrisPayslipDeductionCoverageLevel("EMPLOYEE_CHILDREN");
+        public static readonly PropertyHrisPayslipDeductionCoverageLevel EmployeeFamily = new PropertyHrisPayslipDeductionCoverageLevel("EMPLOYEE_FAMILY");
+        public static readonly PropertyHrisPayslipDeductionCoverageLevel Family = new PropertyHrisPayslipDeductionCoverageLevel("FAMILY");
+        public static readonly PropertyHrisPayslipDeductionCoverageLevel Other = new PropertyHrisPayslipDeductionCoverageLevel("OTHER");
 
-        public static PropertyHrisPayslipDeductionCoverageLevel ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyHrisPayslipDeductionCoverageLevel).GetFields())
+        private static readonly Dictionary <string, PropertyHrisPayslipDeductionCoverageLevel> _knownValues =
+            new Dictionary <string, PropertyHrisPayslipDeductionCoverageLevel> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["EMPLOYEE_ONLY"] = EmployeeOnly,
+                ["EMPLOYEE_SPOUSE"] = EmployeeSpouse,
+                ["EMPLOYEE_CHILD"] = EmployeeChild,
+                ["EMPLOYEE_CHILDREN"] = EmployeeChildren,
+                ["EMPLOYEE_FAMILY"] = EmployeeFamily,
+                ["FAMILY"] = Family,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyHrisPayslipDeductionCoverageLevel> _values =
+            new ConcurrentDictionary<string, PropertyHrisPayslipDeductionCoverageLevel>(_knownValues);
 
-                    if (enumVal is PropertyHrisPayslipDeductionCoverageLevel)
-                    {
-                        return (PropertyHrisPayslipDeductionCoverageLevel)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyHrisPayslipDeductionCoverageLevel");
+        private PropertyHrisPayslipDeductionCoverageLevel(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyHrisPayslipDeductionCoverageLevel Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyHrisPayslipDeductionCoverageLevel(value));
+        }
+
+        public static implicit operator PropertyHrisPayslipDeductionCoverageLevel(string value) => Of(value);
+        public static implicit operator string(PropertyHrisPayslipDeductionCoverageLevel propertyhrispayslipdeductioncoveragelevel) => propertyhrispayslipdeductioncoveragelevel.Value;
+
+        public static PropertyHrisPayslipDeductionCoverageLevel[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyHrisPayslipDeductionCoverageLevel);
+
+        public bool Equals(PropertyHrisPayslipDeductionCoverageLevel? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

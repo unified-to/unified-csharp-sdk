@@ -1,5 +1,4 @@
 # Device
-(*Device*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisDevice" method="get" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all devices
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisDevices" method="get" path="/hris/{connection_id}/device" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisDevice" method="delete" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

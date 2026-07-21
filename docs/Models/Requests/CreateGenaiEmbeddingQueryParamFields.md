@@ -1,5 +1,13 @@
 # CreateGenaiEmbeddingQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateGenaiEmbeddingQueryParamFields.ModelId;
+```
+
 
 ## Values
 

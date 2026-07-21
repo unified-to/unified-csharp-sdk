@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyIntegrationSupportWebhookEventsDeleted
-    {
-        [JsonProperty("virtual")]
-        Virtual,
-        [JsonProperty("native")]
-        Native,
-    }
 
-    public static class PropertyIntegrationSupportWebhookEventsDeletedExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyIntegrationSupportWebhookEventsDeleted : IEquatable<PropertyIntegrationSupportWebhookEventsDeleted>
     {
-        public static string Value(this PropertyIntegrationSupportWebhookEventsDeleted value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyIntegrationSupportWebhookEventsDeleted Virtual = new PropertyIntegrationSupportWebhookEventsDeleted("virtual");
+        public static readonly PropertyIntegrationSupportWebhookEventsDeleted Native = new PropertyIntegrationSupportWebhookEventsDeleted("native");
 
-        public static PropertyIntegrationSupportWebhookEventsDeleted ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyIntegrationSupportWebhookEventsDeleted).GetFields())
+        private static readonly Dictionary <string, PropertyIntegrationSupportWebhookEventsDeleted> _knownValues =
+            new Dictionary <string, PropertyIntegrationSupportWebhookEventsDeleted> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["virtual"] = Virtual,
+                ["native"] = Native
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyIntegrationSupportWebhookEventsDeleted> _values =
+            new ConcurrentDictionary<string, PropertyIntegrationSupportWebhookEventsDeleted>(_knownValues);
 
-                    if (enumVal is PropertyIntegrationSupportWebhookEventsDeleted)
-                    {
-                        return (PropertyIntegrationSupportWebhookEventsDeleted)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyIntegrationSupportWebhookEventsDeleted");
+        private PropertyIntegrationSupportWebhookEventsDeleted(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyIntegrationSupportWebhookEventsDeleted Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyIntegrationSupportWebhookEventsDeleted(value));
+        }
+
+        public static implicit operator PropertyIntegrationSupportWebhookEventsDeleted(string value) => Of(value);
+        public static implicit operator string(PropertyIntegrationSupportWebhookEventsDeleted propertyintegrationsupportwebhookeventsdeleted) => propertyintegrationsupportwebhookeventsdeleted.Value;
+
+        public static PropertyIntegrationSupportWebhookEventsDeleted[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyIntegrationSupportWebhookEventsDeleted);
+
+        public bool Equals(PropertyIntegrationSupportWebhookEventsDeleted? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

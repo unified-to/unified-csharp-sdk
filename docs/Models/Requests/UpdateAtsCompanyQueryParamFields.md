@@ -1,5 +1,13 @@
 # UpdateAtsCompanyQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAtsCompanyQueryParamFields.Id;
+```
+
 
 ## Values
 

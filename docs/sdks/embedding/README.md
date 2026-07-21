@@ -1,5 +1,4 @@
 # Embedding
-(*Embedding*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ Create an embedding
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

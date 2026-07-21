@@ -1,5 +1,16 @@
 # ResponseStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ResponseStatus.Open;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ResponseStatus.Of("custom_value");
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # PatchTicketingTicketQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchTicketingTicketQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # CreateTicketingTicketQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateTicketingTicketQueryParamFields.Id;
+```
+
 
 ## Values
 

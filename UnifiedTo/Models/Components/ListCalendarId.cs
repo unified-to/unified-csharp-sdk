@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListCalendarId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListCalendarIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListCalendarId : IEquatable<ListCalendarId>
     {
-        public static string Value(this ListCalendarId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListCalendarId SupportedRequired = new ListCalendarId("supported-required");
+        public static readonly ListCalendarId Supported = new ListCalendarId("supported");
+        public static readonly ListCalendarId NotSupported = new ListCalendarId("not-supported");
 
-        public static ListCalendarId ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListCalendarId).GetFields())
+        private static readonly Dictionary <string, ListCalendarId> _knownValues =
+            new Dictionary <string, ListCalendarId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListCalendarId> _values =
+            new ConcurrentDictionary<string, ListCalendarId>(_knownValues);
 
-                    if (enumVal is ListCalendarId)
-                    {
-                        return (ListCalendarId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListCalendarId");
+        private ListCalendarId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListCalendarId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListCalendarId(value));
+        }
+
+        public static implicit operator ListCalendarId(string value) => Of(value);
+        public static implicit operator string(ListCalendarId listcalendarid) => listcalendarid.Value;
+
+        public static ListCalendarId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListCalendarId);
+
+        public bool Equals(ListCalendarId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

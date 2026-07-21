@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AtsJobStatus
-    {
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("OPEN")]
-        Open,
-        [JsonProperty("CLOSED")]
-        Closed,
-    }
 
-    public static class AtsJobStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AtsJobStatus : IEquatable<AtsJobStatus>
     {
-        public static string Value(this AtsJobStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AtsJobStatus Archived = new AtsJobStatus("ARCHIVED");
+        public static readonly AtsJobStatus Pending = new AtsJobStatus("PENDING");
+        public static readonly AtsJobStatus Draft = new AtsJobStatus("DRAFT");
+        public static readonly AtsJobStatus Open = new AtsJobStatus("OPEN");
+        public static readonly AtsJobStatus Closed = new AtsJobStatus("CLOSED");
 
-        public static AtsJobStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AtsJobStatus).GetFields())
+        private static readonly Dictionary <string, AtsJobStatus> _knownValues =
+            new Dictionary <string, AtsJobStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ARCHIVED"] = Archived,
+                ["PENDING"] = Pending,
+                ["DRAFT"] = Draft,
+                ["OPEN"] = Open,
+                ["CLOSED"] = Closed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AtsJobStatus> _values =
+            new ConcurrentDictionary<string, AtsJobStatus>(_knownValues);
 
-                    if (enumVal is AtsJobStatus)
-                    {
-                        return (AtsJobStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AtsJobStatus");
+        private AtsJobStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AtsJobStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AtsJobStatus(value));
+        }
+
+        public static implicit operator AtsJobStatus(string value) => Of(value);
+        public static implicit operator string(AtsJobStatus atsjobstatus) => atsjobstatus.Value;
+
+        public static AtsJobStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AtsJobStatus);
+
+        public bool Equals(AtsJobStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

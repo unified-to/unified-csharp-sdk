@@ -1,5 +1,4 @@
 # Payslip
-(*Payslip*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a payslip
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisPayslip" method="get" path="/hris/{connection_id}/payslip/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all payslips
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisPayslips" method="get" path="/hris/{connection_id}/payslip" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

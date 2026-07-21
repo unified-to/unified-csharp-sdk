@@ -1,5 +1,4 @@
 # Target
-(*Target*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a target
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsTarget" method="get" path="/ads/{connection_id}/target/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all targets
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsTargets" method="get" path="/ads/{connection_id}/target" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

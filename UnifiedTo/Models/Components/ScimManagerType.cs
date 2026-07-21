@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ScimManagerType
-    {
-        [JsonProperty("direct")]
-        Direct,
-        [JsonProperty("indirect")]
-        Indirect,
-    }
 
-    public static class ScimManagerTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ScimManagerType : IEquatable<ScimManagerType>
     {
-        public static string Value(this ScimManagerType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ScimManagerType Direct = new ScimManagerType("direct");
+        public static readonly ScimManagerType Indirect = new ScimManagerType("indirect");
 
-        public static ScimManagerType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ScimManagerType).GetFields())
+        private static readonly Dictionary <string, ScimManagerType> _knownValues =
+            new Dictionary <string, ScimManagerType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["direct"] = Direct,
+                ["indirect"] = Indirect
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ScimManagerType> _values =
+            new ConcurrentDictionary<string, ScimManagerType>(_knownValues);
 
-                    if (enumVal is ScimManagerType)
-                    {
-                        return (ScimManagerType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ScimManagerType");
+        private ScimManagerType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ScimManagerType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ScimManagerType(value));
+        }
+
+        public static implicit operator ScimManagerType(string value) => Of(value);
+        public static implicit operator string(ScimManagerType scimmanagertype) => scimmanagertype.Value;
+
+        public static ScimManagerType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ScimManagerType);
+
+        public bool Equals(ScimManagerType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

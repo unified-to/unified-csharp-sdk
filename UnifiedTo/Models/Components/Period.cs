@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Period
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("DAILY")]
-        Daily,
-        [JsonProperty("FLIGHT")]
-        Flight,
-    }
 
-    public static class PeriodExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Period : IEquatable<Period>
     {
-        public static string Value(this Period value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Period Unspecified = new Period("UNSPECIFIED");
+        public static readonly Period Daily = new Period("DAILY");
+        public static readonly Period Flight = new Period("FLIGHT");
 
-        public static Period ToEnum(this string value)
-        {
-            foreach(var field in typeof(Period).GetFields())
+        private static readonly Dictionary <string, Period> _knownValues =
+            new Dictionary <string, Period> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["DAILY"] = Daily,
+                ["FLIGHT"] = Flight
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Period> _values =
+            new ConcurrentDictionary<string, Period>(_knownValues);
 
-                    if (enumVal is Period)
-                    {
-                        return (Period)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Period");
+        private Period(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Period Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Period(value));
+        }
+
+        public static implicit operator Period(string value) => Of(value);
+        public static implicit operator string(Period period) => period.Value;
+
+        public static Period[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Period);
+
+        public bool Equals(Period? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

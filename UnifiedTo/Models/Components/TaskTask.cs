@@ -11,18 +11,19 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class TaskTask
     {
-
         [JsonProperty("assigned_user_ids")]
         public List<string>? AssignedUserIds { get; set; }
 
         /// <summary>
-        /// Array of attachment IDs retrieved from StorageFile.Get endpoint
+        /// Array of attachment IDs retrieved from StorageFile.Get endpoint.
         /// </summary>
         [JsonProperty("attachment_ids")]
         public List<string>? AttachmentIds { get; set; }

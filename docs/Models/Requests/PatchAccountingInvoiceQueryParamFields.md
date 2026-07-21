@@ -1,5 +1,13 @@
 # PatchAccountingInvoiceQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAccountingInvoiceQueryParamFields.Id;
+```
+
 
 ## Values
 

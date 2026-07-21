@@ -1,5 +1,13 @@
 # PatchHrisBankaccountQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchHrisBankaccountQueryParamFields.Id;
+```
+
 
 ## Values
 

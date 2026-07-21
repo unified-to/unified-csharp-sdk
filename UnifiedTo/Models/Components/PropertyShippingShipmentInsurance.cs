@@ -10,15 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Insurance details
+    /// Insurance details.
     /// </summary>
     public class PropertyShippingShipmentInsurance
     {
-
         [JsonProperty("coverage_amount")]
         public double? CoverageAmount { get; set; }
 

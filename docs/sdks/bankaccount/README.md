@@ -1,5 +1,4 @@
 # Bankaccount
-(*Bankaccount*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisBankaccount" method="get" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all bankaccounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisBankaccounts" method="get" path="/hris/{connection_id}/bankaccount" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisBankaccount" method="delete" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -1,5 +1,13 @@
 # GetTicketingNoteQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetTicketingNoteQueryParamFields.Id;
+```
+
 
 ## Values
 

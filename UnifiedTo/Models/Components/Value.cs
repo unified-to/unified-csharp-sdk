@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class ValueType
     {
         private ValueType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ValueType MapOfAny { get { return new ValueType("mapOfAny"); } }
-        
+
         public static ValueType Str { get { return new ValueType("str"); } }
-        
+
         public static ValueType Number { get { return new ValueType("number"); } }
-        
+
         public static ValueType Boolean { get { return new ValueType("boolean"); } }
-        
+
         public static ValueType ArrayOfAtsMetadata5 { get { return new ValueType("arrayOfAtsMetadata5"); } }
-        
-        public static ValueType Null { get { return new ValueType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(ValueType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfAtsMetadata5": return ArrayOfAtsMetadata5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for ValueType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Value.ValueConverter))]
-    public class Value {
-        public Value(ValueType type) {
+    public class Value
+    {
+        public Value(ValueType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<AtsMetadata5>? ArrayOfAtsMetadata5 { get; set; }
 
         public ValueType Type { get; set; }
-
-
-        public static Value CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static Value CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             ValueType typ = ValueType.MapOfAny;
 
             Value res = new Value(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static Value CreateStr(string str) {
+        public static Value CreateStr(string str)
+        {
             ValueType typ = ValueType.Str;
 
             Value res = new Value(typ);
             res.Str = str;
             return res;
         }
-
-        public static Value CreateNumber(double number) {
+        public static Value CreateNumber(double number)
+        {
             ValueType typ = ValueType.Number;
 
             Value res = new Value(typ);
             res.Number = number;
             return res;
         }
-
-        public static Value CreateBoolean(bool boolean) {
+        public static Value CreateBoolean(bool boolean)
+        {
             ValueType typ = ValueType.Boolean;
 
             Value res = new Value(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static Value CreateArrayOfAtsMetadata5(List<AtsMetadata5> arrayOfAtsMetadata5) {
+        public static Value CreateArrayOfAtsMetadata5(List<AtsMetadata5> arrayOfAtsMetadata5)
+        {
             ValueType typ = ValueType.ArrayOfAtsMetadata5;
 
             Value res = new Value(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Value CreateNull() {
-            ValueType typ = ValueType.Null;
-            return new Value(typ);
-        }
-
         public class ValueConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(Value);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                Value res = (Value)value;
-                if (ValueType.FromString(res.Type).Equals(ValueType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                Value res = (Value)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfAtsMetadata5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAtsMetadata5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

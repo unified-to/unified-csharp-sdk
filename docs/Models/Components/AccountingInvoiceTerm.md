@@ -1,5 +1,16 @@
 # AccountingInvoiceTerm
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AccountingInvoiceTerm.OnReceipt;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AccountingInvoiceTerm.Of("custom_value");
+```
+
 
 ## Values
 

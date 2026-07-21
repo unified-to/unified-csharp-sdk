@@ -1,5 +1,13 @@
 # PatchCrmLeadQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCrmLeadQueryParamFields.Id;
+```
+
 
 ## Values
 

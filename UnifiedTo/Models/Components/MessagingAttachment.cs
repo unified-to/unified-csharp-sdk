@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class MessagingAttachment
     {
-
         [JsonProperty("content_identifier")]
         public string? ContentIdentifier { get; set; }
 

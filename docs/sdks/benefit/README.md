@@ -1,5 +1,4 @@
 # Benefit
-(*Benefit*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisBenefit" method="get" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all benefits
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisBenefits" method="get" path="/hris/{connection_id}/benefit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisBenefit" method="delete" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

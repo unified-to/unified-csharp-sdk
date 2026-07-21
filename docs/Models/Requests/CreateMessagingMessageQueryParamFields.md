@@ -1,5 +1,13 @@
 # CreateMessagingMessageQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateMessagingMessageQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,4 @@
 # Repo
-(*Repo*)
 
 ## Overview
 
@@ -42,6 +41,7 @@ Create a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -86,6 +86,7 @@ Create a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -129,6 +130,7 @@ Create an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -170,6 +172,7 @@ Create a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -211,6 +214,7 @@ Create a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -254,6 +258,7 @@ Retrieve a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoBranch" method="get" path="/repo/{connection_id}/branch/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -295,6 +300,7 @@ Retrieve a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoCommit" method="get" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -336,6 +342,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoOrganization" method="get" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -377,6 +384,7 @@ Retrieve a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoPullrequest" method="get" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -418,6 +426,7 @@ Retrieve a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoRepository" method="get" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -459,6 +468,7 @@ List all branches
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoBranches" method="get" path="/repo/{connection_id}/branch" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -499,6 +509,7 @@ List all commits
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoCommits" method="get" path="/repo/{connection_id}/commit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -539,6 +550,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoOrganizations" method="get" path="/repo/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -579,6 +591,7 @@ List all pullrequests
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoPullrequests" method="get" path="/repo/{connection_id}/pullrequest" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -619,6 +632,7 @@ List all repositories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoRepositories" method="get" path="/repo/{connection_id}/repository" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -659,6 +673,7 @@ Update a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -704,6 +719,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -748,6 +764,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -790,6 +807,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -832,6 +850,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -876,6 +895,7 @@ Remove a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoBranch" method="delete" path="/repo/{connection_id}/branch/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -915,6 +935,7 @@ Remove a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoCommit" method="delete" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -954,6 +975,7 @@ Remove an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoOrganization" method="delete" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -993,6 +1015,7 @@ Remove a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoPullrequest" method="delete" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1032,6 +1055,7 @@ Remove a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoRepository" method="delete" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1071,6 +1095,7 @@ Update a branch
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1116,6 +1141,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1160,6 +1186,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1202,6 +1229,7 @@ Update a pullrequest
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1244,6 +1272,7 @@ Update a repository
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

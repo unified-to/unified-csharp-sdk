@@ -1,5 +1,4 @@
 # Applicationstatus
-(*Applicationstatus*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ List all applicationstatuses
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsApplicationstatuses" method="get" path="/ats/{connection_id}/applicationstatus" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

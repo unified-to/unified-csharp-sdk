@@ -1,5 +1,13 @@
 # PatchCrmDealQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCrmDealQueryParamFields.Id;
+```
+
 
 ## Values
 

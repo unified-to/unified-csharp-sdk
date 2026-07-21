@@ -1,5 +1,4 @@
 # Student
-(*Student*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getLmsStudent" method="get" path="/lms/{connection_id}/student/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all students
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listLmsStudents" method="get" path="/lms/{connection_id}/student" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeLmsStudent" method="delete" path="/lms/{connection_id}/student/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a student
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

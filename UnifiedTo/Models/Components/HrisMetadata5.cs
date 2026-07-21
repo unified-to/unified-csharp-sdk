@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class HrisMetadata5Type
     {
         private HrisMetadata5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static HrisMetadata5Type HrisMetadata1 { get { return new HrisMetadata5Type("HrisMetadata_1"); } }
-        
+
         public static HrisMetadata5Type Str { get { return new HrisMetadata5Type("str"); } }
-        
+
         public static HrisMetadata5Type Number { get { return new HrisMetadata5Type("number"); } }
-        
+
         public static HrisMetadata5Type Boolean { get { return new HrisMetadata5Type("boolean"); } }
-        
-        public static HrisMetadata5Type Null { get { return new HrisMetadata5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(HrisMetadata5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for HrisMetadata5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(HrisMetadata5.HrisMetadata5Converter))]
-    public class HrisMetadata5 {
-        public HrisMetadata5(HrisMetadata5Type type) {
+    public class HrisMetadata5
+    {
+        public HrisMetadata5(HrisMetadata5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public HrisMetadata5Type Type { get; set; }
-
-
-        public static HrisMetadata5 CreateHrisMetadata1(HrisMetadata1 hrisMetadata1) {
+        public static HrisMetadata5 CreateHrisMetadata1(HrisMetadata1 hrisMetadata1)
+        {
             HrisMetadata5Type typ = HrisMetadata5Type.HrisMetadata1;
 
             HrisMetadata5 res = new HrisMetadata5(typ);
             res.HrisMetadata1 = hrisMetadata1;
             return res;
         }
-
-        public static HrisMetadata5 CreateStr(string str) {
+        public static HrisMetadata5 CreateStr(string str)
+        {
             HrisMetadata5Type typ = HrisMetadata5Type.Str;
 
             HrisMetadata5 res = new HrisMetadata5(typ);
             res.Str = str;
             return res;
         }
-
-        public static HrisMetadata5 CreateNumber(double number) {
+        public static HrisMetadata5 CreateNumber(double number)
+        {
             HrisMetadata5Type typ = HrisMetadata5Type.Number;
 
             HrisMetadata5 res = new HrisMetadata5(typ);
             res.Number = number;
             return res;
         }
-
-        public static HrisMetadata5 CreateBoolean(bool boolean) {
+        public static HrisMetadata5 CreateBoolean(bool boolean)
+        {
             HrisMetadata5Type typ = HrisMetadata5Type.Boolean;
 
             HrisMetadata5 res = new HrisMetadata5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static HrisMetadata5 CreateNull() {
-            HrisMetadata5Type typ = HrisMetadata5Type.Null;
-            return new HrisMetadata5(typ);
-        }
-
         public class HrisMetadata5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(HrisMetadata5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                HrisMetadata5 res = (HrisMetadata5)value;
-                if (HrisMetadata5Type.FromString(res.Type).Equals(HrisMetadata5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                HrisMetadata5 res = (HrisMetadata5)value;
+
                 if (res.HrisMetadata1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

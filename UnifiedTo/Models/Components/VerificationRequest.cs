@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class VerificationRequest
     {
-
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
 
@@ -67,7 +68,7 @@ namespace UnifiedTo.Models.Components
         public List<VerificationResponseDetail>? ResponseDetails { get; set; }
 
         /// <summary>
-        /// report download
+        /// report download.
         /// </summary>
         [JsonProperty("response_download_urls")]
         public List<string>? ResponseDownloadUrls { get; set; }

@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("LIFETIME")]
-        Lifetime,
-        [JsonProperty("MONTHS")]
-        Months,
-        [JsonProperty("WEEKS")]
-        Weeks,
-        [JsonProperty("DAYS")]
-        Days,
-        [JsonProperty("HOURS")]
-        Hours,
-        [JsonProperty("MINUTES")]
-        Minutes,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignFrequencyCapTimeUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit : IEquatable<PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Unspecified = new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit("UNSPECIFIED");
+        public static readonly PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Lifetime = new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit("LIFETIME");
+        public static readonly PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Months = new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit("MONTHS");
+        public static readonly PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Weeks = new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit("WEEKS");
+        public static readonly PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Days = new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit("DAYS");
+        public static readonly PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Hours = new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit("HOURS");
+        public static readonly PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Minutes = new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit("MINUTES");
 
-        public static PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["LIFETIME"] = Lifetime,
+                ["MONTHS"] = Months,
+                ["WEEKS"] = Weeks,
+                ["DAYS"] = Days,
+                ["HOURS"] = Hours,
+                ["MINUTES"] = Minutes
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit)
-                    {
-                        return (PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit");
+        private PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit propertyadsreportmetricscampaignfrequencycaptimeunit) => propertyadsreportmetricscampaignfrequencycaptimeunit.Value;
+
+        public static PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignFrequencyCapTimeUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

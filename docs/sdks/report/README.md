@@ -1,5 +1,4 @@
 # Report
-(*Report*)
 
 ## Overview
 
@@ -17,6 +16,7 @@ Retrieve a report
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingReport" method="get" path="/accounting/{connection_id}/report/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -58,6 +58,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingReports" method="get" path="/accounting/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -98,6 +99,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsReports" method="get" path="/ads/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -138,6 +140,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsReports" method="get" path="/analytics/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -178,6 +181,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMartechReports" method="get" path="/martech/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -11,12 +11,11 @@ namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class RemovePassthroughRequest
     {
-
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;

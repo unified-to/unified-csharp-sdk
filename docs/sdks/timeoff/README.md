@@ -1,5 +1,4 @@
 # Timeoff
-(*Timeoff*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisTimeoff" method="get" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ List all timeoffs
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisTimeoffs" method="get" path="/hris/{connection_id}/timeoff" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,6 +144,7 @@ Update a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -186,6 +189,7 @@ Remove a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisTimeoff" method="delete" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -225,6 +229,7 @@ Update a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

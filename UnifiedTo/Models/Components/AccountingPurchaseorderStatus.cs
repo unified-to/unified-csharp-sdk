@@ -11,61 +11,78 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingPurchaseorderStatus
-    {
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("VOIDED")]
-        Voided,
-        [JsonProperty("AUTHORIZED")]
-        Authorized,
-        [JsonProperty("PAID")]
-        Paid,
-        [JsonProperty("PARTIALLY_PAID")]
-        PartiallyPaid,
-        [JsonProperty("PARTIALLY_REFUNDED")]
-        PartiallyRefunded,
-        [JsonProperty("REFUNDED")]
-        Refunded,
-        [JsonProperty("SUBMITTED")]
-        Submitted,
-        [JsonProperty("DELETED")]
-        Deleted,
-    }
 
-    public static class AccountingPurchaseorderStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingPurchaseorderStatus : IEquatable<AccountingPurchaseorderStatus>
     {
-        public static string Value(this AccountingPurchaseorderStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingPurchaseorderStatus Draft = new AccountingPurchaseorderStatus("DRAFT");
+        public static readonly AccountingPurchaseorderStatus Voided = new AccountingPurchaseorderStatus("VOIDED");
+        public static readonly AccountingPurchaseorderStatus Authorized = new AccountingPurchaseorderStatus("AUTHORIZED");
+        public static readonly AccountingPurchaseorderStatus Paid = new AccountingPurchaseorderStatus("PAID");
+        public static readonly AccountingPurchaseorderStatus PartiallyPaid = new AccountingPurchaseorderStatus("PARTIALLY_PAID");
+        public static readonly AccountingPurchaseorderStatus PartiallyRefunded = new AccountingPurchaseorderStatus("PARTIALLY_REFUNDED");
+        public static readonly AccountingPurchaseorderStatus Refunded = new AccountingPurchaseorderStatus("REFUNDED");
+        public static readonly AccountingPurchaseorderStatus Submitted = new AccountingPurchaseorderStatus("SUBMITTED");
+        public static readonly AccountingPurchaseorderStatus Deleted = new AccountingPurchaseorderStatus("DELETED");
 
-        public static AccountingPurchaseorderStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingPurchaseorderStatus).GetFields())
+        private static readonly Dictionary <string, AccountingPurchaseorderStatus> _knownValues =
+            new Dictionary <string, AccountingPurchaseorderStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DRAFT"] = Draft,
+                ["VOIDED"] = Voided,
+                ["AUTHORIZED"] = Authorized,
+                ["PAID"] = Paid,
+                ["PARTIALLY_PAID"] = PartiallyPaid,
+                ["PARTIALLY_REFUNDED"] = PartiallyRefunded,
+                ["REFUNDED"] = Refunded,
+                ["SUBMITTED"] = Submitted,
+                ["DELETED"] = Deleted
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingPurchaseorderStatus> _values =
+            new ConcurrentDictionary<string, AccountingPurchaseorderStatus>(_knownValues);
 
-                    if (enumVal is AccountingPurchaseorderStatus)
-                    {
-                        return (AccountingPurchaseorderStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingPurchaseorderStatus");
+        private AccountingPurchaseorderStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingPurchaseorderStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingPurchaseorderStatus(value));
+        }
+
+        public static implicit operator AccountingPurchaseorderStatus(string value) => Of(value);
+        public static implicit operator string(AccountingPurchaseorderStatus accountingpurchaseorderstatus) => accountingpurchaseorderstatus.Value;
+
+        public static AccountingPurchaseorderStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingPurchaseorderStatus);
+
+        public bool Equals(AccountingPurchaseorderStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

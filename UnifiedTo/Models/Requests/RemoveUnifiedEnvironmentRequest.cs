@@ -10,10 +10,9 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class RemoveUnifiedEnvironmentRequest
     {
-
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=env")]
         public string Env { get; set; } = default!;
     }

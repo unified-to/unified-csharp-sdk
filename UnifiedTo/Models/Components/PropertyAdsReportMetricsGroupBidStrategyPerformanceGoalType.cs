@@ -11,61 +11,78 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("CPA")]
-        Cpa,
-        [JsonProperty("CPC")]
-        Cpc,
-        [JsonProperty("VIEWABLE_CPM")]
-        ViewableCpm,
-        [JsonProperty("CUSTOM_ALGO")]
-        CustomAlgo,
-        [JsonProperty("CIVA")]
-        Civa,
-        [JsonProperty("IVO_TEN")]
-        IvoTen,
-        [JsonProperty("AV_VIEWED")]
-        AvViewed,
-        [JsonProperty("REACH")]
-        Reach,
-    }
 
-    public static class PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType : IEquatable<PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType Unspecified = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("UNSPECIFIED");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType Cpa = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("CPA");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType Cpc = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("CPC");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType ViewableCpm = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("VIEWABLE_CPM");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType CustomAlgo = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("CUSTOM_ALGO");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType Civa = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("CIVA");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType IvoTen = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("IVO_TEN");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType AvViewed = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("AV_VIEWED");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType Reach = new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType("REACH");
 
-        public static PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["CPA"] = Cpa,
+                ["CPC"] = Cpc,
+                ["VIEWABLE_CPM"] = ViewableCpm,
+                ["CUSTOM_ALGO"] = CustomAlgo,
+                ["CIVA"] = Civa,
+                ["IVO_TEN"] = IvoTen,
+                ["AV_VIEWED"] = AvViewed,
+                ["REACH"] = Reach
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType)
-                    {
-                        return (PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType");
+        private PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType propertyadsreportmetricsgroupbidstrategyperformancegoaltype) => propertyadsreportmetricsgroupbidstrategyperformancegoaltype.Value;
+
+        public static PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType);
+
+        public bool Equals(PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

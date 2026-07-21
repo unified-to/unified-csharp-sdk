@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisTimeoffType
-    {
-        [JsonProperty("VACATION")]
-        Vacation,
-        [JsonProperty("SICK")]
-        Sick,
-        [JsonProperty("HOLIDAY")]
-        Holiday,
-        [JsonProperty("BEREAVEMENT")]
-        Bereavement,
-        [JsonProperty("PARENTAL")]
-        Parental,
-        [JsonProperty("UNPAID")]
-        Unpaid,
-        [JsonProperty("IN_LIEU")]
-        InLieu,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class HrisTimeoffTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisTimeoffType : IEquatable<HrisTimeoffType>
     {
-        public static string Value(this HrisTimeoffType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisTimeoffType Vacation = new HrisTimeoffType("VACATION");
+        public static readonly HrisTimeoffType Sick = new HrisTimeoffType("SICK");
+        public static readonly HrisTimeoffType Holiday = new HrisTimeoffType("HOLIDAY");
+        public static readonly HrisTimeoffType Bereavement = new HrisTimeoffType("BEREAVEMENT");
+        public static readonly HrisTimeoffType Parental = new HrisTimeoffType("PARENTAL");
+        public static readonly HrisTimeoffType Unpaid = new HrisTimeoffType("UNPAID");
+        public static readonly HrisTimeoffType InLieu = new HrisTimeoffType("IN_LIEU");
+        public static readonly HrisTimeoffType Other = new HrisTimeoffType("OTHER");
 
-        public static HrisTimeoffType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisTimeoffType).GetFields())
+        private static readonly Dictionary <string, HrisTimeoffType> _knownValues =
+            new Dictionary <string, HrisTimeoffType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["VACATION"] = Vacation,
+                ["SICK"] = Sick,
+                ["HOLIDAY"] = Holiday,
+                ["BEREAVEMENT"] = Bereavement,
+                ["PARENTAL"] = Parental,
+                ["UNPAID"] = Unpaid,
+                ["IN_LIEU"] = InLieu,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisTimeoffType> _values =
+            new ConcurrentDictionary<string, HrisTimeoffType>(_knownValues);
 
-                    if (enumVal is HrisTimeoffType)
-                    {
-                        return (HrisTimeoffType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisTimeoffType");
+        private HrisTimeoffType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisTimeoffType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisTimeoffType(value));
+        }
+
+        public static implicit operator HrisTimeoffType(string value) => Of(value);
+        public static implicit operator string(HrisTimeoffType hristimeofftype) => hristimeofftype.Value;
+
+        public static HrisTimeoffType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisTimeoffType);
+
+        public bool Equals(HrisTimeoffType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

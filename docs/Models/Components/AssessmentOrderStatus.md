@@ -1,5 +1,16 @@
 # AssessmentOrderStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AssessmentOrderStatus.Open;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AssessmentOrderStatus.Of("custom_value");
+```
+
 
 ## Values
 

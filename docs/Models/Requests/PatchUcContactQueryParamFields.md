@@ -1,5 +1,13 @@
 # PatchUcContactQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchUcContactQueryParamFields.Id;
+```
+
 
 ## Values
 

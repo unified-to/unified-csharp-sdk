@@ -10,15 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// The telephone number called
+    /// The telephone number called.
     /// </summary>
     public class PropertyUcCallTelephone
     {
-
         [JsonProperty("telephone")]
         public string Telephone { get; set; } = default!;
 

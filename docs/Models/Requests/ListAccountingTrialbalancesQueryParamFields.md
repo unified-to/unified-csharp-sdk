@@ -1,5 +1,13 @@
 # ListAccountingTrialbalancesQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAccountingTrialbalancesQueryParamFields.Id;
+```
+
 
 ## Values
 

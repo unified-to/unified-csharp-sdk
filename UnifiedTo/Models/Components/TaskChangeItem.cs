@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class TaskChangeItem
     {
-
         [JsonProperty("field")]
         public string Field { get; set; } = default!;
 

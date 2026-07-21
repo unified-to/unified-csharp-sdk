@@ -1,5 +1,16 @@
 # EmploymentType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = EmploymentType.FullTime;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = EmploymentType.Of("custom_value");
+```
+
 
 ## Values
 

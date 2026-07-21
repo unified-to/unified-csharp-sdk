@@ -1,5 +1,13 @@
 # CreateLmsClassQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateLmsClassQueryParamFields.Id;
+```
+
 
 ## Values
 

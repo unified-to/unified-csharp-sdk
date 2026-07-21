@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CommerceItemvariant
     {
-
         [JsonProperty("available_at")]
         public DateTime? AvailableAt { get; set; }
 
@@ -46,7 +47,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsVisible { get; set; }
 
         /// <summary>
-        /// references CommerceItem
+        /// references CommerceItem.
         /// </summary>
         [JsonProperty("items")]
         public List<CommerceReference>? Items { get; set; }

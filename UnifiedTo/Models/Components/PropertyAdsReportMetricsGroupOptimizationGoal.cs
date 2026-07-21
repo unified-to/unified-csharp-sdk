@@ -11,67 +11,84 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupOptimizationGoal
-    {
-        [JsonProperty("REACH")]
-        Reach,
-        [JsonProperty("IMPRESSIONS")]
-        Impressions,
-        [JsonProperty("LINK_CLICKS")]
-        LinkClicks,
-        [JsonProperty("LANDING_PAGE_VIEWS")]
-        LandingPageViews,
-        [JsonProperty("CONVERSIONS")]
-        Conversions,
-        [JsonProperty("LEAD_GENERATION")]
-        LeadGeneration,
-        [JsonProperty("APP_INSTALLS")]
-        AppInstalls,
-        [JsonProperty("APP_ENGAGEMENT")]
-        AppEngagement,
-        [JsonProperty("VIDEO_VIEWS")]
-        VideoViews,
-        [JsonProperty("ENGAGEMENT")]
-        Engagement,
-        [JsonProperty("PAGE_LIKES")]
-        PageLikes,
-        [JsonProperty("MESSAGES")]
-        Messages,
-    }
 
-    public static class PropertyAdsReportMetricsGroupOptimizationGoalExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupOptimizationGoal : IEquatable<PropertyAdsReportMetricsGroupOptimizationGoal>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupOptimizationGoal value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal Reach = new PropertyAdsReportMetricsGroupOptimizationGoal("REACH");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal Impressions = new PropertyAdsReportMetricsGroupOptimizationGoal("IMPRESSIONS");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal LinkClicks = new PropertyAdsReportMetricsGroupOptimizationGoal("LINK_CLICKS");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal LandingPageViews = new PropertyAdsReportMetricsGroupOptimizationGoal("LANDING_PAGE_VIEWS");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal Conversions = new PropertyAdsReportMetricsGroupOptimizationGoal("CONVERSIONS");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal LeadGeneration = new PropertyAdsReportMetricsGroupOptimizationGoal("LEAD_GENERATION");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal AppInstalls = new PropertyAdsReportMetricsGroupOptimizationGoal("APP_INSTALLS");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal AppEngagement = new PropertyAdsReportMetricsGroupOptimizationGoal("APP_ENGAGEMENT");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal VideoViews = new PropertyAdsReportMetricsGroupOptimizationGoal("VIDEO_VIEWS");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal Engagement = new PropertyAdsReportMetricsGroupOptimizationGoal("ENGAGEMENT");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal PageLikes = new PropertyAdsReportMetricsGroupOptimizationGoal("PAGE_LIKES");
+        public static readonly PropertyAdsReportMetricsGroupOptimizationGoal Messages = new PropertyAdsReportMetricsGroupOptimizationGoal("MESSAGES");
 
-        public static PropertyAdsReportMetricsGroupOptimizationGoal ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupOptimizationGoal).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupOptimizationGoal> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupOptimizationGoal> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["REACH"] = Reach,
+                ["IMPRESSIONS"] = Impressions,
+                ["LINK_CLICKS"] = LinkClicks,
+                ["LANDING_PAGE_VIEWS"] = LandingPageViews,
+                ["CONVERSIONS"] = Conversions,
+                ["LEAD_GENERATION"] = LeadGeneration,
+                ["APP_INSTALLS"] = AppInstalls,
+                ["APP_ENGAGEMENT"] = AppEngagement,
+                ["VIDEO_VIEWS"] = VideoViews,
+                ["ENGAGEMENT"] = Engagement,
+                ["PAGE_LIKES"] = PageLikes,
+                ["MESSAGES"] = Messages
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupOptimizationGoal> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupOptimizationGoal>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupOptimizationGoal)
-                    {
-                        return (PropertyAdsReportMetricsGroupOptimizationGoal)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupOptimizationGoal");
+        private PropertyAdsReportMetricsGroupOptimizationGoal(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupOptimizationGoal Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupOptimizationGoal(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupOptimizationGoal(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupOptimizationGoal propertyadsreportmetricsgroupoptimizationgoal) => propertyadsreportmetricsgroupoptimizationgoal.Value;
+
+        public static PropertyAdsReportMetricsGroupOptimizationGoal[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupOptimizationGoal);
+
+        public bool Equals(PropertyAdsReportMetricsGroupOptimizationGoal? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

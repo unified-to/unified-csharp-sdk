@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListCourseId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListCourseIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListCourseId : IEquatable<ListCourseId>
     {
-        public static string Value(this ListCourseId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListCourseId SupportedRequired = new ListCourseId("supported-required");
+        public static readonly ListCourseId Supported = new ListCourseId("supported");
+        public static readonly ListCourseId NotSupported = new ListCourseId("not-supported");
 
-        public static ListCourseId ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListCourseId).GetFields())
+        private static readonly Dictionary <string, ListCourseId> _knownValues =
+            new Dictionary <string, ListCourseId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListCourseId> _values =
+            new ConcurrentDictionary<string, ListCourseId>(_knownValues);
 
-                    if (enumVal is ListCourseId)
-                    {
-                        return (ListCourseId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListCourseId");
+        private ListCourseId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListCourseId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListCourseId(value));
+        }
+
+        public static implicit operator ListCourseId(string value) => Of(value);
+        public static implicit operator string(ListCourseId listcourseid) => listcourseid.Value;
+
+        public static ListCourseId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListCourseId);
+
+        public bool Equals(ListCourseId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

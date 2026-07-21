@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignGoal
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("BRAND_AWARENESS")]
-        BrandAwareness,
-        [JsonProperty("ENGAGEMENT")]
-        Engagement,
-        [JsonProperty("REACH")]
-        Reach,
-        [JsonProperty("WEBSITE_TRAFFIC")]
-        WebsiteTraffic,
-        [JsonProperty("LEADS")]
-        Leads,
-        [JsonProperty("SALES")]
-        Sales,
-        [JsonProperty("APP_PROMOTION")]
-        AppPromotion,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignGoalExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignGoal : IEquatable<PropertyAdsReportMetricsCampaignGoal>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignGoal value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignGoal Unspecified = new PropertyAdsReportMetricsCampaignGoal("UNSPECIFIED");
+        public static readonly PropertyAdsReportMetricsCampaignGoal BrandAwareness = new PropertyAdsReportMetricsCampaignGoal("BRAND_AWARENESS");
+        public static readonly PropertyAdsReportMetricsCampaignGoal Engagement = new PropertyAdsReportMetricsCampaignGoal("ENGAGEMENT");
+        public static readonly PropertyAdsReportMetricsCampaignGoal Reach = new PropertyAdsReportMetricsCampaignGoal("REACH");
+        public static readonly PropertyAdsReportMetricsCampaignGoal WebsiteTraffic = new PropertyAdsReportMetricsCampaignGoal("WEBSITE_TRAFFIC");
+        public static readonly PropertyAdsReportMetricsCampaignGoal Leads = new PropertyAdsReportMetricsCampaignGoal("LEADS");
+        public static readonly PropertyAdsReportMetricsCampaignGoal Sales = new PropertyAdsReportMetricsCampaignGoal("SALES");
+        public static readonly PropertyAdsReportMetricsCampaignGoal AppPromotion = new PropertyAdsReportMetricsCampaignGoal("APP_PROMOTION");
 
-        public static PropertyAdsReportMetricsCampaignGoal ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignGoal).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignGoal> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignGoal> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["BRAND_AWARENESS"] = BrandAwareness,
+                ["ENGAGEMENT"] = Engagement,
+                ["REACH"] = Reach,
+                ["WEBSITE_TRAFFIC"] = WebsiteTraffic,
+                ["LEADS"] = Leads,
+                ["SALES"] = Sales,
+                ["APP_PROMOTION"] = AppPromotion
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignGoal> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignGoal>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignGoal)
-                    {
-                        return (PropertyAdsReportMetricsCampaignGoal)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignGoal");
+        private PropertyAdsReportMetricsCampaignGoal(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignGoal Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignGoal(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignGoal(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignGoal propertyadsreportmetricscampaigngoal) => propertyadsreportmetricscampaigngoal.Value;
+
+        public static PropertyAdsReportMetricsCampaignGoal[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignGoal);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignGoal? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

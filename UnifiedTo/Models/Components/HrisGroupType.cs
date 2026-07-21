@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisGroupType
-    {
-        [JsonProperty("TEAM")]
-        Team,
-        [JsonProperty("GROUP")]
-        Group,
-        [JsonProperty("DEPARTMENT")]
-        Department,
-        [JsonProperty("DIVISION")]
-        Division,
-        [JsonProperty("BUSINESS_UNIT")]
-        BusinessUnit,
-        [JsonProperty("BRANCH")]
-        Branch,
-        [JsonProperty("SUB_DEPARTMENT")]
-        SubDepartment,
-    }
 
-    public static class HrisGroupTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisGroupType : IEquatable<HrisGroupType>
     {
-        public static string Value(this HrisGroupType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisGroupType Team = new HrisGroupType("TEAM");
+        public static readonly HrisGroupType Group = new HrisGroupType("GROUP");
+        public static readonly HrisGroupType Department = new HrisGroupType("DEPARTMENT");
+        public static readonly HrisGroupType Division = new HrisGroupType("DIVISION");
+        public static readonly HrisGroupType BusinessUnit = new HrisGroupType("BUSINESS_UNIT");
+        public static readonly HrisGroupType Branch = new HrisGroupType("BRANCH");
+        public static readonly HrisGroupType SubDepartment = new HrisGroupType("SUB_DEPARTMENT");
 
-        public static HrisGroupType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisGroupType).GetFields())
+        private static readonly Dictionary <string, HrisGroupType> _knownValues =
+            new Dictionary <string, HrisGroupType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEAM"] = Team,
+                ["GROUP"] = Group,
+                ["DEPARTMENT"] = Department,
+                ["DIVISION"] = Division,
+                ["BUSINESS_UNIT"] = BusinessUnit,
+                ["BRANCH"] = Branch,
+                ["SUB_DEPARTMENT"] = SubDepartment
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisGroupType> _values =
+            new ConcurrentDictionary<string, HrisGroupType>(_knownValues);
 
-                    if (enumVal is HrisGroupType)
-                    {
-                        return (HrisGroupType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisGroupType");
+        private HrisGroupType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisGroupType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisGroupType(value));
+        }
+
+        public static implicit operator HrisGroupType(string value) => Of(value);
+        public static implicit operator string(HrisGroupType hrisgrouptype) => hrisgrouptype.Value;
+
+        public static HrisGroupType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisGroupType);
+
+        public bool Equals(HrisGroupType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

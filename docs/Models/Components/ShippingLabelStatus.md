@@ -1,5 +1,16 @@
 # ShippingLabelStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ShippingLabelStatus.Pending;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ShippingLabelStatus.Of("custom_value");
+```
+
 
 ## Values
 

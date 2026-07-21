@@ -14,13 +14,12 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// formatted address string + lat/long) and PlayHQ venues (structured address parts).
     /// </summary>
     public class ClubsLocation
     {
-
         [JsonProperty("address")]
         public PropertyClubsLocationAddress? Address { get; set; }
 

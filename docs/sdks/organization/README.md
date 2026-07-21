@@ -1,5 +1,4 @@
 # Organization
-(*Organization*)
 
 ## Overview
 
@@ -26,6 +25,7 @@ Create an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -67,6 +67,7 @@ Create an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -108,6 +109,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingOrganization" method="get" path="/accounting/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -149,6 +151,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsOrganization" method="get" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -190,6 +193,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoOrganization" method="get" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -231,6 +235,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingOrganizations" method="get" path="/accounting/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -271,6 +276,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsOrganizations" method="get" path="/ads/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -311,6 +317,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoOrganizations" method="get" path="/repo/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -351,6 +358,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -393,6 +401,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -435,6 +444,7 @@ Remove an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsOrganization" method="delete" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -474,6 +484,7 @@ Remove an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoOrganization" method="delete" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -513,6 +524,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -555,6 +567,7 @@ Update an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

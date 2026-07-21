@@ -11,71 +11,88 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisDocumentType
-    {
-        [JsonProperty("CONTRACT")]
-        Contract,
-        [JsonProperty("OFFER_LETTER")]
-        OfferLetter,
-        [JsonProperty("POLICY")]
-        Policy,
-        [JsonProperty("TAX")]
-        Tax,
-        [JsonProperty("ID")]
-        Id,
-        [JsonProperty("VISA")]
-        Visa,
-        [JsonProperty("PAYSLIP")]
-        Payslip,
-        [JsonProperty("BENEFITS")]
-        Benefits,
-        [JsonProperty("CERTIFICATION")]
-        Certification,
-        [JsonProperty("PERFORMANCE_REVIEW")]
-        PerformanceReview,
-        [JsonProperty("ONBOARDING")]
-        Onboarding,
-        [JsonProperty("TERMINATION")]
-        Termination,
-        [JsonProperty("MEDICAL")]
-        Medical,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class HrisDocumentTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisDocumentType : IEquatable<HrisDocumentType>
     {
-        public static string Value(this HrisDocumentType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisDocumentType Contract = new HrisDocumentType("CONTRACT");
+        public static readonly HrisDocumentType OfferLetter = new HrisDocumentType("OFFER_LETTER");
+        public static readonly HrisDocumentType Policy = new HrisDocumentType("POLICY");
+        public static readonly HrisDocumentType Tax = new HrisDocumentType("TAX");
+        public static readonly HrisDocumentType Id = new HrisDocumentType("ID");
+        public static readonly HrisDocumentType Visa = new HrisDocumentType("VISA");
+        public static readonly HrisDocumentType Payslip = new HrisDocumentType("PAYSLIP");
+        public static readonly HrisDocumentType Benefits = new HrisDocumentType("BENEFITS");
+        public static readonly HrisDocumentType Certification = new HrisDocumentType("CERTIFICATION");
+        public static readonly HrisDocumentType PerformanceReview = new HrisDocumentType("PERFORMANCE_REVIEW");
+        public static readonly HrisDocumentType Onboarding = new HrisDocumentType("ONBOARDING");
+        public static readonly HrisDocumentType Termination = new HrisDocumentType("TERMINATION");
+        public static readonly HrisDocumentType Medical = new HrisDocumentType("MEDICAL");
+        public static readonly HrisDocumentType Other = new HrisDocumentType("OTHER");
 
-        public static HrisDocumentType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisDocumentType).GetFields())
+        private static readonly Dictionary <string, HrisDocumentType> _knownValues =
+            new Dictionary <string, HrisDocumentType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["CONTRACT"] = Contract,
+                ["OFFER_LETTER"] = OfferLetter,
+                ["POLICY"] = Policy,
+                ["TAX"] = Tax,
+                ["ID"] = Id,
+                ["VISA"] = Visa,
+                ["PAYSLIP"] = Payslip,
+                ["BENEFITS"] = Benefits,
+                ["CERTIFICATION"] = Certification,
+                ["PERFORMANCE_REVIEW"] = PerformanceReview,
+                ["ONBOARDING"] = Onboarding,
+                ["TERMINATION"] = Termination,
+                ["MEDICAL"] = Medical,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisDocumentType> _values =
+            new ConcurrentDictionary<string, HrisDocumentType>(_knownValues);
 
-                    if (enumVal is HrisDocumentType)
-                    {
-                        return (HrisDocumentType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisDocumentType");
+        private HrisDocumentType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisDocumentType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisDocumentType(value));
+        }
+
+        public static implicit operator HrisDocumentType(string value) => Of(value);
+        public static implicit operator string(HrisDocumentType hrisdocumenttype) => hrisdocumenttype.Value;
+
+        public static HrisDocumentType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisDocumentType);
+
+        public bool Equals(HrisDocumentType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

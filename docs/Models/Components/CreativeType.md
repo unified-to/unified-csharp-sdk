@@ -1,5 +1,16 @@
 # CreativeType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = CreativeType.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CreativeType.Of("custom_value");
+```
+
 
 ## Values
 

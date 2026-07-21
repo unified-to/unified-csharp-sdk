@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     public class EnrichPersonWorkHistory
     {
-
         [JsonProperty("company_domain")]
         public string? CompanyDomain { get; set; }
 

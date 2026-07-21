@@ -1,5 +1,13 @@
 # ListHrisBankaccountsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListHrisBankaccountsQueryParamFields.Id;
+```
+
 
 ## Values
 

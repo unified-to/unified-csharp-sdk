@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType
-    {
-        [JsonProperty("direct")]
-        Direct,
-        [JsonProperty("indirect")]
-        Indirect,
-    }
 
-    public static class PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType : IEquatable<PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType>
     {
-        public static string Value(this PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType Direct = new PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType("direct");
+        public static readonly PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType Indirect = new PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType("indirect");
 
-        public static PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType).GetFields())
+        private static readonly Dictionary <string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType> _knownValues =
+            new Dictionary <string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["direct"] = Direct,
+                ["indirect"] = Indirect
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType> _values =
+            new ConcurrentDictionary<string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType>(_knownValues);
 
-                    if (enumVal is PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType)
-                    {
-                        return (PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType");
+        private PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType(value));
+        }
+
+        public static implicit operator PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType(string value) => Of(value);
+        public static implicit operator string(PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType propertyscimuserurnietfparamsscimschemasextensionenterprise20usermanagertype) => propertyscimuserurnietfparamsscimschemasextensionenterprise20usermanagertype.Value;
+
+        public static PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType);
+
+        public bool Equals(PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

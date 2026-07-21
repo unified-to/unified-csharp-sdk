@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class SamlType
     {
         private SamlType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static SamlType MapOfAny { get { return new SamlType("mapOfAny"); } }
-        
+
         public static SamlType Str { get { return new SamlType("str"); } }
-        
+
         public static SamlType Number { get { return new SamlType("number"); } }
-        
+
         public static SamlType Boolean { get { return new SamlType("boolean"); } }
-        
+
         public static SamlType ArrayOfIntegrationSchemasSaml5 { get { return new SamlType("arrayOfIntegrationSchemasSaml5"); } }
-        
-        public static SamlType Null { get { return new SamlType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(SamlType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfIntegrationSchemasSaml5": return ArrayOfIntegrationSchemasSaml5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for SamlType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Saml.SamlConverter))]
-    public class Saml {
-        public Saml(SamlType type) {
+    public class Saml
+    {
+        public Saml(SamlType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<IntegrationSchemasSaml5>? ArrayOfIntegrationSchemasSaml5 { get; set; }
 
         public SamlType Type { get; set; }
-
-
-        public static Saml CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static Saml CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             SamlType typ = SamlType.MapOfAny;
 
             Saml res = new Saml(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static Saml CreateStr(string str) {
+        public static Saml CreateStr(string str)
+        {
             SamlType typ = SamlType.Str;
 
             Saml res = new Saml(typ);
             res.Str = str;
             return res;
         }
-
-        public static Saml CreateNumber(double number) {
+        public static Saml CreateNumber(double number)
+        {
             SamlType typ = SamlType.Number;
 
             Saml res = new Saml(typ);
             res.Number = number;
             return res;
         }
-
-        public static Saml CreateBoolean(bool boolean) {
+        public static Saml CreateBoolean(bool boolean)
+        {
             SamlType typ = SamlType.Boolean;
 
             Saml res = new Saml(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static Saml CreateArrayOfIntegrationSchemasSaml5(List<IntegrationSchemasSaml5> arrayOfIntegrationSchemasSaml5) {
+        public static Saml CreateArrayOfIntegrationSchemasSaml5(List<IntegrationSchemasSaml5> arrayOfIntegrationSchemasSaml5)
+        {
             SamlType typ = SamlType.ArrayOfIntegrationSchemasSaml5;
 
             Saml res = new Saml(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Saml CreateNull() {
-            SamlType typ = SamlType.Null;
-            return new Saml(typ);
-        }
-
         public class SamlConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(Saml);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                Saml res = (Saml)value;
-                if (SamlType.FromString(res.Type).Equals(SamlType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                Saml res = (Saml)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfIntegrationSchemasSaml5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegrationSchemasSaml5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

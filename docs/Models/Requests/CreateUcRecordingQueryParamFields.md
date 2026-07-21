@@ -1,5 +1,13 @@
 # CreateUcRecordingQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateUcRecordingQueryParamFields.Id;
+```
+
 
 ## Values
 

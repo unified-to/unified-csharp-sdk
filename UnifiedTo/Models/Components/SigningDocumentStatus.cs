@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SigningDocumentStatus
-    {
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("SENT")]
-        Sent,
-        [JsonProperty("DELIVERED")]
-        Delivered,
-        [JsonProperty("IN_PROGRESS")]
-        InProgress,
-        [JsonProperty("COMPLETED")]
-        Completed,
-        [JsonProperty("DECLINED")]
-        Declined,
-        [JsonProperty("VOIDED")]
-        Voided,
-        [JsonProperty("EXPIRED")]
-        Expired,
-    }
 
-    public static class SigningDocumentStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SigningDocumentStatus : IEquatable<SigningDocumentStatus>
     {
-        public static string Value(this SigningDocumentStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SigningDocumentStatus Draft = new SigningDocumentStatus("DRAFT");
+        public static readonly SigningDocumentStatus Sent = new SigningDocumentStatus("SENT");
+        public static readonly SigningDocumentStatus Delivered = new SigningDocumentStatus("DELIVERED");
+        public static readonly SigningDocumentStatus InProgress = new SigningDocumentStatus("IN_PROGRESS");
+        public static readonly SigningDocumentStatus Completed = new SigningDocumentStatus("COMPLETED");
+        public static readonly SigningDocumentStatus Declined = new SigningDocumentStatus("DECLINED");
+        public static readonly SigningDocumentStatus Voided = new SigningDocumentStatus("VOIDED");
+        public static readonly SigningDocumentStatus Expired = new SigningDocumentStatus("EXPIRED");
 
-        public static SigningDocumentStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(SigningDocumentStatus).GetFields())
+        private static readonly Dictionary <string, SigningDocumentStatus> _knownValues =
+            new Dictionary <string, SigningDocumentStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DRAFT"] = Draft,
+                ["SENT"] = Sent,
+                ["DELIVERED"] = Delivered,
+                ["IN_PROGRESS"] = InProgress,
+                ["COMPLETED"] = Completed,
+                ["DECLINED"] = Declined,
+                ["VOIDED"] = Voided,
+                ["EXPIRED"] = Expired
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SigningDocumentStatus> _values =
+            new ConcurrentDictionary<string, SigningDocumentStatus>(_knownValues);
 
-                    if (enumVal is SigningDocumentStatus)
-                    {
-                        return (SigningDocumentStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SigningDocumentStatus");
+        private SigningDocumentStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SigningDocumentStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SigningDocumentStatus(value));
+        }
+
+        public static implicit operator SigningDocumentStatus(string value) => Of(value);
+        public static implicit operator string(SigningDocumentStatus signingdocumentstatus) => signingdocumentstatus.Value;
+
+        public static SigningDocumentStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SigningDocumentStatus);
+
+        public bool Equals(SigningDocumentStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

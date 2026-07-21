@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CoverageLevel
-    {
-        [JsonProperty("EMPLOYEE_ONLY")]
-        EmployeeOnly,
-        [JsonProperty("EMPLOYEE_SPOUSE")]
-        EmployeeSpouse,
-        [JsonProperty("EMPLOYEE_CHILD")]
-        EmployeeChild,
-        [JsonProperty("EMPLOYEE_CHILDREN")]
-        EmployeeChildren,
-        [JsonProperty("EMPLOYEE_FAMILY")]
-        EmployeeFamily,
-        [JsonProperty("FAMILY")]
-        Family,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class CoverageLevelExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CoverageLevel : IEquatable<CoverageLevel>
     {
-        public static string Value(this CoverageLevel value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CoverageLevel EmployeeOnly = new CoverageLevel("EMPLOYEE_ONLY");
+        public static readonly CoverageLevel EmployeeSpouse = new CoverageLevel("EMPLOYEE_SPOUSE");
+        public static readonly CoverageLevel EmployeeChild = new CoverageLevel("EMPLOYEE_CHILD");
+        public static readonly CoverageLevel EmployeeChildren = new CoverageLevel("EMPLOYEE_CHILDREN");
+        public static readonly CoverageLevel EmployeeFamily = new CoverageLevel("EMPLOYEE_FAMILY");
+        public static readonly CoverageLevel Family = new CoverageLevel("FAMILY");
+        public static readonly CoverageLevel Other = new CoverageLevel("OTHER");
 
-        public static CoverageLevel ToEnum(this string value)
-        {
-            foreach(var field in typeof(CoverageLevel).GetFields())
+        private static readonly Dictionary <string, CoverageLevel> _knownValues =
+            new Dictionary <string, CoverageLevel> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["EMPLOYEE_ONLY"] = EmployeeOnly,
+                ["EMPLOYEE_SPOUSE"] = EmployeeSpouse,
+                ["EMPLOYEE_CHILD"] = EmployeeChild,
+                ["EMPLOYEE_CHILDREN"] = EmployeeChildren,
+                ["EMPLOYEE_FAMILY"] = EmployeeFamily,
+                ["FAMILY"] = Family,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CoverageLevel> _values =
+            new ConcurrentDictionary<string, CoverageLevel>(_knownValues);
 
-                    if (enumVal is CoverageLevel)
-                    {
-                        return (CoverageLevel)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CoverageLevel");
+        private CoverageLevel(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CoverageLevel Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CoverageLevel(value));
+        }
+
+        public static implicit operator CoverageLevel(string value) => Of(value);
+        public static implicit operator string(CoverageLevel coveragelevel) => coveragelevel.Value;
+
+        public static CoverageLevel[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CoverageLevel);
+
+        public bool Equals(CoverageLevel? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

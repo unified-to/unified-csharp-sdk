@@ -11,65 +11,82 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EffectiveStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("SERVING")]
-        Serving,
-        [JsonProperty("LIMITED")]
-        Limited,
-        [JsonProperty("LEARNING")]
-        Learning,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("ENDED")]
-        Ended,
-        [JsonProperty("MISCONFIGURED")]
-        Misconfigured,
-        [JsonProperty("NOT_ELIGIBLE")]
-        NotEligible,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("REMOVED")]
-        Removed,
-    }
 
-    public static class EffectiveStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EffectiveStatus : IEquatable<EffectiveStatus>
     {
-        public static string Value(this EffectiveStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EffectiveStatus Unspecified = new EffectiveStatus("UNSPECIFIED");
+        public static readonly EffectiveStatus Serving = new EffectiveStatus("SERVING");
+        public static readonly EffectiveStatus Limited = new EffectiveStatus("LIMITED");
+        public static readonly EffectiveStatus Learning = new EffectiveStatus("LEARNING");
+        public static readonly EffectiveStatus Paused = new EffectiveStatus("PAUSED");
+        public static readonly EffectiveStatus Pending = new EffectiveStatus("PENDING");
+        public static readonly EffectiveStatus Ended = new EffectiveStatus("ENDED");
+        public static readonly EffectiveStatus Misconfigured = new EffectiveStatus("MISCONFIGURED");
+        public static readonly EffectiveStatus NotEligible = new EffectiveStatus("NOT_ELIGIBLE");
+        public static readonly EffectiveStatus Archived = new EffectiveStatus("ARCHIVED");
+        public static readonly EffectiveStatus Removed = new EffectiveStatus("REMOVED");
 
-        public static EffectiveStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(EffectiveStatus).GetFields())
+        private static readonly Dictionary <string, EffectiveStatus> _knownValues =
+            new Dictionary <string, EffectiveStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["SERVING"] = Serving,
+                ["LIMITED"] = Limited,
+                ["LEARNING"] = Learning,
+                ["PAUSED"] = Paused,
+                ["PENDING"] = Pending,
+                ["ENDED"] = Ended,
+                ["MISCONFIGURED"] = Misconfigured,
+                ["NOT_ELIGIBLE"] = NotEligible,
+                ["ARCHIVED"] = Archived,
+                ["REMOVED"] = Removed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EffectiveStatus> _values =
+            new ConcurrentDictionary<string, EffectiveStatus>(_knownValues);
 
-                    if (enumVal is EffectiveStatus)
-                    {
-                        return (EffectiveStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EffectiveStatus");
+        private EffectiveStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EffectiveStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EffectiveStatus(value));
+        }
+
+        public static implicit operator EffectiveStatus(string value) => Of(value);
+        public static implicit operator string(EffectiveStatus effectivestatus) => effectivestatus.Value;
+
+        public static EffectiveStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EffectiveStatus);
+
+        public bool Equals(EffectiveStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

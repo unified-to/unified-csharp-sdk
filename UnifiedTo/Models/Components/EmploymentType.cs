@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EmploymentType
-    {
-        [JsonProperty("FULL_TIME")]
-        FullTime,
-        [JsonProperty("PART_TIME")]
-        PartTime,
-        [JsonProperty("CONTRACTOR")]
-        Contractor,
-        [JsonProperty("INTERN")]
-        Intern,
-        [JsonProperty("CONSULTANT")]
-        Consultant,
-        [JsonProperty("VOLUNTEER")]
-        Volunteer,
-        [JsonProperty("CASUAL")]
-        Casual,
-        [JsonProperty("SEASONAL")]
-        Seasonal,
-        [JsonProperty("FREELANCE")]
-        Freelance,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class EmploymentTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EmploymentType : IEquatable<EmploymentType>
     {
-        public static string Value(this EmploymentType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EmploymentType FullTime = new EmploymentType("FULL_TIME");
+        public static readonly EmploymentType PartTime = new EmploymentType("PART_TIME");
+        public static readonly EmploymentType Contractor = new EmploymentType("CONTRACTOR");
+        public static readonly EmploymentType Intern = new EmploymentType("INTERN");
+        public static readonly EmploymentType Consultant = new EmploymentType("CONSULTANT");
+        public static readonly EmploymentType Volunteer = new EmploymentType("VOLUNTEER");
+        public static readonly EmploymentType Casual = new EmploymentType("CASUAL");
+        public static readonly EmploymentType Seasonal = new EmploymentType("SEASONAL");
+        public static readonly EmploymentType Freelance = new EmploymentType("FREELANCE");
+        public static readonly EmploymentType Other = new EmploymentType("OTHER");
 
-        public static EmploymentType ToEnum(this string value)
-        {
-            foreach(var field in typeof(EmploymentType).GetFields())
+        private static readonly Dictionary <string, EmploymentType> _knownValues =
+            new Dictionary <string, EmploymentType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FULL_TIME"] = FullTime,
+                ["PART_TIME"] = PartTime,
+                ["CONTRACTOR"] = Contractor,
+                ["INTERN"] = Intern,
+                ["CONSULTANT"] = Consultant,
+                ["VOLUNTEER"] = Volunteer,
+                ["CASUAL"] = Casual,
+                ["SEASONAL"] = Seasonal,
+                ["FREELANCE"] = Freelance,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EmploymentType> _values =
+            new ConcurrentDictionary<string, EmploymentType>(_knownValues);
 
-                    if (enumVal is EmploymentType)
-                    {
-                        return (EmploymentType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EmploymentType");
+        private EmploymentType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EmploymentType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EmploymentType(value));
+        }
+
+        public static implicit operator EmploymentType(string value) => Of(value);
+        public static implicit operator string(EmploymentType employmenttype) => employmenttype.Value;
+
+        public static EmploymentType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EmploymentType);
+
+        public bool Equals(EmploymentType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

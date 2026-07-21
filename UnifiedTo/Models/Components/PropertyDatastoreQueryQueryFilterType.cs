@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyDatastoreQueryQueryFilterType
-    {
-        [JsonProperty("FILTER")]
-        Filter,
-        [JsonProperty("AND")]
-        And,
-        [JsonProperty("OR")]
-        Or,
-    }
 
-    public static class PropertyDatastoreQueryQueryFilterTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyDatastoreQueryQueryFilterType : IEquatable<PropertyDatastoreQueryQueryFilterType>
     {
-        public static string Value(this PropertyDatastoreQueryQueryFilterType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyDatastoreQueryQueryFilterType Filter = new PropertyDatastoreQueryQueryFilterType("FILTER");
+        public static readonly PropertyDatastoreQueryQueryFilterType And = new PropertyDatastoreQueryQueryFilterType("AND");
+        public static readonly PropertyDatastoreQueryQueryFilterType Or = new PropertyDatastoreQueryQueryFilterType("OR");
 
-        public static PropertyDatastoreQueryQueryFilterType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyDatastoreQueryQueryFilterType).GetFields())
+        private static readonly Dictionary <string, PropertyDatastoreQueryQueryFilterType> _knownValues =
+            new Dictionary <string, PropertyDatastoreQueryQueryFilterType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FILTER"] = Filter,
+                ["AND"] = And,
+                ["OR"] = Or
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyDatastoreQueryQueryFilterType> _values =
+            new ConcurrentDictionary<string, PropertyDatastoreQueryQueryFilterType>(_knownValues);
 
-                    if (enumVal is PropertyDatastoreQueryQueryFilterType)
-                    {
-                        return (PropertyDatastoreQueryQueryFilterType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyDatastoreQueryQueryFilterType");
+        private PropertyDatastoreQueryQueryFilterType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyDatastoreQueryQueryFilterType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyDatastoreQueryQueryFilterType(value));
+        }
+
+        public static implicit operator PropertyDatastoreQueryQueryFilterType(string value) => Of(value);
+        public static implicit operator string(PropertyDatastoreQueryQueryFilterType propertydatastorequeryqueryfiltertype) => propertydatastorequeryqueryfiltertype.Value;
+
+        public static PropertyDatastoreQueryQueryFilterType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyDatastoreQueryQueryFilterType);
+
+        public bool Equals(PropertyDatastoreQueryQueryFilterType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

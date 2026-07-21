@@ -14,10 +14,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class MarketingReport
     {
-
         [JsonProperty("abuse_reports")]
         public double? AbuseReports { get; set; }
 
@@ -64,7 +63,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? LastOpenAt { get; set; }
 
         /// <summary>
-        /// URL-specific click data
+        /// URL-specific click data.
         /// </summary>
         [JsonProperty("links")]
         public List<MarketingReportLink>? Links { get; set; }

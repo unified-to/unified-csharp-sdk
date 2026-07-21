@@ -1,5 +1,4 @@
 # Course
-(*Course*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getLmsCourse" method="get" path="/lms/{connection_id}/course/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all courses
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listLmsCourses" method="get" path="/lms/{connection_id}/course" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeLmsCourse" method="delete" path="/lms/{connection_id}/course/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a course
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -1,5 +1,4 @@
 # Activity
-(*Activity*)
 
 ## Overview
 
@@ -26,6 +25,7 @@ Create an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsActivity" method="post" path="/ats/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -67,6 +67,7 @@ Create an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -108,6 +109,7 @@ Retrieve an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsActivity" method="get" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -149,6 +151,7 @@ Retrieve an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsActivity" method="get" path="/clubs/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -190,6 +193,7 @@ Retrieve an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getLmsActivity" method="get" path="/lms/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -231,6 +235,7 @@ List all activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsActivities" method="get" path="/ats/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -271,6 +276,7 @@ List all activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsActivities" method="get" path="/clubs/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -311,6 +317,7 @@ List all activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listLmsActivities" method="get" path="/lms/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -351,6 +358,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsActivity" method="patch" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -393,6 +401,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -435,6 +444,7 @@ Remove an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsActivity" method="delete" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -474,6 +484,7 @@ Remove an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeLmsActivity" method="delete" path="/lms/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -513,6 +524,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsActivity" method="put" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -555,6 +567,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

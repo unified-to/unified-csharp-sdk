@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyScimUserSchemas
-    {
-        [JsonProperty("urn:ietf:params:scim:schemas:core:2.0:User")]
-        UrnIetfParamsScimSchemasCore20User,
-        [JsonProperty("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User")]
-        UrnIetfParamsScimSchemasExtensionEnterprise20User,
-        [JsonProperty("urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User")]
-        UrnIetfParamsScimSchemasExtensionLatticeAttributes10User,
-        [JsonProperty("urn:ietf:params:scim:schemas:extension:peakon:2.0:User")]
-        UrnIetfParamsScimSchemasExtensionPeakon20User,
-    }
 
-    public static class PropertyScimUserSchemasExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyScimUserSchemas : IEquatable<PropertyScimUserSchemas>
     {
-        public static string Value(this PropertyScimUserSchemas value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyScimUserSchemas UrnIetfParamsScimSchemasCore20User = new PropertyScimUserSchemas("urn:ietf:params:scim:schemas:core:2.0:User");
+        public static readonly PropertyScimUserSchemas UrnIetfParamsScimSchemasExtensionEnterprise20User = new PropertyScimUserSchemas("urn:ietf:params:scim:schemas:extension:enterprise:2.0:User");
+        public static readonly PropertyScimUserSchemas UrnIetfParamsScimSchemasExtensionLatticeAttributes10User = new PropertyScimUserSchemas("urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User");
+        public static readonly PropertyScimUserSchemas UrnIetfParamsScimSchemasExtensionPeakon20User = new PropertyScimUserSchemas("urn:ietf:params:scim:schemas:extension:peakon:2.0:User");
 
-        public static PropertyScimUserSchemas ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyScimUserSchemas).GetFields())
+        private static readonly Dictionary <string, PropertyScimUserSchemas> _knownValues =
+            new Dictionary <string, PropertyScimUserSchemas> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["urn:ietf:params:scim:schemas:core:2.0:User"] = UrnIetfParamsScimSchemasCore20User,
+                ["urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"] = UrnIetfParamsScimSchemasExtensionEnterprise20User,
+                ["urn:ietf:params:scim:schemas:extension:lattice:attributes:1.0:User"] = UrnIetfParamsScimSchemasExtensionLatticeAttributes10User,
+                ["urn:ietf:params:scim:schemas:extension:peakon:2.0:User"] = UrnIetfParamsScimSchemasExtensionPeakon20User
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyScimUserSchemas> _values =
+            new ConcurrentDictionary<string, PropertyScimUserSchemas>(_knownValues);
 
-                    if (enumVal is PropertyScimUserSchemas)
-                    {
-                        return (PropertyScimUserSchemas)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyScimUserSchemas");
+        private PropertyScimUserSchemas(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyScimUserSchemas Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyScimUserSchemas(value));
+        }
+
+        public static implicit operator PropertyScimUserSchemas(string value) => Of(value);
+        public static implicit operator string(PropertyScimUserSchemas propertyscimuserschemas) => propertyscimuserschemas.Value;
+
+        public static PropertyScimUserSchemas[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyScimUserSchemas);
+
+        public bool Equals(PropertyScimUserSchemas? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

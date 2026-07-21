@@ -1,5 +1,4 @@
 # Database
-(*Database*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createDatastoreDatabase" method="post" path="/datastore/{connection_id}/database" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getDatastoreDatabase" method="get" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all databases
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listDatastoreDatabases" method="get" path="/datastore/{connection_id}/database" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchDatastoreDatabase" method="patch" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeDatastoreDatabase" method="delete" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateDatastoreDatabase" method="put" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

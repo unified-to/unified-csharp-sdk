@@ -1,5 +1,4 @@
 # Purchaseorder
-(*Purchaseorder*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingPurchaseorder" method="get" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all purchaseorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingPurchaseorders" method="get" path="/accounting/{connection_id}/purchaseorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingPurchaseorder" method="delete" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

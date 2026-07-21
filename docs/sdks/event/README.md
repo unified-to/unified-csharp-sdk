@@ -1,5 +1,4 @@
 # Event
-(*Event*)
 
 ## Overview
 
@@ -31,6 +30,7 @@ Create an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsEvent" method="post" path="/analytics/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -72,6 +72,7 @@ Create an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCalendarEvent" method="post" path="/calendar/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -113,6 +114,7 @@ Create an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmEvent" method="post" path="/crm/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -154,6 +156,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAnalyticsEvent" method="get" path="/analytics/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -195,6 +198,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCalendarEvent" method="get" path="/calendar/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -236,6 +240,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsEvent" method="get" path="/clubs/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -277,6 +282,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmEvent" method="get" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -318,6 +324,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsEvents" method="get" path="/analytics/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -358,6 +365,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCalendarEvents" method="get" path="/calendar/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -398,6 +406,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsEvents" method="get" path="/clubs/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -438,6 +447,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmEvents" method="get" path="/crm/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -478,6 +488,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCalendarEvent" method="patch" path="/calendar/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -520,6 +531,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmEvent" method="patch" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -562,6 +574,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMessagingEvent" method="patch" path="/messaging/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -604,6 +617,7 @@ Remove an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCalendarEvent" method="delete" path="/calendar/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -643,6 +657,7 @@ Remove an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmEvent" method="delete" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -682,6 +697,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCalendarEvent" method="put" path="/calendar/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -724,6 +740,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmEvent" method="put" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -766,6 +783,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMessagingEvent" method="put" path="/messaging/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

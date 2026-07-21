@@ -1,5 +1,13 @@
 # ListAccountingOrganizationsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAccountingOrganizationsQueryParamFields.Id;
+```
+
 
 ## Values
 

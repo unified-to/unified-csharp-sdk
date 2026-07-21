@@ -1,5 +1,13 @@
 # PatchRepoOrganizationQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchRepoOrganizationQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CrmEmailType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class CrmEmailTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CrmEmailType : IEquatable<CrmEmailType>
     {
-        public static string Value(this CrmEmailType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CrmEmailType Work = new CrmEmailType("WORK");
+        public static readonly CrmEmailType Home = new CrmEmailType("HOME");
+        public static readonly CrmEmailType Other = new CrmEmailType("OTHER");
 
-        public static CrmEmailType ToEnum(this string value)
-        {
-            foreach(var field in typeof(CrmEmailType).GetFields())
+        private static readonly Dictionary <string, CrmEmailType> _knownValues =
+            new Dictionary <string, CrmEmailType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CrmEmailType> _values =
+            new ConcurrentDictionary<string, CrmEmailType>(_knownValues);
 
-                    if (enumVal is CrmEmailType)
-                    {
-                        return (CrmEmailType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CrmEmailType");
+        private CrmEmailType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CrmEmailType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CrmEmailType(value));
+        }
+
+        public static implicit operator CrmEmailType(string value) => Of(value);
+        public static implicit operator string(CrmEmailType crmemailtype) => crmemailtype.Value;
+
+        public static CrmEmailType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CrmEmailType);
+
+        public bool Equals(CrmEmailType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

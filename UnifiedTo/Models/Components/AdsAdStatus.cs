@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsAdStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("SCHEDULED_FOR_DELETION")]
-        ScheduledForDeletion,
-        [JsonProperty("PROCESSING")]
-        Processing,
-        [JsonProperty("PROCESSING_FAILED")]
-        ProcessingFailed,
-    }
 
-    public static class AdsAdStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsAdStatus : IEquatable<AdsAdStatus>
     {
-        public static string Value(this AdsAdStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsAdStatus Unspecified = new AdsAdStatus("UNSPECIFIED");
+        public static readonly AdsAdStatus Active = new AdsAdStatus("ACTIVE");
+        public static readonly AdsAdStatus Paused = new AdsAdStatus("PAUSED");
+        public static readonly AdsAdStatus Archived = new AdsAdStatus("ARCHIVED");
+        public static readonly AdsAdStatus Draft = new AdsAdStatus("DRAFT");
+        public static readonly AdsAdStatus ScheduledForDeletion = new AdsAdStatus("SCHEDULED_FOR_DELETION");
+        public static readonly AdsAdStatus Processing = new AdsAdStatus("PROCESSING");
+        public static readonly AdsAdStatus ProcessingFailed = new AdsAdStatus("PROCESSING_FAILED");
 
-        public static AdsAdStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsAdStatus).GetFields())
+        private static readonly Dictionary <string, AdsAdStatus> _knownValues =
+            new Dictionary <string, AdsAdStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["ACTIVE"] = Active,
+                ["PAUSED"] = Paused,
+                ["ARCHIVED"] = Archived,
+                ["DRAFT"] = Draft,
+                ["SCHEDULED_FOR_DELETION"] = ScheduledForDeletion,
+                ["PROCESSING"] = Processing,
+                ["PROCESSING_FAILED"] = ProcessingFailed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsAdStatus> _values =
+            new ConcurrentDictionary<string, AdsAdStatus>(_knownValues);
 
-                    if (enumVal is AdsAdStatus)
-                    {
-                        return (AdsAdStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsAdStatus");
+        private AdsAdStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsAdStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsAdStatus(value));
+        }
+
+        public static implicit operator AdsAdStatus(string value) => Of(value);
+        public static implicit operator string(AdsAdStatus adsadstatus) => adsadstatus.Value;
+
+        public static AdsAdStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsAdStatus);
+
+        public bool Equals(AdsAdStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

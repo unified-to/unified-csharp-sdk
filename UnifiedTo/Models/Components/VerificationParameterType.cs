@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VerificationParameterType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("MULTIPLE_CHOICE")]
-        MultipleChoice,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("FILE")]
-        File,
-    }
 
-    public static class VerificationParameterTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VerificationParameterType : IEquatable<VerificationParameterType>
     {
-        public static string Value(this VerificationParameterType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VerificationParameterType Text = new VerificationParameterType("TEXT");
+        public static readonly VerificationParameterType Number = new VerificationParameterType("NUMBER");
+        public static readonly VerificationParameterType MultipleChoice = new VerificationParameterType("MULTIPLE_CHOICE");
+        public static readonly VerificationParameterType MultipleSelect = new VerificationParameterType("MULTIPLE_SELECT");
+        public static readonly VerificationParameterType Date = new VerificationParameterType("DATE");
+        public static readonly VerificationParameterType File = new VerificationParameterType("FILE");
 
-        public static VerificationParameterType ToEnum(this string value)
-        {
-            foreach(var field in typeof(VerificationParameterType).GetFields())
+        private static readonly Dictionary <string, VerificationParameterType> _knownValues =
+            new Dictionary <string, VerificationParameterType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["MULTIPLE_CHOICE"] = MultipleChoice,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["DATE"] = Date,
+                ["FILE"] = File
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VerificationParameterType> _values =
+            new ConcurrentDictionary<string, VerificationParameterType>(_knownValues);
 
-                    if (enumVal is VerificationParameterType)
-                    {
-                        return (VerificationParameterType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VerificationParameterType");
+        private VerificationParameterType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VerificationParameterType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VerificationParameterType(value));
+        }
+
+        public static implicit operator VerificationParameterType(string value) => Of(value);
+        public static implicit operator string(VerificationParameterType verificationparametertype) => verificationparametertype.Value;
+
+        public static VerificationParameterType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VerificationParameterType);
+
+        public bool Equals(VerificationParameterType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

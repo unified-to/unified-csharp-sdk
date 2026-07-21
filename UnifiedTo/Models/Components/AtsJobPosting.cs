@@ -13,12 +13,11 @@ namespace UnifiedTo.Models.Components
     using System;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AtsJobPosting
     {
-
         /// <summary>
-        /// job-post-specific address
+        /// job-post-specific address.
         /// </summary>
         [JsonProperty("address")]
         public PropertyAtsJobPostingAddress? Address { get; set; }

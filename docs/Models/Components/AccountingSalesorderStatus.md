@@ -1,5 +1,16 @@
 # AccountingSalesorderStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AccountingSalesorderStatus.Draft;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AccountingSalesorderStatus.Of("custom_value");
+```
+
 
 ## Values
 

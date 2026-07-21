@@ -17,6 +17,9 @@ namespace UnifiedTo
     using UnifiedTo.Utils;
     using UnifiedTo.Utils.Retries;
 
+    /// <summary>
+    /// Main configuration for the SDK.
+    /// </summary>
     public struct SDKConfig
     {
         /// <summary>
@@ -44,7 +47,7 @@ namespace UnifiedTo
             Client = client ?? new SpeakeasyHttpClient();
             ServerUrl = "";
             ServerIndex = 0;
-            UserAgent = "speakeasy-sdk/csharp 0.130.91 2.632.2 1.0 UnifiedTo";
+            UserAgent = "speakeasy-sdk/csharp 0.131.0 2.918.4 1.0 UnifiedTo";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;

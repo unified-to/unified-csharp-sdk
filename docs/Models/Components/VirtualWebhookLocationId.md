@@ -1,5 +1,16 @@
 # VirtualWebhookLocationId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookLocationId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookLocationId.Of("custom_value");
+```
+
 
 ## Values
 

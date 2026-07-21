@@ -1,5 +1,4 @@
 # Location
-(*Location*)
 
 ## Overview
 
@@ -26,6 +25,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -67,6 +67,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -108,6 +109,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsLocation" method="get" path="/clubs/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -149,6 +151,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceLocation" method="get" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -190,6 +193,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisLocation" method="get" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -231,6 +235,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsLocations" method="get" path="/clubs/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -271,6 +276,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceLocations" method="get" path="/commerce/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -311,6 +317,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisLocations" method="get" path="/hris/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -351,6 +358,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -393,6 +401,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -435,6 +444,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceLocation" method="delete" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -474,6 +484,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisLocation" method="delete" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -513,6 +524,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -555,6 +567,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

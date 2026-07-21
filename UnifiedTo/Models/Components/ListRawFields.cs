@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListRawFields
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListRawFieldsExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListRawFields : IEquatable<ListRawFields>
     {
-        public static string Value(this ListRawFields value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListRawFields SupportedRequired = new ListRawFields("supported-required");
+        public static readonly ListRawFields Supported = new ListRawFields("supported");
+        public static readonly ListRawFields NotSupported = new ListRawFields("not-supported");
 
-        public static ListRawFields ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListRawFields).GetFields())
+        private static readonly Dictionary <string, ListRawFields> _knownValues =
+            new Dictionary <string, ListRawFields> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListRawFields> _values =
+            new ConcurrentDictionary<string, ListRawFields>(_knownValues);
 
-                    if (enumVal is ListRawFields)
-                    {
-                        return (ListRawFields)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListRawFields");
+        private ListRawFields(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListRawFields Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListRawFields(value));
+        }
+
+        public static implicit operator ListRawFields(string value) => Of(value);
+        public static implicit operator string(ListRawFields listrawfields) => listrawfields.Value;
+
+        public static ListRawFields[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListRawFields);
+
+        public bool Equals(ListRawFields? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

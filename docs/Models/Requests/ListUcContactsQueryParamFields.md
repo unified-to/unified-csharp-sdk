@@ -1,5 +1,13 @@
 # ListUcContactsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListUcContactsQueryParamFields.Id;
+```
+
 
 ## Values
 

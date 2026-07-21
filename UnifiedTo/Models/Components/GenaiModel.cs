@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class GenaiModel
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

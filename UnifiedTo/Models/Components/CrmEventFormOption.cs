@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class CrmEventFormOption
     {
-
         [JsonProperty("label")]
         public string? Label { get; set; }
 

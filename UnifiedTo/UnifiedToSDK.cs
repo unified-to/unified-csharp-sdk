@@ -19,335 +19,940 @@ namespace UnifiedTo
     using UnifiedTo.Models.Errors;
     using UnifiedTo.Utils;
     using UnifiedTo.Utils.Retries;
-
     /// <summary>
-    /// Unified.to  API: One API to Rule Them All
-    /// 
-    /// <see>https://docs.unified.to} - API Documentation</see>
+    /// Unified.to  API: One API to Rule Them All<br/>
+    /// <see href="https://docs.unified.to">API Documentation</see>
     /// </summary>
     public interface IUnifiedToSDK
     {
         public IAccounting Accounting { get; }
+
         public IAccount Account { get; }
+
         public IBalancesheet Balancesheet { get; }
+
         public IBill Bill { get; }
+
         public ICashflow Cashflow { get; }
+
         public ICategory Category { get; }
+
         public IContact Contact { get; }
+
         public ICreditmemo Creditmemo { get; }
+
         public IExpense Expense { get; }
+
         public IInvoice Invoice { get; }
+
         public IJournal Journal { get; }
+
         public IOrder Order { get; }
+
         public IOrganization Organization { get; }
+
         public IProfitloss Profitloss { get; }
+
         public IPurchaseorder Purchaseorder { get; }
+
         public IReport Report { get; }
+
         public ISalesorder Salesorder { get; }
+
         public ITaxrate Taxrate { get; }
+
         public ITransaction Transaction { get; }
+
         public ITrialbalance Trialbalance { get; }
+
         public IVendorcredit Vendorcredit { get; }
+
         public IAds Ads { get; }
+
         public IAd Ad { get; }
+
         public ICampaign Campaign { get; }
+
         public ICreative Creative { get; }
+
         public IGroup Group { get; }
+
         public IInsertionorder Insertionorder { get; }
+
         public IPromoted Promoted { get; }
+
         public ITarget Target { get; }
+
         public IAnalytics Analytics { get; }
+
         public IEvent Event { get; }
+
         public IProperty Property { get; }
+
         public ISession Session { get; }
+
         public IVisitor Visitor { get; }
+
         public IAssessment Assessment { get; }
+
         public IPackage Package { get; }
+
         public IAts Ats { get; }
+
         public IActivity Activity { get; }
+
         public IApplication Application { get; }
+
         public IApplicationstatus Applicationstatus { get; }
+
         public ICandidate Candidate { get; }
+
         public ICompany Company { get; }
+
         public IDocument Document { get; }
+
         public IInterview Interview { get; }
+
         public IJob Job { get; }
+
         public IScorecard Scorecard { get; }
+
         public ICalendar Calendar { get; }
+
         public IBusy Busy { get; }
+
         public ILink Link { get; }
+
         public IRecording Recording { get; }
+
         public IWebinar Webinar { get; }
+
         public IClubs Clubs { get; }
+
         public ILocation Location { get; }
+
         public IMember Member { get; }
+
         public ICommerce Commerce { get; }
+
         public IAvailability Availability { get; }
+
         public ICollection Collection { get; }
+
         public IInventory Inventory { get; }
+
         public IItem Item { get; }
+
         public IItemvariant Itemvariant { get; }
+
         public IReservation Reservation { get; }
+
         public IReview Review { get; }
+
         public ISaleschannel Saleschannel { get; }
+
         public ICrm Crm { get; }
+
         public IDeal Deal { get; }
+
         public ILead Lead { get; }
+
         public IPicklist Picklist { get; }
+
         public IPipeline Pipeline { get; }
+
         public IDatastore Datastore { get; }
+
         public IDatabase Database { get; }
+
         public IQuery Query { get; }
+
         public IRecord Record { get; }
+
         public ITable Table { get; }
+
         public IEnrich Enrich { get; }
+
         public IPerson Person { get; }
+
         public IForms Forms { get; }
+
         public IForm Form { get; }
+
         public ISubmission Submission { get; }
+
         public IGenai Genai { get; }
+
         public IEmbedding Embedding { get; }
+
         public IModel Model { get; }
+
         public IPrompt Prompt { get; }
+
         public IHris Hris { get; }
+
         public IBankaccount Bankaccount { get; }
+
         public IBenefit Benefit { get; }
+
         public IDeduction Deduction { get; }
+
         public IDevice Device { get; }
+
         public IEmployee Employee { get; }
+
         public IPayslip Payslip { get; }
+
         public ITaxonomy Taxonomy { get; }
+
         public ITimeoff Timeoff { get; }
+
         public ITimeshift Timeshift { get; }
+
         public IKms Kms { get; }
+
         public IComment Comment { get; }
+
         public IPage Page { get; }
+
         public ISpace Space { get; }
+
         public ILms Lms { get; }
+
         public IClass Class { get; }
+
         public IContent Content { get; }
+
         public ICourse Course { get; }
+
         public IInstructor Instructor { get; }
+
         public IStudent Student { get; }
+
         public IMartech Martech { get; }
+
         public IList List { get; }
+
         public IMessaging Messaging { get; }
+
         public IChannel Channel { get; }
+
         public IMessage Message { get; }
+
         public IMetadata Metadata { get; }
+
         public IPassthrough Passthrough { get; }
+
         public IPayment Payment { get; }
+
         public IPayout Payout { get; }
+
         public IRefund Refund { get; }
+
         public ISubscription Subscription { get; }
+
         public IRepo Repo { get; }
+
         public IBranch Branch { get; }
+
         public ICommit Commit { get; }
+
         public IPullrequest Pullrequest { get; }
+
         public IRepository Repository { get; }
+
         public IScim Scim { get; }
+
         public IUser User { get; }
+
         public IShipping Shipping { get; }
+
         public ICarrier Carrier { get; }
+
         public ILabel Label { get; }
+
         public IRate Rate { get; }
+
         public IShipment Shipment { get; }
+
         public ITracking Tracking { get; }
+
         public ISigning Signing { get; }
+
         public ISignatory Signatory { get; }
+
         public ITemplate Template { get; }
+
         public IStorage Storage { get; }
+
         public IFile File { get; }
+
         public ITask Task { get; }
+
         public IChange Change { get; }
+
         public IProject Project { get; }
+
         public ITicketing Ticketing { get; }
+
         public ICustomer Customer { get; }
+
         public INote Note { get; }
+
         public ITicket Ticket { get; }
+
         public IUc Uc { get; }
+
         public ICall Call { get; }
+
         public IUnified Unified { get; }
+
         public IApicall Apicall { get; }
+
         public IConnection Connection { get; }
+
         public IEnvironment Environment { get; }
+
         public IIntegration Integration { get; }
+
         public IAuth Auth { get; }
+
         public ILogin Login { get; }
+
         public IIssue Issue { get; }
+
         public IWebhook Webhook { get; }
+
         public ISecretsmanager Secretsmanager { get; }
+
         public IVerification Verification { get; }
+
         public IRequest Request { get; }
     }
 
-
     /// <summary>
-    /// Unified.to  API: One API to Rule Them All
-    /// 
-    /// <see>https://docs.unified.to} - API Documentation</see>
+    /// Unified.to  API: One API to Rule Them All<br/>
+    /// <see href="https://docs.unified.to">API Documentation</see>
     /// </summary>
     public class UnifiedToSDK: IUnifiedToSDK
     {
+        /// <summary>
+        /// The main SDK Configuration.
+        /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
-
-        private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.91";
-        private const string _sdkGenVersion = "2.632.2";
-        private const string _openapiDocVersion = "1.0";
+        /// <summary>
+        /// The Accounting sub-SDK.
+        /// </summary>
         public IAccounting Accounting { get; private set; }
+        /// <summary>
+        /// The Account sub-SDK.
+        /// </summary>
         public IAccount Account { get; private set; }
+        /// <summary>
+        /// The Balancesheet sub-SDK.
+        /// </summary>
         public IBalancesheet Balancesheet { get; private set; }
+        /// <summary>
+        /// The Bill sub-SDK.
+        /// </summary>
         public IBill Bill { get; private set; }
+        /// <summary>
+        /// The Cashflow sub-SDK.
+        /// </summary>
         public ICashflow Cashflow { get; private set; }
+        /// <summary>
+        /// The Category sub-SDK.
+        /// </summary>
         public ICategory Category { get; private set; }
+        /// <summary>
+        /// The Contact sub-SDK.
+        /// </summary>
         public IContact Contact { get; private set; }
+        /// <summary>
+        /// The Creditmemo sub-SDK.
+        /// </summary>
         public ICreditmemo Creditmemo { get; private set; }
+        /// <summary>
+        /// The Expense sub-SDK.
+        /// </summary>
         public IExpense Expense { get; private set; }
+        /// <summary>
+        /// The Invoice sub-SDK.
+        /// </summary>
         public IInvoice Invoice { get; private set; }
+        /// <summary>
+        /// The Journal sub-SDK.
+        /// </summary>
         public IJournal Journal { get; private set; }
+        /// <summary>
+        /// The Order sub-SDK.
+        /// </summary>
         public IOrder Order { get; private set; }
+        /// <summary>
+        /// The Organization sub-SDK.
+        /// </summary>
         public IOrganization Organization { get; private set; }
+        /// <summary>
+        /// The Profitloss sub-SDK.
+        /// </summary>
         public IProfitloss Profitloss { get; private set; }
+        /// <summary>
+        /// The Purchaseorder sub-SDK.
+        /// </summary>
         public IPurchaseorder Purchaseorder { get; private set; }
+        /// <summary>
+        /// The Report sub-SDK.
+        /// </summary>
         public IReport Report { get; private set; }
+        /// <summary>
+        /// The Salesorder sub-SDK.
+        /// </summary>
         public ISalesorder Salesorder { get; private set; }
+        /// <summary>
+        /// The Taxrate sub-SDK.
+        /// </summary>
         public ITaxrate Taxrate { get; private set; }
+        /// <summary>
+        /// The Transaction sub-SDK.
+        /// </summary>
         public ITransaction Transaction { get; private set; }
+        /// <summary>
+        /// The Trialbalance sub-SDK.
+        /// </summary>
         public ITrialbalance Trialbalance { get; private set; }
+        /// <summary>
+        /// The Vendorcredit sub-SDK.
+        /// </summary>
         public IVendorcredit Vendorcredit { get; private set; }
+        /// <summary>
+        /// The Ads sub-SDK.
+        /// </summary>
         public IAds Ads { get; private set; }
+        /// <summary>
+        /// The Ad sub-SDK.
+        /// </summary>
         public IAd Ad { get; private set; }
+        /// <summary>
+        /// The Campaign sub-SDK.
+        /// </summary>
         public ICampaign Campaign { get; private set; }
+        /// <summary>
+        /// The Creative sub-SDK.
+        /// </summary>
         public ICreative Creative { get; private set; }
+        /// <summary>
+        /// The Group sub-SDK.
+        /// </summary>
         public IGroup Group { get; private set; }
+        /// <summary>
+        /// The Insertionorder sub-SDK.
+        /// </summary>
         public IInsertionorder Insertionorder { get; private set; }
+        /// <summary>
+        /// The Promoted sub-SDK.
+        /// </summary>
         public IPromoted Promoted { get; private set; }
+        /// <summary>
+        /// The Target sub-SDK.
+        /// </summary>
         public ITarget Target { get; private set; }
+        /// <summary>
+        /// The Analytics sub-SDK.
+        /// </summary>
         public IAnalytics Analytics { get; private set; }
+        /// <summary>
+        /// The Event sub-SDK.
+        /// </summary>
         public IEvent Event { get; private set; }
+        /// <summary>
+        /// The Property sub-SDK.
+        /// </summary>
         public IProperty Property { get; private set; }
+        /// <summary>
+        /// The Session sub-SDK.
+        /// </summary>
         public ISession Session { get; private set; }
+        /// <summary>
+        /// The Visitor sub-SDK.
+        /// </summary>
         public IVisitor Visitor { get; private set; }
+        /// <summary>
+        /// The Assessment sub-SDK.
+        /// </summary>
         public IAssessment Assessment { get; private set; }
+        /// <summary>
+        /// The Package sub-SDK.
+        /// </summary>
         public IPackage Package { get; private set; }
+        /// <summary>
+        /// The Ats sub-SDK.
+        /// </summary>
         public IAts Ats { get; private set; }
+        /// <summary>
+        /// The Activity sub-SDK.
+        /// </summary>
         public IActivity Activity { get; private set; }
+        /// <summary>
+        /// The Application sub-SDK.
+        /// </summary>
         public IApplication Application { get; private set; }
+        /// <summary>
+        /// The Applicationstatus sub-SDK.
+        /// </summary>
         public IApplicationstatus Applicationstatus { get; private set; }
+        /// <summary>
+        /// The Candidate sub-SDK.
+        /// </summary>
         public ICandidate Candidate { get; private set; }
+        /// <summary>
+        /// The Company sub-SDK.
+        /// </summary>
         public ICompany Company { get; private set; }
+        /// <summary>
+        /// The Document sub-SDK.
+        /// </summary>
         public IDocument Document { get; private set; }
+        /// <summary>
+        /// The Interview sub-SDK.
+        /// </summary>
         public IInterview Interview { get; private set; }
+        /// <summary>
+        /// The Job sub-SDK.
+        /// </summary>
         public IJob Job { get; private set; }
+        /// <summary>
+        /// The Scorecard sub-SDK.
+        /// </summary>
         public IScorecard Scorecard { get; private set; }
+        /// <summary>
+        /// The Calendar sub-SDK.
+        /// </summary>
         public ICalendar Calendar { get; private set; }
+        /// <summary>
+        /// The Busy sub-SDK.
+        /// </summary>
         public IBusy Busy { get; private set; }
+        /// <summary>
+        /// The Link sub-SDK.
+        /// </summary>
         public ILink Link { get; private set; }
+        /// <summary>
+        /// The Recording sub-SDK.
+        /// </summary>
         public IRecording Recording { get; private set; }
+        /// <summary>
+        /// The Webinar sub-SDK.
+        /// </summary>
         public IWebinar Webinar { get; private set; }
+        /// <summary>
+        /// The Clubs sub-SDK.
+        /// </summary>
         public IClubs Clubs { get; private set; }
+        /// <summary>
+        /// The Location sub-SDK.
+        /// </summary>
         public ILocation Location { get; private set; }
+        /// <summary>
+        /// The Member sub-SDK.
+        /// </summary>
         public IMember Member { get; private set; }
+        /// <summary>
+        /// The Commerce sub-SDK.
+        /// </summary>
         public ICommerce Commerce { get; private set; }
+        /// <summary>
+        /// The Availability sub-SDK.
+        /// </summary>
         public IAvailability Availability { get; private set; }
+        /// <summary>
+        /// The Collection sub-SDK.
+        /// </summary>
         public ICollection Collection { get; private set; }
+        /// <summary>
+        /// The Inventory sub-SDK.
+        /// </summary>
         public IInventory Inventory { get; private set; }
+        /// <summary>
+        /// The Item sub-SDK.
+        /// </summary>
         public IItem Item { get; private set; }
+        /// <summary>
+        /// The Itemvariant sub-SDK.
+        /// </summary>
         public IItemvariant Itemvariant { get; private set; }
+        /// <summary>
+        /// The Reservation sub-SDK.
+        /// </summary>
         public IReservation Reservation { get; private set; }
+        /// <summary>
+        /// The Review sub-SDK.
+        /// </summary>
         public IReview Review { get; private set; }
+        /// <summary>
+        /// The Saleschannel sub-SDK.
+        /// </summary>
         public ISaleschannel Saleschannel { get; private set; }
+        /// <summary>
+        /// The Crm sub-SDK.
+        /// </summary>
         public ICrm Crm { get; private set; }
+        /// <summary>
+        /// The Deal sub-SDK.
+        /// </summary>
         public IDeal Deal { get; private set; }
+        /// <summary>
+        /// The Lead sub-SDK.
+        /// </summary>
         public ILead Lead { get; private set; }
+        /// <summary>
+        /// The Picklist sub-SDK.
+        /// </summary>
         public IPicklist Picklist { get; private set; }
+        /// <summary>
+        /// The Pipeline sub-SDK.
+        /// </summary>
         public IPipeline Pipeline { get; private set; }
+        /// <summary>
+        /// The Datastore sub-SDK.
+        /// </summary>
         public IDatastore Datastore { get; private set; }
+        /// <summary>
+        /// The Database sub-SDK.
+        /// </summary>
         public IDatabase Database { get; private set; }
+        /// <summary>
+        /// The Query sub-SDK.
+        /// </summary>
         public IQuery Query { get; private set; }
+        /// <summary>
+        /// The Record sub-SDK.
+        /// </summary>
         public IRecord Record { get; private set; }
+        /// <summary>
+        /// The Table sub-SDK.
+        /// </summary>
         public ITable Table { get; private set; }
+        /// <summary>
+        /// The Enrich sub-SDK.
+        /// </summary>
         public IEnrich Enrich { get; private set; }
+        /// <summary>
+        /// The Person sub-SDK.
+        /// </summary>
         public IPerson Person { get; private set; }
+        /// <summary>
+        /// The Forms sub-SDK.
+        /// </summary>
         public IForms Forms { get; private set; }
+        /// <summary>
+        /// The Form sub-SDK.
+        /// </summary>
         public IForm Form { get; private set; }
+        /// <summary>
+        /// The Submission sub-SDK.
+        /// </summary>
         public ISubmission Submission { get; private set; }
+        /// <summary>
+        /// The Genai sub-SDK.
+        /// </summary>
         public IGenai Genai { get; private set; }
+        /// <summary>
+        /// The Embedding sub-SDK.
+        /// </summary>
         public IEmbedding Embedding { get; private set; }
+        /// <summary>
+        /// The Model sub-SDK.
+        /// </summary>
         public IModel Model { get; private set; }
+        /// <summary>
+        /// The Prompt sub-SDK.
+        /// </summary>
         public IPrompt Prompt { get; private set; }
+        /// <summary>
+        /// The Hris sub-SDK.
+        /// </summary>
         public IHris Hris { get; private set; }
+        /// <summary>
+        /// The Bankaccount sub-SDK.
+        /// </summary>
         public IBankaccount Bankaccount { get; private set; }
+        /// <summary>
+        /// The Benefit sub-SDK.
+        /// </summary>
         public IBenefit Benefit { get; private set; }
+        /// <summary>
+        /// The Deduction sub-SDK.
+        /// </summary>
         public IDeduction Deduction { get; private set; }
+        /// <summary>
+        /// The Device sub-SDK.
+        /// </summary>
         public IDevice Device { get; private set; }
+        /// <summary>
+        /// The Employee sub-SDK.
+        /// </summary>
         public IEmployee Employee { get; private set; }
+        /// <summary>
+        /// The Payslip sub-SDK.
+        /// </summary>
         public IPayslip Payslip { get; private set; }
+        /// <summary>
+        /// The Taxonomy sub-SDK.
+        /// </summary>
         public ITaxonomy Taxonomy { get; private set; }
+        /// <summary>
+        /// The Timeoff sub-SDK.
+        /// </summary>
         public ITimeoff Timeoff { get; private set; }
+        /// <summary>
+        /// The Timeshift sub-SDK.
+        /// </summary>
         public ITimeshift Timeshift { get; private set; }
+        /// <summary>
+        /// The Kms sub-SDK.
+        /// </summary>
         public IKms Kms { get; private set; }
+        /// <summary>
+        /// The Comment sub-SDK.
+        /// </summary>
         public IComment Comment { get; private set; }
+        /// <summary>
+        /// The Page sub-SDK.
+        /// </summary>
         public IPage Page { get; private set; }
+        /// <summary>
+        /// The Space sub-SDK.
+        /// </summary>
         public ISpace Space { get; private set; }
+        /// <summary>
+        /// The Lms sub-SDK.
+        /// </summary>
         public ILms Lms { get; private set; }
+        /// <summary>
+        /// The Class sub-SDK.
+        /// </summary>
         public IClass Class { get; private set; }
+        /// <summary>
+        /// The Content sub-SDK.
+        /// </summary>
         public IContent Content { get; private set; }
+        /// <summary>
+        /// The Course sub-SDK.
+        /// </summary>
         public ICourse Course { get; private set; }
+        /// <summary>
+        /// The Instructor sub-SDK.
+        /// </summary>
         public IInstructor Instructor { get; private set; }
+        /// <summary>
+        /// The Student sub-SDK.
+        /// </summary>
         public IStudent Student { get; private set; }
+        /// <summary>
+        /// The Martech sub-SDK.
+        /// </summary>
         public IMartech Martech { get; private set; }
+        /// <summary>
+        /// The List sub-SDK.
+        /// </summary>
         public IList List { get; private set; }
+        /// <summary>
+        /// The Messaging sub-SDK.
+        /// </summary>
         public IMessaging Messaging { get; private set; }
+        /// <summary>
+        /// The Channel sub-SDK.
+        /// </summary>
         public IChannel Channel { get; private set; }
+        /// <summary>
+        /// The Message sub-SDK.
+        /// </summary>
         public IMessage Message { get; private set; }
+        /// <summary>
+        /// The Metadata sub-SDK.
+        /// </summary>
         public IMetadata Metadata { get; private set; }
+        /// <summary>
+        /// The Passthrough sub-SDK.
+        /// </summary>
         public IPassthrough Passthrough { get; private set; }
+        /// <summary>
+        /// The Payment sub-SDK.
+        /// </summary>
         public IPayment Payment { get; private set; }
+        /// <summary>
+        /// The Payout sub-SDK.
+        /// </summary>
         public IPayout Payout { get; private set; }
+        /// <summary>
+        /// The Refund sub-SDK.
+        /// </summary>
         public IRefund Refund { get; private set; }
+        /// <summary>
+        /// The Subscription sub-SDK.
+        /// </summary>
         public ISubscription Subscription { get; private set; }
+        /// <summary>
+        /// The Repo sub-SDK.
+        /// </summary>
         public IRepo Repo { get; private set; }
+        /// <summary>
+        /// The Branch sub-SDK.
+        /// </summary>
         public IBranch Branch { get; private set; }
+        /// <summary>
+        /// The Commit sub-SDK.
+        /// </summary>
         public ICommit Commit { get; private set; }
+        /// <summary>
+        /// The Pullrequest sub-SDK.
+        /// </summary>
         public IPullrequest Pullrequest { get; private set; }
+        /// <summary>
+        /// The Repository sub-SDK.
+        /// </summary>
         public IRepository Repository { get; private set; }
+        /// <summary>
+        /// The Scim sub-SDK.
+        /// </summary>
         public IScim Scim { get; private set; }
+        /// <summary>
+        /// The User sub-SDK.
+        /// </summary>
         public IUser User { get; private set; }
+        /// <summary>
+        /// The Shipping sub-SDK.
+        /// </summary>
         public IShipping Shipping { get; private set; }
+        /// <summary>
+        /// The Carrier sub-SDK.
+        /// </summary>
         public ICarrier Carrier { get; private set; }
+        /// <summary>
+        /// The Label sub-SDK.
+        /// </summary>
         public ILabel Label { get; private set; }
+        /// <summary>
+        /// The Rate sub-SDK.
+        /// </summary>
         public IRate Rate { get; private set; }
+        /// <summary>
+        /// The Shipment sub-SDK.
+        /// </summary>
         public IShipment Shipment { get; private set; }
+        /// <summary>
+        /// The Tracking sub-SDK.
+        /// </summary>
         public ITracking Tracking { get; private set; }
+        /// <summary>
+        /// The Signing sub-SDK.
+        /// </summary>
         public ISigning Signing { get; private set; }
+        /// <summary>
+        /// The Signatory sub-SDK.
+        /// </summary>
         public ISignatory Signatory { get; private set; }
+        /// <summary>
+        /// The Template sub-SDK.
+        /// </summary>
         public ITemplate Template { get; private set; }
+        /// <summary>
+        /// The Storage sub-SDK.
+        /// </summary>
         public IStorage Storage { get; private set; }
+        /// <summary>
+        /// The File sub-SDK.
+        /// </summary>
         public IFile File { get; private set; }
+        /// <summary>
+        /// The Task sub-SDK.
+        /// </summary>
         public ITask Task { get; private set; }
+        /// <summary>
+        /// The Change sub-SDK.
+        /// </summary>
         public IChange Change { get; private set; }
+        /// <summary>
+        /// The Project sub-SDK.
+        /// </summary>
         public IProject Project { get; private set; }
+        /// <summary>
+        /// The Ticketing sub-SDK.
+        /// </summary>
         public ITicketing Ticketing { get; private set; }
+        /// <summary>
+        /// The Customer sub-SDK.
+        /// </summary>
         public ICustomer Customer { get; private set; }
+        /// <summary>
+        /// The Note sub-SDK.
+        /// </summary>
         public INote Note { get; private set; }
+        /// <summary>
+        /// The Ticket sub-SDK.
+        /// </summary>
         public ITicket Ticket { get; private set; }
+        /// <summary>
+        /// The Uc sub-SDK.
+        /// </summary>
         public IUc Uc { get; private set; }
+        /// <summary>
+        /// The Call sub-SDK.
+        /// </summary>
         public ICall Call { get; private set; }
+        /// <summary>
+        /// The Unified sub-SDK.
+        /// </summary>
         public IUnified Unified { get; private set; }
+        /// <summary>
+        /// The Apicall sub-SDK.
+        /// </summary>
         public IApicall Apicall { get; private set; }
+        /// <summary>
+        /// The Connection sub-SDK.
+        /// </summary>
         public IConnection Connection { get; private set; }
+        /// <summary>
+        /// The Environment sub-SDK.
+        /// </summary>
         public IEnvironment Environment { get; private set; }
+        /// <summary>
+        /// The Integration sub-SDK.
+        /// </summary>
         public IIntegration Integration { get; private set; }
+        /// <summary>
+        /// The Auth sub-SDK.
+        /// </summary>
         public IAuth Auth { get; private set; }
+        /// <summary>
+        /// The Login sub-SDK.
+        /// </summary>
         public ILogin Login { get; private set; }
+        /// <summary>
+        /// The Issue sub-SDK.
+        /// </summary>
         public IIssue Issue { get; private set; }
+        /// <summary>
+        /// The Webhook sub-SDK.
+        /// </summary>
         public IWebhook Webhook { get; private set; }
+        /// <summary>
+        /// The Secretsmanager sub-SDK.
+        /// </summary>
         public ISecretsmanager Secretsmanager { get; private set; }
+        /// <summary>
+        /// The Verification sub-SDK.
+        /// </summary>
         public IVerification Verification { get; private set; }
+        /// <summary>
+        /// The Request sub-SDK.
+        /// </summary>
         public IRequest Request { get; private set; }
 
+        /// <summary>
+        /// Initializes a new instance of the SDK based on a <see cref="SDKConfig"/> configuration object.
+        /// </summary>
+        /// <param name="config">The SDK configuration object.</param>
         public UnifiedToSDK(SDKConfig config)
         {
             SDKConfiguration = config;
@@ -658,13 +1263,33 @@ namespace UnifiedTo
             Request = new Request(SDKConfiguration);
         }
 
-        public UnifiedToSDK(UnifiedTo.Models.Components.Security? security = null, Func<UnifiedTo.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
+        /// <summary>
+        /// Initializes a new instance of the SDK with optional configuration parameters.
+        /// </summary>
+        /// <param name="security">The security configuration to use for API requests. If provided, this will be used as a static security configuration.</param>
+        /// <param name="securitySource">A function that returns the security configuration dynamically. This takes precedence over the static security parameter if both are provided.</param>
+        /// <param name="serverIndex">The index of the server to use from the predefined server list. Must be between 0 and the length of the server list. Defaults to 0 if not specified.</param>
+        /// <param name="serverUrl">A custom server URL to use instead of the predefined server list. If provided with urlParams, the URL will be templated with the provided parameters.</param>
+        /// <param name="urlParams">A dictionary of parameters to use for templating the serverUrl. Only used when serverUrl is provided.</param>
+        /// <param name="client">A custom HTTP client implementation to use for making API requests. If not provided, the default SpeakeasyHttpClient will be used.</param>
+        /// <param name="retryConfig">Configuration for retry behavior when API requests fail. Defines retry strategies, backoff policies, and maximum retry attempts.</param>
+        /// <exception cref="ArgumentOutOfRangeException">Invalid value provided for <paramref name="serverIndex"/>: must be between 0 (inclusive) and 3 (exclusive).</exception>
+        /// <exception cref="ArgumentException">None of <paramref name="security"/> and <paramref name="securitySource"/> were provided.</exception>
+        public UnifiedToSDK(
+            UnifiedTo.Models.Components.Security? security = null,
+            Func<UnifiedTo.Models.Components.Security>? securitySource = null,
+            int? serverIndex = null,
+            string? serverUrl = null,
+            Dictionary<string, string>? urlParams = null,
+            ISpeakeasyHttpClient? client = null,
+            RetryConfig? retryConfig = null
+        )
         {
             if (serverIndex != null)
             {
                 if (serverIndex.Value < 0 || serverIndex.Value >= SDKConfig.ServerList.Length)
                 {
-                    throw new Exception($"Invalid server index {serverIndex.Value}");
+                    throw new ArgumentOutOfRangeException($"Invalid server index {serverIndex}: must be between 0 (inclusive) and {SDKConfig.ServerList.Length} (exclusive)." );
                 }
             }
 
@@ -687,7 +1312,7 @@ namespace UnifiedTo
             }
             else
             {
-                throw new Exception("security and securitySource cannot both be null");
+                throw new ArgumentException("security and securitySource cannot both be null");
             }
 
             SDKConfiguration = new SDKConfig(client)
@@ -1018,22 +1643,31 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
+        /// <summary>
+        /// Builder class for constructing an instance of the SDK.
+        /// </summary>
         public class SDKBuilder
         {
             private SDKConfig _sdkConfig = new SDKConfig(client: new SpeakeasyHttpClient());
 
             public SDKBuilder() { }
 
+            /// <summary>
+            /// Overrides the default server by index.
+            /// </summary>
             public SDKBuilder WithServerIndex(int serverIndex)
             {
                 if (serverIndex < 0 || serverIndex >= SDKConfig.ServerList.Length)
                 {
-                    throw new Exception($"Invalid server index {serverIndex}");
+                    throw new ArgumentOutOfRangeException($"Invalid server index {serverIndex}: must be between 0 (inclusive) and {SDKConfig.ServerList.Length} (exclusive)." );
                 }
                 _sdkConfig.ServerIndex = serverIndex;
                 return this;
             }
 
+            /// <summary>
+            /// Overrides the default server URL for the SDK.
+            /// </summary>
             public SDKBuilder WithServerUrl(string serverUrl, Dictionary<string, string>? serverVariables = null)
             {
                 if (serverVariables != null)
@@ -1044,34 +1678,49 @@ namespace UnifiedTo
                 return this;
             }
 
+            /// <summary>
+            /// Sets the securitySource security parameter for the SDK.
+            /// </summary>
             public SDKBuilder WithSecuritySource(Func<UnifiedTo.Models.Components.Security> securitySource)
             {
                 _sdkConfig.SecuritySource = securitySource;
                 return this;
             }
 
+            /// <summary>
+            /// Sets the security security parameter for the SDK.
+            /// </summary>
             public SDKBuilder WithSecurity(UnifiedTo.Models.Components.Security security)
             {
                 _sdkConfig.SecuritySource = () => security;
                 return this;
             }
 
+            /// <summary>
+            /// Sets a custom HTTP client to be used by the SDK.
+            /// </summary>
             public SDKBuilder WithClient(ISpeakeasyHttpClient client)
             {
                 _sdkConfig.Client = client;
                 return this;
             }
 
+            /// <summary>
+            /// Sets the retry configuration for the SDK.
+            /// </summary>
             public SDKBuilder WithRetryConfig(RetryConfig retryConfig)
             {
                 _sdkConfig.RetryConfig = retryConfig;
                 return this;
             }
 
+            /// <summary>
+            /// Builds and returns the SDK instance.
+            /// </summary>
             public UnifiedToSDK Build()
             {
               if (_sdkConfig.SecuritySource == null) {
-                  throw new Exception("securitySource cannot be null. One of `Security` or `securitySource` needs to be defined.");
+                  throw new ArgumentException("securitySource cannot be null. One of `Security` or `securitySource` needs to be defined.");
               }
               return new UnifiedToSDK(_sdkConfig);
             }

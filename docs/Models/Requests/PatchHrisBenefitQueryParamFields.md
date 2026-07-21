@@ -1,5 +1,13 @@
 # PatchHrisBenefitQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchHrisBenefitQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyHrisEmployeeEmployeeRoles
-    {
-        [JsonProperty("ADMIN")]
-        Admin,
-        [JsonProperty("MANAGER")]
-        Manager,
-        [JsonProperty("RECRUITER")]
-        Recruiter,
-        [JsonProperty("SALESREP")]
-        Salesrep,
-        [JsonProperty("INTERVIEWER")]
-        Interviewer,
-    }
 
-    public static class PropertyHrisEmployeeEmployeeRolesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyHrisEmployeeEmployeeRoles : IEquatable<PropertyHrisEmployeeEmployeeRoles>
     {
-        public static string Value(this PropertyHrisEmployeeEmployeeRoles value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyHrisEmployeeEmployeeRoles Admin = new PropertyHrisEmployeeEmployeeRoles("ADMIN");
+        public static readonly PropertyHrisEmployeeEmployeeRoles Manager = new PropertyHrisEmployeeEmployeeRoles("MANAGER");
+        public static readonly PropertyHrisEmployeeEmployeeRoles Recruiter = new PropertyHrisEmployeeEmployeeRoles("RECRUITER");
+        public static readonly PropertyHrisEmployeeEmployeeRoles Salesrep = new PropertyHrisEmployeeEmployeeRoles("SALESREP");
+        public static readonly PropertyHrisEmployeeEmployeeRoles Interviewer = new PropertyHrisEmployeeEmployeeRoles("INTERVIEWER");
 
-        public static PropertyHrisEmployeeEmployeeRoles ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyHrisEmployeeEmployeeRoles).GetFields())
+        private static readonly Dictionary <string, PropertyHrisEmployeeEmployeeRoles> _knownValues =
+            new Dictionary <string, PropertyHrisEmployeeEmployeeRoles> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ADMIN"] = Admin,
+                ["MANAGER"] = Manager,
+                ["RECRUITER"] = Recruiter,
+                ["SALESREP"] = Salesrep,
+                ["INTERVIEWER"] = Interviewer
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyHrisEmployeeEmployeeRoles> _values =
+            new ConcurrentDictionary<string, PropertyHrisEmployeeEmployeeRoles>(_knownValues);
 
-                    if (enumVal is PropertyHrisEmployeeEmployeeRoles)
-                    {
-                        return (PropertyHrisEmployeeEmployeeRoles)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyHrisEmployeeEmployeeRoles");
+        private PropertyHrisEmployeeEmployeeRoles(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyHrisEmployeeEmployeeRoles Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyHrisEmployeeEmployeeRoles(value));
+        }
+
+        public static implicit operator PropertyHrisEmployeeEmployeeRoles(string value) => Of(value);
+        public static implicit operator string(PropertyHrisEmployeeEmployeeRoles propertyhrisemployeeemployeeroles) => propertyhrisemployeeemployeeroles.Value;
+
+        public static PropertyHrisEmployeeEmployeeRoles[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyHrisEmployeeEmployeeRoles);
+
+        public bool Equals(PropertyHrisEmployeeEmployeeRoles? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

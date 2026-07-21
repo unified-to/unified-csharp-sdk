@@ -1,5 +1,16 @@
 # ListSaleschannelId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListSaleschannelId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListSaleschannelId.Of("custom_value");
+```
+
 
 ## Values
 

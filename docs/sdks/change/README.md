@@ -1,5 +1,4 @@
 # Change
-(*Change*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a change
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTaskChange" method="get" path="/task/{connection_id}/change/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all changes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTaskChanges" method="get" path="/task/{connection_id}/change" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

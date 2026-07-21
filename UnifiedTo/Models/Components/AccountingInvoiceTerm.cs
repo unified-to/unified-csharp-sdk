@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingInvoiceTerm
-    {
-        [JsonProperty("ON_RECEIPT")]
-        OnReceipt,
-        [JsonProperty("NET_7")]
-        Net7,
-        [JsonProperty("NET_10")]
-        Net10,
-        [JsonProperty("NET_15")]
-        Net15,
-        [JsonProperty("NET_20")]
-        Net20,
-        [JsonProperty("NET_25")]
-        Net25,
-        [JsonProperty("NET_30")]
-        Net30,
-        [JsonProperty("NET_60")]
-        Net60,
-    }
 
-    public static class AccountingInvoiceTermExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingInvoiceTerm : IEquatable<AccountingInvoiceTerm>
     {
-        public static string Value(this AccountingInvoiceTerm value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingInvoiceTerm OnReceipt = new AccountingInvoiceTerm("ON_RECEIPT");
+        public static readonly AccountingInvoiceTerm Net7 = new AccountingInvoiceTerm("NET_7");
+        public static readonly AccountingInvoiceTerm Net10 = new AccountingInvoiceTerm("NET_10");
+        public static readonly AccountingInvoiceTerm Net15 = new AccountingInvoiceTerm("NET_15");
+        public static readonly AccountingInvoiceTerm Net20 = new AccountingInvoiceTerm("NET_20");
+        public static readonly AccountingInvoiceTerm Net25 = new AccountingInvoiceTerm("NET_25");
+        public static readonly AccountingInvoiceTerm Net30 = new AccountingInvoiceTerm("NET_30");
+        public static readonly AccountingInvoiceTerm Net60 = new AccountingInvoiceTerm("NET_60");
 
-        public static AccountingInvoiceTerm ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingInvoiceTerm).GetFields())
+        private static readonly Dictionary <string, AccountingInvoiceTerm> _knownValues =
+            new Dictionary <string, AccountingInvoiceTerm> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ON_RECEIPT"] = OnReceipt,
+                ["NET_7"] = Net7,
+                ["NET_10"] = Net10,
+                ["NET_15"] = Net15,
+                ["NET_20"] = Net20,
+                ["NET_25"] = Net25,
+                ["NET_30"] = Net30,
+                ["NET_60"] = Net60
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingInvoiceTerm> _values =
+            new ConcurrentDictionary<string, AccountingInvoiceTerm>(_knownValues);
 
-                    if (enumVal is AccountingInvoiceTerm)
-                    {
-                        return (AccountingInvoiceTerm)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingInvoiceTerm");
+        private AccountingInvoiceTerm(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingInvoiceTerm Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingInvoiceTerm(value));
+        }
+
+        public static implicit operator AccountingInvoiceTerm(string value) => Of(value);
+        public static implicit operator string(AccountingInvoiceTerm accountinginvoiceterm) => accountinginvoiceterm.Value;
+
+        public static AccountingInvoiceTerm[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingInvoiceTerm);
+
+        public bool Equals(AccountingInvoiceTerm? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,13 @@
 # PatchTaskCommentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchTaskCommentQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,4 @@
 # Ats
-(*Ats*)
 
 ## Overview
 
@@ -61,6 +60,7 @@ Create an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsActivity" method="post" path="/ats/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +102,7 @@ Create an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsApplication" method="post" path="/ats/{connection_id}/application" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -143,6 +144,7 @@ Create a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsCandidate" method="post" path="/ats/{connection_id}/candidate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -184,6 +186,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -225,6 +228,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -266,6 +270,7 @@ Create an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -307,6 +312,7 @@ Create a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsJob" method="post" path="/ats/{connection_id}/job" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -348,6 +354,7 @@ Create a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAtsScorecard" method="post" path="/ats/{connection_id}/scorecard" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -389,6 +396,7 @@ Retrieve an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsActivity" method="get" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -430,6 +438,7 @@ Retrieve an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsApplication" method="get" path="/ats/{connection_id}/application/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -471,6 +480,7 @@ Retrieve a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsCandidate" method="get" path="/ats/{connection_id}/candidate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -512,6 +522,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsCompany" method="get" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -553,6 +564,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsDocument" method="get" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -594,6 +606,7 @@ Retrieve an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsInterview" method="get" path="/ats/{connection_id}/interview/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -635,6 +648,7 @@ Retrieve a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsJob" method="get" path="/ats/{connection_id}/job/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -676,6 +690,7 @@ Retrieve a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAtsScorecard" method="get" path="/ats/{connection_id}/scorecard/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -717,6 +732,7 @@ List all activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsActivities" method="get" path="/ats/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -757,6 +773,7 @@ List all applications
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsApplications" method="get" path="/ats/{connection_id}/application" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -797,6 +814,7 @@ List all applicationstatuses
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsApplicationstatuses" method="get" path="/ats/{connection_id}/applicationstatus" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -837,6 +855,7 @@ List all candidates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsCandidates" method="get" path="/ats/{connection_id}/candidate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -877,6 +896,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsCompanies" method="get" path="/ats/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -917,6 +937,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsDocuments" method="get" path="/ats/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -957,6 +978,7 @@ List all interviews
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsInterviews" method="get" path="/ats/{connection_id}/interview" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -997,6 +1019,7 @@ List all jobs
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsJobs" method="get" path="/ats/{connection_id}/job" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1037,6 +1060,7 @@ List all scorecards
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAtsScorecards" method="get" path="/ats/{connection_id}/scorecard" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1077,6 +1101,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsActivity" method="patch" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1119,6 +1144,7 @@ Update an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsApplication" method="patch" path="/ats/{connection_id}/application/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1161,6 +1187,7 @@ Update a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsCandidate" method="patch" path="/ats/{connection_id}/candidate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1203,6 +1230,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1245,6 +1273,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1287,6 +1316,7 @@ Update an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1329,6 +1359,7 @@ Update a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsJob" method="patch" path="/ats/{connection_id}/job/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1371,6 +1402,7 @@ Update a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAtsScorecard" method="patch" path="/ats/{connection_id}/scorecard/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1413,6 +1445,7 @@ Remove an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsActivity" method="delete" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1452,6 +1485,7 @@ Remove an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsApplication" method="delete" path="/ats/{connection_id}/application/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1491,6 +1525,7 @@ Remove a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsCandidate" method="delete" path="/ats/{connection_id}/candidate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1530,6 +1565,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsCompany" method="delete" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1569,6 +1605,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsDocument" method="delete" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1608,6 +1645,7 @@ Remove an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsInterview" method="delete" path="/ats/{connection_id}/interview/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1647,6 +1685,7 @@ Remove a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsJob" method="delete" path="/ats/{connection_id}/job/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1686,6 +1725,7 @@ Remove a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAtsScorecard" method="delete" path="/ats/{connection_id}/scorecard/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1725,6 +1765,7 @@ Update an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsActivity" method="put" path="/ats/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1767,6 +1808,7 @@ Update an application
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsApplication" method="put" path="/ats/{connection_id}/application/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1809,6 +1851,7 @@ Update a candidate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsCandidate" method="put" path="/ats/{connection_id}/candidate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1851,6 +1894,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1893,6 +1937,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1935,6 +1980,7 @@ Update an interview
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1977,6 +2023,7 @@ Update a job
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsJob" method="put" path="/ats/{connection_id}/job/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2019,6 +2066,7 @@ Update a scorecard
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAtsScorecard" method="put" path="/ats/{connection_id}/scorecard/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

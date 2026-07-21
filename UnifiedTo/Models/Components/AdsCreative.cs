@@ -11,15 +11,16 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AdsCreative
     {
-
         /// <summary>
-        /// Hosted asset mode (best-effort, provider-specific
+        /// Hosted asset mode (best-effort, provider-specific.
         /// </summary>
         [JsonProperty("asset_urls")]
         public List<string>? AssetUrls { get; set; }

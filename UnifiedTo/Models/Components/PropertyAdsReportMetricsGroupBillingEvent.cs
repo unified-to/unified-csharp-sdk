@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupBillingEvent
-    {
-        [JsonProperty("IMPRESSIONS")]
-        Impressions,
-        [JsonProperty("LINK_CLICKS")]
-        LinkClicks,
-        [JsonProperty("VIDEO_VIEWS")]
-        VideoViews,
-        [JsonProperty("APP_INSTALLS")]
-        AppInstalls,
-        [JsonProperty("ENGAGEMENT")]
-        Engagement,
-        [JsonProperty("PAGE_LIKES")]
-        PageLikes,
-        [JsonProperty("MESSAGES")]
-        Messages,
-        [JsonProperty("POST_ENGAGEMENT")]
-        PostEngagement,
-        [JsonProperty("PURCHASE")]
-        Purchase,
-        [JsonProperty("NONE")]
-        None,
-    }
 
-    public static class PropertyAdsReportMetricsGroupBillingEventExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupBillingEvent : IEquatable<PropertyAdsReportMetricsGroupBillingEvent>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupBillingEvent value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent Impressions = new PropertyAdsReportMetricsGroupBillingEvent("IMPRESSIONS");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent LinkClicks = new PropertyAdsReportMetricsGroupBillingEvent("LINK_CLICKS");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent VideoViews = new PropertyAdsReportMetricsGroupBillingEvent("VIDEO_VIEWS");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent AppInstalls = new PropertyAdsReportMetricsGroupBillingEvent("APP_INSTALLS");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent Engagement = new PropertyAdsReportMetricsGroupBillingEvent("ENGAGEMENT");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent PageLikes = new PropertyAdsReportMetricsGroupBillingEvent("PAGE_LIKES");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent Messages = new PropertyAdsReportMetricsGroupBillingEvent("MESSAGES");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent PostEngagement = new PropertyAdsReportMetricsGroupBillingEvent("POST_ENGAGEMENT");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent Purchase = new PropertyAdsReportMetricsGroupBillingEvent("PURCHASE");
+        public static readonly PropertyAdsReportMetricsGroupBillingEvent None = new PropertyAdsReportMetricsGroupBillingEvent("NONE");
 
-        public static PropertyAdsReportMetricsGroupBillingEvent ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupBillingEvent).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupBillingEvent> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupBillingEvent> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["IMPRESSIONS"] = Impressions,
+                ["LINK_CLICKS"] = LinkClicks,
+                ["VIDEO_VIEWS"] = VideoViews,
+                ["APP_INSTALLS"] = AppInstalls,
+                ["ENGAGEMENT"] = Engagement,
+                ["PAGE_LIKES"] = PageLikes,
+                ["MESSAGES"] = Messages,
+                ["POST_ENGAGEMENT"] = PostEngagement,
+                ["PURCHASE"] = Purchase,
+                ["NONE"] = None
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBillingEvent> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBillingEvent>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupBillingEvent)
-                    {
-                        return (PropertyAdsReportMetricsGroupBillingEvent)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupBillingEvent");
+        private PropertyAdsReportMetricsGroupBillingEvent(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupBillingEvent Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupBillingEvent(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupBillingEvent(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupBillingEvent propertyadsreportmetricsgroupbillingevent) => propertyadsreportmetricsgroupbillingevent.Value;
+
+        public static PropertyAdsReportMetricsGroupBillingEvent[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupBillingEvent);
+
+        public bool Equals(PropertyAdsReportMetricsGroupBillingEvent? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

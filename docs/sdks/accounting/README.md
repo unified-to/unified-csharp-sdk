@@ -1,5 +1,4 @@
 # Accounting
-(*Accounting*)
 
 ## Overview
 
@@ -108,6 +107,7 @@ Create an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -149,6 +149,7 @@ Create a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -190,6 +191,7 @@ Create a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -231,6 +233,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -272,6 +275,7 @@ Create a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -313,6 +317,7 @@ Create an expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -354,6 +359,7 @@ Create an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -395,6 +401,7 @@ Create a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -436,6 +443,7 @@ Create an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -477,6 +485,7 @@ Create a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -518,6 +527,7 @@ Create a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -559,6 +569,7 @@ Create a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -600,6 +611,7 @@ Create a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -641,6 +653,7 @@ Create a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -682,6 +695,7 @@ Retrieve an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingAccount" method="get" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -723,6 +737,7 @@ Retrieve a balancesheet
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingBalancesheet" method="get" path="/accounting/{connection_id}/balancesheet/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -764,6 +779,7 @@ Retrieve a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingBill" method="get" path="/accounting/{connection_id}/bill/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -805,6 +821,7 @@ Retrieve a cashflow
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingCashflow" method="get" path="/accounting/{connection_id}/cashflow/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -846,6 +863,7 @@ Retrieve a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingCategory" method="get" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -887,6 +905,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingContact" method="get" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -928,6 +947,7 @@ Retrieve a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingCreditmemo" method="get" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -969,6 +989,7 @@ Retrieve an expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingExpense" method="get" path="/accounting/{connection_id}/expense/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1010,6 +1031,7 @@ Retrieve an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingInvoice" method="get" path="/accounting/{connection_id}/invoice/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1051,6 +1073,7 @@ Retrieve a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingJournal" method="get" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1092,6 +1115,7 @@ Retrieve an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingOrder" method="get" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1133,6 +1157,7 @@ Retrieve an organization
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingOrganization" method="get" path="/accounting/{connection_id}/organization/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1174,6 +1199,7 @@ Retrieve a profitloss
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingProfitloss" method="get" path="/accounting/{connection_id}/profitloss/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1215,6 +1241,7 @@ Retrieve a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingPurchaseorder" method="get" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1256,6 +1283,7 @@ Retrieve a report
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingReport" method="get" path="/accounting/{connection_id}/report/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1297,6 +1325,7 @@ Retrieve a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingSalesorder" method="get" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1338,6 +1367,7 @@ Retrieve a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingTaxrate" method="get" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1379,6 +1409,7 @@ Retrieve a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingTransaction" method="get" path="/accounting/{connection_id}/transaction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1420,6 +1451,7 @@ Retrieve a trialbalance
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingTrialbalance" method="get" path="/accounting/{connection_id}/trialbalance/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1461,6 +1493,7 @@ Retrieve a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingVendorcredit" method="get" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1502,6 +1535,7 @@ List all accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingAccounts" method="get" path="/accounting/{connection_id}/account" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1542,6 +1576,7 @@ List all balancesheets
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingBalancesheets" method="get" path="/accounting/{connection_id}/balancesheet" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1582,6 +1617,7 @@ List all bills
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingBills" method="get" path="/accounting/{connection_id}/bill" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1622,6 +1658,7 @@ List all cashflows
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingCashflows" method="get" path="/accounting/{connection_id}/cashflow" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1662,6 +1699,7 @@ List all categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingCategories" method="get" path="/accounting/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1702,6 +1740,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingContacts" method="get" path="/accounting/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1742,6 +1781,7 @@ List all creditmemoes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingCreditmemoes" method="get" path="/accounting/{connection_id}/creditmemo" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1782,6 +1822,7 @@ List all expenses
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingExpenses" method="get" path="/accounting/{connection_id}/expense" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1822,6 +1863,7 @@ List all invoices
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingInvoices" method="get" path="/accounting/{connection_id}/invoice" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1862,6 +1904,7 @@ List all journals
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingJournals" method="get" path="/accounting/{connection_id}/journal" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1902,6 +1945,7 @@ List all orders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingOrders" method="get" path="/accounting/{connection_id}/order" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1942,6 +1986,7 @@ List all organizations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingOrganizations" method="get" path="/accounting/{connection_id}/organization" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1982,6 +2027,7 @@ List all profitlosses
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingProfitlosses" method="get" path="/accounting/{connection_id}/profitloss" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2022,6 +2068,7 @@ List all purchaseorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingPurchaseorders" method="get" path="/accounting/{connection_id}/purchaseorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2062,6 +2109,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingReports" method="get" path="/accounting/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2102,6 +2150,7 @@ List all salesorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingSalesorders" method="get" path="/accounting/{connection_id}/salesorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2142,6 +2191,7 @@ List all taxrates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingTaxrates" method="get" path="/accounting/{connection_id}/taxrate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2182,6 +2232,7 @@ List all transactions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingTransactions" method="get" path="/accounting/{connection_id}/transaction" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2222,6 +2273,7 @@ List all trialbalances
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingTrialbalances" method="get" path="/accounting/{connection_id}/trialbalance" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2262,6 +2314,7 @@ List all vendorcredits
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingVendorcredits" method="get" path="/accounting/{connection_id}/vendorcredit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2302,6 +2355,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2344,6 +2398,7 @@ Update a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2386,6 +2441,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2428,6 +2484,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2470,6 +2527,7 @@ Update a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2512,6 +2570,7 @@ Update an expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2554,6 +2613,7 @@ Update an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2596,6 +2656,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2638,6 +2699,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2680,6 +2742,7 @@ Update a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2722,6 +2785,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2764,6 +2828,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2806,6 +2871,7 @@ Update a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2848,6 +2914,7 @@ Update a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2890,6 +2957,7 @@ Remove an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingAccount" method="delete" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2929,6 +2997,7 @@ Remove a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingBill" method="delete" path="/accounting/{connection_id}/bill/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2968,6 +3037,7 @@ Remove a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingCategory" method="delete" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3007,6 +3077,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingContact" method="delete" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3046,6 +3117,7 @@ Remove a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingCreditmemo" method="delete" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3085,6 +3157,7 @@ Remove an expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingExpense" method="delete" path="/accounting/{connection_id}/expense/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3124,6 +3197,7 @@ Remove an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingInvoice" method="delete" path="/accounting/{connection_id}/invoice/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3163,6 +3237,7 @@ Remove a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingJournal" method="delete" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3202,6 +3277,7 @@ Remove an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingOrder" method="delete" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3241,6 +3317,7 @@ Remove a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingPurchaseorder" method="delete" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3280,6 +3357,7 @@ Remove a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingSalesorder" method="delete" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3319,6 +3397,7 @@ Remove a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingTaxrate" method="delete" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3358,6 +3437,7 @@ Remove a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingTransaction" method="delete" path="/accounting/{connection_id}/transaction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3397,6 +3477,7 @@ Remove a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingVendorcredit" method="delete" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3436,6 +3517,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3478,6 +3560,7 @@ Update a bill
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3520,6 +3603,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3562,6 +3646,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3604,6 +3689,7 @@ Update a creditmemo
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3646,6 +3732,7 @@ Update an expense
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3688,6 +3775,7 @@ Update an invoice
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3730,6 +3818,7 @@ Update a journal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3772,6 +3861,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3814,6 +3904,7 @@ Update a purchaseorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3856,6 +3947,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3898,6 +3990,7 @@ Update a taxrate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3940,6 +4033,7 @@ Update a transaction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -3982,6 +4076,7 @@ Update a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

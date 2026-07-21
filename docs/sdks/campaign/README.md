@@ -1,5 +1,4 @@
 # Campaign
-(*Campaign*)
 
 ## Overview
 
@@ -24,6 +23,7 @@ Create a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -65,6 +65,7 @@ Create a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -106,6 +107,7 @@ Retrieve a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsCampaign" method="get" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -147,6 +149,7 @@ Retrieve a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getMartechCampaign" method="get" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -188,6 +191,7 @@ List all campaigns
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsCampaigns" method="get" path="/ads/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -228,6 +232,7 @@ List all campaigns
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMartechCampaigns" method="get" path="/martech/{connection_id}/campaign" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -268,6 +273,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -310,6 +316,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -352,6 +359,7 @@ Remove a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAdsCampaign" method="delete" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -391,6 +399,7 @@ Remove a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeMartechCampaign" method="delete" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -430,6 +439,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -472,6 +482,7 @@ Update a campaign
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

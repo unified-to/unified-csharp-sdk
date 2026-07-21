@@ -1,5 +1,4 @@
 # Vendorcredit
-(*Vendorcredit*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingVendorcredit" method="get" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all vendorcredits
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingVendorcredits" method="get" path="/accounting/{connection_id}/vendorcredit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingVendorcredit" method="delete" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a vendorcredit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

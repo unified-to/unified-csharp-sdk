@@ -1,5 +1,13 @@
 # UpdateAdsAdQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAdsAdQueryParamFields.Id;
+```
+
 
 ## Values
 

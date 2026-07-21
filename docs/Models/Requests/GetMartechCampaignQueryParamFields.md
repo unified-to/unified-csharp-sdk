@@ -1,5 +1,13 @@
 # GetMartechCampaignQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetMartechCampaignQueryParamFields.Id;
+```
+
 
 ## Values
 

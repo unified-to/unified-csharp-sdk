@@ -11,12 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CalendarWebinarRegistrant
     {
-
         [JsonProperty("email")]
         public string? Email { get; set; }
 

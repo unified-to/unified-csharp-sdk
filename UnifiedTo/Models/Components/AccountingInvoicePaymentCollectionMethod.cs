@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingInvoicePaymentCollectionMethod
-    {
-        [JsonProperty("send_invoice")]
-        SendInvoice,
-        [JsonProperty("charge_automatically")]
-        ChargeAutomatically,
-    }
 
-    public static class AccountingInvoicePaymentCollectionMethodExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingInvoicePaymentCollectionMethod : IEquatable<AccountingInvoicePaymentCollectionMethod>
     {
-        public static string Value(this AccountingInvoicePaymentCollectionMethod value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingInvoicePaymentCollectionMethod SendInvoice = new AccountingInvoicePaymentCollectionMethod("send_invoice");
+        public static readonly AccountingInvoicePaymentCollectionMethod ChargeAutomatically = new AccountingInvoicePaymentCollectionMethod("charge_automatically");
 
-        public static AccountingInvoicePaymentCollectionMethod ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingInvoicePaymentCollectionMethod).GetFields())
+        private static readonly Dictionary <string, AccountingInvoicePaymentCollectionMethod> _knownValues =
+            new Dictionary <string, AccountingInvoicePaymentCollectionMethod> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["send_invoice"] = SendInvoice,
+                ["charge_automatically"] = ChargeAutomatically
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingInvoicePaymentCollectionMethod> _values =
+            new ConcurrentDictionary<string, AccountingInvoicePaymentCollectionMethod>(_knownValues);
 
-                    if (enumVal is AccountingInvoicePaymentCollectionMethod)
-                    {
-                        return (AccountingInvoicePaymentCollectionMethod)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingInvoicePaymentCollectionMethod");
+        private AccountingInvoicePaymentCollectionMethod(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingInvoicePaymentCollectionMethod Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingInvoicePaymentCollectionMethod(value));
+        }
+
+        public static implicit operator AccountingInvoicePaymentCollectionMethod(string value) => Of(value);
+        public static implicit operator string(AccountingInvoicePaymentCollectionMethod accountinginvoicepaymentcollectionmethod) => accountinginvoicepaymentcollectionmethod.Value;
+
+        public static AccountingInvoicePaymentCollectionMethod[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingInvoicePaymentCollectionMethod);
+
+        public bool Equals(AccountingInvoicePaymentCollectionMethod? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,16 @@
 # YoutubeAndPartnersType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = YoutubeAndPartnersType.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = YoutubeAndPartnersType.Of("custom_value");
+```
+
 
 ## Values
 

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingInvoiceType
-    {
-        [JsonProperty("BILL")]
-        Bill,
-        [JsonProperty("INVOICE")]
-        Invoice,
-        [JsonProperty("CREDITMEMO")]
-        Creditmemo,
-    }
 
-    public static class AccountingInvoiceTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingInvoiceType : IEquatable<AccountingInvoiceType>
     {
-        public static string Value(this AccountingInvoiceType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingInvoiceType Bill = new AccountingInvoiceType("BILL");
+        public static readonly AccountingInvoiceType Invoice = new AccountingInvoiceType("INVOICE");
+        public static readonly AccountingInvoiceType Creditmemo = new AccountingInvoiceType("CREDITMEMO");
 
-        public static AccountingInvoiceType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingInvoiceType).GetFields())
+        private static readonly Dictionary <string, AccountingInvoiceType> _knownValues =
+            new Dictionary <string, AccountingInvoiceType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["BILL"] = Bill,
+                ["INVOICE"] = Invoice,
+                ["CREDITMEMO"] = Creditmemo
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingInvoiceType> _values =
+            new ConcurrentDictionary<string, AccountingInvoiceType>(_knownValues);
 
-                    if (enumVal is AccountingInvoiceType)
-                    {
-                        return (AccountingInvoiceType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingInvoiceType");
+        private AccountingInvoiceType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingInvoiceType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingInvoiceType(value));
+        }
+
+        public static implicit operator AccountingInvoiceType(string value) => Of(value);
+        public static implicit operator string(AccountingInvoiceType accountinginvoicetype) => accountinginvoicetype.Value;
+
+        public static AccountingInvoiceType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingInvoiceType);
+
+        public bool Equals(AccountingInvoiceType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

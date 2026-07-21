@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CommerceReviewCommentStatus
-    {
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("APPROVED")]
-        Approved,
-        [JsonProperty("REJECTED")]
-        Rejected,
-        [JsonProperty("SPAM")]
-        Spam,
-    }
 
-    public static class CommerceReviewCommentStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CommerceReviewCommentStatus : IEquatable<CommerceReviewCommentStatus>
     {
-        public static string Value(this CommerceReviewCommentStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CommerceReviewCommentStatus Pending = new CommerceReviewCommentStatus("PENDING");
+        public static readonly CommerceReviewCommentStatus Approved = new CommerceReviewCommentStatus("APPROVED");
+        public static readonly CommerceReviewCommentStatus Rejected = new CommerceReviewCommentStatus("REJECTED");
+        public static readonly CommerceReviewCommentStatus Spam = new CommerceReviewCommentStatus("SPAM");
 
-        public static CommerceReviewCommentStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(CommerceReviewCommentStatus).GetFields())
+        private static readonly Dictionary <string, CommerceReviewCommentStatus> _knownValues =
+            new Dictionary <string, CommerceReviewCommentStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PENDING"] = Pending,
+                ["APPROVED"] = Approved,
+                ["REJECTED"] = Rejected,
+                ["SPAM"] = Spam
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CommerceReviewCommentStatus> _values =
+            new ConcurrentDictionary<string, CommerceReviewCommentStatus>(_knownValues);
 
-                    if (enumVal is CommerceReviewCommentStatus)
-                    {
-                        return (CommerceReviewCommentStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CommerceReviewCommentStatus");
+        private CommerceReviewCommentStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CommerceReviewCommentStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CommerceReviewCommentStatus(value));
+        }
+
+        public static implicit operator CommerceReviewCommentStatus(string value) => Of(value);
+        public static implicit operator string(CommerceReviewCommentStatus commercereviewcommentstatus) => commercereviewcommentstatus.Value;
+
+        public static CommerceReviewCommentStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CommerceReviewCommentStatus);
+
+        public bool Equals(CommerceReviewCommentStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

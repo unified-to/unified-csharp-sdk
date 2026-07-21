@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ScimAddressType
-    {
-        [JsonProperty("work")]
-        Work,
-        [JsonProperty("home")]
-        Home,
-        [JsonProperty("other")]
-        Other,
-    }
 
-    public static class ScimAddressTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ScimAddressType : IEquatable<ScimAddressType>
     {
-        public static string Value(this ScimAddressType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ScimAddressType Work = new ScimAddressType("work");
+        public static readonly ScimAddressType Home = new ScimAddressType("home");
+        public static readonly ScimAddressType Other = new ScimAddressType("other");
 
-        public static ScimAddressType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ScimAddressType).GetFields())
+        private static readonly Dictionary <string, ScimAddressType> _knownValues =
+            new Dictionary <string, ScimAddressType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["work"] = Work,
+                ["home"] = Home,
+                ["other"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ScimAddressType> _values =
+            new ConcurrentDictionary<string, ScimAddressType>(_knownValues);
 
-                    if (enumVal is ScimAddressType)
-                    {
-                        return (ScimAddressType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ScimAddressType");
+        private ScimAddressType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ScimAddressType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ScimAddressType(value));
+        }
+
+        public static implicit operator ScimAddressType(string value) => Of(value);
+        public static implicit operator string(ScimAddressType scimaddresstype) => scimaddresstype.Value;
+
+        public static ScimAddressType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ScimAddressType);
+
+        public bool Equals(ScimAddressType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

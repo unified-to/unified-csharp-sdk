@@ -1,5 +1,13 @@
 # UpdateAccountingContactQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingContactQueryParamFields.Id;
+```
+
 
 ## Values
 

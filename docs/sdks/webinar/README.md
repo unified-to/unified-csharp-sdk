@@ -1,5 +1,4 @@
 # Webinar
-(*Webinar*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a webinar
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCalendarWebinar" method="post" path="/calendar/{connection_id}/webinar" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a webinar
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCalendarWebinar" method="get" path="/calendar/{connection_id}/webinar/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all webinars
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCalendarWebinars" method="get" path="/calendar/{connection_id}/webinar" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a webinar
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCalendarWebinar" method="patch" path="/calendar/{connection_id}/webinar/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a webinar
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCalendarWebinar" method="delete" path="/calendar/{connection_id}/webinar/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a webinar
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCalendarWebinar" method="put" path="/calendar/{connection_id}/webinar/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

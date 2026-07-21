@@ -10,13 +10,15 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class LmsMedia
     {
-
         [JsonProperty("content")]
         public string? Content { get; set; }
 
@@ -24,7 +26,7 @@ namespace UnifiedTo.Models.Components
         public string? Description { get; set; }
 
         /// <summary>
-        /// ISO 2-digit language codes
+        /// ISO 2-digit language codes.
         /// </summary>
         [JsonProperty("languages")]
         public List<string>? Languages { get; set; }

@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListJobId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListJobIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListJobId : IEquatable<ListJobId>
     {
-        public static string Value(this ListJobId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListJobId SupportedRequired = new ListJobId("supported-required");
+        public static readonly ListJobId Supported = new ListJobId("supported");
+        public static readonly ListJobId NotSupported = new ListJobId("not-supported");
 
-        public static ListJobId ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListJobId).GetFields())
+        private static readonly Dictionary <string, ListJobId> _knownValues =
+            new Dictionary <string, ListJobId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListJobId> _values =
+            new ConcurrentDictionary<string, ListJobId>(_knownValues);
 
-                    if (enumVal is ListJobId)
-                    {
-                        return (ListJobId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListJobId");
+        private ListJobId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListJobId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListJobId(value));
+        }
+
+        public static implicit operator ListJobId(string value) => Of(value);
+        public static implicit operator string(ListJobId listjobid) => listjobid.Value;
+
+        public static ListJobId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListJobId);
+
+        public bool Equals(ListJobId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

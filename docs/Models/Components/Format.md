@@ -1,5 +1,16 @@
 # Format
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = Format.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = Format.Of("custom_value");
+```
+
 
 ## Values
 

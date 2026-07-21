@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class PropertyCrmEventMarketingEmail
     {
-
         [JsonProperty("attachment_file_ids")]
         public List<string>? AttachmentFileIds { get; set; }
 
@@ -23,7 +22,7 @@ namespace UnifiedTo.Models.Components
         public string? Body { get; set; }
 
         /// <summary>
-        /// The event email&apos;s cc name &amp; email (name &lt;test@test.com&gt;)
+        /// The event email's cc name &amp; email (name &lt;test@test.com&gt;).
         /// </summary>
         [JsonProperty("cc")]
         public List<string>? Cc { get; set; }
@@ -38,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public string? Subject { get; set; }
 
         /// <summary>
-        /// The event email&apos;s &quot;to&quot; name &amp; email (name &lt;test@test.com&gt;)
+        /// The event email's "to" name &amp; email (name &lt;test@test.com&gt;).
         /// </summary>
         [JsonProperty("to")]
         public List<string>? To { get; set; }

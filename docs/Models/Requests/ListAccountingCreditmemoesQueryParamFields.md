@@ -1,5 +1,13 @@
 # ListAccountingCreditmemoesQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAccountingCreditmemoesQueryParamFields.Id;
+```
+
 
 ## Values
 

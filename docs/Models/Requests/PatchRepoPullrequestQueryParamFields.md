@@ -1,5 +1,13 @@
 # PatchRepoPullrequestQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchRepoPullrequestQueryParamFields.Id;
+```
+
 
 ## Values
 

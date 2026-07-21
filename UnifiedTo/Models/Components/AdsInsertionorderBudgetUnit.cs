@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsInsertionorderBudgetUnit
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("IMPRESSIONS")]
-        Impressions,
-    }
 
-    public static class AdsInsertionorderBudgetUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsInsertionorderBudgetUnit : IEquatable<AdsInsertionorderBudgetUnit>
     {
-        public static string Value(this AdsInsertionorderBudgetUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsInsertionorderBudgetUnit Unspecified = new AdsInsertionorderBudgetUnit("UNSPECIFIED");
+        public static readonly AdsInsertionorderBudgetUnit Currency = new AdsInsertionorderBudgetUnit("CURRENCY");
+        public static readonly AdsInsertionorderBudgetUnit Impressions = new AdsInsertionorderBudgetUnit("IMPRESSIONS");
 
-        public static AdsInsertionorderBudgetUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsInsertionorderBudgetUnit).GetFields())
+        private static readonly Dictionary <string, AdsInsertionorderBudgetUnit> _knownValues =
+            new Dictionary <string, AdsInsertionorderBudgetUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["CURRENCY"] = Currency,
+                ["IMPRESSIONS"] = Impressions
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsInsertionorderBudgetUnit> _values =
+            new ConcurrentDictionary<string, AdsInsertionorderBudgetUnit>(_knownValues);
 
-                    if (enumVal is AdsInsertionorderBudgetUnit)
-                    {
-                        return (AdsInsertionorderBudgetUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsInsertionorderBudgetUnit");
+        private AdsInsertionorderBudgetUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsInsertionorderBudgetUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsInsertionorderBudgetUnit(value));
+        }
+
+        public static implicit operator AdsInsertionorderBudgetUnit(string value) => Of(value);
+        public static implicit operator string(AdsInsertionorderBudgetUnit adsinsertionorderbudgetunit) => adsinsertionorderbudgetunit.Value;
+
+        public static AdsInsertionorderBudgetUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsInsertionorderBudgetUnit);
+
+        public bool Equals(AdsInsertionorderBudgetUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

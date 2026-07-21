@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListEffectiveStatus
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListEffectiveStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListEffectiveStatus : IEquatable<ListEffectiveStatus>
     {
-        public static string Value(this ListEffectiveStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListEffectiveStatus SupportedRequired = new ListEffectiveStatus("supported-required");
+        public static readonly ListEffectiveStatus Supported = new ListEffectiveStatus("supported");
+        public static readonly ListEffectiveStatus NotSupported = new ListEffectiveStatus("not-supported");
 
-        public static ListEffectiveStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListEffectiveStatus).GetFields())
+        private static readonly Dictionary <string, ListEffectiveStatus> _knownValues =
+            new Dictionary <string, ListEffectiveStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListEffectiveStatus> _values =
+            new ConcurrentDictionary<string, ListEffectiveStatus>(_knownValues);
 
-                    if (enumVal is ListEffectiveStatus)
-                    {
-                        return (ListEffectiveStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListEffectiveStatus");
+        private ListEffectiveStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListEffectiveStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListEffectiveStatus(value));
+        }
+
+        public static implicit operator ListEffectiveStatus(string value) => Of(value);
+        public static implicit operator string(ListEffectiveStatus listeffectivestatus) => listeffectivestatus.Value;
+
+        public static ListEffectiveStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListEffectiveStatus);
+
+        public bool Equals(ListEffectiveStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

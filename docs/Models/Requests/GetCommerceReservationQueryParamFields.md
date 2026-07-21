@@ -1,5 +1,13 @@
 # GetCommerceReservationQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetCommerceReservationQueryParamFields.Id;
+```
+
 
 ## Values
 

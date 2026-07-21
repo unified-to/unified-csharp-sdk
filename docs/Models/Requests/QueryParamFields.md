@@ -1,5 +1,13 @@
 # QueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = QueryParamFields.Id;
+```
+
 
 ## Values
 

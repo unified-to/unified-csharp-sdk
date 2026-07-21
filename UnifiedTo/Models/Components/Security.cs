@@ -10,10 +10,9 @@
 namespace UnifiedTo.Models.Components
 {
     using UnifiedTo.Utils;
-    
+
     public class Security
     {
-
         [SpeakeasyMetadata("security:scheme=true,type=apiKey,subType=header,name=authorization")]
         public string Jwt { get; set; } = default!;
     }

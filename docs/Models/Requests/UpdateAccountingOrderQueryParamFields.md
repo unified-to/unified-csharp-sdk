@@ -1,5 +1,13 @@
 # UpdateAccountingOrderQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingOrderQueryParamFields.Id;
+```
+
 
 ## Values
 

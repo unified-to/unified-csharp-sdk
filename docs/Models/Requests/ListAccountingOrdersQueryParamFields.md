@@ -1,5 +1,13 @@
 # ListAccountingOrdersQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAccountingOrdersQueryParamFields.Id;
+```
+
 
 ## Values
 

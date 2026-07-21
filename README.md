@@ -458,8 +458,12 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Channel](docs/sdks/channel/README.md)
 
+* [CreateMessagingChannel](docs/sdks/channel/README.md#createmessagingchannel) - Create a channel
 * [GetMessagingChannel](docs/sdks/channel/README.md#getmessagingchannel) - Retrieve a channel
 * [ListMessagingChannels](docs/sdks/channel/README.md#listmessagingchannels) - List all channels
+* [PatchMessagingChannel](docs/sdks/channel/README.md#patchmessagingchannel) - Update a channel
+* [RemoveMessagingChannel](docs/sdks/channel/README.md#removemessagingchannel) - Remove a channel
+* [UpdateMessagingChannel](docs/sdks/channel/README.md#updatemessagingchannel) - Update a channel
 
 ### [Class](docs/sdks/class/README.md)
 
@@ -1248,14 +1252,18 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Messaging](docs/sdks/messaging/README.md)
 
+* [CreateMessagingChannel](docs/sdks/messaging/README.md#createmessagingchannel) - Create a channel
 * [CreateMessagingMessage](docs/sdks/messaging/README.md#createmessagingmessage) - Create a message
 * [GetMessagingChannel](docs/sdks/messaging/README.md#getmessagingchannel) - Retrieve a channel
 * [GetMessagingMessage](docs/sdks/messaging/README.md#getmessagingmessage) - Retrieve a message
 * [ListMessagingChannels](docs/sdks/messaging/README.md#listmessagingchannels) - List all channels
 * [ListMessagingMessages](docs/sdks/messaging/README.md#listmessagingmessages) - List all messages
+* [PatchMessagingChannel](docs/sdks/messaging/README.md#patchmessagingchannel) - Update a channel
 * [PatchMessagingEvent](docs/sdks/messaging/README.md#patchmessagingevent) - Update an event
 * [PatchMessagingMessage](docs/sdks/messaging/README.md#patchmessagingmessage) - Update a message
+* [RemoveMessagingChannel](docs/sdks/messaging/README.md#removemessagingchannel) - Remove a channel
 * [RemoveMessagingMessage](docs/sdks/messaging/README.md#removemessagingmessage) - Remove a message
+* [UpdateMessagingChannel](docs/sdks/messaging/README.md#updatemessagingchannel) - Update a channel
 * [UpdateMessagingEvent](docs/sdks/messaging/README.md#updatemessagingevent) - Update an event
 * [UpdateMessagingMessage](docs/sdks/messaging/README.md#updatemessagingmessage) - Update a message
 
@@ -1886,7 +1894,6 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [UpdateUnifiedWebhook](docs/sdks/unified/README.md#updateunifiedwebhook) - Update webhook subscription
 * [UpdateUnifiedWebhookTrigger](docs/sdks/unified/README.md#updateunifiedwebhooktrigger) - Trigger webhook
 
-
 ### [User](docs/sdks/user/README.md)
 
 * [CreateScimUsers](docs/sdks/user/README.md#createscimusers) - Create user
@@ -1968,7 +1975,7 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(
-    serverIndex: 2,
+    serverIndex: 0,
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     }
@@ -2079,22 +2086,16 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or throw an exception.
-
-By default, an API error will raise a `UnifiedTo.Models.Errors.SDKException` exception, which has the following properties:
+[`UnifiedToError`](./UnifiedTo/Models/Errors/UnifiedToError.cs) is the base exception class for all HTTP error responses. It has the following properties:
 
 | Property      | Type                  | Description           |
 |---------------|-----------------------|-----------------------|
-| `Message`     | *string*              | The error message     |
-| `StatusCode`  | *int*                 | The HTTP status code  |
-| `RawResponse` | *HttpResponseMessage* | The raw HTTP response |
-| `Body`        | *string*              | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAccountingAccountAsync` method throws the following exceptions:
-
-| Error Type                           | Status Code | Content Type |
-| ------------------------------------ | ----------- | ------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX    | \*/\*        |
+| `Message`     | *string*              | Error message         |
+| `StatusCode`  | *int*                 | HTTP status code      |
+| `Headers`     | *HttpResponseHeaders* | HTTP headers          |
+| `ContentType` | *string?*             | HTTP content type     |
+| `RawResponse` | *HttpResponseMessage* | HTTP response object  |
+| `Body`        | *string*              | HTTP response body    |
 
 ### Example
 
@@ -2116,15 +2117,36 @@ try
 
     // handle response
 }
-catch (Exception ex)
+catch (UnifiedToError ex)  // all SDK exceptions inherit from UnifiedToError
 {
-    if (ex is UnifiedTo.Models.Errors.SDKException)
-    {
-        // Handle default exception
-        throw;
-    }
+    // ex.ToString() provides a detailed error message
+    System.Console.WriteLine(ex);
+
+    // Base exception fields
+    HttpResponseMessage rawResponse = ex.RawResponse;
+    HttpResponseHeaders headers = ex.Headers;
+    int statusCode = ex.StatusCode;
+    string? contentType = ex.ContentType;
+    var responseBody = ex.Body;
+}
+catch (System.Net.Http.HttpRequestException ex)
+{
+    // Check ex.InnerException for Network connectivity errors
 }
 ```
+
+### Error Classes
+
+**Primary exception:**
+* [`UnifiedToError`](./UnifiedTo/Models/Errors/UnifiedToError.cs): The base class for HTTP error responses.
+
+<details><summary>Less common exceptions (2)</summary>
+
+* [`System.Net.Http.HttpRequestException`](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httprequestexception): Network connectivity error. For more details about the underlying cause, inspect the `ex.InnerException`.
+
+* Inheriting from [`UnifiedToError`](./UnifiedTo/Models/Errors/UnifiedToError.cs):
+  * [`ResponseValidationError`](./UnifiedTo/Models/Errors/ResponseValidationError.cs): Thrown when the response data could not be deserialized into the expected type.
+</details>
 <!-- End Error Handling [errors] -->
 
 <!-- Start Custom HTTP Client [http-client] -->

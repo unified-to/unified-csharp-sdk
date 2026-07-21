@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AtsActivityType
-    {
-        [JsonProperty("NOTE")]
-        Note,
-        [JsonProperty("TASK")]
-        Task,
-        [JsonProperty("EMAIL")]
-        Email,
-    }
 
-    public static class AtsActivityTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AtsActivityType : IEquatable<AtsActivityType>
     {
-        public static string Value(this AtsActivityType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AtsActivityType Note = new AtsActivityType("NOTE");
+        public static readonly AtsActivityType Task = new AtsActivityType("TASK");
+        public static readonly AtsActivityType Email = new AtsActivityType("EMAIL");
 
-        public static AtsActivityType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AtsActivityType).GetFields())
+        private static readonly Dictionary <string, AtsActivityType> _knownValues =
+            new Dictionary <string, AtsActivityType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["NOTE"] = Note,
+                ["TASK"] = Task,
+                ["EMAIL"] = Email
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AtsActivityType> _values =
+            new ConcurrentDictionary<string, AtsActivityType>(_knownValues);
 
-                    if (enumVal is AtsActivityType)
-                    {
-                        return (AtsActivityType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AtsActivityType");
+        private AtsActivityType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AtsActivityType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AtsActivityType(value));
+        }
+
+        public static implicit operator AtsActivityType(string value) => Of(value);
+        public static implicit operator string(AtsActivityType atsactivitytype) => atsactivitytype.Value;
+
+        public static AtsActivityType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AtsActivityType);
+
+        public bool Equals(AtsActivityType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

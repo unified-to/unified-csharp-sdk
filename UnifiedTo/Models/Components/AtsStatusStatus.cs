@@ -11,71 +11,88 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AtsStatusStatus
-    {
-        [JsonProperty("NEW")]
-        New,
-        [JsonProperty("REVIEWING")]
-        Reviewing,
-        [JsonProperty("SCREENING")]
-        Screening,
-        [JsonProperty("SUBMITTED")]
-        Submitted,
-        [JsonProperty("FIRST_INTERVIEW")]
-        FirstInterview,
-        [JsonProperty("SECOND_INTERVIEW")]
-        SecondInterview,
-        [JsonProperty("THIRD_INTERVIEW")]
-        ThirdInterview,
-        [JsonProperty("BACKGROUND_CHECK")]
-        BackgroundCheck,
-        [JsonProperty("OFFERED")]
-        Offered,
-        [JsonProperty("ACCEPTED")]
-        Accepted,
-        [JsonProperty("HIRED")]
-        Hired,
-        [JsonProperty("REJECTED")]
-        Rejected,
-        [JsonProperty("DECLINED")]
-        Declined,
-        [JsonProperty("WITHDRAWN")]
-        Withdrawn,
-    }
 
-    public static class AtsStatusStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AtsStatusStatus : IEquatable<AtsStatusStatus>
     {
-        public static string Value(this AtsStatusStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AtsStatusStatus New = new AtsStatusStatus("NEW");
+        public static readonly AtsStatusStatus Reviewing = new AtsStatusStatus("REVIEWING");
+        public static readonly AtsStatusStatus Screening = new AtsStatusStatus("SCREENING");
+        public static readonly AtsStatusStatus Submitted = new AtsStatusStatus("SUBMITTED");
+        public static readonly AtsStatusStatus FirstInterview = new AtsStatusStatus("FIRST_INTERVIEW");
+        public static readonly AtsStatusStatus SecondInterview = new AtsStatusStatus("SECOND_INTERVIEW");
+        public static readonly AtsStatusStatus ThirdInterview = new AtsStatusStatus("THIRD_INTERVIEW");
+        public static readonly AtsStatusStatus BackgroundCheck = new AtsStatusStatus("BACKGROUND_CHECK");
+        public static readonly AtsStatusStatus Offered = new AtsStatusStatus("OFFERED");
+        public static readonly AtsStatusStatus Accepted = new AtsStatusStatus("ACCEPTED");
+        public static readonly AtsStatusStatus Hired = new AtsStatusStatus("HIRED");
+        public static readonly AtsStatusStatus Rejected = new AtsStatusStatus("REJECTED");
+        public static readonly AtsStatusStatus Declined = new AtsStatusStatus("DECLINED");
+        public static readonly AtsStatusStatus Withdrawn = new AtsStatusStatus("WITHDRAWN");
 
-        public static AtsStatusStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AtsStatusStatus).GetFields())
+        private static readonly Dictionary <string, AtsStatusStatus> _knownValues =
+            new Dictionary <string, AtsStatusStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["NEW"] = New,
+                ["REVIEWING"] = Reviewing,
+                ["SCREENING"] = Screening,
+                ["SUBMITTED"] = Submitted,
+                ["FIRST_INTERVIEW"] = FirstInterview,
+                ["SECOND_INTERVIEW"] = SecondInterview,
+                ["THIRD_INTERVIEW"] = ThirdInterview,
+                ["BACKGROUND_CHECK"] = BackgroundCheck,
+                ["OFFERED"] = Offered,
+                ["ACCEPTED"] = Accepted,
+                ["HIRED"] = Hired,
+                ["REJECTED"] = Rejected,
+                ["DECLINED"] = Declined,
+                ["WITHDRAWN"] = Withdrawn
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AtsStatusStatus> _values =
+            new ConcurrentDictionary<string, AtsStatusStatus>(_knownValues);
 
-                    if (enumVal is AtsStatusStatus)
-                    {
-                        return (AtsStatusStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AtsStatusStatus");
+        private AtsStatusStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AtsStatusStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AtsStatusStatus(value));
+        }
+
+        public static implicit operator AtsStatusStatus(string value) => Of(value);
+        public static implicit operator string(AtsStatusStatus atsstatusstatus) => atsstatusstatus.Value;
+
+        public static AtsStatusStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AtsStatusStatus);
+
+        public bool Equals(AtsStatusStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,4 @@
 # Comment
-(*Comment*)
 
 ## Overview
 
@@ -30,6 +29,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -71,6 +71,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -112,6 +113,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -153,6 +155,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getKmsComment" method="get" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -194,6 +197,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTaskComment" method="get" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -235,6 +239,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcComment" method="get" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -276,6 +281,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listKmsComments" method="get" path="/kms/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -316,6 +322,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTaskComments" method="get" path="/task/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -356,6 +363,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcComments" method="get" path="/uc/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -396,6 +404,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -438,6 +447,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -480,6 +490,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -522,6 +533,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeKmsComment" method="delete" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -561,6 +573,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTaskComment" method="delete" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -600,6 +613,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUcComment" method="delete" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -639,6 +653,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -681,6 +696,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -723,6 +739,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

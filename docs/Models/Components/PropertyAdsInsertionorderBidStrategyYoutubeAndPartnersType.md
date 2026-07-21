@@ -1,5 +1,16 @@
 # PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsInsertionorderBidStrategyYoutubeAndPartnersType.Of("custom_value");
+```
+
 
 ## Values
 

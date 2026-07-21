@@ -1,5 +1,13 @@
 # CreateCrmContactQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateCrmContactQueryParamFields.Id;
+```
+
 
 ## Values
 

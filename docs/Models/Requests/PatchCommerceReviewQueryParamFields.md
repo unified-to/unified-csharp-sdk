@@ -1,5 +1,13 @@
 # PatchCommerceReviewQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCommerceReviewQueryParamFields.Id;
+```
+
 
 ## Values
 

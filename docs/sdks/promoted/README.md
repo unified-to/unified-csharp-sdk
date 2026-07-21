@@ -1,5 +1,4 @@
 # Promoted
-(*Promoted*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a promoted
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAdsPromoted" method="get" path="/ads/{connection_id}/promoted/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all promoteds
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAdsPromoteds" method="get" path="/ads/{connection_id}/promoted" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

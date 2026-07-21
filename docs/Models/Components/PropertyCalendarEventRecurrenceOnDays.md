@@ -1,5 +1,16 @@
 # PropertyCalendarEventRecurrenceOnDays
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyCalendarEventRecurrenceOnDays.Su;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyCalendarEventRecurrenceOnDays.Of("custom_value");
+```
+
 
 ## Values
 

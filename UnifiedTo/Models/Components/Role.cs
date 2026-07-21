@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Role
-    {
-        [JsonProperty("SYSTEM")]
-        System,
-        [JsonProperty("USER")]
-        User,
-        [JsonProperty("ASSISTANT")]
-        Assistant,
-    }
 
-    public static class RoleExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Role : IEquatable<Role>
     {
-        public static string Value(this Role value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Role System = new Role("SYSTEM");
+        public static readonly Role User = new Role("USER");
+        public static readonly Role Assistant = new Role("ASSISTANT");
 
-        public static Role ToEnum(this string value)
-        {
-            foreach(var field in typeof(Role).GetFields())
+        private static readonly Dictionary <string, Role> _knownValues =
+            new Dictionary <string, Role> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SYSTEM"] = System,
+                ["USER"] = User,
+                ["ASSISTANT"] = Assistant
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Role> _values =
+            new ConcurrentDictionary<string, Role>(_knownValues);
 
-                    if (enumVal is Role)
-                    {
-                        return (Role)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Role");
+        private Role(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Role Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Role(value));
+        }
+
+        public static implicit operator Role(string value) => Of(value);
+        public static implicit operator string(Role role) => role.Value;
+
+        public static Role[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Role);
+
+        public bool Equals(Role? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

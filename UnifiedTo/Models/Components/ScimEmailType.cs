@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ScimEmailType
-    {
-        [JsonProperty("work")]
-        Work,
-        [JsonProperty("home")]
-        Home,
-        [JsonProperty("other")]
-        Other,
-    }
 
-    public static class ScimEmailTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ScimEmailType : IEquatable<ScimEmailType>
     {
-        public static string Value(this ScimEmailType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ScimEmailType Work = new ScimEmailType("work");
+        public static readonly ScimEmailType Home = new ScimEmailType("home");
+        public static readonly ScimEmailType Other = new ScimEmailType("other");
 
-        public static ScimEmailType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ScimEmailType).GetFields())
+        private static readonly Dictionary <string, ScimEmailType> _knownValues =
+            new Dictionary <string, ScimEmailType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["work"] = Work,
+                ["home"] = Home,
+                ["other"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ScimEmailType> _values =
+            new ConcurrentDictionary<string, ScimEmailType>(_knownValues);
 
-                    if (enumVal is ScimEmailType)
-                    {
-                        return (ScimEmailType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ScimEmailType");
+        private ScimEmailType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ScimEmailType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ScimEmailType(value));
+        }
+
+        public static implicit operator ScimEmailType(string value) => Of(value);
+        public static implicit operator string(ScimEmailType scimemailtype) => scimemailtype.Value;
+
+        public static ScimEmailType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ScimEmailType);
+
+        public bool Equals(ScimEmailType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,18 +11,19 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class PropertyAdsReportMetricsGroup
     {
-
         [JsonProperty("bid_amount")]
         public double? BidAmount { get; set; }
 
         /// <summary>
-        /// YOUTUBE_AND_PARTNERS
+        /// YOUTUBE_AND_PARTNERS.
         /// </summary>
         [JsonProperty("bid_strategy")]
         public PropertyAdsReportMetricsGroupBidStrategy? BidStrategy { get; set; }

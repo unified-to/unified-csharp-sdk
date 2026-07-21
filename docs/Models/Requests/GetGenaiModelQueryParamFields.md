@@ -1,5 +1,13 @@
 # GetGenaiModelQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetGenaiModelQueryParamFields.Id;
+```
+
 
 ## Values
 

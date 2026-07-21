@@ -14,10 +14,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class LmsCourse
     {
-
         [JsonProperty("categories")]
         public List<string>? Categories { get; set; }
 
@@ -40,7 +39,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// @deprecated; use instructors
+        /// @deprecated; use instructors.
         /// </summary>
         [JsonProperty("instructor_ids")]
         public List<string>? InstructorIds { get; set; }
@@ -79,7 +78,7 @@ namespace UnifiedTo.Models.Components
         public List<string>? Skills { get; set; }
 
         /// <summary>
-        /// @deprecated; use students
+        /// @deprecated; use students.
         /// </summary>
         [JsonProperty("student_ids")]
         public List<string>? StudentIds { get; set; }

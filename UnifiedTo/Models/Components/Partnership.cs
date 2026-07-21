@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class PartnershipType
     {
         private PartnershipType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static PartnershipType MapOfAny { get { return new PartnershipType("mapOfAny"); } }
-        
+
         public static PartnershipType Str { get { return new PartnershipType("str"); } }
-        
+
         public static PartnershipType Number { get { return new PartnershipType("number"); } }
-        
+
         public static PartnershipType Boolean { get { return new PartnershipType("boolean"); } }
-        
+
         public static PartnershipType ArrayOfIntegrationSchemas5 { get { return new PartnershipType("arrayOfIntegrationSchemas5"); } }
-        
-        public static PartnershipType Null { get { return new PartnershipType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(PartnershipType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfIntegrationSchemas5": return ArrayOfIntegrationSchemas5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for PartnershipType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Partnership.PartnershipConverter))]
-    public class Partnership {
-        public Partnership(PartnershipType type) {
+    public class Partnership
+    {
+        public Partnership(PartnershipType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<IntegrationSchemas5>? ArrayOfIntegrationSchemas5 { get; set; }
 
         public PartnershipType Type { get; set; }
-
-
-        public static Partnership CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static Partnership CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             PartnershipType typ = PartnershipType.MapOfAny;
 
             Partnership res = new Partnership(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static Partnership CreateStr(string str) {
+        public static Partnership CreateStr(string str)
+        {
             PartnershipType typ = PartnershipType.Str;
 
             Partnership res = new Partnership(typ);
             res.Str = str;
             return res;
         }
-
-        public static Partnership CreateNumber(double number) {
+        public static Partnership CreateNumber(double number)
+        {
             PartnershipType typ = PartnershipType.Number;
 
             Partnership res = new Partnership(typ);
             res.Number = number;
             return res;
         }
-
-        public static Partnership CreateBoolean(bool boolean) {
+        public static Partnership CreateBoolean(bool boolean)
+        {
             PartnershipType typ = PartnershipType.Boolean;
 
             Partnership res = new Partnership(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static Partnership CreateArrayOfIntegrationSchemas5(List<IntegrationSchemas5> arrayOfIntegrationSchemas5) {
+        public static Partnership CreateArrayOfIntegrationSchemas5(List<IntegrationSchemas5> arrayOfIntegrationSchemas5)
+        {
             PartnershipType typ = PartnershipType.ArrayOfIntegrationSchemas5;
 
             Partnership res = new Partnership(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Partnership CreateNull() {
-            PartnershipType typ = PartnershipType.Null;
-            return new Partnership(typ);
-        }
-
         public class PartnershipConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(Partnership);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                Partnership res = (Partnership)value;
-                if (PartnershipType.FromString(res.Type).Equals(PartnershipType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                Partnership res = (Partnership)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfIntegrationSchemas5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegrationSchemas5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

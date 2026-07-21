@@ -1,5 +1,4 @@
 # Request
-(*Request*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createVerificationRequest" method="post" path="/verification/{connection_id}/request" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getVerificationRequest" method="get" path="/verification/{connection_id}/request/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all requests
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listVerificationRequests" method="get" path="/verification/{connection_id}/request" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchVerificationRequest" method="patch" path="/verification/{connection_id}/request/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeVerificationRequest" method="delete" path="/verification/{connection_id}/request/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a request
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateVerificationRequest" method="put" path="/verification/{connection_id}/request/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class LmsContentLocalization
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

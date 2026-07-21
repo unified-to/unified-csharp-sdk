@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsInsertionorderStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("SCHEDULED_FOR_DELETION")]
-        ScheduledForDeletion,
-        [JsonProperty("PROCESSING")]
-        Processing,
-        [JsonProperty("PROCESSING_FAILED")]
-        ProcessingFailed,
-    }
 
-    public static class AdsInsertionorderStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsInsertionorderStatus : IEquatable<AdsInsertionorderStatus>
     {
-        public static string Value(this AdsInsertionorderStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsInsertionorderStatus Unspecified = new AdsInsertionorderStatus("UNSPECIFIED");
+        public static readonly AdsInsertionorderStatus Active = new AdsInsertionorderStatus("ACTIVE");
+        public static readonly AdsInsertionorderStatus Paused = new AdsInsertionorderStatus("PAUSED");
+        public static readonly AdsInsertionorderStatus Archived = new AdsInsertionorderStatus("ARCHIVED");
+        public static readonly AdsInsertionorderStatus Draft = new AdsInsertionorderStatus("DRAFT");
+        public static readonly AdsInsertionorderStatus ScheduledForDeletion = new AdsInsertionorderStatus("SCHEDULED_FOR_DELETION");
+        public static readonly AdsInsertionorderStatus Processing = new AdsInsertionorderStatus("PROCESSING");
+        public static readonly AdsInsertionorderStatus ProcessingFailed = new AdsInsertionorderStatus("PROCESSING_FAILED");
 
-        public static AdsInsertionorderStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsInsertionorderStatus).GetFields())
+        private static readonly Dictionary <string, AdsInsertionorderStatus> _knownValues =
+            new Dictionary <string, AdsInsertionorderStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["ACTIVE"] = Active,
+                ["PAUSED"] = Paused,
+                ["ARCHIVED"] = Archived,
+                ["DRAFT"] = Draft,
+                ["SCHEDULED_FOR_DELETION"] = ScheduledForDeletion,
+                ["PROCESSING"] = Processing,
+                ["PROCESSING_FAILED"] = ProcessingFailed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsInsertionorderStatus> _values =
+            new ConcurrentDictionary<string, AdsInsertionorderStatus>(_knownValues);
 
-                    if (enumVal is AdsInsertionorderStatus)
-                    {
-                        return (AdsInsertionorderStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsInsertionorderStatus");
+        private AdsInsertionorderStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsInsertionorderStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsInsertionorderStatus(value));
+        }
+
+        public static implicit operator AdsInsertionorderStatus(string value) => Of(value);
+        public static implicit operator string(AdsInsertionorderStatus adsinsertionorderstatus) => adsinsertionorderstatus.Value;
+
+        public static AdsInsertionorderStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsInsertionorderStatus);
+
+        public bool Equals(AdsInsertionorderStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

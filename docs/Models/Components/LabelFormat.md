@@ -1,5 +1,16 @@
 # LabelFormat
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = LabelFormat.Pdf;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = LabelFormat.Of("custom_value");
+```
+
 
 ## Values
 

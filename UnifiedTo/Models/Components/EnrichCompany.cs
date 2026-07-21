@@ -14,15 +14,14 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A company object from an enrichment integration
+    /// A company object from an enrichment integration.
     /// </summary>
     public class EnrichCompany
     {
-
         /// <summary>
-        /// The address of the company
+        /// The address of the company.
         /// </summary>
         [JsonProperty("address")]
         public PropertyEnrichCompanyAddress? Address { get; set; }
@@ -85,7 +84,7 @@ namespace UnifiedTo.Models.Components
         public string? Stock { get; set; }
 
         /// <summary>
-        /// An array of telephones for this company
+        /// An array of telephones for this company.
         /// </summary>
         [JsonProperty("telephones")]
         public List<EnrichTelephone>? Telephones { get; set; }

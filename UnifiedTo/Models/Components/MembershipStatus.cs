@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MembershipStatus
-    {
-        [JsonProperty("MEMBER")]
-        Member,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("NONE")]
-        None,
-    }
 
-    public static class MembershipStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MembershipStatus : IEquatable<MembershipStatus>
     {
-        public static string Value(this MembershipStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MembershipStatus Member = new MembershipStatus("MEMBER");
+        public static readonly MembershipStatus Pending = new MembershipStatus("PENDING");
+        public static readonly MembershipStatus None = new MembershipStatus("NONE");
 
-        public static MembershipStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(MembershipStatus).GetFields())
+        private static readonly Dictionary <string, MembershipStatus> _knownValues =
+            new Dictionary <string, MembershipStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MEMBER"] = Member,
+                ["PENDING"] = Pending,
+                ["NONE"] = None
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MembershipStatus> _values =
+            new ConcurrentDictionary<string, MembershipStatus>(_knownValues);
 
-                    if (enumVal is MembershipStatus)
-                    {
-                        return (MembershipStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MembershipStatus");
+        private MembershipStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MembershipStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MembershipStatus(value));
+        }
+
+        public static implicit operator MembershipStatus(string value) => Of(value);
+        public static implicit operator string(MembershipStatus membershipstatus) => membershipstatus.Value;
+
+        public static MembershipStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MembershipStatus);
+
+        public bool Equals(MembershipStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

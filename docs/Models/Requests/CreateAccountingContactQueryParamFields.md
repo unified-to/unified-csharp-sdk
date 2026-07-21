@@ -1,5 +1,13 @@
 # CreateAccountingContactQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateAccountingContactQueryParamFields.Id;
+```
+
 
 ## Values
 

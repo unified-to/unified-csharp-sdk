@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AssessmentPackageType
-    {
-        [JsonProperty("SKILLS_TEST")]
-        SkillsTest,
-        [JsonProperty("BEHAVIORAL_ASSESSMENT")]
-        BehavioralAssessment,
-        [JsonProperty("VIDEO_INTERVIEW")]
-        VideoInterview,
-        [JsonProperty("BACKGROUND_CHECK")]
-        BackgroundCheck,
-        [JsonProperty("REFERENCE_CHECK")]
-        ReferenceCheck,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class AssessmentPackageTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AssessmentPackageType : IEquatable<AssessmentPackageType>
     {
-        public static string Value(this AssessmentPackageType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AssessmentPackageType SkillsTest = new AssessmentPackageType("SKILLS_TEST");
+        public static readonly AssessmentPackageType BehavioralAssessment = new AssessmentPackageType("BEHAVIORAL_ASSESSMENT");
+        public static readonly AssessmentPackageType VideoInterview = new AssessmentPackageType("VIDEO_INTERVIEW");
+        public static readonly AssessmentPackageType BackgroundCheck = new AssessmentPackageType("BACKGROUND_CHECK");
+        public static readonly AssessmentPackageType ReferenceCheck = new AssessmentPackageType("REFERENCE_CHECK");
+        public static readonly AssessmentPackageType Other = new AssessmentPackageType("OTHER");
 
-        public static AssessmentPackageType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AssessmentPackageType).GetFields())
+        private static readonly Dictionary <string, AssessmentPackageType> _knownValues =
+            new Dictionary <string, AssessmentPackageType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SKILLS_TEST"] = SkillsTest,
+                ["BEHAVIORAL_ASSESSMENT"] = BehavioralAssessment,
+                ["VIDEO_INTERVIEW"] = VideoInterview,
+                ["BACKGROUND_CHECK"] = BackgroundCheck,
+                ["REFERENCE_CHECK"] = ReferenceCheck,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AssessmentPackageType> _values =
+            new ConcurrentDictionary<string, AssessmentPackageType>(_knownValues);
 
-                    if (enumVal is AssessmentPackageType)
-                    {
-                        return (AssessmentPackageType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AssessmentPackageType");
+        private AssessmentPackageType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AssessmentPackageType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AssessmentPackageType(value));
+        }
+
+        public static implicit operator AssessmentPackageType(string value) => Of(value);
+        public static implicit operator string(AssessmentPackageType assessmentpackagetype) => assessmentpackagetype.Value;
+
+        public static AssessmentPackageType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AssessmentPackageType);
+
+        public bool Equals(AssessmentPackageType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

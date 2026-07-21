@@ -1,5 +1,13 @@
 # ListClubsMembersQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListClubsMembersQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,4 @@
 # Model
-(*Model*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a model
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getGenaiModel" method="get" path="/genai/{connection_id}/model/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all models
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listGenaiModels" method="get" path="/genai/{connection_id}/model" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

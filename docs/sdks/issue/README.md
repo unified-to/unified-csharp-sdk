@@ -1,5 +1,4 @@
 # Issue
-(*Issue*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve support issue
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedIssue" method="get" path="/unified/issue/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -49,6 +49,7 @@ List support issues
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedIssues" method="get" path="/unified/issue" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -58,7 +59,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIssuesRequest req = ;
+ListUnifiedIssuesRequest? req = null;
 
 var res = await sdk.Issue.ListUnifiedIssuesAsync(req);
 

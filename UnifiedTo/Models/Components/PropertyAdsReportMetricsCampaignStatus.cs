@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("SCHEDULED_FOR_DELETION")]
-        ScheduledForDeletion,
-        [JsonProperty("PROCESSING")]
-        Processing,
-        [JsonProperty("PROCESSING_FAILED")]
-        ProcessingFailed,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignStatus : IEquatable<PropertyAdsReportMetricsCampaignStatus>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignStatus Unspecified = new PropertyAdsReportMetricsCampaignStatus("UNSPECIFIED");
+        public static readonly PropertyAdsReportMetricsCampaignStatus Active = new PropertyAdsReportMetricsCampaignStatus("ACTIVE");
+        public static readonly PropertyAdsReportMetricsCampaignStatus Paused = new PropertyAdsReportMetricsCampaignStatus("PAUSED");
+        public static readonly PropertyAdsReportMetricsCampaignStatus Archived = new PropertyAdsReportMetricsCampaignStatus("ARCHIVED");
+        public static readonly PropertyAdsReportMetricsCampaignStatus Draft = new PropertyAdsReportMetricsCampaignStatus("DRAFT");
+        public static readonly PropertyAdsReportMetricsCampaignStatus ScheduledForDeletion = new PropertyAdsReportMetricsCampaignStatus("SCHEDULED_FOR_DELETION");
+        public static readonly PropertyAdsReportMetricsCampaignStatus Processing = new PropertyAdsReportMetricsCampaignStatus("PROCESSING");
+        public static readonly PropertyAdsReportMetricsCampaignStatus ProcessingFailed = new PropertyAdsReportMetricsCampaignStatus("PROCESSING_FAILED");
 
-        public static PropertyAdsReportMetricsCampaignStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignStatus).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignStatus> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["ACTIVE"] = Active,
+                ["PAUSED"] = Paused,
+                ["ARCHIVED"] = Archived,
+                ["DRAFT"] = Draft,
+                ["SCHEDULED_FOR_DELETION"] = ScheduledForDeletion,
+                ["PROCESSING"] = Processing,
+                ["PROCESSING_FAILED"] = ProcessingFailed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignStatus> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignStatus>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignStatus)
-                    {
-                        return (PropertyAdsReportMetricsCampaignStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignStatus");
+        private PropertyAdsReportMetricsCampaignStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignStatus(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignStatus(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignStatus propertyadsreportmetricscampaignstatus) => propertyadsreportmetricscampaignstatus.Value;
+
+        public static PropertyAdsReportMetricsCampaignStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignStatus);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

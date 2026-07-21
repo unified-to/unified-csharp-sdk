@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingEmailType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class AccountingEmailTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingEmailType : IEquatable<AccountingEmailType>
     {
-        public static string Value(this AccountingEmailType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingEmailType Work = new AccountingEmailType("WORK");
+        public static readonly AccountingEmailType Home = new AccountingEmailType("HOME");
+        public static readonly AccountingEmailType Other = new AccountingEmailType("OTHER");
 
-        public static AccountingEmailType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingEmailType).GetFields())
+        private static readonly Dictionary <string, AccountingEmailType> _knownValues =
+            new Dictionary <string, AccountingEmailType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingEmailType> _values =
+            new ConcurrentDictionary<string, AccountingEmailType>(_knownValues);
 
-                    if (enumVal is AccountingEmailType)
-                    {
-                        return (AccountingEmailType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingEmailType");
+        private AccountingEmailType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingEmailType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingEmailType(value));
+        }
+
+        public static implicit operator AccountingEmailType(string value) => Of(value);
+        public static implicit operator string(AccountingEmailType accountingemailtype) => accountingemailtype.Value;
+
+        public static AccountingEmailType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingEmailType);
+
+        public bool Equals(AccountingEmailType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

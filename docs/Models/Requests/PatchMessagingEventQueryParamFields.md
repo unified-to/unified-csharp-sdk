@@ -1,5 +1,13 @@
 # PatchMessagingEventQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchMessagingEventQueryParamFields.Id;
+```
+
 
 ## Values
 

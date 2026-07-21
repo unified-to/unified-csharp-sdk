@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum TimeUnit
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("LIFETIME")]
-        Lifetime,
-        [JsonProperty("MONTHS")]
-        Months,
-        [JsonProperty("WEEKS")]
-        Weeks,
-        [JsonProperty("DAYS")]
-        Days,
-        [JsonProperty("HOURS")]
-        Hours,
-        [JsonProperty("MINUTES")]
-        Minutes,
-    }
 
-    public static class TimeUnitExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class TimeUnit : IEquatable<TimeUnit>
     {
-        public static string Value(this TimeUnit value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly TimeUnit Unspecified = new TimeUnit("UNSPECIFIED");
+        public static readonly TimeUnit Lifetime = new TimeUnit("LIFETIME");
+        public static readonly TimeUnit Months = new TimeUnit("MONTHS");
+        public static readonly TimeUnit Weeks = new TimeUnit("WEEKS");
+        public static readonly TimeUnit Days = new TimeUnit("DAYS");
+        public static readonly TimeUnit Hours = new TimeUnit("HOURS");
+        public static readonly TimeUnit Minutes = new TimeUnit("MINUTES");
 
-        public static TimeUnit ToEnum(this string value)
-        {
-            foreach(var field in typeof(TimeUnit).GetFields())
+        private static readonly Dictionary <string, TimeUnit> _knownValues =
+            new Dictionary <string, TimeUnit> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["LIFETIME"] = Lifetime,
+                ["MONTHS"] = Months,
+                ["WEEKS"] = Weeks,
+                ["DAYS"] = Days,
+                ["HOURS"] = Hours,
+                ["MINUTES"] = Minutes
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, TimeUnit> _values =
+            new ConcurrentDictionary<string, TimeUnit>(_knownValues);
 
-                    if (enumVal is TimeUnit)
-                    {
-                        return (TimeUnit)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum TimeUnit");
+        private TimeUnit(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static TimeUnit Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new TimeUnit(value));
+        }
+
+        public static implicit operator TimeUnit(string value) => Of(value);
+        public static implicit operator string(TimeUnit timeunit) => timeunit.Value;
+
+        public static TimeUnit[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as TimeUnit);
+
+        public bool Equals(TimeUnit? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

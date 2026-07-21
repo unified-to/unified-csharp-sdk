@@ -1,5 +1,13 @@
 # UpdateAccountingCategoryQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingCategoryQueryParamFields.Id;
+```
+
 
 ## Values
 

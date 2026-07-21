@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class TaskMetadataExtraDataType
     {
         private TaskMetadataExtraDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TaskMetadataExtraDataType MapOfAny { get { return new TaskMetadataExtraDataType("mapOfAny"); } }
-        
+
         public static TaskMetadataExtraDataType Str { get { return new TaskMetadataExtraDataType("str"); } }
-        
+
         public static TaskMetadataExtraDataType Number { get { return new TaskMetadataExtraDataType("number"); } }
-        
+
         public static TaskMetadataExtraDataType Boolean { get { return new TaskMetadataExtraDataType("boolean"); } }
-        
+
         public static TaskMetadataExtraDataType ArrayOfTaskMetadata5 { get { return new TaskMetadataExtraDataType("arrayOfTaskMetadata5"); } }
-        
-        public static TaskMetadataExtraDataType Null { get { return new TaskMetadataExtraDataType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(TaskMetadataExtraDataType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfTaskMetadata5": return ArrayOfTaskMetadata5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for TaskMetadataExtraDataType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(TaskMetadataExtraData.TaskMetadataExtraDataConverter))]
-    public class TaskMetadataExtraData {
-        public TaskMetadataExtraData(TaskMetadataExtraDataType type) {
+    public class TaskMetadataExtraData
+    {
+        public TaskMetadataExtraData(TaskMetadataExtraDataType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<TaskMetadata5>? ArrayOfTaskMetadata5 { get; set; }
 
         public TaskMetadataExtraDataType Type { get; set; }
-
-
-        public static TaskMetadataExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static TaskMetadataExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.MapOfAny;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static TaskMetadataExtraData CreateStr(string str) {
+        public static TaskMetadataExtraData CreateStr(string str)
+        {
             TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.Str;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
             res.Str = str;
             return res;
         }
-
-        public static TaskMetadataExtraData CreateNumber(double number) {
+        public static TaskMetadataExtraData CreateNumber(double number)
+        {
             TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.Number;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
             res.Number = number;
             return res;
         }
-
-        public static TaskMetadataExtraData CreateBoolean(bool boolean) {
+        public static TaskMetadataExtraData CreateBoolean(bool boolean)
+        {
             TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.Boolean;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static TaskMetadataExtraData CreateArrayOfTaskMetadata5(List<TaskMetadata5> arrayOfTaskMetadata5) {
+        public static TaskMetadataExtraData CreateArrayOfTaskMetadata5(List<TaskMetadata5> arrayOfTaskMetadata5)
+        {
             TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.ArrayOfTaskMetadata5;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static TaskMetadataExtraData CreateNull() {
-            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.Null;
-            return new TaskMetadataExtraData(typ);
-        }
-
         public class TaskMetadataExtraDataConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(TaskMetadataExtraData);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                TaskMetadataExtraData res = (TaskMetadataExtraData)value;
-                if (TaskMetadataExtraDataType.FromString(res.Type).Equals(TaskMetadataExtraDataType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                TaskMetadataExtraData res = (TaskMetadataExtraData)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfTaskMetadata5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfTaskMetadata5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

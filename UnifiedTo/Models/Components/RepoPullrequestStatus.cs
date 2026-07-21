@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum RepoPullrequestStatus
-    {
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("APPROVED")]
-        Approved,
-        [JsonProperty("REJECTED")]
-        Rejected,
-    }
 
-    public static class RepoPullrequestStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class RepoPullrequestStatus : IEquatable<RepoPullrequestStatus>
     {
-        public static string Value(this RepoPullrequestStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly RepoPullrequestStatus Pending = new RepoPullrequestStatus("PENDING");
+        public static readonly RepoPullrequestStatus Approved = new RepoPullrequestStatus("APPROVED");
+        public static readonly RepoPullrequestStatus Rejected = new RepoPullrequestStatus("REJECTED");
 
-        public static RepoPullrequestStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(RepoPullrequestStatus).GetFields())
+        private static readonly Dictionary <string, RepoPullrequestStatus> _knownValues =
+            new Dictionary <string, RepoPullrequestStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PENDING"] = Pending,
+                ["APPROVED"] = Approved,
+                ["REJECTED"] = Rejected
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, RepoPullrequestStatus> _values =
+            new ConcurrentDictionary<string, RepoPullrequestStatus>(_knownValues);
 
-                    if (enumVal is RepoPullrequestStatus)
-                    {
-                        return (RepoPullrequestStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum RepoPullrequestStatus");
+        private RepoPullrequestStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static RepoPullrequestStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new RepoPullrequestStatus(value));
+        }
+
+        public static implicit operator RepoPullrequestStatus(string value) => Of(value);
+        public static implicit operator string(RepoPullrequestStatus repopullrequeststatus) => repopullrequeststatus.Value;
+
+        public static RepoPullrequestStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as RepoPullrequestStatus);
+
+        public bool Equals(RepoPullrequestStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

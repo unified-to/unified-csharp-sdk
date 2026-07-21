@@ -1,5 +1,13 @@
 # UpdateTaskProjectQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateTaskProjectQueryParamFields.Id;
+```
+
 
 ## Values
 

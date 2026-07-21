@@ -10,12 +10,11 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class GetUnifiedWebhookRequest
     {
-
         /// <summary>
-        /// ID of the Webhook
+        /// ID of the Webhook.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

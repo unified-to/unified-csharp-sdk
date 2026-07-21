@@ -1,5 +1,16 @@
 # DatastoreFieldType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = DatastoreFieldType.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = DatastoreFieldType.Of("custom_value");
+```
+
 
 ## Values
 

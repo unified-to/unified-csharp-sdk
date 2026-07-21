@@ -1,5 +1,13 @@
 # UpdateTicketingTicketQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateTicketingTicketQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,16 @@
 # NativeWebhookTableId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = NativeWebhookTableId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = NativeWebhookTableId.Of("custom_value");
+```
+
 
 ## Values
 

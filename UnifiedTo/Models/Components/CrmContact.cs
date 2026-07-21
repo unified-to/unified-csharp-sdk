@@ -14,13 +14,12 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A contact represents a person that optionally is associated with a deal and/or a company
+    /// A contact represents a person that optionally is associated with a deal and/or a company.
     /// </summary>
     public class CrmContact
     {
-
         [JsonProperty("address")]
         public PropertyCrmContactAddress? Address { get; set; }
 
@@ -28,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public string? Company { get; set; }
 
         /// <summary>
-        /// An array of company IDs associated with this contact
+        /// An array of company IDs associated with this contact.
         /// </summary>
         [JsonProperty("company_ids")]
         public List<string>? CompanyIds { get; set; }
@@ -37,7 +36,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// An array of deal IDs associated with this contact
+        /// An array of deal IDs associated with this contact.
         /// </summary>
         [JsonProperty("deal_ids")]
         public List<string>? DealIds { get; set; }
@@ -46,7 +45,7 @@ namespace UnifiedTo.Models.Components
         public string? Department { get; set; }
 
         /// <summary>
-        /// An array of email addresses for this contact
+        /// An array of email addresses for this contact.
         /// </summary>
         [JsonProperty("emails")]
         public List<CrmEmail>? Emails { get; set; }
@@ -64,7 +63,7 @@ namespace UnifiedTo.Models.Components
         public string? LastName { get; set; }
 
         /// <summary>
-        /// Additional URLs associated with the contact e.g., LinkedIn, website, etc
+        /// Additional URLs associated with the contact e.g., LinkedIn, website, etc.
         /// </summary>
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }
@@ -79,7 +78,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
-        /// An array of telephones for this contact
+        /// An array of telephones for this contact.
         /// </summary>
         [JsonProperty("telephones")]
         public List<CrmTelephone>? Telephones { get; set; }

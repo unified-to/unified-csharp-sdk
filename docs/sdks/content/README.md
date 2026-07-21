@@ -1,5 +1,4 @@
 # Content
-(*Content*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createLmsContent" method="post" path="/lms/{connection_id}/content" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getLmsContent" method="get" path="/lms/{connection_id}/content/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all contents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listLmsContents" method="get" path="/lms/{connection_id}/content" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchLmsContent" method="patch" path="/lms/{connection_id}/content/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeLmsContent" method="delete" path="/lms/{connection_id}/content/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a content
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateLmsContent" method="put" path="/lms/{connection_id}/content/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

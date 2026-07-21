@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("IMAGE")]
-        Image,
-        [JsonProperty("VIDEO")]
-        Video,
-        [JsonProperty("RESPONSIVE")]
-        Responsive,
-        [JsonProperty("SHOPPING")]
-        Shopping,
-        [JsonProperty("APP")]
-        App,
-        [JsonProperty("CALL")]
-        Call,
-        [JsonProperty("CAROUSEL")]
-        Carousel,
-        [JsonProperty("SOCIAL")]
-        Social,
-        [JsonProperty("DISPLAY")]
-        Display,
-        [JsonProperty("SEARCH")]
-        Search,
-        [JsonProperty("AUDIO")]
-        Audio,
-        [JsonProperty("YOUTUBE")]
-        Youtube,
-    }
 
-    public static class PropertyAdsReportMetricsGroupTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupType : IEquatable<PropertyAdsReportMetricsGroupType>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupType Text = new PropertyAdsReportMetricsGroupType("TEXT");
+        public static readonly PropertyAdsReportMetricsGroupType Image = new PropertyAdsReportMetricsGroupType("IMAGE");
+        public static readonly PropertyAdsReportMetricsGroupType Video = new PropertyAdsReportMetricsGroupType("VIDEO");
+        public static readonly PropertyAdsReportMetricsGroupType Responsive = new PropertyAdsReportMetricsGroupType("RESPONSIVE");
+        public static readonly PropertyAdsReportMetricsGroupType Shopping = new PropertyAdsReportMetricsGroupType("SHOPPING");
+        public static readonly PropertyAdsReportMetricsGroupType App = new PropertyAdsReportMetricsGroupType("APP");
+        public static readonly PropertyAdsReportMetricsGroupType Call = new PropertyAdsReportMetricsGroupType("CALL");
+        public static readonly PropertyAdsReportMetricsGroupType Carousel = new PropertyAdsReportMetricsGroupType("CAROUSEL");
+        public static readonly PropertyAdsReportMetricsGroupType Social = new PropertyAdsReportMetricsGroupType("SOCIAL");
+        public static readonly PropertyAdsReportMetricsGroupType Display = new PropertyAdsReportMetricsGroupType("DISPLAY");
+        public static readonly PropertyAdsReportMetricsGroupType Search = new PropertyAdsReportMetricsGroupType("SEARCH");
+        public static readonly PropertyAdsReportMetricsGroupType Audio = new PropertyAdsReportMetricsGroupType("AUDIO");
+        public static readonly PropertyAdsReportMetricsGroupType Youtube = new PropertyAdsReportMetricsGroupType("YOUTUBE");
 
-        public static PropertyAdsReportMetricsGroupType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupType> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["IMAGE"] = Image,
+                ["VIDEO"] = Video,
+                ["RESPONSIVE"] = Responsive,
+                ["SHOPPING"] = Shopping,
+                ["APP"] = App,
+                ["CALL"] = Call,
+                ["CAROUSEL"] = Carousel,
+                ["SOCIAL"] = Social,
+                ["DISPLAY"] = Display,
+                ["SEARCH"] = Search,
+                ["AUDIO"] = Audio,
+                ["YOUTUBE"] = Youtube
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupType> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupType>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupType)
-                    {
-                        return (PropertyAdsReportMetricsGroupType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupType");
+        private PropertyAdsReportMetricsGroupType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupType(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupType propertyadsreportmetricsgrouptype) => propertyadsreportmetricsgrouptype.Value;
+
+        public static PropertyAdsReportMetricsGroupType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupType);
+
+        public bool Equals(PropertyAdsReportMetricsGroupType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

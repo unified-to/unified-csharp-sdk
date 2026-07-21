@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum WeekStart
-    {
-        [JsonProperty("SU")]
-        Su,
-        [JsonProperty("MO")]
-        Mo,
-        [JsonProperty("TU")]
-        Tu,
-        [JsonProperty("WE")]
-        We,
-        [JsonProperty("TH")]
-        Th,
-        [JsonProperty("FR")]
-        Fr,
-        [JsonProperty("SA")]
-        Sa,
-    }
 
-    public static class WeekStartExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class WeekStart : IEquatable<WeekStart>
     {
-        public static string Value(this WeekStart value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly WeekStart Su = new WeekStart("SU");
+        public static readonly WeekStart Mo = new WeekStart("MO");
+        public static readonly WeekStart Tu = new WeekStart("TU");
+        public static readonly WeekStart We = new WeekStart("WE");
+        public static readonly WeekStart Th = new WeekStart("TH");
+        public static readonly WeekStart Fr = new WeekStart("FR");
+        public static readonly WeekStart Sa = new WeekStart("SA");
 
-        public static WeekStart ToEnum(this string value)
-        {
-            foreach(var field in typeof(WeekStart).GetFields())
+        private static readonly Dictionary <string, WeekStart> _knownValues =
+            new Dictionary <string, WeekStart> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SU"] = Su,
+                ["MO"] = Mo,
+                ["TU"] = Tu,
+                ["WE"] = We,
+                ["TH"] = Th,
+                ["FR"] = Fr,
+                ["SA"] = Sa
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, WeekStart> _values =
+            new ConcurrentDictionary<string, WeekStart>(_knownValues);
 
-                    if (enumVal is WeekStart)
-                    {
-                        return (WeekStart)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum WeekStart");
+        private WeekStart(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static WeekStart Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new WeekStart(value));
+        }
+
+        public static implicit operator WeekStart(string value) => Of(value);
+        public static implicit operator string(WeekStart weekstart) => weekstart.Value;
+
+        public static WeekStart[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as WeekStart);
+
+        public bool Equals(WeekStart? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -1,5 +1,4 @@
 # Call
-(*Call*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a call
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcCall" method="get" path="/uc/{connection_id}/call/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcCalls" method="get" path="/uc/{connection_id}/call" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

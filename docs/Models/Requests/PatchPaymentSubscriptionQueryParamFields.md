@@ -1,5 +1,13 @@
 # PatchPaymentSubscriptionQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchPaymentSubscriptionQueryParamFields.Id;
+```
+
 
 ## Values
 

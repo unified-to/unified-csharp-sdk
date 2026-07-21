@@ -1,5 +1,13 @@
 # GetAnalyticsEventQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAnalyticsEventQueryParamFields.Id;
+```
+
 
 ## Values
 

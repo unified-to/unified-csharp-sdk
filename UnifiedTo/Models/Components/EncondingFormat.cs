@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EncondingFormat
-    {
-        [JsonProperty("FLOAT")]
-        Float,
-        [JsonProperty("UINT8")]
-        Uint8,
-        [JsonProperty("INT8")]
-        Int8,
-        [JsonProperty("BINARY")]
-        Binary,
-        [JsonProperty("UBINARY")]
-        Ubinary,
-        [JsonProperty("BASE64")]
-        Base64,
-    }
 
-    public static class EncondingFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EncondingFormat : IEquatable<EncondingFormat>
     {
-        public static string Value(this EncondingFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EncondingFormat Float = new EncondingFormat("FLOAT");
+        public static readonly EncondingFormat Uint8 = new EncondingFormat("UINT8");
+        public static readonly EncondingFormat Int8 = new EncondingFormat("INT8");
+        public static readonly EncondingFormat Binary = new EncondingFormat("BINARY");
+        public static readonly EncondingFormat Ubinary = new EncondingFormat("UBINARY");
+        public static readonly EncondingFormat Base64 = new EncondingFormat("BASE64");
 
-        public static EncondingFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(EncondingFormat).GetFields())
+        private static readonly Dictionary <string, EncondingFormat> _knownValues =
+            new Dictionary <string, EncondingFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FLOAT"] = Float,
+                ["UINT8"] = Uint8,
+                ["INT8"] = Int8,
+                ["BINARY"] = Binary,
+                ["UBINARY"] = Ubinary,
+                ["BASE64"] = Base64
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EncondingFormat> _values =
+            new ConcurrentDictionary<string, EncondingFormat>(_knownValues);
 
-                    if (enumVal is EncondingFormat)
-                    {
-                        return (EncondingFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EncondingFormat");
+        private EncondingFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EncondingFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EncondingFormat(value));
+        }
+
+        public static implicit operator EncondingFormat(string value) => Of(value);
+        public static implicit operator string(EncondingFormat encondingformat) => encondingformat.Value;
+
+        public static EncondingFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EncondingFormat);
+
+        public bool Equals(EncondingFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

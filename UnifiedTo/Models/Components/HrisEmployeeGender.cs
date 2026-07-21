@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisEmployeeGender
-    {
-        [JsonProperty("MALE")]
-        Male,
-        [JsonProperty("FEMALE")]
-        Female,
-        [JsonProperty("INTERSEX")]
-        Intersex,
-        [JsonProperty("TRANS")]
-        Trans,
-        [JsonProperty("NON_BINARY")]
-        NonBinary,
-    }
 
-    public static class HrisEmployeeGenderExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisEmployeeGender : IEquatable<HrisEmployeeGender>
     {
-        public static string Value(this HrisEmployeeGender value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisEmployeeGender Male = new HrisEmployeeGender("MALE");
+        public static readonly HrisEmployeeGender Female = new HrisEmployeeGender("FEMALE");
+        public static readonly HrisEmployeeGender Intersex = new HrisEmployeeGender("INTERSEX");
+        public static readonly HrisEmployeeGender Trans = new HrisEmployeeGender("TRANS");
+        public static readonly HrisEmployeeGender NonBinary = new HrisEmployeeGender("NON_BINARY");
 
-        public static HrisEmployeeGender ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisEmployeeGender).GetFields())
+        private static readonly Dictionary <string, HrisEmployeeGender> _knownValues =
+            new Dictionary <string, HrisEmployeeGender> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MALE"] = Male,
+                ["FEMALE"] = Female,
+                ["INTERSEX"] = Intersex,
+                ["TRANS"] = Trans,
+                ["NON_BINARY"] = NonBinary
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisEmployeeGender> _values =
+            new ConcurrentDictionary<string, HrisEmployeeGender>(_knownValues);
 
-                    if (enumVal is HrisEmployeeGender)
-                    {
-                        return (HrisEmployeeGender)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisEmployeeGender");
+        private HrisEmployeeGender(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisEmployeeGender Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisEmployeeGender(value));
+        }
+
+        public static implicit operator HrisEmployeeGender(string value) => Of(value);
+        public static implicit operator string(HrisEmployeeGender hrisemployeegender) => hrisemployeegender.Value;
+
+        public static HrisEmployeeGender[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisEmployeeGender);
+
+        public bool Equals(HrisEmployeeGender? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

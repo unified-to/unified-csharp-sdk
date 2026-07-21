@@ -1,5 +1,16 @@
 # PropertyAdsInsertionorderBidStrategyPerformanceGoalType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsInsertionorderBidStrategyPerformanceGoalType.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsInsertionorderBidStrategyPerformanceGoalType.Of("custom_value");
+```
+
 
 ## Values
 

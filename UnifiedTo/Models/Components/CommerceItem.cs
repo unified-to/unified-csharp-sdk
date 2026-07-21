@@ -11,24 +11,25 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CommerceItem
     {
-
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
         /// <summary>
-        ///  @deprecated; use collections instead
+        /// @deprecated; use collections instead.
         /// </summary>
         [JsonProperty("collection_ids")]
         public List<string>? CollectionIds { get; set; }
 
         /// <summary>
-        /// points to Collection with id, name, and type fields
+        /// points to Collection with id, name, and type fields.
         /// </summary>
         [JsonProperty("collections")]
         public List<CommerceReference>? Collections { get; set; }
@@ -109,7 +110,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// first variant is the default variant
+        /// first variant is the default variant.
         /// </summary>
         [JsonProperty("variants")]
         public List<CommerceItemvariant>? Variants { get; set; }

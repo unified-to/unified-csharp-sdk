@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     public class AtsCandidateExperience
     {
-
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 

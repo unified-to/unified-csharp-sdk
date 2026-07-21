@@ -1,5 +1,13 @@
 # UpdateHrisCompanyQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateHrisCompanyQueryParamFields.Id;
+```
+
 
 ## Values
 

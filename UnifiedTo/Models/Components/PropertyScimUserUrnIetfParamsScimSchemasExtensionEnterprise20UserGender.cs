@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender
-    {
-        [JsonProperty("male")]
-        Male,
-        [JsonProperty("female")]
-        Female,
-    }
 
-    public static class PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGenderExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender : IEquatable<PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender>
     {
-        public static string Value(this PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender Male = new PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender("male");
+        public static readonly PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender Female = new PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender("female");
 
-        public static PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender).GetFields())
+        private static readonly Dictionary <string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender> _knownValues =
+            new Dictionary <string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["male"] = Male,
+                ["female"] = Female
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender> _values =
+            new ConcurrentDictionary<string, PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender>(_knownValues);
 
-                    if (enumVal is PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender)
-                    {
-                        return (PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender");
+        private PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender(value));
+        }
+
+        public static implicit operator PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender(string value) => Of(value);
+        public static implicit operator string(PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender propertyscimuserurnietfparamsscimschemasextensionenterprise20usergender) => propertyscimuserurnietfparamsscimschemasextensionenterprise20usergender.Value;
+
+        public static PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender);
+
+        public bool Equals(PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

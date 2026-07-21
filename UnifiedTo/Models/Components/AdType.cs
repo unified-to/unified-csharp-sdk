@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("IMAGE")]
-        Image,
-        [JsonProperty("VIDEO")]
-        Video,
-        [JsonProperty("RESPONSIVE")]
-        Responsive,
-        [JsonProperty("SHOPPING")]
-        Shopping,
-        [JsonProperty("APP")]
-        App,
-        [JsonProperty("CALL")]
-        Call,
-        [JsonProperty("CAROUSEL")]
-        Carousel,
-        [JsonProperty("SOCIAL")]
-        Social,
-        [JsonProperty("DISPLAY")]
-        Display,
-        [JsonProperty("SEARCH")]
-        Search,
-        [JsonProperty("AUDIO")]
-        Audio,
-        [JsonProperty("YOUTUBE")]
-        Youtube,
-    }
 
-    public static class AdTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdType : IEquatable<AdType>
     {
-        public static string Value(this AdType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdType Text = new AdType("TEXT");
+        public static readonly AdType Image = new AdType("IMAGE");
+        public static readonly AdType Video = new AdType("VIDEO");
+        public static readonly AdType Responsive = new AdType("RESPONSIVE");
+        public static readonly AdType Shopping = new AdType("SHOPPING");
+        public static readonly AdType App = new AdType("APP");
+        public static readonly AdType Call = new AdType("CALL");
+        public static readonly AdType Carousel = new AdType("CAROUSEL");
+        public static readonly AdType Social = new AdType("SOCIAL");
+        public static readonly AdType Display = new AdType("DISPLAY");
+        public static readonly AdType Search = new AdType("SEARCH");
+        public static readonly AdType Audio = new AdType("AUDIO");
+        public static readonly AdType Youtube = new AdType("YOUTUBE");
 
-        public static AdType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdType).GetFields())
+        private static readonly Dictionary <string, AdType> _knownValues =
+            new Dictionary <string, AdType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["IMAGE"] = Image,
+                ["VIDEO"] = Video,
+                ["RESPONSIVE"] = Responsive,
+                ["SHOPPING"] = Shopping,
+                ["APP"] = App,
+                ["CALL"] = Call,
+                ["CAROUSEL"] = Carousel,
+                ["SOCIAL"] = Social,
+                ["DISPLAY"] = Display,
+                ["SEARCH"] = Search,
+                ["AUDIO"] = Audio,
+                ["YOUTUBE"] = Youtube
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdType> _values =
+            new ConcurrentDictionary<string, AdType>(_knownValues);
 
-                    if (enumVal is AdType)
-                    {
-                        return (AdType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdType");
+        private AdType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdType(value));
+        }
+
+        public static implicit operator AdType(string value) => Of(value);
+        public static implicit operator string(AdType adtype) => adtype.Value;
+
+        public static AdType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdType);
+
+        public bool Equals(AdType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

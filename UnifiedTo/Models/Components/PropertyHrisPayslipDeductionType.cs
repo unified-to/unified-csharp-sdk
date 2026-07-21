@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyHrisPayslipDeductionType
-    {
-        [JsonProperty("FIXED")]
-        Fixed,
-        [JsonProperty("PERCENTAGE")]
-        Percentage,
-    }
 
-    public static class PropertyHrisPayslipDeductionTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyHrisPayslipDeductionType : IEquatable<PropertyHrisPayslipDeductionType>
     {
-        public static string Value(this PropertyHrisPayslipDeductionType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyHrisPayslipDeductionType Fixed = new PropertyHrisPayslipDeductionType("FIXED");
+        public static readonly PropertyHrisPayslipDeductionType Percentage = new PropertyHrisPayslipDeductionType("PERCENTAGE");
 
-        public static PropertyHrisPayslipDeductionType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyHrisPayslipDeductionType).GetFields())
+        private static readonly Dictionary <string, PropertyHrisPayslipDeductionType> _knownValues =
+            new Dictionary <string, PropertyHrisPayslipDeductionType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FIXED"] = Fixed,
+                ["PERCENTAGE"] = Percentage
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyHrisPayslipDeductionType> _values =
+            new ConcurrentDictionary<string, PropertyHrisPayslipDeductionType>(_knownValues);
 
-                    if (enumVal is PropertyHrisPayslipDeductionType)
-                    {
-                        return (PropertyHrisPayslipDeductionType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyHrisPayslipDeductionType");
+        private PropertyHrisPayslipDeductionType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyHrisPayslipDeductionType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyHrisPayslipDeductionType(value));
+        }
+
+        public static implicit operator PropertyHrisPayslipDeductionType(string value) => Of(value);
+        public static implicit operator string(PropertyHrisPayslipDeductionType propertyhrispayslipdeductiontype) => propertyhrispayslipdeductiontype.Value;
+
+        public static PropertyHrisPayslipDeductionType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyHrisPayslipDeductionType);
+
+        public bool Equals(PropertyHrisPayslipDeductionType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

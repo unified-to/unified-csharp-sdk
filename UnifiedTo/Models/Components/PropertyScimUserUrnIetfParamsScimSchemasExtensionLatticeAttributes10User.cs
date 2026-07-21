@@ -11,12 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User
     {
-
         [JsonProperty("Job Level")]
         public string? JobLevel { get; set; }
 

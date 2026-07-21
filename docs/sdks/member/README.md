@@ -1,5 +1,4 @@
 # Member
-(*Member*)
 
 ## Overview
 
@@ -20,6 +19,7 @@ Create a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsMember" method="get" path="/clubs/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ Retrieve a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getMartechMember" method="get" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -143,6 +145,7 @@ List all members
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsMembers" method="get" path="/clubs/{connection_id}/member" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -183,6 +186,7 @@ List all members
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMartechMembers" method="get" path="/martech/{connection_id}/member" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -223,6 +227,7 @@ Update a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -265,6 +270,7 @@ Remove a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeMartechMember" method="delete" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -304,6 +310,7 @@ Update a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

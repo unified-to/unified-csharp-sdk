@@ -1,5 +1,4 @@
 # Enrich
-(*Enrich*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve enrichment information for a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listEnrichCompanies" method="get" path="/enrich/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -51,6 +51,7 @@ Retrieve enrichment information for a person
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listEnrichPeople" method="get" path="/enrich/{connection_id}/person" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -1,5 +1,13 @@
 # PatchShippingShipmentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchShippingShipmentQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingCreditmemoStatus
-    {
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("VOIDED")]
-        Voided,
-        [JsonProperty("AUTHORIZED")]
-        Authorized,
-        [JsonProperty("PAID")]
-        Paid,
-        [JsonProperty("PARTIALLY_PAID")]
-        PartiallyPaid,
-        [JsonProperty("PARTIALLY_REFUNDED")]
-        PartiallyRefunded,
-        [JsonProperty("REFUNDED")]
-        Refunded,
-        [JsonProperty("SUBMITTED")]
-        Submitted,
-        [JsonProperty("DELETED")]
-        Deleted,
-        [JsonProperty("OVERDUE")]
-        Overdue,
-    }
 
-    public static class AccountingCreditmemoStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingCreditmemoStatus : IEquatable<AccountingCreditmemoStatus>
     {
-        public static string Value(this AccountingCreditmemoStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingCreditmemoStatus Draft = new AccountingCreditmemoStatus("DRAFT");
+        public static readonly AccountingCreditmemoStatus Voided = new AccountingCreditmemoStatus("VOIDED");
+        public static readonly AccountingCreditmemoStatus Authorized = new AccountingCreditmemoStatus("AUTHORIZED");
+        public static readonly AccountingCreditmemoStatus Paid = new AccountingCreditmemoStatus("PAID");
+        public static readonly AccountingCreditmemoStatus PartiallyPaid = new AccountingCreditmemoStatus("PARTIALLY_PAID");
+        public static readonly AccountingCreditmemoStatus PartiallyRefunded = new AccountingCreditmemoStatus("PARTIALLY_REFUNDED");
+        public static readonly AccountingCreditmemoStatus Refunded = new AccountingCreditmemoStatus("REFUNDED");
+        public static readonly AccountingCreditmemoStatus Submitted = new AccountingCreditmemoStatus("SUBMITTED");
+        public static readonly AccountingCreditmemoStatus Deleted = new AccountingCreditmemoStatus("DELETED");
+        public static readonly AccountingCreditmemoStatus Overdue = new AccountingCreditmemoStatus("OVERDUE");
 
-        public static AccountingCreditmemoStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingCreditmemoStatus).GetFields())
+        private static readonly Dictionary <string, AccountingCreditmemoStatus> _knownValues =
+            new Dictionary <string, AccountingCreditmemoStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DRAFT"] = Draft,
+                ["VOIDED"] = Voided,
+                ["AUTHORIZED"] = Authorized,
+                ["PAID"] = Paid,
+                ["PARTIALLY_PAID"] = PartiallyPaid,
+                ["PARTIALLY_REFUNDED"] = PartiallyRefunded,
+                ["REFUNDED"] = Refunded,
+                ["SUBMITTED"] = Submitted,
+                ["DELETED"] = Deleted,
+                ["OVERDUE"] = Overdue
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingCreditmemoStatus> _values =
+            new ConcurrentDictionary<string, AccountingCreditmemoStatus>(_knownValues);
 
-                    if (enumVal is AccountingCreditmemoStatus)
-                    {
-                        return (AccountingCreditmemoStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingCreditmemoStatus");
+        private AccountingCreditmemoStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingCreditmemoStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingCreditmemoStatus(value));
+        }
+
+        public static implicit operator AccountingCreditmemoStatus(string value) => Of(value);
+        public static implicit operator string(AccountingCreditmemoStatus accountingcreditmemostatus) => accountingcreditmemostatus.Value;
+
+        public static AccountingCreditmemoStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingCreditmemoStatus);
+
+        public bool Equals(AccountingCreditmemoStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

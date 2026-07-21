@@ -1,5 +1,4 @@
 # Carrier
-(*Carrier*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a carrier
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getShippingCarrier" method="get" path="/shipping/{connection_id}/carrier/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all carriers
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listShippingCarriers" method="get" path="/shipping/{connection_id}/carrier" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

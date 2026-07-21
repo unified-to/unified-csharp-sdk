@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsGroupTargetingGeographicLocationTypes
-    {
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("RECENT")]
-        Recent,
-        [JsonProperty("TRAVEL")]
-        Travel,
-    }
 
-    public static class PropertyAdsGroupTargetingGeographicLocationTypesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsGroupTargetingGeographicLocationTypes : IEquatable<PropertyAdsGroupTargetingGeographicLocationTypes>
     {
-        public static string Value(this PropertyAdsGroupTargetingGeographicLocationTypes value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsGroupTargetingGeographicLocationTypes Home = new PropertyAdsGroupTargetingGeographicLocationTypes("HOME");
+        public static readonly PropertyAdsGroupTargetingGeographicLocationTypes Recent = new PropertyAdsGroupTargetingGeographicLocationTypes("RECENT");
+        public static readonly PropertyAdsGroupTargetingGeographicLocationTypes Travel = new PropertyAdsGroupTargetingGeographicLocationTypes("TRAVEL");
 
-        public static PropertyAdsGroupTargetingGeographicLocationTypes ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsGroupTargetingGeographicLocationTypes).GetFields())
+        private static readonly Dictionary <string, PropertyAdsGroupTargetingGeographicLocationTypes> _knownValues =
+            new Dictionary <string, PropertyAdsGroupTargetingGeographicLocationTypes> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["HOME"] = Home,
+                ["RECENT"] = Recent,
+                ["TRAVEL"] = Travel
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsGroupTargetingGeographicLocationTypes> _values =
+            new ConcurrentDictionary<string, PropertyAdsGroupTargetingGeographicLocationTypes>(_knownValues);
 
-                    if (enumVal is PropertyAdsGroupTargetingGeographicLocationTypes)
-                    {
-                        return (PropertyAdsGroupTargetingGeographicLocationTypes)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsGroupTargetingGeographicLocationTypes");
+        private PropertyAdsGroupTargetingGeographicLocationTypes(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsGroupTargetingGeographicLocationTypes Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsGroupTargetingGeographicLocationTypes(value));
+        }
+
+        public static implicit operator PropertyAdsGroupTargetingGeographicLocationTypes(string value) => Of(value);
+        public static implicit operator string(PropertyAdsGroupTargetingGeographicLocationTypes propertyadsgrouptargetinggeographiclocationtypes) => propertyadsgrouptargetinggeographiclocationtypes.Value;
+
+        public static PropertyAdsGroupTargetingGeographicLocationTypes[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsGroupTargetingGeographicLocationTypes);
+
+        public bool Equals(PropertyAdsGroupTargetingGeographicLocationTypes? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

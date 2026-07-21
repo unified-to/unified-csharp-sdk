@@ -1,5 +1,13 @@
 # UpdateCalendarWebinarQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateCalendarWebinarQueryParamFields.Id;
+```
+
 
 ## Values
 

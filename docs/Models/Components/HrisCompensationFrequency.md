@@ -1,5 +1,16 @@
 # HrisCompensationFrequency
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = HrisCompensationFrequency.OneTime;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisCompensationFrequency.Of("custom_value");
+```
+
 
 ## Values
 

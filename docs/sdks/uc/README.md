@@ -1,5 +1,4 @@
 # Uc
-(*Uc*)
 
 ## Overview
 
@@ -32,6 +31,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -73,6 +73,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -114,6 +115,7 @@ Create a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -155,6 +157,7 @@ Retrieve a call
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcCall" method="get" path="/uc/{connection_id}/call/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -196,6 +199,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcComment" method="get" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -237,6 +241,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcContact" method="get" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -278,6 +283,7 @@ Retrieve a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcRecording" method="get" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -319,6 +325,7 @@ List all calls
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcCalls" method="get" path="/uc/{connection_id}/call" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -359,6 +366,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcComments" method="get" path="/uc/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -399,6 +407,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcContacts" method="get" path="/uc/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -439,6 +448,7 @@ List all recordings
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcRecordings" method="get" path="/uc/{connection_id}/recording" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -479,6 +489,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -521,6 +532,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -563,6 +575,7 @@ Update a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -605,6 +618,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUcComment" method="delete" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -644,6 +658,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUcContact" method="delete" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -683,6 +698,7 @@ Remove a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUcRecording" method="delete" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -722,6 +738,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -764,6 +781,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -806,6 +824,7 @@ Update a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

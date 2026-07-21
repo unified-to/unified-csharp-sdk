@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class CommerceMetadataValueType
     {
         private CommerceMetadataValueType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CommerceMetadataValueType MapOfAny { get { return new CommerceMetadataValueType("mapOfAny"); } }
-        
+
         public static CommerceMetadataValueType Str { get { return new CommerceMetadataValueType("str"); } }
-        
+
         public static CommerceMetadataValueType Number { get { return new CommerceMetadataValueType("number"); } }
-        
+
         public static CommerceMetadataValueType Boolean { get { return new CommerceMetadataValueType("boolean"); } }
-        
+
         public static CommerceMetadataValueType ArrayOfCommerceMetadataSchemas5 { get { return new CommerceMetadataValueType("arrayOfCommerceMetadataSchemas5"); } }
-        
-        public static CommerceMetadataValueType Null { get { return new CommerceMetadataValueType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(CommerceMetadataValueType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfCommerceMetadataSchemas5": return ArrayOfCommerceMetadataSchemas5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CommerceMetadataValueType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CommerceMetadataValue.CommerceMetadataValueConverter))]
-    public class CommerceMetadataValue {
-        public CommerceMetadataValue(CommerceMetadataValueType type) {
+    public class CommerceMetadataValue
+    {
+        public CommerceMetadataValue(CommerceMetadataValueType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<CommerceMetadataSchemas5>? ArrayOfCommerceMetadataSchemas5 { get; set; }
 
         public CommerceMetadataValueType Type { get; set; }
-
-
-        public static CommerceMetadataValue CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static CommerceMetadataValue CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             CommerceMetadataValueType typ = CommerceMetadataValueType.MapOfAny;
 
             CommerceMetadataValue res = new CommerceMetadataValue(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static CommerceMetadataValue CreateStr(string str) {
+        public static CommerceMetadataValue CreateStr(string str)
+        {
             CommerceMetadataValueType typ = CommerceMetadataValueType.Str;
 
             CommerceMetadataValue res = new CommerceMetadataValue(typ);
             res.Str = str;
             return res;
         }
-
-        public static CommerceMetadataValue CreateNumber(double number) {
+        public static CommerceMetadataValue CreateNumber(double number)
+        {
             CommerceMetadataValueType typ = CommerceMetadataValueType.Number;
 
             CommerceMetadataValue res = new CommerceMetadataValue(typ);
             res.Number = number;
             return res;
         }
-
-        public static CommerceMetadataValue CreateBoolean(bool boolean) {
+        public static CommerceMetadataValue CreateBoolean(bool boolean)
+        {
             CommerceMetadataValueType typ = CommerceMetadataValueType.Boolean;
 
             CommerceMetadataValue res = new CommerceMetadataValue(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CommerceMetadataValue CreateArrayOfCommerceMetadataSchemas5(List<CommerceMetadataSchemas5> arrayOfCommerceMetadataSchemas5) {
+        public static CommerceMetadataValue CreateArrayOfCommerceMetadataSchemas5(List<CommerceMetadataSchemas5> arrayOfCommerceMetadataSchemas5)
+        {
             CommerceMetadataValueType typ = CommerceMetadataValueType.ArrayOfCommerceMetadataSchemas5;
 
             CommerceMetadataValue res = new CommerceMetadataValue(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static CommerceMetadataValue CreateNull() {
-            CommerceMetadataValueType typ = CommerceMetadataValueType.Null;
-            return new CommerceMetadataValue(typ);
-        }
-
         public class CommerceMetadataValueConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(CommerceMetadataValue);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                CommerceMetadataValue res = (CommerceMetadataValue)value;
-                if (CommerceMetadataValueType.FromString(res.Type).Equals(CommerceMetadataValueType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                CommerceMetadataValue res = (CommerceMetadataValue)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfCommerceMetadataSchemas5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfCommerceMetadataSchemas5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

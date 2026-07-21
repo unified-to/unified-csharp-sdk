@@ -1,5 +1,4 @@
 # Payment
-(*Payment*)
 
 ## Overview
 
@@ -34,6 +33,7 @@ Create a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -75,6 +75,7 @@ Create a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createPaymentPayment" method="post" path="/payment/{connection_id}/payment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -116,6 +117,7 @@ Create a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -157,6 +159,7 @@ Retrieve a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentLink" method="get" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -198,6 +201,7 @@ Retrieve a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentPayment" method="get" path="/payment/{connection_id}/payment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -239,6 +243,7 @@ Retrieve a payout
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentPayout" method="get" path="/payment/{connection_id}/payout/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -280,6 +285,7 @@ Retrieve a refund
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentRefund" method="get" path="/payment/{connection_id}/refund/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -321,6 +327,7 @@ Retrieve a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentSubscription" method="get" path="/payment/{connection_id}/subscription/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -362,6 +369,7 @@ List all links
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentLinks" method="get" path="/payment/{connection_id}/link" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -402,6 +410,7 @@ List all payments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentPayments" method="get" path="/payment/{connection_id}/payment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -442,6 +451,7 @@ List all payouts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentPayouts" method="get" path="/payment/{connection_id}/payout" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -482,6 +492,7 @@ List all refunds
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentRefunds" method="get" path="/payment/{connection_id}/refund" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -522,6 +533,7 @@ List all subscriptions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentSubscriptions" method="get" path="/payment/{connection_id}/subscription" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -562,6 +574,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -604,6 +617,7 @@ Update a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchPaymentPayment" method="patch" path="/payment/{connection_id}/payment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -646,6 +660,7 @@ Update a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -688,6 +703,7 @@ Remove a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removePaymentLink" method="delete" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -727,6 +743,7 @@ Remove a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removePaymentPayment" method="delete" path="/payment/{connection_id}/payment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -766,6 +783,7 @@ Remove a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removePaymentSubscription" method="delete" path="/payment/{connection_id}/subscription/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -805,6 +823,7 @@ Update a link
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -847,6 +866,7 @@ Update a payment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updatePaymentPayment" method="put" path="/payment/{connection_id}/payment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -889,6 +909,7 @@ Update a subscription
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

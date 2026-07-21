@@ -1,5 +1,13 @@
 # PatchCommerceSaleschannelQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCommerceSaleschannelQueryParamFields.Id;
+```
+
 
 ## Values
 

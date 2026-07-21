@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class UpdateUnifiedConnectionRequest
     {
-
         /// <summary>
         /// A connection represents a specific authentication of an integration.
         /// </summary>
@@ -22,7 +21,7 @@ namespace UnifiedTo.Models.Requests
         public Models.Components.Connection Connection { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Connection
+        /// ID of the Connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

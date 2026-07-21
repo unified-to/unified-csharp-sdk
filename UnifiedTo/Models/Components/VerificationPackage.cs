@@ -11,18 +11,19 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class VerificationPackage
     {
-
         [JsonProperty("aliases")]
         public List<string>? Aliases { get; set; }
 
         /// <summary>
-        /// average processing time in minutes
+        /// average processing time in minutes.
         /// </summary>
         [JsonProperty("average_processing_times")]
         public List<VerificationTime>? AverageProcessingTimes { get; set; }
@@ -61,7 +62,7 @@ namespace UnifiedTo.Models.Components
         public bool? NeedsIpAddress { get; set; }
 
         /// <summary>
-        /// Questions that need to be answered for this verification
+        /// Questions that need to be answered for this verification.
         /// </summary>
         [JsonProperty("parameters")]
         public List<VerificationParameter>? Parameters { get; set; }
@@ -70,7 +71,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
-        /// Category (Verification, Validation, Background Check)
+        /// Category (Verification, Validation, Background Check).
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
@@ -82,7 +83,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// {country}-{state/province/territory} or just {country} 2-digit ISO codes
+        /// {country}-{state/province/territory} or just {country} 2-digit ISO codes.
         /// </summary>
         [JsonProperty("valid_regions")]
         public List<string>? ValidRegions { get; set; }

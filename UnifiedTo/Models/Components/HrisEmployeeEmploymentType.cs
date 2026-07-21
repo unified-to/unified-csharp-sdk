@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisEmployeeEmploymentType
-    {
-        [JsonProperty("FULL_TIME")]
-        FullTime,
-        [JsonProperty("PART_TIME")]
-        PartTime,
-        [JsonProperty("CONTRACTOR")]
-        Contractor,
-        [JsonProperty("INTERN")]
-        Intern,
-        [JsonProperty("CONSULTANT")]
-        Consultant,
-        [JsonProperty("VOLUNTEER")]
-        Volunteer,
-        [JsonProperty("CASUAL")]
-        Casual,
-        [JsonProperty("SEASONAL")]
-        Seasonal,
-        [JsonProperty("FREELANCE")]
-        Freelance,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class HrisEmployeeEmploymentTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisEmployeeEmploymentType : IEquatable<HrisEmployeeEmploymentType>
     {
-        public static string Value(this HrisEmployeeEmploymentType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisEmployeeEmploymentType FullTime = new HrisEmployeeEmploymentType("FULL_TIME");
+        public static readonly HrisEmployeeEmploymentType PartTime = new HrisEmployeeEmploymentType("PART_TIME");
+        public static readonly HrisEmployeeEmploymentType Contractor = new HrisEmployeeEmploymentType("CONTRACTOR");
+        public static readonly HrisEmployeeEmploymentType Intern = new HrisEmployeeEmploymentType("INTERN");
+        public static readonly HrisEmployeeEmploymentType Consultant = new HrisEmployeeEmploymentType("CONSULTANT");
+        public static readonly HrisEmployeeEmploymentType Volunteer = new HrisEmployeeEmploymentType("VOLUNTEER");
+        public static readonly HrisEmployeeEmploymentType Casual = new HrisEmployeeEmploymentType("CASUAL");
+        public static readonly HrisEmployeeEmploymentType Seasonal = new HrisEmployeeEmploymentType("SEASONAL");
+        public static readonly HrisEmployeeEmploymentType Freelance = new HrisEmployeeEmploymentType("FREELANCE");
+        public static readonly HrisEmployeeEmploymentType Other = new HrisEmployeeEmploymentType("OTHER");
 
-        public static HrisEmployeeEmploymentType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisEmployeeEmploymentType).GetFields())
+        private static readonly Dictionary <string, HrisEmployeeEmploymentType> _knownValues =
+            new Dictionary <string, HrisEmployeeEmploymentType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FULL_TIME"] = FullTime,
+                ["PART_TIME"] = PartTime,
+                ["CONTRACTOR"] = Contractor,
+                ["INTERN"] = Intern,
+                ["CONSULTANT"] = Consultant,
+                ["VOLUNTEER"] = Volunteer,
+                ["CASUAL"] = Casual,
+                ["SEASONAL"] = Seasonal,
+                ["FREELANCE"] = Freelance,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisEmployeeEmploymentType> _values =
+            new ConcurrentDictionary<string, HrisEmployeeEmploymentType>(_knownValues);
 
-                    if (enumVal is HrisEmployeeEmploymentType)
-                    {
-                        return (HrisEmployeeEmploymentType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisEmployeeEmploymentType");
+        private HrisEmployeeEmploymentType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisEmployeeEmploymentType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisEmployeeEmploymentType(value));
+        }
+
+        public static implicit operator HrisEmployeeEmploymentType(string value) => Of(value);
+        public static implicit operator string(HrisEmployeeEmploymentType hrisemployeeemploymenttype) => hrisemployeeemploymenttype.Value;
+
+        public static HrisEmployeeEmploymentType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisEmployeeEmploymentType);
+
+        public bool Equals(HrisEmployeeEmploymentType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

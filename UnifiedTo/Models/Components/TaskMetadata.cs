@@ -10,13 +10,16 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class TaskMetadata
     {
-
-        [JsonProperty("extra_data")]
+        [JsonProperty("extra_data", NullValueHandling = NullValueHandling.Include)]
         public TaskMetadataExtraData? ExtraData { get; set; }
 
         [JsonProperty("format")]
@@ -37,7 +40,7 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public string? Type { get; set; }
 
-        [JsonProperty("value")]
+        [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public TaskMetadataValue? Value { get; set; }
     }
 }

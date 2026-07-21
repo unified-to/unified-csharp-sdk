@@ -1,5 +1,13 @@
 # UpdateAccountingVendorcreditQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingVendorcreditQueryParamFields.Id;
+```
+
 
 ## Values
 

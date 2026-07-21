@@ -1,5 +1,4 @@
 # Balancesheet
-(*Balancesheet*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a balancesheet
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingBalancesheet" method="get" path="/accounting/{connection_id}/balancesheet/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all balancesheets
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingBalancesheets" method="get" path="/accounting/{connection_id}/balancesheet" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

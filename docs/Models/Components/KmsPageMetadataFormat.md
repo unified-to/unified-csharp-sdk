@@ -1,5 +1,16 @@
 # KmsPageMetadataFormat
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = KmsPageMetadataFormat.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = KmsPageMetadataFormat.Of("custom_value");
+```
+
 
 ## Values
 

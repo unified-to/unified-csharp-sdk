@@ -1,5 +1,13 @@
 # Fields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = Fields.Id;
+```
+
 
 ## Values
 

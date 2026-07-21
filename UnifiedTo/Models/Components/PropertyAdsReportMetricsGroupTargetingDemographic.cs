@@ -11,13 +11,12 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Demographic targeting (Meta: age_min, age_max, genders)
+    /// Demographic targeting (Meta: age_min, age_max, genders).
     /// </summary>
     public class PropertyAdsReportMetricsGroupTargetingDemographic
     {
-
         [JsonProperty("age_max")]
         public double? AgeMax { get; set; }
 

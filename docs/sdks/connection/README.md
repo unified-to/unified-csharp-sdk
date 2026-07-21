@@ -1,5 +1,4 @@
 # Connection
-(*Connection*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Used only to import existing customer credentials; use "Authorize new connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedConnection" method="post" path="/unified/connection" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -27,7 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-Models.Components.Connection req = new Models.Components.Connection() {
+Models.Components.Connection req = new UnifiedTo.Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {},
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
@@ -62,6 +62,7 @@ Retrieve connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedConnection" method="get" path="/unified/connection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -97,6 +98,7 @@ List all connections
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedConnections" method="get" path="/unified/connection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -106,7 +108,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedConnectionsRequest req = ;
+ListUnifiedConnectionsRequest? req = null;
 
 var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
 
@@ -135,6 +137,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUnifiedConnection" method="patch" path="/unified/connection/{id}" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -145,7 +148,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
-    connection: new Models.Components.Connection() {
+    connection: new UnifiedTo.Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Storage,
         },
@@ -183,6 +186,7 @@ Remove connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedConnection" method="delete" path="/unified/connection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -218,6 +222,7 @@ Update connection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUnifiedConnection" method="put" path="/unified/connection/{id}" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -228,7 +233,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
-    connection: new Models.Components.Connection() {
+    connection: new UnifiedTo.Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {},
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {

@@ -11,13 +11,12 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// The note object, when type = note
+    /// The note object, when type = note.
     /// </summary>
     public class PropertyCrmEventNote
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

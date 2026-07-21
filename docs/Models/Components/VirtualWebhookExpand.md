@@ -1,5 +1,16 @@
 # VirtualWebhookExpand
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookExpand.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookExpand.Of("custom_value");
+```
+
 
 ## Values
 

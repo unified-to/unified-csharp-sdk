@@ -1,5 +1,16 @@
 # TaxExemption
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = TaxExemption.FederalGov;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = TaxExemption.Of("custom_value");
+```
+
 
 ## Values
 

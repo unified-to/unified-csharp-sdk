@@ -1,5 +1,16 @@
 # SearchName
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = SearchName.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = SearchName.Of("custom_value");
+```
+
 
 ## Values
 

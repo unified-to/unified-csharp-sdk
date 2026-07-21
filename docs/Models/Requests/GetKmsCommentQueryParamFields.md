@@ -1,5 +1,13 @@
 # GetKmsCommentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetKmsCommentQueryParamFields.Id;
+```
+
 
 ## Values
 

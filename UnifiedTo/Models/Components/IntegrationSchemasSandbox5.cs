@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class IntegrationSchemasSandbox5Type
     {
         private IntegrationSchemasSandbox5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static IntegrationSchemasSandbox5Type IntegrationSchemasSandbox1 { get { return new IntegrationSchemasSandbox5Type("Integration_Schemas_sandbox_1"); } }
-        
+
         public static IntegrationSchemasSandbox5Type Str { get { return new IntegrationSchemasSandbox5Type("str"); } }
-        
+
         public static IntegrationSchemasSandbox5Type Number { get { return new IntegrationSchemasSandbox5Type("number"); } }
-        
+
         public static IntegrationSchemasSandbox5Type Boolean { get { return new IntegrationSchemasSandbox5Type("boolean"); } }
-        
-        public static IntegrationSchemasSandbox5Type Null { get { return new IntegrationSchemasSandbox5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(IntegrationSchemasSandbox5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for IntegrationSchemasSandbox5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(IntegrationSchemasSandbox5.IntegrationSchemasSandbox5Converter))]
-    public class IntegrationSchemasSandbox5 {
-        public IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type type) {
+    public class IntegrationSchemasSandbox5
+    {
+        public IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public IntegrationSchemasSandbox5Type Type { get; set; }
-
-
-        public static IntegrationSchemasSandbox5 CreateIntegrationSchemasSandbox1(IntegrationSchemasSandbox1 integrationSchemasSandbox1) {
+        public static IntegrationSchemasSandbox5 CreateIntegrationSchemasSandbox1(IntegrationSchemasSandbox1 integrationSchemasSandbox1)
+        {
             IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.IntegrationSchemasSandbox1;
 
             IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
             res.IntegrationSchemasSandbox1 = integrationSchemasSandbox1;
             return res;
         }
-
-        public static IntegrationSchemasSandbox5 CreateStr(string str) {
+        public static IntegrationSchemasSandbox5 CreateStr(string str)
+        {
             IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.Str;
 
             IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
             res.Str = str;
             return res;
         }
-
-        public static IntegrationSchemasSandbox5 CreateNumber(double number) {
+        public static IntegrationSchemasSandbox5 CreateNumber(double number)
+        {
             IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.Number;
 
             IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
             res.Number = number;
             return res;
         }
-
-        public static IntegrationSchemasSandbox5 CreateBoolean(bool boolean) {
+        public static IntegrationSchemasSandbox5 CreateBoolean(bool boolean)
+        {
             IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.Boolean;
 
             IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static IntegrationSchemasSandbox5 CreateNull() {
-            IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.Null;
-            return new IntegrationSchemasSandbox5(typ);
-        }
-
         public class IntegrationSchemasSandbox5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(IntegrationSchemasSandbox5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                IntegrationSchemasSandbox5 res = (IntegrationSchemasSandbox5)value;
-                if (IntegrationSchemasSandbox5Type.FromString(res.Type).Equals(IntegrationSchemasSandbox5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                IntegrationSchemasSandbox5 res = (IntegrationSchemasSandbox5)value;
+
                 if (res.IntegrationSchemasSandbox1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

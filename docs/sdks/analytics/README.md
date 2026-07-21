@@ -1,5 +1,4 @@
 # Analytics
-(*Analytics*)
 
 ## Overview
 
@@ -30,6 +29,7 @@ Create an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsEvent" method="post" path="/analytics/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -71,6 +71,7 @@ Create a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -112,6 +113,7 @@ Create a visitor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -153,6 +155,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAnalyticsEvent" method="get" path="/analytics/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -194,6 +197,7 @@ Retrieve a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAnalyticsProperty" method="get" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -235,6 +239,7 @@ Retrieve a session
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAnalyticsSession" method="get" path="/analytics/{connection_id}/session/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -276,6 +281,7 @@ Retrieve a visitor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAnalyticsVisitor" method="get" path="/analytics/{connection_id}/visitor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -317,6 +323,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsEvents" method="get" path="/analytics/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -357,6 +364,7 @@ List all properties
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsProperties" method="get" path="/analytics/{connection_id}/property" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -397,6 +405,7 @@ List all reports
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsReports" method="get" path="/analytics/{connection_id}/report" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -437,6 +446,7 @@ List all sessions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsSessions" method="get" path="/analytics/{connection_id}/session" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -477,6 +487,7 @@ List all visitors
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAnalyticsVisitors" method="get" path="/analytics/{connection_id}/visitor" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -517,6 +528,7 @@ Update a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -559,6 +571,7 @@ Update a visitor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -601,6 +614,7 @@ Remove a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAnalyticsProperty" method="delete" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -640,6 +654,7 @@ Remove a visitor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAnalyticsVisitor" method="delete" path="/analytics/{connection_id}/visitor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -679,6 +694,7 @@ Update a property
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -721,6 +737,7 @@ Update a visitor
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class AtsMetadata5Type
     {
         private AtsMetadata5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static AtsMetadata5Type AtsMetadata1 { get { return new AtsMetadata5Type("AtsMetadata_1"); } }
-        
+
         public static AtsMetadata5Type Str { get { return new AtsMetadata5Type("str"); } }
-        
+
         public static AtsMetadata5Type Number { get { return new AtsMetadata5Type("number"); } }
-        
+
         public static AtsMetadata5Type Boolean { get { return new AtsMetadata5Type("boolean"); } }
-        
-        public static AtsMetadata5Type Null { get { return new AtsMetadata5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(AtsMetadata5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for AtsMetadata5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(AtsMetadata5.AtsMetadata5Converter))]
-    public class AtsMetadata5 {
-        public AtsMetadata5(AtsMetadata5Type type) {
+    public class AtsMetadata5
+    {
+        public AtsMetadata5(AtsMetadata5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public AtsMetadata5Type Type { get; set; }
-
-
-        public static AtsMetadata5 CreateAtsMetadata1(AtsMetadata1 atsMetadata1) {
+        public static AtsMetadata5 CreateAtsMetadata1(AtsMetadata1 atsMetadata1)
+        {
             AtsMetadata5Type typ = AtsMetadata5Type.AtsMetadata1;
 
             AtsMetadata5 res = new AtsMetadata5(typ);
             res.AtsMetadata1 = atsMetadata1;
             return res;
         }
-
-        public static AtsMetadata5 CreateStr(string str) {
+        public static AtsMetadata5 CreateStr(string str)
+        {
             AtsMetadata5Type typ = AtsMetadata5Type.Str;
 
             AtsMetadata5 res = new AtsMetadata5(typ);
             res.Str = str;
             return res;
         }
-
-        public static AtsMetadata5 CreateNumber(double number) {
+        public static AtsMetadata5 CreateNumber(double number)
+        {
             AtsMetadata5Type typ = AtsMetadata5Type.Number;
 
             AtsMetadata5 res = new AtsMetadata5(typ);
             res.Number = number;
             return res;
         }
-
-        public static AtsMetadata5 CreateBoolean(bool boolean) {
+        public static AtsMetadata5 CreateBoolean(bool boolean)
+        {
             AtsMetadata5Type typ = AtsMetadata5Type.Boolean;
 
             AtsMetadata5 res = new AtsMetadata5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static AtsMetadata5 CreateNull() {
-            AtsMetadata5Type typ = AtsMetadata5Type.Null;
-            return new AtsMetadata5(typ);
-        }
-
         public class AtsMetadata5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(AtsMetadata5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                AtsMetadata5 res = (AtsMetadata5)value;
-                if (AtsMetadata5Type.FromString(res.Type).Equals(AtsMetadata5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                AtsMetadata5 res = (AtsMetadata5)value;
+
                 if (res.AtsMetadata1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadata1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

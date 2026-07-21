@@ -1,5 +1,13 @@
 # PatchUcRecordingQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchUcRecordingQueryParamFields.Id;
+```
+
 
 ## Values
 

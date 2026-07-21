@@ -14,10 +14,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class ShippingRate
     {
-
         [JsonProperty("carrier_id")]
         public string? CarrierId { get; set; }
 
@@ -25,7 +24,7 @@ namespace UnifiedTo.Models.Components
         public string? Currency { get; set; }
 
         /// <summary>
-        /// Origin address
+        /// Origin address.
         /// </summary>
         [JsonProperty("from_address")]
         public PropertyShippingRateFromAddress? FromAddress { get; set; }
@@ -34,7 +33,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// Multiple packages (alternative to package)
+        /// Multiple packages (alternative to package).
         /// </summary>
         [JsonProperty("packages")]
         public List<ShippingPackage>? Packages { get; set; }
@@ -52,7 +51,7 @@ namespace UnifiedTo.Models.Components
         public string? ShipmentId { get; set; }
 
         /// <summary>
-        /// Destination address
+        /// Destination address.
         /// </summary>
         [JsonProperty("to_address")]
         public PropertyShippingRateToAddress? ToAddress { get; set; }

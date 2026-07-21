@@ -1,5 +1,4 @@
 # Collection
-(*Collection*)
 
 ## Overview
 
@@ -24,6 +23,7 @@ Create a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -67,6 +67,7 @@ Create a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -108,6 +109,7 @@ Retrieve a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCommerceCollection" method="get" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -149,6 +151,7 @@ Retrieve a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getLmsCollection" method="get" path="/lms/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -190,6 +193,7 @@ List all collections
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceCollections" method="get" path="/commerce/{connection_id}/collection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -230,6 +234,7 @@ List all collections
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listLmsCollections" method="get" path="/lms/{connection_id}/collection" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -270,6 +275,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -314,6 +320,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -356,6 +363,7 @@ Remove a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCommerceCollection" method="delete" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -395,6 +403,7 @@ Remove a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeLmsCollection" method="delete" path="/lms/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -434,6 +443,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -478,6 +488,7 @@ Update a collection
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

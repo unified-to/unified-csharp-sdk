@@ -1,5 +1,13 @@
 # PatchAccountingCategoryQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAccountingCategoryQueryParamFields.Id;
+```
+
 
 ## Values
 

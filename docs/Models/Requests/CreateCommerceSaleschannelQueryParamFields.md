@@ -1,5 +1,13 @@
 # CreateCommerceSaleschannelQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateCommerceSaleschannelQueryParamFields.Id;
+```
+
 
 ## Values
 

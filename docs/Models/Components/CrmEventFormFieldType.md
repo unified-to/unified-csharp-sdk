@@ -1,5 +1,16 @@
 # CrmEventFormFieldType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = CrmEventFormFieldType.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = CrmEventFormFieldType.Of("custom_value");
+```
+
 
 ## Values
 

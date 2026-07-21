@@ -1,5 +1,4 @@
 # Page
-(*Page*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getKmsPage" method="get" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ List all pages
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listKmsPages" method="get" path="/kms/{connection_id}/page" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,6 +144,7 @@ Update a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -186,6 +189,7 @@ Remove a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeKmsPage" method="delete" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -225,6 +229,7 @@ Update a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

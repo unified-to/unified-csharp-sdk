@@ -1,5 +1,16 @@
 # ListSortByName
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListSortByName.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListSortByName.Of("custom_value");
+```
+
 
 ## Values
 

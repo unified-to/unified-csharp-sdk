@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyCalendarRecordingTranscriptAttendeeStatus
-    {
-        [JsonProperty("ACCEPTED")]
-        Accepted,
-        [JsonProperty("REJECTED")]
-        Rejected,
-        [JsonProperty("TENTATIVE")]
-        Tentative,
-    }
 
-    public static class PropertyCalendarRecordingTranscriptAttendeeStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyCalendarRecordingTranscriptAttendeeStatus : IEquatable<PropertyCalendarRecordingTranscriptAttendeeStatus>
     {
-        public static string Value(this PropertyCalendarRecordingTranscriptAttendeeStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyCalendarRecordingTranscriptAttendeeStatus Accepted = new PropertyCalendarRecordingTranscriptAttendeeStatus("ACCEPTED");
+        public static readonly PropertyCalendarRecordingTranscriptAttendeeStatus Rejected = new PropertyCalendarRecordingTranscriptAttendeeStatus("REJECTED");
+        public static readonly PropertyCalendarRecordingTranscriptAttendeeStatus Tentative = new PropertyCalendarRecordingTranscriptAttendeeStatus("TENTATIVE");
 
-        public static PropertyCalendarRecordingTranscriptAttendeeStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyCalendarRecordingTranscriptAttendeeStatus).GetFields())
+        private static readonly Dictionary <string, PropertyCalendarRecordingTranscriptAttendeeStatus> _knownValues =
+            new Dictionary <string, PropertyCalendarRecordingTranscriptAttendeeStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACCEPTED"] = Accepted,
+                ["REJECTED"] = Rejected,
+                ["TENTATIVE"] = Tentative
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyCalendarRecordingTranscriptAttendeeStatus> _values =
+            new ConcurrentDictionary<string, PropertyCalendarRecordingTranscriptAttendeeStatus>(_knownValues);
 
-                    if (enumVal is PropertyCalendarRecordingTranscriptAttendeeStatus)
-                    {
-                        return (PropertyCalendarRecordingTranscriptAttendeeStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyCalendarRecordingTranscriptAttendeeStatus");
+        private PropertyCalendarRecordingTranscriptAttendeeStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyCalendarRecordingTranscriptAttendeeStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyCalendarRecordingTranscriptAttendeeStatus(value));
+        }
+
+        public static implicit operator PropertyCalendarRecordingTranscriptAttendeeStatus(string value) => Of(value);
+        public static implicit operator string(PropertyCalendarRecordingTranscriptAttendeeStatus propertycalendarrecordingtranscriptattendeestatus) => propertycalendarrecordingtranscriptattendeestatus.Value;
+
+        public static PropertyCalendarRecordingTranscriptAttendeeStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyCalendarRecordingTranscriptAttendeeStatus);
+
+        public bool Equals(PropertyCalendarRecordingTranscriptAttendeeStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

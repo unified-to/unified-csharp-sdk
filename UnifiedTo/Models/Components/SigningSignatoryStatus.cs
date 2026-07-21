@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SigningSignatoryStatus
-    {
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("SENT")]
-        Sent,
-        [JsonProperty("DELIVERED")]
-        Delivered,
-        [JsonProperty("SIGNED")]
-        Signed,
-        [JsonProperty("DECLINED")]
-        Declined,
-        [JsonProperty("ERROR")]
-        Error,
-    }
 
-    public static class SigningSignatoryStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SigningSignatoryStatus : IEquatable<SigningSignatoryStatus>
     {
-        public static string Value(this SigningSignatoryStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SigningSignatoryStatus Pending = new SigningSignatoryStatus("PENDING");
+        public static readonly SigningSignatoryStatus Sent = new SigningSignatoryStatus("SENT");
+        public static readonly SigningSignatoryStatus Delivered = new SigningSignatoryStatus("DELIVERED");
+        public static readonly SigningSignatoryStatus Signed = new SigningSignatoryStatus("SIGNED");
+        public static readonly SigningSignatoryStatus Declined = new SigningSignatoryStatus("DECLINED");
+        public static readonly SigningSignatoryStatus Error = new SigningSignatoryStatus("ERROR");
 
-        public static SigningSignatoryStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(SigningSignatoryStatus).GetFields())
+        private static readonly Dictionary <string, SigningSignatoryStatus> _knownValues =
+            new Dictionary <string, SigningSignatoryStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PENDING"] = Pending,
+                ["SENT"] = Sent,
+                ["DELIVERED"] = Delivered,
+                ["SIGNED"] = Signed,
+                ["DECLINED"] = Declined,
+                ["ERROR"] = Error
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SigningSignatoryStatus> _values =
+            new ConcurrentDictionary<string, SigningSignatoryStatus>(_knownValues);
 
-                    if (enumVal is SigningSignatoryStatus)
-                    {
-                        return (SigningSignatoryStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SigningSignatoryStatus");
+        private SigningSignatoryStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SigningSignatoryStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SigningSignatoryStatus(value));
+        }
+
+        public static implicit operator SigningSignatoryStatus(string value) => Of(value);
+        public static implicit operator string(SigningSignatoryStatus signingsignatorystatus) => signingsignatorystatus.Value;
+
+        public static SigningSignatoryStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SigningSignatoryStatus);
+
+        public bool Equals(SigningSignatoryStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

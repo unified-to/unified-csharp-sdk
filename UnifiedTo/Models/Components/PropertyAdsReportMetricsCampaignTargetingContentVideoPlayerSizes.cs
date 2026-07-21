@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes
-    {
-        [JsonProperty("SMALL")]
-        Small,
-        [JsonProperty("LARGE")]
-        Large,
-        [JsonProperty("HD")]
-        Hd,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes : IEquatable<PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes Small = new PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes("SMALL");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes Large = new PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes("LARGE");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes Hd = new PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes("HD");
 
-        public static PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SMALL"] = Small,
+                ["LARGE"] = Large,
+                ["HD"] = Hd
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes)
-                    {
-                        return (PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes");
+        private PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes propertyadsreportmetricscampaigntargetingcontentvideoplayersizes) => propertyadsreportmetricscampaigntargetingcontentvideoplayersizes.Value;
+
+        public static PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignTargetingContentVideoPlayerSizes? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

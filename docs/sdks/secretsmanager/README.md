@@ -1,5 +1,4 @@
 # Secretsmanager
-(*Secretsmanager*)
 
 ## Overview
 
@@ -16,6 +15,7 @@ Create secrets manager
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUnifiedWorkspaceSecretsmanager" method="post" path="/unified/workspace/secretsmanager" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -60,6 +60,7 @@ Retrieve secrets manager
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedWorkspaceSecretsmanager" method="get" path="/unified/workspace/secretsmanager/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -95,6 +96,7 @@ List secrets managers
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUnifiedWorkspaceSecretsmanagers" method="get" path="/unified/workspace/secretsmanager" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -104,7 +106,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedWorkspaceSecretsmanagersRequest req = ;
+ListUnifiedWorkspaceSecretsmanagersRequest? req = null;
 
 var res = await sdk.Secretsmanager.ListUnifiedWorkspaceSecretsmanagersAsync(req);
 
@@ -133,6 +135,7 @@ Remove secrets manager
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUnifiedWorkspaceSecretsmanager" method="delete" path="/unified/workspace/secretsmanager/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

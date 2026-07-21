@@ -1,5 +1,16 @@
 # DbType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = DbType.Mongodb;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = DbType.Of("custom_value");
+```
+
 
 ## Values
 

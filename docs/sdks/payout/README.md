@@ -1,5 +1,4 @@
 # Payout
-(*Payout*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a payout
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentPayout" method="get" path="/payment/{connection_id}/payout/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all payouts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentPayouts" method="get" path="/payment/{connection_id}/payout" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

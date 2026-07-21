@@ -1,5 +1,13 @@
 # ListCommerceInventoriesQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListCommerceInventoriesQueryParamFields.Id;
+```
+
 
 ## Values
 

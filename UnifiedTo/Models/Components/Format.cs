@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Format
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-    }
 
-    public static class FormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Format : IEquatable<Format>
     {
-        public static string Value(this Format value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Format Text = new Format("TEXT");
+        public static readonly Format Number = new Format("NUMBER");
+        public static readonly Format Date = new Format("DATE");
+        public static readonly Format Boolean = new Format("BOOLEAN");
+        public static readonly Format File = new Format("FILE");
+        public static readonly Format Textarea = new Format("TEXTAREA");
+        public static readonly Format SingleSelect = new Format("SINGLE_SELECT");
+        public static readonly Format MultipleSelect = new Format("MULTIPLE_SELECT");
+        public static readonly Format Measurement = new Format("MEASUREMENT");
+        public static readonly Format Price = new Format("PRICE");
+        public static readonly Format YesNo = new Format("YES_NO");
+        public static readonly Format Currency = new Format("CURRENCY");
+        public static readonly Format Url = new Format("URL");
 
-        public static Format ToEnum(this string value)
-        {
-            foreach(var field in typeof(Format).GetFields())
+        private static readonly Dictionary <string, Format> _knownValues =
+            new Dictionary <string, Format> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["MEASUREMENT"] = Measurement,
+                ["PRICE"] = Price,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Format> _values =
+            new ConcurrentDictionary<string, Format>(_knownValues);
 
-                    if (enumVal is Format)
-                    {
-                        return (Format)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Format");
+        private Format(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Format Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Format(value));
+        }
+
+        public static implicit operator Format(string value) => Of(value);
+        public static implicit operator string(Format format) => format.Value;
+
+        public static Format[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Format);
+
+        public bool Equals(Format? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

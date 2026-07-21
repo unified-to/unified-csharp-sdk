@@ -11,24 +11,25 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// A connection represents a specific authentication of an integration.
     /// </summary>
     public class Connection
     {
-
         /// <summary>
-        /// An authentication object that represents a specific authorized user&apos;s connection to an integration.
+        /// An authentication object that represents a specific authorized user's connection to an integration.
         /// </summary>
         [JsonProperty("auth")]
         public PropertyConnectionAuth? Auth { get; set; }
 
         /// <summary>
-        /// The Integration categories that this connection supports
+        /// The Integration categories that this connection supports.
         /// </summary>
         [JsonProperty("categories")]
         public List<PropertyConnectionCategories> Categories { get; set; } = default!;

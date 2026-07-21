@@ -1,5 +1,16 @@
 # VirtualWebhookEventId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookEventId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookEventId.Of("custom_value");
+```
+
 
 ## Values
 

@@ -1,5 +1,13 @@
 # UpdateCrmDealQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateCrmDealQueryParamFields.Id;
+```
+
 
 ## Values
 

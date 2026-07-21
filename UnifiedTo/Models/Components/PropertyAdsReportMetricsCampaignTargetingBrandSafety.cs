@@ -10,16 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Brand safety (Meta: excluded_publisher_categories, etc.; Google
+    /// Brand safety (Meta: excluded_publisher_categories, etc.; Google.
     /// </summary>
     public class PropertyAdsReportMetricsCampaignTargetingBrandSafety
     {
-
         [JsonProperty("block_list_ids")]
         public List<string>? BlockListIds { get; set; }
 
@@ -27,7 +29,7 @@ namespace UnifiedTo.Models.Components
         public List<string>? BrandSafetyContentFilterLevels { get; set; }
 
         /// <summary>
-        /// Google Ads ContentLabelType
+        /// Google Ads ContentLabelType.
         /// </summary>
         [JsonProperty("excluded_content_labels")]
         public List<string>? ExcludedContentLabels { get; set; }

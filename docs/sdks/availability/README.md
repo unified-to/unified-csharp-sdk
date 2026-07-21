@@ -1,5 +1,4 @@
 # Availability
-(*Availability*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ List all availabilities
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCommerceAvailabilities" method="get" path="/commerce/{connection_id}/availability" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

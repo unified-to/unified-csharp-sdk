@@ -1,5 +1,4 @@
 # Rate
-(*Rate*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ Create a rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

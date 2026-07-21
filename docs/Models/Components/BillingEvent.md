@@ -1,5 +1,16 @@
 # BillingEvent
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = BillingEvent.Impressions;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = BillingEvent.Of("custom_value");
+```
+
 
 ## Values
 

@@ -11,13 +11,12 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// The address of the person
+    /// The address of the person.
     /// </summary>
     public class PropertyEnrichPersonAddress
     {
-
         [JsonProperty("address1")]
         public string? Address1 { get; set; }
 

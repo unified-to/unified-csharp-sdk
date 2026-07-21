@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ProfileGender
-    {
-        [JsonProperty("MALE")]
-        Male,
-        [JsonProperty("FEMALE")]
-        Female,
-        [JsonProperty("INTERSEX")]
-        Intersex,
-        [JsonProperty("TRANS")]
-        Trans,
-        [JsonProperty("NON_BINARY")]
-        NonBinary,
-    }
 
-    public static class ProfileGenderExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ProfileGender : IEquatable<ProfileGender>
     {
-        public static string Value(this ProfileGender value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ProfileGender Male = new ProfileGender("MALE");
+        public static readonly ProfileGender Female = new ProfileGender("FEMALE");
+        public static readonly ProfileGender Intersex = new ProfileGender("INTERSEX");
+        public static readonly ProfileGender Trans = new ProfileGender("TRANS");
+        public static readonly ProfileGender NonBinary = new ProfileGender("NON_BINARY");
 
-        public static ProfileGender ToEnum(this string value)
-        {
-            foreach(var field in typeof(ProfileGender).GetFields())
+        private static readonly Dictionary <string, ProfileGender> _knownValues =
+            new Dictionary <string, ProfileGender> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MALE"] = Male,
+                ["FEMALE"] = Female,
+                ["INTERSEX"] = Intersex,
+                ["TRANS"] = Trans,
+                ["NON_BINARY"] = NonBinary
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ProfileGender> _values =
+            new ConcurrentDictionary<string, ProfileGender>(_knownValues);
 
-                    if (enumVal is ProfileGender)
-                    {
-                        return (ProfileGender)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ProfileGender");
+        private ProfileGender(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ProfileGender Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ProfileGender(value));
+        }
+
+        public static implicit operator ProfileGender(string value) => Of(value);
+        public static implicit operator string(ProfileGender profilegender) => profilegender.Value;
+
+        public static ProfileGender[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ProfileGender);
+
+        public bool Equals(ProfileGender? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

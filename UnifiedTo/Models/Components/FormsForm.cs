@@ -14,10 +14,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class FormsForm
     {
-
         [JsonProperty("confirmation_message")]
         public string? ConfirmationMessage { get; set; }
 

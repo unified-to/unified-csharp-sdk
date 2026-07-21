@@ -11,79 +11,96 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum FormFieldType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("EMAIL")]
-        Email,
-        [JsonProperty("URL")]
-        Url,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("TIME")]
-        Time,
-        [JsonProperty("DATETIME")]
-        Datetime,
-        [JsonProperty("PHONE")]
-        Phone,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("FILE_UPLOAD")]
-        FileUpload,
-        [JsonProperty("RATING")]
-        Rating,
-        [JsonProperty("SCALE")]
-        Scale,
-        [JsonProperty("MATRIX")]
-        Matrix,
-        [JsonProperty("SECTION_HEADER")]
-        SectionHeader,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class FormFieldTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class FormFieldType : IEquatable<FormFieldType>
     {
-        public static string Value(this FormFieldType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly FormFieldType Text = new FormFieldType("TEXT");
+        public static readonly FormFieldType Textarea = new FormFieldType("TEXTAREA");
+        public static readonly FormFieldType Number = new FormFieldType("NUMBER");
+        public static readonly FormFieldType Email = new FormFieldType("EMAIL");
+        public static readonly FormFieldType Url = new FormFieldType("URL");
+        public static readonly FormFieldType Date = new FormFieldType("DATE");
+        public static readonly FormFieldType Time = new FormFieldType("TIME");
+        public static readonly FormFieldType Datetime = new FormFieldType("DATETIME");
+        public static readonly FormFieldType Phone = new FormFieldType("PHONE");
+        public static readonly FormFieldType Boolean = new FormFieldType("BOOLEAN");
+        public static readonly FormFieldType SingleSelect = new FormFieldType("SINGLE_SELECT");
+        public static readonly FormFieldType MultipleSelect = new FormFieldType("MULTIPLE_SELECT");
+        public static readonly FormFieldType FileUpload = new FormFieldType("FILE_UPLOAD");
+        public static readonly FormFieldType Rating = new FormFieldType("RATING");
+        public static readonly FormFieldType Scale = new FormFieldType("SCALE");
+        public static readonly FormFieldType Matrix = new FormFieldType("MATRIX");
+        public static readonly FormFieldType SectionHeader = new FormFieldType("SECTION_HEADER");
+        public static readonly FormFieldType Other = new FormFieldType("OTHER");
 
-        public static FormFieldType ToEnum(this string value)
-        {
-            foreach(var field in typeof(FormFieldType).GetFields())
+        private static readonly Dictionary <string, FormFieldType> _knownValues =
+            new Dictionary <string, FormFieldType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["TEXTAREA"] = Textarea,
+                ["NUMBER"] = Number,
+                ["EMAIL"] = Email,
+                ["URL"] = Url,
+                ["DATE"] = Date,
+                ["TIME"] = Time,
+                ["DATETIME"] = Datetime,
+                ["PHONE"] = Phone,
+                ["BOOLEAN"] = Boolean,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["FILE_UPLOAD"] = FileUpload,
+                ["RATING"] = Rating,
+                ["SCALE"] = Scale,
+                ["MATRIX"] = Matrix,
+                ["SECTION_HEADER"] = SectionHeader,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, FormFieldType> _values =
+            new ConcurrentDictionary<string, FormFieldType>(_knownValues);
 
-                    if (enumVal is FormFieldType)
-                    {
-                        return (FormFieldType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum FormFieldType");
+        private FormFieldType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static FormFieldType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new FormFieldType(value));
+        }
+
+        public static implicit operator FormFieldType(string value) => Of(value);
+        public static implicit operator string(FormFieldType formfieldtype) => formfieldtype.Value;
+
+        public static FormFieldType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as FormFieldType);
+
+        public bool Equals(FormFieldType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

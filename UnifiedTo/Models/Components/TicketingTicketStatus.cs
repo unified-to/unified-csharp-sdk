@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum TicketingTicketStatus
-    {
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("CLOSED")]
-        Closed,
-    }
 
-    public static class TicketingTicketStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class TicketingTicketStatus : IEquatable<TicketingTicketStatus>
     {
-        public static string Value(this TicketingTicketStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly TicketingTicketStatus Active = new TicketingTicketStatus("ACTIVE");
+        public static readonly TicketingTicketStatus Closed = new TicketingTicketStatus("CLOSED");
 
-        public static TicketingTicketStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(TicketingTicketStatus).GetFields())
+        private static readonly Dictionary <string, TicketingTicketStatus> _knownValues =
+            new Dictionary <string, TicketingTicketStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACTIVE"] = Active,
+                ["CLOSED"] = Closed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, TicketingTicketStatus> _values =
+            new ConcurrentDictionary<string, TicketingTicketStatus>(_knownValues);
 
-                    if (enumVal is TicketingTicketStatus)
-                    {
-                        return (TicketingTicketStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum TicketingTicketStatus");
+        private TicketingTicketStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static TicketingTicketStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new TicketingTicketStatus(value));
+        }
+
+        public static implicit operator TicketingTicketStatus(string value) => Of(value);
+        public static implicit operator string(TicketingTicketStatus ticketingticketstatus) => ticketingticketstatus.Value;
+
+        public static TicketingTicketStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as TicketingTicketStatus);
+
+        public bool Equals(TicketingTicketStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

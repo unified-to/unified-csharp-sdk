@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CreateUnifiedWebhookRequest
     {
-
         /// <summary>
         /// A webhook is used to POST new/updated information to your server.
         /// </summary>

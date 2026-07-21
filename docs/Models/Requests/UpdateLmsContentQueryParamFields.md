@@ -1,5 +1,13 @@
 # UpdateLmsContentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateLmsContentQueryParamFields.Id;
+```
+
 
 ## Values
 

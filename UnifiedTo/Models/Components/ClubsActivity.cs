@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// ClubActivity (getClubActivitiesById, NO id) and the full DetailedActivity (getActivityById).
     /// </summary>
     public class ClubsActivity
     {
-
         [JsonProperty("achievement_count")]
         public double? AchievementCount { get; set; }
 

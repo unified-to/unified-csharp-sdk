@@ -1,5 +1,4 @@
 # Shipping
-(*Shipping*)
 
 ## Overview
 
@@ -29,6 +28,7 @@ Create a label
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -70,6 +70,7 @@ Create a rate
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -111,6 +112,7 @@ Create a shipment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -152,6 +154,7 @@ Retrieve a carrier
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getShippingCarrier" method="get" path="/shipping/{connection_id}/carrier/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -193,6 +196,7 @@ Retrieve a label
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getShippingLabel" method="get" path="/shipping/{connection_id}/label/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -234,6 +238,7 @@ Retrieve a shipment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getShippingShipment" method="get" path="/shipping/{connection_id}/shipment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -275,6 +280,7 @@ Retrieve a tracking
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getShippingTracking" method="get" path="/shipping/{connection_id}/tracking/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -316,6 +322,7 @@ List all carriers
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listShippingCarriers" method="get" path="/shipping/{connection_id}/carrier" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -356,6 +363,7 @@ List all labels
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listShippingLabels" method="get" path="/shipping/{connection_id}/label" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -396,6 +404,7 @@ List all shipments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listShippingShipments" method="get" path="/shipping/{connection_id}/shipment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -436,6 +445,7 @@ List all trackings
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listShippingTrackings" method="get" path="/shipping/{connection_id}/tracking" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -476,6 +486,7 @@ Update a label
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -518,6 +529,7 @@ Update a shipment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -560,6 +572,7 @@ Remove a label
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeShippingLabel" method="delete" path="/shipping/{connection_id}/label/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -599,6 +612,7 @@ Remove a shipment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeShippingShipment" method="delete" path="/shipping/{connection_id}/shipment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -638,6 +652,7 @@ Update a label
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -680,6 +695,7 @@ Update a shipment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

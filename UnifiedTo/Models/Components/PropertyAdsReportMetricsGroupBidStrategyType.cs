@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupBidStrategyType
-    {
-        [JsonProperty("FIXED_BID")]
-        FixedBid,
-        [JsonProperty("MAXIMIZE_SPEND")]
-        MaximizeSpend,
-        [JsonProperty("PERFORMANCE_GOAL")]
-        PerformanceGoal,
-        [JsonProperty("YOUTUBE_AND_PARTNERS")]
-        YoutubeAndPartners,
-    }
 
-    public static class PropertyAdsReportMetricsGroupBidStrategyTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupBidStrategyType : IEquatable<PropertyAdsReportMetricsGroupBidStrategyType>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupBidStrategyType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyType FixedBid = new PropertyAdsReportMetricsGroupBidStrategyType("FIXED_BID");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyType MaximizeSpend = new PropertyAdsReportMetricsGroupBidStrategyType("MAXIMIZE_SPEND");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyType PerformanceGoal = new PropertyAdsReportMetricsGroupBidStrategyType("PERFORMANCE_GOAL");
+        public static readonly PropertyAdsReportMetricsGroupBidStrategyType YoutubeAndPartners = new PropertyAdsReportMetricsGroupBidStrategyType("YOUTUBE_AND_PARTNERS");
 
-        public static PropertyAdsReportMetricsGroupBidStrategyType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupBidStrategyType).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupBidStrategyType> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupBidStrategyType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["FIXED_BID"] = FixedBid,
+                ["MAXIMIZE_SPEND"] = MaximizeSpend,
+                ["PERFORMANCE_GOAL"] = PerformanceGoal,
+                ["YOUTUBE_AND_PARTNERS"] = YoutubeAndPartners
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBidStrategyType> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupBidStrategyType>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupBidStrategyType)
-                    {
-                        return (PropertyAdsReportMetricsGroupBidStrategyType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupBidStrategyType");
+        private PropertyAdsReportMetricsGroupBidStrategyType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupBidStrategyType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupBidStrategyType(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupBidStrategyType(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupBidStrategyType propertyadsreportmetricsgroupbidstrategytype) => propertyadsreportmetricsgroupbidstrategytype.Value;
+
+        public static PropertyAdsReportMetricsGroupBidStrategyType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupBidStrategyType);
+
+        public bool Equals(PropertyAdsReportMetricsGroupBidStrategyType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

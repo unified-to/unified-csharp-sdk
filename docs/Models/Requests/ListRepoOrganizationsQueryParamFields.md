@@ -1,5 +1,13 @@
 # ListRepoOrganizationsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListRepoOrganizationsQueryParamFields.Id;
+```
+
 
 ## Values
 

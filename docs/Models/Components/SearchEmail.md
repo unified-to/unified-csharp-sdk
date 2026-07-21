@@ -1,5 +1,16 @@
 # SearchEmail
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = SearchEmail.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = SearchEmail.Of("custom_value");
+```
+
 
 ## Values
 

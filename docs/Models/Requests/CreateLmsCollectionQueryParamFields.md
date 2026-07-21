@@ -1,5 +1,13 @@
 # CreateLmsCollectionQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateLmsCollectionQueryParamFields.Id;
+```
+
 
 ## Values
 

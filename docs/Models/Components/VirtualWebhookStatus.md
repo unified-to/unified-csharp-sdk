@@ -1,5 +1,16 @@
 # VirtualWebhookStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookStatus.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookStatus.Of("custom_value");
+```
+
 
 ## Values
 

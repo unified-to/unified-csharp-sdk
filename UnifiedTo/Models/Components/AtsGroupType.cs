@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AtsGroupType
-    {
-        [JsonProperty("TEAM")]
-        Team,
-        [JsonProperty("GROUP")]
-        Group,
-        [JsonProperty("DEPARTMENT")]
-        Department,
-        [JsonProperty("DIVISION")]
-        Division,
-        [JsonProperty("BUSINESS_UNIT")]
-        BusinessUnit,
-        [JsonProperty("BRANCH")]
-        Branch,
-        [JsonProperty("SUB_DEPARTMENT")]
-        SubDepartment,
-    }
 
-    public static class AtsGroupTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AtsGroupType : IEquatable<AtsGroupType>
     {
-        public static string Value(this AtsGroupType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AtsGroupType Team = new AtsGroupType("TEAM");
+        public static readonly AtsGroupType Group = new AtsGroupType("GROUP");
+        public static readonly AtsGroupType Department = new AtsGroupType("DEPARTMENT");
+        public static readonly AtsGroupType Division = new AtsGroupType("DIVISION");
+        public static readonly AtsGroupType BusinessUnit = new AtsGroupType("BUSINESS_UNIT");
+        public static readonly AtsGroupType Branch = new AtsGroupType("BRANCH");
+        public static readonly AtsGroupType SubDepartment = new AtsGroupType("SUB_DEPARTMENT");
 
-        public static AtsGroupType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AtsGroupType).GetFields())
+        private static readonly Dictionary <string, AtsGroupType> _knownValues =
+            new Dictionary <string, AtsGroupType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEAM"] = Team,
+                ["GROUP"] = Group,
+                ["DEPARTMENT"] = Department,
+                ["DIVISION"] = Division,
+                ["BUSINESS_UNIT"] = BusinessUnit,
+                ["BRANCH"] = Branch,
+                ["SUB_DEPARTMENT"] = SubDepartment
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AtsGroupType> _values =
+            new ConcurrentDictionary<string, AtsGroupType>(_knownValues);
 
-                    if (enumVal is AtsGroupType)
-                    {
-                        return (AtsGroupType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AtsGroupType");
+        private AtsGroupType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AtsGroupType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AtsGroupType(value));
+        }
+
+        public static implicit operator AtsGroupType(string value) => Of(value);
+        public static implicit operator string(AtsGroupType atsgrouptype) => atsgrouptype.Value;
+
+        public static AtsGroupType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AtsGroupType);
+
+        public bool Equals(AtsGroupType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

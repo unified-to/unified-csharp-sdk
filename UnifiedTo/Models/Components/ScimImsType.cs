@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ScimImsType
-    {
-        [JsonProperty("aim")]
-        Aim,
-        [JsonProperty("qtalk")]
-        Qtalk,
-        [JsonProperty("icq")]
-        Icq,
-        [JsonProperty("xmpp")]
-        Xmpp,
-        [JsonProperty("msn")]
-        Msn,
-        [JsonProperty("skype")]
-        Skype,
-        [JsonProperty("qq")]
-        Qq,
-        [JsonProperty("yahoo")]
-        Yahoo,
-    }
 
-    public static class ScimImsTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ScimImsType : IEquatable<ScimImsType>
     {
-        public static string Value(this ScimImsType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ScimImsType Aim = new ScimImsType("aim");
+        public static readonly ScimImsType Qtalk = new ScimImsType("qtalk");
+        public static readonly ScimImsType Icq = new ScimImsType("icq");
+        public static readonly ScimImsType Xmpp = new ScimImsType("xmpp");
+        public static readonly ScimImsType Msn = new ScimImsType("msn");
+        public static readonly ScimImsType Skype = new ScimImsType("skype");
+        public static readonly ScimImsType Qq = new ScimImsType("qq");
+        public static readonly ScimImsType Yahoo = new ScimImsType("yahoo");
 
-        public static ScimImsType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ScimImsType).GetFields())
+        private static readonly Dictionary <string, ScimImsType> _knownValues =
+            new Dictionary <string, ScimImsType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["aim"] = Aim,
+                ["qtalk"] = Qtalk,
+                ["icq"] = Icq,
+                ["xmpp"] = Xmpp,
+                ["msn"] = Msn,
+                ["skype"] = Skype,
+                ["qq"] = Qq,
+                ["yahoo"] = Yahoo
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ScimImsType> _values =
+            new ConcurrentDictionary<string, ScimImsType>(_knownValues);
 
-                    if (enumVal is ScimImsType)
-                    {
-                        return (ScimImsType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ScimImsType");
+        private ScimImsType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ScimImsType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ScimImsType(value));
+        }
+
+        public static implicit operator ScimImsType(string value) => Of(value);
+        public static implicit operator string(ScimImsType scimimstype) => scimimstype.Value;
+
+        public static ScimImsType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ScimImsType);
+
+        public bool Equals(ScimImsType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

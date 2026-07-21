@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MetadataMetadataFormat
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-    }
 
-    public static class MetadataMetadataFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MetadataMetadataFormat : IEquatable<MetadataMetadataFormat>
     {
-        public static string Value(this MetadataMetadataFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MetadataMetadataFormat Text = new MetadataMetadataFormat("TEXT");
+        public static readonly MetadataMetadataFormat Number = new MetadataMetadataFormat("NUMBER");
+        public static readonly MetadataMetadataFormat Date = new MetadataMetadataFormat("DATE");
+        public static readonly MetadataMetadataFormat Boolean = new MetadataMetadataFormat("BOOLEAN");
+        public static readonly MetadataMetadataFormat File = new MetadataMetadataFormat("FILE");
+        public static readonly MetadataMetadataFormat Textarea = new MetadataMetadataFormat("TEXTAREA");
+        public static readonly MetadataMetadataFormat SingleSelect = new MetadataMetadataFormat("SINGLE_SELECT");
+        public static readonly MetadataMetadataFormat MultipleSelect = new MetadataMetadataFormat("MULTIPLE_SELECT");
+        public static readonly MetadataMetadataFormat Measurement = new MetadataMetadataFormat("MEASUREMENT");
+        public static readonly MetadataMetadataFormat Price = new MetadataMetadataFormat("PRICE");
+        public static readonly MetadataMetadataFormat YesNo = new MetadataMetadataFormat("YES_NO");
+        public static readonly MetadataMetadataFormat Currency = new MetadataMetadataFormat("CURRENCY");
+        public static readonly MetadataMetadataFormat Url = new MetadataMetadataFormat("URL");
 
-        public static MetadataMetadataFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(MetadataMetadataFormat).GetFields())
+        private static readonly Dictionary <string, MetadataMetadataFormat> _knownValues =
+            new Dictionary <string, MetadataMetadataFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["MEASUREMENT"] = Measurement,
+                ["PRICE"] = Price,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MetadataMetadataFormat> _values =
+            new ConcurrentDictionary<string, MetadataMetadataFormat>(_knownValues);
 
-                    if (enumVal is MetadataMetadataFormat)
-                    {
-                        return (MetadataMetadataFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MetadataMetadataFormat");
+        private MetadataMetadataFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MetadataMetadataFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MetadataMetadataFormat(value));
+        }
+
+        public static implicit operator MetadataMetadataFormat(string value) => Of(value);
+        public static implicit operator string(MetadataMetadataFormat metadatametadataformat) => metadatametadataformat.Value;
+
+        public static MetadataMetadataFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MetadataMetadataFormat);
+
+        public bool Equals(MetadataMetadataFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

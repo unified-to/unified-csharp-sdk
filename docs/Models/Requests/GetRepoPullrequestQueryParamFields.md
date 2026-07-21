@@ -1,5 +1,13 @@
 # GetRepoPullrequestQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetRepoPullrequestQueryParamFields.Id;
+```
+
 
 ## Values
 

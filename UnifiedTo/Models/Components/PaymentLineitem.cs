@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     public class PaymentLineitem
     {
-
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 

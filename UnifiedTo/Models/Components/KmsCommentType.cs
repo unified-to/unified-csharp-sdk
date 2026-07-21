@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum KmsCommentType
-    {
-        [JsonProperty("PAGE_INLINE")]
-        PageInline,
-        [JsonProperty("PAGE")]
-        Page,
-    }
 
-    public static class KmsCommentTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class KmsCommentType : IEquatable<KmsCommentType>
     {
-        public static string Value(this KmsCommentType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly KmsCommentType PageInline = new KmsCommentType("PAGE_INLINE");
+        public static readonly KmsCommentType Page = new KmsCommentType("PAGE");
 
-        public static KmsCommentType ToEnum(this string value)
-        {
-            foreach(var field in typeof(KmsCommentType).GetFields())
+        private static readonly Dictionary <string, KmsCommentType> _knownValues =
+            new Dictionary <string, KmsCommentType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PAGE_INLINE"] = PageInline,
+                ["PAGE"] = Page
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, KmsCommentType> _values =
+            new ConcurrentDictionary<string, KmsCommentType>(_knownValues);
 
-                    if (enumVal is KmsCommentType)
-                    {
-                        return (KmsCommentType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum KmsCommentType");
+        private KmsCommentType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static KmsCommentType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new KmsCommentType(value));
+        }
+
+        public static implicit operator KmsCommentType(string value) => Of(value);
+        public static implicit operator string(KmsCommentType kmscommenttype) => kmscommenttype.Value;
+
+        public static KmsCommentType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as KmsCommentType);
+
+        public bool Equals(KmsCommentType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

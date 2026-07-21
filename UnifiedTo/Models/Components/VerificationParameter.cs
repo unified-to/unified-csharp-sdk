@@ -10,15 +10,17 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class VerificationParameter
     {
-
         /// <summary>
-        /// valid file mime types
+        /// valid file mime types.
         /// </summary>
         [JsonProperty("file_types")]
         public List<string>? FileTypes { get; set; }
@@ -33,7 +35,7 @@ namespace UnifiedTo.Models.Components
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// options for MULTIPLE_CHOICE and MULTIPLE_SELECT
+        /// options for MULTIPLE_CHOICE and MULTIPLE_SELECT.
         /// </summary>
         [JsonProperty("options")]
         public List<string>? Options { get; set; }
@@ -45,7 +47,7 @@ namespace UnifiedTo.Models.Components
         public VerificationParameterType? Type { get; set; }
 
         /// <summary>
-        /// {country}-{stateprovince/territory} or just {country} 2-digit ISO codes
+        /// {country}-{stateprovince/territory} or just {country} 2-digit ISO codes.
         /// </summary>
         [JsonProperty("valid_regions")]
         public List<string>? ValidRegions { get; set; }

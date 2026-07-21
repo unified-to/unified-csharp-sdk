@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class UpdateUnifiedWebhookRequest
     {
-
         /// <summary>
         /// A webhook is used to POST new/updated information to your server.
         /// </summary>
@@ -22,7 +21,7 @@ namespace UnifiedTo.Models.Requests
         public Models.Components.Webhook Webhook { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Webhook
+        /// ID of the Webhook.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

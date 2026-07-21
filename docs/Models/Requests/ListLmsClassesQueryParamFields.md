@@ -1,5 +1,13 @@
 # ListLmsClassesQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListLmsClassesQueryParamFields.Id;
+```
+
 
 ## Values
 

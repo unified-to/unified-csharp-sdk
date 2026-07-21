@@ -14,12 +14,11 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CommerceSaleschannel
     {
-
         /// <summary>
-        /// points to a CommerceCollection
+        /// points to a CommerceCollection.
         /// </summary>
         [JsonProperty("collections")]
         public List<CommerceReference>? Collections { get; set; }

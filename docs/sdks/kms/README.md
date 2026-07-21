@@ -1,5 +1,4 @@
 # Kms
-(*Kms*)
 
 ## Overview
 
@@ -30,6 +29,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -71,6 +71,7 @@ Create a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -114,6 +115,7 @@ Create a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -155,6 +157,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getKmsComment" method="get" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -196,6 +199,7 @@ Retrieve a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getKmsPage" method="get" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -237,6 +241,7 @@ Retrieve a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getKmsSpace" method="get" path="/kms/{connection_id}/space/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -278,6 +283,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listKmsComments" method="get" path="/kms/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -318,6 +324,7 @@ List all pages
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listKmsPages" method="get" path="/kms/{connection_id}/page" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -358,6 +365,7 @@ List all spaces
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listKmsSpaces" method="get" path="/kms/{connection_id}/space" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -398,6 +406,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -440,6 +449,7 @@ Update a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -484,6 +494,7 @@ Update a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -526,6 +537,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeKmsComment" method="delete" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -565,6 +577,7 @@ Remove a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeKmsPage" method="delete" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -604,6 +617,7 @@ Remove a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeKmsSpace" method="delete" path="/kms/{connection_id}/space/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -643,6 +657,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -685,6 +700,7 @@ Update a page
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -729,6 +745,7 @@ Update a space
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

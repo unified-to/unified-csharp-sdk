@@ -13,15 +13,14 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class PropertyAdsReportMetricsGroupTargeting
     {
-
         [JsonProperty("audience")]
         public PropertyAdsReportMetricsGroupTargetingAudience? Audience { get; set; }
 
         /// <summary>
-        /// Brand safety (Meta: excluded_publisher_categories, etc.; Google
+        /// Brand safety (Meta: excluded_publisher_categories, etc.; Google.
         /// </summary>
         [JsonProperty("brand_safety")]
         public PropertyAdsReportMetricsGroupTargetingBrandSafety? BrandSafety { get; set; }
@@ -30,7 +29,7 @@ namespace UnifiedTo.Models.Components
         public PropertyAdsReportMetricsGroupTargetingContent? Content { get; set; }
 
         /// <summary>
-        /// Demographic targeting (Meta: age_min, age_max, genders)
+        /// Demographic targeting (Meta: age_min, age_max, genders).
         /// </summary>
         [JsonProperty("demographic")]
         public PropertyAdsReportMetricsGroupTargetingDemographic? Demographic { get; set; }
@@ -45,7 +44,7 @@ namespace UnifiedTo.Models.Components
         public List<TargetRef>? Language { get; set; }
 
         /// <summary>
-        /// Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
+        /// Optimization (Meta: targeting_automation; Google: observation vs targeting mode).
         /// </summary>
         [JsonProperty("optimization")]
         public PropertyAdsReportMetricsGroupTargetingOptimization? Optimization { get; set; }

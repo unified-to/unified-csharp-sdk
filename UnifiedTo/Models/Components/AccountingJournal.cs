@@ -14,10 +14,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AccountingJournal
     {
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -31,7 +30,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// new field name
+        /// new field name.
         /// </summary>
         [JsonProperty("lineitems")]
         public List<AccountingJournalLineitem>? Lineitems { get; set; }

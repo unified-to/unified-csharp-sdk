@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListParentId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListParentIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListParentId : IEquatable<ListParentId>
     {
-        public static string Value(this ListParentId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListParentId SupportedRequired = new ListParentId("supported-required");
+        public static readonly ListParentId Supported = new ListParentId("supported");
+        public static readonly ListParentId NotSupported = new ListParentId("not-supported");
 
-        public static ListParentId ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListParentId).GetFields())
+        private static readonly Dictionary <string, ListParentId> _knownValues =
+            new Dictionary <string, ListParentId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListParentId> _values =
+            new ConcurrentDictionary<string, ListParentId>(_knownValues);
 
-                    if (enumVal is ListParentId)
-                    {
-                        return (ListParentId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListParentId");
+        private ListParentId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListParentId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListParentId(value));
+        }
+
+        public static implicit operator ListParentId(string value) => Of(value);
+        public static implicit operator string(ListParentId listparentid) => listparentid.Value;
+
+        public static ListParentId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListParentId);
+
+        public bool Equals(ListParentId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

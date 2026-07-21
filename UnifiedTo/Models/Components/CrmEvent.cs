@@ -11,30 +11,31 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// An event represents an event, activity, or engagement and is always associated with a deal, contact, or company
+    /// An event represents an event, activity, or engagement and is always associated with a deal, contact, or company.
     /// </summary>
     public class CrmEvent
     {
-
         /// <summary>
-        /// The call object, when type = call
+        /// The call object, when type = call.
         /// </summary>
         [JsonProperty("call")]
         public PropertyCrmEventCall? Call { get; set; }
 
         /// <summary>
-        /// An array of company IDs associated with this event
+        /// An array of company IDs associated with this event.
         /// </summary>
         [JsonProperty("company_ids")]
         public List<string>? CompanyIds { get; set; }
 
         /// <summary>
-        /// An array of contact IDs associated with this event
+        /// An array of contact IDs associated with this event.
         /// </summary>
         [JsonProperty("contact_ids")]
         public List<string>? ContactIds { get; set; }
@@ -43,13 +44,13 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// An array of deal IDs associated with this event
+        /// An array of deal IDs associated with this event.
         /// </summary>
         [JsonProperty("deal_ids")]
         public List<string>? DealIds { get; set; }
 
         /// <summary>
-        /// The email object, when type = email
+        /// The email object, when type = email.
         /// </summary>
         [JsonProperty("email")]
         public PropertyCrmEventEmail? Email { get; set; }
@@ -67,13 +68,13 @@ namespace UnifiedTo.Models.Components
         public PropertyCrmEventMarketingEmail? MarketingEmail { get; set; }
 
         /// <summary>
-        /// The meeting object, when type = meeting
+        /// The meeting object, when type = meeting.
         /// </summary>
         [JsonProperty("meeting")]
         public PropertyCrmEventMeeting? Meeting { get; set; }
 
         /// <summary>
-        /// The note object, when type = note
+        /// The note object, when type = note.
         /// </summary>
         [JsonProperty("note")]
         public PropertyCrmEventNote? Note { get; set; }
@@ -85,7 +86,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
-        /// The task object, when type = task
+        /// The task object, when type = task.
         /// </summary>
         [JsonProperty("task")]
         public PropertyCrmEventTask? Task { get; set; }

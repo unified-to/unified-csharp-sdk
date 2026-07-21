@@ -13,10 +13,9 @@ namespace UnifiedTo.Models.Components
     using System;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CalendarRecordingTranscript
     {
-
         [JsonProperty("attendee")]
         public PropertyCalendarRecordingTranscriptAttendee? Attendee { get; set; }
 

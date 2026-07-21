@@ -11,83 +11,100 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Dimension
-    {
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("HOUR")]
-        Hour,
-        [JsonProperty("DAY_OF_WEEK")]
-        DayOfWeek,
-        [JsonProperty("WEEK")]
-        Week,
-        [JsonProperty("MONTH")]
-        Month,
-        [JsonProperty("YEAR")]
-        Year,
-        [JsonProperty("PAGE")]
-        Page,
-        [JsonProperty("PAGE_TITLE")]
-        PageTitle,
-        [JsonProperty("EVENT_NAME")]
-        EventName,
-        [JsonProperty("SOURCE")]
-        Source,
-        [JsonProperty("MEDIUM")]
-        Medium,
-        [JsonProperty("CAMPAIGN")]
-        Campaign,
-        [JsonProperty("COUNTRY")]
-        Country,
-        [JsonProperty("CITY")]
-        City,
-        [JsonProperty("DEVICE_TYPE")]
-        DeviceType,
-        [JsonProperty("BROWSER")]
-        Browser,
-        [JsonProperty("OS")]
-        Os,
-        [JsonProperty("USER_TYPE")]
-        UserType,
-        [JsonProperty("LANDING_PAGE")]
-        LandingPage,
-        [JsonProperty("VIDEO")]
-        Video,
-    }
 
-    public static class DimensionExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Dimension : IEquatable<Dimension>
     {
-        public static string Value(this Dimension value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Dimension Date = new Dimension("DATE");
+        public static readonly Dimension Hour = new Dimension("HOUR");
+        public static readonly Dimension DayOfWeek = new Dimension("DAY_OF_WEEK");
+        public static readonly Dimension Week = new Dimension("WEEK");
+        public static readonly Dimension Month = new Dimension("MONTH");
+        public static readonly Dimension Year = new Dimension("YEAR");
+        public static readonly Dimension Page = new Dimension("PAGE");
+        public static readonly Dimension PageTitle = new Dimension("PAGE_TITLE");
+        public static readonly Dimension EventName = new Dimension("EVENT_NAME");
+        public static readonly Dimension Source = new Dimension("SOURCE");
+        public static readonly Dimension Medium = new Dimension("MEDIUM");
+        public static readonly Dimension Campaign = new Dimension("CAMPAIGN");
+        public static readonly Dimension Country = new Dimension("COUNTRY");
+        public static readonly Dimension City = new Dimension("CITY");
+        public static readonly Dimension DeviceType = new Dimension("DEVICE_TYPE");
+        public static readonly Dimension Browser = new Dimension("BROWSER");
+        public static readonly Dimension Os = new Dimension("OS");
+        public static readonly Dimension UserType = new Dimension("USER_TYPE");
+        public static readonly Dimension LandingPage = new Dimension("LANDING_PAGE");
+        public static readonly Dimension Video = new Dimension("VIDEO");
 
-        public static Dimension ToEnum(this string value)
-        {
-            foreach(var field in typeof(Dimension).GetFields())
+        private static readonly Dictionary <string, Dimension> _knownValues =
+            new Dictionary <string, Dimension> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DATE"] = Date,
+                ["HOUR"] = Hour,
+                ["DAY_OF_WEEK"] = DayOfWeek,
+                ["WEEK"] = Week,
+                ["MONTH"] = Month,
+                ["YEAR"] = Year,
+                ["PAGE"] = Page,
+                ["PAGE_TITLE"] = PageTitle,
+                ["EVENT_NAME"] = EventName,
+                ["SOURCE"] = Source,
+                ["MEDIUM"] = Medium,
+                ["CAMPAIGN"] = Campaign,
+                ["COUNTRY"] = Country,
+                ["CITY"] = City,
+                ["DEVICE_TYPE"] = DeviceType,
+                ["BROWSER"] = Browser,
+                ["OS"] = Os,
+                ["USER_TYPE"] = UserType,
+                ["LANDING_PAGE"] = LandingPage,
+                ["VIDEO"] = Video
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Dimension> _values =
+            new ConcurrentDictionary<string, Dimension>(_knownValues);
 
-                    if (enumVal is Dimension)
-                    {
-                        return (Dimension)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Dimension");
+        private Dimension(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Dimension Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Dimension(value));
+        }
+
+        public static implicit operator Dimension(string value) => Of(value);
+        public static implicit operator string(Dimension dimension) => dimension.Value;
+
+        public static Dimension[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Dimension);
+
+        public bool Equals(Dimension? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

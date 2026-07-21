@@ -1,5 +1,4 @@
 # Refund
-(*Refund*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a refund
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getPaymentRefund" method="get" path="/payment/{connection_id}/refund/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all refunds
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listPaymentRefunds" method="get" path="/payment/{connection_id}/refund" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

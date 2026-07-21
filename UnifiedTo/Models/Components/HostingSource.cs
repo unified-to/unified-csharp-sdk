@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HostingSource
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("CM")]
-        Cm,
-        [JsonProperty("THIRD_PARTY")]
-        ThirdParty,
-        [JsonProperty("HOSTED")]
-        Hosted,
-        [JsonProperty("RICH_MEDIA")]
-        RichMedia,
-        [JsonProperty("PUBLISHER_HOSTED")]
-        PublisherHosted,
-    }
 
-    public static class HostingSourceExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HostingSource : IEquatable<HostingSource>
     {
-        public static string Value(this HostingSource value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HostingSource Unspecified = new HostingSource("UNSPECIFIED");
+        public static readonly HostingSource Cm = new HostingSource("CM");
+        public static readonly HostingSource ThirdParty = new HostingSource("THIRD_PARTY");
+        public static readonly HostingSource Hosted = new HostingSource("HOSTED");
+        public static readonly HostingSource RichMedia = new HostingSource("RICH_MEDIA");
+        public static readonly HostingSource PublisherHosted = new HostingSource("PUBLISHER_HOSTED");
 
-        public static HostingSource ToEnum(this string value)
-        {
-            foreach(var field in typeof(HostingSource).GetFields())
+        private static readonly Dictionary <string, HostingSource> _knownValues =
+            new Dictionary <string, HostingSource> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["CM"] = Cm,
+                ["THIRD_PARTY"] = ThirdParty,
+                ["HOSTED"] = Hosted,
+                ["RICH_MEDIA"] = RichMedia,
+                ["PUBLISHER_HOSTED"] = PublisherHosted
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HostingSource> _values =
+            new ConcurrentDictionary<string, HostingSource>(_knownValues);
 
-                    if (enumVal is HostingSource)
-                    {
-                        return (HostingSource)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HostingSource");
+        private HostingSource(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HostingSource Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HostingSource(value));
+        }
+
+        public static implicit operator HostingSource(string value) => Of(value);
+        public static implicit operator string(HostingSource hostingsource) => hostingsource.Value;
+
+        public static HostingSource[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HostingSource);
+
+        public bool Equals(HostingSource? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

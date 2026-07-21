@@ -1,5 +1,13 @@
 # ListShippingTrackingsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListShippingTrackingsQueryParamFields.Id;
+```
+
 
 ## Values
 

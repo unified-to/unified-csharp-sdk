@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PaymentType
-    {
-        [JsonProperty("DIRECT")]
-        Direct,
-        [JsonProperty("CHEQUE")]
-        Cheque,
-        [JsonProperty("CASH")]
-        Cash,
-    }
 
-    public static class PaymentTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PaymentType : IEquatable<PaymentType>
     {
-        public static string Value(this PaymentType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PaymentType Direct = new PaymentType("DIRECT");
+        public static readonly PaymentType Cheque = new PaymentType("CHEQUE");
+        public static readonly PaymentType Cash = new PaymentType("CASH");
 
-        public static PaymentType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PaymentType).GetFields())
+        private static readonly Dictionary <string, PaymentType> _knownValues =
+            new Dictionary <string, PaymentType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DIRECT"] = Direct,
+                ["CHEQUE"] = Cheque,
+                ["CASH"] = Cash
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PaymentType> _values =
+            new ConcurrentDictionary<string, PaymentType>(_knownValues);
 
-                    if (enumVal is PaymentType)
-                    {
-                        return (PaymentType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PaymentType");
+        private PaymentType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PaymentType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PaymentType(value));
+        }
+
+        public static implicit operator PaymentType(string value) => Of(value);
+        public static implicit operator string(PaymentType paymenttype) => paymenttype.Value;
+
+        public static PaymentType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PaymentType);
+
+        public bool Equals(PaymentType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

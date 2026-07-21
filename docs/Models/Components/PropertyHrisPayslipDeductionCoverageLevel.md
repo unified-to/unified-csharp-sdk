@@ -1,5 +1,16 @@
 # PropertyHrisPayslipDeductionCoverageLevel
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyHrisPayslipDeductionCoverageLevel.EmployeeOnly;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyHrisPayslipDeductionCoverageLevel.Of("custom_value");
+```
+
 
 ## Values
 

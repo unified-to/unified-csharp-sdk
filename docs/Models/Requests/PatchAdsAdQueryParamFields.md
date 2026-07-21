@@ -1,5 +1,13 @@
 # PatchAdsAdQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAdsAdQueryParamFields.Id;
+```
+
 
 ## Values
 

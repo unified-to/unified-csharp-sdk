@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class HrisEmployee
     {
-
         [JsonProperty("address")]
         public PropertyHrisEmployeeAddress? Address { get; set; }
 
@@ -106,7 +107,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
-        /// the employee&apos;s personal relationships (eg. emergency contacts, spouse, dependants, ...)
+        /// the employee's personal relationships (eg. emergency contacts, spouse, dependants, ...).
         /// </summary>
         [JsonProperty("relationships")]
         public List<HrisEmployeerelationship>? Relationships { get; set; }

@@ -1,5 +1,13 @@
 # GetHrisTimeoffQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetHrisTimeoffQueryParamFields.Id;
+```
+
 
 ## Values
 

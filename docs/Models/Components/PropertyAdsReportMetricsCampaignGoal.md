@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsCampaignGoal
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsCampaignGoal.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsCampaignGoal.Of("custom_value");
+```
+
 
 ## Values
 

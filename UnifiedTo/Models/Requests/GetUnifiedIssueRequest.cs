@@ -10,12 +10,11 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class GetUnifiedIssueRequest
     {
-
         /// <summary>
-        /// ID of the Issue
+        /// ID of the Issue.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

@@ -1,5 +1,4 @@
 # Ticketing
-(*Ticketing*)
 
 ## Overview
 
@@ -36,6 +35,7 @@ Create a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -77,6 +77,7 @@ Create a customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -118,6 +119,7 @@ Create a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -159,6 +161,7 @@ Create a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -200,6 +203,7 @@ Retrieve a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTicketingCategory" method="get" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -241,6 +245,7 @@ Retrieve a customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTicketingCustomer" method="get" path="/ticketing/{connection_id}/customer/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -282,6 +287,7 @@ Retrieve a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTicketingNote" method="get" path="/ticketing/{connection_id}/note/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -323,6 +329,7 @@ Retrieve a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTicketingTicket" method="get" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -364,6 +371,7 @@ List all categories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTicketingCategories" method="get" path="/ticketing/{connection_id}/category" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -404,6 +412,7 @@ List all customers
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTicketingCustomers" method="get" path="/ticketing/{connection_id}/customer" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -444,6 +453,7 @@ List all notes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTicketingNotes" method="get" path="/ticketing/{connection_id}/note" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -484,6 +494,7 @@ List all tickets
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTicketingTickets" method="get" path="/ticketing/{connection_id}/ticket" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -524,6 +535,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -566,6 +578,7 @@ Update a customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -608,6 +621,7 @@ Update a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -650,6 +664,7 @@ Update a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -692,6 +707,7 @@ Remove a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTicketingCategory" method="delete" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -731,6 +747,7 @@ Remove a customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTicketingCustomer" method="delete" path="/ticketing/{connection_id}/customer/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -770,6 +787,7 @@ Remove a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTicketingNote" method="delete" path="/ticketing/{connection_id}/note/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -809,6 +827,7 @@ Remove a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTicketingTicket" method="delete" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -848,6 +867,7 @@ Update a category
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -890,6 +910,7 @@ Update a customer
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -932,6 +953,7 @@ Update a note
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -974,6 +996,7 @@ Update a ticket
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

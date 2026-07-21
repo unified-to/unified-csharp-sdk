@@ -1,5 +1,4 @@
 # Crm
-(*Crm*)
 
 ## Overview
 
@@ -49,6 +48,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -90,6 +90,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -131,6 +132,7 @@ Create a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -172,6 +174,7 @@ Create an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmEvent" method="post" path="/crm/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -213,6 +216,7 @@ Create a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -254,6 +258,7 @@ Create a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -295,6 +300,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmCompany" method="get" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -336,6 +342,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmContact" method="get" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -377,6 +384,7 @@ Retrieve a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmDeal" method="get" path="/crm/{connection_id}/deal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -418,6 +426,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmEvent" method="get" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -459,6 +468,7 @@ Retrieve a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmLead" method="get" path="/crm/{connection_id}/lead/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -500,6 +510,7 @@ Retrieve a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmPipeline" method="get" path="/crm/{connection_id}/pipeline/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -541,6 +552,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmCompanies" method="get" path="/crm/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -581,6 +593,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmContacts" method="get" path="/crm/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -621,6 +634,7 @@ List all deals
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmDeals" method="get" path="/crm/{connection_id}/deal" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -661,6 +675,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmEvents" method="get" path="/crm/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -701,6 +716,7 @@ List all leads
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmLeads" method="get" path="/crm/{connection_id}/lead" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -741,6 +757,7 @@ List all picklists
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmPicklists" method="get" path="/crm/{connection_id}/picklist" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -781,6 +798,7 @@ List all pipelines
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmPipelines" method="get" path="/crm/{connection_id}/pipeline" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -821,6 +839,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -863,6 +882,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -905,6 +925,7 @@ Update a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -947,6 +968,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmEvent" method="patch" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -989,6 +1011,7 @@ Update a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1031,6 +1054,7 @@ Update a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1073,6 +1097,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmCompany" method="delete" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1112,6 +1137,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmContact" method="delete" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1151,6 +1177,7 @@ Remove a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmDeal" method="delete" path="/crm/{connection_id}/deal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1190,6 +1217,7 @@ Remove an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmEvent" method="delete" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1229,6 +1257,7 @@ Remove a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmLead" method="delete" path="/crm/{connection_id}/lead/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1268,6 +1297,7 @@ Remove a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmPipeline" method="delete" path="/crm/{connection_id}/pipeline/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1307,6 +1337,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1349,6 +1380,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1391,6 +1423,7 @@ Update a deal
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1433,6 +1466,7 @@ Update an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmEvent" method="put" path="/crm/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1475,6 +1509,7 @@ Update a lead
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1517,6 +1552,7 @@ Update a pipeline
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

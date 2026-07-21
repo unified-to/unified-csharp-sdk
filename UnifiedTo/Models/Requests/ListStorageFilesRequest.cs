@@ -12,12 +12,11 @@ namespace UnifiedTo.Models.Requests
     using System.Collections.Generic;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
-    
+
     public class ListStorageFilesRequest
     {
-
         /// <summary>
-        /// ID of the connection
+        /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
@@ -29,13 +28,13 @@ namespace UnifiedTo.Models.Requests
         public bool? Expand { get; set; }
 
         /// <summary>
-        /// Fields to return
+        /// Fields to return.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListStorageFilesQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// The fulltext to filter by
+        /// The fulltext to filter by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fulltext")]
         public string? Fulltext { get; set; }
@@ -50,25 +49,25 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
-        /// The parent ID to filter by
+        /// The parent ID to filter by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=parent_id")]
         public string? ParentId { get; set; }
 
         /// <summary>
-        /// Query string to search. eg. email address or name
+        /// Query string to search. eg. email address or name.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]
         public string? Query { get; set; }
 
         /// <summary>
-        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar
+        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
 
         /// <summary>
-        /// The referenced entity ID to filter by (e.g. linked accounting record for storage_file)
+        /// The referenced entity ID to filter by (e.g. linked accounting record for storage_file).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=reference")]
         public string? Reference { get; set; }
@@ -77,13 +76,13 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// The type to filter by
+        /// The type to filter by.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
         public string? Type { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

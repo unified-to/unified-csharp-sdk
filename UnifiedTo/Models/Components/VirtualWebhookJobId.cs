@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VirtualWebhookJobId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class VirtualWebhookJobIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VirtualWebhookJobId : IEquatable<VirtualWebhookJobId>
     {
-        public static string Value(this VirtualWebhookJobId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VirtualWebhookJobId SupportedRequired = new VirtualWebhookJobId("supported-required");
+        public static readonly VirtualWebhookJobId Supported = new VirtualWebhookJobId("supported");
+        public static readonly VirtualWebhookJobId NotSupported = new VirtualWebhookJobId("not-supported");
 
-        public static VirtualWebhookJobId ToEnum(this string value)
-        {
-            foreach(var field in typeof(VirtualWebhookJobId).GetFields())
+        private static readonly Dictionary <string, VirtualWebhookJobId> _knownValues =
+            new Dictionary <string, VirtualWebhookJobId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VirtualWebhookJobId> _values =
+            new ConcurrentDictionary<string, VirtualWebhookJobId>(_knownValues);
 
-                    if (enumVal is VirtualWebhookJobId)
-                    {
-                        return (VirtualWebhookJobId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VirtualWebhookJobId");
+        private VirtualWebhookJobId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VirtualWebhookJobId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VirtualWebhookJobId(value));
+        }
+
+        public static implicit operator VirtualWebhookJobId(string value) => Of(value);
+        public static implicit operator string(VirtualWebhookJobId virtualwebhookjobid) => virtualwebhookjobid.Value;
+
+        public static VirtualWebhookJobId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VirtualWebhookJobId);
+
+        public bool Equals(VirtualWebhookJobId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

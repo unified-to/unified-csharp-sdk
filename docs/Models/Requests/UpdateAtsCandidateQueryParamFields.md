@@ -1,5 +1,13 @@
 # UpdateAtsCandidateQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAtsCandidateQueryParamFields.Id;
+```
+
 
 ## Values
 

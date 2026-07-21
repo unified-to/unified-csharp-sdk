@@ -1,5 +1,4 @@
 # Auth
-(*Auth*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedIntegrationAuth" method="get" path="/unified/integration/auth/{workspace_id}/{integration_type}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ Returns an authentication URL for the specified integration.  Once a successful 
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUnifiedIntegrationLogin" method="get" path="/unified/integration/login/{workspace_id}/{integration_type}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

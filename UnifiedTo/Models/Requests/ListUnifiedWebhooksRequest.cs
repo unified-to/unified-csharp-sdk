@@ -10,18 +10,17 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class ListUnifiedWebhooksRequest
     {
-
         /// <summary>
-        /// Filter the results to just this integration
+        /// Filter the results to just this integration.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=connection_id")]
         public string? ConnectionId { get; set; }
 
         /// <summary>
-        /// Return only results whose created date is equal or less to this value
+        /// Return only results whose created date is equal or less to this value.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=created_lte")]
         public string? CreatedLte { get; set; }
@@ -30,7 +29,7 @@ namespace UnifiedTo.Models.Requests
         public string? Env { get; set; }
 
         /// <summary>
-        /// Filter the results to just this integration
+        /// Filter the results to just this integration.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=integration_type")]
         public string? IntegrationType { get; set; }
@@ -39,7 +38,7 @@ namespace UnifiedTo.Models.Requests
         public double? Limit { get; set; }
 
         /// <summary>
-        /// Filter the results for webhooks for only this object
+        /// Filter the results for webhooks for only this object.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=object")]
         public string? Object { get; set; }
@@ -54,7 +53,7 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

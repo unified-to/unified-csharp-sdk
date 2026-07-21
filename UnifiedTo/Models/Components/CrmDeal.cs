@@ -14,13 +14,12 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A deal represents an opportunity with companies and/or contacts
+    /// A deal represents an opportunity with companies and/or contacts.
     /// </summary>
     public class CrmDeal
     {
-
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 

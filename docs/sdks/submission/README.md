@@ -1,5 +1,4 @@
 # Submission
-(*Submission*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a submission
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getFormsSubmission" method="get" path="/forms/{connection_id}/submission/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all submissions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listFormsSubmissions" method="get" path="/forms/{connection_id}/submission" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

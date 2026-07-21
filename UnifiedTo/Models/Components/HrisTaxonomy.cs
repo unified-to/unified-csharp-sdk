@@ -11,15 +11,16 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class HrisTaxonomy
     {
-
         /// <summary>
-        /// synonyms / alternative labels
+        /// synonyms / alternative labels.
         /// </summary>
         [JsonProperty("alternative_names")]
         public List<string>? AlternativeNames { get; set; }
@@ -52,7 +53,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
-        /// ids of hris_taxonomy items of type ROLE that this skill relates to
+        /// ids of hris_taxonomy items of type ROLE that this skill relates to.
         /// </summary>
         [JsonProperty("role_ids")]
         public List<string>? RoleIds { get; set; }

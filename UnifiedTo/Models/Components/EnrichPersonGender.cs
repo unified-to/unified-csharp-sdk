@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EnrichPersonGender
-    {
-        [JsonProperty("MALE")]
-        Male,
-        [JsonProperty("FEMALE")]
-        Female,
-    }
 
-    public static class EnrichPersonGenderExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EnrichPersonGender : IEquatable<EnrichPersonGender>
     {
-        public static string Value(this EnrichPersonGender value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EnrichPersonGender Male = new EnrichPersonGender("MALE");
+        public static readonly EnrichPersonGender Female = new EnrichPersonGender("FEMALE");
 
-        public static EnrichPersonGender ToEnum(this string value)
-        {
-            foreach(var field in typeof(EnrichPersonGender).GetFields())
+        private static readonly Dictionary <string, EnrichPersonGender> _knownValues =
+            new Dictionary <string, EnrichPersonGender> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MALE"] = Male,
+                ["FEMALE"] = Female
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EnrichPersonGender> _values =
+            new ConcurrentDictionary<string, EnrichPersonGender>(_knownValues);
 
-                    if (enumVal is EnrichPersonGender)
-                    {
-                        return (EnrichPersonGender)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EnrichPersonGender");
+        private EnrichPersonGender(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EnrichPersonGender Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EnrichPersonGender(value));
+        }
+
+        public static implicit operator EnrichPersonGender(string value) => Of(value);
+        public static implicit operator string(EnrichPersonGender enrichpersongender) => enrichpersongender.Value;
+
+        public static EnrichPersonGender[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EnrichPersonGender);
+
+        public bool Equals(EnrichPersonGender? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

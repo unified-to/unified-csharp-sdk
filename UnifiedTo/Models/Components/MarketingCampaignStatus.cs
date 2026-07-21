@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MarketingCampaignStatus
-    {
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("SCHEDULED")]
-        Scheduled,
-        [JsonProperty("SENDING")]
-        Sending,
-        [JsonProperty("SENT")]
-        Sent,
-        [JsonProperty("CANCELLED")]
-        Cancelled,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class MarketingCampaignStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MarketingCampaignStatus : IEquatable<MarketingCampaignStatus>
     {
-        public static string Value(this MarketingCampaignStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MarketingCampaignStatus Draft = new MarketingCampaignStatus("DRAFT");
+        public static readonly MarketingCampaignStatus Scheduled = new MarketingCampaignStatus("SCHEDULED");
+        public static readonly MarketingCampaignStatus Sending = new MarketingCampaignStatus("SENDING");
+        public static readonly MarketingCampaignStatus Sent = new MarketingCampaignStatus("SENT");
+        public static readonly MarketingCampaignStatus Cancelled = new MarketingCampaignStatus("CANCELLED");
+        public static readonly MarketingCampaignStatus Paused = new MarketingCampaignStatus("PAUSED");
+        public static readonly MarketingCampaignStatus Archived = new MarketingCampaignStatus("ARCHIVED");
+        public static readonly MarketingCampaignStatus Other = new MarketingCampaignStatus("OTHER");
 
-        public static MarketingCampaignStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(MarketingCampaignStatus).GetFields())
+        private static readonly Dictionary <string, MarketingCampaignStatus> _knownValues =
+            new Dictionary <string, MarketingCampaignStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DRAFT"] = Draft,
+                ["SCHEDULED"] = Scheduled,
+                ["SENDING"] = Sending,
+                ["SENT"] = Sent,
+                ["CANCELLED"] = Cancelled,
+                ["PAUSED"] = Paused,
+                ["ARCHIVED"] = Archived,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MarketingCampaignStatus> _values =
+            new ConcurrentDictionary<string, MarketingCampaignStatus>(_knownValues);
 
-                    if (enumVal is MarketingCampaignStatus)
-                    {
-                        return (MarketingCampaignStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MarketingCampaignStatus");
+        private MarketingCampaignStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MarketingCampaignStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MarketingCampaignStatus(value));
+        }
+
+        public static implicit operator MarketingCampaignStatus(string value) => Of(value);
+        public static implicit operator string(MarketingCampaignStatus marketingcampaignstatus) => marketingcampaignstatus.Value;
+
+        public static MarketingCampaignStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MarketingCampaignStatus);
+
+        public bool Equals(MarketingCampaignStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

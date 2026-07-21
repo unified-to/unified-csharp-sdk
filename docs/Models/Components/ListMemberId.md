@@ -1,5 +1,16 @@
 # ListMemberId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListMemberId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListMemberId.Of("custom_value");
+```
+
 
 ## Values
 

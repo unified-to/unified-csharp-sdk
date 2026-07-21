@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class TaskMetadataSchemas5Type
     {
         private TaskMetadataSchemas5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TaskMetadataSchemas5Type TaskMetadataSchemas1 { get { return new TaskMetadataSchemas5Type("TaskMetadata_Schemas_1"); } }
-        
+
         public static TaskMetadataSchemas5Type Str { get { return new TaskMetadataSchemas5Type("str"); } }
-        
+
         public static TaskMetadataSchemas5Type Number { get { return new TaskMetadataSchemas5Type("number"); } }
-        
+
         public static TaskMetadataSchemas5Type Boolean { get { return new TaskMetadataSchemas5Type("boolean"); } }
-        
-        public static TaskMetadataSchemas5Type Null { get { return new TaskMetadataSchemas5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(TaskMetadataSchemas5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for TaskMetadataSchemas5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(TaskMetadataSchemas5.TaskMetadataSchemas5Converter))]
-    public class TaskMetadataSchemas5 {
-        public TaskMetadataSchemas5(TaskMetadataSchemas5Type type) {
+    public class TaskMetadataSchemas5
+    {
+        public TaskMetadataSchemas5(TaskMetadataSchemas5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public TaskMetadataSchemas5Type Type { get; set; }
-
-
-        public static TaskMetadataSchemas5 CreateTaskMetadataSchemas1(TaskMetadataSchemas1 taskMetadataSchemas1) {
+        public static TaskMetadataSchemas5 CreateTaskMetadataSchemas1(TaskMetadataSchemas1 taskMetadataSchemas1)
+        {
             TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.TaskMetadataSchemas1;
 
             TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
             res.TaskMetadataSchemas1 = taskMetadataSchemas1;
             return res;
         }
-
-        public static TaskMetadataSchemas5 CreateStr(string str) {
+        public static TaskMetadataSchemas5 CreateStr(string str)
+        {
             TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.Str;
 
             TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
             res.Str = str;
             return res;
         }
-
-        public static TaskMetadataSchemas5 CreateNumber(double number) {
+        public static TaskMetadataSchemas5 CreateNumber(double number)
+        {
             TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.Number;
 
             TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
             res.Number = number;
             return res;
         }
-
-        public static TaskMetadataSchemas5 CreateBoolean(bool boolean) {
+        public static TaskMetadataSchemas5 CreateBoolean(bool boolean)
+        {
             TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.Boolean;
 
             TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static TaskMetadataSchemas5 CreateNull() {
-            TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.Null;
-            return new TaskMetadataSchemas5(typ);
-        }
-
         public class TaskMetadataSchemas5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(TaskMetadataSchemas5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                TaskMetadataSchemas5 res = (TaskMetadataSchemas5)value;
-                if (TaskMetadataSchemas5Type.FromString(res.Type).Equals(TaskMetadataSchemas5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                TaskMetadataSchemas5 res = (TaskMetadataSchemas5)value;
+
                 if (res.TaskMetadataSchemas1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadataSchemas1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

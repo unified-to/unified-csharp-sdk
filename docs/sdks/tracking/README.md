@@ -1,5 +1,4 @@
 # Tracking
-(*Tracking*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a tracking
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getShippingTracking" method="get" path="/shipping/{connection_id}/tracking/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all trackings
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listShippingTrackings" method="get" path="/shipping/{connection_id}/tracking" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

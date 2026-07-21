@@ -1,5 +1,4 @@
 # Assessment
-(*Assessment*)
 
 ## Overview
 
@@ -20,6 +19,7 @@ Create an assessment package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Get an assessment package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAssessmentPackage" method="get" path="/assessment/{connection_id}/package/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List assessment packages
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAssessmentPackages" method="get" path="/assessment/{connection_id}/package" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -137,6 +139,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Update an assessment package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -225,6 +229,7 @@ Delete an assessment package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAssessmentPackage" method="delete" path="/assessment/{connection_id}/package/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -264,6 +269,7 @@ Update an order
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -309,6 +315,7 @@ Update an assessment package
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

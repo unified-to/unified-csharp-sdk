@@ -1,5 +1,16 @@
 # PropertyAdsGroupFrequencyCapTimeUnit
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsGroupFrequencyCapTimeUnit.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsGroupFrequencyCapTimeUnit.Of("custom_value");
+```
+
 
 ## Values
 

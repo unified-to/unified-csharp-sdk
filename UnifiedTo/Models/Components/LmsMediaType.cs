@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum LmsMediaType
-    {
-        [JsonProperty("IMAGE")]
-        Image,
-        [JsonProperty("HEADSHOT")]
-        Headshot,
-        [JsonProperty("VIDEO")]
-        Video,
-        [JsonProperty("WEB")]
-        Web,
-        [JsonProperty("DOCUMENT")]
-        Document,
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("HTML")]
-        Html,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class LmsMediaTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class LmsMediaType : IEquatable<LmsMediaType>
     {
-        public static string Value(this LmsMediaType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly LmsMediaType Image = new LmsMediaType("IMAGE");
+        public static readonly LmsMediaType Headshot = new LmsMediaType("HEADSHOT");
+        public static readonly LmsMediaType Video = new LmsMediaType("VIDEO");
+        public static readonly LmsMediaType Web = new LmsMediaType("WEB");
+        public static readonly LmsMediaType Document = new LmsMediaType("DOCUMENT");
+        public static readonly LmsMediaType Text = new LmsMediaType("TEXT");
+        public static readonly LmsMediaType Html = new LmsMediaType("HTML");
+        public static readonly LmsMediaType Other = new LmsMediaType("OTHER");
 
-        public static LmsMediaType ToEnum(this string value)
-        {
-            foreach(var field in typeof(LmsMediaType).GetFields())
+        private static readonly Dictionary <string, LmsMediaType> _knownValues =
+            new Dictionary <string, LmsMediaType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["IMAGE"] = Image,
+                ["HEADSHOT"] = Headshot,
+                ["VIDEO"] = Video,
+                ["WEB"] = Web,
+                ["DOCUMENT"] = Document,
+                ["TEXT"] = Text,
+                ["HTML"] = Html,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, LmsMediaType> _values =
+            new ConcurrentDictionary<string, LmsMediaType>(_knownValues);
 
-                    if (enumVal is LmsMediaType)
-                    {
-                        return (LmsMediaType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum LmsMediaType");
+        private LmsMediaType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static LmsMediaType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new LmsMediaType(value));
+        }
+
+        public static implicit operator LmsMediaType(string value) => Of(value);
+        public static implicit operator string(LmsMediaType lmsmediatype) => lmsmediatype.Value;
+
+        public static LmsMediaType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as LmsMediaType);
+
+        public bool Equals(LmsMediaType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

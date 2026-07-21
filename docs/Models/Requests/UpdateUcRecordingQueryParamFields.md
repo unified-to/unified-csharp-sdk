@@ -1,5 +1,13 @@
 # UpdateUcRecordingQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateUcRecordingQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class FormAnswer
     {
-
         [JsonProperty("field_id")]
         public string FieldId { get; set; } = default!;
 
@@ -23,7 +22,7 @@ namespace UnifiedTo.Models.Components
         public string? FieldName { get; set; }
 
         /// <summary>
-        /// references StorageFile ID
+        /// references StorageFile ID.
         /// </summary>
         [JsonProperty("file_ids")]
         public List<string>? FileIds { get; set; }

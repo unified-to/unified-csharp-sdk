@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AtsCompensationType
-    {
-        [JsonProperty("SALARY")]
-        Salary,
-        [JsonProperty("BONUS")]
-        Bonus,
-        [JsonProperty("STOCK_OPTIONS")]
-        StockOptions,
-        [JsonProperty("EQUITY")]
-        Equity,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class AtsCompensationTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AtsCompensationType : IEquatable<AtsCompensationType>
     {
-        public static string Value(this AtsCompensationType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AtsCompensationType Salary = new AtsCompensationType("SALARY");
+        public static readonly AtsCompensationType Bonus = new AtsCompensationType("BONUS");
+        public static readonly AtsCompensationType StockOptions = new AtsCompensationType("STOCK_OPTIONS");
+        public static readonly AtsCompensationType Equity = new AtsCompensationType("EQUITY");
+        public static readonly AtsCompensationType Other = new AtsCompensationType("OTHER");
 
-        public static AtsCompensationType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AtsCompensationType).GetFields())
+        private static readonly Dictionary <string, AtsCompensationType> _knownValues =
+            new Dictionary <string, AtsCompensationType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SALARY"] = Salary,
+                ["BONUS"] = Bonus,
+                ["STOCK_OPTIONS"] = StockOptions,
+                ["EQUITY"] = Equity,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AtsCompensationType> _values =
+            new ConcurrentDictionary<string, AtsCompensationType>(_knownValues);
 
-                    if (enumVal is AtsCompensationType)
-                    {
-                        return (AtsCompensationType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AtsCompensationType");
+        private AtsCompensationType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AtsCompensationType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AtsCompensationType(value));
+        }
+
+        public static implicit operator AtsCompensationType(string value) => Of(value);
+        public static implicit operator string(AtsCompensationType atscompensationtype) => atscompensationtype.Value;
+
+        public static AtsCompensationType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AtsCompensationType);
+
+        public bool Equals(AtsCompensationType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

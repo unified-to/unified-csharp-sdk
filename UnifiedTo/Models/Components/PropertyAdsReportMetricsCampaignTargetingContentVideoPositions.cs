@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsCampaignTargetingContentVideoPositions
-    {
-        [JsonProperty("PREROLL")]
-        Preroll,
-        [JsonProperty("MIDROLL")]
-        Midroll,
-        [JsonProperty("POSTROLL")]
-        Postroll,
-        [JsonProperty("INSTREAM")]
-        Instream,
-        [JsonProperty("OUTSTREAM")]
-        Outstream,
-    }
 
-    public static class PropertyAdsReportMetricsCampaignTargetingContentVideoPositionsExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsCampaignTargetingContentVideoPositions : IEquatable<PropertyAdsReportMetricsCampaignTargetingContentVideoPositions>
     {
-        public static string Value(this PropertyAdsReportMetricsCampaignTargetingContentVideoPositions value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPositions Preroll = new PropertyAdsReportMetricsCampaignTargetingContentVideoPositions("PREROLL");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPositions Midroll = new PropertyAdsReportMetricsCampaignTargetingContentVideoPositions("MIDROLL");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPositions Postroll = new PropertyAdsReportMetricsCampaignTargetingContentVideoPositions("POSTROLL");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPositions Instream = new PropertyAdsReportMetricsCampaignTargetingContentVideoPositions("INSTREAM");
+        public static readonly PropertyAdsReportMetricsCampaignTargetingContentVideoPositions Outstream = new PropertyAdsReportMetricsCampaignTargetingContentVideoPositions("OUTSTREAM");
 
-        public static PropertyAdsReportMetricsCampaignTargetingContentVideoPositions ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsCampaignTargetingContentVideoPositions).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignTargetingContentVideoPositions> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsCampaignTargetingContentVideoPositions> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PREROLL"] = Preroll,
+                ["MIDROLL"] = Midroll,
+                ["POSTROLL"] = Postroll,
+                ["INSTREAM"] = Instream,
+                ["OUTSTREAM"] = Outstream
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingContentVideoPositions> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignTargetingContentVideoPositions>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsCampaignTargetingContentVideoPositions)
-                    {
-                        return (PropertyAdsReportMetricsCampaignTargetingContentVideoPositions)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsCampaignTargetingContentVideoPositions");
+        private PropertyAdsReportMetricsCampaignTargetingContentVideoPositions(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsCampaignTargetingContentVideoPositions Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsCampaignTargetingContentVideoPositions(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsCampaignTargetingContentVideoPositions(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsCampaignTargetingContentVideoPositions propertyadsreportmetricscampaigntargetingcontentvideopositions) => propertyadsreportmetricscampaigntargetingcontentvideopositions.Value;
+
+        public static PropertyAdsReportMetricsCampaignTargetingContentVideoPositions[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsCampaignTargetingContentVideoPositions);
+
+        public bool Equals(PropertyAdsReportMetricsCampaignTargetingContentVideoPositions? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

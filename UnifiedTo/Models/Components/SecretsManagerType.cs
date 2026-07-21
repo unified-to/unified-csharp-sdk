@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SecretsManagerType
-    {
-        [JsonProperty("aws")]
-        Aws,
-        [JsonProperty("azure")]
-        Azure,
-        [JsonProperty("gcp")]
-        Gcp,
-        [JsonProperty("hashicorp")]
-        Hashicorp,
-        [JsonProperty("composio")]
-        Composio,
-    }
 
-    public static class SecretsManagerTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SecretsManagerType : IEquatable<SecretsManagerType>
     {
-        public static string Value(this SecretsManagerType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SecretsManagerType Aws = new SecretsManagerType("aws");
+        public static readonly SecretsManagerType Azure = new SecretsManagerType("azure");
+        public static readonly SecretsManagerType Gcp = new SecretsManagerType("gcp");
+        public static readonly SecretsManagerType Hashicorp = new SecretsManagerType("hashicorp");
+        public static readonly SecretsManagerType Composio = new SecretsManagerType("composio");
 
-        public static SecretsManagerType ToEnum(this string value)
-        {
-            foreach(var field in typeof(SecretsManagerType).GetFields())
+        private static readonly Dictionary <string, SecretsManagerType> _knownValues =
+            new Dictionary <string, SecretsManagerType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["aws"] = Aws,
+                ["azure"] = Azure,
+                ["gcp"] = Gcp,
+                ["hashicorp"] = Hashicorp,
+                ["composio"] = Composio
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SecretsManagerType> _values =
+            new ConcurrentDictionary<string, SecretsManagerType>(_knownValues);
 
-                    if (enumVal is SecretsManagerType)
-                    {
-                        return (SecretsManagerType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SecretsManagerType");
+        private SecretsManagerType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SecretsManagerType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SecretsManagerType(value));
+        }
+
+        public static implicit operator SecretsManagerType(string value) => Of(value);
+        public static implicit operator string(SecretsManagerType secretsmanagertype) => secretsmanagertype.Value;
+
+        public static SecretsManagerType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SecretsManagerType);
+
+        public bool Equals(SecretsManagerType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

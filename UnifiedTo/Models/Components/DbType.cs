@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum DbType
-    {
-        [JsonProperty("mongodb")]
-        Mongodb,
-        [JsonProperty("mysql")]
-        Mysql,
-        [JsonProperty("postgres")]
-        Postgres,
-        [JsonProperty("mssql")]
-        Mssql,
-        [JsonProperty("mariadb")]
-        Mariadb,
-        [JsonProperty("supabase")]
-        Supabase,
-        [JsonProperty("snowflake")]
-        Snowflake,
-    }
 
-    public static class DbTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class DbType : IEquatable<DbType>
     {
-        public static string Value(this DbType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly DbType Mongodb = new DbType("mongodb");
+        public static readonly DbType Mysql = new DbType("mysql");
+        public static readonly DbType Postgres = new DbType("postgres");
+        public static readonly DbType Mssql = new DbType("mssql");
+        public static readonly DbType Mariadb = new DbType("mariadb");
+        public static readonly DbType Supabase = new DbType("supabase");
+        public static readonly DbType Snowflake = new DbType("snowflake");
 
-        public static DbType ToEnum(this string value)
-        {
-            foreach(var field in typeof(DbType).GetFields())
+        private static readonly Dictionary <string, DbType> _knownValues =
+            new Dictionary <string, DbType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["mongodb"] = Mongodb,
+                ["mysql"] = Mysql,
+                ["postgres"] = Postgres,
+                ["mssql"] = Mssql,
+                ["mariadb"] = Mariadb,
+                ["supabase"] = Supabase,
+                ["snowflake"] = Snowflake
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, DbType> _values =
+            new ConcurrentDictionary<string, DbType>(_knownValues);
 
-                    if (enumVal is DbType)
-                    {
-                        return (DbType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum DbType");
+        private DbType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static DbType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new DbType(value));
+        }
+
+        public static implicit operator DbType(string value) => Of(value);
+        public static implicit operator string(DbType dbtype) => dbtype.Value;
+
+        public static DbType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as DbType);
+
+        public bool Equals(DbType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

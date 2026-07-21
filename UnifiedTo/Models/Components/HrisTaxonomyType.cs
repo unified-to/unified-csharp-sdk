@@ -11,55 +11,72 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisTaxonomyType
-    {
-        [JsonProperty("SKILL")]
-        Skill,
-        [JsonProperty("KNOWLEDGE")]
-        Knowledge,
-        [JsonProperty("COMPETENCE")]
-        Competence,
-        [JsonProperty("ABILITY")]
-        Ability,
-        [JsonProperty("CERTIFICATION")]
-        Certification,
-        [JsonProperty("ROLE")]
-        Role,
-    }
 
-    public static class HrisTaxonomyTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisTaxonomyType : IEquatable<HrisTaxonomyType>
     {
-        public static string Value(this HrisTaxonomyType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisTaxonomyType Skill = new HrisTaxonomyType("SKILL");
+        public static readonly HrisTaxonomyType Knowledge = new HrisTaxonomyType("KNOWLEDGE");
+        public static readonly HrisTaxonomyType Competence = new HrisTaxonomyType("COMPETENCE");
+        public static readonly HrisTaxonomyType Ability = new HrisTaxonomyType("ABILITY");
+        public static readonly HrisTaxonomyType Certification = new HrisTaxonomyType("CERTIFICATION");
+        public static readonly HrisTaxonomyType Role = new HrisTaxonomyType("ROLE");
 
-        public static HrisTaxonomyType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisTaxonomyType).GetFields())
+        private static readonly Dictionary <string, HrisTaxonomyType> _knownValues =
+            new Dictionary <string, HrisTaxonomyType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SKILL"] = Skill,
+                ["KNOWLEDGE"] = Knowledge,
+                ["COMPETENCE"] = Competence,
+                ["ABILITY"] = Ability,
+                ["CERTIFICATION"] = Certification,
+                ["ROLE"] = Role
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisTaxonomyType> _values =
+            new ConcurrentDictionary<string, HrisTaxonomyType>(_knownValues);
 
-                    if (enumVal is HrisTaxonomyType)
-                    {
-                        return (HrisTaxonomyType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisTaxonomyType");
+        private HrisTaxonomyType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisTaxonomyType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisTaxonomyType(value));
+        }
+
+        public static implicit operator HrisTaxonomyType(string value) => Of(value);
+        public static implicit operator string(HrisTaxonomyType hristaxonomytype) => hristaxonomytype.Value;
+
+        public static HrisTaxonomyType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisTaxonomyType);
+
+        public bool Equals(HrisTaxonomyType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

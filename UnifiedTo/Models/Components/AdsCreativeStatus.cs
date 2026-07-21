@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsCreativeStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("SCHEDULED_FOR_DELETION")]
-        ScheduledForDeletion,
-        [JsonProperty("PROCESSING")]
-        Processing,
-        [JsonProperty("PROCESSING_FAILED")]
-        ProcessingFailed,
-    }
 
-    public static class AdsCreativeStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsCreativeStatus : IEquatable<AdsCreativeStatus>
     {
-        public static string Value(this AdsCreativeStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsCreativeStatus Unspecified = new AdsCreativeStatus("UNSPECIFIED");
+        public static readonly AdsCreativeStatus Active = new AdsCreativeStatus("ACTIVE");
+        public static readonly AdsCreativeStatus Paused = new AdsCreativeStatus("PAUSED");
+        public static readonly AdsCreativeStatus Archived = new AdsCreativeStatus("ARCHIVED");
+        public static readonly AdsCreativeStatus Draft = new AdsCreativeStatus("DRAFT");
+        public static readonly AdsCreativeStatus ScheduledForDeletion = new AdsCreativeStatus("SCHEDULED_FOR_DELETION");
+        public static readonly AdsCreativeStatus Processing = new AdsCreativeStatus("PROCESSING");
+        public static readonly AdsCreativeStatus ProcessingFailed = new AdsCreativeStatus("PROCESSING_FAILED");
 
-        public static AdsCreativeStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsCreativeStatus).GetFields())
+        private static readonly Dictionary <string, AdsCreativeStatus> _knownValues =
+            new Dictionary <string, AdsCreativeStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["ACTIVE"] = Active,
+                ["PAUSED"] = Paused,
+                ["ARCHIVED"] = Archived,
+                ["DRAFT"] = Draft,
+                ["SCHEDULED_FOR_DELETION"] = ScheduledForDeletion,
+                ["PROCESSING"] = Processing,
+                ["PROCESSING_FAILED"] = ProcessingFailed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsCreativeStatus> _values =
+            new ConcurrentDictionary<string, AdsCreativeStatus>(_knownValues);
 
-                    if (enumVal is AdsCreativeStatus)
-                    {
-                        return (AdsCreativeStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsCreativeStatus");
+        private AdsCreativeStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsCreativeStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsCreativeStatus(value));
+        }
+
+        public static implicit operator AdsCreativeStatus(string value) => Of(value);
+        public static implicit operator string(AdsCreativeStatus adscreativestatus) => adscreativestatus.Value;
+
+        public static AdsCreativeStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsCreativeStatus);
+
+        public bool Equals(AdsCreativeStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

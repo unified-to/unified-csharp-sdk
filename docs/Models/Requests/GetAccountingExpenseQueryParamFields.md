@@ -1,5 +1,13 @@
 # GetAccountingExpenseQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingExpenseQueryParamFields.Id;
+```
+
 
 ## Values
 

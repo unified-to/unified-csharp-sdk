@@ -1,5 +1,16 @@
 # ListInterviewId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListInterviewId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListInterviewId.Of("custom_value");
+```
+
 
 ## Values
 

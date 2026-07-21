@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisDeductionCoverageLevel
-    {
-        [JsonProperty("EMPLOYEE_ONLY")]
-        EmployeeOnly,
-        [JsonProperty("EMPLOYEE_SPOUSE")]
-        EmployeeSpouse,
-        [JsonProperty("EMPLOYEE_CHILD")]
-        EmployeeChild,
-        [JsonProperty("EMPLOYEE_CHILDREN")]
-        EmployeeChildren,
-        [JsonProperty("EMPLOYEE_FAMILY")]
-        EmployeeFamily,
-        [JsonProperty("FAMILY")]
-        Family,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class HrisDeductionCoverageLevelExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisDeductionCoverageLevel : IEquatable<HrisDeductionCoverageLevel>
     {
-        public static string Value(this HrisDeductionCoverageLevel value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisDeductionCoverageLevel EmployeeOnly = new HrisDeductionCoverageLevel("EMPLOYEE_ONLY");
+        public static readonly HrisDeductionCoverageLevel EmployeeSpouse = new HrisDeductionCoverageLevel("EMPLOYEE_SPOUSE");
+        public static readonly HrisDeductionCoverageLevel EmployeeChild = new HrisDeductionCoverageLevel("EMPLOYEE_CHILD");
+        public static readonly HrisDeductionCoverageLevel EmployeeChildren = new HrisDeductionCoverageLevel("EMPLOYEE_CHILDREN");
+        public static readonly HrisDeductionCoverageLevel EmployeeFamily = new HrisDeductionCoverageLevel("EMPLOYEE_FAMILY");
+        public static readonly HrisDeductionCoverageLevel Family = new HrisDeductionCoverageLevel("FAMILY");
+        public static readonly HrisDeductionCoverageLevel Other = new HrisDeductionCoverageLevel("OTHER");
 
-        public static HrisDeductionCoverageLevel ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisDeductionCoverageLevel).GetFields())
+        private static readonly Dictionary <string, HrisDeductionCoverageLevel> _knownValues =
+            new Dictionary <string, HrisDeductionCoverageLevel> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["EMPLOYEE_ONLY"] = EmployeeOnly,
+                ["EMPLOYEE_SPOUSE"] = EmployeeSpouse,
+                ["EMPLOYEE_CHILD"] = EmployeeChild,
+                ["EMPLOYEE_CHILDREN"] = EmployeeChildren,
+                ["EMPLOYEE_FAMILY"] = EmployeeFamily,
+                ["FAMILY"] = Family,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisDeductionCoverageLevel> _values =
+            new ConcurrentDictionary<string, HrisDeductionCoverageLevel>(_knownValues);
 
-                    if (enumVal is HrisDeductionCoverageLevel)
-                    {
-                        return (HrisDeductionCoverageLevel)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisDeductionCoverageLevel");
+        private HrisDeductionCoverageLevel(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisDeductionCoverageLevel Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisDeductionCoverageLevel(value));
+        }
+
+        public static implicit operator HrisDeductionCoverageLevel(string value) => Of(value);
+        public static implicit operator string(HrisDeductionCoverageLevel hrisdeductioncoveragelevel) => hrisdeductioncoveragelevel.Value;
+
+        public static HrisDeductionCoverageLevel[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisDeductionCoverageLevel);
+
+        public bool Equals(HrisDeductionCoverageLevel? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

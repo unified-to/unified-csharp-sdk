@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum DayOfWeek
-    {
-        [JsonProperty("MONDAY")]
-        Monday,
-        [JsonProperty("TUESDAY")]
-        Tuesday,
-        [JsonProperty("WEDNESDAY")]
-        Wednesday,
-        [JsonProperty("THURSDAY")]
-        Thursday,
-        [JsonProperty("FRIDAY")]
-        Friday,
-        [JsonProperty("SATURDAY")]
-        Saturday,
-        [JsonProperty("SUNDAY")]
-        Sunday,
-    }
 
-    public static class DayOfWeekExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class DayOfWeek : IEquatable<DayOfWeek>
     {
-        public static string Value(this DayOfWeek value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly DayOfWeek Monday = new DayOfWeek("MONDAY");
+        public static readonly DayOfWeek Tuesday = new DayOfWeek("TUESDAY");
+        public static readonly DayOfWeek Wednesday = new DayOfWeek("WEDNESDAY");
+        public static readonly DayOfWeek Thursday = new DayOfWeek("THURSDAY");
+        public static readonly DayOfWeek Friday = new DayOfWeek("FRIDAY");
+        public static readonly DayOfWeek Saturday = new DayOfWeek("SATURDAY");
+        public static readonly DayOfWeek Sunday = new DayOfWeek("SUNDAY");
 
-        public static DayOfWeek ToEnum(this string value)
-        {
-            foreach(var field in typeof(DayOfWeek).GetFields())
+        private static readonly Dictionary <string, DayOfWeek> _knownValues =
+            new Dictionary <string, DayOfWeek> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MONDAY"] = Monday,
+                ["TUESDAY"] = Tuesday,
+                ["WEDNESDAY"] = Wednesday,
+                ["THURSDAY"] = Thursday,
+                ["FRIDAY"] = Friday,
+                ["SATURDAY"] = Saturday,
+                ["SUNDAY"] = Sunday
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, DayOfWeek> _values =
+            new ConcurrentDictionary<string, DayOfWeek>(_knownValues);
 
-                    if (enumVal is DayOfWeek)
-                    {
-                        return (DayOfWeek)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum DayOfWeek");
+        private DayOfWeek(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static DayOfWeek Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new DayOfWeek(value));
+        }
+
+        public static implicit operator DayOfWeek(string value) => Of(value);
+        public static implicit operator string(DayOfWeek dayofweek) => dayofweek.Value;
+
+        public static DayOfWeek[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as DayOfWeek);
+
+        public bool Equals(DayOfWeek? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

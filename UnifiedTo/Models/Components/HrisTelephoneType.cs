@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisTelephoneType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-        [JsonProperty("FAX")]
-        Fax,
-        [JsonProperty("MOBILE")]
-        Mobile,
-    }
 
-    public static class HrisTelephoneTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisTelephoneType : IEquatable<HrisTelephoneType>
     {
-        public static string Value(this HrisTelephoneType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisTelephoneType Work = new HrisTelephoneType("WORK");
+        public static readonly HrisTelephoneType Home = new HrisTelephoneType("HOME");
+        public static readonly HrisTelephoneType Other = new HrisTelephoneType("OTHER");
+        public static readonly HrisTelephoneType Fax = new HrisTelephoneType("FAX");
+        public static readonly HrisTelephoneType Mobile = new HrisTelephoneType("MOBILE");
 
-        public static HrisTelephoneType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisTelephoneType).GetFields())
+        private static readonly Dictionary <string, HrisTelephoneType> _knownValues =
+            new Dictionary <string, HrisTelephoneType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other,
+                ["FAX"] = Fax,
+                ["MOBILE"] = Mobile
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisTelephoneType> _values =
+            new ConcurrentDictionary<string, HrisTelephoneType>(_knownValues);
 
-                    if (enumVal is HrisTelephoneType)
-                    {
-                        return (HrisTelephoneType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisTelephoneType");
+        private HrisTelephoneType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisTelephoneType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisTelephoneType(value));
+        }
+
+        public static implicit operator HrisTelephoneType(string value) => Of(value);
+        public static implicit operator string(HrisTelephoneType hristelephonetype) => hristelephonetype.Value;
+
+        public static HrisTelephoneType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisTelephoneType);
+
+        public bool Equals(HrisTelephoneType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Status
-    {
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-    }
 
-    public static class StatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Status : IEquatable<Status>
     {
-        public static string Value(this Status value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Status Active = new Status("ACTIVE");
+        public static readonly Status Archived = new Status("ARCHIVED");
 
-        public static Status ToEnum(this string value)
-        {
-            foreach(var field in typeof(Status).GetFields())
+        private static readonly Dictionary <string, Status> _knownValues =
+            new Dictionary <string, Status> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACTIVE"] = Active,
+                ["ARCHIVED"] = Archived
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Status> _values =
+            new ConcurrentDictionary<string, Status>(_knownValues);
 
-                    if (enumVal is Status)
-                    {
-                        return (Status)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Status");
+        private Status(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Status Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Status(value));
+        }
+
+        public static implicit operator Status(string value) => Of(value);
+        public static implicit operator string(Status status) => status.Value;
+
+        public static Status[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Status);
+
+        public bool Equals(Status? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

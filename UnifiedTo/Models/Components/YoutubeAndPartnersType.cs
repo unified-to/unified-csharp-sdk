@@ -11,65 +11,82 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum YoutubeAndPartnersType
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("MANUAL_CPV")]
-        ManualCpv,
-        [JsonProperty("MANUAL_CPM")]
-        ManualCpm,
-        [JsonProperty("TARGET_CPA")]
-        TargetCpa,
-        [JsonProperty("TARGET_CPM")]
-        TargetCpm,
-        [JsonProperty("RESERVE_CPM")]
-        ReserveCpm,
-        [JsonProperty("MAXIMIZE_LIFT")]
-        MaximizeLift,
-        [JsonProperty("MAXIMIZE_CONVERSIONS")]
-        MaximizeConversions,
-        [JsonProperty("TARGET_CPV")]
-        TargetCpv,
-        [JsonProperty("TARGET_ROAS")]
-        TargetRoas,
-        [JsonProperty("MAXIMIZE_CONVERSION_VALUE")]
-        MaximizeConversionValue,
-    }
 
-    public static class YoutubeAndPartnersTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class YoutubeAndPartnersType : IEquatable<YoutubeAndPartnersType>
     {
-        public static string Value(this YoutubeAndPartnersType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly YoutubeAndPartnersType Unspecified = new YoutubeAndPartnersType("UNSPECIFIED");
+        public static readonly YoutubeAndPartnersType ManualCpv = new YoutubeAndPartnersType("MANUAL_CPV");
+        public static readonly YoutubeAndPartnersType ManualCpm = new YoutubeAndPartnersType("MANUAL_CPM");
+        public static readonly YoutubeAndPartnersType TargetCpa = new YoutubeAndPartnersType("TARGET_CPA");
+        public static readonly YoutubeAndPartnersType TargetCpm = new YoutubeAndPartnersType("TARGET_CPM");
+        public static readonly YoutubeAndPartnersType ReserveCpm = new YoutubeAndPartnersType("RESERVE_CPM");
+        public static readonly YoutubeAndPartnersType MaximizeLift = new YoutubeAndPartnersType("MAXIMIZE_LIFT");
+        public static readonly YoutubeAndPartnersType MaximizeConversions = new YoutubeAndPartnersType("MAXIMIZE_CONVERSIONS");
+        public static readonly YoutubeAndPartnersType TargetCpv = new YoutubeAndPartnersType("TARGET_CPV");
+        public static readonly YoutubeAndPartnersType TargetRoas = new YoutubeAndPartnersType("TARGET_ROAS");
+        public static readonly YoutubeAndPartnersType MaximizeConversionValue = new YoutubeAndPartnersType("MAXIMIZE_CONVERSION_VALUE");
 
-        public static YoutubeAndPartnersType ToEnum(this string value)
-        {
-            foreach(var field in typeof(YoutubeAndPartnersType).GetFields())
+        private static readonly Dictionary <string, YoutubeAndPartnersType> _knownValues =
+            new Dictionary <string, YoutubeAndPartnersType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["MANUAL_CPV"] = ManualCpv,
+                ["MANUAL_CPM"] = ManualCpm,
+                ["TARGET_CPA"] = TargetCpa,
+                ["TARGET_CPM"] = TargetCpm,
+                ["RESERVE_CPM"] = ReserveCpm,
+                ["MAXIMIZE_LIFT"] = MaximizeLift,
+                ["MAXIMIZE_CONVERSIONS"] = MaximizeConversions,
+                ["TARGET_CPV"] = TargetCpv,
+                ["TARGET_ROAS"] = TargetRoas,
+                ["MAXIMIZE_CONVERSION_VALUE"] = MaximizeConversionValue
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, YoutubeAndPartnersType> _values =
+            new ConcurrentDictionary<string, YoutubeAndPartnersType>(_knownValues);
 
-                    if (enumVal is YoutubeAndPartnersType)
-                    {
-                        return (YoutubeAndPartnersType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum YoutubeAndPartnersType");
+        private YoutubeAndPartnersType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static YoutubeAndPartnersType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new YoutubeAndPartnersType(value));
+        }
+
+        public static implicit operator YoutubeAndPartnersType(string value) => Of(value);
+        public static implicit operator string(YoutubeAndPartnersType youtubeandpartnerstype) => youtubeandpartnerstype.Value;
+
+        public static YoutubeAndPartnersType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as YoutubeAndPartnersType);
+
+        public bool Equals(YoutubeAndPartnersType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

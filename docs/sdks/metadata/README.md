@@ -1,5 +1,4 @@
 # Metadata
-(*Metadata*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createMetadataMetadata" method="post" path="/metadata/{connection_id}/metadata" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -62,6 +62,7 @@ Retrieve a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getMetadataMetadata" method="get" path="/metadata/{connection_id}/metadata/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -103,6 +104,7 @@ List all metadatas
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listMetadataMetadatas" method="get" path="/metadata/{connection_id}/metadata" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -143,6 +145,7 @@ Update a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchMetadataMetadata" method="patch" path="/metadata/{connection_id}/metadata/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -188,6 +191,7 @@ Remove a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeMetadataMetadata" method="delete" path="/metadata/{connection_id}/metadata/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -227,6 +231,7 @@ Update a metadata
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateMetadataMetadata" method="put" path="/metadata/{connection_id}/metadata/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

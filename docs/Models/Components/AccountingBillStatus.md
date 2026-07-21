@@ -1,5 +1,16 @@
 # AccountingBillStatus
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AccountingBillStatus.Draft;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AccountingBillStatus.Of("custom_value");
+```
+
 
 ## Values
 

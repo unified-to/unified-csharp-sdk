@@ -10,16 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Customs information
+    /// Customs information.
     /// </summary>
     public class PropertyShippingShipmentCustoms
     {
-
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
@@ -36,7 +38,7 @@ namespace UnifiedTo.Models.Components
         public DutiesPaidBy? DutiesPaidBy { get; set; }
 
         /// <summary>
-        /// Customs items
+        /// Customs items.
         /// </summary>
         [JsonProperty("items")]
         public List<ShippingCustomsItem>? Items { get; set; }
@@ -51,7 +53,7 @@ namespace UnifiedTo.Models.Components
         public string? RecipientTaxNumber { get; set; }
 
         /// <summary>
-        /// Any restrictions
+        /// Any restrictions.
         /// </summary>
         [JsonProperty("restrictions")]
         public List<string>? Restrictions { get; set; }

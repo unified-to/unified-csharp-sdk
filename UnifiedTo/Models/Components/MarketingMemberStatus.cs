@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MarketingMemberStatus
-    {
-        [JsonProperty("SUBSCRIBED")]
-        Subscribed,
-        [JsonProperty("UNSUBSCRIBED")]
-        Unsubscribed,
-        [JsonProperty("CLEANED")]
-        Cleaned,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("TRANSACTIONAL")]
-        Transactional,
-    }
 
-    public static class MarketingMemberStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MarketingMemberStatus : IEquatable<MarketingMemberStatus>
     {
-        public static string Value(this MarketingMemberStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MarketingMemberStatus Subscribed = new MarketingMemberStatus("SUBSCRIBED");
+        public static readonly MarketingMemberStatus Unsubscribed = new MarketingMemberStatus("UNSUBSCRIBED");
+        public static readonly MarketingMemberStatus Cleaned = new MarketingMemberStatus("CLEANED");
+        public static readonly MarketingMemberStatus Pending = new MarketingMemberStatus("PENDING");
+        public static readonly MarketingMemberStatus Transactional = new MarketingMemberStatus("TRANSACTIONAL");
 
-        public static MarketingMemberStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(MarketingMemberStatus).GetFields())
+        private static readonly Dictionary <string, MarketingMemberStatus> _knownValues =
+            new Dictionary <string, MarketingMemberStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SUBSCRIBED"] = Subscribed,
+                ["UNSUBSCRIBED"] = Unsubscribed,
+                ["CLEANED"] = Cleaned,
+                ["PENDING"] = Pending,
+                ["TRANSACTIONAL"] = Transactional
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MarketingMemberStatus> _values =
+            new ConcurrentDictionary<string, MarketingMemberStatus>(_knownValues);
 
-                    if (enumVal is MarketingMemberStatus)
-                    {
-                        return (MarketingMemberStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MarketingMemberStatus");
+        private MarketingMemberStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MarketingMemberStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MarketingMemberStatus(value));
+        }
+
+        public static implicit operator MarketingMemberStatus(string value) => Of(value);
+        public static implicit operator string(MarketingMemberStatus marketingmemberstatus) => marketingmemberstatus.Value;
+
+        public static MarketingMemberStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MarketingMemberStatus);
+
+        public bool Equals(MarketingMemberStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

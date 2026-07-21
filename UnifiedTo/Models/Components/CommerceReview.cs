@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CommerceReview
     {
-
         [JsonProperty("author_avatar_url")]
         public string? AuthorAvatarUrl { get; set; }
 
@@ -64,7 +65,7 @@ namespace UnifiedTo.Models.Components
         public string? LocationId { get; set; }
 
         /// <summary>
-        /// Photosvideos attached to the review
+        /// Photosvideos attached to the review.
         /// </summary>
         [JsonProperty("media")]
         public List<CommerceItemMedia>? Media { get; set; }

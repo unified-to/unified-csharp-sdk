@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Chart of accounts
+    /// Chart of accounts.
     /// </summary>
     public class AccountingAccount
     {
-
         [JsonProperty("balance")]
         public double? Balance { get; set; }
 

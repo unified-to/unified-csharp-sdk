@@ -1,5 +1,16 @@
 # VerificationPackageType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VerificationPackageType.IdentityVerification;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VerificationPackageType.Of("custom_value");
+```
+
 
 ## Values
 

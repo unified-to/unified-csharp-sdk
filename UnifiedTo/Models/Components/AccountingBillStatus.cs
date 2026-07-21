@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingBillStatus
-    {
-        [JsonProperty("DRAFT")]
-        Draft,
-        [JsonProperty("VOIDED")]
-        Voided,
-        [JsonProperty("AUTHORIZED")]
-        Authorized,
-        [JsonProperty("PAID")]
-        Paid,
-        [JsonProperty("PARTIALLY_PAID")]
-        PartiallyPaid,
-        [JsonProperty("PARTIALLY_REFUNDED")]
-        PartiallyRefunded,
-        [JsonProperty("REFUNDED")]
-        Refunded,
-        [JsonProperty("SUBMITTED")]
-        Submitted,
-        [JsonProperty("DELETED")]
-        Deleted,
-        [JsonProperty("OVERDUE")]
-        Overdue,
-    }
 
-    public static class AccountingBillStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingBillStatus : IEquatable<AccountingBillStatus>
     {
-        public static string Value(this AccountingBillStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingBillStatus Draft = new AccountingBillStatus("DRAFT");
+        public static readonly AccountingBillStatus Voided = new AccountingBillStatus("VOIDED");
+        public static readonly AccountingBillStatus Authorized = new AccountingBillStatus("AUTHORIZED");
+        public static readonly AccountingBillStatus Paid = new AccountingBillStatus("PAID");
+        public static readonly AccountingBillStatus PartiallyPaid = new AccountingBillStatus("PARTIALLY_PAID");
+        public static readonly AccountingBillStatus PartiallyRefunded = new AccountingBillStatus("PARTIALLY_REFUNDED");
+        public static readonly AccountingBillStatus Refunded = new AccountingBillStatus("REFUNDED");
+        public static readonly AccountingBillStatus Submitted = new AccountingBillStatus("SUBMITTED");
+        public static readonly AccountingBillStatus Deleted = new AccountingBillStatus("DELETED");
+        public static readonly AccountingBillStatus Overdue = new AccountingBillStatus("OVERDUE");
 
-        public static AccountingBillStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingBillStatus).GetFields())
+        private static readonly Dictionary <string, AccountingBillStatus> _knownValues =
+            new Dictionary <string, AccountingBillStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DRAFT"] = Draft,
+                ["VOIDED"] = Voided,
+                ["AUTHORIZED"] = Authorized,
+                ["PAID"] = Paid,
+                ["PARTIALLY_PAID"] = PartiallyPaid,
+                ["PARTIALLY_REFUNDED"] = PartiallyRefunded,
+                ["REFUNDED"] = Refunded,
+                ["SUBMITTED"] = Submitted,
+                ["DELETED"] = Deleted,
+                ["OVERDUE"] = Overdue
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingBillStatus> _values =
+            new ConcurrentDictionary<string, AccountingBillStatus>(_knownValues);
 
-                    if (enumVal is AccountingBillStatus)
-                    {
-                        return (AccountingBillStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingBillStatus");
+        private AccountingBillStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingBillStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingBillStatus(value));
+        }
+
+        public static implicit operator AccountingBillStatus(string value) => Of(value);
+        public static implicit operator string(AccountingBillStatus accountingbillstatus) => accountingbillstatus.Value;
+
+        public static AccountingBillStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingBillStatus);
+
+        public bool Equals(AccountingBillStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

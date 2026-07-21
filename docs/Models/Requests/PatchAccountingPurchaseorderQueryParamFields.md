@@ -1,5 +1,13 @@
 # PatchAccountingPurchaseorderQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAccountingPurchaseorderQueryParamFields.Id;
+```
+
 
 ## Values
 

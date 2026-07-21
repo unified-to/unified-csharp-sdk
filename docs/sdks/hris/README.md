@@ -1,5 +1,4 @@
 # Hris
-(*Hris*)
 
 ## Overview
 
@@ -82,6 +81,7 @@ Create a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -123,6 +123,7 @@ Create a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -164,6 +165,7 @@ Create a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -205,6 +207,7 @@ Create a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -246,6 +249,7 @@ Create a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -287,6 +291,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisDocument" method="post" path="/hris/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -328,6 +333,7 @@ Create an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisEmployee" method="post" path="/hris/{connection_id}/employee" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -369,6 +375,7 @@ Create a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -410,6 +417,7 @@ Create a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -451,6 +459,7 @@ Create a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -494,6 +503,7 @@ Create a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -537,6 +547,7 @@ Retrieve a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisBankaccount" method="get" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -578,6 +589,7 @@ Retrieve a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisBenefit" method="get" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -619,6 +631,7 @@ Retrieve a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisCompany" method="get" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -660,6 +673,7 @@ Retrieve a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisDeduction" method="get" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -701,6 +715,7 @@ Retrieve a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisDevice" method="get" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -742,6 +757,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisDocument" method="get" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -783,6 +799,7 @@ Retrieve an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisEmployee" method="get" path="/hris/{connection_id}/employee/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -824,6 +841,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisGroup" method="get" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -865,6 +883,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisLocation" method="get" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -906,6 +925,7 @@ Retrieve a payslip
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisPayslip" method="get" path="/hris/{connection_id}/payslip/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -947,6 +967,7 @@ Retrieve a taxonomy
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisTaxonomy" method="get" path="/hris/{connection_id}/taxonomy/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -988,6 +1009,7 @@ Retrieve a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisTimeoff" method="get" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1029,6 +1051,7 @@ Retrieve a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisTimeshift" method="get" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1070,6 +1093,7 @@ List all bankaccounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisBankaccounts" method="get" path="/hris/{connection_id}/bankaccount" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1110,6 +1134,7 @@ List all benefits
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisBenefits" method="get" path="/hris/{connection_id}/benefit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1150,6 +1175,7 @@ List all companies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisCompanies" method="get" path="/hris/{connection_id}/company" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1190,6 +1216,7 @@ List all deductions
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisDeductions" method="get" path="/hris/{connection_id}/deduction" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1230,6 +1257,7 @@ List all devices
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisDevices" method="get" path="/hris/{connection_id}/device" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1270,6 +1298,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisDocuments" method="get" path="/hris/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1310,6 +1339,7 @@ List all employees
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisEmployees" method="get" path="/hris/{connection_id}/employee" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1350,6 +1380,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisGroups" method="get" path="/hris/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1390,6 +1421,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisLocations" method="get" path="/hris/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1430,6 +1462,7 @@ List all payslips
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisPayslips" method="get" path="/hris/{connection_id}/payslip" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1470,6 +1503,7 @@ List all taxonomies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisTaxonomies" method="get" path="/hris/{connection_id}/taxonomy" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1510,6 +1544,7 @@ List all timeoffs
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisTimeoffs" method="get" path="/hris/{connection_id}/timeoff" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1550,6 +1585,7 @@ List all timeshifts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisTimeshifts" method="get" path="/hris/{connection_id}/timeshift" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1590,6 +1626,7 @@ Update a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1632,6 +1669,7 @@ Update a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1674,6 +1712,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1716,6 +1755,7 @@ Update a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1758,6 +1798,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1800,6 +1841,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisDocument" method="patch" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1842,6 +1884,7 @@ Update an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisEmployee" method="patch" path="/hris/{connection_id}/employee/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1884,6 +1927,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1926,6 +1970,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -1968,6 +2013,7 @@ Update a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2012,6 +2058,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2056,6 +2103,7 @@ Remove a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisBankaccount" method="delete" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2095,6 +2143,7 @@ Remove a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisBenefit" method="delete" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2134,6 +2183,7 @@ Remove a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisCompany" method="delete" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2173,6 +2223,7 @@ Remove a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisDeduction" method="delete" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2212,6 +2263,7 @@ Remove a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisDevice" method="delete" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2251,6 +2303,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisDocument" method="delete" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2290,6 +2343,7 @@ Remove an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisEmployee" method="delete" path="/hris/{connection_id}/employee/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2329,6 +2383,7 @@ Remove a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisGroup" method="delete" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2368,6 +2423,7 @@ Remove a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisLocation" method="delete" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2407,6 +2463,7 @@ Remove a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisTimeoff" method="delete" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2446,6 +2503,7 @@ Remove a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeHrisTimeshift" method="delete" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2485,6 +2543,7 @@ Update a bankaccount
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2527,6 +2586,7 @@ Update a benefit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2569,6 +2629,7 @@ Update a company
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2611,6 +2672,7 @@ Update a deduction
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2653,6 +2715,7 @@ Update a device
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2695,6 +2758,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisDocument" method="put" path="/hris/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2737,6 +2801,7 @@ Update an employee
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisEmployee" method="put" path="/hris/{connection_id}/employee/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2779,6 +2844,7 @@ Update a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2821,6 +2887,7 @@ Update a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2863,6 +2930,7 @@ Update a timeoff
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -2907,6 +2975,7 @@ Update a timeshift
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

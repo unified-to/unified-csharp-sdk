@@ -1,5 +1,13 @@
 # GetAccountingVendorcreditQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingVendorcreditQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,13 +11,12 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Return address (may differ from from_address)
+    /// Return address (may differ from from_address).
     /// </summary>
     public class PropertyShippingShipmentReturnAddress
     {
-
         [JsonProperty("address1")]
         public string? Address1 { get; set; }
 

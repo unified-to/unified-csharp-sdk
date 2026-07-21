@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VerificationRequestProfileGender
-    {
-        [JsonProperty("MALE")]
-        Male,
-        [JsonProperty("FEMALE")]
-        Female,
-        [JsonProperty("INTERSEX")]
-        Intersex,
-        [JsonProperty("TRANS")]
-        Trans,
-        [JsonProperty("NON_BINARY")]
-        NonBinary,
-    }
 
-    public static class VerificationRequestProfileGenderExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VerificationRequestProfileGender : IEquatable<VerificationRequestProfileGender>
     {
-        public static string Value(this VerificationRequestProfileGender value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VerificationRequestProfileGender Male = new VerificationRequestProfileGender("MALE");
+        public static readonly VerificationRequestProfileGender Female = new VerificationRequestProfileGender("FEMALE");
+        public static readonly VerificationRequestProfileGender Intersex = new VerificationRequestProfileGender("INTERSEX");
+        public static readonly VerificationRequestProfileGender Trans = new VerificationRequestProfileGender("TRANS");
+        public static readonly VerificationRequestProfileGender NonBinary = new VerificationRequestProfileGender("NON_BINARY");
 
-        public static VerificationRequestProfileGender ToEnum(this string value)
-        {
-            foreach(var field in typeof(VerificationRequestProfileGender).GetFields())
+        private static readonly Dictionary <string, VerificationRequestProfileGender> _knownValues =
+            new Dictionary <string, VerificationRequestProfileGender> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["MALE"] = Male,
+                ["FEMALE"] = Female,
+                ["INTERSEX"] = Intersex,
+                ["TRANS"] = Trans,
+                ["NON_BINARY"] = NonBinary
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VerificationRequestProfileGender> _values =
+            new ConcurrentDictionary<string, VerificationRequestProfileGender>(_knownValues);
 
-                    if (enumVal is VerificationRequestProfileGender)
-                    {
-                        return (VerificationRequestProfileGender)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VerificationRequestProfileGender");
+        private VerificationRequestProfileGender(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VerificationRequestProfileGender Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VerificationRequestProfileGender(value));
+        }
+
+        public static implicit operator VerificationRequestProfileGender(string value) => Of(value);
+        public static implicit operator string(VerificationRequestProfileGender verificationrequestprofilegender) => verificationrequestprofilegender.Value;
+
+        public static VerificationRequestProfileGender[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VerificationRequestProfileGender);
+
+        public bool Equals(VerificationRequestProfileGender? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

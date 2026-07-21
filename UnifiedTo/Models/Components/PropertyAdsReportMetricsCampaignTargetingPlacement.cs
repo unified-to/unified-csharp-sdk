@@ -12,10 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class PropertyAdsReportMetricsCampaignTargetingPlacement
     {
-
         [JsonProperty("audience_network_positions")]
         public List<string>? AudienceNetworkPositions { get; set; }
 

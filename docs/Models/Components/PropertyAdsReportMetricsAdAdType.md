@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsAdAdType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsAdAdType.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsAdAdType.Of("custom_value");
+```
+
 
 ## Values
 

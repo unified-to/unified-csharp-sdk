@@ -1,5 +1,4 @@
 # Class
-(*Class*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getLmsClass" method="get" path="/lms/{connection_id}/class/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all classes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listLmsClasses" method="get" path="/lms/{connection_id}/class" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeLmsClass" method="delete" path="/lms/{connection_id}/class/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a class
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

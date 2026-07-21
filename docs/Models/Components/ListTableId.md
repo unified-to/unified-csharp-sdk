@@ -1,5 +1,16 @@
 # ListTableId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListTableId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListTableId.Of("custom_value");
+```
+
 
 ## Values
 

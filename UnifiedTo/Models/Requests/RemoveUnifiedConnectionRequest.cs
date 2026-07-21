@@ -10,12 +10,11 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class RemoveUnifiedConnectionRequest
     {
-
         /// <summary>
-        /// ID of the Connection
+        /// ID of the Connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

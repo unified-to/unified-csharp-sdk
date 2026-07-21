@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VirtualWebhookItemVariantId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class VirtualWebhookItemVariantIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VirtualWebhookItemVariantId : IEquatable<VirtualWebhookItemVariantId>
     {
-        public static string Value(this VirtualWebhookItemVariantId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VirtualWebhookItemVariantId SupportedRequired = new VirtualWebhookItemVariantId("supported-required");
+        public static readonly VirtualWebhookItemVariantId Supported = new VirtualWebhookItemVariantId("supported");
+        public static readonly VirtualWebhookItemVariantId NotSupported = new VirtualWebhookItemVariantId("not-supported");
 
-        public static VirtualWebhookItemVariantId ToEnum(this string value)
-        {
-            foreach(var field in typeof(VirtualWebhookItemVariantId).GetFields())
+        private static readonly Dictionary <string, VirtualWebhookItemVariantId> _knownValues =
+            new Dictionary <string, VirtualWebhookItemVariantId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VirtualWebhookItemVariantId> _values =
+            new ConcurrentDictionary<string, VirtualWebhookItemVariantId>(_knownValues);
 
-                    if (enumVal is VirtualWebhookItemVariantId)
-                    {
-                        return (VirtualWebhookItemVariantId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VirtualWebhookItemVariantId");
+        private VirtualWebhookItemVariantId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VirtualWebhookItemVariantId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VirtualWebhookItemVariantId(value));
+        }
+
+        public static implicit operator VirtualWebhookItemVariantId(string value) => Of(value);
+        public static implicit operator string(VirtualWebhookItemVariantId virtualwebhookitemvariantid) => virtualwebhookitemvariantid.Value;
+
+        public static VirtualWebhookItemVariantId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VirtualWebhookItemVariantId);
+
+        public bool Equals(VirtualWebhookItemVariantId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

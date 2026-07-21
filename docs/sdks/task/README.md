@@ -1,5 +1,4 @@
 # Task
-(*Task*)
 
 ## Overview
 
@@ -32,6 +31,7 @@ Create a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -73,6 +73,7 @@ Create a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -114,6 +115,7 @@ Create a task
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createTaskTask" method="post" path="/task/{connection_id}/task" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -155,6 +157,7 @@ Retrieve a change
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTaskChange" method="get" path="/task/{connection_id}/change/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -196,6 +199,7 @@ Retrieve a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTaskComment" method="get" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -237,6 +241,7 @@ Retrieve a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTaskProject" method="get" path="/task/{connection_id}/project/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -278,6 +283,7 @@ Retrieve a task
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getTaskTask" method="get" path="/task/{connection_id}/task/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -319,6 +325,7 @@ List all changes
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTaskChanges" method="get" path="/task/{connection_id}/change" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -359,6 +366,7 @@ List all comments
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTaskComments" method="get" path="/task/{connection_id}/comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -399,6 +407,7 @@ List all projects
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTaskProjects" method="get" path="/task/{connection_id}/project" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -439,6 +448,7 @@ List all tasks
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listTaskTasks" method="get" path="/task/{connection_id}/task" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -479,6 +489,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -521,6 +532,7 @@ Update a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -563,6 +575,7 @@ Update a task
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchTaskTask" method="patch" path="/task/{connection_id}/task/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -605,6 +618,7 @@ Remove a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTaskComment" method="delete" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -644,6 +658,7 @@ Remove a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTaskProject" method="delete" path="/task/{connection_id}/project/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -683,6 +698,7 @@ Remove a task
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeTaskTask" method="delete" path="/task/{connection_id}/task/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -722,6 +738,7 @@ Update a comment
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -764,6 +781,7 @@ Update a project
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -806,6 +824,7 @@ Update a task
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateTaskTask" method="put" path="/task/{connection_id}/task/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

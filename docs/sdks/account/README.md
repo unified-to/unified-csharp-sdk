@@ -1,5 +1,4 @@
 # Account
-(*Account*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingAccount" method="get" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all accounts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingAccounts" method="get" path="/accounting/{connection_id}/account" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingAccount" method="delete" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update an account
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

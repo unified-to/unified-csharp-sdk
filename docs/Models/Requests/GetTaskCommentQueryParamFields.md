@@ -1,5 +1,13 @@
 # GetTaskCommentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetTaskCommentQueryParamFields.Id;
+```
+
 
 ## Values
 

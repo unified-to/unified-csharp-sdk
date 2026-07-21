@@ -1,5 +1,13 @@
 # ListRepoPullrequestsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListRepoPullrequestsQueryParamFields.Id;
+```
+
 
 ## Values
 

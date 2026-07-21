@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisMetadataFormat
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-    }
 
-    public static class HrisMetadataFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisMetadataFormat : IEquatable<HrisMetadataFormat>
     {
-        public static string Value(this HrisMetadataFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisMetadataFormat Text = new HrisMetadataFormat("TEXT");
+        public static readonly HrisMetadataFormat Number = new HrisMetadataFormat("NUMBER");
+        public static readonly HrisMetadataFormat Date = new HrisMetadataFormat("DATE");
+        public static readonly HrisMetadataFormat Boolean = new HrisMetadataFormat("BOOLEAN");
+        public static readonly HrisMetadataFormat File = new HrisMetadataFormat("FILE");
+        public static readonly HrisMetadataFormat Textarea = new HrisMetadataFormat("TEXTAREA");
+        public static readonly HrisMetadataFormat SingleSelect = new HrisMetadataFormat("SINGLE_SELECT");
+        public static readonly HrisMetadataFormat MultipleSelect = new HrisMetadataFormat("MULTIPLE_SELECT");
+        public static readonly HrisMetadataFormat Measurement = new HrisMetadataFormat("MEASUREMENT");
+        public static readonly HrisMetadataFormat Price = new HrisMetadataFormat("PRICE");
+        public static readonly HrisMetadataFormat YesNo = new HrisMetadataFormat("YES_NO");
+        public static readonly HrisMetadataFormat Currency = new HrisMetadataFormat("CURRENCY");
+        public static readonly HrisMetadataFormat Url = new HrisMetadataFormat("URL");
 
-        public static HrisMetadataFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisMetadataFormat).GetFields())
+        private static readonly Dictionary <string, HrisMetadataFormat> _knownValues =
+            new Dictionary <string, HrisMetadataFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["MEASUREMENT"] = Measurement,
+                ["PRICE"] = Price,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisMetadataFormat> _values =
+            new ConcurrentDictionary<string, HrisMetadataFormat>(_knownValues);
 
-                    if (enumVal is HrisMetadataFormat)
-                    {
-                        return (HrisMetadataFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisMetadataFormat");
+        private HrisMetadataFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisMetadataFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisMetadataFormat(value));
+        }
+
+        public static implicit operator HrisMetadataFormat(string value) => Of(value);
+        public static implicit operator string(HrisMetadataFormat hrismetadataformat) => hrismetadataformat.Value;
+
+        public static HrisMetadataFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisMetadataFormat);
+
+        public bool Equals(HrisMetadataFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

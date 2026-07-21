@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum FromWebhook
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class FromWebhookExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class FromWebhook : IEquatable<FromWebhook>
     {
-        public static string Value(this FromWebhook value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly FromWebhook SupportedRequired = new FromWebhook("supported-required");
+        public static readonly FromWebhook Supported = new FromWebhook("supported");
+        public static readonly FromWebhook NotSupported = new FromWebhook("not-supported");
 
-        public static FromWebhook ToEnum(this string value)
-        {
-            foreach(var field in typeof(FromWebhook).GetFields())
+        private static readonly Dictionary <string, FromWebhook> _knownValues =
+            new Dictionary <string, FromWebhook> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, FromWebhook> _values =
+            new ConcurrentDictionary<string, FromWebhook>(_knownValues);
 
-                    if (enumVal is FromWebhook)
-                    {
-                        return (FromWebhook)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum FromWebhook");
+        private FromWebhook(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static FromWebhook Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new FromWebhook(value));
+        }
+
+        public static implicit operator FromWebhook(string value) => Of(value);
+        public static implicit operator string(FromWebhook fromwebhook) => fromwebhook.Value;
+
+        public static FromWebhook[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as FromWebhook);
+
+        public bool Equals(FromWebhook? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

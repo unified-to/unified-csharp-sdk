@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsGroupBudgetPeriod
-    {
-        [JsonProperty("DAILY")]
-        Daily,
-        [JsonProperty("MONTHLY")]
-        Monthly,
-        [JsonProperty("TOTAL")]
-        Total,
-        [JsonProperty("LIFETIME")]
-        Lifetime,
-    }
 
-    public static class AdsGroupBudgetPeriodExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsGroupBudgetPeriod : IEquatable<AdsGroupBudgetPeriod>
     {
-        public static string Value(this AdsGroupBudgetPeriod value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsGroupBudgetPeriod Daily = new AdsGroupBudgetPeriod("DAILY");
+        public static readonly AdsGroupBudgetPeriod Monthly = new AdsGroupBudgetPeriod("MONTHLY");
+        public static readonly AdsGroupBudgetPeriod Total = new AdsGroupBudgetPeriod("TOTAL");
+        public static readonly AdsGroupBudgetPeriod Lifetime = new AdsGroupBudgetPeriod("LIFETIME");
 
-        public static AdsGroupBudgetPeriod ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsGroupBudgetPeriod).GetFields())
+        private static readonly Dictionary <string, AdsGroupBudgetPeriod> _knownValues =
+            new Dictionary <string, AdsGroupBudgetPeriod> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DAILY"] = Daily,
+                ["MONTHLY"] = Monthly,
+                ["TOTAL"] = Total,
+                ["LIFETIME"] = Lifetime
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsGroupBudgetPeriod> _values =
+            new ConcurrentDictionary<string, AdsGroupBudgetPeriod>(_knownValues);
 
-                    if (enumVal is AdsGroupBudgetPeriod)
-                    {
-                        return (AdsGroupBudgetPeriod)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsGroupBudgetPeriod");
+        private AdsGroupBudgetPeriod(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsGroupBudgetPeriod Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsGroupBudgetPeriod(value));
+        }
+
+        public static implicit operator AdsGroupBudgetPeriod(string value) => Of(value);
+        public static implicit operator string(AdsGroupBudgetPeriod adsgroupbudgetperiod) => adsgroupbudgetperiod.Value;
+
+        public static AdsGroupBudgetPeriod[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsGroupBudgetPeriod);
+
+        public bool Equals(AdsGroupBudgetPeriod? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

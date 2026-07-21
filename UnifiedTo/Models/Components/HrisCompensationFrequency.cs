@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisCompensationFrequency
-    {
-        [JsonProperty("ONE_TIME")]
-        OneTime,
-        [JsonProperty("DAY")]
-        Day,
-        [JsonProperty("QUARTER")]
-        Quarter,
-        [JsonProperty("YEAR")]
-        Year,
-        [JsonProperty("HOUR")]
-        Hour,
-        [JsonProperty("MONTH")]
-        Month,
-        [JsonProperty("WEEK")]
-        Week,
-    }
 
-    public static class HrisCompensationFrequencyExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisCompensationFrequency : IEquatable<HrisCompensationFrequency>
     {
-        public static string Value(this HrisCompensationFrequency value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisCompensationFrequency OneTime = new HrisCompensationFrequency("ONE_TIME");
+        public static readonly HrisCompensationFrequency Day = new HrisCompensationFrequency("DAY");
+        public static readonly HrisCompensationFrequency Quarter = new HrisCompensationFrequency("QUARTER");
+        public static readonly HrisCompensationFrequency Year = new HrisCompensationFrequency("YEAR");
+        public static readonly HrisCompensationFrequency Hour = new HrisCompensationFrequency("HOUR");
+        public static readonly HrisCompensationFrequency Month = new HrisCompensationFrequency("MONTH");
+        public static readonly HrisCompensationFrequency Week = new HrisCompensationFrequency("WEEK");
 
-        public static HrisCompensationFrequency ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisCompensationFrequency).GetFields())
+        private static readonly Dictionary <string, HrisCompensationFrequency> _knownValues =
+            new Dictionary <string, HrisCompensationFrequency> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ONE_TIME"] = OneTime,
+                ["DAY"] = Day,
+                ["QUARTER"] = Quarter,
+                ["YEAR"] = Year,
+                ["HOUR"] = Hour,
+                ["MONTH"] = Month,
+                ["WEEK"] = Week
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisCompensationFrequency> _values =
+            new ConcurrentDictionary<string, HrisCompensationFrequency>(_knownValues);
 
-                    if (enumVal is HrisCompensationFrequency)
-                    {
-                        return (HrisCompensationFrequency)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisCompensationFrequency");
+        private HrisCompensationFrequency(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisCompensationFrequency Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisCompensationFrequency(value));
+        }
+
+        public static implicit operator HrisCompensationFrequency(string value) => Of(value);
+        public static implicit operator string(HrisCompensationFrequency hriscompensationfrequency) => hriscompensationfrequency.Value;
+
+        public static HrisCompensationFrequency[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisCompensationFrequency);
+
+        public bool Equals(HrisCompensationFrequency? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

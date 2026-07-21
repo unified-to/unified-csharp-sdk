@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class AssessmentResponseDetail
     {
-
         [JsonProperty("download_url")]
         public string? DownloadUrl { get; set; }
 

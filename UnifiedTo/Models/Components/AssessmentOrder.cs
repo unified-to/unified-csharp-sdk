@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AssessmentOrder
     {
-
         [JsonProperty("application_id")]
         public string? ApplicationId { get; set; }
 
@@ -46,7 +47,7 @@ namespace UnifiedTo.Models.Components
         public string? PackageId { get; set; }
 
         /// <summary>
-        /// Filled-in answers to the package&apos;s parameter questions
+        /// Filled-in answers to the package's parameter questions.
         /// </summary>
         [JsonProperty("parameters")]
         public List<AssessmentParameterInput>? Parameters { get; set; }
@@ -94,7 +95,7 @@ namespace UnifiedTo.Models.Components
         public string? Reference { get; set; }
 
         /// <summary>
-        /// Additional result attributes
+        /// Additional result attributes.
         /// </summary>
         [JsonProperty("response_attributes")]
         public List<AssessmentAttribute>? ResponseAttributes { get; set; }
@@ -106,7 +107,7 @@ namespace UnifiedTo.Models.Components
         public List<AssessmentResponseDetail>? ResponseDetails { get; set; }
 
         /// <summary>
-        /// Report download URLs
+        /// Report download URLs.
         /// </summary>
         [JsonProperty("response_download_urls")]
         public List<string>? ResponseDownloadUrls { get; set; }

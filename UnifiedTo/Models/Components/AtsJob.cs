@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AtsJob
     {
-
         [JsonProperty("addresses")]
         public List<AtsAddress>? Addresses { get; set; }
 
@@ -40,7 +41,7 @@ namespace UnifiedTo.Models.Components
         public EmploymentType? EmploymentType { get; set; }
 
         /// <summary>
-        /// The departments/divisions/teams that this job belongs to
+        /// The departments/divisions/teams that this job belongs to.
         /// </summary>
         [JsonProperty("groups")]
         public List<AtsGroup>? Groups { get; set; }
@@ -76,13 +77,13 @@ namespace UnifiedTo.Models.Components
         public List<AtsJobOpening>? Openings { get; set; }
 
         /// <summary>
-        /// Public job postings
+        /// Public job postings.
         /// </summary>
         [JsonProperty("postings")]
         public List<AtsJobPosting>? Postings { get; set; }
 
         /// <summary>
-        /// URLs for pages containing public listings for the job
+        /// URLs for pages containing public listings for the job.
         /// </summary>
         [JsonProperty("public_job_urls")]
         public List<string>? PublicJobUrls { get; set; }

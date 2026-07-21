@@ -14,18 +14,17 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// A company represents an organization that optionally is associated with a deal and/or contacts
+    /// A company represents an organization that optionally is associated with a deal and/or contacts.
     /// </summary>
     public class CrmCompany
     {
-
         [JsonProperty("address")]
         public PropertyCrmCompanyAddress? Address { get; set; }
 
         /// <summary>
-        /// An array of contact IDs associated with this company
+        /// An array of contact IDs associated with this company.
         /// </summary>
         [JsonProperty("contact_ids")]
         public List<string>? ContactIds { get; set; }
@@ -34,7 +33,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// An array of deal IDs associated with this contact
+        /// An array of deal IDs associated with this contact.
         /// </summary>
         [JsonProperty("deal_ids")]
         public List<string>? DealIds { get; set; }
@@ -61,7 +60,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsActive { get; set; }
 
         /// <summary>
-        /// Additional URLs associated with the contact e.g., LinkedIn, website, etc
+        /// Additional URLs associated with the contact e.g., LinkedIn, website, etc.
         /// </summary>
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }

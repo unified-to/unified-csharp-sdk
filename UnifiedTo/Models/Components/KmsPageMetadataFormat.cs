@@ -11,79 +11,96 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum KmsPageMetadataFormat
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-        [JsonProperty("PERCENT")]
-        Percent,
-        [JsonProperty("EMAIL")]
-        Email,
-        [JsonProperty("PHONE")]
-        Phone,
-        [JsonProperty("REFERENCE")]
-        Reference,
-        [JsonProperty("TIME")]
-        Time,
-    }
 
-    public static class KmsPageMetadataFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class KmsPageMetadataFormat : IEquatable<KmsPageMetadataFormat>
     {
-        public static string Value(this KmsPageMetadataFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly KmsPageMetadataFormat Text = new KmsPageMetadataFormat("TEXT");
+        public static readonly KmsPageMetadataFormat Number = new KmsPageMetadataFormat("NUMBER");
+        public static readonly KmsPageMetadataFormat Date = new KmsPageMetadataFormat("DATE");
+        public static readonly KmsPageMetadataFormat Boolean = new KmsPageMetadataFormat("BOOLEAN");
+        public static readonly KmsPageMetadataFormat File = new KmsPageMetadataFormat("FILE");
+        public static readonly KmsPageMetadataFormat Textarea = new KmsPageMetadataFormat("TEXTAREA");
+        public static readonly KmsPageMetadataFormat SingleSelect = new KmsPageMetadataFormat("SINGLE_SELECT");
+        public static readonly KmsPageMetadataFormat MultipleSelect = new KmsPageMetadataFormat("MULTIPLE_SELECT");
+        public static readonly KmsPageMetadataFormat Measurement = new KmsPageMetadataFormat("MEASUREMENT");
+        public static readonly KmsPageMetadataFormat Price = new KmsPageMetadataFormat("PRICE");
+        public static readonly KmsPageMetadataFormat YesNo = new KmsPageMetadataFormat("YES_NO");
+        public static readonly KmsPageMetadataFormat Currency = new KmsPageMetadataFormat("CURRENCY");
+        public static readonly KmsPageMetadataFormat Url = new KmsPageMetadataFormat("URL");
+        public static readonly KmsPageMetadataFormat Percent = new KmsPageMetadataFormat("PERCENT");
+        public static readonly KmsPageMetadataFormat Email = new KmsPageMetadataFormat("EMAIL");
+        public static readonly KmsPageMetadataFormat Phone = new KmsPageMetadataFormat("PHONE");
+        public static readonly KmsPageMetadataFormat Reference = new KmsPageMetadataFormat("REFERENCE");
+        public static readonly KmsPageMetadataFormat Time = new KmsPageMetadataFormat("TIME");
 
-        public static KmsPageMetadataFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(KmsPageMetadataFormat).GetFields())
+        private static readonly Dictionary <string, KmsPageMetadataFormat> _knownValues =
+            new Dictionary <string, KmsPageMetadataFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["MEASUREMENT"] = Measurement,
+                ["PRICE"] = Price,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url,
+                ["PERCENT"] = Percent,
+                ["EMAIL"] = Email,
+                ["PHONE"] = Phone,
+                ["REFERENCE"] = Reference,
+                ["TIME"] = Time
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, KmsPageMetadataFormat> _values =
+            new ConcurrentDictionary<string, KmsPageMetadataFormat>(_knownValues);
 
-                    if (enumVal is KmsPageMetadataFormat)
-                    {
-                        return (KmsPageMetadataFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum KmsPageMetadataFormat");
+        private KmsPageMetadataFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static KmsPageMetadataFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new KmsPageMetadataFormat(value));
+        }
+
+        public static implicit operator KmsPageMetadataFormat(string value) => Of(value);
+        public static implicit operator string(KmsPageMetadataFormat kmspagemetadataformat) => kmspagemetadataformat.Value;
+
+        public static KmsPageMetadataFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as KmsPageMetadataFormat);
+
+        public bool Equals(KmsPageMetadataFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

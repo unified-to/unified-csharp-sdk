@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum BudgetPeriod
-    {
-        [JsonProperty("DAILY")]
-        Daily,
-        [JsonProperty("MONTHLY")]
-        Monthly,
-        [JsonProperty("TOTAL")]
-        Total,
-        [JsonProperty("LIFETIME")]
-        Lifetime,
-    }
 
-    public static class BudgetPeriodExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class BudgetPeriod : IEquatable<BudgetPeriod>
     {
-        public static string Value(this BudgetPeriod value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly BudgetPeriod Daily = new BudgetPeriod("DAILY");
+        public static readonly BudgetPeriod Monthly = new BudgetPeriod("MONTHLY");
+        public static readonly BudgetPeriod Total = new BudgetPeriod("TOTAL");
+        public static readonly BudgetPeriod Lifetime = new BudgetPeriod("LIFETIME");
 
-        public static BudgetPeriod ToEnum(this string value)
-        {
-            foreach(var field in typeof(BudgetPeriod).GetFields())
+        private static readonly Dictionary <string, BudgetPeriod> _knownValues =
+            new Dictionary <string, BudgetPeriod> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DAILY"] = Daily,
+                ["MONTHLY"] = Monthly,
+                ["TOTAL"] = Total,
+                ["LIFETIME"] = Lifetime
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, BudgetPeriod> _values =
+            new ConcurrentDictionary<string, BudgetPeriod>(_knownValues);
 
-                    if (enumVal is BudgetPeriod)
-                    {
-                        return (BudgetPeriod)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum BudgetPeriod");
+        private BudgetPeriod(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static BudgetPeriod Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new BudgetPeriod(value));
+        }
+
+        public static implicit operator BudgetPeriod(string value) => Of(value);
+        public static implicit operator string(BudgetPeriod budgetperiod) => budgetperiod.Value;
+
+        public static BudgetPeriod[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as BudgetPeriod);
+
+        public bool Equals(BudgetPeriod? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

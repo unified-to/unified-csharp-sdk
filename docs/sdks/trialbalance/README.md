@@ -1,5 +1,4 @@
 # Trialbalance
-(*Trialbalance*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a trialbalance
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingTrialbalance" method="get" path="/accounting/{connection_id}/trialbalance/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all trialbalances
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingTrialbalances" method="get" path="/accounting/{connection_id}/trialbalance" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

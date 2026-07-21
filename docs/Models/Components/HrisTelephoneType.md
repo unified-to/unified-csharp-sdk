@@ -1,5 +1,16 @@
 # HrisTelephoneType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = HrisTelephoneType.Work;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisTelephoneType.Of("custom_value");
+```
+
 
 ## Values
 

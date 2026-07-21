@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum BillingEvent
-    {
-        [JsonProperty("IMPRESSIONS")]
-        Impressions,
-        [JsonProperty("LINK_CLICKS")]
-        LinkClicks,
-        [JsonProperty("VIDEO_VIEWS")]
-        VideoViews,
-        [JsonProperty("APP_INSTALLS")]
-        AppInstalls,
-        [JsonProperty("ENGAGEMENT")]
-        Engagement,
-        [JsonProperty("PAGE_LIKES")]
-        PageLikes,
-        [JsonProperty("MESSAGES")]
-        Messages,
-        [JsonProperty("POST_ENGAGEMENT")]
-        PostEngagement,
-        [JsonProperty("PURCHASE")]
-        Purchase,
-        [JsonProperty("NONE")]
-        None,
-    }
 
-    public static class BillingEventExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class BillingEvent : IEquatable<BillingEvent>
     {
-        public static string Value(this BillingEvent value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly BillingEvent Impressions = new BillingEvent("IMPRESSIONS");
+        public static readonly BillingEvent LinkClicks = new BillingEvent("LINK_CLICKS");
+        public static readonly BillingEvent VideoViews = new BillingEvent("VIDEO_VIEWS");
+        public static readonly BillingEvent AppInstalls = new BillingEvent("APP_INSTALLS");
+        public static readonly BillingEvent Engagement = new BillingEvent("ENGAGEMENT");
+        public static readonly BillingEvent PageLikes = new BillingEvent("PAGE_LIKES");
+        public static readonly BillingEvent Messages = new BillingEvent("MESSAGES");
+        public static readonly BillingEvent PostEngagement = new BillingEvent("POST_ENGAGEMENT");
+        public static readonly BillingEvent Purchase = new BillingEvent("PURCHASE");
+        public static readonly BillingEvent None = new BillingEvent("NONE");
 
-        public static BillingEvent ToEnum(this string value)
-        {
-            foreach(var field in typeof(BillingEvent).GetFields())
+        private static readonly Dictionary <string, BillingEvent> _knownValues =
+            new Dictionary <string, BillingEvent> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["IMPRESSIONS"] = Impressions,
+                ["LINK_CLICKS"] = LinkClicks,
+                ["VIDEO_VIEWS"] = VideoViews,
+                ["APP_INSTALLS"] = AppInstalls,
+                ["ENGAGEMENT"] = Engagement,
+                ["PAGE_LIKES"] = PageLikes,
+                ["MESSAGES"] = Messages,
+                ["POST_ENGAGEMENT"] = PostEngagement,
+                ["PURCHASE"] = Purchase,
+                ["NONE"] = None
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, BillingEvent> _values =
+            new ConcurrentDictionary<string, BillingEvent>(_knownValues);
 
-                    if (enumVal is BillingEvent)
-                    {
-                        return (BillingEvent)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum BillingEvent");
+        private BillingEvent(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static BillingEvent Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new BillingEvent(value));
+        }
+
+        public static implicit operator BillingEvent(string value) => Of(value);
+        public static implicit operator string(BillingEvent billingevent) => billingevent.Value;
+
+        public static BillingEvent[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as BillingEvent);
+
+        public bool Equals(BillingEvent? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

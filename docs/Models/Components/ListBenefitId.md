@@ -1,5 +1,16 @@
 # ListBenefitId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListBenefitId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListBenefitId.Of("custom_value");
+```
+
 
 ## Values
 

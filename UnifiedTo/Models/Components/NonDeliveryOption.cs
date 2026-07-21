@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum NonDeliveryOption
-    {
-        [JsonProperty("RETURN")]
-        Return,
-        [JsonProperty("ABANDON")]
-        Abandon,
-    }
 
-    public static class NonDeliveryOptionExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class NonDeliveryOption : IEquatable<NonDeliveryOption>
     {
-        public static string Value(this NonDeliveryOption value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly NonDeliveryOption Return = new NonDeliveryOption("RETURN");
+        public static readonly NonDeliveryOption Abandon = new NonDeliveryOption("ABANDON");
 
-        public static NonDeliveryOption ToEnum(this string value)
-        {
-            foreach(var field in typeof(NonDeliveryOption).GetFields())
+        private static readonly Dictionary <string, NonDeliveryOption> _knownValues =
+            new Dictionary <string, NonDeliveryOption> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["RETURN"] = Return,
+                ["ABANDON"] = Abandon
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, NonDeliveryOption> _values =
+            new ConcurrentDictionary<string, NonDeliveryOption>(_knownValues);
 
-                    if (enumVal is NonDeliveryOption)
-                    {
-                        return (NonDeliveryOption)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum NonDeliveryOption");
+        private NonDeliveryOption(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static NonDeliveryOption Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new NonDeliveryOption(value));
+        }
+
+        public static implicit operator NonDeliveryOption(string value) => Of(value);
+        public static implicit operator string(NonDeliveryOption nondeliveryoption) => nondeliveryoption.Value;
+
+        public static NonDeliveryOption[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as NonDeliveryOption);
+
+        public bool Equals(NonDeliveryOption? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

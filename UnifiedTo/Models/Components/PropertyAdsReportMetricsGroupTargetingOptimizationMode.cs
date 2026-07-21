@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupTargetingOptimizationMode
-    {
-        [JsonProperty("TARGETING")]
-        Targeting,
-        [JsonProperty("OBSERVATION")]
-        Observation,
-    }
 
-    public static class PropertyAdsReportMetricsGroupTargetingOptimizationModeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupTargetingOptimizationMode : IEquatable<PropertyAdsReportMetricsGroupTargetingOptimizationMode>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupTargetingOptimizationMode value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupTargetingOptimizationMode Targeting = new PropertyAdsReportMetricsGroupTargetingOptimizationMode("TARGETING");
+        public static readonly PropertyAdsReportMetricsGroupTargetingOptimizationMode Observation = new PropertyAdsReportMetricsGroupTargetingOptimizationMode("OBSERVATION");
 
-        public static PropertyAdsReportMetricsGroupTargetingOptimizationMode ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupTargetingOptimizationMode).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupTargetingOptimizationMode> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupTargetingOptimizationMode> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TARGETING"] = Targeting,
+                ["OBSERVATION"] = Observation
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingOptimizationMode> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupTargetingOptimizationMode>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupTargetingOptimizationMode)
-                    {
-                        return (PropertyAdsReportMetricsGroupTargetingOptimizationMode)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupTargetingOptimizationMode");
+        private PropertyAdsReportMetricsGroupTargetingOptimizationMode(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupTargetingOptimizationMode Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupTargetingOptimizationMode(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupTargetingOptimizationMode(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupTargetingOptimizationMode propertyadsreportmetricsgrouptargetingoptimizationmode) => propertyadsreportmetricsgrouptargetingoptimizationmode.Value;
+
+        public static PropertyAdsReportMetricsGroupTargetingOptimizationMode[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupTargetingOptimizationMode);
+
+        public bool Equals(PropertyAdsReportMetricsGroupTargetingOptimizationMode? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

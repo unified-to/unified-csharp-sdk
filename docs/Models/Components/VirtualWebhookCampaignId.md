@@ -1,5 +1,16 @@
 # VirtualWebhookCampaignId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = VirtualWebhookCampaignId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = VirtualWebhookCampaignId.Of("custom_value");
+```
+
 
 ## Values
 

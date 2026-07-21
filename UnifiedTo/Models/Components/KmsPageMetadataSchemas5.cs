@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class KmsPageMetadataSchemas5Type
     {
         private KmsPageMetadataSchemas5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static KmsPageMetadataSchemas5Type KmsPageMetadataSchemas1 { get { return new KmsPageMetadataSchemas5Type("KmsPageMetadata_Schemas_1"); } }
-        
+
         public static KmsPageMetadataSchemas5Type Str { get { return new KmsPageMetadataSchemas5Type("str"); } }
-        
+
         public static KmsPageMetadataSchemas5Type Number { get { return new KmsPageMetadataSchemas5Type("number"); } }
-        
+
         public static KmsPageMetadataSchemas5Type Boolean { get { return new KmsPageMetadataSchemas5Type("boolean"); } }
-        
-        public static KmsPageMetadataSchemas5Type Null { get { return new KmsPageMetadataSchemas5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(KmsPageMetadataSchemas5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for KmsPageMetadataSchemas5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(KmsPageMetadataSchemas5.KmsPageMetadataSchemas5Converter))]
-    public class KmsPageMetadataSchemas5 {
-        public KmsPageMetadataSchemas5(KmsPageMetadataSchemas5Type type) {
+    public class KmsPageMetadataSchemas5
+    {
+        public KmsPageMetadataSchemas5(KmsPageMetadataSchemas5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public KmsPageMetadataSchemas5Type Type { get; set; }
-
-
-        public static KmsPageMetadataSchemas5 CreateKmsPageMetadataSchemas1(KmsPageMetadataSchemas1 kmsPageMetadataSchemas1) {
+        public static KmsPageMetadataSchemas5 CreateKmsPageMetadataSchemas1(KmsPageMetadataSchemas1 kmsPageMetadataSchemas1)
+        {
             KmsPageMetadataSchemas5Type typ = KmsPageMetadataSchemas5Type.KmsPageMetadataSchemas1;
 
             KmsPageMetadataSchemas5 res = new KmsPageMetadataSchemas5(typ);
             res.KmsPageMetadataSchemas1 = kmsPageMetadataSchemas1;
             return res;
         }
-
-        public static KmsPageMetadataSchemas5 CreateStr(string str) {
+        public static KmsPageMetadataSchemas5 CreateStr(string str)
+        {
             KmsPageMetadataSchemas5Type typ = KmsPageMetadataSchemas5Type.Str;
 
             KmsPageMetadataSchemas5 res = new KmsPageMetadataSchemas5(typ);
             res.Str = str;
             return res;
         }
-
-        public static KmsPageMetadataSchemas5 CreateNumber(double number) {
+        public static KmsPageMetadataSchemas5 CreateNumber(double number)
+        {
             KmsPageMetadataSchemas5Type typ = KmsPageMetadataSchemas5Type.Number;
 
             KmsPageMetadataSchemas5 res = new KmsPageMetadataSchemas5(typ);
             res.Number = number;
             return res;
         }
-
-        public static KmsPageMetadataSchemas5 CreateBoolean(bool boolean) {
+        public static KmsPageMetadataSchemas5 CreateBoolean(bool boolean)
+        {
             KmsPageMetadataSchemas5Type typ = KmsPageMetadataSchemas5Type.Boolean;
 
             KmsPageMetadataSchemas5 res = new KmsPageMetadataSchemas5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static KmsPageMetadataSchemas5 CreateNull() {
-            KmsPageMetadataSchemas5Type typ = KmsPageMetadataSchemas5Type.Null;
-            return new KmsPageMetadataSchemas5(typ);
-        }
-
         public class KmsPageMetadataSchemas5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(KmsPageMetadataSchemas5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                KmsPageMetadataSchemas5 res = (KmsPageMetadataSchemas5)value;
-                if (KmsPageMetadataSchemas5Type.FromString(res.Type).Equals(KmsPageMetadataSchemas5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                KmsPageMetadataSchemas5 res = (KmsPageMetadataSchemas5)value;
+
                 if (res.KmsPageMetadataSchemas1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.KmsPageMetadataSchemas1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

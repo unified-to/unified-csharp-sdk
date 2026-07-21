@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Event
-    {
-        [JsonProperty("updated")]
-        Updated,
-        [JsonProperty("created")]
-        Created,
-        [JsonProperty("deleted")]
-        Deleted,
-    }
 
-    public static class EventExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Event : IEquatable<Event>
     {
-        public static string Value(this Event value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Event Updated = new Event("updated");
+        public static readonly Event Created = new Event("created");
+        public static readonly Event Deleted = new Event("deleted");
 
-        public static Event ToEnum(this string value)
-        {
-            foreach(var field in typeof(Event).GetFields())
+        private static readonly Dictionary <string, Event> _knownValues =
+            new Dictionary <string, Event> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["updated"] = Updated,
+                ["created"] = Created,
+                ["deleted"] = Deleted
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Event> _values =
+            new ConcurrentDictionary<string, Event>(_knownValues);
 
-                    if (enumVal is Event)
-                    {
-                        return (Event)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Event");
+        private Event(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Event Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Event(value));
+        }
+
+        public static implicit operator Event(string value) => Of(value);
+        public static implicit operator string(Event eventvar) => eventvar.Value;
+
+        public static Event[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Event);
+
+        public bool Equals(Event? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

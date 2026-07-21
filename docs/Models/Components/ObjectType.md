@@ -1,5 +1,16 @@
 # ObjectType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ObjectType.AccountingAccount;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ObjectType.Of("custom_value");
+```
+
 
 ## Values
 

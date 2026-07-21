@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyCalendarWebinarOrganizerStatus
-    {
-        [JsonProperty("ACCEPTED")]
-        Accepted,
-        [JsonProperty("REJECTED")]
-        Rejected,
-        [JsonProperty("TENTATIVE")]
-        Tentative,
-    }
 
-    public static class PropertyCalendarWebinarOrganizerStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyCalendarWebinarOrganizerStatus : IEquatable<PropertyCalendarWebinarOrganizerStatus>
     {
-        public static string Value(this PropertyCalendarWebinarOrganizerStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyCalendarWebinarOrganizerStatus Accepted = new PropertyCalendarWebinarOrganizerStatus("ACCEPTED");
+        public static readonly PropertyCalendarWebinarOrganizerStatus Rejected = new PropertyCalendarWebinarOrganizerStatus("REJECTED");
+        public static readonly PropertyCalendarWebinarOrganizerStatus Tentative = new PropertyCalendarWebinarOrganizerStatus("TENTATIVE");
 
-        public static PropertyCalendarWebinarOrganizerStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyCalendarWebinarOrganizerStatus).GetFields())
+        private static readonly Dictionary <string, PropertyCalendarWebinarOrganizerStatus> _knownValues =
+            new Dictionary <string, PropertyCalendarWebinarOrganizerStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACCEPTED"] = Accepted,
+                ["REJECTED"] = Rejected,
+                ["TENTATIVE"] = Tentative
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyCalendarWebinarOrganizerStatus> _values =
+            new ConcurrentDictionary<string, PropertyCalendarWebinarOrganizerStatus>(_knownValues);
 
-                    if (enumVal is PropertyCalendarWebinarOrganizerStatus)
-                    {
-                        return (PropertyCalendarWebinarOrganizerStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyCalendarWebinarOrganizerStatus");
+        private PropertyCalendarWebinarOrganizerStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyCalendarWebinarOrganizerStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyCalendarWebinarOrganizerStatus(value));
+        }
+
+        public static implicit operator PropertyCalendarWebinarOrganizerStatus(string value) => Of(value);
+        public static implicit operator string(PropertyCalendarWebinarOrganizerStatus propertycalendarwebinarorganizerstatus) => propertycalendarwebinarorganizerstatus.Value;
+
+        public static PropertyCalendarWebinarOrganizerStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyCalendarWebinarOrganizerStatus);
+
+        public bool Equals(PropertyCalendarWebinarOrganizerStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

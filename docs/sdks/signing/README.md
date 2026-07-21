@@ -1,5 +1,4 @@
 # Signing
-(*Signing*)
 
 ## Overview
 
@@ -26,6 +25,7 @@ Create a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -67,6 +67,7 @@ Create a signatory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createSigningSignatory" method="post" path="/signing/{connection_id}/signatory" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -108,6 +109,7 @@ Retrieve a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getSigningDocument" method="get" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -149,6 +151,7 @@ Retrieve a signatory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getSigningSignatory" method="get" path="/signing/{connection_id}/signatory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -190,6 +193,7 @@ Retrieve a template
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getSigningTemplate" method="get" path="/signing/{connection_id}/template/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -231,6 +235,7 @@ List all documents
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listSigningDocuments" method="get" path="/signing/{connection_id}/document" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -271,6 +276,7 @@ List all signatories
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listSigningSignatories" method="get" path="/signing/{connection_id}/signatory" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -311,6 +317,7 @@ List all templates
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listSigningTemplates" method="get" path="/signing/{connection_id}/template" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -351,6 +358,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -393,6 +401,7 @@ Update a signatory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchSigningSignatory" method="patch" path="/signing/{connection_id}/signatory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -435,6 +444,7 @@ Remove a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeSigningDocument" method="delete" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -474,6 +484,7 @@ Remove a signatory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeSigningSignatory" method="delete" path="/signing/{connection_id}/signatory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -513,6 +524,7 @@ Update a document
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -555,6 +567,7 @@ Update a signatory
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateSigningSignatory" method="put" path="/signing/{connection_id}/signatory/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

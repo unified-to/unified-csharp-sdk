@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType.Unspecified;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsGroupBidStrategyPerformanceGoalType.Of("custom_value");
+```
+
 
 ## Values
 

@@ -1,5 +1,16 @@
 # AccountingFeeType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AccountingFeeType.Tax;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AccountingFeeType.Of("custom_value");
+```
+
 
 ## Values
 

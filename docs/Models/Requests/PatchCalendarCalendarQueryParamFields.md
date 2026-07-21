@@ -1,5 +1,13 @@
 # PatchCalendarCalendarQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCalendarCalendarQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,4 @@
 # Recording
-(*Recording*)
 
 ## Overview
 
@@ -20,6 +19,7 @@ Create a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCalendarRecording" method="get" path="/calendar/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ Retrieve a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcRecording" method="get" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -143,6 +145,7 @@ List all recordings
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCalendarRecordings" method="get" path="/calendar/{connection_id}/recording" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -183,6 +186,7 @@ List all recordings
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcRecordings" method="get" path="/uc/{connection_id}/recording" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -223,6 +227,7 @@ Update a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -265,6 +270,7 @@ Remove a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUcRecording" method="delete" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -304,6 +310,7 @@ Update a recording
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

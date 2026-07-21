@@ -1,5 +1,13 @@
 # GetPaymentPayoutQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetPaymentPayoutQueryParamFields.Id;
+```
+
 
 ## Values
 

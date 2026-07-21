@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CommerceTelephoneType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("FAX")]
-        Fax,
-        [JsonProperty("MOBILE")]
-        Mobile,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class CommerceTelephoneTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CommerceTelephoneType : IEquatable<CommerceTelephoneType>
     {
-        public static string Value(this CommerceTelephoneType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CommerceTelephoneType Work = new CommerceTelephoneType("WORK");
+        public static readonly CommerceTelephoneType Home = new CommerceTelephoneType("HOME");
+        public static readonly CommerceTelephoneType Fax = new CommerceTelephoneType("FAX");
+        public static readonly CommerceTelephoneType Mobile = new CommerceTelephoneType("MOBILE");
+        public static readonly CommerceTelephoneType Other = new CommerceTelephoneType("OTHER");
 
-        public static CommerceTelephoneType ToEnum(this string value)
-        {
-            foreach(var field in typeof(CommerceTelephoneType).GetFields())
+        private static readonly Dictionary <string, CommerceTelephoneType> _knownValues =
+            new Dictionary <string, CommerceTelephoneType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["FAX"] = Fax,
+                ["MOBILE"] = Mobile,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CommerceTelephoneType> _values =
+            new ConcurrentDictionary<string, CommerceTelephoneType>(_knownValues);
 
-                    if (enumVal is CommerceTelephoneType)
-                    {
-                        return (CommerceTelephoneType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CommerceTelephoneType");
+        private CommerceTelephoneType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CommerceTelephoneType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CommerceTelephoneType(value));
+        }
+
+        public static implicit operator CommerceTelephoneType(string value) => Of(value);
+        public static implicit operator string(CommerceTelephoneType commercetelephonetype) => commercetelephonetype.Value;
+
+        public static CommerceTelephoneType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CommerceTelephoneType);
+
+        public bool Equals(CommerceTelephoneType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

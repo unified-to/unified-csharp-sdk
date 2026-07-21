@@ -11,109 +11,126 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AnalyticsReportMetricsType
-    {
-        [JsonProperty("USERS")]
-        Users,
-        [JsonProperty("NEW_USERS")]
-        NewUsers,
-        [JsonProperty("SESSIONS")]
-        Sessions,
-        [JsonProperty("PAGE_VIEWS")]
-        PageViews,
-        [JsonProperty("UNIQUE_PAGE_VIEWS")]
-        UniquePageViews,
-        [JsonProperty("SCREENS")]
-        Screens,
-        [JsonProperty("EVENTS")]
-        Events,
-        [JsonProperty("AVERAGE_SESSION_DURATION")]
-        AverageSessionDuration,
-        [JsonProperty("PAGES_PER_SESSION")]
-        PagesPerSession,
-        [JsonProperty("BOUNCE_RATE")]
-        BounceRate,
-        [JsonProperty("ENGAGEMENT_RATE")]
-        EngagementRate,
-        [JsonProperty("EVENTS_PER_SESSION")]
-        EventsPerSession,
-        [JsonProperty("CONVERSIONS")]
-        Conversions,
-        [JsonProperty("CONVERSION_RATE")]
-        ConversionRate,
-        [JsonProperty("GOAL_COMPLETIONS")]
-        GoalCompletions,
-        [JsonProperty("GOAL_VALUE")]
-        GoalValue,
-        [JsonProperty("TRANSACTIONS")]
-        Transactions,
-        [JsonProperty("REVENUE")]
-        Revenue,
-        [JsonProperty("AVERAGE_ORDER_VALUE")]
-        AverageOrderValue,
-        [JsonProperty("ECOMMERCE_CONVERSION_RATE")]
-        EcommerceConversionRate,
-        [JsonProperty("SESSIONS_BY_SOURCE")]
-        SessionsBySource,
-        [JsonProperty("USERS_BY_SOURCE")]
-        UsersBySource,
-        [JsonProperty("CONVERSIONS_BY_SOURCE")]
-        ConversionsBySource,
-        [JsonProperty("VIDEO_VIEWS")]
-        VideoViews,
-        [JsonProperty("WATCH_TIME")]
-        WatchTime,
-        [JsonProperty("AVERAGE_VIEW_DURATION")]
-        AverageViewDuration,
-        [JsonProperty("AVERAGE_VIEW_PERCENTAGE")]
-        AverageViewPercentage,
-        [JsonProperty("LIKES")]
-        Likes,
-        [JsonProperty("DISLIKES")]
-        Dislikes,
-        [JsonProperty("COMMENTS")]
-        Comments,
-        [JsonProperty("SHARES")]
-        Shares,
-        [JsonProperty("SUBSCRIBERS_GAINED")]
-        SubscribersGained,
-        [JsonProperty("SUBSCRIBERS_LOST")]
-        SubscribersLost,
-    }
 
-    public static class AnalyticsReportMetricsTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AnalyticsReportMetricsType : IEquatable<AnalyticsReportMetricsType>
     {
-        public static string Value(this AnalyticsReportMetricsType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AnalyticsReportMetricsType Users = new AnalyticsReportMetricsType("USERS");
+        public static readonly AnalyticsReportMetricsType NewUsers = new AnalyticsReportMetricsType("NEW_USERS");
+        public static readonly AnalyticsReportMetricsType Sessions = new AnalyticsReportMetricsType("SESSIONS");
+        public static readonly AnalyticsReportMetricsType PageViews = new AnalyticsReportMetricsType("PAGE_VIEWS");
+        public static readonly AnalyticsReportMetricsType UniquePageViews = new AnalyticsReportMetricsType("UNIQUE_PAGE_VIEWS");
+        public static readonly AnalyticsReportMetricsType Screens = new AnalyticsReportMetricsType("SCREENS");
+        public static readonly AnalyticsReportMetricsType Events = new AnalyticsReportMetricsType("EVENTS");
+        public static readonly AnalyticsReportMetricsType AverageSessionDuration = new AnalyticsReportMetricsType("AVERAGE_SESSION_DURATION");
+        public static readonly AnalyticsReportMetricsType PagesPerSession = new AnalyticsReportMetricsType("PAGES_PER_SESSION");
+        public static readonly AnalyticsReportMetricsType BounceRate = new AnalyticsReportMetricsType("BOUNCE_RATE");
+        public static readonly AnalyticsReportMetricsType EngagementRate = new AnalyticsReportMetricsType("ENGAGEMENT_RATE");
+        public static readonly AnalyticsReportMetricsType EventsPerSession = new AnalyticsReportMetricsType("EVENTS_PER_SESSION");
+        public static readonly AnalyticsReportMetricsType Conversions = new AnalyticsReportMetricsType("CONVERSIONS");
+        public static readonly AnalyticsReportMetricsType ConversionRate = new AnalyticsReportMetricsType("CONVERSION_RATE");
+        public static readonly AnalyticsReportMetricsType GoalCompletions = new AnalyticsReportMetricsType("GOAL_COMPLETIONS");
+        public static readonly AnalyticsReportMetricsType GoalValue = new AnalyticsReportMetricsType("GOAL_VALUE");
+        public static readonly AnalyticsReportMetricsType Transactions = new AnalyticsReportMetricsType("TRANSACTIONS");
+        public static readonly AnalyticsReportMetricsType Revenue = new AnalyticsReportMetricsType("REVENUE");
+        public static readonly AnalyticsReportMetricsType AverageOrderValue = new AnalyticsReportMetricsType("AVERAGE_ORDER_VALUE");
+        public static readonly AnalyticsReportMetricsType EcommerceConversionRate = new AnalyticsReportMetricsType("ECOMMERCE_CONVERSION_RATE");
+        public static readonly AnalyticsReportMetricsType SessionsBySource = new AnalyticsReportMetricsType("SESSIONS_BY_SOURCE");
+        public static readonly AnalyticsReportMetricsType UsersBySource = new AnalyticsReportMetricsType("USERS_BY_SOURCE");
+        public static readonly AnalyticsReportMetricsType ConversionsBySource = new AnalyticsReportMetricsType("CONVERSIONS_BY_SOURCE");
+        public static readonly AnalyticsReportMetricsType VideoViews = new AnalyticsReportMetricsType("VIDEO_VIEWS");
+        public static readonly AnalyticsReportMetricsType WatchTime = new AnalyticsReportMetricsType("WATCH_TIME");
+        public static readonly AnalyticsReportMetricsType AverageViewDuration = new AnalyticsReportMetricsType("AVERAGE_VIEW_DURATION");
+        public static readonly AnalyticsReportMetricsType AverageViewPercentage = new AnalyticsReportMetricsType("AVERAGE_VIEW_PERCENTAGE");
+        public static readonly AnalyticsReportMetricsType Likes = new AnalyticsReportMetricsType("LIKES");
+        public static readonly AnalyticsReportMetricsType Dislikes = new AnalyticsReportMetricsType("DISLIKES");
+        public static readonly AnalyticsReportMetricsType Comments = new AnalyticsReportMetricsType("COMMENTS");
+        public static readonly AnalyticsReportMetricsType Shares = new AnalyticsReportMetricsType("SHARES");
+        public static readonly AnalyticsReportMetricsType SubscribersGained = new AnalyticsReportMetricsType("SUBSCRIBERS_GAINED");
+        public static readonly AnalyticsReportMetricsType SubscribersLost = new AnalyticsReportMetricsType("SUBSCRIBERS_LOST");
 
-        public static AnalyticsReportMetricsType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AnalyticsReportMetricsType).GetFields())
+        private static readonly Dictionary <string, AnalyticsReportMetricsType> _knownValues =
+            new Dictionary <string, AnalyticsReportMetricsType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["USERS"] = Users,
+                ["NEW_USERS"] = NewUsers,
+                ["SESSIONS"] = Sessions,
+                ["PAGE_VIEWS"] = PageViews,
+                ["UNIQUE_PAGE_VIEWS"] = UniquePageViews,
+                ["SCREENS"] = Screens,
+                ["EVENTS"] = Events,
+                ["AVERAGE_SESSION_DURATION"] = AverageSessionDuration,
+                ["PAGES_PER_SESSION"] = PagesPerSession,
+                ["BOUNCE_RATE"] = BounceRate,
+                ["ENGAGEMENT_RATE"] = EngagementRate,
+                ["EVENTS_PER_SESSION"] = EventsPerSession,
+                ["CONVERSIONS"] = Conversions,
+                ["CONVERSION_RATE"] = ConversionRate,
+                ["GOAL_COMPLETIONS"] = GoalCompletions,
+                ["GOAL_VALUE"] = GoalValue,
+                ["TRANSACTIONS"] = Transactions,
+                ["REVENUE"] = Revenue,
+                ["AVERAGE_ORDER_VALUE"] = AverageOrderValue,
+                ["ECOMMERCE_CONVERSION_RATE"] = EcommerceConversionRate,
+                ["SESSIONS_BY_SOURCE"] = SessionsBySource,
+                ["USERS_BY_SOURCE"] = UsersBySource,
+                ["CONVERSIONS_BY_SOURCE"] = ConversionsBySource,
+                ["VIDEO_VIEWS"] = VideoViews,
+                ["WATCH_TIME"] = WatchTime,
+                ["AVERAGE_VIEW_DURATION"] = AverageViewDuration,
+                ["AVERAGE_VIEW_PERCENTAGE"] = AverageViewPercentage,
+                ["LIKES"] = Likes,
+                ["DISLIKES"] = Dislikes,
+                ["COMMENTS"] = Comments,
+                ["SHARES"] = Shares,
+                ["SUBSCRIBERS_GAINED"] = SubscribersGained,
+                ["SUBSCRIBERS_LOST"] = SubscribersLost
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AnalyticsReportMetricsType> _values =
+            new ConcurrentDictionary<string, AnalyticsReportMetricsType>(_knownValues);
 
-                    if (enumVal is AnalyticsReportMetricsType)
-                    {
-                        return (AnalyticsReportMetricsType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AnalyticsReportMetricsType");
+        private AnalyticsReportMetricsType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AnalyticsReportMetricsType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AnalyticsReportMetricsType(value));
+        }
+
+        public static implicit operator AnalyticsReportMetricsType(string value) => Of(value);
+        public static implicit operator string(AnalyticsReportMetricsType analyticsreportmetricstype) => analyticsreportmetricstype.Value;
+
+        public static AnalyticsReportMetricsType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AnalyticsReportMetricsType);
+
+        public bool Equals(AnalyticsReportMetricsType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

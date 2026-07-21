@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListMedium
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListMediumExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListMedium : IEquatable<ListMedium>
     {
-        public static string Value(this ListMedium value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListMedium SupportedRequired = new ListMedium("supported-required");
+        public static readonly ListMedium Supported = new ListMedium("supported");
+        public static readonly ListMedium NotSupported = new ListMedium("not-supported");
 
-        public static ListMedium ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListMedium).GetFields())
+        private static readonly Dictionary <string, ListMedium> _knownValues =
+            new Dictionary <string, ListMedium> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListMedium> _values =
+            new ConcurrentDictionary<string, ListMedium>(_knownValues);
 
-                    if (enumVal is ListMedium)
-                    {
-                        return (ListMedium)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListMedium");
+        private ListMedium(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListMedium Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListMedium(value));
+        }
+
+        public static implicit operator ListMedium(string value) => Of(value);
+        public static implicit operator string(ListMedium listmedium) => listmedium.Value;
+
+        public static ListMedium[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListMedium);
+
+        public bool Equals(ListMedium? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

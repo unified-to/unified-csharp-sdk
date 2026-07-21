@@ -13,10 +13,9 @@ namespace UnifiedTo.Models.Components
     using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
-    
+
     public class HrisDevice
     {
-
         [JsonProperty("admin_user_ids")]
         public List<string>? AdminUserIds { get; set; }
 
@@ -72,7 +71,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// users who have this device
+        /// users who have this device.
         /// </summary>
         [JsonProperty("user_ids")]
         public List<string>? UserIds { get; set; }

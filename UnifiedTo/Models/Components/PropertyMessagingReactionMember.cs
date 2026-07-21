@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class PropertyMessagingReactionMember
     {
-
         [JsonProperty("email")]
         public string? Email { get; set; }
 

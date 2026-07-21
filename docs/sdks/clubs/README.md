@@ -1,5 +1,4 @@
 # Clubs
-(*Clubs*)
 
 ## Overview
 
@@ -22,6 +21,7 @@ Retrieve an activity
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsActivity" method="get" path="/clubs/{connection_id}/activity/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -63,6 +63,7 @@ Retrieve an event
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsEvent" method="get" path="/clubs/{connection_id}/event/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -104,6 +105,7 @@ Retrieve a group
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsGroup" method="get" path="/clubs/{connection_id}/group/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -145,6 +147,7 @@ Retrieve a location
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsLocation" method="get" path="/clubs/{connection_id}/location/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -186,6 +189,7 @@ Retrieve a member
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getClubsMember" method="get" path="/clubs/{connection_id}/member/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -227,6 +231,7 @@ List all activities
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsActivities" method="get" path="/clubs/{connection_id}/activity" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -267,6 +272,7 @@ List all events
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsEvents" method="get" path="/clubs/{connection_id}/event" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -307,6 +313,7 @@ List all groups
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsGroups" method="get" path="/clubs/{connection_id}/group" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -347,6 +354,7 @@ List all locations
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsLocations" method="get" path="/clubs/{connection_id}/location" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -387,6 +395,7 @@ List all members
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listClubsMembers" method="get" path="/clubs/{connection_id}/member" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

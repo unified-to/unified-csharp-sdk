@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VerificationPackageType
-    {
-        [JsonProperty("IDENTITY_VERIFICATION")]
-        IdentityVerification,
-        [JsonProperty("SCREENING")]
-        Screening,
-        [JsonProperty("BACKGROUND_CHECK")]
-        BackgroundCheck,
-        [JsonProperty("EMPLOYMENT_VERIFICATION")]
-        EmploymentVerification,
-        [JsonProperty("EDUCATION_VERIFICATION")]
-        EducationVerification,
-        [JsonProperty("CREDIT_CHECK")]
-        CreditCheck,
-        [JsonProperty("FRAUD_PREVENTION")]
-        FraudPrevention,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class VerificationPackageTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VerificationPackageType : IEquatable<VerificationPackageType>
     {
-        public static string Value(this VerificationPackageType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VerificationPackageType IdentityVerification = new VerificationPackageType("IDENTITY_VERIFICATION");
+        public static readonly VerificationPackageType Screening = new VerificationPackageType("SCREENING");
+        public static readonly VerificationPackageType BackgroundCheck = new VerificationPackageType("BACKGROUND_CHECK");
+        public static readonly VerificationPackageType EmploymentVerification = new VerificationPackageType("EMPLOYMENT_VERIFICATION");
+        public static readonly VerificationPackageType EducationVerification = new VerificationPackageType("EDUCATION_VERIFICATION");
+        public static readonly VerificationPackageType CreditCheck = new VerificationPackageType("CREDIT_CHECK");
+        public static readonly VerificationPackageType FraudPrevention = new VerificationPackageType("FRAUD_PREVENTION");
+        public static readonly VerificationPackageType Other = new VerificationPackageType("OTHER");
 
-        public static VerificationPackageType ToEnum(this string value)
-        {
-            foreach(var field in typeof(VerificationPackageType).GetFields())
+        private static readonly Dictionary <string, VerificationPackageType> _knownValues =
+            new Dictionary <string, VerificationPackageType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["IDENTITY_VERIFICATION"] = IdentityVerification,
+                ["SCREENING"] = Screening,
+                ["BACKGROUND_CHECK"] = BackgroundCheck,
+                ["EMPLOYMENT_VERIFICATION"] = EmploymentVerification,
+                ["EDUCATION_VERIFICATION"] = EducationVerification,
+                ["CREDIT_CHECK"] = CreditCheck,
+                ["FRAUD_PREVENTION"] = FraudPrevention,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VerificationPackageType> _values =
+            new ConcurrentDictionary<string, VerificationPackageType>(_knownValues);
 
-                    if (enumVal is VerificationPackageType)
-                    {
-                        return (VerificationPackageType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VerificationPackageType");
+        private VerificationPackageType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VerificationPackageType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VerificationPackageType(value));
+        }
+
+        public static implicit operator VerificationPackageType(string value) => Of(value);
+        public static implicit operator string(VerificationPackageType verificationpackagetype) => verificationpackagetype.Value;
+
+        public static VerificationPackageType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VerificationPackageType);
+
+        public bool Equals(VerificationPackageType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

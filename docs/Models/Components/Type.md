@@ -1,5 +1,16 @@
 # Type
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = Type.AccountsPayable;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = Type.Of("custom_value");
+```
+
 
 ## Values
 

@@ -13,10 +13,9 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class PropertyDatastoreQueryQueryAggregate
     {
-
         [JsonProperty("avg")]
         public PropertyDatastoreQueryQueryAggregateAvg? Avg { get; set; }
 

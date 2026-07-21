@@ -1,5 +1,13 @@
 # CreateDatastoreRecordQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateDatastoreRecordQueryParamFields.Id;
+```
+
 
 ## Values
 

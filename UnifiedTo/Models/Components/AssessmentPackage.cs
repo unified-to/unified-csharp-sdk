@@ -11,18 +11,19 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Used by assessment providers to SUBMIT packages to ATS systems
+    /// Used by assessment providers to SUBMIT packages to ATS systems.
     /// </summary>
     public class AssessmentPackage
     {
-
         /// <summary>
-        /// Alternative namesidentifiers for this package
+        /// Alternative namesidentifiers for this package.
         /// </summary>
         [JsonProperty("aliases")]
         public List<string>? Aliases { get; set; }
@@ -49,7 +50,7 @@ namespace UnifiedTo.Models.Components
         public string? InfoUrl { get; set; }
 
         /// <summary>
-        /// Integration types that support this package
+        /// Integration types that support this package.
         /// </summary>
         [JsonProperty("integration_types")]
         public List<string>? IntegrationTypes { get; set; }
@@ -64,7 +65,7 @@ namespace UnifiedTo.Models.Components
         public bool? NeedsIpAddress { get; set; }
 
         /// <summary>
-        /// Questionsinputs needed for this assessment (aligned with verification)
+        /// Questionsinputs needed for this assessment (aligned with verification).
         /// </summary>
         [JsonProperty("parameters")]
         public List<AssessmentParameter>? Parameters { get; set; }
@@ -76,7 +77,7 @@ namespace UnifiedTo.Models.Components
         public List<AssessmentPackageRegion>? Regions { get; set; }
 
         /// <summary>
-        /// Category tags (e.g., &quot;Assessment&quot;, &quot;Background Check&quot;)
+        /// Category tags (e.g., "Assessment", "Background Check").
         /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }

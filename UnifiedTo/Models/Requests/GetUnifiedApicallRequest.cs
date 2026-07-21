@@ -10,12 +10,11 @@
 namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
-    
+
     public class GetUnifiedApicallRequest
     {
-
         /// <summary>
-        /// ID of the Apicall
+        /// ID of the Apicall.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

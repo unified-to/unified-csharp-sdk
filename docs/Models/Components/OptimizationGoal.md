@@ -1,5 +1,16 @@
 # OptimizationGoal
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = OptimizationGoal.Reach;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = OptimizationGoal.Of("custom_value");
+```
+
 
 ## Values
 

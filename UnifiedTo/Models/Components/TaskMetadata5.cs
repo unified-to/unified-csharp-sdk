@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class TaskMetadata5Type
     {
         private TaskMetadata5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static TaskMetadata5Type TaskMetadata1 { get { return new TaskMetadata5Type("TaskMetadata_1"); } }
-        
+
         public static TaskMetadata5Type Str { get { return new TaskMetadata5Type("str"); } }
-        
+
         public static TaskMetadata5Type Number { get { return new TaskMetadata5Type("number"); } }
-        
+
         public static TaskMetadata5Type Boolean { get { return new TaskMetadata5Type("boolean"); } }
-        
-        public static TaskMetadata5Type Null { get { return new TaskMetadata5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(TaskMetadata5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for TaskMetadata5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(TaskMetadata5.TaskMetadata5Converter))]
-    public class TaskMetadata5 {
-        public TaskMetadata5(TaskMetadata5Type type) {
+    public class TaskMetadata5
+    {
+        public TaskMetadata5(TaskMetadata5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public TaskMetadata5Type Type { get; set; }
-
-
-        public static TaskMetadata5 CreateTaskMetadata1(TaskMetadata1 taskMetadata1) {
+        public static TaskMetadata5 CreateTaskMetadata1(TaskMetadata1 taskMetadata1)
+        {
             TaskMetadata5Type typ = TaskMetadata5Type.TaskMetadata1;
 
             TaskMetadata5 res = new TaskMetadata5(typ);
             res.TaskMetadata1 = taskMetadata1;
             return res;
         }
-
-        public static TaskMetadata5 CreateStr(string str) {
+        public static TaskMetadata5 CreateStr(string str)
+        {
             TaskMetadata5Type typ = TaskMetadata5Type.Str;
 
             TaskMetadata5 res = new TaskMetadata5(typ);
             res.Str = str;
             return res;
         }
-
-        public static TaskMetadata5 CreateNumber(double number) {
+        public static TaskMetadata5 CreateNumber(double number)
+        {
             TaskMetadata5Type typ = TaskMetadata5Type.Number;
 
             TaskMetadata5 res = new TaskMetadata5(typ);
             res.Number = number;
             return res;
         }
-
-        public static TaskMetadata5 CreateBoolean(bool boolean) {
+        public static TaskMetadata5 CreateBoolean(bool boolean)
+        {
             TaskMetadata5Type typ = TaskMetadata5Type.Boolean;
 
             TaskMetadata5 res = new TaskMetadata5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static TaskMetadata5 CreateNull() {
-            TaskMetadata5Type typ = TaskMetadata5Type.Null;
-            return new TaskMetadata5(typ);
-        }
-
         public class TaskMetadata5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(TaskMetadata5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                TaskMetadata5 res = (TaskMetadata5)value;
-                if (TaskMetadata5Type.FromString(res.Type).Equals(TaskMetadata5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                TaskMetadata5 res = (TaskMetadata5)value;
+
                 if (res.TaskMetadata1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadata1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

@@ -1,5 +1,13 @@
 # CreateRepoBranchQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateRepoBranchQueryParamFields.Id;
+```
+
 
 ## Values
 

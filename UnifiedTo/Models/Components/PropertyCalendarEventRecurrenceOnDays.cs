@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyCalendarEventRecurrenceOnDays
-    {
-        [JsonProperty("SU")]
-        Su,
-        [JsonProperty("MO")]
-        Mo,
-        [JsonProperty("TU")]
-        Tu,
-        [JsonProperty("WE")]
-        We,
-        [JsonProperty("TH")]
-        Th,
-        [JsonProperty("FR")]
-        Fr,
-        [JsonProperty("SA")]
-        Sa,
-    }
 
-    public static class PropertyCalendarEventRecurrenceOnDaysExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyCalendarEventRecurrenceOnDays : IEquatable<PropertyCalendarEventRecurrenceOnDays>
     {
-        public static string Value(this PropertyCalendarEventRecurrenceOnDays value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyCalendarEventRecurrenceOnDays Su = new PropertyCalendarEventRecurrenceOnDays("SU");
+        public static readonly PropertyCalendarEventRecurrenceOnDays Mo = new PropertyCalendarEventRecurrenceOnDays("MO");
+        public static readonly PropertyCalendarEventRecurrenceOnDays Tu = new PropertyCalendarEventRecurrenceOnDays("TU");
+        public static readonly PropertyCalendarEventRecurrenceOnDays We = new PropertyCalendarEventRecurrenceOnDays("WE");
+        public static readonly PropertyCalendarEventRecurrenceOnDays Th = new PropertyCalendarEventRecurrenceOnDays("TH");
+        public static readonly PropertyCalendarEventRecurrenceOnDays Fr = new PropertyCalendarEventRecurrenceOnDays("FR");
+        public static readonly PropertyCalendarEventRecurrenceOnDays Sa = new PropertyCalendarEventRecurrenceOnDays("SA");
 
-        public static PropertyCalendarEventRecurrenceOnDays ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyCalendarEventRecurrenceOnDays).GetFields())
+        private static readonly Dictionary <string, PropertyCalendarEventRecurrenceOnDays> _knownValues =
+            new Dictionary <string, PropertyCalendarEventRecurrenceOnDays> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SU"] = Su,
+                ["MO"] = Mo,
+                ["TU"] = Tu,
+                ["WE"] = We,
+                ["TH"] = Th,
+                ["FR"] = Fr,
+                ["SA"] = Sa
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyCalendarEventRecurrenceOnDays> _values =
+            new ConcurrentDictionary<string, PropertyCalendarEventRecurrenceOnDays>(_knownValues);
 
-                    if (enumVal is PropertyCalendarEventRecurrenceOnDays)
-                    {
-                        return (PropertyCalendarEventRecurrenceOnDays)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyCalendarEventRecurrenceOnDays");
+        private PropertyCalendarEventRecurrenceOnDays(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyCalendarEventRecurrenceOnDays Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyCalendarEventRecurrenceOnDays(value));
+        }
+
+        public static implicit operator PropertyCalendarEventRecurrenceOnDays(string value) => Of(value);
+        public static implicit operator string(PropertyCalendarEventRecurrenceOnDays propertycalendareventrecurrenceondays) => propertycalendareventrecurrenceondays.Value;
+
+        public static PropertyCalendarEventRecurrenceOnDays[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyCalendarEventRecurrenceOnDays);
+
+        public bool Equals(PropertyCalendarEventRecurrenceOnDays? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

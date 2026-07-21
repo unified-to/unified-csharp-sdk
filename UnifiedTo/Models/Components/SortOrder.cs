@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum SortOrder
-    {
-        [JsonProperty("asc")]
-        Asc,
-        [JsonProperty("desc")]
-        Desc,
-    }
 
-    public static class SortOrderExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class SortOrder : IEquatable<SortOrder>
     {
-        public static string Value(this SortOrder value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly SortOrder Asc = new SortOrder("asc");
+        public static readonly SortOrder Desc = new SortOrder("desc");
 
-        public static SortOrder ToEnum(this string value)
-        {
-            foreach(var field in typeof(SortOrder).GetFields())
+        private static readonly Dictionary <string, SortOrder> _knownValues =
+            new Dictionary <string, SortOrder> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["asc"] = Asc,
+                ["desc"] = Desc
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, SortOrder> _values =
+            new ConcurrentDictionary<string, SortOrder>(_knownValues);
 
-                    if (enumVal is SortOrder)
-                    {
-                        return (SortOrder)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum SortOrder");
+        private SortOrder(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static SortOrder Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new SortOrder(value));
+        }
+
+        public static implicit operator SortOrder(string value) => Of(value);
+        public static implicit operator string(SortOrder sortorder) => sortorder.Value;
+
+        public static SortOrder[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as SortOrder);
+
+        public bool Equals(SortOrder? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

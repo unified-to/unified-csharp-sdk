@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class ApiType
     {
         private ApiType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static ApiType MapOfAny { get { return new ApiType("mapOfAny"); } }
-        
+
         public static ApiType Str { get { return new ApiType("str"); } }
-        
+
         public static ApiType Number { get { return new ApiType("number"); } }
-        
+
         public static ApiType Boolean { get { return new ApiType("boolean"); } }
-        
+
         public static ApiType ArrayOfIntegration5 { get { return new ApiType("arrayOfIntegration5"); } }
-        
-        public static ApiType Null { get { return new ApiType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(ApiType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfIntegration5": return ArrayOfIntegration5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for ApiType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(Api.ApiConverter))]
-    public class Api {
-        public Api(ApiType type) {
+    public class Api
+    {
+        public Api(ApiType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<Integration5>? ArrayOfIntegration5 { get; set; }
 
         public ApiType Type { get; set; }
-
-
-        public static Api CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static Api CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             ApiType typ = ApiType.MapOfAny;
 
             Api res = new Api(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static Api CreateStr(string str) {
+        public static Api CreateStr(string str)
+        {
             ApiType typ = ApiType.Str;
 
             Api res = new Api(typ);
             res.Str = str;
             return res;
         }
-
-        public static Api CreateNumber(double number) {
+        public static Api CreateNumber(double number)
+        {
             ApiType typ = ApiType.Number;
 
             Api res = new Api(typ);
             res.Number = number;
             return res;
         }
-
-        public static Api CreateBoolean(bool boolean) {
+        public static Api CreateBoolean(bool boolean)
+        {
             ApiType typ = ApiType.Boolean;
 
             Api res = new Api(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static Api CreateArrayOfIntegration5(List<Integration5> arrayOfIntegration5) {
+        public static Api CreateArrayOfIntegration5(List<Integration5> arrayOfIntegration5)
+        {
             ApiType typ = ApiType.ArrayOfIntegration5;
 
             Api res = new Api(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static Api CreateNull() {
-            ApiType typ = ApiType.Null;
-            return new Api(typ);
-        }
-
         public class ApiConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(Api);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                Api res = (Api)value;
-                if (ApiType.FromString(res.Type).Equals(ApiType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                Api res = (Api)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfIntegration5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegration5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+    /// The ID (and optionally name) of the employee deduction (if this detail represents a deduction).
     /// </summary>
     public class PropertyHrisPayslipDeduction
     {
-
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 

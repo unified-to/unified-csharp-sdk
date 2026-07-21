@@ -1,5 +1,16 @@
 # ListTeacherId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListTeacherId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListTeacherId.Of("custom_value");
+```
+
 
 ## Values
 

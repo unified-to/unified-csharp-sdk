@@ -11,343 +11,360 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ObjectType
-    {
-        [JsonProperty("accounting_account")]
-        AccountingAccount,
-        [JsonProperty("accounting_transaction")]
-        AccountingTransaction,
-        [JsonProperty("accounting_journal")]
-        AccountingJournal,
-        [JsonProperty("accounting_contact")]
-        AccountingContact,
-        [JsonProperty("accounting_invoice")]
-        AccountingInvoice,
-        [JsonProperty("accounting_bill")]
-        AccountingBill,
-        [JsonProperty("accounting_vendorcredit")]
-        AccountingVendorcredit,
-        [JsonProperty("accounting_creditmemo")]
-        AccountingCreditmemo,
-        [JsonProperty("accounting_taxrate")]
-        AccountingTaxrate,
-        [JsonProperty("accounting_organization")]
-        AccountingOrganization,
-        [JsonProperty("accounting_order")]
-        AccountingOrder,
-        [JsonProperty("accounting_salesorder")]
-        AccountingSalesorder,
-        [JsonProperty("accounting_purchaseorder")]
-        AccountingPurchaseorder,
-        [JsonProperty("accounting_report")]
-        AccountingReport,
-        [JsonProperty("accounting_balancesheet")]
-        AccountingBalancesheet,
-        [JsonProperty("accounting_profitloss")]
-        AccountingProfitloss,
-        [JsonProperty("accounting_trialbalance")]
-        AccountingTrialbalance,
-        [JsonProperty("accounting_category")]
-        AccountingCategory,
-        [JsonProperty("accounting_expense")]
-        AccountingExpense,
-        [JsonProperty("accounting_cashflow")]
-        AccountingCashflow,
-        [JsonProperty("payment_payment")]
-        PaymentPayment,
-        [JsonProperty("payment_link")]
-        PaymentLink,
-        [JsonProperty("payment_payout")]
-        PaymentPayout,
-        [JsonProperty("payment_refund")]
-        PaymentRefund,
-        [JsonProperty("payment_subscription")]
-        PaymentSubscription,
-        [JsonProperty("commerce_item")]
-        CommerceItem,
-        [JsonProperty("commerce_collection")]
-        CommerceCollection,
-        [JsonProperty("commerce_inventory")]
-        CommerceInventory,
-        [JsonProperty("commerce_location")]
-        CommerceLocation,
-        [JsonProperty("commerce_review")]
-        CommerceReview,
-        [JsonProperty("commerce_saleschannel")]
-        CommerceSaleschannel,
-        [JsonProperty("commerce_itemvariant")]
-        CommerceItemvariant,
-        [JsonProperty("commerce_reservation")]
-        CommerceReservation,
-        [JsonProperty("commerce_availability")]
-        CommerceAvailability,
-        [JsonProperty("verification_package")]
-        VerificationPackage,
-        [JsonProperty("verification_request")]
-        VerificationRequest,
-        [JsonProperty("assessment_package")]
-        AssessmentPackage,
-        [JsonProperty("assessment_order")]
-        AssessmentOrder,
-        [JsonProperty("ats_activity")]
-        AtsActivity,
-        [JsonProperty("ats_application")]
-        AtsApplication,
-        [JsonProperty("ats_applicationstatus")]
-        AtsApplicationstatus,
-        [JsonProperty("ats_candidate")]
-        AtsCandidate,
-        [JsonProperty("ats_document")]
-        AtsDocument,
-        [JsonProperty("ats_interview")]
-        AtsInterview,
-        [JsonProperty("ats_job")]
-        AtsJob,
-        [JsonProperty("ats_scorecard")]
-        AtsScorecard,
-        [JsonProperty("ats_company")]
-        AtsCompany,
-        [JsonProperty("crm_company")]
-        CrmCompany,
-        [JsonProperty("crm_contact")]
-        CrmContact,
-        [JsonProperty("crm_deal")]
-        CrmDeal,
-        [JsonProperty("crm_event")]
-        CrmEvent,
-        [JsonProperty("crm_lead")]
-        CrmLead,
-        [JsonProperty("crm_pipeline")]
-        CrmPipeline,
-        [JsonProperty("crm_picklist")]
-        CrmPicklist,
-        [JsonProperty("hris_employee")]
-        HrisEmployee,
-        [JsonProperty("hris_group")]
-        HrisGroup,
-        [JsonProperty("hris_payslip")]
-        HrisPayslip,
-        [JsonProperty("hris_timeoff")]
-        HrisTimeoff,
-        [JsonProperty("hris_company")]
-        HrisCompany,
-        [JsonProperty("hris_location")]
-        HrisLocation,
-        [JsonProperty("hris_device")]
-        HrisDevice,
-        [JsonProperty("hris_timeshift")]
-        HrisTimeshift,
-        [JsonProperty("hris_deduction")]
-        HrisDeduction,
-        [JsonProperty("hris_benefit")]
-        HrisBenefit,
-        [JsonProperty("hris_bankaccount")]
-        HrisBankaccount,
-        [JsonProperty("hris_document")]
-        HrisDocument,
-        [JsonProperty("hris_taxonomy")]
-        HrisTaxonomy,
-        [JsonProperty("martech_list")]
-        MartechList,
-        [JsonProperty("martech_member")]
-        MartechMember,
-        [JsonProperty("martech_campaign")]
-        MartechCampaign,
-        [JsonProperty("martech_report")]
-        MartechReport,
-        [JsonProperty("passthrough")]
-        Passthrough,
-        [JsonProperty("ticketing_note")]
-        TicketingNote,
-        [JsonProperty("ticketing_ticket")]
-        TicketingTicket,
-        [JsonProperty("ticketing_customer")]
-        TicketingCustomer,
-        [JsonProperty("ticketing_category")]
-        TicketingCategory,
-        [JsonProperty("uc_contact")]
-        UcContact,
-        [JsonProperty("uc_call")]
-        UcCall,
-        [JsonProperty("uc_comment")]
-        UcComment,
-        [JsonProperty("uc_recording")]
-        UcRecording,
-        [JsonProperty("enrich_person")]
-        EnrichPerson,
-        [JsonProperty("enrich_company")]
-        EnrichCompany,
-        [JsonProperty("storage_file")]
-        StorageFile,
-        [JsonProperty("genai_model")]
-        GenaiModel,
-        [JsonProperty("genai_prompt")]
-        GenaiPrompt,
-        [JsonProperty("genai_embedding")]
-        GenaiEmbedding,
-        [JsonProperty("messaging_message")]
-        MessagingMessage,
-        [JsonProperty("messaging_channel")]
-        MessagingChannel,
-        [JsonProperty("messaging_event")]
-        MessagingEvent,
-        [JsonProperty("kms_space")]
-        KmsSpace,
-        [JsonProperty("kms_page")]
-        KmsPage,
-        [JsonProperty("kms_comment")]
-        KmsComment,
-        [JsonProperty("task_project")]
-        TaskProject,
-        [JsonProperty("task_task")]
-        TaskTask,
-        [JsonProperty("task_comment")]
-        TaskComment,
-        [JsonProperty("task_change")]
-        TaskChange,
-        [JsonProperty("scim_users")]
-        ScimUsers,
-        [JsonProperty("scim_groups")]
-        ScimGroups,
-        [JsonProperty("lms_course")]
-        LmsCourse,
-        [JsonProperty("lms_class")]
-        LmsClass,
-        [JsonProperty("lms_student")]
-        LmsStudent,
-        [JsonProperty("lms_instructor")]
-        LmsInstructor,
-        [JsonProperty("lms_content")]
-        LmsContent,
-        [JsonProperty("lms_collection")]
-        LmsCollection,
-        [JsonProperty("lms_activity")]
-        LmsActivity,
-        [JsonProperty("repo_organization")]
-        RepoOrganization,
-        [JsonProperty("repo_repository")]
-        RepoRepository,
-        [JsonProperty("repo_branch")]
-        RepoBranch,
-        [JsonProperty("repo_commit")]
-        RepoCommit,
-        [JsonProperty("repo_pullrequest")]
-        RepoPullrequest,
-        [JsonProperty("metadata_metadata")]
-        MetadataMetadata,
-        [JsonProperty("calendar_calendar")]
-        CalendarCalendar,
-        [JsonProperty("calendar_event")]
-        CalendarEvent,
-        [JsonProperty("calendar_busy")]
-        CalendarBusy,
-        [JsonProperty("calendar_link")]
-        CalendarLink,
-        [JsonProperty("calendar_recording")]
-        CalendarRecording,
-        [JsonProperty("calendar_webinar")]
-        CalendarWebinar,
-        [JsonProperty("ads_organization")]
-        AdsOrganization,
-        [JsonProperty("ads_ad")]
-        AdsAd,
-        [JsonProperty("ads_campaign")]
-        AdsCampaign,
-        [JsonProperty("ads_report")]
-        AdsReport,
-        [JsonProperty("ads_group")]
-        AdsGroup,
-        [JsonProperty("ads_creative")]
-        AdsCreative,
-        [JsonProperty("ads_insertionorder")]
-        AdsInsertionorder,
-        [JsonProperty("ads_target")]
-        AdsTarget,
-        [JsonProperty("ads_promoted")]
-        AdsPromoted,
-        [JsonProperty("analytics_property")]
-        AnalyticsProperty,
-        [JsonProperty("analytics_event")]
-        AnalyticsEvent,
-        [JsonProperty("analytics_session")]
-        AnalyticsSession,
-        [JsonProperty("analytics_visitor")]
-        AnalyticsVisitor,
-        [JsonProperty("analytics_report")]
-        AnalyticsReport,
-        [JsonProperty("forms_form")]
-        FormsForm,
-        [JsonProperty("forms_submission")]
-        FormsSubmission,
-        [JsonProperty("shipping_carrier")]
-        ShippingCarrier,
-        [JsonProperty("shipping_rate")]
-        ShippingRate,
-        [JsonProperty("shipping_shipment")]
-        ShippingShipment,
-        [JsonProperty("shipping_label")]
-        ShippingLabel,
-        [JsonProperty("shipping_tracking")]
-        ShippingTracking,
-        [JsonProperty("signing_document")]
-        SigningDocument,
-        [JsonProperty("signing_signatory")]
-        SigningSignatory,
-        [JsonProperty("signing_template")]
-        SigningTemplate,
-        [JsonProperty("clubs_group")]
-        ClubsGroup,
-        [JsonProperty("clubs_member")]
-        ClubsMember,
-        [JsonProperty("clubs_activity")]
-        ClubsActivity,
-        [JsonProperty("clubs_location")]
-        ClubsLocation,
-        [JsonProperty("clubs_event")]
-        ClubsEvent,
-        [JsonProperty("datastore_database")]
-        DatastoreDatabase,
-        [JsonProperty("datastore_table")]
-        DatastoreTable,
-        [JsonProperty("datastore_record")]
-        DatastoreRecord,
-        [JsonProperty("datastore_query")]
-        DatastoreQuery,
-    }
 
-    public static class ObjectTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ObjectType : IEquatable<ObjectType>
     {
-        public static string Value(this ObjectType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ObjectType AccountingAccount = new ObjectType("accounting_account");
+        public static readonly ObjectType AccountingTransaction = new ObjectType("accounting_transaction");
+        public static readonly ObjectType AccountingJournal = new ObjectType("accounting_journal");
+        public static readonly ObjectType AccountingContact = new ObjectType("accounting_contact");
+        public static readonly ObjectType AccountingInvoice = new ObjectType("accounting_invoice");
+        public static readonly ObjectType AccountingBill = new ObjectType("accounting_bill");
+        public static readonly ObjectType AccountingVendorcredit = new ObjectType("accounting_vendorcredit");
+        public static readonly ObjectType AccountingCreditmemo = new ObjectType("accounting_creditmemo");
+        public static readonly ObjectType AccountingTaxrate = new ObjectType("accounting_taxrate");
+        public static readonly ObjectType AccountingOrganization = new ObjectType("accounting_organization");
+        public static readonly ObjectType AccountingOrder = new ObjectType("accounting_order");
+        public static readonly ObjectType AccountingSalesorder = new ObjectType("accounting_salesorder");
+        public static readonly ObjectType AccountingPurchaseorder = new ObjectType("accounting_purchaseorder");
+        public static readonly ObjectType AccountingReport = new ObjectType("accounting_report");
+        public static readonly ObjectType AccountingBalancesheet = new ObjectType("accounting_balancesheet");
+        public static readonly ObjectType AccountingProfitloss = new ObjectType("accounting_profitloss");
+        public static readonly ObjectType AccountingTrialbalance = new ObjectType("accounting_trialbalance");
+        public static readonly ObjectType AccountingCategory = new ObjectType("accounting_category");
+        public static readonly ObjectType AccountingExpense = new ObjectType("accounting_expense");
+        public static readonly ObjectType AccountingCashflow = new ObjectType("accounting_cashflow");
+        public static readonly ObjectType PaymentPayment = new ObjectType("payment_payment");
+        public static readonly ObjectType PaymentLink = new ObjectType("payment_link");
+        public static readonly ObjectType PaymentPayout = new ObjectType("payment_payout");
+        public static readonly ObjectType PaymentRefund = new ObjectType("payment_refund");
+        public static readonly ObjectType PaymentSubscription = new ObjectType("payment_subscription");
+        public static readonly ObjectType CommerceItem = new ObjectType("commerce_item");
+        public static readonly ObjectType CommerceCollection = new ObjectType("commerce_collection");
+        public static readonly ObjectType CommerceInventory = new ObjectType("commerce_inventory");
+        public static readonly ObjectType CommerceLocation = new ObjectType("commerce_location");
+        public static readonly ObjectType CommerceReview = new ObjectType("commerce_review");
+        public static readonly ObjectType CommerceSaleschannel = new ObjectType("commerce_saleschannel");
+        public static readonly ObjectType CommerceItemvariant = new ObjectType("commerce_itemvariant");
+        public static readonly ObjectType CommerceReservation = new ObjectType("commerce_reservation");
+        public static readonly ObjectType CommerceAvailability = new ObjectType("commerce_availability");
+        public static readonly ObjectType VerificationPackage = new ObjectType("verification_package");
+        public static readonly ObjectType VerificationRequest = new ObjectType("verification_request");
+        public static readonly ObjectType AssessmentPackage = new ObjectType("assessment_package");
+        public static readonly ObjectType AssessmentOrder = new ObjectType("assessment_order");
+        public static readonly ObjectType AtsActivity = new ObjectType("ats_activity");
+        public static readonly ObjectType AtsApplication = new ObjectType("ats_application");
+        public static readonly ObjectType AtsApplicationstatus = new ObjectType("ats_applicationstatus");
+        public static readonly ObjectType AtsCandidate = new ObjectType("ats_candidate");
+        public static readonly ObjectType AtsDocument = new ObjectType("ats_document");
+        public static readonly ObjectType AtsInterview = new ObjectType("ats_interview");
+        public static readonly ObjectType AtsJob = new ObjectType("ats_job");
+        public static readonly ObjectType AtsScorecard = new ObjectType("ats_scorecard");
+        public static readonly ObjectType AtsCompany = new ObjectType("ats_company");
+        public static readonly ObjectType CrmCompany = new ObjectType("crm_company");
+        public static readonly ObjectType CrmContact = new ObjectType("crm_contact");
+        public static readonly ObjectType CrmDeal = new ObjectType("crm_deal");
+        public static readonly ObjectType CrmEvent = new ObjectType("crm_event");
+        public static readonly ObjectType CrmLead = new ObjectType("crm_lead");
+        public static readonly ObjectType CrmPipeline = new ObjectType("crm_pipeline");
+        public static readonly ObjectType CrmPicklist = new ObjectType("crm_picklist");
+        public static readonly ObjectType HrisEmployee = new ObjectType("hris_employee");
+        public static readonly ObjectType HrisGroup = new ObjectType("hris_group");
+        public static readonly ObjectType HrisPayslip = new ObjectType("hris_payslip");
+        public static readonly ObjectType HrisTimeoff = new ObjectType("hris_timeoff");
+        public static readonly ObjectType HrisCompany = new ObjectType("hris_company");
+        public static readonly ObjectType HrisLocation = new ObjectType("hris_location");
+        public static readonly ObjectType HrisDevice = new ObjectType("hris_device");
+        public static readonly ObjectType HrisTimeshift = new ObjectType("hris_timeshift");
+        public static readonly ObjectType HrisDeduction = new ObjectType("hris_deduction");
+        public static readonly ObjectType HrisBenefit = new ObjectType("hris_benefit");
+        public static readonly ObjectType HrisBankaccount = new ObjectType("hris_bankaccount");
+        public static readonly ObjectType HrisDocument = new ObjectType("hris_document");
+        public static readonly ObjectType HrisTaxonomy = new ObjectType("hris_taxonomy");
+        public static readonly ObjectType MartechList = new ObjectType("martech_list");
+        public static readonly ObjectType MartechMember = new ObjectType("martech_member");
+        public static readonly ObjectType MartechCampaign = new ObjectType("martech_campaign");
+        public static readonly ObjectType MartechReport = new ObjectType("martech_report");
+        public static readonly ObjectType Passthrough = new ObjectType("passthrough");
+        public static readonly ObjectType TicketingNote = new ObjectType("ticketing_note");
+        public static readonly ObjectType TicketingTicket = new ObjectType("ticketing_ticket");
+        public static readonly ObjectType TicketingCustomer = new ObjectType("ticketing_customer");
+        public static readonly ObjectType TicketingCategory = new ObjectType("ticketing_category");
+        public static readonly ObjectType UcContact = new ObjectType("uc_contact");
+        public static readonly ObjectType UcCall = new ObjectType("uc_call");
+        public static readonly ObjectType UcComment = new ObjectType("uc_comment");
+        public static readonly ObjectType UcRecording = new ObjectType("uc_recording");
+        public static readonly ObjectType EnrichPerson = new ObjectType("enrich_person");
+        public static readonly ObjectType EnrichCompany = new ObjectType("enrich_company");
+        public static readonly ObjectType StorageFile = new ObjectType("storage_file");
+        public static readonly ObjectType GenaiModel = new ObjectType("genai_model");
+        public static readonly ObjectType GenaiPrompt = new ObjectType("genai_prompt");
+        public static readonly ObjectType GenaiEmbedding = new ObjectType("genai_embedding");
+        public static readonly ObjectType MessagingMessage = new ObjectType("messaging_message");
+        public static readonly ObjectType MessagingChannel = new ObjectType("messaging_channel");
+        public static readonly ObjectType MessagingEvent = new ObjectType("messaging_event");
+        public static readonly ObjectType KmsSpace = new ObjectType("kms_space");
+        public static readonly ObjectType KmsPage = new ObjectType("kms_page");
+        public static readonly ObjectType KmsComment = new ObjectType("kms_comment");
+        public static readonly ObjectType TaskProject = new ObjectType("task_project");
+        public static readonly ObjectType TaskTask = new ObjectType("task_task");
+        public static readonly ObjectType TaskComment = new ObjectType("task_comment");
+        public static readonly ObjectType TaskChange = new ObjectType("task_change");
+        public static readonly ObjectType ScimUsers = new ObjectType("scim_users");
+        public static readonly ObjectType ScimGroups = new ObjectType("scim_groups");
+        public static readonly ObjectType LmsCourse = new ObjectType("lms_course");
+        public static readonly ObjectType LmsClass = new ObjectType("lms_class");
+        public static readonly ObjectType LmsStudent = new ObjectType("lms_student");
+        public static readonly ObjectType LmsInstructor = new ObjectType("lms_instructor");
+        public static readonly ObjectType LmsContent = new ObjectType("lms_content");
+        public static readonly ObjectType LmsCollection = new ObjectType("lms_collection");
+        public static readonly ObjectType LmsActivity = new ObjectType("lms_activity");
+        public static readonly ObjectType RepoOrganization = new ObjectType("repo_organization");
+        public static readonly ObjectType RepoRepository = new ObjectType("repo_repository");
+        public static readonly ObjectType RepoBranch = new ObjectType("repo_branch");
+        public static readonly ObjectType RepoCommit = new ObjectType("repo_commit");
+        public static readonly ObjectType RepoPullrequest = new ObjectType("repo_pullrequest");
+        public static readonly ObjectType MetadataMetadata = new ObjectType("metadata_metadata");
+        public static readonly ObjectType CalendarCalendar = new ObjectType("calendar_calendar");
+        public static readonly ObjectType CalendarEvent = new ObjectType("calendar_event");
+        public static readonly ObjectType CalendarBusy = new ObjectType("calendar_busy");
+        public static readonly ObjectType CalendarLink = new ObjectType("calendar_link");
+        public static readonly ObjectType CalendarRecording = new ObjectType("calendar_recording");
+        public static readonly ObjectType CalendarWebinar = new ObjectType("calendar_webinar");
+        public static readonly ObjectType AdsOrganization = new ObjectType("ads_organization");
+        public static readonly ObjectType AdsAd = new ObjectType("ads_ad");
+        public static readonly ObjectType AdsCampaign = new ObjectType("ads_campaign");
+        public static readonly ObjectType AdsReport = new ObjectType("ads_report");
+        public static readonly ObjectType AdsGroup = new ObjectType("ads_group");
+        public static readonly ObjectType AdsCreative = new ObjectType("ads_creative");
+        public static readonly ObjectType AdsInsertionorder = new ObjectType("ads_insertionorder");
+        public static readonly ObjectType AdsTarget = new ObjectType("ads_target");
+        public static readonly ObjectType AdsPromoted = new ObjectType("ads_promoted");
+        public static readonly ObjectType AnalyticsProperty = new ObjectType("analytics_property");
+        public static readonly ObjectType AnalyticsEvent = new ObjectType("analytics_event");
+        public static readonly ObjectType AnalyticsSession = new ObjectType("analytics_session");
+        public static readonly ObjectType AnalyticsVisitor = new ObjectType("analytics_visitor");
+        public static readonly ObjectType AnalyticsReport = new ObjectType("analytics_report");
+        public static readonly ObjectType FormsForm = new ObjectType("forms_form");
+        public static readonly ObjectType FormsSubmission = new ObjectType("forms_submission");
+        public static readonly ObjectType ShippingCarrier = new ObjectType("shipping_carrier");
+        public static readonly ObjectType ShippingRate = new ObjectType("shipping_rate");
+        public static readonly ObjectType ShippingShipment = new ObjectType("shipping_shipment");
+        public static readonly ObjectType ShippingLabel = new ObjectType("shipping_label");
+        public static readonly ObjectType ShippingTracking = new ObjectType("shipping_tracking");
+        public static readonly ObjectType SigningDocument = new ObjectType("signing_document");
+        public static readonly ObjectType SigningSignatory = new ObjectType("signing_signatory");
+        public static readonly ObjectType SigningTemplate = new ObjectType("signing_template");
+        public static readonly ObjectType ClubsGroup = new ObjectType("clubs_group");
+        public static readonly ObjectType ClubsMember = new ObjectType("clubs_member");
+        public static readonly ObjectType ClubsActivity = new ObjectType("clubs_activity");
+        public static readonly ObjectType ClubsLocation = new ObjectType("clubs_location");
+        public static readonly ObjectType ClubsEvent = new ObjectType("clubs_event");
+        public static readonly ObjectType DatastoreDatabase = new ObjectType("datastore_database");
+        public static readonly ObjectType DatastoreTable = new ObjectType("datastore_table");
+        public static readonly ObjectType DatastoreRecord = new ObjectType("datastore_record");
+        public static readonly ObjectType DatastoreQuery = new ObjectType("datastore_query");
 
-        public static ObjectType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ObjectType).GetFields())
+        private static readonly Dictionary <string, ObjectType> _knownValues =
+            new Dictionary <string, ObjectType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["accounting_account"] = AccountingAccount,
+                ["accounting_transaction"] = AccountingTransaction,
+                ["accounting_journal"] = AccountingJournal,
+                ["accounting_contact"] = AccountingContact,
+                ["accounting_invoice"] = AccountingInvoice,
+                ["accounting_bill"] = AccountingBill,
+                ["accounting_vendorcredit"] = AccountingVendorcredit,
+                ["accounting_creditmemo"] = AccountingCreditmemo,
+                ["accounting_taxrate"] = AccountingTaxrate,
+                ["accounting_organization"] = AccountingOrganization,
+                ["accounting_order"] = AccountingOrder,
+                ["accounting_salesorder"] = AccountingSalesorder,
+                ["accounting_purchaseorder"] = AccountingPurchaseorder,
+                ["accounting_report"] = AccountingReport,
+                ["accounting_balancesheet"] = AccountingBalancesheet,
+                ["accounting_profitloss"] = AccountingProfitloss,
+                ["accounting_trialbalance"] = AccountingTrialbalance,
+                ["accounting_category"] = AccountingCategory,
+                ["accounting_expense"] = AccountingExpense,
+                ["accounting_cashflow"] = AccountingCashflow,
+                ["payment_payment"] = PaymentPayment,
+                ["payment_link"] = PaymentLink,
+                ["payment_payout"] = PaymentPayout,
+                ["payment_refund"] = PaymentRefund,
+                ["payment_subscription"] = PaymentSubscription,
+                ["commerce_item"] = CommerceItem,
+                ["commerce_collection"] = CommerceCollection,
+                ["commerce_inventory"] = CommerceInventory,
+                ["commerce_location"] = CommerceLocation,
+                ["commerce_review"] = CommerceReview,
+                ["commerce_saleschannel"] = CommerceSaleschannel,
+                ["commerce_itemvariant"] = CommerceItemvariant,
+                ["commerce_reservation"] = CommerceReservation,
+                ["commerce_availability"] = CommerceAvailability,
+                ["verification_package"] = VerificationPackage,
+                ["verification_request"] = VerificationRequest,
+                ["assessment_package"] = AssessmentPackage,
+                ["assessment_order"] = AssessmentOrder,
+                ["ats_activity"] = AtsActivity,
+                ["ats_application"] = AtsApplication,
+                ["ats_applicationstatus"] = AtsApplicationstatus,
+                ["ats_candidate"] = AtsCandidate,
+                ["ats_document"] = AtsDocument,
+                ["ats_interview"] = AtsInterview,
+                ["ats_job"] = AtsJob,
+                ["ats_scorecard"] = AtsScorecard,
+                ["ats_company"] = AtsCompany,
+                ["crm_company"] = CrmCompany,
+                ["crm_contact"] = CrmContact,
+                ["crm_deal"] = CrmDeal,
+                ["crm_event"] = CrmEvent,
+                ["crm_lead"] = CrmLead,
+                ["crm_pipeline"] = CrmPipeline,
+                ["crm_picklist"] = CrmPicklist,
+                ["hris_employee"] = HrisEmployee,
+                ["hris_group"] = HrisGroup,
+                ["hris_payslip"] = HrisPayslip,
+                ["hris_timeoff"] = HrisTimeoff,
+                ["hris_company"] = HrisCompany,
+                ["hris_location"] = HrisLocation,
+                ["hris_device"] = HrisDevice,
+                ["hris_timeshift"] = HrisTimeshift,
+                ["hris_deduction"] = HrisDeduction,
+                ["hris_benefit"] = HrisBenefit,
+                ["hris_bankaccount"] = HrisBankaccount,
+                ["hris_document"] = HrisDocument,
+                ["hris_taxonomy"] = HrisTaxonomy,
+                ["martech_list"] = MartechList,
+                ["martech_member"] = MartechMember,
+                ["martech_campaign"] = MartechCampaign,
+                ["martech_report"] = MartechReport,
+                ["passthrough"] = Passthrough,
+                ["ticketing_note"] = TicketingNote,
+                ["ticketing_ticket"] = TicketingTicket,
+                ["ticketing_customer"] = TicketingCustomer,
+                ["ticketing_category"] = TicketingCategory,
+                ["uc_contact"] = UcContact,
+                ["uc_call"] = UcCall,
+                ["uc_comment"] = UcComment,
+                ["uc_recording"] = UcRecording,
+                ["enrich_person"] = EnrichPerson,
+                ["enrich_company"] = EnrichCompany,
+                ["storage_file"] = StorageFile,
+                ["genai_model"] = GenaiModel,
+                ["genai_prompt"] = GenaiPrompt,
+                ["genai_embedding"] = GenaiEmbedding,
+                ["messaging_message"] = MessagingMessage,
+                ["messaging_channel"] = MessagingChannel,
+                ["messaging_event"] = MessagingEvent,
+                ["kms_space"] = KmsSpace,
+                ["kms_page"] = KmsPage,
+                ["kms_comment"] = KmsComment,
+                ["task_project"] = TaskProject,
+                ["task_task"] = TaskTask,
+                ["task_comment"] = TaskComment,
+                ["task_change"] = TaskChange,
+                ["scim_users"] = ScimUsers,
+                ["scim_groups"] = ScimGroups,
+                ["lms_course"] = LmsCourse,
+                ["lms_class"] = LmsClass,
+                ["lms_student"] = LmsStudent,
+                ["lms_instructor"] = LmsInstructor,
+                ["lms_content"] = LmsContent,
+                ["lms_collection"] = LmsCollection,
+                ["lms_activity"] = LmsActivity,
+                ["repo_organization"] = RepoOrganization,
+                ["repo_repository"] = RepoRepository,
+                ["repo_branch"] = RepoBranch,
+                ["repo_commit"] = RepoCommit,
+                ["repo_pullrequest"] = RepoPullrequest,
+                ["metadata_metadata"] = MetadataMetadata,
+                ["calendar_calendar"] = CalendarCalendar,
+                ["calendar_event"] = CalendarEvent,
+                ["calendar_busy"] = CalendarBusy,
+                ["calendar_link"] = CalendarLink,
+                ["calendar_recording"] = CalendarRecording,
+                ["calendar_webinar"] = CalendarWebinar,
+                ["ads_organization"] = AdsOrganization,
+                ["ads_ad"] = AdsAd,
+                ["ads_campaign"] = AdsCampaign,
+                ["ads_report"] = AdsReport,
+                ["ads_group"] = AdsGroup,
+                ["ads_creative"] = AdsCreative,
+                ["ads_insertionorder"] = AdsInsertionorder,
+                ["ads_target"] = AdsTarget,
+                ["ads_promoted"] = AdsPromoted,
+                ["analytics_property"] = AnalyticsProperty,
+                ["analytics_event"] = AnalyticsEvent,
+                ["analytics_session"] = AnalyticsSession,
+                ["analytics_visitor"] = AnalyticsVisitor,
+                ["analytics_report"] = AnalyticsReport,
+                ["forms_form"] = FormsForm,
+                ["forms_submission"] = FormsSubmission,
+                ["shipping_carrier"] = ShippingCarrier,
+                ["shipping_rate"] = ShippingRate,
+                ["shipping_shipment"] = ShippingShipment,
+                ["shipping_label"] = ShippingLabel,
+                ["shipping_tracking"] = ShippingTracking,
+                ["signing_document"] = SigningDocument,
+                ["signing_signatory"] = SigningSignatory,
+                ["signing_template"] = SigningTemplate,
+                ["clubs_group"] = ClubsGroup,
+                ["clubs_member"] = ClubsMember,
+                ["clubs_activity"] = ClubsActivity,
+                ["clubs_location"] = ClubsLocation,
+                ["clubs_event"] = ClubsEvent,
+                ["datastore_database"] = DatastoreDatabase,
+                ["datastore_table"] = DatastoreTable,
+                ["datastore_record"] = DatastoreRecord,
+                ["datastore_query"] = DatastoreQuery
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ObjectType> _values =
+            new ConcurrentDictionary<string, ObjectType>(_knownValues);
 
-                    if (enumVal is ObjectType)
-                    {
-                        return (ObjectType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ObjectType");
+        private ObjectType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ObjectType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ObjectType(value));
+        }
+
+        public static implicit operator ObjectType(string value) => Of(value);
+        public static implicit operator string(ObjectType objecttype) => objecttype.Value;
+
+        public static ObjectType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ObjectType);
+
+        public bool Equals(ObjectType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

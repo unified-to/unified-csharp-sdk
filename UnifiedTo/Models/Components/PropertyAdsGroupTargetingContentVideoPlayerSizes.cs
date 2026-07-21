@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsGroupTargetingContentVideoPlayerSizes
-    {
-        [JsonProperty("SMALL")]
-        Small,
-        [JsonProperty("LARGE")]
-        Large,
-        [JsonProperty("HD")]
-        Hd,
-    }
 
-    public static class PropertyAdsGroupTargetingContentVideoPlayerSizesExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsGroupTargetingContentVideoPlayerSizes : IEquatable<PropertyAdsGroupTargetingContentVideoPlayerSizes>
     {
-        public static string Value(this PropertyAdsGroupTargetingContentVideoPlayerSizes value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsGroupTargetingContentVideoPlayerSizes Small = new PropertyAdsGroupTargetingContentVideoPlayerSizes("SMALL");
+        public static readonly PropertyAdsGroupTargetingContentVideoPlayerSizes Large = new PropertyAdsGroupTargetingContentVideoPlayerSizes("LARGE");
+        public static readonly PropertyAdsGroupTargetingContentVideoPlayerSizes Hd = new PropertyAdsGroupTargetingContentVideoPlayerSizes("HD");
 
-        public static PropertyAdsGroupTargetingContentVideoPlayerSizes ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsGroupTargetingContentVideoPlayerSizes).GetFields())
+        private static readonly Dictionary <string, PropertyAdsGroupTargetingContentVideoPlayerSizes> _knownValues =
+            new Dictionary <string, PropertyAdsGroupTargetingContentVideoPlayerSizes> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SMALL"] = Small,
+                ["LARGE"] = Large,
+                ["HD"] = Hd
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsGroupTargetingContentVideoPlayerSizes> _values =
+            new ConcurrentDictionary<string, PropertyAdsGroupTargetingContentVideoPlayerSizes>(_knownValues);
 
-                    if (enumVal is PropertyAdsGroupTargetingContentVideoPlayerSizes)
-                    {
-                        return (PropertyAdsGroupTargetingContentVideoPlayerSizes)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsGroupTargetingContentVideoPlayerSizes");
+        private PropertyAdsGroupTargetingContentVideoPlayerSizes(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsGroupTargetingContentVideoPlayerSizes Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsGroupTargetingContentVideoPlayerSizes(value));
+        }
+
+        public static implicit operator PropertyAdsGroupTargetingContentVideoPlayerSizes(string value) => Of(value);
+        public static implicit operator string(PropertyAdsGroupTargetingContentVideoPlayerSizes propertyadsgrouptargetingcontentvideoplayersizes) => propertyadsgrouptargetingcontentvideoplayersizes.Value;
+
+        public static PropertyAdsGroupTargetingContentVideoPlayerSizes[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsGroupTargetingContentVideoPlayerSizes);
+
+        public bool Equals(PropertyAdsGroupTargetingContentVideoPlayerSizes? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

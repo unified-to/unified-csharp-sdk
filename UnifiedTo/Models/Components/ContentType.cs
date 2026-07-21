@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ContentType
-    {
-        [JsonProperty("HTML")]
-        Html,
-        [JsonProperty("MARKDOWN")]
-        Markdown,
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class ContentTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ContentType : IEquatable<ContentType>
     {
-        public static string Value(this ContentType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ContentType Html = new ContentType("HTML");
+        public static readonly ContentType Markdown = new ContentType("MARKDOWN");
+        public static readonly ContentType Text = new ContentType("TEXT");
+        public static readonly ContentType Other = new ContentType("OTHER");
 
-        public static ContentType ToEnum(this string value)
-        {
-            foreach(var field in typeof(ContentType).GetFields())
+        private static readonly Dictionary <string, ContentType> _knownValues =
+            new Dictionary <string, ContentType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["HTML"] = Html,
+                ["MARKDOWN"] = Markdown,
+                ["TEXT"] = Text,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ContentType> _values =
+            new ConcurrentDictionary<string, ContentType>(_knownValues);
 
-                    if (enumVal is ContentType)
-                    {
-                        return (ContentType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ContentType");
+        private ContentType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ContentType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ContentType(value));
+        }
+
+        public static implicit operator ContentType(string value) => Of(value);
+        public static implicit operator string(ContentType contenttype) => contenttype.Value;
+
+        public static ContentType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ContentType);
+
+        public bool Equals(ContentType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

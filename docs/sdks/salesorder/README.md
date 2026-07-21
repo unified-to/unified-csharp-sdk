@@ -1,5 +1,4 @@
 # Salesorder
-(*Salesorder*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -59,6 +59,7 @@ Retrieve a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingSalesorder" method="get" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -100,6 +101,7 @@ List all salesorders
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingSalesorders" method="get" path="/accounting/{connection_id}/salesorder" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -140,6 +142,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -182,6 +185,7 @@ Remove a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingSalesorder" method="delete" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -221,6 +225,7 @@ Update a salesorder
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

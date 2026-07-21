@@ -1,5 +1,16 @@
 # HrisTimeoffType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = HrisTimeoffType.Vacation;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisTimeoffType.Of("custom_value");
+```
+
 
 ## Values
 

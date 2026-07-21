@@ -1,5 +1,4 @@
 # Contact
-(*Contact*)
 
 ## Overview
 
@@ -30,6 +29,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -71,6 +71,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -112,6 +113,7 @@ Create a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -153,6 +155,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getAccountingContact" method="get" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -194,6 +197,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getCrmContact" method="get" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -235,6 +239,7 @@ Retrieve a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getUcContact" method="get" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -276,6 +281,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listAccountingContacts" method="get" path="/accounting/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -316,6 +322,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmContacts" method="get" path="/crm/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -356,6 +363,7 @@ List all contacts
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listUcContacts" method="get" path="/uc/{connection_id}/contact" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -396,6 +404,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -438,6 +447,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -480,6 +490,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -522,6 +533,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeAccountingContact" method="delete" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -561,6 +573,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeCrmContact" method="delete" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -600,6 +613,7 @@ Remove a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeUcContact" method="delete" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -639,6 +653,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -681,6 +696,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -723,6 +739,7 @@ Update a contact
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

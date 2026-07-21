@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AdsGroupType
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("IMAGE")]
-        Image,
-        [JsonProperty("VIDEO")]
-        Video,
-        [JsonProperty("RESPONSIVE")]
-        Responsive,
-        [JsonProperty("SHOPPING")]
-        Shopping,
-        [JsonProperty("APP")]
-        App,
-        [JsonProperty("CALL")]
-        Call,
-        [JsonProperty("CAROUSEL")]
-        Carousel,
-        [JsonProperty("SOCIAL")]
-        Social,
-        [JsonProperty("DISPLAY")]
-        Display,
-        [JsonProperty("SEARCH")]
-        Search,
-        [JsonProperty("AUDIO")]
-        Audio,
-        [JsonProperty("YOUTUBE")]
-        Youtube,
-    }
 
-    public static class AdsGroupTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AdsGroupType : IEquatable<AdsGroupType>
     {
-        public static string Value(this AdsGroupType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AdsGroupType Text = new AdsGroupType("TEXT");
+        public static readonly AdsGroupType Image = new AdsGroupType("IMAGE");
+        public static readonly AdsGroupType Video = new AdsGroupType("VIDEO");
+        public static readonly AdsGroupType Responsive = new AdsGroupType("RESPONSIVE");
+        public static readonly AdsGroupType Shopping = new AdsGroupType("SHOPPING");
+        public static readonly AdsGroupType App = new AdsGroupType("APP");
+        public static readonly AdsGroupType Call = new AdsGroupType("CALL");
+        public static readonly AdsGroupType Carousel = new AdsGroupType("CAROUSEL");
+        public static readonly AdsGroupType Social = new AdsGroupType("SOCIAL");
+        public static readonly AdsGroupType Display = new AdsGroupType("DISPLAY");
+        public static readonly AdsGroupType Search = new AdsGroupType("SEARCH");
+        public static readonly AdsGroupType Audio = new AdsGroupType("AUDIO");
+        public static readonly AdsGroupType Youtube = new AdsGroupType("YOUTUBE");
 
-        public static AdsGroupType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AdsGroupType).GetFields())
+        private static readonly Dictionary <string, AdsGroupType> _knownValues =
+            new Dictionary <string, AdsGroupType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["IMAGE"] = Image,
+                ["VIDEO"] = Video,
+                ["RESPONSIVE"] = Responsive,
+                ["SHOPPING"] = Shopping,
+                ["APP"] = App,
+                ["CALL"] = Call,
+                ["CAROUSEL"] = Carousel,
+                ["SOCIAL"] = Social,
+                ["DISPLAY"] = Display,
+                ["SEARCH"] = Search,
+                ["AUDIO"] = Audio,
+                ["YOUTUBE"] = Youtube
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AdsGroupType> _values =
+            new ConcurrentDictionary<string, AdsGroupType>(_knownValues);
 
-                    if (enumVal is AdsGroupType)
-                    {
-                        return (AdsGroupType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AdsGroupType");
+        private AdsGroupType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AdsGroupType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AdsGroupType(value));
+        }
+
+        public static implicit operator AdsGroupType(string value) => Of(value);
+        public static implicit operator string(AdsGroupType adsgrouptype) => adsgrouptype.Value;
+
+        public static AdsGroupType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AdsGroupType);
+
+        public bool Equals(AdsGroupType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

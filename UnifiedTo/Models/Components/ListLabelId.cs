@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum ListLabelId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class ListLabelIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class ListLabelId : IEquatable<ListLabelId>
     {
-        public static string Value(this ListLabelId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly ListLabelId SupportedRequired = new ListLabelId("supported-required");
+        public static readonly ListLabelId Supported = new ListLabelId("supported");
+        public static readonly ListLabelId NotSupported = new ListLabelId("not-supported");
 
-        public static ListLabelId ToEnum(this string value)
-        {
-            foreach(var field in typeof(ListLabelId).GetFields())
+        private static readonly Dictionary <string, ListLabelId> _knownValues =
+            new Dictionary <string, ListLabelId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, ListLabelId> _values =
+            new ConcurrentDictionary<string, ListLabelId>(_knownValues);
 
-                    if (enumVal is ListLabelId)
-                    {
-                        return (ListLabelId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum ListLabelId");
+        private ListLabelId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static ListLabelId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new ListLabelId(value));
+        }
+
+        public static implicit operator ListLabelId(string value) => Of(value);
+        public static implicit operator string(ListLabelId listlabelid) => listlabelid.Value;
+
+        public static ListLabelId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as ListLabelId);
+
+        public bool Equals(ListLabelId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

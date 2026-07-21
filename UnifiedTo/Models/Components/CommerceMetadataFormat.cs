@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CommerceMetadataFormat
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-    }
 
-    public static class CommerceMetadataFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CommerceMetadataFormat : IEquatable<CommerceMetadataFormat>
     {
-        public static string Value(this CommerceMetadataFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CommerceMetadataFormat Text = new CommerceMetadataFormat("TEXT");
+        public static readonly CommerceMetadataFormat Number = new CommerceMetadataFormat("NUMBER");
+        public static readonly CommerceMetadataFormat Date = new CommerceMetadataFormat("DATE");
+        public static readonly CommerceMetadataFormat Boolean = new CommerceMetadataFormat("BOOLEAN");
+        public static readonly CommerceMetadataFormat File = new CommerceMetadataFormat("FILE");
+        public static readonly CommerceMetadataFormat Textarea = new CommerceMetadataFormat("TEXTAREA");
+        public static readonly CommerceMetadataFormat SingleSelect = new CommerceMetadataFormat("SINGLE_SELECT");
+        public static readonly CommerceMetadataFormat MultipleSelect = new CommerceMetadataFormat("MULTIPLE_SELECT");
+        public static readonly CommerceMetadataFormat Measurement = new CommerceMetadataFormat("MEASUREMENT");
+        public static readonly CommerceMetadataFormat Price = new CommerceMetadataFormat("PRICE");
+        public static readonly CommerceMetadataFormat YesNo = new CommerceMetadataFormat("YES_NO");
+        public static readonly CommerceMetadataFormat Currency = new CommerceMetadataFormat("CURRENCY");
+        public static readonly CommerceMetadataFormat Url = new CommerceMetadataFormat("URL");
 
-        public static CommerceMetadataFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(CommerceMetadataFormat).GetFields())
+        private static readonly Dictionary <string, CommerceMetadataFormat> _knownValues =
+            new Dictionary <string, CommerceMetadataFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["MEASUREMENT"] = Measurement,
+                ["PRICE"] = Price,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CommerceMetadataFormat> _values =
+            new ConcurrentDictionary<string, CommerceMetadataFormat>(_knownValues);
 
-                    if (enumVal is CommerceMetadataFormat)
-                    {
-                        return (CommerceMetadataFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CommerceMetadataFormat");
+        private CommerceMetadataFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CommerceMetadataFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CommerceMetadataFormat(value));
+        }
+
+        public static implicit operator CommerceMetadataFormat(string value) => Of(value);
+        public static implicit operator string(CommerceMetadataFormat commercemetadataformat) => commercemetadataformat.Value;
+
+        public static CommerceMetadataFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CommerceMetadataFormat);
+
+        public bool Equals(CommerceMetadataFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,18 +11,19 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class AtsOffer
     {
-
         [JsonProperty("accepted_at")]
         public DateTime? AcceptedAt { get; set; }
 
         /// <summary>
-        /// compensation details for the offer
+        /// compensation details for the offer.
         /// </summary>
         [JsonProperty("compensation")]
         public List<AtsCompensation>? Compensation { get; set; }

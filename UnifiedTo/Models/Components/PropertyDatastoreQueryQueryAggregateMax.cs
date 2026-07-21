@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class PropertyDatastoreQueryQueryAggregateMax
     {
-
         [JsonProperty("alias")]
         public string? Alias { get; set; }
 

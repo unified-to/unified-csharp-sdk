@@ -1,5 +1,16 @@
 # HrisDeductionFrequency
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = HrisDeductionFrequency.OneTime;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisDeductionFrequency.Of("custom_value");
+```
+
 
 ## Values
 

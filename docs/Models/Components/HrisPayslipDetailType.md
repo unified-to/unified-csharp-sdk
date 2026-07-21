@@ -1,5 +1,16 @@
 # HrisPayslipDetailType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = HrisPayslipDetailType.EarningSalary;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = HrisPayslipDetailType.Of("custom_value");
+```
+
 
 ## Values
 

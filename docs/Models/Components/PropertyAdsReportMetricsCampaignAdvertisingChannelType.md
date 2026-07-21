@@ -1,5 +1,16 @@
 # PropertyAdsReportMetricsCampaignAdvertisingChannelType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyAdsReportMetricsCampaignAdvertisingChannelType.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyAdsReportMetricsCampaignAdvertisingChannelType.Of("custom_value");
+```
+
 
 ## Values
 

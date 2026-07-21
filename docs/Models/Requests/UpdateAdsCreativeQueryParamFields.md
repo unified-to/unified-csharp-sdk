@@ -1,5 +1,13 @@
 # UpdateAdsCreativeQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAdsCreativeQueryParamFields.Id;
+```
+
 
 ## Values
 

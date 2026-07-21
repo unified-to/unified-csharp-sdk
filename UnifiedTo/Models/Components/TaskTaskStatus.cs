@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum TaskTaskStatus
-    {
-        [JsonProperty("OPENED")]
-        Opened,
-        [JsonProperty("IN_PROGRESS")]
-        InProgress,
-        [JsonProperty("COMPLETED")]
-        Completed,
-    }
 
-    public static class TaskTaskStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class TaskTaskStatus : IEquatable<TaskTaskStatus>
     {
-        public static string Value(this TaskTaskStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly TaskTaskStatus Opened = new TaskTaskStatus("OPENED");
+        public static readonly TaskTaskStatus InProgress = new TaskTaskStatus("IN_PROGRESS");
+        public static readonly TaskTaskStatus Completed = new TaskTaskStatus("COMPLETED");
 
-        public static TaskTaskStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(TaskTaskStatus).GetFields())
+        private static readonly Dictionary <string, TaskTaskStatus> _knownValues =
+            new Dictionary <string, TaskTaskStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["OPENED"] = Opened,
+                ["IN_PROGRESS"] = InProgress,
+                ["COMPLETED"] = Completed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, TaskTaskStatus> _values =
+            new ConcurrentDictionary<string, TaskTaskStatus>(_knownValues);
 
-                    if (enumVal is TaskTaskStatus)
-                    {
-                        return (TaskTaskStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum TaskTaskStatus");
+        private TaskTaskStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static TaskTaskStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new TaskTaskStatus(value));
+        }
+
+        public static implicit operator TaskTaskStatus(string value) => Of(value);
+        public static implicit operator string(TaskTaskStatus tasktaskstatus) => tasktaskstatus.Value;
+
+        public static TaskTaskStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as TaskTaskStatus);
+
+        public bool Equals(TaskTaskStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

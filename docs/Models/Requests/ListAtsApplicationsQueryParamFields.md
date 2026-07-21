@@ -1,5 +1,13 @@
 # ListAtsApplicationsQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListAtsApplicationsQueryParamFields.Id;
+```
+
 
 ## Values
 

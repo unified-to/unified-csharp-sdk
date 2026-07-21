@@ -1,5 +1,16 @@
 # ListCarrierId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListCarrierId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListCarrierId.Of("custom_value");
+```
+
 
 ## Values
 

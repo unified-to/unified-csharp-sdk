@@ -1,5 +1,13 @@
 # UpdateVerificationRequestQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateVerificationRequestQueryParamFields.Id;
+```
+
 
 ## Values
 

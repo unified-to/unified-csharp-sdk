@@ -1,5 +1,13 @@
 # PatchDatastoreRecordQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchDatastoreRecordQueryParamFields.Id;
+```
+
 
 ## Values
 

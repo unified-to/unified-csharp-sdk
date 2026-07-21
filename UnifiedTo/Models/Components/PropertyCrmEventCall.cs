@@ -12,13 +12,12 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// The call object, when type = call
+    /// The call object, when type = call.
     /// </summary>
     public class PropertyCrmEventCall
     {
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

@@ -1,5 +1,13 @@
 # CreateHrisBenefitQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateHrisBenefitQueryParamFields.Id;
+```
+
 
 ## Values
 

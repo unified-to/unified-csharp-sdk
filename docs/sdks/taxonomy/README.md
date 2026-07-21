@@ -1,5 +1,4 @@
 # Taxonomy
-(*Taxonomy*)
 
 ## Overview
 
@@ -14,6 +13,7 @@ Retrieve a taxonomy
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getHrisTaxonomy" method="get" path="/hris/{connection_id}/taxonomy/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -55,6 +55,7 @@ List all taxonomies
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listHrisTaxonomies" method="get" path="/hris/{connection_id}/taxonomy" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

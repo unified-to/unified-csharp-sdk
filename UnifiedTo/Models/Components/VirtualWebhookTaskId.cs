@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VirtualWebhookTaskId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class VirtualWebhookTaskIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VirtualWebhookTaskId : IEquatable<VirtualWebhookTaskId>
     {
-        public static string Value(this VirtualWebhookTaskId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VirtualWebhookTaskId SupportedRequired = new VirtualWebhookTaskId("supported-required");
+        public static readonly VirtualWebhookTaskId Supported = new VirtualWebhookTaskId("supported");
+        public static readonly VirtualWebhookTaskId NotSupported = new VirtualWebhookTaskId("not-supported");
 
-        public static VirtualWebhookTaskId ToEnum(this string value)
-        {
-            foreach(var field in typeof(VirtualWebhookTaskId).GetFields())
+        private static readonly Dictionary <string, VirtualWebhookTaskId> _knownValues =
+            new Dictionary <string, VirtualWebhookTaskId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VirtualWebhookTaskId> _values =
+            new ConcurrentDictionary<string, VirtualWebhookTaskId>(_knownValues);
 
-                    if (enumVal is VirtualWebhookTaskId)
-                    {
-                        return (VirtualWebhookTaskId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VirtualWebhookTaskId");
+        private VirtualWebhookTaskId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VirtualWebhookTaskId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VirtualWebhookTaskId(value));
+        }
+
+        public static implicit operator VirtualWebhookTaskId(string value) => Of(value);
+        public static implicit operator string(VirtualWebhookTaskId virtualwebhooktaskid) => virtualwebhooktaskid.Value;
+
+        public static VirtualWebhookTaskId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VirtualWebhookTaskId);
+
+        public bool Equals(VirtualWebhookTaskId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

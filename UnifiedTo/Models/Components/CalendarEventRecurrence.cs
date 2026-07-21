@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class CalendarEventRecurrence
     {
-
         [JsonProperty("count")]
         public double? Count { get; set; }
 
@@ -25,7 +26,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? EndAt { get; set; }
 
         /// <summary>
-        /// dates to exclude from the recurrence, defaults to undefined (no exclusions)
+        /// dates to exclude from the recurrence, defaults to undefined (no exclusions).
         /// </summary>
         [JsonProperty("excluded_dates")]
         public List<string>? ExcludedDates { get; set; }
@@ -34,7 +35,7 @@ namespace UnifiedTo.Models.Components
         public CalendarEventRecurrenceFrequency? Frequency { get; set; }
 
         /// <summary>
-        /// dates to include in the recurrence, defaults to undefined (no inclusions)
+        /// dates to include in the recurrence, defaults to undefined (no inclusions).
         /// </summary>
         [JsonProperty("included_dates")]
         public List<string>? IncludedDates { get; set; }
@@ -43,19 +44,19 @@ namespace UnifiedTo.Models.Components
         public double? Interval { get; set; }
 
         /// <summary>
-        /// days of the week to repeat on, defaults to undefined (every day), only used if frequency is WEEKLY
+        /// days of the week to repeat on, defaults to undefined (every day), only used if frequency is WEEKLY.
         /// </summary>
         [JsonProperty("on_days")]
         public List<PropertyCalendarEventRecurrenceOnDays>? OnDays { get; set; }
 
         /// <summary>
-        /// days of the month to repeat on, defaults to undefined (every day), only used if frequency is MONTHLY
+        /// days of the month to repeat on, defaults to undefined (every day), only used if frequency is MONTHLY.
         /// </summary>
         [JsonProperty("on_month_days")]
         public List<double>? OnMonthDays { get; set; }
 
         /// <summary>
-        /// months of the year to repeat on, defaults to undefined (every month), only used if frequency is YEARLY, January is 1
+        /// months of the year to repeat on, defaults to undefined (every month), only used if frequency is YEARLY, January is 1.
         /// </summary>
         [JsonProperty("on_months")]
         public List<double>? OnMonths { get; set; }
@@ -67,7 +68,7 @@ namespace UnifiedTo.Models.Components
         public List<double>? OnWeeks { get; set; }
 
         /// <summary>
-        /// days of the year to repeat on, defaults to undefined (every day), only used if frequency is YEARLY
+        /// days of the year to repeat on, defaults to undefined (every day), only used if frequency is YEARLY.
         /// </summary>
         [JsonProperty("on_year_days")]
         public List<double>? OnYearDays { get; set; }

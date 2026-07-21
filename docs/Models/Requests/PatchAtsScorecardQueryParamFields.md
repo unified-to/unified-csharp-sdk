@@ -1,5 +1,13 @@
 # PatchAtsScorecardQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAtsScorecardQueryParamFields.Id;
+```
+
 
 ## Values
 

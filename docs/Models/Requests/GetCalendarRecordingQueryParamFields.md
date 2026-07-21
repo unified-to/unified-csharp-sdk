@@ -1,5 +1,13 @@
 # GetCalendarRecordingQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetCalendarRecordingQueryParamFields.Id;
+```
+
 
 ## Values
 

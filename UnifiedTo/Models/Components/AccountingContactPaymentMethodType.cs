@@ -11,61 +11,78 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum AccountingContactPaymentMethodType
-    {
-        [JsonProperty("ACH")]
-        Ach,
-        [JsonProperty("ALIPAY")]
-        Alipay,
-        [JsonProperty("CARD")]
-        Card,
-        [JsonProperty("GIROPAY")]
-        Giropay,
-        [JsonProperty("IDEAL")]
-        Ideal,
-        [JsonProperty("OTHER")]
-        Other,
-        [JsonProperty("PAYPAL")]
-        Paypal,
-        [JsonProperty("WIRE")]
-        Wire,
-        [JsonProperty("CHECK")]
-        Check,
-    }
 
-    public static class AccountingContactPaymentMethodTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class AccountingContactPaymentMethodType : IEquatable<AccountingContactPaymentMethodType>
     {
-        public static string Value(this AccountingContactPaymentMethodType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly AccountingContactPaymentMethodType Ach = new AccountingContactPaymentMethodType("ACH");
+        public static readonly AccountingContactPaymentMethodType Alipay = new AccountingContactPaymentMethodType("ALIPAY");
+        public static readonly AccountingContactPaymentMethodType Card = new AccountingContactPaymentMethodType("CARD");
+        public static readonly AccountingContactPaymentMethodType Giropay = new AccountingContactPaymentMethodType("GIROPAY");
+        public static readonly AccountingContactPaymentMethodType Ideal = new AccountingContactPaymentMethodType("IDEAL");
+        public static readonly AccountingContactPaymentMethodType Other = new AccountingContactPaymentMethodType("OTHER");
+        public static readonly AccountingContactPaymentMethodType Paypal = new AccountingContactPaymentMethodType("PAYPAL");
+        public static readonly AccountingContactPaymentMethodType Wire = new AccountingContactPaymentMethodType("WIRE");
+        public static readonly AccountingContactPaymentMethodType Check = new AccountingContactPaymentMethodType("CHECK");
 
-        public static AccountingContactPaymentMethodType ToEnum(this string value)
-        {
-            foreach(var field in typeof(AccountingContactPaymentMethodType).GetFields())
+        private static readonly Dictionary <string, AccountingContactPaymentMethodType> _knownValues =
+            new Dictionary <string, AccountingContactPaymentMethodType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACH"] = Ach,
+                ["ALIPAY"] = Alipay,
+                ["CARD"] = Card,
+                ["GIROPAY"] = Giropay,
+                ["IDEAL"] = Ideal,
+                ["OTHER"] = Other,
+                ["PAYPAL"] = Paypal,
+                ["WIRE"] = Wire,
+                ["CHECK"] = Check
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, AccountingContactPaymentMethodType> _values =
+            new ConcurrentDictionary<string, AccountingContactPaymentMethodType>(_knownValues);
 
-                    if (enumVal is AccountingContactPaymentMethodType)
-                    {
-                        return (AccountingContactPaymentMethodType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum AccountingContactPaymentMethodType");
+        private AccountingContactPaymentMethodType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static AccountingContactPaymentMethodType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new AccountingContactPaymentMethodType(value));
+        }
+
+        public static implicit operator AccountingContactPaymentMethodType(string value) => Of(value);
+        public static implicit operator string(AccountingContactPaymentMethodType accountingcontactpaymentmethodtype) => accountingcontactpaymentmethodtype.Value;
+
+        public static AccountingContactPaymentMethodType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as AccountingContactPaymentMethodType);
+
+        public bool Equals(AccountingContactPaymentMethodType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

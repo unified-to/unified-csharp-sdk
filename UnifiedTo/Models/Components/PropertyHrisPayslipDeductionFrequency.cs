@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyHrisPayslipDeductionFrequency
-    {
-        [JsonProperty("ONE_TIME")]
-        OneTime,
-        [JsonProperty("DAY")]
-        Day,
-        [JsonProperty("QUARTER")]
-        Quarter,
-        [JsonProperty("YEAR")]
-        Year,
-        [JsonProperty("HOUR")]
-        Hour,
-        [JsonProperty("MONTH")]
-        Month,
-        [JsonProperty("WEEK")]
-        Week,
-    }
 
-    public static class PropertyHrisPayslipDeductionFrequencyExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyHrisPayslipDeductionFrequency : IEquatable<PropertyHrisPayslipDeductionFrequency>
     {
-        public static string Value(this PropertyHrisPayslipDeductionFrequency value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyHrisPayslipDeductionFrequency OneTime = new PropertyHrisPayslipDeductionFrequency("ONE_TIME");
+        public static readonly PropertyHrisPayslipDeductionFrequency Day = new PropertyHrisPayslipDeductionFrequency("DAY");
+        public static readonly PropertyHrisPayslipDeductionFrequency Quarter = new PropertyHrisPayslipDeductionFrequency("QUARTER");
+        public static readonly PropertyHrisPayslipDeductionFrequency Year = new PropertyHrisPayslipDeductionFrequency("YEAR");
+        public static readonly PropertyHrisPayslipDeductionFrequency Hour = new PropertyHrisPayslipDeductionFrequency("HOUR");
+        public static readonly PropertyHrisPayslipDeductionFrequency Month = new PropertyHrisPayslipDeductionFrequency("MONTH");
+        public static readonly PropertyHrisPayslipDeductionFrequency Week = new PropertyHrisPayslipDeductionFrequency("WEEK");
 
-        public static PropertyHrisPayslipDeductionFrequency ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyHrisPayslipDeductionFrequency).GetFields())
+        private static readonly Dictionary <string, PropertyHrisPayslipDeductionFrequency> _knownValues =
+            new Dictionary <string, PropertyHrisPayslipDeductionFrequency> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ONE_TIME"] = OneTime,
+                ["DAY"] = Day,
+                ["QUARTER"] = Quarter,
+                ["YEAR"] = Year,
+                ["HOUR"] = Hour,
+                ["MONTH"] = Month,
+                ["WEEK"] = Week
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyHrisPayslipDeductionFrequency> _values =
+            new ConcurrentDictionary<string, PropertyHrisPayslipDeductionFrequency>(_knownValues);
 
-                    if (enumVal is PropertyHrisPayslipDeductionFrequency)
-                    {
-                        return (PropertyHrisPayslipDeductionFrequency)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyHrisPayslipDeductionFrequency");
+        private PropertyHrisPayslipDeductionFrequency(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyHrisPayslipDeductionFrequency Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyHrisPayslipDeductionFrequency(value));
+        }
+
+        public static implicit operator PropertyHrisPayslipDeductionFrequency(string value) => Of(value);
+        public static implicit operator string(PropertyHrisPayslipDeductionFrequency propertyhrispayslipdeductionfrequency) => propertyhrispayslipdeductionfrequency.Value;
+
+        public static PropertyHrisPayslipDeductionFrequency[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyHrisPayslipDeductionFrequency);
+
+        public bool Equals(PropertyHrisPayslipDeductionFrequency? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,53 +11,70 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyUcCallTelephoneType
-    {
-        [JsonProperty("WORK")]
-        Work,
-        [JsonProperty("HOME")]
-        Home,
-        [JsonProperty("OTHER")]
-        Other,
-        [JsonProperty("FAX")]
-        Fax,
-        [JsonProperty("MOBILE")]
-        Mobile,
-    }
 
-    public static class PropertyUcCallTelephoneTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyUcCallTelephoneType : IEquatable<PropertyUcCallTelephoneType>
     {
-        public static string Value(this PropertyUcCallTelephoneType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyUcCallTelephoneType Work = new PropertyUcCallTelephoneType("WORK");
+        public static readonly PropertyUcCallTelephoneType Home = new PropertyUcCallTelephoneType("HOME");
+        public static readonly PropertyUcCallTelephoneType Other = new PropertyUcCallTelephoneType("OTHER");
+        public static readonly PropertyUcCallTelephoneType Fax = new PropertyUcCallTelephoneType("FAX");
+        public static readonly PropertyUcCallTelephoneType Mobile = new PropertyUcCallTelephoneType("MOBILE");
 
-        public static PropertyUcCallTelephoneType ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyUcCallTelephoneType).GetFields())
+        private static readonly Dictionary <string, PropertyUcCallTelephoneType> _knownValues =
+            new Dictionary <string, PropertyUcCallTelephoneType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["WORK"] = Work,
+                ["HOME"] = Home,
+                ["OTHER"] = Other,
+                ["FAX"] = Fax,
+                ["MOBILE"] = Mobile
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyUcCallTelephoneType> _values =
+            new ConcurrentDictionary<string, PropertyUcCallTelephoneType>(_knownValues);
 
-                    if (enumVal is PropertyUcCallTelephoneType)
-                    {
-                        return (PropertyUcCallTelephoneType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyUcCallTelephoneType");
+        private PropertyUcCallTelephoneType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyUcCallTelephoneType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyUcCallTelephoneType(value));
+        }
+
+        public static implicit operator PropertyUcCallTelephoneType(string value) => Of(value);
+        public static implicit operator string(PropertyUcCallTelephoneType propertyuccalltelephonetype) => propertyuccalltelephonetype.Value;
+
+        public static PropertyUcCallTelephoneType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyUcCallTelephoneType);
+
+        public bool Equals(PropertyUcCallTelephoneType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

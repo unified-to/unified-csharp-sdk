@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CrmEventType
-    {
-        [JsonProperty("NOTE")]
-        Note,
-        [JsonProperty("EMAIL")]
-        Email,
-        [JsonProperty("TASK")]
-        Task,
-        [JsonProperty("MEETING")]
-        Meeting,
-        [JsonProperty("CALL")]
-        Call,
-        [JsonProperty("MARKETING_EMAIL")]
-        MarketingEmail,
-        [JsonProperty("FORM")]
-        Form,
-        [JsonProperty("PAGE_VIEW")]
-        PageView,
-    }
 
-    public static class CrmEventTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CrmEventType : IEquatable<CrmEventType>
     {
-        public static string Value(this CrmEventType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CrmEventType Note = new CrmEventType("NOTE");
+        public static readonly CrmEventType Email = new CrmEventType("EMAIL");
+        public static readonly CrmEventType Task = new CrmEventType("TASK");
+        public static readonly CrmEventType Meeting = new CrmEventType("MEETING");
+        public static readonly CrmEventType Call = new CrmEventType("CALL");
+        public static readonly CrmEventType MarketingEmail = new CrmEventType("MARKETING_EMAIL");
+        public static readonly CrmEventType Form = new CrmEventType("FORM");
+        public static readonly CrmEventType PageView = new CrmEventType("PAGE_VIEW");
 
-        public static CrmEventType ToEnum(this string value)
-        {
-            foreach(var field in typeof(CrmEventType).GetFields())
+        private static readonly Dictionary <string, CrmEventType> _knownValues =
+            new Dictionary <string, CrmEventType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["NOTE"] = Note,
+                ["EMAIL"] = Email,
+                ["TASK"] = Task,
+                ["MEETING"] = Meeting,
+                ["CALL"] = Call,
+                ["MARKETING_EMAIL"] = MarketingEmail,
+                ["FORM"] = Form,
+                ["PAGE_VIEW"] = PageView
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CrmEventType> _values =
+            new ConcurrentDictionary<string, CrmEventType>(_knownValues);
 
-                    if (enumVal is CrmEventType)
-                    {
-                        return (CrmEventType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CrmEventType");
+        private CrmEventType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CrmEventType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CrmEventType(value));
+        }
+
+        public static implicit operator CrmEventType(string value) => Of(value);
+        public static implicit operator string(CrmEventType crmeventtype) => crmeventtype.Value;
+
+        public static CrmEventType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CrmEventType);
+
+        public bool Equals(CrmEventType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

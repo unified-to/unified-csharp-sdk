@@ -1,5 +1,13 @@
 # GetAdsInsertionorderQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAdsInsertionorderQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -11,24 +11,25 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// SummaryClub / DetailedClub, but generic across providers (TeamSnap team, PlayHQ org, etc.).
     /// </summary>
     public class ClubsGroup
     {
-
         /// <summary>
-        /// The activity types the group focuses on
+        /// The activity types the group focuses on.
         /// </summary>
         [JsonProperty("activity_types")]
         public List<string>? ActivityTypes { get; set; }
 
         /// <summary>
-        /// The group&apos;s address
+        /// The group's address.
         /// </summary>
         [JsonProperty("address")]
         public PropertyClubsGroupAddress? Address { get; set; }

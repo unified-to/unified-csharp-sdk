@@ -1,5 +1,13 @@
 # CreateCalendarCalendarQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateCalendarCalendarQueryParamFields.Id;
+```
+
 
 ## Values
 

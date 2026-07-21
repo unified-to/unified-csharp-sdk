@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Recommendation
-    {
-        [JsonProperty("DEFINITELY_NO")]
-        DefinitelyNo,
-        [JsonProperty("NO")]
-        No,
-        [JsonProperty("YES")]
-        Yes,
-        [JsonProperty("STRONG_YES")]
-        StrongYes,
-    }
 
-    public static class RecommendationExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Recommendation : IEquatable<Recommendation>
     {
-        public static string Value(this Recommendation value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Recommendation DefinitelyNo = new Recommendation("DEFINITELY_NO");
+        public static readonly Recommendation No = new Recommendation("NO");
+        public static readonly Recommendation Yes = new Recommendation("YES");
+        public static readonly Recommendation StrongYes = new Recommendation("STRONG_YES");
 
-        public static Recommendation ToEnum(this string value)
-        {
-            foreach(var field in typeof(Recommendation).GetFields())
+        private static readonly Dictionary <string, Recommendation> _knownValues =
+            new Dictionary <string, Recommendation> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["DEFINITELY_NO"] = DefinitelyNo,
+                ["NO"] = No,
+                ["YES"] = Yes,
+                ["STRONG_YES"] = StrongYes
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Recommendation> _values =
+            new ConcurrentDictionary<string, Recommendation>(_knownValues);
 
-                    if (enumVal is Recommendation)
-                    {
-                        return (Recommendation)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Recommendation");
+        private Recommendation(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Recommendation Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Recommendation(value));
+        }
+
+        public static implicit operator Recommendation(string value) => Of(value);
+        public static implicit operator string(Recommendation recommendation) => recommendation.Value;
+
+        public static Recommendation[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Recommendation);
+
+        public bool Equals(Recommendation? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

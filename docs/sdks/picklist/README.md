@@ -1,5 +1,4 @@
 # Picklist
-(*Picklist*)
 
 ## Overview
 
@@ -13,6 +12,7 @@ List all picklists
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listCrmPicklists" method="get" path="/crm/{connection_id}/picklist" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

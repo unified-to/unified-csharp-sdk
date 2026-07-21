@@ -1,5 +1,4 @@
 # Commit
-(*Commit*)
 
 ## Overview
 
@@ -18,6 +17,7 @@ Create a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -61,6 +61,7 @@ Retrieve a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getRepoCommit" method="get" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -102,6 +103,7 @@ List all commits
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listRepoCommits" method="get" path="/repo/{connection_id}/commit" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -142,6 +144,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -186,6 +189,7 @@ Remove a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeRepoCommit" method="delete" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -225,6 +229,7 @@ Update a commit
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

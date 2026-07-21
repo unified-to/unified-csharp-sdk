@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum IssueStatus
-    {
-        [JsonProperty("COMPLETED")]
-        Completed,
-        [JsonProperty("NEW")]
-        New,
-        [JsonProperty("ROADMAP")]
-        Roadmap,
-        [JsonProperty("IN_PROGRESS")]
-        InProgress,
-        [JsonProperty("ON_HOLD")]
-        OnHold,
-        [JsonProperty("VALIDATING")]
-        Validating,
-        [JsonProperty("REJECTED")]
-        Rejected,
-    }
 
-    public static class IssueStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class IssueStatus : IEquatable<IssueStatus>
     {
-        public static string Value(this IssueStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly IssueStatus Completed = new IssueStatus("COMPLETED");
+        public static readonly IssueStatus New = new IssueStatus("NEW");
+        public static readonly IssueStatus Roadmap = new IssueStatus("ROADMAP");
+        public static readonly IssueStatus InProgress = new IssueStatus("IN_PROGRESS");
+        public static readonly IssueStatus OnHold = new IssueStatus("ON_HOLD");
+        public static readonly IssueStatus Validating = new IssueStatus("VALIDATING");
+        public static readonly IssueStatus Rejected = new IssueStatus("REJECTED");
 
-        public static IssueStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(IssueStatus).GetFields())
+        private static readonly Dictionary <string, IssueStatus> _knownValues =
+            new Dictionary <string, IssueStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["COMPLETED"] = Completed,
+                ["NEW"] = New,
+                ["ROADMAP"] = Roadmap,
+                ["IN_PROGRESS"] = InProgress,
+                ["ON_HOLD"] = OnHold,
+                ["VALIDATING"] = Validating,
+                ["REJECTED"] = Rejected
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, IssueStatus> _values =
+            new ConcurrentDictionary<string, IssueStatus>(_knownValues);
 
-                    if (enumVal is IssueStatus)
-                    {
-                        return (IssueStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum IssueStatus");
+        private IssueStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static IssueStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new IssueStatus(value));
+        }
+
+        public static implicit operator IssueStatus(string value) => Of(value);
+        public static implicit operator string(IssueStatus issuestatus) => issuestatus.Value;
+
+        public static IssueStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as IssueStatus);
+
+        public bool Equals(IssueStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

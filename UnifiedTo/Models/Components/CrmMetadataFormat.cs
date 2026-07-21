@@ -11,69 +11,86 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum CrmMetadataFormat
-    {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
-    }
 
-    public static class CrmMetadataFormatExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class CrmMetadataFormat : IEquatable<CrmMetadataFormat>
     {
-        public static string Value(this CrmMetadataFormat value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly CrmMetadataFormat Text = new CrmMetadataFormat("TEXT");
+        public static readonly CrmMetadataFormat Number = new CrmMetadataFormat("NUMBER");
+        public static readonly CrmMetadataFormat Date = new CrmMetadataFormat("DATE");
+        public static readonly CrmMetadataFormat Boolean = new CrmMetadataFormat("BOOLEAN");
+        public static readonly CrmMetadataFormat File = new CrmMetadataFormat("FILE");
+        public static readonly CrmMetadataFormat Textarea = new CrmMetadataFormat("TEXTAREA");
+        public static readonly CrmMetadataFormat SingleSelect = new CrmMetadataFormat("SINGLE_SELECT");
+        public static readonly CrmMetadataFormat MultipleSelect = new CrmMetadataFormat("MULTIPLE_SELECT");
+        public static readonly CrmMetadataFormat Measurement = new CrmMetadataFormat("MEASUREMENT");
+        public static readonly CrmMetadataFormat Price = new CrmMetadataFormat("PRICE");
+        public static readonly CrmMetadataFormat YesNo = new CrmMetadataFormat("YES_NO");
+        public static readonly CrmMetadataFormat Currency = new CrmMetadataFormat("CURRENCY");
+        public static readonly CrmMetadataFormat Url = new CrmMetadataFormat("URL");
 
-        public static CrmMetadataFormat ToEnum(this string value)
-        {
-            foreach(var field in typeof(CrmMetadataFormat).GetFields())
+        private static readonly Dictionary <string, CrmMetadataFormat> _knownValues =
+            new Dictionary <string, CrmMetadataFormat> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["TEXT"] = Text,
+                ["NUMBER"] = Number,
+                ["DATE"] = Date,
+                ["BOOLEAN"] = Boolean,
+                ["FILE"] = File,
+                ["TEXTAREA"] = Textarea,
+                ["SINGLE_SELECT"] = SingleSelect,
+                ["MULTIPLE_SELECT"] = MultipleSelect,
+                ["MEASUREMENT"] = Measurement,
+                ["PRICE"] = Price,
+                ["YES_NO"] = YesNo,
+                ["CURRENCY"] = Currency,
+                ["URL"] = Url
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, CrmMetadataFormat> _values =
+            new ConcurrentDictionary<string, CrmMetadataFormat>(_knownValues);
 
-                    if (enumVal is CrmMetadataFormat)
-                    {
-                        return (CrmMetadataFormat)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum CrmMetadataFormat");
+        private CrmMetadataFormat(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static CrmMetadataFormat Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new CrmMetadataFormat(value));
+        }
+
+        public static implicit operator CrmMetadataFormat(string value) => Of(value);
+        public static implicit operator string(CrmMetadataFormat crmmetadataformat) => crmmetadataformat.Value;
+
+        public static CrmMetadataFormat[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as CrmMetadataFormat);
+
+        public bool Equals(CrmMetadataFormat? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -11,51 +11,68 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum RegistrationStatus
-    {
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("APPROVED")]
-        Approved,
-        [JsonProperty("REJECTED")]
-        Rejected,
-        [JsonProperty("CANCELLED")]
-        Cancelled,
-    }
 
-    public static class RegistrationStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class RegistrationStatus : IEquatable<RegistrationStatus>
     {
-        public static string Value(this RegistrationStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly RegistrationStatus Pending = new RegistrationStatus("PENDING");
+        public static readonly RegistrationStatus Approved = new RegistrationStatus("APPROVED");
+        public static readonly RegistrationStatus Rejected = new RegistrationStatus("REJECTED");
+        public static readonly RegistrationStatus Cancelled = new RegistrationStatus("CANCELLED");
 
-        public static RegistrationStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(RegistrationStatus).GetFields())
+        private static readonly Dictionary <string, RegistrationStatus> _knownValues =
+            new Dictionary <string, RegistrationStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["PENDING"] = Pending,
+                ["APPROVED"] = Approved,
+                ["REJECTED"] = Rejected,
+                ["CANCELLED"] = Cancelled
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, RegistrationStatus> _values =
+            new ConcurrentDictionary<string, RegistrationStatus>(_knownValues);
 
-                    if (enumVal is RegistrationStatus)
-                    {
-                        return (RegistrationStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum RegistrationStatus");
+        private RegistrationStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static RegistrationStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new RegistrationStatus(value));
+        }
+
+        public static implicit operator RegistrationStatus(string value) => Of(value);
+        public static implicit operator string(RegistrationStatus registrationstatus) => registrationstatus.Value;
+
+        public static RegistrationStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as RegistrationStatus);
+
+        public bool Equals(RegistrationStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

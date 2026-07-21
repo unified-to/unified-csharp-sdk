@@ -11,10 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
-    
+
     public class AtsScorecardQuestion
     {
-
         [JsonProperty("answer")]
         public string? Answer { get; set; }
 

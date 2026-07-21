@@ -1,5 +1,13 @@
 # ListTicketingCategoriesQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = ListTicketingCategoriesQueryParamFields.Id;
+```
+
 
 ## Values
 

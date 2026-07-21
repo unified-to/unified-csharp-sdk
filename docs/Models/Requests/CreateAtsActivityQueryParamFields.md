@@ -1,5 +1,13 @@
 # CreateAtsActivityQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateAtsActivityQueryParamFields.Id;
+```
+
 
 ## Values
 

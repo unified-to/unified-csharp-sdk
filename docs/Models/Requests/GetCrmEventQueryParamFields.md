@@ -1,5 +1,13 @@
 # GetCrmEventQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetCrmEventQueryParamFields.Id;
+```
+
 
 ## Values
 

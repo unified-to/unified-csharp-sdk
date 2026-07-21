@@ -1,5 +1,13 @@
 # GetRepoOrganizationQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetRepoOrganizationQueryParamFields.Id;
+```
+
 
 ## Values
 

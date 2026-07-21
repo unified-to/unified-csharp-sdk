@@ -1,5 +1,16 @@
 # PropertyConnectionPermissions
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyConnectionPermissions.AccountingAccountRead;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyConnectionPermissions.Of("custom_value");
+```
+
 
 ## Values
 
@@ -165,6 +176,7 @@
 | `MessagingMessageRead`         | messaging_message_read         |
 | `MessagingMessageWrite`        | messaging_message_write        |
 | `MessagingChannelRead`         | messaging_channel_read         |
+| `MessagingChannelWrite`        | messaging_channel_write        |
 | `MessagingEventRead`           | messaging_event_read           |
 | `MessagingEventWrite`          | messaging_event_write          |
 | `KmsSpaceRead`                 | kms_space_read                 |

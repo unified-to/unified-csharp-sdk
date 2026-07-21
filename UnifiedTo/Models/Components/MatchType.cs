@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum MatchType
-    {
-        [JsonProperty("BROAD")]
-        Broad,
-        [JsonProperty("PHRASE")]
-        Phrase,
-        [JsonProperty("EXACT")]
-        Exact,
-    }
 
-    public static class MatchTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class MatchType : IEquatable<MatchType>
     {
-        public static string Value(this MatchType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly MatchType Broad = new MatchType("BROAD");
+        public static readonly MatchType Phrase = new MatchType("PHRASE");
+        public static readonly MatchType Exact = new MatchType("EXACT");
 
-        public static MatchType ToEnum(this string value)
-        {
-            foreach(var field in typeof(MatchType).GetFields())
+        private static readonly Dictionary <string, MatchType> _knownValues =
+            new Dictionary <string, MatchType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["BROAD"] = Broad,
+                ["PHRASE"] = Phrase,
+                ["EXACT"] = Exact
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, MatchType> _values =
+            new ConcurrentDictionary<string, MatchType>(_knownValues);
 
-                    if (enumVal is MatchType)
-                    {
-                        return (MatchType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum MatchType");
+        private MatchType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static MatchType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new MatchType(value));
+        }
+
+        public static implicit operator MatchType(string value) => Of(value);
+        public static implicit operator string(MatchType matchtype) => matchtype.Value;
+
+        public static MatchType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as MatchType);
+
+        public bool Equals(MatchType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

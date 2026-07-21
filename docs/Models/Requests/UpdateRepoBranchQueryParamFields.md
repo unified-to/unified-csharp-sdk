@@ -1,5 +1,13 @@
 # UpdateRepoBranchQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateRepoBranchQueryParamFields.Id;
+```
+
 
 ## Values
 

@@ -1,5 +1,16 @@
 # AdType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AdType.Text;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AdType.Of("custom_value");
+```
+
 
 ## Values
 

@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class UcCall
     {
-
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
@@ -43,7 +44,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? StartAt { get; set; }
 
         /// <summary>
-        /// The telephone number called
+        /// The telephone number called.
         /// </summary>
         [JsonProperty("telephone")]
         public PropertyUcCallTelephone? Telephone { get; set; }

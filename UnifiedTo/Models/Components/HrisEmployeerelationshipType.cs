@@ -11,57 +11,74 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum HrisEmployeerelationshipType
-    {
-        [JsonProperty("EMERGENCY")]
-        Emergency,
-        [JsonProperty("SPOUSE")]
-        Spouse,
-        [JsonProperty("CHILD")]
-        Child,
-        [JsonProperty("PARENT")]
-        Parent,
-        [JsonProperty("SIBLING")]
-        Sibling,
-        [JsonProperty("FRIEND")]
-        Friend,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class HrisEmployeerelationshipTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class HrisEmployeerelationshipType : IEquatable<HrisEmployeerelationshipType>
     {
-        public static string Value(this HrisEmployeerelationshipType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly HrisEmployeerelationshipType Emergency = new HrisEmployeerelationshipType("EMERGENCY");
+        public static readonly HrisEmployeerelationshipType Spouse = new HrisEmployeerelationshipType("SPOUSE");
+        public static readonly HrisEmployeerelationshipType Child = new HrisEmployeerelationshipType("CHILD");
+        public static readonly HrisEmployeerelationshipType Parent = new HrisEmployeerelationshipType("PARENT");
+        public static readonly HrisEmployeerelationshipType Sibling = new HrisEmployeerelationshipType("SIBLING");
+        public static readonly HrisEmployeerelationshipType Friend = new HrisEmployeerelationshipType("FRIEND");
+        public static readonly HrisEmployeerelationshipType Other = new HrisEmployeerelationshipType("OTHER");
 
-        public static HrisEmployeerelationshipType ToEnum(this string value)
-        {
-            foreach(var field in typeof(HrisEmployeerelationshipType).GetFields())
+        private static readonly Dictionary <string, HrisEmployeerelationshipType> _knownValues =
+            new Dictionary <string, HrisEmployeerelationshipType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["EMERGENCY"] = Emergency,
+                ["SPOUSE"] = Spouse,
+                ["CHILD"] = Child,
+                ["PARENT"] = Parent,
+                ["SIBLING"] = Sibling,
+                ["FRIEND"] = Friend,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, HrisEmployeerelationshipType> _values =
+            new ConcurrentDictionary<string, HrisEmployeerelationshipType>(_knownValues);
 
-                    if (enumVal is HrisEmployeerelationshipType)
-                    {
-                        return (HrisEmployeerelationshipType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum HrisEmployeerelationshipType");
+        private HrisEmployeerelationshipType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static HrisEmployeerelationshipType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new HrisEmployeerelationshipType(value));
+        }
+
+        public static implicit operator HrisEmployeerelationshipType(string value) => Of(value);
+        public static implicit operator string(HrisEmployeerelationshipType hrisemployeerelationshiptype) => hrisemployeerelationshiptype.Value;
+
+        public static HrisEmployeerelationshipType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as HrisEmployeerelationshipType);
+
+        public bool Equals(HrisEmployeerelationshipType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

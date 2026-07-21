@@ -1,5 +1,13 @@
 # PatchCrmEventQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchCrmEventQueryParamFields.Id;
+```
+
 
 ## Values
 

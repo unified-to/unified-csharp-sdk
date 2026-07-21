@@ -55,22 +55,16 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations. All operations return a response object or throw an exception.
-
-By default, an API error will raise a `UnifiedTo.Models.Errors.SDKException` exception, which has the following properties:
+[`UnifiedToError`](./UnifiedTo/Models/Errors/UnifiedToError.cs) is the base exception class for all HTTP error responses. It has the following properties:
 
 | Property      | Type                  | Description           |
 |---------------|-----------------------|-----------------------|
-| `Message`     | *string*              | The error message     |
-| `StatusCode`  | *int*                 | The HTTP status code  |
-| `RawResponse` | *HttpResponseMessage* | The raw HTTP response |
-| `Body`        | *string*              | The response content  |
-
-When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAccountingAccountAsync` method throws the following exceptions:
-
-| Error Type                           | Status Code | Content Type |
-| ------------------------------------ | ----------- | ------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX    | \*/\*        |
+| `Message`     | *string*              | Error message         |
+| `StatusCode`  | *int*                 | HTTP status code      |
+| `Headers`     | *HttpResponseHeaders* | HTTP headers          |
+| `ContentType` | *string?*             | HTTP content type     |
+| `RawResponse` | *HttpResponseMessage* | HTTP response object  |
+| `Body`        | *string*              | HTTP response body    |
 
 ### Example
 
@@ -92,15 +86,35 @@ try
 
     // handle response
 }
-catch (Exception ex)
+catch (UnifiedToError ex)  // all SDK exceptions inherit from UnifiedToError
 {
-    if (ex is UnifiedTo.Models.Errors.SDKException)
-    {
-        // Handle default exception
-        throw;
-    }
+    // ex.ToString() provides a detailed error message
+    System.Console.WriteLine(ex);
+
+    // Base exception fields
+    HttpResponseMessage rawResponse = ex.RawResponse;
+    HttpResponseHeaders headers = ex.Headers;
+    int statusCode = ex.StatusCode;
+    string? contentType = ex.ContentType;
+    var responseBody = ex.Body;
+}
+catch (System.Net.Http.HttpRequestException ex)
+{
+    // Check ex.InnerException for Network connectivity errors
 }
 ```
+
+### Error Classes
+
+**Primary exception:**
+* [`UnifiedToError`](./UnifiedTo/Models/Errors/UnifiedToError.cs): The base class for HTTP error responses.
+
+**Less common exceptions (2)**
+
+* [`System.Net.Http.HttpRequestException`](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httprequestexception): Network connectivity error. For more details about the underlying cause, inspect the `ex.InnerException`.
+
+* Inheriting from [`UnifiedToError`](./UnifiedTo/Models/Errors/UnifiedToError.cs):
+  * [`ResponseValidationError`](./UnifiedTo/Models/Errors/ResponseValidationError.cs): Thrown when the response data could not be deserialized into the expected type.
 <!-- End Error Handling [errors] -->
 
 <!-- Start Server Selection [server] -->
@@ -123,7 +137,7 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(
-    serverIndex: 2,
+    serverIndex: 0,
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     }

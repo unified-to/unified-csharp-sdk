@@ -11,16 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// `lastname` is only a single initial. We do not synthesize an id, so `id` is typically absent.
     /// </summary>
     public class ClubsMember
     {
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

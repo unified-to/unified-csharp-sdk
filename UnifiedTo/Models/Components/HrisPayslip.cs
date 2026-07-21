@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class HrisPayslip
     {
-
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
@@ -28,7 +29,7 @@ namespace UnifiedTo.Models.Components
         public string? Currency { get; set; }
 
         /// <summary>
-        /// The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+        /// The ID (and optionally name) of the employee deduction (if this detail represents a deduction).
         /// </summary>
         [JsonProperty("deduction")]
         public PropertyHrisPayslipDeduction? Deduction { get; set; }

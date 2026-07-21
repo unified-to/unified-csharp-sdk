@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Operation
-    {
-        [JsonProperty("add")]
-        Add,
-        [JsonProperty("delete")]
-        Delete,
-    }
 
-    public static class OperationExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Operation : IEquatable<Operation>
     {
-        public static string Value(this Operation value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Operation Add = new Operation("add");
+        public static readonly Operation Delete = new Operation("delete");
 
-        public static Operation ToEnum(this string value)
-        {
-            foreach(var field in typeof(Operation).GetFields())
+        private static readonly Dictionary <string, Operation> _knownValues =
+            new Dictionary <string, Operation> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["add"] = Add,
+                ["delete"] = Delete
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Operation> _values =
+            new ConcurrentDictionary<string, Operation>(_knownValues);
 
-                    if (enumVal is Operation)
-                    {
-                        return (Operation)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Operation");
+        private Operation(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Operation Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Operation(value));
+        }
+
+        public static implicit operator Operation(string value) => Of(value);
+        public static implicit operator string(Operation operation) => operation.Value;
+
+        public static Operation[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Operation);
+
+        public bool Equals(Operation? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

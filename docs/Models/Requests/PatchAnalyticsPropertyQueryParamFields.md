@@ -1,5 +1,13 @@
 # PatchAnalyticsPropertyQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAnalyticsPropertyQueryParamFields.Id;
+```
+
 
 ## Values
 

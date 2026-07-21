@@ -11,65 +11,82 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsReportMetricsGroupEffectiveStatus
-    {
-        [JsonProperty("UNSPECIFIED")]
-        Unspecified,
-        [JsonProperty("SERVING")]
-        Serving,
-        [JsonProperty("LIMITED")]
-        Limited,
-        [JsonProperty("LEARNING")]
-        Learning,
-        [JsonProperty("PAUSED")]
-        Paused,
-        [JsonProperty("PENDING")]
-        Pending,
-        [JsonProperty("ENDED")]
-        Ended,
-        [JsonProperty("MISCONFIGURED")]
-        Misconfigured,
-        [JsonProperty("NOT_ELIGIBLE")]
-        NotEligible,
-        [JsonProperty("ARCHIVED")]
-        Archived,
-        [JsonProperty("REMOVED")]
-        Removed,
-    }
 
-    public static class PropertyAdsReportMetricsGroupEffectiveStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsReportMetricsGroupEffectiveStatus : IEquatable<PropertyAdsReportMetricsGroupEffectiveStatus>
     {
-        public static string Value(this PropertyAdsReportMetricsGroupEffectiveStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Unspecified = new PropertyAdsReportMetricsGroupEffectiveStatus("UNSPECIFIED");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Serving = new PropertyAdsReportMetricsGroupEffectiveStatus("SERVING");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Limited = new PropertyAdsReportMetricsGroupEffectiveStatus("LIMITED");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Learning = new PropertyAdsReportMetricsGroupEffectiveStatus("LEARNING");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Paused = new PropertyAdsReportMetricsGroupEffectiveStatus("PAUSED");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Pending = new PropertyAdsReportMetricsGroupEffectiveStatus("PENDING");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Ended = new PropertyAdsReportMetricsGroupEffectiveStatus("ENDED");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Misconfigured = new PropertyAdsReportMetricsGroupEffectiveStatus("MISCONFIGURED");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus NotEligible = new PropertyAdsReportMetricsGroupEffectiveStatus("NOT_ELIGIBLE");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Archived = new PropertyAdsReportMetricsGroupEffectiveStatus("ARCHIVED");
+        public static readonly PropertyAdsReportMetricsGroupEffectiveStatus Removed = new PropertyAdsReportMetricsGroupEffectiveStatus("REMOVED");
 
-        public static PropertyAdsReportMetricsGroupEffectiveStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsReportMetricsGroupEffectiveStatus).GetFields())
+        private static readonly Dictionary <string, PropertyAdsReportMetricsGroupEffectiveStatus> _knownValues =
+            new Dictionary <string, PropertyAdsReportMetricsGroupEffectiveStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["UNSPECIFIED"] = Unspecified,
+                ["SERVING"] = Serving,
+                ["LIMITED"] = Limited,
+                ["LEARNING"] = Learning,
+                ["PAUSED"] = Paused,
+                ["PENDING"] = Pending,
+                ["ENDED"] = Ended,
+                ["MISCONFIGURED"] = Misconfigured,
+                ["NOT_ELIGIBLE"] = NotEligible,
+                ["ARCHIVED"] = Archived,
+                ["REMOVED"] = Removed
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsGroupEffectiveStatus> _values =
+            new ConcurrentDictionary<string, PropertyAdsReportMetricsGroupEffectiveStatus>(_knownValues);
 
-                    if (enumVal is PropertyAdsReportMetricsGroupEffectiveStatus)
-                    {
-                        return (PropertyAdsReportMetricsGroupEffectiveStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupEffectiveStatus");
+        private PropertyAdsReportMetricsGroupEffectiveStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsReportMetricsGroupEffectiveStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsReportMetricsGroupEffectiveStatus(value));
+        }
+
+        public static implicit operator PropertyAdsReportMetricsGroupEffectiveStatus(string value) => Of(value);
+        public static implicit operator string(PropertyAdsReportMetricsGroupEffectiveStatus propertyadsreportmetricsgroupeffectivestatus) => propertyadsreportmetricsgroupeffectivestatus.Value;
+
+        public static PropertyAdsReportMetricsGroupEffectiveStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsReportMetricsGroupEffectiveStatus);
+
+        public bool Equals(PropertyAdsReportMetricsGroupEffectiveStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

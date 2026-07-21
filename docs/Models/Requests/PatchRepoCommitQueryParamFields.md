@@ -1,5 +1,13 @@
 # PatchRepoCommitQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchRepoCommitQueryParamFields.Id;
+```
+
 
 ## Values
 

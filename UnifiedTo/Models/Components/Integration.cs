@@ -11,20 +11,21 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
     /// Informational object for supported integrations.
     /// </summary>
     public class Integration
     {
-
         [JsonProperty("active_healthy_connections")]
         public double? ActiveHealthyConnections { get; set; }
 
-        [JsonProperty("api")]
+        [JsonProperty("api", NullValueHandling = NullValueHandling.Include)]
         public Api? Api { get; set; }
 
         [JsonProperty("api_docs_url")]
@@ -34,7 +35,7 @@ namespace UnifiedTo.Models.Components
         public bool? Beta { get; set; }
 
         /// <summary>
-        /// The categories of support solutions that this integration has
+        /// The categories of support solutions that this integration has.
         /// </summary>
         [JsonProperty("categories")]
         public List<PropertyIntegrationCategories> Categories { get; set; } = default!;
@@ -69,7 +70,7 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
-        [JsonProperty("partnership")]
+        [JsonProperty("partnership", NullValueHandling = NullValueHandling.Include)]
         public Partnership? Partnership { get; set; }
 
         [JsonProperty("popularity")]
@@ -81,10 +82,10 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("requires_cname")]
         public bool? RequiresCname { get; set; }
 
-        [JsonProperty("saml")]
+        [JsonProperty("saml", NullValueHandling = NullValueHandling.Include)]
         public Saml? Saml { get; set; }
 
-        [JsonProperty("sandbox")]
+        [JsonProperty("sandbox", NullValueHandling = NullValueHandling.Include)]
         public Sandbox? Sandbox { get; set; }
 
         [JsonProperty("support")]
@@ -97,13 +98,13 @@ namespace UnifiedTo.Models.Components
         public string? TextColor { get; set; }
 
         /// <summary>
-        /// instructions for the user on how to find the token/key
+        /// instructions for the user on how to find the token/key.
         /// </summary>
         [JsonProperty("token_instructions")]
         public List<string>? TokenInstructions { get; set; }
 
         /// <summary>
-        /// if auth_types = &apos;token&apos;
+        /// if auth_types = 'token'
         /// </summary>
         [JsonProperty("token_names")]
         public List<string>? TokenNames { get; set; }

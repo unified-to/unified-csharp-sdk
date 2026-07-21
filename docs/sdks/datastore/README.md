@@ -1,5 +1,4 @@
 # Datastore
-(*Datastore*)
 
 ## Overview
 
@@ -31,6 +30,7 @@ Create a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createDatastoreDatabase" method="post" path="/datastore/{connection_id}/database" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -72,6 +72,7 @@ Create a query
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createDatastoreQuery" method="post" path="/datastore/{connection_id}/query" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -113,6 +114,7 @@ Create a record
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createDatastoreRecord" method="post" path="/datastore/{connection_id}/record" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -159,6 +161,7 @@ Create a table
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="createDatastoreTable" method="post" path="/datastore/{connection_id}/table" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -200,6 +203,7 @@ Retrieve a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getDatastoreDatabase" method="get" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -241,6 +245,7 @@ Retrieve a record
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getDatastoreRecord" method="get" path="/datastore/{connection_id}/record/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -282,6 +287,7 @@ Retrieve a table
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="getDatastoreTable" method="get" path="/datastore/{connection_id}/table/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -323,6 +329,7 @@ List all databases
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listDatastoreDatabases" method="get" path="/datastore/{connection_id}/database" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -363,6 +370,7 @@ List all records
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listDatastoreRecords" method="get" path="/datastore/{connection_id}/record" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -403,6 +411,7 @@ List all tables
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="listDatastoreTables" method="get" path="/datastore/{connection_id}/table" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -443,6 +452,7 @@ Update a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchDatastoreDatabase" method="patch" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -485,6 +495,7 @@ Update a record
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchDatastoreRecord" method="patch" path="/datastore/{connection_id}/record/{id}" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -532,6 +543,7 @@ Update a table
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="patchDatastoreTable" method="patch" path="/datastore/{connection_id}/table/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -574,6 +586,7 @@ Remove a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeDatastoreDatabase" method="delete" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -613,6 +626,7 @@ Remove a record
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeDatastoreRecord" method="delete" path="/datastore/{connection_id}/record/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -652,6 +666,7 @@ Remove a table
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="removeDatastoreTable" method="delete" path="/datastore/{connection_id}/table/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -691,6 +706,7 @@ Update a database
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateDatastoreDatabase" method="put" path="/datastore/{connection_id}/database/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -733,6 +749,7 @@ Update a record
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateDatastoreRecord" method="put" path="/datastore/{connection_id}/record/{id}" -->
 ```csharp
 using System.Collections.Generic;
 using UnifiedTo;
@@ -780,6 +797,7 @@ Update a table
 
 ### Example Usage
 
+<!-- UsageSnippet language="csharp" operationID="updateDatastoreTable" method="put" path="/datastore/{connection_id}/table/{id}" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;

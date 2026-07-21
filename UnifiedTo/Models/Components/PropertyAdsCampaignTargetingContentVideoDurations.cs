@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum PropertyAdsCampaignTargetingContentVideoDurations
-    {
-        [JsonProperty("SHORT")]
-        Short,
-        [JsonProperty("MEDIUM")]
-        Medium,
-        [JsonProperty("LONG")]
-        Long,
-    }
 
-    public static class PropertyAdsCampaignTargetingContentVideoDurationsExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class PropertyAdsCampaignTargetingContentVideoDurations : IEquatable<PropertyAdsCampaignTargetingContentVideoDurations>
     {
-        public static string Value(this PropertyAdsCampaignTargetingContentVideoDurations value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly PropertyAdsCampaignTargetingContentVideoDurations Short = new PropertyAdsCampaignTargetingContentVideoDurations("SHORT");
+        public static readonly PropertyAdsCampaignTargetingContentVideoDurations Medium = new PropertyAdsCampaignTargetingContentVideoDurations("MEDIUM");
+        public static readonly PropertyAdsCampaignTargetingContentVideoDurations Long = new PropertyAdsCampaignTargetingContentVideoDurations("LONG");
 
-        public static PropertyAdsCampaignTargetingContentVideoDurations ToEnum(this string value)
-        {
-            foreach(var field in typeof(PropertyAdsCampaignTargetingContentVideoDurations).GetFields())
+        private static readonly Dictionary <string, PropertyAdsCampaignTargetingContentVideoDurations> _knownValues =
+            new Dictionary <string, PropertyAdsCampaignTargetingContentVideoDurations> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["SHORT"] = Short,
+                ["MEDIUM"] = Medium,
+                ["LONG"] = Long
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, PropertyAdsCampaignTargetingContentVideoDurations> _values =
+            new ConcurrentDictionary<string, PropertyAdsCampaignTargetingContentVideoDurations>(_knownValues);
 
-                    if (enumVal is PropertyAdsCampaignTargetingContentVideoDurations)
-                    {
-                        return (PropertyAdsCampaignTargetingContentVideoDurations)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum PropertyAdsCampaignTargetingContentVideoDurations");
+        private PropertyAdsCampaignTargetingContentVideoDurations(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static PropertyAdsCampaignTargetingContentVideoDurations Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new PropertyAdsCampaignTargetingContentVideoDurations(value));
+        }
+
+        public static implicit operator PropertyAdsCampaignTargetingContentVideoDurations(string value) => Of(value);
+        public static implicit operator string(PropertyAdsCampaignTargetingContentVideoDurations propertyadscampaigntargetingcontentvideodurations) => propertyadscampaigntargetingcontentvideodurations.Value;
+
+        public static PropertyAdsCampaignTargetingContentVideoDurations[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as PropertyAdsCampaignTargetingContentVideoDurations);
+
+        public bool Equals(PropertyAdsCampaignTargetingContentVideoDurations? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

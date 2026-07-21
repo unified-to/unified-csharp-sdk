@@ -14,27 +14,26 @@ namespace UnifiedTo.Models.Requests
     using System.Net.Http;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     public class ListFormsFormsResponse
     {
-
         /// <summary>
-        /// HTTP response content type for this operation
+        /// HTTP response content type for this operation.
         /// </summary>
         public string? ContentType { get; set; } = default!;
 
         /// <summary>
-        /// Successful
+        /// Successful.
         /// </summary>
         public List<FormsForm>? FormsForms { get; set; }
 
         /// <summary>
-        /// HTTP response status code for this operation
+        /// HTTP response status code for this operation.
         /// </summary>
         public int StatusCode { get; set; } = default!;
 
         /// <summary>
-        /// Raw HTTP response; suitable for custom response parsing
+        /// Raw HTTP response; suitable for custom response parsing.
         /// </summary>
         public HttpResponseMessage RawResponse { get; set; } = default!;
     }

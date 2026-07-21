@@ -1,5 +1,13 @@
 # GetCommerceItemvariantQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetCommerceItemvariantQueryParamFields.Id;
+```
+
 
 ## Values
 

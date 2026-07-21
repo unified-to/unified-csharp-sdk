@@ -1,5 +1,13 @@
 # PatchHrisDocumentQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchHrisDocumentQueryParamFields.Id;
+```
+
 
 ## Values
 

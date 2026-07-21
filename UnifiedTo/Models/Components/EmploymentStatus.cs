@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum EmploymentStatus
-    {
-        [JsonProperty("ACTIVE")]
-        Active,
-        [JsonProperty("INACTIVE")]
-        Inactive,
-    }
 
-    public static class EmploymentStatusExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class EmploymentStatus : IEquatable<EmploymentStatus>
     {
-        public static string Value(this EmploymentStatus value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly EmploymentStatus Active = new EmploymentStatus("ACTIVE");
+        public static readonly EmploymentStatus Inactive = new EmploymentStatus("INACTIVE");
 
-        public static EmploymentStatus ToEnum(this string value)
-        {
-            foreach(var field in typeof(EmploymentStatus).GetFields())
+        private static readonly Dictionary <string, EmploymentStatus> _knownValues =
+            new Dictionary <string, EmploymentStatus> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACTIVE"] = Active,
+                ["INACTIVE"] = Inactive
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, EmploymentStatus> _values =
+            new ConcurrentDictionary<string, EmploymentStatus>(_knownValues);
 
-                    if (enumVal is EmploymentStatus)
-                    {
-                        return (EmploymentStatus)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum EmploymentStatus");
+        private EmploymentStatus(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static EmploymentStatus Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new EmploymentStatus(value));
+        }
+
+        public static implicit operator EmploymentStatus(string value) => Of(value);
+        public static implicit operator string(EmploymentStatus employmentstatus) => employmentstatus.Value;
+
+        public static EmploymentStatus[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as EmploymentStatus);
+
+        public bool Equals(EmploymentStatus? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

@@ -17,22 +17,20 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class CommerceMetadata5Type
     {
         private CommerceMetadata5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CommerceMetadata5Type CommerceMetadata1 { get { return new CommerceMetadata5Type("CommerceMetadata_1"); } }
-        
+
         public static CommerceMetadata5Type Str { get { return new CommerceMetadata5Type("str"); } }
-        
+
         public static CommerceMetadata5Type Number { get { return new CommerceMetadata5Type("number"); } }
-        
+
         public static CommerceMetadata5Type Boolean { get { return new CommerceMetadata5Type("boolean"); } }
-        
-        public static CommerceMetadata5Type Null { get { return new CommerceMetadata5Type("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(CommerceMetadata5Type v) { return v.Value; }
@@ -42,7 +40,6 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CommerceMetadata5Type");
             }
         }
@@ -61,10 +58,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CommerceMetadata5.CommerceMetadata5Converter))]
-    public class CommerceMetadata5 {
-        public CommerceMetadata5(CommerceMetadata5Type type) {
+    public class CommerceMetadata5
+    {
+        public CommerceMetadata5(CommerceMetadata5Type type)
+        {
             Type = type;
         }
 
@@ -81,33 +79,32 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         public CommerceMetadata5Type Type { get; set; }
-
-
-        public static CommerceMetadata5 CreateCommerceMetadata1(CommerceMetadata1 commerceMetadata1) {
+        public static CommerceMetadata5 CreateCommerceMetadata1(CommerceMetadata1 commerceMetadata1)
+        {
             CommerceMetadata5Type typ = CommerceMetadata5Type.CommerceMetadata1;
 
             CommerceMetadata5 res = new CommerceMetadata5(typ);
             res.CommerceMetadata1 = commerceMetadata1;
             return res;
         }
-
-        public static CommerceMetadata5 CreateStr(string str) {
+        public static CommerceMetadata5 CreateStr(string str)
+        {
             CommerceMetadata5Type typ = CommerceMetadata5Type.Str;
 
             CommerceMetadata5 res = new CommerceMetadata5(typ);
             res.Str = str;
             return res;
         }
-
-        public static CommerceMetadata5 CreateNumber(double number) {
+        public static CommerceMetadata5 CreateNumber(double number)
+        {
             CommerceMetadata5Type typ = CommerceMetadata5Type.Number;
 
             CommerceMetadata5 res = new CommerceMetadata5(typ);
             res.Number = number;
             return res;
         }
-
-        public static CommerceMetadata5 CreateBoolean(bool boolean) {
+        public static CommerceMetadata5 CreateBoolean(bool boolean)
+        {
             CommerceMetadata5Type typ = CommerceMetadata5Type.Boolean;
 
             CommerceMetadata5 res = new CommerceMetadata5(typ);
@@ -115,26 +112,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static CommerceMetadata5 CreateNull() {
-            CommerceMetadata5Type typ = CommerceMetadata5Type.Null;
-            return new CommerceMetadata5(typ);
-        }
-
         public class CommerceMetadata5Converter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(CommerceMetadata5);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -215,37 +206,40 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                CommerceMetadata5 res = (CommerceMetadata5)value;
-                if (CommerceMetadata5Type.FromString(res.Type).Equals(CommerceMetadata5Type.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                CommerceMetadata5 res = (CommerceMetadata5)value;
+
                 if (res.CommerceMetadata1 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.CommerceMetadata1));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

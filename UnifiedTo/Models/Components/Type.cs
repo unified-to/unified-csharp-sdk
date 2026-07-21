@@ -11,63 +11,80 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Type
-    {
-        [JsonProperty("ACCOUNTS_PAYABLE")]
-        AccountsPayable,
-        [JsonProperty("ACCOUNTS_RECEIVABLE")]
-        AccountsReceivable,
-        [JsonProperty("BANK")]
-        Bank,
-        [JsonProperty("CREDIT_CARD")]
-        CreditCard,
-        [JsonProperty("FIXED_ASSET")]
-        FixedAsset,
-        [JsonProperty("LIABILITY")]
-        Liability,
-        [JsonProperty("EQUITY")]
-        Equity,
-        [JsonProperty("EXPENSE")]
-        Expense,
-        [JsonProperty("REVENUE")]
-        Revenue,
-        [JsonProperty("OTHER")]
-        Other,
-    }
 
-    public static class TypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Type : IEquatable<Type>
     {
-        public static string Value(this Type value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Type AccountsPayable = new Type("ACCOUNTS_PAYABLE");
+        public static readonly Type AccountsReceivable = new Type("ACCOUNTS_RECEIVABLE");
+        public static readonly Type Bank = new Type("BANK");
+        public static readonly Type CreditCard = new Type("CREDIT_CARD");
+        public static readonly Type FixedAsset = new Type("FIXED_ASSET");
+        public static readonly Type Liability = new Type("LIABILITY");
+        public static readonly Type Equity = new Type("EQUITY");
+        public static readonly Type Expense = new Type("EXPENSE");
+        public static readonly Type Revenue = new Type("REVENUE");
+        public static readonly Type Other = new Type("OTHER");
 
-        public static Type ToEnum(this string value)
-        {
-            foreach(var field in typeof(Type).GetFields())
+        private static readonly Dictionary <string, Type> _knownValues =
+            new Dictionary <string, Type> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ACCOUNTS_PAYABLE"] = AccountsPayable,
+                ["ACCOUNTS_RECEIVABLE"] = AccountsReceivable,
+                ["BANK"] = Bank,
+                ["CREDIT_CARD"] = CreditCard,
+                ["FIXED_ASSET"] = FixedAsset,
+                ["LIABILITY"] = Liability,
+                ["EQUITY"] = Equity,
+                ["EXPENSE"] = Expense,
+                ["REVENUE"] = Revenue,
+                ["OTHER"] = Other
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Type> _values =
+            new ConcurrentDictionary<string, Type>(_knownValues);
 
-                    if (enumVal is Type)
-                    {
-                        return (Type)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Type");
+        private Type(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Type Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Type(value));
+        }
+
+        public static implicit operator Type(string value) => Of(value);
+        public static implicit operator string(Type type) => type.Value;
+
+        public static Type[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Type);
+
+        public bool Equals(Type? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

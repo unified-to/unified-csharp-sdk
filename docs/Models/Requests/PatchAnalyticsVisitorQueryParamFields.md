@@ -1,5 +1,13 @@
 # PatchAnalyticsVisitorQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = PatchAnalyticsVisitorQueryParamFields.Id;
+```
+
 
 ## Values
 

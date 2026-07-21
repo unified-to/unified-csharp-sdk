@@ -10,7 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using UnifiedTo.Utils;
-    
+
     public class CommerceMetadata1
     {
     }

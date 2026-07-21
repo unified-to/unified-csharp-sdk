@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VirtualWebhookContactId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class VirtualWebhookContactIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VirtualWebhookContactId : IEquatable<VirtualWebhookContactId>
     {
-        public static string Value(this VirtualWebhookContactId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VirtualWebhookContactId SupportedRequired = new VirtualWebhookContactId("supported-required");
+        public static readonly VirtualWebhookContactId Supported = new VirtualWebhookContactId("supported");
+        public static readonly VirtualWebhookContactId NotSupported = new VirtualWebhookContactId("not-supported");
 
-        public static VirtualWebhookContactId ToEnum(this string value)
-        {
-            foreach(var field in typeof(VirtualWebhookContactId).GetFields())
+        private static readonly Dictionary <string, VirtualWebhookContactId> _knownValues =
+            new Dictionary <string, VirtualWebhookContactId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VirtualWebhookContactId> _values =
+            new ConcurrentDictionary<string, VirtualWebhookContactId>(_knownValues);
 
-                    if (enumVal is VirtualWebhookContactId)
-                    {
-                        return (VirtualWebhookContactId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VirtualWebhookContactId");
+        private VirtualWebhookContactId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VirtualWebhookContactId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VirtualWebhookContactId(value));
+        }
+
+        public static implicit operator VirtualWebhookContactId(string value) => Of(value);
+        public static implicit operator string(VirtualWebhookContactId virtualwebhookcontactid) => virtualwebhookcontactid.Value;
+
+        public static VirtualWebhookContactId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VirtualWebhookContactId);
+
+        public bool Equals(VirtualWebhookContactId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

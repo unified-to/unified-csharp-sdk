@@ -1,5 +1,16 @@
 # NativeWebhookParentId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = NativeWebhookParentId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = NativeWebhookParentId.Of("custom_value");
+```
+
 
 ## Values
 

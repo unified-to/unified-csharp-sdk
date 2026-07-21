@@ -11,47 +11,64 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum DatastoreRelationshipType
-    {
-        [JsonProperty("ONE")]
-        One,
-        [JsonProperty("MANY")]
-        Many,
-    }
 
-    public static class DatastoreRelationshipTypeExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class DatastoreRelationshipType : IEquatable<DatastoreRelationshipType>
     {
-        public static string Value(this DatastoreRelationshipType value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly DatastoreRelationshipType One = new DatastoreRelationshipType("ONE");
+        public static readonly DatastoreRelationshipType Many = new DatastoreRelationshipType("MANY");
 
-        public static DatastoreRelationshipType ToEnum(this string value)
-        {
-            foreach(var field in typeof(DatastoreRelationshipType).GetFields())
+        private static readonly Dictionary <string, DatastoreRelationshipType> _knownValues =
+            new Dictionary <string, DatastoreRelationshipType> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ONE"] = One,
+                ["MANY"] = Many
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, DatastoreRelationshipType> _values =
+            new ConcurrentDictionary<string, DatastoreRelationshipType>(_knownValues);
 
-                    if (enumVal is DatastoreRelationshipType)
-                    {
-                        return (DatastoreRelationshipType)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum DatastoreRelationshipType");
+        private DatastoreRelationshipType(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static DatastoreRelationshipType Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new DatastoreRelationshipType(value));
+        }
+
+        public static implicit operator DatastoreRelationshipType(string value) => Of(value);
+        public static implicit operator string(DatastoreRelationshipType datastorerelationshiptype) => datastorerelationshiptype.Value;
+
+        public static DatastoreRelationshipType[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as DatastoreRelationshipType);
+
+        public bool Equals(DatastoreRelationshipType? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

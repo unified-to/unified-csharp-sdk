@@ -1,5 +1,16 @@
 # AdsTargetType
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = AdsTargetType.Interest;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = AdsTargetType.Of("custom_value");
+```
+
 
 ## Values
 

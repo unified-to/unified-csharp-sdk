@@ -1,5 +1,16 @@
 # ListParentId
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListParentId.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListParentId.Of("custom_value");
+```
+
 
 ## Values
 

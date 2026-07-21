@@ -10,16 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Promoted entity (e.g. page, app, product, tweet) for ads create
+    /// Promoted entity (e.g. page, app, product, tweet) for ads create.
     /// </summary>
     public class AdsPromoted
     {
-
         [JsonProperty("id")]
         public string Id { get; set; } = default!;
 

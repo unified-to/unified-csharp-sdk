@@ -11,59 +11,76 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum Term
-    {
-        [JsonProperty("ON_RECEIPT")]
-        OnReceipt,
-        [JsonProperty("NET_7")]
-        Net7,
-        [JsonProperty("NET_10")]
-        Net10,
-        [JsonProperty("NET_15")]
-        Net15,
-        [JsonProperty("NET_20")]
-        Net20,
-        [JsonProperty("NET_25")]
-        Net25,
-        [JsonProperty("NET_30")]
-        Net30,
-        [JsonProperty("NET_60")]
-        Net60,
-    }
 
-    public static class TermExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class Term : IEquatable<Term>
     {
-        public static string Value(this Term value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly Term OnReceipt = new Term("ON_RECEIPT");
+        public static readonly Term Net7 = new Term("NET_7");
+        public static readonly Term Net10 = new Term("NET_10");
+        public static readonly Term Net15 = new Term("NET_15");
+        public static readonly Term Net20 = new Term("NET_20");
+        public static readonly Term Net25 = new Term("NET_25");
+        public static readonly Term Net30 = new Term("NET_30");
+        public static readonly Term Net60 = new Term("NET_60");
 
-        public static Term ToEnum(this string value)
-        {
-            foreach(var field in typeof(Term).GetFields())
+        private static readonly Dictionary <string, Term> _knownValues =
+            new Dictionary <string, Term> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["ON_RECEIPT"] = OnReceipt,
+                ["NET_7"] = Net7,
+                ["NET_10"] = Net10,
+                ["NET_15"] = Net15,
+                ["NET_20"] = Net20,
+                ["NET_25"] = Net25,
+                ["NET_30"] = Net30,
+                ["NET_60"] = Net60
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, Term> _values =
+            new ConcurrentDictionary<string, Term>(_knownValues);
 
-                    if (enumVal is Term)
-                    {
-                        return (Term)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum Term");
+        private Term(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static Term Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new Term(value));
+        }
+
+        public static implicit operator Term(string value) => Of(value);
+        public static implicit operator string(Term term) => term.Value;
+
+        public static Term[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as Term);
+
+        public bool Equals(Term? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

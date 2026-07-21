@@ -14,13 +14,12 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Mailing List
+    /// Mailing List.
     /// </summary>
     public class MarketingList
     {
-
         [JsonProperty("address")]
         public PropertyMarketingListAddress? Address { get; set; }
 

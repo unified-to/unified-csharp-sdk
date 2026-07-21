@@ -1,5 +1,13 @@
 # UpdateHrisDeviceQueryParamFields
 
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateHrisDeviceQueryParamFields.Id;
+```
+
 
 ## Values
 

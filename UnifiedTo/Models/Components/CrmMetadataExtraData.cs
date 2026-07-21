@@ -17,24 +17,22 @@ namespace UnifiedTo.Models.Components
     using System.Reflection;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
 
     public class CrmMetadataExtraDataType
     {
         private CrmMetadataExtraDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
+
         public static CrmMetadataExtraDataType MapOfAny { get { return new CrmMetadataExtraDataType("mapOfAny"); } }
-        
+
         public static CrmMetadataExtraDataType Str { get { return new CrmMetadataExtraDataType("str"); } }
-        
+
         public static CrmMetadataExtraDataType Number { get { return new CrmMetadataExtraDataType("number"); } }
-        
+
         public static CrmMetadataExtraDataType Boolean { get { return new CrmMetadataExtraDataType("boolean"); } }
-        
+
         public static CrmMetadataExtraDataType ArrayOfCrmMetadata5 { get { return new CrmMetadataExtraDataType("arrayOfCrmMetadata5"); } }
-        
-        public static CrmMetadataExtraDataType Null { get { return new CrmMetadataExtraDataType("null"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(CrmMetadataExtraDataType v) { return v.Value; }
@@ -45,7 +43,6 @@ namespace UnifiedTo.Models.Components
                 case "number": return Number;
                 case "boolean": return Boolean;
                 case "arrayOfCrmMetadata5": return ArrayOfCrmMetadata5;
-                case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CrmMetadataExtraDataType");
             }
         }
@@ -64,10 +61,11 @@ namespace UnifiedTo.Models.Components
         }
     }
 
-
     [JsonConverter(typeof(CrmMetadataExtraData.CrmMetadataExtraDataConverter))]
-    public class CrmMetadataExtraData {
-        public CrmMetadataExtraData(CrmMetadataExtraDataType type) {
+    public class CrmMetadataExtraData
+    {
+        public CrmMetadataExtraData(CrmMetadataExtraDataType type)
+        {
             Type = type;
         }
 
@@ -87,41 +85,40 @@ namespace UnifiedTo.Models.Components
         public List<CrmMetadata5>? ArrayOfCrmMetadata5 { get; set; }
 
         public CrmMetadataExtraDataType Type { get; set; }
-
-
-        public static CrmMetadataExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+        public static CrmMetadataExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny)
+        {
             CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.MapOfAny;
 
             CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
             res.MapOfAny = mapOfAny;
             return res;
         }
-
-        public static CrmMetadataExtraData CreateStr(string str) {
+        public static CrmMetadataExtraData CreateStr(string str)
+        {
             CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.Str;
 
             CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
             res.Str = str;
             return res;
         }
-
-        public static CrmMetadataExtraData CreateNumber(double number) {
+        public static CrmMetadataExtraData CreateNumber(double number)
+        {
             CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.Number;
 
             CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
             res.Number = number;
             return res;
         }
-
-        public static CrmMetadataExtraData CreateBoolean(bool boolean) {
+        public static CrmMetadataExtraData CreateBoolean(bool boolean)
+        {
             CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.Boolean;
 
             CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
             res.Boolean = boolean;
             return res;
         }
-
-        public static CrmMetadataExtraData CreateArrayOfCrmMetadata5(List<CrmMetadata5> arrayOfCrmMetadata5) {
+        public static CrmMetadataExtraData CreateArrayOfCrmMetadata5(List<CrmMetadata5> arrayOfCrmMetadata5)
+        {
             CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.ArrayOfCrmMetadata5;
 
             CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
@@ -129,26 +126,20 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static CrmMetadataExtraData CreateNull() {
-            CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.Null;
-            return new CrmMetadataExtraData(typ);
-        }
-
         public class CrmMetadataExtraDataConverter : JsonConverter
         {
-
             public override bool CanConvert(System.Type objectType) => objectType == typeof(CrmMetadataExtraData);
 
             public override bool CanRead => true;
 
             public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                if (reader.TokenType == JsonToken.Null)
                 {
-                    return null;
+                    throw new InvalidOperationException("Received unexpected null JSON value");
                 }
 
+                var json = JRaw.Create(reader).ToString();
                 var fallbackCandidates = new List<(System.Type, object, string)>();
 
                 try
@@ -249,42 +240,46 @@ namespace UnifiedTo.Models.Components
 
             public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
             {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                CrmMetadataExtraData res = (CrmMetadataExtraData)value;
-                if (CrmMetadataExtraDataType.FromString(res.Type).Equals(CrmMetadataExtraDataType.Null))
+                if (value == null)
                 {
-                    writer.WriteRawValue("null");
-                    return;
+                    throw new InvalidOperationException("Unexpected null JSON value.");
                 }
+
+                CrmMetadataExtraData res = (CrmMetadataExtraData)value;
+
                 if (res.MapOfAny != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
+
                 if (res.Str != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
+
                 if (res.Number != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
+
                 if (res.Boolean != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
+
                 if (res.ArrayOfCrmMetadata5 != null)
                 {
                     writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfCrmMetadata5));
                     return;
                 }
 
+                throw new InvalidOperationException(
+                    "Could not serialize union to JSON: no variant value was set. " +
+                    "Construct this union using one of the Create* factory methods.");
             }
 
         }

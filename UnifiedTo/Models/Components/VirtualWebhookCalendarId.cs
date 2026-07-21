@@ -11,49 +11,66 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
+    using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Utils;
-    
-    public enum VirtualWebhookCalendarId
-    {
-        [JsonProperty("supported-required")]
-        SupportedRequired,
-        [JsonProperty("supported")]
-        Supported,
-        [JsonProperty("not-supported")]
-        NotSupported,
-    }
 
-    public static class VirtualWebhookCalendarIdExtension
+    [JsonConverter(typeof(OpenEnumConverter))]
+    public class VirtualWebhookCalendarId : IEquatable<VirtualWebhookCalendarId>
     {
-        public static string Value(this VirtualWebhookCalendarId value)
-        {
-            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
-        }
+        public static readonly VirtualWebhookCalendarId SupportedRequired = new VirtualWebhookCalendarId("supported-required");
+        public static readonly VirtualWebhookCalendarId Supported = new VirtualWebhookCalendarId("supported");
+        public static readonly VirtualWebhookCalendarId NotSupported = new VirtualWebhookCalendarId("not-supported");
 
-        public static VirtualWebhookCalendarId ToEnum(this string value)
-        {
-            foreach(var field in typeof(VirtualWebhookCalendarId).GetFields())
+        private static readonly Dictionary <string, VirtualWebhookCalendarId> _knownValues =
+            new Dictionary <string, VirtualWebhookCalendarId> ()
             {
-                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
-                if (attributes.Length == 0)
-                {
-                    continue;
-                }
+                ["supported-required"] = SupportedRequired,
+                ["supported"] = Supported,
+                ["not-supported"] = NotSupported
+            };
 
-                var attribute = attributes[0] as JsonPropertyAttribute;
-                if (attribute != null && attribute.PropertyName == value)
-                {
-                    var enumVal = field.GetValue(null);
+        private static readonly ConcurrentDictionary<string, VirtualWebhookCalendarId> _values =
+            new ConcurrentDictionary<string, VirtualWebhookCalendarId>(_knownValues);
 
-                    if (enumVal is VirtualWebhookCalendarId)
-                    {
-                        return (VirtualWebhookCalendarId)enumVal;
-                    }
-                }
-            }
-
-            throw new Exception($"Unknown value {value} for enum VirtualWebhookCalendarId");
+        private VirtualWebhookCalendarId(string value)
+        {
+            if (value == null) throw new ArgumentNullException(nameof(value));
+            Value = value;
         }
-    }
 
+        public string Value { get; }
+
+        public static VirtualWebhookCalendarId Of(string value)
+        {
+            return _values.GetOrAdd(value, _ => new VirtualWebhookCalendarId(value));
+        }
+
+        public static implicit operator VirtualWebhookCalendarId(string value) => Of(value);
+        public static implicit operator string(VirtualWebhookCalendarId virtualwebhookcalendarid) => virtualwebhookcalendarid.Value;
+
+        public static VirtualWebhookCalendarId[] Values()
+        {
+            return _values.Values.ToArray();
+        }
+
+        public override string ToString() => Value.ToString();
+
+        public bool IsKnown()
+        {
+            return _knownValues.ContainsKey(Value);
+        }
+
+        public override bool Equals(object? obj) => Equals(obj as VirtualWebhookCalendarId);
+
+        public bool Equals(VirtualWebhookCalendarId? other)
+        {
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+            return string.Equals(Value, other.Value);
+        }
+
+        public override int GetHashCode() => Value.GetHashCode();
+    }
 }

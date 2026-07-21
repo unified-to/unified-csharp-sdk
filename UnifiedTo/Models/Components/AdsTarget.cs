@@ -10,16 +10,18 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
-    
+
     /// <summary>
-    /// Targeting search result (for ads_target list endpoint)
+    /// Targeting search result (for ads_target list endpoint).
     /// </summary>
     public class AdsTarget
     {
-
         [JsonProperty("audience_count_max")]
         public double? AudienceCountMax { get; set; }
 
