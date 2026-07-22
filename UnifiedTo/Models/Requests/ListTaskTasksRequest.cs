@@ -16,6 +16,12 @@ namespace UnifiedTo.Models.Requests
     public class ListTaskTasksRequest
     {
         /// <summary>
+        /// The assigned user/employee ID to filter by (reference to HrisEmployee).
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=assigned_user_id")]
+        public string? AssignedUserId { get; set; }
+
+        /// <summary>
         /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]

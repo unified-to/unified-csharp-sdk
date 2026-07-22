@@ -35,6 +35,10 @@ namespace UnifiedTo.Models.Requests
         Notes,
         [JsonProperty("due_at")]
         DueAt,
+        [JsonProperty("start_at")]
+        StartAt,
+        [JsonProperty("end_at")]
+        EndAt,
         [JsonProperty("priority")]
         Priority,
         [JsonProperty("assigned_user_ids")]
@@ -55,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         Metadata,
         [JsonProperty("has_children")]
         HasChildren,
+        [JsonProperty("type")]
+        Type,
         [JsonProperty("raw")]
         Raw,
     }

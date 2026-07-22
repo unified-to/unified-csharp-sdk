@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 1c53d4c83d670f3e7401df3422270680
+  docChecksum: 335e17908653c0fa69c4c2a83a1a7885
   docVersion: "1.0"
   speakeasyVersion: 1.790.3
   generationVersion: 2.918.4
-  releaseVersion: 0.131.0
-  configChecksum: 7f5e683122e00b3eff2dd23d9dbffa64
+  releaseVersion: 0.131.1
+  configChecksum: be0bcee3a7c0062ff138d4944127e304
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: 179f5cbb-50a6-4e5b-b8fc-c35574131553
-  pristine_commit_hash: 25fb8447af4f4663d07ed84bbf83e7077108ec91
-  pristine_tree_hash: b14afcffd4c2a4d646cfc2effcae936c2bb6d832
+  generation_id: f182fb6e-53c2-40cd-ba26-c40201c9fa7f
+  pristine_commit_hash: 6693c513e16fb9c8f8a62263cd1b34a323215821
+  pristine_tree_hash: f5069a95168074649aa1bdbb0c39449a6dc25f01
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -1794,8 +1794,8 @@ trackedFiles:
     pristine_git_object: d68b0785a8349fab29e8fc6221514311b3d18f09
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:f59725b94d779b26898e79e80246e3fd6dc72790
-    pristine_git_object: 689b95f3b7b4972142263652a4f4d3d1755b66a5
+    last_write_checksum: sha1:cf332fbacff1c20ae43ba17e9052bc3ad5c5cf86
+    pristine_git_object: b5c837e158aeda8f0595a1c590f48db81bd10201
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
     last_write_checksum: sha1:4526a6f20fd90c5155165f4373571d7ca5fd731a
@@ -1876,6 +1876,10 @@ trackedFiles:
     id: b04c011fb50a
     last_write_checksum: sha1:b9729fb1c669135ca97374a161b8925f729e39ee
     pristine_git_object: 88fd52ff8b873d8608098715db2101dc1bc8f89d
+  UnifiedTo/Models/Components/ListAssignedUserId.cs:
+    id: 2ae07970f76d
+    last_write_checksum: sha1:f2540bbb30959c26aecd63950e01994814dc4211
+    pristine_git_object: c7c903dba5af14192bdfe470d0a51aeed55a2924
   UnifiedTo/Models/Components/ListBenefitId.cs:
     id: 3e00490edd90
     last_write_checksum: sha1:e804d555613ba078bbe4a47add50d04b490f293f
@@ -3826,8 +3830,8 @@ trackedFiles:
     pristine_git_object: b78c09a460e57291001c1fa9200720b7003fe522
   UnifiedTo/Models/Components/TaskTask.cs:
     id: 045d763ad43b
-    last_write_checksum: sha1:b264f0a2667b05ad9ba942334e1892ec7e268e48
-    pristine_git_object: 15fe9b13bd25571664eb57d311b4d3961d93443a
+    last_write_checksum: sha1:e893ae33f4f637c5452d3725ebbdb6afe06705df
+    pristine_git_object: a7319b65dd6944facb21582f6b54ca8c9707b7ea
   UnifiedTo/Models/Components/TaskTaskStatus.cs:
     id: cb4d63a01042
     last_write_checksum: sha1:c64264963a7a2c485cdea6ca327d2a12e06e340c
@@ -4000,6 +4004,10 @@ trackedFiles:
     id: b79ab3c77d2f
     last_write_checksum: sha1:932539bbdf60298f9d72a8c40efd87bf708aa728
     pristine_git_object: d3a1347ed1f8f22f16bb1b9338dac4ab1d86c25b
+  UnifiedTo/Models/Components/VirtualWebhookAssignedUserId.cs:
+    id: 625b5c455360
+    last_write_checksum: sha1:f2504330184edfc8942a1166faa37c1ec7f70cbb
+    pristine_git_object: b51fb9eccf535d75abc863ae21eceeca4d1ef4bf
   UnifiedTo/Models/Components/VirtualWebhookBenefitId.cs:
     id: f7174ee71b6d
     last_write_checksum: sha1:459bffc830754c4a20929bbc4c3f7690b13afa04
@@ -5502,8 +5510,8 @@ trackedFiles:
     pristine_git_object: 9b104f24b2dca4e4562a0b2266ef52a85379d830
   UnifiedTo/Models/Requests/CreateTaskTaskQueryParamFields.cs:
     id: 6694e40b660d
-    last_write_checksum: sha1:68569838beb7fd4f005929528cbcf4e2a830768f
-    pristine_git_object: af145d58720ef3ffa5c9a1bba1a59b7b6a13f8e4
+    last_write_checksum: sha1:4ae2ccc211190f00cdcdfb0fd39bf28acacb7986
+    pristine_git_object: c8122e92cd8c12a7f3fe2afebd6afaf24d5d118b
   UnifiedTo/Models/Requests/CreateTaskTaskRequest.cs:
     id: ef2eaf4fafbe
     last_write_checksum: sha1:1fdcd8252f1162710814f8a8e4275f10f30c3cc5
@@ -7094,8 +7102,8 @@ trackedFiles:
     pristine_git_object: 40ce960b8730966e11e5652f10baf094df892c9d
   UnifiedTo/Models/Requests/GetTaskTaskQueryParamFields.cs:
     id: 6bf883f43b85
-    last_write_checksum: sha1:8637aaa1fc32a77d109f380f0b8af179bee3a1db
-    pristine_git_object: c674f921c62f819218398e7c7d0ec147db34b4e7
+    last_write_checksum: sha1:dc978def695057ba3f64810a6b9475446d665cf9
+    pristine_git_object: 07ca0cfbf2b12a6bde44ffc44aac83b203cf7584
   UnifiedTo/Models/Requests/GetTaskTaskRequest.cs:
     id: c7181eb66021
     last_write_checksum: sha1:c6d1e3097994794422b98395728d7df9cade5c55
@@ -8854,12 +8862,12 @@ trackedFiles:
     pristine_git_object: dac0b974e3d829bf96c0026627282bf8c7e9ad52
   UnifiedTo/Models/Requests/ListTaskTasksQueryParamFields.cs:
     id: 66cb241e2dd3
-    last_write_checksum: sha1:e26897e9384a1c82611ea8664537ce3b2b01b528
-    pristine_git_object: 1556034bf7146ccd10c24f93f3948084d32eb10f
+    last_write_checksum: sha1:f35845232c1f22b90ae3031fa01d813e7bab15a1
+    pristine_git_object: e9c24b8808a6979c2ee2fbc35d5d4fa8bb3bd04a
   UnifiedTo/Models/Requests/ListTaskTasksRequest.cs:
     id: bd78894a0469
-    last_write_checksum: sha1:0da8a9d21000aefc3df23cde8347ee858de61c6d
-    pristine_git_object: 12fc12540550ad52861e34de13fbf2e79042c729
+    last_write_checksum: sha1:794698b0b086b2e80f352e285c785755aff873f8
+    pristine_git_object: 08715a588f5b2b5e98e9603547f4b8779a554db7
   UnifiedTo/Models/Requests/ListTaskTasksResponse.cs:
     id: 4be72c0e3851
     last_write_checksum: sha1:b72a8878908d91999b8ee2dcf64e318afbf55bf9
@@ -10242,8 +10250,8 @@ trackedFiles:
     pristine_git_object: 972f321a6ae6891be4fee704abff744d60697490
   UnifiedTo/Models/Requests/PatchTaskTaskQueryParamFields.cs:
     id: bda024ab2012
-    last_write_checksum: sha1:193ba909533f7b100bd3a2d6c6d84e43e1c4ffb3
-    pristine_git_object: 22df130808c3f2ad2c666d76ff0410137c106bf7
+    last_write_checksum: sha1:ed9008e414d91c884d5fd7e0bd20529ed8f3dec4
+    pristine_git_object: 882ec760e5518daf219498ac7f756d399dbad80e
   UnifiedTo/Models/Requests/PatchTaskTaskRequest.cs:
     id: 11715be4cf3e
     last_write_checksum: sha1:ea0f48ab503758dacca82a13d00631fe1c30ce44
@@ -12462,8 +12470,8 @@ trackedFiles:
     pristine_git_object: ff3cf43781e316671ddc4c9e27bdc77f036792c0
   UnifiedTo/Models/Requests/UpdateTaskTaskQueryParamFields.cs:
     id: d9098a44d540
-    last_write_checksum: sha1:5d5f67a639e63636beb3747cf6c19c04d865766d
-    pristine_git_object: e07255d75c7fafb67d6e8c56b562271c1b2a29bc
+    last_write_checksum: sha1:2fcb52446c1c15d7382afae0de4f7dfa3999d494
+    pristine_git_object: 38b78d1ddb1370aa97cbcbcafb8ef24ef79e152f
   UnifiedTo/Models/Requests/UpdateTaskTaskRequest.cs:
     id: ebb1a5dfa6c7
     last_write_checksum: sha1:f7c4eaeafd18e4919ddf38d0eb30e88f868a2d2c
@@ -12714,8 +12722,8 @@ trackedFiles:
     pristine_git_object: f4a15de0ba2bd4140130f22d61c09baa393f3282
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:072936801f8879e4d8c407f33094e620aa2bb380
-    pristine_git_object: 206d18f3002fc67c321c39b46ee45aa4a610ea75
+    last_write_checksum: sha1:344143940a2850c63323d41ac5b094df3404dde8
+    pristine_git_object: 8947ffc7643701b5e3ece4a8b9c5a913426cd062
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -12838,8 +12846,8 @@ trackedFiles:
     pristine_git_object: 9b1b93cea5451e186b5535d7f02d4e4e97048dd2
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:c258e1573f8bb7c09d650d93dc1de139bb7297e0
-    pristine_git_object: b0daf84485e609299b42d597ac8ba07f507d19c2
+    last_write_checksum: sha1:b98cff57040729283f12f29d2227037f093601a6
+    pristine_git_object: b74dab99945b0e600f971937146631a1a7673b89
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:09b2d642625ce044ba89f103e785767c18452ab8
@@ -12858,8 +12866,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:675fc09aff638f5f15dfaa6cd7b88e5ca8ec7a54
-    pristine_git_object: 83013b90e290bba8ed03c6b964a0d99b55157287
+    last_write_checksum: sha1:5410a75779573c25b4cbf670b154252fd4ce70d1
+    pristine_git_object: e16cf0502a35e8a212c78c3bd0363c86c2b79d31
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -14338,8 +14346,8 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:c7c5155f9c5bda59ecf6b8f2a0fc3c87edb17d7f
-    pristine_git_object: ece2bd31e2320896396867dec285ef785907cef9
+    last_write_checksum: sha1:7bda06507fc74b5f7cb27fbf2f5f0ffd1f673a8b
+    pristine_git_object: c6842ed932bdc5121026dcc3e34681c184d3b301
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
     last_write_checksum: sha1:d0dadc493d09c6acf2d90610e9bb0e00d6437c1a
@@ -14420,6 +14428,10 @@ trackedFiles:
     id: 7de654931a11
     last_write_checksum: sha1:342177ead3bde2ad13162945c0cf728cc68ef90f
     pristine_git_object: 4627b1b4a9799bd99647b380fbf29c3e94ad9396
+  docs/Models/Components/ListAssignedUserId.md:
+    id: 07726de7ea51
+    last_write_checksum: sha1:90ecdb736fecfb71414f3292226d696b7a3c47dc
+    pristine_git_object: 529feea3207da064ea8c6e98930992dafe813cd0
   docs/Models/Components/ListBenefitId.md:
     id: 096d0a5eab61
     last_write_checksum: sha1:f71679b5ee6df1402294375e00913942d0216e6e
@@ -16370,8 +16382,8 @@ trackedFiles:
     pristine_git_object: 1ef5c77d868069b2edfd0a11a02b659b3383301b
   docs/Models/Components/TaskTask.md:
     id: 70fbae8112e9
-    last_write_checksum: sha1:0cb212247e365d93319333ff53198f1a5ebef176
-    pristine_git_object: 9f2f8e5382cd30194903cbbda45805e727e95308
+    last_write_checksum: sha1:61f2ff55ebb386e94cb0b0f72f7e91383e346603
+    pristine_git_object: 2e234dfad7b02a7d3512198f0326013ff8d2475e
   docs/Models/Components/TaskTaskStatus.md:
     id: d544b4e23440
     last_write_checksum: sha1:3bbe241129d5cc1169a00e0702faeea9dda8d7c6
@@ -16544,6 +16556,10 @@ trackedFiles:
     id: 20f3e256dbfc
     last_write_checksum: sha1:8cc8c22fb08fda768b527116c6be323f117da78f
     pristine_git_object: 96003d864532c714e4af6a41beb3b9e3db44aa01
+  docs/Models/Components/VirtualWebhookAssignedUserId.md:
+    id: 944bacd5bc2a
+    last_write_checksum: sha1:871ca120caadd4c69c5262a35883bd2a61425007
+    pristine_git_object: 7a29a3e44717eeae3b41dc9ab9b48ff274d0da5e
   docs/Models/Components/VirtualWebhookBenefitId.md:
     id: ab6247f72bdf
     last_write_checksum: sha1:0ae96324f777927c828698b69b32949605fce28f
@@ -18034,8 +18050,8 @@ trackedFiles:
     pristine_git_object: 794bcbc1674f56fea35d3ed8408b759dbc688130
   docs/Models/Requests/CreateTaskTaskQueryParamFields.md:
     id: fe150c2cd111
-    last_write_checksum: sha1:9d1e75ee14e3f2570ade34a8d327c470a7c1e74d
-    pristine_git_object: ea61869325ad1aaeaace2505082a18b8965d2df0
+    last_write_checksum: sha1:03352651dda2f04a02919ffb7df58e421132fe7b
+    pristine_git_object: ace1712b6401da91bff9397099dce0409f2aa668
   docs/Models/Requests/CreateTaskTaskRequest.md:
     id: 754d9153f7b9
     last_write_checksum: sha1:d2d33c5358d3a6eaf06804417c86516748f863e5
@@ -19626,8 +19642,8 @@ trackedFiles:
     pristine_git_object: c0f74e9c4a2f3d609d95c328f6c66234ba07ad0c
   docs/Models/Requests/GetTaskTaskQueryParamFields.md:
     id: db2704f8ea13
-    last_write_checksum: sha1:6a527bcf35bc36f9b75df119ade90e4452b28b67
-    pristine_git_object: 478220cefd4340eb6868a61735012126baa51eb4
+    last_write_checksum: sha1:90e988bbb1125f8d83760691b71c082d4a54bc28
+    pristine_git_object: 9c798fcac6d935d3baafbdbe163b7d9c68d59903
   docs/Models/Requests/GetTaskTaskRequest.md:
     id: c962517675f8
     last_write_checksum: sha1:d8f888002ae427f007b96c0a0863bf617033dd78
@@ -21386,12 +21402,12 @@ trackedFiles:
     pristine_git_object: 9651cb2fbe94bd1d8d9b78d0bce0887df6cf74be
   docs/Models/Requests/ListTaskTasksQueryParamFields.md:
     id: acff42af6635
-    last_write_checksum: sha1:4789cdf88a936e81ad3b287f10b5baba950fc69a
-    pristine_git_object: f6e09547f89a128274294c054dbd30c5013b4bb8
+    last_write_checksum: sha1:bcfbe0a09889088d7265f92012d6086ae69e64ad
+    pristine_git_object: eb270c0a69ebd7cad1d4dd709f63bd1a57e1f469
   docs/Models/Requests/ListTaskTasksRequest.md:
     id: 6b2ab26a44db
-    last_write_checksum: sha1:06c3735dd5d826732d1a3682ce08cf6f269007d7
-    pristine_git_object: 65614f28de9449df1a13455a837bbe8322944e20
+    last_write_checksum: sha1:7c974c2395901a25ecf49b03252172bd77803611
+    pristine_git_object: 4dc1698661d5d72ffa89010959a27ad3f31afc3c
   docs/Models/Requests/ListTaskTasksResponse.md:
     id: 0f95e502bb18
     last_write_checksum: sha1:df5cec21ed2e2974531c21406e829f7602f93a95
@@ -22774,8 +22790,8 @@ trackedFiles:
     pristine_git_object: 4513f270b1ba94876b0d4f0fcb3d08daebc72c6d
   docs/Models/Requests/PatchTaskTaskQueryParamFields.md:
     id: 2c00ab1f8fa3
-    last_write_checksum: sha1:27c691a5fdd39c18e84551d87a2fc1940e502ec1
-    pristine_git_object: d75e3055501cd16625650e5c7c3d09ef2ed4a45b
+    last_write_checksum: sha1:d1a23d7552ce8668cbb79df38229cb04803f2f90
+    pristine_git_object: 201cf9241c8eae441982cb3d643e80df7f656b65
   docs/Models/Requests/PatchTaskTaskRequest.md:
     id: 4ac0de89131f
     last_write_checksum: sha1:ffd92886c8e30921782f1ffe316d0ae70441db3c
@@ -24994,8 +25010,8 @@ trackedFiles:
     pristine_git_object: 26def125aa78f7e1e1b9026853036f1f5b716225
   docs/Models/Requests/UpdateTaskTaskQueryParamFields.md:
     id: 92417871d318
-    last_write_checksum: sha1:ad9e53c8d9ebbbd883e7bc52b3778d44c021b44a
-    pristine_git_object: d619d0f0526141f2af185f121b9c2c2cbd8aa879
+    last_write_checksum: sha1:8127ca98f35d6b23cf53e146de053dc2759c5678
+    pristine_git_object: 8d18aec23ee498e4d6186e51e2f6f31eb545604d
   docs/Models/Requests/UpdateTaskTaskRequest.md:
     id: cd0862068914
     last_write_checksum: sha1:b3fc2c551d72b90db9c634f765aa2c1e85d98d3a
@@ -38831,7 +38847,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Messaging.CreateMessagingChannel()`: **Added**\n* `UnifiedTo.Messaging.PatchMessagingChannel()`: **Added**\n* `UnifiedTo.Messaging.RemoveMessagingChannel()`: **Added**\n* `UnifiedTo.Messaging.UpdateMessagingChannel()`: **Added**\n* `UnifiedTo.Channel.CreateMessagingChannel()`: **Added**\n* `UnifiedTo.Channel.PatchMessagingChannel()`: **Added**\n* `UnifiedTo.Channel.RemoveMessagingChannel()`: **Added**\n* `UnifiedTo.Channel.UpdateMessagingChannel()`: **Added**\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Permissions[].Enum(messagingChannelWrite)` **Added**\n  *  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(messagingChannelWrite)` **Added**\n  *  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(messagingChannelWrite)` **Added**\n  *  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Permissions[].Enum(messagingChannelWrite)` **Added**\n  *  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(messagingChannelWrite)` **Added**\n  *  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(messagingChannelWrite)` **Added**\n  *  `response.permissions[].Enum(messagingChannelWrite)` **Added**\n"
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Task.CreateTaskTask()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Task.GetTaskTask()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Task.ListTaskTasks()`: \n  *  `request` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Task.PatchTaskTask()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Task.UpdateTaskTask()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md

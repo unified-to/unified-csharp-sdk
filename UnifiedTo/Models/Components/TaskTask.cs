@@ -40,6 +40,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        [JsonProperty("end_at")]
+        public DateTime? EndAt { get; set; }
+
         [JsonProperty("follower_user_ids")]
         public List<string>? FollowerUserIds { get; set; }
 
@@ -73,11 +76,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
+
         [JsonProperty("status")]
         public TaskTaskStatus? Status { get; set; }
 
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
+
+        [JsonProperty("type")]
+        public string? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

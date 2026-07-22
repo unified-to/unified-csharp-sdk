@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_application_id")]
         public ListApplicationId? ListApplicationId { get; set; }
 
+        [JsonProperty("list_assigned_user_id")]
+        public ListAssignedUserId? ListAssignedUserId { get; set; }
+
         [JsonProperty("list_benefit_id")]
         public ListBenefitId? ListBenefitId { get; set; }
 
@@ -396,6 +399,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_application_id")]
         public VirtualWebhookApplicationId? VirtualWebhookApplicationId { get; set; }
+
+        [JsonProperty("virtual_webhook_assigned_user_id")]
+        public VirtualWebhookAssignedUserId? VirtualWebhookAssignedUserId { get; set; }
 
         [JsonProperty("virtual_webhook_benefit_id")]
         public VirtualWebhookBenefitId? VirtualWebhookBenefitId { get; set; }
