@@ -1,0 +1,13 @@
+# CdpMetadata
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `ExtraData`                                                             | [CdpMetadataExtraData](../../Models/Components/CdpMetadataExtraData.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Format`                                                                | [CdpMetadataFormat](../../Models/Components/CdpMetadataFormat.md)       | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Id`                                                                    | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Namespace`                                                             | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Slug`                                                                  | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Value`                                                                 | [CdpMetadataValue](../../Models/Components/CdpMetadataValue.md)         | :heavy_minus_sign:                                                      | N/A                                                                     |

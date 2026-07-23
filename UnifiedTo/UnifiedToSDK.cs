@@ -127,6 +127,18 @@ namespace UnifiedTo
 
         public IWebinar Webinar { get; }
 
+        public ICdp Cdp { get; }
+
+        public IActivation Activation { get; }
+
+        public IDestination Destination { get; }
+
+        public IProfile Profile { get; }
+
+        public ISegment Segment { get; }
+
+        public ISource Source { get; }
+
         public IClubs Clubs { get; }
 
         public ILocation Location { get; }
@@ -544,6 +556,30 @@ namespace UnifiedTo
         /// The Webinar sub-SDK.
         /// </summary>
         public IWebinar Webinar { get; private set; }
+        /// <summary>
+        /// The Cdp sub-SDK.
+        /// </summary>
+        public ICdp Cdp { get; private set; }
+        /// <summary>
+        /// The Activation sub-SDK.
+        /// </summary>
+        public IActivation Activation { get; private set; }
+        /// <summary>
+        /// The Destination sub-SDK.
+        /// </summary>
+        public IDestination Destination { get; private set; }
+        /// <summary>
+        /// The Profile sub-SDK.
+        /// </summary>
+        public IProfile Profile { get; private set; }
+        /// <summary>
+        /// The Segment sub-SDK.
+        /// </summary>
+        public ISegment Segment { get; private set; }
+        /// <summary>
+        /// The Source sub-SDK.
+        /// </summary>
+        public ISource Source { get; private set; }
         /// <summary>
         /// The Clubs sub-SDK.
         /// </summary>
@@ -1060,6 +1096,18 @@ namespace UnifiedTo
 
             Webinar = new Webinar(SDKConfiguration);
 
+            Cdp = new Cdp(SDKConfiguration);
+
+            Activation = new Activation(SDKConfiguration);
+
+            Destination = new Destination(SDKConfiguration);
+
+            Profile = new Profile(SDKConfiguration);
+
+            Segment = new Segment(SDKConfiguration);
+
+            Source = new Source(SDKConfiguration);
+
             Clubs = new Clubs(SDKConfiguration);
 
             Location = new Location(SDKConfiguration);
@@ -1426,6 +1474,18 @@ namespace UnifiedTo
             Recording = new Recording(SDKConfiguration);
 
             Webinar = new Webinar(SDKConfiguration);
+
+            Cdp = new Cdp(SDKConfiguration);
+
+            Activation = new Activation(SDKConfiguration);
+
+            Destination = new Destination(SDKConfiguration);
+
+            Profile = new Profile(SDKConfiguration);
+
+            Segment = new Segment(SDKConfiguration);
+
+            Source = new Source(SDKConfiguration);
 
             Clubs = new Clubs(SDKConfiguration);
 

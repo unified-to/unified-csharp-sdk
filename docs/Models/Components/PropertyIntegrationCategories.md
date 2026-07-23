@@ -47,3 +47,4 @@ var custom = PropertyIntegrationCategories.Of("custom_value");
 | `Signing`      | signing        |
 | `Clubs`        | clubs          |
 | `Datastore`    | datastore      |
+| `Cdp`          | cdp            |

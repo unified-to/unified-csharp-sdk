@@ -39,14 +39,22 @@ namespace UnifiedTo.Models.Requests
         DurationMinutes,
         [JsonProperty("categories")]
         Categories,
+        [JsonProperty("subjects")]
+        Subjects,
         [JsonProperty("skills")]
         Skills,
+        [JsonProperty("tags")]
+        Tags,
+        [JsonProperty("difficulty")]
+        Difficulty,
         [JsonProperty("sort_order")]
         SortOrder,
         [JsonProperty("provider_name")]
         ProviderName,
         [JsonProperty("short_description")]
         ShortDescription,
+        [JsonProperty("published_at")]
+        PublishedAt,
         [JsonProperty("localizations")]
         Localizations,
         [JsonProperty("instructor_ids")]

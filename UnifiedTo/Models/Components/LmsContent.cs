@@ -32,6 +32,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("difficulty")]
+        public string? Difficulty { get; set; }
+
         [JsonProperty("duration_minutes")]
         public double? DurationMinutes { get; set; }
 
@@ -62,6 +65,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("provider_name")]
         public string? ProviderName { get; set; }
 
+        [JsonProperty("published_at")]
+        public DateTime? PublishedAt { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -73,6 +79,15 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("sort_order")]
         public double? SortOrder { get; set; }
+
+        /// <summary>
+        /// Topic taxonomy as {name, rank} pairs carrying the full ancestor chain (rank = depth, 0 = top level).
+        /// </summary>
+        [JsonProperty("subjects")]
+        public List<LmsSubject>? Subjects { get; set; }
+
+        [JsonProperty("tags")]
+        public List<string>? Tags { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

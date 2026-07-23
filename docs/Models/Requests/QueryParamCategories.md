@@ -44,3 +44,4 @@ var value = QueryParamCategories.Passthrough;
 | `Signing`      | signing        |
 | `Clubs`        | clubs          |
 | `Datastore`    | datastore      |
+| `Cdp`          | cdp            |

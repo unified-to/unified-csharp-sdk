@@ -169,6 +169,12 @@ namespace UnifiedTo.Models.Components
         public static readonly ObjectType DatastoreTable = new ObjectType("datastore_table");
         public static readonly ObjectType DatastoreRecord = new ObjectType("datastore_record");
         public static readonly ObjectType DatastoreQuery = new ObjectType("datastore_query");
+        public static readonly ObjectType CdpProfile = new ObjectType("cdp_profile");
+        public static readonly ObjectType CdpSegment = new ObjectType("cdp_segment");
+        public static readonly ObjectType CdpEvent = new ObjectType("cdp_event");
+        public static readonly ObjectType CdpSource = new ObjectType("cdp_source");
+        public static readonly ObjectType CdpDestination = new ObjectType("cdp_destination");
+        public static readonly ObjectType CdpActivation = new ObjectType("cdp_activation");
 
         private static readonly Dictionary <string, ObjectType> _knownValues =
             new Dictionary <string, ObjectType> ()
@@ -322,7 +328,13 @@ namespace UnifiedTo.Models.Components
                 ["datastore_database"] = DatastoreDatabase,
                 ["datastore_table"] = DatastoreTable,
                 ["datastore_record"] = DatastoreRecord,
-                ["datastore_query"] = DatastoreQuery
+                ["datastore_query"] = DatastoreQuery,
+                ["cdp_profile"] = CdpProfile,
+                ["cdp_segment"] = CdpSegment,
+                ["cdp_event"] = CdpEvent,
+                ["cdp_source"] = CdpSource,
+                ["cdp_destination"] = CdpDestination,
+                ["cdp_activation"] = CdpActivation
             };
 
         private static readonly ConcurrentDictionary<string, ObjectType> _values =

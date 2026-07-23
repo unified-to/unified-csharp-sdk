@@ -50,6 +50,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyIntegrationCategories Signing = new PropertyIntegrationCategories("signing");
         public static readonly PropertyIntegrationCategories Clubs = new PropertyIntegrationCategories("clubs");
         public static readonly PropertyIntegrationCategories Datastore = new PropertyIntegrationCategories("datastore");
+        public static readonly PropertyIntegrationCategories Cdp = new PropertyIntegrationCategories("cdp");
 
         private static readonly Dictionary <string, PropertyIntegrationCategories> _knownValues =
             new Dictionary <string, PropertyIntegrationCategories> ()
@@ -84,7 +85,8 @@ namespace UnifiedTo.Models.Components
                 ["assessment"] = Assessment,
                 ["signing"] = Signing,
                 ["clubs"] = Clubs,
-                ["datastore"] = Datastore
+                ["datastore"] = Datastore,
+                ["cdp"] = Cdp
             };
 
         private static readonly ConcurrentDictionary<string, PropertyIntegrationCategories> _values =

@@ -295,6 +295,18 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions DatastoreRecordWrite = new PropertyConnectionPermissions("datastore_record_write");
         public static readonly PropertyConnectionPermissions DatastoreQueryRead = new PropertyConnectionPermissions("datastore_query_read");
         public static readonly PropertyConnectionPermissions DatastoreQueryWrite = new PropertyConnectionPermissions("datastore_query_write");
+        public static readonly PropertyConnectionPermissions CdpProfileRead = new PropertyConnectionPermissions("cdp_profile_read");
+        public static readonly PropertyConnectionPermissions CdpProfileWrite = new PropertyConnectionPermissions("cdp_profile_write");
+        public static readonly PropertyConnectionPermissions CdpSegmentRead = new PropertyConnectionPermissions("cdp_segment_read");
+        public static readonly PropertyConnectionPermissions CdpSegmentWrite = new PropertyConnectionPermissions("cdp_segment_write");
+        public static readonly PropertyConnectionPermissions CdpEventRead = new PropertyConnectionPermissions("cdp_event_read");
+        public static readonly PropertyConnectionPermissions CdpEventWrite = new PropertyConnectionPermissions("cdp_event_write");
+        public static readonly PropertyConnectionPermissions CdpSourceRead = new PropertyConnectionPermissions("cdp_source_read");
+        public static readonly PropertyConnectionPermissions CdpSourceWrite = new PropertyConnectionPermissions("cdp_source_write");
+        public static readonly PropertyConnectionPermissions CdpDestinationRead = new PropertyConnectionPermissions("cdp_destination_read");
+        public static readonly PropertyConnectionPermissions CdpDestinationWrite = new PropertyConnectionPermissions("cdp_destination_write");
+        public static readonly PropertyConnectionPermissions CdpActivationRead = new PropertyConnectionPermissions("cdp_activation_read");
+        public static readonly PropertyConnectionPermissions CdpActivationWrite = new PropertyConnectionPermissions("cdp_activation_write");
 
         private static readonly Dictionary <string, PropertyConnectionPermissions> _knownValues =
             new Dictionary <string, PropertyConnectionPermissions> ()
@@ -574,7 +586,19 @@ namespace UnifiedTo.Models.Components
                 ["datastore_record_read"] = DatastoreRecordRead,
                 ["datastore_record_write"] = DatastoreRecordWrite,
                 ["datastore_query_read"] = DatastoreQueryRead,
-                ["datastore_query_write"] = DatastoreQueryWrite
+                ["datastore_query_write"] = DatastoreQueryWrite,
+                ["cdp_profile_read"] = CdpProfileRead,
+                ["cdp_profile_write"] = CdpProfileWrite,
+                ["cdp_segment_read"] = CdpSegmentRead,
+                ["cdp_segment_write"] = CdpSegmentWrite,
+                ["cdp_event_read"] = CdpEventRead,
+                ["cdp_event_write"] = CdpEventWrite,
+                ["cdp_source_read"] = CdpSourceRead,
+                ["cdp_source_write"] = CdpSourceWrite,
+                ["cdp_destination_read"] = CdpDestinationRead,
+                ["cdp_destination_write"] = CdpDestinationWrite,
+                ["cdp_activation_read"] = CdpActivationRead,
+                ["cdp_activation_write"] = CdpActivationWrite
             };
 
         private static readonly ConcurrentDictionary<string, PropertyConnectionPermissions> _values =

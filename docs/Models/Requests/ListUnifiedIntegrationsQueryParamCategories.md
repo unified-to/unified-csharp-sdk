@@ -44,3 +44,4 @@ var value = ListUnifiedIntegrationsQueryParamCategories.Passthrough;
 | `Signing`      | signing        |
 | `Clubs`        | clubs          |
 | `Datastore`    | datastore      |
+| `Cdp`          | cdp            |

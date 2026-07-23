@@ -77,6 +77,8 @@ namespace UnifiedTo.Models.Requests
         Clubs,
         [JsonProperty("datastore")]
         Datastore,
+        [JsonProperty("cdp")]
+        Cdp,
     }
 
     public static class CategoriesExtension
