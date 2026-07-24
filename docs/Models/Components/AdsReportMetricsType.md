@@ -141,3 +141,5 @@ var custom = AdsReportMetricsType.Of("custom_value");
 | `TwentyEightDVIEW`                   | 28D_VIEW                             |
 | `TwentyEightDCLICK`                  | 28D_CLICK                            |
 | `ThirtyDCLICK`                       | 30D_CLICK                            |
+| `Visits`                             | VISITS                               |
+| `AudioMutes`                         | AUDIO_MUTES                          |

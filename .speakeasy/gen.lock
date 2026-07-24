@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: df9d7e70f96a426fc6497f3a82fde17e
+  docChecksum: 4926c88b7af5a30853ff3f6a7d37afe1
   docVersion: "1.0"
   speakeasyVersion: 1.790.3
   generationVersion: 2.918.4
-  releaseVersion: 0.131.2
-  configChecksum: 6f06cde1a789639b9f9cb27045817532
+  releaseVersion: 0.131.3
+  configChecksum: 4594cee421afec2a808a0dfdfa8fe562
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: a1879230-a5aa-4ce6-ad2e-172f8a701158
-  pristine_commit_hash: 32b46b6b766700f6242b9f5a3c08836956be3119
-  pristine_tree_hash: e90ed6a0a5a8f04e94a6b7778b447d2b45486be7
+  generation_id: 3f601236-44d1-4151-ac57-6d4521f76206
+  pristine_commit_hash: 77d9c084e860e57a9dae927e68ebf69f6772171c
+  pristine_tree_hash: d7d860d609bca1b4b4ead3c059cd6d0d81979215
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -742,8 +742,8 @@ trackedFiles:
     pristine_git_object: aeec14fca8ded72fc467410ee11d27c5ca2dc076
   UnifiedTo/Models/Components/AdsReportMetricsType.cs:
     id: 08c8110e34a3
-    last_write_checksum: sha1:ab990ba8c49ac44b38fdbfb806d8cf3160c07dbe
-    pristine_git_object: b1521396601c45e16974dde1cbb1db9d22e9bf90
+    last_write_checksum: sha1:5820d25e13a492031c74c2ee1ae12b7d06ce877d
+    pristine_git_object: 071b948411d15a32f558e0192ff65ef368f6ae68
   UnifiedTo/Models/Components/AdsTarget.cs:
     id: 86ec32266996
     last_write_checksum: sha1:b85aa12300a28b764d1c1f2411b9c60a7eaf1aa8
@@ -7894,8 +7894,8 @@ trackedFiles:
     pristine_git_object: 4bcda1e3a7ff8f9f961dc9ec6d6a5d38815cada2
   UnifiedTo/Models/Requests/ListAdsReportsRequest.cs:
     id: "697438190878"
-    last_write_checksum: sha1:79afb8959c7c7d3986a2ff3a71e5c4b60f3af402
-    pristine_git_object: 5e37385f78b8ae1ed82c5dee64d62136fc2a7145
+    last_write_checksum: sha1:d1c66344c8b5a35bb43bd7625def4a42fc1b671f
+    pristine_git_object: 40d6bc54d7013dfbab298fb907e869a3c710a352
   UnifiedTo/Models/Requests/ListAdsReportsResponse.cs:
     id: 23be03ec7178
     last_write_checksum: sha1:66eab2f5aee44ca9ead9f77c7c34670aeffb4741
@@ -13266,8 +13266,8 @@ trackedFiles:
     pristine_git_object: f4a15de0ba2bd4140130f22d61c09baa393f3282
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:1bd33fb0c4b55f05128fefd418319b8f2f0cf746
-    pristine_git_object: b8fe8d5be03851aa3c5d0c7012394e14f97a7914
+    last_write_checksum: sha1:3af506fe12af258ba967ae310b339f5243495f8d
+    pristine_git_object: 88edc228e546c24848618c843ddb208aa1be55ec
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -13398,8 +13398,8 @@ trackedFiles:
     pristine_git_object: 9b1b93cea5451e186b5535d7f02d4e4e97048dd2
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:4a489f6a6262cf21b613ea8df3e2a96b35fffc24
-    pristine_git_object: de95ce5866ddbc3c79144e54798bfc808035c24f
+    last_write_checksum: sha1:c7ea2f463c578613942ca25377444d737b000566
+    pristine_git_object: 6e86b74a4c96fa69593e9ab1f12b2c68c5f5db5b
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:bae60dc0228ff38ed478bbc988275acab4331160
@@ -13418,8 +13418,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:3d808eadf21df00d442c3061d08fd35199eaea81
-    pristine_git_object: e2f7842d2b5bc2fbd6c2a3e401bdfae265596191
+    last_write_checksum: sha1:257a152d01d33762d3f7cfab700d694e7bdaa349
+    pristine_git_object: 4f9b1ce7e117121f63c663fbf00f2a2b3316353e
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -13834,8 +13834,8 @@ trackedFiles:
     pristine_git_object: 56077501df1fe8b67d947066f30c1a2e2be52b70
   docs/Models/Components/AdsReportMetricsType.md:
     id: 18d7475461ce
-    last_write_checksum: sha1:93ec7a749db601bd13d96f80a3d0933672611f9a
-    pristine_git_object: 3edc5371faf4c6fb888a82047b8df68bb5c81362
+    last_write_checksum: sha1:d1a7a686fca8cfda49cf7f96f09e1a976784c73e
+    pristine_git_object: 44274093931f154db9dc71dd762c80fc3dc860d7
   docs/Models/Components/AdsTarget.md:
     id: 3d31b7d65be2
     last_write_checksum: sha1:18152677a7dca8ee4246d8879286ae5ca9898b2c
@@ -20974,8 +20974,8 @@ trackedFiles:
     pristine_git_object: 87c0a3ffd03054fbded9e01f60f61f579840c6a8
   docs/Models/Requests/ListAdsReportsRequest.md:
     id: 2ee446500728
-    last_write_checksum: sha1:24a14888772124b4550477aa2ffb2ecbd7e6da05
-    pristine_git_object: 32028d5903d3f78dbce68994c5811673f5f3dc47
+    last_write_checksum: sha1:d0644c28da29f3f7c9d7f87bae5a61b494b80edd
+    pristine_git_object: 131f21c2f315fa1ab0ffb83bdde20eab6f58e5ca
   docs/Models/Requests/ListAdsReportsResponse.md:
     id: a6d594817d1e
     last_write_checksum: sha1:6c50a0e514c488a2d0732e0b380a5720203e5cea
@@ -40281,7 +40281,10 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Event.CreateCdpEvent()`: **Added**\n* `UnifiedTo.Event.GetCdpEvent()`: **Added**\n* `UnifiedTo.Event.ListCdpEvents()`: **Added**\n* `UnifiedTo.Event.PatchCdpEvent()`: **Added**\n* `UnifiedTo.Event.RemoveCdpEvent()`: **Added**\n* `UnifiedTo.Event.UpdateCdpEvent()`: **Added**\n* `UnifiedTo.Cdp.CreateCdpActivation()`: **Added**\n* `UnifiedTo.Cdp.CreateCdpDestination()`: **Added**\n* `UnifiedTo.Cdp.CreateCdpEvent()`: **Added**\n* `UnifiedTo.Cdp.CreateCdpProfile()`: **Added**\n* `UnifiedTo.Cdp.CreateCdpSegment()`: **Added**\n* `UnifiedTo.Cdp.CreateCdpSource()`: **Added**\n* `UnifiedTo.Cdp.GetCdpActivation()`: **Added**\n* `UnifiedTo.Cdp.GetCdpDestination()`: **Added**\n* `UnifiedTo.Cdp.GetCdpEvent()`: **Added**\n* `UnifiedTo.Cdp.GetCdpProfile()`: **Added**\n* `UnifiedTo.Cdp.GetCdpSegment()`: **Added**\n* `UnifiedTo.Cdp.GetCdpSource()`: **Added**\n* `UnifiedTo.Cdp.ListCdpActivations()`: **Added**\n* `UnifiedTo.Cdp.ListCdpDestinations()`: **Added**\n* `UnifiedTo.Cdp.ListCdpEvents()`: **Added**\n* `UnifiedTo.Cdp.ListCdpProfiles()`: **Added**\n* `UnifiedTo.Cdp.ListCdpSegments()`: **Added**\n* `UnifiedTo.Cdp.ListCdpSources()`: **Added**\n* `UnifiedTo.Cdp.PatchCdpActivation()`: **Added**\n* `UnifiedTo.Cdp.PatchCdpDestination()`: **Added**\n* `UnifiedTo.Cdp.PatchCdpEvent()`: **Added**\n* `UnifiedTo.Cdp.PatchCdpProfile()`: **Added**\n* `UnifiedTo.Cdp.PatchCdpSegment()`: **Added**\n* `UnifiedTo.Cdp.PatchCdpSource()`: **Added**\n* `UnifiedTo.Cdp.RemoveCdpActivation()`: **Added**\n* `UnifiedTo.Cdp.RemoveCdpDestination()`: **Added**\n* `UnifiedTo.Cdp.RemoveCdpEvent()`: **Added**\n* `UnifiedTo.Cdp.RemoveCdpProfile()`: **Added**\n* `UnifiedTo.Cdp.RemoveCdpSegment()`: **Added**\n* `UnifiedTo.Cdp.RemoveCdpSource()`: **Added**\n* `UnifiedTo.Cdp.UpdateCdpActivation()`: **Added**\n* `UnifiedTo.Cdp.UpdateCdpDestination()`: **Added**\n* `UnifiedTo.Cdp.UpdateCdpEvent()`: **Added**\n* `UnifiedTo.Cdp.UpdateCdpProfile()`: **Added**\n* `UnifiedTo.Cdp.UpdateCdpSegment()`: **Added**\n* `UnifiedTo.Cdp.UpdateCdpSource()`: **Added**\n* `UnifiedTo.Activation.CreateCdpActivation()`: **Added**\n* `UnifiedTo.Activation.GetCdpActivation()`: **Added**\n* `UnifiedTo.Activation.ListCdpActivations()`: **Added**\n* `UnifiedTo.Activation.PatchCdpActivation()`: **Added**\n* `UnifiedTo.Activation.RemoveCdpActivation()`: **Added**\n* `UnifiedTo.Activation.UpdateCdpActivation()`: **Added**\n* `UnifiedTo.Destination.CreateCdpDestination()`: **Added**\n* `UnifiedTo.Destination.GetCdpDestination()`: **Added**\n* `UnifiedTo.Destination.ListCdpDestinations()`: **Added**\n* `UnifiedTo.Destination.PatchCdpDestination()`: **Added**\n* `UnifiedTo.Destination.RemoveCdpDestination()`: **Added**\n* `UnifiedTo.Destination.UpdateCdpDestination()`: **Added**\n* `UnifiedTo.Profile.CreateCdpProfile()`: **Added**\n* `UnifiedTo.Profile.GetCdpProfile()`: **Added**\n* `UnifiedTo.Profile.ListCdpProfiles()`: **Added**\n* `UnifiedTo.Profile.PatchCdpProfile()`: **Added**\n* `UnifiedTo.Profile.RemoveCdpProfile()`: **Added**\n* `UnifiedTo.Profile.UpdateCdpProfile()`: **Added**\n* `UnifiedTo.Segment.CreateCdpSegment()`: **Added**\n* `UnifiedTo.Segment.GetCdpSegment()`: **Added**\n* `UnifiedTo.Segment.ListCdpSegments()`: **Added**\n* `UnifiedTo.Segment.PatchCdpSegment()`: **Added**\n* `UnifiedTo.Segment.RemoveCdpSegment()`: **Added**\n* `UnifiedTo.Segment.UpdateCdpSegment()`: **Added**\n* `UnifiedTo.Source.CreateCdpSource()`: **Added**\n* `UnifiedTo.Source.GetCdpSource()`: **Added**\n* `UnifiedTo.Source.ListCdpSources()`: **Added**\n* `UnifiedTo.Source.PatchCdpSource()`: **Added**\n* `UnifiedTo.Source.RemoveCdpSource()`: **Added**\n* `UnifiedTo.Source.UpdateCdpSource()`: **Added**\n* `UnifiedTo.Lms.CreateLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Lms.GetLmsContent()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Lms.ListLmsContents()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Lms.PatchLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Lms.UpdateLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Content.CreateLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Content.GetLmsContent()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Content.ListLmsContents()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Content.PatchLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Content.UpdateLmsContent()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response` **Changed**\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.objectType` **Changed**\n* `UnifiedTo.Unified.ListUnifiedConnections()`: \n  *  `request.Categories` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`: \n  *  `request.Categories` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`: \n  *  `request.Categories` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].ObjectType` **Changed**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response` **Changed**\n* `UnifiedTo.Connection.ListUnifiedConnections()`: \n  *  `request.Categories` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`: \n  *  `request.Categories` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`: \n  *  `request.Categories` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.objectType` **Changed**\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].ObjectType` **Changed**\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n"
+releaseNotes: |
+  ## Csharp SDK Changes:
+  * `UnifiedTo.Report.ListAdsReports()`:  `response.[].Metrics[].Type` **Changed**
+  * `UnifiedTo.Ads.ListAdsReports()`:  `response.[].Metrics[].Type` **Changed**
 generatedFiles:
   - .gitattributes
   - NUGET.md

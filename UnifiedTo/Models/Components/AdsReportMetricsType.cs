@@ -144,6 +144,8 @@ namespace UnifiedTo.Models.Components
         public static readonly AdsReportMetricsType TwentyEightDVIEW = new AdsReportMetricsType("28D_VIEW");
         public static readonly AdsReportMetricsType TwentyEightDCLICK = new AdsReportMetricsType("28D_CLICK");
         public static readonly AdsReportMetricsType ThirtyDCLICK = new AdsReportMetricsType("30D_CLICK");
+        public static readonly AdsReportMetricsType Visits = new AdsReportMetricsType("VISITS");
+        public static readonly AdsReportMetricsType AudioMutes = new AdsReportMetricsType("AUDIO_MUTES");
 
         private static readonly Dictionary <string, AdsReportMetricsType> _knownValues =
             new Dictionary <string, AdsReportMetricsType> ()
@@ -272,7 +274,9 @@ namespace UnifiedTo.Models.Components
                 ["14D_CLICK"] = FourteenDCLICK,
                 ["28D_VIEW"] = TwentyEightDVIEW,
                 ["28D_CLICK"] = TwentyEightDCLICK,
-                ["30D_CLICK"] = ThirtyDCLICK
+                ["30D_CLICK"] = ThirtyDCLICK,
+                ["VISITS"] = Visits,
+                ["AUDIO_MUTES"] = AudioMutes
             };
 
         private static readonly ConcurrentDictionary<string, AdsReportMetricsType> _values =
