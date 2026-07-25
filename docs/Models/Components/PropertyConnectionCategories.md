@@ -20,6 +20,7 @@ var custom = PropertyConnectionCategories.Of("custom_value");
 | `Hris`         | hris           |
 | `Ats`          | ats            |
 | `Auth`         | auth           |
+| `Saml`         | saml           |
 | `Crm`          | crm            |
 | `Enrich`       | enrich         |
 | `Martech`      | martech        |

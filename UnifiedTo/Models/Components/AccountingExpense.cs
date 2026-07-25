@@ -11,7 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
@@ -26,6 +28,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("approver_user_id")]
         public string? ApproverUserId { get; set; }
 
+        /// <summary>
+        /// expense approver(s); id is HR employee/user when resolved.
+        /// </summary>
+        [JsonProperty("approver_users")]
+        public List<AccountingReference>? ApproverUsers { get; set; }
+
         [JsonProperty("attachments")]
         public List<AccountingAttachment>? Attachments { get; set; }
 
@@ -37,6 +45,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
+
+        [JsonProperty("external_number")]
+        public string? ExternalNumber { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -65,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reimbursed_at")]
         public DateTime? ReimbursedAt { get; set; }
 
+        [JsonProperty("status")]
+        public AccountingExpenseStatus? Status { get; set; }
+
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
@@ -76,5 +90,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
+
+        [JsonProperty("users")]
+        public List<AccountingReference>? Users { get; set; }
     }
 }

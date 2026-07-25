@@ -19,6 +19,12 @@ namespace UnifiedTo.Models.Components
 
     public class TicketingTicket
     {
+        /// <summary>
+        /// Array of attachment IDs retrieved from StorageFile.Get endpoint.
+        /// </summary>
+        [JsonProperty("attachment_ids")]
+        public List<string>? AttachmentIds { get; set; }
+
         [JsonProperty("category_id")]
         public string? CategoryId { get; set; }
 

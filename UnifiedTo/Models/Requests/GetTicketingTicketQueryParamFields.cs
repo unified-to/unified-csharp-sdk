@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("url")]
         Url,
+        [JsonProperty("attachment_ids")]
+        AttachmentIds,
         [JsonProperty("due_at")]
         DueAt,
         [JsonProperty("raw")]

@@ -53,6 +53,14 @@ namespace UnifiedTo.Models.Requests
         Attachments,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("users")]
+        Users,
+        [JsonProperty("approver_users")]
+        ApproverUsers,
+        [JsonProperty("status")]
+        Status,
+        [JsonProperty("external_number")]
+        ExternalNumber,
         [JsonProperty("raw")]
         Raw,
     }

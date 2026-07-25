@@ -23,6 +23,8 @@ namespace UnifiedTo.Models.Requests
         Ats,
         [JsonProperty("auth")]
         Auth,
+        [JsonProperty("saml")]
+        Saml,
         [JsonProperty("crm")]
         Crm,
         [JsonProperty("enrich")]

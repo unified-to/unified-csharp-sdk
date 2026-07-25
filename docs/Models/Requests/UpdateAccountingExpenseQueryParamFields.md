@@ -32,4 +32,8 @@ var value = UpdateAccountingExpenseQueryParamFields.Id;
 | `Lineitems`        | lineitems          |
 | `Attachments`      | attachments        |
 | `OrganizationId`   | organization_id    |
+| `Users`            | users              |
+| `ApproverUsers`    | approver_users     |
+| `Status`           | status             |
+| `ExternalNumber`   | external_number    |
 | `Raw`              | raw                |

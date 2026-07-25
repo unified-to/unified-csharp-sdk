@@ -23,6 +23,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyIntegrationCategories Hris = new PropertyIntegrationCategories("hris");
         public static readonly PropertyIntegrationCategories Ats = new PropertyIntegrationCategories("ats");
         public static readonly PropertyIntegrationCategories Auth = new PropertyIntegrationCategories("auth");
+        public static readonly PropertyIntegrationCategories Saml = new PropertyIntegrationCategories("saml");
         public static readonly PropertyIntegrationCategories Crm = new PropertyIntegrationCategories("crm");
         public static readonly PropertyIntegrationCategories Enrich = new PropertyIntegrationCategories("enrich");
         public static readonly PropertyIntegrationCategories Martech = new PropertyIntegrationCategories("martech");
@@ -59,6 +60,7 @@ namespace UnifiedTo.Models.Components
                 ["hris"] = Hris,
                 ["ats"] = Ats,
                 ["auth"] = Auth,
+                ["saml"] = Saml,
                 ["crm"] = Crm,
                 ["enrich"] = Enrich,
                 ["martech"] = Martech,
