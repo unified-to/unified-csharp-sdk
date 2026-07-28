@@ -70,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("priority")]
         public string? Priority { get; set; }
 
+        [JsonProperty("progress")]
+        public double? Progress { get; set; }
+
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
@@ -82,8 +85,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public TaskTaskStatus? Status { get; set; }
 
+        [JsonProperty("story_points")]
+        public double? StoryPoints { get; set; }
+
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
+
+        [JsonProperty("time_spent")]
+        public double? TimeSpent { get; set; }
+
+        [JsonProperty("time_spent_unit")]
+        public string? TimeSpentUnit { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }

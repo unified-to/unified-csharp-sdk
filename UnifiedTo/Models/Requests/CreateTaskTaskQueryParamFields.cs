@@ -61,6 +61,14 @@ namespace UnifiedTo.Models.Requests
         HasChildren,
         [JsonProperty("type")]
         Type,
+        [JsonProperty("time_spent")]
+        TimeSpent,
+        [JsonProperty("time_spent_unit")]
+        TimeSpentUnit,
+        [JsonProperty("progress")]
+        Progress,
+        [JsonProperty("story_points")]
+        StoryPoints,
         [JsonProperty("raw")]
         Raw,
     }
