@@ -21,26 +21,26 @@ namespace UnifiedTo
     using UnifiedTo.Utils;
     using UnifiedTo.Utils.Retries;
 
-    public interface ILogin
+    public interface ISaml
     {
         /// <summary>
-        /// Sign in a user.
+        /// Sign in a user via SAML.
         /// </summary>
         /// <remarks>
-        /// Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+        /// Returns a SAML authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
         /// </remarks>
-        /// <param name="request">A <see cref="GetUnifiedIntegrationLoginRequest"/> parameter.</param>
-        /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationLoginResponse"/> response envelope when completed.</returns>
+        /// <param name="request">A <see cref="GetUnifiedIntegrationSamlRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationSamlResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<GetUnifiedIntegrationLoginResponse> GetUnifiedIntegrationLoginAsync(
-            GetUnifiedIntegrationLoginRequest request
+        public  Task<GetUnifiedIntegrationSamlResponse> GetUnifiedIntegrationSamlAsync(
+            GetUnifiedIntegrationSamlRequest request
         );
     }
 
-    public class Login: ILogin
+    public class Saml: ISaml
     {
         /// <summary>
         /// SDK Configuration.
@@ -48,31 +48,31 @@ namespace UnifiedTo
         /// </summary>
         public SDKConfig SDKConfiguration { get; private set; }
 
-        public Login(SDKConfig config)
+        public Saml(SDKConfig config)
         {
             SDKConfiguration = config;
         }
 
         /// <summary>
-        /// Sign in a user.
+        /// Sign in a user via SAML.
         /// </summary>
         /// <remarks>
-        /// Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+        /// Returns a SAML authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
         /// </remarks>
-        /// <param name="request">A <see cref="GetUnifiedIntegrationLoginRequest"/> parameter.</param>
-        /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationLoginResponse"/> response envelope when completed.</returns>
+        /// <param name="request">A <see cref="GetUnifiedIntegrationSamlRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationSamlResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<GetUnifiedIntegrationLoginResponse> GetUnifiedIntegrationLoginAsync(
-            GetUnifiedIntegrationLoginRequest request
+        public async  Task<GetUnifiedIntegrationSamlResponse> GetUnifiedIntegrationSamlAsync(
+            GetUnifiedIntegrationSamlRequest request
         )
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/integration/login/{workspace_id}/{integration_type}", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/integration/saml/{workspace_id}/{integration_type}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -87,7 +87,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUnifiedIntegrationLogin", null, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUnifiedIntegrationSaml", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -127,7 +127,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("text/plain", contentType))
                 {
-                    var response = new GetUnifiedIntegrationLoginResponse()
+                    var response = new GetUnifiedIntegrationSamlResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,

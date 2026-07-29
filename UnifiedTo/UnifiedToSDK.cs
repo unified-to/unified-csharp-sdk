@@ -331,6 +331,8 @@ namespace UnifiedTo
 
         public ILogin Login { get; }
 
+        public ISaml Saml { get; }
+
         public IIssue Issue { get; }
 
         public IWebhook Webhook { get; }
@@ -965,6 +967,10 @@ namespace UnifiedTo
         /// </summary>
         public ILogin Login { get; private set; }
         /// <summary>
+        /// The Saml sub-SDK.
+        /// </summary>
+        public ISaml Saml { get; private set; }
+        /// <summary>
         /// The Issue sub-SDK.
         /// </summary>
         public IIssue Issue { get; private set; }
@@ -1299,6 +1305,8 @@ namespace UnifiedTo
             Auth = new Auth(SDKConfiguration);
 
             Login = new Login(SDKConfiguration);
+
+            Saml = new Saml(SDKConfiguration);
 
             Issue = new Issue(SDKConfiguration);
 
@@ -1678,6 +1686,8 @@ namespace UnifiedTo
             Auth = new Auth(SDKConfiguration);
 
             Login = new Login(SDKConfiguration);
+
+            Saml = new Saml(SDKConfiguration);
 
             Issue = new Issue(SDKConfiguration);
 

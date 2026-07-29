@@ -1271,7 +1271,6 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### [Login](docs/sdks/login/README.md)
 
 * [GetUnifiedIntegrationLogin](docs/sdks/login/README.md#getunifiedintegrationlogin) - Sign in a user
-* [GetUnifiedIntegrationSaml](docs/sdks/login/README.md#getunifiedintegrationsaml) - Sign in a user via SAML
 
 ### [Martech](docs/sdks/martech/README.md)
 
@@ -1652,6 +1651,10 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [PatchAccountingSalesorder](docs/sdks/salesorder/README.md#patchaccountingsalesorder) - Update a salesorder
 * [RemoveAccountingSalesorder](docs/sdks/salesorder/README.md#removeaccountingsalesorder) - Remove a salesorder
 * [UpdateAccountingSalesorder](docs/sdks/salesorder/README.md#updateaccountingsalesorder) - Update a salesorder
+
+### [Saml](docs/sdks/saml/README.md)
+
+* [GetUnifiedIntegrationSaml](docs/sdks/saml/README.md#getunifiedintegrationsaml) - Sign in a user via SAML
 
 ### [Scim](docs/sdks/scim/README.md)
 

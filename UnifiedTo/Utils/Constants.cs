@@ -22,7 +22,7 @@ namespace UnifiedTo.Utils
         /// <summary>
         /// The version of the SDK.
         /// </summary>
-        public const string SdkVersion = "0.131.5";
+        public const string SdkVersion = "0.131.6";
 
         /// <summary>
         /// The version of the SDK generator used to create this SDK.

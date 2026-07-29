@@ -83,7 +83,7 @@ namespace UnifiedTo.Models.Components
         public bool? RequiresCname { get; set; }
 
         [JsonProperty("saml", NullValueHandling = NullValueHandling.Include)]
-        public Saml? Saml { get; set; }
+        public Models.Components.Saml? Saml { get; set; }
 
         [JsonProperty("sandbox", NullValueHandling = NullValueHandling.Include)]
         public Sandbox? Sandbox { get; set; }

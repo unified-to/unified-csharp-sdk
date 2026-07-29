@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// Sign in a user.
         /// </summary>
         /// <remarks>
-        /// Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+        /// Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
         /// </remarks>
         /// <param name="request">A <see cref="GetUnifiedIntegrationLoginRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationLoginResponse"/> response envelope when completed.</returns>
@@ -188,7 +188,7 @@ namespace UnifiedTo
         /// Sign in a user.
         /// </summary>
         /// <remarks>
-        /// Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
+        /// Returns an authentication URL for the specified integration.  Once a successful OAuth2 code-flow authentication occurs, the name and email are returned inside a jwt parameter, which is a JSON web token that is base-64 encoded.
         /// </remarks>
         /// <param name="request">A <see cref="GetUnifiedIntegrationLoginRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationLoginResponse"/> response envelope when completed.</returns>
