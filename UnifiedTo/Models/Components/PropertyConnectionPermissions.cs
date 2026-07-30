@@ -249,6 +249,8 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions AdsOrganizationWrite = new PropertyConnectionPermissions("ads_organization_write");
         public static readonly PropertyConnectionPermissions AdsCreativeRead = new PropertyConnectionPermissions("ads_creative_read");
         public static readonly PropertyConnectionPermissions AdsCreativeWrite = new PropertyConnectionPermissions("ads_creative_write");
+        public static readonly PropertyConnectionPermissions AdsAssetRead = new PropertyConnectionPermissions("ads_asset_read");
+        public static readonly PropertyConnectionPermissions AdsAssetWrite = new PropertyConnectionPermissions("ads_asset_write");
         public static readonly PropertyConnectionPermissions AdsInsertionorderRead = new PropertyConnectionPermissions("ads_insertionorder_read");
         public static readonly PropertyConnectionPermissions AdsInsertionorderWrite = new PropertyConnectionPermissions("ads_insertionorder_write");
         public static readonly PropertyConnectionPermissions AdsTargetRead = new PropertyConnectionPermissions("ads_target_read");
@@ -541,6 +543,8 @@ namespace UnifiedTo.Models.Components
                 ["ads_organization_write"] = AdsOrganizationWrite,
                 ["ads_creative_read"] = AdsCreativeRead,
                 ["ads_creative_write"] = AdsCreativeWrite,
+                ["ads_asset_read"] = AdsAssetRead,
+                ["ads_asset_write"] = AdsAssetWrite,
                 ["ads_insertionorder_read"] = AdsInsertionorderRead,
                 ["ads_insertionorder_write"] = AdsInsertionorderWrite,
                 ["ads_target_read"] = AdsTargetRead,

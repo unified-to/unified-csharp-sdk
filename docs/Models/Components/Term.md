@@ -23,4 +23,7 @@ var custom = Term.Of("custom_value");
 | `Net20`     | NET_20      |
 | `Net25`     | NET_25      |
 | `Net30`     | NET_30      |
+| `Net45`     | NET_45      |
 | `Net60`     | NET_60      |
+| `Net90`     | NET_90      |
+| `Other`     | OTHER       |

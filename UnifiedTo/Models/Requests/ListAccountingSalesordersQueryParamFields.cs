@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         OrganizationId,
         [JsonProperty("fees")]
         Fees,
+        [JsonProperty("category_ids")]
+        CategoryIds,
         [JsonProperty("raw")]
         Raw,
     }

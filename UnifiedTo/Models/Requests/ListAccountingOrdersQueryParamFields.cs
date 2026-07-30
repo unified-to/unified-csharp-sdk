@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         Status,
         [JsonProperty("lineitems")]
         Lineitems,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

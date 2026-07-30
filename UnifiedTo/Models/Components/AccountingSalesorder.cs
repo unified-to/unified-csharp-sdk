@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("billing_address")]
         public PropertyAccountingSalesorderBillingAddress? BillingAddress { get; set; }
 
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 

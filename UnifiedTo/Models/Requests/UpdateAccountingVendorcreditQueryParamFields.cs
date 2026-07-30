@@ -47,6 +47,8 @@ namespace UnifiedTo.Models.Requests
         OrganizationId,
         [JsonProperty("apply_amount")]
         ApplyAmount,
+        [JsonProperty("applications")]
+        Applications,
         [JsonProperty("raw")]
         Raw,
     }

@@ -26,7 +26,10 @@ namespace UnifiedTo.Models.Components
         public static readonly AccountingInvoiceTerm Net20 = new AccountingInvoiceTerm("NET_20");
         public static readonly AccountingInvoiceTerm Net25 = new AccountingInvoiceTerm("NET_25");
         public static readonly AccountingInvoiceTerm Net30 = new AccountingInvoiceTerm("NET_30");
+        public static readonly AccountingInvoiceTerm Net45 = new AccountingInvoiceTerm("NET_45");
         public static readonly AccountingInvoiceTerm Net60 = new AccountingInvoiceTerm("NET_60");
+        public static readonly AccountingInvoiceTerm Net90 = new AccountingInvoiceTerm("NET_90");
+        public static readonly AccountingInvoiceTerm Other = new AccountingInvoiceTerm("OTHER");
 
         private static readonly Dictionary <string, AccountingInvoiceTerm> _knownValues =
             new Dictionary <string, AccountingInvoiceTerm> ()
@@ -38,7 +41,10 @@ namespace UnifiedTo.Models.Components
                 ["NET_20"] = Net20,
                 ["NET_25"] = Net25,
                 ["NET_30"] = Net30,
-                ["NET_60"] = Net60
+                ["NET_45"] = Net45,
+                ["NET_60"] = Net60,
+                ["NET_90"] = Net90,
+                ["OTHER"] = Other
             };
 
         private static readonly ConcurrentDictionary<string, AccountingInvoiceTerm> _values =

@@ -36,4 +36,5 @@ var value = ListAccountingExpensesQueryParamFields.Id;
 | `ApproverUsers`    | approver_users     |
 | `Status`           | status             |
 | `ExternalNumber`   | external_number    |
+| `CategoryIds`      | category_ids       |
 | `Raw`              | raw                |

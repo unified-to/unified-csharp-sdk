@@ -5,12 +5,14 @@
 ### Available Operations
 
 * [CreateAdsAd](#createadsad) - Create an ad
+* [CreateAdsAsset](#createadsasset) - Create an asset
 * [CreateAdsCampaign](#createadscampaign) - Create a campaign
 * [CreateAdsCreative](#createadscreative) - Create a creative
 * [CreateAdsGroup](#createadsgroup) - Create a group
 * [CreateAdsInsertionorder](#createadsinsertionorder) - Create an insertionorder
 * [CreateAdsOrganization](#createadsorganization) - Create an organization
 * [GetAdsAd](#getadsad) - Retrieve an ad
+* [GetAdsAsset](#getadsasset) - Retrieve an asset
 * [GetAdsCampaign](#getadscampaign) - Retrieve a campaign
 * [GetAdsCreative](#getadscreative) - Retrieve a creative
 * [GetAdsGroup](#getadsgroup) - Retrieve a group
@@ -19,6 +21,7 @@
 * [GetAdsPromoted](#getadspromoted) - Retrieve a promoted
 * [GetAdsTarget](#getadstarget) - Retrieve a target
 * [ListAdsAds](#listadsads) - List all ads
+* [ListAdsAssets](#listadsassets) - List all assets
 * [ListAdsCampaigns](#listadscampaigns) - List all campaigns
 * [ListAdsCreatives](#listadscreatives) - List all creatives
 * [ListAdsGroups](#listadsgroups) - List all groups
@@ -81,6 +84,48 @@ var res = await sdk.Ads.CreateAdsAdAsync(
 ### Response
 
 **[CreateAdsAdResponse](../../Models/Requests/CreateAdsAdResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAdsAsset
+
+Create an asset
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Ads.CreateAdsAssetAsync(
+    adsAsset: new AdsAsset() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AdsAsset`                                                                                                                                       | [AdsAsset](../../Models/Components/AdsAsset.md)                                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateAdsAssetQueryParamFields](../../Models/Requests/CreateAdsAssetQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAdsAssetResponse](../../Models/Requests/CreateAdsAssetResponse.md)**
 
 ### Errors
 
@@ -333,6 +378,48 @@ var res = await sdk.Ads.GetAdsAdAsync(
 ### Response
 
 **[GetAdsAdResponse](../../Models/Requests/GetAdsAdResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetAdsAsset
+
+Retrieve an asset
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getAdsAsset" method="get" path="/ads/{connection_id}/asset/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Ads.GetAdsAssetAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Asset                                                                                                                                  |
+| `Fields`                                                                                                                                         | List<[GetAdsAssetQueryParamFields](../../Models/Requests/GetAdsAssetQueryParamFields.md)>                                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAdsAssetResponse](../../Models/Requests/GetAdsAssetResponse.md)**
 
 ### Errors
 
@@ -668,6 +755,47 @@ var res = await sdk.Ads.ListAdsAdsAsync(req);
 ### Response
 
 **[ListAdsAdsResponse](../../Models/Requests/ListAdsAdsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListAdsAssets
+
+List all assets
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listAdsAssets" method="get" path="/ads/{connection_id}/asset" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAdsAssetsRequest req = new ListAdsAssetsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Ads.ListAdsAssetsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [ListAdsAssetsRequest](../../Models/Requests/ListAdsAssetsRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+
+### Response
+
+**[ListAdsAssetsResponse](../../Models/Requests/ListAdsAssetsResponse.md)**
 
 ### Errors
 

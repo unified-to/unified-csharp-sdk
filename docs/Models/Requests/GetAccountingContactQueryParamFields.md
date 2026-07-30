@@ -35,4 +35,5 @@ var value = GetAccountingContactQueryParamFields.Id;
 | `Identification`     | identification       |
 | `AssociatedContacts` | associated_contacts  |
 | `OrganizationId`     | organization_id      |
+| `PaymentTerms`       | payment_terms        |
 | `Raw`                | raw                  |

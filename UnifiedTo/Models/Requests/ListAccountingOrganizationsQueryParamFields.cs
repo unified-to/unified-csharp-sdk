@@ -41,6 +41,10 @@ namespace UnifiedTo.Models.Requests
         FiscalYearEndMonth,
         [JsonProperty("organization_code")]
         OrganizationCode,
+        [JsonProperty("type")]
+        Type,
+        [JsonProperty("is_elimination")]
+        IsElimination,
         [JsonProperty("raw")]
         Raw,
     }

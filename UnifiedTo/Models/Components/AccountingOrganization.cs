@@ -11,7 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
@@ -31,6 +33,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("is_elimination")]
+        public bool? IsElimination { get; set; }
 
         [JsonProperty("legal_name")]
         public string? LegalName { get; set; }
@@ -52,6 +57,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
+
+        [JsonProperty("type")]
+        public AccountingOrganizationType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

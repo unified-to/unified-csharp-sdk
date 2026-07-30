@@ -29,6 +29,10 @@ namespace UnifiedTo.Models.Requests
         UserName,
         [JsonProperty("task_id")]
         TaskId,
+        [JsonProperty("parent_id")]
+        ParentId,
+        [JsonProperty("has_children")]
+        HasChildren,
         [JsonProperty("raw")]
         Raw,
     }

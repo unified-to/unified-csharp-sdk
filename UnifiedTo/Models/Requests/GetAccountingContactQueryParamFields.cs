@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         AssociatedContacts,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("payment_terms")]
+        PaymentTerms,
         [JsonProperty("raw")]
         Raw,
     }

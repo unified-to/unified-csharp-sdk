@@ -11,11 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class AccountingCategory
     {
+        [JsonProperty("code")]
+        public string? Code { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -31,11 +37,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("organization_id")]
+        public string? OrganizationId { get; set; }
+
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("type")]
+        public AccountingCategoryType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

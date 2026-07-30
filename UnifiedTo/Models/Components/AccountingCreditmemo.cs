@@ -19,6 +19,12 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingCreditmemo
     {
+        /// <summary>
+        /// What this credit memo was applied to (invoices/bills). Writable inline on create/update.
+        /// </summary>
+        [JsonProperty("applications")]
+        public List<AccountingCreditApplication>? Applications { get; set; }
+
         [JsonProperty("apply_amount")]
         public double? ApplyAmount { get; set; }
 

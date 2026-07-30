@@ -10,12 +10,16 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
 
     public class AccountingTransactionLineItem
     {
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
+
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }

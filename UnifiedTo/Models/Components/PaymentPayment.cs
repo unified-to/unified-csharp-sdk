@@ -22,6 +22,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// What this payment was applied to (invoices, bills, credit memos, etc.). Replaces separate invoice/bill payment endpoints.
+        /// </summary>
+        [JsonProperty("allocations")]
+        public List<PaymentAllocation>? Allocations { get; set; }
+
         [JsonProperty("bill_id")]
         public string? BillId { get; set; }
 

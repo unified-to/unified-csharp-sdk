@@ -71,6 +71,8 @@ namespace UnifiedTo
 
         public IAd Ad { get; }
 
+        public IAsset Asset { get; }
+
         public ICampaign Campaign { get; }
 
         public ICreative Creative { get; }
@@ -446,6 +448,10 @@ namespace UnifiedTo
         /// The Ad sub-SDK.
         /// </summary>
         public IAd Ad { get; private set; }
+        /// <summary>
+        /// The Asset sub-SDK.
+        /// </summary>
+        public IAsset Asset { get; private set; }
         /// <summary>
         /// The Campaign sub-SDK.
         /// </summary>
@@ -1046,6 +1052,8 @@ namespace UnifiedTo
 
             Ad = new Ad(SDKConfiguration);
 
+            Asset = new Asset(SDKConfiguration);
+
             Campaign = new Campaign(SDKConfiguration);
 
             Creative = new Creative(SDKConfiguration);
@@ -1426,6 +1434,8 @@ namespace UnifiedTo
             Ads = new Ads(SDKConfiguration);
 
             Ad = new Ad(SDKConfiguration);
+
+            Asset = new Asset(SDKConfiguration);
 
             Campaign = new Campaign(SDKConfiguration);
 

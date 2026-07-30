@@ -19,8 +19,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("has_children")]
+        public bool? HasChildren { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

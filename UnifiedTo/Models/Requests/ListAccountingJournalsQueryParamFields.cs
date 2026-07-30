@@ -39,6 +39,10 @@ namespace UnifiedTo.Models.Requests
         Source,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("category_ids")]
+        CategoryIds,
+        [JsonProperty("attachments")]
+        Attachments,
         [JsonProperty("raw")]
         Raw,
     }

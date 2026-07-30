@@ -67,10 +67,16 @@ namespace UnifiedTo.Models.Requests
         Send,
         [JsonProperty("organization_id")]
         OrganizationId,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("term")]
         Term,
+        [JsonProperty("payment_terms")]
+        PaymentTerms,
+        [JsonProperty("payments")]
+        Payments,
+        [JsonProperty("category_ids")]
+        CategoryIds,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class PatchAccountingBillQueryParamFieldsExtension

@@ -22,6 +22,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// What this vendor credit was applied to (invoices/bills). Writable inline on create/update.
+        /// </summary>
+        [JsonProperty("applications")]
+        public List<AccountingCreditApplication>? Applications { get; set; }
+
         [JsonProperty("apply_amount")]
         public double? ApplyAmount { get; set; }
 

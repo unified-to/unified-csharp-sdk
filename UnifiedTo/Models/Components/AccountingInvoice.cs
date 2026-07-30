@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("cancelled_at")]
         public DateTime? CancelledAt { get; set; }
 
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
@@ -66,6 +69,15 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("payment_collection_method")]
         public AccountingInvoicePaymentCollectionMethod? PaymentCollectionMethod { get; set; }
+
+        [JsonProperty("payment_terms")]
+        public AccountingInvoicePaymentTerms? PaymentTerms { get; set; }
+
+        /// <summary>
+        /// ead-only reciprocal of PaymentPayment.allocations; payments applied to this invoice.
+        /// </summary>
+        [JsonProperty("payments")]
+        public List<AccountingPaymentReference>? Payments { get; set; }
 
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }

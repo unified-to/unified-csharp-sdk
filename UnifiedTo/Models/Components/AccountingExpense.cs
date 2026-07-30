@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attachments")]
         public List<AccountingAttachment>? Attachments { get; set; }
 
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 

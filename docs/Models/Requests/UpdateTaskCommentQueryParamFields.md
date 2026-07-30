@@ -11,13 +11,15 @@ var value = UpdateTaskCommentQueryParamFields.Id;
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Id`        | id          |
-| `CreatedAt` | created_at  |
-| `UpdatedAt` | updated_at  |
-| `Text`      | text        |
-| `UserId`    | user_id     |
-| `UserName`  | user_name   |
-| `TaskId`    | task_id     |
-| `Raw`       | raw         |
+| Name          | Value         |
+| ------------- | ------------- |
+| `Id`          | id            |
+| `CreatedAt`   | created_at    |
+| `UpdatedAt`   | updated_at    |
+| `Text`        | text          |
+| `UserId`      | user_id       |
+| `UserName`    | user_name     |
+| `TaskId`      | task_id       |
+| `ParentId`    | parent_id     |
+| `HasChildren` | has_children  |
+| `Raw`         | raw           |

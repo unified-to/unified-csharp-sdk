@@ -26,4 +26,5 @@ var value = UpdateAccountingPurchaseorderQueryParamFields.Id;
 | `Status`          | status            |
 | `Lineitems`       | lineitems         |
 | `OrganizationId`  | organization_id   |
+| `CategoryIds`     | category_ids      |
 | `Raw`             | raw               |

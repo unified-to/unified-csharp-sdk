@@ -28,4 +28,5 @@ var value = PatchPaymentPaymentQueryParamFields.Id;
 | `AccountId`      | account_id       |
 | `Reference`      | reference        |
 | `OrganizationId` | organization_id  |
+| `Allocations`    | allocations      |
 | `Raw`            | raw              |

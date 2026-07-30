@@ -25,8 +25,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("campaign")]
         public PropertyAdsReportMetricsCampaign? Campaign { get; set; }
 
+        [JsonProperty("creative")]
+        public PropertyAdsReportMetricsCreative? Creative { get; set; }
+
+        [JsonProperty("dimension")]
+        public Dimension? Dimension { get; set; }
+
+        [JsonProperty("dimension_value")]
+        public string? DimensionValue { get; set; }
+
         [JsonProperty("group")]
         public PropertyAdsReportMetricsGroup? Group { get; set; }
+
+        [JsonProperty("insertionorder")]
+        public PropertyAdsReportMetricsInsertionorder? Insertionorder { get; set; }
+
+        [JsonProperty("keyword")]
+        public PropertyAdsReportMetricsKeyword? Keyword { get; set; }
+
+        [JsonProperty("placement")]
+        public PropertyAdsReportMetricsPlacement? Placement { get; set; }
 
         [JsonProperty("type")]
         public AdsReportMetricsType? Type { get; set; }

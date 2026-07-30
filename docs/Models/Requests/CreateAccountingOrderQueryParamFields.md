@@ -26,4 +26,5 @@ var value = CreateAccountingOrderQueryParamFields.Id;
 | `BillingAddress`  | billing_address   |
 | `Status`          | status            |
 | `Lineitems`       | lineitems         |
+| `OrganizationId`  | organization_id   |
 | `Raw`             | raw               |

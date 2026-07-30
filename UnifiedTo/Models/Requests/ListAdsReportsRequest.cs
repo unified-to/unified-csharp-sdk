@@ -34,6 +34,12 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
+        /// One or more (comma-separated) of: DATE, PLATFORM, PLATFORM_POSITION, DEVICE.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=dimension")]
+        public string? Dimension { get; set; }
+
+        /// <summary>
         /// The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_lt")]

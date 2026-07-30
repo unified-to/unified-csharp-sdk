@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Requests
         Contacts,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("category_ids")]
+        CategoryIds,
         [JsonProperty("raw")]
         Raw,
     }

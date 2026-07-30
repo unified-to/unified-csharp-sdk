@@ -61,6 +61,8 @@ namespace UnifiedTo.Models.Requests
         Status,
         [JsonProperty("external_number")]
         ExternalNumber,
+        [JsonProperty("category_ids")]
+        CategoryIds,
         [JsonProperty("raw")]
         Raw,
     }

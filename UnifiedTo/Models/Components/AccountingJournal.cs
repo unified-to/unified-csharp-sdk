@@ -17,6 +17,12 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingJournal
     {
+        [JsonProperty("attachments")]
+        public List<AccountingAttachment>? Attachments { get; set; }
+
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

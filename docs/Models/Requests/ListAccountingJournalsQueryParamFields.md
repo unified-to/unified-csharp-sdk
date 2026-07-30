@@ -25,4 +25,6 @@ var value = ListAccountingJournalsQueryParamFields.Id;
 | `PostedAt`       | posted_at        |
 | `Source`         | source           |
 | `OrganizationId` | organization_id  |
+| `CategoryIds`    | category_ids     |
+| `Attachments`    | attachments      |
 | `Raw`            | raw              |

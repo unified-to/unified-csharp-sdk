@@ -20,49 +20,17 @@ namespace UnifiedTo.Models.Components
     public class Dimension : IEquatable<Dimension>
     {
         public static readonly Dimension Date = new Dimension("DATE");
-        public static readonly Dimension Hour = new Dimension("HOUR");
-        public static readonly Dimension DayOfWeek = new Dimension("DAY_OF_WEEK");
-        public static readonly Dimension Week = new Dimension("WEEK");
-        public static readonly Dimension Month = new Dimension("MONTH");
-        public static readonly Dimension Year = new Dimension("YEAR");
-        public static readonly Dimension Page = new Dimension("PAGE");
-        public static readonly Dimension PageTitle = new Dimension("PAGE_TITLE");
-        public static readonly Dimension EventName = new Dimension("EVENT_NAME");
-        public static readonly Dimension Source = new Dimension("SOURCE");
-        public static readonly Dimension Medium = new Dimension("MEDIUM");
-        public static readonly Dimension Campaign = new Dimension("CAMPAIGN");
-        public static readonly Dimension Country = new Dimension("COUNTRY");
-        public static readonly Dimension City = new Dimension("CITY");
-        public static readonly Dimension DeviceType = new Dimension("DEVICE_TYPE");
-        public static readonly Dimension Browser = new Dimension("BROWSER");
-        public static readonly Dimension Os = new Dimension("OS");
-        public static readonly Dimension UserType = new Dimension("USER_TYPE");
-        public static readonly Dimension LandingPage = new Dimension("LANDING_PAGE");
-        public static readonly Dimension Video = new Dimension("VIDEO");
+        public static readonly Dimension Platform = new Dimension("PLATFORM");
+        public static readonly Dimension PlatformPosition = new Dimension("PLATFORM_POSITION");
+        public static readonly Dimension Device = new Dimension("DEVICE");
 
         private static readonly Dictionary <string, Dimension> _knownValues =
             new Dictionary <string, Dimension> ()
             {
                 ["DATE"] = Date,
-                ["HOUR"] = Hour,
-                ["DAY_OF_WEEK"] = DayOfWeek,
-                ["WEEK"] = Week,
-                ["MONTH"] = Month,
-                ["YEAR"] = Year,
-                ["PAGE"] = Page,
-                ["PAGE_TITLE"] = PageTitle,
-                ["EVENT_NAME"] = EventName,
-                ["SOURCE"] = Source,
-                ["MEDIUM"] = Medium,
-                ["CAMPAIGN"] = Campaign,
-                ["COUNTRY"] = Country,
-                ["CITY"] = City,
-                ["DEVICE_TYPE"] = DeviceType,
-                ["BROWSER"] = Browser,
-                ["OS"] = Os,
-                ["USER_TYPE"] = UserType,
-                ["LANDING_PAGE"] = LandingPage,
-                ["VIDEO"] = Video
+                ["PLATFORM"] = Platform,
+                ["PLATFORM_POSITION"] = PlatformPosition,
+                ["DEVICE"] = Device
             };
 
         private static readonly ConcurrentDictionary<string, Dimension> _values =

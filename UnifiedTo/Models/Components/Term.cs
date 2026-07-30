@@ -26,7 +26,10 @@ namespace UnifiedTo.Models.Components
         public static readonly Term Net20 = new Term("NET_20");
         public static readonly Term Net25 = new Term("NET_25");
         public static readonly Term Net30 = new Term("NET_30");
+        public static readonly Term Net45 = new Term("NET_45");
         public static readonly Term Net60 = new Term("NET_60");
+        public static readonly Term Net90 = new Term("NET_90");
+        public static readonly Term Other = new Term("OTHER");
 
         private static readonly Dictionary <string, Term> _knownValues =
             new Dictionary <string, Term> ()
@@ -38,7 +41,10 @@ namespace UnifiedTo.Models.Components
                 ["NET_20"] = Net20,
                 ["NET_25"] = Net25,
                 ["NET_30"] = Net30,
-                ["NET_60"] = Net60
+                ["NET_45"] = Net45,
+                ["NET_60"] = Net60,
+                ["NET_90"] = Net90,
+                ["OTHER"] = Other
             };
 
         private static readonly ConcurrentDictionary<string, Term> _values =

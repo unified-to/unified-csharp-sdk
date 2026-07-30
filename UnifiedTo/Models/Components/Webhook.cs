@@ -77,7 +77,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsPaused { get; set; }
 
         [JsonProperty("object_type")]
-        public ObjectType ObjectType { get; set; } = default!;
+        public WebhookObjectType ObjectType { get; set; } = default!;
 
         [JsonProperty("page_max_limit")]
         public double? PageMaxLimit { get; set; }

@@ -57,6 +57,8 @@ namespace UnifiedTo.Models.Requests
         RefundReason,
         [JsonProperty("term")]
         Term,
+        [JsonProperty("payment_terms")]
+        PaymentTerms,
         [JsonProperty("lineitems")]
         Lineitems,
         [JsonProperty("status")]
@@ -73,6 +75,10 @@ namespace UnifiedTo.Models.Requests
         Send,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("payments")]
+        Payments,
+        [JsonProperty("category_ids")]
+        CategoryIds,
         [JsonProperty("raw")]
         Raw,
     }

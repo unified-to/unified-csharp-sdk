@@ -20,7 +20,7 @@ namespace UnifiedTo.Models.Components
     public class AnalyticsReportMetrics
     {
         [JsonProperty("dimension")]
-        public Dimension? Dimension { get; set; }
+        public AnalyticsReportMetricsDimension? Dimension { get; set; }
 
         [JsonProperty("dimension_value")]
         public string? DimensionValue { get; set; }
