@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("budget_period")]
         public PropertyAdsReportMetricsCampaignBudgetPeriod? BudgetPeriod { get; set; }
 
+        [JsonProperty("budget_unit")]
+        public PropertyAdsReportMetricsCampaignBudgetUnit? BudgetUnit { get; set; }
+
         [JsonProperty("campaign_budget_identifier")]
         public string? CampaignBudgetIdentifier { get; set; }
 

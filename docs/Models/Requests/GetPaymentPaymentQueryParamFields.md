@@ -28,5 +28,5 @@ var value = GetPaymentPaymentQueryParamFields.Id;
 | `AccountId`      | account_id       |
 | `Reference`      | reference        |
 | `OrganizationId` | organization_id  |
-| `Allocations`    | allocations      |
 | `Raw`            | raw              |
+| `Allocations`    | allocations      |

@@ -24,6 +24,7 @@ var value = CreateAdsCampaignQueryParamFields.Id;
 | `EndAt`                    | end_at                     |
 | `BudgetAmount`             | budget_amount              |
 | `BudgetPeriod`             | budget_period              |
+| `BudgetUnit`               | budget_unit                |
 | `TotalSpendAmount`         | total_spend_amount         |
 | `Targeting`                | targeting                  |
 | `Goal`                     | goal                       |

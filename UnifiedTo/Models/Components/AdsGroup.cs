@@ -44,7 +44,7 @@ namespace UnifiedTo.Models.Components
         public AdsGroupBudgetPeriod? BudgetPeriod { get; set; }
 
         [JsonProperty("budget_unit")]
-        public BudgetUnit? BudgetUnit { get; set; }
+        public AdsGroupBudgetUnit? BudgetUnit { get; set; }
 
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }

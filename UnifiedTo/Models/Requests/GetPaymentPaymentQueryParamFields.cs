@@ -45,10 +45,10 @@ namespace UnifiedTo.Models.Requests
         Reference,
         [JsonProperty("organization_id")]
         OrganizationId,
-        [JsonProperty("allocations")]
-        Allocations,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("allocations")]
+        Allocations,
     }
 
     public static class GetPaymentPaymentQueryParamFieldsExtension

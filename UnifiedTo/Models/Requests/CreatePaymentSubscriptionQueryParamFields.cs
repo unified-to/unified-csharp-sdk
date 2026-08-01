@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         CanceledAt,
         [JsonProperty("currency")]
         Currency,
+        [JsonProperty("total_amount")]
+        TotalAmount,
         [JsonProperty("start_at")]
         StartAt,
         [JsonProperty("end_at")]

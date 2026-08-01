@@ -273,6 +273,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions ShippingLabelWrite = new PropertyConnectionPermissions("shipping_label_write");
         public static readonly PropertyConnectionPermissions ShippingTrackingRead = new PropertyConnectionPermissions("shipping_tracking_read");
         public static readonly PropertyConnectionPermissions ShippingRateRead = new PropertyConnectionPermissions("shipping_rate_read");
+        public static readonly PropertyConnectionPermissions ShippingRateWrite = new PropertyConnectionPermissions("shipping_rate_write");
         public static readonly PropertyConnectionPermissions ShippingCarrierRead = new PropertyConnectionPermissions("shipping_carrier_read");
         public static readonly PropertyConnectionPermissions SigningDocumentRead = new PropertyConnectionPermissions("signing_document_read");
         public static readonly PropertyConnectionPermissions SigningDocumentWrite = new PropertyConnectionPermissions("signing_document_write");
@@ -567,6 +568,7 @@ namespace UnifiedTo.Models.Components
                 ["shipping_label_write"] = ShippingLabelWrite,
                 ["shipping_tracking_read"] = ShippingTrackingRead,
                 ["shipping_rate_read"] = ShippingRateRead,
+                ["shipping_rate_write"] = ShippingRateWrite,
                 ["shipping_carrier_read"] = ShippingCarrierRead,
                 ["signing_document_read"] = SigningDocumentRead,
                 ["signing_document_write"] = SigningDocumentWrite,

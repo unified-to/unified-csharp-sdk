@@ -32,6 +32,9 @@ namespace UnifiedTo.Models.Components
         public static readonly AdsGroupType Search = new AdsGroupType("SEARCH");
         public static readonly AdsGroupType Audio = new AdsGroupType("AUDIO");
         public static readonly AdsGroupType Youtube = new AdsGroupType("YOUTUBE");
+        public static readonly AdsGroupType Native = new AdsGroupType("NATIVE");
+        public static readonly AdsGroupType Ctv = new AdsGroupType("CTV");
+        public static readonly AdsGroupType Dooh = new AdsGroupType("DOOH");
 
         private static readonly Dictionary <string, AdsGroupType> _knownValues =
             new Dictionary <string, AdsGroupType> ()
@@ -48,7 +51,10 @@ namespace UnifiedTo.Models.Components
                 ["DISPLAY"] = Display,
                 ["SEARCH"] = Search,
                 ["AUDIO"] = Audio,
-                ["YOUTUBE"] = Youtube
+                ["YOUTUBE"] = Youtube,
+                ["NATIVE"] = Native,
+                ["CTV"] = Ctv,
+                ["DOOH"] = Dooh
             };
 
         private static readonly ConcurrentDictionary<string, AdsGroupType> _values =

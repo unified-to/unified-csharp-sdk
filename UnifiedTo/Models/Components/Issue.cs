@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
+        [JsonProperty("customer_note")]
+        public string? CustomerNote { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

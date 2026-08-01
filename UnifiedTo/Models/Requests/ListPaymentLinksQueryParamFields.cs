@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         ContactId,
         [JsonProperty("url")]
         Url,
+        [JsonProperty("description")]
+        Description,
         [JsonProperty("is_chargeable_now")]
         IsChargeableNow,
         [JsonProperty("success_url")]

@@ -29,3 +29,6 @@ var custom = PropertyAdsReportMetricsAdAdType.Of("custom_value");
 | `Search`     | SEARCH       |
 | `Audio`      | AUDIO        |
 | `Youtube`    | YOUTUBE      |
+| `Native`     | NATIVE       |
+| `Ctv`        | CTV          |
+| `Dooh`       | DOOH         |

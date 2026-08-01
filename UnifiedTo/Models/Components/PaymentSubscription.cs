@@ -76,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public PaymentSubscriptionStatus? Status { get; set; }
 
+        [JsonProperty("total_amount")]
+        public double? TotalAmount { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

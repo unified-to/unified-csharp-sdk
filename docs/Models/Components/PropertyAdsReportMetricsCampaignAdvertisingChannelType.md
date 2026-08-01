@@ -29,3 +29,6 @@ var custom = PropertyAdsReportMetricsCampaignAdvertisingChannelType.Of("custom_v
 | `Search`     | SEARCH       |
 | `Audio`      | AUDIO        |
 | `Youtube`    | YOUTUBE      |
+| `Native`     | NATIVE       |
+| `Ctv`        | CTV          |
+| `Dooh`       | DOOH         |
