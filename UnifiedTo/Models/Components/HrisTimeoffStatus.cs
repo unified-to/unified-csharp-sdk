@@ -22,13 +22,15 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisTimeoffStatus Approved = new HrisTimeoffStatus("APPROVED");
         public static readonly HrisTimeoffStatus Pending = new HrisTimeoffStatus("PENDING");
         public static readonly HrisTimeoffStatus Denied = new HrisTimeoffStatus("DENIED");
+        public static readonly HrisTimeoffStatus Cancelled = new HrisTimeoffStatus("CANCELLED");
 
         private static readonly Dictionary <string, HrisTimeoffStatus> _knownValues =
             new Dictionary <string, HrisTimeoffStatus> ()
             {
                 ["APPROVED"] = Approved,
                 ["PENDING"] = Pending,
-                ["DENIED"] = Denied
+                ["DENIED"] = Denied,
+                ["CANCELLED"] = Cancelled
             };
 
         private static readonly ConcurrentDictionary<string, HrisTimeoffStatus> _values =

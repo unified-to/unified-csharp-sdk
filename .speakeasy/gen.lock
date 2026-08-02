@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 2261a49528204f202086da5d7c5d3ba5
+  docChecksum: eaa7c7c10c6b862aff52c98e1484ea59
   docVersion: "1.0"
   speakeasyVersion: 1.791.0
   generationVersion: 2.924.0
-  releaseVersion: 0.131.8
-  configChecksum: ca8fb7edd6325064ae79c5bb15ecc2e6
+  releaseVersion: 0.131.9
+  configChecksum: 90d2d8f9c3833a7f8e45f43c7a51e9fb
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: 75f5104e-3d29-44e7-9c79-3f52dd80428b
-  pristine_commit_hash: 2bd7b8f09df5e2cd0911ee9790107574e4bafae7
-  pristine_tree_hash: 7bc89ac1b6fb2fde10674c3beb61263a8a0bcb2c
+  generation_id: ec598237-a792-41fd-a49b-f7a7100aa9e5
+  pristine_commit_hash: 139e3888be877ddb3cebf2cfe888fd17de7da03f
+  pristine_tree_hash: 3537b474d74de43651e8cc64064ed5e102ea6ca0
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -1910,8 +1910,8 @@ trackedFiles:
     pristine_git_object: 276429f23366a67c05d2402ae64cb1c145ec4096
   UnifiedTo/Models/Components/HrisTimeoffStatus.cs:
     id: 65303ab39aec
-    last_write_checksum: sha1:1a152b560a1f6faeefed2dd0706974f15e234bd1
-    pristine_git_object: c0127237b9fc988a6739156771e04b5799a98d99
+    last_write_checksum: sha1:ed00a695ca115b87c8da1c1e96ddfeba8080d353
+    pristine_git_object: 176c835d7618f66d6c6e1140cb344a0ddc2400b1
   UnifiedTo/Models/Components/HrisTimeoffType.cs:
     id: 36af36ebdbbe
     last_write_checksum: sha1:e8e8f2da95bb1c0ded07fab9e8cc6b9940ad57de
@@ -8510,8 +8510,8 @@ trackedFiles:
     pristine_git_object: d703f60b0f54e0da160868b707b19dd572546709
   UnifiedTo/Models/Requests/ListCommerceInventoriesRequest.cs:
     id: 998ded81e0ac
-    last_write_checksum: sha1:a0edc8bdf69ee05a7468a867ec3112a33b20490f
-    pristine_git_object: c4e83ecfcffc13610d4a913617467600bf0b3331
+    last_write_checksum: sha1:138cfda781e735bad41991ce15a8c3c3e129ea32
+    pristine_git_object: 443da91b75aff7699bb5ac0ecd5201a3b8095d22
   UnifiedTo/Models/Requests/ListCommerceInventoriesResponse.cs:
     id: db7ab684732c
     last_write_checksum: sha1:6bbfe2d01d60ee0380841087533a315eb6ff2f5d
@@ -13454,8 +13454,8 @@ trackedFiles:
     pristine_git_object: f4a15de0ba2bd4140130f22d61c09baa393f3282
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:b892014f469fb8163ddae7203ce82fd2cb48e3dd
-    pristine_git_object: 005d94d0d44996fd2562f0f78023690586690fa8
+    last_write_checksum: sha1:921dd85a0ce27ce9d18fda0586feb2ebde856d24
+    pristine_git_object: 40eacd3575b62ddbd866ac629fb62b7f68126369
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -13590,8 +13590,8 @@ trackedFiles:
     pristine_git_object: 9b1b93cea5451e186b5535d7f02d4e4e97048dd2
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:14aa1d15e032ce6ea8f26a03259d386ed342033e
-    pristine_git_object: f8136131e15cb04df91656d12910901feb2b5a5a
+    last_write_checksum: sha1:118e8f310d69b59ef8cd475ecc84f2a89d53233b
+    pristine_git_object: e935fb589974602bcbef32f67c48175b82ed7c6b
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:6e33a0c74c2ef2a41d556a39e19db9195d0b533b
@@ -13610,8 +13610,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:04dd37e2e7aef1fecb64624398a303ec2738918b
-    pristine_git_object: 9ea00a1386718016811d75804d45dd3cdddeeb44
+    last_write_checksum: sha1:af3a9aac34a9c8079c616eca32c6891ff8f5d8f6
+    pristine_git_object: 1472ab26233f437ed304e17c5a2037b8a971cc10
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -15190,8 +15190,8 @@ trackedFiles:
     pristine_git_object: ff5738f88b06cfa87272bc2ae63d3f76c7ee379e
   docs/Models/Components/HrisTimeoffStatus.md:
     id: 0ef2113e920f
-    last_write_checksum: sha1:34b55048efce5a26e4aab3b75a18f39261995c9f
-    pristine_git_object: bbf53eb9a8b43e552298b457555e77166472178a
+    last_write_checksum: sha1:99449484ccb934cf60c5414fb2e25ff32299d23c
+    pristine_git_object: e6b48fc126a12b7803c8f7421ca88118ef72fb80
   docs/Models/Components/HrisTimeoffType.md:
     id: e74e6d36801e
     last_write_checksum: sha1:1704ae9953be22889616506a0f8fb8566c20d537
@@ -21778,8 +21778,8 @@ trackedFiles:
     pristine_git_object: 4b53cf07c3e1c99f1bf9e1a74837c4e6d81b759c
   docs/Models/Requests/ListCommerceInventoriesRequest.md:
     id: 3c629f155d20
-    last_write_checksum: sha1:1e2fa90498e0096c1b0667222f3cdc422b044292
-    pristine_git_object: 9a366df189d9b32d9ff2f4d647e1812cb4c2f26d
+    last_write_checksum: sha1:64723768774bebcd30ab47a6be24efc8a9973b88
+    pristine_git_object: 6d7cd0df2eeb2a791a2e7bb5b3fdf4cce9b755b1
   docs/Models/Requests/ListCommerceInventoriesResponse.md:
     id: a4038898cd74
     last_write_checksum: sha1:0e2b76009d85a27e796bb99c1ab8a2f173d030e9
@@ -40701,7 +40701,7 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Report.ListAdsReports()`:  `response.[].Metrics[]` **Changed**\n* `UnifiedTo.Ads.CreateAdsAd()`: \n  *  `request.adsAd.AdType` **Changed**\n  *  `response.adType` **Changed**\n* `UnifiedTo.Ads.CreateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Ads.CreateAdsGroup()`: \n  *  `request.adsGroup.Type` **Changed**\n  *  `response.type` **Changed**\n* `UnifiedTo.Ads.GetAdsAd()`:  `response.adType` **Changed**\n* `UnifiedTo.Ads.GetAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Ads.GetAdsGroup()`:  `response.type` **Changed**\n* `UnifiedTo.Ads.ListAdsAds()`:  `response.[].AdType` **Changed**\n* `UnifiedTo.Ads.ListAdsCampaigns()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Ads.ListAdsGroups()`:  `response.[].Type` **Changed**\n* `UnifiedTo.Ads.ListAdsReports()`:  `response.[].Metrics[]` **Changed**\n* `UnifiedTo.Ads.PatchAdsAd()`: \n  *  `request.AdsAd.AdType` **Changed**\n  *  `response.adType` **Changed**\n* `UnifiedTo.Ads.PatchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Ads.PatchAdsGroup()`: \n  *  `request.AdsGroup.Type` **Changed**\n  *  `response.type` **Changed**\n* `UnifiedTo.Ads.UpdateAdsAd()`: \n  *  `request.AdsAd.AdType` **Changed**\n  *  `response.adType` **Changed**\n* `UnifiedTo.Ads.UpdateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Ads.UpdateAdsGroup()`: \n  *  `request.AdsGroup.Type` **Changed**\n  *  `response.type` **Changed**\n* `UnifiedTo.Ad.CreateAdsAd()`: \n  *  `request.adsAd.AdType` **Changed**\n  *  `response.adType` **Changed**\n* `UnifiedTo.Ad.GetAdsAd()`:  `response.adType` **Changed**\n* `UnifiedTo.Ad.ListAdsAds()`:  `response.[].AdType` **Changed**\n* `UnifiedTo.Ad.PatchAdsAd()`: \n  *  `request.AdsAd.AdType` **Changed**\n  *  `response.adType` **Changed**\n* `UnifiedTo.Ad.UpdateAdsAd()`: \n  *  `request.AdsAd.AdType` **Changed**\n  *  `response.adType` **Changed**\n* `UnifiedTo.Campaign.CreateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Campaign.GetAdsCampaign()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Campaign.ListAdsCampaigns()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Campaign.PatchAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Campaign.UpdateAdsCampaign()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Group.CreateAdsGroup()`: \n  *  `request.adsGroup.Type` **Changed**\n  *  `response.type` **Changed**\n* `UnifiedTo.Group.GetAdsGroup()`:  `response.type` **Changed**\n* `UnifiedTo.Group.ListAdsGroups()`:  `response.[].Type` **Changed**\n* `UnifiedTo.Group.PatchAdsGroup()`: \n  *  `request.AdsGroup.Type` **Changed**\n  *  `response.type` **Changed**\n* `UnifiedTo.Group.UpdateAdsGroup()`: \n  *  `request.AdsGroup.Type` **Changed**\n  *  `response.type` **Changed**\n* `UnifiedTo.Link.CreatePaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Link.GetPaymentLink()`: \n  *  `request.fields` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Link.ListPaymentLinks()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Description` **Added**\n* `UnifiedTo.Link.PatchPaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Link.UpdatePaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Payment.CreatePaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Payment.CreatePaymentPayment()`:  `request.fields` **Changed**\n* `UnifiedTo.Payment.CreatePaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Payment.GetPaymentLink()`: \n  *  `request.fields` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Payment.GetPaymentPayment()`:  `request.fields` **Changed**\n* `UnifiedTo.Payment.GetPaymentSubscription()`: \n  *  `request.fields` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Payment.ListPaymentLinks()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Description` **Added**\n* `UnifiedTo.Payment.ListPaymentPayments()`: \n  *  `request.Fields` **Changed**\n* `UnifiedTo.Payment.ListPaymentSubscriptions()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].TotalAmount` **Added**\n* `UnifiedTo.Payment.PatchPaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Payment.PatchPaymentPayment()`: \n  *  `request.Fields` **Changed**\n* `UnifiedTo.Payment.PatchPaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Payment.UpdatePaymentLink()`: \n  *  `request` **Changed**\n  *  `response.description` **Added**\n* `UnifiedTo.Payment.UpdatePaymentPayment()`: \n  *  `request.Fields` **Changed**\n* `UnifiedTo.Payment.UpdatePaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Subscription.CreatePaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Subscription.GetPaymentSubscription()`: \n  *  `request.fields` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Subscription.ListPaymentSubscriptions()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].TotalAmount` **Added**\n* `UnifiedTo.Subscription.PatchPaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Subscription.UpdatePaymentSubscription()`: \n  *  `request` **Changed**\n  *  `response.totalAmount` **Added**\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Permissions[].Enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Unified.GetUnifiedIssue()`:  `response.customerNote` **Added**\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Unified.ListUnifiedIssues()`:  `response.[].CustomerNote` **Added**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Permissions[].Enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[].Enum(shippingRateWrite)` **Added**\n  *  `response.permissions[].Enum(shippingRateWrite)` **Added**\n* `UnifiedTo.Issue.GetUnifiedIssue()`:  `response.customerNote` **Added**\n* `UnifiedTo.Issue.ListUnifiedIssues()`:  `response.[].CustomerNote` **Added**\n"
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Commerce.ListCommerceInventories()`: \n  *  `request.ItemId` **Added**\n* `UnifiedTo.Inventory.ListCommerceInventories()`: \n  *  `request.ItemId` **Added**\n* `UnifiedTo.Hris.CreateHrisTimeoff()`: \n  *  `request.hrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.GetHrisTimeoff()`:  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.ListHrisTimeoffs()`:  `response.[].Status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.PatchHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.UpdateHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.CreateHrisTimeoff()`: \n  *  `request.hrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.GetHrisTimeoff()`:  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.ListHrisTimeoffs()`:  `response.[].Status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.PatchHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.UpdateHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md
