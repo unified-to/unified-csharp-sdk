@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("last_unhealthy_at")]
         public DateTime? LastUnhealthyAt { get; set; }
 
+        [JsonProperty("last_unhealthy_code")]
+        public string? LastUnhealthyCode { get; set; }
+
         [JsonProperty("permissions")]
         public List<PropertyConnectionPermissions> Permissions { get; set; } = default!;
 

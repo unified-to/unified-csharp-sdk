@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: eaa7c7c10c6b862aff52c98e1484ea59
+  docChecksum: 6bf7f9e899b77c356d345eaaf87bb444
   docVersion: "1.0"
-  speakeasyVersion: 1.791.0
-  generationVersion: 2.924.0
-  releaseVersion: 0.131.9
-  configChecksum: 90d2d8f9c3833a7f8e45f43c7a51e9fb
+  speakeasyVersion: 1.791.4
+  generationVersion: 2.926.8
+  releaseVersion: 0.131.10
+  configChecksum: c231c2f59003e1ce2f5ef610af645dab
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: ec598237-a792-41fd-a49b-f7a7100aa9e5
-  pristine_commit_hash: 139e3888be877ddb3cebf2cfe888fd17de7da03f
-  pristine_tree_hash: 3537b474d74de43651e8cc64064ed5e102ea6ca0
+  generation_id: db0fff3b-39db-4c30-8426-e14e1e9238d2
+  pristine_commit_hash: cffa6db26e29b6275135acbf51ff4fb2464b7bc1
+  pristine_tree_hash: a231e7eb5de1ec4ed5debe8e1f5422cdbef3d593
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -1410,8 +1410,8 @@ trackedFiles:
     pristine_git_object: 7364cee55e5ffeb1a28fd2d1b001cd212d3b2a9f
   UnifiedTo/Models/Components/Connection.cs:
     id: 48bc2319d927
-    last_write_checksum: sha1:ac2a454abd247e2fc1b054b9e963ceeb0dfedbfc
-    pristine_git_object: 968db0e3b6107af42d15690e8d36e1d3710d25b2
+    last_write_checksum: sha1:e4b0552bc71db52fd240914054abdedf2b2cf5f9
+    pristine_git_object: c7506273cb25770b2804303807e01e00842e5ec1
   UnifiedTo/Models/Components/ContentType.cs:
     id: 3bb0b21cabdc
     last_write_checksum: sha1:be4ce9959b439cfd96fc4a752595153a8694cdda
@@ -13454,8 +13454,8 @@ trackedFiles:
     pristine_git_object: f4a15de0ba2bd4140130f22d61c09baa393f3282
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:921dd85a0ce27ce9d18fda0586feb2ebde856d24
-    pristine_git_object: 40eacd3575b62ddbd866ac629fb62b7f68126369
+    last_write_checksum: sha1:aff66a26ede5c15ee3e1a29befe02250d7acf330
+    pristine_git_object: 2576fd3fd0dc83ae170bde3a5bf69a4130d5ba7a
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -13590,8 +13590,8 @@ trackedFiles:
     pristine_git_object: 9b1b93cea5451e186b5535d7f02d4e4e97048dd2
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:118e8f310d69b59ef8cd475ecc84f2a89d53233b
-    pristine_git_object: e935fb589974602bcbef32f67c48175b82ed7c6b
+    last_write_checksum: sha1:c2b2b2cf93490bf7c405c3ee04a18681fbb08ff2
+    pristine_git_object: 3e4a656950c600730308fad0568490a22fae65d6
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:6e33a0c74c2ef2a41d556a39e19db9195d0b533b
@@ -13610,8 +13610,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:af3a9aac34a9c8079c616eca32c6891ff8f5d8f6
-    pristine_git_object: 1472ab26233f437ed304e17c5a2037b8a971cc10
+    last_write_checksum: sha1:beec2b99d3228c6bbdc7111720d9c33d659e8934
+    pristine_git_object: 9ae16ae96231e7f4ff5287e184259c15b3043716
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -14690,8 +14690,8 @@ trackedFiles:
     pristine_git_object: cf551f1392d06831c7ab2a4bd68906a08d57a1ae
   docs/Models/Components/Connection.md:
     id: 5688c7e8f7e9
-    last_write_checksum: sha1:0e10b8608180817130422d5acb49a95c58655de5
-    pristine_git_object: e8309dc28b398fe434028edd2be32a07020a5ad6
+    last_write_checksum: sha1:81cba8f819423b4212f49b75521ce7a7d7f28e92
+    pristine_git_object: f62d1523cc2c955376b5e6589b1f548c0192071c
   docs/Models/Components/ContentType.md:
     id: 89ba6a58f12b
     last_write_checksum: sha1:b74b0c6193836cb166e3b9ea34624f34b1e0d4b2
@@ -40701,7 +40701,7 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Commerce.ListCommerceInventories()`: \n  *  `request.ItemId` **Added**\n* `UnifiedTo.Inventory.ListCommerceInventories()`: \n  *  `request.ItemId` **Added**\n* `UnifiedTo.Hris.CreateHrisTimeoff()`: \n  *  `request.hrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.GetHrisTimeoff()`:  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.ListHrisTimeoffs()`:  `response.[].Status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.PatchHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Hris.UpdateHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.CreateHrisTimeoff()`: \n  *  `request.hrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.GetHrisTimeoff()`:  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.ListHrisTimeoffs()`:  `response.[].Status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.PatchHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n* `UnifiedTo.Timeoff.UpdateHrisTimeoff()`: \n  *  `request.HrisTimeoff.Status.Enum(cancelled)` **Added**\n  *  `response.status.Enum(cancelled)` **Added**\n"
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.LastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.lastUnhealthyCode` **Added**\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].LastUnhealthyCode` **Added**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.LastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.LastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.LastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.lastUnhealthyCode` **Added**\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].LastUnhealthyCode` **Added**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.LastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.LastUnhealthyCode` **Added**\n  *  `response.lastUnhealthyCode` **Added**\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md
