@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
 
+        /// <summary>
+        /// The segment ID to filter by.
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=segment_id")]
         public string? SegmentId { get; set; }
 
