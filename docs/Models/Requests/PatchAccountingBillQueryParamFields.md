@@ -43,4 +43,5 @@ var value = PatchAccountingBillQueryParamFields.Id;
 | `PaymentTerms`            | payment_terms             |
 | `Payments`                | payments                  |
 | `CategoryIds`             | category_ids              |
+| `ProjectId`               | project_id                |
 | `Raw`                     | raw                       |

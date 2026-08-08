@@ -55,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("creative_ids")]
         public List<string>? CreativeIds { get; set; }
 
+        [JsonProperty("creative_selection")]
+        public CreativeSelection? CreativeSelection { get; set; }
+
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
@@ -75,6 +78,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("insertionorder_id")]
         public string? InsertionorderId { get; set; }
+
+        [JsonProperty("language_locale")]
+        public string? LanguageLocale { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

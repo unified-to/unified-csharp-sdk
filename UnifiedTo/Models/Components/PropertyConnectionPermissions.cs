@@ -60,6 +60,12 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions PaymentPaymentWrite = new PropertyConnectionPermissions("payment_payment_write");
         public static readonly PropertyConnectionPermissions AccountingCashflowRead = new PropertyConnectionPermissions("accounting_cashflow_read");
         public static readonly PropertyConnectionPermissions AccountingCashflowWrite = new PropertyConnectionPermissions("accounting_cashflow_write");
+        public static readonly PropertyConnectionPermissions AccountingQuoteRead = new PropertyConnectionPermissions("accounting_quote_read");
+        public static readonly PropertyConnectionPermissions AccountingQuoteWrite = new PropertyConnectionPermissions("accounting_quote_write");
+        public static readonly PropertyConnectionPermissions AccountingAgedreceivableRead = new PropertyConnectionPermissions("accounting_agedreceivable_read");
+        public static readonly PropertyConnectionPermissions AccountingAgedpayableRead = new PropertyConnectionPermissions("accounting_agedpayable_read");
+        public static readonly PropertyConnectionPermissions AccountingProjectRead = new PropertyConnectionPermissions("accounting_project_read");
+        public static readonly PropertyConnectionPermissions AccountingProjectWrite = new PropertyConnectionPermissions("accounting_project_write");
         public static readonly PropertyConnectionPermissions PaymentPayoutRead = new PropertyConnectionPermissions("payment_payout_read");
         public static readonly PropertyConnectionPermissions PaymentRefundRead = new PropertyConnectionPermissions("payment_refund_read");
         public static readonly PropertyConnectionPermissions PaymentLinkRead = new PropertyConnectionPermissions("payment_link_read");
@@ -355,6 +361,12 @@ namespace UnifiedTo.Models.Components
                 ["payment_payment_write"] = PaymentPaymentWrite,
                 ["accounting_cashflow_read"] = AccountingCashflowRead,
                 ["accounting_cashflow_write"] = AccountingCashflowWrite,
+                ["accounting_quote_read"] = AccountingQuoteRead,
+                ["accounting_quote_write"] = AccountingQuoteWrite,
+                ["accounting_agedreceivable_read"] = AccountingAgedreceivableRead,
+                ["accounting_agedpayable_read"] = AccountingAgedpayableRead,
+                ["accounting_project_read"] = AccountingProjectRead,
+                ["accounting_project_write"] = AccountingProjectWrite,
                 ["payment_payout_read"] = PaymentPayoutRead,
                 ["payment_refund_read"] = PaymentRefundRead,
                 ["payment_link_read"] = PaymentLinkRead,

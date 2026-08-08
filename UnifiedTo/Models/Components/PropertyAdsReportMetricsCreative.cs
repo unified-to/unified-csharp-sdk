@@ -67,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
+        [JsonProperty("labels")]
+        public List<string>? Labels { get; set; }
+
         [JsonProperty("link_url")]
         public string? LinkUrl { get; set; }
 
@@ -99,6 +102,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("url_tags")]
+        public string? UrlTags { get; set; }
 
         [JsonProperty("vast_tag_url")]
         public string? VastTagUrl { get; set; }

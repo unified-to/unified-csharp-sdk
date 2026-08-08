@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("size")]
         public double? Size { get; set; }
 
+        [JsonProperty("tags")]
+        public List<string>? Tags { get; set; }
+
         [JsonProperty("type")]
         public StorageFileType? Type { get; set; }
 

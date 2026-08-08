@@ -29,6 +29,10 @@ namespace UnifiedTo
 
         public IAccount Account { get; }
 
+        public IAgedpayable Agedpayable { get; }
+
+        public IAgedreceivable Agedreceivable { get; }
+
         public IBalancesheet Balancesheet { get; }
 
         public IBill Bill { get; }
@@ -53,7 +57,11 @@ namespace UnifiedTo
 
         public IProfitloss Profitloss { get; }
 
+        public IProject Project { get; }
+
         public IPurchaseorder Purchaseorder { get; }
+
+        public IQuote Quote { get; }
 
         public IReport Report { get; }
 
@@ -305,8 +313,6 @@ namespace UnifiedTo
 
         public IChange Change { get; }
 
-        public IProject Project { get; }
-
         public ITicketing Ticketing { get; }
 
         public ICustomer Customer { get; }
@@ -365,6 +371,14 @@ namespace UnifiedTo
         /// </summary>
         public IAccount Account { get; private set; }
         /// <summary>
+        /// The Agedpayable sub-SDK.
+        /// </summary>
+        public IAgedpayable Agedpayable { get; private set; }
+        /// <summary>
+        /// The Agedreceivable sub-SDK.
+        /// </summary>
+        public IAgedreceivable Agedreceivable { get; private set; }
+        /// <summary>
         /// The Balancesheet sub-SDK.
         /// </summary>
         public IBalancesheet Balancesheet { get; private set; }
@@ -413,9 +427,17 @@ namespace UnifiedTo
         /// </summary>
         public IProfitloss Profitloss { get; private set; }
         /// <summary>
+        /// The Project sub-SDK.
+        /// </summary>
+        public IProject Project { get; private set; }
+        /// <summary>
         /// The Purchaseorder sub-SDK.
         /// </summary>
         public IPurchaseorder Purchaseorder { get; private set; }
+        /// <summary>
+        /// The Quote sub-SDK.
+        /// </summary>
+        public IQuote Quote { get; private set; }
         /// <summary>
         /// The Report sub-SDK.
         /// </summary>
@@ -917,10 +939,6 @@ namespace UnifiedTo
         /// </summary>
         public IChange Change { get; private set; }
         /// <summary>
-        /// The Project sub-SDK.
-        /// </summary>
-        public IProject Project { get; private set; }
-        /// <summary>
         /// The Ticketing sub-SDK.
         /// </summary>
         public ITicketing Ticketing { get; private set; }
@@ -1010,6 +1028,10 @@ namespace UnifiedTo
 
             Account = new Account(SDKConfiguration);
 
+            Agedpayable = new Agedpayable(SDKConfiguration);
+
+            Agedreceivable = new Agedreceivable(SDKConfiguration);
+
             Balancesheet = new Balancesheet(SDKConfiguration);
 
             Bill = new Bill(SDKConfiguration);
@@ -1034,7 +1056,11 @@ namespace UnifiedTo
 
             Profitloss = new Profitloss(SDKConfiguration);
 
+            Project = new Project(SDKConfiguration);
+
             Purchaseorder = new Purchaseorder(SDKConfiguration);
+
+            Quote = new Quote(SDKConfiguration);
 
             Report = new Report(SDKConfiguration);
 
@@ -1285,8 +1311,6 @@ namespace UnifiedTo
             Task = new Task(SDKConfiguration);
 
             Change = new Change(SDKConfiguration);
-
-            Project = new Project(SDKConfiguration);
 
             Ticketing = new Ticketing(SDKConfiguration);
 
@@ -1393,6 +1417,10 @@ namespace UnifiedTo
 
             Account = new Account(SDKConfiguration);
 
+            Agedpayable = new Agedpayable(SDKConfiguration);
+
+            Agedreceivable = new Agedreceivable(SDKConfiguration);
+
             Balancesheet = new Balancesheet(SDKConfiguration);
 
             Bill = new Bill(SDKConfiguration);
@@ -1417,7 +1445,11 @@ namespace UnifiedTo
 
             Profitloss = new Profitloss(SDKConfiguration);
 
+            Project = new Project(SDKConfiguration);
+
             Purchaseorder = new Purchaseorder(SDKConfiguration);
+
+            Quote = new Quote(SDKConfiguration);
 
             Report = new Report(SDKConfiguration);
 
@@ -1668,8 +1700,6 @@ namespace UnifiedTo
             Task = new Task(SDKConfiguration);
 
             Change = new Change(SDKConfiguration);
-
-            Project = new Project(SDKConfiguration);
 
             Ticketing = new Ticketing(SDKConfiguration);
 

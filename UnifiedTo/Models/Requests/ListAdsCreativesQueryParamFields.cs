@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         AssetUrls,
         [JsonProperty("link_url")]
         LinkUrl,
+        [JsonProperty("url_tags")]
+        UrlTags,
         [JsonProperty("body")]
         Body,
         [JsonProperty("title")]
@@ -69,6 +71,8 @@ namespace UnifiedTo.Models.Requests
         Path2,
         [JsonProperty("data")]
         Data,
+        [JsonProperty("labels")]
+        Labels,
         [JsonProperty("raw")]
         Raw,
     }

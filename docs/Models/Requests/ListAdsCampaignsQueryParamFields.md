@@ -35,4 +35,5 @@ var value = ListAdsCampaignsQueryParamFields.Id;
 | `Currency`                 | currency                   |
 | `Category`                 | category                   |
 | `HasEuPoliticalAds`        | has_eu_political_ads       |
+| `Labels`                   | labels                     |
 | `Raw`                      | raw                        |

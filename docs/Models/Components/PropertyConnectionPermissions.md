@@ -57,6 +57,12 @@ var custom = PropertyConnectionPermissions.Of("custom_value");
 | `PaymentPaymentWrite`          | payment_payment_write          |
 | `AccountingCashflowRead`       | accounting_cashflow_read       |
 | `AccountingCashflowWrite`      | accounting_cashflow_write      |
+| `AccountingQuoteRead`          | accounting_quote_read          |
+| `AccountingQuoteWrite`         | accounting_quote_write         |
+| `AccountingAgedreceivableRead` | accounting_agedreceivable_read |
+| `AccountingAgedpayableRead`    | accounting_agedpayable_read    |
+| `AccountingProjectRead`        | accounting_project_read        |
+| `AccountingProjectWrite`       | accounting_project_write       |
 | `PaymentPayoutRead`            | payment_payout_read            |
 | `PaymentRefundRead`            | payment_refund_read            |
 | `PaymentLinkRead`              | payment_link_read              |

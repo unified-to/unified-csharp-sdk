@@ -79,6 +79,8 @@ namespace UnifiedTo.Models.Requests
         Payments,
         [JsonProperty("category_ids")]
         CategoryIds,
+        [JsonProperty("project_id")]
+        ProjectId,
         [JsonProperty("raw")]
         Raw,
     }

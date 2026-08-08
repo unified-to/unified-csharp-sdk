@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         WebUrl,
         [JsonProperty("references")]
         References,
+        [JsonProperty("tags")]
+        Tags,
         [JsonProperty("raw")]
         Raw,
     }

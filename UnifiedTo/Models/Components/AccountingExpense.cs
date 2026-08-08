@@ -70,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
+        [JsonProperty("project_id")]
+        public string? ProjectId { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

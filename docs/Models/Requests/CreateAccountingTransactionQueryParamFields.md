@@ -32,4 +32,5 @@ var value = CreateAccountingTransactionQueryParamFields.Id;
 | `Contacts`        | contacts          |
 | `OrganizationId`  | organization_id   |
 | `CategoryIds`     | category_ids      |
+| `ProjectId`       | project_id        |
 | `Raw`             | raw               |

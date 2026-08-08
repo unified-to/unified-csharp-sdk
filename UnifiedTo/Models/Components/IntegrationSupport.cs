@@ -346,9 +346,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_property_id")]
         public NativeWebhookPropertyId? NativeWebhookPropertyId { get; set; }
 
-        [JsonProperty("native_webhook_segment_id")]
-        public NativeWebhookSegmentId? NativeWebhookSegmentId { get; set; }
-
         [JsonProperty("native_webhook_session_id")]
         public NativeWebhookSessionId? NativeWebhookSessionId { get; set; }
 
@@ -549,9 +546,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_saleschannel_id")]
         public VirtualWebhookSaleschannelId? VirtualWebhookSaleschannelId { get; set; }
-
-        [JsonProperty("virtual_webhook_segment_id")]
-        public VirtualWebhookSegmentId? VirtualWebhookSegmentId { get; set; }
 
         [JsonProperty("virtual_webhook_session_id")]
         public VirtualWebhookSessionId? VirtualWebhookSessionId { get; set; }

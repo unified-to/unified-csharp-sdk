@@ -11,11 +11,17 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class AdsOrganization
     {
+        [JsonProperty("account_number")]
+        public string? AccountNumber { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -25,6 +31,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Manager/agency chain, top-most manager first, closest manager last (SA360 manager/sub_manager).
+        /// </summary>
+        [JsonProperty("managers")]
+        public List<AdsManager>? Managers { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -33,6 +45,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("status")]
+        public AdsOrganizationStatus? Status { get; set; }
 
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }

@@ -73,6 +73,10 @@ namespace UnifiedTo.Models.Requests
         Currency,
         [JsonProperty("promoted")]
         Promoted,
+        [JsonProperty("language_locale")]
+        LanguageLocale,
+        [JsonProperty("creative_selection")]
+        CreativeSelection,
         [JsonProperty("raw")]
         Raw,
     }

@@ -29,6 +29,12 @@ namespace UnifiedTo.Models.Requests
         Timezone,
         [JsonProperty("parent_id")]
         ParentId,
+        [JsonProperty("status")]
+        Status,
+        [JsonProperty("account_number")]
+        AccountNumber,
+        [JsonProperty("managers")]
+        Managers,
         [JsonProperty("raw")]
         Raw,
     }

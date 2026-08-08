@@ -53,6 +53,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payment_terms")]
         public string? PaymentTerms { get; set; }
 
+        [JsonProperty("project_id")]
+        public string? ProjectId { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

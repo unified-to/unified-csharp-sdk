@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         OrganizationId,
         [JsonProperty("category_ids")]
         CategoryIds,
+        [JsonProperty("project_id")]
+        ProjectId,
         [JsonProperty("attachments")]
         Attachments,
         [JsonProperty("raw")]

@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         Category,
         [JsonProperty("has_eu_political_ads")]
         HasEuPoliticalAds,
+        [JsonProperty("labels")]
+        Labels,
         [JsonProperty("raw")]
         Raw,
     }

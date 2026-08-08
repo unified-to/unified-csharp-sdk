@@ -42,4 +42,6 @@ var value = UpdateAdsGroupQueryParamFields.Id;
 | `BillingEvent`         | billing_event          |
 | `Currency`             | currency               |
 | `Promoted`             | promoted               |
+| `LanguageLocale`       | language_locale        |
+| `CreativeSelection`    | creative_selection     |
 | `Raw`                  | raw                    |

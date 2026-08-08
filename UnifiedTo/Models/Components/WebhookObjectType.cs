@@ -39,6 +39,10 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType AccountingCategory = new WebhookObjectType("accounting_category");
         public static readonly WebhookObjectType AccountingExpense = new WebhookObjectType("accounting_expense");
         public static readonly WebhookObjectType AccountingCashflow = new WebhookObjectType("accounting_cashflow");
+        public static readonly WebhookObjectType AccountingQuote = new WebhookObjectType("accounting_quote");
+        public static readonly WebhookObjectType AccountingAgedreceivable = new WebhookObjectType("accounting_agedreceivable");
+        public static readonly WebhookObjectType AccountingAgedpayable = new WebhookObjectType("accounting_agedpayable");
+        public static readonly WebhookObjectType AccountingProject = new WebhookObjectType("accounting_project");
         public static readonly WebhookObjectType PaymentPayment = new WebhookObjectType("payment_payment");
         public static readonly WebhookObjectType PaymentLink = new WebhookObjectType("payment_link");
         public static readonly WebhookObjectType PaymentPayout = new WebhookObjectType("payment_payout");
@@ -200,6 +204,10 @@ namespace UnifiedTo.Models.Components
                 ["accounting_category"] = AccountingCategory,
                 ["accounting_expense"] = AccountingExpense,
                 ["accounting_cashflow"] = AccountingCashflow,
+                ["accounting_quote"] = AccountingQuote,
+                ["accounting_agedreceivable"] = AccountingAgedreceivable,
+                ["accounting_agedpayable"] = AccountingAgedpayable,
+                ["accounting_project"] = AccountingProject,
                 ["payment_payment"] = PaymentPayment,
                 ["payment_link"] = PaymentLink,
                 ["payment_payout"] = PaymentPayout,
