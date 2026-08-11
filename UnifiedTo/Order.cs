@@ -27,7 +27,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
-        /// <param name="accountingOrder">A <see cref="AccountingOrder"/> parameter.</param>
+        /// <param name="accountingOrder">@deprecated; use AccountingSalesorder or AccountingPurchaseorder.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
         /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
@@ -145,7 +145,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order.
         /// </summary>
-        /// <param name="accountingOrder">A <see cref="AccountingOrder"/> parameter.</param>
+        /// <param name="accountingOrder">@deprecated; use AccountingSalesorder or AccountingPurchaseorder.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
         /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>

@@ -46,3 +46,4 @@ var value = Categories.Passthrough;
 | `Clubs`        | clubs          |
 | `Datastore`    | datastore      |
 | `Cdp`          | cdp            |
+| `Performance`  | performance    |

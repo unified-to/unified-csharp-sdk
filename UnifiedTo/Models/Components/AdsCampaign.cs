@@ -53,7 +53,7 @@ namespace UnifiedTo.Models.Components
         public PropertyAdsCampaignFrequencyCap? FrequencyCap { get; set; }
 
         [JsonProperty("goal")]
-        public Goal? Goal { get; set; }
+        public Models.Components.Goal? Goal { get; set; }
 
         [JsonProperty("has_eu_political_ads")]
         public bool? HasEuPoliticalAds { get; set; }

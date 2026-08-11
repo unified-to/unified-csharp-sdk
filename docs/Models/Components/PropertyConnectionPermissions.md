@@ -313,3 +313,10 @@ var custom = PropertyConnectionPermissions.Of("custom_value");
 | `CdpDestinationWrite`          | cdp_destination_write          |
 | `CdpActivationRead`            | cdp_activation_read            |
 | `CdpActivationWrite`           | cdp_activation_write           |
+| `PerformanceCycleRead`         | performance_cycle_read         |
+| `PerformanceReviewRead`        | performance_review_read        |
+| `PerformanceReviewWrite`       | performance_review_write       |
+| `PerformanceGoalRead`          | performance_goal_read          |
+| `PerformanceGoalWrite`         | performance_goal_write         |
+| `PerformanceFeedbackRead`      | performance_feedback_read      |
+| `PerformanceFeedbackWrite`     | performance_feedback_write     |

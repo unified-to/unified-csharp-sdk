@@ -177,3 +177,7 @@ var custom = WebhookObjectType.Of("custom_value");
 | `CdpSource`                | cdp_source                 |
 | `CdpDestination`           | cdp_destination            |
 | `CdpActivation`            | cdp_activation             |
+| `PerformanceCycle`         | performance_cycle          |
+| `PerformanceReview`        | performance_review         |
+| `PerformanceGoal`          | performance_goal           |
+| `PerformanceFeedback`      | performance_feedback       |

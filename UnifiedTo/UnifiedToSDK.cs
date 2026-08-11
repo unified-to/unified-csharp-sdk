@@ -273,6 +273,14 @@ namespace UnifiedTo
 
         public ISubscription Subscription { get; }
 
+        public IPerformance Performance { get; }
+
+        public ICycle Cycle { get; }
+
+        public IFeedback Feedback { get; }
+
+        public IGoal Goal { get; }
+
         public IRepo Repo { get; }
 
         public IBranch Branch { get; }
@@ -859,6 +867,22 @@ namespace UnifiedTo
         /// </summary>
         public ISubscription Subscription { get; private set; }
         /// <summary>
+        /// The Performance sub-SDK.
+        /// </summary>
+        public IPerformance Performance { get; private set; }
+        /// <summary>
+        /// The Cycle sub-SDK.
+        /// </summary>
+        public ICycle Cycle { get; private set; }
+        /// <summary>
+        /// The Feedback sub-SDK.
+        /// </summary>
+        public IFeedback Feedback { get; private set; }
+        /// <summary>
+        /// The Goal sub-SDK.
+        /// </summary>
+        public IGoal Goal { get; private set; }
+        /// <summary>
         /// The Repo sub-SDK.
         /// </summary>
         public IRepo Repo { get; private set; }
@@ -1272,6 +1296,14 @@ namespace UnifiedTo
 
             Subscription = new Subscription(SDKConfiguration);
 
+            Performance = new Performance(SDKConfiguration);
+
+            Cycle = new Cycle(SDKConfiguration);
+
+            Feedback = new Feedback(SDKConfiguration);
+
+            Goal = new Goal(SDKConfiguration);
+
             Repo = new Repo(SDKConfiguration);
 
             Branch = new Branch(SDKConfiguration);
@@ -1660,6 +1692,14 @@ namespace UnifiedTo
             Refund = new Refund(SDKConfiguration);
 
             Subscription = new Subscription(SDKConfiguration);
+
+            Performance = new Performance(SDKConfiguration);
+
+            Cycle = new Cycle(SDKConfiguration);
+
+            Feedback = new Feedback(SDKConfiguration);
+
+            Goal = new Goal(SDKConfiguration);
 
             Repo = new Repo(SDKConfiguration);
 

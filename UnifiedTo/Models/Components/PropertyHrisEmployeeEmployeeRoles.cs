@@ -24,6 +24,8 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyHrisEmployeeEmployeeRoles Recruiter = new PropertyHrisEmployeeEmployeeRoles("RECRUITER");
         public static readonly PropertyHrisEmployeeEmployeeRoles Salesrep = new PropertyHrisEmployeeEmployeeRoles("SALESREP");
         public static readonly PropertyHrisEmployeeEmployeeRoles Interviewer = new PropertyHrisEmployeeEmployeeRoles("INTERVIEWER");
+        public static readonly PropertyHrisEmployeeEmployeeRoles User = new PropertyHrisEmployeeEmployeeRoles("USER");
+        public static readonly PropertyHrisEmployeeEmployeeRoles Employee = new PropertyHrisEmployeeEmployeeRoles("EMPLOYEE");
 
         private static readonly Dictionary <string, PropertyHrisEmployeeEmployeeRoles> _knownValues =
             new Dictionary <string, PropertyHrisEmployeeEmployeeRoles> ()
@@ -32,7 +34,9 @@ namespace UnifiedTo.Models.Components
                 ["MANAGER"] = Manager,
                 ["RECRUITER"] = Recruiter,
                 ["SALESREP"] = Salesrep,
-                ["INTERVIEWER"] = Interviewer
+                ["INTERVIEWER"] = Interviewer,
+                ["USER"] = User,
+                ["EMPLOYEE"] = Employee
             };
 
         private static readonly ConcurrentDictionary<string, PropertyHrisEmployeeEmployeeRoles> _values =

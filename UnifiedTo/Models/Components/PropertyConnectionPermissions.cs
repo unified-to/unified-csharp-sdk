@@ -316,6 +316,13 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions CdpDestinationWrite = new PropertyConnectionPermissions("cdp_destination_write");
         public static readonly PropertyConnectionPermissions CdpActivationRead = new PropertyConnectionPermissions("cdp_activation_read");
         public static readonly PropertyConnectionPermissions CdpActivationWrite = new PropertyConnectionPermissions("cdp_activation_write");
+        public static readonly PropertyConnectionPermissions PerformanceCycleRead = new PropertyConnectionPermissions("performance_cycle_read");
+        public static readonly PropertyConnectionPermissions PerformanceReviewRead = new PropertyConnectionPermissions("performance_review_read");
+        public static readonly PropertyConnectionPermissions PerformanceReviewWrite = new PropertyConnectionPermissions("performance_review_write");
+        public static readonly PropertyConnectionPermissions PerformanceGoalRead = new PropertyConnectionPermissions("performance_goal_read");
+        public static readonly PropertyConnectionPermissions PerformanceGoalWrite = new PropertyConnectionPermissions("performance_goal_write");
+        public static readonly PropertyConnectionPermissions PerformanceFeedbackRead = new PropertyConnectionPermissions("performance_feedback_read");
+        public static readonly PropertyConnectionPermissions PerformanceFeedbackWrite = new PropertyConnectionPermissions("performance_feedback_write");
 
         private static readonly Dictionary <string, PropertyConnectionPermissions> _knownValues =
             new Dictionary <string, PropertyConnectionPermissions> ()
@@ -616,7 +623,14 @@ namespace UnifiedTo.Models.Components
                 ["cdp_destination_read"] = CdpDestinationRead,
                 ["cdp_destination_write"] = CdpDestinationWrite,
                 ["cdp_activation_read"] = CdpActivationRead,
-                ["cdp_activation_write"] = CdpActivationWrite
+                ["cdp_activation_write"] = CdpActivationWrite,
+                ["performance_cycle_read"] = PerformanceCycleRead,
+                ["performance_review_read"] = PerformanceReviewRead,
+                ["performance_review_write"] = PerformanceReviewWrite,
+                ["performance_goal_read"] = PerformanceGoalRead,
+                ["performance_goal_write"] = PerformanceGoalWrite,
+                ["performance_feedback_read"] = PerformanceFeedbackRead,
+                ["performance_feedback_write"] = PerformanceFeedbackWrite
             };
 
         private static readonly ConcurrentDictionary<string, PropertyConnectionPermissions> _values =

@@ -180,6 +180,10 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType CdpSource = new WebhookObjectType("cdp_source");
         public static readonly WebhookObjectType CdpDestination = new WebhookObjectType("cdp_destination");
         public static readonly WebhookObjectType CdpActivation = new WebhookObjectType("cdp_activation");
+        public static readonly WebhookObjectType PerformanceCycle = new WebhookObjectType("performance_cycle");
+        public static readonly WebhookObjectType PerformanceReview = new WebhookObjectType("performance_review");
+        public static readonly WebhookObjectType PerformanceGoal = new WebhookObjectType("performance_goal");
+        public static readonly WebhookObjectType PerformanceFeedback = new WebhookObjectType("performance_feedback");
 
         private static readonly Dictionary <string, WebhookObjectType> _knownValues =
             new Dictionary <string, WebhookObjectType> ()
@@ -344,7 +348,11 @@ namespace UnifiedTo.Models.Components
                 ["cdp_event"] = CdpEvent,
                 ["cdp_source"] = CdpSource,
                 ["cdp_destination"] = CdpDestination,
-                ["cdp_activation"] = CdpActivation
+                ["cdp_activation"] = CdpActivation,
+                ["performance_cycle"] = PerformanceCycle,
+                ["performance_review"] = PerformanceReview,
+                ["performance_goal"] = PerformanceGoal,
+                ["performance_feedback"] = PerformanceFeedback
             };
 
         private static readonly ConcurrentDictionary<string, WebhookObjectType> _values =

@@ -81,6 +81,8 @@ namespace UnifiedTo.Models.Requests
         Datastore,
         [JsonProperty("cdp")]
         Cdp,
+        [JsonProperty("performance")]
+        Performance,
     }
 
     public static class ListUnifiedIntegrationsQueryParamCategoriesExtension

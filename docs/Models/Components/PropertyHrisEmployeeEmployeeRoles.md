@@ -21,3 +21,5 @@ var custom = PropertyHrisEmployeeEmployeeRoles.Of("custom_value");
 | `Recruiter`   | RECRUITER     |
 | `Salesrep`    | SALESREP      |
 | `Interviewer` | INTERVIEWER   |
+| `User`        | USER          |
+| `Employee`    | EMPLOYEE      |

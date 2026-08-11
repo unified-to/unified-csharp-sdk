@@ -88,6 +88,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_customer_id")]
         public ListCustomerId? ListCustomerId { get; set; }
 
+        [JsonProperty("list_cycle_id")]
+        public ListCycleId? ListCycleId { get; set; }
+
         [JsonProperty("list_database_id")]
         public ListDatabaseId? ListDatabaseId { get; set; }
 
@@ -450,6 +453,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_customer_id")]
         public VirtualWebhookCustomerId? VirtualWebhookCustomerId { get; set; }
+
+        [JsonProperty("virtual_webhook_cycle_id")]
+        public VirtualWebhookCycleId? VirtualWebhookCycleId { get; set; }
 
         [JsonProperty("virtual_webhook_database_id")]
         public VirtualWebhookDatabaseId? VirtualWebhookDatabaseId { get; set; }

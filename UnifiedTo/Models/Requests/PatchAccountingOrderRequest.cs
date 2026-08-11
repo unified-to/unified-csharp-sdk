@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
 
     public class PatchAccountingOrderRequest
     {
+        /// <summary>
+        /// @deprecated; use AccountingSalesorder or AccountingPurchaseorder.
+        /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public AccountingOrder AccountingOrder { get; set; } = default!;
 

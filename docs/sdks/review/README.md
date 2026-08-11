@@ -6,7 +6,9 @@
 
 * [CreateCommerceReview](#createcommercereview) - Create a review
 * [GetCommerceReview](#getcommercereview) - Retrieve a review
+* [GetPerformanceReview](#getperformancereview) - Retrieve a review
 * [ListCommerceReviews](#listcommercereviews) - List all reviews
+* [ListPerformanceReviews](#listperformancereviews) - List all reviews
 * [PatchCommerceReview](#patchcommercereview) - Update a review
 * [RemoveCommerceReview](#removecommercereview) - Remove a review
 * [UpdateCommerceReview](#updatecommercereview) - Update a review
@@ -95,6 +97,48 @@ var res = await sdk.Review.GetCommerceReviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetPerformanceReview
+
+Retrieve a review
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getPerformanceReview" method="get" path="/performance/{connection_id}/review/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Review.GetPerformanceReviewAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Review                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetPerformanceReviewQueryParamFields](../../Models/Requests/GetPerformanceReviewQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetPerformanceReviewResponse](../../Models/Requests/GetPerformanceReviewResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListCommerceReviews
 
 List all reviews
@@ -129,6 +173,47 @@ var res = await sdk.Review.ListCommerceReviewsAsync(req);
 ### Response
 
 **[ListCommerceReviewsResponse](../../Models/Requests/ListCommerceReviewsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListPerformanceReviews
+
+List all reviews
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listPerformanceReviews" method="get" path="/performance/{connection_id}/review" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListPerformanceReviewsRequest req = new ListPerformanceReviewsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Review.ListPerformanceReviewsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListPerformanceReviewsRequest](../../Models/Requests/ListPerformanceReviewsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[ListPerformanceReviewsResponse](../../Models/Requests/ListPerformanceReviewsResponse.md)**
 
 ### Errors
 

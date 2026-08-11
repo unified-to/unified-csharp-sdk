@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// @deprecated; use AccountingSalesorder or AccountingPurchaseorder.
+    /// </summary>
     public class AccountingOrder
     {
         [JsonProperty("account_id")]

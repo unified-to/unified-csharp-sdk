@@ -33,9 +33,6 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListAccountingProjectsQueryParamFields>? Fields { get; set; }
 
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=is_active")]
-        public string? IsActive { get; set; }
-
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
