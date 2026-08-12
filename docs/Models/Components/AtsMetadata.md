@@ -1,0 +1,13 @@
+# AtsMetadata
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `ExtraData`                                                             | [AtsMetadataExtraData](../../Models/Components/AtsMetadataExtraData.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Format`                                                                | [AtsMetadataFormat](../../Models/Components/AtsMetadataFormat.md)       | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Id`                                                                    | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Namespace`                                                             | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Slug`                                                                  | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Value`                                                                 | [AtsMetadataValue](../../Models/Components/AtsMetadataValue.md)         | :heavy_minus_sign:                                                      | N/A                                                                     |

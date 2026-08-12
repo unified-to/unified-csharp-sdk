@@ -1,0 +1,11 @@
+# PerformanceReviewQuestion
+
+
+## Fields
+
+| Field                                                                                     | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `Answers`                                                                                 | List<*string*>                                                                            | :heavy_minus_sign:                                                                        | all answer values; single-answer questions have one element                               |
+| `Description`                                                                             | *string*                                                                                  | :heavy_minus_sign:                                                                        | N/A                                                                                       |
+| `Question`                                                                                | *string*                                                                                  | :heavy_check_mark:                                                                        | N/A                                                                                       |
+| `Type`                                                                                    | [PerformanceReviewQuestionType](../../Models/Components/PerformanceReviewQuestionType.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |

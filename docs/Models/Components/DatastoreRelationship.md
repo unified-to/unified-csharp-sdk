@@ -1,0 +1,11 @@
+# DatastoreRelationship
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `Field`                                                                           | *string*                                                                          | :heavy_check_mark:                                                                | N/A                                                                               |
+| `Name`                                                                            | *string*                                                                          | :heavy_check_mark:                                                                | N/A                                                                               |
+| `TableId`                                                                         | *string*                                                                          | :heavy_check_mark:                                                                | N/A                                                                               |
+| `Type`                                                                            | [DatastoreRelationshipType](../../Models/Components/DatastoreRelationshipType.md) | :heavy_check_mark:                                                                | N/A                                                                               |

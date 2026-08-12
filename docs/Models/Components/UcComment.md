@@ -1,0 +1,14 @@
+# UcComment
+
+
+## Fields
+
+| Field                        | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `CallId`                     | *string*                     | :heavy_minus_sign:           | N/A                          |
+| `Content`                    | *string*                     | :heavy_minus_sign:           | N/A                          |
+| `CreatedAt`                  | *string*                     | :heavy_minus_sign:           | N/A                          |
+| `Id`                         | *string*                     | :heavy_minus_sign:           | N/A                          |
+| `Raw`                        | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
+| `UpdatedAt`                  | *string*                     | :heavy_minus_sign:           | N/A                          |
+| `UserId`                     | *string*                     | :heavy_minus_sign:           | N/A                          |

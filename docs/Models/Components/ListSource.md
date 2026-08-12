@@ -1,0 +1,21 @@
+# ListSource
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = ListSource.SupportedRequired;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = ListSource.Of("custom_value");
+```
+
+
+## Values
+
+| Name                | Value               |
+| ------------------- | ------------------- |
+| `SupportedRequired` | supported-required  |
+| `Supported`         | supported           |
+| `NotSupported`      | not-supported       |

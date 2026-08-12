@@ -1,0 +1,13 @@
+# CrmMetadata
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `ExtraData`                                                             | [CrmMetadataExtraData](../../Models/Components/CrmMetadataExtraData.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Format`                                                                | [CrmMetadataFormat](../../Models/Components/CrmMetadataFormat.md)       | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Id`                                                                    | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Namespace`                                                             | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Slug`                                                                  | *string*                                                                | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `Value`                                                                 | [CrmMetadataValue](../../Models/Components/CrmMetadataValue.md)         | :heavy_minus_sign:                                                      | N/A                                                                     |

@@ -1,0 +1,26 @@
+# GetUcContactQueryParamFields
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetUcContactQueryParamFields.Id;
+```
+
+
+## Values
+
+| Name         | Value        |
+| ------------ | ------------ |
+| `Id`         | id           |
+| `CreatedAt`  | created_at   |
+| `UpdatedAt`  | updated_at   |
+| `Name`       | name         |
+| `FirstName`  | first_name   |
+| `LastName`   | last_name    |
+| `Title`      | title        |
+| `Company`    | company      |
+| `Emails`     | emails       |
+| `Telephones` | telephones   |
+| `Raw`        | raw          |

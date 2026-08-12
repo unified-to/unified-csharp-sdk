@@ -1,0 +1,26 @@
+# UpdateAdsOrganizationQueryParamFields
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAdsOrganizationQueryParamFields.Id;
+```
+
+
+## Values
+
+| Name            | Value           |
+| --------------- | --------------- |
+| `Id`            | id              |
+| `CreatedAt`     | created_at      |
+| `UpdatedAt`     | updated_at      |
+| `Name`          | name            |
+| `Currency`      | currency        |
+| `Timezone`      | timezone        |
+| `ParentId`      | parent_id       |
+| `Status`        | status          |
+| `AccountNumber` | account_number  |
+| `Managers`      | managers        |
+| `Raw`           | raw             |

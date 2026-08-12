@@ -1,0 +1,42 @@
+# GetAccountingExpenseQueryParamFields
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetAccountingExpenseQueryParamFields.Id;
+```
+
+
+## Values
+
+| Name               | Value              |
+| ------------------ | ------------------ |
+| `Id`               | id                 |
+| `CreatedAt`        | created_at         |
+| `UpdatedAt`        | updated_at         |
+| `UserId`           | user_id            |
+| `ContactId`        | contact_id         |
+| `AccountId`        | account_id         |
+| `Name`             | name               |
+| `PaymentMethod`    | payment_method     |
+| `PostedAt`         | posted_at          |
+| `TotalAmount`      | total_amount       |
+| `Currency`         | currency           |
+| `TaxAmount`        | tax_amount         |
+| `ReimbursedAmount` | reimbursed_amount  |
+| `ReimbursedAt`     | reimbursed_at      |
+| `ApprovedAt`       | approved_at        |
+| `ApproverUserId`   | approver_user_id   |
+| `Lineitems`        | lineitems          |
+| `Attachments`      | attachments        |
+| `OrganizationId`   | organization_id    |
+| `Users`            | users              |
+| `ApproverUsers`    | approver_users     |
+| `Status`           | status             |
+| `ExternalNumber`   | external_number    |
+| `CategoryIds`      | category_ids       |
+| `ProjectId`        | project_id         |
+| `Metadata`         | metadata           |
+| `Raw`              | raw                |

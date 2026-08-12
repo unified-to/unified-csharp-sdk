@@ -1,0 +1,12 @@
+# AccountingAgedPeriod
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `EndAt`                                                                               | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `Name`                                                                                | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `StartAt`                                                                             | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `SubItems`                                                                            | List<[AccountingAgedRow](../../Models/Components/AccountingAgedRow.md)>               | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `TotalAmount`                                                                         | *double*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |

@@ -1,0 +1,11 @@
+# PropertyCrmEventForm
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `ArchivedAt`                                                                          | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `Fields`                                                                              | List<[CrmEventFormField](../../Models/Components/CrmEventFormField.md)>               | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `Name`                                                                                | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `RedirectUrl`                                                                         | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
