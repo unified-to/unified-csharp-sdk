@@ -152,6 +152,8 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions HrisTimeoffWrite = new PropertyConnectionPermissions("hris_timeoff_write");
         public static readonly PropertyConnectionPermissions HrisTimeshiftRead = new PropertyConnectionPermissions("hris_timeshift_read");
         public static readonly PropertyConnectionPermissions HrisTimeshiftWrite = new PropertyConnectionPermissions("hris_timeshift_write");
+        public static readonly PropertyConnectionPermissions HrisAttendanceRead = new PropertyConnectionPermissions("hris_attendance_read");
+        public static readonly PropertyConnectionPermissions HrisAttendanceWrite = new PropertyConnectionPermissions("hris_attendance_write");
         public static readonly PropertyConnectionPermissions HrisCompanyRead = new PropertyConnectionPermissions("hris_company_read");
         public static readonly PropertyConnectionPermissions HrisCompanyWrite = new PropertyConnectionPermissions("hris_company_write");
         public static readonly PropertyConnectionPermissions HrisLocationRead = new PropertyConnectionPermissions("hris_location_read");
@@ -460,6 +462,8 @@ namespace UnifiedTo.Models.Components
                 ["hris_timeoff_write"] = HrisTimeoffWrite,
                 ["hris_timeshift_read"] = HrisTimeshiftRead,
                 ["hris_timeshift_write"] = HrisTimeshiftWrite,
+                ["hris_attendance_read"] = HrisAttendanceRead,
+                ["hris_attendance_write"] = HrisAttendanceWrite,
                 ["hris_company_read"] = HrisCompanyRead,
                 ["hris_company_write"] = HrisCompanyWrite,
                 ["hris_location_read"] = HrisLocationRead,

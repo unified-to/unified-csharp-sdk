@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         IsActive,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

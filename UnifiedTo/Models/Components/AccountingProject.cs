@@ -85,6 +85,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("manager_user_id")]
         public string? ManagerUserId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         [JsonProperty("minutes_logged")]
         public double? MinutesLogged { get; set; }
 

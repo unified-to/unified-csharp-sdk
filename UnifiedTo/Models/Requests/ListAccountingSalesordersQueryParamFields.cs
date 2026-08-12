@@ -47,6 +47,38 @@ namespace UnifiedTo.Models.Requests
         Fees,
         [JsonProperty("category_ids")]
         CategoryIds,
+        [JsonProperty("metadata")]
+        Metadata,
+        [JsonProperty("order_number")]
+        OrderNumber,
+        [JsonProperty("location_id")]
+        LocationId,
+        [JsonProperty("employee_user_id")]
+        EmployeeUserId,
+        [JsonProperty("device_id")]
+        DeviceId,
+        [JsonProperty("fulfillment_type")]
+        FulfillmentType,
+        [JsonProperty("guest_count")]
+        GuestCount,
+        [JsonProperty("subtotal_amount")]
+        SubtotalAmount,
+        [JsonProperty("tax_amount")]
+        TaxAmount,
+        [JsonProperty("discount_amount")]
+        DiscountAmount,
+        [JsonProperty("tip_amount")]
+        TipAmount,
+        [JsonProperty("service_charge_amount")]
+        ServiceChargeAmount,
+        [JsonProperty("refunded_amount")]
+        RefundedAmount,
+        [JsonProperty("closed_at")]
+        ClosedAt,
+        [JsonProperty("subscription_id")]
+        SubscriptionId,
+        [JsonProperty("payments")]
+        Payments,
         [JsonProperty("raw")]
         Raw,
     }

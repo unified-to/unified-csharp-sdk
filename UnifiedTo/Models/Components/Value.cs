@@ -32,7 +32,7 @@ namespace UnifiedTo.Models.Components
 
         public static ValueType Boolean { get { return new ValueType("boolean"); } }
 
-        public static ValueType ArrayOfAtsMetadata5 { get { return new ValueType("arrayOfAtsMetadata5"); } }
+        public static ValueType ArrayOfAccountingMetadata5 { get { return new ValueType("arrayOfAccountingMetadata5"); } }
 
         public override string ToString() { return Value; }
         public static implicit operator String(ValueType v) { return v.Value; }
@@ -42,7 +42,7 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "arrayOfAtsMetadata5": return ArrayOfAtsMetadata5;
+                case "arrayOfAccountingMetadata5": return ArrayOfAccountingMetadata5;
                 default: throw new ArgumentException("Invalid value for ValueType");
             }
         }
@@ -82,7 +82,7 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<AtsMetadata5>? ArrayOfAtsMetadata5 { get; set; }
+        public List<AccountingMetadata5>? ArrayOfAccountingMetadata5 { get; set; }
 
         public ValueType Type { get; set; }
         public static Value CreateMapOfAny(Dictionary<string, object> mapOfAny)
@@ -117,12 +117,12 @@ namespace UnifiedTo.Models.Components
             res.Boolean = boolean;
             return res;
         }
-        public static Value CreateArrayOfAtsMetadata5(List<AtsMetadata5> arrayOfAtsMetadata5)
+        public static Value CreateArrayOfAccountingMetadata5(List<AccountingMetadata5> arrayOfAccountingMetadata5)
         {
-            ValueType typ = ValueType.ArrayOfAtsMetadata5;
+            ValueType typ = ValueType.ArrayOfAccountingMetadata5;
 
             Value res = new Value(typ);
-            res.ArrayOfAtsMetadata5 = arrayOfAtsMetadata5;
+            res.ArrayOfAccountingMetadata5 = arrayOfAccountingMetadata5;
             return res;
         }
 
@@ -197,14 +197,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new Value(ValueType.ArrayOfAtsMetadata5)
+                    return new Value(ValueType.ArrayOfAccountingMetadata5)
                     {
-                        ArrayOfAtsMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<AtsMetadata5>>(json)
+                        ArrayOfAccountingMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<AccountingMetadata5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(List<AtsMetadata5>), new Value(ValueType.ArrayOfAtsMetadata5), "ArrayOfAtsMetadata5"));
+                    fallbackCandidates.Add((typeof(List<AccountingMetadata5>), new Value(ValueType.ArrayOfAccountingMetadata5), "ArrayOfAccountingMetadata5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -271,9 +271,9 @@ namespace UnifiedTo.Models.Components
                     return;
                 }
 
-                if (res.ArrayOfAtsMetadata5 != null)
+                if (res.ArrayOfAccountingMetadata5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAtsMetadata5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAccountingMetadata5));
                     return;
                 }
 

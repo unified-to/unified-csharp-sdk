@@ -213,6 +213,8 @@ namespace UnifiedTo
 
         public IHris Hris { get; }
 
+        public IAttendance Attendance { get; }
+
         public IBankaccount Bankaccount { get; }
 
         public IBenefit Benefit { get; }
@@ -747,6 +749,10 @@ namespace UnifiedTo
         /// </summary>
         public IHris Hris { get; private set; }
         /// <summary>
+        /// The Attendance sub-SDK.
+        /// </summary>
+        public IAttendance Attendance { get; private set; }
+        /// <summary>
         /// The Bankaccount sub-SDK.
         /// </summary>
         public IBankaccount Bankaccount { get; private set; }
@@ -1236,6 +1242,8 @@ namespace UnifiedTo
 
             Hris = new Hris(SDKConfiguration);
 
+            Attendance = new Attendance(SDKConfiguration);
+
             Bankaccount = new Bankaccount(SDKConfiguration);
 
             Benefit = new Benefit(SDKConfiguration);
@@ -1632,6 +1640,8 @@ namespace UnifiedTo
             Prompt = new Prompt(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
+
+            Attendance = new Attendance(SDKConfiguration);
 
             Bankaccount = new Bankaccount(SDKConfiguration);
 

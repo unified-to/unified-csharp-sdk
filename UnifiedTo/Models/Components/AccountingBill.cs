@@ -55,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<AccountingLineitem>? Lineitems { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 

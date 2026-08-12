@@ -31,6 +31,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("bill_id")]
         public string? BillId { get; set; }
 
+        [JsonProperty("card_brand")]
+        public string? CardBrand { get; set; }
+
+        [JsonProperty("card_last4")]
+        public string? CardLast4 { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
@@ -40,6 +46,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; } = "USD";
 
+        [JsonProperty("device_id")]
+        public string? DeviceId { get; set; }
+
+        [JsonProperty("fee_amount")]
+        public double? FeeAmount { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -48,6 +60,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("link_id")]
         public string? LinkId { get; set; }
+
+        [JsonProperty("location_id")]
+        public string? LocationId { get; set; }
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }
@@ -63,6 +78,18 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }
+
+        [JsonProperty("salesorder_id")]
+        public string? SalesorderId { get; set; }
+
+        [JsonProperty("status")]
+        public PaymentPaymentStatus? Status { get; set; }
+
+        [JsonProperty("tender_type")]
+        public TenderType? TenderType { get; set; }
+
+        [JsonProperty("tip_amount")]
+        public double? TipAmount { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }

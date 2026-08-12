@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         ApplyAmount,
         [JsonProperty("applications")]
         Applications,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

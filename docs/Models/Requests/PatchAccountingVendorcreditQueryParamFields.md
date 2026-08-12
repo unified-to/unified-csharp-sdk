@@ -30,4 +30,5 @@ var value = PatchAccountingVendorcreditQueryParamFields.Id;
 | `OrganizationId` | organization_id  |
 | `ApplyAmount`    | apply_amount     |
 | `Applications`   | applications     |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

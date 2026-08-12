@@ -76,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("memo")]
         public string? Memo { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 

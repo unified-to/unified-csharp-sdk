@@ -26,6 +26,8 @@ namespace UnifiedTo.Models.Components
         public static readonly AccountingFeeType GiftWrap = new AccountingFeeType("GIFT_WRAP");
         public static readonly AccountingFeeType Cod = new AccountingFeeType("COD");
         public static readonly AccountingFeeType Surcharge = new AccountingFeeType("SURCHARGE");
+        public static readonly AccountingFeeType Tip = new AccountingFeeType("TIP");
+        public static readonly AccountingFeeType ServiceCharge = new AccountingFeeType("SERVICE_CHARGE");
         public static readonly AccountingFeeType Other = new AccountingFeeType("OTHER");
 
         private static readonly Dictionary <string, AccountingFeeType> _knownValues =
@@ -38,6 +40,8 @@ namespace UnifiedTo.Models.Components
                 ["GIFT_WRAP"] = GiftWrap,
                 ["COD"] = Cod,
                 ["SURCHARGE"] = Surcharge,
+                ["TIP"] = Tip,
+                ["SERVICE_CHARGE"] = ServiceCharge,
                 ["OTHER"] = Other
             };
 

@@ -27,4 +27,5 @@ var value = PatchAccountingPurchaseorderQueryParamFields.Id;
 | `Lineitems`       | lineitems         |
 | `OrganizationId`  | organization_id   |
 | `CategoryIds`     | category_ids      |
+| `Metadata`        | metadata          |
 | `Raw`             | raw               |

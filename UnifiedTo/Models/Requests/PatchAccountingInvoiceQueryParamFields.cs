@@ -81,6 +81,8 @@ namespace UnifiedTo.Models.Requests
         CategoryIds,
         [JsonProperty("project_id")]
         ProjectId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

@@ -23,4 +23,5 @@ var value = GetAccountingCategoryQueryParamFields.Id;
 | `Type`           | type             |
 | `Code`           | code             |
 | `OrganizationId` | organization_id  |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

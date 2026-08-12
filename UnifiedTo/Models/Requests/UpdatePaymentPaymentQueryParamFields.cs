@@ -45,10 +45,28 @@ namespace UnifiedTo.Models.Requests
         Reference,
         [JsonProperty("organization_id")]
         OrganizationId,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("allocations")]
         Allocations,
+        [JsonProperty("status")]
+        Status,
+        [JsonProperty("salesorder_id")]
+        SalesorderId,
+        [JsonProperty("tender_type")]
+        TenderType,
+        [JsonProperty("tip_amount")]
+        TipAmount,
+        [JsonProperty("fee_amount")]
+        FeeAmount,
+        [JsonProperty("location_id")]
+        LocationId,
+        [JsonProperty("device_id")]
+        DeviceId,
+        [JsonProperty("card_brand")]
+        CardBrand,
+        [JsonProperty("card_last4")]
+        CardLast4,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class UpdatePaymentPaymentQueryParamFieldsExtension

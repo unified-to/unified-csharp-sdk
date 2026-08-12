@@ -25,3 +25,6 @@ var custom = AccountingOrderStatus.Of("custom_value");
 | `Refunded`          | REFUNDED            |
 | `Submitted`         | SUBMITTED           |
 | `Deleted`           | DELETED             |
+| `Open`              | OPEN                |
+| `Completed`         | COMPLETED           |
+| `Canceled`          | CANCELED            |

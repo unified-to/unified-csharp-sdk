@@ -20,10 +20,10 @@ namespace UnifiedTo.Models.Components
     public class AtsMetadata
     {
         [JsonProperty("extra_data", NullValueHandling = NullValueHandling.Include)]
-        public ExtraData? ExtraData { get; set; }
+        public AtsMetadataExtraData? ExtraData { get; set; }
 
         [JsonProperty("format")]
-        public Format? Format { get; set; }
+        public AtsMetadataFormat? Format { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -35,6 +35,6 @@ namespace UnifiedTo.Models.Components
         public string? Slug { get; set; }
 
         [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
-        public Value? Value { get; set; }
+        public AtsMetadataValue? Value { get; set; }
     }
 }

@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class AccountingTaxrate
@@ -27,6 +28,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

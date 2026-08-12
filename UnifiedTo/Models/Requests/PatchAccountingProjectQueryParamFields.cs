@@ -79,6 +79,8 @@ namespace UnifiedTo.Models.Requests
         LocationId,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

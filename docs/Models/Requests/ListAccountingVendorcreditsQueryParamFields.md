@@ -30,4 +30,5 @@ var value = ListAccountingVendorcreditsQueryParamFields.Id;
 | `OrganizationId` | organization_id  |
 | `ApplyAmount`    | apply_amount     |
 | `Applications`   | applications     |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

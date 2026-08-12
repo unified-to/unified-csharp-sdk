@@ -85,6 +85,7 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType HrisLocation = new WebhookObjectType("hris_location");
         public static readonly WebhookObjectType HrisDevice = new WebhookObjectType("hris_device");
         public static readonly WebhookObjectType HrisTimeshift = new WebhookObjectType("hris_timeshift");
+        public static readonly WebhookObjectType HrisAttendance = new WebhookObjectType("hris_attendance");
         public static readonly WebhookObjectType HrisDeduction = new WebhookObjectType("hris_deduction");
         public static readonly WebhookObjectType HrisBenefit = new WebhookObjectType("hris_benefit");
         public static readonly WebhookObjectType HrisBankaccount = new WebhookObjectType("hris_bankaccount");
@@ -254,6 +255,7 @@ namespace UnifiedTo.Models.Components
                 ["hris_location"] = HrisLocation,
                 ["hris_device"] = HrisDevice,
                 ["hris_timeshift"] = HrisTimeshift,
+                ["hris_attendance"] = HrisAttendance,
                 ["hris_deduction"] = HrisDeduction,
                 ["hris_benefit"] = HrisBenefit,
                 ["hris_bankaccount"] = HrisBankaccount,

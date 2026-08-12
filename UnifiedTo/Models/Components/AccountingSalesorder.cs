@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        [JsonProperty("closed_at")]
+        public DateTime? ClosedAt { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
@@ -37,8 +40,23 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        [JsonProperty("device_id")]
+        public string? DeviceId { get; set; }
+
+        [JsonProperty("discount_amount")]
+        public double? DiscountAmount { get; set; }
+
+        [JsonProperty("employee_user_id")]
+        public string? EmployeeUserId { get; set; }
+
         [JsonProperty("fees")]
         public List<AccountingFee>? Fees { get; set; }
+
+        [JsonProperty("fulfillment_type")]
+        public FulfillmentType? FulfillmentType { get; set; }
+
+        [JsonProperty("guest_count")]
+        public double? GuestCount { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -46,8 +64,23 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<AccountingLineitem>? Lineitems { get; set; }
 
+        [JsonProperty("location_id")]
+        public string? LocationId { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<AccountingMetadata>? Metadata { get; set; }
+
+        [JsonProperty("order_number")]
+        public string? OrderNumber { get; set; }
+
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
+
+        /// <summary>
+        /// read-only reciprocal of PaymentPayment.allocations; payments applied to this sales order.
+        /// </summary>
+        [JsonProperty("payments")]
+        public List<AccountingPaymentReference>? Payments { get; set; }
 
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
@@ -55,14 +88,32 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("refunded_amount")]
+        public double? RefundedAmount { get; set; }
+
         [JsonProperty("sales_channel")]
         public string? SalesChannel { get; set; }
+
+        [JsonProperty("service_charge_amount")]
+        public double? ServiceChargeAmount { get; set; }
 
         [JsonProperty("shipping_address")]
         public PropertyAccountingSalesorderShippingAddress? ShippingAddress { get; set; }
 
         [JsonProperty("status")]
         public AccountingSalesorderStatus? Status { get; set; }
+
+        [JsonProperty("subscription_id")]
+        public string? SubscriptionId { get; set; }
+
+        [JsonProperty("subtotal_amount")]
+        public double? SubtotalAmount { get; set; }
+
+        [JsonProperty("tax_amount")]
+        public double? TaxAmount { get; set; }
+
+        [JsonProperty("tip_amount")]
+        public double? TipAmount { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }

@@ -21,4 +21,5 @@ var value = CreateAccountingTaxrateQueryParamFields.Id;
 | `Rate`           | rate             |
 | `IsActive`       | is_active        |
 | `OrganizationId` | organization_id  |
+| `Metadata`       | metadata         |
 | `Raw`            | raw              |

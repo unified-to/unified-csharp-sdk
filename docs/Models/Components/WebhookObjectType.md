@@ -82,6 +82,7 @@ var custom = WebhookObjectType.Of("custom_value");
 | `HrisLocation`             | hris_location              |
 | `HrisDevice`               | hris_device                |
 | `HrisTimeshift`            | hris_timeshift             |
+| `HrisAttendance`           | hris_attendance            |
 | `HrisDeduction`            | hris_deduction             |
 | `HrisBenefit`              | hris_benefit               |
 | `HrisBankaccount`          | hris_bankaccount           |

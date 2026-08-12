@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         public static readonly AccountingSalesorderStatus Refunded = new AccountingSalesorderStatus("REFUNDED");
         public static readonly AccountingSalesorderStatus Submitted = new AccountingSalesorderStatus("SUBMITTED");
         public static readonly AccountingSalesorderStatus Deleted = new AccountingSalesorderStatus("DELETED");
+        public static readonly AccountingSalesorderStatus Open = new AccountingSalesorderStatus("OPEN");
+        public static readonly AccountingSalesorderStatus Completed = new AccountingSalesorderStatus("COMPLETED");
+        public static readonly AccountingSalesorderStatus Canceled = new AccountingSalesorderStatus("CANCELED");
 
         private static readonly Dictionary <string, AccountingSalesorderStatus> _knownValues =
             new Dictionary <string, AccountingSalesorderStatus> ()
@@ -40,7 +43,10 @@ namespace UnifiedTo.Models.Components
                 ["PARTIALLY_REFUNDED"] = PartiallyRefunded,
                 ["REFUNDED"] = Refunded,
                 ["SUBMITTED"] = Submitted,
-                ["DELETED"] = Deleted
+                ["DELETED"] = Deleted,
+                ["OPEN"] = Open,
+                ["COMPLETED"] = Completed,
+                ["CANCELED"] = Canceled
             };
 
         private static readonly ConcurrentDictionary<string, AccountingSalesorderStatus> _values =

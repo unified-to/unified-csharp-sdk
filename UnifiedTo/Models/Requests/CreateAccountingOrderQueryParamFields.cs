@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         Lineitems,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }
