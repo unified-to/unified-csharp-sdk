@@ -1,0 +1,40 @@
+# GetCommerceReviewQueryParamFields
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = GetCommerceReviewQueryParamFields.Id;
+```
+
+
+## Values
+
+| Name               | Value              |
+| ------------------ | ------------------ |
+| `Id`               | id                 |
+| `CreatedAt`        | created_at         |
+| `UpdatedAt`        | updated_at         |
+| `ItemId`           | item_id            |
+| `ItemVariantId`    | item_variant_id    |
+| `LocationId`       | location_id        |
+| `Rating`           | rating             |
+| `Title`            | title              |
+| `Content`          | content            |
+| `AuthorName`       | author_name        |
+| `AuthorEmail`      | author_email       |
+| `AuthorAvatarUrl`  | author_avatar_url  |
+| `AuthorLocation`   | author_location    |
+| `VerifiedPurchase` | verified_purchase  |
+| `HelpfulVotes`     | helpful_votes      |
+| `UnhelpfulVotes`   | unhelpful_votes    |
+| `Media`            | media              |
+| `Status`           | status             |
+| `IsVerified`       | is_verified        |
+| `IsFeatured`       | is_featured        |
+| `IsPublic`         | is_public          |
+| `Comments`         | comments           |
+| `Metadata`         | metadata           |
+| `Url`              | url                |
+| `Raw`              | raw                |

@@ -1,0 +1,12 @@
+# AtsJobOpening
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `ApplicationId`                                                                       | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `CloseReason`                                                                         | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `ClosedAt`                                                                            | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `OpenedAt`                                                                            | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `Status`                                                                              | [AtsJobOpeningStatus](../../Models/Components/AtsJobOpeningStatus.md)                 | :heavy_minus_sign:                                                                    | N/A                                                                                   |

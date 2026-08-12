@@ -1,0 +1,13 @@
+# HrisMetadata
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ExtraData`                                                               | [HrisMetadataExtraData](../../Models/Components/HrisMetadataExtraData.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Format`                                                                  | [HrisMetadataFormat](../../Models/Components/HrisMetadataFormat.md)       | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Id`                                                                      | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Namespace`                                                               | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Slug`                                                                    | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Value`                                                                   | [HrisMetadataValue](../../Models/Components/HrisMetadataValue.md)         | :heavy_minus_sign:                                                        | N/A                                                                       |

@@ -1,0 +1,39 @@
+# CreateAdsCampaignQueryParamFields
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = CreateAdsCampaignQueryParamFields.Id;
+```
+
+
+## Values
+
+| Name                       | Value                      |
+| -------------------------- | -------------------------- |
+| `Id`                       | id                         |
+| `CreatedAt`                | created_at                 |
+| `UpdatedAt`                | updated_at                 |
+| `Name`                     | name                       |
+| `OrganizationId`           | organization_id            |
+| `Status`                   | status                     |
+| `EffectiveStatus`          | effective_status           |
+| `StartAt`                  | start_at                   |
+| `EndAt`                    | end_at                     |
+| `BudgetAmount`             | budget_amount              |
+| `BudgetPeriod`             | budget_period              |
+| `BudgetUnit`               | budget_unit                |
+| `TotalSpendAmount`         | total_spend_amount         |
+| `Targeting`                | targeting                  |
+| `Goal`                     | goal                       |
+| `PlannedSpendAmount`       | planned_spend_amount       |
+| `FrequencyCap`             | frequency_cap              |
+| `AdvertisingChannelType`   | advertising_channel_type   |
+| `CampaignBudgetIdentifier` | campaign_budget_identifier |
+| `Currency`                 | currency                   |
+| `Category`                 | category                   |
+| `HasEuPoliticalAds`        | has_eu_political_ads       |
+| `Labels`                   | labels                     |
+| `Raw`                      | raw                        |

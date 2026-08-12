@@ -1,0 +1,13 @@
+# KmsPageMetadata
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `ExtraData`                                                                     | [KmsPageMetadataExtraData](../../Models/Components/KmsPageMetadataExtraData.md) | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Format`                                                                        | [KmsPageMetadataFormat](../../Models/Components/KmsPageMetadataFormat.md)       | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Id`                                                                            | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Namespace`                                                                     | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Slug`                                                                          | *string*                                                                        | :heavy_minus_sign:                                                              | N/A                                                                             |
+| `Value`                                                                         | [KmsPageMetadataValue](../../Models/Components/KmsPageMetadataValue.md)         | :heavy_minus_sign:                                                              | N/A                                                                             |

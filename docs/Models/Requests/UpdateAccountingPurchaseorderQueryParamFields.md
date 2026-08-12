@@ -1,0 +1,31 @@
+# UpdateAccountingPurchaseorderQueryParamFields
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingPurchaseorderQueryParamFields.Id;
+```
+
+
+## Values
+
+| Name              | Value             |
+| ----------------- | ----------------- |
+| `Id`              | id                |
+| `CreatedAt`       | created_at        |
+| `UpdatedAt`       | updated_at        |
+| `PostedAt`        | posted_at         |
+| `ContactId`       | contact_id        |
+| `AccountId`       | account_id        |
+| `Currency`        | currency          |
+| `TotalAmount`     | total_amount      |
+| `ShippingAddress` | shipping_address  |
+| `BillingAddress`  | billing_address   |
+| `Status`          | status            |
+| `Lineitems`       | lineitems         |
+| `OrganizationId`  | organization_id   |
+| `CategoryIds`     | category_ids      |
+| `Metadata`        | metadata          |
+| `Raw`             | raw               |

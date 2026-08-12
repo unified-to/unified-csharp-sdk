@@ -1,0 +1,11 @@
+# AccountingCreditApplication
+
+
+## Fields
+
+| Field                                                                                 | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `Amount`                                                                              | *double*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `AppliedAt`                                                                           | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `ObjectId`                                                                            | *string*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
+| `ObjectType`                                                                          | [ObjectType](../../Models/Components/ObjectType.md)                                   | :heavy_minus_sign:                                                                    | N/A                                                                                   |

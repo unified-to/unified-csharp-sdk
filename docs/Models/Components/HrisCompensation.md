@@ -1,0 +1,13 @@
+# HrisCompensation
+
+
+## Fields
+
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `Amount`                                                                          | *double*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Currency`                                                                        | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Frequency`                                                                       | [HrisCompensationFrequency](../../Models/Components/HrisCompensationFrequency.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `GroupId`                                                                         | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Notes`                                                                           | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Type`                                                                            | [HrisCompensationType](../../Models/Components/HrisCompensationType.md)           | :heavy_minus_sign:                                                                | N/A                                                                               |

@@ -1,0 +1,31 @@
+# UpdateAccountingJournalQueryParamFields
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Requests;
+
+var value = UpdateAccountingJournalQueryParamFields.Id;
+```
+
+
+## Values
+
+| Name             | Value            |
+| ---------------- | ---------------- |
+| `Id`             | id               |
+| `CreatedAt`      | created_at       |
+| `UpdatedAt`      | updated_at       |
+| `Reference`      | reference        |
+| `TaxAmount`      | tax_amount       |
+| `Currency`       | currency         |
+| `Lineitems`      | lineitems        |
+| `TaxrateId`      | taxrate_id       |
+| `Description`    | description      |
+| `PostedAt`       | posted_at        |
+| `Source`         | source           |
+| `OrganizationId` | organization_id  |
+| `CategoryIds`    | category_ids     |
+| `ProjectId`      | project_id       |
+| `Attachments`    | attachments      |
+| `Raw`            | raw              |
