@@ -44,8 +44,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// @deprecated; use instructors.
+        /// </summary>
         [JsonProperty("instructor_ids")]
         public List<string>? InstructorIds { get; set; }
+
+        [JsonProperty("instructors")]
+        public List<LmsReference>? Instructors { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }

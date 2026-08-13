@@ -55,12 +55,12 @@ namespace UnifiedTo.Models.Requests
         DurationMinutes,
         [JsonProperty("provider_name")]
         ProviderName,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("published_at")]
         PublishedAt,
         [JsonProperty("time_estimate_minutes")]
         TimeEstimateMinutes,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class CreateLmsCourseQueryParamFieldsExtension

@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: d36ed43c30a913e487dea4d78c125ad4
+  docChecksum: f9c6b1df5a3515296c00eef279133788
   docVersion: "1.0"
   speakeasyVersion: 1.791.4
   generationVersion: 2.926.8
-  releaseVersion: 0.131.14
-  configChecksum: 3aa2d463842001bbf9ab08acb9a28e79
+  releaseVersion: 0.131.15
+  configChecksum: 2d64d898e95918202231b576c0193d98
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: 0af75577-1c41-415a-a5c0-2d1ec829b17c
-  pristine_commit_hash: 96ec6072a048f5443d71a943869424c70baedfa0
-  pristine_tree_hash: 432b95a4a905f20b83893eec5cbc0c1b88592d90
+  generation_id: a33f49c6-d723-4a0e-84da-9c5db1bf0433
+  pristine_commit_hash: 92705f4931b51cd372471d50552e85d1c9757802
+  pristine_tree_hash: 32d2debba06c3f42006a9fdefe2ba0b5c434e376
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -2522,24 +2522,24 @@ trackedFiles:
     pristine_git_object: 04c1f809ba1568609e5f1d1962820b3c14685abf
   UnifiedTo/Models/Components/LmsClass.cs:
     id: 9c4d85481505
-    last_write_checksum: sha1:0e40b9df04e6c68a70ccb77f71091ca5d4577470
-    pristine_git_object: 1dc1fecb09a1386708991136bd40f6a8780e522c
+    last_write_checksum: sha1:46d56fdc5f26a587ee4d75fb03ffc6da60ac96fe
+    pristine_git_object: a28ad7491a164291a7953d0d24bcf13daaf8399a
   UnifiedTo/Models/Components/LmsCollection.cs:
     id: ebbab91d0aad
     last_write_checksum: sha1:9bffd81419ef6fe95d73b4b98de4101ffd947157
     pristine_git_object: 02ef734761bcc5feb3971e6af0388623e2b615ac
   UnifiedTo/Models/Components/LmsContent.cs:
     id: 8e6dda619a21
-    last_write_checksum: sha1:8e957c08e351eaf60ed9d1c2730ddc4ca3938c85
-    pristine_git_object: c7a1eebaff7e510dc5eb163398966a90822fc793
+    last_write_checksum: sha1:0b02c748392286d5932c9725da66124aa1266159
+    pristine_git_object: bce56b9ea8877fda4d2f4a5e6bbca71c47547527
   UnifiedTo/Models/Components/LmsContentLocalization.cs:
     id: d6c489d92a2c
     last_write_checksum: sha1:ef2a21e3847f0db90c70110e91fb3d47e4625e92
     pristine_git_object: f803395e9bd9f0a454e7737022be729afa946c19
   UnifiedTo/Models/Components/LmsCourse.cs:
     id: ccf60a813ba6
-    last_write_checksum: sha1:0950875e99ecf73ce0f947827504c3c783941a76
-    pristine_git_object: cb237e73556cc499ccd72de6f500f0c7d31d2fea
+    last_write_checksum: sha1:9bbfd0730fa577120d8b5bb171a66ea6505c5db7
+    pristine_git_object: ae16067120cfcf2bc3dae3fd5103a94b5c3b2f21
   UnifiedTo/Models/Components/LmsEmail.cs:
     id: 22283db33697
     last_write_checksum: sha1:750e5d74bd1d3998c85fd61462b3ae756044ca93
@@ -2556,6 +2556,10 @@ trackedFiles:
     id: 6e0e0319ae89
     last_write_checksum: sha1:549a17c6211c229913a9088d6f2f150f1c19ebd3
     pristine_git_object: 3eb32efeea3a31e30d10d6af499ae1a67ea9ddc9
+  UnifiedTo/Models/Components/LmsReference.cs:
+    id: 297db1730775
+    last_write_checksum: sha1:4d7a9bf7799c4ffe967a28c6ae80a369c4f35dac
+    pristine_git_object: 6ff8bde9ab6cdcaf139dc6b2a2f433123be5760b
   UnifiedTo/Models/Components/LmsStudent.cs:
     id: b0dfc983bf3c
     last_write_checksum: sha1:5f40e268ac2101b7f712fdd9e3d5ccebec84d565
@@ -5758,8 +5762,8 @@ trackedFiles:
     pristine_git_object: f1b492b8b69b955d02516c766c78fb92ace3459e
   UnifiedTo/Models/Requests/CreateLmsClassQueryParamFields.cs:
     id: 5e27e1206275
-    last_write_checksum: sha1:e71ae2cfa255b19d6ee5aced2bc76ee5ca9e394e
-    pristine_git_object: dd48de8dddfc2a827661663e411203d3ad79fe04
+    last_write_checksum: sha1:3c2b9e8a117daa95638eac6e1f4d954634203e0e
+    pristine_git_object: 8c0188216622985a83af6f2c4dad0ddf17fc3e3d
   UnifiedTo/Models/Requests/CreateLmsClassRequest.cs:
     id: 867cb3f7e2c7
     last_write_checksum: sha1:91d988c7467de983f2c441ee1f529cc42ec713b6
@@ -5782,8 +5786,8 @@ trackedFiles:
     pristine_git_object: 447476d6ab1c9df569d982314bc709c07adfa1b0
   UnifiedTo/Models/Requests/CreateLmsContentQueryParamFields.cs:
     id: 37ff2c9ffc4e
-    last_write_checksum: sha1:0fca0cf1a00a445986d43428f87af7854defeb73
-    pristine_git_object: 7226ea0902efc3751920eac5ec49a543cbfde53d
+    last_write_checksum: sha1:90e121055dde584848283368fabdbd850c487fb0
+    pristine_git_object: 2c83c9e273d4a568ae5c683c792f3e6986451223
   UnifiedTo/Models/Requests/CreateLmsContentRequest.cs:
     id: 8e75823e2ec9
     last_write_checksum: sha1:33dc544924f501af826c7d1ad8fb10ed0e83efaa
@@ -5794,8 +5798,8 @@ trackedFiles:
     pristine_git_object: f9ab29c87b5c292a49170facf6ff63c87ec64ae6
   UnifiedTo/Models/Requests/CreateLmsCourseQueryParamFields.cs:
     id: 3432c1d78030
-    last_write_checksum: sha1:fbc09179bd151d313a58d48a657295fe010ca551
-    pristine_git_object: 287ac3c6076c6b7c3ec95718cf3fd07cfa252812
+    last_write_checksum: sha1:6bd51bba47d66343d1e3cd7c3328d884a3c92b9f
+    pristine_git_object: c4541d4819a3152b8db7e61560d226e0ad6b544f
   UnifiedTo/Models/Requests/CreateLmsCourseRequest.cs:
     id: 8bcfb6df8ece
     last_write_checksum: sha1:785e1bde1a64e8014a2a1dd6890de0e3cc1b3249
@@ -7474,8 +7478,8 @@ trackedFiles:
     pristine_git_object: 08666a298b3447c48412de03d67d8b624fdf82ab
   UnifiedTo/Models/Requests/GetLmsClassQueryParamFields.cs:
     id: 50e9ebeb59a9
-    last_write_checksum: sha1:a9a3e8c29eff4cd586c7a6c058efafb69f66a4fa
-    pristine_git_object: c10d0279e7a0872d2f4ad309c75d2ca877d669b6
+    last_write_checksum: sha1:3eb50c4511995cc7eed07d5ae96db14aa35ff7dd
+    pristine_git_object: 6fb456ce00a52b2fa2c5fb62a26873b3401345f9
   UnifiedTo/Models/Requests/GetLmsClassRequest.cs:
     id: 1b9cc4bc2e05
     last_write_checksum: sha1:5ca8b4e42e3ad2a3e7cd5ff1c5216f7bd8efabf3
@@ -7498,8 +7502,8 @@ trackedFiles:
     pristine_git_object: b89bd330397e10d0ca456d81d9700fe7825ec871
   UnifiedTo/Models/Requests/GetLmsContentQueryParamFields.cs:
     id: f9dde63bae81
-    last_write_checksum: sha1:60d280ff6dfc2503962d3c0795448405d074c314
-    pristine_git_object: 7cf68294a2e416fcc39ae89167efa3d513f06ba8
+    last_write_checksum: sha1:da64754a9a580e19d341534abcfc814bf9a505c1
+    pristine_git_object: b1f002c2c73c242baa2fd076f0f73cc76b1d853e
   UnifiedTo/Models/Requests/GetLmsContentRequest.cs:
     id: 49c102b23c04
     last_write_checksum: sha1:64b6feb08193f5ceab5ec95bbaa58b1fc048a322
@@ -7510,8 +7514,8 @@ trackedFiles:
     pristine_git_object: 9c022f8e39cc785ee09c5b76b1c37163a8a1bcd4
   UnifiedTo/Models/Requests/GetLmsCourseQueryParamFields.cs:
     id: 0a0c73458328
-    last_write_checksum: sha1:83427a92a0f563cceaea63a886dfdcfc23183316
-    pristine_git_object: f6e87a6790db9e15da93a86e61ec313ce69751cc
+    last_write_checksum: sha1:ffdba3ba18d6389ea9b1a7f192755a76b5b2d9ef
+    pristine_git_object: 8112b6d1360600cebc6a2baac25de12530ade298
   UnifiedTo/Models/Requests/GetLmsCourseRequest.cs:
     id: 4b69a15fe28f
     last_write_checksum: sha1:132478a4b27e2c4e6b7ac3f73c76172c4c30ed18
@@ -8182,8 +8186,8 @@ trackedFiles:
     pristine_git_object: cb542476630f0ea1eca8a328c23f854f1febc858
   UnifiedTo/Models/Requests/ListAccountingBillsRequest.cs:
     id: 60749bf52fd1
-    last_write_checksum: sha1:93613785421b8e02e580a4c18bd901f2c82e4868
-    pristine_git_object: b354eea0ca163c84522c7360a37f9bc9de7c4917
+    last_write_checksum: sha1:f3902f763ff80e508cf46eeca7c67141770d5ad3
+    pristine_git_object: 3e4f5163a0ba624e307ca18e3f9d1bd13a3a9c20
   UnifiedTo/Models/Requests/ListAccountingBillsResponse.cs:
     id: 5709d402edb7
     last_write_checksum: sha1:73f64141b9667f4343a6994b04d400aceafc50b1
@@ -9414,8 +9418,8 @@ trackedFiles:
     pristine_git_object: bafd87d8f5bf6193a4c49a5a6af512eb41445412
   UnifiedTo/Models/Requests/ListLmsClassesQueryParamFields.cs:
     id: 2b500e649e42
-    last_write_checksum: sha1:a94c1f4fad243239014d6409b7b658497a715ee5
-    pristine_git_object: 1f8ff301d20b4baedf07e63cf895e21975c87f55
+    last_write_checksum: sha1:183f556f23ec996192fc4c7bde995a51970799e2
+    pristine_git_object: 5f8952fab463be17864236f6c614ba2e9d793f83
   UnifiedTo/Models/Requests/ListLmsClassesRequest.cs:
     id: 2add697cee71
     last_write_checksum: sha1:9041483913237a69d393ec8d47f0aa348e192ff2
@@ -9438,8 +9442,8 @@ trackedFiles:
     pristine_git_object: 502d031f85a72a666458a0d85a089c884a9c63a0
   UnifiedTo/Models/Requests/ListLmsContentsQueryParamFields.cs:
     id: b66e3b6a6d6f
-    last_write_checksum: sha1:1551936b0063fb40eb34638d71bbdd385cfad3fb
-    pristine_git_object: 6269cba95b8a429edc2ca0d6c32a5ce1ed89409b
+    last_write_checksum: sha1:cc0b8ee8cd07d13044ab7e721ffa69ffd4dfe271
+    pristine_git_object: db009aa778e9c29b47074e524c5240635f7c9777
   UnifiedTo/Models/Requests/ListLmsContentsRequest.cs:
     id: 4ba49eed55c5
     last_write_checksum: sha1:d3a9ac46d0705012a98d11b0ac76bc98f93b9548
@@ -9450,8 +9454,8 @@ trackedFiles:
     pristine_git_object: 23ef5e1eac78b6a41edaf2ddf30e26554b76b39a
   UnifiedTo/Models/Requests/ListLmsCoursesQueryParamFields.cs:
     id: 648e212d0d69
-    last_write_checksum: sha1:3bc3b8a4195f100910868d2e3add4dd706d60ff2
-    pristine_git_object: fcc7946b823a36b5f8fb0be4e30f501b7fd3b41e
+    last_write_checksum: sha1:530b3b358b65dfb783969bba6cc7f367f1ab81ff
+    pristine_git_object: b2167ff0c272e9996d7609a2a0bf54a87467cc74
   UnifiedTo/Models/Requests/ListLmsCoursesRequest.cs:
     id: 19fe0c62e5d1
     last_write_checksum: sha1:347a2418f4b6af92c549646f2ba266b976c8f539
@@ -11022,8 +11026,8 @@ trackedFiles:
     pristine_git_object: f2e4072564517c7cfc02d37ab4a9260e3c026f84
   UnifiedTo/Models/Requests/PatchLmsClassQueryParamFields.cs:
     id: 07055f333efa
-    last_write_checksum: sha1:65552e8b8c557055cff90dc331e0c08557564d9e
-    pristine_git_object: 1007001e159773766135587f71dfc9e856cd237f
+    last_write_checksum: sha1:ed793bc2a6271e62393312a9de9946f0eb3ba205
+    pristine_git_object: c3eab6991026c48682d45854521fd7c11b232d99
   UnifiedTo/Models/Requests/PatchLmsClassRequest.cs:
     id: 248341a42985
     last_write_checksum: sha1:2707ae97abeef4fe1281e475f0f4581118437d05
@@ -11046,8 +11050,8 @@ trackedFiles:
     pristine_git_object: e46dfb1029aeaae5fa1be02c15b85d8e23e61f44
   UnifiedTo/Models/Requests/PatchLmsContentQueryParamFields.cs:
     id: c0e79fbf36c8
-    last_write_checksum: sha1:88edc30b93e49b4ac9fc8bca79e45d6d39567682
-    pristine_git_object: 2712232b766c51543df495243fa5ff811457efa0
+    last_write_checksum: sha1:6e0d29f52d4ee098fa5fa4afead71e792015836d
+    pristine_git_object: 4082ade08341be17c02346d270cf5ba081a35951
   UnifiedTo/Models/Requests/PatchLmsContentRequest.cs:
     id: 7138be15eed3
     last_write_checksum: sha1:8c1edd8de2c7770d05f4f265b8d4d7ec4d381784
@@ -11058,8 +11062,8 @@ trackedFiles:
     pristine_git_object: 9597a9dd71511db2aaf6b74d8fa542522d4d0455
   UnifiedTo/Models/Requests/PatchLmsCourseQueryParamFields.cs:
     id: ac54e3263b14
-    last_write_checksum: sha1:53f6f2af691048cdf36d35b4d2942cd2e99bcf5c
-    pristine_git_object: 3d45b0e42810ccb0d5fcdded5b9c1a118eda1fad
+    last_write_checksum: sha1:02f97a00c4c1dd38f0d9ddf6594c6a8c711b25a5
+    pristine_git_object: f87ad11c585bdf661fbb45e098f75531e88c4df2
   UnifiedTo/Models/Requests/PatchLmsCourseRequest.cs:
     id: 2a7285da06c5
     last_write_checksum: sha1:e3438536e3c246792d943fb6e29345e7299db049
@@ -13442,8 +13446,8 @@ trackedFiles:
     pristine_git_object: 47c20a3b4b87a9a250fa244c2e7069a6870da040
   UnifiedTo/Models/Requests/UpdateLmsClassQueryParamFields.cs:
     id: 124de7af2c9c
-    last_write_checksum: sha1:3488df66c50e1a3103258fb3a3468a9ebee29662
-    pristine_git_object: bbafae8db7b1fd16a1528e96294df588c211eb1f
+    last_write_checksum: sha1:a8d5d6b9a70fdd642e10c7910f27a8f3b88388f4
+    pristine_git_object: 7d37f01edbe3f18ce4ff4034e492e72c36e71820
   UnifiedTo/Models/Requests/UpdateLmsClassRequest.cs:
     id: ddef833352b1
     last_write_checksum: sha1:114669f97e4cdd879937def082921b9fa65ff925
@@ -13466,8 +13470,8 @@ trackedFiles:
     pristine_git_object: 2dbc0df6d71857b4c38f49e62949b3249f5d2968
   UnifiedTo/Models/Requests/UpdateLmsContentQueryParamFields.cs:
     id: 3e30a33afff3
-    last_write_checksum: sha1:643aa13d3abcebed1ad3cecf7433e5e8ecffaa94
-    pristine_git_object: 14fd7c69ae2672b7d6acf62b9dd7a658954e63f8
+    last_write_checksum: sha1:8d28f6a4ee4f8bbfd61a73b881ba890458999767
+    pristine_git_object: eea13e71a1363f99d83d7245a998ea5a3a292739
   UnifiedTo/Models/Requests/UpdateLmsContentRequest.cs:
     id: 00d7174928e8
     last_write_checksum: sha1:31bd577df3903ded0acfb08b76b474b7560334a4
@@ -13478,8 +13482,8 @@ trackedFiles:
     pristine_git_object: faa2ba373593f11cd4a226fd4f5d0814add0fbdc
   UnifiedTo/Models/Requests/UpdateLmsCourseQueryParamFields.cs:
     id: 52930871eeed
-    last_write_checksum: sha1:2a9377686791930e309c47a1d72be027553316b6
-    pristine_git_object: 5fd5d764aa8571e6f26afd946ec2400be05cdbc7
+    last_write_checksum: sha1:5db6065ce05322720482c85fa7bff31cdbb370e7
+    pristine_git_object: c62ad6f1987c9d7937e2458068c351f8feb270fa
   UnifiedTo/Models/Requests/UpdateLmsCourseRequest.cs:
     id: aa0bda54002b
     last_write_checksum: sha1:0129a5e1d2da489d5026f1197d5641c4521a139d
@@ -14086,8 +14090,8 @@ trackedFiles:
     pristine_git_object: 4a983adb1dcd0bc2e3a3e9979cf1b2f1b9e4f3b1
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:b41179f54638f59209ce334c18cc005b6fa499a3
-    pristine_git_object: 236cdb0b134845bfe9b8f5d5bc6cdcecb2e94e69
+    last_write_checksum: sha1:9d05d58343e7171e0528bca57d268214ede9bdb2
+    pristine_git_object: ab6679b767f9ae133a944c6ad77058eab794f79c
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -14222,8 +14226,8 @@ trackedFiles:
     pristine_git_object: 9b1b93cea5451e186b5535d7f02d4e4e97048dd2
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:47e2917f610567455aa66997acaf09d2cf1bcf30
-    pristine_git_object: 6aa69c7ab7c8bd294735c575aee2ac9549bdcef0
+    last_write_checksum: sha1:1fe27729cd2bc87ebf796d2ddb8230f1ff210bde
+    pristine_git_object: 7438b675c10048c8668bb2ec3ce7b82e9c3cfa5d
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:ac32cfb31edfe0a67b0653bf0c2f81fe19ae36ca
@@ -14242,8 +14246,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:3859fcc6a081b7a1ec972942222c40bdbfa7b4f9
-    pristine_git_object: 6b0e9f900aa754898511a9ad07e8ba0cbf79d3fc
+    last_write_checksum: sha1:a5899682dcf46ba2bc4d9a5caf8b3c05dce6ec05
+    pristine_git_object: 876a69339d3c73726254ea21d963e8793d9eb28b
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -16410,24 +16414,24 @@ trackedFiles:
     pristine_git_object: 81cb77436ccfd1fea47a06a1de1a4decd0061659
   docs/Models/Components/LmsClass.md:
     id: 7ccc0f803491
-    last_write_checksum: sha1:d9afcd04050f3bcfcd83d69806ea458fdfabfa70
-    pristine_git_object: 10c066078660ee3beca3d0efaff5b18fe3a5c906
+    last_write_checksum: sha1:bc8369107ca30b7300011607016ae68a7d9977bb
+    pristine_git_object: 860449d5362bffd0e9af86ce18720a82ecf7162f
   docs/Models/Components/LmsCollection.md:
     id: 0e3ac794f0fc
     last_write_checksum: sha1:9b52f866eea1c4a25c42b50c8403a59490cb1425
     pristine_git_object: e98b32a847c9d0f13b74417afe94e65ea2f5ae31
   docs/Models/Components/LmsContent.md:
     id: 0e268d916137
-    last_write_checksum: sha1:ad310916db7c481db17f6cc8c2a5f3397499847d
-    pristine_git_object: 4502aff6105f4675e0c3b8a5bfa90121e1b9b57a
+    last_write_checksum: sha1:56c80701720ec277fe1dac386c81c67fc19bd228
+    pristine_git_object: 6fa043b94a6afab2c87d400ec15b45b196dd348e
   docs/Models/Components/LmsContentLocalization.md:
     id: 921e3f8ccfe8
     last_write_checksum: sha1:27400eb4bb7f2f74ecd3e9696fd3ad76ba28c0d7
     pristine_git_object: 50ede18b151abbd60c9706d30a1c89b728d30958
   docs/Models/Components/LmsCourse.md:
     id: 7ed108a9deb1
-    last_write_checksum: sha1:e156f5063d70c4fcf841dfe1780d70735229ef2b
-    pristine_git_object: c8849573146fedf23559140d82daeae2aa3c0b8a
+    last_write_checksum: sha1:24e41a2e3831f3aec0af557e5d0544755aa402fb
+    pristine_git_object: 695b5cebeb46bc83e393cbdf29f8eb79f5bda5ca
   docs/Models/Components/LmsEmail.md:
     id: 8909f4be9ca8
     last_write_checksum: sha1:2704f81f7b5a9c1bc98cc074693c921380fc3f05
@@ -16444,6 +16448,10 @@ trackedFiles:
     id: 47092b79dc51
     last_write_checksum: sha1:7f522fe6b5acc23278d842cdf9fdba6492032557
     pristine_git_object: 11885785ce2e7a4d3e04ea84ac2dbf85c1224210
+  docs/Models/Components/LmsReference.md:
+    id: c5d30fc3472a
+    last_write_checksum: sha1:5372736b92d48181edf01ca5511a78746d3f55a5
+    pristine_git_object: 941b0e3606823416ffe4dd91e882d12122eb3900
   docs/Models/Components/LmsStudent.md:
     id: 848b1281b49b
     last_write_checksum: sha1:6436d4a7d77b5d132bfe92f89793481dfc64f720
@@ -19634,8 +19642,8 @@ trackedFiles:
     pristine_git_object: 69626afa058284b546cc4fcaa01aad291a2b9e1c
   docs/Models/Requests/CreateLmsClassQueryParamFields.md:
     id: 63b9709a0b95
-    last_write_checksum: sha1:ef29b130ce48af126820df2a529eb5e0b042c677
-    pristine_git_object: e46fecd5cb8868250e4b90c00d03a77bb20af479
+    last_write_checksum: sha1:3b0fe09f78b9d15343c981c76a36b9433254ae97
+    pristine_git_object: dec18ffdc8d11292cc87c88f339eeb6b07fae94d
   docs/Models/Requests/CreateLmsClassRequest.md:
     id: 45a609f1eeb5
     last_write_checksum: sha1:0c736eb4d5921c28398254895a16c32670abd0b1
@@ -19658,8 +19666,8 @@ trackedFiles:
     pristine_git_object: 1830a1e87b7f78a69f462a931aa0493096f65cf5
   docs/Models/Requests/CreateLmsContentQueryParamFields.md:
     id: 29f98daba377
-    last_write_checksum: sha1:a3414526788e8824506413a4766a112434e394d3
-    pristine_git_object: 06178939615f031243332ddbfb79e10ac7a83458
+    last_write_checksum: sha1:2a9f31db17f333d77de0f3dfa2a261c0cf4dca17
+    pristine_git_object: d3f7f037c904c2f21737157fd221114db236eeb2
   docs/Models/Requests/CreateLmsContentRequest.md:
     id: fd3718131f7c
     last_write_checksum: sha1:30e807e440b64152edfd40229be59b601c5e83a4
@@ -19670,8 +19678,8 @@ trackedFiles:
     pristine_git_object: 1fe98038dc5ba2d8a0d088d00ae97b9a1ad3c7c3
   docs/Models/Requests/CreateLmsCourseQueryParamFields.md:
     id: 31f8bc5b4075
-    last_write_checksum: sha1:2c7468d60f1d223dca99264554115b720b779363
-    pristine_git_object: 0d945a7eef7134dd989820aae2db2ffd3d6c277f
+    last_write_checksum: sha1:7b9ac331c4886d681b921f894bf879f6f351626c
+    pristine_git_object: 603d3d3e737286bf6246d3e371f4ebaa42e9ad83
   docs/Models/Requests/CreateLmsCourseRequest.md:
     id: b890cee90db5
     last_write_checksum: sha1:2c6a16af6b7a2f43da13780c0d71861efdb7804e
@@ -21350,8 +21358,8 @@ trackedFiles:
     pristine_git_object: a227f8d30b4f4cae93b256f5cee42d16d071a1db
   docs/Models/Requests/GetLmsClassQueryParamFields.md:
     id: dee51c121f88
-    last_write_checksum: sha1:3e1283304cb9c0caf19c942f836b6f10944ec561
-    pristine_git_object: c86bacf12df437b7555e77a08113033810d99178
+    last_write_checksum: sha1:c858f2130d1cf42766b3a00bc4b160b9be61c8f6
+    pristine_git_object: b6ff3455f43bf35e96ef1208aaf24ab8bdbbd270
   docs/Models/Requests/GetLmsClassRequest.md:
     id: 3c1f2371cf97
     last_write_checksum: sha1:d83b3507fa031a6e53b5979defaab1215ea7eca9
@@ -21374,8 +21382,8 @@ trackedFiles:
     pristine_git_object: bc08ecea62d6dbcbe9793cd03b1d83fa66a52ca2
   docs/Models/Requests/GetLmsContentQueryParamFields.md:
     id: c8bc8ca3c4e2
-    last_write_checksum: sha1:fb5c4e4b43d7ba2367c8ac165f118a369546e6d7
-    pristine_git_object: 342f988f16b2543c6d957180e8eeaf0f16142797
+    last_write_checksum: sha1:ee0e2b54750699887d3d7e4a476f53dfa9b81aae
+    pristine_git_object: 5154650ff1b8ad8cef15700fcfbe072234a35175
   docs/Models/Requests/GetLmsContentRequest.md:
     id: ce4872b8311a
     last_write_checksum: sha1:0ea8dc303319465fceb9f522d4868427e25f9fb4
@@ -21386,8 +21394,8 @@ trackedFiles:
     pristine_git_object: fc1466ce32d8f30afd36c9ade9991c9713420940
   docs/Models/Requests/GetLmsCourseQueryParamFields.md:
     id: 0ccba8419469
-    last_write_checksum: sha1:63b9b7df2b86fa7cd713d139dc49702920a27b8d
-    pristine_git_object: 29ef85a834fffdbdbda06ac53cefb13125c6712a
+    last_write_checksum: sha1:463acb29bbf9b12923e2052114ce28dcdd9ba4f3
+    pristine_git_object: 18ece6769ce79b09cdd8dc996086c85f65be83c1
   docs/Models/Requests/GetLmsCourseRequest.md:
     id: 5270b484d338
     last_write_checksum: sha1:c8135fa4d130549f617bcfad2c62c2516e928e5c
@@ -22058,8 +22066,8 @@ trackedFiles:
     pristine_git_object: 5aca1e60ee6b2313874b90c8d57712905c173fb3
   docs/Models/Requests/ListAccountingBillsRequest.md:
     id: 2f66febe167a
-    last_write_checksum: sha1:8aaf9f5b46121b450a973943af8d87531f5e1902
-    pristine_git_object: b26e21940a69aec8e5f87a7ec91353e47f5a071a
+    last_write_checksum: sha1:429ec208405ebdac796fa1b31fa4e9a797a4c62d
+    pristine_git_object: 1e4908d98264cf841635fc3a235acb8954228f19
   docs/Models/Requests/ListAccountingBillsResponse.md:
     id: e4e178f9ad40
     last_write_checksum: sha1:4ed9a6c729eec2eb8c8eb0c66021552716156481
@@ -23290,8 +23298,8 @@ trackedFiles:
     pristine_git_object: 53c92afa4aa9b5f7d5048c957f99bf5e8166eb3f
   docs/Models/Requests/ListLmsClassesQueryParamFields.md:
     id: 09f0e0e6780e
-    last_write_checksum: sha1:fd93888ef26e44c24940802074abd32a31f55a02
-    pristine_git_object: 24f2cfb7a91ae301797bb0a84bb4acb61a534a42
+    last_write_checksum: sha1:0d205e0d030a0094081894c185b463e71d846b17
+    pristine_git_object: 9d51e50ae21981b68d2849a79004c5d2b3c99097
   docs/Models/Requests/ListLmsClassesRequest.md:
     id: cb392223fdff
     last_write_checksum: sha1:55e97274b335195c00c24d1b66dbf89fc81026ee
@@ -23314,8 +23322,8 @@ trackedFiles:
     pristine_git_object: ac3ddb677aa0337556ec4c1f7a35c46ddffb62c8
   docs/Models/Requests/ListLmsContentsQueryParamFields.md:
     id: 94437edf2723
-    last_write_checksum: sha1:8b1bb533362643730a59e38df1757238e7d615b4
-    pristine_git_object: 6c85f987a7b3e66112ed6fb7785602d3266d257c
+    last_write_checksum: sha1:7d69bf200eaa562a4251bd0ad0e06e77f91043f3
+    pristine_git_object: 5e238ed4e48e072f5f0eeea3b340db24e287ec4f
   docs/Models/Requests/ListLmsContentsRequest.md:
     id: 736cd9c27ced
     last_write_checksum: sha1:4e2f00c310b74e5cc62295c21bbbb2226b179527
@@ -23326,8 +23334,8 @@ trackedFiles:
     pristine_git_object: 6163b68a953a3bcc9711e1a1a14c733d15df5c71
   docs/Models/Requests/ListLmsCoursesQueryParamFields.md:
     id: 3a8881125938
-    last_write_checksum: sha1:c0f04165612979e8b684a09fed8c3a684d03bf7f
-    pristine_git_object: 5abde2646966316640c6d688d610533e08450f33
+    last_write_checksum: sha1:d245a92985bab5ecb8ffbd7f465fd0884ab6b718
+    pristine_git_object: e18f3a49e032bc33f659a3246ebfeac3d1dafb8b
   docs/Models/Requests/ListLmsCoursesRequest.md:
     id: 7da00b294026
     last_write_checksum: sha1:7479a0b42d44b9cc965a51508dfa48b1596c25a1
@@ -24898,8 +24906,8 @@ trackedFiles:
     pristine_git_object: 27848f580dddfbc857d4615f1968be27b8fc50e4
   docs/Models/Requests/PatchLmsClassQueryParamFields.md:
     id: 8b38831312cc
-    last_write_checksum: sha1:d10e2ffaa19be26bda857bed3faa10336ca553ee
-    pristine_git_object: 4ca774efb9015fdfdc7b4ffe86ebb2880e0c59a0
+    last_write_checksum: sha1:d65ab3124ec02668fcc86e20d87a6954478fcb64
+    pristine_git_object: 8204730f46dd6ae87858cc833d5ed5d3184aa025
   docs/Models/Requests/PatchLmsClassRequest.md:
     id: a54bec0edda4
     last_write_checksum: sha1:e8099b100b1ce481cb029e4bb03ec1cc7cc2c9cf
@@ -24922,8 +24930,8 @@ trackedFiles:
     pristine_git_object: 696cc750aa6017cfcdae0c2d19cda822c297ced0
   docs/Models/Requests/PatchLmsContentQueryParamFields.md:
     id: 686602c98dc0
-    last_write_checksum: sha1:bf97f86de7755d1d9ab0fc18f4398314f570ba1d
-    pristine_git_object: 6c97c9e23ea0dbf3ba0ed8e8b5e82a7e2ed11595
+    last_write_checksum: sha1:470844672cf9575bbe23865828ed656646495149
+    pristine_git_object: 6d2e90cf6391a42fb64cd588818111dbd392ee2b
   docs/Models/Requests/PatchLmsContentRequest.md:
     id: b0f84bea1483
     last_write_checksum: sha1:8b04724183f7f125a8ba147141d72c07ddac60e3
@@ -24934,8 +24942,8 @@ trackedFiles:
     pristine_git_object: 23110be84688bbff6d0dd8bf851cffc42f0c2d87
   docs/Models/Requests/PatchLmsCourseQueryParamFields.md:
     id: 6a337e7368b4
-    last_write_checksum: sha1:d41e326848dddf2e78de5f687f5bcefc0ad38c9c
-    pristine_git_object: 15c816c923ce191fd0217abe05cd736a0b4b3d2d
+    last_write_checksum: sha1:43e2526d635f165e50f4d4f3ddfd6d11f4a0dce2
+    pristine_git_object: af2c6214eeda7c4a126a3222220d45ab71c36f97
   docs/Models/Requests/PatchLmsCourseRequest.md:
     id: "368837877289"
     last_write_checksum: sha1:6c774b9e3dd0cfa69030e2bad0f43595cce7e9b7
@@ -27318,8 +27326,8 @@ trackedFiles:
     pristine_git_object: cab183fe4458c2067fd733fdca5228692b1afa4c
   docs/Models/Requests/UpdateLmsClassQueryParamFields.md:
     id: 66aca373e907
-    last_write_checksum: sha1:c30f50ed1639ae2eee40b765d1dde1748325dc2a
-    pristine_git_object: a8d34a2fcad485a0b2fd32f17625a5e5a90255c2
+    last_write_checksum: sha1:357ddc48fbd62b41e37c1233d54041a3a4d2ac62
+    pristine_git_object: a5fb151849f1875af827f0d62e686b615eb7ccd1
   docs/Models/Requests/UpdateLmsClassRequest.md:
     id: 2e7f2b80e8a1
     last_write_checksum: sha1:9e61f09a9b0752bf354ba0da2dfe55c990a7f695
@@ -27342,8 +27350,8 @@ trackedFiles:
     pristine_git_object: d57411a474b6200e9cb583c6a948c11f472bb262
   docs/Models/Requests/UpdateLmsContentQueryParamFields.md:
     id: cbc2de024176
-    last_write_checksum: sha1:14aa11730cb9ae5ed1382dc71158e010b2ee652c
-    pristine_git_object: 3854cc038d823f638f2bbaaac59045b02f61a133
+    last_write_checksum: sha1:11a4f58837728e99a17fad2b595b3adcee14b985
+    pristine_git_object: d0ac6f388d0e03a73df18d5cdaae1132838b4016
   docs/Models/Requests/UpdateLmsContentRequest.md:
     id: 41f3dd27192d
     last_write_checksum: sha1:b70327173065c13c5d2ce9efca5eca66c870a677
@@ -27354,8 +27362,8 @@ trackedFiles:
     pristine_git_object: db6c4db1f4c0d5b11974aa08110d83ee08ab05cf
   docs/Models/Requests/UpdateLmsCourseQueryParamFields.md:
     id: 6614dbe8acb9
-    last_write_checksum: sha1:c6bee5389cb32af133f36aeacf85867e8235b67a
-    pristine_git_object: 5af60fddeda20bc2a41abcaedee42a2123d4d233
+    last_write_checksum: sha1:189ec6027d5acc3f979f6201086b79d27990bd91
+    pristine_git_object: f4deda2ab51ae71166775ed487dcd74d4342f396
   docs/Models/Requests/UpdateLmsCourseRequest.md:
     id: 40038266ff79
     last_write_checksum: sha1:0ecfec146a796c97955b8d31fccde2258021f623
@@ -42280,7 +42288,7 @@ examples:
           application/json: {"employee_user_id": "<id>", "end_at": "2025-02-07T06:39:13.305Z", "start_at": "2025-09-24T00:00:27.827Z"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Hris.CreateHrisAttendance()`: **Added**\n* `UnifiedTo.Hris.GetHrisAttendance()`: **Added**\n* `UnifiedTo.Hris.ListHrisAttendances()`: **Added**\n* `UnifiedTo.Hris.PatchHrisAttendance()`: **Added**\n* `UnifiedTo.Hris.RemoveHrisAttendance()`: **Added**\n* `UnifiedTo.Hris.UpdateHrisAttendance()`: **Added**\n* `UnifiedTo.Attendance.CreateHrisAttendance()`: **Added**\n* `UnifiedTo.Attendance.GetHrisAttendance()`: **Added**\n* `UnifiedTo.Attendance.ListHrisAttendances()`: **Added**\n* `UnifiedTo.Attendance.PatchHrisAttendance()`: **Added**\n* `UnifiedTo.Attendance.RemoveHrisAttendance()`: **Added**\n* `UnifiedTo.Attendance.UpdateHrisAttendance()`: **Added**\n* `UnifiedTo.Accounting.CreateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingCategory()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.CreateAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingOrder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingProject()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.CreateAccountingPurchaseorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingQuote()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingSalesorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.CreateAccountingTaxrate()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.CreateAccountingVendorcredit()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingBill()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingCategory()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.GetAccountingCreditmemo()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingInvoice()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingOrder()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingProject()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.GetAccountingPurchaseorder()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingQuote()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingSalesorder()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.GetAccountingTaxrate()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.GetAccountingVendorcredit()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.ListAccountingBills()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingCategories()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Metadata` **Added**\n* `UnifiedTo.Accounting.ListAccountingCreditmemoes()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingExpenses()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingInvoices()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingOrders()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingProjects()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Metadata` **Added**\n* `UnifiedTo.Accounting.ListAccountingPurchaseorders()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingQuotes()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingSalesorders()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingTaxrates()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Metadata` **Added**\n* `UnifiedTo.Accounting.ListAccountingVendorcredits()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingBill()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingCategory()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.PatchAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingOrder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingProject()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.PatchAccountingPurchaseorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingQuote()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingSalesorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingTaxrate()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.PatchAccountingVendorcredit()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingCategory()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingOrder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingProject()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingPurchaseorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingQuote()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingSalesorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingTaxrate()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingVendorcredit()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Bill.CreateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Bill.GetAccountingBill()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Bill.ListAccountingBills()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Bill.PatchAccountingBill()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Bill.UpdateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Category.CreateAccountingCategory()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Category.GetAccountingCategory()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Category.ListAccountingCategories()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Metadata` **Added**\n* `UnifiedTo.Category.PatchAccountingCategory()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Category.UpdateAccountingCategory()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Creditmemo.CreateAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Creditmemo.GetAccountingCreditmemo()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Creditmemo.ListAccountingCreditmemoes()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Creditmemo.PatchAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Creditmemo.UpdateAccountingCreditmemo()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Expense.CreateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Expense.GetAccountingExpense()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Expense.ListAccountingExpenses()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Expense.PatchAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Expense.UpdateAccountingExpense()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Invoice.CreateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Invoice.GetAccountingInvoice()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Invoice.ListAccountingInvoices()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Invoice.PatchAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Invoice.UpdateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Order.CreateAccountingOrder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Order.GetAccountingOrder()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Order.ListAccountingOrders()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Order.PatchAccountingOrder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Order.UpdateAccountingOrder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Project.CreateAccountingProject()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Project.GetAccountingProject()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Project.ListAccountingProjects()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Metadata` **Added**\n* `UnifiedTo.Project.PatchAccountingProject()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Project.UpdateAccountingProject()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Purchaseorder.CreateAccountingPurchaseorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Purchaseorder.GetAccountingPurchaseorder()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Purchaseorder.ListAccountingPurchaseorders()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Purchaseorder.PatchAccountingPurchaseorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Purchaseorder.UpdateAccountingPurchaseorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Quote.CreateAccountingQuote()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Quote.GetAccountingQuote()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Quote.ListAccountingQuotes()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Quote.PatchAccountingQuote()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Quote.UpdateAccountingQuote()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Salesorder.CreateAccountingSalesorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Salesorder.GetAccountingSalesorder()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Salesorder.ListAccountingSalesorders()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Salesorder.PatchAccountingSalesorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Salesorder.UpdateAccountingSalesorder()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Taxrate.CreateAccountingTaxrate()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Taxrate.GetAccountingTaxrate()`: \n  *  `request.fields` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Taxrate.ListAccountingTaxrates()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Metadata` **Added**\n* `UnifiedTo.Taxrate.PatchAccountingTaxrate()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Taxrate.UpdateAccountingTaxrate()`: \n  *  `request` **Changed**\n  *  `response.metadata` **Added**\n* `UnifiedTo.Vendorcredit.CreateAccountingVendorcredit()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Vendorcredit.GetAccountingVendorcredit()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Vendorcredit.ListAccountingVendorcredits()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Vendorcredit.PatchAccountingVendorcredit()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Vendorcredit.UpdateAccountingVendorcredit()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Payment.CreatePaymentPayment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Payment.GetPaymentPayment()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Payment.ListPaymentPayments()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Payment.PatchPaymentPayment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Payment.UpdatePaymentPayment()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(hrisAttendance)` **Added**\n  *  `response.objectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.objectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed**\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].ObjectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(hrisAttendance)` **Added**\n  *  `response.objectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(hrisAttendance)` **Added**\n  *  `response.objectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(hrisAttendance)` **Added**\n  *  `response.objectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.objectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].ObjectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(hrisAttendance)` **Added**\n  *  `response.objectType.Enum(hrisAttendance)` **Added**\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(hrisAttendance)` **Added**\n  *  `response.objectType.Enum(hrisAttendance)` **Added**\n"
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Lms.ListLmsCourses()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.UpdateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.PatchLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.ListLmsCourses()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.CreateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.GetLmsCourse()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.CreateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.GetLmsCourse()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.UpdateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.PatchLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.ListLmsClasses()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Class.UpdateLmsClass()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Lms.PatchLmsContent()`: \n  *  `request` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Lms.ListLmsContents()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Instructors` **Added**\n* `UnifiedTo.Lms.UpdateLmsClass()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Lms.UpdateLmsContent()`: \n  *  `request` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Accounting.ListAccountingBills()`:  `request` **Changed**\n* `UnifiedTo.Class.CreateLmsClass()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Class.GetLmsClass()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Class.ListLmsClasses()`: \n  *  `request.Fields` **Changed**\n  *  `response.[]` **Changed**\n* `UnifiedTo.Class.PatchLmsClass()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Lms.PatchLmsClass()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Content.CreateLmsContent()`: \n  *  `request` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Content.GetLmsContent()`: \n  *  `request.fields` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Content.ListLmsContents()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].Instructors` **Added**\n* `UnifiedTo.Content.PatchLmsContent()`: \n  *  `request` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Content.UpdateLmsContent()`: \n  *  `request` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Lms.GetLmsContent()`: \n  *  `request.fields` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Lms.GetLmsClass()`: \n  *  `request.fields` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Lms.CreateLmsContent()`: \n  *  `request` **Changed**\n  *  `response.instructors` **Added**\n* `UnifiedTo.Lms.CreateLmsClass()`: \n  *  `request` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Bill.ListAccountingBills()`:  `request` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md

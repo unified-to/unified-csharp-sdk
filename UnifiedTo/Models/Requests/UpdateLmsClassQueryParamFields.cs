@@ -35,6 +35,10 @@ namespace UnifiedTo.Models.Requests
         StudentIds,
         [JsonProperty("languages")]
         Languages,
+        [JsonProperty("instructors")]
+        Instructors,
+        [JsonProperty("students")]
+        Students,
         [JsonProperty("raw")]
         Raw,
     }

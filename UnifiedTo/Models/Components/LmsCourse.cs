@@ -45,7 +45,7 @@ namespace UnifiedTo.Models.Components
         public List<string>? InstructorIds { get; set; }
 
         [JsonProperty("instructors")]
-        public List<LmsInstructor>? Instructors { get; set; }
+        public List<LmsReference>? Instructors { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
@@ -84,7 +84,7 @@ namespace UnifiedTo.Models.Components
         public List<string>? StudentIds { get; set; }
 
         [JsonProperty("students")]
-        public List<LmsStudent>? Students { get; set; }
+        public List<LmsReference>? Students { get; set; }
 
         [JsonProperty("time_estimate_minutes")]
         public double? TimeEstimateMinutes { get; set; }

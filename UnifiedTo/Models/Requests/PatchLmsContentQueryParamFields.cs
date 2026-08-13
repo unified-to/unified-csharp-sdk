@@ -53,14 +53,16 @@ namespace UnifiedTo.Models.Requests
         ProviderName,
         [JsonProperty("short_description")]
         ShortDescription,
-        [JsonProperty("published_at")]
-        PublishedAt,
         [JsonProperty("localizations")]
         Localizations,
         [JsonProperty("instructor_ids")]
         InstructorIds,
         [JsonProperty("collection_ids")]
         CollectionIds,
+        [JsonProperty("instructors")]
+        Instructors,
+        [JsonProperty("published_at")]
+        PublishedAt,
         [JsonProperty("raw")]
         Raw,
     }

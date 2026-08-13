@@ -33,6 +33,6 @@ var value = UpdateLmsCourseQueryParamFields.Id;
 | `Skills`              | skills                |
 | `DurationMinutes`     | duration_minutes      |
 | `ProviderName`        | provider_name         |
-| `Raw`                 | raw                   |
 | `PublishedAt`         | published_at          |
 | `TimeEstimateMinutes` | time_estimate_minutes |
+| `Raw`                 | raw                   |
