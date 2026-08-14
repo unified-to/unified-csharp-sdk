@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_assigned_user_id")]
         public ListAssignedUserId? ListAssignedUserId { get; set; }
 
+        [JsonProperty("list_bankfeedaccount_id")]
+        public ListBankfeedaccountId? ListBankfeedaccountId { get; set; }
+
         [JsonProperty("list_benefit_id")]
         public ListBenefitId? ListBenefitId { get; set; }
 
@@ -411,6 +414,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_assigned_user_id")]
         public VirtualWebhookAssignedUserId? VirtualWebhookAssignedUserId { get; set; }
+
+        [JsonProperty("virtual_webhook_bankfeedaccount_id")]
+        public VirtualWebhookBankfeedaccountId? VirtualWebhookBankfeedaccountId { get; set; }
 
         [JsonProperty("virtual_webhook_benefit_id")]
         public VirtualWebhookBenefitId? VirtualWebhookBenefitId { get; set; }

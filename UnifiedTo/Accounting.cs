@@ -44,6 +44,44 @@ namespace UnifiedTo
         );
 
         /// <summary>
+        /// Create a bankfeedaccount.
+        /// </summary>
+        /// <param name="accountingBankfeedaccount">A <see cref="AccountingBankfeedaccount"/> parameter.</param>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountingBankfeedaccount"/> or <paramref name="connectionId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateAccountingBankfeedaccountResponse> CreateAccountingBankfeedaccountAsync(
+            AccountingBankfeedaccount accountingBankfeedaccount,
+            string connectionId,
+            List<CreateAccountingBankfeedaccountQueryParamFields>? fields = null,
+            string? raw = null
+        );
+
+        /// <summary>
+        /// Create a bankfeedtransaction.
+        /// </summary>
+        /// <param name="accountingBankfeedtransaction">A <see cref="AccountingBankfeedtransaction"/> parameter.</param>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountingBankfeedtransaction"/> or <paramref name="connectionId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateAccountingBankfeedtransactionResponse> CreateAccountingBankfeedtransactionAsync(
+            AccountingBankfeedtransaction accountingBankfeedtransaction,
+            string connectionId,
+            List<CreateAccountingBankfeedtransactionQueryParamFields>? fields = null,
+            string? raw = null
+        );
+
+        /// <summary>
         /// Create a bill.
         /// </summary>
         /// <param name="accountingBill">A <see cref="AccountingBill"/> parameter.</param>
@@ -401,6 +439,44 @@ namespace UnifiedTo
             string connectionId,
             string id,
             List<GetAccountingBalancesheetQueryParamFields>? fields = null,
+            string? raw = null
+        );
+
+        /// <summary>
+        /// Retrieve a bankfeedaccount.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedaccount.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetAccountingBankfeedaccountResponse> GetAccountingBankfeedaccountAsync(
+            string connectionId,
+            string id,
+            List<GetAccountingBankfeedaccountQueryParamFields>? fields = null,
+            string? raw = null
+        );
+
+        /// <summary>
+        /// Retrieve a bankfeedtransaction.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedtransaction.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<GetAccountingBankfeedtransactionResponse> GetAccountingBankfeedtransactionAsync(
+            string connectionId,
+            string id,
+            List<GetAccountingBankfeedtransactionQueryParamFields>? fields = null,
             string? raw = null
         );
 
@@ -835,6 +911,32 @@ namespace UnifiedTo
         );
 
         /// <summary>
+        /// List all bankfeedaccounts.
+        /// </summary>
+        /// <param name="request">A <see cref="ListAccountingBankfeedaccountsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedaccountsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListAccountingBankfeedaccountsResponse> ListAccountingBankfeedaccountsAsync(
+            ListAccountingBankfeedaccountsRequest request
+        );
+
+        /// <summary>
+        /// List all bankfeedtransactions.
+        /// </summary>
+        /// <param name="request">A <see cref="ListAccountingBankfeedtransactionsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedtransactionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListAccountingBankfeedtransactionsResponse> ListAccountingBankfeedtransactionsAsync(
+            ListAccountingBankfeedtransactionsRequest request
+        );
+
+        /// <summary>
         /// List all bills.
         /// </summary>
         /// <param name="request">A <see cref="ListAccountingBillsRequest"/> parameter.</param>
@@ -1086,6 +1188,32 @@ namespace UnifiedTo
         public  Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(PatchAccountingAccountRequest request);
 
         /// <summary>
+        /// Update a bankfeedaccount.
+        /// </summary>
+        /// <param name="request">A <see cref="PatchAccountingBankfeedaccountRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<PatchAccountingBankfeedaccountResponse> PatchAccountingBankfeedaccountAsync(
+            PatchAccountingBankfeedaccountRequest request
+        );
+
+        /// <summary>
+        /// Update a bankfeedtransaction.
+        /// </summary>
+        /// <param name="request">A <see cref="PatchAccountingBankfeedtransactionRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<PatchAccountingBankfeedtransactionResponse> PatchAccountingBankfeedtransactionAsync(
+            PatchAccountingBankfeedtransactionRequest request
+        );
+
+        /// <summary>
         /// Update a bill.
         /// </summary>
         /// <param name="request">A <see cref="PatchAccountingBillRequest"/> parameter.</param>
@@ -1274,6 +1402,34 @@ namespace UnifiedTo
         public  Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(string connectionId, string id);
 
         /// <summary>
+        /// Remove a bankfeedaccount.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedaccount.</param>
+        /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<RemoveAccountingBankfeedaccountResponse> RemoveAccountingBankfeedaccountAsync(
+            string connectionId,
+            string id
+        );
+
+        /// <summary>
+        /// Remove a bankfeedtransaction.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedtransaction.</param>
+        /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<RemoveAccountingBankfeedtransactionResponse> RemoveAccountingBankfeedtransactionAsync(
+            string connectionId,
+            string id
+        );
+
+        /// <summary>
         /// Remove a bill.
         /// </summary>
         /// <param name="connectionId">ID of the connection.</param>
@@ -1458,6 +1614,32 @@ namespace UnifiedTo
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(
             UpdateAccountingAccountRequest request
+        );
+
+        /// <summary>
+        /// Update a bankfeedaccount.
+        /// </summary>
+        /// <param name="request">A <see cref="UpdateAccountingBankfeedaccountRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<UpdateAccountingBankfeedaccountResponse> UpdateAccountingBankfeedaccountAsync(
+            UpdateAccountingBankfeedaccountRequest request
+        );
+
+        /// <summary>
+        /// Update a bankfeedtransaction.
+        /// </summary>
+        /// <param name="request">A <see cref="UpdateAccountingBankfeedtransactionRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<UpdateAccountingBankfeedtransactionResponse> UpdateAccountingBankfeedtransactionAsync(
+            UpdateAccountingBankfeedtransactionRequest request
         );
 
         /// <summary>
@@ -1773,6 +1955,262 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.AccountingAccount = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Create a bankfeedaccount.
+        /// </summary>
+        /// <param name="accountingBankfeedaccount">A <see cref="AccountingBankfeedaccount"/> parameter.</param>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountingBankfeedaccount"/> or <paramref name="connectionId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateAccountingBankfeedaccountResponse> CreateAccountingBankfeedaccountAsync(
+            AccountingBankfeedaccount accountingBankfeedaccount,
+            string connectionId,
+            List<CreateAccountingBankfeedaccountQueryParamFields>? fields = null,
+            string? raw = null
+        )
+        {
+            if (accountingBankfeedaccount == null) throw new ArgumentNullException(nameof(accountingBankfeedaccount));
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+
+            var request = new CreateAccountingBankfeedaccountRequest()
+            {
+                AccountingBankfeedaccount = accountingBankfeedaccount,
+                ConnectionId = connectionId,
+                Fields = fields,
+                Raw = raw,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedaccount", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingBankfeedaccount", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingBankfeedaccount", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedaccount obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedaccount>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedaccount.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new CreateAccountingBankfeedaccountResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedaccount = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Create a bankfeedtransaction.
+        /// </summary>
+        /// <param name="accountingBankfeedtransaction">A <see cref="AccountingBankfeedtransaction"/> parameter.</param>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="accountingBankfeedtransaction"/> or <paramref name="connectionId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateAccountingBankfeedtransactionResponse> CreateAccountingBankfeedtransactionAsync(
+            AccountingBankfeedtransaction accountingBankfeedtransaction,
+            string connectionId,
+            List<CreateAccountingBankfeedtransactionQueryParamFields>? fields = null,
+            string? raw = null
+        )
+        {
+            if (accountingBankfeedtransaction == null) throw new ArgumentNullException(nameof(accountingBankfeedtransaction));
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+
+            var request = new CreateAccountingBankfeedtransactionRequest()
+            {
+                AccountingBankfeedtransaction = accountingBankfeedtransaction,
+                ConnectionId = connectionId,
+                Fields = fields,
+                Raw = raw,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedtransaction", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingBankfeedtransaction", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createAccountingBankfeedtransaction", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedtransaction obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedtransaction>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedtransaction.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new CreateAccountingBankfeedtransactionResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedtransaction = obj;
                     return response;
                 }
 
@@ -4181,6 +4619,250 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.AccountingBalancesheet = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Retrieve a bankfeedaccount.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedaccount.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetAccountingBankfeedaccountResponse> GetAccountingBankfeedaccountAsync(
+            string connectionId,
+            string id,
+            List<GetAccountingBankfeedaccountQueryParamFields>? fields = null,
+            string? raw = null
+        )
+        {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
+            var request = new GetAccountingBankfeedaccountRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+                Raw = raw,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedaccount/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingBankfeedaccount", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedaccount obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedaccount>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedaccount.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new GetAccountingBankfeedaccountResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedaccount = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Retrieve a bankfeedtransaction.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedtransaction.</param>
+        /// <param name="fields">Fields to return.</param>
+        /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
+        /// <returns>An awaitable task that returns a <see cref="GetAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<GetAccountingBankfeedtransactionResponse> GetAccountingBankfeedtransactionAsync(
+            string connectionId,
+            string id,
+            List<GetAccountingBankfeedtransactionQueryParamFields>? fields = null,
+            string? raw = null
+        )
+        {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
+            var request = new GetAccountingBankfeedtransactionRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+                Raw = raw,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedtransaction/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getAccountingBankfeedtransaction", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedtransaction obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedtransaction>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedtransaction.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new GetAccountingBankfeedtransactionResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedtransaction = obj;
                     return response;
                 }
 
@@ -7068,6 +7750,220 @@ namespace UnifiedTo
 
 
         /// <summary>
+        /// List all bankfeedaccounts.
+        /// </summary>
+        /// <param name="request">A <see cref="ListAccountingBankfeedaccountsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedaccountsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListAccountingBankfeedaccountsResponse> ListAccountingBankfeedaccountsAsync(
+            ListAccountingBankfeedaccountsRequest request
+        )
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedaccount", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingBankfeedaccounts", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<AccountingBankfeedaccount> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<AccountingBankfeedaccount>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<AccountingBankfeedaccount>.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListAccountingBankfeedaccountsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedaccounts = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// List all bankfeedtransactions.
+        /// </summary>
+        /// <param name="request">A <see cref="ListAccountingBankfeedtransactionsRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListAccountingBankfeedtransactionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListAccountingBankfeedtransactionsResponse> ListAccountingBankfeedtransactionsAsync(
+            ListAccountingBankfeedtransactionsRequest request
+        )
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedtransaction", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listAccountingBankfeedtransactions", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<AccountingBankfeedtransaction> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<AccountingBankfeedtransaction>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<AccountingBankfeedtransaction>.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListAccountingBankfeedtransactionsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedtransactions = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
         /// List all bills.
         /// </summary>
         /// <param name="request">A <see cref="ListAccountingBillsRequest"/> parameter.</param>
@@ -9315,6 +10211,232 @@ namespace UnifiedTo
 
 
         /// <summary>
+        /// Update a bankfeedaccount.
+        /// </summary>
+        /// <param name="request">A <see cref="PatchAccountingBankfeedaccountRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<PatchAccountingBankfeedaccountResponse> PatchAccountingBankfeedaccountAsync(
+            PatchAccountingBankfeedaccountRequest request
+        )
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedaccount/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingBankfeedaccount", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingBankfeedaccount", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedaccount obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedaccount>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedaccount.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new PatchAccountingBankfeedaccountResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedaccount = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Update a bankfeedtransaction.
+        /// </summary>
+        /// <param name="request">A <see cref="PatchAccountingBankfeedtransactionRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="PatchAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<PatchAccountingBankfeedtransactionResponse> PatchAccountingBankfeedtransactionAsync(
+            PatchAccountingBankfeedtransactionRequest request
+        )
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedtransaction/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingBankfeedtransaction", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "patchAccountingBankfeedtransaction", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedtransaction obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedtransaction>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedtransaction.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new PatchAccountingBankfeedtransactionResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedtransaction = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
         /// Update a bill.
         /// </summary>
         /// <param name="request">A <see cref="PatchAccountingBillRequest"/> parameter.</param>
@@ -11107,6 +12229,218 @@ namespace UnifiedTo
 
 
         /// <summary>
+        /// Remove a bankfeedaccount.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedaccount.</param>
+        /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<RemoveAccountingBankfeedaccountResponse> RemoveAccountingBankfeedaccountAsync(
+            string connectionId,
+            string id
+        )
+        {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
+            var request = new RemoveAccountingBankfeedaccountRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedaccount/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "*/*");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingBankfeedaccount", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                return new RemoveAccountingBankfeedaccountResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else
+            {
+                return new RemoveAccountingBankfeedaccountResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                };
+            }
+        }
+
+
+        /// <summary>
+        /// Remove a bankfeedtransaction.
+        /// </summary>
+        /// <param name="connectionId">ID of the connection.</param>
+        /// <param name="id">ID of the Bankfeedtransaction.</param>
+        /// <returns>An awaitable task that returns a <see cref="RemoveAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">One of <paramref name="connectionId"/> or <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<RemoveAccountingBankfeedtransactionResponse> RemoveAccountingBankfeedtransactionAsync(
+            string connectionId,
+            string id
+        )
+        {
+            if (connectionId == null) throw new ArgumentNullException(nameof(connectionId));
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
+            var request = new RemoveAccountingBankfeedtransactionRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedtransaction/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "*/*");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeAccountingBankfeedtransaction", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                return new RemoveAccountingBankfeedtransactionResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else
+            {
+                return new RemoveAccountingBankfeedtransactionResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse,
+                    Headers = Utilities.CollectHeaders(httpResponse.Headers)
+                };
+            }
+        }
+
+
+        /// <summary>
         /// Remove a bill.
         /// </summary>
         /// <param name="connectionId">ID of the connection.</param>
@@ -12764,6 +14098,232 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.AccountingAccount = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Update a bankfeedaccount.
+        /// </summary>
+        /// <param name="request">A <see cref="UpdateAccountingBankfeedaccountRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedaccountResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<UpdateAccountingBankfeedaccountResponse> UpdateAccountingBankfeedaccountAsync(
+            UpdateAccountingBankfeedaccountRequest request
+        )
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedaccount/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingBankfeedaccount", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingBankfeedaccount", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedaccount obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedaccount>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedaccount.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new UpdateAccountingBankfeedaccountResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedaccount = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Update a bankfeedtransaction.
+        /// </summary>
+        /// <param name="request">A <see cref="UpdateAccountingBankfeedtransactionRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="UpdateAccountingBankfeedtransactionResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<UpdateAccountingBankfeedtransactionResponse> UpdateAccountingBankfeedtransactionAsync(
+            UpdateAccountingBankfeedtransactionRequest request
+        )
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/bankfeedtransaction/{id}", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingBankfeedtransaction", "json", false, false);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "updateAccountingBankfeedtransaction", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    AccountingBankfeedtransaction obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<AccountingBankfeedtransaction>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into AccountingBankfeedtransaction.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new UpdateAccountingBankfeedtransactionResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.AccountingBankfeedtransaction = obj;
                     return response;
                 }
 

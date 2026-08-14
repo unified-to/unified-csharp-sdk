@@ -66,6 +66,10 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions AccountingAgedpayableRead = new PropertyConnectionPermissions("accounting_agedpayable_read");
         public static readonly PropertyConnectionPermissions AccountingProjectRead = new PropertyConnectionPermissions("accounting_project_read");
         public static readonly PropertyConnectionPermissions AccountingProjectWrite = new PropertyConnectionPermissions("accounting_project_write");
+        public static readonly PropertyConnectionPermissions AccountingBankfeedaccountRead = new PropertyConnectionPermissions("accounting_bankfeedaccount_read");
+        public static readonly PropertyConnectionPermissions AccountingBankfeedaccountWrite = new PropertyConnectionPermissions("accounting_bankfeedaccount_write");
+        public static readonly PropertyConnectionPermissions AccountingBankfeedtransactionRead = new PropertyConnectionPermissions("accounting_bankfeedtransaction_read");
+        public static readonly PropertyConnectionPermissions AccountingBankfeedtransactionWrite = new PropertyConnectionPermissions("accounting_bankfeedtransaction_write");
         public static readonly PropertyConnectionPermissions PaymentPayoutRead = new PropertyConnectionPermissions("payment_payout_read");
         public static readonly PropertyConnectionPermissions PaymentRefundRead = new PropertyConnectionPermissions("payment_refund_read");
         public static readonly PropertyConnectionPermissions PaymentLinkRead = new PropertyConnectionPermissions("payment_link_read");
@@ -376,6 +380,10 @@ namespace UnifiedTo.Models.Components
                 ["accounting_agedpayable_read"] = AccountingAgedpayableRead,
                 ["accounting_project_read"] = AccountingProjectRead,
                 ["accounting_project_write"] = AccountingProjectWrite,
+                ["accounting_bankfeedaccount_read"] = AccountingBankfeedaccountRead,
+                ["accounting_bankfeedaccount_write"] = AccountingBankfeedaccountWrite,
+                ["accounting_bankfeedtransaction_read"] = AccountingBankfeedtransactionRead,
+                ["accounting_bankfeedtransaction_write"] = AccountingBankfeedtransactionWrite,
                 ["payment_payout_read"] = PaymentPayoutRead,
                 ["payment_refund_read"] = PaymentRefundRead,
                 ["payment_link_read"] = PaymentLinkRead,

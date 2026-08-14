@@ -21,12 +21,18 @@ namespace UnifiedTo.Models.Components
     {
         public static readonly AccountType Checking = new AccountType("CHECKING");
         public static readonly AccountType Savings = new AccountType("SAVINGS");
+        public static readonly AccountType CreditCard = new AccountType("CREDIT_CARD");
+        public static readonly AccountType Loan = new AccountType("LOAN");
+        public static readonly AccountType Other = new AccountType("OTHER");
 
         private static readonly Dictionary <string, AccountType> _knownValues =
             new Dictionary <string, AccountType> ()
             {
                 ["CHECKING"] = Checking,
-                ["SAVINGS"] = Savings
+                ["SAVINGS"] = Savings,
+                ["CREDIT_CARD"] = CreditCard,
+                ["LOAN"] = Loan,
+                ["OTHER"] = Other
             };
 
         private static readonly ConcurrentDictionary<string, AccountType> _values =

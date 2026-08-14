@@ -5,6 +5,8 @@
 ### Available Operations
 
 * [CreateAccountingAccount](#createaccountingaccount) - Create an account
+* [CreateAccountingBankfeedaccount](#createaccountingbankfeedaccount) - Create a bankfeedaccount
+* [CreateAccountingBankfeedtransaction](#createaccountingbankfeedtransaction) - Create a bankfeedtransaction
 * [CreateAccountingBill](#createaccountingbill) - Create a bill
 * [CreateAccountingCategory](#createaccountingcategory) - Create a category
 * [CreateAccountingContact](#createaccountingcontact) - Create a contact
@@ -24,6 +26,8 @@
 * [GetAccountingAgedpayable](#getaccountingagedpayable) - Retrieve an agedpayable
 * [GetAccountingAgedreceivable](#getaccountingagedreceivable) - Retrieve an agedreceivable
 * [GetAccountingBalancesheet](#getaccountingbalancesheet) - Retrieve a balancesheet
+* [GetAccountingBankfeedaccount](#getaccountingbankfeedaccount) - Retrieve a bankfeedaccount
+* [GetAccountingBankfeedtransaction](#getaccountingbankfeedtransaction) - Retrieve a bankfeedtransaction
 * [GetAccountingBill](#getaccountingbill) - Retrieve a bill
 * [GetAccountingCashflow](#getaccountingcashflow) - Retrieve a cashflow
 * [GetAccountingCategory](#getaccountingcategory) - Retrieve a category
@@ -48,6 +52,8 @@
 * [ListAccountingAgedpayables](#listaccountingagedpayables) - List all agedpayables
 * [ListAccountingAgedreceivables](#listaccountingagedreceivables) - List all agedreceivables
 * [ListAccountingBalancesheets](#listaccountingbalancesheets) - List all balancesheets
+* [ListAccountingBankfeedaccounts](#listaccountingbankfeedaccounts) - List all bankfeedaccounts
+* [ListAccountingBankfeedtransactions](#listaccountingbankfeedtransactions) - List all bankfeedtransactions
 * [ListAccountingBills](#listaccountingbills) - List all bills
 * [ListAccountingCashflows](#listaccountingcashflows) - List all cashflows
 * [ListAccountingCategories](#listaccountingcategories) - List all categories
@@ -69,6 +75,8 @@
 * [ListAccountingTrialbalances](#listaccountingtrialbalances) - List all trialbalances
 * [ListAccountingVendorcredits](#listaccountingvendorcredits) - List all vendorcredits
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
+* [PatchAccountingBankfeedaccount](#patchaccountingbankfeedaccount) - Update a bankfeedaccount
+* [PatchAccountingBankfeedtransaction](#patchaccountingbankfeedtransaction) - Update a bankfeedtransaction
 * [PatchAccountingBill](#patchaccountingbill) - Update a bill
 * [PatchAccountingCategory](#patchaccountingcategory) - Update a category
 * [PatchAccountingContact](#patchaccountingcontact) - Update a contact
@@ -85,6 +93,8 @@
 * [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [PatchAccountingVendorcredit](#patchaccountingvendorcredit) - Update a vendorcredit
 * [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
+* [RemoveAccountingBankfeedaccount](#removeaccountingbankfeedaccount) - Remove a bankfeedaccount
+* [RemoveAccountingBankfeedtransaction](#removeaccountingbankfeedtransaction) - Remove a bankfeedtransaction
 * [RemoveAccountingBill](#removeaccountingbill) - Remove a bill
 * [RemoveAccountingCategory](#removeaccountingcategory) - Remove a category
 * [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
@@ -101,6 +111,8 @@
 * [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [RemoveAccountingVendorcredit](#removeaccountingvendorcredit) - Remove a vendorcredit
 * [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
+* [UpdateAccountingBankfeedaccount](#updateaccountingbankfeedaccount) - Update a bankfeedaccount
+* [UpdateAccountingBankfeedtransaction](#updateaccountingbankfeedtransaction) - Update a bankfeedtransaction
 * [UpdateAccountingBill](#updateaccountingbill) - Update a bill
 * [UpdateAccountingCategory](#updateaccountingcategory) - Update a category
 * [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
@@ -152,6 +164,90 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### Response
 
 **[CreateAccountingAccountResponse](../../Models/Requests/CreateAccountingAccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAccountingBankfeedaccount
+
+Create a bankfeedaccount
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.CreateAccountingBankfeedaccountAsync(
+    accountingBankfeedaccount: new AccountingBankfeedaccount() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AccountingBankfeedaccount`                                                                                                                      | [AccountingBankfeedaccount](../../Models/Components/AccountingBankfeedaccount.md)                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateAccountingBankfeedaccountQueryParamFields](../../Models/Requests/CreateAccountingBankfeedaccountQueryParamFields.md)>                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAccountingBankfeedaccountResponse](../../Models/Requests/CreateAccountingBankfeedaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAccountingBankfeedtransaction
+
+Create a bankfeedtransaction
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.CreateAccountingBankfeedtransactionAsync(
+    accountingBankfeedtransaction: new AccountingBankfeedtransaction() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AccountingBankfeedtransaction`                                                                                                                  | [AccountingBankfeedtransaction](../../Models/Components/AccountingBankfeedtransaction.md)                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateAccountingBankfeedtransactionQueryParamFields](../../Models/Requests/CreateAccountingBankfeedtransactionQueryParamFields.md)>        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAccountingBankfeedtransactionResponse](../../Models/Requests/CreateAccountingBankfeedtransactionResponse.md)**
 
 ### Errors
 
@@ -950,6 +1046,90 @@ var res = await sdk.Accounting.GetAccountingBalancesheetAsync(
 ### Response
 
 **[GetAccountingBalancesheetResponse](../../Models/Requests/GetAccountingBalancesheetResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetAccountingBankfeedaccount
+
+Retrieve a bankfeedaccount
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getAccountingBankfeedaccount" method="get" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingBankfeedaccountAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Bankfeedaccount                                                                                                                        |
+| `Fields`                                                                                                                                         | List<[GetAccountingBankfeedaccountQueryParamFields](../../Models/Requests/GetAccountingBankfeedaccountQueryParamFields.md)>                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingBankfeedaccountResponse](../../Models/Requests/GetAccountingBankfeedaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetAccountingBankfeedtransaction
+
+Retrieve a bankfeedtransaction
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getAccountingBankfeedtransaction" method="get" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingBankfeedtransactionAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Bankfeedtransaction                                                                                                                    |
+| `Fields`                                                                                                                                         | List<[GetAccountingBankfeedtransactionQueryParamFields](../../Models/Requests/GetAccountingBankfeedtransactionQueryParamFields.md)>              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingBankfeedtransactionResponse](../../Models/Requests/GetAccountingBankfeedtransactionResponse.md)**
 
 ### Errors
 
@@ -1961,6 +2141,88 @@ var res = await sdk.Accounting.ListAccountingBalancesheetsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListAccountingBankfeedaccounts
+
+List all bankfeedaccounts
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listAccountingBankfeedaccounts" method="get" path="/accounting/{connection_id}/bankfeedaccount" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingBankfeedaccountsRequest req = new ListAccountingBankfeedaccountsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingBankfeedaccountsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                               | [ListAccountingBankfeedaccountsRequest](../../Models/Requests/ListAccountingBankfeedaccountsRequest.md) | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
+
+### Response
+
+**[ListAccountingBankfeedaccountsResponse](../../Models/Requests/ListAccountingBankfeedaccountsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListAccountingBankfeedtransactions
+
+List all bankfeedtransactions
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listAccountingBankfeedtransactions" method="get" path="/accounting/{connection_id}/bankfeedtransaction" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingBankfeedtransactionsRequest req = new ListAccountingBankfeedtransactionsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingBankfeedtransactionsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                       | [ListAccountingBankfeedtransactionsRequest](../../Models/Requests/ListAccountingBankfeedtransactionsRequest.md) | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
+
+### Response
+
+**[ListAccountingBankfeedtransactionsResponse](../../Models/Requests/ListAccountingBankfeedtransactionsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAccountingBills
 
 List all bills
@@ -2824,6 +3086,92 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchAccountingBankfeedaccount
+
+Update a bankfeedaccount
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAccountingBankfeedaccountRequest req = new PatchAccountingBankfeedaccountRequest() {
+    AccountingBankfeedaccount = new AccountingBankfeedaccount() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.PatchAccountingBankfeedaccountAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                               | [PatchAccountingBankfeedaccountRequest](../../Models/Requests/PatchAccountingBankfeedaccountRequest.md) | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
+
+### Response
+
+**[PatchAccountingBankfeedaccountResponse](../../Models/Requests/PatchAccountingBankfeedaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchAccountingBankfeedtransaction
+
+Update a bankfeedtransaction
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAccountingBankfeedtransactionRequest req = new PatchAccountingBankfeedtransactionRequest() {
+    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.PatchAccountingBankfeedtransactionAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                       | [PatchAccountingBankfeedtransactionRequest](../../Models/Requests/PatchAccountingBankfeedtransactionRequest.md) | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
+
+### Response
+
+**[PatchAccountingBankfeedtransactionResponse](../../Models/Requests/PatchAccountingBankfeedtransactionResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchAccountingBill
 
 Update a bill
@@ -3509,6 +3857,86 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveAccountingBankfeedaccount
+
+Remove a bankfeedaccount
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeAccountingBankfeedaccount" method="delete" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.RemoveAccountingBankfeedaccountAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                 | Type                      | Required                  | Description               |
+| ------------------------- | ------------------------- | ------------------------- | ------------------------- |
+| `ConnectionId`            | *string*                  | :heavy_check_mark:        | ID of the connection      |
+| `Id`                      | *string*                  | :heavy_check_mark:        | ID of the Bankfeedaccount |
+
+### Response
+
+**[RemoveAccountingBankfeedaccountResponse](../../Models/Requests/RemoveAccountingBankfeedaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveAccountingBankfeedtransaction
+
+Remove a bankfeedtransaction
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeAccountingBankfeedtransaction" method="delete" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.RemoveAccountingBankfeedtransactionAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                     | Type                          | Required                      | Description                   |
+| ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- |
+| `ConnectionId`                | *string*                      | :heavy_check_mark:            | ID of the connection          |
+| `Id`                          | *string*                      | :heavy_check_mark:            | ID of the Bankfeedtransaction |
+
+### Response
+
+**[RemoveAccountingBankfeedtransactionResponse](../../Models/Requests/RemoveAccountingBankfeedtransactionResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveAccountingBill
 
 Remove a bill
@@ -4145,6 +4573,92 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(req);
 ### Response
 
 **[UpdateAccountingAccountResponse](../../Models/Requests/UpdateAccountingAccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAccountingBankfeedaccount
+
+Update a bankfeedaccount
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAccountingBankfeedaccountRequest req = new UpdateAccountingBankfeedaccountRequest() {
+    AccountingBankfeedaccount = new AccountingBankfeedaccount() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.UpdateAccountingBankfeedaccountAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                 | [UpdateAccountingBankfeedaccountRequest](../../Models/Requests/UpdateAccountingBankfeedaccountRequest.md) | :heavy_check_mark:                                                                                        | The request object to use for the request.                                                                |
+
+### Response
+
+**[UpdateAccountingBankfeedaccountResponse](../../Models/Requests/UpdateAccountingBankfeedaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAccountingBankfeedtransaction
+
+Update a bankfeedtransaction
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAccountingBankfeedtransactionRequest req = new UpdateAccountingBankfeedtransactionRequest() {
+    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.UpdateAccountingBankfeedtransactionAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                         | [UpdateAccountingBankfeedtransactionRequest](../../Models/Requests/UpdateAccountingBankfeedtransactionRequest.md) | :heavy_check_mark:                                                                                                | The request object to use for the request.                                                                        |
+
+### Response
+
+**[UpdateAccountingBankfeedtransactionResponse](../../Models/Requests/UpdateAccountingBankfeedtransactionResponse.md)**
 
 ### Errors
 

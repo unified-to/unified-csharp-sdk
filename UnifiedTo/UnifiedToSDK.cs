@@ -35,6 +35,10 @@ namespace UnifiedTo
 
         public IBalancesheet Balancesheet { get; }
 
+        public IBankfeedaccount Bankfeedaccount { get; }
+
+        public IBankfeedtransaction Bankfeedtransaction { get; }
+
         public IBill Bill { get; }
 
         public ICashflow Cashflow { get; }
@@ -392,6 +396,14 @@ namespace UnifiedTo
         /// The Balancesheet sub-SDK.
         /// </summary>
         public IBalancesheet Balancesheet { get; private set; }
+        /// <summary>
+        /// The Bankfeedaccount sub-SDK.
+        /// </summary>
+        public IBankfeedaccount Bankfeedaccount { get; private set; }
+        /// <summary>
+        /// The Bankfeedtransaction sub-SDK.
+        /// </summary>
+        public IBankfeedtransaction Bankfeedtransaction { get; private set; }
         /// <summary>
         /// The Bill sub-SDK.
         /// </summary>
@@ -1064,6 +1076,10 @@ namespace UnifiedTo
 
             Balancesheet = new Balancesheet(SDKConfiguration);
 
+            Bankfeedaccount = new Bankfeedaccount(SDKConfiguration);
+
+            Bankfeedtransaction = new Bankfeedtransaction(SDKConfiguration);
+
             Bill = new Bill(SDKConfiguration);
 
             Cashflow = new Cashflow(SDKConfiguration);
@@ -1462,6 +1478,10 @@ namespace UnifiedTo
             Agedreceivable = new Agedreceivable(SDKConfiguration);
 
             Balancesheet = new Balancesheet(SDKConfiguration);
+
+            Bankfeedaccount = new Bankfeedaccount(SDKConfiguration);
+
+            Bankfeedtransaction = new Bankfeedtransaction(SDKConfiguration);
 
             Bill = new Bill(SDKConfiguration);
 

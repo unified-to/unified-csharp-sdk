@@ -26,7 +26,7 @@ namespace UnifiedTo.Models.Components
         public string? AccountNumberLast4 { get; set; }
 
         [JsonProperty("account_type")]
-        public AccountType? AccountType { get; set; }
+        public HrisBankaccountAccountType? AccountType { get; set; }
 
         [JsonProperty("bank_name")]
         public string? BankName { get; set; }
