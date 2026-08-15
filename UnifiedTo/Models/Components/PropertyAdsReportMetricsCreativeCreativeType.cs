@@ -28,6 +28,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyAdsReportMetricsCreativeCreativeType PublisherHosted = new PropertyAdsReportMetricsCreativeCreativeType("PUBLISHER_HOSTED");
         public static readonly PropertyAdsReportMetricsCreativeCreativeType AssetBased = new PropertyAdsReportMetricsCreativeCreativeType("ASSET_BASED");
         public static readonly PropertyAdsReportMetricsCreativeCreativeType Image = new PropertyAdsReportMetricsCreativeCreativeType("IMAGE");
+        public static readonly PropertyAdsReportMetricsCreativeCreativeType Share = new PropertyAdsReportMetricsCreativeCreativeType("SHARE");
         public static readonly PropertyAdsReportMetricsCreativeCreativeType Document = new PropertyAdsReportMetricsCreativeCreativeType("DOCUMENT");
 
         private static readonly Dictionary <string, PropertyAdsReportMetricsCreativeCreativeType> _knownValues =
@@ -42,6 +43,7 @@ namespace UnifiedTo.Models.Components
                 ["PUBLISHER_HOSTED"] = PublisherHosted,
                 ["ASSET_BASED"] = AssetBased,
                 ["IMAGE"] = Image,
+                ["SHARE"] = Share,
                 ["DOCUMENT"] = Document
             };
 

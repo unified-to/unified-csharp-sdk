@@ -28,6 +28,7 @@ namespace UnifiedTo.Models.Components
         public static readonly CreativeType PublisherHosted = new CreativeType("PUBLISHER_HOSTED");
         public static readonly CreativeType AssetBased = new CreativeType("ASSET_BASED");
         public static readonly CreativeType Image = new CreativeType("IMAGE");
+        public static readonly CreativeType Share = new CreativeType("SHARE");
         public static readonly CreativeType Document = new CreativeType("DOCUMENT");
 
         private static readonly Dictionary <string, CreativeType> _knownValues =
@@ -42,6 +43,7 @@ namespace UnifiedTo.Models.Components
                 ["PUBLISHER_HOSTED"] = PublisherHosted,
                 ["ASSET_BASED"] = AssetBased,
                 ["IMAGE"] = Image,
+                ["SHARE"] = Share,
                 ["DOCUMENT"] = Document
             };
 

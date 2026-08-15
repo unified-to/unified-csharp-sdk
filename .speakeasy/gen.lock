@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: c2c443fb3eedde0720e069b060bd03ca
+  docChecksum: adb495d6e549f77377fe9efbe72717f5
   docVersion: "1.0"
   speakeasyVersion: 1.791.4
   generationVersion: 2.926.8
-  releaseVersion: 0.131.16
-  configChecksum: 26588740157aed312d45d37cd3086353
+  releaseVersion: 0.131.17
+  configChecksum: 08122174a4c800dbd7cd941c38b25af1
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: e60a134d-72c2-4321-84e2-43032591cb5d
-  pristine_commit_hash: 43595453bf909ded1421ea105f91d04e571d0000
-  pristine_tree_hash: 725c2dcc49ed5763d75495745592dba48a9937ef
+  generation_id: 97497e63-fa35-47ba-b628-debaf3b19060
+  pristine_commit_hash: fd404b1b1ba8f447ae17b17806e747ecb9f033b5
+  pristine_tree_hash: c39ff084128656930beb1bb06680f8e51079bf0f
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -1562,8 +1562,8 @@ trackedFiles:
     pristine_git_object: 8faa207e947afa8ca94776c1e4ac74493059dbc1
   UnifiedTo/Models/Components/CreativeType.cs:
     id: 04015a2581e9
-    last_write_checksum: sha1:b5f9a842bd5a4036bab9e8a24268112edd8be765
-    pristine_git_object: f8aa8a8c6b3383ea900d51ebb992e363d57a00dd
+    last_write_checksum: sha1:c2f3331f3961c583f8414d99f963a9443b7e7c13
+    pristine_git_object: dd79d75cbebde74ccaba767c070eb77611f15168
   UnifiedTo/Models/Components/CrmCompany.cs:
     id: a3a18469f555
     last_write_checksum: sha1:8d6fa6feaffffa3d43316ba0d55beebbd42628a5
@@ -3346,8 +3346,8 @@ trackedFiles:
     pristine_git_object: 69f2b19e8dab6e3cf3928ef8f3246fcfddc1cb0d
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCreativeCreativeType.cs:
     id: 05e7f4b83401
-    last_write_checksum: sha1:7868421ee567a0a41d7b5a878a66e34569f99259
-    pristine_git_object: 2a9c38f416ab40e4ea0572b5c447bad53a338d39
+    last_write_checksum: sha1:da8fe529e0771e7884c554b0b6fefec84127d631
+    pristine_git_object: c9108219327b12a5fe6b6cf93c1d8ac7248230cf
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCreativeHostingSource.cs:
     id: 1e0481c90881
     last_write_checksum: sha1:cfe42e3f7a7c12f3a022a5a23dc6c07911a0c2af
@@ -14262,8 +14262,8 @@ trackedFiles:
     pristine_git_object: 4a983adb1dcd0bc2e3a3e9979cf1b2f1b9e4f3b1
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:8aa778be58cc4b9f2636f6db8620f1eb6136534a
-    pristine_git_object: 37c6db3df236e8f43a9421dbd132898c001d280c
+    last_write_checksum: sha1:a069f79947d532ee7ad1daf826f26a38c0de84da
+    pristine_git_object: c3998dd8192cb65a84bd55fec8282a9215bd770d
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -14398,8 +14398,8 @@ trackedFiles:
     pristine_git_object: 9b1b93cea5451e186b5535d7f02d4e4e97048dd2
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:3c7d5d4090f6f2c63899ccdb3ef5862621489170
-    pristine_git_object: a906c076b1e04a368a7710beb69e73fbc3214a27
+    last_write_checksum: sha1:55ca5b53dd55ebc788b4e845e08e5070b00e5e53
+    pristine_git_object: 9737503a082fe7a5c9221feab12a8bdda779b509
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:b65789332072ebb7a3b55f117061ad7d7d7080e2
@@ -14418,8 +14418,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:c240caf43687a7252ee9a34c168ca80c7d4d8b6d
-    pristine_git_object: b08c9f23ee48e1c0b90874a3c246571af035b128
+    last_write_checksum: sha1:57a074cf6902c53066490bb654f5679460bc8668
+    pristine_git_object: 53064c99189741ffa4c44e2ca329023d39bbe0d3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -15618,8 +15618,8 @@ trackedFiles:
     pristine_git_object: 1aaeeb15995ef696705086986eb483b02ccdf3f2
   docs/Models/Components/CreativeType.md:
     id: 423a81ae0ff0
-    last_write_checksum: sha1:f8ebd6c345435b189298ace817889321f1991e1e
-    pristine_git_object: f587df1a995e8cd5cb340a39c0a11f9bfe00019e
+    last_write_checksum: sha1:522ffa39852e100e10df3124facecbe1ec6034f9
+    pristine_git_object: 51de1f42f9c9dc8c1df33d4efedcb0f7e98bc913
   docs/Models/Components/CrmCompany.md:
     id: 34d38bdf2496
     last_write_checksum: sha1:d68d5253842192bf062d37ff0f975009c51598fd
@@ -17402,8 +17402,8 @@ trackedFiles:
     pristine_git_object: bbffde12cdbfdfc2252b00262e2a23baf41876dd
   docs/Models/Components/PropertyAdsReportMetricsCreativeCreativeType.md:
     id: bef1a0c17902
-    last_write_checksum: sha1:85cf60ddf81ad93d02ade4c51476acc1986ba922
-    pristine_git_object: cd55863e3673da23c696a9b706aa12460b4e4364
+    last_write_checksum: sha1:5664ce64060f525621ca3219e42a595237c758c1
+    pristine_git_object: ee36e05b658e1e15a7f747d7edef445bb9aff02f
   docs/Models/Components/PropertyAdsReportMetricsCreativeHostingSource.md:
     id: bc811842cfb8
     last_write_checksum: sha1:b2c498af1589998a330d755261f5caac15799f81
@@ -42742,7 +42742,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Accounting.CreateAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Accounting.CreateAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Accounting.GetAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Accounting.GetAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Accounting.ListAccountingBankfeedaccounts()`: **Added**\n* `UnifiedTo.Accounting.ListAccountingBankfeedtransactions()`: **Added**\n* `UnifiedTo.Accounting.PatchAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Accounting.PatchAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Accounting.RemoveAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Accounting.RemoveAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Accounting.UpdateAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Accounting.UpdateAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Bankfeedaccount.CreateAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Bankfeedaccount.GetAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Bankfeedaccount.ListAccountingBankfeedaccounts()`: **Added**\n* `UnifiedTo.Bankfeedaccount.PatchAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Bankfeedaccount.RemoveAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Bankfeedaccount.UpdateAccountingBankfeedaccount()`: **Added**\n* `UnifiedTo.Bankfeedtransaction.CreateAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Bankfeedtransaction.GetAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Bankfeedtransaction.ListAccountingBankfeedtransactions()`: **Added**\n* `UnifiedTo.Bankfeedtransaction.PatchAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Bankfeedtransaction.RemoveAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Bankfeedtransaction.UpdateAccountingBankfeedtransaction()`: **Added**\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.objectType` **Changed**\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].ObjectType` **Changed**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.permissions[]` **Changed**\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed**\n  *  `response.permissions[]` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.objectType` **Changed**\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].ObjectType` **Changed**\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed**\n  *  `response.objectType` **Changed**\n"
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Report.ListAdsReports()`:  `response.[].Metrics[].Creative.CreativeType.Enum(share)` **Added**\n* `UnifiedTo.Ads.CreateAdsCreative()`: \n  *  `request.adsCreative.CreativeType.Enum(share)` **Added**\n  *  `response.creativeType.Enum(share)` **Added**\n* `UnifiedTo.Ads.GetAdsCreative()`:  `response.creativeType.Enum(share)` **Added**\n* `UnifiedTo.Ads.ListAdsCreatives()`:  `response.[].CreativeType.Enum(share)` **Added**\n* `UnifiedTo.Ads.ListAdsReports()`:  `response.[].Metrics[].Creative.CreativeType.Enum(share)` **Added**\n* `UnifiedTo.Ads.PatchAdsCreative()`: \n  *  `request.AdsCreative.CreativeType.Enum(share)` **Added**\n  *  `response.creativeType.Enum(share)` **Added**\n* `UnifiedTo.Ads.UpdateAdsCreative()`: \n  *  `request.AdsCreative.CreativeType.Enum(share)` **Added**\n  *  `response.creativeType.Enum(share)` **Added**\n* `UnifiedTo.Creative.CreateAdsCreative()`: \n  *  `request.adsCreative.CreativeType.Enum(share)` **Added**\n  *  `response.creativeType.Enum(share)` **Added**\n* `UnifiedTo.Creative.GetAdsCreative()`:  `response.creativeType.Enum(share)` **Added**\n* `UnifiedTo.Creative.ListAdsCreatives()`:  `response.[].CreativeType.Enum(share)` **Added**\n* `UnifiedTo.Creative.PatchAdsCreative()`: \n  *  `request.AdsCreative.CreativeType.Enum(share)` **Added**\n  *  `response.creativeType.Enum(share)` **Added**\n* `UnifiedTo.Creative.UpdateAdsCreative()`: \n  *  `request.AdsCreative.CreativeType.Enum(share)` **Added**\n  *  `response.creativeType.Enum(share)` **Added**\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md
