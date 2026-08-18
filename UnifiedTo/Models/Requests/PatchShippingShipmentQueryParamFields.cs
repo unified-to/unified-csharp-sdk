@@ -23,6 +23,8 @@ namespace UnifiedTo.Models.Requests
         UpdatedAt,
         [JsonProperty("order_id")]
         OrderId,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("from_address")]
         FromAddress,
         [JsonProperty("to_address")]
@@ -85,6 +87,12 @@ namespace UnifiedTo.Models.Requests
         ReturnReason,
         [JsonProperty("return_type")]
         ReturnType,
+        [JsonProperty("carrier_name")]
+        CarrierName,
+        [JsonProperty("tracking_url")]
+        TrackingUrl,
+        [JsonProperty("lineitems")]
+        Lineitems,
         [JsonProperty("raw")]
         Raw,
     }

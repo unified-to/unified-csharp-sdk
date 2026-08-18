@@ -49,6 +49,12 @@ namespace UnifiedTo.Models.Requests
         public string? OrderId { get; set; }
 
         /// <summary>
+        /// The org ID to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=org_id")]
+        public string? OrgId { get; set; }
+
+        /// <summary>
         /// Query string to search. eg. email address or name.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]

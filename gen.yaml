@@ -29,7 +29,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.131.17
+  version: 0.131.18
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
@@ -67,6 +67,7 @@ csharp:
   product: ""
   respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope
+  schemaValidation: strict
   sourceDirectory: ""
   targetFramework: dotnetVersion
   unionStrategy: left-to-right

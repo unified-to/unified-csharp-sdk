@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("carrier_id")]
         public string? CarrierId { get; set; }
 
+        [JsonProperty("carrier_name")]
+        public string? CarrierName { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -64,8 +67,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("label_id")]
         public string? LabelId { get; set; }
 
+        /// <summary>
+        /// Item-level fulfillment lines (what shipped); used by commerce-platform fulfillments.
+        /// </summary>
+        [JsonProperty("lineitems")]
+        public List<ShippingShipmentLineitem>? Lineitems { get; set; }
+
         [JsonProperty("order_id")]
         public string? OrderId { get; set; }
+
+        [JsonProperty("organization_id")]
+        public string? OrganizationId { get; set; }
 
         [JsonProperty("original_shipment_id")]
         public string? OriginalShipmentId { get; set; }
@@ -138,6 +150,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("tracking_id")]
         public string? TrackingId { get; set; }
+
+        [JsonProperty("tracking_url")]
+        public string? TrackingUrl { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

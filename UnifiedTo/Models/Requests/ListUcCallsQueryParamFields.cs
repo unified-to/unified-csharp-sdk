@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         UserPhone,
         [JsonProperty("type")]
         Type,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

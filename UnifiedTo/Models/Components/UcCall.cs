@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_private")]
         public bool? IsPrivate { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<UcMetadata>? Metadata { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
