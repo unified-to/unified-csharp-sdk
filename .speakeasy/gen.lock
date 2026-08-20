@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 886b4ea0644bd8b8175e53cfbdd19e43
+  docChecksum: f1b21bdacc13bdae2d4bb40a40b83aba
   docVersion: "1.0"
   speakeasyVersion: 1.791.4
   generationVersion: 2.926.8
-  releaseVersion: 0.131.19
-  configChecksum: 7b668b07cef890fa6a5a92f04b74cf73
+  releaseVersion: 0.131.20
+  configChecksum: c72fc5f5822c76e11b9c0a4717934045
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: 18072f0b-ade4-43e2-b6c5-b2bd570976b2
-  pristine_commit_hash: 8d0788ec561bd32731b912e6bc3cff55907891cb
-  pristine_tree_hash: 152757b59f3c3d2a100c17843f1b4e7cfb23baa5
+  generation_id: 43edb027-d6a3-4a70-a58f-e48f3dc6802d
+  pristine_commit_hash: 1203f504f1f77953ad160c9380eebf4e47fa36b0
+  pristine_tree_hash: 02726aada7786d6bc6f6f78fa0a7b7644f9215bb
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -9458,8 +9458,8 @@ trackedFiles:
     pristine_git_object: d02c03feac6f6e5ba3fd67d21072e34a2b1bd839
   UnifiedTo/Models/Requests/ListHrisLocationsRequest.cs:
     id: 73a52f163d55
-    last_write_checksum: sha1:2b9ca2df5e9c235fc9c93f84e37ca3256a8c1298
-    pristine_git_object: e64c1bbb6750c77f86026621c4eeb1da9a6fbb8a
+    last_write_checksum: sha1:a648d8da7b1a45adf7115a2b9884fde148d4bfa6
+    pristine_git_object: 96ef873fcb88c310ca4874f8d2002c692a11c403
   UnifiedTo/Models/Requests/ListHrisLocationsResponse.cs:
     id: 1cb2981eb2c3
     last_write_checksum: sha1:a5220135a842c975f913f5b510952c15ac266330
@@ -14298,8 +14298,8 @@ trackedFiles:
     pristine_git_object: 4a983adb1dcd0bc2e3a3e9979cf1b2f1b9e4f3b1
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:f1f4bb2ab5190fb4baceb1e561fc9ff7cac998ce
-    pristine_git_object: b81f1f7ee9dad544545891917502f8504489f705
+    last_write_checksum: sha1:73aa72d59da86281a46e3a66e44a01f571ae7a22
+    pristine_git_object: cf174dd978d2ca66e69463991de32e7071772b57
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -14434,8 +14434,8 @@ trackedFiles:
     pristine_git_object: 9b1b93cea5451e186b5535d7f02d4e4e97048dd2
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:95a85e676c0696a3d15e934965c398d33fdb8a84
-    pristine_git_object: cd2482163636d7e709f5d1176b74cd2eaf2a8387
+    last_write_checksum: sha1:27652acc3d96425a11e3a3a4062f10812e5a4732
+    pristine_git_object: a8039bc2d8660f2205d1182cb65f9b0c20cfe6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:b65789332072ebb7a3b55f117061ad7d7d7080e2
@@ -14454,8 +14454,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:5db5f987ae02c4677ea2faab20d2d91a832e7b5b
-    pristine_git_object: e19074e9d92bde987fca1bbf6ad7b9bb275a5f60
+    last_write_checksum: sha1:88e563090cb8b1f16fa91777f82d32af947758ed
+    pristine_git_object: 1e1c8eafc2937ff647b1845abfa1c6d94eeaa733
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -23538,8 +23538,8 @@ trackedFiles:
     pristine_git_object: 8859414622f6b403be0e95560b4d32bc90e20a3c
   docs/Models/Requests/ListHrisLocationsRequest.md:
     id: 1cebedbd6476
-    last_write_checksum: sha1:3ff4929f0f5e2909f066586b05bd727756efb6ee
-    pristine_git_object: 49e9633de58a6f6793907b558237f0249c63dc1b
+    last_write_checksum: sha1:21876313207597dd790cb7fefcc09bbdc5610322
+    pristine_git_object: 371ed5870b041e084b0379e6198bf0d66642e1da
   docs/Models/Requests/ListHrisLocationsResponse.md:
     id: 6813a26ea767
     last_write_checksum: sha1:836e45d67f70f9481926ef0f3707ca6f51afc72c
@@ -42814,7 +42814,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Ats.ListAtsApplicationstatuses()`: \n  *  `request.JobId` **Added**\n* `UnifiedTo.Applicationstatus.ListAtsApplicationstatuses()`: \n  *  `request.JobId` **Added**\n"
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Location.ListHrisLocations()`: \n  *  `request.ParentId` **Added**\n* `UnifiedTo.Hris.ListHrisLocations()`: \n  *  `request.ParentId` **Added**\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md

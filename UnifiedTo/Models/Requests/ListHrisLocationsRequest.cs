@@ -43,6 +43,12 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
+        /// The parent ID to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=parent_id")]
+        public string? ParentId { get; set; }
+
+        /// <summary>
         /// Query string to search. eg. email address or name.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]

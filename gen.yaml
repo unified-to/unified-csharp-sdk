@@ -29,7 +29,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.131.19
+  version: 0.131.20
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
