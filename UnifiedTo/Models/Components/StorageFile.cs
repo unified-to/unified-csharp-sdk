@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("size")]
         public double? Size { get; set; }
 
+        /// <summary>
+        /// labels.
+        /// </summary>
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 

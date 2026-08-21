@@ -24,6 +24,12 @@ namespace UnifiedTo.Models.Components
         public static readonly SecretsManagerType Gcp = new SecretsManagerType("gcp");
         public static readonly SecretsManagerType Hashicorp = new SecretsManagerType("hashicorp");
         public static readonly SecretsManagerType Composio = new SecretsManagerType("composio");
+        public static readonly SecretsManagerType Onepassword = new SecretsManagerType("1password");
+        public static readonly SecretsManagerType Bitwarden = new SecretsManagerType("bitwarden");
+        public static readonly SecretsManagerType Doppler = new SecretsManagerType("doppler");
+        public static readonly SecretsManagerType Akeyless = new SecretsManagerType("akeyless");
+        public static readonly SecretsManagerType Pipedream = new SecretsManagerType("pipedream");
+        public static readonly SecretsManagerType Alibabacloud = new SecretsManagerType("alibabacloud");
 
         private static readonly Dictionary <string, SecretsManagerType> _knownValues =
             new Dictionary <string, SecretsManagerType> ()
@@ -32,7 +38,13 @@ namespace UnifiedTo.Models.Components
                 ["azure"] = Azure,
                 ["gcp"] = Gcp,
                 ["hashicorp"] = Hashicorp,
-                ["composio"] = Composio
+                ["composio"] = Composio,
+                ["1password"] = Onepassword,
+                ["bitwarden"] = Bitwarden,
+                ["doppler"] = Doppler,
+                ["akeyless"] = Akeyless,
+                ["pipedream"] = Pipedream,
+                ["alibabacloud"] = Alibabacloud
             };
 
         private static readonly ConcurrentDictionary<string, SecretsManagerType> _values =

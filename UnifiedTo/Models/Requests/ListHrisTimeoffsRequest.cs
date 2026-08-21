@@ -69,6 +69,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
         public string? StartGte { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=status")]
+        public string? Status { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
         public string? Type { get; set; }
 
