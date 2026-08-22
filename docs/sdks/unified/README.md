@@ -20,6 +20,7 @@
 * [ListUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 * [ListUnifiedIssues](#listunifiedissues) - List support issues
+* [ListUnifiedNotifications](#listunifiednotifications) - List event notifications
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
 * [ListUnifiedWorkspaceSecretsmanagers](#listunifiedworkspacesecretsmanagers) - List secrets managers
 * [PatchUnifiedConnection](#patchunifiedconnection) - Update connection
@@ -134,7 +135,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Unified.CreateUnifiedWebhookAsync(webhook: new UnifiedTo.Models.Components.Webhook() {
     ConnectionId = "<id>",
-    Event = UnifiedTo.Models.Components.Event.Created,
+    Event = WebhookEvent.Created,
     ObjectType = WebhookObjectType.AtsScorecard,
 });
 
@@ -652,6 +653,45 @@ var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListUnifiedNotifications
+
+List event notifications
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listUnifiedNotifications" method="get" path="/unified/notification" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListUnifiedNotificationsRequest? req = null;
+
+var res = await sdk.Unified.ListUnifiedNotificationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListUnifiedNotificationsRequest](../../Models/Requests/ListUnifiedNotificationsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[ListUnifiedNotificationsResponse](../../Models/Requests/ListUnifiedNotificationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListUnifiedWebhooks
 
 Returns all registered webhooks
@@ -797,7 +837,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.PatchUnifiedWebhookAsync(
     webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = UnifiedTo.Models.Components.Event.Updated,
+        Event = WebhookEvent.Updated,
         ObjectType = WebhookObjectType.TicketingCustomer,
     },
     id: "<id>"
@@ -1069,7 +1109,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
     webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = UnifiedTo.Models.Components.Event.Deleted,
+        Event = WebhookEvent.Deleted,
         ObjectType = WebhookObjectType.MessagingChannel,
     },
     id: "<id>"

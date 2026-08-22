@@ -19,16 +19,50 @@ namespace UnifiedTo.Models.Components
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Event : IEquatable<Event>
     {
-        public static readonly Event Updated = new Event("updated");
-        public static readonly Event Created = new Event("created");
-        public static readonly Event Deleted = new Event("deleted");
+        public static readonly Event UserCreated = new Event("USER_CREATED");
+        public static readonly Event UserDeleted = new Event("USER_DELETED");
+        public static readonly Event ConnectionHealthy = new Event("CONNECTION_HEALTHY");
+        public static readonly Event ConnectionUnhealthy = new Event("CONNECTION_UNHEALTHY");
+        public static readonly Event ConnectionCreated = new Event("CONNECTION_CREATED");
+        public static readonly Event ConnectionUpdated = new Event("CONNECTION_UPDATED");
+        public static readonly Event ConnectionDeleted = new Event("CONNECTION_DELETED");
+        public static readonly Event ConnectionPaused = new Event("CONNECTION_PAUSED");
+        public static readonly Event ConnectionUnpaused = new Event("CONNECTION_UNPAUSED");
+        public static readonly Event IntegrationActivated = new Event("INTEGRATION_ACTIVATED");
+        public static readonly Event IntegrationDeactivated = new Event("INTEGRATION_DEACTIVATED");
+        public static readonly Event IntegrationUpdated = new Event("INTEGRATION_UPDATED");
+        public static readonly Event WorkspaceUpdated = new Event("WORKSPACE_UPDATED");
+        public static readonly Event WorkspaceOverLimit = new Event("WORKSPACE_OVER_LIMIT");
+        public static readonly Event Workspace80PercentLimit = new Event("WORKSPACE_80PERCENT_LIMIT");
+        public static readonly Event WebhookCreated = new Event("WEBHOOK_CREATED");
+        public static readonly Event WebhookDeleted = new Event("WEBHOOK_DELETED");
+        public static readonly Event WebhookUnhealthy = new Event("WEBHOOK_UNHEALTHY");
+        public static readonly Event WebhookPaused = new Event("WEBHOOK_PAUSED");
+        public static readonly Event WebhookUnpaused = new Event("WEBHOOK_UNPAUSED");
 
         private static readonly Dictionary <string, Event> _knownValues =
             new Dictionary <string, Event> ()
             {
-                ["updated"] = Updated,
-                ["created"] = Created,
-                ["deleted"] = Deleted
+                ["USER_CREATED"] = UserCreated,
+                ["USER_DELETED"] = UserDeleted,
+                ["CONNECTION_HEALTHY"] = ConnectionHealthy,
+                ["CONNECTION_UNHEALTHY"] = ConnectionUnhealthy,
+                ["CONNECTION_CREATED"] = ConnectionCreated,
+                ["CONNECTION_UPDATED"] = ConnectionUpdated,
+                ["CONNECTION_DELETED"] = ConnectionDeleted,
+                ["CONNECTION_PAUSED"] = ConnectionPaused,
+                ["CONNECTION_UNPAUSED"] = ConnectionUnpaused,
+                ["INTEGRATION_ACTIVATED"] = IntegrationActivated,
+                ["INTEGRATION_DEACTIVATED"] = IntegrationDeactivated,
+                ["INTEGRATION_UPDATED"] = IntegrationUpdated,
+                ["WORKSPACE_UPDATED"] = WorkspaceUpdated,
+                ["WORKSPACE_OVER_LIMIT"] = WorkspaceOverLimit,
+                ["WORKSPACE_80PERCENT_LIMIT"] = Workspace80PercentLimit,
+                ["WEBHOOK_CREATED"] = WebhookCreated,
+                ["WEBHOOK_DELETED"] = WebhookDeleted,
+                ["WEBHOOK_UNHEALTHY"] = WebhookUnhealthy,
+                ["WEBHOOK_PAUSED"] = WebhookPaused,
+                ["WEBHOOK_UNPAUSED"] = WebhookUnpaused
             };
 
         private static readonly ConcurrentDictionary<string, Event> _values =

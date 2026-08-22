@@ -47,7 +47,7 @@ namespace UnifiedTo.Models.Components
         public string? Environment { get; set; } = "Production";
 
         [JsonProperty("event")]
-        public Models.Components.Event Event { get; set; } = default!;
+        public WebhookEvent Event { get; set; } = default!;
 
         [JsonProperty("fields")]
         public string? Fields { get; set; }

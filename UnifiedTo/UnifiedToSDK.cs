@@ -357,6 +357,8 @@ namespace UnifiedTo
 
         public IIssue Issue { get; }
 
+        public INotification Notification { get; }
+
         public IWebhook Webhook { get; }
 
         public ISecretsmanager Secretsmanager { get; }
@@ -1041,6 +1043,10 @@ namespace UnifiedTo
         /// </summary>
         public IIssue Issue { get; private set; }
         /// <summary>
+        /// The Notification sub-SDK.
+        /// </summary>
+        public INotification Notification { get; private set; }
+        /// <summary>
         /// The Webhook sub-SDK.
         /// </summary>
         public IWebhook Webhook { get; private set; }
@@ -1397,6 +1403,8 @@ namespace UnifiedTo
             Saml = new Saml(SDKConfiguration);
 
             Issue = new Issue(SDKConfiguration);
+
+            Notification = new Notification(SDKConfiguration);
 
             Webhook = new Webhook(SDKConfiguration);
 
@@ -1800,6 +1808,8 @@ namespace UnifiedTo
             Saml = new Saml(SDKConfiguration);
 
             Issue = new Issue(SDKConfiguration);
+
+            Notification = new Notification(SDKConfiguration);
 
             Webhook = new Webhook(SDKConfiguration);
 

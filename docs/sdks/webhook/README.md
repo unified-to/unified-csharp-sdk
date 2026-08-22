@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(webhook: new UnifiedTo.Models.Components.Webhook() {
     ConnectionId = "<id>",
-    Event = UnifiedTo.Models.Components.Event.Created,
+    Event = WebhookEvent.Created,
     ObjectType = WebhookObjectType.AtsScorecard,
 });
 
@@ -147,7 +147,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
     webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = UnifiedTo.Models.Components.Event.Updated,
+        Event = WebhookEvent.Updated,
         ObjectType = WebhookObjectType.TicketingCustomer,
     },
     id: "<id>"
@@ -263,7 +263,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
     webhook: new UnifiedTo.Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = UnifiedTo.Models.Components.Event.Deleted,
+        Event = WebhookEvent.Deleted,
         ObjectType = WebhookObjectType.MessagingChannel,
     },
     id: "<id>"
