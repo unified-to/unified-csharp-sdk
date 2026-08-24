@@ -36,4 +36,5 @@ var value = UpdateAccountingContactQueryParamFields.Id;
 | `AssociatedContacts` | associated_contacts  |
 | `OrganizationId`     | organization_id      |
 | `PaymentTerms`       | payment_terms        |
+| `PaymenttermId`      | paymentterm_id       |
 | `Raw`                | raw                  |

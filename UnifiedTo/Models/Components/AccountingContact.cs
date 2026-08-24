@@ -70,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payment_terms")]
         public AccountingContactPaymentTerms? PaymentTerms { get; set; }
 
+        [JsonProperty("paymentterm_id")]
+        public string? PaymenttermId { get; set; }
+
         [JsonProperty("portal_url")]
         public string? PortalUrl { get; set; }
 

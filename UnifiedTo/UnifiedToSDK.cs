@@ -59,6 +59,8 @@ namespace UnifiedTo
 
         public IOrganization Organization { get; }
 
+        public IPaymentterm Paymentterm { get; }
+
         public IProfitloss Profitloss { get; }
 
         public IProject Project { get; }
@@ -446,6 +448,10 @@ namespace UnifiedTo
         /// The Organization sub-SDK.
         /// </summary>
         public IOrganization Organization { get; private set; }
+        /// <summary>
+        /// The Paymentterm sub-SDK.
+        /// </summary>
+        public IPaymentterm Paymentterm { get; private set; }
         /// <summary>
         /// The Profitloss sub-SDK.
         /// </summary>
@@ -1106,6 +1112,8 @@ namespace UnifiedTo
 
             Organization = new Organization(SDKConfiguration);
 
+            Paymentterm = new Paymentterm(SDKConfiguration);
+
             Profitloss = new Profitloss(SDKConfiguration);
 
             Project = new Project(SDKConfiguration);
@@ -1510,6 +1518,8 @@ namespace UnifiedTo
             Order = new Order(SDKConfiguration);
 
             Organization = new Organization(SDKConfiguration);
+
+            Paymentterm = new Paymentterm(SDKConfiguration);
 
             Profitloss = new Profitloss(SDKConfiguration);
 

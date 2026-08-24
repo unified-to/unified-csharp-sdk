@@ -15,6 +15,7 @@
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [CreateAccountingJournal](#createaccountingjournal) - Create a journal
 * [CreateAccountingOrder](#createaccountingorder) - Create an order
+* [CreateAccountingPaymentterm](#createaccountingpaymentterm) - Create a paymentterm
 * [CreateAccountingProject](#createaccountingproject) - Create a project
 * [CreateAccountingPurchaseorder](#createaccountingpurchaseorder) - Create a purchaseorder
 * [CreateAccountingQuote](#createaccountingquote) - Create a quote
@@ -38,6 +39,7 @@
 * [GetAccountingJournal](#getaccountingjournal) - Retrieve a journal
 * [GetAccountingOrder](#getaccountingorder) - Retrieve an order
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
+* [GetAccountingPaymentterm](#getaccountingpaymentterm) - Retrieve a paymentterm
 * [GetAccountingProfitloss](#getaccountingprofitloss) - Retrieve a profitloss
 * [GetAccountingProject](#getaccountingproject) - Retrieve a project
 * [GetAccountingPurchaseorder](#getaccountingpurchaseorder) - Retrieve a purchaseorder
@@ -64,6 +66,7 @@
 * [ListAccountingJournals](#listaccountingjournals) - List all journals
 * [ListAccountingOrders](#listaccountingorders) - List all orders
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
+* [ListAccountingPaymentterms](#listaccountingpaymentterms) - List all paymentterms
 * [ListAccountingProfitlosses](#listaccountingprofitlosses) - List all profitlosses
 * [ListAccountingProjects](#listaccountingprojects) - List all projects
 * [ListAccountingPurchaseorders](#listaccountingpurchaseorders) - List all purchaseorders
@@ -85,6 +88,7 @@
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [PatchAccountingJournal](#patchaccountingjournal) - Update a journal
 * [PatchAccountingOrder](#patchaccountingorder) - Update an order
+* [PatchAccountingPaymentterm](#patchaccountingpaymentterm) - Update a paymentterm
 * [PatchAccountingProject](#patchaccountingproject) - Update a project
 * [PatchAccountingPurchaseorder](#patchaccountingpurchaseorder) - Update a purchaseorder
 * [PatchAccountingQuote](#patchaccountingquote) - Update a quote
@@ -103,6 +107,7 @@
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [RemoveAccountingJournal](#removeaccountingjournal) - Remove a journal
 * [RemoveAccountingOrder](#removeaccountingorder) - Remove an order
+* [RemoveAccountingPaymentterm](#removeaccountingpaymentterm) - Remove a paymentterm
 * [RemoveAccountingProject](#removeaccountingproject) - Remove a project
 * [RemoveAccountingPurchaseorder](#removeaccountingpurchaseorder) - Remove a purchaseorder
 * [RemoveAccountingQuote](#removeaccountingquote) - Remove a quote
@@ -121,6 +126,7 @@
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [UpdateAccountingJournal](#updateaccountingjournal) - Update a journal
 * [UpdateAccountingOrder](#updateaccountingorder) - Update an order
+* [UpdateAccountingPaymentterm](#updateaccountingpaymentterm) - Update a paymentterm
 * [UpdateAccountingProject](#updateaccountingproject) - Update a project
 * [UpdateAccountingPurchaseorder](#updateaccountingpurchaseorder) - Update a purchaseorder
 * [UpdateAccountingQuote](#updateaccountingquote) - Update a quote
@@ -584,6 +590,48 @@ var res = await sdk.Accounting.CreateAccountingOrderAsync(
 ### Response
 
 **[CreateAccountingOrderResponse](../../Models/Requests/CreateAccountingOrderResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAccountingPaymentterm
+
+Create a paymentterm
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.CreateAccountingPaymenttermAsync(
+    accountingPaymentterm: new AccountingPaymentterm() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AccountingPaymentterm`                                                                                                                          | [AccountingPaymentterm](../../Models/Components/AccountingPaymentterm.md)                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateAccountingPaymenttermQueryParamFields](../../Models/Requests/CreateAccountingPaymenttermQueryParamFields.md)>                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAccountingPaymenttermResponse](../../Models/Requests/CreateAccountingPaymenttermResponse.md)**
 
 ### Errors
 
@@ -1550,6 +1598,48 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 ### Response
 
 **[GetAccountingOrganizationResponse](../../Models/Requests/GetAccountingOrganizationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetAccountingPaymentterm
+
+Retrieve a paymentterm
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getAccountingPaymentterm" method="get" path="/accounting/{connection_id}/paymentterm/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingPaymenttermAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Paymentterm                                                                                                                            |
+| `Fields`                                                                                                                                         | List<[GetAccountingPaymenttermQueryParamFields](../../Models/Requests/GetAccountingPaymenttermQueryParamFields.md)>                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingPaymenttermResponse](../../Models/Requests/GetAccountingPaymenttermResponse.md)**
 
 ### Errors
 
@@ -2633,6 +2723,47 @@ var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListAccountingPaymentterms
+
+List all paymentterms
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listAccountingPaymentterms" method="get" path="/accounting/{connection_id}/paymentterm" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingPaymenttermsRequest req = new ListAccountingPaymenttermsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingPaymenttermsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListAccountingPaymenttermsRequest](../../Models/Requests/ListAccountingPaymenttermsRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+### Response
+
+**[ListAccountingPaymenttermsResponse](../../Models/Requests/ListAccountingPaymenttermsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAccountingProfitlosses
 
 List all profitlosses
@@ -3516,6 +3647,49 @@ var res = await sdk.Accounting.PatchAccountingOrderAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchAccountingPaymentterm
+
+Update a paymentterm
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAccountingPaymenttermRequest req = new PatchAccountingPaymenttermRequest() {
+    AccountingPaymentterm = new AccountingPaymentterm() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.PatchAccountingPaymenttermAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [PatchAccountingPaymenttermRequest](../../Models/Requests/PatchAccountingPaymenttermRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+### Response
+
+**[PatchAccountingPaymenttermResponse](../../Models/Requests/PatchAccountingPaymenttermResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchAccountingProject
 
 Update a project
@@ -4250,6 +4424,46 @@ var res = await sdk.Accounting.RemoveAccountingOrderAsync(
 ### Response
 
 **[RemoveAccountingOrderResponse](../../Models/Requests/RemoveAccountingOrderResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveAccountingPaymentterm
+
+Remove a paymentterm
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeAccountingPaymentterm" method="delete" path="/accounting/{connection_id}/paymentterm/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.RemoveAccountingPaymenttermAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter             | Type                  | Required              | Description           |
+| --------------------- | --------------------- | --------------------- | --------------------- |
+| `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
+| `Id`                  | *string*              | :heavy_check_mark:    | ID of the Paymentterm |
+
+### Response
+
+**[RemoveAccountingPaymenttermResponse](../../Models/Requests/RemoveAccountingPaymenttermResponse.md)**
 
 ### Errors
 
@@ -5003,6 +5217,49 @@ var res = await sdk.Accounting.UpdateAccountingOrderAsync(req);
 ### Response
 
 **[UpdateAccountingOrderResponse](../../Models/Requests/UpdateAccountingOrderResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAccountingPaymentterm
+
+Update a paymentterm
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAccountingPaymenttermRequest req = new UpdateAccountingPaymenttermRequest() {
+    AccountingPaymentterm = new AccountingPaymentterm() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.UpdateAccountingPaymenttermAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [UpdateAccountingPaymenttermRequest](../../Models/Requests/UpdateAccountingPaymenttermRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[UpdateAccountingPaymenttermResponse](../../Models/Requests/UpdateAccountingPaymenttermResponse.md)**
 
 ### Errors
 

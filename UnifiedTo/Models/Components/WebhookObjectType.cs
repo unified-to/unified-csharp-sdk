@@ -28,6 +28,7 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType AccountingVendorcredit = new WebhookObjectType("accounting_vendorcredit");
         public static readonly WebhookObjectType AccountingCreditmemo = new WebhookObjectType("accounting_creditmemo");
         public static readonly WebhookObjectType AccountingTaxrate = new WebhookObjectType("accounting_taxrate");
+        public static readonly WebhookObjectType AccountingPaymentterm = new WebhookObjectType("accounting_paymentterm");
         public static readonly WebhookObjectType AccountingOrganization = new WebhookObjectType("accounting_organization");
         public static readonly WebhookObjectType AccountingOrder = new WebhookObjectType("accounting_order");
         public static readonly WebhookObjectType AccountingSalesorder = new WebhookObjectType("accounting_salesorder");
@@ -200,6 +201,7 @@ namespace UnifiedTo.Models.Components
                 ["accounting_vendorcredit"] = AccountingVendorcredit,
                 ["accounting_creditmemo"] = AccountingCreditmemo,
                 ["accounting_taxrate"] = AccountingTaxrate,
+                ["accounting_paymentterm"] = AccountingPaymentterm,
                 ["accounting_organization"] = AccountingOrganization,
                 ["accounting_order"] = AccountingOrder,
                 ["accounting_salesorder"] = AccountingSalesorder,

@@ -71,6 +71,8 @@ namespace UnifiedTo.Models.Requests
         Term,
         [JsonProperty("payment_terms")]
         PaymentTerms,
+        [JsonProperty("paymentterm_id")]
+        PaymenttermId,
         [JsonProperty("payments")]
         Payments,
         [JsonProperty("category_ids")]

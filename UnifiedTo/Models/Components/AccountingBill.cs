@@ -82,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payments")]
         public List<AccountingPaymentReference>? Payments { get; set; }
 
+        [JsonProperty("paymentterm_id")]
+        public string? PaymenttermId { get; set; }
+
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 

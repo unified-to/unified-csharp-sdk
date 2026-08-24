@@ -35,6 +35,7 @@ var value = UpdateAccountingInvoiceQueryParamFields.Id;
 | `RefundReason`            | refund_reason             |
 | `Term`                    | term                      |
 | `PaymentTerms`            | payment_terms             |
+| `PaymenttermId`           | paymentterm_id            |
 | `Lineitems`               | lineitems                 |
 | `Status`                  | status                    |
 | `Url`                     | url                       |

@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         Term,
         [JsonProperty("payment_terms")]
         PaymentTerms,
+        [JsonProperty("paymentterm_id")]
+        PaymenttermId,
         [JsonProperty("lineitems")]
         Lineitems,
         [JsonProperty("status")]

@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions AccountingExpenseWrite = new PropertyConnectionPermissions("accounting_expense_write");
         public static readonly PropertyConnectionPermissions AccountingTaxrateRead = new PropertyConnectionPermissions("accounting_taxrate_read");
         public static readonly PropertyConnectionPermissions AccountingTaxrateWrite = new PropertyConnectionPermissions("accounting_taxrate_write");
+        public static readonly PropertyConnectionPermissions AccountingPaymenttermRead = new PropertyConnectionPermissions("accounting_paymentterm_read");
+        public static readonly PropertyConnectionPermissions AccountingPaymenttermWrite = new PropertyConnectionPermissions("accounting_paymentterm_write");
         public static readonly PropertyConnectionPermissions AccountingOrganizationRead = new PropertyConnectionPermissions("accounting_organization_read");
         public static readonly PropertyConnectionPermissions AccountingOrderRead = new PropertyConnectionPermissions("accounting_order_read");
         public static readonly PropertyConnectionPermissions AccountingOrderWrite = new PropertyConnectionPermissions("accounting_order_write");
@@ -353,6 +355,8 @@ namespace UnifiedTo.Models.Components
                 ["accounting_expense_write"] = AccountingExpenseWrite,
                 ["accounting_taxrate_read"] = AccountingTaxrateRead,
                 ["accounting_taxrate_write"] = AccountingTaxrateWrite,
+                ["accounting_paymentterm_read"] = AccountingPaymenttermRead,
+                ["accounting_paymentterm_write"] = AccountingPaymenttermWrite,
                 ["accounting_organization_read"] = AccountingOrganizationRead,
                 ["accounting_order_read"] = AccountingOrderRead,
                 ["accounting_order_write"] = AccountingOrderWrite,
