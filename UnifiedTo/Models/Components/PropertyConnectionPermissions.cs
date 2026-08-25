@@ -331,6 +331,14 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions PerformanceGoalWrite = new PropertyConnectionPermissions("performance_goal_write");
         public static readonly PropertyConnectionPermissions PerformanceFeedbackRead = new PropertyConnectionPermissions("performance_feedback_read");
         public static readonly PropertyConnectionPermissions PerformanceFeedbackWrite = new PropertyConnectionPermissions("performance_feedback_write");
+        public static readonly PropertyConnectionPermissions SocialPostRead = new PropertyConnectionPermissions("social_post_read");
+        public static readonly PropertyConnectionPermissions SocialPostWrite = new PropertyConnectionPermissions("social_post_write");
+        public static readonly PropertyConnectionPermissions SocialProfileRead = new PropertyConnectionPermissions("social_profile_read");
+        public static readonly PropertyConnectionPermissions SocialProfileWrite = new PropertyConnectionPermissions("social_profile_write");
+        public static readonly PropertyConnectionPermissions SocialReviewRead = new PropertyConnectionPermissions("social_review_read");
+        public static readonly PropertyConnectionPermissions SocialReviewWrite = new PropertyConnectionPermissions("social_review_write");
+        public static readonly PropertyConnectionPermissions SocialInsightRead = new PropertyConnectionPermissions("social_insight_read");
+        public static readonly PropertyConnectionPermissions SocialInsightWrite = new PropertyConnectionPermissions("social_insight_write");
 
         private static readonly Dictionary <string, PropertyConnectionPermissions> _knownValues =
             new Dictionary <string, PropertyConnectionPermissions> ()
@@ -646,7 +654,15 @@ namespace UnifiedTo.Models.Components
                 ["performance_goal_read"] = PerformanceGoalRead,
                 ["performance_goal_write"] = PerformanceGoalWrite,
                 ["performance_feedback_read"] = PerformanceFeedbackRead,
-                ["performance_feedback_write"] = PerformanceFeedbackWrite
+                ["performance_feedback_write"] = PerformanceFeedbackWrite,
+                ["social_post_read"] = SocialPostRead,
+                ["social_post_write"] = SocialPostWrite,
+                ["social_profile_read"] = SocialProfileRead,
+                ["social_profile_write"] = SocialProfileWrite,
+                ["social_review_read"] = SocialReviewRead,
+                ["social_review_write"] = SocialReviewWrite,
+                ["social_insight_read"] = SocialInsightRead,
+                ["social_insight_write"] = SocialInsightWrite
             };
 
         private static readonly ConcurrentDictionary<string, PropertyConnectionPermissions> _values =

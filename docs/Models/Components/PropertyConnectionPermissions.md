@@ -328,3 +328,11 @@ var custom = PropertyConnectionPermissions.Of("custom_value");
 | `PerformanceGoalWrite`               | performance_goal_write               |
 | `PerformanceFeedbackRead`            | performance_feedback_read            |
 | `PerformanceFeedbackWrite`           | performance_feedback_write           |
+| `SocialPostRead`                     | social_post_read                     |
+| `SocialPostWrite`                    | social_post_write                    |
+| `SocialProfileRead`                  | social_profile_read                  |
+| `SocialProfileWrite`                 | social_profile_write                 |
+| `SocialReviewRead`                   | social_review_read                   |
+| `SocialReviewWrite`                  | social_review_write                  |
+| `SocialInsightRead`                  | social_insight_read                  |
+| `SocialInsightWrite`                 | social_insight_write                 |

@@ -26,7 +26,7 @@ namespace UnifiedTo.Models.Components
         public double? DailyMaxImpressions { get; set; }
 
         [JsonProperty("period")]
-        public Period? Period { get; set; }
+        public PropertyAdsGroupPacingPeriod? Period { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }

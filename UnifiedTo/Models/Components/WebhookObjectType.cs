@@ -188,6 +188,10 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType PerformanceReview = new WebhookObjectType("performance_review");
         public static readonly WebhookObjectType PerformanceGoal = new WebhookObjectType("performance_goal");
         public static readonly WebhookObjectType PerformanceFeedback = new WebhookObjectType("performance_feedback");
+        public static readonly WebhookObjectType SocialPost = new WebhookObjectType("social_post");
+        public static readonly WebhookObjectType SocialProfile = new WebhookObjectType("social_profile");
+        public static readonly WebhookObjectType SocialReview = new WebhookObjectType("social_review");
+        public static readonly WebhookObjectType SocialInsight = new WebhookObjectType("social_insight");
 
         private static readonly Dictionary <string, WebhookObjectType> _knownValues =
             new Dictionary <string, WebhookObjectType> ()
@@ -360,7 +364,11 @@ namespace UnifiedTo.Models.Components
                 ["performance_cycle"] = PerformanceCycle,
                 ["performance_review"] = PerformanceReview,
                 ["performance_goal"] = PerformanceGoal,
-                ["performance_feedback"] = PerformanceFeedback
+                ["performance_feedback"] = PerformanceFeedback,
+                ["social_post"] = SocialPost,
+                ["social_profile"] = SocialProfile,
+                ["social_review"] = SocialReview,
+                ["social_insight"] = SocialInsight
             };
 
         private static readonly ConcurrentDictionary<string, WebhookObjectType> _values =

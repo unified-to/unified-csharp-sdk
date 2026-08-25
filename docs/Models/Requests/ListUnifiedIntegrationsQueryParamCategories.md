@@ -47,3 +47,4 @@ var value = ListUnifiedIntegrationsQueryParamCategories.Passthrough;
 | `Datastore`    | datastore      |
 | `Cdp`          | cdp            |
 | `Performance`  | performance    |
+| `Social`       | social         |

@@ -34,6 +34,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=integration_type")]
         public string? IntegrationType { get; set; }
 
+        /// <summary>
+        /// Filter by health. Omit to return all.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=is_healthy")]
+        public bool? IsHealthy { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 

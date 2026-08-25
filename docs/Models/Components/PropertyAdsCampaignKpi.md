@@ -1,0 +1,12 @@
+# PropertyAdsCampaignKpi
+
+
+## Fields
+
+| Field                                                                               | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `AlgorithmId`                                                                       | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Amount`                                                                            | *double*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Percentage`                                                                        | *double*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `StringValue`                                                                       | *string*                                                                            | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `Type`                                                                              | [PropertyAdsCampaignKpiType](../../Models/Components/PropertyAdsCampaignKpiType.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |

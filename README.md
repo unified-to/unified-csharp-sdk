@@ -1166,6 +1166,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveAdsInsertionorder](docs/sdks/insertionorder/README.md#removeadsinsertionorder) - Remove an insertionorder
 * [UpdateAdsInsertionorder](docs/sdks/insertionorder/README.md#updateadsinsertionorder) - Update an insertionorder
 
+### [Insight](docs/sdks/insight/README.md)
+
+* [GetSocialInsight](docs/sdks/insight/README.md#getsocialinsight) - Retrieve an insight
+* [ListSocialInsights](docs/sdks/insight/README.md#listsocialinsights) - List all insights
+
 ### [Instructor](docs/sdks/instructor/README.md)
 
 * [CreateLmsInstructor](docs/sdks/instructor/README.md#createlmsinstructor) - Create an instructor
@@ -1600,11 +1605,22 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveCrmPipeline](docs/sdks/pipeline/README.md#removecrmpipeline) - Remove a pipeline
 * [UpdateCrmPipeline](docs/sdks/pipeline/README.md#updatecrmpipeline) - Update a pipeline
 
+### [Post](docs/sdks/post/README.md)
+
+* [CreateSocialPost](docs/sdks/post/README.md#createsocialpost) - Create a post
+* [GetSocialPost](docs/sdks/post/README.md#getsocialpost) - Retrieve a post
+* [ListSocialPosts](docs/sdks/post/README.md#listsocialposts) - List all posts
+* [PatchSocialPost](docs/sdks/post/README.md#patchsocialpost) - Update a post
+* [RemoveSocialPost](docs/sdks/post/README.md#removesocialpost) - Remove a post
+* [UpdateSocialPost](docs/sdks/post/README.md#updatesocialpost) - Update a post
+
 ### [Profile](docs/sdks/profile/README.md)
 
 * [CreateCdpProfile](docs/sdks/profile/README.md#createcdpprofile) - Create a profile
 * [GetCdpProfile](docs/sdks/profile/README.md#getcdpprofile) - Retrieve a profile
+* [GetSocialProfile](docs/sdks/profile/README.md#getsocialprofile) - Retrieve a profile
 * [ListCdpProfiles](docs/sdks/profile/README.md#listcdpprofiles) - List all profiles
+* [ListSocialProfiles](docs/sdks/profile/README.md#listsocialprofiles) - List all profiles
 * [PatchCdpProfile](docs/sdks/profile/README.md#patchcdpprofile) - Update a profile
 * [RemoveCdpProfile](docs/sdks/profile/README.md#removecdpprofile) - Remove a profile
 * [UpdateCdpProfile](docs/sdks/profile/README.md#updatecdpprofile) - Update a profile
@@ -1780,11 +1796,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [CreateCommerceReview](docs/sdks/review/README.md#createcommercereview) - Create a review
 * [GetCommerceReview](docs/sdks/review/README.md#getcommercereview) - Retrieve a review
 * [GetPerformanceReview](docs/sdks/review/README.md#getperformancereview) - Retrieve a review
+* [GetSocialReview](docs/sdks/review/README.md#getsocialreview) - Retrieve a review
 * [ListCommerceReviews](docs/sdks/review/README.md#listcommercereviews) - List all reviews
 * [ListPerformanceReviews](docs/sdks/review/README.md#listperformancereviews) - List all reviews
+* [ListSocialReviews](docs/sdks/review/README.md#listsocialreviews) - List all reviews
 * [PatchCommerceReview](docs/sdks/review/README.md#patchcommercereview) - Update a review
+* [PatchSocialReview](docs/sdks/review/README.md#patchsocialreview) - Update a review
 * [RemoveCommerceReview](docs/sdks/review/README.md#removecommercereview) - Remove a review
 * [UpdateCommerceReview](docs/sdks/review/README.md#updatecommercereview) - Update a review
+* [UpdateSocialReview](docs/sdks/review/README.md#updatesocialreview) - Update a review
 
 ### [Saleschannel](docs/sdks/saleschannel/README.md)
 
@@ -1907,6 +1927,23 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveSigningSignatory](docs/sdks/signing/README.md#removesigningsignatory) - Remove a signatory
 * [UpdateSigningDocument](docs/sdks/signing/README.md#updatesigningdocument) - Update a document
 * [UpdateSigningSignatory](docs/sdks/signing/README.md#updatesigningsignatory) - Update a signatory
+
+### [Social](docs/sdks/social/README.md)
+
+* [CreateSocialPost](docs/sdks/social/README.md#createsocialpost) - Create a post
+* [GetSocialInsight](docs/sdks/social/README.md#getsocialinsight) - Retrieve an insight
+* [GetSocialPost](docs/sdks/social/README.md#getsocialpost) - Retrieve a post
+* [GetSocialProfile](docs/sdks/social/README.md#getsocialprofile) - Retrieve a profile
+* [GetSocialReview](docs/sdks/social/README.md#getsocialreview) - Retrieve a review
+* [ListSocialInsights](docs/sdks/social/README.md#listsocialinsights) - List all insights
+* [ListSocialPosts](docs/sdks/social/README.md#listsocialposts) - List all posts
+* [ListSocialProfiles](docs/sdks/social/README.md#listsocialprofiles) - List all profiles
+* [ListSocialReviews](docs/sdks/social/README.md#listsocialreviews) - List all reviews
+* [PatchSocialPost](docs/sdks/social/README.md#patchsocialpost) - Update a post
+* [PatchSocialReview](docs/sdks/social/README.md#patchsocialreview) - Update a review
+* [RemoveSocialPost](docs/sdks/social/README.md#removesocialpost) - Remove a post
+* [UpdateSocialPost](docs/sdks/social/README.md#updatesocialpost) - Update a post
+* [UpdateSocialReview](docs/sdks/social/README.md#updatesocialreview) - Update a review
 
 ### [Source](docs/sdks/source/README.md)
 

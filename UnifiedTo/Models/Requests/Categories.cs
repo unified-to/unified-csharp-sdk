@@ -83,6 +83,8 @@ namespace UnifiedTo.Models.Requests
         Cdp,
         [JsonProperty("performance")]
         Performance,
+        [JsonProperty("social")]
+        Social,
     }
 
     public static class CategoriesExtension

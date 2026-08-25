@@ -205,6 +205,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_pipeline_id")]
         public ListPipelineId? ListPipelineId { get; set; }
 
+        [JsonProperty("list_post_id")]
+        public ListPostId? ListPostId { get; set; }
+
         [JsonProperty("list_profile_id")]
         public ListProfileId? ListProfileId { get; set; }
 
@@ -540,6 +543,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_pipeline_id")]
         public VirtualWebhookPipelineId? VirtualWebhookPipelineId { get; set; }
+
+        [JsonProperty("virtual_webhook_post_id")]
+        public VirtualWebhookPostId? VirtualWebhookPostId { get; set; }
 
         [JsonProperty("virtual_webhook_profile_id")]
         public VirtualWebhookProfileId? VirtualWebhookProfileId { get; set; }

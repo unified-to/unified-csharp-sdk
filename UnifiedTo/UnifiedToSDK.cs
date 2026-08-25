@@ -321,6 +321,12 @@ namespace UnifiedTo
 
         public ITemplate Template { get; }
 
+        public ISocial Social { get; }
+
+        public IInsight Insight { get; }
+
+        public IPost Post { get; }
+
         public IStorage Storage { get; }
 
         public IFile File { get; }
@@ -973,6 +979,18 @@ namespace UnifiedTo
         /// </summary>
         public ITemplate Template { get; private set; }
         /// <summary>
+        /// The Social sub-SDK.
+        /// </summary>
+        public ISocial Social { get; private set; }
+        /// <summary>
+        /// The Insight sub-SDK.
+        /// </summary>
+        public IInsight Insight { get; private set; }
+        /// <summary>
+        /// The Post sub-SDK.
+        /// </summary>
+        public IPost Post { get; private set; }
+        /// <summary>
         /// The Storage sub-SDK.
         /// </summary>
         public IStorage Storage { get; private set; }
@@ -1373,6 +1391,12 @@ namespace UnifiedTo
             Signatory = new Signatory(SDKConfiguration);
 
             Template = new Template(SDKConfiguration);
+
+            Social = new Social(SDKConfiguration);
+
+            Insight = new Insight(SDKConfiguration);
+
+            Post = new Post(SDKConfiguration);
 
             Storage = new Storage(SDKConfiguration);
 
@@ -1780,6 +1804,12 @@ namespace UnifiedTo
             Signatory = new Signatory(SDKConfiguration);
 
             Template = new Template(SDKConfiguration);
+
+            Social = new Social(SDKConfiguration);
+
+            Insight = new Insight(SDKConfiguration);
+
+            Post = new Post(SDKConfiguration);
 
             Storage = new Storage(SDKConfiguration);
 

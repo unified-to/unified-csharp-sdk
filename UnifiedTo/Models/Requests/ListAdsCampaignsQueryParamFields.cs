@@ -61,6 +61,8 @@ namespace UnifiedTo.Models.Requests
         HasEuPoliticalAds,
         [JsonProperty("labels")]
         Labels,
+        [JsonProperty("kpi")]
+        Kpi,
         [JsonProperty("raw")]
         Raw,
     }

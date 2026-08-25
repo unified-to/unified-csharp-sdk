@@ -19,16 +19,22 @@ namespace UnifiedTo.Models.Components
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Period : IEquatable<Period>
     {
-        public static readonly Period Unspecified = new Period("UNSPECIFIED");
-        public static readonly Period Daily = new Period("DAILY");
-        public static readonly Period Flight = new Period("FLIGHT");
+        public static readonly Period Day = new Period("DAY");
+        public static readonly Period Week = new Period("WEEK");
+        public static readonly Period Month = new Period("MONTH");
+        public static readonly Period Lifetime = new Period("LIFETIME");
+        public static readonly Period Total = new Period("TOTAL");
+        public static readonly Period Other = new Period("OTHER");
 
         private static readonly Dictionary <string, Period> _knownValues =
             new Dictionary <string, Period> ()
             {
-                ["UNSPECIFIED"] = Unspecified,
-                ["DAILY"] = Daily,
-                ["FLIGHT"] = Flight
+                ["DAY"] = Day,
+                ["WEEK"] = Week,
+                ["MONTH"] = Month,
+                ["LIFETIME"] = Lifetime,
+                ["TOTAL"] = Total,
+                ["OTHER"] = Other
             };
 
         private static readonly ConcurrentDictionary<string, Period> _values =

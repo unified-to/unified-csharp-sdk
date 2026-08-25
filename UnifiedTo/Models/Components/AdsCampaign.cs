@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("kpi")]
+        public PropertyAdsCampaignKpi? Kpi { get; set; }
+
         [JsonProperty("labels")]
         public List<string>? Labels { get; set; }
 

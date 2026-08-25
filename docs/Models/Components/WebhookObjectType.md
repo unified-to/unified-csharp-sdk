@@ -185,3 +185,7 @@ var custom = WebhookObjectType.Of("custom_value");
 | `PerformanceReview`             | performance_review              |
 | `PerformanceGoal`               | performance_goal                |
 | `PerformanceFeedback`           | performance_feedback            |
+| `SocialPost`                    | social_post                     |
+| `SocialProfile`                 | social_profile                  |
+| `SocialReview`                  | social_review                   |
+| `SocialInsight`                 | social_insight                  |

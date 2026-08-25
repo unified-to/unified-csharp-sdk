@@ -6,7 +6,9 @@
 
 * [CreateCdpProfile](#createcdpprofile) - Create a profile
 * [GetCdpProfile](#getcdpprofile) - Retrieve a profile
+* [GetSocialProfile](#getsocialprofile) - Retrieve a profile
 * [ListCdpProfiles](#listcdpprofiles) - List all profiles
+* [ListSocialProfiles](#listsocialprofiles) - List all profiles
 * [PatchCdpProfile](#patchcdpprofile) - Update a profile
 * [RemoveCdpProfile](#removecdpprofile) - Remove a profile
 * [UpdateCdpProfile](#updatecdpprofile) - Update a profile
@@ -95,6 +97,48 @@ var res = await sdk.Profile.GetCdpProfileAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetSocialProfile
+
+Retrieve a profile
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getSocialProfile" method="get" path="/social/{connection_id}/profile/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Profile.GetSocialProfileAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Profile                                                                                                                                |
+| `Fields`                                                                                                                                         | List<[GetSocialProfileQueryParamFields](../../Models/Requests/GetSocialProfileQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetSocialProfileResponse](../../Models/Requests/GetSocialProfileResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListCdpProfiles
 
 List all profiles
@@ -129,6 +173,47 @@ var res = await sdk.Profile.ListCdpProfilesAsync(req);
 ### Response
 
 **[ListCdpProfilesResponse](../../Models/Requests/ListCdpProfilesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListSocialProfiles
+
+List all profiles
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listSocialProfiles" method="get" path="/social/{connection_id}/profile" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListSocialProfilesRequest req = new ListSocialProfilesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Profile.ListSocialProfilesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListSocialProfilesRequest](../../Models/Requests/ListSocialProfilesRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[ListSocialProfilesResponse](../../Models/Requests/ListSocialProfilesResponse.md)**
 
 ### Errors
 

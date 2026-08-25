@@ -47,3 +47,4 @@ var value = QueryParamCategories.Passthrough;
 | `Datastore`    | datastore      |
 | `Cdp`          | cdp            |
 | `Performance`  | performance    |
+| `Social`       | social         |

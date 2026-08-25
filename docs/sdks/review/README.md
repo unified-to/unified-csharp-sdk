@@ -7,11 +7,15 @@
 * [CreateCommerceReview](#createcommercereview) - Create a review
 * [GetCommerceReview](#getcommercereview) - Retrieve a review
 * [GetPerformanceReview](#getperformancereview) - Retrieve a review
+* [GetSocialReview](#getsocialreview) - Retrieve a review
 * [ListCommerceReviews](#listcommercereviews) - List all reviews
 * [ListPerformanceReviews](#listperformancereviews) - List all reviews
+* [ListSocialReviews](#listsocialreviews) - List all reviews
 * [PatchCommerceReview](#patchcommercereview) - Update a review
+* [PatchSocialReview](#patchsocialreview) - Update a review
 * [RemoveCommerceReview](#removecommercereview) - Remove a review
 * [UpdateCommerceReview](#updatecommercereview) - Update a review
+* [UpdateSocialReview](#updatesocialreview) - Update a review
 
 ## CreateCommerceReview
 
@@ -139,6 +143,48 @@ var res = await sdk.Review.GetPerformanceReviewAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetSocialReview
+
+Retrieve a review
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getSocialReview" method="get" path="/social/{connection_id}/review/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Review.GetSocialReviewAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Review                                                                                                                                 |
+| `Fields`                                                                                                                                         | List<[GetSocialReviewQueryParamFields](../../Models/Requests/GetSocialReviewQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetSocialReviewResponse](../../Models/Requests/GetSocialReviewResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListCommerceReviews
 
 List all reviews
@@ -221,6 +267,47 @@ var res = await sdk.Review.ListPerformanceReviewsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListSocialReviews
+
+List all reviews
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listSocialReviews" method="get" path="/social/{connection_id}/review" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListSocialReviewsRequest req = new ListSocialReviewsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Review.ListSocialReviewsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListSocialReviewsRequest](../../Models/Requests/ListSocialReviewsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListSocialReviewsResponse](../../Models/Requests/ListSocialReviewsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchCommerceReview
 
 Update a review
@@ -257,6 +344,49 @@ var res = await sdk.Review.PatchCommerceReviewAsync(req);
 ### Response
 
 **[PatchCommerceReviewResponse](../../Models/Requests/PatchCommerceReviewResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchSocialReview
+
+Update a review
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchSocialReview" method="patch" path="/social/{connection_id}/review/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchSocialReviewRequest req = new PatchSocialReviewRequest() {
+    SocialReview = new SocialReview() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Review.PatchSocialReviewAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchSocialReviewRequest](../../Models/Requests/PatchSocialReviewRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[PatchSocialReviewResponse](../../Models/Requests/PatchSocialReviewResponse.md)**
 
 ### Errors
 
@@ -340,6 +470,49 @@ var res = await sdk.Review.UpdateCommerceReviewAsync(req);
 ### Response
 
 **[UpdateCommerceReviewResponse](../../Models/Requests/UpdateCommerceReviewResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateSocialReview
+
+Update a review
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateSocialReview" method="put" path="/social/{connection_id}/review/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateSocialReviewRequest req = new UpdateSocialReviewRequest() {
+    SocialReview = new SocialReview() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Review.UpdateSocialReviewAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateSocialReviewRequest](../../Models/Requests/UpdateSocialReviewRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[UpdateSocialReviewResponse](../../Models/Requests/UpdateSocialReviewResponse.md)**
 
 ### Errors
 

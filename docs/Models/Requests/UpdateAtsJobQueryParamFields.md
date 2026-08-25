@@ -40,4 +40,5 @@ var value = UpdateAtsJobQueryParamFields.Id;
 | `Skills`                 | skills                   |
 | `Metadata`               | metadata                 |
 | `UserId`                 | user_id                  |
+| `Industry`               | industry                 |
 | `Raw`                    | raw                      |

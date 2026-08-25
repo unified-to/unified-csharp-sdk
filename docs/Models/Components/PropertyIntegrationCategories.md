@@ -50,3 +50,4 @@ var custom = PropertyIntegrationCategories.Of("custom_value");
 | `Datastore`    | datastore      |
 | `Cdp`          | cdp            |
 | `Performance`  | performance    |
+| `Social`       | social         |

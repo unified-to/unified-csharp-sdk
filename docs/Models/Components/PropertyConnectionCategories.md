@@ -50,3 +50,4 @@ var custom = PropertyConnectionCategories.Of("custom_value");
 | `Datastore`    | datastore      |
 | `Cdp`          | cdp            |
 | `Performance`  | performance    |
+| `Social`       | social         |

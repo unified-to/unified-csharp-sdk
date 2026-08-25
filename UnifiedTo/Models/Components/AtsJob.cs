@@ -55,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("industry")]
+        public string? Industry { get; set; }
+
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
 
