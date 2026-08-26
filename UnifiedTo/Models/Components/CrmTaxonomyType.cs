@@ -17,20 +17,20 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Utils;
 
     [JsonConverter(typeof(OpenEnumConverter))]
-    public class CrmPicklistType : IEquatable<CrmPicklistType>
+    public class CrmTaxonomyType : IEquatable<CrmTaxonomyType>
     {
-        public static readonly CrmPicklistType Industry = new CrmPicklistType("INDUSTRY");
+        public static readonly CrmTaxonomyType Industry = new CrmTaxonomyType("INDUSTRY");
 
-        private static readonly Dictionary <string, CrmPicklistType> _knownValues =
-            new Dictionary <string, CrmPicklistType> ()
+        private static readonly Dictionary <string, CrmTaxonomyType> _knownValues =
+            new Dictionary <string, CrmTaxonomyType> ()
             {
                 ["INDUSTRY"] = Industry
             };
 
-        private static readonly ConcurrentDictionary<string, CrmPicklistType> _values =
-            new ConcurrentDictionary<string, CrmPicklistType>(_knownValues);
+        private static readonly ConcurrentDictionary<string, CrmTaxonomyType> _values =
+            new ConcurrentDictionary<string, CrmTaxonomyType>(_knownValues);
 
-        private CrmPicklistType(string value)
+        private CrmTaxonomyType(string value)
         {
             if (value == null) throw new ArgumentNullException(nameof(value));
             Value = value;
@@ -38,15 +38,15 @@ namespace UnifiedTo.Models.Components
 
         public string Value { get; }
 
-        public static CrmPicklistType Of(string value)
+        public static CrmTaxonomyType Of(string value)
         {
-            return _values.GetOrAdd(value, _ => new CrmPicklistType(value));
+            return _values.GetOrAdd(value, _ => new CrmTaxonomyType(value));
         }
 
-        public static implicit operator CrmPicklistType(string value) => Of(value);
-        public static implicit operator string(CrmPicklistType crmpicklisttype) => crmpicklisttype.Value;
+        public static implicit operator CrmTaxonomyType(string value) => Of(value);
+        public static implicit operator string(CrmTaxonomyType crmtaxonomytype) => crmtaxonomytype.Value;
 
-        public static CrmPicklistType[] Values()
+        public static CrmTaxonomyType[] Values()
         {
             return _values.Values.ToArray();
         }
@@ -58,9 +58,9 @@ namespace UnifiedTo.Models.Components
             return _knownValues.ContainsKey(Value);
         }
 
-        public override bool Equals(object? obj) => Equals(obj as CrmPicklistType);
+        public override bool Equals(object? obj) => Equals(obj as CrmTaxonomyType);
 
-        public bool Equals(CrmPicklistType? other)
+        public bool Equals(CrmTaxonomyType? other)
         {
             if (ReferenceEquals(this, other)) return true;
             if (other is null) return false;

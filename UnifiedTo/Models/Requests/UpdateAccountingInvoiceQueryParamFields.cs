@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         Currency,
         [JsonProperty("notes")]
         Notes,
+        [JsonProperty("extended_notes")]
+        ExtendedNotes,
         [JsonProperty("refund_reason")]
         RefundReason,
         [JsonProperty("term")]

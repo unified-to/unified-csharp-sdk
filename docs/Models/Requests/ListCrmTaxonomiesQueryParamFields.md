@@ -1,11 +1,11 @@
-# ListCrmPicklistsQueryParamFields
+# ListCrmTaxonomiesQueryParamFields
 
 ## Example Usage
 
 ```csharp
 using UnifiedTo.Models.Requests;
 
-var value = ListCrmPicklistsQueryParamFields.Id;
+var value = ListCrmTaxonomiesQueryParamFields.Id;
 ```
 
 

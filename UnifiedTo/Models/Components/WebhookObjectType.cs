@@ -79,7 +79,7 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType CrmEvent = new WebhookObjectType("crm_event");
         public static readonly WebhookObjectType CrmLead = new WebhookObjectType("crm_lead");
         public static readonly WebhookObjectType CrmPipeline = new WebhookObjectType("crm_pipeline");
-        public static readonly WebhookObjectType CrmPicklist = new WebhookObjectType("crm_picklist");
+        public static readonly WebhookObjectType CrmTaxonomy = new WebhookObjectType("crm_taxonomy");
         public static readonly WebhookObjectType HrisEmployee = new WebhookObjectType("hris_employee");
         public static readonly WebhookObjectType HrisGroup = new WebhookObjectType("hris_group");
         public static readonly WebhookObjectType HrisPayslip = new WebhookObjectType("hris_payslip");
@@ -256,7 +256,7 @@ namespace UnifiedTo.Models.Components
                 ["crm_event"] = CrmEvent,
                 ["crm_lead"] = CrmLead,
                 ["crm_pipeline"] = CrmPipeline,
-                ["crm_picklist"] = CrmPicklist,
+                ["crm_taxonomy"] = CrmTaxonomy,
                 ["hris_employee"] = HrisEmployee,
                 ["hris_group"] = HrisGroup,
                 ["hris_payslip"] = HrisPayslip,

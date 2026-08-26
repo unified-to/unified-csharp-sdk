@@ -15,7 +15,7 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
-    public class ListCrmPicklistsResponse
+    public class ListCrmTaxonomiesResponse
     {
         /// <summary>
         /// HTTP response content type for this operation.
@@ -25,7 +25,7 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// Successful.
         /// </summary>
-        public List<CrmPicklist>? CrmPicklists { get; set; }
+        public List<CrmTaxonomy>? CrmTaxonomies { get; set; }
 
         /// <summary>
         /// HTTP response status code for this operation.

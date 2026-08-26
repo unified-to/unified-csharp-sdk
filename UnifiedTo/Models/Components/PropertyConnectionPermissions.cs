@@ -131,7 +131,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions CrmLeadWrite = new PropertyConnectionPermissions("crm_lead_write");
         public static readonly PropertyConnectionPermissions CrmPipelineRead = new PropertyConnectionPermissions("crm_pipeline_read");
         public static readonly PropertyConnectionPermissions CrmPipelineWrite = new PropertyConnectionPermissions("crm_pipeline_write");
-        public static readonly PropertyConnectionPermissions CrmPicklistRead = new PropertyConnectionPermissions("crm_picklist_read");
+        public static readonly PropertyConnectionPermissions CrmTaxonomyRead = new PropertyConnectionPermissions("crm_taxonomy_read");
         public static readonly PropertyConnectionPermissions MartechListRead = new PropertyConnectionPermissions("martech_list_read");
         public static readonly PropertyConnectionPermissions MartechListWrite = new PropertyConnectionPermissions("martech_list_write");
         public static readonly PropertyConnectionPermissions MartechMemberRead = new PropertyConnectionPermissions("martech_member_read");
@@ -455,7 +455,7 @@ namespace UnifiedTo.Models.Components
                 ["crm_lead_write"] = CrmLeadWrite,
                 ["crm_pipeline_read"] = CrmPipelineRead,
                 ["crm_pipeline_write"] = CrmPipelineWrite,
-                ["crm_picklist_read"] = CrmPicklistRead,
+                ["crm_taxonomy_read"] = CrmTaxonomyRead,
                 ["martech_list_read"] = MartechListRead,
                 ["martech_list_write"] = MartechListWrite,
                 ["martech_member_read"] = MartechMemberRead,

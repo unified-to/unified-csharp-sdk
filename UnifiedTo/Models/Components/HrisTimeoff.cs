@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_paid")]
         public bool? IsPaid { get; set; }
 
+        [JsonProperty("original_type")]
+        public string? OriginalType { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

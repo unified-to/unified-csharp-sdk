@@ -185,9 +185,9 @@ namespace UnifiedTo
 
         public ILead Lead { get; }
 
-        public IPicklist Picklist { get; }
-
         public IPipeline Pipeline { get; }
+
+        public ITaxonomy Taxonomy { get; }
 
         public IDatastore Datastore { get; }
 
@@ -232,8 +232,6 @@ namespace UnifiedTo
         public IEmployee Employee { get; }
 
         public IPayslip Payslip { get; }
-
-        public ITaxonomy Taxonomy { get; }
 
         public ITimeoff Timeoff { get; }
 
@@ -707,13 +705,13 @@ namespace UnifiedTo
         /// </summary>
         public ILead Lead { get; private set; }
         /// <summary>
-        /// The Picklist sub-SDK.
-        /// </summary>
-        public IPicklist Picklist { get; private set; }
-        /// <summary>
         /// The Pipeline sub-SDK.
         /// </summary>
         public IPipeline Pipeline { get; private set; }
+        /// <summary>
+        /// The Taxonomy sub-SDK.
+        /// </summary>
+        public ITaxonomy Taxonomy { get; private set; }
         /// <summary>
         /// The Datastore sub-SDK.
         /// </summary>
@@ -802,10 +800,6 @@ namespace UnifiedTo
         /// The Payslip sub-SDK.
         /// </summary>
         public IPayslip Payslip { get; private set; }
-        /// <summary>
-        /// The Taxonomy sub-SDK.
-        /// </summary>
-        public ITaxonomy Taxonomy { get; private set; }
         /// <summary>
         /// The Timeoff sub-SDK.
         /// </summary>
@@ -1256,9 +1250,9 @@ namespace UnifiedTo
 
             Lead = new Lead(SDKConfiguration);
 
-            Picklist = new Picklist(SDKConfiguration);
-
             Pipeline = new Pipeline(SDKConfiguration);
+
+            Taxonomy = new Taxonomy(SDKConfiguration);
 
             Datastore = new Datastore(SDKConfiguration);
 
@@ -1303,8 +1297,6 @@ namespace UnifiedTo
             Employee = new Employee(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
-
-            Taxonomy = new Taxonomy(SDKConfiguration);
 
             Timeoff = new Timeoff(SDKConfiguration);
 
@@ -1669,9 +1661,9 @@ namespace UnifiedTo
 
             Lead = new Lead(SDKConfiguration);
 
-            Picklist = new Picklist(SDKConfiguration);
-
             Pipeline = new Pipeline(SDKConfiguration);
+
+            Taxonomy = new Taxonomy(SDKConfiguration);
 
             Datastore = new Datastore(SDKConfiguration);
 
@@ -1716,8 +1708,6 @@ namespace UnifiedTo
             Employee = new Employee(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
-
-            Taxonomy = new Taxonomy(SDKConfiguration);
 
             Timeoff = new Timeoff(SDKConfiguration);
 

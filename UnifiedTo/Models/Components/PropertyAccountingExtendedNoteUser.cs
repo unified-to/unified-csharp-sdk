@@ -10,28 +10,14 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using System;
-    using System.Collections.Concurrent;
-    using System.Collections.Generic;
-    using System.Linq;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
-    public class CrmPicklist
+    public class PropertyAccountingExtendedNoteUser
     {
         [JsonProperty("id")]
-        public string Id { get; set; } = default!;
-
-        [JsonProperty("label")]
-        public string? Label { get; set; }
+        public string? Id { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
-
-        [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
-
-        [JsonProperty("type")]
-        public CrmPicklistType? Type { get; set; }
     }
 }

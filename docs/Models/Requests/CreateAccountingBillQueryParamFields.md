@@ -31,6 +31,7 @@ var value = CreateAccountingBillQueryParamFields.Id;
 | `ContactId`               | contact_id                |
 | `Currency`                | currency                  |
 | `Notes`                   | notes                     |
+| `ExtendedNotes`           | extended_notes            |
 | `RefundReason`            | refund_reason             |
 | `Lineitems`               | lineitems                 |
 | `Status`                  | status                    |

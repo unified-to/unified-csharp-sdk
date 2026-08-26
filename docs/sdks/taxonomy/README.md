@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [GetHrisTaxonomy](#gethristaxonomy) - Retrieve a taxonomy
+* [ListCrmTaxonomies](#listcrmtaxonomies) - List all taxonomies
 * [ListHrisTaxonomies](#listhristaxonomies) - List all taxonomies
 
 ## GetHrisTaxonomy
@@ -42,6 +43,47 @@ var res = await sdk.Taxonomy.GetHrisTaxonomyAsync(
 ### Response
 
 **[GetHrisTaxonomyResponse](../../Models/Requests/GetHrisTaxonomyResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListCrmTaxonomies
+
+List all taxonomies
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listCrmTaxonomies" method="get" path="/crm/{connection_id}/taxonomy" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCrmTaxonomiesRequest req = new ListCrmTaxonomiesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Taxonomy.ListCrmTaxonomiesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListCrmTaxonomiesRequest](../../Models/Requests/ListCrmTaxonomiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListCrmTaxonomiesResponse](../../Models/Requests/ListCrmTaxonomiesResponse.md)**
 
 ### Errors
 

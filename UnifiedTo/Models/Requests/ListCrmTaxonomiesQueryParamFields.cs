@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Requests
     using System;
     using UnifiedTo.Utils;
 
-    public enum ListCrmPicklistsQueryParamFields
+    public enum ListCrmTaxonomiesQueryParamFields
     {
         [JsonProperty("id")]
         Id,
@@ -27,16 +27,16 @@ namespace UnifiedTo.Models.Requests
         Raw,
     }
 
-    public static class ListCrmPicklistsQueryParamFieldsExtension
+    public static class ListCrmTaxonomiesQueryParamFieldsExtension
     {
-        public static string Value(this ListCrmPicklistsQueryParamFields value)
+        public static string Value(this ListCrmTaxonomiesQueryParamFields value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static ListCrmPicklistsQueryParamFields ToEnum(this string value)
+        public static ListCrmTaxonomiesQueryParamFields ToEnum(this string value)
         {
-            foreach(var field in typeof(ListCrmPicklistsQueryParamFields).GetFields())
+            foreach(var field in typeof(ListCrmTaxonomiesQueryParamFields).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -49,14 +49,14 @@ namespace UnifiedTo.Models.Requests
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is ListCrmPicklistsQueryParamFields)
+                    if (enumVal is ListCrmTaxonomiesQueryParamFields)
                     {
-                        return (ListCrmPicklistsQueryParamFields)enumVal;
+                        return (ListCrmTaxonomiesQueryParamFields)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum ListCrmPicklistsQueryParamFields");
+            throw new Exception($"Unknown value {value} for enum ListCrmTaxonomiesQueryParamFields");
         }
     }
 }

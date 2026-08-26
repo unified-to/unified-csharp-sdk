@@ -23,3 +23,4 @@ var custom = HrisTaxonomyType.Of("custom_value");
 | `Certification` | CERTIFICATION   |
 | `Role`          | ROLE            |
 | `Holiday`       | HOLIDAY         |
+| `Leave`         | LEAVE           |

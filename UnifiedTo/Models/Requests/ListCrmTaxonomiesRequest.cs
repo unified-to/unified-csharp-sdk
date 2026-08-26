@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
 
-    public class ListCrmPicklistsRequest
+    public class ListCrmTaxonomiesRequest
     {
         /// <summary>
         /// ID of the connection.
@@ -25,7 +25,7 @@ namespace UnifiedTo.Models.Requests
         /// Fields to return.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<ListCrmPicklistsQueryParamFields>? Fields { get; set; }
+        public List<ListCrmTaxonomiesQueryParamFields>? Fields { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }

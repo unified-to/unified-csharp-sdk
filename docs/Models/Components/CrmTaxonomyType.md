@@ -1,14 +1,14 @@
-# CrmPicklistType
+# CrmTaxonomyType
 
 ## Example Usage
 
 ```csharp
 using UnifiedTo.Models.Components;
 
-var value = CrmPicklistType.Industry;
+var value = CrmTaxonomyType.Industry;
 
 // Open enum: use .Of() to create instances from custom string values
-var custom = CrmPicklistType.Of("custom_value");
+var custom = CrmTaxonomyType.Of("custom_value");
 ```
 
 

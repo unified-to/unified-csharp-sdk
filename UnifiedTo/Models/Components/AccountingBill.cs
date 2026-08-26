@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        [JsonProperty("extended_notes")]
+        public List<AccountingExtendedNote>? ExtendedNotes { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

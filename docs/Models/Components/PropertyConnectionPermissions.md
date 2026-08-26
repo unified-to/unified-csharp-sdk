@@ -128,7 +128,7 @@ var custom = PropertyConnectionPermissions.Of("custom_value");
 | `CrmLeadWrite`                       | crm_lead_write                       |
 | `CrmPipelineRead`                    | crm_pipeline_read                    |
 | `CrmPipelineWrite`                   | crm_pipeline_write                   |
-| `CrmPicklistRead`                    | crm_picklist_read                    |
+| `CrmTaxonomyRead`                    | crm_taxonomy_read                    |
 | `MartechListRead`                    | martech_list_read                    |
 | `MartechListWrite`                   | martech_list_write                   |
 | `MartechMemberRead`                  | martech_member_read                  |

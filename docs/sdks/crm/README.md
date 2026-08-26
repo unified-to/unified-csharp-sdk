@@ -21,8 +21,8 @@
 * [ListCrmDeals](#listcrmdeals) - List all deals
 * [ListCrmEvents](#listcrmevents) - List all events
 * [ListCrmLeads](#listcrmleads) - List all leads
-* [ListCrmPicklists](#listcrmpicklists) - List all picklists
 * [ListCrmPipelines](#listcrmpipelines) - List all pipelines
+* [ListCrmTaxonomies](#listcrmtaxonomies) - List all taxonomies
 * [PatchCrmCompany](#patchcrmcompany) - Update a company
 * [PatchCrmContact](#patchcrmcontact) - Update a contact
 * [PatchCrmDeal](#patchcrmdeal) - Update a deal
@@ -751,47 +751,6 @@ var res = await sdk.Crm.ListCrmLeadsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCrmPicklists
-
-List all picklists
-
-### Example Usage
-
-<!-- UsageSnippet language="csharp" operationID="listCrmPicklists" method="get" path="/crm/{connection_id}/picklist" -->
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListCrmPicklistsRequest req = new ListCrmPicklistsRequest() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Crm.ListCrmPicklistsAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListCrmPicklistsRequest](../../Models/Requests/ListCrmPicklistsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
-
-### Response
-
-**[ListCrmPicklistsResponse](../../Models/Requests/ListCrmPicklistsResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
 ## ListCrmPipelines
 
 List all pipelines
@@ -826,6 +785,47 @@ var res = await sdk.Crm.ListCrmPipelinesAsync(req);
 ### Response
 
 **[ListCrmPipelinesResponse](../../Models/Requests/ListCrmPipelinesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListCrmTaxonomies
+
+List all taxonomies
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listCrmTaxonomies" method="get" path="/crm/{connection_id}/taxonomy" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCrmTaxonomiesRequest req = new ListCrmTaxonomiesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Crm.ListCrmTaxonomiesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListCrmTaxonomiesRequest](../../Models/Requests/ListCrmTaxonomiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListCrmTaxonomiesResponse](../../Models/Requests/ListCrmTaxonomiesResponse.md)**
 
 ### Errors
 

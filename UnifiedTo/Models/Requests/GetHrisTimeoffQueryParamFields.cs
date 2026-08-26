@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         Comments,
         [JsonProperty("reason")]
         Reason,
+        [JsonProperty("original_type")]
+        OriginalType,
         [JsonProperty("type")]
         Type,
         [JsonProperty("duration")]

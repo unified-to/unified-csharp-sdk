@@ -26,6 +26,7 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisTaxonomyType Certification = new HrisTaxonomyType("CERTIFICATION");
         public static readonly HrisTaxonomyType Role = new HrisTaxonomyType("ROLE");
         public static readonly HrisTaxonomyType Holiday = new HrisTaxonomyType("HOLIDAY");
+        public static readonly HrisTaxonomyType Leave = new HrisTaxonomyType("LEAVE");
 
         private static readonly Dictionary <string, HrisTaxonomyType> _knownValues =
             new Dictionary <string, HrisTaxonomyType> ()
@@ -36,7 +37,8 @@ namespace UnifiedTo.Models.Components
                 ["ABILITY"] = Ability,
                 ["CERTIFICATION"] = Certification,
                 ["ROLE"] = Role,
-                ["HOLIDAY"] = Holiday
+                ["HOLIDAY"] = Holiday,
+                ["LEAVE"] = Leave
             };
 
         private static readonly ConcurrentDictionary<string, HrisTaxonomyType> _values =
