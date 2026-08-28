@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 717e539aa15792c3d978cbdc61f6bfd1
+  docChecksum: 3ffdf53db69180f3a9706188fe5b0bca
   docVersion: "1.0"
   speakeasyVersion: 1.791.4
   generationVersion: 2.926.8
-  releaseVersion: 0.131.25
-  configChecksum: a5ef755eef2a2e634eae184690e565bf
+  releaseVersion: 0.131.26
+  configChecksum: 8397f3dc9b84e217b3c4fc72f2ffb58c
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: d4fd6c49-6ab3-49a6-9540-02540b9e673a
-  pristine_commit_hash: 133e694e1ffd9a0721c479554af13b0d0f1d1bab
-  pristine_tree_hash: 7063359ef80be8ce9edcaffb925c64529fe2c37a
+  generation_id: 45aca37b-34e6-4532-92d6-dcdfdb5792a2
+  pristine_commit_hash: cfc4422354f79b19bd6dbf35e426a979ed582dbc
+  pristine_tree_hash: c21c9af352b76a658c7858c079e04bac24f574db
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -98,8 +98,8 @@ trackedFiles:
     pristine_git_object: c3efeb9d6fd0ff64cfac8c08bb262a52150c9d80
   UnifiedTo/Assessment.cs:
     id: fa51c06a01f2
-    last_write_checksum: sha1:1320f5b8cf10dd5800c9bcca3351f1f02b8fcc94
-    pristine_git_object: 460fd79c4c9a74cde1ef3843862dd1b094f48459
+    last_write_checksum: sha1:bac49164fea5c845f01c4b0272c3c58913e13604
+    pristine_git_object: 273f0f0a5e3fafc4dc234070af7da2d6d1b9463d
   UnifiedTo/Asset.cs:
     id: 7775c2f61a34
     last_write_checksum: sha1:55182ac5ca827acf46a42be1bb3d593a61e78c09
@@ -5324,6 +5324,18 @@ trackedFiles:
     id: b2cf0572c2cc
     last_write_checksum: sha1:a3253d0461d133ed042396b3dc29fd87bb684bdf
     pristine_git_object: 13d058b3b6dfcf7976da87d13c2046af5d2d2a10
+  UnifiedTo/Models/Requests/CreateAssessmentOrderQueryParamFields.cs:
+    id: a8ef258d19ec
+    last_write_checksum: sha1:9fe713d61b8f88eb63a76cba3601d7bcb746d78c
+    pristine_git_object: 400b6d626c79dbc6af66391184626c354406ff62
+  UnifiedTo/Models/Requests/CreateAssessmentOrderRequest.cs:
+    id: 577ff3930cf2
+    last_write_checksum: sha1:1514e00c21d1a53922242b58eb8d39f9ca148ee0
+    pristine_git_object: 8f3fcab058abc37511a17f67583630726a6b32fd
+  UnifiedTo/Models/Requests/CreateAssessmentOrderResponse.cs:
+    id: 1efd1ab170f7
+    last_write_checksum: sha1:4880b42d36331484f89b352ea64845a2c2e0f343
+    pristine_git_object: a1d12b4d0f18ea9f6aff910c03347b2adf28c113
   UnifiedTo/Models/Requests/CreateAssessmentPackageRequest.cs:
     id: bd29d4c8a9a5
     last_write_checksum: sha1:fbd15b718192f3edfa4ec9f35d61ad23c428a625
@@ -7004,6 +7016,18 @@ trackedFiles:
     id: e120fab25952
     last_write_checksum: sha1:0da765e6305fe59f6a98d9b6abc668dec0d6539b
     pristine_git_object: e936c9058444dfbb1f7ac66632201f38d6d227fe
+  UnifiedTo/Models/Requests/GetAssessmentOrderQueryParamFields.cs:
+    id: 0512dc0595de
+    last_write_checksum: sha1:e28d0acebdc63898b81592ef2950f27267c40892
+    pristine_git_object: 5703ef1b2a9fcf1c5c0041e23853c4cda591d33c
+  UnifiedTo/Models/Requests/GetAssessmentOrderRequest.cs:
+    id: 1cced386ffad
+    last_write_checksum: sha1:fcaa3c2353df4bfe369c1acc2c6b10c211f233b0
+    pristine_git_object: bb58d6d667598e30377bceeff2db8b29dfa012e6
+  UnifiedTo/Models/Requests/GetAssessmentOrderResponse.cs:
+    id: 92200b624882
+    last_write_checksum: sha1:9f88feca0e99e70998a62ed187c3a136d202b8d3
+    pristine_git_object: 37395b5dde747700dba935f8b0739b39439ee10d
   UnifiedTo/Models/Requests/GetAssessmentPackageRequest.cs:
     id: 9a54fce46730
     last_write_checksum: sha1:398a0e3f7f3905ffd1c6d1868f81b8474f7c9e3e
@@ -14538,8 +14562,8 @@ trackedFiles:
     pristine_git_object: 282adba7ade53606152fa5482ffee976761b0ff3
   UnifiedTo/Order.cs:
     id: cd40bcbbbd2d
-    last_write_checksum: sha1:26d93e32363cf9dfc43ff1c33b857977ba811cbe
-    pristine_git_object: b3196a999f4e4b97dfdc3733390d70ad4991ccac
+    last_write_checksum: sha1:bfe75c333e84ee0e8864de783ef1f196b3b758e4
+    pristine_git_object: 207c0bfb9157f10b4e183108e68db2cbc59f47b2
   UnifiedTo/Organization.cs:
     id: 9e552f6038c0
     last_write_checksum: sha1:1f2cd38f5ef8748f29457f2e96bd323cbc277eb9
@@ -14670,8 +14694,8 @@ trackedFiles:
     pristine_git_object: ea70369f535eb971fa2dbf09a2fe13b2e6b49b71
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:0fa7ff8105076cf2b7abef62115f729ea0a37769
-    pristine_git_object: 7b5d598990b1179b0d7681475dbe867e63709e55
+    last_write_checksum: sha1:8965eea184c908627fc36d37a5285a7ea9d5d90e
+    pristine_git_object: c5cbc9f7a3c0aea46cceaafad7fd7350898a4049
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -14810,8 +14834,8 @@ trackedFiles:
     pristine_git_object: cc2264209a62e6f816b66ae551410531673f721f
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:6dfa3a61b053eb1b0e98db26f72c7c4e38edd966
-    pristine_git_object: 202f0caab402e114bec807f3435a2c450dc2d981
+    last_write_checksum: sha1:d29f3a4c72236bffd99997dc2d88f4b8e56cbf81
+    pristine_git_object: 643e41c91dfe6a49f38ebc8f11cc361195743fa2
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:5b50b2c9ebc98732a7130ee8f497d280ea5beabd
@@ -14830,8 +14854,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:0f46949fdad6cfc29368d99f027a72623a1280ab
-    pristine_git_object: 7fef9a1b6a9dcd1c3e06c5d281765aad05c005e5
+    last_write_checksum: sha1:aae8757c6cec8c71a6bfcac4c934b54f4703a5cc
+    pristine_git_object: 8deaa0824489b505bec1efe2a131b51622628eb8
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -19776,6 +19800,18 @@ trackedFiles:
     id: 3f893b92d173
     last_write_checksum: sha1:f8060aedba731090a281ea13d72f9373c2c7b88a
     pristine_git_object: 6f3a9433cac6c76c84ab5af087c6c0154abe9795
+  docs/Models/Requests/CreateAssessmentOrderQueryParamFields.md:
+    id: 6f5ec8843e3d
+    last_write_checksum: sha1:6418a0803c30a71abb0e62882cb317dd0a775282
+    pristine_git_object: cc5c468e14715ac1c549a076fcd804658b4d7eab
+  docs/Models/Requests/CreateAssessmentOrderRequest.md:
+    id: 40103b631fb2
+    last_write_checksum: sha1:17bcae0a60d60cf9c9dc3018239626abea36d0a3
+    pristine_git_object: 4afab8c24a7e93e4e5ed421ed41bf622af6ca364
+  docs/Models/Requests/CreateAssessmentOrderResponse.md:
+    id: 943dcf1bfe2f
+    last_write_checksum: sha1:651761b06087656ddd2f7b1befd6c1c4f1105788
+    pristine_git_object: 6b779b18d87035e88bf37a7b99858be1c9bf4f8d
   docs/Models/Requests/CreateAssessmentPackageRequest.md:
     id: 0a459e134b32
     last_write_checksum: sha1:18c519583783013acbdfebdd3774c150b1f92605
@@ -21456,6 +21492,18 @@ trackedFiles:
     id: e9c6ba0546ed
     last_write_checksum: sha1:f4f1fea3665f1f7c5e3b4442da84e79c4538a2fd
     pristine_git_object: 92b3449241abf07f7bb7807aef215ac432ae6e3b
+  docs/Models/Requests/GetAssessmentOrderQueryParamFields.md:
+    id: 48c3aa5ad4ec
+    last_write_checksum: sha1:db898393ff3b71bfc896242dbdc03fb3485ea9fd
+    pristine_git_object: 9cbaacf353bd74836a87d36f73f277377c523874
+  docs/Models/Requests/GetAssessmentOrderRequest.md:
+    id: 06415b3eede7
+    last_write_checksum: sha1:95e945e9db56b2ab320365699fe6a22c5fd44e7e
+    pristine_git_object: b627be3d593d240c40fa67df59306d0679fd630b
+  docs/Models/Requests/GetAssessmentOrderResponse.md:
+    id: e664d8b8dcd9
+    last_write_checksum: sha1:a9ec41ace7607df71e7809a5988195acbece252a
+    pristine_git_object: 00f589a005c948cb5388c6eb093b13cd78a872d7
   docs/Models/Requests/GetAssessmentPackageRequest.md:
     id: 6ddafbd634c0
     last_write_checksum: sha1:db0289bb14117e8c468f9910b3078d390aab7663
@@ -29030,8 +29078,8 @@ trackedFiles:
     pristine_git_object: 27181fd1e1f76675845ccbf2a9d71663535576cf
   docs/sdks/assessment/README.md:
     id: 54c8061fbed1
-    last_write_checksum: sha1:c7f24cbc43fcdceb54508e05b61f9b35b0bd1f58
-    pristine_git_object: fd64b72f81e1f5b58a806ff76706f49fbf89fcec
+    last_write_checksum: sha1:322dd0edd45ae33235a059d71572583031a072c3
+    pristine_git_object: 2939a47517a8b8f41adac12935c6a10c16d2e6f9
   docs/sdks/asset/README.md:
     id: aca68248e4fc
     last_write_checksum: sha1:e61f00736a7c06da14174dbd992494f852b4cd73
@@ -29386,8 +29434,8 @@ trackedFiles:
     pristine_git_object: ba4ad85e96e9122bb5e5303392457cc14f0cf4ac
   docs/sdks/order/README.md:
     id: 9463f6b17ea6
-    last_write_checksum: sha1:4ea22f313a42abc5ae83697a7ba98d6a736c551c
-    pristine_git_object: b33092222b86724a0de913501db08415475429da
+    last_write_checksum: sha1:a796b2510913660980a9510e0eb7ea093398e0df
+    pristine_git_object: 64ed84388edf12bee8540feabef495eadb0a6b62
   docs/sdks/organization/README.md:
     id: 69e4232b8432
     last_write_checksum: sha1:73e3a9cbc8037edd7762f13b63dace7f3741bfb0
@@ -43760,9 +43808,33 @@ examples:
       responses:
         "200":
           application/json: [{"id": "<id>"}]
+  createAssessmentOrder:
+    speakeasy-default-create-assessment-order:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {"connection_id": "<id>", "workspace_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"connection_id": "<id>", "workspace_id": "<id>"}
+  getAssessmentOrder:
+    speakeasy-default-get-assessment-order:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"connection_id": "<id>", "workspace_id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed** (Breaking ⚠️)\n  *  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed** (Breaking ⚠️)\n  *  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].ObjectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed** (Breaking ⚠️)\n  *  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed** (Breaking ⚠️)\n  *  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed** (Breaking ⚠️)\n  *  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].ObjectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType` **Changed** (Breaking ⚠️)\n  *  `response.objectType` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Bill.CreateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Invoice.CreateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Invoice.PatchAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Invoice.UpdateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Hris.CreateHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Hris.GetHrisTaxonomy()`:  `response.type.Enum(leave)` **Added**\n* `UnifiedTo.Hris.GetHrisTimeoff()`: \n  *  `request.fields` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Hris.ListHrisTaxonomies()`:  `response.[].Type.Enum(leave)` **Added**\n* `UnifiedTo.Hris.ListHrisTimeoffs()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].OriginalType` **Added**\n* `UnifiedTo.Hris.PatchHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Hris.UpdateHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Taxonomy.GetHrisTaxonomy()`:  `response.type.Enum(leave)` **Added**\n* `UnifiedTo.Taxonomy.ListHrisTaxonomies()`:  `response.[].Type.Enum(leave)` **Added**\n* `UnifiedTo.Timeoff.CreateHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Timeoff.GetHrisTimeoff()`: \n  *  `request.fields` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Timeoff.ListHrisTimeoffs()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].OriginalType` **Added**\n* `UnifiedTo.Timeoff.PatchHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Timeoff.UpdateHrisTimeoff()`: \n  *  `request` **Changed**\n  *  `response.originalType` **Added**\n* `UnifiedTo.Invoice.GetAccountingInvoice()`: \n  *  `request.fields` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Invoice.ListAccountingInvoices()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].ExtendedNotes` **Added**\n* `UnifiedTo.Bill.UpdateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Bill.PatchAccountingBill()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Bill.ListAccountingBills()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].ExtendedNotes` **Added**\n* `UnifiedTo.Bill.GetAccountingBill()`: \n  *  `request.fields` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Crm.ListCrmTaxonomies()`: **Added**\n* `UnifiedTo.Accounting.UpdateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Accounting.PatchAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Accounting.PatchAccountingBill()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Accounting.ListAccountingInvoices()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].ExtendedNotes` **Added**\n* `UnifiedTo.Accounting.ListAccountingBills()`: \n  *  `request.Fields` **Changed**\n  *  `response.[].ExtendedNotes` **Added**\n* `UnifiedTo.Accounting.GetAccountingInvoice()`: \n  *  `request.fields` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Accounting.GetAccountingBill()`: \n  *  `request.fields` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Accounting.CreateAccountingInvoice()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Accounting.CreateAccountingBill()`: \n  *  `request` **Changed**\n  *  `response.extendedNotes` **Added**\n* `UnifiedTo.Picklist.ListCrmPicklists()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Crm.ListCrmPicklists()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Taxonomy.ListCrmTaxonomies()`: **Added**\n"
+releaseNotes: |
+  ## Csharp SDK Changes:
+  * `UnifiedTo.Order.CreateAssessmentOrder()`: **Added**
+  * `UnifiedTo.Order.GetAssessmentOrder()`: **Added**
+  * `UnifiedTo.Assessment.CreateAssessmentOrder()`: **Added**
+  * `UnifiedTo.Assessment.GetAssessmentOrder()`: **Added**
 generatedFiles:
   - .gitattributes
   - NUGET.md
