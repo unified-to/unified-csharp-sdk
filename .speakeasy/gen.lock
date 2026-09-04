@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3ffdf53db69180f3a9706188fe5b0bca
+  docChecksum: 5cd3b024de4650685a1ee9ef777ba37a
   docVersion: "1.0"
   speakeasyVersion: 1.791.4
   generationVersion: 2.926.8
-  releaseVersion: 0.131.26
-  configChecksum: 8397f3dc9b84e217b3c4fc72f2ffb58c
+  releaseVersion: 0.131.27
+  configChecksum: 41bd2ba3158ea4cbe36dc74a76115990
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: 45aca37b-34e6-4532-92d6-dcdfdb5792a2
-  pristine_commit_hash: cfc4422354f79b19bd6dbf35e426a979ed582dbc
-  pristine_tree_hash: c21c9af352b76a658c7858c079e04bac24f574db
+  generation_id: 8465f2e1-cb90-4a0a-b3d7-60f3b6171c02
+  pristine_commit_hash: 962c55e2a06fef58a487a44dd6371d7d336a5218
+  pristine_tree_hash: 0d09b68aade2baeefaa777d5b97383e1e65446f2
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -346,8 +346,8 @@ trackedFiles:
     pristine_git_object: 7d3596a3d49fe01f891c7f5c8ef35931eb5bc669
   UnifiedTo/Hris.cs:
     id: ee509f497b6d
-    last_write_checksum: sha1:22a532fef21795deee5170fe03fa24b0600343d0
-    pristine_git_object: 3953d3b317c923e035be497d524cd0762ccbeca0
+    last_write_checksum: sha1:04ca87fdb7d5aca95c53182a3f17b6b43554b8ed
+    pristine_git_object: 7b67a9d316b2e4da7e0f0fe3827f0e7245899e93
   UnifiedTo/Insertionorder.cs:
     id: 2e639fd08882
     last_write_checksum: sha1:5ba10d7b970c97a872da3a6a89239e85e46412c7
@@ -2130,8 +2130,8 @@ trackedFiles:
     pristine_git_object: d68b0785a8349fab29e8fc6221514311b3d18f09
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:b4166d9fc8f37e704a4f005adc49e9dc60d7fe52
-    pristine_git_object: 549d21de7d5502591b6a82f0eb4abce90d683a88
+    last_write_checksum: sha1:50b38e0a87a32af0922c0069611ff2f125f40614
+    pristine_git_object: 2e550913712b13cdb42924ba55f8601c22c0e909
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
     last_write_checksum: sha1:4526a6f20fd90c5155165f4373571d7ca5fd731a
@@ -2212,6 +2212,10 @@ trackedFiles:
     id: b04c011fb50a
     last_write_checksum: sha1:b9729fb1c669135ca97374a161b8925f729e39ee
     pristine_git_object: 88fd52ff8b873d8608098715db2101dc1bc8f89d
+  UnifiedTo/Models/Components/ListApproverUserId.cs:
+    id: 9261aeb9ecd2
+    last_write_checksum: sha1:93540a1b0c71354f620ed66518f74e886bdc7faa
+    pristine_git_object: ba49ed7fafef632b7bcc25b76babd07523978466
   UnifiedTo/Models/Components/ListAssignedUserId.cs:
     id: 2ae07970f76d
     last_write_checksum: sha1:f2540bbb30959c26aecd63950e01994814dc4211
@@ -4672,6 +4676,10 @@ trackedFiles:
     id: b79ab3c77d2f
     last_write_checksum: sha1:932539bbdf60298f9d72a8c40efd87bf708aa728
     pristine_git_object: d3a1347ed1f8f22f16bb1b9338dac4ab1d86c25b
+  UnifiedTo/Models/Components/VirtualWebhookApproverUserId.cs:
+    id: 1b166f99568d
+    last_write_checksum: sha1:2e90f8eed7279a840c426f4e00ae7beea7d8fa7d
+    pristine_git_object: 3f605dd5ef42b01251b54c40425be509847230e2
   UnifiedTo/Models/Components/VirtualWebhookAssignedUserId.cs:
     id: 625b5c455360
     last_write_checksum: sha1:f2504330184edfc8942a1166faa37c1ec7f70cbb
@@ -5932,6 +5940,18 @@ trackedFiles:
     id: 6b19ddf85587
     last_write_checksum: sha1:58f69ed02f35f5a6f98f61f542428d1f6dc01c75
     pristine_git_object: f9c6abb66e370191502f484302e528683c51f9ef
+  UnifiedTo/Models/Requests/CreateHrisTaxonomyQueryParamFields.cs:
+    id: c55d0e36f92f
+    last_write_checksum: sha1:7dbbf38de5d8e8f1b65eb424929185594b89d5d9
+    pristine_git_object: 89d528621093b4e0bf21945d6f4d8a74a916b080
+  UnifiedTo/Models/Requests/CreateHrisTaxonomyRequest.cs:
+    id: 43e0cb994b71
+    last_write_checksum: sha1:8fc097c1247115851f63054237ee700395faa758
+    pristine_git_object: 7d2b3bedfb02c43a7bb733feb385427317deb13f
+  UnifiedTo/Models/Requests/CreateHrisTaxonomyResponse.cs:
+    id: 7ab318115e3d
+    last_write_checksum: sha1:eee20a7f89375c8ff24e94c92bdb0ae19986f7c0
+    pristine_git_object: d5c31683f4cfd81dd35b6fcbb1aebbbc3aee8ec3
   UnifiedTo/Models/Requests/CreateHrisTimeoffQueryParamFields.cs:
     id: 89f742424607
     last_write_checksum: sha1:4eb28fdfa80eca1db17fe356751f564888106e1e
@@ -8622,8 +8642,8 @@ trackedFiles:
     pristine_git_object: 592e725e06481e6f1b74ee175c9d1cd418bf0293
   UnifiedTo/Models/Requests/ListAccountingExpensesRequest.cs:
     id: 13cae24046f9
-    last_write_checksum: sha1:cd19d4269135ba01d4a2b0f33ab8ae7d096b1f6e
-    pristine_git_object: 8f8f627bb205bba47c13677c5186cdf60c294ea3
+    last_write_checksum: sha1:71e58d51dd11fb02f0a668fbd5eef87186e955d4
+    pristine_git_object: 66ff932c0d261ea7c16fbeb7d7d02c1f4b72d85e
   UnifiedTo/Models/Requests/ListAccountingExpensesResponse.cs:
     id: 0d7780bbe143
     last_write_checksum: sha1:b0062d2934541153574adfeacfb8a2f550b98482
@@ -14694,8 +14714,8 @@ trackedFiles:
     pristine_git_object: ea70369f535eb971fa2dbf09a2fe13b2e6b49b71
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:8965eea184c908627fc36d37a5285a7ea9d5d90e
-    pristine_git_object: c5cbc9f7a3c0aea46cceaafad7fd7350898a4049
+    last_write_checksum: sha1:ca6c2583d0038bfcf7d60d2c67346ecc3f5d9c89
+    pristine_git_object: 87d0cb40967d76587b327f882cbde45a659bc455
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -14786,8 +14806,8 @@ trackedFiles:
     pristine_git_object: f62d4eaa87b25b644e3ecb67e64c8ec368f10d0e
   UnifiedTo/Taxonomy.cs:
     id: 798e69f98cb7
-    last_write_checksum: sha1:8523f04d5d7dcf15054cfe6fdf292d0eb47c8e06
-    pristine_git_object: b82367519dc48507830141e67d265fad2b712476
+    last_write_checksum: sha1:c079a0fceedae197e0aa557ee504809fb1d2ccaa
+    pristine_git_object: eeaa24266d31e609ab8b06d29cdfe7f3be810be4
   UnifiedTo/Taxrate.cs:
     id: f72339d245f3
     last_write_checksum: sha1:21db6fe7c57131dfdeb8cb2c7c17a83f66d976a9
@@ -14834,8 +14854,8 @@ trackedFiles:
     pristine_git_object: cc2264209a62e6f816b66ae551410531673f721f
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:d29f3a4c72236bffd99997dc2d88f4b8e56cbf81
-    pristine_git_object: 643e41c91dfe6a49f38ebc8f11cc361195743fa2
+    last_write_checksum: sha1:52ea9650c426654cd35f5a75681cce0faba8485a
+    pristine_git_object: cd31716a6020cf4546aeb8b5957dbbe11b1337a3
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:5b50b2c9ebc98732a7130ee8f497d280ea5beabd
@@ -14854,8 +14874,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:aae8757c6cec8c71a6bfcac4c934b54f4703a5cc
-    pristine_git_object: 8deaa0824489b505bec1efe2a131b51622628eb8
+    last_write_checksum: sha1:97606890ee64edee4553e925fa1141ff199dcf5b
+    pristine_git_object: 8efc009aa74ef6e793d9d5e88890a2f16fb8aedc
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -16618,8 +16638,8 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:6ac70c7bfeae12fdf555873d78aa7e22d7ec87f7
-    pristine_git_object: 103bde7d3781d7eedf3617b489fc31d531f3ad21
+    last_write_checksum: sha1:9a461a82b49ad41326dbf66b26b75ecb4f92620a
+    pristine_git_object: ed9827ad6f46faddf625c64cfcaa2ee1811420aa
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
     last_write_checksum: sha1:d0dadc493d09c6acf2d90610e9bb0e00d6437c1a
@@ -16700,6 +16720,10 @@ trackedFiles:
     id: 7de654931a11
     last_write_checksum: sha1:342177ead3bde2ad13162945c0cf728cc68ef90f
     pristine_git_object: 4627b1b4a9799bd99647b380fbf29c3e94ad9396
+  docs/Models/Components/ListApproverUserId.md:
+    id: 2452ba27582b
+    last_write_checksum: sha1:52532edfd6bdd0fff887ba68e73c0abf0d81b001
+    pristine_git_object: f12c3a7e28f5b2c50e7b9341489e1ee93ed7e9cc
   docs/Models/Components/ListAssignedUserId.md:
     id: 07726de7ea51
     last_write_checksum: sha1:90ecdb736fecfb71414f3292226d696b7a3c47dc
@@ -19160,6 +19184,10 @@ trackedFiles:
     id: 20f3e256dbfc
     last_write_checksum: sha1:8cc8c22fb08fda768b527116c6be323f117da78f
     pristine_git_object: 96003d864532c714e4af6a41beb3b9e3db44aa01
+  docs/Models/Components/VirtualWebhookApproverUserId.md:
+    id: 1f6ed20f90f9
+    last_write_checksum: sha1:df694158bffcc4233a16c0231c3fea090b91014a
+    pristine_git_object: 6e0b5ffa1531c5c6e894688bc2d4415290d3b516
   docs/Models/Components/VirtualWebhookAssignedUserId.md:
     id: 944bacd5bc2a
     last_write_checksum: sha1:871ca120caadd4c69c5262a35883bd2a61425007
@@ -20408,6 +20436,18 @@ trackedFiles:
     id: 3c26bc8d2b7d
     last_write_checksum: sha1:2ed6da1ce81ce6647cefc4cc63cb762730307809
     pristine_git_object: e59840b4820048017c0564db0195561ba9a50cd3
+  docs/Models/Requests/CreateHrisTaxonomyQueryParamFields.md:
+    id: da9203b6a997
+    last_write_checksum: sha1:e9ecb66f13373953d5a265d9674e32b15b61a0fd
+    pristine_git_object: 8009b0aa8813e3c2510960ca5884718e76b7587e
+  docs/Models/Requests/CreateHrisTaxonomyRequest.md:
+    id: 1d2a8468fa15
+    last_write_checksum: sha1:63b492fd80f909457114d39cbe583123edc51483
+    pristine_git_object: d4c9178d1bc008fa37c7d8af3ce5f3e95031b72d
+  docs/Models/Requests/CreateHrisTaxonomyResponse.md:
+    id: 525cb9a4a709
+    last_write_checksum: sha1:2a73cab76933188a8a1285b94f534bc575e67976
+    pristine_git_object: 9fc45ac49c57becd2ccd414894e9e092a5857d5e
   docs/Models/Requests/CreateHrisTimeoffQueryParamFields.md:
     id: 2300d3288714
     last_write_checksum: sha1:5078c72c114f9fb789c330e264b86f5cc6a3645e
@@ -23098,8 +23138,8 @@ trackedFiles:
     pristine_git_object: 02a0c56c8e94a717a9fdf6c1adb055b8a48ee3f6
   docs/Models/Requests/ListAccountingExpensesRequest.md:
     id: 5b99b21b3870
-    last_write_checksum: sha1:cdb052c4fcc7d69c218e1d5077fee61ee1923812
-    pristine_git_object: f711e791d50b71d5dd6051e6f86814ffa9e500d0
+    last_write_checksum: sha1:8e6eeff2e8bc9201d8b49b8948527af8b21857ab
+    pristine_git_object: 6d514e4bb756bb290552cd99815bb605e0dbb8f6
   docs/Models/Requests/ListAccountingExpensesResponse.md:
     id: a160c66c1ba4
     last_write_checksum: sha1:ba31da8f3b8b6b7741137ca19c43637cb0a86631
@@ -29318,8 +29358,8 @@ trackedFiles:
     pristine_git_object: 1f56be8f37afd9040ad4021ffd6beecd79138bff
   docs/sdks/hris/README.md:
     id: 0baa868a038c
-    last_write_checksum: sha1:5c6dab995aa39fc6b4b90ab51a8535f128fd676e
-    pristine_git_object: f208753a02f2d1771d0afbff6d6d7261a857cd80
+    last_write_checksum: sha1:a434f8dae802658cde903c473cee9ef8fd20e27b
+    pristine_git_object: 7031fab71d6c62f6f12d76c690ffa76a0742c80b
   docs/sdks/insertionorder/README.md:
     id: 72e4049753b2
     last_write_checksum: sha1:c2e53f7d77df988a17ffc0260b8765d886bf1ff6
@@ -29654,8 +29694,8 @@ trackedFiles:
     pristine_git_object: 91416671fb34d3142867b22c24152083828516e5
   docs/sdks/taxonomy/README.md:
     id: 1ec2a3120503
-    last_write_checksum: sha1:708ea631f3b71bdc8a6e85510d8b3db187fd45eb
-    pristine_git_object: 2adf4d4018cff80ab271d6f639119a3dbef811da
+    last_write_checksum: sha1:2759eda72421ef20a37ceefbab43f96324ed6517
+    pristine_git_object: d38ba25e7e250d0ae3281c74cd54130edbbd9179
   docs/sdks/taxrate/README.md:
     id: 626e6511cf80
     last_write_checksum: sha1:899a305983cd92d62ffe41bbc6dd6295db94f8ee
@@ -43827,14 +43867,19 @@ examples:
       responses:
         "200":
           application/json: {"connection_id": "<id>", "workspace_id": "<id>"}
+  createHrisTaxonomy:
+    speakeasy-default-create-hris-taxonomy:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Csharp SDK Changes:
-  * `UnifiedTo.Order.CreateAssessmentOrder()`: **Added**
-  * `UnifiedTo.Order.GetAssessmentOrder()`: **Added**
-  * `UnifiedTo.Assessment.CreateAssessmentOrder()`: **Added**
-  * `UnifiedTo.Assessment.GetAssessmentOrder()`: **Added**
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Taxonomy.CreateHrisTaxonomy()`: **Added**\n* `UnifiedTo.Hris.CreateHrisTaxonomy()`: **Added**\n* `UnifiedTo.Accounting.ListAccountingExpenses()`: \n  *  `request.ApproverUserId` **Added**\n* `UnifiedTo.Expense.ListAccountingExpenses()`: \n  *  `request.ApproverUserId` **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Support.Map<IntegrationSupport>` **Changed**\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md

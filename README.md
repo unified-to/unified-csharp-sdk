@@ -1092,6 +1092,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [CreateHrisEmployee](docs/sdks/hris/README.md#createhrisemployee) - Create an employee
 * [CreateHrisGroup](docs/sdks/hris/README.md#createhrisgroup) - Create a group
 * [CreateHrisLocation](docs/sdks/hris/README.md#createhrislocation) - Create a location
+* [CreateHrisTaxonomy](docs/sdks/hris/README.md#createhristaxonomy) - Create a taxonomy
 * [CreateHrisTimeoff](docs/sdks/hris/README.md#createhristimeoff) - Create a timeoff
 * [CreateHrisTimeshift](docs/sdks/hris/README.md#createhristimeshift) - Create a timeshift
 * [GetHrisAttendance](docs/sdks/hris/README.md#gethrisattendance) - Retrieve an attendance
@@ -2034,6 +2035,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Taxonomy](docs/sdks/taxonomy/README.md)
 
+* [CreateHrisTaxonomy](docs/sdks/taxonomy/README.md#createhristaxonomy) - Create a taxonomy
 * [GetHrisTaxonomy](docs/sdks/taxonomy/README.md#gethristaxonomy) - Retrieve a taxonomy
 * [ListCrmTaxonomies](docs/sdks/taxonomy/README.md#listcrmtaxonomies) - List all taxonomies
 * [ListHrisTaxonomies](docs/sdks/taxonomy/README.md#listhristaxonomies) - List all taxonomies

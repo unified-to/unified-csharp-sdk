@@ -16,6 +16,12 @@ namespace UnifiedTo.Models.Requests
     public class ListAccountingExpensesRequest
     {
         /// <summary>
+        /// The expense approver user/employee ID to filter by (reference to HrisEmployee).
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=approver_user_id")]
+        public string? ApproverUserId { get; set; }
+
+        /// <summary>
         /// The category ID to filter by (reference to AccountingCategory).
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=category_id")]
