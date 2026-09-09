@@ -31,14 +31,6 @@ namespace UnifiedTo.Models.Requests
         ClosedAt,
         [JsonProperty("closing_at")]
         ClosingAt,
-        [JsonProperty("stage")]
-        Stage,
-        [JsonProperty("stage_id")]
-        StageId,
-        [JsonProperty("pipeline")]
-        Pipeline,
-        [JsonProperty("pipeline_id")]
-        PipelineId,
         [JsonProperty("stages")]
         Stages,
         [JsonProperty("pipelines")]
@@ -61,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         CompanyIds,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("description")]
+        Description,
         [JsonProperty("raw")]
         Raw,
     }

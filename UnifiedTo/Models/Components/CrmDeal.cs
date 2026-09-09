@@ -41,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        [JsonProperty("description")]
+        public string? Description { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -53,12 +56,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
-        [JsonProperty("pipeline")]
-        public string? Pipeline { get; set; }
-
-        [JsonProperty("pipeline_id")]
-        public string? PipelineId { get; set; }
-
         [JsonProperty("pipelines")]
         public List<CrmReference>? Pipelines { get; set; }
 
@@ -70,12 +67,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("source")]
         public string? Source { get; set; }
-
-        [JsonProperty("stage")]
-        public string? Stage { get; set; }
-
-        [JsonProperty("stage_id")]
-        public string? StageId { get; set; }
 
         [JsonProperty("stages")]
         public List<CrmReference>? Stages { get; set; }

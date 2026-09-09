@@ -29,10 +29,6 @@ namespace UnifiedTo.Models.Requests
         Media,
         [JsonProperty("course_id")]
         CourseId,
-        [JsonProperty("instructor_ids")]
-        InstructorIds,
-        [JsonProperty("student_ids")]
-        StudentIds,
         [JsonProperty("languages")]
         Languages,
         [JsonProperty("instructors")]

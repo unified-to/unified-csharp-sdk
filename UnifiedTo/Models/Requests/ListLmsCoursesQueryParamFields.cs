@@ -39,12 +39,8 @@ namespace UnifiedTo.Models.Requests
         Currency,
         [JsonProperty("media")]
         Media,
-        [JsonProperty("instructor_ids")]
-        InstructorIds,
         [JsonProperty("instructors")]
         Instructors,
-        [JsonProperty("student_ids")]
-        StudentIds,
         [JsonProperty("students")]
         Students,
         [JsonProperty("content_ids")]

@@ -55,8 +55,6 @@ namespace UnifiedTo.Models.Requests
         ShortDescription,
         [JsonProperty("localizations")]
         Localizations,
-        [JsonProperty("instructor_ids")]
-        InstructorIds,
         [JsonProperty("collection_ids")]
         CollectionIds,
         [JsonProperty("instructors")]

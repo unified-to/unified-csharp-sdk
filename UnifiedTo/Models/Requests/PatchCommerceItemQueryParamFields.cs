@@ -63,8 +63,6 @@ namespace UnifiedTo.Models.Requests
         Tags,
         [JsonProperty("media")]
         Media,
-        [JsonProperty("collection_ids")]
-        CollectionIds,
         [JsonProperty("account_id")]
         AccountId,
         [JsonProperty("metadata")]

@@ -29,15 +29,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("buttons")]
         public List<MessagingButton>? Buttons { get; set; }
 
-        [JsonProperty("channel_id")]
-        public string? ChannelId { get; set; }
-
-        /// <summary>
-        /// @deprecated; use channels instead.
-        /// </summary>
-        [JsonProperty("channel_ids")]
-        public List<string>? ChannelIds { get; set; }
-
         /// <summary>
         /// Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.
         /// </summary>
@@ -97,9 +88,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }
-
-        [JsonProperty("root_message_id")]
-        public string? RootMessageId { get; set; }
 
         [JsonProperty("subject")]
         public string? Subject { get; set; }

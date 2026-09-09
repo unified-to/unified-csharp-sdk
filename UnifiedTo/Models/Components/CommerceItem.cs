@@ -23,12 +23,6 @@ namespace UnifiedTo.Models.Components
         public string? AccountId { get; set; }
 
         /// <summary>
-        /// @deprecated; use collections instead.
-        /// </summary>
-        [JsonProperty("collection_ids")]
-        public List<string>? CollectionIds { get; set; }
-
-        /// <summary>
         /// points to Collection with id, name, and type fields.
         /// </summary>
         [JsonProperty("collections")]

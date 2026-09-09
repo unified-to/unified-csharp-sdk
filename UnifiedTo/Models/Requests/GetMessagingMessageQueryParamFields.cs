@@ -21,16 +21,10 @@ namespace UnifiedTo.Models.Requests
         CreatedAt,
         [JsonProperty("updated_at")]
         UpdatedAt,
-        [JsonProperty("channel_id")]
-        ChannelId,
-        [JsonProperty("channel_ids")]
-        ChannelIds,
         [JsonProperty("channels")]
         Channels,
         [JsonProperty("parent_id")]
         ParentId,
-        [JsonProperty("root_message_id")]
-        RootMessageId,
         [JsonProperty("message_thread_identifier")]
         MessageThreadIdentifier,
         [JsonProperty("author_member")]

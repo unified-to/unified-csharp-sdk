@@ -31,16 +31,6 @@ namespace UnifiedTo.Models.Requests
         Name,
         [JsonProperty("currency")]
         Currency,
-        [JsonProperty("income")]
-        Income,
-        [JsonProperty("expenses")]
-        Expenses,
-        [JsonProperty("cost_of_goods_sold")]
-        CostOfGoodsSold,
-        [JsonProperty("gross_profit_amount")]
-        GrossProfitAmount,
-        [JsonProperty("net_profit_amount")]
-        NetProfitAmount,
         [JsonProperty("income_total_amount")]
         IncomeTotalAmount,
         [JsonProperty("net_income_amount")]

@@ -37,7 +37,6 @@ var value = PatchCommerceItemQueryParamFields.Id;
 | `Variants`          | variants            |
 | `Tags`              | tags                |
 | `Media`             | media               |
-| `CollectionIds`     | collection_ids      |
 | `AccountId`         | account_id          |
 | `Metadata`          | metadata            |
 | `Collections`       | collections         |

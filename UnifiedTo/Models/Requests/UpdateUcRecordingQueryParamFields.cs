@@ -31,12 +31,6 @@ namespace UnifiedTo.Models.Requests
         CallId,
         [JsonProperty("web_url")]
         WebUrl,
-        [JsonProperty("contact_id")]
-        ContactId,
-        [JsonProperty("contact_name")]
-        ContactName,
-        [JsonProperty("contact_phone")]
-        ContactPhone,
         [JsonProperty("contacts")]
         Contacts,
         [JsonProperty("user_id")]

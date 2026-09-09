@@ -29,12 +29,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
-        /// <summary>
-        /// @deprecated; use instructors.
-        /// </summary>
-        [JsonProperty("instructor_ids")]
-        public List<string>? InstructorIds { get; set; }
-
         [JsonProperty("instructors")]
         public List<LmsReference>? Instructors { get; set; }
 
@@ -49,12 +43,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
-
-        /// <summary>
-        /// @deprecated; use students.
-        /// </summary>
-        [JsonProperty("student_ids")]
-        public List<string>? StudentIds { get; set; }
 
         [JsonProperty("students")]
         public List<LmsReference>? Students { get; set; }

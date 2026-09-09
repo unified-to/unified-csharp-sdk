@@ -20,12 +20,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
-        /// <summary>
-        /// @deprecated – use cost_of_goods_sold_sections instead.
-        /// </summary>
-        [JsonProperty("cost_of_goods_sold")]
-        public List<AccountingProfitlossCategory>? CostOfGoodsSold { get; set; }
-
         [JsonProperty("cost_of_goods_sold_sections")]
         public List<AccountingProfitlossSection>? CostOfGoodsSoldSections { get; set; }
 
@@ -41,29 +35,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
-        /// <summary>
-        /// @deprecated – use expenses_sections instead.
-        /// </summary>
-        [JsonProperty("expenses")]
-        public List<AccountingProfitlossCategory>? Expenses { get; set; }
-
         [JsonProperty("expenses_sections")]
         public List<AccountingProfitlossSection>? ExpensesSections { get; set; }
 
         [JsonProperty("expenses_total_amount")]
         public double? ExpensesTotalAmount { get; set; }
 
-        [JsonProperty("gross_profit_amount")]
-        public double? GrossProfitAmount { get; set; }
-
         [JsonProperty("id")]
         public string? Id { get; set; }
-
-        /// <summary>
-        /// @deprecated – use income_sections instead.
-        /// </summary>
-        [JsonProperty("income")]
-        public List<AccountingProfitlossCategory>? Income { get; set; }
 
         [JsonProperty("income_sections")]
         public List<AccountingProfitlossSection>? IncomeSections { get; set; }
@@ -76,9 +55,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("net_income_amount")]
         public double? NetIncomeAmount { get; set; }
-
-        [JsonProperty("net_profit_amount")]
-        public double? NetProfitAmount { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

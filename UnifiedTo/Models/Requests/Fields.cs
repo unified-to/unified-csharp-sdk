@@ -37,14 +37,6 @@ namespace UnifiedTo.Models.Requests
         CustomerDefinedCode,
         [JsonProperty("is_payable")]
         IsPayable,
-        [JsonProperty("section")]
-        Section,
-        [JsonProperty("subsection")]
-        Subsection,
-        [JsonProperty("group")]
-        Group,
-        [JsonProperty("subgroup")]
-        Subgroup,
         [JsonProperty("parent_id")]
         ParentId,
         [JsonProperty("taxonomy")]

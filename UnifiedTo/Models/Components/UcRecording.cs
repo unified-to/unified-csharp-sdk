@@ -22,15 +22,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("call_id")]
         public string? CallId { get; set; }
 
-        [JsonProperty("contact_id")]
-        public string? ContactId { get; set; }
-
-        [JsonProperty("contact_name")]
-        public string? ContactName { get; set; }
-
-        [JsonProperty("contact_phone")]
-        public string? ContactPhone { get; set; }
-
         [JsonProperty("contacts")]
         public List<UcContact>? Contacts { get; set; }
 
