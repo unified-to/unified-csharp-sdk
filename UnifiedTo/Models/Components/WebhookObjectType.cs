@@ -33,7 +33,6 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType AccountingOrder = new WebhookObjectType("accounting_order");
         public static readonly WebhookObjectType AccountingSalesorder = new WebhookObjectType("accounting_salesorder");
         public static readonly WebhookObjectType AccountingPurchaseorder = new WebhookObjectType("accounting_purchaseorder");
-        public static readonly WebhookObjectType AccountingReport = new WebhookObjectType("accounting_report");
         public static readonly WebhookObjectType AccountingBalancesheet = new WebhookObjectType("accounting_balancesheet");
         public static readonly WebhookObjectType AccountingProfitloss = new WebhookObjectType("accounting_profitloss");
         public static readonly WebhookObjectType AccountingTrialbalance = new WebhookObjectType("accounting_trialbalance");
@@ -210,7 +209,6 @@ namespace UnifiedTo.Models.Components
                 ["accounting_order"] = AccountingOrder,
                 ["accounting_salesorder"] = AccountingSalesorder,
                 ["accounting_purchaseorder"] = AccountingPurchaseorder,
-                ["accounting_report"] = AccountingReport,
                 ["accounting_balancesheet"] = AccountingBalancesheet,
                 ["accounting_profitloss"] = AccountingProfitloss,
                 ["accounting_trialbalance"] = AccountingTrialbalance,

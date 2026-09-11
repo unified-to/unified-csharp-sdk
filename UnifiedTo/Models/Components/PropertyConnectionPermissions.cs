@@ -48,8 +48,6 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions AccountingPurchaseorderWrite = new PropertyConnectionPermissions("accounting_purchaseorder_write");
         public static readonly PropertyConnectionPermissions AccountingSalesorderRead = new PropertyConnectionPermissions("accounting_salesorder_read");
         public static readonly PropertyConnectionPermissions AccountingSalesorderWrite = new PropertyConnectionPermissions("accounting_salesorder_write");
-        public static readonly PropertyConnectionPermissions AccountingReportRead = new PropertyConnectionPermissions("accounting_report_read");
-        public static readonly PropertyConnectionPermissions AccountingReportWrite = new PropertyConnectionPermissions("accounting_report_write");
         public static readonly PropertyConnectionPermissions AccountingTrialbalanceRead = new PropertyConnectionPermissions("accounting_trialbalance_read");
         public static readonly PropertyConnectionPermissions AccountingTrialbalanceWrite = new PropertyConnectionPermissions("accounting_trialbalance_write");
         public static readonly PropertyConnectionPermissions AccountingProfitlossRead = new PropertyConnectionPermissions("accounting_profitloss_read");
@@ -372,8 +370,6 @@ namespace UnifiedTo.Models.Components
                 ["accounting_purchaseorder_write"] = AccountingPurchaseorderWrite,
                 ["accounting_salesorder_read"] = AccountingSalesorderRead,
                 ["accounting_salesorder_write"] = AccountingSalesorderWrite,
-                ["accounting_report_read"] = AccountingReportRead,
-                ["accounting_report_write"] = AccountingReportWrite,
                 ["accounting_trialbalance_read"] = AccountingTrialbalanceRead,
                 ["accounting_trialbalance_write"] = AccountingTrialbalanceWrite,
                 ["accounting_profitloss_read"] = AccountingProfitlossRead,

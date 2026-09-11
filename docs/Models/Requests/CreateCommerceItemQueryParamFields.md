@@ -34,7 +34,6 @@ var value = CreateCommerceItemQueryParamFields.Id;
 | `Prices`            | prices              |
 | `InventoryId`       | inventory_id        |
 | `TotalStock`        | total_stock         |
-| `Variants`          | variants            |
 | `Tags`              | tags                |
 | `Media`             | media               |
 | `AccountId`         | account_id          |

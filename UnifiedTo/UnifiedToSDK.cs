@@ -69,8 +69,6 @@ namespace UnifiedTo
 
         public IQuote Quote { get; }
 
-        public IReport Report { get; }
-
         public ISalesorder Salesorder { get; }
 
         public ITaxrate Taxrate { get; }
@@ -96,6 +94,8 @@ namespace UnifiedTo
         public IInsertionorder Insertionorder { get; }
 
         public IPromoted Promoted { get; }
+
+        public IReport Report { get; }
 
         public ITarget Target { get; }
 
@@ -473,10 +473,6 @@ namespace UnifiedTo
         /// </summary>
         public IQuote Quote { get; private set; }
         /// <summary>
-        /// The Report sub-SDK.
-        /// </summary>
-        public IReport Report { get; private set; }
-        /// <summary>
         /// The Salesorder sub-SDK.
         /// </summary>
         public ISalesorder Salesorder { get; private set; }
@@ -528,6 +524,10 @@ namespace UnifiedTo
         /// The Promoted sub-SDK.
         /// </summary>
         public IPromoted Promoted { get; private set; }
+        /// <summary>
+        /// The Report sub-SDK.
+        /// </summary>
+        public IReport Report { get; private set; }
         /// <summary>
         /// The Target sub-SDK.
         /// </summary>
@@ -1134,8 +1134,6 @@ namespace UnifiedTo
 
             Quote = new Quote(SDKConfiguration);
 
-            Report = new Report(SDKConfiguration);
-
             Salesorder = new Salesorder(SDKConfiguration);
 
             Taxrate = new Taxrate(SDKConfiguration);
@@ -1161,6 +1159,8 @@ namespace UnifiedTo
             Insertionorder = new Insertionorder(SDKConfiguration);
 
             Promoted = new Promoted(SDKConfiguration);
+
+            Report = new Report(SDKConfiguration);
 
             Target = new Target(SDKConfiguration);
 
@@ -1545,8 +1545,6 @@ namespace UnifiedTo
 
             Quote = new Quote(SDKConfiguration);
 
-            Report = new Report(SDKConfiguration);
-
             Salesorder = new Salesorder(SDKConfiguration);
 
             Taxrate = new Taxrate(SDKConfiguration);
@@ -1572,6 +1570,8 @@ namespace UnifiedTo
             Insertionorder = new Insertionorder(SDKConfiguration);
 
             Promoted = new Promoted(SDKConfiguration);
+
+            Report = new Report(SDKConfiguration);
 
             Target = new Target(SDKConfiguration);
 

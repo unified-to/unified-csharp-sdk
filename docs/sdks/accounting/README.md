@@ -44,7 +44,6 @@
 * [GetAccountingProject](#getaccountingproject) - Retrieve a project
 * [GetAccountingPurchaseorder](#getaccountingpurchaseorder) - Retrieve a purchaseorder
 * [GetAccountingQuote](#getaccountingquote) - Retrieve a quote
-* [GetAccountingReport](#getaccountingreport) - Retrieve a report
 * [GetAccountingSalesorder](#getaccountingsalesorder) - Retrieve a salesorder
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
@@ -71,7 +70,6 @@
 * [ListAccountingProjects](#listaccountingprojects) - List all projects
 * [ListAccountingPurchaseorders](#listaccountingpurchaseorders) - List all purchaseorders
 * [ListAccountingQuotes](#listaccountingquotes) - List all quotes
-* [ListAccountingReports](#listaccountingreports) - List all reports
 * [ListAccountingSalesorders](#listaccountingsalesorders) - List all salesorders
 * [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
@@ -1815,48 +1813,6 @@ var res = await sdk.Accounting.GetAccountingQuoteAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetAccountingReport
-
-Retrieve a report
-
-### Example Usage
-
-<!-- UsageSnippet language="csharp" operationID="getAccountingReport" method="get" path="/accounting/{connection_id}/report/{id}" -->
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Accounting.GetAccountingReportAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Report                                                                                                                                 |
-| `Fields`                                                                                                                                         | List<[GetAccountingReportQueryParamFields](../../Models/Requests/GetAccountingReportQueryParamFields.md)>                                        | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
-| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
-
-### Response
-
-**[GetAccountingReportResponse](../../Models/Requests/GetAccountingReportResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
 ## GetAccountingSalesorder
 
 Retrieve a salesorder
@@ -2921,47 +2877,6 @@ var res = await sdk.Accounting.ListAccountingQuotesAsync(req);
 ### Response
 
 **[ListAccountingQuotesResponse](../../Models/Requests/ListAccountingQuotesResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## ListAccountingReports
-
-List all reports
-
-### Example Usage
-
-<!-- UsageSnippet language="csharp" operationID="listAccountingReports" method="get" path="/accounting/{connection_id}/report" -->
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-ListAccountingReportsRequest req = new ListAccountingReportsRequest() {
-    ConnectionId = "<id>",
-};
-
-var res = await sdk.Accounting.ListAccountingReportsAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListAccountingReportsRequest](../../Models/Requests/ListAccountingReportsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
-
-### Response
-
-**[ListAccountingReportsResponse](../../Models/Requests/ListAccountingReportsResponse.md)**
 
 ### Errors
 

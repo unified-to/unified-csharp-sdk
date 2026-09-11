@@ -5,7 +5,7 @@
 ```csharp
 using UnifiedTo.Models.Components;
 
-var value = AccountingInvoiceType.Bill;
+var value = AccountingInvoiceType.Invoice;
 
 // Open enum: use .Of() to create instances from custom string values
 var custom = AccountingInvoiceType.Of("custom_value");
@@ -16,6 +16,5 @@ var custom = AccountingInvoiceType.Of("custom_value");
 
 | Name         | Value        |
 | ------------ | ------------ |
-| `Bill`       | BILL         |
 | `Invoice`    | INVOICE      |
 | `Creditmemo` | CREDITMEMO   |

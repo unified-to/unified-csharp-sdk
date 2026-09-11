@@ -19,14 +19,12 @@ namespace UnifiedTo.Models.Components
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingInvoiceType : IEquatable<AccountingInvoiceType>
     {
-        public static readonly AccountingInvoiceType Bill = new AccountingInvoiceType("BILL");
         public static readonly AccountingInvoiceType Invoice = new AccountingInvoiceType("INVOICE");
         public static readonly AccountingInvoiceType Creditmemo = new AccountingInvoiceType("CREDITMEMO");
 
         private static readonly Dictionary <string, AccountingInvoiceType> _knownValues =
             new Dictionary <string, AccountingInvoiceType> ()
             {
-                ["BILL"] = Bill,
                 ["INVOICE"] = Invoice,
                 ["CREDITMEMO"] = Creditmemo
             };

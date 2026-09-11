@@ -103,12 +103,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
-        /// <summary>
-        /// first variant is the default variant.
-        /// </summary>
-        [JsonProperty("variants")]
-        public List<CommerceItemvariant>? Variants { get; set; }
-
         [JsonProperty("vendor_name")]
         public string? VendorName { get; set; }
 

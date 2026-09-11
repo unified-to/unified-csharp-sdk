@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 0d6ce61374059ad32a939916e4bd0c06
+  docChecksum: 2603dd36aa034d8cef9a411c0f95cad1
   docVersion: "1.0"
   speakeasyVersion: 1.791.4
   generationVersion: 2.926.8
-  releaseVersion: 0.131.28
-  configChecksum: bed0c4e01dec2fe7cc4ffed57acf5adf
+  releaseVersion: 0.131.29
+  configChecksum: 3d2fdd94d7032c778ddbbcad2154e89a
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: 267c1dc3-1de8-4493-9fe0-7c70cb7432d2
-  pristine_commit_hash: ffa534672200bea5b03f4928cc452746e0608f2f
-  pristine_tree_hash: c9fc810b28041c49ab701ba0357ffc91cdbf3cf3
+  generation_id: 7efe94e6-1515-46a6-8b97-01c45edd3ac5
+  pristine_commit_hash: 903eb6e4382ae06ca32b23f174e3290af8fe6441
+  pristine_tree_hash: 5eaa994c7ce9a58c8d7d4c4a1cb6b1257cf4caba
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -54,8 +54,8 @@ trackedFiles:
     pristine_git_object: e2ec7581101d6c9f3db1f8943570d6f5e967512c
   UnifiedTo/Accounting.cs:
     id: 9afb52f92031
-    last_write_checksum: sha1:b20987175308827a3eafa5d923c467bb741999fc
-    pristine_git_object: 420033e2d76b09ce08becd11c6af4510ed2feadf
+    last_write_checksum: sha1:ac20c6b984b5ba0230dc9cee4c5d77970ad92f1e
+    pristine_git_object: 9e9891a85f62be2aa7c0f38a4cda28a44c483650
   UnifiedTo/Activation.cs:
     id: f55f5f6a9f1d
     last_write_checksum: sha1:c5aa01c480dc85bd8f15f11740407ba8208514ac
@@ -626,8 +626,8 @@ trackedFiles:
     pristine_git_object: 5eb290c4ea620ae1a8877776ef47c272f7e6ef0a
   UnifiedTo/Models/Components/AccountingInvoiceType.cs:
     id: f9d046d91a07
-    last_write_checksum: sha1:c15d1fbf6dbd8e6160f80d2e5fdae5068682c53f
-    pristine_git_object: 89116ad08438021a44aee96327db8ca150411206
+    last_write_checksum: sha1:dd8c08d8d6f952cd0dc7b1de4b380cc9ab144767
+    pristine_git_object: 0698bf52fb11671b75b3ec7324d45541c2ef753a
   UnifiedTo/Models/Components/AccountingJournal.cs:
     id: fbd30c13d42a
     last_write_checksum: sha1:91d8a0a4ccb7ee3c22b57e05182eac4983370802
@@ -728,14 +728,6 @@ trackedFiles:
     id: "45691450e079"
     last_write_checksum: sha1:403c1415e9538d7634fde044c83ac4b83dbe6e22
     pristine_git_object: 229a9567d6bc2554c03b54fc57aebfdbc559f47c
-  UnifiedTo/Models/Components/AccountingReport.cs:
-    id: 78f88c7d2584
-    last_write_checksum: sha1:d2fdfff91a858ed9d93c4325bc7804eb1a2ea308
-    pristine_git_object: dfbd6b15045f73c44f978c06385481f510f4864e
-  UnifiedTo/Models/Components/AccountingReportType.cs:
-    id: 47fa4b96b055
-    last_write_checksum: sha1:5eab3c3b517d89aa1bc64839c373c9d4770f47d0
-    pristine_git_object: eeb5d3fe9198d8664447bee7bb128f74bf6f5081
   UnifiedTo/Models/Components/AccountingSalesorder.cs:
     id: 970a1ae6b482
     last_write_checksum: sha1:39d852c803338a0f2440ac52bc0d8bda17fc098b
@@ -1442,8 +1434,8 @@ trackedFiles:
     pristine_git_object: 90a47a1fb782b76168a6911c19e9c741d88c2a18
   UnifiedTo/Models/Components/CommerceItem.cs:
     id: 3205c4d36546
-    last_write_checksum: sha1:02f38c2919e2b56be112837f5f15c1cc8d37d4a8
-    pristine_git_object: 43cdfd4c9c259afba6adb74ab677115cb167c391
+    last_write_checksum: sha1:01754783be0b6b0ee5dc73595f3ccffaa0f877ea
+    pristine_git_object: 157f7beaf9fffcd613a1f4a54bf554cb1cf09884
   UnifiedTo/Models/Components/CommerceItemMedia.cs:
     id: 662c9235cc4b
     last_write_checksum: sha1:ba21ea881c54f4ca1a9fa4f56a5379055ba19d80
@@ -3044,18 +3036,6 @@ trackedFiles:
     id: 20a2bedb8c31
     last_write_checksum: sha1:599d7341a2ab59d9d4370ef0c6aadaf76f85cfc4
     pristine_git_object: a974e64d0e23eb098c805c2775d8cb28206ff1e1
-  UnifiedTo/Models/Components/PropertyAccountingReportBalanceSheet.cs:
-    id: 8d93b3c36127
-    last_write_checksum: sha1:b3c6851619f62f039dfc923d643d9e319c7d5cfd
-    pristine_git_object: c4ee1cf609e6d5e802ccebf67ae1dcf4db09bb2c
-  UnifiedTo/Models/Components/PropertyAccountingReportProfitAndLoss.cs:
-    id: f019d2cc123b
-    last_write_checksum: sha1:61ffc729fcd9a1ac35e018fb74441e3be06d7698
-    pristine_git_object: c2d182c1d972dae0d7bb410a3b457c5dd225b818
-  UnifiedTo/Models/Components/PropertyAccountingReportTrialBalance.cs:
-    id: 22a1280ae030
-    last_write_checksum: sha1:e26d419a70acab8b416cdd50b64f5a76052b6adf
-    pristine_git_object: 87713aa10c30b98e70f5e3bfacbdbca7d20e5eb3
   UnifiedTo/Models/Components/PropertyAccountingSalesorderBillingAddress.cs:
     id: 87ea51c07803
     last_write_checksum: sha1:8a53955840573da79fb0b8fd9a00df0e5c2a13f2
@@ -3690,8 +3670,8 @@ trackedFiles:
     pristine_git_object: 225a314eef7fe3ff35ee2bccb2b45118595765d8
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:b8f791bbc514c803dd89077abcb3e1531cc572fb
-    pristine_git_object: 3a022e93f01d94465ea34ead9a44d67f0034d028
+    last_write_checksum: sha1:2c40fbb3d8c1da9929431c29392aaf3abdc506f4
+    pristine_git_object: 1fe63e4d391f747c10a2f9b92a01e47b96ae6c78
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
     last_write_checksum: sha1:35d44560854c38d618566b4771eb7257cf9510f3
@@ -4946,8 +4926,8 @@ trackedFiles:
     pristine_git_object: 59062e64a9e60f2c06835bde6bd9a0fd449da8cd
   UnifiedTo/Models/Components/WebhookObjectType.cs:
     id: fe7337fec745
-    last_write_checksum: sha1:bd1c160fa3ec29d619014249ed7a164b4739f4c6
-    pristine_git_object: ee3489b3b243b35236d1d7d620bc4bc46749ebb8
+    last_write_checksum: sha1:4c3b705b0c436b83ff2f96da82bc86ef80e6d2ab
+    pristine_git_object: 5fc54fb6807e65bd73cf64e32e77fcd12f9849c2
   UnifiedTo/Models/Components/WebhookType.cs:
     id: 0d2a4a013f23
     last_write_checksum: sha1:e0747654f03d55379eb9f6e4fcf93bbee99e629c
@@ -5586,8 +5566,8 @@ trackedFiles:
     pristine_git_object: 714cd23a73fbed89c079459383241f57c56e8219
   UnifiedTo/Models/Requests/CreateCommerceItemQueryParamFields.cs:
     id: 5ab603aca8e5
-    last_write_checksum: sha1:c37e2b7a48e99aef57abf3aaf7e0a9dacfad6de0
-    pristine_git_object: f9dec272dc27c6fe85d8feed418e8abd524f2e9e
+    last_write_checksum: sha1:3ce296d83249b6c12def399b1b42e28b39e0c250
+    pristine_git_object: a609cca86c46ea040d09c549842993919e6619d0
   UnifiedTo/Models/Requests/CreateCommerceItemRequest.cs:
     id: 022c1a3aa74c
     last_write_checksum: sha1:af375f08e22de50ac6896677c67bbd814809ae48
@@ -6800,18 +6780,6 @@ trackedFiles:
     id: aec2471fe267
     last_write_checksum: sha1:d7ae2f030eb24aaff733115b223d0bf29520fb87
     pristine_git_object: 75b92e9b384c42ab7dfddd6b8c02e61c7987d0ad
-  UnifiedTo/Models/Requests/GetAccountingReportQueryParamFields.cs:
-    id: e074b9dc3ce2
-    last_write_checksum: sha1:dc40fb1945f75cf1ef841cc4f9eabcfa4f2f59fd
-    pristine_git_object: 7a50bba2a8510ab97104cc48dc58bfe4d79e1a4e
-  UnifiedTo/Models/Requests/GetAccountingReportRequest.cs:
-    id: 68653e2c6094
-    last_write_checksum: sha1:07df6ee460dad35278169d699ff4f88994c57dd8
-    pristine_git_object: 7d9c6cbb601118064970c0a817a31ae705566c22
-  UnifiedTo/Models/Requests/GetAccountingReportResponse.cs:
-    id: 65b04861e309
-    last_write_checksum: sha1:3339c19c27a3c4737ae0b63f2d4e487fae85d505
-    pristine_git_object: bdd2f4f351b1b592d2eb34a3a37f82a8233b8215
   UnifiedTo/Models/Requests/GetAccountingSalesorderQueryParamFields.cs:
     id: 67dfb1f66a11
     last_write_checksum: sha1:a82ac58ea391322b39ee00511cb4d8946da90acc
@@ -7362,8 +7330,8 @@ trackedFiles:
     pristine_git_object: 15ca1f3c0e9b5297797c6136af0ecce2625b97f1
   UnifiedTo/Models/Requests/GetCommerceItemQueryParamFields.cs:
     id: 545b4a9210bf
-    last_write_checksum: sha1:6c90efe211065016e1e0b5c1107edcfd7dcdbc18
-    pristine_git_object: 367be1270e9e602fd5435c44616460bb3cb0b799
+    last_write_checksum: sha1:54c7d7aaad4638107d0d45d37835a9f230e5abdd
+    pristine_git_object: ef1962d67d5362cda0829a6ee48cb04723f55c80
   UnifiedTo/Models/Requests/GetCommerceItemRequest.cs:
     id: da7f64349468
     last_write_checksum: sha1:5f10c219262a10ccef6da317c4bdf53dc32c9b73
@@ -8748,18 +8716,6 @@ trackedFiles:
     id: 2bfaa522d2c0
     last_write_checksum: sha1:73f10c93b7acf2d99236050f4013ed75fddb78df
     pristine_git_object: d8d7b928cb94e5d0a0823746ef4c8f8d09bea831
-  UnifiedTo/Models/Requests/ListAccountingReportsQueryParamFields.cs:
-    id: 4298299fdc4e
-    last_write_checksum: sha1:2cc0c7f24c728eee02e27c5383f82c1fb2d14a73
-    pristine_git_object: 80b6eea08c85373b46b67439bd53524e35fdbd40
-  UnifiedTo/Models/Requests/ListAccountingReportsRequest.cs:
-    id: d6e1e9e1f1f2
-    last_write_checksum: sha1:1ad155f5a41bb7ca4b3845b08b0c849f4f52a074
-    pristine_git_object: 8b9fd8b260c1c55a53cdee285442ab8e261b6abd
-  UnifiedTo/Models/Requests/ListAccountingReportsResponse.cs:
-    id: 8152dcaf2475
-    last_write_checksum: sha1:bfd80243dbb3af742bb255f3772d04edb140d159
-    pristine_git_object: f9ef604a22e3d64f983263c656c420e3f43a3725
   UnifiedTo/Models/Requests/ListAccountingSalesordersQueryParamFields.cs:
     id: 218ddac7b1f0
     last_write_checksum: sha1:a72f206a948eb7e5b00e4a5b0bd83e4c82e1e878
@@ -9358,8 +9314,8 @@ trackedFiles:
     pristine_git_object: f7ccc837048d82b363e7dcf2adbb7dd49742ad6e
   UnifiedTo/Models/Requests/ListCommerceItemsQueryParamFields.cs:
     id: 4317a45e273c
-    last_write_checksum: sha1:26ea560902bb2c9770bb47cf2bdcba65d77fb070
-    pristine_git_object: 3caa43c9d24af2c7e4ae9b22d4cfdf9043924aee
+    last_write_checksum: sha1:d97b66a578e9fc3a0903e74a56a5951e2c3608f4
+    pristine_git_object: 5eea4e8b390e49e61521fb0164560e9f9a48033c
   UnifiedTo/Models/Requests/ListCommerceItemsRequest.cs:
     id: b6d5cec63e93
     last_write_checksum: sha1:dcabacce6292c4a19f006ef8b4e31c940afc30b2
@@ -11134,8 +11090,8 @@ trackedFiles:
     pristine_git_object: 21a3bd9c86d9b59f83a52d007eb9e194ac4b00b5
   UnifiedTo/Models/Requests/PatchCommerceItemQueryParamFields.cs:
     id: 83030618fb48
-    last_write_checksum: sha1:f0f796d7a247f878204116dda29a22a552c53582
-    pristine_git_object: 499f0068f19d159557e4378e217886aed1dab775
+    last_write_checksum: sha1:d1c10beed4f9528bb67afd16f7366bf48c8be73a
+    pristine_git_object: 4749747ce440f31b58db4e97f93f541cfab46902
   UnifiedTo/Models/Requests/PatchCommerceItemRequest.cs:
     id: 1786100ea712
     last_write_checksum: sha1:d60cacff3553afd3e550d7315741130cabac91fa
@@ -13646,8 +13602,8 @@ trackedFiles:
     pristine_git_object: ba9a79eba68289a4340f4096645aa85aad50deaa
   UnifiedTo/Models/Requests/UpdateCommerceItemQueryParamFields.cs:
     id: 37e812bd40c2
-    last_write_checksum: sha1:da6da25085739bb92264be4f295eed10d13b6d1a
-    pristine_git_object: b6a62d9a8fc87f8249800771a0811ad0f0350da4
+    last_write_checksum: sha1:7bfc9546b92e59b8a223151aeee0dd7eb651e9c4
+    pristine_git_object: df74dabe0c8be7dbfff9a091e7fc38778b78fc36
   UnifiedTo/Models/Requests/UpdateCommerceItemRequest.cs:
     id: 76125932a9cf
     last_write_checksum: sha1:7c18771429c1520bad9208133940fdcbb4281ea2
@@ -14686,8 +14642,8 @@ trackedFiles:
     pristine_git_object: ea0d4ed2b0076924597f021e8f6a15eba75a4c11
   UnifiedTo/Report.cs:
     id: 7ac277bf94d4
-    last_write_checksum: sha1:11878e2e1dfa777cd89ff9aa56656b72f1592930
-    pristine_git_object: 48512796a56623064e7713768296f7578a5d378d
+    last_write_checksum: sha1:1ccb57e7838d9ee1e023d77ff2c94de1446b7a99
+    pristine_git_object: 3b3d0edbcc4703602bfeb05728fe4e413914305d
   UnifiedTo/Repository.cs:
     id: cc642e633004
     last_write_checksum: sha1:c4261069c7c5d4e259ceddfd4b0e4b490c551991
@@ -14706,8 +14662,8 @@ trackedFiles:
     pristine_git_object: ea70369f535eb971fa2dbf09a2fe13b2e6b49b71
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:abbb1217be4d1352adad4a327cc422faebe8e425
-    pristine_git_object: 6ec2e2d02ffd801dfaf2d4d2ddbbf6c6cb6e2e67
+    last_write_checksum: sha1:6fcdfb62cd402ca8a698a964b53439632863909d
+    pristine_git_object: 644b3fdd9f63a4702246c49ee8403b1ac8d892ef
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -14846,12 +14802,12 @@ trackedFiles:
     pristine_git_object: cc2264209a62e6f816b66ae551410531673f721f
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:8b6d60d05e74ecfcc786ecb7052f9f9c946c9336
-    pristine_git_object: dc52a30afb645ff43c2f2a7c2eff606f6191326b
+    last_write_checksum: sha1:12bd741a1c0311282be81abd1f08aae74e0fa297
+    pristine_git_object: d46311938e31c3aec0cdc622684c610db204838f
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
-    last_write_checksum: sha1:5b50b2c9ebc98732a7130ee8f497d280ea5beabd
-    pristine_git_object: 689878b212042648e2c50f90577e3b922cfecb09
+    last_write_checksum: sha1:0bfb8cf7de88671dd260cc268a8aed97db930f91
+    pristine_git_object: bea549291237fbf25d3865bbb501e8e8e2486415
   UnifiedTo/User.cs:
     id: 603e44ffd153
     last_write_checksum: sha1:bc9b44dac90cc194b36293147eee8ea2f67780c7
@@ -14866,8 +14822,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:17fa43035c48af2106b1f4ac8c0888012149d9e8
-    pristine_git_object: 6f524726e914d857af2021732cb7d5c6e42a7e83
+    last_write_checksum: sha1:131a6940f9d7312a9e74c3efcde41cb89472ce11
+    pristine_git_object: 14c938c0ae9c062041be914adbf6cbdaee32dd69
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -15126,8 +15082,8 @@ trackedFiles:
     pristine_git_object: 1ccc633029126a30a37c1be4e682018114bd722f
   docs/Models/Components/AccountingInvoiceType.md:
     id: a3713dc93626
-    last_write_checksum: sha1:c8308d9d7a7b46b6f18e444ec64171d8567a13a3
-    pristine_git_object: affae84d820963167c71ee9c41da58b74e13cf11
+    last_write_checksum: sha1:1c6e654c557796dac4ec9f7ffb870e5febcfeb17
+    pristine_git_object: f782c542409c45766a9a766bdb9b5ae3156c96fd
   docs/Models/Components/AccountingJournal.md:
     id: 50a971d557f4
     last_write_checksum: sha1:95b68aab3423c43b7fdbfea1edb16992ebd508a5
@@ -15228,14 +15184,6 @@ trackedFiles:
     id: 9ac44726351b
     last_write_checksum: sha1:4a9d3b47f0382568fe8ed66218a2584237e84d1f
     pristine_git_object: 552e85385455bf9e61fc7a064300ca67f79b1ce3
-  docs/Models/Components/AccountingReport.md:
-    id: 4c775618c7a5
-    last_write_checksum: sha1:2acf52b24c88ec5aa43ac0f707d2d3234878382a
-    pristine_git_object: e9a7f9a43496ed501239184c690aecf6fe981ed9
-  docs/Models/Components/AccountingReportType.md:
-    id: 69ca3edc87e8
-    last_write_checksum: sha1:b857912d5e93cad457eb4ff00243abd2c4cd7cc7
-    pristine_git_object: ddbbe79851d6156a5beaca2b51ccd11c2170265f
   docs/Models/Components/AccountingSalesorder.md:
     id: 516f95fd00ed
     last_write_checksum: sha1:f355c04351ab3f71236f48868679be62fc858704
@@ -15942,8 +15890,8 @@ trackedFiles:
     pristine_git_object: 0c98621d966bd2670cf3abd289c232e82fc6bc09
   docs/Models/Components/CommerceItem.md:
     id: 6c6560567c0f
-    last_write_checksum: sha1:77500db872038431b8c161878d722d90e12b452f
-    pristine_git_object: aea230cd3efb13aa96c5fff1210a862a3b86f0bc
+    last_write_checksum: sha1:dc8e5da030f9e13af302d8bdec24b394d1f44084
+    pristine_git_object: 1ab8c6b29c07b26fa06ce8fc9a8ee5aae37b37d3
   docs/Models/Components/CommerceItemMedia.md:
     id: d5b5f94bb1e6
     last_write_checksum: sha1:fa109c1f97084919da5a31f93bc3beb5aae40a8e
@@ -17544,18 +17492,6 @@ trackedFiles:
     id: 17aa4f722eb1
     last_write_checksum: sha1:f17b90423b7a3bfd861932d1c197c0a77cdf7ae5
     pristine_git_object: dbf6f23668c1c4310ef00bd5fe836d7c61eeb13b
-  docs/Models/Components/PropertyAccountingReportBalanceSheet.md:
-    id: 0b02d1b97506
-    last_write_checksum: sha1:835fb58ca941f8895fbe51bc538f14880dcc8725
-    pristine_git_object: f0ec25df4fe64525b43c97fe1b74272f609c44db
-  docs/Models/Components/PropertyAccountingReportProfitAndLoss.md:
-    id: 3ea9023a6c30
-    last_write_checksum: sha1:9ee1b4de93160182b36f8d006bd5e3e3e71aeb93
-    pristine_git_object: bb043a63228ad0557f810fae0cb2ad82900cbadb
-  docs/Models/Components/PropertyAccountingReportTrialBalance.md:
-    id: 712a2c1cd5c8
-    last_write_checksum: sha1:49faed70a61cb62d3653874c63fd5f521d5f1d3f
-    pristine_git_object: 11a738b1174d435c8bf9d4300597fe282a34162a
   docs/Models/Components/PropertyAccountingSalesorderBillingAddress.md:
     id: 638bf1e8f83d
     last_write_checksum: sha1:88cbea984815b6742e181e139f27242ea256970d
@@ -18190,8 +18126,8 @@ trackedFiles:
     pristine_git_object: fdb116ae6520a4a040490d2b2364ee927637300b
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:6fc4b892e534daac8e2d4fda37d26eb25a13eac7
-    pristine_git_object: c1df24a27ce53bf5fed1fd9b67f534af74d5a48a
+    last_write_checksum: sha1:b467a4e836b0bbab5c6f2672e66b5c4b30ac2912
+    pristine_git_object: b7bdff6452f126d279a3cddbf98592efc5c6c9f3
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
     last_write_checksum: sha1:bb4087988f2fd4578119b5a088062149363399d5
@@ -19446,8 +19382,8 @@ trackedFiles:
     pristine_git_object: fe0ddc056f24c7c9f4e726610597bde65734531f
   docs/Models/Components/WebhookObjectType.md:
     id: a25acf48bb02
-    last_write_checksum: sha1:1d3cfa630315d3ddda79ead922ed8e2b2a633d15
-    pristine_git_object: 6ed5b37f5a036bc1b9710b18de1d851950ce1cd3
+    last_write_checksum: sha1:2873bd7b7eac145379c916b0126be6f9818a9899
+    pristine_git_object: 11f0d59bdbf74bf2fd66b15efca8f3f7b1aa17db
   docs/Models/Components/WebhookType.md:
     id: a85132fd56a5
     last_write_checksum: sha1:ac2f92519d4d8f7b9b5fd7dd6b2b7a1534556d53
@@ -20074,8 +20010,8 @@ trackedFiles:
     pristine_git_object: 740f162e6c1f872cb7648b10d41e041ff6c8343b
   docs/Models/Requests/CreateCommerceItemQueryParamFields.md:
     id: 5181b989305d
-    last_write_checksum: sha1:25b3a08eb6dd3a6f3a5c71cbc84d666cdbfb5009
-    pristine_git_object: d6e4ab5b0c6aeaa5cacaed5d1decbe5ee1a89bfa
+    last_write_checksum: sha1:a7689cd7a62a2112021f41c8231d9b167aed9133
+    pristine_git_object: f630a0bb8caaae280bde255649ceb434ac44e054
   docs/Models/Requests/CreateCommerceItemRequest.md:
     id: 4d507b38f404
     last_write_checksum: sha1:44d92e5d721c90c50f60983042be146a7fd0072b
@@ -21288,18 +21224,6 @@ trackedFiles:
     id: 0e2c797f4917
     last_write_checksum: sha1:dd271c9b42d4af61fae7a96b633aba1c3890210a
     pristine_git_object: 47726864c8b3c969b180adde43892a85e71370bb
-  docs/Models/Requests/GetAccountingReportQueryParamFields.md:
-    id: ffe4760add51
-    last_write_checksum: sha1:3f4e6ac3aac5f87f9739dfc5c059a4cac30e5db6
-    pristine_git_object: 97fbbbcf1a7a7ffc5a8fd075e5556883a8b0c1fa
-  docs/Models/Requests/GetAccountingReportRequest.md:
-    id: d0f7197ff0c3
-    last_write_checksum: sha1:d728ade0e898be747b2d0e50457041cad75e2a0b
-    pristine_git_object: 1c7bbd6c9bb61ddc9da1754d36ffd4f2571c49a2
-  docs/Models/Requests/GetAccountingReportResponse.md:
-    id: a8210faf3bfe
-    last_write_checksum: sha1:e8683b6e833812b057d2fdaf2f4ace3888ebebbb
-    pristine_git_object: d8d4143cc01817c14e05f54cc24ef7155af88032
   docs/Models/Requests/GetAccountingSalesorderQueryParamFields.md:
     id: e7c41d3f51aa
     last_write_checksum: sha1:2bc7dc077d8a01b205f7acb8c7a4212eb8c6407d
@@ -21850,8 +21774,8 @@ trackedFiles:
     pristine_git_object: 921f65ca4859b0e72433c58f81ca4dadc6dbec64
   docs/Models/Requests/GetCommerceItemQueryParamFields.md:
     id: c475d6ec6fa3
-    last_write_checksum: sha1:5ff28b13a4866fbf0bede9f962e04330652be12c
-    pristine_git_object: f6bb3c69c4ff52f03dbed626a5f1e50386a41756
+    last_write_checksum: sha1:ed6c64a9c002e95ace78ef47705afd5b32fc04c9
+    pristine_git_object: 48916ae0fe47d09d365215ef389d505bf7675421
   docs/Models/Requests/GetCommerceItemRequest.md:
     id: 8db2095c1104
     last_write_checksum: sha1:3a0e930845a28f5d73a74d766278f01ee484fb4e
@@ -23236,18 +23160,6 @@ trackedFiles:
     id: fd778e6c9a9f
     last_write_checksum: sha1:1f8d3a7cf4cd735b792f76b4d980325a1e7f9243
     pristine_git_object: 6e5f72481c9acfd367f3ce7dd66ce6c6c2065f96
-  docs/Models/Requests/ListAccountingReportsQueryParamFields.md:
-    id: 9d7fbc695866
-    last_write_checksum: sha1:ac142d47c22bfd0f9361325ac9b8c432e5ac7599
-    pristine_git_object: 6c18ce9eb1dcd1ae4e6ca487fe77b64e48a373ab
-  docs/Models/Requests/ListAccountingReportsRequest.md:
-    id: e22ad4a8656e
-    last_write_checksum: sha1:ab3075483ad58aa4706bfaae489604501b246771
-    pristine_git_object: 71873b47657ab9f8cfb2621f762c291ff6be54d6
-  docs/Models/Requests/ListAccountingReportsResponse.md:
-    id: bdd63efc763c
-    last_write_checksum: sha1:515429333bfa9f3a8d400a7b47e929d36a2a1368
-    pristine_git_object: d1f7d9aaddc6e375a91254309d7a3ad001394069
   docs/Models/Requests/ListAccountingSalesordersQueryParamFields.md:
     id: 83db4ea0b1a0
     last_write_checksum: sha1:35ab32dde2d2f7d70bc13c3f69ed38242942b5a4
@@ -23846,8 +23758,8 @@ trackedFiles:
     pristine_git_object: d61d6335908d1a7051186a3752798388b7f64ae5
   docs/Models/Requests/ListCommerceItemsQueryParamFields.md:
     id: 817d0e2e6dde
-    last_write_checksum: sha1:e13501493df3fb11f01d1c63b30ee4e2b54d9c9d
-    pristine_git_object: 6a10ac697e1c02f563459111311d045d71f6310c
+    last_write_checksum: sha1:4dc930f3fb0b5783bea9c9f800e8f81b49dc9836
+    pristine_git_object: 5a0bb1997e979329761b24f409a5c9fd71645ff4
   docs/Models/Requests/ListCommerceItemsRequest.md:
     id: ca1c70ff5f0d
     last_write_checksum: sha1:5e10741073b1d10ccdbd374dd34420c601dfe4c9
@@ -25622,8 +25534,8 @@ trackedFiles:
     pristine_git_object: 77bb82ea7f7b3fd328e9df4ad2581bdb5fab2ac8
   docs/Models/Requests/PatchCommerceItemQueryParamFields.md:
     id: 581a196017b8
-    last_write_checksum: sha1:6c534b25a06692c4d622bf9b49259cf0cc3f06e9
-    pristine_git_object: c683f888007ac77c74e12a1dffb07b0ae98c8144
+    last_write_checksum: sha1:d2dc365bafa2909098f0b0b3d0680b83e4f2888c
+    pristine_git_object: 5dcd3674ddb3fb19bde2fd7423bc9f0bc3617bcb
   docs/Models/Requests/PatchCommerceItemRequest.md:
     id: ee161eb6d385
     last_write_checksum: sha1:580b1a06e00e7be179cc0f1739047b0af58b0fc5
@@ -28134,8 +28046,8 @@ trackedFiles:
     pristine_git_object: 420e1fd0ee4c120448aff87d720b39e95bf300f6
   docs/Models/Requests/UpdateCommerceItemQueryParamFields.md:
     id: c33efa92819c
-    last_write_checksum: sha1:a39a969ac94427ebf961d25170f156b52769a99e
-    pristine_git_object: b64110a59caa48a70fac7055dd60c8db84bb089e
+    last_write_checksum: sha1:6bd9f247fe7b88121246cff81d7be3fcab8d198d
+    pristine_git_object: 1bf6891d9d4f06542d056e807bfaed705bbecced
   docs/Models/Requests/UpdateCommerceItemRequest.md:
     id: 01fe5b97b733
     last_write_checksum: sha1:13335f6f882e780c34edfd25bcea37839a6403d7
@@ -29058,8 +28970,8 @@ trackedFiles:
     pristine_git_object: 491884ce56c15f390f96bcfe5f787b2d76bc897b
   docs/sdks/accounting/README.md:
     id: 6abb8976ed95
-    last_write_checksum: sha1:e66e7fcf733f9b4a5ed6062359ad60fb7f8ae0e5
-    pristine_git_object: eaf4d5bf9cd32b070fd33d21b817dd9897ba7ca1
+    last_write_checksum: sha1:2e7d62c6c97ab3276605f12ed39c52a7a5d22b74
+    pristine_git_object: efc138e885bfcc5f7eb6a9e312bdcbcf808cc1f1
   docs/sdks/activation/README.md:
     id: 3260d3c79ad0
     last_write_checksum: sha1:5f5e357cb69108559efbb863e55b455331d5256f
@@ -29570,8 +29482,8 @@ trackedFiles:
     pristine_git_object: 2aca855c62effad209f78fc3242067a7e3ab4f6e
   docs/sdks/report/README.md:
     id: 0e99424930fc
-    last_write_checksum: sha1:410b67571462bce27c8c422234a7ccddf60d0311
-    pristine_git_object: a049cc8b757df73a50336a22e73215dd7dca09bd
+    last_write_checksum: sha1:1a8a06faccebc00565daf30f48663bc82700fe49
+    pristine_git_object: 15d349751d3938c71914ce7f0659ffac4a997386
   docs/sdks/repository/README.md:
     id: 25db3a468495
     last_write_checksum: sha1:6a40b2400a3f42e6ba7a9cdeef5605f4183b8105
@@ -43863,7 +43775,7 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Accounting.CreateAccountingAccount()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.GetAccountingAccount()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.GetAccountingProfitloss()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.GetAccountingReport()`:  `response.profitAndLoss` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.ListAccountingAccounts()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.ListAccountingProfitlosses()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.ListAccountingReports()`:  `response.[].ProfitAndLoss` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.PatchAccountingAccount()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.UpdateAccountingAccount()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Account.CreateAccountingAccount()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Account.GetAccountingAccount()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Account.ListAccountingAccounts()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Account.PatchAccountingAccount()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Account.UpdateAccountingAccount()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Profitloss.GetAccountingProfitloss()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Profitloss.ListAccountingProfitlosses()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Project.CreateTaskProject()`: \n  *  `request.taskProject.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Project.GetTaskProject()`:  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Project.ListTaskProjects()`:  `response.[].Metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Project.PatchTaskProject()`: \n  *  `request.TaskProject.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Project.UpdateTaskProject()`: \n  *  `request.TaskProject.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Report.GetAccountingReport()`:  `response.profitAndLoss` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Report.ListAccountingReports()`:  `response.[].ProfitAndLoss` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Event.PatchMessagingEvent()`: \n  *  `request.MessagingEvent.Message` **Changed** (Breaking ⚠️)\n  *  `response.message` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Event.UpdateMessagingEvent()`: \n  *  `request.MessagingEvent.Message` **Changed** (Breaking ⚠️)\n  *  `response.message` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Recording.CreateUcRecording()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Recording.GetUcRecording()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Recording.ListUcRecordings()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Recording.PatchUcRecording()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Recording.UpdateUcRecording()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.CreateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.GetCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.ListCommerceItems()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].CollectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.PatchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.UpdateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.CreateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.GetCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.ListCommerceItems()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].CollectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.PatchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.UpdateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.collectionIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Crm.CreateCrmDeal()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Crm.GetCrmDeal()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Crm.ListCrmDeals()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Crm.PatchCrmDeal()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Crm.UpdateCrmDeal()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Deal.CreateCrmDeal()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Deal.GetCrmDeal()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Deal.ListCrmDeals()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Deal.PatchCrmDeal()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Deal.UpdateCrmDeal()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.CreateLmsClass()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.CreateLmsContent()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Lms.CreateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.GetLmsClass()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.GetLmsContent()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Lms.GetLmsCourse()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.ListLmsClasses()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.ListLmsContents()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].InstructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Lms.ListLmsCourses()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.PatchLmsClass()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.PatchLmsContent()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Lms.PatchLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.UpdateLmsClass()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Lms.UpdateLmsContent()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Lms.UpdateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Class.CreateLmsClass()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Class.GetLmsClass()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Class.ListLmsClasses()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Class.PatchLmsClass()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Class.UpdateLmsClass()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Content.CreateLmsContent()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Content.GetLmsContent()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Content.ListLmsContents()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].InstructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Content.PatchLmsContent()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Content.UpdateLmsContent()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.instructorIds` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Course.CreateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.GetLmsCourse()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.ListLmsCourses()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.PatchLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Course.UpdateLmsCourse()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Messaging.CreateMessagingMessage()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Messaging.GetMessagingMessage()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Messaging.ListMessagingMessages()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Messaging.PatchMessagingEvent()`: \n  *  `request.MessagingEvent.Message` **Changed** (Breaking ⚠️)\n  *  `response.message` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Messaging.PatchMessagingMessage()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Messaging.UpdateMessagingEvent()`: \n  *  `request.MessagingEvent.Message` **Changed** (Breaking ⚠️)\n  *  `response.message` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Messaging.UpdateMessagingMessage()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Message.CreateMessagingMessage()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Message.GetMessagingMessage()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Message.ListMessagingMessages()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Message.PatchMessagingMessage()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Message.UpdateMessagingMessage()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.CreateTaskProject()`: \n  *  `request.taskProject.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.CreateTaskTask()`: \n  *  `request.taskTask.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.GetTaskProject()`:  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.GetTaskTask()`:  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.ListTaskProjects()`:  `response.[].Metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.ListTaskTasks()`:  `response.[].Metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.PatchTaskProject()`: \n  *  `request.TaskProject.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.PatchTaskTask()`: \n  *  `request.TaskTask.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.UpdateTaskProject()`: \n  *  `request.TaskProject.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Task.UpdateTaskTask()`: \n  *  `request.TaskTask.Metadata[]` **Changed** (Breaking ⚠️)\n  *  `response.metadata[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Uc.CreateUcRecording()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Uc.GetUcRecording()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Uc.ListUcRecordings()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Uc.PatchUcRecording()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Uc.UpdateUcRecording()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response` **Changed** (Breaking ⚠️)\n"
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Item.PatchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.GetAccountingInvoice()`:  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.ListAccountingInvoices()`:  `response.[].Type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.GetAccountingInvoice()`:  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.ListAccountingInvoices()`:  `response.[].Type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.CreateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.GetCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.ListCommerceItems()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].Variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.PatchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.UpdateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.CreateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.ListCommerceItems()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].Variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.UpdateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Item.GetCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.ListAccountingReports()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.GetAccountingReport()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Report.ListAccountingReports()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Report.GetAccountingReport()`: **Removed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md

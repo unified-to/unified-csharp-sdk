@@ -57,8 +57,6 @@ namespace UnifiedTo.Models.Requests
         InventoryId,
         [JsonProperty("total_stock")]
         TotalStock,
-        [JsonProperty("variants")]
-        Variants,
         [JsonProperty("tags")]
         Tags,
         [JsonProperty("media")]
