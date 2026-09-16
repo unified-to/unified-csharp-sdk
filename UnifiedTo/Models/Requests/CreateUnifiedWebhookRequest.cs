@@ -21,7 +21,7 @@ namespace UnifiedTo.Models.Requests
         public Models.Components.Webhook Webhook { get; set; } = default!;
 
         /// <summary>
-        /// When set, all of the existing data will sent back to your server.
+        /// When true, send existing/historic data. When false, no historic data is sent.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=include_all")]
         public bool? IncludeAll { get; set; }

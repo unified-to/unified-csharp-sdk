@@ -31,7 +31,7 @@ namespace UnifiedTo
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </remarks>
         /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
-        /// <param name="includeAll">When set, all of the existing data will sent back to your server.</param>
+        /// <param name="includeAll">When true, send existing/historic data. When false, no historic data is sent.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="webhook"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
@@ -141,7 +141,7 @@ namespace UnifiedTo
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </remarks>
         /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
-        /// <param name="includeAll">When set, all of the existing data will sent back to your server.</param>
+        /// <param name="includeAll">When true, send existing/historic data. When false, no historic data is sent.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="webhook"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>

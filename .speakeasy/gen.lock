@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 2603dd36aa034d8cef9a411c0f95cad1
+  docChecksum: d97af36e486283112b42dc840ba12587
   docVersion: "1.0"
   speakeasyVersion: 1.791.4
   generationVersion: 2.926.8
-  releaseVersion: 0.131.29
-  configChecksum: 3d2fdd94d7032c778ddbbcad2154e89a
+  releaseVersion: 0.131.30
+  configChecksum: d23fcd7749fec7c0e42085afa188411f
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
   published: true
 persistentEdits:
-  generation_id: 7efe94e6-1515-46a6-8b97-01c45edd3ac5
-  pristine_commit_hash: 903eb6e4382ae06ca32b23f174e3290af8fe6441
-  pristine_tree_hash: 5eaa994c7ce9a58c8d7d4c4a1cb6b1257cf4caba
+  generation_id: 4ee3244d-392a-4816-a954-fabe82498fc6
+  pristine_commit_hash: 2d91b38e02d249cac8f9da824f1a124347cabaf8
+  pristine_tree_hash: db3760c6f3880a3ee6e61ccf962d5dced0ef5b4f
 features:
   csharp:
     additionalDependencies: 0.1.0
@@ -6506,8 +6506,8 @@ trackedFiles:
     pristine_git_object: caeba7660032b169614e8150406a56a13013c097
   UnifiedTo/Models/Requests/CreateUnifiedWebhookRequest.cs:
     id: 717533689bbe
-    last_write_checksum: sha1:480ec85a3cb618dfaf651ec1d62cd4f91408537f
-    pristine_git_object: 8d944dee4af20d7916a441a127219e598449872e
+    last_write_checksum: sha1:722395b47c92ce20f6bb6386c4f9921c3ebc4a68
+    pristine_git_object: e2422b3fe192ac3bcc28ad66a042b018e7d09aa6
   UnifiedTo/Models/Requests/CreateUnifiedWebhookResponse.cs:
     id: 16f2a563fb61
     last_write_checksum: sha1:064526cd1a06352af02ca20875f5a737b9913abc
@@ -14662,8 +14662,8 @@ trackedFiles:
     pristine_git_object: ea70369f535eb971fa2dbf09a2fe13b2e6b49b71
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:6fcdfb62cd402ca8a698a964b53439632863909d
-    pristine_git_object: 644b3fdd9f63a4702246c49ee8403b1ac8d892ef
+    last_write_checksum: sha1:ff67c6b89f883d1de9118ce79cffa82c84dcf6a3
+    pristine_git_object: 96a07447ee9d4dc12a18fdc5de9f4338f7ae0e80
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
     last_write_checksum: sha1:5d5f268f2b06e5443dd4da797a40c1827fbb0c4c
@@ -14798,12 +14798,12 @@ trackedFiles:
     pristine_git_object: a3f11190d260982041f9d5097b27aa6f02ef9f70
   UnifiedTo/Unified.cs:
     id: 099e70cced74
-    last_write_checksum: sha1:bcd81d99d7349929009db1f177ba875b0c68876f
-    pristine_git_object: cc2264209a62e6f816b66ae551410531673f721f
+    last_write_checksum: sha1:1df4f9e5c0f2903e3d1d67a8e019e192b96728a2
+    pristine_git_object: f7f12b5361fb13b78622eddb7db48fa3deadf525
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:12bd741a1c0311282be81abd1f08aae74e0fa297
-    pristine_git_object: d46311938e31c3aec0cdc622684c610db204838f
+    last_write_checksum: sha1:90e49fc3a2f454cef659e3fc1429ba814b481b89
+    pristine_git_object: 5fb826d4fd6d17ba7f06756a1ed07fa96c8f6c75
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
     last_write_checksum: sha1:0bfb8cf7de88671dd260cc268a8aed97db930f91
@@ -14822,8 +14822,8 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:131a6940f9d7312a9e74c3efcde41cb89472ce11
-    pristine_git_object: 14c938c0ae9c062041be914adbf6cbdaee32dd69
+    last_write_checksum: sha1:b8077dea7ae26ec50c1d6fa1ad0881792d9eed75
+    pristine_git_object: bad1f73e2aae35c135f293870302e8fee4798f1f
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
     last_write_checksum: sha1:d6c99edc6f5d86d26e3b75706fb367af143a1305
@@ -14902,8 +14902,8 @@ trackedFiles:
     pristine_git_object: c152b8d572e42f6715a592f292c013d0cb8f8dc8
   UnifiedTo/Webhook.cs:
     id: 9e55bbe39f98
-    last_write_checksum: sha1:a46a5708115669f06daa989017a264b234a9811a
-    pristine_git_object: de84b57523af3155dd64f7b5e0484a0303f93add
+    last_write_checksum: sha1:df6756d92fec3e3d22864fa7fcea6331f37b592a
+    pristine_git_object: 43f4e4eb9299da8b1a8296cfc6186b0a483b9b82
   UnifiedTo/Webinar.cs:
     id: d554fb6f62eb
     last_write_checksum: sha1:6952a9f10281610002782f131ce19ae7ae269cb1
@@ -20950,8 +20950,8 @@ trackedFiles:
     pristine_git_object: 5fb44aebb0cfce26e4dfd80da4901d11df12978c
   docs/Models/Requests/CreateUnifiedWebhookRequest.md:
     id: 72ea703bf6c1
-    last_write_checksum: sha1:f626c199f24b93997bc430defdf54a3a256dd69b
-    pristine_git_object: 8cc5cb3813b0c62a1db3e958487e6444f4624522
+    last_write_checksum: sha1:403a1224dde2f0942ccb097826cc28b96f965889
+    pristine_git_object: d054ea20f48eb4e72323089ffb1779bf23934f39
   docs/Models/Requests/CreateUnifiedWebhookResponse.md:
     id: e2afbe796d99
     last_write_checksum: sha1:eae45fd47ab8dae631276cb39ccad3f562f09737
@@ -29634,8 +29634,8 @@ trackedFiles:
     pristine_git_object: 441d67b4030c268c607876642dbfadf2c3289ec4
   docs/sdks/unified/README.md:
     id: e15cc6babd27
-    last_write_checksum: sha1:7b435e74d8e8c1620d4488eec95b91a543d2e184
-    pristine_git_object: 7d29a93c489229e87763c507f1974fe4a9bdcd5d
+    last_write_checksum: sha1:54b3815e50a7a371cf26df0d7015c8d31ab2d39f
+    pristine_git_object: 1f572b60fc7595ef408c380bf18ebaa11c67daf5
   docs/sdks/user/README.md:
     id: 437dd7dc6e30
     last_write_checksum: sha1:272e2d57434cd6522134c46f82026ab44ce7555c
@@ -29654,8 +29654,8 @@ trackedFiles:
     pristine_git_object: eb6ac1e4976bb2a99ab33874e32324cfbb26287f
   docs/sdks/webhook/README.md:
     id: 3b908e644c3d
-    last_write_checksum: sha1:f8c91e82bf98247a8efd380259f13778c0b769bd
-    pristine_git_object: a8ebdab41b0601482b5967ae43e7b6e1e00c1d99
+    last_write_checksum: sha1:0d4a5bfcec24320ff1d7afeb646e3df4026f28dc
+    pristine_git_object: 488d355c37ba3c8512a7f6b63ba501cb8a125aae
   docs/sdks/webinar/README.md:
     id: f09c102d4cb9
     last_write_checksum: sha1:bf5397fcad643137317c95c335e351cce6634fb1
@@ -43775,7 +43775,6 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Item.PatchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.GetAccountingInvoice()`:  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.ListAccountingInvoices()`:  `response.[].Type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.GetAccountingInvoice()`:  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.ListAccountingInvoices()`:  `response.[].Type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Invoice.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Type.Enum(bill)` **Removed** (Breaking ⚠️)\n  *  `response.type.Enum(bill)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.CreateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.GetCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.ListCommerceItems()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].Variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.PatchCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Commerce.UpdateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.CreateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.ListCommerceItems()`: \n  *  `request.Fields` **Changed** (Breaking ⚠️)\n  *  `response.[].Variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Item.UpdateCommerceItem()`: \n  *  `request` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Item.GetCommerceItem()`: \n  *  `request.fields` **Changed** (Breaking ⚠️)\n  *  `response.variants` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Permissions[]` **Changed** (Breaking ⚠️)\n  *  `response.permissions[]` **Changed** (Breaking ⚠️)\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.ObjectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n  *  `response.objectType.Enum(accountingReport)` **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.ListAccountingReports()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Accounting.GetAccountingReport()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Report.ListAccountingReports()`: **Removed** (Breaking ⚠️)\n* `UnifiedTo.Report.GetAccountingReport()`: **Removed** (Breaking ⚠️)\n"
 generatedFiles:
   - .gitattributes
   - NUGET.md
