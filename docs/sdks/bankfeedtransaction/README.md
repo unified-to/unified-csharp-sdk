@@ -17,8 +17,10 @@ Create a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" example="accounting_bankfeedtransaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Bankfeedtransaction.CreateAccountingBankfeedtransactionAsync(
-    accountingBankfeedtransaction: new AccountingBankfeedtransaction() {},
+    accountingBankfeedtransaction: new AccountingBankfeedtransaction() {
+        AccountId = "b7dc4175-1368-4b89-a700-d621b6666648",
+        Amount = 60889D,
+        BankCategory = "Games",
+        BankfeedaccountId = "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+        CategoryIds = new List<string>() {},
+        ContactId = "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+        CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
+        Currency = "SRD",
+        Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+        Id = "30fb790d-3f8e-48ab-8f69-cfc3c408e989",
+        IsPending = true,
+        MerchantName = "Reichert, Erdman and Tillman",
+        PostedAt = System.DateTime.Parse("2025-03-23T18:34:48.066Z").ToUniversalTime(),
+        Reference = "93642593",
+        TransactionAt = System.DateTime.Parse("2022-07-27T19:48:15.221Z").ToUniversalTime(),
+        Type = AccountingBankfeedtransactionType.Credit,
+        UpdatedAt = System.DateTime.Parse("2022-05-23T20:47:21.834Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +162,10 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +175,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingBankfeedtransactionRequest req = new PatchAccountingBankfeedtransactionRequest() {
-    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {},
+    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {
+        AccountId = "b7dc4175-1368-4b89-a700-d621b6666648",
+        Amount = 60889D,
+        BankCategory = "Games",
+        BankfeedaccountId = "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+        CategoryIds = new List<string>() {},
+        ContactId = "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+        CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
+        Currency = "SRD",
+        Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+        Id = "99973f58-3052-444a-a355-5b7ffb177172",
+        IsPending = true,
+        MerchantName = "Reichert, Erdman and Tillman",
+        PostedAt = System.DateTime.Parse("2025-03-23T18:34:48.075Z").ToUniversalTime(),
+        Reference = "93642593",
+        TransactionAt = System.DateTime.Parse("2022-07-27T19:48:15.222Z").ToUniversalTime(),
+        Type = AccountingBankfeedtransactionType.Credit,
+        UpdatedAt = System.DateTime.Parse("2022-05-23T20:47:21.835Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +265,10 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +278,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingBankfeedtransactionRequest req = new UpdateAccountingBankfeedtransactionRequest() {
-    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {},
+    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {
+        AccountId = "b7dc4175-1368-4b89-a700-d621b6666648",
+        Amount = 60889D,
+        BankCategory = "Games",
+        BankfeedaccountId = "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+        CategoryIds = new List<string>() {},
+        ContactId = "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+        CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
+        Currency = "SRD",
+        Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+        Id = "99973f58-3052-444a-a355-5b7ffb177172",
+        IsPending = true,
+        MerchantName = "Reichert, Erdman and Tillman",
+        PostedAt = System.DateTime.Parse("2025-03-23T18:34:48.075Z").ToUniversalTime(),
+        Reference = "93642593",
+        TransactionAt = System.DateTime.Parse("2022-07-27T19:48:15.222Z").ToUniversalTime(),
+        Type = AccountingBankfeedtransactionType.Credit,
+        UpdatedAt = System.DateTime.Parse("2022-05-23T20:47:21.835Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -31,7 +31,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
+<!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" example="uc_comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -41,7 +41,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.CreateUcCommentAsync(
-    ucComment: new UcComment() {},
+    ucComment: new UcComment() {
+        Content = "Vociferor vitiosus.",
+        CreatedAt = "2023-04-02T23:42:31.571Z",
+        Id = "f6c71223-2280-4fde-a2f8-4750d07d5346",
+        UpdatedAt = "2024-02-01T19:29:21.734Z",
+    },
     connectionId: "<id>"
 );
 
@@ -73,8 +78,10 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
+<!-- UsageSnippet language="csharp" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" example="uc_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -83,7 +90,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.CreateUcContactAsync(
-    ucContact: new UcContact() {},
+    ucContact: new UcContact() {
+        Company = "Tillman Group",
+        CreatedAt = System.DateTime.Parse("2019-10-28T11:06:56.460Z").ToUniversalTime(),
+        Emails = new List<UcEmail>() {
+            new UcEmail() {
+                Email = "Luther_Rogahn32@yahoo.com",
+                Type = UcEmailType.Work,
+            },
+        },
+        FirstName = "Luther",
+        Id = "39e5f225-c2fe-448f-9931-c96c7bd540e7",
+        LastName = "Rogahn",
+        Name = "Luther Rogahn",
+        Telephones = new List<UcTelephone>() {
+            new UcTelephone() {
+                Telephone = "(809) 992-1681",
+                Type = UcTelephoneType.Fax,
+            },
+            new UcTelephone() {
+                Telephone = "(868) 238-2746",
+                Type = UcTelephoneType.Home,
+            },
+            new UcTelephone() {
+                Telephone = "(219) 736-0357",
+                Type = UcTelephoneType.Mobile,
+            },
+        },
+        Title = "Chief Optimization Executive",
+        UpdatedAt = System.DateTime.Parse("2023-11-18T22:30:46.346Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -115,8 +151,10 @@ Create a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" -->
+<!-- UsageSnippet language="csharp" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" example="uc_recording" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -125,7 +163,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.CreateUcRecordingAsync(
-    ucRecording: new UcRecording() {},
+    ucRecording: new UcRecording() {
+        Contacts = new List<UcContact>() {},
+        CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-21T20:25:37.089Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-03-28T16:21:59.272Z").ToUniversalTime(),
+        Id = "f159e1de-c6df-4fca-b181-b2205dd29d42",
+        Media = new List<UcRecordingMedia>() {},
+        StartAt = System.DateTime.Parse("2023-04-22T20:25:31.818Z").ToUniversalTime(),
+        Type = UcRecordingType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2025-02-24T08:24:25.608Z").ToUniversalTime(),
+        UserName = "Melyna Larson",
+        UserPhone = "1-915-327-0429 x509",
+        WebUrl = "https://spherical-comparison.org",
+    },
     connectionId: "<id>"
 );
 
@@ -489,7 +540,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -500,7 +551,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcCommentRequest req = new PatchUcCommentRequest() {
-    UcComment = new UcComment() {},
+    UcComment = new UcComment() {
+        Content = "Vociferor vitiosus.",
+        CreatedAt = "2023-04-02T23:42:31.571Z",
+        Id = "f43b76fb-3830-472f-9736-ae94a1787acd",
+        UpdatedAt = "2024-02-01T19:29:21.735Z",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -532,8 +588,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -543,7 +601,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcContactRequest req = new PatchUcContactRequest() {
-    UcContact = new UcContact() {},
+    UcContact = new UcContact() {
+        Company = "Tillman Group",
+        CreatedAt = System.DateTime.Parse("2019-10-28T11:06:56.460Z").ToUniversalTime(),
+        Emails = new List<UcEmail>() {
+            new UcEmail() {
+                Email = "Luther_Rogahn32@yahoo.com",
+                Type = UcEmailType.Work,
+            },
+        },
+        FirstName = "Luther",
+        Id = "356575db-851d-45e5-bbd6-3069bcf46bdb",
+        LastName = "Rogahn",
+        Name = "Luther Rogahn",
+        Telephones = new List<UcTelephone>() {
+            new UcTelephone() {
+                Telephone = "(809) 992-1681",
+                Type = UcTelephoneType.Fax,
+            },
+            new UcTelephone() {
+                Telephone = "(868) 238-2746",
+                Type = UcTelephoneType.Home,
+            },
+            new UcTelephone() {
+                Telephone = "(219) 736-0357",
+                Type = UcTelephoneType.Mobile,
+            },
+        },
+        Title = "Chief Optimization Executive",
+        UpdatedAt = System.DateTime.Parse("2023-11-18T22:30:46.355Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -575,8 +662,10 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -586,7 +675,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcRecordingRequest req = new PatchUcRecordingRequest() {
-    UcRecording = new UcRecording() {},
+    UcRecording = new UcRecording() {
+        Contacts = new List<UcContact>() {},
+        CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-21T20:25:37.108Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-03-28T16:21:59.313Z").ToUniversalTime(),
+        Id = "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+        Media = new List<UcRecordingMedia>() {},
+        StartAt = System.DateTime.Parse("2023-04-22T20:25:31.825Z").ToUniversalTime(),
+        Type = UcRecordingType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2025-02-24T08:24:25.637Z").ToUniversalTime(),
+        UserName = "Melyna Larson",
+        UserPhone = "1-915-327-0429 x509",
+        WebUrl = "https://spherical-comparison.org",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -738,7 +840,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -749,7 +851,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
-    UcComment = new UcComment() {},
+    UcComment = new UcComment() {
+        Content = "Vociferor vitiosus.",
+        CreatedAt = "2023-04-02T23:42:31.571Z",
+        Id = "f43b76fb-3830-472f-9736-ae94a1787acd",
+        UpdatedAt = "2024-02-01T19:29:21.735Z",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -781,8 +888,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -792,7 +901,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcContactRequest req = new UpdateUcContactRequest() {
-    UcContact = new UcContact() {},
+    UcContact = new UcContact() {
+        Company = "Tillman Group",
+        CreatedAt = System.DateTime.Parse("2019-10-28T11:06:56.460Z").ToUniversalTime(),
+        Emails = new List<UcEmail>() {
+            new UcEmail() {
+                Email = "Luther_Rogahn32@yahoo.com",
+                Type = UcEmailType.Work,
+            },
+        },
+        FirstName = "Luther",
+        Id = "356575db-851d-45e5-bbd6-3069bcf46bdb",
+        LastName = "Rogahn",
+        Name = "Luther Rogahn",
+        Telephones = new List<UcTelephone>() {
+            new UcTelephone() {
+                Telephone = "(809) 992-1681",
+                Type = UcTelephoneType.Fax,
+            },
+            new UcTelephone() {
+                Telephone = "(868) 238-2746",
+                Type = UcTelephoneType.Home,
+            },
+            new UcTelephone() {
+                Telephone = "(219) 736-0357",
+                Type = UcTelephoneType.Mobile,
+            },
+        },
+        Title = "Chief Optimization Executive",
+        UpdatedAt = System.DateTime.Parse("2023-11-18T22:30:46.355Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -824,8 +962,10 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -835,7 +975,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcRecordingRequest req = new UpdateUcRecordingRequest() {
-    UcRecording = new UcRecording() {},
+    UcRecording = new UcRecording() {
+        Contacts = new List<UcContact>() {},
+        CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-21T20:25:37.108Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-03-28T16:21:59.313Z").ToUniversalTime(),
+        Id = "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+        Media = new List<UcRecordingMedia>() {},
+        StartAt = System.DateTime.Parse("2023-04-22T20:25:31.825Z").ToUniversalTime(),
+        Type = UcRecordingType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2025-02-24T08:24:25.637Z").ToUniversalTime(),
+        UserName = "Melyna Larson",
+        UserPhone = "1-915-327-0429 x509",
+        WebUrl = "https://spherical-comparison.org",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

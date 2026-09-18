@@ -25,8 +25,10 @@ Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" -->
+<!-- UsageSnippet language="csharp" operationID="createCommerceLocation" method="post" path="/commerce/{connection_id}/location" example="commerce_location" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -35,7 +37,63 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.CreateCommerceLocationAsync(
-    commerceLocation: new CommerceLocation() {},
+    commerceLocation: new CommerceLocation() {
+        Address = new PropertyCommerceLocationAddress() {
+            Address1 = "29896 The Limes",
+            City = "New Kenny",
+            CountryCode = "US",
+            PostalCode = "14490-0609",
+            Region = "Virginia",
+            RegionCode = "MS",
+        },
+        Categories = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
+        Currency = "XCD",
+        Description = "Adsidue audentia.",
+        Id = "cc586ecd-1c4e-4aae-99e6-a4f89fb0e1cb",
+        ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
+        IsActive = false,
+        LanguageLocale = "vulgaris",
+        Latitude = 0D,
+        LocationType = LocationType.Restaurant,
+        Longitude = 0D,
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Addo.",
+                Height = 283D,
+                Id = "f83a47f5-2eed-42eb-b7d4-efe96e7e4980",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "8348bb1a-aebf-4aba-926f-e7bf46c18d55",
+                        Slug = "abutor",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "damno"
+                        ),
+                    },
+                },
+                Position = 40D,
+                Type = CommerceItemMediaType.Image,
+                Url = "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+                Width = 1D,
+            },
+        },
+        Name = "Olson - Mraz",
+        PriceLevel = "",
+        Rating = 0D,
+        ReviewCount = 0D,
+        Telephones = new List<CommerceTelephone>() {
+            new CommerceTelephone() {
+                Telephone = "(872) 522-3201",
+                Type = CommerceTelephoneType.Other,
+            },
+            new CommerceTelephone() {
+                Telephone = "(236) 274-2445",
+                Type = CommerceTelephoneType.Mobile,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2024-04-09T09:36:01.351Z").ToUniversalTime(),
+        WebUrl = "https://chilly-edge.info",
+    },
     connectionId: "<id>"
 );
 
@@ -67,8 +125,10 @@ Create a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisLocation" method="post" path="/hris/{connection_id}/location" example="hris_location" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -77,7 +137,42 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.CreateHrisLocationAsync(
-    hrisLocation: new HrisLocation() {},
+    hrisLocation: new HrisLocation() {
+        Address = new PropertyHrisLocationAddress() {
+            Address1 = "2743 Connelly Summit",
+            Address2 = "Apt. 350",
+            City = "Titusville",
+            CountryCode = "US",
+            PostalCode = "16154-1095",
+            Region = "Oregon",
+            RegionCode = "AL",
+        },
+        CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
+        Currency = "MUR",
+        Description = "Acervus caries.",
+        ExternalIdentifier = "76a05081-d11e-4359-8f85-19fd2875e804",
+        Id = "48338c1d-ca7f-4eb0-bc12-a5468160ffea",
+        IsActive = true,
+        IsHq = false,
+        LanguageLocale = "fr",
+        Name = "adhuc",
+        Telephones = new List<HrisTelephone>() {
+            new HrisTelephone() {
+                Telephone = "(710) 550-6997",
+                Type = HrisTelephoneType.Fax,
+            },
+            new HrisTelephone() {
+                Telephone = "(208) 555-8542",
+                Type = HrisTelephoneType.Home,
+            },
+            new HrisTelephone() {
+                Telephone = "(712) 473-5482",
+                Type = HrisTelephoneType.Fax,
+            },
+        },
+        Timezone = "America/Guyana",
+        UpdatedAt = System.DateTime.Parse("2023-06-09T00:40:22.393Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -358,8 +453,10 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCommerceLocation" method="patch" path="/commerce/{connection_id}/location/{id}" example="commerce_location" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -369,7 +466,63 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
-    CommerceLocation = new CommerceLocation() {},
+    CommerceLocation = new CommerceLocation() {
+        Address = new PropertyCommerceLocationAddress() {
+            Address1 = "29896 The Limes",
+            City = "New Kenny",
+            CountryCode = "US",
+            PostalCode = "14490-0609",
+            Region = "Virginia",
+            RegionCode = "MS",
+        },
+        Categories = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
+        Currency = "XCD",
+        Description = "Adsidue audentia.",
+        Id = "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+        ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
+        IsActive = false,
+        LanguageLocale = "vulgaris",
+        Latitude = 0D,
+        LocationType = LocationType.Restaurant,
+        Longitude = 0D,
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Addo.",
+                Height = 283D,
+                Id = "3909acdf-2cde-4603-8361-fd936c020e65",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "2d33a074-28fe-493c-981d-888616925162",
+                        Slug = "abutor",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "damno"
+                        ),
+                    },
+                },
+                Position = 40D,
+                Type = CommerceItemMediaType.Image,
+                Url = "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+                Width = 1D,
+            },
+        },
+        Name = "Olson - Mraz",
+        PriceLevel = "",
+        Rating = 0D,
+        ReviewCount = 0D,
+        Telephones = new List<CommerceTelephone>() {
+            new CommerceTelephone() {
+                Telephone = "(872) 522-3201",
+                Type = CommerceTelephoneType.Other,
+            },
+            new CommerceTelephone() {
+                Telephone = "(236) 274-2445",
+                Type = CommerceTelephoneType.Mobile,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2024-04-09T09:36:01.364Z").ToUniversalTime(),
+        WebUrl = "https://chilly-edge.info",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -401,8 +554,10 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisLocation" method="patch" path="/hris/{connection_id}/location/{id}" example="hris_location" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -412,7 +567,42 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
-    HrisLocation = new HrisLocation() {},
+    HrisLocation = new HrisLocation() {
+        Address = new PropertyHrisLocationAddress() {
+            Address1 = "2743 Connelly Summit",
+            Address2 = "Apt. 350",
+            City = "Titusville",
+            CountryCode = "US",
+            PostalCode = "16154-1095",
+            Region = "Oregon",
+            RegionCode = "AL",
+        },
+        CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
+        Currency = "MUR",
+        Description = "Acervus caries.",
+        ExternalIdentifier = "99f0dbdd-df2b-4d49-9e82-00a607a43d9f",
+        Id = "445b1f3e-80ff-43ad-a8af-2ca6e1046fd7",
+        IsActive = true,
+        IsHq = false,
+        LanguageLocale = "fr",
+        Name = "adhuc",
+        Telephones = new List<HrisTelephone>() {
+            new HrisTelephone() {
+                Telephone = "(710) 550-6997",
+                Type = HrisTelephoneType.Fax,
+            },
+            new HrisTelephone() {
+                Telephone = "(208) 555-8542",
+                Type = HrisTelephoneType.Home,
+            },
+            new HrisTelephone() {
+                Telephone = "(712) 473-5482",
+                Type = HrisTelephoneType.Fax,
+            },
+        },
+        Timezone = "America/Guyana",
+        UpdatedAt = System.DateTime.Parse("2023-06-09T00:40:22.398Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -524,8 +714,10 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCommerceLocation" method="put" path="/commerce/{connection_id}/location/{id}" example="commerce_location" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -535,7 +727,63 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
-    CommerceLocation = new CommerceLocation() {},
+    CommerceLocation = new CommerceLocation() {
+        Address = new PropertyCommerceLocationAddress() {
+            Address1 = "29896 The Limes",
+            City = "New Kenny",
+            CountryCode = "US",
+            PostalCode = "14490-0609",
+            Region = "Virginia",
+            RegionCode = "MS",
+        },
+        Categories = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
+        Currency = "XCD",
+        Description = "Adsidue audentia.",
+        Id = "4a8eb352-cec0-40d3-9002-d9db68c1420b",
+        ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
+        IsActive = false,
+        LanguageLocale = "vulgaris",
+        Latitude = 0D,
+        LocationType = LocationType.Restaurant,
+        Longitude = 0D,
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Addo.",
+                Height = 283D,
+                Id = "3909acdf-2cde-4603-8361-fd936c020e65",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "2d33a074-28fe-493c-981d-888616925162",
+                        Slug = "abutor",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "damno"
+                        ),
+                    },
+                },
+                Position = 40D,
+                Type = CommerceItemMediaType.Image,
+                Url = "https://picsum.photos/seed/QVh7ViTV/3964/1567",
+                Width = 1D,
+            },
+        },
+        Name = "Olson - Mraz",
+        PriceLevel = "",
+        Rating = 0D,
+        ReviewCount = 0D,
+        Telephones = new List<CommerceTelephone>() {
+            new CommerceTelephone() {
+                Telephone = "(872) 522-3201",
+                Type = CommerceTelephoneType.Other,
+            },
+            new CommerceTelephone() {
+                Telephone = "(236) 274-2445",
+                Type = CommerceTelephoneType.Mobile,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2024-04-09T09:36:01.364Z").ToUniversalTime(),
+        WebUrl = "https://chilly-edge.info",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -567,8 +815,10 @@ Update a location
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisLocation" method="put" path="/hris/{connection_id}/location/{id}" example="hris_location" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -578,7 +828,42 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
-    HrisLocation = new HrisLocation() {},
+    HrisLocation = new HrisLocation() {
+        Address = new PropertyHrisLocationAddress() {
+            Address1 = "2743 Connelly Summit",
+            Address2 = "Apt. 350",
+            City = "Titusville",
+            CountryCode = "US",
+            PostalCode = "16154-1095",
+            Region = "Oregon",
+            RegionCode = "AL",
+        },
+        CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
+        Currency = "MUR",
+        Description = "Acervus caries.",
+        ExternalIdentifier = "99f0dbdd-df2b-4d49-9e82-00a607a43d9f",
+        Id = "445b1f3e-80ff-43ad-a8af-2ca6e1046fd7",
+        IsActive = true,
+        IsHq = false,
+        LanguageLocale = "fr",
+        Name = "adhuc",
+        Telephones = new List<HrisTelephone>() {
+            new HrisTelephone() {
+                Telephone = "(710) 550-6997",
+                Type = HrisTelephoneType.Fax,
+            },
+            new HrisTelephone() {
+                Telephone = "(208) 555-8542",
+                Type = HrisTelephoneType.Home,
+            },
+            new HrisTelephone() {
+                Telephone = "(712) 473-5482",
+                Type = HrisTelephoneType.Fax,
+            },
+        },
+        Timezone = "America/Guyana",
+        UpdatedAt = System.DateTime.Parse("2023-06-09T00:40:22.398Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

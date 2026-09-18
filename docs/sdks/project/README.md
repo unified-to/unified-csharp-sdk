@@ -65,8 +65,10 @@ Create a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" -->
+<!-- UsageSnippet language="csharp" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" example="task_project" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -75,7 +77,45 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Project.CreateTaskProjectAsync(
-    taskProject: new TaskProject() {},
+    taskProject: new TaskProject() {
+        CreatedAt = System.DateTime.Parse("2023-06-23T16:39:40.446Z").ToUniversalTime(),
+        Description = "Valetudo aggredior accommodo curiositas vox.",
+        HasChildren = false,
+        HasTasks = false,
+        Id = "b89dd93c-edbd-47f7-8077-f16b2f9cf4a1",
+        Metadata = new List<TaskMetadata>() {
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "db969ea0-9310-4a66-a696-8fceb5ef1409",
+                Namespace = "custom",
+                Slug = "decens",
+                Value = TaskMetadataValue.CreateStr(
+                    "uterque"
+                ),
+            },
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "f2df3bed-7357-48cd-bf87-bd708995401a",
+                Namespace = "custom",
+                Slug = "benevolentia",
+                Value = TaskMetadataValue.CreateStr(
+                    "pariatur"
+                ),
+            },
+        },
+        Name = "Garden",
+        UpdatedAt = System.DateTime.Parse("2023-10-08T14:52:33.709Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -316,8 +356,10 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -327,7 +369,45 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
-    TaskProject = new TaskProject() {},
+    TaskProject = new TaskProject() {
+        CreatedAt = System.DateTime.Parse("2023-06-23T16:39:40.446Z").ToUniversalTime(),
+        Description = "Valetudo aggredior accommodo curiositas vox.",
+        HasChildren = false,
+        HasTasks = false,
+        Id = "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+        Metadata = new List<TaskMetadata>() {
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "5783b242-6b8f-46b3-8562-811ab290f6b2",
+                Namespace = "custom",
+                Slug = "decens",
+                Value = TaskMetadataValue.CreateStr(
+                    "uterque"
+                ),
+            },
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+                Namespace = "custom",
+                Slug = "benevolentia",
+                Value = TaskMetadataValue.CreateStr(
+                    "pariatur"
+                ),
+            },
+        },
+        Name = "Garden",
+        UpdatedAt = System.DateTime.Parse("2023-10-08T14:52:33.710Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -482,8 +562,10 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -493,7 +575,45 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
-    TaskProject = new TaskProject() {},
+    TaskProject = new TaskProject() {
+        CreatedAt = System.DateTime.Parse("2023-06-23T16:39:40.446Z").ToUniversalTime(),
+        Description = "Valetudo aggredior accommodo curiositas vox.",
+        HasChildren = false,
+        HasTasks = false,
+        Id = "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+        Metadata = new List<TaskMetadata>() {
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "5783b242-6b8f-46b3-8562-811ab290f6b2",
+                Namespace = "custom",
+                Slug = "decens",
+                Value = TaskMetadataValue.CreateStr(
+                    "uterque"
+                ),
+            },
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+                Namespace = "custom",
+                Slug = "benevolentia",
+                Value = TaskMetadataValue.CreateStr(
+                    "pariatur"
+                ),
+            },
+        },
+        Name = "Garden",
+        UpdatedAt = System.DateTime.Parse("2023-10-08T14:52:33.710Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

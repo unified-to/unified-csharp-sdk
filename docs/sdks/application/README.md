@@ -17,8 +17,10 @@ Create an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAtsApplication" method="post" path="/ats/{connection_id}/application" -->
+<!-- UsageSnippet language="csharp" operationID="createAtsApplication" method="post" path="/ats/{connection_id}/application" example="ats_application" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Application.CreateAtsApplicationAsync(
-    atsApplication: new AtsApplication() {},
+    atsApplication: new AtsApplication() {
+        Answers = new List<AtsApplicationAnswer>() {},
+        AppliedAt = System.DateTime.Parse("2025-09-08T08:48:32.240Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
+        HiredAt = System.DateTime.Parse("2026-04-14T14:34:12.048Z").ToUniversalTime(),
+        Id = "85d62f00-b2a0-42db-8c72-8ee24f2b01fd",
+        Metadata = new List<AtsMetadata>() {
+            new AtsMetadata() {
+                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = AtsMetadataFormat.Text,
+                Id = "a1302a79-0341-40e6-b91a-daeb95584617",
+                Namespace = "application",
+                Slug = "despecto",
+                Value = AtsMetadataValue.CreateStr(
+                    "Argentum decretum cultellus aveho distinctio verecundia stella depono."
+                ),
+            },
+        },
+        Offers = new List<AtsOffer>() {},
+        OriginalStatus = "vomica",
+        OriginalSubstatus = "allatus",
+        RejectedAt = System.DateTime.Parse("2026-09-08T19:51:38.295Z").ToUniversalTime(),
+        RejectedReason = "Cometes amplitudo videlicet talio.",
+        Source = "credo",
+        Status = AtsApplicationStatus.Reviewing,
+        UpdatedAt = System.DateTime.Parse("2026-09-15T11:10:10.512Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +174,10 @@ Update an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAtsApplication" method="patch" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAtsApplication" method="patch" path="/ats/{connection_id}/application/{id}" example="ats_application" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +187,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
-    AtsApplication = new AtsApplication() {},
+    AtsApplication = new AtsApplication() {
+        Answers = new List<AtsApplicationAnswer>() {},
+        AppliedAt = System.DateTime.Parse("2025-09-08T08:48:32.256Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
+        HiredAt = System.DateTime.Parse("2026-04-14T14:34:12.068Z").ToUniversalTime(),
+        Id = "b1876d77-92f7-4377-8a74-00bdf3ad20d2",
+        Metadata = new List<AtsMetadata>() {
+            new AtsMetadata() {
+                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = AtsMetadataFormat.Text,
+                Id = "a1302a79-0341-40e6-b91a-daeb95584617",
+                Namespace = "application",
+                Slug = "despecto",
+                Value = AtsMetadataValue.CreateStr(
+                    "Argentum decretum cultellus aveho distinctio verecundia stella depono."
+                ),
+            },
+        },
+        Offers = new List<AtsOffer>() {},
+        OriginalStatus = "vomica",
+        OriginalSubstatus = "allatus",
+        RejectedAt = System.DateTime.Parse("2026-09-08T19:51:38.319Z").ToUniversalTime(),
+        RejectedReason = "Cometes amplitudo videlicet talio.",
+        Source = "credo",
+        Status = AtsApplicationStatus.Reviewing,
+        UpdatedAt = System.DateTime.Parse("2026-09-15T11:10:10.536Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +289,10 @@ Update an application
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAtsApplication" method="put" path="/ats/{connection_id}/application/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAtsApplication" method="put" path="/ats/{connection_id}/application/{id}" example="ats_application" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +302,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
-    AtsApplication = new AtsApplication() {},
+    AtsApplication = new AtsApplication() {
+        Answers = new List<AtsApplicationAnswer>() {},
+        AppliedAt = System.DateTime.Parse("2025-09-08T08:48:32.256Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
+        HiredAt = System.DateTime.Parse("2026-04-14T14:34:12.068Z").ToUniversalTime(),
+        Id = "b1876d77-92f7-4377-8a74-00bdf3ad20d2",
+        Metadata = new List<AtsMetadata>() {
+            new AtsMetadata() {
+                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = AtsMetadataFormat.Text,
+                Id = "a1302a79-0341-40e6-b91a-daeb95584617",
+                Namespace = "application",
+                Slug = "despecto",
+                Value = AtsMetadataValue.CreateStr(
+                    "Argentum decretum cultellus aveho distinctio verecundia stella depono."
+                ),
+            },
+        },
+        Offers = new List<AtsOffer>() {},
+        OriginalStatus = "vomica",
+        OriginalSubstatus = "allatus",
+        RejectedAt = System.DateTime.Parse("2026-09-08T19:51:38.319Z").ToUniversalTime(),
+        RejectedReason = "Cometes amplitudo videlicet talio.",
+        Source = "credo",
+        Status = AtsApplicationStatus.Reviewing,
+        UpdatedAt = System.DateTime.Parse("2026-09-15T11:10:10.536Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

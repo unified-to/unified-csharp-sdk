@@ -17,8 +17,10 @@ Create a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" example="accounting_vendorcredit" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Vendorcredit.CreateAccountingVendorcreditAsync(
-    accountingVendorcredit: new AccountingVendorcredit() {},
+    accountingVendorcredit: new AccountingVendorcredit() {
+        Applications = new List<AccountingCreditApplication>() {},
+        ApplyAmount = 1D,
+        BalanceAmount = 0D,
+        CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
+        Currency = "KGS",
+        DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
+        Id = "e53c082c-1aa1-4192-be20-f4cdfd0cea57",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Conatus cruciamentum decor avaritia tantum.",
+        PostedAt = System.DateTime.Parse("2023-09-28T16:43:46.445Z").ToUniversalTime(),
+        Status = AccountingVendorcreditStatus.Submitted,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2023-11-26T14:35:53.369Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +159,10 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +172,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingVendorcreditRequest req = new PatchAccountingVendorcreditRequest() {
-    AccountingVendorcredit = new AccountingVendorcredit() {},
+    AccountingVendorcredit = new AccountingVendorcredit() {
+        Applications = new List<AccountingCreditApplication>() {},
+        ApplyAmount = 1D,
+        BalanceAmount = 0D,
+        CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
+        Currency = "KGS",
+        DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
+        Id = "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Conatus cruciamentum decor avaritia tantum.",
+        PostedAt = System.DateTime.Parse("2023-09-28T16:43:46.448Z").ToUniversalTime(),
+        Status = AccountingVendorcreditStatus.Submitted,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2023-11-26T14:35:53.374Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +259,10 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +272,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingVendorcreditRequest req = new UpdateAccountingVendorcreditRequest() {
-    AccountingVendorcredit = new AccountingVendorcredit() {},
+    AccountingVendorcredit = new AccountingVendorcredit() {
+        Applications = new List<AccountingCreditApplication>() {},
+        ApplyAmount = 1D,
+        BalanceAmount = 0D,
+        CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
+        Currency = "KGS",
+        DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
+        Id = "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Conatus cruciamentum decor avaritia tantum.",
+        PostedAt = System.DateTime.Parse("2023-09-28T16:43:46.448Z").ToUniversalTime(),
+        Status = AccountingVendorcreditStatus.Submitted,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2023-11-26T14:35:53.374Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

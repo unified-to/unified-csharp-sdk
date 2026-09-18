@@ -17,8 +17,9 @@ Create a bankaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisBankaccount" method="post" path="/hris/{connection_id}/bankaccount" example="hris_bankaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Bankaccount.CreateHrisBankaccountAsync(
-    hrisBankaccount: new HrisBankaccount() {},
+    hrisBankaccount: new HrisBankaccount() {
+        AccountNumber = "****3777",
+        AccountNumberLast4 = "3777",
+        AccountType = HrisBankaccountAccountType.Checking,
+        BankName = "Huel Group",
+        CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
+        Id = "0ba01940-59d2-4fcb-a5b2-8633146c7a07",
+        IsPrimary = false,
+        Name = "Checking Account",
+        RoutingNumber = "448650724",
+        UpdatedAt = System.DateTime.Parse("2025-06-04T11:31:37.518Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +154,9 @@ Update a bankaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisBankaccount" method="patch" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +166,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
-    HrisBankaccount = new HrisBankaccount() {},
+    HrisBankaccount = new HrisBankaccount() {
+        AccountNumber = "****3777",
+        AccountNumberLast4 = "3777",
+        AccountType = HrisBankaccountAccountType.Checking,
+        BankName = "Huel Group",
+        CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
+        Id = "48efbe5b-f668-403e-9979-a07b0ec0a98a",
+        IsPrimary = false,
+        Name = "Checking Account",
+        RoutingNumber = "448650724",
+        UpdatedAt = System.DateTime.Parse("2025-06-04T11:31:37.525Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +249,9 @@ Update a bankaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisBankaccount" method="put" path="/hris/{connection_id}/bankaccount/{id}" example="hris_bankaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +261,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
-    HrisBankaccount = new HrisBankaccount() {},
+    HrisBankaccount = new HrisBankaccount() {
+        AccountNumber = "****3777",
+        AccountNumberLast4 = "3777",
+        AccountType = HrisBankaccountAccountType.Checking,
+        BankName = "Huel Group",
+        CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
+        Id = "48efbe5b-f668-403e-9979-a07b0ec0a98a",
+        IsPrimary = false,
+        Name = "Checking Account",
+        RoutingNumber = "448650724",
+        UpdatedAt = System.DateTime.Parse("2025-06-04T11:31:37.525Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

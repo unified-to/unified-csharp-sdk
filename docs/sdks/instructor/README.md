@@ -17,8 +17,10 @@ Create an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" example="lms_instructor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Instructor.CreateLmsInstructorAsync(
-    lmsInstructor: new LmsInstructor() {},
+    lmsInstructor: new LmsInstructor() {
+        CreatedAt = System.DateTime.Parse("2021-10-12T16:38:54.979Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Deangelo",
+        Id = "dfe83772-691a-4931-8ea8-97260a0c5abf",
+        ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
+        LastName = "Ritchie",
+        Name = "Deangelo Ritchie",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(352) 551-7989",
+                Type = LmsTelephoneType.Home,
+            },
+        },
+        Title = "Product Solutions Engineer",
+        UpdatedAt = System.DateTime.Parse("2025-06-29T14:07:16.774Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +163,10 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +176,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
-    LmsInstructor = new LmsInstructor() {},
+    LmsInstructor = new LmsInstructor() {
+        CreatedAt = System.DateTime.Parse("2021-10-12T16:38:54.979Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Deangelo",
+        Id = "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+        ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
+        LastName = "Ritchie",
+        Name = "Deangelo Ritchie",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(352) 551-7989",
+                Type = LmsTelephoneType.Home,
+            },
+        },
+        Title = "Product Solutions Engineer",
+        UpdatedAt = System.DateTime.Parse("2025-06-29T14:07:16.781Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +267,10 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +280,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
-    LmsInstructor = new LmsInstructor() {},
+    LmsInstructor = new LmsInstructor() {
+        CreatedAt = System.DateTime.Parse("2021-10-12T16:38:54.979Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Deangelo",
+        Id = "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+        ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
+        LastName = "Ritchie",
+        Name = "Deangelo Ritchie",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(352) 551-7989",
+                Type = LmsTelephoneType.Home,
+            },
+        },
+        Title = "Product Solutions Engineer",
+        UpdatedAt = System.DateTime.Parse("2025-06-29T14:07:16.781Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

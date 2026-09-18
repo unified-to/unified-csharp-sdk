@@ -19,8 +19,10 @@ Create a form
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createFormsForm" method="post" path="/forms/{connection_id}/form" -->
+<!-- UsageSnippet language="csharp" operationID="createFormsForm" method="post" path="/forms/{connection_id}/form" example="forms_form" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,7 +31,72 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Forms.CreateFormsFormAsync(
-    formsForm: new FormsForm() {},
+    formsForm: new FormsForm() {
+        ConfirmationMessage = "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+        CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+        Description = "Sodalitas cupiditas terebro conduco.",
+        Fields = new List<FormField>() {
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Id = "565f27cf-2cf7-4c30-ad97-4340d859b584",
+                IsActive = true,
+                IsRequired = true,
+                MaxLength = 146D,
+                Name = "vulgivagus audio accendo",
+                Order = 0D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2025-04-11T17:17:35.689Z").ToUniversalTime(),
+            },
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Id = "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+                IsActive = true,
+                IsRequired = false,
+                Name = "alo crebro vado",
+                Order = 1D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2024-08-23T07:10:16.251Z").ToUniversalTime(),
+            },
+            new FormField() {
+                Choices = new List<string>() {
+                    "vallum",
+                    "vae",
+                    "nesciunt",
+                    "commodi",
+                    "appositus",
+                },
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                DefaultValue = "cattus",
+                Id = "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+                IsActive = true,
+                IsRequired = false,
+                Name = "casso tenus nesciunt",
+                Order = 2D,
+                Type = FormFieldType.MultipleSelect,
+                UpdatedAt = System.DateTime.Parse("2024-02-22T02:14:33.063Z").ToUniversalTime(),
+            },
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Description = "Sequi antea delectatio.",
+                Id = "e45efb8f-439b-40f6-8370-99c8ec66b065",
+                IsActive = true,
+                IsRequired = false,
+                Name = "comburo utique ipsa",
+                Order = 3D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2024-11-14T23:43:34.255Z").ToUniversalTime(),
+            },
+        },
+        HasMultipleSubmissions = false,
+        HasProgressBar = false,
+        HasShuffleQuestions = true,
+        Id = "d0766382-50db-4bb3-a245-eaefe22f656b",
+        IsActive = false,
+        Name = "voluptatibus omnis audax Form",
+        PublishedUrl = "https://impartial-institute.org/",
+        ResponseCount = 423D,
+        UpdatedAt = System.DateTime.Parse("2024-08-15T04:23:40.243Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -227,8 +294,10 @@ Update a form
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchFormsForm" method="patch" path="/forms/{connection_id}/form/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchFormsForm" method="patch" path="/forms/{connection_id}/form/{id}" example="forms_form" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -238,7 +307,72 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchFormsFormRequest req = new PatchFormsFormRequest() {
-    FormsForm = new FormsForm() {},
+    FormsForm = new FormsForm() {
+        ConfirmationMessage = "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+        CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+        Description = "Sodalitas cupiditas terebro conduco.",
+        Fields = new List<FormField>() {
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Id = "565f27cf-2cf7-4c30-ad97-4340d859b584",
+                IsActive = true,
+                IsRequired = true,
+                MaxLength = 146D,
+                Name = "vulgivagus audio accendo",
+                Order = 0D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2025-04-11T17:17:35.699Z").ToUniversalTime(),
+            },
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Id = "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+                IsActive = true,
+                IsRequired = false,
+                Name = "alo crebro vado",
+                Order = 1D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2024-08-23T07:10:16.257Z").ToUniversalTime(),
+            },
+            new FormField() {
+                Choices = new List<string>() {
+                    "vallum",
+                    "vae",
+                    "nesciunt",
+                    "commodi",
+                    "appositus",
+                },
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                DefaultValue = "cattus",
+                Id = "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+                IsActive = true,
+                IsRequired = false,
+                Name = "casso tenus nesciunt",
+                Order = 2D,
+                Type = FormFieldType.MultipleSelect,
+                UpdatedAt = System.DateTime.Parse("2024-02-22T02:14:33.065Z").ToUniversalTime(),
+            },
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Description = "Sequi antea delectatio.",
+                Id = "e45efb8f-439b-40f6-8370-99c8ec66b065",
+                IsActive = true,
+                IsRequired = false,
+                Name = "comburo utique ipsa",
+                Order = 3D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2024-11-14T23:43:34.262Z").ToUniversalTime(),
+            },
+        },
+        HasMultipleSubmissions = false,
+        HasProgressBar = false,
+        HasShuffleQuestions = true,
+        Id = "5938349a-6b1c-42b1-9d6c-d5641aa72d7a",
+        IsActive = false,
+        Name = "voluptatibus omnis audax Form",
+        PublishedUrl = "https://impartial-institute.org/",
+        ResponseCount = 423D,
+        UpdatedAt = System.DateTime.Parse("2024-08-15T04:23:40.249Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -310,8 +444,10 @@ Update a form
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateFormsForm" method="put" path="/forms/{connection_id}/form/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateFormsForm" method="put" path="/forms/{connection_id}/form/{id}" example="forms_form" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -321,7 +457,72 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateFormsFormRequest req = new UpdateFormsFormRequest() {
-    FormsForm = new FormsForm() {},
+    FormsForm = new FormsForm() {
+        ConfirmationMessage = "Cultura temeritas aptus celebrer volo pecus culpa annus aurum.",
+        CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+        Description = "Sodalitas cupiditas terebro conduco.",
+        Fields = new List<FormField>() {
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Id = "565f27cf-2cf7-4c30-ad97-4340d859b584",
+                IsActive = true,
+                IsRequired = true,
+                MaxLength = 146D,
+                Name = "vulgivagus audio accendo",
+                Order = 0D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2025-04-11T17:17:35.699Z").ToUniversalTime(),
+            },
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Id = "82b263f9-2d16-4cdf-8e99-d05ba46ce817",
+                IsActive = true,
+                IsRequired = false,
+                Name = "alo crebro vado",
+                Order = 1D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2024-08-23T07:10:16.257Z").ToUniversalTime(),
+            },
+            new FormField() {
+                Choices = new List<string>() {
+                    "vallum",
+                    "vae",
+                    "nesciunt",
+                    "commodi",
+                    "appositus",
+                },
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                DefaultValue = "cattus",
+                Id = "d7c963e5-2d3d-4436-a57d-a6e337d9d170",
+                IsActive = true,
+                IsRequired = false,
+                Name = "casso tenus nesciunt",
+                Order = 2D,
+                Type = FormFieldType.MultipleSelect,
+                UpdatedAt = System.DateTime.Parse("2024-02-22T02:14:33.065Z").ToUniversalTime(),
+            },
+            new FormField() {
+                CreatedAt = System.DateTime.Parse("2023-10-05T21:34:29.094Z").ToUniversalTime(),
+                Description = "Sequi antea delectatio.",
+                Id = "e45efb8f-439b-40f6-8370-99c8ec66b065",
+                IsActive = true,
+                IsRequired = false,
+                Name = "comburo utique ipsa",
+                Order = 3D,
+                Type = FormFieldType.Textarea,
+                UpdatedAt = System.DateTime.Parse("2024-11-14T23:43:34.262Z").ToUniversalTime(),
+            },
+        },
+        HasMultipleSubmissions = false,
+        HasProgressBar = false,
+        HasShuffleQuestions = true,
+        Id = "5938349a-6b1c-42b1-9d6c-d5641aa72d7a",
+        IsActive = false,
+        Name = "voluptatibus omnis audax Form",
+        PublishedUrl = "https://impartial-institute.org/",
+        ResponseCount = 423D,
+        UpdatedAt = System.DateTime.Parse("2024-08-15T04:23:40.249Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

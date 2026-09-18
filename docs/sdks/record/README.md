@@ -17,8 +17,9 @@ Create a record
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createDatastoreRecord" method="post" path="/datastore/{connection_id}/record" -->
+<!-- UsageSnippet language="csharp" operationID="createDatastoreRecord" method="post" path="/datastore/{connection_id}/record" example="datastore_record" -->
 ```csharp
+using System;
 using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -29,9 +30,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Record.CreateDatastoreRecordAsync(
     datastoreRecord: new DatastoreRecord() {
+        CreatedAt = System.DateTime.Parse("2022-07-10T04:42:03.076Z").ToUniversalTime(),
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
+        Id = "83da1f22-b6e0-4c15-b368-0120600e09ae",
+        RowNumber = 33D,
+        UpdatedAt = System.DateTime.Parse("2025-02-12T16:24:34.144Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -147,8 +152,9 @@ Update a record
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchDatastoreRecord" method="patch" path="/datastore/{connection_id}/record/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchDatastoreRecord" method="patch" path="/datastore/{connection_id}/record/{id}" example="datastore_record" -->
 ```csharp
+using System;
 using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -160,9 +166,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchDatastoreRecordRequest req = new PatchDatastoreRecordRequest() {
     DatastoreRecord = new DatastoreRecord() {
+        CreatedAt = System.DateTime.Parse("2022-07-10T04:42:03.076Z").ToUniversalTime(),
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
+        Id = "3cf612c8-52e2-46e9-849b-2e77ec060dfd",
+        RowNumber = 33D,
+        UpdatedAt = System.DateTime.Parse("2025-02-12T16:24:34.149Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -235,8 +245,9 @@ Update a record
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateDatastoreRecord" method="put" path="/datastore/{connection_id}/record/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateDatastoreRecord" method="put" path="/datastore/{connection_id}/record/{id}" example="datastore_record" -->
 ```csharp
+using System;
 using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -248,9 +259,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateDatastoreRecordRequest req = new UpdateDatastoreRecordRequest() {
     DatastoreRecord = new DatastoreRecord() {
+        CreatedAt = System.DateTime.Parse("2022-07-10T04:42:03.076Z").ToUniversalTime(),
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
+        Id = "3cf612c8-52e2-46e9-849b-2e77ec060dfd",
+        RowNumber = 33D,
+        UpdatedAt = System.DateTime.Parse("2025-02-12T16:24:34.149Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

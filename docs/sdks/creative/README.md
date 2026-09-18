@@ -17,8 +17,10 @@ Create a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" example="ads_creative" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Creative.CreateAdsCreativeAsync(
-    adsCreative: new AdsCreative() {},
+    adsCreative: new AdsCreative() {
+        CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
+        Id = "5dd7b3ce-88d6-4c92-965d-a4f57ced5201",
+        Labels = new List<string>() {
+            "coma",
+            "accedo",
+            "termes",
+        },
+        Name = "Brekke, Bradtke and Robel",
+        Status = AdsCreativeStatus.Paused,
+        UpdatedAt = System.DateTime.Parse("2021-06-21T01:01:35.446Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +155,10 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +168,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
-    AdsCreative = new AdsCreative() {},
+    AdsCreative = new AdsCreative() {
+        CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
+        Id = "d118ec82-e89d-4441-8941-08ef9518487f",
+        Labels = new List<string>() {
+            "coma",
+            "accedo",
+            "termes",
+        },
+        Name = "Brekke, Bradtke and Robel",
+        Status = AdsCreativeStatus.Paused,
+        UpdatedAt = System.DateTime.Parse("2021-06-21T01:01:35.450Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +251,10 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +264,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
-    AdsCreative = new AdsCreative() {},
+    AdsCreative = new AdsCreative() {
+        CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
+        Id = "d118ec82-e89d-4441-8941-08ef9518487f",
+        Labels = new List<string>() {
+            "coma",
+            "accedo",
+            "termes",
+        },
+        Name = "Brekke, Bradtke and Robel",
+        Status = AdsCreativeStatus.Paused,
+        UpdatedAt = System.DateTime.Parse("2021-06-21T01:01:35.450Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

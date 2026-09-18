@@ -17,8 +17,9 @@ Create a deduction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisDeduction" method="post" path="/hris/{connection_id}/deduction" example="hris_deduction" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Deduction.CreateHrisDeductionAsync(
-    hrisDeduction: new HrisDeduction() {},
+    hrisDeduction: new HrisDeduction() {
+        Amount = 139655D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-05-22T22:53:01.272Z").ToUniversalTime(),
+        Frequency = HrisDeductionFrequency.Month,
+        Id = "53b67e29-3fbf-4518-9dc8-46caa54fd502",
+        IsActive = false,
+        Notes = "Carmen desidero.",
+        StartAt = System.DateTime.Parse("2025-02-18T04:38:44.652Z").ToUniversalTime(),
+        Type = HrisDeductionType.Fixed,
+        UpdatedAt = System.DateTime.Parse("2024-03-01T23:42:32.713Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +155,9 @@ Update a deduction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisDeduction" method="patch" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +167,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
-    HrisDeduction = new HrisDeduction() {},
+    HrisDeduction = new HrisDeduction() {
+        Amount = 139655D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-05-22T22:53:01.279Z").ToUniversalTime(),
+        Frequency = HrisDeductionFrequency.Month,
+        Id = "97cd633a-aa8b-4099-b8f8-f1467cc7eb2c",
+        IsActive = false,
+        Notes = "Carmen desidero.",
+        StartAt = System.DateTime.Parse("2025-02-18T04:38:44.658Z").ToUniversalTime(),
+        Type = HrisDeductionType.Fixed,
+        UpdatedAt = System.DateTime.Parse("2024-03-01T23:42:32.717Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +251,9 @@ Update a deduction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisDeduction" method="put" path="/hris/{connection_id}/deduction/{id}" example="hris_deduction" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +263,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
-    HrisDeduction = new HrisDeduction() {},
+    HrisDeduction = new HrisDeduction() {
+        Amount = 139655D,
+        CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
+        CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-05-22T22:53:01.279Z").ToUniversalTime(),
+        Frequency = HrisDeductionFrequency.Month,
+        Id = "97cd633a-aa8b-4099-b8f8-f1467cc7eb2c",
+        IsActive = false,
+        Notes = "Carmen desidero.",
+        StartAt = System.DateTime.Parse("2025-02-18T04:38:44.658Z").ToUniversalTime(),
+        Type = HrisDeductionType.Fixed,
+        UpdatedAt = System.DateTime.Parse("2024-03-01T23:42:32.717Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

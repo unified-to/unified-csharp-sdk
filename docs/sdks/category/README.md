@@ -23,8 +23,10 @@ Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" example="accounting_category" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -33,7 +35,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Category.CreateAccountingCategoryAsync(
-    accountingCategory: new AccountingCategory() {},
+    accountingCategory: new AccountingCategory() {
+        CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
+        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
+        Id = "dc380b5b-a085-47f0-80e6-a0450e68adcf",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Electronic Cotton Shoes",
+        UpdatedAt = System.DateTime.Parse("2025-08-20T06:36:05.170Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -65,8 +75,9 @@ Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" -->
+<!-- UsageSnippet language="csharp" operationID="createTicketingCategory" method="post" path="/ticketing/{connection_id}/category" example="ticketing_category" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -75,7 +86,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Category.CreateTicketingCategoryAsync(
-    ticketingCategory: new TicketingCategory() {},
+    ticketingCategory: new TicketingCategory() {
+        CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
+        Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+        Id = "f105db66-81f5-4fe1-bc51-33918f354917",
+        IsActive = true,
+        Name = "amicitia",
+        UpdatedAt = System.DateTime.Parse("2025-12-15T15:11:45.224Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -273,8 +291,10 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -284,7 +304,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
-    AccountingCategory = new AccountingCategory() {},
+    AccountingCategory = new AccountingCategory() {
+        CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
+        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
+        Id = "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Electronic Cotton Shoes",
+        UpdatedAt = System.DateTime.Parse("2025-08-20T06:36:05.177Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -316,8 +344,9 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTicketingCategory" method="patch" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -327,7 +356,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
-    TicketingCategory = new TicketingCategory() {},
+    TicketingCategory = new TicketingCategory() {
+        CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
+        Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+        Id = "607d0b35-27ed-4c77-9ff7-e384812051f9",
+        IsActive = true,
+        Name = "amicitia",
+        UpdatedAt = System.DateTime.Parse("2025-12-15T15:11:45.243Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -439,8 +475,10 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -450,7 +488,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
-    AccountingCategory = new AccountingCategory() {},
+    AccountingCategory = new AccountingCategory() {
+        CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
+        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
+        Id = "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Electronic Cotton Shoes",
+        UpdatedAt = System.DateTime.Parse("2025-08-20T06:36:05.177Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -482,8 +528,9 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTicketingCategory" method="put" path="/ticketing/{connection_id}/category/{id}" example="ticketing_category" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -493,7 +540,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
-    TicketingCategory = new TicketingCategory() {},
+    TicketingCategory = new TicketingCategory() {
+        CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
+        Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
+        Id = "607d0b35-27ed-4c77-9ff7-e384812051f9",
+        IsActive = true,
+        Name = "amicitia",
+        UpdatedAt = System.DateTime.Parse("2025-12-15T15:11:45.243Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

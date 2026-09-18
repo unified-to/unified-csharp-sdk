@@ -19,8 +19,10 @@ Create a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" -->
+<!-- UsageSnippet language="csharp" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" example="martech_member" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,7 +31,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Member.CreateMartechMemberAsync(
-    marketingMember: new MarketingMember() {},
+    marketingMember: new MarketingMember() {
+        Company = "Miller - Franecki",
+        CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
+        Emails = new List<MarketingEmail>() {
+            new MarketingEmail() {
+                Email = "Thalia.Abernathy61@gmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Maymie59@hotmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Coty27@hotmail.com",
+                Type = MarketingEmailType.Work,
+            },
+        },
+        FirstName = "Jude",
+        Id = "a0a955df-e281-46e9-af34-0bcaf970081d",
+        LastName = "Leffler",
+        Name = "Jude Leffler",
+        Status = MarketingMemberStatus.Unsubscribed,
+        Tags = new List<string>() {
+            "vinco",
+            "ceno",
+        },
+        UpdatedAt = System.DateTime.Parse("2025-06-15T05:07:12.559Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -227,8 +256,10 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -238,7 +269,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMartechMemberRequest req = new PatchMartechMemberRequest() {
-    MarketingMember = new MarketingMember() {},
+    MarketingMember = new MarketingMember() {
+        Company = "Miller - Franecki",
+        CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
+        Emails = new List<MarketingEmail>() {
+            new MarketingEmail() {
+                Email = "Thalia.Abernathy61@gmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Maymie59@hotmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Coty27@hotmail.com",
+                Type = MarketingEmailType.Work,
+            },
+        },
+        FirstName = "Jude",
+        Id = "5cfa6758-bd0c-4077-8934-7357d115348d",
+        LastName = "Leffler",
+        Name = "Jude Leffler",
+        Status = MarketingMemberStatus.Unsubscribed,
+        Tags = new List<string>() {
+            "vinco",
+            "ceno",
+        },
+        UpdatedAt = System.DateTime.Parse("2025-06-15T05:07:12.567Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -310,8 +368,10 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -321,7 +381,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMartechMemberRequest req = new UpdateMartechMemberRequest() {
-    MarketingMember = new MarketingMember() {},
+    MarketingMember = new MarketingMember() {
+        Company = "Miller - Franecki",
+        CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
+        Emails = new List<MarketingEmail>() {
+            new MarketingEmail() {
+                Email = "Thalia.Abernathy61@gmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Maymie59@hotmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Coty27@hotmail.com",
+                Type = MarketingEmailType.Work,
+            },
+        },
+        FirstName = "Jude",
+        Id = "5cfa6758-bd0c-4077-8934-7357d115348d",
+        LastName = "Leffler",
+        Name = "Jude Leffler",
+        Status = MarketingMemberStatus.Unsubscribed,
+        Tags = new List<string>() {
+            "vinco",
+            "ceno",
+        },
+        UpdatedAt = System.DateTime.Parse("2025-06-15T05:07:12.567Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

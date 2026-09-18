@@ -17,8 +17,9 @@ Create a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisTimeoff" method="post" path="/hris/{connection_id}/timeoff" example="hris_timeoff" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,6 +29,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Timeoff.CreateHrisTimeoffAsync(
     hrisTimeoff: new HrisTimeoff() {
+        ApprovedAt = System.DateTime.Parse("2022-02-20T21:02:44.024Z").ToUniversalTime(),
+        Comments = "Blandior ventus curiositas amplitudo.",
+        CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
+        Duration = 4D,
+        DurationType = DurationType.Day,
+        EndAt = System.DateTime.Parse("2024-12-07T13:51:48.890Z").ToUniversalTime(),
+        Id = "f08121ee-1d8f-478a-89f5-5a8d207ad122",
+        IsPaid = true,
+        OriginalType = "acerbitas ut",
+        Reason = "verto",
+        StartAt = System.DateTime.Parse("2023-08-23T06:57:16.399Z").ToUniversalTime(),
+        Status = HrisTimeoffStatus.Denied,
+        Type = HrisTimeoffType.InLieu,
+        UpdatedAt = System.DateTime.Parse("2022-07-07T19:35:06.898Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"
@@ -144,8 +159,9 @@ Update a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisTimeoff" method="patch" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -156,6 +172,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
+        ApprovedAt = System.DateTime.Parse("2022-02-20T21:02:44.025Z").ToUniversalTime(),
+        Comments = "Blandior ventus curiositas amplitudo.",
+        CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
+        Duration = 4D,
+        DurationType = DurationType.Day,
+        EndAt = System.DateTime.Parse("2024-12-07T13:51:48.897Z").ToUniversalTime(),
+        Id = "f1c287db-49ea-4bb1-92e3-bfac8aaa9194",
+        IsPaid = true,
+        OriginalType = "acerbitas ut",
+        Reason = "verto",
+        StartAt = System.DateTime.Parse("2023-08-23T06:57:16.403Z").ToUniversalTime(),
+        Status = HrisTimeoffStatus.Denied,
+        Type = HrisTimeoffType.InLieu,
+        UpdatedAt = System.DateTime.Parse("2022-07-07T19:35:06.900Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -229,8 +259,9 @@ Update a timeoff
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisTimeoff" method="put" path="/hris/{connection_id}/timeoff/{id}" example="hris_timeoff" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -241,6 +272,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
+        ApprovedAt = System.DateTime.Parse("2022-02-20T21:02:44.025Z").ToUniversalTime(),
+        Comments = "Blandior ventus curiositas amplitudo.",
+        CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
+        Duration = 4D,
+        DurationType = DurationType.Day,
+        EndAt = System.DateTime.Parse("2024-12-07T13:51:48.897Z").ToUniversalTime(),
+        Id = "f1c287db-49ea-4bb1-92e3-bfac8aaa9194",
+        IsPaid = true,
+        OriginalType = "acerbitas ut",
+        Reason = "verto",
+        StartAt = System.DateTime.Parse("2023-08-23T06:57:16.403Z").ToUniversalTime(),
+        Status = HrisTimeoffStatus.Denied,
+        Type = HrisTimeoffType.InLieu,
+        UpdatedAt = System.DateTime.Parse("2022-07-07T19:35:06.900Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",

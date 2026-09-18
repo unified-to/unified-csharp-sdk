@@ -23,8 +23,10 @@ Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" -->
+<!-- UsageSnippet language="csharp" operationID="createCommerceCollection" method="post" path="/commerce/{connection_id}/collection" example="commerce_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -34,7 +36,52 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Collection.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
+        Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
+        Id = "b58ab754-d3cc-453d-aada-355042e8429d",
+        IsActive = true,
+        IsFeatured = false,
+        IsVisible = false,
+        ItemMetadata = new List<CommerceMetadata>() {},
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Defungo adopto thorax.",
+                Height = 759D,
+                Id = "18cba18e-9245-49d1-baee-4d1edc732151",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "7ff7cc76-3780-4284-a689-c0d9dbc99f01",
+                        Slug = "censura",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "toties"
+                        ),
+                    },
+                },
+                Position = 80D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://loremflickr.com/1319/1257?lock=7280448425732025",
+                Width = 40D,
+            },
+        },
+        Metadata = new List<CommerceMetadata>() {
+            new CommerceMetadata() {
+                Id = "be526e0e-67e5-4c68-a5f3-c51c1391d4aa",
+                Slug = "aetas",
+                Value = CommerceMetadataValue.CreateStr(
+                    "consuasor"
+                ),
+            },
+        },
+        Name = "Small Marble Chips",
+        PublicDescription = "Generic Gloves designed with Cotton for miserable performance",
+        PublicName = "Small Marble Chips",
+        Tags = new List<string>() {
+            "ambulo",
+            "adeptio",
+            "contego",
+        },
+        Type = CommerceCollectionType.Collection,
+        UpdatedAt = System.DateTime.Parse("2025-02-26T04:57:40.878Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -67,8 +114,10 @@ Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" example="lms_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -77,7 +126,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Collection.CreateLmsCollectionAsync(
-    lmsCollection: new LmsCollection() {},
+    lmsCollection: new LmsCollection() {
+        CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
+        Description = "Ab.",
+        Id = "8844ee01-dfb0-4ad4-af18-6b5beedaa703",
+        IsActive = true,
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+                Description = "Aliquam tardus careo hic umbra.",
+                Languages = new List<string>() {
+                    "gl",
+                },
+                Name = "thymum",
+                ThumbnailUrl = "https://picsum.photos/seed/15O5EfV/2982/752",
+                Type = LmsMediaType.Headshot,
+                Url = "https://loremflickr.com/2679/70?lock=6078357625960554",
+            },
+        },
+        Name = "ara",
+        UpdatedAt = System.DateTime.Parse("2026-06-28T08:01:49.217Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -275,8 +344,10 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCommerceCollection" method="patch" path="/commerce/{connection_id}/collection/{id}" example="commerce_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -287,7 +358,52 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
+        Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
+        Id = "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+        IsActive = true,
+        IsFeatured = false,
+        IsVisible = false,
+        ItemMetadata = new List<CommerceMetadata>() {},
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Defungo adopto thorax.",
+                Height = 759D,
+                Id = "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "b9ddff2c-2954-4722-b137-f457e95332ca",
+                        Slug = "censura",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "toties"
+                        ),
+                    },
+                },
+                Position = 80D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://loremflickr.com/1319/1257?lock=7280448425732025",
+                Width = 40D,
+            },
+        },
+        Metadata = new List<CommerceMetadata>() {
+            new CommerceMetadata() {
+                Id = "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+                Slug = "aetas",
+                Value = CommerceMetadataValue.CreateStr(
+                    "consuasor"
+                ),
+            },
+        },
+        Name = "Small Marble Chips",
+        PublicDescription = "Generic Gloves designed with Cotton for miserable performance",
+        PublicName = "Small Marble Chips",
+        Tags = new List<string>() {
+            "ambulo",
+            "adeptio",
+            "contego",
+        },
+        Type = CommerceCollectionType.Collection,
+        UpdatedAt = System.DateTime.Parse("2025-02-26T04:57:40.898Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -320,8 +436,10 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -331,7 +449,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
-    LmsCollection = new LmsCollection() {},
+    LmsCollection = new LmsCollection() {
+        CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
+        Description = "Ab.",
+        Id = "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+        IsActive = true,
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+                Description = "Aliquam tardus careo hic umbra.",
+                Languages = new List<string>() {
+                    "gl",
+                },
+                Name = "thymum",
+                ThumbnailUrl = "https://picsum.photos/seed/15O5EfV/2982/752",
+                Type = LmsMediaType.Headshot,
+                Url = "https://loremflickr.com/2679/70?lock=6078357625960554",
+            },
+        },
+        Name = "ara",
+        UpdatedAt = System.DateTime.Parse("2026-06-28T08:01:49.226Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -443,8 +581,10 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCommerceCollection" method="put" path="/commerce/{connection_id}/collection/{id}" example="commerce_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -455,7 +595,52 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
+        Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
+        Id = "8b3a40a6-30fd-497d-99e6-84c8325779e7",
+        IsActive = true,
+        IsFeatured = false,
+        IsVisible = false,
+        ItemMetadata = new List<CommerceMetadata>() {},
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Defungo adopto thorax.",
+                Height = 759D,
+                Id = "eaefabd8-15e5-4c38-8e42-3f8c461b50db",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "b9ddff2c-2954-4722-b137-f457e95332ca",
+                        Slug = "censura",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "toties"
+                        ),
+                    },
+                },
+                Position = 80D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://loremflickr.com/1319/1257?lock=7280448425732025",
+                Width = 40D,
+            },
+        },
+        Metadata = new List<CommerceMetadata>() {
+            new CommerceMetadata() {
+                Id = "bbcbe93b-3bb0-4a94-8fda-f22c6702908a",
+                Slug = "aetas",
+                Value = CommerceMetadataValue.CreateStr(
+                    "consuasor"
+                ),
+            },
+        },
+        Name = "Small Marble Chips",
+        PublicDescription = "Generic Gloves designed with Cotton for miserable performance",
+        PublicName = "Small Marble Chips",
+        Tags = new List<string>() {
+            "ambulo",
+            "adeptio",
+            "contego",
+        },
+        Type = CommerceCollectionType.Collection,
+        UpdatedAt = System.DateTime.Parse("2025-02-26T04:57:40.898Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -488,8 +673,10 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -499,7 +686,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
-    LmsCollection = new LmsCollection() {},
+    LmsCollection = new LmsCollection() {
+        CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
+        Description = "Ab.",
+        Id = "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+        IsActive = true,
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+                Description = "Aliquam tardus careo hic umbra.",
+                Languages = new List<string>() {
+                    "gl",
+                },
+                Name = "thymum",
+                ThumbnailUrl = "https://picsum.photos/seed/15O5EfV/2982/752",
+                Type = LmsMediaType.Headshot,
+                Url = "https://loremflickr.com/2679/70?lock=6078357625960554",
+            },
+        },
+        Name = "ara",
+        UpdatedAt = System.DateTime.Parse("2026-06-28T08:01:49.226Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

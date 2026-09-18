@@ -29,8 +29,9 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
+<!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" example="kms_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -39,7 +40,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateKmsCommentAsync(
-    kmsComment: new KmsComment() {},
+    kmsComment: new KmsComment() {
+        Content = "Decimus tolero viriliter usque.",
+        ContentType = ContentType.Html,
+        CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
+        Id = "7a7c211f-0d0c-4de6-8fa9-150729e7b4a3",
+        Type = KmsCommentType.Page,
+        UpdatedAt = System.DateTime.Parse("2023-11-16T08:15:30.752Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -71,8 +79,9 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
+<!-- UsageSnippet language="csharp" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" example="task_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -81,7 +90,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateTaskCommentAsync(
-    taskComment: new TaskComment() {},
+    taskComment: new TaskComment() {
+        CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "8b5be59d-1fbb-4870-9365-2a2f4ab8abf2",
+        Text = "Colo ulciscor sublime tabernus.",
+        UpdatedAt = System.DateTime.Parse("2021-09-24T01:13:00.569Z").ToUniversalTime(),
+        UserName = "Santina Abbott",
+    },
     connectionId: "<id>"
 );
 
@@ -113,7 +129,7 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" -->
+<!-- UsageSnippet language="csharp" operationID="createUcComment" method="post" path="/uc/{connection_id}/comment" example="uc_comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -123,7 +139,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateUcCommentAsync(
-    ucComment: new UcComment() {},
+    ucComment: new UcComment() {
+        Content = "Vociferor vitiosus.",
+        CreatedAt = "2023-04-02T23:42:31.571Z",
+        Id = "f6c71223-2280-4fde-a2f8-4750d07d5346",
+        UpdatedAt = "2024-02-01T19:29:21.734Z",
+    },
     connectionId: "<id>"
 );
 
@@ -404,8 +425,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -415,7 +437,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
-    KmsComment = new KmsComment() {},
+    KmsComment = new KmsComment() {
+        Content = "Decimus tolero viriliter usque.",
+        ContentType = ContentType.Html,
+        CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
+        Id = "6fddf474-4bea-4611-a88d-4d3410024ce8",
+        Type = KmsCommentType.Page,
+        UpdatedAt = System.DateTime.Parse("2023-11-16T08:15:30.755Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -447,8 +476,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -458,7 +488,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
-    TaskComment = new TaskComment() {},
+    TaskComment = new TaskComment() {
+        CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+        Text = "Colo ulciscor sublime tabernus.",
+        UpdatedAt = System.DateTime.Parse("2021-09-24T01:13:00.571Z").ToUniversalTime(),
+        UserName = "Santina Abbott",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -490,7 +527,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchUcComment" method="patch" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -501,7 +538,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcCommentRequest req = new PatchUcCommentRequest() {
-    UcComment = new UcComment() {},
+    UcComment = new UcComment() {
+        Content = "Vociferor vitiosus.",
+        CreatedAt = "2023-04-02T23:42:31.571Z",
+        Id = "f43b76fb-3830-472f-9736-ae94a1787acd",
+        UpdatedAt = "2024-02-01T19:29:21.735Z",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -653,8 +695,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -664,7 +707,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
-    KmsComment = new KmsComment() {},
+    KmsComment = new KmsComment() {
+        Content = "Decimus tolero viriliter usque.",
+        ContentType = ContentType.Html,
+        CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
+        Id = "6fddf474-4bea-4611-a88d-4d3410024ce8",
+        Type = KmsCommentType.Page,
+        UpdatedAt = System.DateTime.Parse("2023-11-16T08:15:30.755Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -696,8 +746,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -707,7 +758,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
-    TaskComment = new TaskComment() {},
+    TaskComment = new TaskComment() {
+        CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+        Text = "Colo ulciscor sublime tabernus.",
+        UpdatedAt = System.DateTime.Parse("2021-09-24T01:13:00.571Z").ToUniversalTime(),
+        UserName = "Santina Abbott",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -739,7 +797,7 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateUcComment" method="put" path="/uc/{connection_id}/comment/{id}" example="uc_comment" -->
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Components;
@@ -750,7 +808,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
-    UcComment = new UcComment() {},
+    UcComment = new UcComment() {
+        Content = "Vociferor vitiosus.",
+        CreatedAt = "2023-04-02T23:42:31.571Z",
+        Id = "f43b76fb-3830-472f-9736-ae94a1787acd",
+        UpdatedAt = "2024-02-01T19:29:21.735Z",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

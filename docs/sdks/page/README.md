@@ -17,8 +17,10 @@ Create a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
+<!-- UsageSnippet language="csharp" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" example="kms_page" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,7 +30,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Page.CreateKmsPageAsync(
     kmsPage: new KmsPage() {
-        Type = KmsPageType.Text,
+        CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
+        DownloadUrl = "https://agitated-validity.info",
+        HasChildren = true,
+        Id = "f498e686-b37b-400a-8b10-93a6bc4e18f4",
+        IsActive = true,
+        Metadata = new List<KmsPageMetadata>() {},
+        Title = "even minister extract",
+        Type = KmsPageType.Html,
+        UpdatedAt = System.DateTime.Parse("2025-09-10T18:26:23.373Z").ToUniversalTime(),
+        WebUrl = "https://another-petticoat.info",
     },
     connectionId: "<id>"
 );
@@ -144,8 +155,10 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -156,7 +169,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchKmsPageRequest req = new PatchKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Type = KmsPageType.Other,
+        CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
+        DownloadUrl = "https://agitated-validity.info",
+        HasChildren = true,
+        Id = "0636844d-0893-488b-ae20-1aa19425e5d6",
+        IsActive = true,
+        Metadata = new List<KmsPageMetadata>() {},
+        Title = "even minister extract",
+        Type = KmsPageType.Html,
+        UpdatedAt = System.DateTime.Parse("2025-09-10T18:26:23.386Z").ToUniversalTime(),
+        WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -229,8 +251,10 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -241,7 +265,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Type = KmsPageType.Other,
+        CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
+        DownloadUrl = "https://agitated-validity.info",
+        HasChildren = true,
+        Id = "0636844d-0893-488b-ae20-1aa19425e5d6",
+        IsActive = true,
+        Metadata = new List<KmsPageMetadata>() {},
+        Title = "even minister extract",
+        Type = KmsPageType.Html,
+        UpdatedAt = System.DateTime.Parse("2025-09-10T18:26:23.386Z").ToUniversalTime(),
+        WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",

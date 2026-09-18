@@ -17,8 +17,10 @@ Create a device
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisDevice" method="post" path="/hris/{connection_id}/device" example="hris_device" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Device.CreateHrisDeviceAsync(
-    hrisDevice: new HrisDevice() {},
+    hrisDevice: new HrisDevice() {
+        AdminUserIds = new List<string>() {},
+        AssetTag = "dpho9OuFNG",
+        CreatedAt = System.DateTime.Parse("2019-04-04T17:11:40.322Z").ToUniversalTime(),
+        HasAntivirus = false,
+        HasFirewall = true,
+        HasHdEncrypted = true,
+        HasPasswordManager = true,
+        HasScreenlock = true,
+        Id = "bcac94b2-e48a-44d8-85bb-72b920f6ac73",
+        IsMissing = false,
+        Manufacturer = "Sanford - Hamill",
+        Model = "Refined",
+        Name = "cross_contamination_if.rar",
+        Os = "monitor",
+        OsVersion = "1.12.16",
+        UpdatedAt = System.DateTime.Parse("2023-05-21T00:56:51.337Z").ToUniversalTime(),
+        Version = "2.20.17",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +162,10 @@ Update a device
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisDevice" method="patch" path="/hris/{connection_id}/device/{id}" example="hris_device" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +175,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
-    HrisDevice = new HrisDevice() {},
+    HrisDevice = new HrisDevice() {
+        AdminUserIds = new List<string>() {},
+        AssetTag = "dpho9OuFNG",
+        CreatedAt = System.DateTime.Parse("2019-04-04T17:11:40.322Z").ToUniversalTime(),
+        HasAntivirus = false,
+        HasFirewall = true,
+        HasHdEncrypted = true,
+        HasPasswordManager = true,
+        HasScreenlock = true,
+        Id = "74d52d31-891f-476a-a3b5-8c9f384a35b9",
+        IsMissing = false,
+        Manufacturer = "Sanford - Hamill",
+        Model = "Refined",
+        Name = "cross_contamination_if.rar",
+        Os = "monitor",
+        OsVersion = "1.12.16",
+        UpdatedAt = System.DateTime.Parse("2023-05-21T00:56:51.342Z").ToUniversalTime(),
+        Version = "2.20.17",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +265,10 @@ Update a device
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisDevice" method="put" path="/hris/{connection_id}/device/{id}" example="hris_device" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +278,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
-    HrisDevice = new HrisDevice() {},
+    HrisDevice = new HrisDevice() {
+        AdminUserIds = new List<string>() {},
+        AssetTag = "dpho9OuFNG",
+        CreatedAt = System.DateTime.Parse("2019-04-04T17:11:40.322Z").ToUniversalTime(),
+        HasAntivirus = false,
+        HasFirewall = true,
+        HasHdEncrypted = true,
+        HasPasswordManager = true,
+        HasScreenlock = true,
+        Id = "74d52d31-891f-476a-a3b5-8c9f384a35b9",
+        IsMissing = false,
+        Manufacturer = "Sanford - Hamill",
+        Model = "Refined",
+        Name = "cross_contamination_if.rar",
+        Os = "monitor",
+        OsVersion = "1.12.16",
+        UpdatedAt = System.DateTime.Parse("2023-05-21T00:56:51.342Z").ToUniversalTime(),
+        Version = "2.20.17",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -17,8 +17,10 @@ Create a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" example="accounting_purchaseorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
-    accountingPurchaseorder: new AccountingPurchaseorder() {},
+    accountingPurchaseorder: new AccountingPurchaseorder() {
+        BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
+            Address1 = "37214 Tanya Walks",
+            City = "South Annabelleton",
+            CountryCode = "US",
+            PostalCode = "30337",
+            Region = "Nevada",
+            RegionCode = "MA",
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
+        Currency = "ZMW",
+        Id = "870e6384-1e12-4bea-9790-0e4ac7a373f1",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2025-04-25T03:32:03.967Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
+            Address1 = "649 Maggio Overpass",
+            City = "Lake Jaylan",
+            CountryCode = "US",
+            PostalCode = "99211-6547",
+            Region = "North Carolina",
+            RegionCode = "ID",
+        },
+        Status = AccountingPurchaseorderStatus.PartiallyRefunded,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2021-02-26T03:18:48.829Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +171,10 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +184,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderRequest() {
-    AccountingPurchaseorder = new AccountingPurchaseorder() {},
+    AccountingPurchaseorder = new AccountingPurchaseorder() {
+        BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
+            Address1 = "37214 Tanya Walks",
+            City = "South Annabelleton",
+            CountryCode = "US",
+            PostalCode = "30337",
+            Region = "Nevada",
+            RegionCode = "MA",
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
+        Currency = "ZMW",
+        Id = "54658ca1-f723-459d-901f-9dc45e6da571",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2025-04-25T03:32:03.994Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
+            Address1 = "649 Maggio Overpass",
+            City = "Lake Jaylan",
+            CountryCode = "US",
+            PostalCode = "99211-6547",
+            Region = "North Carolina",
+            RegionCode = "ID",
+        },
+        Status = AccountingPurchaseorderStatus.PartiallyRefunded,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2021-02-26T03:18:48.830Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +283,10 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +296,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequest() {
-    AccountingPurchaseorder = new AccountingPurchaseorder() {},
+    AccountingPurchaseorder = new AccountingPurchaseorder() {
+        BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
+            Address1 = "37214 Tanya Walks",
+            City = "South Annabelleton",
+            CountryCode = "US",
+            PostalCode = "30337",
+            Region = "Nevada",
+            RegionCode = "MA",
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
+        Currency = "ZMW",
+        Id = "54658ca1-f723-459d-901f-9dc45e6da571",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2025-04-25T03:32:03.994Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
+            Address1 = "649 Maggio Overpass",
+            City = "Lake Jaylan",
+            CountryCode = "US",
+            PostalCode = "99211-6547",
+            Region = "North Carolina",
+            RegionCode = "ID",
+        },
+        Status = AccountingPurchaseorderStatus.PartiallyRefunded,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2021-02-26T03:18:48.830Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

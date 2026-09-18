@@ -15,8 +15,10 @@ Create a taxonomy
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisTaxonomy" method="post" path="/hris/{connection_id}/taxonomy" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisTaxonomy" method="post" path="/hris/{connection_id}/taxonomy" example="hris_taxonomy" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -25,7 +27,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Taxonomy.CreateHrisTaxonomyAsync(
-    hrisTaxonomy: new HrisTaxonomy() {},
+    hrisTaxonomy: new HrisTaxonomy() {
+        CreatedAt = System.DateTime.Parse("2022-06-23T02:10:00.789Z").ToUniversalTime(),
+        Description = "Apto demonstro audacia adstringo cursim tristis solio careo.",
+        Domain = "Electronics",
+        Id = "ede085db-5709-4d53-a490-746f3de5be17",
+        IsActive = false,
+        Name = "International Functionality Architect",
+        ParentId = "6524b2a7-6520-4e15-8c4e-1aa6793db837",
+        RoleIds = new List<string>() {
+            "2b1ef757-eb4c-4207-8af1-929afe49cd65",
+        },
+        Subcategory = "Bamboo",
+        Type = HrisTaxonomyType.Knowledge,
+        UpdatedAt = System.DateTime.Parse("2023-05-22T04:57:43.336Z").ToUniversalTime(),
+        Url = "https://our-polarisation.name",
+    },
     connectionId: "<id>"
 );
 

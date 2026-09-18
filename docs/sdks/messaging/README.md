@@ -25,8 +25,10 @@ Create a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" -->
+<!-- UsageSnippet language="csharp" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" example="messaging_channel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -35,7 +37,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.CreateMessagingChannelAsync(
-    messagingChannel: new MessagingChannel() {},
+    messagingChannel: new MessagingChannel() {
+        CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
+        Description = "Dolores tutis.",
+        HasSubchannels = true,
+        Id = "021b0aa2-c26f-46af-9ab5-aa8b3668976b",
+        IsActive = false,
+        IsPrivate = true,
+        Members = new List<MessagingMember>() {},
+        Name = "tego",
+        UpdatedAt = System.DateTime.Parse("2026-04-23T02:24:13.912Z").ToUniversalTime(),
+        WebUrl = "https://svelte-rule.name/",
+    },
     connectionId: "<id>"
 );
 
@@ -67,8 +80,10 @@ Create a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" -->
+<!-- UsageSnippet language="csharp" operationID="createMessagingMessage" method="post" path="/messaging/{connection_id}/message" example="messaging_message" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -77,7 +92,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.CreateMessagingMessageAsync(
-    messagingMessage: new MessagingMessage() {},
+    messagingMessage: new MessagingMessage() {
+        Attachments = new List<MessagingAttachment>() {
+            new MessagingAttachment() {
+                ContentIdentifier = "1c72f1d5-f6e4-4ed8-a96a-02a4102f79f4",
+                ContentType = "coaegresco",
+                DownloadUrl = "https://rotating-advertisement.org",
+                Filename = "super",
+                MessageId = "222cedb6-3d1c-47ba-982b-2520c268f506",
+                Size = 327D,
+            },
+        },
+        Buttons = new List<MessagingButton>() {
+            new MessagingButton() {
+                Id = "337e2909-4d4a-4452-8eee-916bebb29ae2",
+                Text = "denuo",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2021-11-26T09:26:33.973Z").ToUniversalTime(),
+        DestinationMembers = new List<MessagingMember>() {},
+        HasChildren = true,
+        HiddenMembers = new List<MessagingMember>() {},
+        Id = "222cedb6-3d1c-47ba-982b-2520c268f506",
+        IsUnread = false,
+        MentionedMembers = new List<MessagingMember>() {},
+        Message = "Sum utique aliquid.",
+        MessageHtml = "Articulus tardus tergiversatio.",
+        MessageMarkdown = "Territo uterque tergo curiositas.",
+        Reactions = new List<MessagingReaction>() {},
+        Reference = "571483f2-d95b-4f06-8b78-d35e7046bb74",
+        Subject = "Cernuus optio cohaero summisse in.",
+        UpdatedAt = System.DateTime.Parse("2023-07-06T11:13:40.621Z").ToUniversalTime(),
+        WebUrl = "https://grumpy-kit.net",
+    },
     connectionId: "<id>"
 );
 
@@ -275,8 +322,10 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -286,7 +335,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMessagingChannelRequest req = new PatchMessagingChannelRequest() {
-    MessagingChannel = new MessagingChannel() {},
+    MessagingChannel = new MessagingChannel() {
+        CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
+        Description = "Dolores tutis.",
+        HasSubchannels = true,
+        Id = "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+        IsActive = false,
+        IsPrivate = true,
+        Members = new List<MessagingMember>() {},
+        Name = "tego",
+        UpdatedAt = System.DateTime.Parse("2026-04-23T02:24:13.920Z").ToUniversalTime(),
+        WebUrl = "https://svelte-rule.name/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -318,8 +378,9 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMessagingEvent" method="patch" path="/messaging/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMessagingEvent" method="patch" path="/messaging/{connection_id}/event/{id}" example="messaging_event" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -329,7 +390,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMessagingEventRequest req = new PatchMessagingEventRequest() {
-    MessagingEvent = new MessagingEvent() {},
+    MessagingEvent = new MessagingEvent() {
+        Channel = new PropertyMessagingEventChannel() {
+            Id = "",
+            Name = "",
+        },
+        CreatedAt = System.DateTime.Parse("2019-05-30T19:44:46.461Z").ToUniversalTime(),
+        Id = "edcbbf0d-0281-47f1-a49d-9cf2a55c7d48",
+        IsReplacingOriginal = false,
+        Type = MessagingEventType.ButtonClick,
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -361,8 +431,10 @@ Update a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMessagingMessage" method="patch" path="/messaging/{connection_id}/message/{id}" example="messaging_message" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -372,7 +444,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
-    MessagingMessage = new MessagingMessage() {},
+    MessagingMessage = new MessagingMessage() {
+        Attachments = new List<MessagingAttachment>() {
+            new MessagingAttachment() {
+                ContentIdentifier = "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+                ContentType = "coaegresco",
+                DownloadUrl = "https://rotating-advertisement.org",
+                Filename = "super",
+                MessageId = "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+                Size = 327D,
+            },
+        },
+        Buttons = new List<MessagingButton>() {
+            new MessagingButton() {
+                Id = "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+                Text = "denuo",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2021-11-26T09:26:33.973Z").ToUniversalTime(),
+        DestinationMembers = new List<MessagingMember>() {},
+        HasChildren = true,
+        HiddenMembers = new List<MessagingMember>() {},
+        Id = "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+        IsUnread = false,
+        MentionedMembers = new List<MessagingMember>() {},
+        Message = "Sum utique aliquid.",
+        MessageHtml = "Articulus tardus tergiversatio.",
+        MessageMarkdown = "Territo uterque tergo curiositas.",
+        Reactions = new List<MessagingReaction>() {},
+        Reference = "571483f2-d95b-4f06-8b78-d35e7046bb74",
+        Subject = "Cernuus optio cohaero summisse in.",
+        UpdatedAt = System.DateTime.Parse("2023-07-06T11:13:40.638Z").ToUniversalTime(),
+        WebUrl = "https://grumpy-kit.net",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -484,8 +588,10 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -495,7 +601,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMessagingChannelRequest req = new UpdateMessagingChannelRequest() {
-    MessagingChannel = new MessagingChannel() {},
+    MessagingChannel = new MessagingChannel() {
+        CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
+        Description = "Dolores tutis.",
+        HasSubchannels = true,
+        Id = "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+        IsActive = false,
+        IsPrivate = true,
+        Members = new List<MessagingMember>() {},
+        Name = "tego",
+        UpdatedAt = System.DateTime.Parse("2026-04-23T02:24:13.920Z").ToUniversalTime(),
+        WebUrl = "https://svelte-rule.name/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -527,8 +644,9 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMessagingEvent" method="put" path="/messaging/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMessagingEvent" method="put" path="/messaging/{connection_id}/event/{id}" example="messaging_event" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -538,7 +656,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMessagingEventRequest req = new UpdateMessagingEventRequest() {
-    MessagingEvent = new MessagingEvent() {},
+    MessagingEvent = new MessagingEvent() {
+        Channel = new PropertyMessagingEventChannel() {
+            Id = "",
+            Name = "",
+        },
+        CreatedAt = System.DateTime.Parse("2019-05-30T19:44:46.461Z").ToUniversalTime(),
+        Id = "edcbbf0d-0281-47f1-a49d-9cf2a55c7d48",
+        IsReplacingOriginal = false,
+        Type = MessagingEventType.ButtonClick,
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -570,8 +697,10 @@ Update a message
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMessagingMessage" method="put" path="/messaging/{connection_id}/message/{id}" example="messaging_message" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -581,7 +710,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
-    MessagingMessage = new MessagingMessage() {},
+    MessagingMessage = new MessagingMessage() {
+        Attachments = new List<MessagingAttachment>() {
+            new MessagingAttachment() {
+                ContentIdentifier = "1a2fed76-5d16-4c7f-8c90-b8124cfe267b",
+                ContentType = "coaegresco",
+                DownloadUrl = "https://rotating-advertisement.org",
+                Filename = "super",
+                MessageId = "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+                Size = 327D,
+            },
+        },
+        Buttons = new List<MessagingButton>() {
+            new MessagingButton() {
+                Id = "11857e5d-8b5b-44bd-ab54-af6df290a21b",
+                Text = "denuo",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2021-11-26T09:26:33.973Z").ToUniversalTime(),
+        DestinationMembers = new List<MessagingMember>() {},
+        HasChildren = true,
+        HiddenMembers = new List<MessagingMember>() {},
+        Id = "5dcf9147-6192-40ad-bfd6-c02931e4722f",
+        IsUnread = false,
+        MentionedMembers = new List<MessagingMember>() {},
+        Message = "Sum utique aliquid.",
+        MessageHtml = "Articulus tardus tergiversatio.",
+        MessageMarkdown = "Territo uterque tergo curiositas.",
+        Reactions = new List<MessagingReaction>() {},
+        Reference = "571483f2-d95b-4f06-8b78-d35e7046bb74",
+        Subject = "Cernuus optio cohaero summisse in.",
+        UpdatedAt = System.DateTime.Parse("2023-07-06T11:13:40.638Z").ToUniversalTime(),
+        WebUrl = "https://grumpy-kit.net",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

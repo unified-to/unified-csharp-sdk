@@ -25,8 +25,9 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" -->
+<!-- UsageSnippet language="csharp" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" example="signing_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -35,7 +36,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Signing.CreateSigningDocumentAsync(
-    signingDocument: new SigningDocument() {},
+    signingDocument: new SigningDocument() {
+        CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-12-16T10:17:24.172Z").ToUniversalTime(),
+        Id = "b56bffa4-89ef-4341-a673-29b95dfc4140",
+        Name = "nam audax absens",
+        Status = SigningDocumentStatus.Voided,
+        UpdatedAt = System.DateTime.Parse("2025-08-07T18:12:00.485Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -67,8 +75,9 @@ Create a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createSigningSignatory" method="post" path="/signing/{connection_id}/signatory" -->
+<!-- UsageSnippet language="csharp" operationID="createSigningSignatory" method="post" path="/signing/{connection_id}/signatory" example="signing_signatory" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -77,7 +86,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Signing.CreateSigningSignatoryAsync(
-    signingSignatory: new SigningSignatory() {},
+    signingSignatory: new SigningSignatory() {
+        CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
+        Email = "Hardy.Wehner@gmail.com",
+        Id = "99b615fd-9943-4e49-b351-51ff875f2002",
+        Order = 5D,
+        Role = SigningSignatoryRole.Signer,
+        Status = SigningSignatoryStatus.Signed,
+        UpdatedAt = System.DateTime.Parse("2026-08-10T19:04:00.900Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -358,8 +375,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -369,7 +387,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchSigningDocumentRequest req = new PatchSigningDocumentRequest() {
-    SigningDocument = new SigningDocument() {},
+    SigningDocument = new SigningDocument() {
+        CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-12-16T10:17:24.183Z").ToUniversalTime(),
+        Id = "92c73198-9b1c-4527-b4de-ec85322f1a73",
+        Name = "nam audax absens",
+        Status = SigningDocumentStatus.Voided,
+        UpdatedAt = System.DateTime.Parse("2025-08-07T18:12:00.493Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -401,8 +426,9 @@ Update a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchSigningSignatory" method="patch" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchSigningSignatory" method="patch" path="/signing/{connection_id}/signatory/{id}" example="signing_signatory" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -412,7 +438,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchSigningSignatoryRequest req = new PatchSigningSignatoryRequest() {
-    SigningSignatory = new SigningSignatory() {},
+    SigningSignatory = new SigningSignatory() {
+        CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
+        Email = "Hardy.Wehner@gmail.com",
+        Id = "cbd3dc66-366a-4130-bd27-8e78a1a7f9f8",
+        Order = 5D,
+        Role = SigningSignatoryRole.Signer,
+        Status = SigningSignatoryStatus.Signed,
+        UpdatedAt = System.DateTime.Parse("2026-08-10T19:04:00.911Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -524,8 +558,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -535,7 +570,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateSigningDocumentRequest req = new UpdateSigningDocumentRequest() {
-    SigningDocument = new SigningDocument() {},
+    SigningDocument = new SigningDocument() {
+        CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-12-16T10:17:24.183Z").ToUniversalTime(),
+        Id = "92c73198-9b1c-4527-b4de-ec85322f1a73",
+        Name = "nam audax absens",
+        Status = SigningDocumentStatus.Voided,
+        UpdatedAt = System.DateTime.Parse("2025-08-07T18:12:00.493Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -567,8 +609,9 @@ Update a signatory
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateSigningSignatory" method="put" path="/signing/{connection_id}/signatory/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateSigningSignatory" method="put" path="/signing/{connection_id}/signatory/{id}" example="signing_signatory" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -578,7 +621,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateSigningSignatoryRequest req = new UpdateSigningSignatoryRequest() {
-    SigningSignatory = new SigningSignatory() {},
+    SigningSignatory = new SigningSignatory() {
+        CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
+        Email = "Hardy.Wehner@gmail.com",
+        Id = "cbd3dc66-366a-4130-bd27-8e78a1a7f9f8",
+        Order = 5D,
+        Role = SigningSignatoryRole.Signer,
+        Status = SigningSignatoryStatus.Signed,
+        UpdatedAt = System.DateTime.Parse("2026-08-10T19:04:00.911Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

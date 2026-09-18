@@ -17,8 +17,9 @@ Create a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" -->
+<!-- UsageSnippet language="csharp" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" example="martech_list" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.List.CreateMartechListAsync(
-    marketingList: new MarketingList() {},
+    marketingList: new MarketingList() {
+        Address = new PropertyMarketingListAddress() {
+            Address1 = "922 Elmore Manor",
+            Address2 = "Suite 925",
+            City = "Deerfield Beach",
+            Country = "Bahrain",
+            PostalCode = "30765-6471",
+            Region = "FL",
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
+        Description = "Currus.",
+        Id = "8d9f0783-8b3b-4844-871c-a335856a11fa",
+        IsActive = true,
+        Language = "it",
+        Name = "Annette Nolan",
+        SenderCompany = "Hickle - Homenick",
+        SenderEmail = "Matt_Steuber@hotmail.com",
+        SenderName = "Salvatore Roob",
+        SenderPhone = "896-328-1153 x4957",
+        Subject = "Tenetur thymum circumvenio triumphus celo.",
+        UpdatedAt = System.DateTime.Parse("2022-08-30T12:23:12.884Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +164,9 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +176,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMartechListRequest req = new PatchMartechListRequest() {
-    MarketingList = new MarketingList() {},
+    MarketingList = new MarketingList() {
+        Address = new PropertyMarketingListAddress() {
+            Address1 = "922 Elmore Manor",
+            Address2 = "Suite 925",
+            City = "Deerfield Beach",
+            Country = "Bahrain",
+            PostalCode = "30765-6471",
+            Region = "FL",
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
+        Description = "Currus.",
+        Id = "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+        IsActive = true,
+        Language = "it",
+        Name = "Annette Nolan",
+        SenderCompany = "Hickle - Homenick",
+        SenderEmail = "Matt_Steuber@hotmail.com",
+        SenderName = "Salvatore Roob",
+        SenderPhone = "896-328-1153 x4957",
+        Subject = "Tenetur thymum circumvenio triumphus celo.",
+        UpdatedAt = System.DateTime.Parse("2022-08-30T12:23:12.891Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +269,9 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +281,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMartechListRequest req = new UpdateMartechListRequest() {
-    MarketingList = new MarketingList() {},
+    MarketingList = new MarketingList() {
+        Address = new PropertyMarketingListAddress() {
+            Address1 = "922 Elmore Manor",
+            Address2 = "Suite 925",
+            City = "Deerfield Beach",
+            Country = "Bahrain",
+            PostalCode = "30765-6471",
+            Region = "FL",
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
+        Description = "Currus.",
+        Id = "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+        IsActive = true,
+        Language = "it",
+        Name = "Annette Nolan",
+        SenderCompany = "Hickle - Homenick",
+        SenderEmail = "Matt_Steuber@hotmail.com",
+        SenderName = "Salvatore Roob",
+        SenderPhone = "896-328-1153 x4957",
+        Subject = "Tenetur thymum circumvenio triumphus celo.",
+        UpdatedAt = System.DateTime.Parse("2022-08-30T12:23:12.891Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -17,8 +17,10 @@ Create a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" example="lms_student" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Student.CreateLmsStudentAsync(
-    lmsStudent: new LmsStudent() {},
+    lmsStudent: new LmsStudent() {
+        Address = new PropertyLmsStudentAddress() {
+            Address1 = "94082 Kassandra Camp",
+            Address2 = "Apt. 461",
+            City = "New Ibrahimmouth",
+            CountryCode = "US",
+            PostalCode = "52851",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CreatedAt = System.DateTime.Parse("2020-03-23T06:59:29.777Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Marcella",
+        Id = "f7f415ad-d6a4-49ee-b6f4-6823b04af952",
+        ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
+        LastName = "Murazik",
+        Name = "Marcella Murazik",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(482) 469-8067",
+                Type = LmsTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2022-06-19T13:56:16.319Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +171,10 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +184,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
-    LmsStudent = new LmsStudent() {},
+    LmsStudent = new LmsStudent() {
+        Address = new PropertyLmsStudentAddress() {
+            Address1 = "94082 Kassandra Camp",
+            Address2 = "Apt. 461",
+            City = "New Ibrahimmouth",
+            CountryCode = "US",
+            PostalCode = "52851",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CreatedAt = System.DateTime.Parse("2020-03-23T06:59:29.777Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Marcella",
+        Id = "d41ddae1-7a51-41a8-8179-becbb620c443",
+        ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
+        LastName = "Murazik",
+        Name = "Marcella Murazik",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(482) 469-8067",
+                Type = LmsTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2022-06-19T13:56:16.323Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +283,10 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +296,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
-    LmsStudent = new LmsStudent() {},
+    LmsStudent = new LmsStudent() {
+        Address = new PropertyLmsStudentAddress() {
+            Address1 = "94082 Kassandra Camp",
+            Address2 = "Apt. 461",
+            City = "New Ibrahimmouth",
+            CountryCode = "US",
+            PostalCode = "52851",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CreatedAt = System.DateTime.Parse("2020-03-23T06:59:29.777Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Marcella",
+        Id = "d41ddae1-7a51-41a8-8179-becbb620c443",
+        ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
+        LastName = "Murazik",
+        Name = "Marcella Murazik",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(482) 469-8067",
+                Type = LmsTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2022-06-19T13:56:16.323Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

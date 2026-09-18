@@ -17,8 +17,9 @@ Create a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" example="accounting_bankfeedaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Bankfeedaccount.CreateAccountingBankfeedaccountAsync(
-    accountingBankfeedaccount: new AccountingBankfeedaccount() {},
+    accountingBankfeedaccount: new AccountingBankfeedaccount() {
+        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+        AccountNumber = "30369722",
+        AccountNumberLast4 = "9722",
+        AccountType = AccountType.Loan,
+        Balance = 90358D,
+        BankName = "Weissnat Inc",
+        CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Currency = "SSP",
+        FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Id = "2ea876a9-ab62-403d-b280-b8bd398c21a5",
+        Name = "Corwin, Donnelly and Connelly Savings",
+        RoutingNumber = "667753156",
+        Status = AccountingBankfeedaccountStatus.Active,
+        UpdatedAt = System.DateTime.Parse("2024-04-11T12:57:07.381Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +158,9 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +170,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingBankfeedaccountRequest req = new PatchAccountingBankfeedaccountRequest() {
-    AccountingBankfeedaccount = new AccountingBankfeedaccount() {},
+    AccountingBankfeedaccount = new AccountingBankfeedaccount() {
+        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+        AccountNumber = "30369722",
+        AccountNumberLast4 = "9722",
+        AccountType = AccountType.Loan,
+        Balance = 90358D,
+        BankName = "Weissnat Inc",
+        CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Currency = "SSP",
+        FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Id = "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+        Name = "Corwin, Donnelly and Connelly Savings",
+        RoutingNumber = "667753156",
+        Status = AccountingBankfeedaccountStatus.Active,
+        UpdatedAt = System.DateTime.Parse("2024-04-11T12:57:07.387Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +257,9 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +269,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingBankfeedaccountRequest req = new UpdateAccountingBankfeedaccountRequest() {
-    AccountingBankfeedaccount = new AccountingBankfeedaccount() {},
+    AccountingBankfeedaccount = new AccountingBankfeedaccount() {
+        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+        AccountNumber = "30369722",
+        AccountNumberLast4 = "9722",
+        AccountType = AccountType.Loan,
+        Balance = 90358D,
+        BankName = "Weissnat Inc",
+        CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Currency = "SSP",
+        FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Id = "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+        Name = "Corwin, Donnelly and Connelly Savings",
+        RoutingNumber = "667753156",
+        Status = AccountingBankfeedaccountStatus.Active,
+        UpdatedAt = System.DateTime.Parse("2024-04-11T12:57:07.387Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -21,8 +21,10 @@ Create an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAssessmentOrder" method="post" path="/assessment/{connection_id}/order" -->
+<!-- UsageSnippet language="csharp" operationID="createAssessmentOrder" method="post" path="/assessment/{connection_id}/order" example="assessment_order" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -33,6 +35,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Assessment.CreateAssessmentOrderAsync(
     assessmentOrder: new AssessmentOrder() {
         ConnectionId = "<id>",
+        CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
+        Id = "eb559378-8a4c-4147-b0b6-108e9aa26caa",
+        Parameters = new List<AssessmentParameterInput>() {},
+        ProfileAddresses = new List<AssessmentAddress>() {},
+        ProfileDateOfBirth = "1989-07-22T16:18:37.650Z",
+        ProfileEmails = new List<string>() {
+            "Cleta.Daugherty@gmail.com",
+        },
+        ProfileFirstName = "Amy",
+        ProfileGender = ProfileGender.NonBinary,
+        ProfileLastName = "Kris-Windler",
+        ProfileName = "Amy Kris-Windler",
+        ProfileResumeUrl = "https://enchanted-cycle.biz/",
+        ProfileSocialMediaUrls = new List<string>() {},
+        ProfileTelephones = new List<string>() {
+            "(828) 263-1594 x5248",
+        },
+        Reference = "ab",
+        ResponseAttributes = new List<AssessmentAttribute>() {},
+        ResponseDetails = new List<AssessmentResponseDetail>() {},
+        ResponseDownloadUrls = new List<string>() {},
+        ResponseMaxScore = 82D,
+        ResponseScore = 92D,
+        ResponseStatus = ResponseStatus.Failed,
+        ResponseUrl = "https://irresponsible-trench.info/",
+        Status = AssessmentOrderStatus.Rejected,
+        TargetUrl = "https://cautious-turret.info",
+        UpdatedAt = System.DateTime.Parse("2023-01-17T01:52:25.097Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     connectionId: "<id>"
@@ -66,8 +96,10 @@ Create an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" -->
+<!-- UsageSnippet language="csharp" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" example="assessment_package" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -77,7 +109,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Assessment.CreateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.ReferenceCheck,
+        Aliases = new List<string>() {
+            "quia",
+        },
+        CreatedAt = System.DateTime.Parse("2022-11-18T19:48:39.433Z").ToUniversalTime(),
+        Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+        HasRedirectUrl = true,
+        HasTargetUrl = false,
+        Id = "399d78b0-643b-4379-b5fc-7a3efac3d6b6",
+        InfoUrl = "https://ugly-instance.biz/",
+        IntegrationTypes = new List<string>() {
+            "viridis",
+        },
+        MaxScore = 22D,
+        Name = "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+        NeedsIpAddress = true,
+        Parameters = new List<AssessmentParameter>() {},
+        Regions = new List<AssessmentPackageRegion>() {},
+        Tags = new List<string>() {
+            "clamo",
+        },
+        Type = AssessmentPackageType.VideoInterview,
+        UpdatedAt = System.DateTime.Parse("2023-09-18T05:29:15.659Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -228,8 +281,10 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAssessmentOrder" method="patch" path="/assessment/{connection_id}/order/{id}" example="assessment_order" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -241,6 +296,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAssessmentOrderRequest req = new PatchAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
+        CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
+        Id = "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+        Parameters = new List<AssessmentParameterInput>() {},
+        ProfileAddresses = new List<AssessmentAddress>() {},
+        ProfileDateOfBirth = "1989-07-22T16:18:37.650Z",
+        ProfileEmails = new List<string>() {
+            "Cleta.Daugherty@gmail.com",
+        },
+        ProfileFirstName = "Amy",
+        ProfileGender = ProfileGender.NonBinary,
+        ProfileLastName = "Kris-Windler",
+        ProfileName = "Amy Kris-Windler",
+        ProfileResumeUrl = "https://enchanted-cycle.biz/",
+        ProfileSocialMediaUrls = new List<string>() {},
+        ProfileTelephones = new List<string>() {
+            "(828) 263-1594 x5248",
+        },
+        Reference = "ab",
+        ResponseAttributes = new List<AssessmentAttribute>() {},
+        ResponseDetails = new List<AssessmentResponseDetail>() {},
+        ResponseDownloadUrls = new List<string>() {},
+        ResponseMaxScore = 82D,
+        ResponseScore = 92D,
+        ResponseStatus = ResponseStatus.Failed,
+        ResponseUrl = "https://irresponsible-trench.info/",
+        Status = AssessmentOrderStatus.Rejected,
+        TargetUrl = "https://cautious-turret.info",
+        UpdatedAt = System.DateTime.Parse("2023-01-17T01:52:25.109Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     ConnectionId = "<id>",
@@ -274,8 +357,10 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -285,7 +370,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Assessment.PatchAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.BackgroundCheck,
+        Aliases = new List<string>() {
+            "quia",
+        },
+        CreatedAt = System.DateTime.Parse("2022-11-18T19:48:39.433Z").ToUniversalTime(),
+        Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+        HasRedirectUrl = true,
+        HasTargetUrl = false,
+        Id = "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+        InfoUrl = "https://ugly-instance.biz/",
+        IntegrationTypes = new List<string>() {
+            "viridis",
+        },
+        MaxScore = 22D,
+        Name = "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+        NeedsIpAddress = true,
+        Parameters = new List<AssessmentParameter>() {},
+        Regions = new List<AssessmentPackageRegion>() {},
+        Tags = new List<string>() {
+            "clamo",
+        },
+        Type = AssessmentPackageType.VideoInterview,
+        UpdatedAt = System.DateTime.Parse("2023-09-18T05:29:15.663Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"
@@ -358,8 +464,10 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAssessmentOrder" method="put" path="/assessment/{connection_id}/order/{id}" example="assessment_order" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -371,6 +479,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAssessmentOrderRequest req = new UpdateAssessmentOrderRequest() {
     AssessmentOrder = new AssessmentOrder() {
         ConnectionId = "<id>",
+        CreatedAt = System.DateTime.Parse("2021-09-18T10:33:57.803Z").ToUniversalTime(),
+        Id = "2165508c-a576-42d8-9e14-4a01fbb91f9d",
+        Parameters = new List<AssessmentParameterInput>() {},
+        ProfileAddresses = new List<AssessmentAddress>() {},
+        ProfileDateOfBirth = "1989-07-22T16:18:37.650Z",
+        ProfileEmails = new List<string>() {
+            "Cleta.Daugherty@gmail.com",
+        },
+        ProfileFirstName = "Amy",
+        ProfileGender = ProfileGender.NonBinary,
+        ProfileLastName = "Kris-Windler",
+        ProfileName = "Amy Kris-Windler",
+        ProfileResumeUrl = "https://enchanted-cycle.biz/",
+        ProfileSocialMediaUrls = new List<string>() {},
+        ProfileTelephones = new List<string>() {
+            "(828) 263-1594 x5248",
+        },
+        Reference = "ab",
+        ResponseAttributes = new List<AssessmentAttribute>() {},
+        ResponseDetails = new List<AssessmentResponseDetail>() {},
+        ResponseDownloadUrls = new List<string>() {},
+        ResponseMaxScore = 82D,
+        ResponseScore = 92D,
+        ResponseStatus = ResponseStatus.Failed,
+        ResponseUrl = "https://irresponsible-trench.info/",
+        Status = AssessmentOrderStatus.Rejected,
+        TargetUrl = "https://cautious-turret.info",
+        UpdatedAt = System.DateTime.Parse("2023-01-17T01:52:25.109Z").ToUniversalTime(),
         WorkspaceId = "<id>",
     },
     ConnectionId = "<id>",
@@ -404,8 +540,10 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -415,7 +553,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Assessment.UpdateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.Other,
+        Aliases = new List<string>() {
+            "quia",
+        },
+        CreatedAt = System.DateTime.Parse("2022-11-18T19:48:39.433Z").ToUniversalTime(),
+        Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+        HasRedirectUrl = true,
+        HasTargetUrl = false,
+        Id = "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+        InfoUrl = "https://ugly-instance.biz/",
+        IntegrationTypes = new List<string>() {
+            "viridis",
+        },
+        MaxScore = 22D,
+        Name = "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+        NeedsIpAddress = true,
+        Parameters = new List<AssessmentParameter>() {},
+        Regions = new List<AssessmentPackageRegion>() {},
+        Tags = new List<string>() {
+            "clamo",
+        },
+        Type = AssessmentPackageType.VideoInterview,
+        UpdatedAt = System.DateTime.Parse("2023-09-18T05:29:15.663Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"

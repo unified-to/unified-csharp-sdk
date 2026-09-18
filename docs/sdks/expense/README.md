@@ -17,8 +17,10 @@ Create an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" example="accounting_expense" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Expense.CreateAccountingExpenseAsync(
-    accountingExpense: new AccountingExpense() {},
+    accountingExpense: new AccountingExpense() {
+        ApprovedAt = System.DateTime.Parse("2026-05-09T18:24:02.313Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://ripe-napkin.biz/",
+                Id = "bfba31e4-33ae-4dea-b8e5-edc2181608ec",
+                MimeType = "annus",
+                Name = "cohibeo",
+            },
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
+        Currency = "SSP",
+        ExternalNumber = "necessitatibus",
+        Id = "049777da-55cf-41fb-866d-0a574a19b0eb",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "f26d5412-51c5-4471-95e4-ce3041eb1194",
+                ItemDescription = "Innovative Table featuring left technology and Rubber construction",
+                ItemName = "Luxurious Cotton Pizza",
+                ItemSku = "978-0-8324-6620-5",
+                Notes = "Degusto conventus defendo valetudo.",
+                TaxAmount = 2501D,
+                TotalAmount = 168D,
+                UnitAmount = 3059D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Refined Steel Shoes",
+        PaymentMethod = "CASH",
+        PostedAt = System.DateTime.Parse("2021-06-04T05:04:02.308Z").ToUniversalTime(),
+        ReimbursedAmount = 1833D,
+        Status = AccountingExpenseStatus.Submitted,
+        TaxAmount = 2602D,
+        TotalAmount = 3580D,
+        UpdatedAt = System.DateTime.Parse("2026-05-09T18:24:02.313Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +181,10 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +194,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
-    AccountingExpense = new AccountingExpense() {},
+    AccountingExpense = new AccountingExpense() {
+        ApprovedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://ripe-napkin.biz/",
+                Id = "4298778d-022a-4392-aa3b-287ddb9df4eb",
+                MimeType = "annus",
+                Name = "cohibeo",
+            },
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
+        Currency = "SSP",
+        ExternalNumber = "necessitatibus",
+        Id = "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+                ItemDescription = "Innovative Table featuring left technology and Rubber construction",
+                ItemName = "Luxurious Cotton Pizza",
+                ItemSku = "978-0-8324-6620-5",
+                Notes = "Degusto conventus defendo valetudo.",
+                TaxAmount = 2501D,
+                TotalAmount = 168D,
+                UnitAmount = 3059D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Refined Steel Shoes",
+        PaymentMethod = "CASH",
+        PostedAt = System.DateTime.Parse("2021-06-04T05:04:02.315Z").ToUniversalTime(),
+        ReimbursedAmount = 1833D,
+        Status = AccountingExpenseStatus.Submitted,
+        TaxAmount = 2602D,
+        TotalAmount = 3580D,
+        UpdatedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +303,10 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +316,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
-    AccountingExpense = new AccountingExpense() {},
+    AccountingExpense = new AccountingExpense() {
+        ApprovedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://ripe-napkin.biz/",
+                Id = "4298778d-022a-4392-aa3b-287ddb9df4eb",
+                MimeType = "annus",
+                Name = "cohibeo",
+            },
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
+        Currency = "SSP",
+        ExternalNumber = "necessitatibus",
+        Id = "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+                ItemDescription = "Innovative Table featuring left technology and Rubber construction",
+                ItemName = "Luxurious Cotton Pizza",
+                ItemSku = "978-0-8324-6620-5",
+                Notes = "Degusto conventus defendo valetudo.",
+                TaxAmount = 2501D,
+                TotalAmount = 168D,
+                UnitAmount = 3059D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Refined Steel Shoes",
+        PaymentMethod = "CASH",
+        PostedAt = System.DateTime.Parse("2021-06-04T05:04:02.315Z").ToUniversalTime(),
+        ReimbursedAmount = 1833D,
+        Status = AccountingExpenseStatus.Submitted,
+        TaxAmount = 2602D,
+        TotalAmount = 3580D,
+        UpdatedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

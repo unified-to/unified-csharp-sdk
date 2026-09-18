@@ -11,6 +11,8 @@ dotnet add package UnifiedTo
 ### Example
 
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -19,7 +21,31 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    accountingAccount: new AccountingAccount() {},
+    accountingAccount: new AccountingAccount() {
+        Balance = 12092D,
+        CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+        Currency = "BOB",
+        CustomerDefinedCode = "quo",
+        Description = "Spoliatio comedo vilitas harum cupiditate.",
+        Id = "35991572-6b6d-4a7b-a883-101be82c839d",
+        IsPayable = true,
+        Name = "Electronic Aluminum Tuna",
+        Status = Status.Archived,
+        Taxonomy = new List<AccountingAccountTaxonomy>() {
+            new AccountingAccountTaxonomy() {
+                OriginalType = "vesper",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "iste",
+            },
+            new AccountingAccountTaxonomy() {
+                OriginalType = "adamo",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "peccatus",
+            },
+        },
+        Type = UnifiedTo.Models.Components.Type.Bank,
+        UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.602Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -2255,6 +2281,8 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -2266,7 +2294,31 @@ var sdk = new UnifiedToSDK(
 );
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    accountingAccount: new AccountingAccount() {},
+    accountingAccount: new AccountingAccount() {
+        Balance = 12092D,
+        CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+        Currency = "BOB",
+        CustomerDefinedCode = "quo",
+        Description = "Spoliatio comedo vilitas harum cupiditate.",
+        Id = "35991572-6b6d-4a7b-a883-101be82c839d",
+        IsPayable = true,
+        Name = "Electronic Aluminum Tuna",
+        Status = Status.Archived,
+        Taxonomy = new List<AccountingAccountTaxonomy>() {
+            new AccountingAccountTaxonomy() {
+                OriginalType = "vesper",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "iste",
+            },
+            new AccountingAccountTaxonomy() {
+                OriginalType = "adamo",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "peccatus",
+            },
+        },
+        Type = UnifiedTo.Models.Components.Type.Bank,
+        UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.602Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -2277,6 +2329,8 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 The default server can also be overridden globally by passing a URL to the `serverUrl: string` optional parameter when initializing the SDK client instance. For example:
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -2288,7 +2342,31 @@ var sdk = new UnifiedToSDK(
 );
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    accountingAccount: new AccountingAccount() {},
+    accountingAccount: new AccountingAccount() {
+        Balance = 12092D,
+        CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+        Currency = "BOB",
+        CustomerDefinedCode = "quo",
+        Description = "Spoliatio comedo vilitas harum cupiditate.",
+        Id = "35991572-6b6d-4a7b-a883-101be82c839d",
+        IsPayable = true,
+        Name = "Electronic Aluminum Tuna",
+        Status = Status.Archived,
+        Taxonomy = new List<AccountingAccountTaxonomy>() {
+            new AccountingAccountTaxonomy() {
+                OriginalType = "vesper",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "iste",
+            },
+            new AccountingAccountTaxonomy() {
+                OriginalType = "adamo",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "peccatus",
+            },
+        },
+        Type = UnifiedTo.Models.Components.Type.Bank,
+        UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.602Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -2351,6 +2429,8 @@ This SDK supports the following security scheme globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -2359,7 +2439,31 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    accountingAccount: new AccountingAccount() {},
+    accountingAccount: new AccountingAccount() {
+        Balance = 12092D,
+        CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+        Currency = "BOB",
+        CustomerDefinedCode = "quo",
+        Description = "Spoliatio comedo vilitas harum cupiditate.",
+        Id = "35991572-6b6d-4a7b-a883-101be82c839d",
+        IsPayable = true,
+        Name = "Electronic Aluminum Tuna",
+        Status = Status.Archived,
+        Taxonomy = new List<AccountingAccountTaxonomy>() {
+            new AccountingAccountTaxonomy() {
+                OriginalType = "vesper",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "iste",
+            },
+            new AccountingAccountTaxonomy() {
+                OriginalType = "adamo",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "peccatus",
+            },
+        },
+        Type = UnifiedTo.Models.Components.Type.Bank,
+        UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.602Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -2384,6 +2488,8 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### Example
 
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Errors;
@@ -2395,7 +2501,31 @@ var sdk = new UnifiedToSDK(security: new Security() {
 try
 {
     var res = await sdk.Accounting.CreateAccountingAccountAsync(
-        accountingAccount: new AccountingAccount() {},
+        accountingAccount: new AccountingAccount() {
+            Balance = 12092D,
+            CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+            Currency = "BOB",
+            CustomerDefinedCode = "quo",
+            Description = "Spoliatio comedo vilitas harum cupiditate.",
+            Id = "35991572-6b6d-4a7b-a883-101be82c839d",
+            IsPayable = true,
+            Name = "Electronic Aluminum Tuna",
+            Status = Status.Archived,
+            Taxonomy = new List<AccountingAccountTaxonomy>() {
+                new AccountingAccountTaxonomy() {
+                    OriginalType = "vesper",
+                    Type = AccountingAccountTaxonomyType.Subgroup,
+                    Value = "iste",
+                },
+                new AccountingAccountTaxonomy() {
+                    OriginalType = "adamo",
+                    Type = AccountingAccountTaxonomyType.Subgroup,
+                    Value = "peccatus",
+                },
+            },
+            Type = UnifiedTo.Models.Components.Type.Bank,
+            UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.602Z").ToUniversalTime(),
+        },
         connectionId: "<id>"
     );
 

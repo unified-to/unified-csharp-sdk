@@ -17,8 +17,9 @@ Create a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" example="repo_repository" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,7 +29,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repository.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
+        Description = "Tribuo torqueo aetas ustulo illum.",
+        Id = "2b8e1ef3-d009-4d87-9a50-495da886c6d8",
+        IsPrivate = false,
+        Name = "suggero",
+        Owner = "Marcella Kuhic",
+        UpdatedAt = System.DateTime.Parse("2024-02-23T00:27:33.873Z").ToUniversalTime(),
+        WebUrl = "https://brown-phrase.info",
     },
     connectionId: "<id>"
 );
@@ -144,8 +152,9 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -156,7 +165,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoRepositoryRequest req = new PatchRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
+        Description = "Tribuo torqueo aetas ustulo illum.",
+        Id = "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+        IsPrivate = false,
+        Name = "suggero",
+        Owner = "Marcella Kuhic",
+        UpdatedAt = System.DateTime.Parse("2024-02-23T00:27:33.875Z").ToUniversalTime(),
+        WebUrl = "https://brown-phrase.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -229,8 +245,9 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -241,7 +258,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoRepositoryRequest req = new UpdateRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
+        Description = "Tribuo torqueo aetas ustulo illum.",
+        Id = "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+        IsPrivate = false,
+        Name = "suggero",
+        Owner = "Marcella Kuhic",
+        UpdatedAt = System.DateTime.Parse("2024-02-23T00:27:33.875Z").ToUniversalTime(),
+        WebUrl = "https://brown-phrase.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",

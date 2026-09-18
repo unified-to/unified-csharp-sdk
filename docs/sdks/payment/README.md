@@ -33,8 +33,10 @@ Create a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" -->
+<!-- UsageSnippet language="csharp" operationID="createPaymentLink" method="post" path="/payment/{connection_id}/link" example="payment_link" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -43,7 +45,84 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.CreatePaymentLinkAsync(
-    paymentLink: new PaymentLink() {},
+    paymentLink: new PaymentLink() {
+        Amount = 81211D,
+        CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
+        Currency = "GYD",
+        Description = "Adfero ipsa terreo benevolentia utrum.",
+        Id = "b6f6ca2e-e1cc-4005-8fd1-bbbf3e301533",
+        IsActive = true,
+        IsChargeableNow = false,
+        Lineitems = new List<PaymentLineitem>() {
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-08-21T00:45:53.202Z").ToUniversalTime(),
+                Id = "542a1868-424f-4d59-8020-678870334cdc",
+                ItemDescription = "Experience the white brilliance of our Hat, perfect for aggravating environments",
+                ItemName = "Licensed Marble Mouse",
+                ItemSku = "TAD4EYLVRI",
+                Notes = "Charisma theca video verus conduco attollo cervus decretum viridis.",
+                TaxAmount = 221D,
+                TotalAmount = 1841D,
+                UnitAmount = 270D,
+                UnitQuantity = 6D,
+                UpdatedAt = System.DateTime.Parse("2023-02-12T17:31:25.507Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-09-30T05:29:29.258Z").ToUniversalTime(),
+                DiscountAmount = 15D,
+                Id = "8d826834-e2c6-40fa-a93f-46269b34c77b",
+                ItemDescription = "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+                ItemName = "Intelligent Steel Table",
+                ItemSku = "V8HQCDQYUZ",
+                TaxAmount = 150D,
+                TotalAmount = 2037D,
+                UnitAmount = 317D,
+                UnitQuantity = 6D,
+                UpdatedAt = System.DateTime.Parse("2023-05-31T11:10:09.190Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-12-16T13:52:52.341Z").ToUniversalTime(),
+                Id = "828a583d-f269-4125-ac29-cc3ac667cffd",
+                ItemDescription = "Dach - Wolff's most advanced Car technology increases dense capabilities",
+                ItemName = "Modern Gold Soap",
+                ItemSku = "DYGKCTCLDJ",
+                TaxAmount = 41D,
+                TotalAmount = 281D,
+                UnitAmount = 30D,
+                UnitQuantity = 8D,
+                UpdatedAt = System.DateTime.Parse("2023-05-22T16:35:07.583Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-08-12T19:45:39.705Z").ToUniversalTime(),
+                Id = "8dfb021c-78fb-420d-ba19-22fdc69f2aea",
+                ItemDescription = "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+                ItemName = "Generic Aluminum Ball",
+                ItemSku = "BSBAXWAAFF",
+                Notes = "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+                TaxAmount = 6D,
+                TotalAmount = 78D,
+                UnitAmount = 24D,
+                UnitQuantity = 3D,
+                UpdatedAt = System.DateTime.Parse("2023-11-13T12:39:15.951Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-02-14T06:21:13.641Z").ToUniversalTime(),
+                DiscountAmount = 171D,
+                Id = "fff39870-54ae-4af2-91aa-005bc9e727fd",
+                ItemDescription = "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+                ItemName = "Incredible Aluminum Chicken",
+                ItemSku = "6ERMJK20HE",
+                TaxAmount = 263D,
+                TotalAmount = 3708D,
+                UnitAmount = 452D,
+                UnitQuantity = 8D,
+                UpdatedAt = System.DateTime.Parse("2023-01-31T21:39:30.894Z").ToUniversalTime(),
+            },
+        },
+        SuccessUrl = "https://parched-kettledrum.com/",
+        UpdatedAt = System.DateTime.Parse("2025-12-10T19:02:34.966Z").ToUniversalTime(),
+        Url = "https://forceful-laughter.biz/",
+    },
     connectionId: "<id>"
 );
 
@@ -75,8 +154,10 @@ Create a payment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createPaymentPayment" method="post" path="/payment/{connection_id}/payment" -->
+<!-- UsageSnippet language="csharp" operationID="createPaymentPayment" method="post" path="/payment/{connection_id}/payment" example="payment_payment" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -85,7 +166,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.CreatePaymentPaymentAsync(
-    paymentPayment: new PaymentPayment() {},
+    paymentPayment: new PaymentPayment() {
+        Allocations = new List<PaymentAllocation>() {},
+        CardBrand = "AMEX",
+        CardLast4 = "0819",
+        CreatedAt = System.DateTime.Parse("2022-03-10T00:19:42.086Z").ToUniversalTime(),
+        Currency = "BIF",
+        FeeAmount = 3D,
+        Id = "cb697617-f4a2-4c61-8f37-8585acb1a595",
+        LocationId = "94f7c68e-07de-40d1-9d6f-a0896363913f",
+        Notes = "Tactus vilicus.",
+        PaymentMethod = "BANK_TRANSFER",
+        Reference = "auctus",
+        Status = PaymentPaymentStatus.Succeeded,
+        TenderType = TenderType.Check,
+        TipAmount = 2D,
+        TotalAmount = 44219D,
+        Type = PaymentPaymentType.Invoice,
+        UpdatedAt = System.DateTime.Parse("2025-05-24T15:11:03.135Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -117,8 +216,10 @@ Create a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" -->
+<!-- UsageSnippet language="csharp" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" example="payment_subscription" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -127,7 +228,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.CreatePaymentSubscriptionAsync(
-    paymentSubscription: new PaymentSubscription() {},
+    paymentSubscription: new PaymentSubscription() {
+        CreatedAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
+        Currency = "WST",
+        CurrentPeriodEndAt = System.DateTime.Parse("2023-06-03T04:20:29.157Z").ToUniversalTime(),
+        CurrentPeriodStartAt = System.DateTime.Parse("2023-05-21T03:55:58.846Z").ToUniversalTime(),
+        DayOfMonth = 1D,
+        Description = "Innovative Mouse featuring important technology and Bamboo construction",
+        EndAt = System.DateTime.Parse("2023-05-21T12:36:09.234Z").ToUniversalTime(),
+        Id = "f7519009-e6cd-4e12-b266-7782c6582fdd",
+        Interval = 1D,
+        IntervalUnit = IntervalUnit.Month,
+        Lineitems = new List<PaymentLineitem>() {},
+        StartAt = System.DateTime.Parse("2023-05-29T06:04:51.030Z").ToUniversalTime(),
+        Status = PaymentSubscriptionStatus.Active,
+        TotalAmount = 75616D,
+        UpdatedAt = System.DateTime.Parse("2023-12-15T22:33:27.051Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -574,8 +691,10 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchPaymentLink" method="patch" path="/payment/{connection_id}/link/{id}" example="payment_link" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -585,7 +704,84 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchPaymentLinkRequest req = new PatchPaymentLinkRequest() {
-    PaymentLink = new PaymentLink() {},
+    PaymentLink = new PaymentLink() {
+        Amount = 81211D,
+        CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
+        Currency = "GYD",
+        Description = "Adfero ipsa terreo benevolentia utrum.",
+        Id = "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+        IsActive = true,
+        IsChargeableNow = false,
+        Lineitems = new List<PaymentLineitem>() {
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-08-21T00:45:53.202Z").ToUniversalTime(),
+                Id = "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+                ItemDescription = "Experience the white brilliance of our Hat, perfect for aggravating environments",
+                ItemName = "Licensed Marble Mouse",
+                ItemSku = "TAD4EYLVRI",
+                Notes = "Charisma theca video verus conduco attollo cervus decretum viridis.",
+                TaxAmount = 221D,
+                TotalAmount = 1841D,
+                UnitAmount = 270D,
+                UnitQuantity = 6D,
+                UpdatedAt = System.DateTime.Parse("2023-02-12T17:31:25.507Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-09-30T05:29:29.258Z").ToUniversalTime(),
+                DiscountAmount = 15D,
+                Id = "2adb9164-4288-4862-91c5-ce845917c5fe",
+                ItemDescription = "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+                ItemName = "Intelligent Steel Table",
+                ItemSku = "V8HQCDQYUZ",
+                TaxAmount = 150D,
+                TotalAmount = 2037D,
+                UnitAmount = 317D,
+                UnitQuantity = 6D,
+                UpdatedAt = System.DateTime.Parse("2023-05-31T11:10:09.190Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-12-16T13:52:52.341Z").ToUniversalTime(),
+                Id = "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+                ItemDescription = "Dach - Wolff's most advanced Car technology increases dense capabilities",
+                ItemName = "Modern Gold Soap",
+                ItemSku = "DYGKCTCLDJ",
+                TaxAmount = 41D,
+                TotalAmount = 281D,
+                UnitAmount = 30D,
+                UnitQuantity = 8D,
+                UpdatedAt = System.DateTime.Parse("2023-05-22T16:35:07.583Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-08-12T19:45:39.705Z").ToUniversalTime(),
+                Id = "b7fff63f-7cf2-4186-8893-214575cfac8a",
+                ItemDescription = "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+                ItemName = "Generic Aluminum Ball",
+                ItemSku = "BSBAXWAAFF",
+                Notes = "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+                TaxAmount = 6D,
+                TotalAmount = 78D,
+                UnitAmount = 24D,
+                UnitQuantity = 3D,
+                UpdatedAt = System.DateTime.Parse("2023-11-13T12:39:15.951Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-02-14T06:21:13.641Z").ToUniversalTime(),
+                DiscountAmount = 171D,
+                Id = "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+                ItemDescription = "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+                ItemName = "Incredible Aluminum Chicken",
+                ItemSku = "6ERMJK20HE",
+                TaxAmount = 263D,
+                TotalAmount = 3708D,
+                UnitAmount = 452D,
+                UnitQuantity = 8D,
+                UpdatedAt = System.DateTime.Parse("2023-01-31T21:39:30.894Z").ToUniversalTime(),
+            },
+        },
+        SuccessUrl = "https://parched-kettledrum.com/",
+        UpdatedAt = System.DateTime.Parse("2025-12-10T19:02:34.976Z").ToUniversalTime(),
+        Url = "https://forceful-laughter.biz/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -617,8 +813,10 @@ Update a payment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchPaymentPayment" method="patch" path="/payment/{connection_id}/payment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchPaymentPayment" method="patch" path="/payment/{connection_id}/payment/{id}" example="payment_payment" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -628,7 +826,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchPaymentPaymentRequest req = new PatchPaymentPaymentRequest() {
-    PaymentPayment = new PaymentPayment() {},
+    PaymentPayment = new PaymentPayment() {
+        Allocations = new List<PaymentAllocation>() {},
+        CardBrand = "AMEX",
+        CardLast4 = "0819",
+        CreatedAt = System.DateTime.Parse("2022-03-10T00:19:42.086Z").ToUniversalTime(),
+        Currency = "BIF",
+        FeeAmount = 3D,
+        Id = "88f67501-63d9-4d34-9f8b-4ae8b27c5ae5",
+        LocationId = "94f7c68e-07de-40d1-9d6f-a0896363913f",
+        Notes = "Tactus vilicus.",
+        PaymentMethod = "BANK_TRANSFER",
+        Reference = "auctus",
+        Status = PaymentPaymentStatus.Succeeded,
+        TenderType = TenderType.Check,
+        TipAmount = 2D,
+        TotalAmount = 44219D,
+        Type = PaymentPaymentType.Invoice,
+        UpdatedAt = System.DateTime.Parse("2025-05-24T15:11:03.152Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -660,8 +876,10 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -671,7 +889,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchPaymentSubscriptionRequest req = new PatchPaymentSubscriptionRequest() {
-    PaymentSubscription = new PaymentSubscription() {},
+    PaymentSubscription = new PaymentSubscription() {
+        CreatedAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
+        Currency = "WST",
+        CurrentPeriodEndAt = System.DateTime.Parse("2023-06-03T04:20:29.157Z").ToUniversalTime(),
+        CurrentPeriodStartAt = System.DateTime.Parse("2023-05-21T03:55:58.846Z").ToUniversalTime(),
+        DayOfMonth = 1D,
+        Description = "Innovative Mouse featuring important technology and Bamboo construction",
+        EndAt = System.DateTime.Parse("2023-05-21T12:36:09.234Z").ToUniversalTime(),
+        Id = "c599db6f-2bd5-4178-ab21-33a523666043",
+        Interval = 1D,
+        IntervalUnit = IntervalUnit.Month,
+        Lineitems = new List<PaymentLineitem>() {},
+        StartAt = System.DateTime.Parse("2023-05-29T06:04:51.030Z").ToUniversalTime(),
+        Status = PaymentSubscriptionStatus.Active,
+        TotalAmount = 75616D,
+        UpdatedAt = System.DateTime.Parse("2023-12-15T22:33:27.054Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -823,8 +1057,10 @@ Update a link
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updatePaymentLink" method="put" path="/payment/{connection_id}/link/{id}" example="payment_link" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -834,7 +1070,84 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdatePaymentLinkRequest req = new UpdatePaymentLinkRequest() {
-    PaymentLink = new PaymentLink() {},
+    PaymentLink = new PaymentLink() {
+        Amount = 81211D,
+        CreatedAt = System.DateTime.Parse("2023-06-04T16:11:45.685Z").ToUniversalTime(),
+        Currency = "GYD",
+        Description = "Adfero ipsa terreo benevolentia utrum.",
+        Id = "d7f2e50e-895a-49d4-8e39-aee0226e9880",
+        IsActive = true,
+        IsChargeableNow = false,
+        Lineitems = new List<PaymentLineitem>() {
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-08-21T00:45:53.202Z").ToUniversalTime(),
+                Id = "1dffc4c2-3475-40ea-ae51-9d51c42fe337",
+                ItemDescription = "Experience the white brilliance of our Hat, perfect for aggravating environments",
+                ItemName = "Licensed Marble Mouse",
+                ItemSku = "TAD4EYLVRI",
+                Notes = "Charisma theca video verus conduco attollo cervus decretum viridis.",
+                TaxAmount = 221D,
+                TotalAmount = 1841D,
+                UnitAmount = 270D,
+                UnitQuantity = 6D,
+                UpdatedAt = System.DateTime.Parse("2023-02-12T17:31:25.507Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-09-30T05:29:29.258Z").ToUniversalTime(),
+                DiscountAmount = 15D,
+                Id = "2adb9164-4288-4862-91c5-ce845917c5fe",
+                ItemDescription = "New Chicken model with 79 GB RAM, 846 GB storage, and lovely features",
+                ItemName = "Intelligent Steel Table",
+                ItemSku = "V8HQCDQYUZ",
+                TaxAmount = 150D,
+                TotalAmount = 2037D,
+                UnitAmount = 317D,
+                UnitQuantity = 6D,
+                UpdatedAt = System.DateTime.Parse("2023-05-31T11:10:09.190Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-12-16T13:52:52.341Z").ToUniversalTime(),
+                Id = "fb966ffe-87ee-41ee-bc6b-15cab2ff65f3",
+                ItemDescription = "Dach - Wolff's most advanced Car technology increases dense capabilities",
+                ItemName = "Modern Gold Soap",
+                ItemSku = "DYGKCTCLDJ",
+                TaxAmount = 41D,
+                TotalAmount = 281D,
+                UnitAmount = 30D,
+                UnitQuantity = 8D,
+                UpdatedAt = System.DateTime.Parse("2023-05-22T16:35:07.583Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-08-12T19:45:39.705Z").ToUniversalTime(),
+                Id = "b7fff63f-7cf2-4186-8893-214575cfac8a",
+                ItemDescription = "The sleek and unimportant Salad comes with salmon LED lighting for smart functionality",
+                ItemName = "Generic Aluminum Ball",
+                ItemSku = "BSBAXWAAFF",
+                Notes = "Cubo adversus victus subito asperiores vereor cibo tabgo.",
+                TaxAmount = 6D,
+                TotalAmount = 78D,
+                UnitAmount = 24D,
+                UnitQuantity = 3D,
+                UpdatedAt = System.DateTime.Parse("2023-11-13T12:39:15.951Z").ToUniversalTime(),
+            },
+            new PaymentLineitem() {
+                CreatedAt = System.DateTime.Parse("2023-02-14T06:21:13.641Z").ToUniversalTime(),
+                DiscountAmount = 171D,
+                Id = "f0122b45-bd2e-48ce-81c7-8bee91460edd",
+                ItemDescription = "New Bike model with 29 GB RAM, 271 GB storage, and minty features",
+                ItemName = "Incredible Aluminum Chicken",
+                ItemSku = "6ERMJK20HE",
+                TaxAmount = 263D,
+                TotalAmount = 3708D,
+                UnitAmount = 452D,
+                UnitQuantity = 8D,
+                UpdatedAt = System.DateTime.Parse("2023-01-31T21:39:30.894Z").ToUniversalTime(),
+            },
+        },
+        SuccessUrl = "https://parched-kettledrum.com/",
+        UpdatedAt = System.DateTime.Parse("2025-12-10T19:02:34.976Z").ToUniversalTime(),
+        Url = "https://forceful-laughter.biz/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -866,8 +1179,10 @@ Update a payment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updatePaymentPayment" method="put" path="/payment/{connection_id}/payment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updatePaymentPayment" method="put" path="/payment/{connection_id}/payment/{id}" example="payment_payment" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -877,7 +1192,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdatePaymentPaymentRequest req = new UpdatePaymentPaymentRequest() {
-    PaymentPayment = new PaymentPayment() {},
+    PaymentPayment = new PaymentPayment() {
+        Allocations = new List<PaymentAllocation>() {},
+        CardBrand = "AMEX",
+        CardLast4 = "0819",
+        CreatedAt = System.DateTime.Parse("2022-03-10T00:19:42.086Z").ToUniversalTime(),
+        Currency = "BIF",
+        FeeAmount = 3D,
+        Id = "88f67501-63d9-4d34-9f8b-4ae8b27c5ae5",
+        LocationId = "94f7c68e-07de-40d1-9d6f-a0896363913f",
+        Notes = "Tactus vilicus.",
+        PaymentMethod = "BANK_TRANSFER",
+        Reference = "auctus",
+        Status = PaymentPaymentStatus.Succeeded,
+        TenderType = TenderType.Check,
+        TipAmount = 2D,
+        TotalAmount = 44219D,
+        Type = PaymentPaymentType.Invoice,
+        UpdatedAt = System.DateTime.Parse("2025-05-24T15:11:03.152Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -909,8 +1242,10 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -920,7 +1255,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdatePaymentSubscriptionRequest req = new UpdatePaymentSubscriptionRequest() {
-    PaymentSubscription = new PaymentSubscription() {},
+    PaymentSubscription = new PaymentSubscription() {
+        CreatedAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
+        Currency = "WST",
+        CurrentPeriodEndAt = System.DateTime.Parse("2023-06-03T04:20:29.157Z").ToUniversalTime(),
+        CurrentPeriodStartAt = System.DateTime.Parse("2023-05-21T03:55:58.846Z").ToUniversalTime(),
+        DayOfMonth = 1D,
+        Description = "Innovative Mouse featuring important technology and Bamboo construction",
+        EndAt = System.DateTime.Parse("2023-05-21T12:36:09.234Z").ToUniversalTime(),
+        Id = "c599db6f-2bd5-4178-ab21-33a523666043",
+        Interval = 1D,
+        IntervalUnit = IntervalUnit.Month,
+        Lineitems = new List<PaymentLineitem>() {},
+        StartAt = System.DateTime.Parse("2023-05-29T06:04:51.030Z").ToUniversalTime(),
+        Status = PaymentSubscriptionStatus.Active,
+        TotalAmount = 75616D,
+        UpdatedAt = System.DateTime.Parse("2023-12-15T22:33:27.054Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

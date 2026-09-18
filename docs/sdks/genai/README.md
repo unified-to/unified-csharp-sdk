@@ -15,8 +15,9 @@ Create an embedding
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" -->
+<!-- UsageSnippet language="csharp" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" example="genai_embedding" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -25,7 +26,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Genai.CreateGenaiEmbeddingAsync(
-    genaiEmbedding: new GenaiEmbedding() {},
+    genaiEmbedding: new GenaiEmbedding() {
+        Content = new List<GenaiEmbeddingContent>() {
+            new GenaiEmbeddingContent() {
+                Text = "Utrimque temptatio pecco demulceo.",
+            },
+        },
+        Dimension = 423D,
+        Embeddings = "Est.",
+        EncondingFormat = EncondingFormat.Float,
+        Id = "7fd5d308-20f8-4679-bdfa-0da51e707b1c",
+        MaxTokens = 223D,
+        TokensUsed = 836D,
+        Type = "classification",
+    },
     connectionId: "<id>"
 );
 
@@ -57,8 +71,9 @@ Create a prompt
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" -->
+<!-- UsageSnippet language="csharp" operationID="createGenaiPrompt" method="post" path="/genai/{connection_id}/prompt" example="genai_prompt" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -67,7 +82,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Genai.CreateGenaiPromptAsync(
-    genaiPrompt: new GenaiPrompt() {},
+    genaiPrompt: new GenaiPrompt() {
+        MaxTokens = 0.4677782787475735D,
+        McpAuthorizationToken = "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
+        McpDeferredTools = new List<string>() {},
+        McpUrl = "https://unsung-dusk.info/",
+        Messages = new List<GenaiContent>() {
+            new GenaiContent() {
+                Content = "Aegre repudiandae verecundia facere statua.",
+                Role = Role.Assistant,
+            },
+            new GenaiContent() {
+                Content = "Speciosus xiphias soleo trepide crinis.",
+                Role = Role.System,
+            },
+        },
+        Responses = new List<string>() {
+            "Balbus vobis circumvenio una.",
+        },
+        Temperature = 0D,
+        TokensUsed = 975D,
+    },
     connectionId: "<id>"
 );
 

@@ -139,8 +139,10 @@ Create an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingAccount" method="post" path="/accounting/{connection_id}/account" example="accounting_account" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -149,7 +151,31 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    accountingAccount: new AccountingAccount() {},
+    accountingAccount: new AccountingAccount() {
+        Balance = 12092D,
+        CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+        Currency = "BOB",
+        CustomerDefinedCode = "quo",
+        Description = "Spoliatio comedo vilitas harum cupiditate.",
+        Id = "35991572-6b6d-4a7b-a883-101be82c839d",
+        IsPayable = true,
+        Name = "Electronic Aluminum Tuna",
+        Status = Status.Archived,
+        Taxonomy = new List<AccountingAccountTaxonomy>() {
+            new AccountingAccountTaxonomy() {
+                OriginalType = "vesper",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "iste",
+            },
+            new AccountingAccountTaxonomy() {
+                OriginalType = "adamo",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "peccatus",
+            },
+        },
+        Type = UnifiedTo.Models.Components.Type.Bank,
+        UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.602Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -181,8 +207,9 @@ Create a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedaccount" method="post" path="/accounting/{connection_id}/bankfeedaccount" example="accounting_bankfeedaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -191,7 +218,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingBankfeedaccountAsync(
-    accountingBankfeedaccount: new AccountingBankfeedaccount() {},
+    accountingBankfeedaccount: new AccountingBankfeedaccount() {
+        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+        AccountNumber = "30369722",
+        AccountNumberLast4 = "9722",
+        AccountType = AccountType.Loan,
+        Balance = 90358D,
+        BankName = "Weissnat Inc",
+        CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Currency = "SSP",
+        FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Id = "2ea876a9-ab62-403d-b280-b8bd398c21a5",
+        Name = "Corwin, Donnelly and Connelly Savings",
+        RoutingNumber = "667753156",
+        Status = AccountingBankfeedaccountStatus.Active,
+        UpdatedAt = System.DateTime.Parse("2024-04-11T12:57:07.381Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -223,8 +265,10 @@ Create a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingBankfeedtransaction" method="post" path="/accounting/{connection_id}/bankfeedtransaction" example="accounting_bankfeedtransaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -233,7 +277,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingBankfeedtransactionAsync(
-    accountingBankfeedtransaction: new AccountingBankfeedtransaction() {},
+    accountingBankfeedtransaction: new AccountingBankfeedtransaction() {
+        AccountId = "b7dc4175-1368-4b89-a700-d621b6666648",
+        Amount = 60889D,
+        BankCategory = "Games",
+        BankfeedaccountId = "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+        CategoryIds = new List<string>() {},
+        ContactId = "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+        CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
+        Currency = "SRD",
+        Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+        Id = "30fb790d-3f8e-48ab-8f69-cfc3c408e989",
+        IsPending = true,
+        MerchantName = "Reichert, Erdman and Tillman",
+        PostedAt = System.DateTime.Parse("2025-03-23T18:34:48.066Z").ToUniversalTime(),
+        Reference = "93642593",
+        TransactionAt = System.DateTime.Parse("2022-07-27T19:48:15.221Z").ToUniversalTime(),
+        Type = AccountingBankfeedtransactionType.Credit,
+        UpdatedAt = System.DateTime.Parse("2022-05-23T20:47:21.834Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -265,8 +327,10 @@ Create a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" example="accounting_bill" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -275,7 +339,30 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingBillAsync(
-    accountingBill: new AccountingBill() {},
+    accountingBill: new AccountingBill() {
+        Attachments = new List<AccountingAttachment>() {},
+        BillNumber = "vitae",
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2019-08-08T23:03:14.104Z").ToUniversalTime(),
+        Currency = "AUD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "100144ed-c290-4ba0-8c70-172d5b231a02",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Tutamen cilicium infit.",
+        PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2024-04-04T07:23:49.049Z").ToUniversalTime(),
+        Send = true,
+        Status = AccountingBillStatus.Deleted,
+        TaxAmount = 0D,
+        Term = Term.Net10,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2025-01-29T00:58:28.612Z").ToUniversalTime(),
+        Url = "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>"
 );
 
@@ -307,8 +394,10 @@ Create a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingCategory" method="post" path="/accounting/{connection_id}/category" example="accounting_category" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -317,7 +406,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingCategoryAsync(
-    accountingCategory: new AccountingCategory() {},
+    accountingCategory: new AccountingCategory() {
+        CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
+        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
+        Id = "dc380b5b-a085-47f0-80e6-a0450e68adcf",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Electronic Cotton Shoes",
+        UpdatedAt = System.DateTime.Parse("2025-08-20T06:36:05.170Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -349,8 +446,10 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" example="accounting_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -359,7 +458,74 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingContactAsync(
-    accountingContact: new AccountingContact() {},
+    accountingContact: new AccountingContact() {
+        AssociatedContacts = new List<AccountingAssociatedContact>() {
+            new AccountingAssociatedContact() {
+                Id = "849cd11b-c680-45ef-8e37-e9a24def34b8",
+                Name = "Delores Reynolds",
+            },
+            new AccountingAssociatedContact() {
+                Id = "b7ba795b-96e2-4c00-b11d-7ad43dd15877",
+                Name = "Delores Reynolds",
+            },
+        },
+        BillingAddress = new PropertyAccountingContactBillingAddress() {
+            Address1 = "2633 Stoney Lane",
+            Address2 = "Suite 176",
+            City = "Ladariusboro",
+            CountryCode = "US",
+            PostalCode = "70131-2908",
+            Region = "Illinois",
+            RegionCode = "NV",
+        },
+        CompanyName = "Marquardt Inc",
+        CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
+        Currency = "ISK",
+        Emails = new List<AccountingEmail>() {
+            new AccountingEmail() {
+                Email = "Delores.Reynolds10@hotmail.com",
+                Type = AccountingEmailType.Home,
+            },
+        },
+        FirstName = "Delores",
+        Id = "d501ead1-d963-4360-9d14-5fc86506b5d5",
+        Identification = "amicitia",
+        IsActive = true,
+        IsCustomer = true,
+        LastName = "Reynolds",
+        Name = "Delores Reynolds",
+        PaymentMethods = new List<AccountingContactPaymentMethod>() {
+            new AccountingContactPaymentMethod() {
+                Default = true,
+                Id = "38ac4078-e7eb-4d4a-938e-3a6293a46e62",
+                Name = "Visa 1234",
+                Type = AccountingContactPaymentMethodType.Card,
+            },
+        },
+        PortalUrl = "https://scented-t-shirt.info/",
+        ShippingAddress = new PropertyAccountingContactShippingAddress() {
+            Address1 = "786 Renner Stream",
+            Address2 = "Apt. 555",
+            City = "Roanoke",
+            CountryCode = "US",
+            PostalCode = "80686-7556",
+            Region = "Vermont",
+            RegionCode = "NE",
+        },
+        TaxExemption = TaxExemption.Resale,
+        TaxNumber = "amplexus",
+        Telephones = new List<AccountingTelephone>() {
+            new AccountingTelephone() {
+                Telephone = "(427) 701-7160",
+                Type = AccountingTelephoneType.Home,
+            },
+            new AccountingTelephone() {
+                Telephone = "(540) 913-9171",
+                Type = AccountingTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2023-12-04T22:28:17.517Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -391,8 +557,10 @@ Create a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" example="accounting_creditmemo" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -401,7 +569,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
-    accountingCreditmemo: new AccountingCreditmemo() {},
+    accountingCreditmemo: new AccountingCreditmemo() {
+        Applications = new List<AccountingCreditApplication>() {},
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://enlightened-chairperson.com/",
+                Id = "b6973779-c8a8-4f1a-9b1a-3f847c624aa4",
+                MimeType = "complectus",
+                Name = "thesis",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-09-20T01:47:01.571Z").ToUniversalTime(),
+        CreditmemoNumber = "ulterius",
+        Currency = "MKD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
+        Id = "7fc36458-5758-4a49-9b68-4665d4871b26",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Dedecor amo adfero torqueo quas.",
+        PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
+        PostedAt = System.DateTime.Parse("2025-11-15T11:03:17.426Z").ToUniversalTime(),
+        RefundAmount = 0D,
+        RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
+        RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
+        Send = false,
+        Status = AccountingCreditmemoStatus.Paid,
+        TaxAmount = 0D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2024-11-15T13:32:51.006Z").ToUniversalTime(),
+        Url = "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>"
 );
 
@@ -433,8 +631,10 @@ Create an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingExpense" method="post" path="/accounting/{connection_id}/expense" example="accounting_expense" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -443,7 +643,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingExpenseAsync(
-    accountingExpense: new AccountingExpense() {},
+    accountingExpense: new AccountingExpense() {
+        ApprovedAt = System.DateTime.Parse("2026-05-09T18:24:02.313Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://ripe-napkin.biz/",
+                Id = "bfba31e4-33ae-4dea-b8e5-edc2181608ec",
+                MimeType = "annus",
+                Name = "cohibeo",
+            },
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
+        Currency = "SSP",
+        ExternalNumber = "necessitatibus",
+        Id = "049777da-55cf-41fb-866d-0a574a19b0eb",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "f26d5412-51c5-4471-95e4-ce3041eb1194",
+                ItemDescription = "Innovative Table featuring left technology and Rubber construction",
+                ItemName = "Luxurious Cotton Pizza",
+                ItemSku = "978-0-8324-6620-5",
+                Notes = "Degusto conventus defendo valetudo.",
+                TaxAmount = 2501D,
+                TotalAmount = 168D,
+                UnitAmount = 3059D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Refined Steel Shoes",
+        PaymentMethod = "CASH",
+        PostedAt = System.DateTime.Parse("2021-06-04T05:04:02.308Z").ToUniversalTime(),
+        ReimbursedAmount = 1833D,
+        Status = AccountingExpenseStatus.Submitted,
+        TaxAmount = 2602D,
+        TotalAmount = 3580D,
+        UpdatedAt = System.DateTime.Parse("2026-05-09T18:24:02.313Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -475,8 +712,10 @@ Create an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingInvoice" method="post" path="/accounting/{connection_id}/invoice" example="accounting_invoice" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -485,7 +724,42 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
-    accountingInvoice: new AccountingInvoice() {},
+    accountingInvoice: new AccountingInvoice() {
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://glossy-markup.net/",
+                Id = "645358a0-c05a-4486-b89b-0a0ed2a6c979",
+                MimeType = "benevolentia",
+                Name = "vespillo",
+            },
+        },
+        BalanceAmount = -1D,
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2022-11-07T14:17:29.587Z").ToUniversalTime(),
+        Currency = "RWF",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2022-11-27T21:25:37.363Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "b81b0ef0-2818-4301-b28e-b6b0df003dc3",
+        InvoiceNumber = "vinco",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Auctus comburo clarus ubi.",
+        PaidAmount = 0D,
+        PaidAt = System.DateTime.Parse("2022-11-25T15:00:28.871Z").ToUniversalTime(),
+        PaymentCollectionMethod = AccountingInvoicePaymentCollectionMethod.SendInvoice,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-03-26T22:47:33.726Z").ToUniversalTime(),
+        Reference = "adinventitias",
+        Send = true,
+        Status = AccountingInvoiceStatus.Deleted,
+        TaxAmount = 0D,
+        Term = AccountingInvoiceTerm.Net45,
+        TotalAmount = 0D,
+        Type = AccountingInvoiceType.Creditmemo,
+        UpdatedAt = System.DateTime.Parse("2023-02-06T06:48:48.536Z").ToUniversalTime(),
+        Url = "https://gifted-yarmulke.info/",
+    },
     connectionId: "<id>"
 );
 
@@ -517,8 +791,10 @@ Create a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" example="accounting_journal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -527,7 +803,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingJournalAsync(
-    accountingJournal: new AccountingJournal() {},
+    accountingJournal: new AccountingJournal() {
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
+        Currency = "FKP",
+        Description = "Calco constans adipisci.",
+        Id = "3d392f10-878d-46c4-a59b-f5250068e316",
+        PostedAt = System.DateTime.Parse("2023-10-19T01:52:16.859Z").ToUniversalTime(),
+        Reference = "ullam",
+        Source = "crustulum",
+        TaxAmount = 78672D,
+        UpdatedAt = System.DateTime.Parse("2022-01-01T11:09:03.238Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -559,8 +847,10 @@ Create an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingOrder" method="post" path="/accounting/{connection_id}/order" example="accounting_order" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -569,7 +859,35 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingOrderAsync(
-    accountingOrder: new AccountingOrder() {},
+    accountingOrder: new AccountingOrder() {
+        BillingAddress = new PropertyAccountingOrderBillingAddress() {
+            Address1 = "802 Bechtelar Park",
+            Address2 = "Apt. 436",
+            City = "Daniellaville",
+            CountryCode = "US",
+            PostalCode = "36947",
+            Region = "Wisconsin",
+            RegionCode = "NY",
+        },
+        CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "62016142-db21-434b-8958-592eefe46e72",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2022-04-05T00:14:38.752Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingOrderShippingAddress() {
+            Address1 = "9745 Betty Shore",
+            City = "South Alainaland",
+            CountryCode = "US",
+            PostalCode = "25274-7654",
+            Region = "New Hampshire",
+            RegionCode = "LA",
+        },
+        Status = AccountingOrderStatus.Submitted,
+        TotalAmount = 0D,
+        Type = AccountingOrderType.Purchase,
+        UpdatedAt = System.DateTime.Parse("2021-06-17T22:40:42.749Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -601,8 +919,10 @@ Create a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" example="accounting_paymentterm" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -611,7 +931,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingPaymenttermAsync(
-    accountingPaymentterm: new AccountingPaymentterm() {},
+    accountingPaymentterm: new AccountingPaymentterm() {
+        Category = UnifiedTo.Models.Components.Category.Standard,
+        CreatedAt = System.DateTime.Parse("2021-08-22T22:42:42.265Z").ToUniversalTime(),
+        DayOfMonthDue = 4D,
+        Description = "Cogito pecco eos cultura.",
+        DiscountDayOfMonth = 13D,
+        DiscountDays = 4D,
+        DiscountPercent = 5D,
+        DueDays = 57D,
+        DueNextMonthDays = 9D,
+        Id = "48745512-c4a4-4ba5-964e-784f73ff4ff1",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Net 30",
+        Type = AccountingPaymenttermType.Net15,
+        UpdatedAt = System.DateTime.Parse("2025-12-11T11:07:31.854Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -685,8 +1021,10 @@ Create a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingPurchaseorder" method="post" path="/accounting/{connection_id}/purchaseorder" example="accounting_purchaseorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -695,7 +1033,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingPurchaseorderAsync(
-    accountingPurchaseorder: new AccountingPurchaseorder() {},
+    accountingPurchaseorder: new AccountingPurchaseorder() {
+        BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
+            Address1 = "37214 Tanya Walks",
+            City = "South Annabelleton",
+            CountryCode = "US",
+            PostalCode = "30337",
+            Region = "Nevada",
+            RegionCode = "MA",
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
+        Currency = "ZMW",
+        Id = "870e6384-1e12-4bea-9790-0e4ac7a373f1",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2025-04-25T03:32:03.967Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
+            Address1 = "649 Maggio Overpass",
+            City = "Lake Jaylan",
+            CountryCode = "US",
+            PostalCode = "99211-6547",
+            Region = "North Carolina",
+            RegionCode = "ID",
+        },
+        Status = AccountingPurchaseorderStatus.PartiallyRefunded,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2021-02-26T03:18:48.829Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -769,8 +1134,10 @@ Create a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" example="accounting_salesorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -779,7 +1146,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingSalesorderAsync(
-    accountingSalesorder: new AccountingSalesorder() {},
+    accountingSalesorder: new AccountingSalesorder() {
+        BillingAddress = new PropertyAccountingSalesorderBillingAddress() {
+            Address1 = "26530 Stroman Rest",
+            Address2 = "Suite 801",
+            City = "Pocatello",
+            CountryCode = "US",
+            PostalCode = "05015-8546",
+            Region = "Louisiana",
+            RegionCode = "MO",
+        },
+        CategoryIds = new List<string>() {},
+        ClosedAt = System.DateTime.Parse("2023-08-16T21:47:45.013Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
+        Currency = "ANG",
+        DiscountAmount = 99D,
+        EmployeeUserId = "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+        Fees = new List<AccountingFee>() {
+            new AccountingFee() {
+                Amount = 519D,
+                Currency = "XCD",
+                Type = AccountingFeeType.Promotion,
+            },
+        },
+        FulfillmentType = FulfillmentType.Takeout,
+        GuestCount = 8D,
+        Id = "4b4b8374-641e-4c7b-84dc-48bb2da0c7fe",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        OrderNumber = "988187",
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-01-11T02:11:41.222Z").ToUniversalTime(),
+        RefundedAmount = 0D,
+        SalesChannel = "Harvey, Collier and Weimann",
+        ServiceChargeAmount = 63D,
+        ShippingAddress = new PropertyAccountingSalesorderShippingAddress() {
+            Address1 = "9878 Bradley Mill",
+            Address2 = "Apt. 215",
+            City = "Port Matildestad",
+            CountryCode = "US",
+            PostalCode = "07989-2148",
+            Region = "Arkansas",
+            RegionCode = "AK",
+        },
+        Status = AccountingSalesorderStatus.Refunded,
+        SubtotalAmount = 0D,
+        TaxAmount = 63D,
+        TipAmount = 34D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-02-10T18:49:09.489Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -811,8 +1227,10 @@ Create a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" example="accounting_taxrate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -821,7 +1239,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
-    accountingTaxrate: new AccountingTaxrate() {},
+    accountingTaxrate: new AccountingTaxrate() {
+        CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
+        Description = "Nemo atrox tricesimus creator aranea.",
+        Id = "4e784882-93ea-4586-bc43-026743ba6449",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "cogo",
+        Rate = 1D,
+        UpdatedAt = System.DateTime.Parse("2025-11-04T07:54:19.715Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -853,8 +1280,10 @@ Create a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" example="accounting_transaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -863,7 +1292,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(
-    accountingTransaction: new AccountingTransaction() {},
+    accountingTransaction: new AccountingTransaction() {
+        CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        Id = "530ce73e-3ab8-48ff-a572-81a47cf56dc1",
+        Lineitems = new List<AccountingTransactionLineItem>() {
+            new AccountingTransactionLineItem() {
+                CategoryIds = new List<string>() {},
+                Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+                Id = "88ce3554-fb4d-4ad0-9ace-6d2c3af152cc",
+                Name = "Salad",
+                ObjectType = "delicate",
+                TotalAmount = 58531D,
+                UnitAmount = 536D,
+                UnitQuantity = 91D,
+            },
+        },
+        Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        TaxAmount = 0D,
+        TotalAmount = 94452D,
+        UpdatedAt = System.DateTime.Parse("2021-09-10T02:36:49.519Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -895,8 +1343,10 @@ Create a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingVendorcredit" method="post" path="/accounting/{connection_id}/vendorcredit" example="accounting_vendorcredit" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -905,7 +1355,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingVendorcreditAsync(
-    accountingVendorcredit: new AccountingVendorcredit() {},
+    accountingVendorcredit: new AccountingVendorcredit() {
+        Applications = new List<AccountingCreditApplication>() {},
+        ApplyAmount = 1D,
+        BalanceAmount = 0D,
+        CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
+        Currency = "KGS",
+        DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
+        Id = "e53c082c-1aa1-4192-be20-f4cdfd0cea57",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Conatus cruciamentum decor avaritia tantum.",
+        PostedAt = System.DateTime.Parse("2023-09-28T16:43:46.445Z").ToUniversalTime(),
+        Status = AccountingVendorcreditStatus.Submitted,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2023-11-26T14:35:53.369Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -3095,8 +3560,10 @@ Update an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingAccount" method="patch" path="/accounting/{connection_id}/account/{id}" example="accounting_account" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3106,7 +3573,31 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
-    AccountingAccount = new AccountingAccount() {},
+    AccountingAccount = new AccountingAccount() {
+        Balance = 12092D,
+        CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+        Currency = "BOB",
+        CustomerDefinedCode = "quo",
+        Description = "Spoliatio comedo vilitas harum cupiditate.",
+        Id = "31484143-f94a-4590-89ec-16b156e6b177",
+        IsPayable = true,
+        Name = "Electronic Aluminum Tuna",
+        Status = Status.Archived,
+        Taxonomy = new List<AccountingAccountTaxonomy>() {
+            new AccountingAccountTaxonomy() {
+                OriginalType = "vesper",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "iste",
+            },
+            new AccountingAccountTaxonomy() {
+                OriginalType = "adamo",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "peccatus",
+            },
+        },
+        Type = UnifiedTo.Models.Components.Type.Bank,
+        UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.604Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3138,8 +3629,9 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedaccount" method="patch" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3149,7 +3641,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingBankfeedaccountRequest req = new PatchAccountingBankfeedaccountRequest() {
-    AccountingBankfeedaccount = new AccountingBankfeedaccount() {},
+    AccountingBankfeedaccount = new AccountingBankfeedaccount() {
+        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+        AccountNumber = "30369722",
+        AccountNumberLast4 = "9722",
+        AccountType = AccountType.Loan,
+        Balance = 90358D,
+        BankName = "Weissnat Inc",
+        CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Currency = "SSP",
+        FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Id = "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+        Name = "Corwin, Donnelly and Connelly Savings",
+        RoutingNumber = "667753156",
+        Status = AccountingBankfeedaccountStatus.Active,
+        UpdatedAt = System.DateTime.Parse("2024-04-11T12:57:07.387Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3181,8 +3688,10 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBankfeedtransaction" method="patch" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3192,7 +3701,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingBankfeedtransactionRequest req = new PatchAccountingBankfeedtransactionRequest() {
-    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {},
+    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {
+        AccountId = "b7dc4175-1368-4b89-a700-d621b6666648",
+        Amount = 60889D,
+        BankCategory = "Games",
+        BankfeedaccountId = "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+        CategoryIds = new List<string>() {},
+        ContactId = "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+        CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
+        Currency = "SRD",
+        Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+        Id = "99973f58-3052-444a-a355-5b7ffb177172",
+        IsPending = true,
+        MerchantName = "Reichert, Erdman and Tillman",
+        PostedAt = System.DateTime.Parse("2025-03-23T18:34:48.075Z").ToUniversalTime(),
+        Reference = "93642593",
+        TransactionAt = System.DateTime.Parse("2022-07-27T19:48:15.222Z").ToUniversalTime(),
+        Type = AccountingBankfeedtransactionType.Credit,
+        UpdatedAt = System.DateTime.Parse("2022-05-23T20:47:21.835Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3224,8 +3751,10 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3235,7 +3764,30 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
-    AccountingBill = new AccountingBill() {},
+    AccountingBill = new AccountingBill() {
+        Attachments = new List<AccountingAttachment>() {},
+        BillNumber = "vitae",
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2019-08-08T23:03:14.104Z").ToUniversalTime(),
+        Currency = "AUD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Tutamen cilicium infit.",
+        PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2024-04-04T07:23:49.078Z").ToUniversalTime(),
+        Send = true,
+        Status = AccountingBillStatus.Deleted,
+        TaxAmount = 0D,
+        Term = Term.Net10,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2025-01-29T00:58:28.647Z").ToUniversalTime(),
+        Url = "https://coarse-interviewer.biz/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3267,8 +3819,10 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingCategory" method="patch" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3278,7 +3832,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
-    AccountingCategory = new AccountingCategory() {},
+    AccountingCategory = new AccountingCategory() {
+        CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
+        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
+        Id = "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Electronic Cotton Shoes",
+        UpdatedAt = System.DateTime.Parse("2025-08-20T06:36:05.177Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3310,8 +3872,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3321,7 +3885,74 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
-    AccountingContact = new AccountingContact() {},
+    AccountingContact = new AccountingContact() {
+        AssociatedContacts = new List<AccountingAssociatedContact>() {
+            new AccountingAssociatedContact() {
+                Id = "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+                Name = "Delores Reynolds",
+            },
+            new AccountingAssociatedContact() {
+                Id = "866874f1-a317-404b-9ee2-18708e6d0dd7",
+                Name = "Delores Reynolds",
+            },
+        },
+        BillingAddress = new PropertyAccountingContactBillingAddress() {
+            Address1 = "2633 Stoney Lane",
+            Address2 = "Suite 176",
+            City = "Ladariusboro",
+            CountryCode = "US",
+            PostalCode = "70131-2908",
+            Region = "Illinois",
+            RegionCode = "NV",
+        },
+        CompanyName = "Marquardt Inc",
+        CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
+        Currency = "ISK",
+        Emails = new List<AccountingEmail>() {
+            new AccountingEmail() {
+                Email = "Delores.Reynolds10@hotmail.com",
+                Type = AccountingEmailType.Home,
+            },
+        },
+        FirstName = "Delores",
+        Id = "568c731f-d6db-4131-8722-72c16c80c495",
+        Identification = "amicitia",
+        IsActive = true,
+        IsCustomer = true,
+        LastName = "Reynolds",
+        Name = "Delores Reynolds",
+        PaymentMethods = new List<AccountingContactPaymentMethod>() {
+            new AccountingContactPaymentMethod() {
+                Default = true,
+                Id = "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+                Name = "Visa 1234",
+                Type = AccountingContactPaymentMethodType.Card,
+            },
+        },
+        PortalUrl = "https://scented-t-shirt.info/",
+        ShippingAddress = new PropertyAccountingContactShippingAddress() {
+            Address1 = "786 Renner Stream",
+            Address2 = "Apt. 555",
+            City = "Roanoke",
+            CountryCode = "US",
+            PostalCode = "80686-7556",
+            Region = "Vermont",
+            RegionCode = "NE",
+        },
+        TaxExemption = TaxExemption.Resale,
+        TaxNumber = "amplexus",
+        Telephones = new List<AccountingTelephone>() {
+            new AccountingTelephone() {
+                Telephone = "(427) 701-7160",
+                Type = AccountingTelephoneType.Home,
+            },
+            new AccountingTelephone() {
+                Telephone = "(540) 913-9171",
+                Type = AccountingTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2023-12-04T22:28:17.531Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3353,8 +3984,10 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3364,7 +3997,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
-    AccountingCreditmemo = new AccountingCreditmemo() {},
+    AccountingCreditmemo = new AccountingCreditmemo() {
+        Applications = new List<AccountingCreditApplication>() {},
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://enlightened-chairperson.com/",
+                Id = "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+                MimeType = "complectus",
+                Name = "thesis",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-09-20T01:47:01.571Z").ToUniversalTime(),
+        CreditmemoNumber = "ulterius",
+        Currency = "MKD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
+        Id = "c0f30724-dec9-4210-8706-4c3a535e2f65",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Dedecor amo adfero torqueo quas.",
+        PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
+        PostedAt = System.DateTime.Parse("2025-11-15T11:03:17.458Z").ToUniversalTime(),
+        RefundAmount = 0D,
+        RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
+        RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
+        Send = false,
+        Status = AccountingCreditmemoStatus.Paid,
+        TaxAmount = 0D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2024-11-15T13:32:51.023Z").ToUniversalTime(),
+        Url = "https://lighthearted-bandwidth.net/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3396,8 +4059,10 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingExpense" method="patch" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3407,7 +4072,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
-    AccountingExpense = new AccountingExpense() {},
+    AccountingExpense = new AccountingExpense() {
+        ApprovedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://ripe-napkin.biz/",
+                Id = "4298778d-022a-4392-aa3b-287ddb9df4eb",
+                MimeType = "annus",
+                Name = "cohibeo",
+            },
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
+        Currency = "SSP",
+        ExternalNumber = "necessitatibus",
+        Id = "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+                ItemDescription = "Innovative Table featuring left technology and Rubber construction",
+                ItemName = "Luxurious Cotton Pizza",
+                ItemSku = "978-0-8324-6620-5",
+                Notes = "Degusto conventus defendo valetudo.",
+                TaxAmount = 2501D,
+                TotalAmount = 168D,
+                UnitAmount = 3059D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Refined Steel Shoes",
+        PaymentMethod = "CASH",
+        PostedAt = System.DateTime.Parse("2021-06-04T05:04:02.315Z").ToUniversalTime(),
+        ReimbursedAmount = 1833D,
+        Status = AccountingExpenseStatus.Submitted,
+        TaxAmount = 2602D,
+        TotalAmount = 3580D,
+        UpdatedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3439,8 +4141,10 @@ Update an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingInvoice" method="patch" path="/accounting/{connection_id}/invoice/{id}" example="accounting_invoice" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3450,7 +4154,42 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
-    AccountingInvoice = new AccountingInvoice() {},
+    AccountingInvoice = new AccountingInvoice() {
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://glossy-markup.net/",
+                Id = "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+                MimeType = "benevolentia",
+                Name = "vespillo",
+            },
+        },
+        BalanceAmount = -1D,
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2022-11-07T14:17:29.587Z").ToUniversalTime(),
+        Currency = "RWF",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2022-11-27T21:25:37.363Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+        InvoiceNumber = "vinco",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Auctus comburo clarus ubi.",
+        PaidAmount = 0D,
+        PaidAt = System.DateTime.Parse("2022-11-25T15:00:28.871Z").ToUniversalTime(),
+        PaymentCollectionMethod = AccountingInvoicePaymentCollectionMethod.SendInvoice,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-03-26T22:47:33.772Z").ToUniversalTime(),
+        Reference = "adinventitias",
+        Send = true,
+        Status = AccountingInvoiceStatus.Deleted,
+        TaxAmount = 0D,
+        Term = AccountingInvoiceTerm.Net45,
+        TotalAmount = 0D,
+        Type = AccountingInvoiceType.Creditmemo,
+        UpdatedAt = System.DateTime.Parse("2023-02-06T06:48:48.540Z").ToUniversalTime(),
+        Url = "https://gifted-yarmulke.info/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3482,8 +4221,10 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3493,7 +4234,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingJournalRequest req = new PatchAccountingJournalRequest() {
-    AccountingJournal = new AccountingJournal() {},
+    AccountingJournal = new AccountingJournal() {
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
+        Currency = "FKP",
+        Description = "Calco constans adipisci.",
+        Id = "92900846-008d-4177-9d82-d2c7a3f578e0",
+        PostedAt = System.DateTime.Parse("2023-10-19T01:52:16.870Z").ToUniversalTime(),
+        Reference = "ullam",
+        Source = "crustulum",
+        TaxAmount = 78672D,
+        UpdatedAt = System.DateTime.Parse("2022-01-01T11:09:03.243Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3525,8 +4278,10 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingOrder" method="patch" path="/accounting/{connection_id}/order/{id}" example="accounting_order" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3536,7 +4291,35 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingOrderRequest req = new PatchAccountingOrderRequest() {
-    AccountingOrder = new AccountingOrder() {},
+    AccountingOrder = new AccountingOrder() {
+        BillingAddress = new PropertyAccountingOrderBillingAddress() {
+            Address1 = "802 Bechtelar Park",
+            Address2 = "Apt. 436",
+            City = "Daniellaville",
+            CountryCode = "US",
+            PostalCode = "36947",
+            Region = "Wisconsin",
+            RegionCode = "NY",
+        },
+        CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "ef699eb0-0563-4717-9061-214486399828",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2022-04-05T00:14:38.762Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingOrderShippingAddress() {
+            Address1 = "9745 Betty Shore",
+            City = "South Alainaland",
+            CountryCode = "US",
+            PostalCode = "25274-7654",
+            Region = "New Hampshire",
+            RegionCode = "LA",
+        },
+        Status = AccountingOrderStatus.Submitted,
+        TotalAmount = 0D,
+        Type = AccountingOrderType.Purchase,
+        UpdatedAt = System.DateTime.Parse("2021-06-17T22:40:42.753Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3568,8 +4351,10 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3579,7 +4364,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingPaymenttermRequest req = new PatchAccountingPaymenttermRequest() {
-    AccountingPaymentterm = new AccountingPaymentterm() {},
+    AccountingPaymentterm = new AccountingPaymentterm() {
+        Category = UnifiedTo.Models.Components.Category.Standard,
+        CreatedAt = System.DateTime.Parse("2021-08-22T22:42:42.265Z").ToUniversalTime(),
+        DayOfMonthDue = 4D,
+        Description = "Cogito pecco eos cultura.",
+        DiscountDayOfMonth = 13D,
+        DiscountDays = 4D,
+        DiscountPercent = 5D,
+        DueDays = 57D,
+        DueNextMonthDays = 9D,
+        Id = "2142d448-2276-437b-83d4-9bf9154c041a",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Net 30",
+        Type = AccountingPaymenttermType.Net15,
+        UpdatedAt = System.DateTime.Parse("2025-12-11T11:07:31.864Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3654,8 +4455,10 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingPurchaseorder" method="patch" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3665,7 +4468,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderRequest() {
-    AccountingPurchaseorder = new AccountingPurchaseorder() {},
+    AccountingPurchaseorder = new AccountingPurchaseorder() {
+        BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
+            Address1 = "37214 Tanya Walks",
+            City = "South Annabelleton",
+            CountryCode = "US",
+            PostalCode = "30337",
+            Region = "Nevada",
+            RegionCode = "MA",
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
+        Currency = "ZMW",
+        Id = "54658ca1-f723-459d-901f-9dc45e6da571",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2025-04-25T03:32:03.994Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
+            Address1 = "649 Maggio Overpass",
+            City = "Lake Jaylan",
+            CountryCode = "US",
+            PostalCode = "99211-6547",
+            Region = "North Carolina",
+            RegionCode = "ID",
+        },
+        Status = AccountingPurchaseorderStatus.PartiallyRefunded,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2021-02-26T03:18:48.830Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3740,8 +4570,10 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3751,7 +4583,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
-    AccountingSalesorder = new AccountingSalesorder() {},
+    AccountingSalesorder = new AccountingSalesorder() {
+        BillingAddress = new PropertyAccountingSalesorderBillingAddress() {
+            Address1 = "26530 Stroman Rest",
+            Address2 = "Suite 801",
+            City = "Pocatello",
+            CountryCode = "US",
+            PostalCode = "05015-8546",
+            Region = "Louisiana",
+            RegionCode = "MO",
+        },
+        CategoryIds = new List<string>() {},
+        ClosedAt = System.DateTime.Parse("2023-08-16T21:47:45.033Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
+        Currency = "ANG",
+        DiscountAmount = 99D,
+        EmployeeUserId = "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+        Fees = new List<AccountingFee>() {
+            new AccountingFee() {
+                Amount = 519D,
+                Currency = "XCD",
+                Type = AccountingFeeType.Promotion,
+            },
+        },
+        FulfillmentType = FulfillmentType.Takeout,
+        GuestCount = 8D,
+        Id = "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        OrderNumber = "988187",
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-01-11T02:11:41.271Z").ToUniversalTime(),
+        RefundedAmount = 0D,
+        SalesChannel = "Harvey, Collier and Weimann",
+        ServiceChargeAmount = 63D,
+        ShippingAddress = new PropertyAccountingSalesorderShippingAddress() {
+            Address1 = "9878 Bradley Mill",
+            Address2 = "Apt. 215",
+            City = "Port Matildestad",
+            CountryCode = "US",
+            PostalCode = "07989-2148",
+            Region = "Arkansas",
+            RegionCode = "AK",
+        },
+        Status = AccountingSalesorderStatus.Refunded,
+        SubtotalAmount = 0D,
+        TaxAmount = 63D,
+        TipAmount = 34D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-02-10T18:49:09.490Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3783,8 +4664,10 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3794,7 +4677,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
-    AccountingTaxrate = new AccountingTaxrate() {},
+    AccountingTaxrate = new AccountingTaxrate() {
+        CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
+        Description = "Nemo atrox tricesimus creator aranea.",
+        Id = "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "cogo",
+        Rate = 1D,
+        UpdatedAt = System.DateTime.Parse("2025-11-04T07:54:19.725Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3826,8 +4718,10 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3837,7 +4731,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
-    AccountingTransaction = new AccountingTransaction() {},
+    AccountingTransaction = new AccountingTransaction() {
+        CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        Id = "21b69be7-0166-4233-91c4-e92eff66f31e",
+        Lineitems = new List<AccountingTransactionLineItem>() {
+            new AccountingTransactionLineItem() {
+                CategoryIds = new List<string>() {},
+                Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+                Id = "3dab4bec-d436-4800-9b97-68628a55b5e0",
+                Name = "Salad",
+                ObjectType = "delicate",
+                TotalAmount = 58531D,
+                UnitAmount = 536D,
+                UnitQuantity = 91D,
+            },
+        },
+        Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        TaxAmount = 0D,
+        TotalAmount = 94452D,
+        UpdatedAt = System.DateTime.Parse("2021-09-10T02:36:49.523Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -3869,8 +4782,10 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingVendorcredit" method="patch" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -3880,7 +4795,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingVendorcreditRequest req = new PatchAccountingVendorcreditRequest() {
-    AccountingVendorcredit = new AccountingVendorcredit() {},
+    AccountingVendorcredit = new AccountingVendorcredit() {
+        Applications = new List<AccountingCreditApplication>() {},
+        ApplyAmount = 1D,
+        BalanceAmount = 0D,
+        CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
+        Currency = "KGS",
+        DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
+        Id = "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Conatus cruciamentum decor avaritia tantum.",
+        PostedAt = System.DateTime.Parse("2023-09-28T16:43:46.448Z").ToUniversalTime(),
+        Status = AccountingVendorcreditStatus.Submitted,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2023-11-26T14:35:53.374Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4672,8 +5602,10 @@ Update an account
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingAccount" method="put" path="/accounting/{connection_id}/account/{id}" example="accounting_account" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4683,7 +5615,31 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
-    AccountingAccount = new AccountingAccount() {},
+    AccountingAccount = new AccountingAccount() {
+        Balance = 12092D,
+        CreatedAt = System.DateTime.Parse("2022-07-03T17:57:07.391Z").ToUniversalTime(),
+        Currency = "BOB",
+        CustomerDefinedCode = "quo",
+        Description = "Spoliatio comedo vilitas harum cupiditate.",
+        Id = "31484143-f94a-4590-89ec-16b156e6b177",
+        IsPayable = true,
+        Name = "Electronic Aluminum Tuna",
+        Status = Status.Archived,
+        Taxonomy = new List<AccountingAccountTaxonomy>() {
+            new AccountingAccountTaxonomy() {
+                OriginalType = "vesper",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "iste",
+            },
+            new AccountingAccountTaxonomy() {
+                OriginalType = "adamo",
+                Type = AccountingAccountTaxonomyType.Subgroup,
+                Value = "peccatus",
+            },
+        },
+        Type = UnifiedTo.Models.Components.Type.Bank,
+        UpdatedAt = System.DateTime.Parse("2023-01-03T03:11:26.604Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4715,8 +5671,9 @@ Update a bankfeedaccount
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedaccount" method="put" path="/accounting/{connection_id}/bankfeedaccount/{id}" example="accounting_bankfeedaccount" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4726,7 +5683,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingBankfeedaccountRequest req = new UpdateAccountingBankfeedaccountRequest() {
-    AccountingBankfeedaccount = new AccountingBankfeedaccount() {},
+    AccountingBankfeedaccount = new AccountingBankfeedaccount() {
+        AccountId = "baa0e9a4-65e9-4bf5-856a-ce46fc36ebb1",
+        AccountNumber = "30369722",
+        AccountNumberLast4 = "9722",
+        AccountType = AccountType.Loan,
+        Balance = 90358D,
+        BankName = "Weissnat Inc",
+        CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Currency = "SSP",
+        FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
+        Id = "209a9fc6-36cf-43c0-a50c-b7e3c177603b",
+        Name = "Corwin, Donnelly and Connelly Savings",
+        RoutingNumber = "667753156",
+        Status = AccountingBankfeedaccountStatus.Active,
+        UpdatedAt = System.DateTime.Parse("2024-04-11T12:57:07.387Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4758,8 +5730,10 @@ Update a bankfeedtransaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBankfeedtransaction" method="put" path="/accounting/{connection_id}/bankfeedtransaction/{id}" example="accounting_bankfeedtransaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4769,7 +5743,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingBankfeedtransactionRequest req = new UpdateAccountingBankfeedtransactionRequest() {
-    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {},
+    AccountingBankfeedtransaction = new AccountingBankfeedtransaction() {
+        AccountId = "b7dc4175-1368-4b89-a700-d621b6666648",
+        Amount = 60889D,
+        BankCategory = "Games",
+        BankfeedaccountId = "34c1d05f-5b62-4bcd-9121-3be8b720941f",
+        CategoryIds = new List<string>() {},
+        ContactId = "1ef58ebe-f9c9-46f6-9d9c-2df2658503be",
+        CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
+        Currency = "SRD",
+        Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
+        Id = "99973f58-3052-444a-a355-5b7ffb177172",
+        IsPending = true,
+        MerchantName = "Reichert, Erdman and Tillman",
+        PostedAt = System.DateTime.Parse("2025-03-23T18:34:48.075Z").ToUniversalTime(),
+        Reference = "93642593",
+        TransactionAt = System.DateTime.Parse("2022-07-27T19:48:15.222Z").ToUniversalTime(),
+        Type = AccountingBankfeedtransactionType.Credit,
+        UpdatedAt = System.DateTime.Parse("2022-05-23T20:47:21.835Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4801,8 +5793,10 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4812,7 +5806,30 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
-    AccountingBill = new AccountingBill() {},
+    AccountingBill = new AccountingBill() {
+        Attachments = new List<AccountingAttachment>() {},
+        BillNumber = "vitae",
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2019-08-08T23:03:14.104Z").ToUniversalTime(),
+        Currency = "AUD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Tutamen cilicium infit.",
+        PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2024-04-04T07:23:49.078Z").ToUniversalTime(),
+        Send = true,
+        Status = AccountingBillStatus.Deleted,
+        TaxAmount = 0D,
+        Term = Term.Net10,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2025-01-29T00:58:28.647Z").ToUniversalTime(),
+        Url = "https://coarse-interviewer.biz/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4844,8 +5861,10 @@ Update a category
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingCategory" method="put" path="/accounting/{connection_id}/category/{id}" example="accounting_category" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4855,7 +5874,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
-    AccountingCategory = new AccountingCategory() {},
+    AccountingCategory = new AccountingCategory() {
+        CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
+        Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
+        Id = "a998bb3b-628d-4a5b-8054-f8edf45f8dfd",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Electronic Cotton Shoes",
+        UpdatedAt = System.DateTime.Parse("2025-08-20T06:36:05.177Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4887,8 +5914,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4898,7 +5927,74 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
-    AccountingContact = new AccountingContact() {},
+    AccountingContact = new AccountingContact() {
+        AssociatedContacts = new List<AccountingAssociatedContact>() {
+            new AccountingAssociatedContact() {
+                Id = "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+                Name = "Delores Reynolds",
+            },
+            new AccountingAssociatedContact() {
+                Id = "866874f1-a317-404b-9ee2-18708e6d0dd7",
+                Name = "Delores Reynolds",
+            },
+        },
+        BillingAddress = new PropertyAccountingContactBillingAddress() {
+            Address1 = "2633 Stoney Lane",
+            Address2 = "Suite 176",
+            City = "Ladariusboro",
+            CountryCode = "US",
+            PostalCode = "70131-2908",
+            Region = "Illinois",
+            RegionCode = "NV",
+        },
+        CompanyName = "Marquardt Inc",
+        CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
+        Currency = "ISK",
+        Emails = new List<AccountingEmail>() {
+            new AccountingEmail() {
+                Email = "Delores.Reynolds10@hotmail.com",
+                Type = AccountingEmailType.Home,
+            },
+        },
+        FirstName = "Delores",
+        Id = "568c731f-d6db-4131-8722-72c16c80c495",
+        Identification = "amicitia",
+        IsActive = true,
+        IsCustomer = true,
+        LastName = "Reynolds",
+        Name = "Delores Reynolds",
+        PaymentMethods = new List<AccountingContactPaymentMethod>() {
+            new AccountingContactPaymentMethod() {
+                Default = true,
+                Id = "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+                Name = "Visa 1234",
+                Type = AccountingContactPaymentMethodType.Card,
+            },
+        },
+        PortalUrl = "https://scented-t-shirt.info/",
+        ShippingAddress = new PropertyAccountingContactShippingAddress() {
+            Address1 = "786 Renner Stream",
+            Address2 = "Apt. 555",
+            City = "Roanoke",
+            CountryCode = "US",
+            PostalCode = "80686-7556",
+            Region = "Vermont",
+            RegionCode = "NE",
+        },
+        TaxExemption = TaxExemption.Resale,
+        TaxNumber = "amplexus",
+        Telephones = new List<AccountingTelephone>() {
+            new AccountingTelephone() {
+                Telephone = "(427) 701-7160",
+                Type = AccountingTelephoneType.Home,
+            },
+            new AccountingTelephone() {
+                Telephone = "(540) 913-9171",
+                Type = AccountingTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2023-12-04T22:28:17.531Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4930,8 +6026,10 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4941,7 +6039,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() {
-    AccountingCreditmemo = new AccountingCreditmemo() {},
+    AccountingCreditmemo = new AccountingCreditmemo() {
+        Applications = new List<AccountingCreditApplication>() {},
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://enlightened-chairperson.com/",
+                Id = "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+                MimeType = "complectus",
+                Name = "thesis",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-09-20T01:47:01.571Z").ToUniversalTime(),
+        CreditmemoNumber = "ulterius",
+        Currency = "MKD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
+        Id = "c0f30724-dec9-4210-8706-4c3a535e2f65",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Dedecor amo adfero torqueo quas.",
+        PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
+        PostedAt = System.DateTime.Parse("2025-11-15T11:03:17.458Z").ToUniversalTime(),
+        RefundAmount = 0D,
+        RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
+        RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
+        Send = false,
+        Status = AccountingCreditmemoStatus.Paid,
+        TaxAmount = 0D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2024-11-15T13:32:51.023Z").ToUniversalTime(),
+        Url = "https://lighthearted-bandwidth.net/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -4973,8 +6101,10 @@ Update an expense
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingExpense" method="put" path="/accounting/{connection_id}/expense/{id}" example="accounting_expense" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -4984,7 +6114,44 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
-    AccountingExpense = new AccountingExpense() {},
+    AccountingExpense = new AccountingExpense() {
+        ApprovedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://ripe-napkin.biz/",
+                Id = "4298778d-022a-4392-aa3b-287ddb9df4eb",
+                MimeType = "annus",
+                Name = "cohibeo",
+            },
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
+        Currency = "SSP",
+        ExternalNumber = "necessitatibus",
+        Id = "ed5c1758-1bcc-4ab8-b2d6-cf125fc1bd3b",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "a4851a9b-120a-48e3-8f5b-ed20b4e6fb0c",
+                ItemDescription = "Innovative Table featuring left technology and Rubber construction",
+                ItemName = "Luxurious Cotton Pizza",
+                ItemSku = "978-0-8324-6620-5",
+                Notes = "Degusto conventus defendo valetudo.",
+                TaxAmount = 2501D,
+                TotalAmount = 168D,
+                UnitAmount = 3059D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Refined Steel Shoes",
+        PaymentMethod = "CASH",
+        PostedAt = System.DateTime.Parse("2021-06-04T05:04:02.315Z").ToUniversalTime(),
+        ReimbursedAmount = 1833D,
+        Status = AccountingExpenseStatus.Submitted,
+        TaxAmount = 2602D,
+        TotalAmount = 3580D,
+        UpdatedAt = System.DateTime.Parse("2026-05-09T18:24:02.349Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5016,8 +6183,10 @@ Update an invoice
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingInvoice" method="put" path="/accounting/{connection_id}/invoice/{id}" example="accounting_invoice" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5027,7 +6196,42 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
-    AccountingInvoice = new AccountingInvoice() {},
+    AccountingInvoice = new AccountingInvoice() {
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://glossy-markup.net/",
+                Id = "244da10f-d492-4fcc-b5fb-3366d5412e8a",
+                MimeType = "benevolentia",
+                Name = "vespillo",
+            },
+        },
+        BalanceAmount = -1D,
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2022-11-07T14:17:29.587Z").ToUniversalTime(),
+        Currency = "RWF",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2022-11-27T21:25:37.363Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "3e24015f-f6ca-4bdc-a2d6-90fb1af81ab7",
+        InvoiceNumber = "vinco",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Auctus comburo clarus ubi.",
+        PaidAmount = 0D,
+        PaidAt = System.DateTime.Parse("2022-11-25T15:00:28.871Z").ToUniversalTime(),
+        PaymentCollectionMethod = AccountingInvoicePaymentCollectionMethod.SendInvoice,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-03-26T22:47:33.772Z").ToUniversalTime(),
+        Reference = "adinventitias",
+        Send = true,
+        Status = AccountingInvoiceStatus.Deleted,
+        TaxAmount = 0D,
+        Term = AccountingInvoiceTerm.Net45,
+        TotalAmount = 0D,
+        Type = AccountingInvoiceType.Creditmemo,
+        UpdatedAt = System.DateTime.Parse("2023-02-06T06:48:48.540Z").ToUniversalTime(),
+        Url = "https://gifted-yarmulke.info/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5059,8 +6263,10 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5070,7 +6276,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingJournalRequest req = new UpdateAccountingJournalRequest() {
-    AccountingJournal = new AccountingJournal() {},
+    AccountingJournal = new AccountingJournal() {
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
+        Currency = "FKP",
+        Description = "Calco constans adipisci.",
+        Id = "92900846-008d-4177-9d82-d2c7a3f578e0",
+        PostedAt = System.DateTime.Parse("2023-10-19T01:52:16.870Z").ToUniversalTime(),
+        Reference = "ullam",
+        Source = "crustulum",
+        TaxAmount = 78672D,
+        UpdatedAt = System.DateTime.Parse("2022-01-01T11:09:03.243Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5102,8 +6320,10 @@ Update an order
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingOrder" method="put" path="/accounting/{connection_id}/order/{id}" example="accounting_order" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5113,7 +6333,35 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingOrderRequest req = new UpdateAccountingOrderRequest() {
-    AccountingOrder = new AccountingOrder() {},
+    AccountingOrder = new AccountingOrder() {
+        BillingAddress = new PropertyAccountingOrderBillingAddress() {
+            Address1 = "802 Bechtelar Park",
+            Address2 = "Apt. 436",
+            City = "Daniellaville",
+            CountryCode = "US",
+            PostalCode = "36947",
+            Region = "Wisconsin",
+            RegionCode = "NY",
+        },
+        CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "ef699eb0-0563-4717-9061-214486399828",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2022-04-05T00:14:38.762Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingOrderShippingAddress() {
+            Address1 = "9745 Betty Shore",
+            City = "South Alainaland",
+            CountryCode = "US",
+            PostalCode = "25274-7654",
+            Region = "New Hampshire",
+            RegionCode = "LA",
+        },
+        Status = AccountingOrderStatus.Submitted,
+        TotalAmount = 0D,
+        Type = AccountingOrderType.Purchase,
+        UpdatedAt = System.DateTime.Parse("2021-06-17T22:40:42.753Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5145,8 +6393,10 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5156,7 +6406,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingPaymenttermRequest req = new UpdateAccountingPaymenttermRequest() {
-    AccountingPaymentterm = new AccountingPaymentterm() {},
+    AccountingPaymentterm = new AccountingPaymentterm() {
+        Category = UnifiedTo.Models.Components.Category.Standard,
+        CreatedAt = System.DateTime.Parse("2021-08-22T22:42:42.265Z").ToUniversalTime(),
+        DayOfMonthDue = 4D,
+        Description = "Cogito pecco eos cultura.",
+        DiscountDayOfMonth = 13D,
+        DiscountDays = 4D,
+        DiscountPercent = 5D,
+        DueDays = 57D,
+        DueNextMonthDays = 9D,
+        Id = "2142d448-2276-437b-83d4-9bf9154c041a",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Net 30",
+        Type = AccountingPaymenttermType.Net15,
+        UpdatedAt = System.DateTime.Parse("2025-12-11T11:07:31.864Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5231,8 +6497,10 @@ Update a purchaseorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingPurchaseorder" method="put" path="/accounting/{connection_id}/purchaseorder/{id}" example="accounting_purchaseorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5242,7 +6510,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequest() {
-    AccountingPurchaseorder = new AccountingPurchaseorder() {},
+    AccountingPurchaseorder = new AccountingPurchaseorder() {
+        BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
+            Address1 = "37214 Tanya Walks",
+            City = "South Annabelleton",
+            CountryCode = "US",
+            PostalCode = "30337",
+            Region = "Nevada",
+            RegionCode = "MA",
+        },
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
+        Currency = "ZMW",
+        Id = "54658ca1-f723-459d-901f-9dc45e6da571",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        PostedAt = System.DateTime.Parse("2025-04-25T03:32:03.994Z").ToUniversalTime(),
+        ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
+            Address1 = "649 Maggio Overpass",
+            City = "Lake Jaylan",
+            CountryCode = "US",
+            PostalCode = "99211-6547",
+            Region = "North Carolina",
+            RegionCode = "ID",
+        },
+        Status = AccountingPurchaseorderStatus.PartiallyRefunded,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2021-02-26T03:18:48.830Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5317,8 +6612,10 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5328,7 +6625,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() {
-    AccountingSalesorder = new AccountingSalesorder() {},
+    AccountingSalesorder = new AccountingSalesorder() {
+        BillingAddress = new PropertyAccountingSalesorderBillingAddress() {
+            Address1 = "26530 Stroman Rest",
+            Address2 = "Suite 801",
+            City = "Pocatello",
+            CountryCode = "US",
+            PostalCode = "05015-8546",
+            Region = "Louisiana",
+            RegionCode = "MO",
+        },
+        CategoryIds = new List<string>() {},
+        ClosedAt = System.DateTime.Parse("2023-08-16T21:47:45.033Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
+        Currency = "ANG",
+        DiscountAmount = 99D,
+        EmployeeUserId = "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+        Fees = new List<AccountingFee>() {
+            new AccountingFee() {
+                Amount = 519D,
+                Currency = "XCD",
+                Type = AccountingFeeType.Promotion,
+            },
+        },
+        FulfillmentType = FulfillmentType.Takeout,
+        GuestCount = 8D,
+        Id = "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        OrderNumber = "988187",
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-01-11T02:11:41.271Z").ToUniversalTime(),
+        RefundedAmount = 0D,
+        SalesChannel = "Harvey, Collier and Weimann",
+        ServiceChargeAmount = 63D,
+        ShippingAddress = new PropertyAccountingSalesorderShippingAddress() {
+            Address1 = "9878 Bradley Mill",
+            Address2 = "Apt. 215",
+            City = "Port Matildestad",
+            CountryCode = "US",
+            PostalCode = "07989-2148",
+            Region = "Arkansas",
+            RegionCode = "AK",
+        },
+        Status = AccountingSalesorderStatus.Refunded,
+        SubtotalAmount = 0D,
+        TaxAmount = 63D,
+        TipAmount = 34D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-02-10T18:49:09.490Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5360,8 +6706,10 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5371,7 +6719,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
-    AccountingTaxrate = new AccountingTaxrate() {},
+    AccountingTaxrate = new AccountingTaxrate() {
+        CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
+        Description = "Nemo atrox tricesimus creator aranea.",
+        Id = "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "cogo",
+        Rate = 1D,
+        UpdatedAt = System.DateTime.Parse("2025-11-04T07:54:19.725Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5403,8 +6760,10 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5414,7 +6773,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
-    AccountingTransaction = new AccountingTransaction() {},
+    AccountingTransaction = new AccountingTransaction() {
+        CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        Id = "21b69be7-0166-4233-91c4-e92eff66f31e",
+        Lineitems = new List<AccountingTransactionLineItem>() {
+            new AccountingTransactionLineItem() {
+                CategoryIds = new List<string>() {},
+                Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+                Id = "3dab4bec-d436-4800-9b97-68628a55b5e0",
+                Name = "Salad",
+                ObjectType = "delicate",
+                TotalAmount = 58531D,
+                UnitAmount = 536D,
+                UnitQuantity = 91D,
+            },
+        },
+        Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        TaxAmount = 0D,
+        TotalAmount = 94452D,
+        UpdatedAt = System.DateTime.Parse("2021-09-10T02:36:49.523Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -5446,8 +6824,10 @@ Update a vendorcredit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingVendorcredit" method="put" path="/accounting/{connection_id}/vendorcredit/{id}" example="accounting_vendorcredit" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -5457,7 +6837,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingVendorcreditRequest req = new UpdateAccountingVendorcreditRequest() {
-    AccountingVendorcredit = new AccountingVendorcredit() {},
+    AccountingVendorcredit = new AccountingVendorcredit() {
+        Applications = new List<AccountingCreditApplication>() {},
+        ApplyAmount = 1D,
+        BalanceAmount = 0D,
+        CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
+        Currency = "KGS",
+        DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
+        Id = "79c98d35-f30c-4832-82a9-eaa45fdf6b58",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Conatus cruciamentum decor avaritia tantum.",
+        PostedAt = System.DateTime.Parse("2023-09-28T16:43:46.448Z").ToUniversalTime(),
+        Status = AccountingVendorcreditStatus.Submitted,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2023-11-26T14:35:53.374Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -17,8 +17,10 @@ Create a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" -->
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" example="analytics_visitor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Visitor.CreateAnalyticsVisitorAsync(
-    analyticsVisitor: new AnalyticsVisitor() {},
+    analyticsVisitor: new AnalyticsVisitor() {
+        CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Email = "Dallas_Mitchell@yahoo.com",
+        FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Id = "420ee3a3-c06b-4e84-aeb3-75a564a396af",
+        LastSeenAt = System.DateTime.Parse("2021-12-04T18:09:30.380Z").ToUniversalTime(),
+        Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
+            { "segment", new PropertyAnalyticsVisitorMetadata() {} },
+        },
+        Name = "Desiree O'Hara",
+        TotalEvents = 3639D,
+        UpdatedAt = System.DateTime.Parse("2025-06-03T08:28:54.986Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +156,10 @@ Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" example="analytics_visitor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +169,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAnalyticsVisitorRequest req = new PatchAnalyticsVisitorRequest() {
-    AnalyticsVisitor = new AnalyticsVisitor() {},
+    AnalyticsVisitor = new AnalyticsVisitor() {
+        CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Email = "Dallas_Mitchell@yahoo.com",
+        FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Id = "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+        LastSeenAt = System.DateTime.Parse("2021-12-04T18:09:30.384Z").ToUniversalTime(),
+        Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
+            { "segment", new PropertyAnalyticsVisitorMetadata() {} },
+        },
+        Name = "Desiree O'Hara",
+        TotalEvents = 3639D,
+        UpdatedAt = System.DateTime.Parse("2025-06-03T08:28:54.997Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +253,10 @@ Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" example="analytics_visitor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +266,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAnalyticsVisitorRequest req = new UpdateAnalyticsVisitorRequest() {
-    AnalyticsVisitor = new AnalyticsVisitor() {},
+    AnalyticsVisitor = new AnalyticsVisitor() {
+        CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Email = "Dallas_Mitchell@yahoo.com",
+        FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Id = "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+        LastSeenAt = System.DateTime.Parse("2021-12-04T18:09:30.384Z").ToUniversalTime(),
+        Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
+            { "segment", new PropertyAnalyticsVisitorMetadata() {} },
+        },
+        Name = "Desiree O'Hara",
+        TotalEvents = 3639D,
+        UpdatedAt = System.DateTime.Parse("2025-06-03T08:28:54.997Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

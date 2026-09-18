@@ -17,8 +17,9 @@ Create a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" example="repo_branch" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,8 +29,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Branch.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
+        Id = "597e1772-7923-4e1d-875c-e660983871be",
+        Name = "voluptas",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2020-01-03T14:15:11.083Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -145,8 +149,9 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -157,8 +162,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
+        Id = "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+        Name = "voluptas",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2020-01-03T14:15:11.084Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -231,8 +239,9 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -243,8 +252,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
+        Id = "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+        Name = "voluptas",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2020-01-03T14:15:11.084Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

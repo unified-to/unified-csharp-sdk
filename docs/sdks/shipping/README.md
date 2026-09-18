@@ -28,8 +28,9 @@ Create a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" -->
+<!-- UsageSnippet language="csharp" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" example="shipping_label" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -38,7 +39,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Shipping.CreateShippingLabelAsync(
-    shippingLabel: new ShippingLabel() {},
+    shippingLabel: new ShippingLabel() {
+        CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
+        Id = "b1a2cbe7-daa0-4fe1-a4db-10b32f67618f",
+        IsVoided = false,
+        LabelCost = 40.83653403213248D,
+        LabelCostCurrency = "USD",
+        LabelFormat = LabelFormat.Png,
+        LabelUrl = "https://optimal-meadow.net",
+        ServiceCode = "GIz",
+        Status = ShippingLabelStatus.Exception,
+        TrackingNumber = "zYv60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-16T18:20:50.737Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -70,8 +83,10 @@ Create a rate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" -->
+<!-- UsageSnippet language="csharp" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" example="shipping_rate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -80,7 +95,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Shipping.CreateShippingRateAsync(
-    shippingRate: new ShippingRate() {},
+    shippingRate: new ShippingRate() {
+        Currency = "USD",
+        Id = "08ea0d8f-f20c-4b47-9e57-6901e9b38266",
+        Rates = new List<ShippingRateRate>() {
+            new ShippingRateRate() {
+                Amount = 54.679719475097954D,
+                BaseAmount = 76.45537888631225D,
+                Currency = "USD",
+                DeliveryDays = 8D,
+                Description = "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
+                EstimatedDays = 10D,
+                EstimatedDeliveryEndAt = System.DateTime.Parse("2024-01-31T23:12:25.475Z").ToUniversalTime(),
+                IsGuaranteed = true,
+                IsNegotiatedRate = true,
+                TaxAmount = 2.2701712837442756D,
+                Title = "Turcotte Inc",
+            },
+        },
+    },
     connectionId: "<id>"
 );
 
@@ -112,8 +145,9 @@ Create a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" -->
+<!-- UsageSnippet language="csharp" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" example="shipping_shipment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -122,7 +156,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Shipping.CreateShippingShipmentAsync(
-    shippingShipment: new ShippingShipment() {},
+    shippingShipment: new ShippingShipment() {
+        CarrierName = "Bogisich, Franey and Koelpin",
+        CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
+        Id = "aeba27e5-5821-4e2a-9407-bb494f9559b5",
+        RateAmount = 8.86546263936907D,
+        RateCurrency = "USD",
+        RateEstimatedDays = 8D,
+        RateServiceName = "Fisher - Kilback",
+        ServiceCode = "F7U",
+        ShippedAt = System.DateTime.Parse("2025-08-24T18:20:41.033Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Pending,
+        TrackingUrl = "https://shallow-secrecy.info/",
+        UpdatedAt = System.DateTime.Parse("2025-07-03T02:07:43.627Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -486,8 +533,9 @@ Update a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -497,7 +545,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
-    ShippingLabel = new ShippingLabel() {},
+    ShippingLabel = new ShippingLabel() {
+        CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
+        Id = "0936a3b6-f849-46e3-a10d-946d76091c5d",
+        IsVoided = false,
+        LabelCost = 40.83653403213248D,
+        LabelCostCurrency = "USD",
+        LabelFormat = LabelFormat.Png,
+        LabelUrl = "https://optimal-meadow.net",
+        ServiceCode = "GIz",
+        Status = ShippingLabelStatus.Exception,
+        TrackingNumber = "zYv60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-16T18:20:50.742Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -529,8 +589,9 @@ Update a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -540,7 +601,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
-    ShippingShipment = new ShippingShipment() {},
+    ShippingShipment = new ShippingShipment() {
+        CarrierName = "Bogisich, Franey and Koelpin",
+        CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
+        Id = "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+        RateAmount = 8.86546263936907D,
+        RateCurrency = "USD",
+        RateEstimatedDays = 8D,
+        RateServiceName = "Fisher - Kilback",
+        ServiceCode = "F7U",
+        ShippedAt = System.DateTime.Parse("2025-08-24T18:20:41.092Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Pending,
+        TrackingUrl = "https://shallow-secrecy.info/",
+        UpdatedAt = System.DateTime.Parse("2025-07-03T02:07:43.683Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -652,8 +726,9 @@ Update a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -663,7 +738,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
-    ShippingLabel = new ShippingLabel() {},
+    ShippingLabel = new ShippingLabel() {
+        CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
+        Id = "0936a3b6-f849-46e3-a10d-946d76091c5d",
+        IsVoided = false,
+        LabelCost = 40.83653403213248D,
+        LabelCostCurrency = "USD",
+        LabelFormat = LabelFormat.Png,
+        LabelUrl = "https://optimal-meadow.net",
+        ServiceCode = "GIz",
+        Status = ShippingLabelStatus.Exception,
+        TrackingNumber = "zYv60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-16T18:20:50.742Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -695,8 +782,9 @@ Update a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -706,7 +794,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
-    ShippingShipment = new ShippingShipment() {},
+    ShippingShipment = new ShippingShipment() {
+        CarrierName = "Bogisich, Franey and Koelpin",
+        CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
+        Id = "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+        RateAmount = 8.86546263936907D,
+        RateCurrency = "USD",
+        RateEstimatedDays = 8D,
+        RateServiceName = "Fisher - Kilback",
+        ServiceCode = "F7U",
+        ShippedAt = System.DateTime.Parse("2025-08-24T18:20:41.092Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Pending,
+        TrackingUrl = "https://shallow-secrecy.info/",
+        UpdatedAt = System.DateTime.Parse("2025-07-03T02:07:43.683Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

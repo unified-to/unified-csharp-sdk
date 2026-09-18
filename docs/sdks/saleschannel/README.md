@@ -17,8 +17,10 @@ Create a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" -->
+<!-- UsageSnippet language="csharp" operationID="createCommerceSaleschannel" method="post" path="/commerce/{connection_id}/saleschannel" example="commerce_saleschannel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Saleschannel.CreateCommerceSaleschannelAsync(
-    commerceSaleschannel: new CommerceSaleschannel() {},
+    commerceSaleschannel: new CommerceSaleschannel() {
+        Collections = new List<CommerceReference>() {},
+        CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
+        Description = "Utroque denuncio solutio.",
+        Id = "40686ae3-40d6-4f84-a18c-43ea22fc7e79",
+        IsActive = false,
+        Slug = "amiculum-congregatio-suspendo",
+        UpdatedAt = System.DateTime.Parse("2025-01-06T17:44:30.036Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +152,10 @@ Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCommerceSaleschannel" method="patch" path="/commerce/{connection_id}/saleschannel/{id}" example="commerce_saleschannel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +165,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceSaleschannelRequest req = new PatchCommerceSaleschannelRequest() {
-    CommerceSaleschannel = new CommerceSaleschannel() {},
+    CommerceSaleschannel = new CommerceSaleschannel() {
+        Collections = new List<CommerceReference>() {},
+        CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
+        Description = "Utroque denuncio solutio.",
+        Id = "9c75c38f-b43b-4042-a122-482b994e374f",
+        IsActive = false,
+        Slug = "amiculum-congregatio-suspendo",
+        UpdatedAt = System.DateTime.Parse("2025-01-06T17:44:30.042Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +245,10 @@ Update a saleschannel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCommerceSaleschannel" method="put" path="/commerce/{connection_id}/saleschannel/{id}" example="commerce_saleschannel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +258,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceSaleschannelRequest req = new UpdateCommerceSaleschannelRequest() {
-    CommerceSaleschannel = new CommerceSaleschannel() {},
+    CommerceSaleschannel = new CommerceSaleschannel() {
+        Collections = new List<CommerceReference>() {},
+        CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
+        Description = "Utroque denuncio solutio.",
+        Id = "9c75c38f-b43b-4042-a122-482b994e374f",
+        IsActive = false,
+        Slug = "amiculum-congregatio-suspendo",
+        UpdatedAt = System.DateTime.Parse("2025-01-06T17:44:30.042Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

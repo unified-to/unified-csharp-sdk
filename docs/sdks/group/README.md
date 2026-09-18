@@ -31,8 +31,9 @@ Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" example="ads_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -41,7 +42,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.CreateAdsGroupAsync(
-    adsGroup: new AdsGroup() {},
+    adsGroup: new AdsGroup() {
+        BidAmount = 26.16030164062977D,
+        BudgetAmount = 5099.175239447504D,
+        BudgetPeriod = AdsGroupBudgetPeriod.Monthly,
+        CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = AdsGroupEffectiveStatus.Paused,
+        EndAt = System.DateTime.Parse("2026-05-24T13:19:12.102Z").ToUniversalTime(),
+        Id = "e888dea0-f654-41b9-92b4-9bed6e836d63",
+        LanguageLocale = "fr-FR",
+        Name = "Stark - Baumbach",
+        StartAt = System.DateTime.Parse("2025-12-10T21:11:12.512Z").ToUniversalTime(),
+        Status = AdsGroupStatus.Processing,
+        Targeting = new PropertyAdsGroupTargeting() {},
+        UpdatedAt = System.DateTime.Parse("2022-01-02T16:46:00.565Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -73,8 +89,9 @@ Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisGroup" method="post" path="/hris/{connection_id}/group" example="hris_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -83,7 +100,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.CreateHrisGroupAsync(
-    hrisGroup: new HrisGroup() {},
+    hrisGroup: new HrisGroup() {
+        CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
+        Description = "Absorbeo casso.",
+        Id = "929982e7-4f14-49ea-83cc-de83a6e8059c",
+        IsActive = false,
+        Name = "Games",
+        Type = HrisGroupType.BusinessUnit,
+        UpdatedAt = System.DateTime.Parse("2026-04-23T14:25:48.389Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -487,8 +512,9 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -498,7 +524,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsGroupRequest req = new PatchAdsGroupRequest() {
-    AdsGroup = new AdsGroup() {},
+    AdsGroup = new AdsGroup() {
+        BidAmount = 26.16030164062977D,
+        BudgetAmount = 5099.175239447504D,
+        BudgetPeriod = AdsGroupBudgetPeriod.Monthly,
+        CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = AdsGroupEffectiveStatus.Paused,
+        EndAt = System.DateTime.Parse("2026-05-24T13:19:12.211Z").ToUniversalTime(),
+        Id = "696ee368-be46-4fed-aede-f2ef993e2ea4",
+        LanguageLocale = "fr-FR",
+        Name = "Stark - Baumbach",
+        StartAt = System.DateTime.Parse("2025-12-10T21:11:12.613Z").ToUniversalTime(),
+        Status = AdsGroupStatus.Processing,
+        Targeting = new PropertyAdsGroupTargeting() {},
+        UpdatedAt = System.DateTime.Parse("2022-01-02T16:46:00.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -530,8 +571,9 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisGroup" method="patch" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -541,7 +583,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
-    HrisGroup = new HrisGroup() {},
+    HrisGroup = new HrisGroup() {
+        CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
+        Description = "Absorbeo casso.",
+        Id = "e6f510a5-a158-4c0b-ac94-6d68578b4e95",
+        IsActive = false,
+        Name = "Games",
+        Type = HrisGroupType.BusinessUnit,
+        UpdatedAt = System.DateTime.Parse("2026-04-23T14:25:48.395Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -737,8 +787,9 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -748,7 +799,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsGroupRequest req = new UpdateAdsGroupRequest() {
-    AdsGroup = new AdsGroup() {},
+    AdsGroup = new AdsGroup() {
+        BidAmount = 26.16030164062977D,
+        BudgetAmount = 5099.175239447504D,
+        BudgetPeriod = AdsGroupBudgetPeriod.Monthly,
+        CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = AdsGroupEffectiveStatus.Paused,
+        EndAt = System.DateTime.Parse("2026-05-24T13:19:12.211Z").ToUniversalTime(),
+        Id = "696ee368-be46-4fed-aede-f2ef993e2ea4",
+        LanguageLocale = "fr-FR",
+        Name = "Stark - Baumbach",
+        StartAt = System.DateTime.Parse("2025-12-10T21:11:12.613Z").ToUniversalTime(),
+        Status = AdsGroupStatus.Processing,
+        Targeting = new PropertyAdsGroupTargeting() {},
+        UpdatedAt = System.DateTime.Parse("2022-01-02T16:46:00.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -780,8 +846,9 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisGroup" method="put" path="/hris/{connection_id}/group/{id}" example="hris_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -791,7 +858,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
-    HrisGroup = new HrisGroup() {},
+    HrisGroup = new HrisGroup() {
+        CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
+        Description = "Absorbeo casso.",
+        Id = "e6f510a5-a158-4c0b-ac94-6d68578b4e95",
+        IsActive = false,
+        Name = "Games",
+        Type = HrisGroupType.BusinessUnit,
+        UpdatedAt = System.DateTime.Parse("2026-04-23T14:25:48.395Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

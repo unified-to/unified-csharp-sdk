@@ -17,8 +17,10 @@ Create a candidate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAtsCandidate" method="post" path="/ats/{connection_id}/candidate" -->
+<!-- UsageSnippet language="csharp" operationID="createAtsCandidate" method="post" path="/ats/{connection_id}/candidate" example="ats_candidate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,96 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Candidate.CreateAtsCandidateAsync(
-    atsCandidate: new AtsCandidate() {},
+    atsCandidate: new AtsCandidate() {
+        Address = new PropertyAtsCandidateAddress() {
+            Address1 = "802 Roberts Squares",
+            Address2 = "Suite 550",
+            City = "Lake Raeganside",
+            CountryCode = "US",
+            PostalCode = "44530-0054",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CompanyName = "Ferry, Legros and Feest",
+        CreatedAt = System.DateTime.Parse("2023-10-16T05:42:56.049Z").ToUniversalTime(),
+        Education = new List<AtsCandidateEducation>() {
+            new AtsCandidateEducation() {
+                Degree = "mouser throughout",
+                EndAt = System.DateTime.Parse("1992-11-28T20:23:20.311Z").ToUniversalTime(),
+                FieldOfStudy = "solutio",
+                Institution = "Heller - Lubowitz",
+                Level = "phd",
+                StartAt = System.DateTime.Parse("2001-03-26T08:12:11.510Z").ToUniversalTime(),
+            },
+        },
+        Emails = new List<AtsEmail>() {
+            new AtsEmail() {
+                Email = "Ardith.Beatty@hotmail.com",
+                Name = "Opal Lindgren",
+                Type = AtsEmailType.Work,
+            },
+            new AtsEmail() {
+                Email = "Ardith_Beatty@gmail.com",
+                Name = "Kristi Nader",
+                Type = AtsEmailType.Other,
+            },
+        },
+        Experiences = new List<AtsCandidateExperience>() {
+            new AtsCandidateExperience() {
+                CompanyName = "Donnelly, Buckridge and Steuber",
+                EndAt = System.DateTime.Parse("1978-06-20T02:53:48.383Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("1980-02-06T17:16:53.798Z").ToUniversalTime(),
+                Title = "Principal Brand Strategist",
+            },
+        },
+        FirstName = "Ardith",
+        Id = "59cebc0f-3274-48fe-b456-efe66f9ff211",
+        ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
+        JobIds = new List<string>() {},
+        LastName = "Beatty",
+        LinkUrls = new List<string>() {
+            "https://sizzling-legislature.com",
+            "https://soupy-interchange.net",
+            "https://troubled-substitution.info",
+        },
+        Metadata = new List<AtsMetadata>() {
+            new AtsMetadata() {
+                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = AtsMetadataFormat.Text,
+                Id = "6b842011-54cc-4549-9976-9af27f096a6d",
+                Namespace = "custom",
+                Slug = "custom_field",
+                Value = AtsMetadataValue.CreateStr(
+                    "cariosus"
+                ),
+            },
+        },
+        Name = "Ardith Beatty",
+        Origin = Origin.Sourced,
+        Skills = new List<string>() {
+            "vita",
+            "cohors",
+        },
+        Sources = new List<string>() {
+            "tactus",
+        },
+        Tags = new List<string>() {
+            "aliquid",
+        },
+        Telephones = new List<AtsTelephone>() {
+            new AtsTelephone() {
+                Telephone = "(779) 296-5994",
+                Type = AtsTelephoneType.Home,
+            },
+        },
+        Title = "Principal Implementation Analyst",
+        UpdatedAt = System.DateTime.Parse("2024-04-22T21:06:56.351Z").ToUniversalTime(),
+        WebUrl = "https://expert-lender.name/",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +233,10 @@ Update a candidate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAtsCandidate" method="patch" path="/ats/{connection_id}/candidate/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAtsCandidate" method="patch" path="/ats/{connection_id}/candidate/{id}" example="ats_candidate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +246,96 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
-    AtsCandidate = new AtsCandidate() {},
+    AtsCandidate = new AtsCandidate() {
+        Address = new PropertyAtsCandidateAddress() {
+            Address1 = "802 Roberts Squares",
+            Address2 = "Suite 550",
+            City = "Lake Raeganside",
+            CountryCode = "US",
+            PostalCode = "44530-0054",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CompanyName = "Ferry, Legros and Feest",
+        CreatedAt = System.DateTime.Parse("2023-10-16T05:42:56.049Z").ToUniversalTime(),
+        Education = new List<AtsCandidateEducation>() {
+            new AtsCandidateEducation() {
+                Degree = "mouser throughout",
+                EndAt = System.DateTime.Parse("1992-11-28T20:23:20.311Z").ToUniversalTime(),
+                FieldOfStudy = "solutio",
+                Institution = "Heller - Lubowitz",
+                Level = "phd",
+                StartAt = System.DateTime.Parse("2001-03-26T08:12:11.510Z").ToUniversalTime(),
+            },
+        },
+        Emails = new List<AtsEmail>() {
+            new AtsEmail() {
+                Email = "Ardith.Beatty@hotmail.com",
+                Name = "Opal Lindgren",
+                Type = AtsEmailType.Work,
+            },
+            new AtsEmail() {
+                Email = "Ardith_Beatty@gmail.com",
+                Name = "Kristi Nader",
+                Type = AtsEmailType.Other,
+            },
+        },
+        Experiences = new List<AtsCandidateExperience>() {
+            new AtsCandidateExperience() {
+                CompanyName = "Donnelly, Buckridge and Steuber",
+                EndAt = System.DateTime.Parse("1978-06-20T02:53:48.383Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("1980-02-06T17:16:53.798Z").ToUniversalTime(),
+                Title = "Principal Brand Strategist",
+            },
+        },
+        FirstName = "Ardith",
+        Id = "367e2ce4-a89b-4076-a673-be58f32632cd",
+        ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
+        JobIds = new List<string>() {},
+        LastName = "Beatty",
+        LinkUrls = new List<string>() {
+            "https://sizzling-legislature.com",
+            "https://soupy-interchange.net",
+            "https://troubled-substitution.info",
+        },
+        Metadata = new List<AtsMetadata>() {
+            new AtsMetadata() {
+                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = AtsMetadataFormat.Text,
+                Id = "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+                Namespace = "custom",
+                Slug = "custom_field",
+                Value = AtsMetadataValue.CreateStr(
+                    "cariosus"
+                ),
+            },
+        },
+        Name = "Ardith Beatty",
+        Origin = Origin.Sourced,
+        Skills = new List<string>() {
+            "vita",
+            "cohors",
+        },
+        Sources = new List<string>() {
+            "tactus",
+        },
+        Tags = new List<string>() {
+            "aliquid",
+        },
+        Telephones = new List<AtsTelephone>() {
+            new AtsTelephone() {
+                Telephone = "(779) 296-5994",
+                Type = AtsTelephoneType.Home,
+            },
+        },
+        Title = "Principal Implementation Analyst",
+        UpdatedAt = System.DateTime.Parse("2024-04-22T21:06:56.360Z").ToUniversalTime(),
+        WebUrl = "https://expert-lender.name/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +407,10 @@ Update a candidate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAtsCandidate" method="put" path="/ats/{connection_id}/candidate/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAtsCandidate" method="put" path="/ats/{connection_id}/candidate/{id}" example="ats_candidate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +420,96 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
-    AtsCandidate = new AtsCandidate() {},
+    AtsCandidate = new AtsCandidate() {
+        Address = new PropertyAtsCandidateAddress() {
+            Address1 = "802 Roberts Squares",
+            Address2 = "Suite 550",
+            City = "Lake Raeganside",
+            CountryCode = "US",
+            PostalCode = "44530-0054",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CompanyName = "Ferry, Legros and Feest",
+        CreatedAt = System.DateTime.Parse("2023-10-16T05:42:56.049Z").ToUniversalTime(),
+        Education = new List<AtsCandidateEducation>() {
+            new AtsCandidateEducation() {
+                Degree = "mouser throughout",
+                EndAt = System.DateTime.Parse("1992-11-28T20:23:20.311Z").ToUniversalTime(),
+                FieldOfStudy = "solutio",
+                Institution = "Heller - Lubowitz",
+                Level = "phd",
+                StartAt = System.DateTime.Parse("2001-03-26T08:12:11.510Z").ToUniversalTime(),
+            },
+        },
+        Emails = new List<AtsEmail>() {
+            new AtsEmail() {
+                Email = "Ardith.Beatty@hotmail.com",
+                Name = "Opal Lindgren",
+                Type = AtsEmailType.Work,
+            },
+            new AtsEmail() {
+                Email = "Ardith_Beatty@gmail.com",
+                Name = "Kristi Nader",
+                Type = AtsEmailType.Other,
+            },
+        },
+        Experiences = new List<AtsCandidateExperience>() {
+            new AtsCandidateExperience() {
+                CompanyName = "Donnelly, Buckridge and Steuber",
+                EndAt = System.DateTime.Parse("1978-06-20T02:53:48.383Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("1980-02-06T17:16:53.798Z").ToUniversalTime(),
+                Title = "Principal Brand Strategist",
+            },
+        },
+        FirstName = "Ardith",
+        Id = "367e2ce4-a89b-4076-a673-be58f32632cd",
+        ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
+        JobIds = new List<string>() {},
+        LastName = "Beatty",
+        LinkUrls = new List<string>() {
+            "https://sizzling-legislature.com",
+            "https://soupy-interchange.net",
+            "https://troubled-substitution.info",
+        },
+        Metadata = new List<AtsMetadata>() {
+            new AtsMetadata() {
+                ExtraData = AtsMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = AtsMetadataFormat.Text,
+                Id = "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+                Namespace = "custom",
+                Slug = "custom_field",
+                Value = AtsMetadataValue.CreateStr(
+                    "cariosus"
+                ),
+            },
+        },
+        Name = "Ardith Beatty",
+        Origin = Origin.Sourced,
+        Skills = new List<string>() {
+            "vita",
+            "cohors",
+        },
+        Sources = new List<string>() {
+            "tactus",
+        },
+        Tags = new List<string>() {
+            "aliquid",
+        },
+        Telephones = new List<AtsTelephone>() {
+            new AtsTelephone() {
+                Telephone = "(779) 296-5994",
+                Type = AtsTelephoneType.Home,
+            },
+        },
+        Title = "Principal Implementation Analyst",
+        UpdatedAt = System.DateTime.Parse("2024-04-22T21:06:56.360Z").ToUniversalTime(),
+        WebUrl = "https://expert-lender.name/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

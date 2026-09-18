@@ -17,8 +17,10 @@ Create a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" -->
+<!-- UsageSnippet language="csharp" operationID="createTicketingCustomer" method="post" path="/ticketing/{connection_id}/customer" example="ticketing_customer" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Customer.CreateTicketingCustomerAsync(
-    ticketingCustomer: new TicketingCustomer() {},
+    ticketingCustomer: new TicketingCustomer() {
+        CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
+        Emails = new List<TicketingEmail>() {
+            new TicketingEmail() {
+                Email = "Christian_Windler@gmail.com",
+                Type = TicketingEmailType.Home,
+            },
+        },
+        Id = "e4eda98a-50de-46a3-969f-b9ed09d9be62",
+        Name = "Christian Windler",
+        Tags = new List<string>() {
+            "casso",
+            "peccatus",
+        },
+        Telephones = new List<TicketingTelephone>() {
+            new TicketingTelephone() {
+                Telephone = "(532) 242-0482",
+                Type = TicketingTelephoneType.Other,
+            },
+            new TicketingTelephone() {
+                Telephone = "(826) 283-7431",
+                Type = TicketingTelephoneType.Mobile,
+            },
+            new TicketingTelephone() {
+                Telephone = "(483) 314-6826",
+                Type = TicketingTelephoneType.Mobile,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2026-05-04T07:40:10.066Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +173,10 @@ Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTicketingCustomer" method="patch" path="/ticketing/{connection_id}/customer/{id}" example="ticketing_customer" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +186,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
-    TicketingCustomer = new TicketingCustomer() {},
+    TicketingCustomer = new TicketingCustomer() {
+        CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
+        Emails = new List<TicketingEmail>() {
+            new TicketingEmail() {
+                Email = "Christian_Windler@gmail.com",
+                Type = TicketingEmailType.Home,
+            },
+        },
+        Id = "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+        Name = "Christian Windler",
+        Tags = new List<string>() {
+            "casso",
+            "peccatus",
+        },
+        Telephones = new List<TicketingTelephone>() {
+            new TicketingTelephone() {
+                Telephone = "(532) 242-0482",
+                Type = TicketingTelephoneType.Other,
+            },
+            new TicketingTelephone() {
+                Telephone = "(826) 283-7431",
+                Type = TicketingTelephoneType.Mobile,
+            },
+            new TicketingTelephone() {
+                Telephone = "(483) 314-6826",
+                Type = TicketingTelephoneType.Mobile,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2026-05-04T07:40:10.076Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +287,10 @@ Update a customer
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTicketingCustomer" method="put" path="/ticketing/{connection_id}/customer/{id}" example="ticketing_customer" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +300,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
-    TicketingCustomer = new TicketingCustomer() {},
+    TicketingCustomer = new TicketingCustomer() {
+        CreatedAt = System.DateTime.Parse("2021-03-15T12:33:14.875Z").ToUniversalTime(),
+        Emails = new List<TicketingEmail>() {
+            new TicketingEmail() {
+                Email = "Christian_Windler@gmail.com",
+                Type = TicketingEmailType.Home,
+            },
+        },
+        Id = "9693c0c0-2580-43e7-b5e8-50ed01af5e16",
+        Name = "Christian Windler",
+        Tags = new List<string>() {
+            "casso",
+            "peccatus",
+        },
+        Telephones = new List<TicketingTelephone>() {
+            new TicketingTelephone() {
+                Telephone = "(532) 242-0482",
+                Type = TicketingTelephoneType.Other,
+            },
+            new TicketingTelephone() {
+                Telephone = "(826) 283-7431",
+                Type = TicketingTelephoneType.Mobile,
+            },
+            new TicketingTelephone() {
+                Telephone = "(483) 314-6826",
+                Type = TicketingTelephoneType.Mobile,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2026-05-04T07:40:10.076Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

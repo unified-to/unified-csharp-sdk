@@ -17,8 +17,10 @@ Create a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" -->
+<!-- UsageSnippet language="csharp" operationID="createPaymentSubscription" method="post" path="/payment/{connection_id}/subscription" example="payment_subscription" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Subscription.CreatePaymentSubscriptionAsync(
-    paymentSubscription: new PaymentSubscription() {},
+    paymentSubscription: new PaymentSubscription() {
+        CreatedAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
+        Currency = "WST",
+        CurrentPeriodEndAt = System.DateTime.Parse("2023-06-03T04:20:29.157Z").ToUniversalTime(),
+        CurrentPeriodStartAt = System.DateTime.Parse("2023-05-21T03:55:58.846Z").ToUniversalTime(),
+        DayOfMonth = 1D,
+        Description = "Innovative Mouse featuring important technology and Bamboo construction",
+        EndAt = System.DateTime.Parse("2023-05-21T12:36:09.234Z").ToUniversalTime(),
+        Id = "f7519009-e6cd-4e12-b266-7782c6582fdd",
+        Interval = 1D,
+        IntervalUnit = IntervalUnit.Month,
+        Lineitems = new List<PaymentLineitem>() {},
+        StartAt = System.DateTime.Parse("2023-05-29T06:04:51.030Z").ToUniversalTime(),
+        Status = PaymentSubscriptionStatus.Active,
+        TotalAmount = 75616D,
+        UpdatedAt = System.DateTime.Parse("2023-12-15T22:33:27.051Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +160,10 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchPaymentSubscription" method="patch" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +173,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchPaymentSubscriptionRequest req = new PatchPaymentSubscriptionRequest() {
-    PaymentSubscription = new PaymentSubscription() {},
+    PaymentSubscription = new PaymentSubscription() {
+        CreatedAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
+        Currency = "WST",
+        CurrentPeriodEndAt = System.DateTime.Parse("2023-06-03T04:20:29.157Z").ToUniversalTime(),
+        CurrentPeriodStartAt = System.DateTime.Parse("2023-05-21T03:55:58.846Z").ToUniversalTime(),
+        DayOfMonth = 1D,
+        Description = "Innovative Mouse featuring important technology and Bamboo construction",
+        EndAt = System.DateTime.Parse("2023-05-21T12:36:09.234Z").ToUniversalTime(),
+        Id = "c599db6f-2bd5-4178-ab21-33a523666043",
+        Interval = 1D,
+        IntervalUnit = IntervalUnit.Month,
+        Lineitems = new List<PaymentLineitem>() {},
+        StartAt = System.DateTime.Parse("2023-05-29T06:04:51.030Z").ToUniversalTime(),
+        Status = PaymentSubscriptionStatus.Active,
+        TotalAmount = 75616D,
+        UpdatedAt = System.DateTime.Parse("2023-12-15T22:33:27.054Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +261,10 @@ Update a subscription
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updatePaymentSubscription" method="put" path="/payment/{connection_id}/subscription/{id}" example="payment_subscription" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +274,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdatePaymentSubscriptionRequest req = new UpdatePaymentSubscriptionRequest() {
-    PaymentSubscription = new PaymentSubscription() {},
+    PaymentSubscription = new PaymentSubscription() {
+        CreatedAt = System.DateTime.Parse("2023-05-08T10:11:03.414Z").ToUniversalTime(),
+        Currency = "WST",
+        CurrentPeriodEndAt = System.DateTime.Parse("2023-06-03T04:20:29.157Z").ToUniversalTime(),
+        CurrentPeriodStartAt = System.DateTime.Parse("2023-05-21T03:55:58.846Z").ToUniversalTime(),
+        DayOfMonth = 1D,
+        Description = "Innovative Mouse featuring important technology and Bamboo construction",
+        EndAt = System.DateTime.Parse("2023-05-21T12:36:09.234Z").ToUniversalTime(),
+        Id = "c599db6f-2bd5-4178-ab21-33a523666043",
+        Interval = 1D,
+        IntervalUnit = IntervalUnit.Month,
+        Lineitems = new List<PaymentLineitem>() {},
+        StartAt = System.DateTime.Parse("2023-05-29T06:04:51.030Z").ToUniversalTime(),
+        Status = PaymentSubscriptionStatus.Active,
+        TotalAmount = 75616D,
+        UpdatedAt = System.DateTime.Parse("2023-12-15T22:33:27.054Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

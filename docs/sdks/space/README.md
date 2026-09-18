@@ -17,8 +17,9 @@ Create a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" -->
+<!-- UsageSnippet language="csharp" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" example="kms_space" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Space.CreateKmsSpaceAsync(
-    kmsSpace: new KmsSpace() {},
+    kmsSpace: new KmsSpace() {
+        CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
+        Description = "Acer.",
+        Id = "72f6d852-9f5b-447f-928a-dd6a6ca5a5f6",
+        IsActive = false,
+        Name = "into nor afore",
+        UpdatedAt = System.DateTime.Parse("2025-12-03T15:52:28.170Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +150,9 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +162,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {},
+    KmsSpace = new KmsSpace() {
+        CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
+        Description = "Acer.",
+        Id = "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+        IsActive = false,
+        Name = "into nor afore",
+        UpdatedAt = System.DateTime.Parse("2025-12-03T15:52:28.175Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +241,9 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +253,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {},
+    KmsSpace = new KmsSpace() {
+        CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
+        Description = "Acer.",
+        Id = "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+        IsActive = false,
+        Name = "into nor afore",
+        UpdatedAt = System.DateTime.Parse("2025-12-03T15:52:28.175Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

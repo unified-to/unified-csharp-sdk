@@ -17,8 +17,10 @@ Create a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingCreditmemo" method="post" path="/accounting/{connection_id}/creditmemo" example="accounting_creditmemo" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Creditmemo.CreateAccountingCreditmemoAsync(
-    accountingCreditmemo: new AccountingCreditmemo() {},
+    accountingCreditmemo: new AccountingCreditmemo() {
+        Applications = new List<AccountingCreditApplication>() {},
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://enlightened-chairperson.com/",
+                Id = "b6973779-c8a8-4f1a-9b1a-3f847c624aa4",
+                MimeType = "complectus",
+                Name = "thesis",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-09-20T01:47:01.571Z").ToUniversalTime(),
+        CreditmemoNumber = "ulterius",
+        Currency = "MKD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
+        Id = "7fc36458-5758-4a49-9b68-4665d4871b26",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Dedecor amo adfero torqueo quas.",
+        PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
+        PostedAt = System.DateTime.Parse("2025-11-15T11:03:17.426Z").ToUniversalTime(),
+        RefundAmount = 0D,
+        RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
+        RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
+        Send = false,
+        Status = AccountingCreditmemoStatus.Paid,
+        TaxAmount = 0D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2024-11-15T13:32:51.006Z").ToUniversalTime(),
+        Url = "https://lighthearted-bandwidth.net/",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +174,10 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingCreditmemo" method="patch" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +187,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
-    AccountingCreditmemo = new AccountingCreditmemo() {},
+    AccountingCreditmemo = new AccountingCreditmemo() {
+        Applications = new List<AccountingCreditApplication>() {},
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://enlightened-chairperson.com/",
+                Id = "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+                MimeType = "complectus",
+                Name = "thesis",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-09-20T01:47:01.571Z").ToUniversalTime(),
+        CreditmemoNumber = "ulterius",
+        Currency = "MKD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
+        Id = "c0f30724-dec9-4210-8706-4c3a535e2f65",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Dedecor amo adfero torqueo quas.",
+        PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
+        PostedAt = System.DateTime.Parse("2025-11-15T11:03:17.458Z").ToUniversalTime(),
+        RefundAmount = 0D,
+        RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
+        RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
+        Send = false,
+        Status = AccountingCreditmemoStatus.Paid,
+        TaxAmount = 0D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2024-11-15T13:32:51.023Z").ToUniversalTime(),
+        Url = "https://lighthearted-bandwidth.net/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +289,10 @@ Update a creditmemo
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingCreditmemo" method="put" path="/accounting/{connection_id}/creditmemo/{id}" example="accounting_creditmemo" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +302,37 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() {
-    AccountingCreditmemo = new AccountingCreditmemo() {},
+    AccountingCreditmemo = new AccountingCreditmemo() {
+        Applications = new List<AccountingCreditApplication>() {},
+        Attachments = new List<AccountingAttachment>() {
+            new AccountingAttachment() {
+                DownloadUrl = "https://enlightened-chairperson.com/",
+                Id = "1caeb4ce-3f7e-48a4-afb3-469839f68cca",
+                MimeType = "complectus",
+                Name = "thesis",
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2023-09-20T01:47:01.571Z").ToUniversalTime(),
+        CreditmemoNumber = "ulterius",
+        Currency = "MKD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
+        Id = "c0f30724-dec9-4210-8706-4c3a535e2f65",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Dedecor amo adfero torqueo quas.",
+        PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
+        PostedAt = System.DateTime.Parse("2025-11-15T11:03:17.458Z").ToUniversalTime(),
+        RefundAmount = 0D,
+        RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
+        RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
+        Send = false,
+        Status = AccountingCreditmemoStatus.Paid,
+        TaxAmount = 0D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2024-11-15T13:32:51.023Z").ToUniversalTime(),
+        Url = "https://lighthearted-bandwidth.net/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

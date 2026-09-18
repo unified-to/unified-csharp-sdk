@@ -23,8 +23,10 @@ Create a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" -->
+<!-- UsageSnippet language="csharp" operationID="createCommerceReview" method="post" path="/commerce/{connection_id}/review" example="commerce_review" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -33,7 +35,84 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Review.CreateCommerceReviewAsync(
-    commerceReview: new CommerceReview() {},
+    commerceReview: new CommerceReview() {
+        AuthorAvatarUrl = "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+        AuthorEmail = "Cleve_Yundt@hotmail.com",
+        AuthorLocation = "ipsum",
+        AuthorName = "Marsha Krajcik",
+        Comments = new List<CommerceReviewComment>() {},
+        Content = "Taedium thymum adipiscor amicitia cui.",
+        CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
+        HelpfulVotes = 26D,
+        Id = "9c5b7e6f-0f4b-4750-8f10-b86d80073fd4",
+        IsFeatured = true,
+        IsPublic = true,
+        IsVerified = false,
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Adulescens.",
+                Height = 519D,
+                Id = "816efc1a-4423-4d51-a391-83385253bc8f",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "a6ebfdaa-8dfe-407d-b0d6-346a84dad5ca",
+                        Slug = "aggero",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "tero"
+                        ),
+                    },
+                },
+                Position = 72D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://loremflickr.com/882/1004?lock=7448492654002422",
+                Width = 75D,
+            },
+            new CommerceItemMedia() {
+                Alt = "Pauci timidus sol comburo thema.",
+                Height = 297D,
+                Id = "12020720-c152-456e-80bf-005ca92e532d",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "4ede0b6b-5898-4c43-93eb-87357417ecee",
+                        Slug = "vito",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "cuppedia"
+                        ),
+                    },
+                },
+                Position = 61D,
+                Type = CommerceItemMediaType.Image,
+                Url = "https://picsum.photos/seed/3QDZ8/1208/2171",
+                Width = 96D,
+            },
+            new CommerceItemMedia() {
+                Alt = "Cuppedia vestrum patruus.",
+                Height = 6D,
+                Id = "c6d2eb71-13f9-4cda-a26e-4bd7a3e27f52",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "6ad69a11-2786-4752-a369-6f863517d900",
+                        Slug = "arbitro",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "villa"
+                        ),
+                    },
+                },
+                Position = 60D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://picsum.photos/seed/ytybC/2616/710",
+                Width = 74D,
+            },
+        },
+        Metadata = new List<CommerceMetadata>() {},
+        Rating = 3D,
+        Status = CommerceReviewStatus.Approved,
+        Title = "Coepi adamo amicitia auxilium toties.",
+        UnhelpfulVotes = 49D,
+        UpdatedAt = System.DateTime.Parse("2025-07-24T23:16:21.947Z").ToUniversalTime(),
+        Url = "https://excitable-underneath.com",
+        VerifiedPurchase = false,
+    },
     connectionId: "<id>"
 );
 
@@ -314,8 +393,10 @@ Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCommerceReview" method="patch" path="/commerce/{connection_id}/review/{id}" example="commerce_review" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -325,7 +406,84 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
-    CommerceReview = new CommerceReview() {},
+    CommerceReview = new CommerceReview() {
+        AuthorAvatarUrl = "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+        AuthorEmail = "Cleve_Yundt@hotmail.com",
+        AuthorLocation = "ipsum",
+        AuthorName = "Marsha Krajcik",
+        Comments = new List<CommerceReviewComment>() {},
+        Content = "Taedium thymum adipiscor amicitia cui.",
+        CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
+        HelpfulVotes = 26D,
+        Id = "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+        IsFeatured = true,
+        IsPublic = true,
+        IsVerified = false,
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Adulescens.",
+                Height = 519D,
+                Id = "146b7d74-0d7e-4beb-941b-44c501241294",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+                        Slug = "aggero",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "tero"
+                        ),
+                    },
+                },
+                Position = 72D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://loremflickr.com/882/1004?lock=7448492654002422",
+                Width = 75D,
+            },
+            new CommerceItemMedia() {
+                Alt = "Pauci timidus sol comburo thema.",
+                Height = 297D,
+                Id = "87af2377-5bc7-415f-994c-28d4bcb0c263",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+                        Slug = "vito",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "cuppedia"
+                        ),
+                    },
+                },
+                Position = 61D,
+                Type = CommerceItemMediaType.Image,
+                Url = "https://picsum.photos/seed/3QDZ8/1208/2171",
+                Width = 96D,
+            },
+            new CommerceItemMedia() {
+                Alt = "Cuppedia vestrum patruus.",
+                Height = 6D,
+                Id = "d5697010-23e7-4425-b385-99c308679379",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+                        Slug = "arbitro",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "villa"
+                        ),
+                    },
+                },
+                Position = 60D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://picsum.photos/seed/ytybC/2616/710",
+                Width = 74D,
+            },
+        },
+        Metadata = new List<CommerceMetadata>() {},
+        Rating = 3D,
+        Status = CommerceReviewStatus.Approved,
+        Title = "Coepi adamo amicitia auxilium toties.",
+        UnhelpfulVotes = 49D,
+        UpdatedAt = System.DateTime.Parse("2025-07-24T23:16:21.986Z").ToUniversalTime(),
+        Url = "https://excitable-underneath.com",
+        VerifiedPurchase = false,
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -440,8 +598,10 @@ Update a review
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCommerceReview" method="put" path="/commerce/{connection_id}/review/{id}" example="commerce_review" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -451,7 +611,84 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
-    CommerceReview = new CommerceReview() {},
+    CommerceReview = new CommerceReview() {
+        AuthorAvatarUrl = "https://picsum.photos/seed/ix4Br3LA/2245/1245",
+        AuthorEmail = "Cleve_Yundt@hotmail.com",
+        AuthorLocation = "ipsum",
+        AuthorName = "Marsha Krajcik",
+        Comments = new List<CommerceReviewComment>() {},
+        Content = "Taedium thymum adipiscor amicitia cui.",
+        CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
+        HelpfulVotes = 26D,
+        Id = "fd0e9457-5554-4f0f-9f5e-eafddd7d0e37",
+        IsFeatured = true,
+        IsPublic = true,
+        IsVerified = false,
+        Media = new List<CommerceItemMedia>() {
+            new CommerceItemMedia() {
+                Alt = "Adulescens.",
+                Height = 519D,
+                Id = "146b7d74-0d7e-4beb-941b-44c501241294",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "cc4f6bd9-6784-4fd2-bed6-73d1869efb90",
+                        Slug = "aggero",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "tero"
+                        ),
+                    },
+                },
+                Position = 72D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://loremflickr.com/882/1004?lock=7448492654002422",
+                Width = 75D,
+            },
+            new CommerceItemMedia() {
+                Alt = "Pauci timidus sol comburo thema.",
+                Height = 297D,
+                Id = "87af2377-5bc7-415f-994c-28d4bcb0c263",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "b0e23d56-6ea0-41f8-83ef-ffcf3e614638",
+                        Slug = "vito",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "cuppedia"
+                        ),
+                    },
+                },
+                Position = 61D,
+                Type = CommerceItemMediaType.Image,
+                Url = "https://picsum.photos/seed/3QDZ8/1208/2171",
+                Width = 96D,
+            },
+            new CommerceItemMedia() {
+                Alt = "Cuppedia vestrum patruus.",
+                Height = 6D,
+                Id = "d5697010-23e7-4425-b385-99c308679379",
+                Metadata = new List<CommerceMetadata>() {
+                    new CommerceMetadata() {
+                        Id = "9ae001db-e9e0-4412-9c1f-9946f9c3559a",
+                        Slug = "arbitro",
+                        Value = CommerceMetadataValue.CreateStr(
+                            "villa"
+                        ),
+                    },
+                },
+                Position = 60D,
+                Type = CommerceItemMediaType.Video,
+                Url = "https://picsum.photos/seed/ytybC/2616/710",
+                Width = 74D,
+            },
+        },
+        Metadata = new List<CommerceMetadata>() {},
+        Rating = 3D,
+        Status = CommerceReviewStatus.Approved,
+        Title = "Coepi adamo amicitia auxilium toties.",
+        UnhelpfulVotes = 49D,
+        UpdatedAt = System.DateTime.Parse("2025-07-24T23:16:21.986Z").ToUniversalTime(),
+        Url = "https://excitable-underneath.com",
+        VerifiedPurchase = false,
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

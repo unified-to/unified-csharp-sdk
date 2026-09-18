@@ -17,8 +17,10 @@ Create a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingPaymentterm" method="post" path="/accounting/{connection_id}/paymentterm" example="accounting_paymentterm" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Paymentterm.CreateAccountingPaymenttermAsync(
-    accountingPaymentterm: new AccountingPaymentterm() {},
+    accountingPaymentterm: new AccountingPaymentterm() {
+        Category = UnifiedTo.Models.Components.Category.Standard,
+        CreatedAt = System.DateTime.Parse("2021-08-22T22:42:42.265Z").ToUniversalTime(),
+        DayOfMonthDue = 4D,
+        Description = "Cogito pecco eos cultura.",
+        DiscountDayOfMonth = 13D,
+        DiscountDays = 4D,
+        DiscountPercent = 5D,
+        DueDays = 57D,
+        DueNextMonthDays = 9D,
+        Id = "48745512-c4a4-4ba5-964e-784f73ff4ff1",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Net 30",
+        Type = AccountingPaymenttermType.Net15,
+        UpdatedAt = System.DateTime.Parse("2025-12-11T11:07:31.854Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +160,10 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingPaymentterm" method="patch" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +173,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingPaymenttermRequest req = new PatchAccountingPaymenttermRequest() {
-    AccountingPaymentterm = new AccountingPaymentterm() {},
+    AccountingPaymentterm = new AccountingPaymentterm() {
+        Category = UnifiedTo.Models.Components.Category.Standard,
+        CreatedAt = System.DateTime.Parse("2021-08-22T22:42:42.265Z").ToUniversalTime(),
+        DayOfMonthDue = 4D,
+        Description = "Cogito pecco eos cultura.",
+        DiscountDayOfMonth = 13D,
+        DiscountDays = 4D,
+        DiscountPercent = 5D,
+        DueDays = 57D,
+        DueNextMonthDays = 9D,
+        Id = "2142d448-2276-437b-83d4-9bf9154c041a",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Net 30",
+        Type = AccountingPaymenttermType.Net15,
+        UpdatedAt = System.DateTime.Parse("2025-12-11T11:07:31.864Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +261,10 @@ Update a paymentterm
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingPaymentterm" method="put" path="/accounting/{connection_id}/paymentterm/{id}" example="accounting_paymentterm" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +274,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingPaymenttermRequest req = new UpdateAccountingPaymenttermRequest() {
-    AccountingPaymentterm = new AccountingPaymentterm() {},
+    AccountingPaymentterm = new AccountingPaymentterm() {
+        Category = UnifiedTo.Models.Components.Category.Standard,
+        CreatedAt = System.DateTime.Parse("2021-08-22T22:42:42.265Z").ToUniversalTime(),
+        DayOfMonthDue = 4D,
+        Description = "Cogito pecco eos cultura.",
+        DiscountDayOfMonth = 13D,
+        DiscountDays = 4D,
+        DiscountPercent = 5D,
+        DueDays = 57D,
+        DueNextMonthDays = 9D,
+        Id = "2142d448-2276-437b-83d4-9bf9154c041a",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Net 30",
+        Type = AccountingPaymenttermType.Net15,
+        UpdatedAt = System.DateTime.Parse("2025-12-11T11:07:31.864Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

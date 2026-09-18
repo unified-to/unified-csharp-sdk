@@ -29,8 +29,9 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" -->
+<!-- UsageSnippet language="csharp" operationID="createAtsDocument" method="post" path="/ats/{connection_id}/document" example="ats_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -39,7 +40,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Document.CreateAtsDocumentAsync(
-    atsDocument: new AtsDocument() {},
+    atsDocument: new AtsDocument() {
+        CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
+        DocumentUrl = "https://vengeful-lashes.biz",
+        Filename = "bah_white_frantically.bz",
+        Id = "8aa6ddb8-a765-430a-b6cb-cbdbc0120932",
+        Type = AtsDocumentType.Resume,
+        UpdatedAt = System.DateTime.Parse("2022-11-28T22:09:41.296Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -71,8 +79,9 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisDocument" method="post" path="/hris/{connection_id}/document" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisDocument" method="post" path="/hris/{connection_id}/document" example="hris_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -81,7 +90,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Document.CreateHrisDocumentAsync(
-    hrisDocument: new HrisDocument() {},
+    hrisDocument: new HrisDocument() {
+        CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
+        DocumentUrl = "https://sore-decision.biz/",
+        Filename = "ridge_forager.xsl",
+        Id = "8e78f38f-1432-40b1-b0e2-deaf6644714c",
+        Type = HrisDocumentType.Policy,
+        UpdatedAt = System.DateTime.Parse("2025-09-17T01:55:35.563Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -113,8 +129,9 @@ Create a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" -->
+<!-- UsageSnippet language="csharp" operationID="createSigningDocument" method="post" path="/signing/{connection_id}/document" example="signing_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -123,7 +140,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Document.CreateSigningDocumentAsync(
-    signingDocument: new SigningDocument() {},
+    signingDocument: new SigningDocument() {
+        CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-12-16T10:17:24.172Z").ToUniversalTime(),
+        Id = "b56bffa4-89ef-4341-a673-29b95dfc4140",
+        Name = "nam audax absens",
+        Status = SigningDocumentStatus.Voided,
+        UpdatedAt = System.DateTime.Parse("2025-08-07T18:12:00.485Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -404,8 +428,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAtsDocument" method="patch" path="/ats/{connection_id}/document/{id}" example="ats_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -415,7 +440,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
-    AtsDocument = new AtsDocument() {},
+    AtsDocument = new AtsDocument() {
+        CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
+        DocumentUrl = "https://vengeful-lashes.biz",
+        Filename = "bah_white_frantically.bz",
+        Id = "a9316274-2e60-4f01-8b33-73b6249fd4ca",
+        Type = AtsDocumentType.Resume,
+        UpdatedAt = System.DateTime.Parse("2022-11-28T22:09:41.297Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -447,8 +479,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisDocument" method="patch" path="/hris/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisDocument" method="patch" path="/hris/{connection_id}/document/{id}" example="hris_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -458,7 +491,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisDocumentRequest req = new PatchHrisDocumentRequest() {
-    HrisDocument = new HrisDocument() {},
+    HrisDocument = new HrisDocument() {
+        CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
+        DocumentUrl = "https://sore-decision.biz/",
+        Filename = "ridge_forager.xsl",
+        Id = "872f8d50-e1c5-40c1-af71-1bf3cbaa734c",
+        Type = HrisDocumentType.Policy,
+        UpdatedAt = System.DateTime.Parse("2025-09-17T01:55:35.570Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -490,8 +530,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchSigningDocument" method="patch" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -501,7 +542,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchSigningDocumentRequest req = new PatchSigningDocumentRequest() {
-    SigningDocument = new SigningDocument() {},
+    SigningDocument = new SigningDocument() {
+        CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-12-16T10:17:24.183Z").ToUniversalTime(),
+        Id = "92c73198-9b1c-4527-b4de-ec85322f1a73",
+        Name = "nam audax absens",
+        Status = SigningDocumentStatus.Voided,
+        UpdatedAt = System.DateTime.Parse("2025-08-07T18:12:00.493Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -653,8 +701,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAtsDocument" method="put" path="/ats/{connection_id}/document/{id}" example="ats_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -664,7 +713,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
-    AtsDocument = new AtsDocument() {},
+    AtsDocument = new AtsDocument() {
+        CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
+        DocumentUrl = "https://vengeful-lashes.biz",
+        Filename = "bah_white_frantically.bz",
+        Id = "a9316274-2e60-4f01-8b33-73b6249fd4ca",
+        Type = AtsDocumentType.Resume,
+        UpdatedAt = System.DateTime.Parse("2022-11-28T22:09:41.297Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -696,8 +752,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisDocument" method="put" path="/hris/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisDocument" method="put" path="/hris/{connection_id}/document/{id}" example="hris_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -707,7 +764,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisDocumentRequest req = new UpdateHrisDocumentRequest() {
-    HrisDocument = new HrisDocument() {},
+    HrisDocument = new HrisDocument() {
+        CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
+        DocumentUrl = "https://sore-decision.biz/",
+        Filename = "ridge_forager.xsl",
+        Id = "872f8d50-e1c5-40c1-af71-1bf3cbaa734c",
+        Type = HrisDocumentType.Policy,
+        UpdatedAt = System.DateTime.Parse("2025-09-17T01:55:35.570Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -739,8 +803,9 @@ Update a document
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateSigningDocument" method="put" path="/signing/{connection_id}/document/{id}" example="signing_document" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -750,7 +815,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateSigningDocumentRequest req = new UpdateSigningDocumentRequest() {
-    SigningDocument = new SigningDocument() {},
+    SigningDocument = new SigningDocument() {
+        CreatedAt = System.DateTime.Parse("2021-05-02T09:35:23.679Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-12-16T10:17:24.183Z").ToUniversalTime(),
+        Id = "92c73198-9b1c-4527-b4de-ec85322f1a73",
+        Name = "nam audax absens",
+        Status = SigningDocumentStatus.Voided,
+        UpdatedAt = System.DateTime.Parse("2025-08-07T18:12:00.493Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

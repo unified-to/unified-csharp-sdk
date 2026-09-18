@@ -17,8 +17,10 @@ Create a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingTaxrate" method="post" path="/accounting/{connection_id}/taxrate" example="accounting_taxrate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
-    accountingTaxrate: new AccountingTaxrate() {},
+    accountingTaxrate: new AccountingTaxrate() {
+        CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
+        Description = "Nemo atrox tricesimus creator aranea.",
+        Id = "4e784882-93ea-4586-bc43-026743ba6449",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "cogo",
+        Rate = 1D,
+        UpdatedAt = System.DateTime.Parse("2025-11-04T07:54:19.715Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +153,10 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingTaxrate" method="patch" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +166,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
-    AccountingTaxrate = new AccountingTaxrate() {},
+    AccountingTaxrate = new AccountingTaxrate() {
+        CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
+        Description = "Nemo atrox tricesimus creator aranea.",
+        Id = "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "cogo",
+        Rate = 1D,
+        UpdatedAt = System.DateTime.Parse("2025-11-04T07:54:19.725Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +247,10 @@ Update a taxrate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingTaxrate" method="put" path="/accounting/{connection_id}/taxrate/{id}" example="accounting_taxrate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +260,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
-    AccountingTaxrate = new AccountingTaxrate() {},
+    AccountingTaxrate = new AccountingTaxrate() {
+        CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
+        Description = "Nemo atrox tricesimus creator aranea.",
+        Id = "3a12088f-0124-4720-a4fc-8205f0fb1a05",
+        IsActive = false,
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "cogo",
+        Rate = 1D,
+        UpdatedAt = System.DateTime.Parse("2025-11-04T07:54:19.725Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

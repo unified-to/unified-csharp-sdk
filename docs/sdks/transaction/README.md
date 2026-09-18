@@ -17,8 +17,10 @@ Create a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingTransaction" method="post" path="/accounting/{connection_id}/transaction" example="accounting_transaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Transaction.CreateAccountingTransactionAsync(
-    accountingTransaction: new AccountingTransaction() {},
+    accountingTransaction: new AccountingTransaction() {
+        CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        Id = "530ce73e-3ab8-48ff-a572-81a47cf56dc1",
+        Lineitems = new List<AccountingTransactionLineItem>() {
+            new AccountingTransactionLineItem() {
+                CategoryIds = new List<string>() {},
+                Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+                Id = "88ce3554-fb4d-4ad0-9ace-6d2c3af152cc",
+                Name = "Salad",
+                ObjectType = "delicate",
+                TotalAmount = 58531D,
+                UnitAmount = 536D,
+                UnitQuantity = 91D,
+            },
+        },
+        Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        TaxAmount = 0D,
+        TotalAmount = 94452D,
+        UpdatedAt = System.DateTime.Parse("2021-09-10T02:36:49.519Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +163,10 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingTransaction" method="patch" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +176,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
-    AccountingTransaction = new AccountingTransaction() {},
+    AccountingTransaction = new AccountingTransaction() {
+        CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        Id = "21b69be7-0166-4233-91c4-e92eff66f31e",
+        Lineitems = new List<AccountingTransactionLineItem>() {
+            new AccountingTransactionLineItem() {
+                CategoryIds = new List<string>() {},
+                Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+                Id = "3dab4bec-d436-4800-9b97-68628a55b5e0",
+                Name = "Salad",
+                ObjectType = "delicate",
+                TotalAmount = 58531D,
+                UnitAmount = 536D,
+                UnitQuantity = 91D,
+            },
+        },
+        Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        TaxAmount = 0D,
+        TotalAmount = 94452D,
+        UpdatedAt = System.DateTime.Parse("2021-09-10T02:36:49.523Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +267,10 @@ Update a transaction
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingTransaction" method="put" path="/accounting/{connection_id}/transaction/{id}" example="accounting_transaction" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +280,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
-    AccountingTransaction = new AccountingTransaction() {},
+    AccountingTransaction = new AccountingTransaction() {
+        CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        Id = "21b69be7-0166-4233-91c4-e92eff66f31e",
+        Lineitems = new List<AccountingTransactionLineItem>() {
+            new AccountingTransactionLineItem() {
+                CategoryIds = new List<string>() {},
+                Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
+                Id = "3dab4bec-d436-4800-9b97-68628a55b5e0",
+                Name = "Salad",
+                ObjectType = "delicate",
+                TotalAmount = 58531D,
+                UnitAmount = 536D,
+                UnitQuantity = 91D,
+            },
+        },
+        Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        TaxAmount = 0D,
+        TotalAmount = 94452D,
+        UpdatedAt = System.DateTime.Parse("2021-09-10T02:36:49.523Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

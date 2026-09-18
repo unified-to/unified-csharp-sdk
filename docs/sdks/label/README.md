@@ -17,8 +17,9 @@ Create a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" -->
+<!-- UsageSnippet language="csharp" operationID="createShippingLabel" method="post" path="/shipping/{connection_id}/label" example="shipping_label" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Label.CreateShippingLabelAsync(
-    shippingLabel: new ShippingLabel() {},
+    shippingLabel: new ShippingLabel() {
+        CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
+        Id = "b1a2cbe7-daa0-4fe1-a4db-10b32f67618f",
+        IsVoided = false,
+        LabelCost = 40.83653403213248D,
+        LabelCostCurrency = "USD",
+        LabelFormat = LabelFormat.Png,
+        LabelUrl = "https://optimal-meadow.net",
+        ServiceCode = "GIz",
+        Status = ShippingLabelStatus.Exception,
+        TrackingNumber = "zYv60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-16T18:20:50.737Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +155,9 @@ Update a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchShippingLabel" method="patch" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +167,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
-    ShippingLabel = new ShippingLabel() {},
+    ShippingLabel = new ShippingLabel() {
+        CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
+        Id = "0936a3b6-f849-46e3-a10d-946d76091c5d",
+        IsVoided = false,
+        LabelCost = 40.83653403213248D,
+        LabelCostCurrency = "USD",
+        LabelFormat = LabelFormat.Png,
+        LabelUrl = "https://optimal-meadow.net",
+        ServiceCode = "GIz",
+        Status = ShippingLabelStatus.Exception,
+        TrackingNumber = "zYv60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-16T18:20:50.742Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +251,9 @@ Update a label
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateShippingLabel" method="put" path="/shipping/{connection_id}/label/{id}" example="shipping_label" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +263,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
-    ShippingLabel = new ShippingLabel() {},
+    ShippingLabel = new ShippingLabel() {
+        CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
+        Id = "0936a3b6-f849-46e3-a10d-946d76091c5d",
+        IsVoided = false,
+        LabelCost = 40.83653403213248D,
+        LabelCostCurrency = "USD",
+        LabelFormat = LabelFormat.Png,
+        LabelUrl = "https://optimal-meadow.net",
+        ServiceCode = "GIz",
+        Status = ShippingLabelStatus.Exception,
+        TrackingNumber = "zYv60FOIBUJ6",
+        UpdatedAt = System.DateTime.Parse("2024-04-16T18:20:50.742Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

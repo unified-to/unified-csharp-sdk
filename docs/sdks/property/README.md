@@ -17,8 +17,9 @@ Create a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" -->
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" example="analytics_property" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Property.CreateAnalyticsPropertyAsync(
-    analyticsProperty: new AnalyticsProperty() {},
+    analyticsProperty: new AnalyticsProperty() {
+        CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "839e126a-c1d9-48e4-94de-156419a6be61",
+        Name = "Daniel, Goldner and Dickinson",
+        Timezone = "UTC",
+        UpdatedAt = System.DateTime.Parse("2021-09-14T16:36:17.635Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +150,9 @@ Update a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" example="analytics_property" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +162,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
-    AnalyticsProperty = new AnalyticsProperty() {},
+    AnalyticsProperty = new AnalyticsProperty() {
+        CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "5958e741-450a-4284-88c1-af3528148dcf",
+        Name = "Daniel, Goldner and Dickinson",
+        Timezone = "UTC",
+        UpdatedAt = System.DateTime.Parse("2021-09-14T16:36:17.635Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +241,9 @@ Update a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" example="analytics_property" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +253,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
-    AnalyticsProperty = new AnalyticsProperty() {},
+    AnalyticsProperty = new AnalyticsProperty() {
+        CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "5958e741-450a-4284-88c1-af3528148dcf",
+        Name = "Daniel, Goldner and Dickinson",
+        Timezone = "UTC",
+        UpdatedAt = System.DateTime.Parse("2021-09-14T16:36:17.635Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

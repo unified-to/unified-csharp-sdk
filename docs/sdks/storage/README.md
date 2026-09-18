@@ -17,8 +17,10 @@ Create a file
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createStorageFile" method="post" path="/storage/{connection_id}/file" -->
+<!-- UsageSnippet language="csharp" operationID="createStorageFile" method="post" path="/storage/{connection_id}/file" example="storage_file" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Storage.CreateStorageFileAsync(
-    storageFile: new StorageFile() {},
+    storageFile: new StorageFile() {
+        CreatedAt = System.DateTime.Parse("2021-09-12T16:48:23.774Z").ToUniversalTime(),
+        Data = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+        Description = "Crastinus cupiditate debilito cimentarius virgo.",
+        DownloadUrl = "https://stingy-casement.name/",
+        Hash = "fe6a659e-75cd-4079-9b76-351f9af2205a",
+        Id = "53dc27e2-0030-4501-8b1b-6e9e4b170adb",
+        MimeType = "FOLDER",
+        Name = "softly.tiff",
+        References = new List<StorageReference>() {
+            new StorageReference() {
+                Id = "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+                Name = "tamisium viduo odio cauda",
+                Type = "accounting_bill",
+            },
+            new StorageReference() {
+                Id = "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+                Name = "quia",
+                Type = "accounting_expense",
+            },
+        },
+        Size = 10276D,
+        Tags = new List<string>() {
+            "spoliatio",
+        },
+        Type = StorageFileType.File,
+        UpdatedAt = System.DateTime.Parse("2023-01-27T11:58:12.326Z").ToUniversalTime(),
+        Version = "1",
+        WebUrl = "https://sandy-distinction.info/",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +173,10 @@ Update a file
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchStorageFile" method="patch" path="/storage/{connection_id}/file/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchStorageFile" method="patch" path="/storage/{connection_id}/file/{id}" example="storage_file" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +186,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchStorageFileRequest req = new PatchStorageFileRequest() {
-    StorageFile = new StorageFile() {},
+    StorageFile = new StorageFile() {
+        CreatedAt = System.DateTime.Parse("2021-09-12T16:48:23.774Z").ToUniversalTime(),
+        Data = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+        Description = "Crastinus cupiditate debilito cimentarius virgo.",
+        DownloadUrl = "https://stingy-casement.name/",
+        Hash = "fe6a659e-75cd-4079-9b76-351f9af2205a",
+        Id = "d475f153-100a-4257-a6ad-70f276ab57ff",
+        MimeType = "FOLDER",
+        Name = "softly.tiff",
+        References = new List<StorageReference>() {
+            new StorageReference() {
+                Id = "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+                Name = "tamisium viduo odio cauda",
+                Type = "accounting_bill",
+            },
+            new StorageReference() {
+                Id = "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+                Name = "quia",
+                Type = "accounting_expense",
+            },
+        },
+        Size = 10276D,
+        Tags = new List<string>() {
+            "spoliatio",
+        },
+        Type = StorageFileType.File,
+        UpdatedAt = System.DateTime.Parse("2023-01-27T11:58:12.331Z").ToUniversalTime(),
+        Version = "1",
+        WebUrl = "https://sandy-distinction.info/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +287,10 @@ Update a file
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateStorageFile" method="put" path="/storage/{connection_id}/file/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateStorageFile" method="put" path="/storage/{connection_id}/file/{id}" example="storage_file" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +300,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateStorageFileRequest req = new UpdateStorageFileRequest() {
-    StorageFile = new StorageFile() {},
+    StorageFile = new StorageFile() {
+        CreatedAt = System.DateTime.Parse("2021-09-12T16:48:23.774Z").ToUniversalTime(),
+        Data = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgYmFzZVByb2ZpbGU9ImZ1bGwiIHdpZHRoPSI4MzIiIGhlaWdodD0iMTg2MSI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iIzFmYzM1NSIvPjx0ZXh0IHg9IjQxNiIgeT0iOTMwLjUiIGZvbnQtc2l6ZT0iMjAiIGFsaWdubWVudC1iYXNlbGluZT0ibWlkZGxlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSI+ODMyeDE4NjE8L3RleHQ+PC9zdmc+",
+        Description = "Crastinus cupiditate debilito cimentarius virgo.",
+        DownloadUrl = "https://stingy-casement.name/",
+        Hash = "fe6a659e-75cd-4079-9b76-351f9af2205a",
+        Id = "d475f153-100a-4257-a6ad-70f276ab57ff",
+        MimeType = "FOLDER",
+        Name = "softly.tiff",
+        References = new List<StorageReference>() {
+            new StorageReference() {
+                Id = "ab705f3b-e368-4a94-8b22-d5f693c14a76",
+                Name = "tamisium viduo odio cauda",
+                Type = "accounting_bill",
+            },
+            new StorageReference() {
+                Id = "9f0f694e-b6f4-4c12-b5f6-ab08d4e81140",
+                Name = "quia",
+                Type = "accounting_expense",
+            },
+        },
+        Size = 10276D,
+        Tags = new List<string>() {
+            "spoliatio",
+        },
+        Type = StorageFileType.File,
+        UpdatedAt = System.DateTime.Parse("2023-01-27T11:58:12.331Z").ToUniversalTime(),
+        Version = "1",
+        WebUrl = "https://sandy-distinction.info/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

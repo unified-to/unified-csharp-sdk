@@ -17,8 +17,10 @@ Create a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" -->
+<!-- UsageSnippet language="csharp" operationID="createTicketingTicket" method="post" path="/ticketing/{connection_id}/ticket" example="ticketing_ticket" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,29 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ticket.CreateTicketingTicketAsync(
-    ticketingTicket: new TicketingTicket() {},
+    ticketingTicket: new TicketingTicket() {
+        AttachmentIds = new List<string>() {
+            "54d062bd-6a74-4ef8-bc70-dc824a2e49fd",
+            "33196987-bf69-447f-b801-4dc7d0300c6e",
+        },
+        CategoryId = "vilicus",
+        CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
+        Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+        DueAt = System.DateTime.Parse("2025-07-20T03:58:02.236Z").ToUniversalTime(),
+        Id = "d06273e9-21f7-41fb-af1f-e6e23ba3756a",
+        Priority = "LOW",
+        Source = "atavus",
+        SourceRef = "ca9c1ed1-8fbe-47fa-9a41-de23adbe14c3",
+        Status = TicketingTicketStatus.Active,
+        Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
+        Tags = new List<string>() {
+            "tamen",
+            "vitae",
+            "torrens",
+        },
+        UpdatedAt = System.DateTime.Parse("2023-05-28T07:25:49.682Z").ToUniversalTime(),
+        Url = "https://yellowish-testimonial.biz",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +166,10 @@ Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTicketingTicket" method="patch" path="/ticketing/{connection_id}/ticket/{id}" example="ticketing_ticket" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +179,29 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
-    TicketingTicket = new TicketingTicket() {},
+    TicketingTicket = new TicketingTicket() {
+        AttachmentIds = new List<string>() {
+            "9197eddb-0952-47e3-9d92-bde276596617",
+            "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+        },
+        CategoryId = "vilicus",
+        CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
+        Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+        DueAt = System.DateTime.Parse("2025-07-20T03:58:02.245Z").ToUniversalTime(),
+        Id = "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+        Priority = "LOW",
+        Source = "atavus",
+        SourceRef = "f4065406-3997-493a-915a-e6e2f051cab8",
+        Status = TicketingTicketStatus.Active,
+        Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
+        Tags = new List<string>() {
+            "tamen",
+            "vitae",
+            "torrens",
+        },
+        UpdatedAt = System.DateTime.Parse("2023-05-28T07:25:49.687Z").ToUniversalTime(),
+        Url = "https://yellowish-testimonial.biz",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +273,10 @@ Update a ticket
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTicketingTicket" method="put" path="/ticketing/{connection_id}/ticket/{id}" example="ticketing_ticket" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +286,29 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
-    TicketingTicket = new TicketingTicket() {},
+    TicketingTicket = new TicketingTicket() {
+        AttachmentIds = new List<string>() {
+            "9197eddb-0952-47e3-9d92-bde276596617",
+            "ad106e8a-7e0f-438e-a59b-fe93218d4b16",
+        },
+        CategoryId = "vilicus",
+        CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
+        Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
+        DueAt = System.DateTime.Parse("2025-07-20T03:58:02.245Z").ToUniversalTime(),
+        Id = "df52c483-0b6f-4e68-80ae-8757d7df2d37",
+        Priority = "LOW",
+        Source = "atavus",
+        SourceRef = "f4065406-3997-493a-915a-e6e2f051cab8",
+        Status = TicketingTicketStatus.Active,
+        Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
+        Tags = new List<string>() {
+            "tamen",
+            "vitae",
+            "torrens",
+        },
+        UpdatedAt = System.DateTime.Parse("2023-05-28T07:25:49.687Z").ToUniversalTime(),
+        Url = "https://yellowish-testimonial.biz",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

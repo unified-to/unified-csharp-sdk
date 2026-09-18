@@ -17,8 +17,9 @@ Create a benefit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisBenefit" method="post" path="/hris/{connection_id}/benefit" example="hris_benefit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Benefit.CreateHrisBenefitAsync(
-    hrisBenefit: new HrisBenefit() {},
+    hrisBenefit: new HrisBenefit() {
+        CoverageLevel = CoverageLevel.EmployeeSpouse,
+        CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
+        Currency = "JOD",
+        Description = "Vomito voluptas dolor sed.",
+        EmployerContributionAmount = 185006D,
+        EmployerContributionMaxAmount = 179093D,
+        EmployerContributionType = EmployerContributionType.Percentage,
+        Frequency = HrisBenefitFrequency.Hour,
+        Id = "56df050c-d73e-477d-a39f-341eca6ae236",
+        IsActive = false,
+        Name = "Frozen Wooden Ball",
+        Tax = Tax.PreTax,
+        Type = HrisBenefitType.Garnishment,
+        UpdatedAt = System.DateTime.Parse("2023-03-06T11:00:57.658Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +158,9 @@ Update a benefit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisBenefit" method="patch" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +170,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
-    HrisBenefit = new HrisBenefit() {},
+    HrisBenefit = new HrisBenefit() {
+        CoverageLevel = CoverageLevel.EmployeeSpouse,
+        CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
+        Currency = "JOD",
+        Description = "Vomito voluptas dolor sed.",
+        EmployerContributionAmount = 185006D,
+        EmployerContributionMaxAmount = 179093D,
+        EmployerContributionType = EmployerContributionType.Percentage,
+        Frequency = HrisBenefitFrequency.Hour,
+        Id = "c01bd534-fa42-44cf-a806-ff9377fd25be",
+        IsActive = false,
+        Name = "Frozen Wooden Ball",
+        Tax = Tax.PreTax,
+        Type = HrisBenefitType.Garnishment,
+        UpdatedAt = System.DateTime.Parse("2023-03-06T11:00:57.663Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +257,9 @@ Update a benefit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisBenefit" method="put" path="/hris/{connection_id}/benefit/{id}" example="hris_benefit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +269,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
-    HrisBenefit = new HrisBenefit() {},
+    HrisBenefit = new HrisBenefit() {
+        CoverageLevel = CoverageLevel.EmployeeSpouse,
+        CreatedAt = System.DateTime.Parse("2020-06-11T01:24:05.654Z").ToUniversalTime(),
+        Currency = "JOD",
+        Description = "Vomito voluptas dolor sed.",
+        EmployerContributionAmount = 185006D,
+        EmployerContributionMaxAmount = 179093D,
+        EmployerContributionType = EmployerContributionType.Percentage,
+        Frequency = HrisBenefitFrequency.Hour,
+        Id = "c01bd534-fa42-44cf-a806-ff9377fd25be",
+        IsActive = false,
+        Name = "Frozen Wooden Ball",
+        Tax = Tax.PreTax,
+        Type = HrisBenefitType.Garnishment,
+        UpdatedAt = System.DateTime.Parse("2023-03-06T11:00:57.663Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

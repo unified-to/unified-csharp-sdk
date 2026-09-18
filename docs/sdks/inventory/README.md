@@ -17,8 +17,9 @@ Create an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" -->
+<!-- UsageSnippet language="csharp" operationID="createCommerceInventory" method="post" path="/commerce/{connection_id}/inventory" example="commerce_inventory" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
-    commerceInventory: new CommerceInventory() {},
+    commerceInventory: new CommerceInventory() {
+        Available = 337D,
+        UpdatedAt = System.DateTime.Parse("2025-10-24T19:37:09.813Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +146,9 @@ Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCommerceInventory" method="patch" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +158,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
-    CommerceInventory = new CommerceInventory() {},
+    CommerceInventory = new CommerceInventory() {
+        Available = 337D,
+        UpdatedAt = System.DateTime.Parse("2025-10-24T19:37:09.818Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +233,9 @@ Update an inventory
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCommerceInventory" method="put" path="/commerce/{connection_id}/inventory/{id}" example="commerce_inventory" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +245,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
-    CommerceInventory = new CommerceInventory() {},
+    CommerceInventory = new CommerceInventory() {
+        Available = 337D,
+        UpdatedAt = System.DateTime.Parse("2025-10-24T19:37:09.818Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

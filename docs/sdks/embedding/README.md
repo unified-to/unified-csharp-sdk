@@ -12,8 +12,9 @@ Create an embedding
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" -->
+<!-- UsageSnippet language="csharp" operationID="createGenaiEmbedding" method="post" path="/genai/{connection_id}/embedding" example="genai_embedding" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -22,7 +23,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Embedding.CreateGenaiEmbeddingAsync(
-    genaiEmbedding: new GenaiEmbedding() {},
+    genaiEmbedding: new GenaiEmbedding() {
+        Content = new List<GenaiEmbeddingContent>() {
+            new GenaiEmbeddingContent() {
+                Text = "Utrimque temptatio pecco demulceo.",
+            },
+        },
+        Dimension = 423D,
+        Embeddings = "Est.",
+        EncondingFormat = EncondingFormat.Float,
+        Id = "7fd5d308-20f8-4679-bdfa-0da51e707b1c",
+        MaxTokens = 223D,
+        TokensUsed = 836D,
+        Type = "classification",
+    },
     connectionId: "<id>"
 );
 

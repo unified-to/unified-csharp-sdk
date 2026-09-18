@@ -17,8 +17,10 @@ Create a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createVerificationRequest" method="post" path="/verification/{connection_id}/request" -->
+<!-- UsageSnippet language="csharp" operationID="createVerificationRequest" method="post" path="/verification/{connection_id}/request" example="verification_request" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Request.CreateVerificationRequestAsync(
-    verificationRequest: new VerificationRequest() {},
+    verificationRequest: new VerificationRequest() {
+        CreatedAt = System.DateTime.Parse("2023-11-20T08:17:29.950Z").ToUniversalTime(),
+        Id = "f7756dc2-2c83-421a-b2e4-dc10eefb914d",
+        Parameters = new List<VerificationParameterInput>() {},
+        ProfileAddresses = new List<VerificationAddress>() {},
+        ProfileEmails = new List<string>() {},
+        ProfileTelephones = new List<string>() {},
+        ResponseDetails = new List<VerificationResponseDetail>() {},
+        ResponseDownloadUrls = new List<string>() {},
+        ResponseSource = "Implemented regional protocol",
+        ResponseStatus = VerificationRequestResponseStatus.Pending,
+        UpdatedAt = System.DateTime.Parse("2023-12-26T03:33:26.786Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +156,10 @@ Update a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchVerificationRequest" method="patch" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchVerificationRequest" method="patch" path="/verification/{connection_id}/request/{id}" example="verification_request" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +169,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchVerificationRequestRequest req = new PatchVerificationRequestRequest() {
-    VerificationRequest = new VerificationRequest() {},
+    VerificationRequest = new VerificationRequest() {
+        CreatedAt = System.DateTime.Parse("2023-11-20T08:17:29.950Z").ToUniversalTime(),
+        Id = "b3679484-2e6a-4545-b4f5-140c9f7b4ee6",
+        Parameters = new List<VerificationParameterInput>() {},
+        ProfileAddresses = new List<VerificationAddress>() {},
+        ProfileEmails = new List<string>() {},
+        ProfileTelephones = new List<string>() {},
+        ResponseDetails = new List<VerificationResponseDetail>() {},
+        ResponseDownloadUrls = new List<string>() {},
+        ResponseSource = "Implemented regional protocol",
+        ResponseStatus = VerificationRequestResponseStatus.Pending,
+        UpdatedAt = System.DateTime.Parse("2023-12-26T03:33:26.787Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +253,10 @@ Update a request
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateVerificationRequest" method="put" path="/verification/{connection_id}/request/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateVerificationRequest" method="put" path="/verification/{connection_id}/request/{id}" example="verification_request" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +266,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateVerificationRequestRequest req = new UpdateVerificationRequestRequest() {
-    VerificationRequest = new VerificationRequest() {},
+    VerificationRequest = new VerificationRequest() {
+        CreatedAt = System.DateTime.Parse("2023-11-20T08:17:29.950Z").ToUniversalTime(),
+        Id = "b3679484-2e6a-4545-b4f5-140c9f7b4ee6",
+        Parameters = new List<VerificationParameterInput>() {},
+        ProfileAddresses = new List<VerificationAddress>() {},
+        ProfileEmails = new List<string>() {},
+        ProfileTelephones = new List<string>() {},
+        ResponseDetails = new List<VerificationResponseDetail>() {},
+        ResponseDownloadUrls = new List<string>() {},
+        ResponseSource = "Implemented regional protocol",
+        ResponseStatus = VerificationRequestResponseStatus.Pending,
+        UpdatedAt = System.DateTime.Parse("2023-12-26T03:33:26.787Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

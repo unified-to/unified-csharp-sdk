@@ -17,8 +17,10 @@ Create a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" example="repo_pullrequest" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
-    repoPullrequest: new RepoPullrequest() {},
+    repoPullrequest: new RepoPullrequest() {
+        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.705Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
+        Id = "a371259c-921a-4ab7-8890-66df1900e75a",
+        Labels = new List<string>() {
+            "adhuc",
+            "quaerat",
+        },
+        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+        SourceBranchId = "microchip-navigate",
+        Status = RepoPullrequestStatus.Rejected,
+        TargetBranchId = "feed-reboot",
+        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
+        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.473Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +158,10 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +171,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
-    RepoPullrequest = new RepoPullrequest() {},
+    RepoPullrequest = new RepoPullrequest() {
+        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.711Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
+        Id = "047c6837-52d0-4609-a236-614e474b832a",
+        Labels = new List<string>() {
+            "adhuc",
+            "quaerat",
+        },
+        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+        SourceBranchId = "microchip-navigate",
+        Status = RepoPullrequestStatus.Rejected,
+        TargetBranchId = "feed-reboot",
+        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
+        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.479Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +257,10 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +270,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
-    RepoPullrequest = new RepoPullrequest() {},
+    RepoPullrequest = new RepoPullrequest() {
+        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.711Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
+        Id = "047c6837-52d0-4609-a236-614e474b832a",
+        Labels = new List<string>() {
+            "adhuc",
+            "quaerat",
+        },
+        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+        SourceBranchId = "microchip-navigate",
+        Status = RepoPullrequestStatus.Rejected,
+        TargetBranchId = "feed-reboot",
+        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
+        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.479Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

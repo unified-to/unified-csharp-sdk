@@ -29,8 +29,10 @@ Create an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAnalyticsEvent" method="post" path="/analytics/{connection_id}/event" -->
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsEvent" method="post" path="/analytics/{connection_id}/event" example="analytics_event" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -39,7 +41,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Analytics.CreateAnalyticsEventAsync(
-    analyticsEvent: new AnalyticsEvent() {},
+    analyticsEvent: new AnalyticsEvent() {
+        CreatedAt = System.DateTime.Parse("2023-06-21T03:13:22.954Z").ToUniversalTime(),
+        EventType = EventType.ScreenView,
+        Id = "2b637adf-8f0f-4471-bb62-420f1a3df3ff",
+        Metadata = new Dictionary<string, PropertyAnalyticsEventMetadata>() {
+            { "key", new PropertyAnalyticsEventMetadata() {} },
+        },
+        Name = "Xk707ttsb51v",
+        UpdatedAt = System.DateTime.Parse("2023-09-22T02:14:32.504Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -71,8 +82,9 @@ Create a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" -->
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsProperty" method="post" path="/analytics/{connection_id}/property" example="analytics_property" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -81,7 +93,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Analytics.CreateAnalyticsPropertyAsync(
-    analyticsProperty: new AnalyticsProperty() {},
+    analyticsProperty: new AnalyticsProperty() {
+        CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "839e126a-c1d9-48e4-94de-156419a6be61",
+        Name = "Daniel, Goldner and Dickinson",
+        Timezone = "UTC",
+        UpdatedAt = System.DateTime.Parse("2021-09-14T16:36:17.635Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -113,8 +132,10 @@ Create a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" -->
+<!-- UsageSnippet language="csharp" operationID="createAnalyticsVisitor" method="post" path="/analytics/{connection_id}/visitor" example="analytics_visitor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -123,7 +144,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Analytics.CreateAnalyticsVisitorAsync(
-    analyticsVisitor: new AnalyticsVisitor() {},
+    analyticsVisitor: new AnalyticsVisitor() {
+        CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Email = "Dallas_Mitchell@yahoo.com",
+        FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Id = "420ee3a3-c06b-4e84-aeb3-75a564a396af",
+        LastSeenAt = System.DateTime.Parse("2021-12-04T18:09:30.380Z").ToUniversalTime(),
+        Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
+            { "segment", new PropertyAnalyticsVisitorMetadata() {} },
+        },
+        Name = "Desiree O'Hara",
+        TotalEvents = 3639D,
+        UpdatedAt = System.DateTime.Parse("2025-06-03T08:28:54.986Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -528,8 +561,9 @@ Update a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAnalyticsProperty" method="patch" path="/analytics/{connection_id}/property/{id}" example="analytics_property" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -539,7 +573,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
-    AnalyticsProperty = new AnalyticsProperty() {},
+    AnalyticsProperty = new AnalyticsProperty() {
+        CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "5958e741-450a-4284-88c1-af3528148dcf",
+        Name = "Daniel, Goldner and Dickinson",
+        Timezone = "UTC",
+        UpdatedAt = System.DateTime.Parse("2021-09-14T16:36:17.635Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -571,8 +612,10 @@ Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAnalyticsVisitor" method="patch" path="/analytics/{connection_id}/visitor/{id}" example="analytics_visitor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -582,7 +625,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAnalyticsVisitorRequest req = new PatchAnalyticsVisitorRequest() {
-    AnalyticsVisitor = new AnalyticsVisitor() {},
+    AnalyticsVisitor = new AnalyticsVisitor() {
+        CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Email = "Dallas_Mitchell@yahoo.com",
+        FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Id = "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+        LastSeenAt = System.DateTime.Parse("2021-12-04T18:09:30.384Z").ToUniversalTime(),
+        Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
+            { "segment", new PropertyAnalyticsVisitorMetadata() {} },
+        },
+        Name = "Desiree O'Hara",
+        TotalEvents = 3639D,
+        UpdatedAt = System.DateTime.Parse("2025-06-03T08:28:54.997Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -694,8 +749,9 @@ Update a property
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAnalyticsProperty" method="put" path="/analytics/{connection_id}/property/{id}" example="analytics_property" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -705,7 +761,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
-    AnalyticsProperty = new AnalyticsProperty() {},
+    AnalyticsProperty = new AnalyticsProperty() {
+        CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "5958e741-450a-4284-88c1-af3528148dcf",
+        Name = "Daniel, Goldner and Dickinson",
+        Timezone = "UTC",
+        UpdatedAt = System.DateTime.Parse("2021-09-14T16:36:17.635Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -737,8 +800,10 @@ Update a visitor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAnalyticsVisitor" method="put" path="/analytics/{connection_id}/visitor/{id}" example="analytics_visitor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -748,7 +813,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAnalyticsVisitorRequest req = new UpdateAnalyticsVisitorRequest() {
-    AnalyticsVisitor = new AnalyticsVisitor() {},
+    AnalyticsVisitor = new AnalyticsVisitor() {
+        CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Email = "Dallas_Mitchell@yahoo.com",
+        FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
+        Id = "0a544765-aa1c-4b18-b2ed-c837c06c1867",
+        LastSeenAt = System.DateTime.Parse("2021-12-04T18:09:30.384Z").ToUniversalTime(),
+        Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
+            { "segment", new PropertyAnalyticsVisitorMetadata() {} },
+        },
+        Name = "Desiree O'Hara",
+        TotalEvents = 3639D,
+        UpdatedAt = System.DateTime.Parse("2025-06-03T08:28:54.997Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -17,8 +17,10 @@ Create an employee
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisEmployee" method="post" path="/hris/{connection_id}/employee" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisEmployee" method="post" path="/hris/{connection_id}/employee" example="hris_employee" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,125 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Employee.CreateHrisEmployeeAsync(
-    hrisEmployee: new HrisEmployee() {},
+    hrisEmployee: new HrisEmployee() {
+        Address = new PropertyHrisEmployeeAddress() {
+            Address1 = "52008 Lansdowne Road",
+            Address2 = "Apt. 101",
+            City = "Connellyberg",
+            CountryCode = "US",
+            PostalCode = "18978",
+            Region = "South Dakota",
+            RegionCode = "NM",
+        },
+        Bio = "sushi devotee, singer",
+        Compensation = new List<HrisCompensation>() {
+            new HrisCompensation() {
+                Amount = 69148D,
+                Currency = "CRC",
+                Frequency = HrisCompensationFrequency.Quarter,
+                Notes = "Tergeo laborum laboriosam tutis.",
+                Type = HrisCompensationType.Equity,
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
+        Currency = "IDR",
+        DateOfBirth = System.DateTime.Parse("2001-04-22").ToUniversalTime(),
+        Emails = new List<HrisEmail>() {
+            new HrisEmail() {
+                Email = "Zetta_Prohaska67@hotmail.com",
+                Type = HrisEmailType.Home,
+            },
+        },
+        EmployeeNumber = "YuOt169CGu",
+        EmploymentStatus = EmploymentStatus.Active,
+        EmploymentType = HrisEmployeeEmploymentType.Volunteer,
+        FirstName = "Zetta",
+        Gender = HrisEmployeeGender.Intersex,
+        HasMfa = true,
+        HiredAt = System.DateTime.Parse("2023-05-10T16:15:07.653Z").ToUniversalTime(),
+        Id = "1dfdcf05-413d-4fb8-82f1-fe4ed9681c02",
+        ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
+        LanguageLocale = "es",
+        LastName = "Prohaska",
+        Locations = new List<HrisLocation>() {},
+        MaritalStatus = MaritalStatus.Married,
+        Metadata = new List<HrisMetadata>() {
+            new HrisMetadata() {
+                ExtraData = HrisMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = HrisMetadataFormat.Text,
+                Id = "1af6cea0-5868-4220-b922-55797633b82d",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = HrisMetadataValue.CreateStr(
+                    "tenetur"
+                ),
+            },
+        },
+        Name = "Zetta Prohaska",
+        Pronouns = "she/her",
+        Relationships = new List<HrisEmployeerelationship>() {
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Deshaun.Sanford24@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Rebeca.Dibbert11@hotmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Hester80@gmail.com",
+                    },
+                },
+                Name = "Automotive",
+                Type = HrisEmployeerelationshipType.Emergency,
+            },
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Benedict_Wisozk83@hotmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Princess_Rath43@gmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Elmira92@yahoo.com",
+                    },
+                },
+                Name = "Music",
+                Type = HrisEmployeerelationshipType.Friend,
+            },
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Jane30@gmail.com",
+                    },
+                },
+                Name = "Jewelry",
+                Type = HrisEmployeerelationshipType.Sibling,
+            },
+        },
+        Salutation = "Miss",
+        SsnSin = "yMRtj0Q3xO",
+        StorageQuotaAllocated = 3674489D,
+        StorageQuotaAvailable = 7748057D,
+        StorageQuotaUsed = 301727D,
+        Telephones = new List<HrisTelephone>() {
+            new HrisTelephone() {
+                Telephone = "(409) 801-3705",
+                Type = HrisTelephoneType.Fax,
+            },
+        },
+        TerminationReason = "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+        TimeoffDaysTotal = 12D,
+        TimeoffDaysUsed = 6D,
+        Timezone = "Africa/Harare",
+        Title = "Investor Paradigm Liaison",
+        UpdatedAt = System.DateTime.Parse("2022-02-19T07:02:15.352Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +262,10 @@ Update an employee
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisEmployee" method="patch" path="/hris/{connection_id}/employee/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisEmployee" method="patch" path="/hris/{connection_id}/employee/{id}" example="hris_employee" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +275,125 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
-    HrisEmployee = new HrisEmployee() {},
+    HrisEmployee = new HrisEmployee() {
+        Address = new PropertyHrisEmployeeAddress() {
+            Address1 = "52008 Lansdowne Road",
+            Address2 = "Apt. 101",
+            City = "Connellyberg",
+            CountryCode = "US",
+            PostalCode = "18978",
+            Region = "South Dakota",
+            RegionCode = "NM",
+        },
+        Bio = "sushi devotee, singer",
+        Compensation = new List<HrisCompensation>() {
+            new HrisCompensation() {
+                Amount = 69148D,
+                Currency = "CRC",
+                Frequency = HrisCompensationFrequency.Quarter,
+                Notes = "Tergeo laborum laboriosam tutis.",
+                Type = HrisCompensationType.Equity,
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
+        Currency = "IDR",
+        DateOfBirth = System.DateTime.Parse("2001-04-22").ToUniversalTime(),
+        Emails = new List<HrisEmail>() {
+            new HrisEmail() {
+                Email = "Zetta_Prohaska67@hotmail.com",
+                Type = HrisEmailType.Home,
+            },
+        },
+        EmployeeNumber = "YuOt169CGu",
+        EmploymentStatus = EmploymentStatus.Active,
+        EmploymentType = HrisEmployeeEmploymentType.Volunteer,
+        FirstName = "Zetta",
+        Gender = HrisEmployeeGender.Intersex,
+        HasMfa = true,
+        HiredAt = System.DateTime.Parse("2023-05-10T16:15:07.690Z").ToUniversalTime(),
+        Id = "f48de0fa-eaf1-4dda-a822-85ff56964d2a",
+        ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
+        LanguageLocale = "es",
+        LastName = "Prohaska",
+        Locations = new List<HrisLocation>() {},
+        MaritalStatus = MaritalStatus.Married,
+        Metadata = new List<HrisMetadata>() {
+            new HrisMetadata() {
+                ExtraData = HrisMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = HrisMetadataFormat.Text,
+                Id = "a70413d9-b815-4ba9-8f48-c242e3ecee27",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = HrisMetadataValue.CreateStr(
+                    "tenetur"
+                ),
+            },
+        },
+        Name = "Zetta Prohaska",
+        Pronouns = "she/her",
+        Relationships = new List<HrisEmployeerelationship>() {
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Deshaun.Sanford24@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Rebeca.Dibbert11@hotmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Hester80@gmail.com",
+                    },
+                },
+                Name = "Automotive",
+                Type = HrisEmployeerelationshipType.Emergency,
+            },
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Benedict_Wisozk83@hotmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Princess_Rath43@gmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Elmira92@yahoo.com",
+                    },
+                },
+                Name = "Music",
+                Type = HrisEmployeerelationshipType.Friend,
+            },
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Jane30@gmail.com",
+                    },
+                },
+                Name = "Jewelry",
+                Type = HrisEmployeerelationshipType.Sibling,
+            },
+        },
+        Salutation = "Miss",
+        SsnSin = "yMRtj0Q3xO",
+        StorageQuotaAllocated = 3674489D,
+        StorageQuotaAvailable = 7748057D,
+        StorageQuotaUsed = 301727D,
+        Telephones = new List<HrisTelephone>() {
+            new HrisTelephone() {
+                Telephone = "(409) 801-3705",
+                Type = HrisTelephoneType.Fax,
+            },
+        },
+        TerminationReason = "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+        TimeoffDaysTotal = 12D,
+        TimeoffDaysUsed = 6D,
+        Timezone = "Africa/Harare",
+        Title = "Investor Paradigm Liaison",
+        UpdatedAt = System.DateTime.Parse("2022-02-19T07:02:15.376Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +465,10 @@ Update an employee
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisEmployee" method="put" path="/hris/{connection_id}/employee/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisEmployee" method="put" path="/hris/{connection_id}/employee/{id}" example="hris_employee" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +478,125 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
-    HrisEmployee = new HrisEmployee() {},
+    HrisEmployee = new HrisEmployee() {
+        Address = new PropertyHrisEmployeeAddress() {
+            Address1 = "52008 Lansdowne Road",
+            Address2 = "Apt. 101",
+            City = "Connellyberg",
+            CountryCode = "US",
+            PostalCode = "18978",
+            Region = "South Dakota",
+            RegionCode = "NM",
+        },
+        Bio = "sushi devotee, singer",
+        Compensation = new List<HrisCompensation>() {
+            new HrisCompensation() {
+                Amount = 69148D,
+                Currency = "CRC",
+                Frequency = HrisCompensationFrequency.Quarter,
+                Notes = "Tergeo laborum laboriosam tutis.",
+                Type = HrisCompensationType.Equity,
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
+        Currency = "IDR",
+        DateOfBirth = System.DateTime.Parse("2001-04-22").ToUniversalTime(),
+        Emails = new List<HrisEmail>() {
+            new HrisEmail() {
+                Email = "Zetta_Prohaska67@hotmail.com",
+                Type = HrisEmailType.Home,
+            },
+        },
+        EmployeeNumber = "YuOt169CGu",
+        EmploymentStatus = EmploymentStatus.Active,
+        EmploymentType = HrisEmployeeEmploymentType.Volunteer,
+        FirstName = "Zetta",
+        Gender = HrisEmployeeGender.Intersex,
+        HasMfa = true,
+        HiredAt = System.DateTime.Parse("2023-05-10T16:15:07.690Z").ToUniversalTime(),
+        Id = "f48de0fa-eaf1-4dda-a822-85ff56964d2a",
+        ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
+        LanguageLocale = "es",
+        LastName = "Prohaska",
+        Locations = new List<HrisLocation>() {},
+        MaritalStatus = MaritalStatus.Married,
+        Metadata = new List<HrisMetadata>() {
+            new HrisMetadata() {
+                ExtraData = HrisMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = HrisMetadataFormat.Text,
+                Id = "a70413d9-b815-4ba9-8f48-c242e3ecee27",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = HrisMetadataValue.CreateStr(
+                    "tenetur"
+                ),
+            },
+        },
+        Name = "Zetta Prohaska",
+        Pronouns = "she/her",
+        Relationships = new List<HrisEmployeerelationship>() {
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Deshaun.Sanford24@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Rebeca.Dibbert11@hotmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Hester80@gmail.com",
+                    },
+                },
+                Name = "Automotive",
+                Type = HrisEmployeerelationshipType.Emergency,
+            },
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Benedict_Wisozk83@hotmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Princess_Rath43@gmail.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Elmira92@yahoo.com",
+                    },
+                },
+                Name = "Music",
+                Type = HrisEmployeerelationshipType.Friend,
+            },
+            new HrisEmployeerelationship() {
+                Emails = new List<HrisEmail>() {
+                    new HrisEmail() {
+                        Email = "Jane30@gmail.com",
+                    },
+                },
+                Name = "Jewelry",
+                Type = HrisEmployeerelationshipType.Sibling,
+            },
+        },
+        Salutation = "Miss",
+        SsnSin = "yMRtj0Q3xO",
+        StorageQuotaAllocated = 3674489D,
+        StorageQuotaAvailable = 7748057D,
+        StorageQuotaUsed = 301727D,
+        Telephones = new List<HrisTelephone>() {
+            new HrisTelephone() {
+                Telephone = "(409) 801-3705",
+                Type = HrisTelephoneType.Fax,
+            },
+        },
+        TerminationReason = "Communis adnuo damnatio atavus terebro acies canis cogito triumphus creber temptatio defendo cubo amissio paulatim corroboro.",
+        TimeoffDaysTotal = 12D,
+        TimeoffDaysUsed = 6D,
+        Timezone = "Africa/Harare",
+        Title = "Investor Paradigm Liaison",
+        UpdatedAt = System.DateTime.Parse("2022-02-19T07:02:15.376Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

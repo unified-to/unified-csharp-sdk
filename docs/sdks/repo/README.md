@@ -41,8 +41,9 @@ Create a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoBranch" method="post" path="/repo/{connection_id}/branch" example="repo_branch" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -52,8 +53,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
+        Id = "597e1772-7923-4e1d-875c-e660983871be",
+        Name = "voluptas",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2020-01-03T14:15:11.083Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -86,8 +90,9 @@ Create a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" example="repo_commit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -97,7 +102,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
+        CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
+        Id = "537657d4-be2d-4530-82aa-c8046846968a",
+        LinesAdded = 313D,
+        LinesChanged = 659D,
+        LinesDeleted = 482D,
+        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2023-05-16T02:59:38.478Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -130,8 +142,9 @@ Create an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoOrganization" method="post" path="/repo/{connection_id}/organization" example="repo_organization" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -140,7 +153,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.CreateRepoOrganizationAsync(
-    repoOrganization: new RepoOrganization() {},
+    repoOrganization: new RepoOrganization() {
+        AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
+        CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
+        Description = "Trepide defendo supra testimonium ager.",
+        Id = "94512032-1bb0-446e-b197-d5b971050f38",
+        Name = "Denesik - Lemke",
+        UpdatedAt = System.DateTime.Parse("2023-08-12T23:35:02.193Z").ToUniversalTime(),
+        WebUrl = "https://turbulent-overheard.biz",
+    },
     connectionId: "<id>"
 );
 
@@ -172,8 +193,10 @@ Create a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoPullrequest" method="post" path="/repo/{connection_id}/pullrequest" example="repo_pullrequest" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -182,7 +205,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.CreateRepoPullrequestAsync(
-    repoPullrequest: new RepoPullrequest() {},
+    repoPullrequest: new RepoPullrequest() {
+        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.705Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
+        Id = "a371259c-921a-4ab7-8890-66df1900e75a",
+        Labels = new List<string>() {
+            "adhuc",
+            "quaerat",
+        },
+        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+        SourceBranchId = "microchip-navigate",
+        Status = RepoPullrequestStatus.Rejected,
+        TargetBranchId = "feed-reboot",
+        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
+        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.473Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -214,8 +251,9 @@ Create a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoRepository" method="post" path="/repo/{connection_id}/repository" example="repo_repository" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -225,7 +263,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
+        Description = "Tribuo torqueo aetas ustulo illum.",
+        Id = "2b8e1ef3-d009-4d87-9a50-495da886c6d8",
+        IsPrivate = false,
+        Name = "suggero",
+        Owner = "Marcella Kuhic",
+        UpdatedAt = System.DateTime.Parse("2024-02-23T00:27:33.873Z").ToUniversalTime(),
+        WebUrl = "https://brown-phrase.info",
     },
     connectionId: "<id>"
 );
@@ -673,8 +718,9 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoBranch" method="patch" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -685,8 +731,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
+        Id = "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+        Name = "voluptas",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2020-01-03T14:15:11.084Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -719,8 +768,9 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -731,7 +781,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
+        CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
+        Id = "2b617b64-dffb-430e-8378-1009b9baedcf",
+        LinesAdded = 313D,
+        LinesChanged = 659D,
+        LinesDeleted = 482D,
+        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2023-05-16T02:59:38.482Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -764,8 +821,9 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoOrganization" method="patch" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -775,7 +833,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchRepoOrganizationRequest req = new PatchRepoOrganizationRequest() {
-    RepoOrganization = new RepoOrganization() {},
+    RepoOrganization = new RepoOrganization() {
+        AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
+        CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
+        Description = "Trepide defendo supra testimonium ager.",
+        Id = "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+        Name = "Denesik - Lemke",
+        UpdatedAt = System.DateTime.Parse("2023-08-12T23:35:02.195Z").ToUniversalTime(),
+        WebUrl = "https://turbulent-overheard.biz",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -807,8 +873,10 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoPullrequest" method="patch" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -818,7 +886,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
-    RepoPullrequest = new RepoPullrequest() {},
+    RepoPullrequest = new RepoPullrequest() {
+        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.711Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
+        Id = "047c6837-52d0-4609-a236-614e474b832a",
+        Labels = new List<string>() {
+            "adhuc",
+            "quaerat",
+        },
+        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+        SourceBranchId = "microchip-navigate",
+        Status = RepoPullrequestStatus.Rejected,
+        TargetBranchId = "feed-reboot",
+        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
+        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.479Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -850,8 +932,9 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoRepository" method="patch" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -862,7 +945,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoRepositoryRequest req = new PatchRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
+        Description = "Tribuo torqueo aetas ustulo illum.",
+        Id = "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+        IsPrivate = false,
+        Name = "suggero",
+        Owner = "Marcella Kuhic",
+        UpdatedAt = System.DateTime.Parse("2024-02-23T00:27:33.875Z").ToUniversalTime(),
+        WebUrl = "https://brown-phrase.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1095,8 +1185,9 @@ Update a branch
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoBranch" method="put" path="/repo/{connection_id}/branch/{id}" example="repo_branch" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1107,8 +1198,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
+        Id = "51e88d6d-eb9f-4fa3-8e8e-75e0b3c0d48f",
+        Name = "voluptas",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2020-01-03T14:15:11.084Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1141,8 +1235,9 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1153,7 +1248,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
+        CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
+        Id = "2b617b64-dffb-430e-8378-1009b9baedcf",
+        LinesAdded = 313D,
+        LinesChanged = 659D,
+        LinesDeleted = 482D,
+        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2023-05-16T02:59:38.482Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1186,8 +1288,9 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoOrganization" method="put" path="/repo/{connection_id}/organization/{id}" example="repo_organization" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1197,7 +1300,15 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateRepoOrganizationRequest req = new UpdateRepoOrganizationRequest() {
-    RepoOrganization = new RepoOrganization() {},
+    RepoOrganization = new RepoOrganization() {
+        AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
+        CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
+        Description = "Trepide defendo supra testimonium ager.",
+        Id = "9e3a01c3-1824-44f1-b5d3-55744e673e8a",
+        Name = "Denesik - Lemke",
+        UpdatedAt = System.DateTime.Parse("2023-08-12T23:35:02.195Z").ToUniversalTime(),
+        WebUrl = "https://turbulent-overheard.biz",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1229,8 +1340,10 @@ Update a pullrequest
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoPullrequest" method="put" path="/repo/{connection_id}/pullrequest/{id}" example="repo_pullrequest" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1240,7 +1353,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
-    RepoPullrequest = new RepoPullrequest() {},
+    RepoPullrequest = new RepoPullrequest() {
+        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.711Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
+        Id = "047c6837-52d0-4609-a236-614e474b832a",
+        Labels = new List<string>() {
+            "adhuc",
+            "quaerat",
+        },
+        Notes = "Coadunatio turbo curtus ceno consuasor aggero. Suggero adeo creptio tutamen vulnus aqua delicate adopto derelinquo caritas. Maiores vulgivagus succurro temporibus.",
+        SourceBranchId = "microchip-navigate",
+        Status = RepoPullrequestStatus.Rejected,
+        TargetBranchId = "feed-reboot",
+        Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
+        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.479Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1272,8 +1399,9 @@ Update a repository
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoRepository" method="put" path="/repo/{connection_id}/repository/{id}" example="repo_repository" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1284,7 +1412,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoRepositoryRequest req = new UpdateRepoRepositoryRequest() {
     RepoRepository = new RepoRepository() {
-        Name = "<value>",
+        CreatedAt = System.DateTime.Parse("2023-06-12T09:42:00.080Z").ToUniversalTime(),
+        Description = "Tribuo torqueo aetas ustulo illum.",
+        Id = "e4cc1567-240f-4c9f-a71e-0c80a589eb73",
+        IsPrivate = false,
+        Name = "suggero",
+        Owner = "Marcella Kuhic",
+        UpdatedAt = System.DateTime.Parse("2024-02-23T00:27:33.875Z").ToUniversalTime(),
+        WebUrl = "https://brown-phrase.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -31,8 +31,9 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" -->
+<!-- UsageSnippet language="csharp" operationID="createTaskComment" method="post" path="/task/{connection_id}/comment" example="task_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -41,7 +42,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskCommentAsync(
-    taskComment: new TaskComment() {},
+    taskComment: new TaskComment() {
+        CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "8b5be59d-1fbb-4870-9365-2a2f4ab8abf2",
+        Text = "Colo ulciscor sublime tabernus.",
+        UpdatedAt = System.DateTime.Parse("2021-09-24T01:13:00.569Z").ToUniversalTime(),
+        UserName = "Santina Abbott",
+    },
     connectionId: "<id>"
 );
 
@@ -73,8 +81,10 @@ Create a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" -->
+<!-- UsageSnippet language="csharp" operationID="createTaskProject" method="post" path="/task/{connection_id}/project" example="task_project" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -83,7 +93,45 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskProjectAsync(
-    taskProject: new TaskProject() {},
+    taskProject: new TaskProject() {
+        CreatedAt = System.DateTime.Parse("2023-06-23T16:39:40.446Z").ToUniversalTime(),
+        Description = "Valetudo aggredior accommodo curiositas vox.",
+        HasChildren = false,
+        HasTasks = false,
+        Id = "b89dd93c-edbd-47f7-8077-f16b2f9cf4a1",
+        Metadata = new List<TaskMetadata>() {
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "db969ea0-9310-4a66-a696-8fceb5ef1409",
+                Namespace = "custom",
+                Slug = "decens",
+                Value = TaskMetadataValue.CreateStr(
+                    "uterque"
+                ),
+            },
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "f2df3bed-7357-48cd-bf87-bd708995401a",
+                Namespace = "custom",
+                Slug = "benevolentia",
+                Value = TaskMetadataValue.CreateStr(
+                    "pariatur"
+                ),
+            },
+        },
+        Name = "Garden",
+        UpdatedAt = System.DateTime.Parse("2023-10-08T14:52:33.709Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -115,8 +163,10 @@ Create a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTaskTask" method="post" path="/task/{connection_id}/task" -->
+<!-- UsageSnippet language="csharp" operationID="createTaskTask" method="post" path="/task/{connection_id}/task" example="task_task" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -125,7 +175,32 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskTaskAsync(
-    taskTask: new TaskTask() {},
+    taskTask: new TaskTask() {
+        AttachmentIds = new List<string>() {},
+        CompletedAt = System.DateTime.Parse("2022-03-24T11:51:32.317Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2019-01-31T08:34:55.626Z").ToUniversalTime(),
+        DueAt = System.DateTime.Parse("2026-04-23T08:41:57.045Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2022-10-13T17:22:28.033Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "819ad665-4bd4-4280-a9da-e2b3fb56cfc5",
+        Metadata = new List<TaskMetadata>() {},
+        Name = "Direct Markets Architect",
+        Notes = "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+        Priority = "LOW",
+        Progress = 2D,
+        StartAt = System.DateTime.Parse("2022-01-19T11:23:51.489Z").ToUniversalTime(),
+        Status = TaskTaskStatus.InProgress,
+        StoryPoints = 0D,
+        Tags = new List<string>() {
+            "concido",
+            "rerum",
+        },
+        TimeSpent = 957D,
+        TimeSpentUnit = "SECONDS",
+        Type = "tubineus",
+        UpdatedAt = System.DateTime.Parse("2019-07-13T10:49:11.153Z").ToUniversalTime(),
+        Url = "https://dismal-silk.net/",
+    },
     connectionId: "<id>"
 );
 
@@ -489,8 +564,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTaskComment" method="patch" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -500,7 +576,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
-    TaskComment = new TaskComment() {},
+    TaskComment = new TaskComment() {
+        CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+        Text = "Colo ulciscor sublime tabernus.",
+        UpdatedAt = System.DateTime.Parse("2021-09-24T01:13:00.571Z").ToUniversalTime(),
+        UserName = "Santina Abbott",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -532,8 +615,10 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTaskProject" method="patch" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -543,7 +628,45 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
-    TaskProject = new TaskProject() {},
+    TaskProject = new TaskProject() {
+        CreatedAt = System.DateTime.Parse("2023-06-23T16:39:40.446Z").ToUniversalTime(),
+        Description = "Valetudo aggredior accommodo curiositas vox.",
+        HasChildren = false,
+        HasTasks = false,
+        Id = "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+        Metadata = new List<TaskMetadata>() {
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "5783b242-6b8f-46b3-8562-811ab290f6b2",
+                Namespace = "custom",
+                Slug = "decens",
+                Value = TaskMetadataValue.CreateStr(
+                    "uterque"
+                ),
+            },
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+                Namespace = "custom",
+                Slug = "benevolentia",
+                Value = TaskMetadataValue.CreateStr(
+                    "pariatur"
+                ),
+            },
+        },
+        Name = "Garden",
+        UpdatedAt = System.DateTime.Parse("2023-10-08T14:52:33.710Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -575,8 +698,10 @@ Update a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTaskTask" method="patch" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTaskTask" method="patch" path="/task/{connection_id}/task/{id}" example="task_task" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -586,7 +711,32 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTaskTaskRequest req = new PatchTaskTaskRequest() {
-    TaskTask = new TaskTask() {},
+    TaskTask = new TaskTask() {
+        AttachmentIds = new List<string>() {},
+        CompletedAt = System.DateTime.Parse("2022-03-24T11:51:32.324Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2019-01-31T08:34:55.626Z").ToUniversalTime(),
+        DueAt = System.DateTime.Parse("2026-04-23T08:41:57.062Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2022-10-13T17:22:28.042Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "1cb76329-5f4e-4d8f-8693-4e3550fc5a92",
+        Metadata = new List<TaskMetadata>() {},
+        Name = "Direct Markets Architect",
+        Notes = "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+        Priority = "LOW",
+        Progress = 2D,
+        StartAt = System.DateTime.Parse("2022-01-19T11:23:51.496Z").ToUniversalTime(),
+        Status = TaskTaskStatus.InProgress,
+        StoryPoints = 0D,
+        Tags = new List<string>() {
+            "concido",
+            "rerum",
+        },
+        TimeSpent = 957D,
+        TimeSpentUnit = "SECONDS",
+        Type = "tubineus",
+        UpdatedAt = System.DateTime.Parse("2019-07-13T10:49:11.154Z").ToUniversalTime(),
+        Url = "https://dismal-silk.net/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -738,8 +888,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTaskComment" method="put" path="/task/{connection_id}/comment/{id}" example="task_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -749,7 +900,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
-    TaskComment = new TaskComment() {},
+    TaskComment = new TaskComment() {
+        CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "8ad2ce33-cddd-43a3-ae6c-d249be67536e",
+        Text = "Colo ulciscor sublime tabernus.",
+        UpdatedAt = System.DateTime.Parse("2021-09-24T01:13:00.571Z").ToUniversalTime(),
+        UserName = "Santina Abbott",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -781,8 +939,10 @@ Update a project
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTaskProject" method="put" path="/task/{connection_id}/project/{id}" example="task_project" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -792,7 +952,45 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
-    TaskProject = new TaskProject() {},
+    TaskProject = new TaskProject() {
+        CreatedAt = System.DateTime.Parse("2023-06-23T16:39:40.446Z").ToUniversalTime(),
+        Description = "Valetudo aggredior accommodo curiositas vox.",
+        HasChildren = false,
+        HasTasks = false,
+        Id = "a7d75864-ea8c-4f67-a06e-003c3dc5a146",
+        Metadata = new List<TaskMetadata>() {
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "5783b242-6b8f-46b3-8562-811ab290f6b2",
+                Namespace = "custom",
+                Slug = "decens",
+                Value = TaskMetadataValue.CreateStr(
+                    "uterque"
+                ),
+            },
+            new TaskMetadata() {
+                ExtraData = TaskMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+
+                    }
+                ),
+                Format = TaskMetadataFormat.Text,
+                Id = "8cba443a-54d7-4e5a-9bd4-478f3bc6680e",
+                Namespace = "custom",
+                Slug = "benevolentia",
+                Value = TaskMetadataValue.CreateStr(
+                    "pariatur"
+                ),
+            },
+        },
+        Name = "Garden",
+        UpdatedAt = System.DateTime.Parse("2023-10-08T14:52:33.710Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -824,8 +1022,10 @@ Update a task
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTaskTask" method="put" path="/task/{connection_id}/task/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTaskTask" method="put" path="/task/{connection_id}/task/{id}" example="task_task" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -835,7 +1035,32 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTaskTaskRequest req = new UpdateTaskTaskRequest() {
-    TaskTask = new TaskTask() {},
+    TaskTask = new TaskTask() {
+        AttachmentIds = new List<string>() {},
+        CompletedAt = System.DateTime.Parse("2022-03-24T11:51:32.324Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2019-01-31T08:34:55.626Z").ToUniversalTime(),
+        DueAt = System.DateTime.Parse("2026-04-23T08:41:57.062Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2022-10-13T17:22:28.042Z").ToUniversalTime(),
+        HasChildren = true,
+        Id = "1cb76329-5f4e-4d8f-8693-4e3550fc5a92",
+        Metadata = new List<TaskMetadata>() {},
+        Name = "Direct Markets Architect",
+        Notes = "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
+        Priority = "LOW",
+        Progress = 2D,
+        StartAt = System.DateTime.Parse("2022-01-19T11:23:51.496Z").ToUniversalTime(),
+        Status = TaskTaskStatus.InProgress,
+        StoryPoints = 0D,
+        Tags = new List<string>() {
+            "concido",
+            "rerum",
+        },
+        TimeSpent = 957D,
+        TimeSpentUnit = "SECONDS",
+        Type = "tubineus",
+        UpdatedAt = System.DateTime.Parse("2019-07-13T10:49:11.154Z").ToUniversalTime(),
+        Url = "https://dismal-silk.net/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

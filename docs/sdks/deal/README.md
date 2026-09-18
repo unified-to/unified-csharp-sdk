@@ -17,8 +17,10 @@ Create a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" example="crm_deal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Deal.CreateCrmDealAsync(
-    crmDeal: new CrmDeal() {},
+    crmDeal: new CrmDeal() {
+        Amount = 98162D,
+        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.203Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.909Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
+        Currency = "IQD",
+        Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
+        Id = "fb9d739e-e46a-4253-80ea-9c4e45eb3f96",
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "3a2e4850-fb79-4e6a-958a-abab7bbc81dc",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "conatus"
+                ),
+            },
+        },
+        Name = "Frozen Silk Chicken",
+        Pipelines = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "eff2b7cd-af8e-4f47-aa85-163272ccc4d9",
+                Name = "trans",
+            },
+        },
+        Probability = 65D,
+        Source = "cubo",
+        Stages = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "1a391e21-a554-4075-9436-04b11d9c2f35",
+                Name = "tubineus",
+            },
+            new CrmReference() {
+                Id = "d764d0a0-f44d-482e-9090-04e20aedf149",
+                Name = "adfectus",
+            },
+        },
+        Tags = new List<string>() {
+            "causa",
+            "suus",
+        },
+        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.578Z").ToUniversalTime(),
+        WonReason = "Usque libero soleo.",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +193,10 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +206,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
-    CrmDeal = new CrmDeal() {},
+    CrmDeal = new CrmDeal() {
+        Amount = 98162D,
+        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.208Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.924Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
+        Currency = "IQD",
+        Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
+        Id = "c48de371-a2f9-40ba-b242-a1d9ef638384",
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "conatus"
+                ),
+            },
+        },
+        Name = "Frozen Silk Chicken",
+        Pipelines = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+                Name = "trans",
+            },
+        },
+        Probability = 65D,
+        Source = "cubo",
+        Stages = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+                Name = "tubineus",
+            },
+            new CrmReference() {
+                Id = "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+                Name = "adfectus",
+            },
+        },
+        Tags = new List<string>() {
+            "causa",
+            "suus",
+        },
+        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.587Z").ToUniversalTime(),
+        WonReason = "Usque libero soleo.",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +327,10 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +340,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
-    CrmDeal = new CrmDeal() {},
+    CrmDeal = new CrmDeal() {
+        Amount = 98162D,
+        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.208Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.924Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
+        Currency = "IQD",
+        Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
+        Id = "c48de371-a2f9-40ba-b242-a1d9ef638384",
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "conatus"
+                ),
+            },
+        },
+        Name = "Frozen Silk Chicken",
+        Pipelines = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+                Name = "trans",
+            },
+        },
+        Probability = 65D,
+        Source = "cubo",
+        Stages = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+                Name = "tubineus",
+            },
+            new CrmReference() {
+                Id = "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+                Name = "adfectus",
+            },
+        },
+        Tags = new List<string>() {
+            "causa",
+            "suus",
+        },
+        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.587Z").ToUniversalTime(),
+        WonReason = "Usque libero soleo.",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

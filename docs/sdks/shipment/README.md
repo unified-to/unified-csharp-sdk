@@ -17,8 +17,9 @@ Create a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" -->
+<!-- UsageSnippet language="csharp" operationID="createShippingShipment" method="post" path="/shipping/{connection_id}/shipment" example="shipping_shipment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Shipment.CreateShippingShipmentAsync(
-    shippingShipment: new ShippingShipment() {},
+    shippingShipment: new ShippingShipment() {
+        CarrierName = "Bogisich, Franey and Koelpin",
+        CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
+        Id = "aeba27e5-5821-4e2a-9407-bb494f9559b5",
+        RateAmount = 8.86546263936907D,
+        RateCurrency = "USD",
+        RateEstimatedDays = 8D,
+        RateServiceName = "Fisher - Kilback",
+        ServiceCode = "F7U",
+        ShippedAt = System.DateTime.Parse("2025-08-24T18:20:41.033Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Pending,
+        TrackingUrl = "https://shallow-secrecy.info/",
+        UpdatedAt = System.DateTime.Parse("2025-07-03T02:07:43.627Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +156,9 @@ Update a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchShippingShipment" method="patch" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +168,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
-    ShippingShipment = new ShippingShipment() {},
+    ShippingShipment = new ShippingShipment() {
+        CarrierName = "Bogisich, Franey and Koelpin",
+        CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
+        Id = "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+        RateAmount = 8.86546263936907D,
+        RateCurrency = "USD",
+        RateEstimatedDays = 8D,
+        RateServiceName = "Fisher - Kilback",
+        ServiceCode = "F7U",
+        ShippedAt = System.DateTime.Parse("2025-08-24T18:20:41.092Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Pending,
+        TrackingUrl = "https://shallow-secrecy.info/",
+        UpdatedAt = System.DateTime.Parse("2025-07-03T02:07:43.683Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +253,9 @@ Update a shipment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateShippingShipment" method="put" path="/shipping/{connection_id}/shipment/{id}" example="shipping_shipment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +265,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
-    ShippingShipment = new ShippingShipment() {},
+    ShippingShipment = new ShippingShipment() {
+        CarrierName = "Bogisich, Franey and Koelpin",
+        CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
+        Id = "b84ec753-8607-467c-9c32-9aea0c5c1b27",
+        RateAmount = 8.86546263936907D,
+        RateCurrency = "USD",
+        RateEstimatedDays = 8D,
+        RateServiceName = "Fisher - Kilback",
+        ServiceCode = "F7U",
+        ShippedAt = System.DateTime.Parse("2025-08-24T18:20:41.092Z").ToUniversalTime(),
+        Status = ShippingShipmentStatus.Pending,
+        TrackingUrl = "https://shallow-secrecy.info/",
+        UpdatedAt = System.DateTime.Parse("2025-07-03T02:07:43.683Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

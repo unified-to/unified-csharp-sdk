@@ -12,8 +12,10 @@ Create a rate
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" -->
+<!-- UsageSnippet language="csharp" operationID="createShippingRate" method="post" path="/shipping/{connection_id}/rate" example="shipping_rate" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -22,7 +24,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Rate.CreateShippingRateAsync(
-    shippingRate: new ShippingRate() {},
+    shippingRate: new ShippingRate() {
+        Currency = "USD",
+        Id = "08ea0d8f-f20c-4b47-9e57-6901e9b38266",
+        Rates = new List<ShippingRateRate>() {
+            new ShippingRateRate() {
+                Amount = 54.679719475097954D,
+                BaseAmount = 76.45537888631225D,
+                Currency = "USD",
+                DeliveryDays = 8D,
+                Description = "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
+                EstimatedDays = 10D,
+                EstimatedDeliveryEndAt = System.DateTime.Parse("2024-01-31T23:12:25.475Z").ToUniversalTime(),
+                IsGuaranteed = true,
+                IsNegotiatedRate = true,
+                TaxAmount = 2.2701712837442756D,
+                Title = "Turcotte Inc",
+            },
+        },
+    },
     connectionId: "<id>"
 );
 

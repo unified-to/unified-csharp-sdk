@@ -30,8 +30,10 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" -->
+<!-- UsageSnippet language="csharp" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" example="martech_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -40,7 +42,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.CreateMartechCampaignAsync(
-    marketingCampaign: new MarketingCampaign() {},
+    marketingCampaign: new MarketingCampaign() {
+        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
+        FromEmail = "Nick.Beahan@hotmail.com",
+        FromName = "Javier Rempel",
+        Id = "1d47a766-5cc6-4e40-959e-2dc9f36995c1",
+        ListIds = new List<string>() {
+            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+        },
+        Name = "Consequatur atqui sustineo.",
+        PreviewText = "Bellicus tener cinis causa cavus toties.",
+        ReplyToEmail = "Antwan.Abshire@hotmail.com",
+        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Sent,
+        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+        Type = "plaintext",
+        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -72,8 +90,9 @@ Create a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" -->
+<!-- UsageSnippet language="csharp" operationID="createMartechList" method="post" path="/martech/{connection_id}/list" example="martech_list" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -82,7 +101,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.CreateMartechListAsync(
-    marketingList: new MarketingList() {},
+    marketingList: new MarketingList() {
+        Address = new PropertyMarketingListAddress() {
+            Address1 = "922 Elmore Manor",
+            Address2 = "Suite 925",
+            City = "Deerfield Beach",
+            Country = "Bahrain",
+            PostalCode = "30765-6471",
+            Region = "FL",
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
+        Description = "Currus.",
+        Id = "8d9f0783-8b3b-4844-871c-a335856a11fa",
+        IsActive = true,
+        Language = "it",
+        Name = "Annette Nolan",
+        SenderCompany = "Hickle - Homenick",
+        SenderEmail = "Matt_Steuber@hotmail.com",
+        SenderName = "Salvatore Roob",
+        SenderPhone = "896-328-1153 x4957",
+        Subject = "Tenetur thymum circumvenio triumphus celo.",
+        UpdatedAt = System.DateTime.Parse("2022-08-30T12:23:12.884Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -114,8 +154,10 @@ Create a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" -->
+<!-- UsageSnippet language="csharp" operationID="createMartechMember" method="post" path="/martech/{connection_id}/member" example="martech_member" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -124,7 +166,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.CreateMartechMemberAsync(
-    marketingMember: new MarketingMember() {},
+    marketingMember: new MarketingMember() {
+        Company = "Miller - Franecki",
+        CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
+        Emails = new List<MarketingEmail>() {
+            new MarketingEmail() {
+                Email = "Thalia.Abernathy61@gmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Maymie59@hotmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Coty27@hotmail.com",
+                Type = MarketingEmailType.Work,
+            },
+        },
+        FirstName = "Jude",
+        Id = "a0a955df-e281-46e9-af34-0bcaf970081d",
+        LastName = "Leffler",
+        Name = "Jude Leffler",
+        Status = MarketingMemberStatus.Unsubscribed,
+        Tags = new List<string>() {
+            "vinco",
+            "ceno",
+        },
+        UpdatedAt = System.DateTime.Parse("2025-06-15T05:07:12.559Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -446,8 +515,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -457,7 +528,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMartechCampaignRequest req = new PatchMartechCampaignRequest() {
-    MarketingCampaign = new MarketingCampaign() {},
+    MarketingCampaign = new MarketingCampaign() {
+        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
+        FromEmail = "Nick.Beahan@hotmail.com",
+        FromName = "Javier Rempel",
+        Id = "a65cd827-3a78-44a7-846e-2bca453f14c1",
+        ListIds = new List<string>() {
+            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+        },
+        Name = "Consequatur atqui sustineo.",
+        PreviewText = "Bellicus tener cinis causa cavus toties.",
+        ReplyToEmail = "Antwan.Abshire@hotmail.com",
+        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Sent,
+        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+        Type = "plaintext",
+        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -489,8 +576,9 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMartechList" method="patch" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -500,7 +588,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMartechListRequest req = new PatchMartechListRequest() {
-    MarketingList = new MarketingList() {},
+    MarketingList = new MarketingList() {
+        Address = new PropertyMarketingListAddress() {
+            Address1 = "922 Elmore Manor",
+            Address2 = "Suite 925",
+            City = "Deerfield Beach",
+            Country = "Bahrain",
+            PostalCode = "30765-6471",
+            Region = "FL",
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
+        Description = "Currus.",
+        Id = "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+        IsActive = true,
+        Language = "it",
+        Name = "Annette Nolan",
+        SenderCompany = "Hickle - Homenick",
+        SenderEmail = "Matt_Steuber@hotmail.com",
+        SenderName = "Salvatore Roob",
+        SenderPhone = "896-328-1153 x4957",
+        Subject = "Tenetur thymum circumvenio triumphus celo.",
+        UpdatedAt = System.DateTime.Parse("2022-08-30T12:23:12.891Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -532,8 +641,10 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMartechMember" method="patch" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -543,7 +654,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMartechMemberRequest req = new PatchMartechMemberRequest() {
-    MarketingMember = new MarketingMember() {},
+    MarketingMember = new MarketingMember() {
+        Company = "Miller - Franecki",
+        CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
+        Emails = new List<MarketingEmail>() {
+            new MarketingEmail() {
+                Email = "Thalia.Abernathy61@gmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Maymie59@hotmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Coty27@hotmail.com",
+                Type = MarketingEmailType.Work,
+            },
+        },
+        FirstName = "Jude",
+        Id = "5cfa6758-bd0c-4077-8934-7357d115348d",
+        LastName = "Leffler",
+        Name = "Jude Leffler",
+        Status = MarketingMemberStatus.Unsubscribed,
+        Tags = new List<string>() {
+            "vinco",
+            "ceno",
+        },
+        UpdatedAt = System.DateTime.Parse("2025-06-15T05:07:12.567Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -695,8 +833,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -706,7 +846,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMartechCampaignRequest req = new UpdateMartechCampaignRequest() {
-    MarketingCampaign = new MarketingCampaign() {},
+    MarketingCampaign = new MarketingCampaign() {
+        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
+        FromEmail = "Nick.Beahan@hotmail.com",
+        FromName = "Javier Rempel",
+        Id = "a65cd827-3a78-44a7-846e-2bca453f14c1",
+        ListIds = new List<string>() {
+            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+        },
+        Name = "Consequatur atqui sustineo.",
+        PreviewText = "Bellicus tener cinis causa cavus toties.",
+        ReplyToEmail = "Antwan.Abshire@hotmail.com",
+        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Sent,
+        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+        Type = "plaintext",
+        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -738,8 +894,9 @@ Update a list
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMartechList" method="put" path="/martech/{connection_id}/list/{id}" example="martech_list" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -749,7 +906,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMartechListRequest req = new UpdateMartechListRequest() {
-    MarketingList = new MarketingList() {},
+    MarketingList = new MarketingList() {
+        Address = new PropertyMarketingListAddress() {
+            Address1 = "922 Elmore Manor",
+            Address2 = "Suite 925",
+            City = "Deerfield Beach",
+            Country = "Bahrain",
+            PostalCode = "30765-6471",
+            Region = "FL",
+        },
+        CreatedAt = System.DateTime.Parse("2019-09-18T02:01:36.950Z").ToUniversalTime(),
+        Description = "Currus.",
+        Id = "bb5014f1-fa07-4257-8cb4-383e4c685d06",
+        IsActive = true,
+        Language = "it",
+        Name = "Annette Nolan",
+        SenderCompany = "Hickle - Homenick",
+        SenderEmail = "Matt_Steuber@hotmail.com",
+        SenderName = "Salvatore Roob",
+        SenderPhone = "896-328-1153 x4957",
+        Subject = "Tenetur thymum circumvenio triumphus celo.",
+        UpdatedAt = System.DateTime.Parse("2022-08-30T12:23:12.891Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -781,8 +959,10 @@ Update a member
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMartechMember" method="put" path="/martech/{connection_id}/member/{id}" example="martech_member" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -792,7 +972,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMartechMemberRequest req = new UpdateMartechMemberRequest() {
-    MarketingMember = new MarketingMember() {},
+    MarketingMember = new MarketingMember() {
+        Company = "Miller - Franecki",
+        CreatedAt = System.DateTime.Parse("2022-04-15T15:32:38.496Z").ToUniversalTime(),
+        Emails = new List<MarketingEmail>() {
+            new MarketingEmail() {
+                Email = "Thalia.Abernathy61@gmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Maymie59@hotmail.com",
+                Type = MarketingEmailType.Home,
+            },
+            new MarketingEmail() {
+                Email = "Coty27@hotmail.com",
+                Type = MarketingEmailType.Work,
+            },
+        },
+        FirstName = "Jude",
+        Id = "5cfa6758-bd0c-4077-8934-7357d115348d",
+        LastName = "Leffler",
+        Name = "Jude Leffler",
+        Status = MarketingMemberStatus.Unsubscribed,
+        Tags = new List<string>() {
+            "vinco",
+            "ceno",
+        },
+        UpdatedAt = System.DateTime.Parse("2025-06-15T05:07:12.567Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

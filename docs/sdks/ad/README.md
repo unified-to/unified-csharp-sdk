@@ -17,8 +17,9 @@ Create an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" example="ads_ad" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ad.CreateAdsAdAsync(
-    adsAd: new AdsAd() {},
+    adsAd: new AdsAd() {
+        AdCopy = "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+        AdType = AdType.Social,
+        AdvertiserName = "Robel, Nader and Rau",
+        CreatedAt = System.DateTime.Parse("2022-11-08T03:38:20.978Z").ToUniversalTime(),
+        CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
+        Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+        FinalUrl = "https://improbable-sanity.com",
+        Id = "6630dd45-9b8c-481f-8b7b-6e77084f0597",
+        Name = "Hermiston Group",
+        Status = AdsAdStatus.Archived,
+        UpdatedAt = System.DateTime.Parse("2024-06-05T02:38:36.051Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +155,9 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +167,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsAdRequest req = new PatchAdsAdRequest() {
-    AdsAd = new AdsAd() {},
+    AdsAd = new AdsAd() {
+        AdCopy = "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+        AdType = AdType.Social,
+        AdvertiserName = "Robel, Nader and Rau",
+        CreatedAt = System.DateTime.Parse("2022-11-08T03:38:20.978Z").ToUniversalTime(),
+        CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
+        Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+        FinalUrl = "https://improbable-sanity.com",
+        Id = "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+        Name = "Hermiston Group",
+        Status = AdsAdStatus.Archived,
+        UpdatedAt = System.DateTime.Parse("2024-06-05T02:38:36.059Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +251,9 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +263,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsAdRequest req = new UpdateAdsAdRequest() {
-    AdsAd = new AdsAd() {},
+    AdsAd = new AdsAd() {
+        AdCopy = "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+        AdType = AdType.Social,
+        AdvertiserName = "Robel, Nader and Rau",
+        CreatedAt = System.DateTime.Parse("2022-11-08T03:38:20.978Z").ToUniversalTime(),
+        CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
+        Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+        FinalUrl = "https://improbable-sanity.com",
+        Id = "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+        Name = "Hermiston Group",
+        Status = AdsAdStatus.Archived,
+        UpdatedAt = System.DateTime.Parse("2024-06-05T02:38:36.059Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

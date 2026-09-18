@@ -17,8 +17,9 @@ Create an interview
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" -->
+<!-- UsageSnippet language="csharp" operationID="createAtsInterview" method="post" path="/ats/{connection_id}/interview" example="ats_interview" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Interview.CreateAtsInterviewAsync(
-    atsInterview: new AtsInterview() {},
+    atsInterview: new AtsInterview() {
+        CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-09-23T08:18:31.424Z").ToUniversalTime(),
+        ExternalEventXref = "22437263-a3c4-4bef-9da5-8a0a2814ab05",
+        Id = "97378090-9e36-41ba-b377-0bf55ead9114",
+        Location = "26596 Halle Trafficway",
+        StartAt = System.DateTime.Parse("2025-05-19T06:26:28.146Z").ToUniversalTime(),
+        Status = AtsInterviewStatus.Scheduled,
+        UpdatedAt = System.DateTime.Parse("2026-02-04T00:38:00.419Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +152,9 @@ Update an interview
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAtsInterview" method="patch" path="/ats/{connection_id}/interview/{id}" example="ats_interview" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +164,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
-    AtsInterview = new AtsInterview() {},
+    AtsInterview = new AtsInterview() {
+        CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-09-23T08:18:31.430Z").ToUniversalTime(),
+        ExternalEventXref = "d69449a5-d6ad-4010-a31f-49b8e650458b",
+        Id = "342cb8a4-20e4-4c9a-afd7-ca235b04f094",
+        Location = "26596 Halle Trafficway",
+        StartAt = System.DateTime.Parse("2025-05-19T06:26:28.151Z").ToUniversalTime(),
+        Status = AtsInterviewStatus.Scheduled,
+        UpdatedAt = System.DateTime.Parse("2026-02-04T00:38:00.426Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +245,9 @@ Update an interview
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAtsInterview" method="put" path="/ats/{connection_id}/interview/{id}" example="ats_interview" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +257,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
-    AtsInterview = new AtsInterview() {},
+    AtsInterview = new AtsInterview() {
+        CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-09-23T08:18:31.430Z").ToUniversalTime(),
+        ExternalEventXref = "d69449a5-d6ad-4010-a31f-49b8e650458b",
+        Id = "342cb8a4-20e4-4c9a-afd7-ca235b04f094",
+        Location = "26596 Halle Trafficway",
+        StartAt = System.DateTime.Parse("2025-05-19T06:26:28.151Z").ToUniversalTime(),
+        Status = AtsInterviewStatus.Scheduled,
+        UpdatedAt = System.DateTime.Parse("2026-02-04T00:38:00.426Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

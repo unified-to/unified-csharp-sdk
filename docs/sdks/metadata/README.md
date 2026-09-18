@@ -17,8 +17,10 @@ Create a metadata
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMetadataMetadata" method="post" path="/metadata/{connection_id}/metadata" -->
+<!-- UsageSnippet language="csharp" operationID="createMetadataMetadata" method="post" path="/metadata/{connection_id}/metadata" example="metadata_metadata" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,8 +30,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Metadata.CreateMetadataMetadataAsync(
     metadataMetadata: new MetadataMetadata() {
-        Name = "<value>",
-        ObjectType = "<value>",
+        CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
+        Format = MetadataMetadataFormat.Price,
+        Id = "ac11f5d2-602e-41dc-b187-ad043957c105",
+        IsRequired = false,
+        Name = "autem",
+        ObjectType = "clubs_group",
+        Objects = new Dictionary<string, object>() {
+
+        },
+        Options = new List<string>() {},
+        OriginalFormat = "advoco",
+        Slug = "arbustum",
+        UpdatedAt = System.DateTime.Parse("2025-02-26T08:01:01.682Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -145,8 +158,10 @@ Update a metadata
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMetadataMetadata" method="patch" path="/metadata/{connection_id}/metadata/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMetadataMetadata" method="patch" path="/metadata/{connection_id}/metadata/{id}" example="metadata_metadata" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -157,8 +172,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
-        Name = "<value>",
-        ObjectType = "<value>",
+        CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
+        Format = MetadataMetadataFormat.Price,
+        Id = "5070526c-4324-4c87-bebf-a9f8aed68f09",
+        IsRequired = false,
+        Name = "autem",
+        ObjectType = "clubs_group",
+        Objects = new Dictionary<string, object>() {
+
+        },
+        Options = new List<string>() {},
+        OriginalFormat = "advoco",
+        Slug = "arbustum",
+        UpdatedAt = System.DateTime.Parse("2025-02-26T08:01:01.690Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -231,8 +257,10 @@ Update a metadata
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMetadataMetadata" method="put" path="/metadata/{connection_id}/metadata/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMetadataMetadata" method="put" path="/metadata/{connection_id}/metadata/{id}" example="metadata_metadata" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -243,8 +271,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
-        Name = "<value>",
-        ObjectType = "<value>",
+        CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
+        Format = MetadataMetadataFormat.Price,
+        Id = "5070526c-4324-4c87-bebf-a9f8aed68f09",
+        IsRequired = false,
+        Name = "autem",
+        ObjectType = "clubs_group",
+        Objects = new Dictionary<string, object>() {
+
+        },
+        Options = new List<string>() {},
+        OriginalFormat = "advoco",
+        Slug = "arbustum",
+        UpdatedAt = System.DateTime.Parse("2025-02-26T08:01:01.690Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

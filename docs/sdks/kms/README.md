@@ -29,8 +29,9 @@ Create a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" -->
+<!-- UsageSnippet language="csharp" operationID="createKmsComment" method="post" path="/kms/{connection_id}/comment" example="kms_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -39,7 +40,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsCommentAsync(
-    kmsComment: new KmsComment() {},
+    kmsComment: new KmsComment() {
+        Content = "Decimus tolero viriliter usque.",
+        ContentType = ContentType.Html,
+        CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
+        Id = "7a7c211f-0d0c-4de6-8fa9-150729e7b4a3",
+        Type = KmsCommentType.Page,
+        UpdatedAt = System.DateTime.Parse("2023-11-16T08:15:30.752Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -71,8 +79,10 @@ Create a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" -->
+<!-- UsageSnippet language="csharp" operationID="createKmsPage" method="post" path="/kms/{connection_id}/page" example="kms_page" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -82,7 +92,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.CreateKmsPageAsync(
     kmsPage: new KmsPage() {
-        Type = KmsPageType.Text,
+        CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
+        DownloadUrl = "https://agitated-validity.info",
+        HasChildren = true,
+        Id = "f498e686-b37b-400a-8b10-93a6bc4e18f4",
+        IsActive = true,
+        Metadata = new List<KmsPageMetadata>() {},
+        Title = "even minister extract",
+        Type = KmsPageType.Html,
+        UpdatedAt = System.DateTime.Parse("2025-09-10T18:26:23.373Z").ToUniversalTime(),
+        WebUrl = "https://another-petticoat.info",
     },
     connectionId: "<id>"
 );
@@ -115,8 +134,9 @@ Create a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" -->
+<!-- UsageSnippet language="csharp" operationID="createKmsSpace" method="post" path="/kms/{connection_id}/space" example="kms_space" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -125,7 +145,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsSpaceAsync(
-    kmsSpace: new KmsSpace() {},
+    kmsSpace: new KmsSpace() {
+        CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
+        Description = "Acer.",
+        Id = "72f6d852-9f5b-447f-928a-dd6a6ca5a5f6",
+        IsActive = false,
+        Name = "into nor afore",
+        UpdatedAt = System.DateTime.Parse("2025-12-03T15:52:28.170Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -406,8 +433,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchKmsComment" method="patch" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -417,7 +445,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
-    KmsComment = new KmsComment() {},
+    KmsComment = new KmsComment() {
+        Content = "Decimus tolero viriliter usque.",
+        ContentType = ContentType.Html,
+        CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
+        Id = "6fddf474-4bea-4611-a88d-4d3410024ce8",
+        Type = KmsCommentType.Page,
+        UpdatedAt = System.DateTime.Parse("2023-11-16T08:15:30.755Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -449,8 +484,10 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchKmsPage" method="patch" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -461,7 +498,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchKmsPageRequest req = new PatchKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Type = KmsPageType.Other,
+        CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
+        DownloadUrl = "https://agitated-validity.info",
+        HasChildren = true,
+        Id = "0636844d-0893-488b-ae20-1aa19425e5d6",
+        IsActive = true,
+        Metadata = new List<KmsPageMetadata>() {},
+        Title = "even minister extract",
+        Type = KmsPageType.Html,
+        UpdatedAt = System.DateTime.Parse("2025-09-10T18:26:23.386Z").ToUniversalTime(),
+        WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -494,8 +540,9 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchKmsSpace" method="patch" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -505,7 +552,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {},
+    KmsSpace = new KmsSpace() {
+        CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
+        Description = "Acer.",
+        Id = "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+        IsActive = false,
+        Name = "into nor afore",
+        UpdatedAt = System.DateTime.Parse("2025-12-03T15:52:28.175Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -657,8 +711,9 @@ Update a comment
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateKmsComment" method="put" path="/kms/{connection_id}/comment/{id}" example="kms_comment" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -668,7 +723,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
-    KmsComment = new KmsComment() {},
+    KmsComment = new KmsComment() {
+        Content = "Decimus tolero viriliter usque.",
+        ContentType = ContentType.Html,
+        CreatedAt = System.DateTime.Parse("2022-08-26T14:40:49.732Z").ToUniversalTime(),
+        Id = "6fddf474-4bea-4611-a88d-4d3410024ce8",
+        Type = KmsCommentType.Page,
+        UpdatedAt = System.DateTime.Parse("2023-11-16T08:15:30.755Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -700,8 +762,10 @@ Update a page
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateKmsPage" method="put" path="/kms/{connection_id}/page/{id}" example="kms_page" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -712,7 +776,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Type = KmsPageType.Other,
+        CreatedAt = System.DateTime.Parse("2019-05-20T18:06:50.749Z").ToUniversalTime(),
+        DownloadUrl = "https://agitated-validity.info",
+        HasChildren = true,
+        Id = "0636844d-0893-488b-ae20-1aa19425e5d6",
+        IsActive = true,
+        Metadata = new List<KmsPageMetadata>() {},
+        Title = "even minister extract",
+        Type = KmsPageType.Html,
+        UpdatedAt = System.DateTime.Parse("2025-09-10T18:26:23.386Z").ToUniversalTime(),
+        WebUrl = "https://another-petticoat.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -745,8 +818,9 @@ Update a space
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateKmsSpace" method="put" path="/kms/{connection_id}/space/{id}" example="kms_space" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -756,7 +830,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {},
+    KmsSpace = new KmsSpace() {
+        CreatedAt = System.DateTime.Parse("2022-10-31T00:56:54.246Z").ToUniversalTime(),
+        Description = "Acer.",
+        Id = "4ef3edbc-fbf3-4572-ba45-0d74d5f1788b",
+        IsActive = false,
+        Name = "into nor afore",
+        UpdatedAt = System.DateTime.Parse("2025-12-03T15:52:28.175Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

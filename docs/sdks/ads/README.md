@@ -55,8 +55,9 @@ Create an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsAd" method="post" path="/ads/{connection_id}/ad" example="ads_ad" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -65,7 +66,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ads.CreateAdsAdAsync(
-    adsAd: new AdsAd() {},
+    adsAd: new AdsAd() {
+        AdCopy = "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+        AdType = AdType.Social,
+        AdvertiserName = "Robel, Nader and Rau",
+        CreatedAt = System.DateTime.Parse("2022-11-08T03:38:20.978Z").ToUniversalTime(),
+        CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
+        Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+        FinalUrl = "https://improbable-sanity.com",
+        Id = "6630dd45-9b8c-481f-8b7b-6e77084f0597",
+        Name = "Hermiston Group",
+        Status = AdsAdStatus.Archived,
+        UpdatedAt = System.DateTime.Parse("2024-06-05T02:38:36.051Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -97,8 +110,9 @@ Create an asset
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsAsset" method="post" path="/ads/{connection_id}/asset" example="ads_asset" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -107,7 +121,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ads.CreateAdsAssetAsync(
-    adsAsset: new AdsAsset() {},
+    adsAsset: new AdsAsset() {
+        CreatedAt = System.DateTime.Parse("2020-03-27T20:14:38.603Z").ToUniversalTime(),
+        Height = 400D,
+        Id = "9ce96283-25c4-4289-92f8-bb2dfdba3c58",
+        MimeType = "IMAGE_PNG",
+        Name = "Lockman - DuBuque",
+        Type = AdsAssetType.Image,
+        UpdatedAt = System.DateTime.Parse("2022-03-15T04:25:20.538Z").ToUniversalTime(),
+        Url = "https://informal-perfection.com/",
+        Width = 600D,
+    },
     connectionId: "<id>"
 );
 
@@ -139,8 +163,10 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" example="ads_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -149,7 +175,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ads.CreateAdsCampaignAsync(
-    adsCampaign: new AdsCampaign() {},
+    adsCampaign: new AdsCampaign() {
+        BudgetAmount = 8743.179536121897D,
+        BudgetPeriod = BudgetPeriod.Monthly,
+        Category = "CREDIT",
+        CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = EffectiveStatus.NotEligible,
+        EndAt = System.DateTime.Parse("2025-05-09T08:19:05.015Z").ToUniversalTime(),
+        Id = "812fa2fe-ecf0-4a07-af47-1f4eeb74cfdd",
+        Labels = new List<string>() {
+            "comedo",
+        },
+        Name = "Emard Inc",
+        StartAt = System.DateTime.Parse("2022-07-20T04:51:23.303Z").ToUniversalTime(),
+        Status = AdsCampaignStatus.ProcessingFailed,
+        Targeting = new PropertyAdsCampaignTargeting() {},
+        TotalSpendAmount = 2349.8642875347286D,
+        UpdatedAt = System.DateTime.Parse("2025-12-05T13:35:57.497Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -181,8 +225,10 @@ Create a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsCreative" method="post" path="/ads/{connection_id}/creative" example="ads_creative" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -191,7 +237,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ads.CreateAdsCreativeAsync(
-    adsCreative: new AdsCreative() {},
+    adsCreative: new AdsCreative() {
+        CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
+        Id = "5dd7b3ce-88d6-4c92-965d-a4f57ced5201",
+        Labels = new List<string>() {
+            "coma",
+            "accedo",
+            "termes",
+        },
+        Name = "Brekke, Bradtke and Robel",
+        Status = AdsCreativeStatus.Paused,
+        UpdatedAt = System.DateTime.Parse("2021-06-21T01:01:35.446Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -223,8 +280,9 @@ Create a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsGroup" method="post" path="/ads/{connection_id}/group" example="ads_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -233,7 +291,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ads.CreateAdsGroupAsync(
-    adsGroup: new AdsGroup() {},
+    adsGroup: new AdsGroup() {
+        BidAmount = 26.16030164062977D,
+        BudgetAmount = 5099.175239447504D,
+        BudgetPeriod = AdsGroupBudgetPeriod.Monthly,
+        CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = AdsGroupEffectiveStatus.Paused,
+        EndAt = System.DateTime.Parse("2026-05-24T13:19:12.102Z").ToUniversalTime(),
+        Id = "e888dea0-f654-41b9-92b4-9bed6e836d63",
+        LanguageLocale = "fr-FR",
+        Name = "Stark - Baumbach",
+        StartAt = System.DateTime.Parse("2025-12-10T21:11:12.512Z").ToUniversalTime(),
+        Status = AdsGroupStatus.Processing,
+        Targeting = new PropertyAdsGroupTargeting() {},
+        UpdatedAt = System.DateTime.Parse("2022-01-02T16:46:00.565Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -265,8 +338,9 @@ Create an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsInsertionorder" method="post" path="/ads/{connection_id}/insertionorder" example="ads_insertionorder" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -275,7 +349,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ads.CreateAdsInsertionorderAsync(
-    adsInsertionorder: new AdsInsertionorder() {},
+    adsInsertionorder: new AdsInsertionorder() {
+        CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
+        Id = "d470068f-65ac-407c-8545-0d0e7170e34e",
+        Name = "Kunde, Smith and Reinger",
+        Status = AdsInsertionorderStatus.Unspecified,
+        UpdatedAt = System.DateTime.Parse("2021-04-28T12:31:22.446Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -307,8 +387,10 @@ Create an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsOrganization" method="post" path="/ads/{connection_id}/organization" example="ads_organization" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -317,7 +399,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ads.CreateAdsOrganizationAsync(
-    adsOrganization: new AdsOrganization() {},
+    adsOrganization: new AdsOrganization() {
+        AccountNumber = "LQUJx8zQBW",
+        CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "0ca7207a-a860-45e9-87da-94e04e0f06a4",
+        Managers = new List<AdsManager>() {
+            new AdsManager() {
+                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+                Name = "Parker, Leannon and Gibson",
+            },
+        },
+        Name = "Ankunding Inc",
+        Status = AdsOrganizationStatus.Processing,
+        Timezone = "Europe/Chisinau",
+        UpdatedAt = System.DateTime.Parse("2026-02-27T02:32:02.767Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -1137,8 +1234,9 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsAd" method="patch" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1148,7 +1246,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsAdRequest req = new PatchAdsAdRequest() {
-    AdsAd = new AdsAd() {},
+    AdsAd = new AdsAd() {
+        AdCopy = "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+        AdType = AdType.Social,
+        AdvertiserName = "Robel, Nader and Rau",
+        CreatedAt = System.DateTime.Parse("2022-11-08T03:38:20.978Z").ToUniversalTime(),
+        CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
+        Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+        FinalUrl = "https://improbable-sanity.com",
+        Id = "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+        Name = "Hermiston Group",
+        Status = AdsAdStatus.Archived,
+        UpdatedAt = System.DateTime.Parse("2024-06-05T02:38:36.059Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1180,8 +1290,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1191,7 +1303,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsCampaignRequest req = new PatchAdsCampaignRequest() {
-    AdsCampaign = new AdsCampaign() {},
+    AdsCampaign = new AdsCampaign() {
+        BudgetAmount = 8743.179536121897D,
+        BudgetPeriod = BudgetPeriod.Monthly,
+        Category = "CREDIT",
+        CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = EffectiveStatus.NotEligible,
+        EndAt = System.DateTime.Parse("2025-05-09T08:19:05.103Z").ToUniversalTime(),
+        Id = "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+        Labels = new List<string>() {
+            "comedo",
+        },
+        Name = "Emard Inc",
+        StartAt = System.DateTime.Parse("2022-07-20T04:51:23.308Z").ToUniversalTime(),
+        Status = AdsCampaignStatus.ProcessingFailed,
+        Targeting = new PropertyAdsCampaignTargeting() {},
+        TotalSpendAmount = 2349.8642875347286D,
+        UpdatedAt = System.DateTime.Parse("2025-12-05T13:35:57.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1223,8 +1353,10 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsCreative" method="patch" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1234,7 +1366,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsCreativeRequest req = new PatchAdsCreativeRequest() {
-    AdsCreative = new AdsCreative() {},
+    AdsCreative = new AdsCreative() {
+        CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
+        Id = "d118ec82-e89d-4441-8941-08ef9518487f",
+        Labels = new List<string>() {
+            "coma",
+            "accedo",
+            "termes",
+        },
+        Name = "Brekke, Bradtke and Robel",
+        Status = AdsCreativeStatus.Paused,
+        UpdatedAt = System.DateTime.Parse("2021-06-21T01:01:35.450Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1266,8 +1409,9 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsGroup" method="patch" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1277,7 +1421,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsGroupRequest req = new PatchAdsGroupRequest() {
-    AdsGroup = new AdsGroup() {},
+    AdsGroup = new AdsGroup() {
+        BidAmount = 26.16030164062977D,
+        BudgetAmount = 5099.175239447504D,
+        BudgetPeriod = AdsGroupBudgetPeriod.Monthly,
+        CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = AdsGroupEffectiveStatus.Paused,
+        EndAt = System.DateTime.Parse("2026-05-24T13:19:12.211Z").ToUniversalTime(),
+        Id = "696ee368-be46-4fed-aede-f2ef993e2ea4",
+        LanguageLocale = "fr-FR",
+        Name = "Stark - Baumbach",
+        StartAt = System.DateTime.Parse("2025-12-10T21:11:12.613Z").ToUniversalTime(),
+        Status = AdsGroupStatus.Processing,
+        Targeting = new PropertyAdsGroupTargeting() {},
+        UpdatedAt = System.DateTime.Parse("2022-01-02T16:46:00.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1309,8 +1468,9 @@ Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsInsertionorder" method="patch" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1320,7 +1480,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
-    AdsInsertionorder = new AdsInsertionorder() {},
+    AdsInsertionorder = new AdsInsertionorder() {
+        CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
+        Id = "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+        Name = "Kunde, Smith and Reinger",
+        Status = AdsInsertionorderStatus.Unspecified,
+        UpdatedAt = System.DateTime.Parse("2021-04-28T12:31:22.446Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1352,8 +1518,10 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsOrganization" method="patch" path="/ads/{connection_id}/organization/{id}" example="ads_organization" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1363,7 +1531,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
-    AdsOrganization = new AdsOrganization() {},
+    AdsOrganization = new AdsOrganization() {
+        AccountNumber = "LQUJx8zQBW",
+        CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+        Managers = new List<AdsManager>() {
+            new AdsManager() {
+                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+                Name = "Parker, Leannon and Gibson",
+            },
+        },
+        Name = "Ankunding Inc",
+        Status = AdsOrganizationStatus.Processing,
+        Timezone = "Europe/Chisinau",
+        UpdatedAt = System.DateTime.Parse("2026-02-27T02:32:02.778Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1635,8 +1818,9 @@ Update an ad
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsAd" method="put" path="/ads/{connection_id}/ad/{id}" example="ads_ad" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1646,7 +1830,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsAdRequest req = new UpdateAdsAdRequest() {
-    AdsAd = new AdsAd() {},
+    AdsAd = new AdsAd() {
+        AdCopy = "Ascisco tolero caute sapiente. Valens unde comedo cursus crinis nobis thema. Cohaero nisi ullam tum unde ultio vilicus auditor capio.",
+        AdType = AdType.Social,
+        AdvertiserName = "Robel, Nader and Rau",
+        CreatedAt = System.DateTime.Parse("2022-11-08T03:38:20.978Z").ToUniversalTime(),
+        CreativeAssetUrl = "https://picsum.photos/seed/LwOzrpr9/948/2793",
+        Description = "Accedo vespillo carpo dolor decet stillicidium comptus tenuis.",
+        FinalUrl = "https://improbable-sanity.com",
+        Id = "1ffc1063-d278-446e-8b5e-655ef73ce5f2",
+        Name = "Hermiston Group",
+        Status = AdsAdStatus.Archived,
+        UpdatedAt = System.DateTime.Parse("2024-06-05T02:38:36.059Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1678,8 +1874,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1689,7 +1887,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsCampaignRequest req = new UpdateAdsCampaignRequest() {
-    AdsCampaign = new AdsCampaign() {},
+    AdsCampaign = new AdsCampaign() {
+        BudgetAmount = 8743.179536121897D,
+        BudgetPeriod = BudgetPeriod.Monthly,
+        Category = "CREDIT",
+        CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = EffectiveStatus.NotEligible,
+        EndAt = System.DateTime.Parse("2025-05-09T08:19:05.103Z").ToUniversalTime(),
+        Id = "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+        Labels = new List<string>() {
+            "comedo",
+        },
+        Name = "Emard Inc",
+        StartAt = System.DateTime.Parse("2022-07-20T04:51:23.308Z").ToUniversalTime(),
+        Status = AdsCampaignStatus.ProcessingFailed,
+        Targeting = new PropertyAdsCampaignTargeting() {},
+        TotalSpendAmount = 2349.8642875347286D,
+        UpdatedAt = System.DateTime.Parse("2025-12-05T13:35:57.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1721,8 +1937,10 @@ Update a creative
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsCreative" method="put" path="/ads/{connection_id}/creative/{id}" example="ads_creative" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1732,7 +1950,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsCreativeRequest req = new UpdateAdsCreativeRequest() {
-    AdsCreative = new AdsCreative() {},
+    AdsCreative = new AdsCreative() {
+        CreatedAt = System.DateTime.Parse("2020-02-17T11:24:51.093Z").ToUniversalTime(),
+        Id = "d118ec82-e89d-4441-8941-08ef9518487f",
+        Labels = new List<string>() {
+            "coma",
+            "accedo",
+            "termes",
+        },
+        Name = "Brekke, Bradtke and Robel",
+        Status = AdsCreativeStatus.Paused,
+        UpdatedAt = System.DateTime.Parse("2021-06-21T01:01:35.450Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1764,8 +1993,9 @@ Update a group
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsGroup" method="put" path="/ads/{connection_id}/group/{id}" example="ads_group" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1775,7 +2005,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsGroupRequest req = new UpdateAdsGroupRequest() {
-    AdsGroup = new AdsGroup() {},
+    AdsGroup = new AdsGroup() {
+        BidAmount = 26.16030164062977D,
+        BudgetAmount = 5099.175239447504D,
+        BudgetPeriod = AdsGroupBudgetPeriod.Monthly,
+        CreatedAt = System.DateTime.Parse("2019-08-29T17:59:41.045Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = AdsGroupEffectiveStatus.Paused,
+        EndAt = System.DateTime.Parse("2026-05-24T13:19:12.211Z").ToUniversalTime(),
+        Id = "696ee368-be46-4fed-aede-f2ef993e2ea4",
+        LanguageLocale = "fr-FR",
+        Name = "Stark - Baumbach",
+        StartAt = System.DateTime.Parse("2025-12-10T21:11:12.613Z").ToUniversalTime(),
+        Status = AdsGroupStatus.Processing,
+        Targeting = new PropertyAdsGroupTargeting() {},
+        UpdatedAt = System.DateTime.Parse("2022-01-02T16:46:00.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1807,8 +2052,9 @@ Update an insertionorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsInsertionorder" method="put" path="/ads/{connection_id}/insertionorder/{id}" example="ads_insertionorder" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1818,7 +2064,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
-    AdsInsertionorder = new AdsInsertionorder() {},
+    AdsInsertionorder = new AdsInsertionorder() {
+        CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
+        Id = "5f4c56e7-ed4c-4eaa-a1d7-4b18779f6cce",
+        Name = "Kunde, Smith and Reinger",
+        Status = AdsInsertionorderStatus.Unspecified,
+        UpdatedAt = System.DateTime.Parse("2021-04-28T12:31:22.446Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1850,8 +2102,10 @@ Update an organization
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsOrganization" method="put" path="/ads/{connection_id}/organization/{id}" example="ads_organization" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1861,7 +2115,22 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
-    AdsOrganization = new AdsOrganization() {},
+    AdsOrganization = new AdsOrganization() {
+        AccountNumber = "LQUJx8zQBW",
+        CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
+        Currency = "USD",
+        Id = "6d20a695-fa80-4f8e-8b00-e3d1dd334cac",
+        Managers = new List<AdsManager>() {
+            new AdsManager() {
+                Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
+                Name = "Parker, Leannon and Gibson",
+            },
+        },
+        Name = "Ankunding Inc",
+        Status = AdsOrganizationStatus.Processing,
+        Timezone = "Europe/Chisinau",
+        UpdatedAt = System.DateTime.Parse("2026-02-27T02:32:02.778Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

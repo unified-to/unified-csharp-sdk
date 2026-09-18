@@ -17,9 +17,10 @@ Create an attendance
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisAttendance" method="post" path="/hris/{connection_id}/attendance" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisAttendance" method="post" path="/hris/{connection_id}/attendance" example="hris_attendance" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,9 +30,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Attendance.CreateHrisAttendanceAsync(
     hrisAttendance: new HrisAttendance() {
+        Address = new PropertyHrisAttendanceAddress() {
+            Address1 = "14108 Allie Flats",
+            City = "Kearaborough",
+            CountryCode = "US",
+            PostalCode = "23844-2344",
+            Region = "Tennessee",
+            RegionCode = "CA",
+        },
+        ApprovedAt = System.DateTime.Parse("2021-08-13T10:36:02.699Z").ToUniversalTime(),
+        Breaks = new List<HrisAttendanceBreak>() {
+            new HrisAttendanceBreak() {
+                DurationMinutes = 12D,
+                EndAt = System.DateTime.Parse("2023-10-22T16:22:57.211Z").ToUniversalTime(),
+                Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+                IsPaid = true,
+                Name = "Lunch",
+                StartAt = System.DateTime.Parse("2023-10-15T20:49:16.476Z").ToUniversalTime(),
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
+        Currency = "UGX",
+        DeclaredTipsAmount = 161D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-07-01T14:10:09.942Z").ToUniversalTime(),
-        StartAt = System.DateTime.Parse("2026-03-31T03:51:43.280Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-06T03:56:34.906Z").ToUniversalTime(),
+        HourlyRate = 53D,
+        Hours = 10D,
+        Id = "e9e33831-f1ad-4fd0-8ca4-1a008527e535",
+        JobName = "Global Creative Supervisor",
+        NonCashTipsAmount = 54D,
+        StartAt = System.DateTime.Parse("2021-11-09T10:26:01.081Z").ToUniversalTime(),
+        Status = HrisAttendanceStatus.Closed,
+        Timezone = "America/Atikokan",
+        UpdatedAt = System.DateTime.Parse("2022-01-17T01:25:06.883Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -147,9 +178,10 @@ Update an attendance
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisAttendance" method="patch" path="/hris/{connection_id}/attendance/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisAttendance" method="patch" path="/hris/{connection_id}/attendance/{id}" example="hris_attendance" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -160,9 +192,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisAttendanceRequest req = new PatchHrisAttendanceRequest() {
     HrisAttendance = new HrisAttendance() {
+        Address = new PropertyHrisAttendanceAddress() {
+            Address1 = "14108 Allie Flats",
+            City = "Kearaborough",
+            CountryCode = "US",
+            PostalCode = "23844-2344",
+            Region = "Tennessee",
+            RegionCode = "CA",
+        },
+        ApprovedAt = System.DateTime.Parse("2021-08-13T10:36:02.699Z").ToUniversalTime(),
+        Breaks = new List<HrisAttendanceBreak>() {
+            new HrisAttendanceBreak() {
+                DurationMinutes = 12D,
+                EndAt = System.DateTime.Parse("2023-10-22T16:22:57.221Z").ToUniversalTime(),
+                Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+                IsPaid = true,
+                Name = "Lunch",
+                StartAt = System.DateTime.Parse("2023-10-15T20:49:16.485Z").ToUniversalTime(),
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
+        Currency = "UGX",
+        DeclaredTipsAmount = 161D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-09-28T22:23:28.906Z").ToUniversalTime(),
-        StartAt = System.DateTime.Parse("2025-01-18T09:17:09.936Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-06T03:56:34.918Z").ToUniversalTime(),
+        HourlyRate = 53D,
+        Hours = 10D,
+        Id = "34ef1ed7-4863-409e-bd2a-2522d8f43302",
+        JobName = "Global Creative Supervisor",
+        NonCashTipsAmount = 54D,
+        StartAt = System.DateTime.Parse("2021-11-09T10:26:01.082Z").ToUniversalTime(),
+        Status = HrisAttendanceStatus.Closed,
+        Timezone = "America/Atikokan",
+        UpdatedAt = System.DateTime.Parse("2022-01-17T01:25:06.885Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -235,9 +297,10 @@ Update an attendance
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisAttendance" method="put" path="/hris/{connection_id}/attendance/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisAttendance" method="put" path="/hris/{connection_id}/attendance/{id}" example="hris_attendance" -->
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -248,9 +311,39 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisAttendanceRequest req = new UpdateHrisAttendanceRequest() {
     HrisAttendance = new HrisAttendance() {
+        Address = new PropertyHrisAttendanceAddress() {
+            Address1 = "14108 Allie Flats",
+            City = "Kearaborough",
+            CountryCode = "US",
+            PostalCode = "23844-2344",
+            Region = "Tennessee",
+            RegionCode = "CA",
+        },
+        ApprovedAt = System.DateTime.Parse("2021-08-13T10:36:02.699Z").ToUniversalTime(),
+        Breaks = new List<HrisAttendanceBreak>() {
+            new HrisAttendanceBreak() {
+                DurationMinutes = 12D,
+                EndAt = System.DateTime.Parse("2023-10-22T16:22:57.221Z").ToUniversalTime(),
+                Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
+                IsPaid = true,
+                Name = "Lunch",
+                StartAt = System.DateTime.Parse("2023-10-15T20:49:16.485Z").ToUniversalTime(),
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
+        Currency = "UGX",
+        DeclaredTipsAmount = 161D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-07-06T19:51:15.352Z").ToUniversalTime(),
-        StartAt = System.DateTime.Parse("2024-05-22T08:12:53.996Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-06T03:56:34.918Z").ToUniversalTime(),
+        HourlyRate = 53D,
+        Hours = 10D,
+        Id = "34ef1ed7-4863-409e-bd2a-2522d8f43302",
+        JobName = "Global Creative Supervisor",
+        NonCashTipsAmount = 54D,
+        StartAt = System.DateTime.Parse("2021-11-09T10:26:01.082Z").ToUniversalTime(),
+        Status = HrisAttendanceStatus.Closed,
+        Timezone = "America/Atikokan",
+        UpdatedAt = System.DateTime.Parse("2022-01-17T01:25:06.885Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

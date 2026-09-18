@@ -17,8 +17,9 @@ Create a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" -->
+<!-- UsageSnippet language="csharp" operationID="createTicketingNote" method="post" path="/ticketing/{connection_id}/note" example="ticketing_note" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +28,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Note.CreateTicketingNoteAsync(
-    ticketingNote: new TicketingNote() {},
+    ticketingNote: new TicketingNote() {
+        CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
+        Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+        Id = "4cee47af-266b-4309-8b76-7cebe1a0cd2c",
+        UpdatedAt = System.DateTime.Parse("2024-09-05T15:39:07.495Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +148,9 @@ Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchTicketingNote" method="patch" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +160,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
-    TicketingNote = new TicketingNote() {},
+    TicketingNote = new TicketingNote() {
+        CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
+        Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+        Id = "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+        UpdatedAt = System.DateTime.Parse("2024-09-05T15:39:07.501Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +237,9 @@ Update a note
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateTicketingNote" method="put" path="/ticketing/{connection_id}/note/{id}" example="ticketing_note" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +249,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
-    TicketingNote = new TicketingNote() {},
+    TicketingNote = new TicketingNote() {
+        CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
+        Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
+        Id = "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
+        UpdatedAt = System.DateTime.Parse("2024-09-05T15:39:07.501Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

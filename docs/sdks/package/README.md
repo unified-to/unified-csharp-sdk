@@ -19,8 +19,10 @@ Create an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" -->
+<!-- UsageSnippet language="csharp" operationID="createAssessmentPackage" method="post" path="/assessment/{connection_id}/package" example="assessment_package" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -30,7 +32,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Package.CreateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.ReferenceCheck,
+        Aliases = new List<string>() {
+            "quia",
+        },
+        CreatedAt = System.DateTime.Parse("2022-11-18T19:48:39.433Z").ToUniversalTime(),
+        Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+        HasRedirectUrl = true,
+        HasTargetUrl = false,
+        Id = "399d78b0-643b-4379-b5fc-7a3efac3d6b6",
+        InfoUrl = "https://ugly-instance.biz/",
+        IntegrationTypes = new List<string>() {
+            "viridis",
+        },
+        MaxScore = 22D,
+        Name = "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+        NeedsIpAddress = true,
+        Parameters = new List<AssessmentParameter>() {},
+        Regions = new List<AssessmentPackageRegion>() {},
+        Tags = new List<string>() {
+            "clamo",
+        },
+        Type = AssessmentPackageType.VideoInterview,
+        UpdatedAt = System.DateTime.Parse("2023-09-18T05:29:15.659Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -222,8 +245,10 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAssessmentPackage" method="patch" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -233,7 +258,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Package.PatchAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.BackgroundCheck,
+        Aliases = new List<string>() {
+            "quia",
+        },
+        CreatedAt = System.DateTime.Parse("2022-11-18T19:48:39.433Z").ToUniversalTime(),
+        Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+        HasRedirectUrl = true,
+        HasTargetUrl = false,
+        Id = "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+        InfoUrl = "https://ugly-instance.biz/",
+        IntegrationTypes = new List<string>() {
+            "viridis",
+        },
+        MaxScore = 22D,
+        Name = "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+        NeedsIpAddress = true,
+        Parameters = new List<AssessmentParameter>() {},
+        Regions = new List<AssessmentPackageRegion>() {},
+        Tags = new List<string>() {
+            "clamo",
+        },
+        Type = AssessmentPackageType.VideoInterview,
+        UpdatedAt = System.DateTime.Parse("2023-09-18T05:29:15.663Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"
@@ -306,8 +352,10 @@ Update an assessment package
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAssessmentPackage" method="put" path="/assessment/{connection_id}/package/{id}" example="assessment_package" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -317,7 +365,28 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Package.UpdateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Type = AssessmentPackageType.Other,
+        Aliases = new List<string>() {
+            "quia",
+        },
+        CreatedAt = System.DateTime.Parse("2022-11-18T19:48:39.433Z").ToUniversalTime(),
+        Description = "Eos aedificium consectetur urbs. Admitto summa accusator tabesco distinctio vapulus culpo templum ancilla.",
+        HasRedirectUrl = true,
+        HasTargetUrl = false,
+        Id = "b73eadb8-975d-4dc0-b2fa-e4d8b4a09f83",
+        InfoUrl = "https://ugly-instance.biz/",
+        IntegrationTypes = new List<string>() {
+            "viridis",
+        },
+        MaxScore = 22D,
+        Name = "Carus sed vox doloremque vigor surgo tabella cupiditas abduco clarus.",
+        NeedsIpAddress = true,
+        Parameters = new List<AssessmentParameter>() {},
+        Regions = new List<AssessmentPackageRegion>() {},
+        Tags = new List<string>() {
+            "clamo",
+        },
+        Type = AssessmentPackageType.VideoInterview,
+        UpdatedAt = System.DateTime.Parse("2023-09-18T05:29:15.663Z").ToUniversalTime(),
     },
     connectionId: "<id>",
     id: "<id>"

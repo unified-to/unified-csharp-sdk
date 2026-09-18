@@ -17,8 +17,10 @@ Create a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingSalesorder" method="post" path="/accounting/{connection_id}/salesorder" example="accounting_salesorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Salesorder.CreateAccountingSalesorderAsync(
-    accountingSalesorder: new AccountingSalesorder() {},
+    accountingSalesorder: new AccountingSalesorder() {
+        BillingAddress = new PropertyAccountingSalesorderBillingAddress() {
+            Address1 = "26530 Stroman Rest",
+            Address2 = "Suite 801",
+            City = "Pocatello",
+            CountryCode = "US",
+            PostalCode = "05015-8546",
+            Region = "Louisiana",
+            RegionCode = "MO",
+        },
+        CategoryIds = new List<string>() {},
+        ClosedAt = System.DateTime.Parse("2023-08-16T21:47:45.013Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
+        Currency = "ANG",
+        DiscountAmount = 99D,
+        EmployeeUserId = "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+        Fees = new List<AccountingFee>() {
+            new AccountingFee() {
+                Amount = 519D,
+                Currency = "XCD",
+                Type = AccountingFeeType.Promotion,
+            },
+        },
+        FulfillmentType = FulfillmentType.Takeout,
+        GuestCount = 8D,
+        Id = "4b4b8374-641e-4c7b-84dc-48bb2da0c7fe",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        OrderNumber = "988187",
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-01-11T02:11:41.222Z").ToUniversalTime(),
+        RefundedAmount = 0D,
+        SalesChannel = "Harvey, Collier and Weimann",
+        ServiceChargeAmount = 63D,
+        ShippingAddress = new PropertyAccountingSalesorderShippingAddress() {
+            Address1 = "9878 Bradley Mill",
+            Address2 = "Apt. 215",
+            City = "Port Matildestad",
+            CountryCode = "US",
+            PostalCode = "07989-2148",
+            Region = "Arkansas",
+            RegionCode = "AK",
+        },
+        Status = AccountingSalesorderStatus.Refunded,
+        SubtotalAmount = 0D,
+        TaxAmount = 63D,
+        TipAmount = 34D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-02-10T18:49:09.489Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +193,10 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingSalesorder" method="patch" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +206,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
-    AccountingSalesorder = new AccountingSalesorder() {},
+    AccountingSalesorder = new AccountingSalesorder() {
+        BillingAddress = new PropertyAccountingSalesorderBillingAddress() {
+            Address1 = "26530 Stroman Rest",
+            Address2 = "Suite 801",
+            City = "Pocatello",
+            CountryCode = "US",
+            PostalCode = "05015-8546",
+            Region = "Louisiana",
+            RegionCode = "MO",
+        },
+        CategoryIds = new List<string>() {},
+        ClosedAt = System.DateTime.Parse("2023-08-16T21:47:45.033Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
+        Currency = "ANG",
+        DiscountAmount = 99D,
+        EmployeeUserId = "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+        Fees = new List<AccountingFee>() {
+            new AccountingFee() {
+                Amount = 519D,
+                Currency = "XCD",
+                Type = AccountingFeeType.Promotion,
+            },
+        },
+        FulfillmentType = FulfillmentType.Takeout,
+        GuestCount = 8D,
+        Id = "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        OrderNumber = "988187",
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-01-11T02:11:41.271Z").ToUniversalTime(),
+        RefundedAmount = 0D,
+        SalesChannel = "Harvey, Collier and Weimann",
+        ServiceChargeAmount = 63D,
+        ShippingAddress = new PropertyAccountingSalesorderShippingAddress() {
+            Address1 = "9878 Bradley Mill",
+            Address2 = "Apt. 215",
+            City = "Port Matildestad",
+            CountryCode = "US",
+            PostalCode = "07989-2148",
+            Region = "Arkansas",
+            RegionCode = "AK",
+        },
+        Status = AccountingSalesorderStatus.Refunded,
+        SubtotalAmount = 0D,
+        TaxAmount = 63D,
+        TipAmount = 34D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-02-10T18:49:09.490Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +327,10 @@ Update a salesorder
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingSalesorder" method="put" path="/accounting/{connection_id}/salesorder/{id}" example="accounting_salesorder" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +340,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() {
-    AccountingSalesorder = new AccountingSalesorder() {},
+    AccountingSalesorder = new AccountingSalesorder() {
+        BillingAddress = new PropertyAccountingSalesorderBillingAddress() {
+            Address1 = "26530 Stroman Rest",
+            Address2 = "Suite 801",
+            City = "Pocatello",
+            CountryCode = "US",
+            PostalCode = "05015-8546",
+            Region = "Louisiana",
+            RegionCode = "MO",
+        },
+        CategoryIds = new List<string>() {},
+        ClosedAt = System.DateTime.Parse("2023-08-16T21:47:45.033Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
+        Currency = "ANG",
+        DiscountAmount = 99D,
+        EmployeeUserId = "4a6b8990-c85a-499f-82d0-5011c3c95a0b",
+        Fees = new List<AccountingFee>() {
+            new AccountingFee() {
+                Amount = 519D,
+                Currency = "XCD",
+                Type = AccountingFeeType.Promotion,
+            },
+        },
+        FulfillmentType = FulfillmentType.Takeout,
+        GuestCount = 8D,
+        Id = "7a2572c0-20e2-47d3-9ebd-99ebd81b6655",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        OrderNumber = "988187",
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2026-01-11T02:11:41.271Z").ToUniversalTime(),
+        RefundedAmount = 0D,
+        SalesChannel = "Harvey, Collier and Weimann",
+        ServiceChargeAmount = 63D,
+        ShippingAddress = new PropertyAccountingSalesorderShippingAddress() {
+            Address1 = "9878 Bradley Mill",
+            Address2 = "Apt. 215",
+            City = "Port Matildestad",
+            CountryCode = "US",
+            PostalCode = "07989-2148",
+            Region = "Arkansas",
+            RegionCode = "AK",
+        },
+        Status = AccountingSalesorderStatus.Refunded,
+        SubtotalAmount = 0D,
+        TaxAmount = 63D,
+        TipAmount = 34D,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-02-10T18:49:09.490Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

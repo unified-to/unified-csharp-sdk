@@ -48,8 +48,10 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" example="crm_company" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -58,7 +60,87 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmCompanyAsync(
-    crmCompany: new CrmCompany() {},
+    crmCompany: new CrmCompany() {
+        Address = new PropertyCrmCompanyAddress() {
+            Address1 = "7261 Salisbury Road",
+            Address2 = "Apt. 778",
+            City = "Harrisburg",
+            CountryCode = "US",
+            PostalCode = "56293-3678",
+            Region = "Pennsylvania",
+            RegionCode = "ID",
+        },
+        CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
+        Description = "Balbus crapula spiculum.",
+        Domains = new List<string>() {
+            "fussy-nerve.info",
+            "sturdy-lobster.org",
+            "greedy-offset.name",
+        },
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@gmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine.Jacobi@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+        },
+        Employees = 967D,
+        Id = "878a4579-b9a2-4c57-8199-2ead09812aa8",
+        Industry = "Infrastructure",
+        IsActive = true,
+        LinkUrls = new List<string>() {
+            "https://blue-license.org",
+            "https://minor-formation.com",
+            "https://ecstatic-hammock.com",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "011e5f4e-5ac6-4bab-bc6e-ad1927085f0f",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "esse"
+                ),
+            },
+        },
+        Name = "Goodwin and Sons",
+        Tags = new List<string>() {
+            "quaerat",
+            "valeo",
+        },
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(432) 849-2690",
+                Type = CrmTelephoneType.Mobile,
+            },
+            new CrmTelephone() {
+                Telephone = "(606) 871-2046",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(842) 258-9395",
+                Type = CrmTelephoneType.Mobile,
+            },
+        },
+        Timezone = "Europe/San_Marino",
+        UpdatedAt = System.DateTime.Parse("2025-02-06T12:34:04.282Z").ToUniversalTime(),
+        Websites = new List<string>() {
+            "https://wise-possession.org",
+        },
+    },
     connectionId: "<id>"
 );
 
@@ -90,8 +172,10 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" example="crm_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -100,7 +184,75 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmContactAsync(
-    crmContact: new CrmContact() {},
+    crmContact: new CrmContact() {
+        Address = new PropertyCrmContactAddress() {
+            Address1 = "518 Brannon Burg",
+            City = "East Helenebury",
+            CountryCode = "US",
+            PostalCode = "92622-2406",
+            Region = "Vermont",
+            RegionCode = "AZ",
+        },
+        Company = "Lowe - Jakubowski",
+        CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
+        Department = "systematic",
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Mohammad.Bartell45@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad.Bartell90@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad_Bartell@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+        },
+        FirstName = "Mohammad",
+        Id = "4b00e4e9-fd2c-4c85-904a-2f9fbb538aab",
+        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        LastName = "Bartell",
+        LinkUrls = new List<string>() {
+            "https://limited-parade.info",
+            "https://faint-papa.com/",
+            "https://windy-accountability.name",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "f5133e22-9032-4da2-b390-6d9b7c942b49",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "autem"
+                ),
+            },
+        },
+        Name = "Mohammad Bartell",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(975) 986-1658",
+                Type = CrmTelephoneType.Work,
+            },
+            new CrmTelephone() {
+                Telephone = "(489) 332-3509",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(205) 880-8886",
+                Type = CrmTelephoneType.Home,
+            },
+        },
+        Title = "National Tactics Analyst",
+        UpdatedAt = System.DateTime.Parse("2021-02-23T09:13:10.758Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -132,8 +284,10 @@ Create a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmDeal" method="post" path="/crm/{connection_id}/deal" example="crm_deal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -142,7 +296,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmDealAsync(
-    crmDeal: new CrmDeal() {},
+    crmDeal: new CrmDeal() {
+        Amount = 98162D,
+        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.203Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.909Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
+        Currency = "IQD",
+        Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
+        Id = "fb9d739e-e46a-4253-80ea-9c4e45eb3f96",
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "3a2e4850-fb79-4e6a-958a-abab7bbc81dc",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "conatus"
+                ),
+            },
+        },
+        Name = "Frozen Silk Chicken",
+        Pipelines = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "eff2b7cd-af8e-4f47-aa85-163272ccc4d9",
+                Name = "trans",
+            },
+        },
+        Probability = 65D,
+        Source = "cubo",
+        Stages = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "1a391e21-a554-4075-9436-04b11d9c2f35",
+                Name = "tubineus",
+            },
+            new CrmReference() {
+                Id = "d764d0a0-f44d-482e-9090-04e20aedf149",
+                Name = "adfectus",
+            },
+        },
+        Tags = new List<string>() {
+            "causa",
+            "suus",
+        },
+        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.578Z").ToUniversalTime(),
+        WonReason = "Usque libero soleo.",
+    },
     connectionId: "<id>"
 );
 
@@ -174,8 +377,9 @@ Create an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmEvent" method="post" path="/crm/{connection_id}/event" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmEvent" method="post" path="/crm/{connection_id}/event" example="crm_event" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -184,7 +388,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmEventAsync(
-    crmEvent: new CrmEvent() {},
+    crmEvent: new CrmEvent() {
+        Call = new PropertyCrmEventCall() {
+            Description = "Arbitro aptus.",
+            Duration = 64D,
+            StartAt = System.DateTime.Parse("2024-11-17T19:36:18.647Z").ToUniversalTime(),
+        },
+        CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
+        Id = "bc6b1939-6879-4e6a-a90b-2a4f3acae555",
+        Type = CrmEventType.Call,
+        UpdatedAt = System.DateTime.Parse("2026-09-08T16:08:26.484Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -216,8 +430,10 @@ Create a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" example="crm_lead" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -226,7 +442,66 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmLeadAsync(
-    crmLead: new CrmLead() {},
+    crmLead: new CrmLead() {
+        Address = new PropertyCrmLeadAddress() {
+            Address1 = "528 Forest Road",
+            Address2 = "Apt. 643",
+            City = "Palm Springs",
+            CountryCode = "US",
+            PostalCode = "55624-6499",
+            Region = "New Jersey",
+            RegionCode = "LA",
+        },
+        CompanyName = "Tillman - Wiegand",
+        CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Velda.Sporer16@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+            new CrmEmail() {
+                Email = "Velda.Sporer@yahoo.com",
+                Type = CrmEmailType.Home,
+            },
+        },
+        FirstName = "Velda",
+        Id = "5c399df0-ebd2-46ff-8824-c35785883216",
+        IsActive = true,
+        LastName = "Sporer",
+        LinkUrls = new List<string>() {
+            "https://classic-sightseeing.com/",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "fbe45a6a-3689-4115-9e09-6d36f037697e",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "sublime"
+                ),
+            },
+        },
+        Name = "Velda Sporer",
+        Source = "aetas",
+        Status = "vesco",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(955) 643-9849",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(621) 811-8800",
+                Type = CrmTelephoneType.Work,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.275Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -258,8 +533,10 @@ Create a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmPipeline" method="post" path="/crm/{connection_id}/pipeline" example="crm_pipeline" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -268,7 +545,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmPipelineAsync(
-    crmPipeline: new CrmPipeline() {},
+    crmPipeline: new CrmPipeline() {
+        CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
+        DealProbability = 99D,
+        DisplayOrder = 8D,
+        Id = "0212937f-ae58-406d-83a3-81d26a8e6868",
+        IsActive = true,
+        Name = "Small Steel Bacon",
+        Stages = new List<CrmStage>() {
+            new CrmStage() {
+                Active = false,
+                CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
+                DealProbability = 84D,
+                DisplayOrder = 72D,
+                Id = "9ca5b3e9-1498-4027-8f0a-c108c9557292",
+                IsClosed = true,
+                Name = "Veniam.",
+                UpdatedAt = System.DateTime.Parse("2025-09-16T09:59:54.930Z").ToUniversalTime(),
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2025-10-07T15:04:42.495Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -839,8 +1136,10 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -850,7 +1149,87 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
-    CrmCompany = new CrmCompany() {},
+    CrmCompany = new CrmCompany() {
+        Address = new PropertyCrmCompanyAddress() {
+            Address1 = "7261 Salisbury Road",
+            Address2 = "Apt. 778",
+            City = "Harrisburg",
+            CountryCode = "US",
+            PostalCode = "56293-3678",
+            Region = "Pennsylvania",
+            RegionCode = "ID",
+        },
+        CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
+        Description = "Balbus crapula spiculum.",
+        Domains = new List<string>() {
+            "fussy-nerve.info",
+            "sturdy-lobster.org",
+            "greedy-offset.name",
+        },
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@gmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine.Jacobi@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+        },
+        Employees = 967D,
+        Id = "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+        Industry = "Infrastructure",
+        IsActive = true,
+        LinkUrls = new List<string>() {
+            "https://blue-license.org",
+            "https://minor-formation.com",
+            "https://ecstatic-hammock.com",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "esse"
+                ),
+            },
+        },
+        Name = "Goodwin and Sons",
+        Tags = new List<string>() {
+            "quaerat",
+            "valeo",
+        },
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(432) 849-2690",
+                Type = CrmTelephoneType.Mobile,
+            },
+            new CrmTelephone() {
+                Telephone = "(606) 871-2046",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(842) 258-9395",
+                Type = CrmTelephoneType.Mobile,
+            },
+        },
+        Timezone = "Europe/San_Marino",
+        UpdatedAt = System.DateTime.Parse("2025-02-06T12:34:04.305Z").ToUniversalTime(),
+        Websites = new List<string>() {
+            "https://wise-possession.org",
+        },
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -882,8 +1261,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -893,7 +1274,75 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmContactRequest req = new PatchCrmContactRequest() {
-    CrmContact = new CrmContact() {},
+    CrmContact = new CrmContact() {
+        Address = new PropertyCrmContactAddress() {
+            Address1 = "518 Brannon Burg",
+            City = "East Helenebury",
+            CountryCode = "US",
+            PostalCode = "92622-2406",
+            Region = "Vermont",
+            RegionCode = "AZ",
+        },
+        Company = "Lowe - Jakubowski",
+        CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
+        Department = "systematic",
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Mohammad.Bartell45@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad.Bartell90@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad_Bartell@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+        },
+        FirstName = "Mohammad",
+        Id = "926522c8-4fea-4b31-870c-dbb458b14cb0",
+        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        LastName = "Bartell",
+        LinkUrls = new List<string>() {
+            "https://limited-parade.info",
+            "https://faint-papa.com/",
+            "https://windy-accountability.name",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "24067b18-8e42-4ed3-bb17-00f11628302f",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "autem"
+                ),
+            },
+        },
+        Name = "Mohammad Bartell",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(975) 986-1658",
+                Type = CrmTelephoneType.Work,
+            },
+            new CrmTelephone() {
+                Telephone = "(489) 332-3509",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(205) 880-8886",
+                Type = CrmTelephoneType.Home,
+            },
+        },
+        Title = "National Tactics Analyst",
+        UpdatedAt = System.DateTime.Parse("2021-02-23T09:13:10.759Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -925,8 +1374,10 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmDeal" method="patch" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -936,7 +1387,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
-    CrmDeal = new CrmDeal() {},
+    CrmDeal = new CrmDeal() {
+        Amount = 98162D,
+        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.208Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.924Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
+        Currency = "IQD",
+        Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
+        Id = "c48de371-a2f9-40ba-b242-a1d9ef638384",
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "conatus"
+                ),
+            },
+        },
+        Name = "Frozen Silk Chicken",
+        Pipelines = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+                Name = "trans",
+            },
+        },
+        Probability = 65D,
+        Source = "cubo",
+        Stages = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+                Name = "tubineus",
+            },
+            new CrmReference() {
+                Id = "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+                Name = "adfectus",
+            },
+        },
+        Tags = new List<string>() {
+            "causa",
+            "suus",
+        },
+        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.587Z").ToUniversalTime(),
+        WonReason = "Usque libero soleo.",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -968,8 +1468,9 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmEvent" method="patch" path="/crm/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmEvent" method="patch" path="/crm/{connection_id}/event/{id}" example="crm_event" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -979,7 +1480,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmEventRequest req = new PatchCrmEventRequest() {
-    CrmEvent = new CrmEvent() {},
+    CrmEvent = new CrmEvent() {
+        Call = new PropertyCrmEventCall() {
+            Description = "Arbitro aptus.",
+            Duration = 64D,
+            StartAt = System.DateTime.Parse("2024-11-17T19:36:18.679Z").ToUniversalTime(),
+        },
+        CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
+        Id = "17e150e0-763c-4553-8b13-2eb74d8d88fb",
+        Type = CrmEventType.Call,
+        UpdatedAt = System.DateTime.Parse("2026-09-08T16:08:26.529Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1011,8 +1522,10 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1022,7 +1535,66 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
-    CrmLead = new CrmLead() {},
+    CrmLead = new CrmLead() {
+        Address = new PropertyCrmLeadAddress() {
+            Address1 = "528 Forest Road",
+            Address2 = "Apt. 643",
+            City = "Palm Springs",
+            CountryCode = "US",
+            PostalCode = "55624-6499",
+            Region = "New Jersey",
+            RegionCode = "LA",
+        },
+        CompanyName = "Tillman - Wiegand",
+        CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Velda.Sporer16@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+            new CrmEmail() {
+                Email = "Velda.Sporer@yahoo.com",
+                Type = CrmEmailType.Home,
+            },
+        },
+        FirstName = "Velda",
+        Id = "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+        IsActive = true,
+        LastName = "Sporer",
+        LinkUrls = new List<string>() {
+            "https://classic-sightseeing.com/",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "sublime"
+                ),
+            },
+        },
+        Name = "Velda Sporer",
+        Source = "aetas",
+        Status = "vesco",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(955) 643-9849",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(621) 811-8800",
+                Type = CrmTelephoneType.Work,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.278Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1054,8 +1626,10 @@ Update a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmPipeline" method="patch" path="/crm/{connection_id}/pipeline/{id}" example="crm_pipeline" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1065,7 +1639,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
-    CrmPipeline = new CrmPipeline() {},
+    CrmPipeline = new CrmPipeline() {
+        CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
+        DealProbability = 99D,
+        DisplayOrder = 8D,
+        Id = "00265dd3-4115-4cab-b919-ae3bbd699676",
+        IsActive = true,
+        Name = "Small Steel Bacon",
+        Stages = new List<CrmStage>() {
+            new CrmStage() {
+                Active = false,
+                CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
+                DealProbability = 84D,
+                DisplayOrder = 72D,
+                Id = "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+                IsClosed = true,
+                Name = "Veniam.",
+                UpdatedAt = System.DateTime.Parse("2025-09-16T09:59:54.936Z").ToUniversalTime(),
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2025-10-07T15:04:42.501Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1337,8 +1931,10 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1348,7 +1944,87 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
-    CrmCompany = new CrmCompany() {},
+    CrmCompany = new CrmCompany() {
+        Address = new PropertyCrmCompanyAddress() {
+            Address1 = "7261 Salisbury Road",
+            Address2 = "Apt. 778",
+            City = "Harrisburg",
+            CountryCode = "US",
+            PostalCode = "56293-3678",
+            Region = "Pennsylvania",
+            RegionCode = "ID",
+        },
+        CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
+        Description = "Balbus crapula spiculum.",
+        Domains = new List<string>() {
+            "fussy-nerve.info",
+            "sturdy-lobster.org",
+            "greedy-offset.name",
+        },
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@gmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine.Jacobi@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+        },
+        Employees = 967D,
+        Id = "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+        Industry = "Infrastructure",
+        IsActive = true,
+        LinkUrls = new List<string>() {
+            "https://blue-license.org",
+            "https://minor-formation.com",
+            "https://ecstatic-hammock.com",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "esse"
+                ),
+            },
+        },
+        Name = "Goodwin and Sons",
+        Tags = new List<string>() {
+            "quaerat",
+            "valeo",
+        },
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(432) 849-2690",
+                Type = CrmTelephoneType.Mobile,
+            },
+            new CrmTelephone() {
+                Telephone = "(606) 871-2046",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(842) 258-9395",
+                Type = CrmTelephoneType.Mobile,
+            },
+        },
+        Timezone = "Europe/San_Marino",
+        UpdatedAt = System.DateTime.Parse("2025-02-06T12:34:04.305Z").ToUniversalTime(),
+        Websites = new List<string>() {
+            "https://wise-possession.org",
+        },
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1380,8 +2056,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1391,7 +2069,75 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
-    CrmContact = new CrmContact() {},
+    CrmContact = new CrmContact() {
+        Address = new PropertyCrmContactAddress() {
+            Address1 = "518 Brannon Burg",
+            City = "East Helenebury",
+            CountryCode = "US",
+            PostalCode = "92622-2406",
+            Region = "Vermont",
+            RegionCode = "AZ",
+        },
+        Company = "Lowe - Jakubowski",
+        CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
+        Department = "systematic",
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Mohammad.Bartell45@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad.Bartell90@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad_Bartell@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+        },
+        FirstName = "Mohammad",
+        Id = "926522c8-4fea-4b31-870c-dbb458b14cb0",
+        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        LastName = "Bartell",
+        LinkUrls = new List<string>() {
+            "https://limited-parade.info",
+            "https://faint-papa.com/",
+            "https://windy-accountability.name",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "24067b18-8e42-4ed3-bb17-00f11628302f",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "autem"
+                ),
+            },
+        },
+        Name = "Mohammad Bartell",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(975) 986-1658",
+                Type = CrmTelephoneType.Work,
+            },
+            new CrmTelephone() {
+                Telephone = "(489) 332-3509",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(205) 880-8886",
+                Type = CrmTelephoneType.Home,
+            },
+        },
+        Title = "National Tactics Analyst",
+        UpdatedAt = System.DateTime.Parse("2021-02-23T09:13:10.759Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1423,8 +2169,10 @@ Update a deal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmDeal" method="put" path="/crm/{connection_id}/deal/{id}" example="crm_deal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1434,7 +2182,56 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
-    CrmDeal = new CrmDeal() {},
+    CrmDeal = new CrmDeal() {
+        Amount = 98162D,
+        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.208Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.924Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
+        Currency = "IQD",
+        Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
+        Id = "c48de371-a2f9-40ba-b242-a1d9ef638384",
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "conatus"
+                ),
+            },
+        },
+        Name = "Frozen Silk Chicken",
+        Pipelines = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+                Name = "trans",
+            },
+        },
+        Probability = 65D,
+        Source = "cubo",
+        Stages = new List<CrmReference>() {
+            new CrmReference() {
+                Id = "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+                Name = "tubineus",
+            },
+            new CrmReference() {
+                Id = "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+                Name = "adfectus",
+            },
+        },
+        Tags = new List<string>() {
+            "causa",
+            "suus",
+        },
+        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.587Z").ToUniversalTime(),
+        WonReason = "Usque libero soleo.",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1466,8 +2263,9 @@ Update an event
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmEvent" method="put" path="/crm/{connection_id}/event/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmEvent" method="put" path="/crm/{connection_id}/event/{id}" example="crm_event" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1477,7 +2275,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmEventRequest req = new UpdateCrmEventRequest() {
-    CrmEvent = new CrmEvent() {},
+    CrmEvent = new CrmEvent() {
+        Call = new PropertyCrmEventCall() {
+            Description = "Arbitro aptus.",
+            Duration = 64D,
+            StartAt = System.DateTime.Parse("2024-11-17T19:36:18.679Z").ToUniversalTime(),
+        },
+        CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
+        Id = "17e150e0-763c-4553-8b13-2eb74d8d88fb",
+        Type = CrmEventType.Call,
+        UpdatedAt = System.DateTime.Parse("2026-09-08T16:08:26.529Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1509,8 +2317,10 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1520,7 +2330,66 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
-    CrmLead = new CrmLead() {},
+    CrmLead = new CrmLead() {
+        Address = new PropertyCrmLeadAddress() {
+            Address1 = "528 Forest Road",
+            Address2 = "Apt. 643",
+            City = "Palm Springs",
+            CountryCode = "US",
+            PostalCode = "55624-6499",
+            Region = "New Jersey",
+            RegionCode = "LA",
+        },
+        CompanyName = "Tillman - Wiegand",
+        CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Velda.Sporer16@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+            new CrmEmail() {
+                Email = "Velda.Sporer@yahoo.com",
+                Type = CrmEmailType.Home,
+            },
+        },
+        FirstName = "Velda",
+        Id = "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+        IsActive = true,
+        LastName = "Sporer",
+        LinkUrls = new List<string>() {
+            "https://classic-sightseeing.com/",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "sublime"
+                ),
+            },
+        },
+        Name = "Velda Sporer",
+        Source = "aetas",
+        Status = "vesco",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(955) 643-9849",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(621) 811-8800",
+                Type = CrmTelephoneType.Work,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.278Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1552,8 +2421,10 @@ Update a pipeline
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmPipeline" method="put" path="/crm/{connection_id}/pipeline/{id}" example="crm_pipeline" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1563,7 +2434,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
-    CrmPipeline = new CrmPipeline() {},
+    CrmPipeline = new CrmPipeline() {
+        CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
+        DealProbability = 99D,
+        DisplayOrder = 8D,
+        Id = "00265dd3-4115-4cab-b919-ae3bbd699676",
+        IsActive = true,
+        Name = "Small Steel Bacon",
+        Stages = new List<CrmStage>() {
+            new CrmStage() {
+                Active = false,
+                CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
+                DealProbability = 84D,
+                DisplayOrder = 72D,
+                Id = "81c3d0ad-e2bd-4a7e-964c-2875e9eab41f",
+                IsClosed = true,
+                Name = "Veniam.",
+                UpdatedAt = System.DateTime.Parse("2025-09-16T09:59:54.936Z").ToUniversalTime(),
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2025-10-07T15:04:42.501Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

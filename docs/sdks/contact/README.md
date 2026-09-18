@@ -29,8 +29,10 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingContact" method="post" path="/accounting/{connection_id}/contact" example="accounting_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -39,7 +41,74 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Contact.CreateAccountingContactAsync(
-    accountingContact: new AccountingContact() {},
+    accountingContact: new AccountingContact() {
+        AssociatedContacts = new List<AccountingAssociatedContact>() {
+            new AccountingAssociatedContact() {
+                Id = "849cd11b-c680-45ef-8e37-e9a24def34b8",
+                Name = "Delores Reynolds",
+            },
+            new AccountingAssociatedContact() {
+                Id = "b7ba795b-96e2-4c00-b11d-7ad43dd15877",
+                Name = "Delores Reynolds",
+            },
+        },
+        BillingAddress = new PropertyAccountingContactBillingAddress() {
+            Address1 = "2633 Stoney Lane",
+            Address2 = "Suite 176",
+            City = "Ladariusboro",
+            CountryCode = "US",
+            PostalCode = "70131-2908",
+            Region = "Illinois",
+            RegionCode = "NV",
+        },
+        CompanyName = "Marquardt Inc",
+        CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
+        Currency = "ISK",
+        Emails = new List<AccountingEmail>() {
+            new AccountingEmail() {
+                Email = "Delores.Reynolds10@hotmail.com",
+                Type = AccountingEmailType.Home,
+            },
+        },
+        FirstName = "Delores",
+        Id = "d501ead1-d963-4360-9d14-5fc86506b5d5",
+        Identification = "amicitia",
+        IsActive = true,
+        IsCustomer = true,
+        LastName = "Reynolds",
+        Name = "Delores Reynolds",
+        PaymentMethods = new List<AccountingContactPaymentMethod>() {
+            new AccountingContactPaymentMethod() {
+                Default = true,
+                Id = "38ac4078-e7eb-4d4a-938e-3a6293a46e62",
+                Name = "Visa 1234",
+                Type = AccountingContactPaymentMethodType.Card,
+            },
+        },
+        PortalUrl = "https://scented-t-shirt.info/",
+        ShippingAddress = new PropertyAccountingContactShippingAddress() {
+            Address1 = "786 Renner Stream",
+            Address2 = "Apt. 555",
+            City = "Roanoke",
+            CountryCode = "US",
+            PostalCode = "80686-7556",
+            Region = "Vermont",
+            RegionCode = "NE",
+        },
+        TaxExemption = TaxExemption.Resale,
+        TaxNumber = "amplexus",
+        Telephones = new List<AccountingTelephone>() {
+            new AccountingTelephone() {
+                Telephone = "(427) 701-7160",
+                Type = AccountingTelephoneType.Home,
+            },
+            new AccountingTelephone() {
+                Telephone = "(540) 913-9171",
+                Type = AccountingTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2023-12-04T22:28:17.517Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -71,8 +140,10 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmContact" method="post" path="/crm/{connection_id}/contact" example="crm_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -81,7 +152,75 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Contact.CreateCrmContactAsync(
-    crmContact: new CrmContact() {},
+    crmContact: new CrmContact() {
+        Address = new PropertyCrmContactAddress() {
+            Address1 = "518 Brannon Burg",
+            City = "East Helenebury",
+            CountryCode = "US",
+            PostalCode = "92622-2406",
+            Region = "Vermont",
+            RegionCode = "AZ",
+        },
+        Company = "Lowe - Jakubowski",
+        CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
+        Department = "systematic",
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Mohammad.Bartell45@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad.Bartell90@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad_Bartell@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+        },
+        FirstName = "Mohammad",
+        Id = "4b00e4e9-fd2c-4c85-904a-2f9fbb538aab",
+        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        LastName = "Bartell",
+        LinkUrls = new List<string>() {
+            "https://limited-parade.info",
+            "https://faint-papa.com/",
+            "https://windy-accountability.name",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "f5133e22-9032-4da2-b390-6d9b7c942b49",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "autem"
+                ),
+            },
+        },
+        Name = "Mohammad Bartell",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(975) 986-1658",
+                Type = CrmTelephoneType.Work,
+            },
+            new CrmTelephone() {
+                Telephone = "(489) 332-3509",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(205) 880-8886",
+                Type = CrmTelephoneType.Home,
+            },
+        },
+        Title = "National Tactics Analyst",
+        UpdatedAt = System.DateTime.Parse("2021-02-23T09:13:10.758Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -113,8 +252,10 @@ Create a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" -->
+<!-- UsageSnippet language="csharp" operationID="createUcContact" method="post" path="/uc/{connection_id}/contact" example="uc_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -123,7 +264,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Contact.CreateUcContactAsync(
-    ucContact: new UcContact() {},
+    ucContact: new UcContact() {
+        Company = "Tillman Group",
+        CreatedAt = System.DateTime.Parse("2019-10-28T11:06:56.460Z").ToUniversalTime(),
+        Emails = new List<UcEmail>() {
+            new UcEmail() {
+                Email = "Luther_Rogahn32@yahoo.com",
+                Type = UcEmailType.Work,
+            },
+        },
+        FirstName = "Luther",
+        Id = "39e5f225-c2fe-448f-9931-c96c7bd540e7",
+        LastName = "Rogahn",
+        Name = "Luther Rogahn",
+        Telephones = new List<UcTelephone>() {
+            new UcTelephone() {
+                Telephone = "(809) 992-1681",
+                Type = UcTelephoneType.Fax,
+            },
+            new UcTelephone() {
+                Telephone = "(868) 238-2746",
+                Type = UcTelephoneType.Home,
+            },
+            new UcTelephone() {
+                Telephone = "(219) 736-0357",
+                Type = UcTelephoneType.Mobile,
+            },
+        },
+        Title = "Chief Optimization Executive",
+        UpdatedAt = System.DateTime.Parse("2023-11-18T22:30:46.346Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -404,8 +574,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingContact" method="patch" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -415,7 +587,74 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
-    AccountingContact = new AccountingContact() {},
+    AccountingContact = new AccountingContact() {
+        AssociatedContacts = new List<AccountingAssociatedContact>() {
+            new AccountingAssociatedContact() {
+                Id = "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+                Name = "Delores Reynolds",
+            },
+            new AccountingAssociatedContact() {
+                Id = "866874f1-a317-404b-9ee2-18708e6d0dd7",
+                Name = "Delores Reynolds",
+            },
+        },
+        BillingAddress = new PropertyAccountingContactBillingAddress() {
+            Address1 = "2633 Stoney Lane",
+            Address2 = "Suite 176",
+            City = "Ladariusboro",
+            CountryCode = "US",
+            PostalCode = "70131-2908",
+            Region = "Illinois",
+            RegionCode = "NV",
+        },
+        CompanyName = "Marquardt Inc",
+        CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
+        Currency = "ISK",
+        Emails = new List<AccountingEmail>() {
+            new AccountingEmail() {
+                Email = "Delores.Reynolds10@hotmail.com",
+                Type = AccountingEmailType.Home,
+            },
+        },
+        FirstName = "Delores",
+        Id = "568c731f-d6db-4131-8722-72c16c80c495",
+        Identification = "amicitia",
+        IsActive = true,
+        IsCustomer = true,
+        LastName = "Reynolds",
+        Name = "Delores Reynolds",
+        PaymentMethods = new List<AccountingContactPaymentMethod>() {
+            new AccountingContactPaymentMethod() {
+                Default = true,
+                Id = "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+                Name = "Visa 1234",
+                Type = AccountingContactPaymentMethodType.Card,
+            },
+        },
+        PortalUrl = "https://scented-t-shirt.info/",
+        ShippingAddress = new PropertyAccountingContactShippingAddress() {
+            Address1 = "786 Renner Stream",
+            Address2 = "Apt. 555",
+            City = "Roanoke",
+            CountryCode = "US",
+            PostalCode = "80686-7556",
+            Region = "Vermont",
+            RegionCode = "NE",
+        },
+        TaxExemption = TaxExemption.Resale,
+        TaxNumber = "amplexus",
+        Telephones = new List<AccountingTelephone>() {
+            new AccountingTelephone() {
+                Telephone = "(427) 701-7160",
+                Type = AccountingTelephoneType.Home,
+            },
+            new AccountingTelephone() {
+                Telephone = "(540) 913-9171",
+                Type = AccountingTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2023-12-04T22:28:17.531Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -447,8 +686,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmContact" method="patch" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -458,7 +699,75 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmContactRequest req = new PatchCrmContactRequest() {
-    CrmContact = new CrmContact() {},
+    CrmContact = new CrmContact() {
+        Address = new PropertyCrmContactAddress() {
+            Address1 = "518 Brannon Burg",
+            City = "East Helenebury",
+            CountryCode = "US",
+            PostalCode = "92622-2406",
+            Region = "Vermont",
+            RegionCode = "AZ",
+        },
+        Company = "Lowe - Jakubowski",
+        CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
+        Department = "systematic",
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Mohammad.Bartell45@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad.Bartell90@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad_Bartell@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+        },
+        FirstName = "Mohammad",
+        Id = "926522c8-4fea-4b31-870c-dbb458b14cb0",
+        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        LastName = "Bartell",
+        LinkUrls = new List<string>() {
+            "https://limited-parade.info",
+            "https://faint-papa.com/",
+            "https://windy-accountability.name",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "24067b18-8e42-4ed3-bb17-00f11628302f",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "autem"
+                ),
+            },
+        },
+        Name = "Mohammad Bartell",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(975) 986-1658",
+                Type = CrmTelephoneType.Work,
+            },
+            new CrmTelephone() {
+                Telephone = "(489) 332-3509",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(205) 880-8886",
+                Type = CrmTelephoneType.Home,
+            },
+        },
+        Title = "National Tactics Analyst",
+        UpdatedAt = System.DateTime.Parse("2021-02-23T09:13:10.759Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -490,8 +799,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchUcContact" method="patch" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -501,7 +812,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcContactRequest req = new PatchUcContactRequest() {
-    UcContact = new UcContact() {},
+    UcContact = new UcContact() {
+        Company = "Tillman Group",
+        CreatedAt = System.DateTime.Parse("2019-10-28T11:06:56.460Z").ToUniversalTime(),
+        Emails = new List<UcEmail>() {
+            new UcEmail() {
+                Email = "Luther_Rogahn32@yahoo.com",
+                Type = UcEmailType.Work,
+            },
+        },
+        FirstName = "Luther",
+        Id = "356575db-851d-45e5-bbd6-3069bcf46bdb",
+        LastName = "Rogahn",
+        Name = "Luther Rogahn",
+        Telephones = new List<UcTelephone>() {
+            new UcTelephone() {
+                Telephone = "(809) 992-1681",
+                Type = UcTelephoneType.Fax,
+            },
+            new UcTelephone() {
+                Telephone = "(868) 238-2746",
+                Type = UcTelephoneType.Home,
+            },
+            new UcTelephone() {
+                Telephone = "(219) 736-0357",
+                Type = UcTelephoneType.Mobile,
+            },
+        },
+        Title = "Chief Optimization Executive",
+        UpdatedAt = System.DateTime.Parse("2023-11-18T22:30:46.355Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -653,8 +993,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingContact" method="put" path="/accounting/{connection_id}/contact/{id}" example="accounting_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -664,7 +1006,74 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
-    AccountingContact = new AccountingContact() {},
+    AccountingContact = new AccountingContact() {
+        AssociatedContacts = new List<AccountingAssociatedContact>() {
+            new AccountingAssociatedContact() {
+                Id = "5d12d0f4-d6c4-41e4-b66f-1f01b7202257",
+                Name = "Delores Reynolds",
+            },
+            new AccountingAssociatedContact() {
+                Id = "866874f1-a317-404b-9ee2-18708e6d0dd7",
+                Name = "Delores Reynolds",
+            },
+        },
+        BillingAddress = new PropertyAccountingContactBillingAddress() {
+            Address1 = "2633 Stoney Lane",
+            Address2 = "Suite 176",
+            City = "Ladariusboro",
+            CountryCode = "US",
+            PostalCode = "70131-2908",
+            Region = "Illinois",
+            RegionCode = "NV",
+        },
+        CompanyName = "Marquardt Inc",
+        CreatedAt = System.DateTime.Parse("2021-08-15T14:56:50.258Z").ToUniversalTime(),
+        Currency = "ISK",
+        Emails = new List<AccountingEmail>() {
+            new AccountingEmail() {
+                Email = "Delores.Reynolds10@hotmail.com",
+                Type = AccountingEmailType.Home,
+            },
+        },
+        FirstName = "Delores",
+        Id = "568c731f-d6db-4131-8722-72c16c80c495",
+        Identification = "amicitia",
+        IsActive = true,
+        IsCustomer = true,
+        LastName = "Reynolds",
+        Name = "Delores Reynolds",
+        PaymentMethods = new List<AccountingContactPaymentMethod>() {
+            new AccountingContactPaymentMethod() {
+                Default = true,
+                Id = "f7dccf3b-a03d-4347-a80e-3a3ce580b82d",
+                Name = "Visa 1234",
+                Type = AccountingContactPaymentMethodType.Card,
+            },
+        },
+        PortalUrl = "https://scented-t-shirt.info/",
+        ShippingAddress = new PropertyAccountingContactShippingAddress() {
+            Address1 = "786 Renner Stream",
+            Address2 = "Apt. 555",
+            City = "Roanoke",
+            CountryCode = "US",
+            PostalCode = "80686-7556",
+            Region = "Vermont",
+            RegionCode = "NE",
+        },
+        TaxExemption = TaxExemption.Resale,
+        TaxNumber = "amplexus",
+        Telephones = new List<AccountingTelephone>() {
+            new AccountingTelephone() {
+                Telephone = "(427) 701-7160",
+                Type = AccountingTelephoneType.Home,
+            },
+            new AccountingTelephone() {
+                Telephone = "(540) 913-9171",
+                Type = AccountingTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2023-12-04T22:28:17.531Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -696,8 +1105,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmContact" method="put" path="/crm/{connection_id}/contact/{id}" example="crm_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -707,7 +1118,75 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
-    CrmContact = new CrmContact() {},
+    CrmContact = new CrmContact() {
+        Address = new PropertyCrmContactAddress() {
+            Address1 = "518 Brannon Burg",
+            City = "East Helenebury",
+            CountryCode = "US",
+            PostalCode = "92622-2406",
+            Region = "Vermont",
+            RegionCode = "AZ",
+        },
+        Company = "Lowe - Jakubowski",
+        CreatedAt = System.DateTime.Parse("2021-01-02T00:41:38.885Z").ToUniversalTime(),
+        Department = "systematic",
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Mohammad.Bartell45@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad.Bartell90@hotmail.com",
+                Type = CrmEmailType.Home,
+            },
+            new CrmEmail() {
+                Email = "Mohammad_Bartell@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+        },
+        FirstName = "Mohammad",
+        Id = "926522c8-4fea-4b31-870c-dbb458b14cb0",
+        ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
+        LastName = "Bartell",
+        LinkUrls = new List<string>() {
+            "https://limited-parade.info",
+            "https://faint-papa.com/",
+            "https://windy-accountability.name",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "24067b18-8e42-4ed3-bb17-00f11628302f",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "autem"
+                ),
+            },
+        },
+        Name = "Mohammad Bartell",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(975) 986-1658",
+                Type = CrmTelephoneType.Work,
+            },
+            new CrmTelephone() {
+                Telephone = "(489) 332-3509",
+                Type = CrmTelephoneType.Home,
+            },
+            new CrmTelephone() {
+                Telephone = "(205) 880-8886",
+                Type = CrmTelephoneType.Home,
+            },
+        },
+        Title = "National Tactics Analyst",
+        UpdatedAt = System.DateTime.Parse("2021-02-23T09:13:10.759Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -739,8 +1218,10 @@ Update a contact
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateUcContact" method="put" path="/uc/{connection_id}/contact/{id}" example="uc_contact" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -750,7 +1231,36 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcContactRequest req = new UpdateUcContactRequest() {
-    UcContact = new UcContact() {},
+    UcContact = new UcContact() {
+        Company = "Tillman Group",
+        CreatedAt = System.DateTime.Parse("2019-10-28T11:06:56.460Z").ToUniversalTime(),
+        Emails = new List<UcEmail>() {
+            new UcEmail() {
+                Email = "Luther_Rogahn32@yahoo.com",
+                Type = UcEmailType.Work,
+            },
+        },
+        FirstName = "Luther",
+        Id = "356575db-851d-45e5-bbd6-3069bcf46bdb",
+        LastName = "Rogahn",
+        Name = "Luther Rogahn",
+        Telephones = new List<UcTelephone>() {
+            new UcTelephone() {
+                Telephone = "(809) 992-1681",
+                Type = UcTelephoneType.Fax,
+            },
+            new UcTelephone() {
+                Telephone = "(868) 238-2746",
+                Type = UcTelephoneType.Home,
+            },
+            new UcTelephone() {
+                Telephone = "(219) 736-0357",
+                Type = UcTelephoneType.Mobile,
+            },
+        },
+        Title = "Chief Optimization Executive",
+        UpdatedAt = System.DateTime.Parse("2023-11-18T22:30:46.355Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

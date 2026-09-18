@@ -17,8 +17,10 @@ Create a timeshift
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisTimeshift" method="post" path="/hris/{connection_id}/timeshift" example="hris_timeshift" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,7 +30,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
+        ApprovedAt = System.DateTime.Parse("2023-06-05T14:32:23.860Z").ToUniversalTime(),
+        Compensation = new List<HrisCompensation>() {
+            new HrisCompensation() {
+                Amount = 76761D,
+                Currency = "JPY",
+                Frequency = HrisCompensationFrequency.Hour,
+                Notes = "Annus adficio suasoria architecto aggero.",
+                Type = HrisCompensationType.Other,
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
+        EndAt = System.DateTime.Parse("2026-08-25T08:29:34.504Z").ToUniversalTime(),
+        Hours = 8D,
+        Id = "edb7e65d-ee9c-4de9-bf02-4dccb2d29377",
+        IsApproved = true,
+        StartAt = System.DateTime.Parse("2023-06-24T19:30:14.691Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-22T20:53:37.144Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -144,8 +163,10 @@ Update a timeshift
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisTimeshift" method="patch" path="/hris/{connection_id}/timeshift/{id}" example="hris_timeshift" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -156,7 +177,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
+        ApprovedAt = System.DateTime.Parse("2023-06-05T14:32:23.868Z").ToUniversalTime(),
+        Compensation = new List<HrisCompensation>() {
+            new HrisCompensation() {
+                Amount = 76761D,
+                Currency = "JPY",
+                Frequency = HrisCompensationFrequency.Hour,
+                Notes = "Annus adficio suasoria architecto aggero.",
+                Type = HrisCompensationType.Other,
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
+        EndAt = System.DateTime.Parse("2026-08-25T08:29:34.519Z").ToUniversalTime(),
+        Hours = 8D,
+        Id = "c51bdd14-5147-4def-afb6-882c8f97c0df",
+        IsApproved = true,
+        StartAt = System.DateTime.Parse("2023-06-24T19:30:14.699Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-22T20:53:37.148Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -229,8 +267,10 @@ Update a timeshift
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisTimeshift" method="put" path="/hris/{connection_id}/timeshift/{id}" example="hris_timeshift" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -241,7 +281,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
+        ApprovedAt = System.DateTime.Parse("2023-06-05T14:32:23.868Z").ToUniversalTime(),
+        Compensation = new List<HrisCompensation>() {
+            new HrisCompensation() {
+                Amount = 76761D,
+                Currency = "JPY",
+                Frequency = HrisCompensationFrequency.Hour,
+                Notes = "Annus adficio suasoria architecto aggero.",
+                Type = HrisCompensationType.Other,
+            },
+        },
+        CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
+        EndAt = System.DateTime.Parse("2026-08-25T08:29:34.519Z").ToUniversalTime(),
+        Hours = 8D,
+        Id = "c51bdd14-5147-4def-afb6-882c8f97c0df",
+        IsApproved = true,
+        StartAt = System.DateTime.Parse("2023-06-24T19:30:14.699Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-22T20:53:37.148Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -17,8 +17,10 @@ Create a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmLead" method="post" path="/crm/{connection_id}/lead" example="crm_lead" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,66 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.CreateCrmLeadAsync(
-    crmLead: new CrmLead() {},
+    crmLead: new CrmLead() {
+        Address = new PropertyCrmLeadAddress() {
+            Address1 = "528 Forest Road",
+            Address2 = "Apt. 643",
+            City = "Palm Springs",
+            CountryCode = "US",
+            PostalCode = "55624-6499",
+            Region = "New Jersey",
+            RegionCode = "LA",
+        },
+        CompanyName = "Tillman - Wiegand",
+        CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Velda.Sporer16@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+            new CrmEmail() {
+                Email = "Velda.Sporer@yahoo.com",
+                Type = CrmEmailType.Home,
+            },
+        },
+        FirstName = "Velda",
+        Id = "5c399df0-ebd2-46ff-8824-c35785883216",
+        IsActive = true,
+        LastName = "Sporer",
+        LinkUrls = new List<string>() {
+            "https://classic-sightseeing.com/",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "fbe45a6a-3689-4115-9e09-6d36f037697e",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "sublime"
+                ),
+            },
+        },
+        Name = "Velda Sporer",
+        Source = "aetas",
+        Status = "vesco",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(955) 643-9849",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(621) 811-8800",
+                Type = CrmTelephoneType.Work,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.275Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +203,10 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmLead" method="patch" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +216,66 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
-    CrmLead = new CrmLead() {},
+    CrmLead = new CrmLead() {
+        Address = new PropertyCrmLeadAddress() {
+            Address1 = "528 Forest Road",
+            Address2 = "Apt. 643",
+            City = "Palm Springs",
+            CountryCode = "US",
+            PostalCode = "55624-6499",
+            Region = "New Jersey",
+            RegionCode = "LA",
+        },
+        CompanyName = "Tillman - Wiegand",
+        CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Velda.Sporer16@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+            new CrmEmail() {
+                Email = "Velda.Sporer@yahoo.com",
+                Type = CrmEmailType.Home,
+            },
+        },
+        FirstName = "Velda",
+        Id = "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+        IsActive = true,
+        LastName = "Sporer",
+        LinkUrls = new List<string>() {
+            "https://classic-sightseeing.com/",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "sublime"
+                ),
+            },
+        },
+        Name = "Velda Sporer",
+        Source = "aetas",
+        Status = "vesco",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(955) 643-9849",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(621) 811-8800",
+                Type = CrmTelephoneType.Work,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.278Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +347,10 @@ Update a lead
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmLead" method="put" path="/crm/{connection_id}/lead/{id}" example="crm_lead" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +360,66 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
-    CrmLead = new CrmLead() {},
+    CrmLead = new CrmLead() {
+        Address = new PropertyCrmLeadAddress() {
+            Address1 = "528 Forest Road",
+            Address2 = "Apt. 643",
+            City = "Palm Springs",
+            CountryCode = "US",
+            PostalCode = "55624-6499",
+            Region = "New Jersey",
+            RegionCode = "LA",
+        },
+        CompanyName = "Tillman - Wiegand",
+        CreatedAt = System.DateTime.Parse("2019-10-12T11:27:59.003Z").ToUniversalTime(),
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Velda.Sporer16@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+            new CrmEmail() {
+                Email = "Velda.Sporer@yahoo.com",
+                Type = CrmEmailType.Home,
+            },
+        },
+        FirstName = "Velda",
+        Id = "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+        IsActive = true,
+        LastName = "Sporer",
+        LinkUrls = new List<string>() {
+            "https://classic-sightseeing.com/",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "sublime"
+                ),
+            },
+        },
+        Name = "Velda Sporer",
+        Source = "aetas",
+        Status = "vesco",
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(955) 643-9849",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(621) 811-8800",
+                Type = CrmTelephoneType.Work,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.278Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

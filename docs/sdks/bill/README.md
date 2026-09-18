@@ -17,8 +17,10 @@ Create a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingBill" method="post" path="/accounting/{connection_id}/bill" example="accounting_bill" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,30 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Bill.CreateAccountingBillAsync(
-    accountingBill: new AccountingBill() {},
+    accountingBill: new AccountingBill() {
+        Attachments = new List<AccountingAttachment>() {},
+        BillNumber = "vitae",
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2019-08-08T23:03:14.104Z").ToUniversalTime(),
+        Currency = "AUD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "100144ed-c290-4ba0-8c70-172d5b231a02",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Tutamen cilicium infit.",
+        PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2024-04-04T07:23:49.049Z").ToUniversalTime(),
+        Send = true,
+        Status = AccountingBillStatus.Deleted,
+        TaxAmount = 0D,
+        Term = Term.Net10,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2025-01-29T00:58:28.612Z").ToUniversalTime(),
+        Url = "https://coarse-interviewer.biz/",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +167,10 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingBill" method="patch" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +180,30 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
-    AccountingBill = new AccountingBill() {},
+    AccountingBill = new AccountingBill() {
+        Attachments = new List<AccountingAttachment>() {},
+        BillNumber = "vitae",
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2019-08-08T23:03:14.104Z").ToUniversalTime(),
+        Currency = "AUD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Tutamen cilicium infit.",
+        PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2024-04-04T07:23:49.078Z").ToUniversalTime(),
+        Send = true,
+        Status = AccountingBillStatus.Deleted,
+        TaxAmount = 0D,
+        Term = Term.Net10,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2025-01-29T00:58:28.647Z").ToUniversalTime(),
+        Url = "https://coarse-interviewer.biz/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +275,10 @@ Update a bill
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingBill" method="put" path="/accounting/{connection_id}/bill/{id}" example="accounting_bill" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +288,30 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
-    AccountingBill = new AccountingBill() {},
+    AccountingBill = new AccountingBill() {
+        Attachments = new List<AccountingAttachment>() {},
+        BillNumber = "vitae",
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2019-08-08T23:03:14.104Z").ToUniversalTime(),
+        Currency = "AUD",
+        DiscountAmount = 0D,
+        DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
+        ExtendedNotes = new List<AccountingExtendedNote>() {},
+        Id = "6150e708-f7e3-4cf9-8e91-303495e24cc3",
+        Lineitems = new List<AccountingLineitem>() {},
+        Metadata = new List<AccountingMetadata>() {},
+        Notes = "Tutamen cilicium infit.",
+        PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
+        Payments = new List<AccountingPaymentReference>() {},
+        PostedAt = System.DateTime.Parse("2024-04-04T07:23:49.078Z").ToUniversalTime(),
+        Send = true,
+        Status = AccountingBillStatus.Deleted,
+        TaxAmount = 0D,
+        Term = Term.Net10,
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2025-01-29T00:58:28.647Z").ToUniversalTime(),
+        Url = "https://coarse-interviewer.biz/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

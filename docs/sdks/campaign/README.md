@@ -23,8 +23,10 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" -->
+<!-- UsageSnippet language="csharp" operationID="createAdsCampaign" method="post" path="/ads/{connection_id}/campaign" example="ads_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -33,7 +35,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Campaign.CreateAdsCampaignAsync(
-    adsCampaign: new AdsCampaign() {},
+    adsCampaign: new AdsCampaign() {
+        BudgetAmount = 8743.179536121897D,
+        BudgetPeriod = BudgetPeriod.Monthly,
+        Category = "CREDIT",
+        CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = EffectiveStatus.NotEligible,
+        EndAt = System.DateTime.Parse("2025-05-09T08:19:05.015Z").ToUniversalTime(),
+        Id = "812fa2fe-ecf0-4a07-af47-1f4eeb74cfdd",
+        Labels = new List<string>() {
+            "comedo",
+        },
+        Name = "Emard Inc",
+        StartAt = System.DateTime.Parse("2022-07-20T04:51:23.303Z").ToUniversalTime(),
+        Status = AdsCampaignStatus.ProcessingFailed,
+        Targeting = new PropertyAdsCampaignTargeting() {},
+        TotalSpendAmount = 2349.8642875347286D,
+        UpdatedAt = System.DateTime.Parse("2025-12-05T13:35:57.497Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -65,8 +85,10 @@ Create a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" -->
+<!-- UsageSnippet language="csharp" operationID="createMartechCampaign" method="post" path="/martech/{connection_id}/campaign" example="martech_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -75,7 +97,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Campaign.CreateMartechCampaignAsync(
-    marketingCampaign: new MarketingCampaign() {},
+    marketingCampaign: new MarketingCampaign() {
+        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
+        FromEmail = "Nick.Beahan@hotmail.com",
+        FromName = "Javier Rempel",
+        Id = "1d47a766-5cc6-4e40-959e-2dc9f36995c1",
+        ListIds = new List<string>() {
+            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+        },
+        Name = "Consequatur atqui sustineo.",
+        PreviewText = "Bellicus tener cinis causa cavus toties.",
+        ReplyToEmail = "Antwan.Abshire@hotmail.com",
+        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Sent,
+        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+        Type = "plaintext",
+        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -273,8 +311,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAdsCampaign" method="patch" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -284,7 +324,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAdsCampaignRequest req = new PatchAdsCampaignRequest() {
-    AdsCampaign = new AdsCampaign() {},
+    AdsCampaign = new AdsCampaign() {
+        BudgetAmount = 8743.179536121897D,
+        BudgetPeriod = BudgetPeriod.Monthly,
+        Category = "CREDIT",
+        CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = EffectiveStatus.NotEligible,
+        EndAt = System.DateTime.Parse("2025-05-09T08:19:05.103Z").ToUniversalTime(),
+        Id = "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+        Labels = new List<string>() {
+            "comedo",
+        },
+        Name = "Emard Inc",
+        StartAt = System.DateTime.Parse("2022-07-20T04:51:23.308Z").ToUniversalTime(),
+        Status = AdsCampaignStatus.ProcessingFailed,
+        Targeting = new PropertyAdsCampaignTargeting() {},
+        TotalSpendAmount = 2349.8642875347286D,
+        UpdatedAt = System.DateTime.Parse("2025-12-05T13:35:57.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -316,8 +374,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMartechCampaign" method="patch" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -327,7 +387,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMartechCampaignRequest req = new PatchMartechCampaignRequest() {
-    MarketingCampaign = new MarketingCampaign() {},
+    MarketingCampaign = new MarketingCampaign() {
+        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
+        FromEmail = "Nick.Beahan@hotmail.com",
+        FromName = "Javier Rempel",
+        Id = "a65cd827-3a78-44a7-846e-2bca453f14c1",
+        ListIds = new List<string>() {
+            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+        },
+        Name = "Consequatur atqui sustineo.",
+        PreviewText = "Bellicus tener cinis causa cavus toties.",
+        ReplyToEmail = "Antwan.Abshire@hotmail.com",
+        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Sent,
+        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+        Type = "plaintext",
+        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -439,8 +515,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAdsCampaign" method="put" path="/ads/{connection_id}/campaign/{id}" example="ads_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -450,7 +528,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAdsCampaignRequest req = new UpdateAdsCampaignRequest() {
-    AdsCampaign = new AdsCampaign() {},
+    AdsCampaign = new AdsCampaign() {
+        BudgetAmount = 8743.179536121897D,
+        BudgetPeriod = BudgetPeriod.Monthly,
+        Category = "CREDIT",
+        CreatedAt = System.DateTime.Parse("2022-05-21T08:51:41.868Z").ToUniversalTime(),
+        Currency = "USD",
+        EffectiveStatus = EffectiveStatus.NotEligible,
+        EndAt = System.DateTime.Parse("2025-05-09T08:19:05.103Z").ToUniversalTime(),
+        Id = "304d62ba-35db-4c76-b39e-4fa4e93b7f71",
+        Labels = new List<string>() {
+            "comedo",
+        },
+        Name = "Emard Inc",
+        StartAt = System.DateTime.Parse("2022-07-20T04:51:23.308Z").ToUniversalTime(),
+        Status = AdsCampaignStatus.ProcessingFailed,
+        Targeting = new PropertyAdsCampaignTargeting() {},
+        TotalSpendAmount = 2349.8642875347286D,
+        UpdatedAt = System.DateTime.Parse("2025-12-05T13:35:57.603Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -482,8 +578,10 @@ Update a campaign
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMartechCampaign" method="put" path="/martech/{connection_id}/campaign/{id}" example="martech_campaign" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -493,7 +591,23 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMartechCampaignRequest req = new UpdateMartechCampaignRequest() {
-    MarketingCampaign = new MarketingCampaign() {},
+    MarketingCampaign = new MarketingCampaign() {
+        CreatedAt = System.DateTime.Parse("2023-08-01T22:29:12.121Z").ToUniversalTime(),
+        FromEmail = "Nick.Beahan@hotmail.com",
+        FromName = "Javier Rempel",
+        Id = "a65cd827-3a78-44a7-846e-2bca453f14c1",
+        ListIds = new List<string>() {
+            "bde5cab9-cf2f-4ed5-adab-b33c88bac5af",
+        },
+        Name = "Consequatur atqui sustineo.",
+        PreviewText = "Bellicus tener cinis causa cavus toties.",
+        ReplyToEmail = "Antwan.Abshire@hotmail.com",
+        SendAt = System.DateTime.Parse("2023-03-28T12:33:25.052Z").ToUniversalTime(),
+        Status = MarketingCampaignStatus.Sent,
+        SubjectLine = "Depromo depulso turpis teres apparatus placeat ventus tolero cunctatio.",
+        Type = "plaintext",
+        UpdatedAt = System.DateTime.Parse("2023-12-17T22:11:31.702Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

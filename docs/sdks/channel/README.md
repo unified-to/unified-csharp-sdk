@@ -17,8 +17,10 @@ Create a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" -->
+<!-- UsageSnippet language="csharp" operationID="createMessagingChannel" method="post" path="/messaging/{connection_id}/channel" example="messaging_channel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Channel.CreateMessagingChannelAsync(
-    messagingChannel: new MessagingChannel() {},
+    messagingChannel: new MessagingChannel() {
+        CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
+        Description = "Dolores tutis.",
+        HasSubchannels = true,
+        Id = "021b0aa2-c26f-46af-9ab5-aa8b3668976b",
+        IsActive = false,
+        IsPrivate = true,
+        Members = new List<MessagingMember>() {},
+        Name = "tego",
+        UpdatedAt = System.DateTime.Parse("2026-04-23T02:24:13.912Z").ToUniversalTime(),
+        WebUrl = "https://svelte-rule.name/",
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +155,10 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchMessagingChannel" method="patch" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +168,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMessagingChannelRequest req = new PatchMessagingChannelRequest() {
-    MessagingChannel = new MessagingChannel() {},
+    MessagingChannel = new MessagingChannel() {
+        CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
+        Description = "Dolores tutis.",
+        HasSubchannels = true,
+        Id = "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+        IsActive = false,
+        IsPrivate = true,
+        Members = new List<MessagingMember>() {},
+        Name = "tego",
+        UpdatedAt = System.DateTime.Parse("2026-04-23T02:24:13.920Z").ToUniversalTime(),
+        WebUrl = "https://svelte-rule.name/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +251,10 @@ Update a channel
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateMessagingChannel" method="put" path="/messaging/{connection_id}/channel/{id}" example="messaging_channel" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +264,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMessagingChannelRequest req = new UpdateMessagingChannelRequest() {
-    MessagingChannel = new MessagingChannel() {},
+    MessagingChannel = new MessagingChannel() {
+        CreatedAt = System.DateTime.Parse("2023-10-05T02:09:22.795Z").ToUniversalTime(),
+        Description = "Dolores tutis.",
+        HasSubchannels = true,
+        Id = "40af066d-f89e-46da-9bb2-81ff7f2f83a9",
+        IsActive = false,
+        IsPrivate = true,
+        Members = new List<MessagingMember>() {},
+        Name = "tego",
+        UpdatedAt = System.DateTime.Parse("2026-04-23T02:24:13.920Z").ToUniversalTime(),
+        WebUrl = "https://svelte-rule.name/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

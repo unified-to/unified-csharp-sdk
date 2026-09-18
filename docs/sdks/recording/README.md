@@ -19,8 +19,10 @@ Create a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" -->
+<!-- UsageSnippet language="csharp" operationID="createUcRecording" method="post" path="/uc/{connection_id}/recording" example="uc_recording" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,7 +31,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Recording.CreateUcRecordingAsync(
-    ucRecording: new UcRecording() {},
+    ucRecording: new UcRecording() {
+        Contacts = new List<UcContact>() {},
+        CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-21T20:25:37.089Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-03-28T16:21:59.272Z").ToUniversalTime(),
+        Id = "f159e1de-c6df-4fca-b181-b2205dd29d42",
+        Media = new List<UcRecordingMedia>() {},
+        StartAt = System.DateTime.Parse("2023-04-22T20:25:31.818Z").ToUniversalTime(),
+        Type = UcRecordingType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2025-02-24T08:24:25.608Z").ToUniversalTime(),
+        UserName = "Melyna Larson",
+        UserPhone = "1-915-327-0429 x509",
+        WebUrl = "https://spherical-comparison.org",
+    },
     connectionId: "<id>"
 );
 
@@ -227,8 +242,10 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchUcRecording" method="patch" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -238,7 +255,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcRecordingRequest req = new PatchUcRecordingRequest() {
-    UcRecording = new UcRecording() {},
+    UcRecording = new UcRecording() {
+        Contacts = new List<UcContact>() {},
+        CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-21T20:25:37.108Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-03-28T16:21:59.313Z").ToUniversalTime(),
+        Id = "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+        Media = new List<UcRecordingMedia>() {},
+        StartAt = System.DateTime.Parse("2023-04-22T20:25:31.825Z").ToUniversalTime(),
+        Type = UcRecordingType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2025-02-24T08:24:25.637Z").ToUniversalTime(),
+        UserName = "Melyna Larson",
+        UserPhone = "1-915-327-0429 x509",
+        WebUrl = "https://spherical-comparison.org",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -310,8 +340,10 @@ Update a recording
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateUcRecording" method="put" path="/uc/{connection_id}/recording/{id}" example="uc_recording" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -321,7 +353,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcRecordingRequest req = new UpdateUcRecordingRequest() {
-    UcRecording = new UcRecording() {},
+    UcRecording = new UcRecording() {
+        Contacts = new List<UcContact>() {},
+        CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-21T20:25:37.108Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-03-28T16:21:59.313Z").ToUniversalTime(),
+        Id = "f852c6c7-c340-42b3-8b0b-bd899a5017c7",
+        Media = new List<UcRecordingMedia>() {},
+        StartAt = System.DateTime.Parse("2023-04-22T20:25:31.825Z").ToUniversalTime(),
+        Type = UcRecordingType.Inbound,
+        UpdatedAt = System.DateTime.Parse("2025-02-24T08:24:25.637Z").ToUniversalTime(),
+        UserName = "Melyna Larson",
+        UserPhone = "1-915-327-0429 x509",
+        WebUrl = "https://spherical-comparison.org",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

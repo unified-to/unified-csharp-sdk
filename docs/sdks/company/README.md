@@ -30,8 +30,9 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" -->
+<!-- UsageSnippet language="csharp" operationID="createAtsCompany" method="post" path="/ats/{connection_id}/company" example="ats_company" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -40,7 +41,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.CreateAtsCompanyAsync(
-    atsCompany: new AtsCompany() {},
+    atsCompany: new AtsCompany() {
+        CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
+        Id = "56afd204-7f7a-49b5-99da-923b6a432b67",
+        Name = "Gulgowski, Dibbert and Wilderman",
+        Phone = "1-602-210-4548",
+        UpdatedAt = System.DateTime.Parse("2020-09-24T19:30:24.553Z").ToUniversalTime(),
+        WebsiteUrl = "https://somber-substitution.com/",
+    },
     connectionId: "<id>"
 );
 
@@ -72,8 +80,10 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" -->
+<!-- UsageSnippet language="csharp" operationID="createCrmCompany" method="post" path="/crm/{connection_id}/company" example="crm_company" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -82,7 +92,87 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.CreateCrmCompanyAsync(
-    crmCompany: new CrmCompany() {},
+    crmCompany: new CrmCompany() {
+        Address = new PropertyCrmCompanyAddress() {
+            Address1 = "7261 Salisbury Road",
+            Address2 = "Apt. 778",
+            City = "Harrisburg",
+            CountryCode = "US",
+            PostalCode = "56293-3678",
+            Region = "Pennsylvania",
+            RegionCode = "ID",
+        },
+        CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
+        Description = "Balbus crapula spiculum.",
+        Domains = new List<string>() {
+            "fussy-nerve.info",
+            "sturdy-lobster.org",
+            "greedy-offset.name",
+        },
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@gmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine.Jacobi@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+        },
+        Employees = 967D,
+        Id = "878a4579-b9a2-4c57-8199-2ead09812aa8",
+        Industry = "Infrastructure",
+        IsActive = true,
+        LinkUrls = new List<string>() {
+            "https://blue-license.org",
+            "https://minor-formation.com",
+            "https://ecstatic-hammock.com",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "011e5f4e-5ac6-4bab-bc6e-ad1927085f0f",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "esse"
+                ),
+            },
+        },
+        Name = "Goodwin and Sons",
+        Tags = new List<string>() {
+            "quaerat",
+            "valeo",
+        },
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(432) 849-2690",
+                Type = CrmTelephoneType.Mobile,
+            },
+            new CrmTelephone() {
+                Telephone = "(606) 871-2046",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(842) 258-9395",
+                Type = CrmTelephoneType.Mobile,
+            },
+        },
+        Timezone = "Europe/San_Marino",
+        UpdatedAt = System.DateTime.Parse("2025-02-06T12:34:04.282Z").ToUniversalTime(),
+        Websites = new List<string>() {
+            "https://wise-possession.org",
+        },
+    },
     connectionId: "<id>"
 );
 
@@ -114,8 +204,9 @@ Create a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" -->
+<!-- UsageSnippet language="csharp" operationID="createHrisCompany" method="post" path="/hris/{connection_id}/company" example="hris_company" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -124,7 +215,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.CreateHrisCompanyAsync(
-    hrisCompany: new HrisCompany() {},
+    hrisCompany: new HrisCompany() {
+        Address = new PropertyHrisCompanyAddress() {
+            Address1 = "2549 Church Walk",
+            City = "Lake Nettiebury",
+            CountryCode = "US",
+            PostalCode = "32877-4898",
+            Region = "Idaho",
+            RegionCode = "PA",
+        },
+        CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
+        Id = "698ffe76-ccdf-460f-8855-4518977a5977",
+        LegalName = "Schultz LLC",
+        Name = "Gottlieb Group",
+        UpdatedAt = System.DateTime.Parse("2026-09-05T21:12:19.808Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -443,8 +548,9 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAtsCompany" method="patch" path="/ats/{connection_id}/company/{id}" example="ats_company" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -454,7 +560,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
-    AtsCompany = new AtsCompany() {},
+    AtsCompany = new AtsCompany() {
+        CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
+        Id = "690c8c51-afd0-48c0-af3f-6cbe5db597c6",
+        Name = "Gulgowski, Dibbert and Wilderman",
+        Phone = "1-602-210-4548",
+        UpdatedAt = System.DateTime.Parse("2020-09-24T19:30:24.557Z").ToUniversalTime(),
+        WebsiteUrl = "https://somber-substitution.com/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -486,8 +599,10 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchCrmCompany" method="patch" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -497,7 +612,87 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
-    CrmCompany = new CrmCompany() {},
+    CrmCompany = new CrmCompany() {
+        Address = new PropertyCrmCompanyAddress() {
+            Address1 = "7261 Salisbury Road",
+            Address2 = "Apt. 778",
+            City = "Harrisburg",
+            CountryCode = "US",
+            PostalCode = "56293-3678",
+            Region = "Pennsylvania",
+            RegionCode = "ID",
+        },
+        CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
+        Description = "Balbus crapula spiculum.",
+        Domains = new List<string>() {
+            "fussy-nerve.info",
+            "sturdy-lobster.org",
+            "greedy-offset.name",
+        },
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@gmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine.Jacobi@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+        },
+        Employees = 967D,
+        Id = "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+        Industry = "Infrastructure",
+        IsActive = true,
+        LinkUrls = new List<string>() {
+            "https://blue-license.org",
+            "https://minor-formation.com",
+            "https://ecstatic-hammock.com",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "esse"
+                ),
+            },
+        },
+        Name = "Goodwin and Sons",
+        Tags = new List<string>() {
+            "quaerat",
+            "valeo",
+        },
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(432) 849-2690",
+                Type = CrmTelephoneType.Mobile,
+            },
+            new CrmTelephone() {
+                Telephone = "(606) 871-2046",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(842) 258-9395",
+                Type = CrmTelephoneType.Mobile,
+            },
+        },
+        Timezone = "Europe/San_Marino",
+        UpdatedAt = System.DateTime.Parse("2025-02-06T12:34:04.305Z").ToUniversalTime(),
+        Websites = new List<string>() {
+            "https://wise-possession.org",
+        },
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -529,8 +724,9 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchHrisCompany" method="patch" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -540,7 +736,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
-    HrisCompany = new HrisCompany() {},
+    HrisCompany = new HrisCompany() {
+        Address = new PropertyHrisCompanyAddress() {
+            Address1 = "2549 Church Walk",
+            City = "Lake Nettiebury",
+            CountryCode = "US",
+            PostalCode = "32877-4898",
+            Region = "Idaho",
+            RegionCode = "PA",
+        },
+        CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
+        Id = "fa4b8143-5f86-4d31-8b32-f1197757c6cf",
+        LegalName = "Schultz LLC",
+        Name = "Gottlieb Group",
+        UpdatedAt = System.DateTime.Parse("2026-09-05T21:12:19.828Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -692,8 +902,9 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAtsCompany" method="put" path="/ats/{connection_id}/company/{id}" example="ats_company" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -703,7 +914,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
-    AtsCompany = new AtsCompany() {},
+    AtsCompany = new AtsCompany() {
+        CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
+        Id = "690c8c51-afd0-48c0-af3f-6cbe5db597c6",
+        Name = "Gulgowski, Dibbert and Wilderman",
+        Phone = "1-602-210-4548",
+        UpdatedAt = System.DateTime.Parse("2020-09-24T19:30:24.557Z").ToUniversalTime(),
+        WebsiteUrl = "https://somber-substitution.com/",
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -735,8 +953,10 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateCrmCompany" method="put" path="/crm/{connection_id}/company/{id}" example="crm_company" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -746,7 +966,87 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
-    CrmCompany = new CrmCompany() {},
+    CrmCompany = new CrmCompany() {
+        Address = new PropertyCrmCompanyAddress() {
+            Address1 = "7261 Salisbury Road",
+            Address2 = "Apt. 778",
+            City = "Harrisburg",
+            CountryCode = "US",
+            PostalCode = "56293-3678",
+            Region = "Pennsylvania",
+            RegionCode = "ID",
+        },
+        CreatedAt = System.DateTime.Parse("2020-05-11T18:26:32.925Z").ToUniversalTime(),
+        Description = "Balbus crapula spiculum.",
+        Domains = new List<string>() {
+            "fussy-nerve.info",
+            "sturdy-lobster.org",
+            "greedy-offset.name",
+        },
+        Emails = new List<CrmEmail>() {
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@hotmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine_Jacobi@gmail.com",
+                Type = CrmEmailType.Work,
+            },
+            new CrmEmail() {
+                Email = "Sandrine.Jacobi@yahoo.com",
+                Type = CrmEmailType.Other,
+            },
+        },
+        Employees = 967D,
+        Id = "8003016a-bd6c-4df3-a7c3-d668a5c955a0",
+        Industry = "Infrastructure",
+        IsActive = true,
+        LinkUrls = new List<string>() {
+            "https://blue-license.org",
+            "https://minor-formation.com",
+            "https://ecstatic-hammock.com",
+        },
+        Metadata = new List<CrmMetadata>() {
+            new CrmMetadata() {
+                ExtraData = CrmMetadataExtraData.CreateMapOfAny(
+                    new Dictionary<string, object>() {
+                        { "display_name", "Custom Property" },
+                    }
+                ),
+                Format = CrmMetadataFormat.Text,
+                Id = "c0e84923-8a1c-4b7e-94a6-498d9d0416a4",
+                Namespace = "custom",
+                Slug = "custom_property",
+                Value = CrmMetadataValue.CreateStr(
+                    "esse"
+                ),
+            },
+        },
+        Name = "Goodwin and Sons",
+        Tags = new List<string>() {
+            "quaerat",
+            "valeo",
+        },
+        Telephones = new List<CrmTelephone>() {
+            new CrmTelephone() {
+                Telephone = "(432) 849-2690",
+                Type = CrmTelephoneType.Mobile,
+            },
+            new CrmTelephone() {
+                Telephone = "(606) 871-2046",
+                Type = CrmTelephoneType.Other,
+            },
+            new CrmTelephone() {
+                Telephone = "(842) 258-9395",
+                Type = CrmTelephoneType.Mobile,
+            },
+        },
+        Timezone = "Europe/San_Marino",
+        UpdatedAt = System.DateTime.Parse("2025-02-06T12:34:04.305Z").ToUniversalTime(),
+        Websites = new List<string>() {
+            "https://wise-possession.org",
+        },
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -778,8 +1078,9 @@ Update a company
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateHrisCompany" method="put" path="/hris/{connection_id}/company/{id}" example="hris_company" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -789,7 +1090,21 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
-    HrisCompany = new HrisCompany() {},
+    HrisCompany = new HrisCompany() {
+        Address = new PropertyHrisCompanyAddress() {
+            Address1 = "2549 Church Walk",
+            City = "Lake Nettiebury",
+            CountryCode = "US",
+            PostalCode = "32877-4898",
+            Region = "Idaho",
+            RegionCode = "PA",
+        },
+        CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
+        Id = "fa4b8143-5f86-4d31-8b32-f1197757c6cf",
+        LegalName = "Schultz LLC",
+        Name = "Gottlieb Group",
+        UpdatedAt = System.DateTime.Parse("2026-09-05T21:12:19.828Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

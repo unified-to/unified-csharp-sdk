@@ -17,8 +17,10 @@ Create a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" -->
+<!-- UsageSnippet language="csharp" operationID="createAccountingJournal" method="post" path="/accounting/{connection_id}/journal" example="accounting_journal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -27,7 +29,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Journal.CreateAccountingJournalAsync(
-    accountingJournal: new AccountingJournal() {},
+    accountingJournal: new AccountingJournal() {
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
+        Currency = "FKP",
+        Description = "Calco constans adipisci.",
+        Id = "3d392f10-878d-46c4-a59b-f5250068e316",
+        PostedAt = System.DateTime.Parse("2023-10-19T01:52:16.859Z").ToUniversalTime(),
+        Reference = "ullam",
+        Source = "crustulum",
+        TaxAmount = 78672D,
+        UpdatedAt = System.DateTime.Parse("2022-01-01T11:09:03.238Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -142,8 +156,10 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchAccountingJournal" method="patch" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -153,7 +169,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAccountingJournalRequest req = new PatchAccountingJournalRequest() {
-    AccountingJournal = new AccountingJournal() {},
+    AccountingJournal = new AccountingJournal() {
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
+        Currency = "FKP",
+        Description = "Calco constans adipisci.",
+        Id = "92900846-008d-4177-9d82-d2c7a3f578e0",
+        PostedAt = System.DateTime.Parse("2023-10-19T01:52:16.870Z").ToUniversalTime(),
+        Reference = "ullam",
+        Source = "crustulum",
+        TaxAmount = 78672D,
+        UpdatedAt = System.DateTime.Parse("2022-01-01T11:09:03.243Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -225,8 +253,10 @@ Update a journal
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateAccountingJournal" method="put" path="/accounting/{connection_id}/journal/{id}" example="accounting_journal" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -236,7 +266,19 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAccountingJournalRequest req = new UpdateAccountingJournalRequest() {
-    AccountingJournal = new AccountingJournal() {},
+    AccountingJournal = new AccountingJournal() {
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
+        Currency = "FKP",
+        Description = "Calco constans adipisci.",
+        Id = "92900846-008d-4177-9d82-d2c7a3f578e0",
+        PostedAt = System.DateTime.Parse("2023-10-19T01:52:16.870Z").ToUniversalTime(),
+        Reference = "ullam",
+        Source = "crustulum",
+        TaxAmount = 78672D,
+        UpdatedAt = System.DateTime.Parse("2022-01-01T11:09:03.243Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -17,8 +17,9 @@ Create a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" -->
+<!-- UsageSnippet language="csharp" operationID="createRepoCommit" method="post" path="/repo/{connection_id}/commit" example="repo_commit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -28,7 +29,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commit.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
+        CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
+        Id = "537657d4-be2d-4530-82aa-c8046846968a",
+        LinesAdded = 313D,
+        LinesChanged = 659D,
+        LinesDeleted = 482D,
+        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2023-05-16T02:59:38.478Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -144,8 +152,9 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchRepoCommit" method="patch" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -156,7 +165,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
+        CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
+        Id = "2b617b64-dffb-430e-8378-1009b9baedcf",
+        LinesAdded = 313D,
+        LinesChanged = 659D,
+        LinesDeleted = 482D,
+        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2023-05-16T02:59:38.482Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -229,8 +245,9 @@ Update a commit
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateRepoCommit" method="put" path="/repo/{connection_id}/commit/{id}" example="repo_commit" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -241,7 +258,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
+        CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
+        Id = "2b617b64-dffb-430e-8378-1009b9baedcf",
+        LinesAdded = 313D,
+        LinesChanged = 659D,
+        LinesDeleted = 482D,
+        Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
+        UpdatedAt = System.DateTime.Parse("2023-05-16T02:59:38.482Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

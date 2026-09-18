@@ -12,8 +12,9 @@ Create a query
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createDatastoreQuery" method="post" path="/datastore/{connection_id}/query" -->
+<!-- UsageSnippet language="csharp" operationID="createDatastoreQuery" method="post" path="/datastore/{connection_id}/query" example="datastore_query" -->
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -22,7 +23,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Query.CreateDatastoreQueryAsync(
-    datastoreQuery: new DatastoreQuery() {},
+    datastoreQuery: new DatastoreQuery() {
+        Query = new PropertyDatastoreQueryQuery() {
+            Filter = new PropertyDatastoreQueryQueryFilter() {
+                Type = PropertyDatastoreQueryQueryFilterType.Or,
+            },
+            Select = new List<string>() {
+                "*",
+            },
+            Sql = "",
+        },
+    },
     connectionId: "<id>"
 );
 

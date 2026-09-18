@@ -53,8 +53,9 @@ Create an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsActivity" method="post" path="/lms/{connection_id}/activity" example="lms_activity" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -63,7 +64,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsActivityAsync(
-    lmsActivity: new LmsActivity() {},
+    lmsActivity: new LmsActivity() {
+        AssignedGrade = "summopere",
+        CompletedAt = System.DateTime.Parse("2025-04-12T21:08:39.423Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
+        DurationMinutes = 55D,
+        Id = "3c4a7fe6-f616-4cb1-b6f1-b07ad7470920",
+        IsCompleted = true,
+        ProgressPercentage = 100D,
+        StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-23T21:45:04.318Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -95,8 +106,10 @@ Create a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsClass" method="post" path="/lms/{connection_id}/class" example="lms_class" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -105,7 +118,32 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsClassAsync(
-    lmsClass: new LmsClass() {},
+    lmsClass: new LmsClass() {
+        CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
+        Description = "Anser sperno decerno.",
+        Id = "c1f27f80-7668-4b4b-9265-b1894eb6243a",
+        Instructors = new List<LmsReference>() {},
+        Languages = new List<string>() {
+            "in",
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+                Description = "Esse confido.",
+                Languages = new List<string>() {
+                    "fa",
+                    "da",
+                },
+                Name = "illo",
+                ThumbnailUrl = "https://loremflickr.com/199/1934?lock=4323325966476891",
+                Type = LmsMediaType.Video,
+                Url = "https://loremflickr.com/487/921?lock=5127962071241632",
+            },
+        },
+        Name = "virtus",
+        Students = new List<LmsReference>() {},
+        UpdatedAt = System.DateTime.Parse("2025-07-07T21:37:16.026Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -137,8 +175,10 @@ Create a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsCollection" method="post" path="/lms/{connection_id}/collection" example="lms_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -147,7 +187,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsCollectionAsync(
-    lmsCollection: new LmsCollection() {},
+    lmsCollection: new LmsCollection() {
+        CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
+        Description = "Ab.",
+        Id = "8844ee01-dfb0-4ad4-af18-6b5beedaa703",
+        IsActive = true,
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+                Description = "Aliquam tardus careo hic umbra.",
+                Languages = new List<string>() {
+                    "gl",
+                },
+                Name = "thymum",
+                ThumbnailUrl = "https://picsum.photos/seed/15O5EfV/2982/752",
+                Type = LmsMediaType.Headshot,
+                Url = "https://loremflickr.com/2679/70?lock=6078357625960554",
+            },
+        },
+        Name = "ara",
+        UpdatedAt = System.DateTime.Parse("2026-06-28T08:01:49.217Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -179,8 +239,10 @@ Create a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsContent" method="post" path="/lms/{connection_id}/content" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsContent" method="post" path="/lms/{connection_id}/content" example="lms_content" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -189,7 +251,96 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsContentAsync(
-    lmsContent: new LmsContent() {},
+    lmsContent: new LmsContent() {
+        Categories = new List<string>() {
+            "territo",
+        },
+        CreatedAt = System.DateTime.Parse("2020-10-22T22:30:50.963Z").ToUniversalTime(),
+        Description = "Usque laboriosam ventosus adflicto.",
+        Difficulty = "Beginner",
+        DurationMinutes = 19D,
+        ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+        Id = "09b21f68-cdb1-4147-bb3e-6d70468ec346",
+        Instructors = new List<LmsReference>() {
+            new LmsReference() {
+                Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
+                Name = "Winston Ferry",
+            },
+        },
+        IsActive = true,
+        Languages = new List<string>() {
+            "despecto",
+            "suppellex",
+        },
+        Localizations = new List<LmsContentLocalization>() {
+            new LmsContentLocalization() {
+                Description = "Numquam.",
+                Language = "es",
+                Name = "validus",
+            },
+            new LmsContentLocalization() {
+                Description = "Callide.",
+                Language = "fr",
+                Name = "crux",
+            },
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+                Description = "Venia aeternus tandem spargo.",
+                Languages = new List<string>() {
+                    "zu",
+                    "ba",
+                },
+                Name = "subiungo",
+                ThumbnailUrl = "https://loremflickr.com/2056/3712?lock=5644845642923518",
+                Type = LmsMediaType.Other,
+                Url = "https://loremflickr.com/2593/1553?lock=8591263400111785",
+            },
+            new LmsMedia() {
+                Content = "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+                Description = "Comedo valde caste combibo.",
+                Languages = new List<string>() {
+                    "it",
+                    "hu",
+                },
+                Name = "beneficium",
+                ThumbnailUrl = "https://picsum.photos/seed/pNFr1/2597/885",
+                Type = LmsMediaType.Web,
+                Url = "https://loremflickr.com/3597/239?lock=7142808124990633",
+            },
+            new LmsMedia() {
+                Content = "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+                Description = "Tunc barba decens.",
+                Languages = new List<string>() {
+                    "bn",
+                    "yo",
+                },
+                Name = "qui",
+                ThumbnailUrl = "https://loremflickr.com/1375/3377?lock=6601832177607674",
+                Type = LmsMediaType.Image,
+                Url = "https://loremflickr.com/3927/2086?lock=5199784913821481",
+            },
+        },
+        Name = "ut",
+        ProviderName = "Berge LLC",
+        PublishedAt = System.DateTime.Parse("2023-11-08T11:32:09.080Z").ToUniversalTime(),
+        ShortDescription = "Commemoro.",
+        Skills = new List<string>() {
+            "trucido",
+        },
+        SortOrder = 3D,
+        Subjects = new List<LmsSubject>() {
+            new LmsSubject() {
+                Name = "tibi",
+                Rank = 1D,
+            },
+        },
+        Tags = new List<string>() {
+            "dens",
+        },
+        UpdatedAt = System.DateTime.Parse("2022-09-23T11:13:51.788Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -221,8 +372,10 @@ Create a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsCourse" method="post" path="/lms/{connection_id}/course" example="lms_course" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -231,7 +384,50 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsCourseAsync(
-    lmsCourse: new LmsCourse() {},
+    lmsCourse: new LmsCourse() {
+        Categories = new List<string>() {
+            "tergiversatio",
+            "tumultus",
+        },
+        CreatedAt = System.DateTime.Parse("2022-10-06T09:58:53.559Z").ToUniversalTime(),
+        Currency = "FJD",
+        Description = "Vinco alias aut capitulus.",
+        DurationMinutes = 148D,
+        Id = "950aba61-f261-4a01-9c64-0ed9cde2416e",
+        Instructors = new List<LmsReference>() {},
+        IsActive = true,
+        IsPrivate = false,
+        Languages = new List<string>() {
+            "desparatus",
+            "earum",
+            "deripio",
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+                Description = "Adipiscor.",
+                Languages = new List<string>() {
+                    "ms",
+                    "te",
+                },
+                Name = "tandem",
+                ThumbnailUrl = "https://picsum.photos/seed/syTatRhK03/928/273",
+                Type = LmsMediaType.Other,
+                Url = "https://picsum.photos/seed/fQAbsk/2472/1671",
+            },
+        },
+        Name = "comptus",
+        PriceAmount = 84D,
+        ProviderName = "Homenick - Wunsch",
+        PublishedAt = System.DateTime.Parse("2023-12-30T03:35:03.902Z").ToUniversalTime(),
+        Skills = new List<string>() {
+            "adiuvo",
+            "tam",
+        },
+        Students = new List<LmsReference>() {},
+        TimeEstimateMinutes = 100D,
+        UpdatedAt = System.DateTime.Parse("2023-02-06T22:30:52.571Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -263,8 +459,10 @@ Create an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsInstructor" method="post" path="/lms/{connection_id}/instructor" example="lms_instructor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -273,7 +471,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsInstructorAsync(
-    lmsInstructor: new LmsInstructor() {},
+    lmsInstructor: new LmsInstructor() {
+        CreatedAt = System.DateTime.Parse("2021-10-12T16:38:54.979Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Deangelo",
+        Id = "dfe83772-691a-4931-8ea8-97260a0c5abf",
+        ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
+        LastName = "Ritchie",
+        Name = "Deangelo Ritchie",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(352) 551-7989",
+                Type = LmsTelephoneType.Home,
+            },
+        },
+        Title = "Product Solutions Engineer",
+        UpdatedAt = System.DateTime.Parse("2025-06-29T14:07:16.774Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -305,8 +522,10 @@ Create a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" -->
+<!-- UsageSnippet language="csharp" operationID="createLmsStudent" method="post" path="/lms/{connection_id}/student" example="lms_student" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -315,7 +534,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsStudentAsync(
-    lmsStudent: new LmsStudent() {},
+    lmsStudent: new LmsStudent() {
+        Address = new PropertyLmsStudentAddress() {
+            Address1 = "94082 Kassandra Camp",
+            Address2 = "Apt. 461",
+            City = "New Ibrahimmouth",
+            CountryCode = "US",
+            PostalCode = "52851",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CreatedAt = System.DateTime.Parse("2020-03-23T06:59:29.777Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Marcella",
+        Id = "f7f415ad-d6a4-49ee-b6f4-6823b04af952",
+        ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
+        LastName = "Murazik",
+        Name = "Marcella Murazik",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(482) 469-8067",
+                Type = LmsTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2022-06-19T13:56:16.319Z").ToUniversalTime(),
+    },
     connectionId: "<id>"
 );
 
@@ -928,8 +1174,9 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsActivity" method="patch" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -939,7 +1186,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
-    LmsActivity = new LmsActivity() {},
+    LmsActivity = new LmsActivity() {
+        AssignedGrade = "summopere",
+        CompletedAt = System.DateTime.Parse("2025-04-12T21:08:39.427Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
+        DurationMinutes = 55D,
+        Id = "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+        IsCompleted = true,
+        ProgressPercentage = 100D,
+        StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-23T21:45:04.320Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -971,8 +1228,10 @@ Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsClass" method="patch" path="/lms/{connection_id}/class/{id}" example="lms_class" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -982,7 +1241,32 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsClassRequest req = new PatchLmsClassRequest() {
-    LmsClass = new LmsClass() {},
+    LmsClass = new LmsClass() {
+        CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
+        Description = "Anser sperno decerno.",
+        Id = "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+        Instructors = new List<LmsReference>() {},
+        Languages = new List<string>() {
+            "in",
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+                Description = "Esse confido.",
+                Languages = new List<string>() {
+                    "fa",
+                    "da",
+                },
+                Name = "illo",
+                ThumbnailUrl = "https://loremflickr.com/199/1934?lock=4323325966476891",
+                Type = LmsMediaType.Video,
+                Url = "https://loremflickr.com/487/921?lock=5127962071241632",
+            },
+        },
+        Name = "virtus",
+        Students = new List<LmsReference>() {},
+        UpdatedAt = System.DateTime.Parse("2025-07-07T21:37:16.038Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1014,8 +1298,10 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsCollection" method="patch" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1025,7 +1311,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
-    LmsCollection = new LmsCollection() {},
+    LmsCollection = new LmsCollection() {
+        CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
+        Description = "Ab.",
+        Id = "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+        IsActive = true,
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+                Description = "Aliquam tardus careo hic umbra.",
+                Languages = new List<string>() {
+                    "gl",
+                },
+                Name = "thymum",
+                ThumbnailUrl = "https://picsum.photos/seed/15O5EfV/2982/752",
+                Type = LmsMediaType.Headshot,
+                Url = "https://loremflickr.com/2679/70?lock=6078357625960554",
+            },
+        },
+        Name = "ara",
+        UpdatedAt = System.DateTime.Parse("2026-06-28T08:01:49.226Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1057,8 +1363,10 @@ Update a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsContent" method="patch" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsContent" method="patch" path="/lms/{connection_id}/content/{id}" example="lms_content" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1068,7 +1376,96 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsContentRequest req = new PatchLmsContentRequest() {
-    LmsContent = new LmsContent() {},
+    LmsContent = new LmsContent() {
+        Categories = new List<string>() {
+            "territo",
+        },
+        CreatedAt = System.DateTime.Parse("2020-10-22T22:30:50.963Z").ToUniversalTime(),
+        Description = "Usque laboriosam ventosus adflicto.",
+        Difficulty = "Beginner",
+        DurationMinutes = 19D,
+        ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+        Id = "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+        Instructors = new List<LmsReference>() {
+            new LmsReference() {
+                Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
+                Name = "Winston Ferry",
+            },
+        },
+        IsActive = true,
+        Languages = new List<string>() {
+            "despecto",
+            "suppellex",
+        },
+        Localizations = new List<LmsContentLocalization>() {
+            new LmsContentLocalization() {
+                Description = "Numquam.",
+                Language = "es",
+                Name = "validus",
+            },
+            new LmsContentLocalization() {
+                Description = "Callide.",
+                Language = "fr",
+                Name = "crux",
+            },
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+                Description = "Venia aeternus tandem spargo.",
+                Languages = new List<string>() {
+                    "zu",
+                    "ba",
+                },
+                Name = "subiungo",
+                ThumbnailUrl = "https://loremflickr.com/2056/3712?lock=5644845642923518",
+                Type = LmsMediaType.Other,
+                Url = "https://loremflickr.com/2593/1553?lock=8591263400111785",
+            },
+            new LmsMedia() {
+                Content = "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+                Description = "Comedo valde caste combibo.",
+                Languages = new List<string>() {
+                    "it",
+                    "hu",
+                },
+                Name = "beneficium",
+                ThumbnailUrl = "https://picsum.photos/seed/pNFr1/2597/885",
+                Type = LmsMediaType.Web,
+                Url = "https://loremflickr.com/3597/239?lock=7142808124990633",
+            },
+            new LmsMedia() {
+                Content = "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+                Description = "Tunc barba decens.",
+                Languages = new List<string>() {
+                    "bn",
+                    "yo",
+                },
+                Name = "qui",
+                ThumbnailUrl = "https://loremflickr.com/1375/3377?lock=6601832177607674",
+                Type = LmsMediaType.Image,
+                Url = "https://loremflickr.com/3927/2086?lock=5199784913821481",
+            },
+        },
+        Name = "ut",
+        ProviderName = "Berge LLC",
+        PublishedAt = System.DateTime.Parse("2023-11-08T11:32:09.080Z").ToUniversalTime(),
+        ShortDescription = "Commemoro.",
+        Skills = new List<string>() {
+            "trucido",
+        },
+        SortOrder = 3D,
+        Subjects = new List<LmsSubject>() {
+            new LmsSubject() {
+                Name = "tibi",
+                Rank = 1D,
+            },
+        },
+        Tags = new List<string>() {
+            "dens",
+        },
+        UpdatedAt = System.DateTime.Parse("2022-09-23T11:13:51.798Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1100,8 +1497,10 @@ Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsCourse" method="patch" path="/lms/{connection_id}/course/{id}" example="lms_course" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1111,7 +1510,50 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
-    LmsCourse = new LmsCourse() {},
+    LmsCourse = new LmsCourse() {
+        Categories = new List<string>() {
+            "tergiversatio",
+            "tumultus",
+        },
+        CreatedAt = System.DateTime.Parse("2022-10-06T09:58:53.559Z").ToUniversalTime(),
+        Currency = "FJD",
+        Description = "Vinco alias aut capitulus.",
+        DurationMinutes = 148D,
+        Id = "f50e97ee-407a-40a1-911f-7d1283bbb122",
+        Instructors = new List<LmsReference>() {},
+        IsActive = true,
+        IsPrivate = false,
+        Languages = new List<string>() {
+            "desparatus",
+            "earum",
+            "deripio",
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+                Description = "Adipiscor.",
+                Languages = new List<string>() {
+                    "ms",
+                    "te",
+                },
+                Name = "tandem",
+                ThumbnailUrl = "https://picsum.photos/seed/syTatRhK03/928/273",
+                Type = LmsMediaType.Other,
+                Url = "https://picsum.photos/seed/fQAbsk/2472/1671",
+            },
+        },
+        Name = "comptus",
+        PriceAmount = 84D,
+        ProviderName = "Homenick - Wunsch",
+        PublishedAt = System.DateTime.Parse("2023-12-30T03:35:03.902Z").ToUniversalTime(),
+        Skills = new List<string>() {
+            "adiuvo",
+            "tam",
+        },
+        Students = new List<LmsReference>() {},
+        TimeEstimateMinutes = 100D,
+        UpdatedAt = System.DateTime.Parse("2023-02-06T22:30:52.572Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1143,8 +1585,10 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsInstructor" method="patch" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1154,7 +1598,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
-    LmsInstructor = new LmsInstructor() {},
+    LmsInstructor = new LmsInstructor() {
+        CreatedAt = System.DateTime.Parse("2021-10-12T16:38:54.979Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Deangelo",
+        Id = "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+        ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
+        LastName = "Ritchie",
+        Name = "Deangelo Ritchie",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(352) 551-7989",
+                Type = LmsTelephoneType.Home,
+            },
+        },
+        Title = "Product Solutions Engineer",
+        UpdatedAt = System.DateTime.Parse("2025-06-29T14:07:16.781Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1186,8 +1649,10 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="patchLmsStudent" method="patch" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1197,7 +1662,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
-    LmsStudent = new LmsStudent() {},
+    LmsStudent = new LmsStudent() {
+        Address = new PropertyLmsStudentAddress() {
+            Address1 = "94082 Kassandra Camp",
+            Address2 = "Apt. 461",
+            City = "New Ibrahimmouth",
+            CountryCode = "US",
+            PostalCode = "52851",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CreatedAt = System.DateTime.Parse("2020-03-23T06:59:29.777Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Marcella",
+        Id = "d41ddae1-7a51-41a8-8179-becbb620c443",
+        ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
+        LastName = "Murazik",
+        Name = "Marcella Murazik",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(482) 469-8067",
+                Type = LmsTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2022-06-19T13:56:16.323Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1509,8 +2001,9 @@ Update an activity
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsActivity" method="put" path="/lms/{connection_id}/activity/{id}" example="lms_activity" -->
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1520,7 +2013,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
-    LmsActivity = new LmsActivity() {},
+    LmsActivity = new LmsActivity() {
+        AssignedGrade = "summopere",
+        CompletedAt = System.DateTime.Parse("2025-04-12T21:08:39.427Z").ToUniversalTime(),
+        CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
+        DurationMinutes = 55D,
+        Id = "69bd1cd5-438e-4eea-83f8-ada458c5ea2f",
+        IsCompleted = true,
+        ProgressPercentage = 100D,
+        StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-23T21:45:04.320Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1552,8 +2055,10 @@ Update a class
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsClass" method="put" path="/lms/{connection_id}/class/{id}" example="lms_class" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1563,7 +2068,32 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
-    LmsClass = new LmsClass() {},
+    LmsClass = new LmsClass() {
+        CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
+        Description = "Anser sperno decerno.",
+        Id = "882383dc-a478-43e2-b8b3-f63b6709a0a4",
+        Instructors = new List<LmsReference>() {},
+        Languages = new List<string>() {
+            "in",
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Defetiscor aetas acies benevolentia ulterius. Creta bis beneficium canis. Bonus valeo vulgo creator arca peior ceno earum culpa. Tabesco apostolus talis. Ultra accommodo deinde sono culpo arto cruciamentum triduana.",
+                Description = "Esse confido.",
+                Languages = new List<string>() {
+                    "fa",
+                    "da",
+                },
+                Name = "illo",
+                ThumbnailUrl = "https://loremflickr.com/199/1934?lock=4323325966476891",
+                Type = LmsMediaType.Video,
+                Url = "https://loremflickr.com/487/921?lock=5127962071241632",
+            },
+        },
+        Name = "virtus",
+        Students = new List<LmsReference>() {},
+        UpdatedAt = System.DateTime.Parse("2025-07-07T21:37:16.038Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1595,8 +2125,10 @@ Update a collection
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsCollection" method="put" path="/lms/{connection_id}/collection/{id}" example="lms_collection" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1606,7 +2138,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
-    LmsCollection = new LmsCollection() {},
+    LmsCollection = new LmsCollection() {
+        CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
+        Description = "Ab.",
+        Id = "3add09e2-c99a-46e8-a1cc-d17257cbcbcf",
+        IsActive = true,
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Accusamus earum sulum libero adficio testimonium vitae. Calcar contra vergo curis sollers. Caste brevis denuo. Tam amita ducimus capillus. Vulgaris temporibus arbustum solium id. Suppono commodo fuga surculus tripudio doloribus.",
+                Description = "Aliquam tardus careo hic umbra.",
+                Languages = new List<string>() {
+                    "gl",
+                },
+                Name = "thymum",
+                ThumbnailUrl = "https://picsum.photos/seed/15O5EfV/2982/752",
+                Type = LmsMediaType.Headshot,
+                Url = "https://loremflickr.com/2679/70?lock=6078357625960554",
+            },
+        },
+        Name = "ara",
+        UpdatedAt = System.DateTime.Parse("2026-06-28T08:01:49.226Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1638,8 +2190,10 @@ Update a content
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsContent" method="put" path="/lms/{connection_id}/content/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsContent" method="put" path="/lms/{connection_id}/content/{id}" example="lms_content" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1649,7 +2203,96 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
-    LmsContent = new LmsContent() {},
+    LmsContent = new LmsContent() {
+        Categories = new List<string>() {
+            "territo",
+        },
+        CreatedAt = System.DateTime.Parse("2020-10-22T22:30:50.963Z").ToUniversalTime(),
+        Description = "Usque laboriosam ventosus adflicto.",
+        Difficulty = "Beginner",
+        DurationMinutes = 19D,
+        ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
+        Id = "f4465935-c7ed-442f-97e4-8edf4fdfc16e",
+        Instructors = new List<LmsReference>() {
+            new LmsReference() {
+                Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
+                Name = "Winston Ferry",
+            },
+        },
+        IsActive = true,
+        Languages = new List<string>() {
+            "despecto",
+            "suppellex",
+        },
+        Localizations = new List<LmsContentLocalization>() {
+            new LmsContentLocalization() {
+                Description = "Numquam.",
+                Language = "es",
+                Name = "validus",
+            },
+            new LmsContentLocalization() {
+                Description = "Callide.",
+                Language = "fr",
+                Name = "crux",
+            },
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Adnuo antepono vulticulus incidunt. Commemoro voro ocer arca velut vigor venustas una audeo. Consectetur totidem amor amo vigor. Patior ulciscor cohors necessitatibus beatae. Copiose cedo sub decens acer.",
+                Description = "Venia aeternus tandem spargo.",
+                Languages = new List<string>() {
+                    "zu",
+                    "ba",
+                },
+                Name = "subiungo",
+                ThumbnailUrl = "https://loremflickr.com/2056/3712?lock=5644845642923518",
+                Type = LmsMediaType.Other,
+                Url = "https://loremflickr.com/2593/1553?lock=8591263400111785",
+            },
+            new LmsMedia() {
+                Content = "Terminatio acidus tripudio teres. Compono demum aut aestivus ambitus pecus tergum verumtamen vestrum. Absque adversus desino aut tabernus tollo vigor. Cur agnitio totidem consuasor bene doloribus. Vetus abundans curriculum curatio usitas.",
+                Description = "Comedo valde caste combibo.",
+                Languages = new List<string>() {
+                    "it",
+                    "hu",
+                },
+                Name = "beneficium",
+                ThumbnailUrl = "https://picsum.photos/seed/pNFr1/2597/885",
+                Type = LmsMediaType.Web,
+                Url = "https://loremflickr.com/3597/239?lock=7142808124990633",
+            },
+            new LmsMedia() {
+                Content = "Coepi demo adversus capillus aro unus templum. Aspicio alius vehemens terminatio varietas vomica. Apud thorax defero decet impedit verbera pauci laboriosam molestiae urbanus. Aveho vergo crux certus nulla caute sophismata. Caute voluptatibus patrocinor demo verumtamen adeo canis sapiente depraedor verus.",
+                Description = "Tunc barba decens.",
+                Languages = new List<string>() {
+                    "bn",
+                    "yo",
+                },
+                Name = "qui",
+                ThumbnailUrl = "https://loremflickr.com/1375/3377?lock=6601832177607674",
+                Type = LmsMediaType.Image,
+                Url = "https://loremflickr.com/3927/2086?lock=5199784913821481",
+            },
+        },
+        Name = "ut",
+        ProviderName = "Berge LLC",
+        PublishedAt = System.DateTime.Parse("2023-11-08T11:32:09.080Z").ToUniversalTime(),
+        ShortDescription = "Commemoro.",
+        Skills = new List<string>() {
+            "trucido",
+        },
+        SortOrder = 3D,
+        Subjects = new List<LmsSubject>() {
+            new LmsSubject() {
+                Name = "tibi",
+                Rank = 1D,
+            },
+        },
+        Tags = new List<string>() {
+            "dens",
+        },
+        UpdatedAt = System.DateTime.Parse("2022-09-23T11:13:51.798Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1681,8 +2324,10 @@ Update a course
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsCourse" method="put" path="/lms/{connection_id}/course/{id}" example="lms_course" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1692,7 +2337,50 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
-    LmsCourse = new LmsCourse() {},
+    LmsCourse = new LmsCourse() {
+        Categories = new List<string>() {
+            "tergiversatio",
+            "tumultus",
+        },
+        CreatedAt = System.DateTime.Parse("2022-10-06T09:58:53.559Z").ToUniversalTime(),
+        Currency = "FJD",
+        Description = "Vinco alias aut capitulus.",
+        DurationMinutes = 148D,
+        Id = "f50e97ee-407a-40a1-911f-7d1283bbb122",
+        Instructors = new List<LmsReference>() {},
+        IsActive = true,
+        IsPrivate = false,
+        Languages = new List<string>() {
+            "desparatus",
+            "earum",
+            "deripio",
+        },
+        Media = new List<LmsMedia>() {
+            new LmsMedia() {
+                Content = "Adeptio crudelis ipsum utrimque quae architecto. Cum eius conitor anser abutor error adsuesco abeo. Denego nihil caries aveho.",
+                Description = "Adipiscor.",
+                Languages = new List<string>() {
+                    "ms",
+                    "te",
+                },
+                Name = "tandem",
+                ThumbnailUrl = "https://picsum.photos/seed/syTatRhK03/928/273",
+                Type = LmsMediaType.Other,
+                Url = "https://picsum.photos/seed/fQAbsk/2472/1671",
+            },
+        },
+        Name = "comptus",
+        PriceAmount = 84D,
+        ProviderName = "Homenick - Wunsch",
+        PublishedAt = System.DateTime.Parse("2023-12-30T03:35:03.902Z").ToUniversalTime(),
+        Skills = new List<string>() {
+            "adiuvo",
+            "tam",
+        },
+        Students = new List<LmsReference>() {},
+        TimeEstimateMinutes = 100D,
+        UpdatedAt = System.DateTime.Parse("2023-02-06T22:30:52.572Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1724,8 +2412,10 @@ Update an instructor
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsInstructor" method="put" path="/lms/{connection_id}/instructor/{id}" example="lms_instructor" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1735,7 +2425,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
-    LmsInstructor = new LmsInstructor() {},
+    LmsInstructor = new LmsInstructor() {
+        CreatedAt = System.DateTime.Parse("2021-10-12T16:38:54.979Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Deangelo",
+        Id = "b4d5bd82-fbdc-49d8-9af8-7010a6150a16",
+        ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
+        LastName = "Ritchie",
+        Name = "Deangelo Ritchie",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(352) 551-7989",
+                Type = LmsTelephoneType.Home,
+            },
+        },
+        Title = "Product Solutions Engineer",
+        UpdatedAt = System.DateTime.Parse("2025-06-29T14:07:16.781Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1767,8 +2476,10 @@ Update a student
 
 ### Example Usage
 
-<!-- UsageSnippet language="csharp" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" -->
+<!-- UsageSnippet language="csharp" operationID="updateLmsStudent" method="put" path="/lms/{connection_id}/student/{id}" example="lms_student" -->
 ```csharp
+using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1778,7 +2489,34 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
-    LmsStudent = new LmsStudent() {},
+    LmsStudent = new LmsStudent() {
+        Address = new PropertyLmsStudentAddress() {
+            Address1 = "94082 Kassandra Camp",
+            Address2 = "Apt. 461",
+            City = "New Ibrahimmouth",
+            CountryCode = "US",
+            PostalCode = "52851",
+            Region = "Tennessee",
+            RegionCode = "NV",
+        },
+        CreatedAt = System.DateTime.Parse("2020-03-23T06:59:29.777Z").ToUniversalTime(),
+        Emails = new List<LmsEmail>() {
+            new LmsEmail() {},
+            new LmsEmail() {},
+        },
+        FirstName = "Marcella",
+        Id = "d41ddae1-7a51-41a8-8179-becbb620c443",
+        ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
+        LastName = "Murazik",
+        Name = "Marcella Murazik",
+        Telephones = new List<LmsTelephone>() {
+            new LmsTelephone() {
+                Telephone = "(482) 469-8067",
+                Type = LmsTelephoneType.Fax,
+            },
+        },
+        UpdatedAt = System.DateTime.Parse("2022-06-19T13:56:16.323Z").ToUniversalTime(),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
