@@ -65,7 +65,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                 Name = "Eloise Mueller PhD",
             },
         },
-        Id = "66ab0110-f43b-4a2e-ac77-00ee9ed7d453",
+        Id = "8e27288a-9adf-492e-8046-95892d82dfef",
         Industry = "Gorgeous Plastic Computer",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -76,7 +76,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "fe031341-9e80-483c-9552-147da99d959e",
+                Id = "d433dbaf-c75b-4155-9ec8-7a679f1a1161",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -91,7 +91,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-09T12:56:29.780Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-10T10:05:26.877Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -105,14 +105,14 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     Region = "Maine",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-02T04:14:45.189Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-03T02:28:02.215Z").ToUniversalTime(),
                 Description = "Deduco cultellus alii terebro depono thesaurus.",
                 Id = "f6101769-deb3-4721-978c-d205638870ee",
                 IsActive = false,
                 Location = "6788 Oxford Road",
                 Name = "Forward Security Orchestrator",
                 PostingUrl = "https://ajar-metabolite.net/",
-                UpdatedAt = System.DateTime.Parse("2026-07-27T18:35:01.326Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-07-28T17:19:00.419Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -159,7 +159,8 @@ var res = await sdk.Job.CreateAtsJobAsync(
             "crux",
         },
         Status = AtsJobStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2026-01-31T18:22:08.370Z").ToUniversalTime(),
+        Summary = "Amicitia vergo hic.",
+        UpdatedAt = System.DateTime.Parse("2026-02-01T13:33:49.366Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -324,7 +325,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Name = "Eloise Mueller PhD",
             },
         },
-        Id = "5cfa40e8-1d71-4a46-bae3-5176a66056a5",
+        Id = "fb3f5df0-08bd-485d-888e-bd162f757a99",
         Industry = "Gorgeous Plastic Computer",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -335,7 +336,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "60b94c73-9f9e-4396-a602-910042160eed",
+                Id = "0463bfcf-8c69-4ab2-8afb-40244d5f7051",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -350,7 +351,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-09T12:56:29.822Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-10T10:05:26.932Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -364,14 +365,14 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     Region = "Maine",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-02T04:14:45.234Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-03T02:28:02.273Z").ToUniversalTime(),
                 Description = "Deduco cultellus alii terebro depono thesaurus.",
                 Id = "f6101769-deb3-4721-978c-d205638870ee",
                 IsActive = false,
                 Location = "6788 Oxford Road",
                 Name = "Forward Security Orchestrator",
                 PostingUrl = "https://ajar-metabolite.net/",
-                UpdatedAt = System.DateTime.Parse("2026-07-27T18:35:01.372Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-07-28T17:19:00.478Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -418,7 +419,8 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
             "crux",
         },
         Status = AtsJobStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2026-01-31T18:22:08.408Z").ToUniversalTime(),
+        Summary = "Amicitia vergo hic.",
+        UpdatedAt = System.DateTime.Parse("2026-02-01T13:33:49.416Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -540,7 +542,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Name = "Eloise Mueller PhD",
             },
         },
-        Id = "5cfa40e8-1d71-4a46-bae3-5176a66056a5",
+        Id = "fb3f5df0-08bd-485d-888e-bd162f757a99",
         Industry = "Gorgeous Plastic Computer",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -551,7 +553,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "60b94c73-9f9e-4396-a602-910042160eed",
+                Id = "0463bfcf-8c69-4ab2-8afb-40244d5f7051",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -566,7 +568,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-09T12:56:29.822Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-10T10:05:26.932Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -580,14 +582,14 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     Region = "Maine",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-02T04:14:45.234Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-03T02:28:02.273Z").ToUniversalTime(),
                 Description = "Deduco cultellus alii terebro depono thesaurus.",
                 Id = "f6101769-deb3-4721-978c-d205638870ee",
                 IsActive = false,
                 Location = "6788 Oxford Road",
                 Name = "Forward Security Orchestrator",
                 PostingUrl = "https://ajar-metabolite.net/",
-                UpdatedAt = System.DateTime.Parse("2026-07-27T18:35:01.372Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-07-28T17:19:00.478Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -634,7 +636,8 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
             "crux",
         },
         Status = AtsJobStatus.Archived,
-        UpdatedAt = System.DateTime.Parse("2026-01-31T18:22:08.408Z").ToUniversalTime(),
+        Summary = "Amicitia vergo hic.",
+        UpdatedAt = System.DateTime.Parse("2026-02-01T13:33:49.416Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

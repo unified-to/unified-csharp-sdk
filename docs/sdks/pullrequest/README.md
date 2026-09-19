@@ -30,9 +30,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
     repoPullrequest: new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.705Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-12T11:40:07.021Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "a371259c-921a-4ab7-8890-66df1900e75a",
+        Id = "1988d410-a6cb-4727-9787-1ca6f19795ba",
         Labels = new List<string>() {
             "adhuc",
             "quaerat",
@@ -42,7 +42,7 @@ var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
         Status = RepoPullrequestStatus.Rejected,
         TargetBranchId = "feed-reboot",
         Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.473Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-12-31T12:02:10.526Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -172,9 +172,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.711Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-12T11:40:07.025Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "047c6837-52d0-4609-a236-614e474b832a",
+        Id = "5d08400b-078a-4fe4-bc88-204d82c4d9c7",
         Labels = new List<string>() {
             "adhuc",
             "quaerat",
@@ -184,7 +184,7 @@ PatchRepoPullrequestRequest req = new PatchRepoPullrequestRequest() {
         Status = RepoPullrequestStatus.Rejected,
         TargetBranchId = "feed-reboot",
         Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.479Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-12-31T12:02:10.530Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -271,9 +271,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
     RepoPullrequest = new RepoPullrequest() {
-        ClosedAt = System.DateTime.Parse("2025-04-11T21:29:15.711Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2025-04-12T11:40:07.025Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-02-27T09:37:13.663Z").ToUniversalTime(),
-        Id = "047c6837-52d0-4609-a236-614e474b832a",
+        Id = "5d08400b-078a-4fe4-bc88-204d82c4d9c7",
         Labels = new List<string>() {
             "adhuc",
             "quaerat",
@@ -283,7 +283,7 @@ UpdateRepoPullrequestRequest req = new UpdateRepoPullrequestRequest() {
         Status = RepoPullrequestStatus.Rejected,
         TargetBranchId = "feed-reboot",
         Title = "Cunae aegrus averto texo advoco bibo amet asporto.",
-        UpdatedAt = System.DateTime.Parse("2024-12-30T23:43:16.479Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-12-31T12:02:10.530Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

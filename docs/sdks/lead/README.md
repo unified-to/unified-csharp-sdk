@@ -52,7 +52,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "5c399df0-ebd2-46ff-8824-c35785883216",
+        Id = "947ae514-5da3-45c3-ad6e-055aa7f83c44",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -66,7 +66,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "fbe45a6a-3689-4115-9e09-6d36f037697e",
+                Id = "ee49ee9c-22c6-453a-947c-9fca0ad9acf7",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -87,7 +87,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                 Type = CrmTelephoneType.Work,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.275Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-15T04:10:15.743Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -239,7 +239,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+        Id = "76e93c41-c4ce-4f5d-a2de-846d3461d97f",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -253,7 +253,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+                Id = "f6ebec83-23f2-4fd1-ae21-e863f804b1b7",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -274,7 +274,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                 Type = CrmTelephoneType.Work,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.278Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-15T04:10:15.745Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -383,7 +383,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "8fc3f6b3-b14f-498f-8e14-f7301ba4adb4",
+        Id = "76e93c41-c4ce-4f5d-a2de-846d3461d97f",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -397,7 +397,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "30eaaeae-9533-412b-bc42-a1d1a0441a29",
+                Id = "f6ebec83-23f2-4fd1-ae21-e863f804b1b7",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -418,7 +418,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                 Type = CrmTelephoneType.Work,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2020-05-15T02:08:48.278Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-15T04:10:15.745Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

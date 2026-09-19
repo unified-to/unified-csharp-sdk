@@ -35,6 +35,7 @@ namespace UnifiedTo.Models.Components
         public static readonly AdsGroupType Native = new AdsGroupType("NATIVE");
         public static readonly AdsGroupType Ctv = new AdsGroupType("CTV");
         public static readonly AdsGroupType Dooh = new AdsGroupType("DOOH");
+        public static readonly AdsGroupType PerformanceMax = new AdsGroupType("PERFORMANCE_MAX");
 
         private static readonly Dictionary <string, AdsGroupType> _knownValues =
             new Dictionary <string, AdsGroupType> ()
@@ -54,7 +55,8 @@ namespace UnifiedTo.Models.Components
                 ["YOUTUBE"] = Youtube,
                 ["NATIVE"] = Native,
                 ["CTV"] = Ctv,
-                ["DOOH"] = Dooh
+                ["DOOH"] = Dooh,
+                ["PERFORMANCE_MAX"] = PerformanceMax
             };
 
         private static readonly ConcurrentDictionary<string, AdsGroupType> _values =

@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         Metadata,
         [JsonProperty("original_substatus")]
         OriginalSubstatus,
+        [JsonProperty("summary")]
+        Summary,
         [JsonProperty("raw")]
         Raw,
     }

@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Deal.CreateCrmDealAsync(
     crmDeal: new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.203Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.909Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-03T18:42:54.835Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-10T13:21:35.876Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "IQD",
         Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
-        Id = "fb9d739e-e46a-4253-80ea-9c4e45eb3f96",
+        Id = "8ad43c3e-51f9-49d2-9444-119544610fdf",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -45,7 +45,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "3a2e4850-fb79-4e6a-958a-abab7bbc81dc",
+                Id = "61015e09-fe40-49cb-94ee-917f9208693a",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -56,7 +56,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
         Name = "Frozen Silk Chicken",
         Pipelines = new List<CrmReference>() {
             new CrmReference() {
-                Id = "eff2b7cd-af8e-4f47-aa85-163272ccc4d9",
+                Id = "c0deac25-46fe-4a01-a7c7-18a6dd6b21f8",
                 Name = "trans",
             },
         },
@@ -64,11 +64,11 @@ var res = await sdk.Deal.CreateCrmDealAsync(
         Source = "cubo",
         Stages = new List<CrmReference>() {
             new CrmReference() {
-                Id = "1a391e21-a554-4075-9436-04b11d9c2f35",
+                Id = "3bf41a44-17fb-4b7d-8067-14a16550e3bf",
                 Name = "tubineus",
             },
             new CrmReference() {
-                Id = "d764d0a0-f44d-482e-9090-04e20aedf149",
+                Id = "68071f55-686a-4d3b-ae29-3f826e062003",
                 Name = "adfectus",
             },
         },
@@ -76,7 +76,7 @@ var res = await sdk.Deal.CreateCrmDealAsync(
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.578Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T12:23:06.405Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     connectionId: "<id>"
@@ -208,12 +208,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.208Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.924Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-03T18:42:54.841Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-10T13:21:35.897Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "IQD",
         Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
-        Id = "c48de371-a2f9-40ba-b242-a1d9ef638384",
+        Id = "1b288fe7-0b1e-4c66-9d57-8e9f0c29a73a",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -222,7 +222,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+                Id = "53d0e966-4c01-4219-aac9-7917340ec7ff",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -233,7 +233,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
         Name = "Frozen Silk Chicken",
         Pipelines = new List<CrmReference>() {
             new CrmReference() {
-                Id = "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+                Id = "44c9c344-b97b-4beb-b966-535231df214c",
                 Name = "trans",
             },
         },
@@ -241,11 +241,11 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
         Source = "cubo",
         Stages = new List<CrmReference>() {
             new CrmReference() {
-                Id = "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+                Id = "258333c4-4239-4606-a5de-be52d7601fc5",
                 Name = "tubineus",
             },
             new CrmReference() {
-                Id = "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+                Id = "cb5cd254-2c36-41b1-ab45-a7c1db70e518",
                 Name = "adfectus",
             },
         },
@@ -253,7 +253,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.587Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T12:23:06.416Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -342,12 +342,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-03T13:46:56.208Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-09T21:47:04.924Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-03T18:42:54.841Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-10T13:21:35.897Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "IQD",
         Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
-        Id = "c48de371-a2f9-40ba-b242-a1d9ef638384",
+        Id = "1b288fe7-0b1e-4c66-9d57-8e9f0c29a73a",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -356,7 +356,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "a53745bd-9d25-4299-93c4-8902acfaa6d1",
+                Id = "53d0e966-4c01-4219-aac9-7917340ec7ff",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -367,7 +367,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
         Name = "Frozen Silk Chicken",
         Pipelines = new List<CrmReference>() {
             new CrmReference() {
-                Id = "ddfef141-0d4a-4bac-9498-e7274d64f9e2",
+                Id = "44c9c344-b97b-4beb-b966-535231df214c",
                 Name = "trans",
             },
         },
@@ -375,11 +375,11 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
         Source = "cubo",
         Stages = new List<CrmReference>() {
             new CrmReference() {
-                Id = "b0bc65e5-f455-4d31-bdc6-3190eefddc75",
+                Id = "258333c4-4239-4606-a5de-be52d7601fc5",
                 Name = "tubineus",
             },
             new CrmReference() {
-                Id = "7c9945f4-ba0b-4acc-bbab-b05e748707bb",
+                Id = "cb5cd254-2c36-41b1-ab45-a7c1db70e518",
                 Name = "adfectus",
             },
         },
@@ -387,7 +387,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-09-29T03:11:55.587Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-09-29T12:23:06.416Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",

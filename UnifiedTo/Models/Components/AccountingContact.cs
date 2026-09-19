@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("associated_contacts")]
         public List<AccountingAssociatedContact>? AssociatedContacts { get; set; }
 
+        [JsonProperty("balance_amount")]
+        public double? BalanceAmount { get; set; }
+
         [JsonProperty("billing_address")]
         public PropertyAccountingContactBillingAddress? BillingAddress { get; set; }
 
@@ -61,6 +64,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("notes")]
+        public string? Notes { get; set; }
+
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
@@ -93,5 +99,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("website")]
+        public string? Website { get; set; }
     }
 }

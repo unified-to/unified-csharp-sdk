@@ -31,8 +31,8 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "4cee47af-266b-4309-8b76-7cebe1a0cd2c",
-        UpdatedAt = System.DateTime.Parse("2024-09-05T15:39:07.495Z").ToUniversalTime(),
+        Id = "ef20e823-209e-4b9b-a205-4f8c3642eb1d",
+        UpdatedAt = System.DateTime.Parse("2024-09-06T08:40:29.897Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -163,8 +163,8 @@ PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
-        UpdatedAt = System.DateTime.Parse("2024-09-05T15:39:07.501Z").ToUniversalTime(),
+        Id = "a25d7baa-37fe-4a36-80f6-334640e576b2",
+        UpdatedAt = System.DateTime.Parse("2024-09-06T08:40:29.902Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -252,8 +252,8 @@ UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "4b86cac9-cf45-4def-83fb-f740e3de8c6e",
-        UpdatedAt = System.DateTime.Parse("2024-09-05T15:39:07.501Z").ToUniversalTime(),
+        Id = "a25d7baa-37fe-4a36-80f6-334640e576b2",
+        UpdatedAt = System.DateTime.Parse("2024-09-06T08:40:29.902Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

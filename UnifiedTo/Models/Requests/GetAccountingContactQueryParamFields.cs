@@ -63,6 +63,12 @@ namespace UnifiedTo.Models.Requests
         PaymentTerms,
         [JsonProperty("paymentterm_id")]
         PaymenttermId,
+        [JsonProperty("balance_amount")]
+        BalanceAmount,
+        [JsonProperty("website")]
+        Website,
+        [JsonProperty("notes")]
+        Notes,
         [JsonProperty("raw")]
         Raw,
     }

@@ -35,6 +35,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyAdsReportMetricsAdAdType Native = new PropertyAdsReportMetricsAdAdType("NATIVE");
         public static readonly PropertyAdsReportMetricsAdAdType Ctv = new PropertyAdsReportMetricsAdAdType("CTV");
         public static readonly PropertyAdsReportMetricsAdAdType Dooh = new PropertyAdsReportMetricsAdAdType("DOOH");
+        public static readonly PropertyAdsReportMetricsAdAdType PerformanceMax = new PropertyAdsReportMetricsAdAdType("PERFORMANCE_MAX");
 
         private static readonly Dictionary <string, PropertyAdsReportMetricsAdAdType> _knownValues =
             new Dictionary <string, PropertyAdsReportMetricsAdAdType> ()
@@ -54,7 +55,8 @@ namespace UnifiedTo.Models.Components
                 ["YOUTUBE"] = Youtube,
                 ["NATIVE"] = Native,
                 ["CTV"] = Ctv,
-                ["DOOH"] = Dooh
+                ["DOOH"] = Dooh,
+                ["PERFORMANCE_MAX"] = PerformanceMax
             };
 
         private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsAdAdType> _values =

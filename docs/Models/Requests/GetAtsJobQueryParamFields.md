@@ -41,4 +41,5 @@ var value = GetAtsJobQueryParamFields.Id;
 | `Metadata`               | metadata                 |
 | `UserId`                 | user_id                  |
 | `Industry`               | industry                 |
+| `Summary`                | summary                  |
 | `Raw`                    | raw                      |

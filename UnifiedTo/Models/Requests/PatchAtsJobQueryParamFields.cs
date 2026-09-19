@@ -71,6 +71,8 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("industry")]
         Industry,
+        [JsonProperty("summary")]
+        Summary,
         [JsonProperty("raw")]
         Raw,
     }

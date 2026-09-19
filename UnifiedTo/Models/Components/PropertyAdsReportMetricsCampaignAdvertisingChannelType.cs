@@ -35,6 +35,7 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyAdsReportMetricsCampaignAdvertisingChannelType Native = new PropertyAdsReportMetricsCampaignAdvertisingChannelType("NATIVE");
         public static readonly PropertyAdsReportMetricsCampaignAdvertisingChannelType Ctv = new PropertyAdsReportMetricsCampaignAdvertisingChannelType("CTV");
         public static readonly PropertyAdsReportMetricsCampaignAdvertisingChannelType Dooh = new PropertyAdsReportMetricsCampaignAdvertisingChannelType("DOOH");
+        public static readonly PropertyAdsReportMetricsCampaignAdvertisingChannelType PerformanceMax = new PropertyAdsReportMetricsCampaignAdvertisingChannelType("PERFORMANCE_MAX");
 
         private static readonly Dictionary <string, PropertyAdsReportMetricsCampaignAdvertisingChannelType> _knownValues =
             new Dictionary <string, PropertyAdsReportMetricsCampaignAdvertisingChannelType> ()
@@ -54,7 +55,8 @@ namespace UnifiedTo.Models.Components
                 ["YOUTUBE"] = Youtube,
                 ["NATIVE"] = Native,
                 ["CTV"] = Ctv,
-                ["DOOH"] = Dooh
+                ["DOOH"] = Dooh,
+                ["PERFORMANCE_MAX"] = PerformanceMax
             };
 
         private static readonly ConcurrentDictionary<string, PropertyAdsReportMetricsCampaignAdvertisingChannelType> _values =

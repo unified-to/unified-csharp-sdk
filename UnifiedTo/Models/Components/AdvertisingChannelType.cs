@@ -35,6 +35,7 @@ namespace UnifiedTo.Models.Components
         public static readonly AdvertisingChannelType Native = new AdvertisingChannelType("NATIVE");
         public static readonly AdvertisingChannelType Ctv = new AdvertisingChannelType("CTV");
         public static readonly AdvertisingChannelType Dooh = new AdvertisingChannelType("DOOH");
+        public static readonly AdvertisingChannelType PerformanceMax = new AdvertisingChannelType("PERFORMANCE_MAX");
 
         private static readonly Dictionary <string, AdvertisingChannelType> _knownValues =
             new Dictionary <string, AdvertisingChannelType> ()
@@ -54,7 +55,8 @@ namespace UnifiedTo.Models.Components
                 ["YOUTUBE"] = Youtube,
                 ["NATIVE"] = Native,
                 ["CTV"] = Ctv,
-                ["DOOH"] = Dooh
+                ["DOOH"] = Dooh,
+                ["PERFORMANCE_MAX"] = PerformanceMax
             };
 
         private static readonly ConcurrentDictionary<string, AdvertisingChannelType> _values =

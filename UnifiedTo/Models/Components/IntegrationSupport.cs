@@ -103,6 +103,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_deal_id")]
         public ListDealId? ListDealId { get; set; }
 
+        [JsonProperty("list_destination_id")]
+        public ListDestinationId? ListDestinationId { get; set; }
+
         [JsonProperty("list_dimension")]
         public ListDimension? ListDimension { get; set; }
 
@@ -379,6 +382,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_type")]
         public NativeWebhookType? NativeWebhookType { get; set; }
 
+        [JsonProperty("native_webhook_updated_gte")]
+        public NativeWebhookUpdatedGte? NativeWebhookUpdatedGte { get; set; }
+
         [JsonProperty("native_webhook_visitor_id")]
         public NativeWebhookVisitorId? NativeWebhookVisitorId { get; set; }
 
@@ -477,6 +483,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_deal_id")]
         public VirtualWebhookDealId? VirtualWebhookDealId { get; set; }
+
+        [JsonProperty("virtual_webhook_effective_status")]
+        public VirtualWebhookEffectiveStatus? VirtualWebhookEffectiveStatus { get; set; }
 
         [JsonProperty("virtual_webhook_end_lt")]
         public VirtualWebhookEndLt? VirtualWebhookEndLt { get; set; }

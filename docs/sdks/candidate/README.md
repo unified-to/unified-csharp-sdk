@@ -72,7 +72,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         FirstName = "Ardith",
-        Id = "59cebc0f-3274-48fe-b456-efe66f9ff211",
+        Id = "e6f61bc4-a70f-4f5e-8260-a5d120496830",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -89,7 +89,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "6b842011-54cc-4549-9976-9af27f096a6d",
+                Id = "edbca8cc-918f-403a-8d6b-9d98ce326174",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -106,6 +106,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
         Sources = new List<string>() {
             "tactus",
         },
+        Summary = "Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.",
         Tags = new List<string>() {
             "aliquid",
         },
@@ -116,7 +117,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-22T21:06:56.351Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-23T01:20:19.046Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     connectionId: "<id>"
@@ -289,7 +290,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "367e2ce4-a89b-4076-a673-be58f32632cd",
+        Id = "8c6674e7-f41c-46f8-923e-22754598aecb",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -306,7 +307,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+                Id = "866b1d12-e4f0-497b-9e2e-c7263d10be48",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -323,6 +324,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
         Sources = new List<string>() {
             "tactus",
         },
+        Summary = "Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.",
         Tags = new List<string>() {
             "aliquid",
         },
@@ -333,7 +335,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-22T21:06:56.360Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-23T01:20:19.054Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     ConnectionId = "<id>",
@@ -463,7 +465,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "367e2ce4-a89b-4076-a673-be58f32632cd",
+        Id = "8c6674e7-f41c-46f8-923e-22754598aecb",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -480,7 +482,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "e2322a08-cbd8-4098-ad0d-5fc62c5f6334",
+                Id = "866b1d12-e4f0-497b-9e2e-c7263d10be48",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -497,6 +499,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
         Sources = new List<string>() {
             "tactus",
         },
+        Summary = "Denego barba rerum similique via templum totam suus voluptatem. Depraedor virgo cui comminor commodi curvo. Chirographum pax spero nostrum damnatio averto pecus cervus aspicio absens.",
         Tags = new List<string>() {
             "aliquid",
         },
@@ -507,7 +510,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-22T21:06:56.360Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-23T01:20:19.054Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     ConnectionId = "<id>",

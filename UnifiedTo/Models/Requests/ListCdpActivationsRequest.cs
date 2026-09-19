@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// The destination ID to filter by.
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=destination_id")]
         public string? DestinationId { get; set; }
 

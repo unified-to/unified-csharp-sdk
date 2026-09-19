@@ -33,6 +33,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListAtsCandidatesQueryParamFields>? Fields { get; set; }
 
+        /// <summary>
+        /// The job ID to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=job_id")]
+        public string? JobId { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 

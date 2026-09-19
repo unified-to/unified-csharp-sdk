@@ -32,10 +32,10 @@ var res = await sdk.Webinar.CreateCalendarWebinarAsync(
     calendarWebinar: new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-03T05:49:51.521Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-04T00:11:19.109Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "c792c6a7-1449-4f10-a71f-0f5edcc168a0",
+        Id = "ff212d04-a497-4a5d-b5f4-b11481bcc96d",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -48,13 +48,13 @@ var res = await sdk.Webinar.CreateCalendarWebinarAsync(
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-22T18:00:43.837Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-23T00:24:00.457Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-01-23T23:17:02.226Z",
+                    "2025-01-24T13:43:57.600Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-14T08:23:07.840Z",
+                    "2024-04-14T18:25:26.574Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -445,16 +445,16 @@ var res = await sdk.Webinar.CreateCalendarWebinarAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-28T20:40:39.446Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-28T21:59:05.852Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-08-16T03:47:42.507Z",
-                    "2024-07-31T22:40:49.340Z",
+                    "2024-08-16T15:45:07.507Z",
+                    "2024-08-01T10:24:05.726Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-11T23:02:06.061Z",
-                    "2025-12-17T07:24:18.363Z",
-                    "2023-08-05T18:20:39.016Z",
+                    "2024-03-12T08:33:22.265Z",
+                    "2025-12-18T02:55:33.238Z",
+                    "2023-08-06T00:28:08.118Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -598,16 +598,16 @@ var res = await sdk.Webinar.CreateCalendarWebinarAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-06-25T08:27:05.448Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-06-26T06:55:01.286Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-11T07:05:41.236Z",
-                    "2023-05-31T13:28:36.359Z",
+                    "2023-06-11T12:21:36.196Z",
+                    "2023-05-31T18:34:32.553Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-03-19T19:50:46.230Z",
-                    "2023-08-11T10:50:08.824Z",
-                    "2024-09-09T19:50:39.063Z",
+                    "2024-03-20T05:29:21.277Z",
+                    "2023-08-11T17:02:55.165Z",
+                    "2024-09-10T08:11:00.126Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -760,11 +760,11 @@ var res = await sdk.Webinar.CreateCalendarWebinarAsync(
         RegistrantPassword = "OxwWzr0C",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-08T21:49:01.812Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-04-09T13:25:37.407Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-08-28T22:23:12.295Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-08-29T21:51:10.552Z").ToUniversalTime(),
         WebUrl = "https://classic-recovery.biz",
     },
     connectionId: "<id>"
@@ -897,10 +897,10 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-03T05:49:51.559Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-04T00:11:19.150Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "fa0c43f3-d5cc-4ab7-a219-e6b1583dd5d0",
+        Id = "99efbf14-42be-46e4-b097-ce01610232ad",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -913,13 +913,13 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-22T18:00:43.850Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-23T00:24:00.471Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-01-23T23:17:02.256Z",
+                    "2025-01-24T13:43:57.633Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-14T08:23:07.860Z",
+                    "2024-04-14T18:25:26.597Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1310,16 +1310,16 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-28T20:40:39.448Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-28T21:59:05.855Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-08-16T03:47:42.531Z",
-                    "2024-07-31T22:40:49.363Z",
+                    "2024-08-16T15:45:07.534Z",
+                    "2024-08-01T10:24:05.752Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-11T23:02:06.081Z",
-                    "2025-12-17T07:24:18.402Z",
-                    "2023-08-05T18:20:39.029Z",
+                    "2024-03-12T08:33:22.287Z",
+                    "2025-12-18T02:55:33.283Z",
+                    "2023-08-06T00:28:08.132Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1463,16 +1463,16 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-06-25T08:27:05.493Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-06-26T06:55:01.337Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-11T07:05:41.247Z",
-                    "2023-05-31T13:28:36.370Z",
+                    "2023-06-11T12:21:36.208Z",
+                    "2023-05-31T18:34:32.565Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-03-19T19:50:46.250Z",
-                    "2023-08-11T10:50:08.837Z",
-                    "2024-09-09T19:50:39.088Z",
+                    "2024-03-20T05:29:21.299Z",
+                    "2023-08-11T17:02:55.179Z",
+                    "2024-09-10T08:11:00.154Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1625,11 +1625,11 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
         RegistrantPassword = "OxwWzr0C",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-08T21:49:01.844Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-04-09T13:25:37.442Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-08-28T22:23:12.342Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-08-29T21:51:10.605Z").ToUniversalTime(),
         WebUrl = "https://classic-recovery.biz",
     },
     ConnectionId = "<id>",
@@ -1719,10 +1719,10 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-03T05:49:51.559Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-04T00:11:19.150Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "fa0c43f3-d5cc-4ab7-a219-e6b1583dd5d0",
+        Id = "99efbf14-42be-46e4-b097-ce01610232ad",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -1735,13 +1735,13 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-22T18:00:43.850Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-23T00:24:00.471Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-01-23T23:17:02.256Z",
+                    "2025-01-24T13:43:57.633Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-14T08:23:07.860Z",
+                    "2024-04-14T18:25:26.597Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2132,16 +2132,16 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-28T20:40:39.448Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-28T21:59:05.855Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-08-16T03:47:42.531Z",
-                    "2024-07-31T22:40:49.363Z",
+                    "2024-08-16T15:45:07.534Z",
+                    "2024-08-01T10:24:05.752Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-11T23:02:06.081Z",
-                    "2025-12-17T07:24:18.402Z",
-                    "2023-08-05T18:20:39.029Z",
+                    "2024-03-12T08:33:22.287Z",
+                    "2025-12-18T02:55:33.283Z",
+                    "2023-08-06T00:28:08.132Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2285,16 +2285,16 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-06-25T08:27:05.493Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-06-26T06:55:01.337Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-11T07:05:41.247Z",
-                    "2023-05-31T13:28:36.370Z",
+                    "2023-06-11T12:21:36.208Z",
+                    "2023-05-31T18:34:32.565Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-03-19T19:50:46.250Z",
-                    "2023-08-11T10:50:08.837Z",
-                    "2024-09-09T19:50:39.088Z",
+                    "2024-03-20T05:29:21.299Z",
+                    "2023-08-11T17:02:55.179Z",
+                    "2024-09-10T08:11:00.154Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2447,11 +2447,11 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
         RegistrantPassword = "OxwWzr0C",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-08T21:49:01.844Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-04-09T13:25:37.442Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-08-28T22:23:12.342Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-08-29T21:51:10.605Z").ToUniversalTime(),
         WebUrl = "https://classic-recovery.biz",
     },
     ConnectionId = "<id>",

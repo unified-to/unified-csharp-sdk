@@ -109,6 +109,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public AtsJobStatus? Status { get; set; }
 
+        [JsonProperty("summary")]
+        public string? Summary { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

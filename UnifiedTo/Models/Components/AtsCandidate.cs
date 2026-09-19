@@ -85,6 +85,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("sources")]
         public List<string>? Sources { get; set; }
 
+        [JsonProperty("summary")]
+        public string? Summary { get; set; }
+
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
