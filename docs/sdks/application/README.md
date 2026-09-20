@@ -31,10 +31,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Application.CreateAtsApplicationAsync(
     atsApplication: new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-09T00:14:07.164Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-09T16:07:42.932Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-04-15T10:51:39.782Z").ToUniversalTime(),
-        Id = "e313225a-89a6-4844-991f-e83d250f88d2",
+        HiredAt = System.DateTime.Parse("2026-04-16T07:45:58.412Z").ToUniversalTime(),
+        Id = "eed16868-94ce-4679-af8d-f29c9a64322c",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -54,12 +54,12 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-09-09T19:25:59.827Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-09-10T19:43:09.817Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-        UpdatedAt = System.DateTime.Parse("2026-09-16T10:53:24.705Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-17T11:19:43.477Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -190,10 +190,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-09T00:14:07.189Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-09T16:07:42.946Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-04-15T10:51:39.815Z").ToUniversalTime(),
-        Id = "06ca876c-e470-4357-94a9-fc5eaa5c9a13",
+        HiredAt = System.DateTime.Parse("2026-04-16T07:45:58.430Z").ToUniversalTime(),
+        Id = "9d94867f-e2c3-41e7-a8da-e36cc97b63a1",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -213,12 +213,12 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-09-09T19:25:59.866Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-09-10T19:43:09.838Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-        UpdatedAt = System.DateTime.Parse("2026-09-16T10:53:24.744Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-17T11:19:43.498Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -306,10 +306,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-09T00:14:07.189Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-09T16:07:42.946Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-04-15T10:51:39.815Z").ToUniversalTime(),
-        Id = "06ca876c-e470-4357-94a9-fc5eaa5c9a13",
+        HiredAt = System.DateTime.Parse("2026-04-16T07:45:58.430Z").ToUniversalTime(),
+        Id = "9d94867f-e2c3-41e7-a8da-e36cc97b63a1",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -329,12 +329,12 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-09-09T19:25:59.866Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-09-10T19:43:09.838Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-        UpdatedAt = System.DateTime.Parse("2026-09-16T10:53:24.744Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-17T11:19:43.498Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

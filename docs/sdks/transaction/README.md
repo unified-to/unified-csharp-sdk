@@ -31,12 +31,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     accountingTransaction: new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "0ce80f76-f728-4886-9329-f5ce95b07dc1",
+        Id = "f05a5db8-7c0a-4174-a373-5436e141c2b0",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "7e917d24-3477-40af-90f4-f0aacd098332",
+                Id = "94a5f98d-1ff3-4f2f-bb7d-d4d1b36e1eac",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -47,7 +47,7 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
         Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
         TaxAmount = 0D,
         TotalAmount = 94452D,
-        UpdatedAt = System.DateTime.Parse("2021-09-10T09:17:15.683Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-10T16:09:49.027Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -178,12 +178,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "f37b8242-c5d4-43e6-83ac-2fa5c32581bc",
+        Id = "669ba468-0b18-4de7-b3c8-441c947209c5",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "655c5874-5c3d-4bac-81cc-033e8d189224",
+                Id = "14e52713-9802-4272-a1d0-9539b1dde560",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -194,7 +194,7 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
         Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
         TaxAmount = 0D,
         TotalAmount = 94452D,
-        UpdatedAt = System.DateTime.Parse("2021-09-10T09:17:15.689Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-10T16:09:49.035Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -282,12 +282,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "f37b8242-c5d4-43e6-83ac-2fa5c32581bc",
+        Id = "669ba468-0b18-4de7-b3c8-441c947209c5",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "655c5874-5c3d-4bac-81cc-033e8d189224",
+                Id = "14e52713-9802-4272-a1d0-9539b1dde560",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -298,7 +298,7 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
         Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
         TaxAmount = 0D,
         TotalAmount = 94452D,
-        UpdatedAt = System.DateTime.Parse("2021-09-10T09:17:15.689Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-10T16:09:49.035Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

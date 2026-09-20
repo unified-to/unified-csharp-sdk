@@ -32,7 +32,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
     metadataMetadata: new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "e42b49a5-7809-46a8-ac6c-5298cd30f91b",
+        Id = "32827ec6-56ac-41d8-be1d-9b3a4d996d58",
         IsRequired = false,
         Name = "autem",
         ObjectType = "clubs_group",
@@ -42,7 +42,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-02-27T01:02:36.007Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-27T18:35:05.063Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -174,7 +174,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "5d87ee14-e76a-4ea8-b4fd-771a802b5a01",
+        Id = "47e96526-9f04-401e-b6a4-d848e164d753",
         IsRequired = false,
         Name = "autem",
         ObjectType = "clubs_group",
@@ -184,7 +184,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-02-27T01:02:36.012Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-27T18:35:05.072Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -273,7 +273,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "5d87ee14-e76a-4ea8-b4fd-771a802b5a01",
+        Id = "47e96526-9f04-401e-b6a4-d848e164d753",
         IsRequired = false,
         Name = "autem",
         ObjectType = "clubs_group",
@@ -283,7 +283,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-02-27T01:02:36.012Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-27T18:35:05.072Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
