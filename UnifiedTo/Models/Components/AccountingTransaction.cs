@@ -11,7 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
@@ -34,6 +36,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("customer_message")]
         public string? CustomerMessage { get; set; }
+
+        [JsonProperty("exchange_rate")]
+        public double? ExchangeRate { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -65,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("split_account_id")]
         public string? SplitAccountId { get; set; }
 
+        [JsonProperty("status")]
+        public AccountingTransactionStatus? Status { get; set; }
+
         [JsonProperty("sub_total_amount")]
         public double? SubTotalAmount { get; set; }
 
@@ -73,6 +81,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
+
+        [JsonProperty("transaction_at")]
+        public DateTime? TransactionAt { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }

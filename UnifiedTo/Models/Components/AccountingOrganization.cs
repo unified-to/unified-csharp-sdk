@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyAccountingOrganizationAddress? Address { get; set; }
 
+        [JsonProperty("books_close_at")]
+        public DateTime? BooksCloseAt { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

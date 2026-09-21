@@ -47,4 +47,7 @@ var value = CreateAccountingBillQueryParamFields.Id;
 | `CategoryIds`             | category_ids              |
 | `ProjectId`               | project_id                |
 | `Metadata`                | metadata                  |
+| `SubTotalAmount`          | sub_total_amount          |
+| `ExchangeRate`            | exchange_rate             |
+| `PurchaseorderIds`        | purchaseorder_ids         |
 | `Raw`                     | raw                       |

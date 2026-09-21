@@ -54,6 +54,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
+        [JsonProperty("taxrate_id")]
+        public string? TaxrateId { get; set; }
+
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
     }

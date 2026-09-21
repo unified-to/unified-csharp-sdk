@@ -37,11 +37,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("reason")]
+        public Reason? Reason { get; set; }
+
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        [JsonProperty("refunded_at")]
+        public DateTime? RefundedAt { get; set; }
+
         [JsonProperty("status")]
         public PaymentRefundStatus? Status { get; set; }
+
+        [JsonProperty("tender_type")]
+        public PaymentRefundTenderType? TenderType { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }

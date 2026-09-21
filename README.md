@@ -27,7 +27,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "1ffc8710-21bb-41c7-8e82-c4fd03a166dd",
+        Id = "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -44,7 +44,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T08:56:58.128Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.467Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -290,6 +290,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 * [GetAccountingAgedreceivable](docs/sdks/agedreceivable/README.md#getaccountingagedreceivable) - Retrieve an agedreceivable
 * [ListAccountingAgedreceivables](docs/sdks/agedreceivable/README.md#listaccountingagedreceivables) - List all agedreceivables
+
+### [Agent](docs/sdks/agent/README.md)
+
+* [CreateGenaiAgent](docs/sdks/agent/README.md#creategenaiagent) - Create an agent
+* [GetGenaiAgent](docs/sdks/agent/README.md#getgenaiagent) - Retrieve an agent
+* [ListGenaiAgents](docs/sdks/agent/README.md#listgenaiagents) - List all agents
+* [PatchGenaiAgent](docs/sdks/agent/README.md#patchgenaiagent) - Update an agent
+* [RemoveGenaiAgent](docs/sdks/agent/README.md#removegenaiagent) - Remove an agent
+* [UpdateGenaiAgent](docs/sdks/agent/README.md#updategenaiagent) - Update an agent
 
 ### [Analytics](docs/sdks/analytics/README.md)
 
@@ -1067,10 +1076,26 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Genai](docs/sdks/genai/README.md)
 
+* [CreateGenaiAgent](docs/sdks/genai/README.md#creategenaiagent) - Create an agent
 * [CreateGenaiEmbedding](docs/sdks/genai/README.md#creategenaiembedding) - Create an embedding
+* [CreateGenaiOrganization](docs/sdks/genai/README.md#creategenaiorganization) - Create an organization
 * [CreateGenaiPrompt](docs/sdks/genai/README.md#creategenaiprompt) - Create a prompt
+* [CreateGenaiTask](docs/sdks/genai/README.md#creategenaitask) - Create a task
+* [GetGenaiAgent](docs/sdks/genai/README.md#getgenaiagent) - Retrieve an agent
 * [GetGenaiModel](docs/sdks/genai/README.md#getgenaimodel) - Retrieve a model
+* [GetGenaiOrganization](docs/sdks/genai/README.md#getgenaiorganization) - Retrieve an organization
+* [GetGenaiTask](docs/sdks/genai/README.md#getgenaitask) - Retrieve a task
+* [ListGenaiAgents](docs/sdks/genai/README.md#listgenaiagents) - List all agents
 * [ListGenaiModels](docs/sdks/genai/README.md#listgenaimodels) - List all models
+* [ListGenaiOrganizations](docs/sdks/genai/README.md#listgenaiorganizations) - List all organizations
+* [ListGenaiTasks](docs/sdks/genai/README.md#listgenaitasks) - List all tasks
+* [PatchGenaiAgent](docs/sdks/genai/README.md#patchgenaiagent) - Update an agent
+* [PatchGenaiOrganization](docs/sdks/genai/README.md#patchgenaiorganization) - Update an organization
+* [RemoveGenaiAgent](docs/sdks/genai/README.md#removegenaiagent) - Remove an agent
+* [RemoveGenaiOrganization](docs/sdks/genai/README.md#removegenaiorganization) - Remove an organization
+* [RemoveGenaiTask](docs/sdks/genai/README.md#removegenaitask) - Remove a task
+* [UpdateGenaiAgent](docs/sdks/genai/README.md#updategenaiagent) - Update an agent
+* [UpdateGenaiOrganization](docs/sdks/genai/README.md#updategenaiorganization) - Update an organization
 
 ### [Goal](docs/sdks/goal/README.md)
 
@@ -1512,18 +1537,24 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### [Organization](docs/sdks/organization/README.md)
 
 * [CreateAdsOrganization](docs/sdks/organization/README.md#createadsorganization) - Create an organization
+* [CreateGenaiOrganization](docs/sdks/organization/README.md#creategenaiorganization) - Create an organization
 * [CreateRepoOrganization](docs/sdks/organization/README.md#createrepoorganization) - Create an organization
 * [GetAccountingOrganization](docs/sdks/organization/README.md#getaccountingorganization) - Retrieve an organization
 * [GetAdsOrganization](docs/sdks/organization/README.md#getadsorganization) - Retrieve an organization
+* [GetGenaiOrganization](docs/sdks/organization/README.md#getgenaiorganization) - Retrieve an organization
 * [GetRepoOrganization](docs/sdks/organization/README.md#getrepoorganization) - Retrieve an organization
 * [ListAccountingOrganizations](docs/sdks/organization/README.md#listaccountingorganizations) - List all organizations
 * [ListAdsOrganizations](docs/sdks/organization/README.md#listadsorganizations) - List all organizations
+* [ListGenaiOrganizations](docs/sdks/organization/README.md#listgenaiorganizations) - List all organizations
 * [ListRepoOrganizations](docs/sdks/organization/README.md#listrepoorganizations) - List all organizations
 * [PatchAdsOrganization](docs/sdks/organization/README.md#patchadsorganization) - Update an organization
+* [PatchGenaiOrganization](docs/sdks/organization/README.md#patchgenaiorganization) - Update an organization
 * [PatchRepoOrganization](docs/sdks/organization/README.md#patchrepoorganization) - Update an organization
 * [RemoveAdsOrganization](docs/sdks/organization/README.md#removeadsorganization) - Remove an organization
+* [RemoveGenaiOrganization](docs/sdks/organization/README.md#removegenaiorganization) - Remove an organization
 * [RemoveRepoOrganization](docs/sdks/organization/README.md#removerepoorganization) - Remove an organization
 * [UpdateAdsOrganization](docs/sdks/organization/README.md#updateadsorganization) - Update an organization
+* [UpdateGenaiOrganization](docs/sdks/organization/README.md#updategenaiorganization) - Update an organization
 * [UpdateRepoOrganization](docs/sdks/organization/README.md#updaterepoorganization) - Update an organization
 
 ### [Package](docs/sdks/package/README.md)
@@ -2034,13 +2065,16 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Task](docs/sdks/task/README.md)
 
+* [CreateGenaiTask](docs/sdks/task/README.md#creategenaitask) - Create a task
 * [CreateTaskComment](docs/sdks/task/README.md#createtaskcomment) - Create a comment
 * [CreateTaskProject](docs/sdks/task/README.md#createtaskproject) - Create a project
 * [CreateTaskTask](docs/sdks/task/README.md#createtasktask) - Create a task
+* [GetGenaiTask](docs/sdks/task/README.md#getgenaitask) - Retrieve a task
 * [GetTaskChange](docs/sdks/task/README.md#gettaskchange) - Retrieve a change
 * [GetTaskComment](docs/sdks/task/README.md#gettaskcomment) - Retrieve a comment
 * [GetTaskProject](docs/sdks/task/README.md#gettaskproject) - Retrieve a project
 * [GetTaskTask](docs/sdks/task/README.md#gettasktask) - Retrieve a task
+* [ListGenaiTasks](docs/sdks/task/README.md#listgenaitasks) - List all tasks
 * [ListTaskChanges](docs/sdks/task/README.md#listtaskchanges) - List all changes
 * [ListTaskComments](docs/sdks/task/README.md#listtaskcomments) - List all comments
 * [ListTaskProjects](docs/sdks/task/README.md#listtaskprojects) - List all projects
@@ -2048,6 +2082,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [PatchTaskComment](docs/sdks/task/README.md#patchtaskcomment) - Update a comment
 * [PatchTaskProject](docs/sdks/task/README.md#patchtaskproject) - Update a project
 * [PatchTaskTask](docs/sdks/task/README.md#patchtasktask) - Update a task
+* [RemoveGenaiTask](docs/sdks/task/README.md#removegenaitask) - Remove a task
 * [RemoveTaskComment](docs/sdks/task/README.md#removetaskcomment) - Remove a comment
 * [RemoveTaskProject](docs/sdks/task/README.md#removetaskproject) - Remove a project
 * [RemoveTaskTask](docs/sdks/task/README.md#removetasktask) - Remove a task
@@ -2300,7 +2335,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "1ffc8710-21bb-41c7-8e82-c4fd03a166dd",
+        Id = "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -2317,7 +2352,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T08:56:58.128Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.467Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2348,7 +2383,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "1ffc8710-21bb-41c7-8e82-c4fd03a166dd",
+        Id = "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -2365,7 +2400,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T08:56:58.128Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.467Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2445,7 +2480,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "1ffc8710-21bb-41c7-8e82-c4fd03a166dd",
+        Id = "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -2462,7 +2497,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T08:56:58.128Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.467Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2507,7 +2542,7 @@ try
             Currency = "BOB",
             CustomerDefinedCode = "quo",
             Description = "Spoliatio comedo vilitas harum cupiditate.",
-            Id = "1ffc8710-21bb-41c7-8e82-c4fd03a166dd",
+            Id = "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
             IsPayable = true,
             Name = "Electronic Aluminum Tuna",
             Status = Status.Archived,
@@ -2524,7 +2559,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.Bank,
-            UpdatedAt = System.DateTime.Parse("2023-01-03T08:56:58.128Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.467Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );

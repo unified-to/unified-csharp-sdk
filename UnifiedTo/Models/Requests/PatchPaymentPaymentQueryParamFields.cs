@@ -65,6 +65,14 @@ namespace UnifiedTo.Models.Requests
         CardBrand,
         [JsonProperty("card_last4")]
         CardLast4,
+        [JsonProperty("paid_at")]
+        PaidAt,
+        [JsonProperty("exchange_rate")]
+        ExchangeRate,
+        [JsonProperty("category_ids")]
+        CategoryIds,
+        [JsonProperty("net_amount")]
+        NetAmount,
         [JsonProperty("raw")]
         Raw,
     }

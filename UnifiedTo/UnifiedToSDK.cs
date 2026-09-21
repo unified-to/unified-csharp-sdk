@@ -211,11 +211,15 @@ namespace UnifiedTo
 
         public IGenai Genai { get; }
 
+        public IAgent Agent { get; }
+
         public IEmbedding Embedding { get; }
 
         public IModel Model { get; }
 
         public IPrompt Prompt { get; }
+
+        public ITask Task { get; }
 
         public IHris Hris { get; }
 
@@ -328,8 +332,6 @@ namespace UnifiedTo
         public IStorage Storage { get; }
 
         public IFile File { get; }
-
-        public ITask Task { get; }
 
         public IChange Change { get; }
 
@@ -757,6 +759,10 @@ namespace UnifiedTo
         /// </summary>
         public IGenai Genai { get; private set; }
         /// <summary>
+        /// The Agent sub-SDK.
+        /// </summary>
+        public IAgent Agent { get; private set; }
+        /// <summary>
         /// The Embedding sub-SDK.
         /// </summary>
         public IEmbedding Embedding { get; private set; }
@@ -768,6 +774,10 @@ namespace UnifiedTo
         /// The Prompt sub-SDK.
         /// </summary>
         public IPrompt Prompt { get; private set; }
+        /// <summary>
+        /// The Task sub-SDK.
+        /// </summary>
+        public ITask Task { get; private set; }
         /// <summary>
         /// The Hris sub-SDK.
         /// </summary>
@@ -992,10 +1002,6 @@ namespace UnifiedTo
         /// The File sub-SDK.
         /// </summary>
         public IFile File { get; private set; }
-        /// <summary>
-        /// The Task sub-SDK.
-        /// </summary>
-        public ITask Task { get; private set; }
         /// <summary>
         /// The Change sub-SDK.
         /// </summary>
@@ -1276,11 +1282,15 @@ namespace UnifiedTo
 
             Genai = new Genai(SDKConfiguration);
 
+            Agent = new Agent(SDKConfiguration);
+
             Embedding = new Embedding(SDKConfiguration);
 
             Model = new Model(SDKConfiguration);
 
             Prompt = new Prompt(SDKConfiguration);
+
+            Task = new Task(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
 
@@ -1393,8 +1403,6 @@ namespace UnifiedTo
             Storage = new Storage(SDKConfiguration);
 
             File = new File(SDKConfiguration);
-
-            Task = new Task(SDKConfiguration);
 
             Change = new Change(SDKConfiguration);
 
@@ -1687,11 +1695,15 @@ namespace UnifiedTo
 
             Genai = new Genai(SDKConfiguration);
 
+            Agent = new Agent(SDKConfiguration);
+
             Embedding = new Embedding(SDKConfiguration);
 
             Model = new Model(SDKConfiguration);
 
             Prompt = new Prompt(SDKConfiguration);
+
+            Task = new Task(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
 
@@ -1804,8 +1816,6 @@ namespace UnifiedTo
             Storage = new Storage(SDKConfiguration);
 
             File = new File(SDKConfiguration);
-
-            Task = new Task(SDKConfiguration);
 
             Change = new Change(SDKConfiguration);
 

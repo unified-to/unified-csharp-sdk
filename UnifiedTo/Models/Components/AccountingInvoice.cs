@@ -46,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        [JsonProperty("exchange_rate")]
+        public double? ExchangeRate { get; set; }
+
         [JsonProperty("extended_notes")]
         public List<AccountingExtendedNote>? ExtendedNotes { get; set; }
 
@@ -54,6 +57,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("invoice_number")]
         public string? InvoiceNumber { get; set; }
+
+        [JsonProperty("is_inclusive_of_tax")]
+        public bool? IsInclusiveOfTax { get; set; }
 
         [JsonProperty("lineitems")]
         public List<AccountingLineitem>? Lineitems { get; set; }
@@ -109,11 +115,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
+        /// <summary>
+        /// refs -&gt; AccountingSalesorder; the sales orders this invoice was raised from.
+        /// </summary>
+        [JsonProperty("salesorder_ids")]
+        public List<string>? SalesorderIds { get; set; }
+
         [JsonProperty("send")]
         public bool? Send { get; set; }
 
         [JsonProperty("status")]
         public AccountingInvoiceStatus? Status { get; set; }
+
+        [JsonProperty("sub_total_amount")]
+        public double? SubTotalAmount { get; set; }
 
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }

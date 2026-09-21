@@ -109,6 +109,9 @@ var custom = WebhookObjectType.Of("custom_value");
 | `GenaiModel`                    | genai_model                     |
 | `GenaiPrompt`                   | genai_prompt                    |
 | `GenaiEmbedding`                | genai_embedding                 |
+| `GenaiTask`                     | genai_task                      |
+| `GenaiAgent`                    | genai_agent                     |
+| `GenaiOrganization`             | genai_organization              |
 | `MessagingMessage`              | messaging_message               |
 | `MessagingChannel`              | messaging_channel               |
 | `MessagingEvent`                | messaging_event                 |

@@ -37,6 +37,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("card_last4")]
         public string? CardLast4 { get; set; }
 
+        /// <summary>
+        /// dimension refs -&gt; AccountingCategory.
+        /// </summary>
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
@@ -48,6 +54,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("device_id")]
         public string? DeviceId { get; set; }
+
+        [JsonProperty("exchange_rate")]
+        public double? ExchangeRate { get; set; }
 
         [JsonProperty("fee_amount")]
         public double? FeeAmount { get; set; }
@@ -64,11 +73,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        [JsonProperty("net_amount")]
+        public double? NetAmount { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
+
+        [JsonProperty("paid_at")]
+        public DateTime? PaidAt { get; set; }
 
         [JsonProperty("payment_method")]
         public string? PaymentMethod { get; set; }

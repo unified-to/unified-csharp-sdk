@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        [JsonProperty("exchange_rate")]
+        public double? ExchangeRate { get; set; }
+
         [JsonProperty("extended_notes")]
         public List<AccountingExtendedNote>? ExtendedNotes { get; set; }
 
@@ -94,6 +97,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
+        /// <summary>
+        /// refs -&gt; AccountingPurchaseorder; the purchase orders this bill was raised from.
+        /// </summary>
+        [JsonProperty("purchaseorder_ids")]
+        public List<string>? PurchaseorderIds { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -111,6 +120,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("status")]
         public AccountingBillStatus? Status { get; set; }
+
+        [JsonProperty("sub_total_amount")]
+        public double? SubTotalAmount { get; set; }
 
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }

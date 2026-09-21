@@ -32,11 +32,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
 
+        [JsonProperty("exchange_rate")]
+        public double? ExchangeRate { get; set; }
+
         [JsonProperty("fees")]
         public List<AccountingFee>? Fees { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("is_billable")]
+        public bool? IsBillable { get; set; }
 
         [JsonProperty("item_description")]
         public string? ItemDescription { get; set; }
@@ -58,6 +64,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }
+
+        [JsonProperty("project_id")]
+        public string? ProjectId { get; set; }
 
         [JsonProperty("refund_amount")]
         public double? RefundAmount { get; set; }

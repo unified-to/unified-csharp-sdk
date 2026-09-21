@@ -31,12 +31,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     accountingTransaction: new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "f05a5db8-7c0a-4174-a373-5436e141c2b0",
+        ExchangeRate = 0.5674D,
+        Id = "17615f5e-0ebb-445a-b676-67eeac8b692b",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "94a5f98d-1ff3-4f2f-bb7d-d4d1b36e1eac",
+                Id = "211e7819-c286-480e-bcae-2c7237cdef02",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -45,9 +46,11 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
             },
         },
         Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        Status = AccountingTransactionStatus.Void,
         TaxAmount = 0D,
         TotalAmount = 94452D,
-        UpdatedAt = System.DateTime.Parse("2021-09-10T16:09:49.027Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-10T21:27:21.377Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -178,12 +181,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "669ba468-0b18-4de7-b3c8-441c947209c5",
+        ExchangeRate = 0.5674D,
+        Id = "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "14e52713-9802-4272-a1d0-9539b1dde560",
+                Id = "5dceaa79-1e95-4cee-928e-c57d24727437",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -192,9 +196,11 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
             },
         },
         Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        Status = AccountingTransactionStatus.Void,
         TaxAmount = 0D,
         TotalAmount = 94452D,
-        UpdatedAt = System.DateTime.Parse("2021-09-10T16:09:49.035Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-10T21:27:21.384Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -282,12 +288,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest() {
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        Id = "669ba468-0b18-4de7-b3c8-441c947209c5",
+        ExchangeRate = 0.5674D,
+        Id = "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "14e52713-9802-4272-a1d0-9539b1dde560",
+                Id = "5dceaa79-1e95-4cee-928e-c57d24727437",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -296,9 +303,11 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
             },
         },
         Memo = "withdrawal of USD 873.18 at Harber and Sons charged to account ending in 1804 using card ending in ****7022.",
+        Status = AccountingTransactionStatus.Void,
         TaxAmount = 0D,
         TotalAmount = 94452D,
-        UpdatedAt = System.DateTime.Parse("2021-09-10T16:09:49.035Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-10T21:27:21.384Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -22,4 +22,11 @@ var value = PatchAccountingTaxrateQueryParamFields.Id;
 | `IsActive`       | is_active        |
 | `OrganizationId` | organization_id  |
 | `Metadata`       | metadata         |
+| `EffectiveRate`  | effective_rate   |
+| `TotalRate`      | total_rate       |
+| `Components`     | components       |
+| `Type`           | type             |
+| `IsCompound`     | is_compound      |
+| `Country`        | country          |
+| `Region`         | region           |
 | `Raw`            | raw              |

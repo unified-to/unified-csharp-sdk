@@ -33,6 +33,20 @@ namespace UnifiedTo.Models.Requests
         OrganizationId,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("effective_rate")]
+        EffectiveRate,
+        [JsonProperty("total_rate")]
+        TotalRate,
+        [JsonProperty("components")]
+        Components,
+        [JsonProperty("type")]
+        Type,
+        [JsonProperty("is_compound")]
+        IsCompound,
+        [JsonProperty("country")]
+        Country,
+        [JsonProperty("region")]
+        Region,
         [JsonProperty("raw")]
         Raw,
     }

@@ -33,6 +33,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("object_type")]
         public string? ObjectType { get; set; }
 
+        [JsonProperty("taxrate_id")]
+        public string? TaxrateId { get; set; }
+
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 

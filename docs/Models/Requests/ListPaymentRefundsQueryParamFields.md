@@ -22,4 +22,7 @@ var value = ListPaymentRefundsQueryParamFields.Id;
 | `Notes`       | notes         |
 | `Status`      | status        |
 | `Reference`   | reference     |
+| `RefundedAt`  | refunded_at   |
+| `Reason`      | reason        |
+| `TenderType`  | tender_type   |
 | `Raw`         | raw           |

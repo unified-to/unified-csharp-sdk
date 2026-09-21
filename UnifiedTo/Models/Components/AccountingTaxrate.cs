@@ -11,23 +11,40 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
     public class AccountingTaxrate
     {
+        /// <summary>
+        /// Component parts of a compound or multi-component tax.
+        /// </summary>
+        [JsonProperty("components")]
+        public List<AccountingTaxrateComponent>? Components { get; set; }
+
+        [JsonProperty("country")]
+        public string? Country { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("effective_rate")]
+        public double? EffectiveRate { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
+
+        [JsonProperty("is_compound")]
+        public bool? IsCompound { get; set; }
 
         [JsonProperty("metadata")]
         public List<AccountingMetadata>? Metadata { get; set; }
@@ -43,6 +60,15 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("region")]
+        public string? Region { get; set; }
+
+        [JsonProperty("total_rate")]
+        public double? TotalRate { get; set; }
+
+        [JsonProperty("type")]
+        public AccountingTaxrateType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

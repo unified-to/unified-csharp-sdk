@@ -30,14 +30,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
     accountingTaxrate: new AccountingTaxrate() {
+        Components = new List<AccountingTaxrateComponent>() {
+            new AccountingTaxrateComponent() {
+                IsCompound = false,
+                Name = "cogo",
+                Rate = 53D,
+            },
+        },
+        Country = "BY",
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
-        Description = "Nemo atrox tricesimus creator aranea.",
-        Id = "0a8f129b-707a-4153-aab3-12f6009740d0",
+        Description = "Atrox tricesimus creator.",
+        EffectiveRate = 53D,
+        Id = "9d45b1ab-9993-41c7-9148-b552b5883179",
         IsActive = false,
+        IsCompound = true,
         Metadata = new List<AccountingMetadata>() {},
-        Name = "cogo",
-        Rate = 1D,
-        UpdatedAt = System.DateTime.Parse("2025-11-06T01:54:57.786Z").ToUniversalTime(),
+        Name = "villa",
+        Rate = 53D,
+        Region = "TX",
+        TotalRate = 53D,
+        Type = AccountingTaxrateType.Other,
+        UpdatedAt = System.DateTime.Parse("2022-04-13T08:15:29.223Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -167,14 +180,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
     AccountingTaxrate = new AccountingTaxrate() {
+        Components = new List<AccountingTaxrateComponent>() {
+            new AccountingTaxrateComponent() {
+                IsCompound = false,
+                Name = "cogo",
+                Rate = 53D,
+            },
+        },
+        Country = "BY",
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
-        Description = "Nemo atrox tricesimus creator aranea.",
-        Id = "170bd5ba-70c2-4039-bf9f-1f1bc500b73b",
+        Description = "Atrox tricesimus creator.",
+        EffectiveRate = 53D,
+        Id = "6b146958-8711-4255-89a5-4e504a6d2a0f",
         IsActive = false,
+        IsCompound = true,
         Metadata = new List<AccountingMetadata>() {},
-        Name = "cogo",
-        Rate = 1D,
-        UpdatedAt = System.DateTime.Parse("2025-11-06T01:54:57.794Z").ToUniversalTime(),
+        Name = "villa",
+        Rate = 53D,
+        Region = "TX",
+        TotalRate = 53D,
+        Type = AccountingTaxrateType.Other,
+        UpdatedAt = System.DateTime.Parse("2022-04-13T08:15:29.226Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -261,14 +287,27 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
     AccountingTaxrate = new AccountingTaxrate() {
+        Components = new List<AccountingTaxrateComponent>() {
+            new AccountingTaxrateComponent() {
+                IsCompound = false,
+                Name = "cogo",
+                Rate = 53D,
+            },
+        },
+        Country = "BY",
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
-        Description = "Nemo atrox tricesimus creator aranea.",
-        Id = "170bd5ba-70c2-4039-bf9f-1f1bc500b73b",
+        Description = "Atrox tricesimus creator.",
+        EffectiveRate = 53D,
+        Id = "6b146958-8711-4255-89a5-4e504a6d2a0f",
         IsActive = false,
+        IsCompound = true,
         Metadata = new List<AccountingMetadata>() {},
-        Name = "cogo",
-        Rate = 1D,
-        UpdatedAt = System.DateTime.Parse("2025-11-06T01:54:57.794Z").ToUniversalTime(),
+        Name = "villa",
+        Rate = 53D,
+        Region = "TX",
+        TotalRate = 53D,
+        Type = AccountingTaxrateType.Other,
+        UpdatedAt = System.DateTime.Parse("2022-04-13T08:15:29.226Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

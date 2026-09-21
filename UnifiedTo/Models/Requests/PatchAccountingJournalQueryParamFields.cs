@@ -45,6 +45,14 @@ namespace UnifiedTo.Models.Requests
         ProjectId,
         [JsonProperty("attachments")]
         Attachments,
+        [JsonProperty("total_amount")]
+        TotalAmount,
+        [JsonProperty("exchange_rate")]
+        ExchangeRate,
+        [JsonProperty("status")]
+        Status,
+        [JsonProperty("is_inclusive_of_tax")]
+        IsInclusiveOfTax,
         [JsonProperty("raw")]
         Raw,
     }

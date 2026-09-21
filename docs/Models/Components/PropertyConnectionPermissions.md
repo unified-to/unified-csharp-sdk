@@ -185,6 +185,12 @@ var custom = PropertyConnectionPermissions.Of("custom_value");
 | `GenaiPromptWrite`                   | genai_prompt_write                   |
 | `GenaiEmbeddingRead`                 | genai_embedding_read                 |
 | `GenaiEmbeddingWrite`                | genai_embedding_write                |
+| `GenaiTaskRead`                      | genai_task_read                      |
+| `GenaiTaskWrite`                     | genai_task_write                     |
+| `GenaiAgentRead`                     | genai_agent_read                     |
+| `GenaiAgentWrite`                    | genai_agent_write                    |
+| `GenaiOrganizationRead`              | genai_organization_read              |
+| `GenaiOrganizationWrite`             | genai_organization_write             |
 | `MessagingMessageRead`               | messaging_message_read               |
 | `MessagingMessageWrite`              | messaging_message_write              |
 | `MessagingChannelRead`               | messaging_channel_read               |

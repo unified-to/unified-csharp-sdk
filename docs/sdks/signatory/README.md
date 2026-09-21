@@ -31,11 +31,11 @@ var res = await sdk.Signatory.CreateSigningSignatoryAsync(
     signingSignatory: new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "Hardy.Wehner@gmail.com",
-        Id = "9089358f-ad1c-4fb1-9af5-8ab9ed8cb965",
+        Id = "fa368704-f7c8-401f-85ac-1aa60c788d6e",
         Order = 5D,
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Signed,
-        UpdatedAt = System.DateTime.Parse("2026-08-12T18:11:55.990Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-08-13T12:36:27.970Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,11 +166,11 @@ PatchSigningSignatoryRequest req = new PatchSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "Hardy.Wehner@gmail.com",
-        Id = "24f5499e-cae3-42cd-a3ba-625c7bfe1e31",
+        Id = "9f327913-a13d-4d5b-a95a-d2b3e0f95b99",
         Order = 5D,
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Signed,
-        UpdatedAt = System.DateTime.Parse("2026-08-12T18:11:55.998Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-08-13T12:36:27.981Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -258,11 +258,11 @@ UpdateSigningSignatoryRequest req = new UpdateSigningSignatoryRequest() {
     SigningSignatory = new SigningSignatory() {
         CreatedAt = System.DateTime.Parse("2022-04-16T19:25:01.966Z").ToUniversalTime(),
         Email = "Hardy.Wehner@gmail.com",
-        Id = "24f5499e-cae3-42cd-a3ba-625c7bfe1e31",
+        Id = "9f327913-a13d-4d5b-a95a-d2b3e0f95b99",
         Order = 5D,
         Role = SigningSignatoryRole.Signer,
         Status = SigningSignatoryStatus.Signed,
-        UpdatedAt = System.DateTime.Parse("2026-08-12T18:11:55.998Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-08-13T12:36:27.981Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

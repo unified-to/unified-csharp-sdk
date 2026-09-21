@@ -5,18 +5,24 @@
 ### Available Operations
 
 * [CreateAdsOrganization](#createadsorganization) - Create an organization
+* [CreateGenaiOrganization](#creategenaiorganization) - Create an organization
 * [CreateRepoOrganization](#createrepoorganization) - Create an organization
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [GetAdsOrganization](#getadsorganization) - Retrieve an organization
+* [GetGenaiOrganization](#getgenaiorganization) - Retrieve an organization
 * [GetRepoOrganization](#getrepoorganization) - Retrieve an organization
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [ListAdsOrganizations](#listadsorganizations) - List all organizations
+* [ListGenaiOrganizations](#listgenaiorganizations) - List all organizations
 * [ListRepoOrganizations](#listrepoorganizations) - List all organizations
 * [PatchAdsOrganization](#patchadsorganization) - Update an organization
+* [PatchGenaiOrganization](#patchgenaiorganization) - Update an organization
 * [PatchRepoOrganization](#patchrepoorganization) - Update an organization
 * [RemoveAdsOrganization](#removeadsorganization) - Remove an organization
+* [RemoveGenaiOrganization](#removegenaiorganization) - Remove an organization
 * [RemoveRepoOrganization](#removerepoorganization) - Remove an organization
 * [UpdateAdsOrganization](#updateadsorganization) - Update an organization
+* [UpdateGenaiOrganization](#updategenaiorganization) - Update an organization
 * [UpdateRepoOrganization](#updaterepoorganization) - Update an organization
 
 ## CreateAdsOrganization
@@ -41,7 +47,7 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "7530c466-28ef-4b6e-ada4-24e24d33462a",
+        Id = "7aa99529-0bf9-46b7-8885-0326ecbc4707",
         Managers = new List<AdsManager>() {
             new AdsManager() {
                 Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -51,7 +57,7 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-02-28T22:26:56.216Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T15:36:04.753Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -71,6 +77,56 @@ var res = await sdk.Organization.CreateAdsOrganizationAsync(
 ### Response
 
 **[CreateAdsOrganizationResponse](../../Models/Requests/CreateAdsOrganizationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateGenaiOrganization
+
+Create an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createGenaiOrganization" method="post" path="/genai/{connection_id}/organization" example="genai_organization" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Organization.CreateGenaiOrganizationAsync(
+    genaiOrganization: new GenaiOrganization() {
+        CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
+        Description = "Voluptates abeo subseco.",
+        Id = "c6b6737d-7782-41e3-a20e-674fb9c33d86",
+        IsActive = false,
+        Name = "officially about",
+        UpdatedAt = System.DateTime.Parse("2023-01-15T02:14:43.003Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `GenaiOrganization`                                                                                                                              | [GenaiOrganization](../../Models/Components/GenaiOrganization.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateGenaiOrganizationQueryParamFields](../../Models/Requests/CreateGenaiOrganizationQueryParamFields.md)>                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateGenaiOrganizationResponse](../../Models/Requests/CreateGenaiOrganizationResponse.md)**
 
 ### Errors
 
@@ -99,9 +155,9 @@ var res = await sdk.Organization.CreateRepoOrganizationAsync(
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "1269b14e-4e5a-4aeb-a849-4a94957b7c2f",
+        Id = "e5e80293-ffea-4c50-8f72-f34ace46e72d",
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-13T12:14:01.456Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-13T17:10:28.255Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     connectionId: "<id>"
@@ -206,6 +262,48 @@ var res = await sdk.Organization.GetAdsOrganizationAsync(
 ### Response
 
 **[GetAdsOrganizationResponse](../../Models/Requests/GetAdsOrganizationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetGenaiOrganization
+
+Retrieve an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getGenaiOrganization" method="get" path="/genai/{connection_id}/organization/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Organization.GetGenaiOrganizationAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Organization                                                                                                                           |
+| `Fields`                                                                                                                                         | List<[GetGenaiOrganizationQueryParamFields](../../Models/Requests/GetGenaiOrganizationQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetGenaiOrganizationResponse](../../Models/Requests/GetGenaiOrganizationResponse.md)**
 
 ### Errors
 
@@ -337,6 +435,47 @@ var res = await sdk.Organization.ListAdsOrganizationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListGenaiOrganizations
+
+List all organizations
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listGenaiOrganizations" method="get" path="/genai/{connection_id}/organization" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListGenaiOrganizationsRequest req = new ListGenaiOrganizationsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Organization.ListGenaiOrganizationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListGenaiOrganizationsRequest](../../Models/Requests/ListGenaiOrganizationsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[ListGenaiOrganizationsResponse](../../Models/Requests/ListGenaiOrganizationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListRepoOrganizations
 
 List all organizations
@@ -401,7 +540,7 @@ PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "9b8548d4-fd59-4424-a7aa-fa7e8b89018f",
+        Id = "efbf089b-dc01-4dbe-bdc5-3d5f86e0b1c3",
         Managers = new List<AdsManager>() {
             new AdsManager() {
                 Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -411,7 +550,7 @@ PatchAdsOrganizationRequest req = new PatchAdsOrganizationRequest() {
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-02-28T22:26:56.228Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T15:36:04.765Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -431,6 +570,57 @@ var res = await sdk.Organization.PatchAdsOrganizationAsync(req);
 ### Response
 
 **[PatchAdsOrganizationResponse](../../Models/Requests/PatchAdsOrganizationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchGenaiOrganization
+
+Update an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchGenaiOrganization" method="patch" path="/genai/{connection_id}/organization/{id}" example="genai_organization" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchGenaiOrganizationRequest req = new PatchGenaiOrganizationRequest() {
+    GenaiOrganization = new GenaiOrganization() {
+        CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
+        Description = "Voluptates abeo subseco.",
+        Id = "e466e490-09c0-476e-9a38-d324960c1635",
+        IsActive = false,
+        Name = "officially about",
+        UpdatedAt = System.DateTime.Parse("2023-01-15T02:14:43.005Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Organization.PatchGenaiOrganizationAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchGenaiOrganizationRequest](../../Models/Requests/PatchGenaiOrganizationRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[PatchGenaiOrganizationResponse](../../Models/Requests/PatchGenaiOrganizationResponse.md)**
 
 ### Errors
 
@@ -460,9 +650,9 @@ PatchRepoOrganizationRequest req = new PatchRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "c6ad8489-29eb-4797-b54f-88d26b56c515",
+        Id = "2c0e48fb-7221-429b-aeed-0a403672f821",
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-13T12:14:01.459Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-13T17:10:28.257Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",
@@ -523,6 +713,46 @@ var res = await sdk.Organization.RemoveAdsOrganizationAsync(
 ### Response
 
 **[RemoveAdsOrganizationResponse](../../Models/Requests/RemoveAdsOrganizationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveGenaiOrganization
+
+Remove an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeGenaiOrganization" method="delete" path="/genai/{connection_id}/organization/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Organization.RemoveGenaiOrganizationAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `ConnectionId`         | *string*               | :heavy_check_mark:     | ID of the connection   |
+| `Id`                   | *string*               | :heavy_check_mark:     | ID of the Organization |
+
+### Response
+
+**[RemoveGenaiOrganizationResponse](../../Models/Requests/RemoveGenaiOrganizationResponse.md)**
 
 ### Errors
 
@@ -593,7 +823,7 @@ UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
         AccountNumber = "LQUJx8zQBW",
         CreatedAt = System.DateTime.Parse("2020-07-23T21:47:11.440Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "9b8548d4-fd59-4424-a7aa-fa7e8b89018f",
+        Id = "efbf089b-dc01-4dbe-bdc5-3d5f86e0b1c3",
         Managers = new List<AdsManager>() {
             new AdsManager() {
                 Id = "e4fd87df-9f8b-4fa0-a77b-b7d18669e350",
@@ -603,7 +833,7 @@ UpdateAdsOrganizationRequest req = new UpdateAdsOrganizationRequest() {
         Name = "Ankunding Inc",
         Status = AdsOrganizationStatus.Processing,
         Timezone = "Europe/Chisinau",
-        UpdatedAt = System.DateTime.Parse("2026-02-28T22:26:56.228Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-01T15:36:04.765Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -623,6 +853,57 @@ var res = await sdk.Organization.UpdateAdsOrganizationAsync(req);
 ### Response
 
 **[UpdateAdsOrganizationResponse](../../Models/Requests/UpdateAdsOrganizationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateGenaiOrganization
+
+Update an organization
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateGenaiOrganization" method="put" path="/genai/{connection_id}/organization/{id}" example="genai_organization" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateGenaiOrganizationRequest req = new UpdateGenaiOrganizationRequest() {
+    GenaiOrganization = new GenaiOrganization() {
+        CreatedAt = System.DateTime.Parse("2020-10-27T16:03:47.122Z").ToUniversalTime(),
+        Description = "Voluptates abeo subseco.",
+        Id = "e466e490-09c0-476e-9a38-d324960c1635",
+        IsActive = false,
+        Name = "officially about",
+        UpdatedAt = System.DateTime.Parse("2023-01-15T02:14:43.005Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Organization.UpdateGenaiOrganizationAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateGenaiOrganizationRequest](../../Models/Requests/UpdateGenaiOrganizationRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[UpdateGenaiOrganizationResponse](../../Models/Requests/UpdateGenaiOrganizationResponse.md)**
 
 ### Errors
 
@@ -652,9 +933,9 @@ UpdateRepoOrganizationRequest req = new UpdateRepoOrganizationRequest() {
         AvatarUrl = "https://picsum.photos/seed/fGl6Lb/3157/3173",
         CreatedAt = System.DateTime.Parse("2022-07-07T00:18:40.748Z").ToUniversalTime(),
         Description = "Trepide defendo supra testimonium ager.",
-        Id = "c6ad8489-29eb-4797-b54f-88d26b56c515",
+        Id = "2c0e48fb-7221-429b-aeed-0a403672f821",
         Name = "Denesik - Lemke",
-        UpdatedAt = System.DateTime.Parse("2023-08-13T12:14:01.459Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-08-13T17:10:28.257Z").ToUniversalTime(),
         WebUrl = "https://turbulent-overheard.biz",
     },
     ConnectionId = "<id>",

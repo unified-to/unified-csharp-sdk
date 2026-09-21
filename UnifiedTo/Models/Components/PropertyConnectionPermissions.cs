@@ -188,6 +188,12 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyConnectionPermissions GenaiPromptWrite = new PropertyConnectionPermissions("genai_prompt_write");
         public static readonly PropertyConnectionPermissions GenaiEmbeddingRead = new PropertyConnectionPermissions("genai_embedding_read");
         public static readonly PropertyConnectionPermissions GenaiEmbeddingWrite = new PropertyConnectionPermissions("genai_embedding_write");
+        public static readonly PropertyConnectionPermissions GenaiTaskRead = new PropertyConnectionPermissions("genai_task_read");
+        public static readonly PropertyConnectionPermissions GenaiTaskWrite = new PropertyConnectionPermissions("genai_task_write");
+        public static readonly PropertyConnectionPermissions GenaiAgentRead = new PropertyConnectionPermissions("genai_agent_read");
+        public static readonly PropertyConnectionPermissions GenaiAgentWrite = new PropertyConnectionPermissions("genai_agent_write");
+        public static readonly PropertyConnectionPermissions GenaiOrganizationRead = new PropertyConnectionPermissions("genai_organization_read");
+        public static readonly PropertyConnectionPermissions GenaiOrganizationWrite = new PropertyConnectionPermissions("genai_organization_write");
         public static readonly PropertyConnectionPermissions MessagingMessageRead = new PropertyConnectionPermissions("messaging_message_read");
         public static readonly PropertyConnectionPermissions MessagingMessageWrite = new PropertyConnectionPermissions("messaging_message_write");
         public static readonly PropertyConnectionPermissions MessagingChannelRead = new PropertyConnectionPermissions("messaging_channel_read");
@@ -510,6 +516,12 @@ namespace UnifiedTo.Models.Components
                 ["genai_prompt_write"] = GenaiPromptWrite,
                 ["genai_embedding_read"] = GenaiEmbeddingRead,
                 ["genai_embedding_write"] = GenaiEmbeddingWrite,
+                ["genai_task_read"] = GenaiTaskRead,
+                ["genai_task_write"] = GenaiTaskWrite,
+                ["genai_agent_read"] = GenaiAgentRead,
+                ["genai_agent_write"] = GenaiAgentWrite,
+                ["genai_organization_read"] = GenaiOrganizationRead,
+                ["genai_organization_write"] = GenaiOrganizationWrite,
                 ["messaging_message_read"] = MessagingMessageRead,
                 ["messaging_message_write"] = MessagingMessageWrite,
                 ["messaging_channel_read"] = MessagingChannelRead,

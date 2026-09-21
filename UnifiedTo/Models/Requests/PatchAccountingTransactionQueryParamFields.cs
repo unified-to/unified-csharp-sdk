@@ -55,6 +55,12 @@ namespace UnifiedTo.Models.Requests
         CategoryIds,
         [JsonProperty("project_id")]
         ProjectId,
+        [JsonProperty("transaction_at")]
+        TransactionAt,
+        [JsonProperty("exchange_rate")]
+        ExchangeRate,
+        [JsonProperty("status")]
+        Status,
         [JsonProperty("raw")]
         Raw,
     }

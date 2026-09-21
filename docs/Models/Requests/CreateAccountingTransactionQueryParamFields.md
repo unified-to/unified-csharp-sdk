@@ -33,4 +33,7 @@ var value = CreateAccountingTransactionQueryParamFields.Id;
 | `OrganizationId`  | organization_id   |
 | `CategoryIds`     | category_ids      |
 | `ProjectId`       | project_id        |
+| `TransactionAt`   | transaction_at    |
+| `ExchangeRate`    | exchange_rate     |
+| `Status`          | status            |
 | `Raw`             | raw               |

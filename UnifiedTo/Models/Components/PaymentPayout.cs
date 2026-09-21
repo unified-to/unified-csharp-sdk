@@ -19,14 +19,32 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentPayout
     {
+        [JsonProperty("account_id")]
+        public string? AccountId { get; set; }
+
+        [JsonProperty("arrival_at")]
+        public DateTime? ArrivalAt { get; set; }
+
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        [JsonProperty("fee_amount")]
+        public double? FeeAmount { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        /// <summary>
+        /// The transactions included in this payout.
+        /// </summary>
+        [JsonProperty("lineitems")]
+        public List<PaymentPayoutLineitem>? Lineitems { get; set; }
+
+        [JsonProperty("net_amount")]
+        public double? NetAmount { get; set; }
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }

@@ -83,6 +83,12 @@ namespace UnifiedTo.Models.Requests
         ProjectId,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("sub_total_amount")]
+        SubTotalAmount,
+        [JsonProperty("exchange_rate")]
+        ExchangeRate,
+        [JsonProperty("purchaseorder_ids")]
+        PurchaseorderIds,
         [JsonProperty("raw")]
         Raw,
     }

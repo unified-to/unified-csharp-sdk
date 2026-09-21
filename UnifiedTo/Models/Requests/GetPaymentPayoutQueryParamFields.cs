@@ -29,6 +29,16 @@ namespace UnifiedTo.Models.Requests
         Notes,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("arrival_at")]
+        ArrivalAt,
+        [JsonProperty("fee_amount")]
+        FeeAmount,
+        [JsonProperty("net_amount")]
+        NetAmount,
+        [JsonProperty("account_id")]
+        AccountId,
+        [JsonProperty("lineitems")]
+        Lineitems,
         [JsonProperty("raw")]
         Raw,
     }

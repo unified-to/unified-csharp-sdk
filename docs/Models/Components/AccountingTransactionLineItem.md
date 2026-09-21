@@ -11,6 +11,7 @@
 | `Id`               | *string*           | :heavy_minus_sign: | N/A                |
 | `Name`             | *string*           | :heavy_minus_sign: | N/A                |
 | `ObjectType`       | *string*           | :heavy_minus_sign: | N/A                |
+| `TaxrateId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `TotalAmount`      | *double*           | :heavy_minus_sign: | N/A                |
 | `UnitAmount`       | *double*           | :heavy_minus_sign: | N/A                |
 | `UnitQuantity`     | *double*           | :heavy_minus_sign: | N/A                |

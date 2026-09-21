@@ -33,6 +33,12 @@ namespace UnifiedTo.Models.Requests
         Status,
         [JsonProperty("reference")]
         Reference,
+        [JsonProperty("refunded_at")]
+        RefundedAt,
+        [JsonProperty("reason")]
+        Reason,
+        [JsonProperty("tender_type")]
+        TenderType,
         [JsonProperty("raw")]
         Raw,
     }

@@ -11,7 +11,9 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Linq;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
@@ -32,8 +34,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("exchange_rate")]
+        public double? ExchangeRate { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("is_inclusive_of_tax")]
+        public bool? IsInclusiveOfTax { get; set; }
 
         /// <summary>
         /// new field name.
@@ -59,11 +67,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("source")]
         public string? Source { get; set; }
 
+        [JsonProperty("status")]
+        public AccountingJournalStatus? Status { get; set; }
+
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
+
+        [JsonProperty("total_amount")]
+        public double? TotalAmount { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
