@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Account status, such as ACTIVE or ARCHIVED.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Status : IEquatable<Status>
     {

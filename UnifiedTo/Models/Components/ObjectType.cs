@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The type of object this credit was applied to.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ObjectType : IEquatable<ObjectType>
     {

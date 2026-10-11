@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("registered_at")]
         public DateTime? RegisteredAt { get; set; }
 

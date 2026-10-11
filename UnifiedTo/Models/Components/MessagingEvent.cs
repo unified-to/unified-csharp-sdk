@@ -25,9 +25,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("channel")]
         public PropertyMessagingEventChannel? Channel { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// not used.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 

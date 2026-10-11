@@ -21,6 +21,7 @@ var value = PatchHrisEmployeeQueryParamFields.Id;
 | `LastName`              | last_name               |
 | `Emails`                | emails                  |
 | `Title`                 | title                   |
+| `JobId`                 | job_id                  |
 | `ManagerId`             | manager_id              |
 | `EmploymentStatus`      | employment_status       |
 | `Gender`                | gender                  |
@@ -54,4 +55,6 @@ var value = PatchHrisEmployeeQueryParamFields.Id;
 | `HasMfa`                | has_mfa                 |
 | `TimeoffDaysTotal`      | timeoff_days_total      |
 | `TimeoffDaysUsed`       | timeoff_days_used       |
+| `FlsaStatus`            | flsa_status             |
+| `PayFrequency`          | pay_frequency           |
 | `Raw`                   | raw                     |

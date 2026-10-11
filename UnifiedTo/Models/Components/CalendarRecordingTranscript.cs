@@ -19,12 +19,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attendee")]
         public PropertyCalendarRecordingTranscriptAttendee? Attendee { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// two digit ISO code.
+        /// </summary>
         [JsonProperty("language")]
         public string? Language { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 

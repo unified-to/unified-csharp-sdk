@@ -28,47 +28,73 @@ namespace UnifiedTo
         /// Create secrets manager.
         /// </summary>
         /// <param name="request">A <see cref="SecretsManager"/> parameter.</param>
-        /// <returns>An awaitable task that returns a <see cref="CreateUnifiedWorkspaceSecretsmanagerResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="CreateUnifiedSecretsmanagerResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<CreateUnifiedWorkspaceSecretsmanagerResponse> CreateUnifiedWorkspaceSecretsmanagerAsync(
-            SecretsManager request
-        );
+        public  Task<CreateUnifiedSecretsmanagerResponse> CreateUnifiedSecretsmanagerAsync(SecretsManager request);
 
         /// <summary>
         /// Retrieve secrets manager.
         /// </summary>
         /// <param name="id">ID of the Secretsmanager.</param>
-        /// <returns>An awaitable task that returns a <see cref="GetUnifiedWorkspaceSecretsmanagerResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="GetUnifiedSecretsmanagerResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<GetUnifiedWorkspaceSecretsmanagerResponse> GetUnifiedWorkspaceSecretsmanagerAsync(string id);
+        public  Task<GetUnifiedSecretsmanagerResponse> GetUnifiedSecretsmanagerAsync(string id);
+
+        /// <summary>
+        /// List secrets manager setup instructions.
+        /// </summary>
+        /// <returns>An awaitable task that returns a <see cref="ListUnifiedSecretsmanagerInstructionsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListUnifiedSecretsmanagerInstructionsResponse> ListUnifiedSecretsmanagerInstructionsAsync();
+
+        /// <summary>
+        /// List secrets in a secrets manager.
+        /// </summary>
+        /// <param name="secretsmanagerId">The secrets manager to list secrets from.</param>
+        /// <param name="limit">Maximum number of secrets to return.</param>
+        /// <param name="offset">Number of secrets to skip.</param>
+        /// <param name="query">Filter secrets by name.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListUnifiedSecretsmanagerSecretsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="secretsmanagerId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<ListUnifiedSecretsmanagerSecretsResponse> ListUnifiedSecretsmanagerSecretsAsync(
+            string secretsmanagerId,
+            double? limit = null,
+            double? offset = null,
+            string? query = null
+        );
 
         /// <summary>
         /// List secrets managers.
         /// </summary>
-        /// <param name="request">A <see cref="ListUnifiedWorkspaceSecretsmanagersRequest"/> parameter.</param>
-        /// <returns>An awaitable task that returns a <see cref="ListUnifiedWorkspaceSecretsmanagersResponse"/> response envelope when completed.</returns>
+        /// <param name="request">A <see cref="ListUnifiedSecretsmanagersRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListUnifiedSecretsmanagersResponse"/> response envelope when completed.</returns>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<ListUnifiedWorkspaceSecretsmanagersResponse> ListUnifiedWorkspaceSecretsmanagersAsync(
-            ListUnifiedWorkspaceSecretsmanagersRequest? request = null
+        public  Task<ListUnifiedSecretsmanagersResponse> ListUnifiedSecretsmanagersAsync(
+            ListUnifiedSecretsmanagersRequest? request = null
         );
 
         /// <summary>
         /// Remove secrets manager.
         /// </summary>
         /// <param name="id">ID of the Secretsmanager.</param>
-        /// <returns>An awaitable task that returns a <see cref="RemoveUnifiedWorkspaceSecretsmanagerResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="RemoveUnifiedSecretsmanagerResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public  Task<RemoveUnifiedWorkspaceSecretsmanagerResponse> RemoveUnifiedWorkspaceSecretsmanagerAsync(string id);
+        public  Task<RemoveUnifiedSecretsmanagerResponse> RemoveUnifiedSecretsmanagerAsync(string id);
     }
 
     public class Secretsmanager: ISecretsmanager
@@ -88,19 +114,17 @@ namespace UnifiedTo
         /// Create secrets manager.
         /// </summary>
         /// <param name="request">A <see cref="SecretsManager"/> parameter.</param>
-        /// <returns>An awaitable task that returns a <see cref="CreateUnifiedWorkspaceSecretsmanagerResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="CreateUnifiedSecretsmanagerResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="request"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<CreateUnifiedWorkspaceSecretsmanagerResponse> CreateUnifiedWorkspaceSecretsmanagerAsync(
-            SecretsManager request
-        )
+        public async  Task<CreateUnifiedSecretsmanagerResponse> CreateUnifiedSecretsmanagerAsync(SecretsManager request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = baseUrl + "/unified/workspace/secretsmanager";
+            var urlString = baseUrl + "/unified/secretsmanager";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -121,7 +145,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUnifiedWorkspaceSecretsmanager", null, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUnifiedSecretsmanager", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -172,7 +196,7 @@ namespace UnifiedTo
                         throw new ResponseValidationException("Failed to deserialize response body into SecretsManager.", httpResponse, httpResponseBody, ex);
                     }
 
-                    var response = new CreateUnifiedWorkspaceSecretsmanagerResponse()
+                    var response = new CreateUnifiedSecretsmanagerResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -201,22 +225,22 @@ namespace UnifiedTo
         /// Retrieve secrets manager.
         /// </summary>
         /// <param name="id">ID of the Secretsmanager.</param>
-        /// <returns>An awaitable task that returns a <see cref="GetUnifiedWorkspaceSecretsmanagerResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="GetUnifiedSecretsmanagerResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<GetUnifiedWorkspaceSecretsmanagerResponse> GetUnifiedWorkspaceSecretsmanagerAsync(string id)
+        public async  Task<GetUnifiedSecretsmanagerResponse> GetUnifiedSecretsmanagerAsync(string id)
         {
             if (id == null) throw new ArgumentNullException(nameof(id));
 
-            var request = new GetUnifiedWorkspaceSecretsmanagerRequest()
+            var request = new GetUnifiedSecretsmanagerRequest()
             {
                 Id = id,
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/workspace/secretsmanager/{id}", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/secretsmanager/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -231,7 +255,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUnifiedWorkspaceSecretsmanager", null, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "getUnifiedSecretsmanager", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -282,7 +306,7 @@ namespace UnifiedTo
                         throw new ResponseValidationException("Failed to deserialize response body into SecretsManager.", httpResponse, httpResponseBody, ex);
                     }
 
-                    var response = new GetUnifiedWorkspaceSecretsmanagerResponse()
+                    var response = new GetUnifiedSecretsmanagerResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -308,19 +332,16 @@ namespace UnifiedTo
 
 
         /// <summary>
-        /// List secrets managers.
+        /// List secrets manager setup instructions.
         /// </summary>
-        /// <param name="request">A <see cref="ListUnifiedWorkspaceSecretsmanagersRequest"/> parameter.</param>
-        /// <returns>An awaitable task that returns a <see cref="ListUnifiedWorkspaceSecretsmanagersResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="ListUnifiedSecretsmanagerInstructionsResponse"/> response envelope when completed.</returns>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<ListUnifiedWorkspaceSecretsmanagersResponse> ListUnifiedWorkspaceSecretsmanagersAsync(
-            ListUnifiedWorkspaceSecretsmanagersRequest? request = null
-        )
+        public async  Task<ListUnifiedSecretsmanagerInstructionsResponse> ListUnifiedSecretsmanagerInstructionsAsync()
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/workspace/secretsmanager", request, null);
+            var urlString = baseUrl + "/unified/secretsmanager/instructions";
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -335,7 +356,232 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUnifiedWorkspaceSecretsmanagers", null, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUnifiedSecretsmanagerInstructions", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<SecretsManagerInstructions> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<SecretsManagerInstructions>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<SecretsManagerInstructions>.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListUnifiedSecretsmanagerInstructionsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.SecretsManagerInstructionsList = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// List secrets in a secrets manager.
+        /// </summary>
+        /// <param name="secretsmanagerId">The secrets manager to list secrets from.</param>
+        /// <param name="limit">Maximum number of secrets to return.</param>
+        /// <param name="offset">Number of secrets to skip.</param>
+        /// <param name="query">Filter secrets by name.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListUnifiedSecretsmanagerSecretsResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="secretsmanagerId"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListUnifiedSecretsmanagerSecretsResponse> ListUnifiedSecretsmanagerSecretsAsync(
+            string secretsmanagerId,
+            double? limit = null,
+            double? offset = null,
+            string? query = null
+        )
+        {
+            if (secretsmanagerId == null) throw new ArgumentNullException(nameof(secretsmanagerId));
+
+            var request = new ListUnifiedSecretsmanagerSecretsRequest()
+            {
+                SecretsmanagerId = secretsmanagerId,
+                Limit = limit,
+                Offset = offset,
+                Query = query,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/secretsmanager/secrets", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUnifiedSecretsmanagerSecrets", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    List<SecretsManagerSecret> obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<List<SecretsManagerSecret>>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into List<SecretsManagerSecret>.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new ListUnifiedSecretsmanagerSecretsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.SecretsManagerSecrets = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// List secrets managers.
+        /// </summary>
+        /// <param name="request">A <see cref="ListUnifiedSecretsmanagersRequest"/> parameter.</param>
+        /// <returns>An awaitable task that returns a <see cref="ListUnifiedSecretsmanagersResponse"/> response envelope when completed.</returns>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<ListUnifiedSecretsmanagersResponse> ListUnifiedSecretsmanagersAsync(
+            ListUnifiedSecretsmanagersRequest? request = null
+        )
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/secretsmanager", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "listUnifiedSecretsmanagers", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -386,7 +632,7 @@ namespace UnifiedTo
                         throw new ResponseValidationException("Failed to deserialize response body into List<SecretsManager>.", httpResponse, httpResponseBody, ex);
                     }
 
-                    var response = new ListUnifiedWorkspaceSecretsmanagersResponse()
+                    var response = new ListUnifiedSecretsmanagersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -415,23 +661,21 @@ namespace UnifiedTo
         /// Remove secrets manager.
         /// </summary>
         /// <param name="id">ID of the Secretsmanager.</param>
-        /// <returns>An awaitable task that returns a <see cref="RemoveUnifiedWorkspaceSecretsmanagerResponse"/> response envelope when completed.</returns>
+        /// <returns>An awaitable task that returns a <see cref="RemoveUnifiedSecretsmanagerResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="id"/> is null.</exception>
         /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
-        public async  Task<RemoveUnifiedWorkspaceSecretsmanagerResponse> RemoveUnifiedWorkspaceSecretsmanagerAsync(
-            string id
-        )
+        public async  Task<RemoveUnifiedSecretsmanagerResponse> RemoveUnifiedSecretsmanagerAsync(string id)
         {
             if (id == null) throw new ArgumentNullException(nameof(id));
 
-            var request = new RemoveUnifiedWorkspaceSecretsmanagerRequest()
+            var request = new RemoveUnifiedSecretsmanagerRequest()
             {
                 Id = id,
             };
 
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/workspace/secretsmanager/{id}", request, null);
+            var urlString = URLBuilder.Build(baseUrl, "/unified/secretsmanager/{id}", request, null);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
@@ -446,7 +690,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUnifiedWorkspaceSecretsmanager", null, SDKConfiguration.SecuritySource);
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "removeUnifiedSecretsmanager", null, SDKConfiguration.SecuritySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -484,7 +728,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {
-                return new RemoveUnifiedWorkspaceSecretsmanagerResponse()
+                return new RemoveUnifiedSecretsmanagerResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -502,7 +746,7 @@ namespace UnifiedTo
             }
             else
             {
-                return new RemoveUnifiedWorkspaceSecretsmanagerResponse()
+                return new RemoveUnifiedSecretsmanagerResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,

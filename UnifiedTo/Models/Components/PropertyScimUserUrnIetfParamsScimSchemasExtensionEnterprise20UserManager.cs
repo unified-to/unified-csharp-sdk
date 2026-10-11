@@ -22,18 +22,30 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager
     {
+        /// <summary>
+        /// The URI of the SCIM resource representing the User's manager.  RECOMMENDED.
+        /// </summary>
         [JsonProperty("$ref")]
         public string? DollarRef { get; set; }
 
+        /// <summary>
+        /// The displayName of the user's manager.  This attribute is OPTIONAL, and mutability is "readOnly".
+        /// </summary>
         [JsonProperty("displayName")]
         public string? DisplayName { get; set; }
 
+        /// <summary>
+        /// alias for value?
+        /// </summary>
         [JsonProperty("managerId")]
         public string? ManagerId { get; set; }
 
         [JsonProperty("type")]
         public PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType? Type { get; set; }
 
+        /// <summary>
+        /// The "id" of the SCIM resource representing the user's manager.  RECOMMENDED.
+        /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; }
     }

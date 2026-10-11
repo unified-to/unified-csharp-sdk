@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// STANDARD (days-based) or DATE_DRIVEN (month-based).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Category : IEquatable<Category>
     {

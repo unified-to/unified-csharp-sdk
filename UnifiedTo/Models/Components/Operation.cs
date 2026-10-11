@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// ONLY USED ON UPDATES.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Operation : IEquatable<Operation>
     {

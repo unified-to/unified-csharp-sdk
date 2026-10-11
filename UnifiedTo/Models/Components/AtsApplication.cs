@@ -22,15 +22,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("answers")]
         public List<AtsApplicationAnswer>? Answers { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("applied_at")]
         public DateTime? AppliedAt { get; set; }
 
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("hired_at")]
         public DateTime? HiredAt { get; set; }
 
@@ -46,15 +55,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("offers")]
         public List<AtsOffer>? Offers { get; set; }
 
+        /// <summary>
+        /// The integration's original status.  Mostly used to have your customers chose the application status/stage so that your software can trigger an event.
+        /// </summary>
         [JsonProperty("original_status")]
         public string? OriginalStatus { get; set; }
 
+        /// <summary>
+        /// The provider's secondary/sub status, when distinct from original_status (e.g. UKG Ready hiring_stage).
+        /// </summary>
         [JsonProperty("original_substatus")]
         public string? OriginalSubstatus { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("rejected_at")]
         public DateTime? RejectedAt { get; set; }
 
@@ -67,12 +85,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public AtsApplicationStatus? Status { get; set; }
 
+        /// <summary>
+        /// Application personal summary (e.g. Pinpoint Personal Summary).
+        /// </summary>
         [JsonProperty("summary")]
         public string? Summary { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// HR user/employee ID (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

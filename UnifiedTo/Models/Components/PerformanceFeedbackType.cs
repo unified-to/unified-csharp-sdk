@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// praise/recognition, constructive feedback, or a response to a feedback request.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PerformanceFeedbackType : IEquatable<PerformanceFeedbackType>
     {

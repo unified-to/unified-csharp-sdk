@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("associated_contacts")]
         public List<AccountingAssociatedContact>? AssociatedContacts { get; set; }
 
+        /// <summary>
+        /// Outstanding AR/AP balance for this contact.
+        /// </summary>
         [JsonProperty("balance_amount")]
         public double? BalanceAmount { get; set; }
 
@@ -31,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -46,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// contact account numbers such as registration, A membership or identification reference to help to identify and search customers.
+        /// </summary>
         [JsonProperty("identification")]
         public string? Identification { get; set; }
 
@@ -79,6 +88,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("paymentterm_id")]
         public string? PaymenttermId { get; set; }
 
+        /// <summary>
+        /// URL for the contact’s portal.
+        /// </summary>
         [JsonProperty("portal_url")]
         public string? PortalUrl { get; set; }
 
@@ -91,12 +103,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tax_exemption")]
         public TaxExemption? TaxExemption { get; set; }
 
+        /// <summary>
+        /// The ID/number of the customer's tax number.  This is also known as the ABN (Australia), GST Number (New Zealand), VAT Number (UK) or Tax ID Number (US and global).
+        /// </summary>
         [JsonProperty("tax_number")]
         public string? TaxNumber { get; set; }
 
         [JsonProperty("telephones")]
         public List<AccountingTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

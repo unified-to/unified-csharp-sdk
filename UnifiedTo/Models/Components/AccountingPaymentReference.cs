@@ -15,12 +15,21 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingPaymentReference
     {
+        /// <summary>
+        /// Date and time when the payment was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("allocated_at")]
         public DateTime? AllocatedAt { get; set; }
 
+        /// <summary>
+        /// amount of the payment applied to this object.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// references a PaymentPayment that was applied to this object (reference to PaymentPayment).
+        /// </summary>
         [JsonProperty("payment_id")]
         public string? PaymentId { get; set; }
     }

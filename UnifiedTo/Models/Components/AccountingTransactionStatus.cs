@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Posting state of the transaction.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingTransactionStatus : IEquatable<AccountingTransactionStatus>
     {

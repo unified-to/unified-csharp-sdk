@@ -28,33 +28,57 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("average_processing_times")]
         public List<VerificationTime>? AverageProcessingTimes { get; set; }
 
+        /// <summary>
+        /// Cost-related information.
+        /// </summary>
         [JsonProperty("cost_amount")]
         public double? CostAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Detailed description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
         [JsonProperty("has_redirect_url")]
         public bool? HasRedirectUrl { get; set; }
 
+        /// <summary>
+        /// where the provider will redirect the user to after the verification.
+        /// </summary>
         [JsonProperty("has_target_url")]
         public bool? HasTargetUrl { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the verification type.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// where to find additional information.
+        /// </summary>
         [JsonProperty("info_url")]
         public string? InfoUrl { get; set; }
 
+        /// <summary>
+        /// if this verification returns a score, what is the maximum?
+        /// </summary>
         [JsonProperty("max_score")]
         public double? MaxScore { get; set; }
 
+        /// <summary>
+        /// Name of the verification type.
+        /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
@@ -79,6 +103,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public VerificationPackageType Type { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -52,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("final_url")]
         public string? FinalUrl { get; set; }
 
+        /// <summary>
+        /// (reference to AdsGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
@@ -85,6 +91,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public AdsAdStatus? Status { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

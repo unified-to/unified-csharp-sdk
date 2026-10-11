@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public ScimUserGroupsType? Type { get; set; }
 
+        /// <summary>
+        /// ID.
+        /// </summary>
         [JsonProperty("value")]
         public string Value { get; set; } = default!;
     }

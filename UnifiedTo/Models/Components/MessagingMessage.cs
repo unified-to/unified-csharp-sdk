@@ -30,11 +30,14 @@ namespace UnifiedTo.Models.Components
         public List<MessagingButton>? Buttons { get; set; }
 
         /// <summary>
-        /// Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.
+        /// Represents all channels to which the message is sent. Identifies the channels where the message is posted.  To send to the "Draft" channel/folder, use a channel ID "DRAFT".
         /// </summary>
         [JsonProperty("channels")]
         public List<MessagingReference>? Channels { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -74,9 +77,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("message_markdown")]
         public string? MessageMarkdown { get; set; }
 
+        /// <summary>
+        /// the opaque identifier for the first message in a thread.
+        /// </summary>
         [JsonProperty("message_thread_identifier")]
         public string? MessageThreadIdentifier { get; set; }
 
+        /// <summary>
+        /// Represents the ID of the immediate predecessor message in the thread. Identifies a specific message to which the current message directly replies.
+        /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
@@ -86,12 +95,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reactions")]
         public List<MessagingReaction>? Reactions { get; set; }
 
+        /// <summary>
+        /// eg. RFC822 MessageID.
+        /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
         [JsonProperty("subject")]
         public string? Subject { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

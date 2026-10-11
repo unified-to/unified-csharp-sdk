@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// feed state: ACTIVE, INACTIVE.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingBankfeedaccountStatus : IEquatable<AccountingBankfeedaccountStatus>
     {

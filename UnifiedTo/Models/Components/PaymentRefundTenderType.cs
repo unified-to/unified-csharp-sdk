@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Normalized tender category the refund was returned to; mirrors PaymentPayment.tender_type.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PaymentRefundTenderType : IEquatable<PaymentRefundTenderType>
     {

@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class CdpEvent
     {
+        /// <summary>
+        /// The date that this event object was ingested (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this event object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -37,24 +43,45 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CdpMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The specific event name (eg. "Product Purchased").
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// When the event actually happened (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("occurred_at")]
         public DateTime? OccurredAt { get; set; }
 
+        /// <summary>
+        /// The profile this event is associated with; points to CdpProfile.
+        /// </summary>
         [JsonProperty("profile_id")]
         public string? ProfileId { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this event.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The source that produced this event.
+        /// </summary>
         [JsonProperty("source")]
         public string? Source { get; set; }
 
+        /// <summary>
+        /// The cdp_source this event originated from; points to CdpSource.
+        /// </summary>
         [JsonProperty("source_id")]
         public string? SourceId { get; set; }
 
+        /// <summary>
+        /// The unified structural category of the event.
+        /// </summary>
         [JsonProperty("type")]
         public CdpEventType? Type { get; set; }
     }

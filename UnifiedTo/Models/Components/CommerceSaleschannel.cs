@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("collections")]
         public List<CommerceReference>? Collections { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -38,9 +41,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// maps to code (name)  a stable identifier per channel.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

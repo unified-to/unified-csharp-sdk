@@ -12,6 +12,7 @@
 * [CreateAccountingContact](#createaccountingcontact) - Create a contact
 * [CreateAccountingCreditmemo](#createaccountingcreditmemo) - Create a creditmemo
 * [CreateAccountingExpense](#createaccountingexpense) - Create an expense
+* [CreateAccountingExpensereport](#createaccountingexpensereport) - Create an expensereport
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [CreateAccountingJournal](#createaccountingjournal) - Create a journal
 * [CreateAccountingOrder](#createaccountingorder) - Create an order
@@ -35,6 +36,7 @@
 * [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [GetAccountingCreditmemo](#getaccountingcreditmemo) - Retrieve a creditmemo
 * [GetAccountingExpense](#getaccountingexpense) - Retrieve an expense
+* [GetAccountingExpensereport](#getaccountingexpensereport) - Retrieve an expensereport
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [GetAccountingJournal](#getaccountingjournal) - Retrieve a journal
 * [GetAccountingOrder](#getaccountingorder) - Retrieve an order
@@ -43,8 +45,10 @@
 * [GetAccountingProfitloss](#getaccountingprofitloss) - Retrieve a profitloss
 * [GetAccountingProject](#getaccountingproject) - Retrieve a project
 * [GetAccountingPurchaseorder](#getaccountingpurchaseorder) - Retrieve a purchaseorder
+* [GetAccountingPurchasereceipt](#getaccountingpurchasereceipt) - Retrieve a purchasereceipt
 * [GetAccountingQuote](#getaccountingquote) - Retrieve a quote
 * [GetAccountingSalesorder](#getaccountingsalesorder) - Retrieve a salesorder
+* [GetAccountingSalesreceipt](#getaccountingsalesreceipt) - Retrieve a salesreceipt
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [GetAccountingTrialbalance](#getaccountingtrialbalance) - Retrieve a trialbalance
@@ -60,6 +64,7 @@
 * [ListAccountingCategories](#listaccountingcategories) - List all categories
 * [ListAccountingContacts](#listaccountingcontacts) - List all contacts
 * [ListAccountingCreditmemoes](#listaccountingcreditmemoes) - List all creditmemoes
+* [ListAccountingExpensereports](#listaccountingexpensereports) - List all expensereports
 * [ListAccountingExpenses](#listaccountingexpenses) - List all expenses
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [ListAccountingJournals](#listaccountingjournals) - List all journals
@@ -69,8 +74,10 @@
 * [ListAccountingProfitlosses](#listaccountingprofitlosses) - List all profitlosses
 * [ListAccountingProjects](#listaccountingprojects) - List all projects
 * [ListAccountingPurchaseorders](#listaccountingpurchaseorders) - List all purchaseorders
+* [ListAccountingPurchasereceipts](#listaccountingpurchasereceipts) - List all purchasereceipts
 * [ListAccountingQuotes](#listaccountingquotes) - List all quotes
 * [ListAccountingSalesorders](#listaccountingsalesorders) - List all salesorders
+* [ListAccountingSalesreceipts](#listaccountingsalesreceipts) - List all salesreceipts
 * [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [ListAccountingTrialbalances](#listaccountingtrialbalances) - List all trialbalances
@@ -83,6 +90,7 @@
 * [PatchAccountingContact](#patchaccountingcontact) - Update a contact
 * [PatchAccountingCreditmemo](#patchaccountingcreditmemo) - Update a creditmemo
 * [PatchAccountingExpense](#patchaccountingexpense) - Update an expense
+* [PatchAccountingExpensereport](#patchaccountingexpensereport) - Update an expensereport
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [PatchAccountingJournal](#patchaccountingjournal) - Update a journal
 * [PatchAccountingOrder](#patchaccountingorder) - Update an order
@@ -102,6 +110,7 @@
 * [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
 * [RemoveAccountingCreditmemo](#removeaccountingcreditmemo) - Remove a creditmemo
 * [RemoveAccountingExpense](#removeaccountingexpense) - Remove an expense
+* [RemoveAccountingExpensereport](#removeaccountingexpensereport) - Remove an expensereport
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [RemoveAccountingJournal](#removeaccountingjournal) - Remove a journal
 * [RemoveAccountingOrder](#removeaccountingorder) - Remove an order
@@ -121,6 +130,7 @@
 * [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
 * [UpdateAccountingCreditmemo](#updateaccountingcreditmemo) - Update a creditmemo
 * [UpdateAccountingExpense](#updateaccountingexpense) - Update an expense
+* [UpdateAccountingExpensereport](#updateaccountingexpensereport) - Update an expensereport
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [UpdateAccountingJournal](#updateaccountingjournal) - Update a journal
 * [UpdateAccountingOrder](#updateaccountingorder) - Update an order
@@ -157,7 +167,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "fe4277ef-5da1-4ca9-9359-50f8d62f8e9f",
+        Id = "56991dac-50de-4353-86e2-c684b15fcb69",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -174,7 +184,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.467Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-05T21:03:45.510Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -228,11 +238,11 @@ var res = await sdk.Accounting.CreateAccountingBankfeedaccountAsync(
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "SSP",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "218719f8-8226-4e63-9a83-e71deec58055",
+        Id = "c877b0c4-6618-42ea-bf2f-a8d647ee3099",
         Name = "Corwin, Donnelly and Connelly Savings",
         RoutingNumber = "667753156",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-12T13:57:09.405Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-20T02:35:59.939Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -287,14 +297,14 @@ var res = await sdk.Accounting.CreateAccountingBankfeedtransactionAsync(
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "SRD",
         Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-        Id = "149a7dcd-1137-4fc6-9014-f73511481cb8",
+        Id = "19ed8f06-5331-414b-b1a0-1ee664683214",
         IsPending = true,
         MerchantName = "Reichert, Erdman and Tillman",
-        PostedAt = System.DateTime.Parse("2025-03-25T15:26:46.355Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-08T03:38:14.249Z").ToUniversalTime(),
         Reference = "93642593",
-        TransactionAt = System.DateTime.Parse("2022-07-28T00:55:13.105Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-29T13:53:15.798Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-23T23:14:36.067Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-24T16:58:29.868Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -348,13 +358,13 @@ var res = await sdk.Accounting.CreateAccountingBillAsync(
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "47aff446-04b3-478f-a547-1dfef16a2da3",
+        Id = "339a5fd3-7fbe-4871-95ba-b75769001fca",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Tutamen cilicium infit.",
         PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2024-04-06T03:20:50.873Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2024-04-19T08:55:21.037Z").ToUniversalTime(),
         PurchaseorderIds = new List<string>() {},
         Send = true,
         Status = AccountingBillStatus.Deleted,
@@ -362,7 +372,7 @@ var res = await sdk.Accounting.CreateAccountingBillAsync(
         TaxAmount = 0D,
         Term = Term.Net10,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-01-31T04:40:21.326Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-15T18:13:43.875Z").ToUniversalTime(),
         Url = "https://coarse-interviewer.biz/",
     },
     connectionId: "<id>"
@@ -411,11 +421,11 @@ var res = await sdk.Accounting.CreateAccountingCategoryAsync(
     accountingCategory: new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "bd82d66f-0901-40ed-81c3-24bc2c90b469",
+        Id = "2dfe35ff-f710-4187-961b-1e8ceb4536a4",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-08-22T03:49:23.607Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-04T18:35:02.003Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -463,11 +473,11 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
     accountingContact: new AccountingContact() {
         AssociatedContacts = new List<AccountingAssociatedContact>() {
             new AccountingAssociatedContact() {
-                Id = "9bebb770-590a-4626-9e91-a1e3f6a1a152",
+                Id = "9b5c2f50-3514-43d7-aad0-d3ec98a9103d",
                 Name = "Delores Reynolds",
             },
             new AccountingAssociatedContact() {
-                Id = "98dc7b2b-a61a-4a86-a865-2c32e436115f",
+                Id = "98c10c29-8cbf-45a2-b73d-3a24353fdd78",
                 Name = "Delores Reynolds",
             },
         },
@@ -490,7 +500,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
             },
         },
         FirstName = "Delores",
-        Id = "8ed22c78-3f9d-4b74-8667-42e4fe13d6d2",
+        Id = "a7c01682-7ccf-4b17-be2a-46f6b10e8e2f",
         Identification = "amicitia",
         IsActive = true,
         IsCustomer = true,
@@ -500,7 +510,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "ebd23a6a-340a-4205-bc59-1ccf6a918747",
+                Id = "ec710ebe-1e5a-45d5-b416-8cc245211f46",
                 Name = "Visa 1234",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -527,7 +537,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-06T04:50:42.426Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-15T08:19:00.768Z").ToUniversalTime(),
         Website = "https://noxious-advertisement.org",
     },
     connectionId: "<id>"
@@ -578,7 +588,7 @@ var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://enlightened-chairperson.com/",
-                Id = "1db49fd3-7f25-4080-b187-04bcbc9f3bc1",
+                Id = "ab0d27db-f5a6-47e6-a1cc-f141bc4061a3",
                 MimeType = "complectus",
                 Name = "thesis",
             },
@@ -588,12 +598,12 @@ var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
         Currency = "MKD",
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
-        Id = "d04c0986-5cc3-4c55-a5b5-1caa37d81dd4",
+        Id = "3d014091-d624-4745-bc32-ac501fc4aee3",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Dedecor amo adfero torqueo quas.",
         PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
-        PostedAt = System.DateTime.Parse("2025-11-17T11:22:22.052Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-12-02T00:30:20.953Z").ToUniversalTime(),
         RefundAmount = 0D,
         RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
         RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
@@ -601,7 +611,7 @@ var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
         Status = AccountingCreditmemoStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2024-11-16T15:28:24.980Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-11-24T10:48:32.149Z").ToUniversalTime(),
         Url = "https://lighthearted-bandwidth.net/",
     },
     connectionId: "<id>"
@@ -648,11 +658,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingExpenseAsync(
     accountingExpense: new AccountingExpense() {
-        ApprovedAt = System.DateTime.Parse("2026-05-12T09:40:54.236Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2026-05-31T10:56:02.731Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://ripe-napkin.biz/",
-                Id = "fef67b87-0957-42c3-adcf-43c0c46d6107",
+                Id = "2d3e86aa-a965-4d39-95a0-62dbc6d206a8",
                 MimeType = "annus",
                 Name = "cohibeo",
             },
@@ -661,10 +671,10 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "SSP",
         ExternalNumber = "necessitatibus",
-        Id = "ffa6e9c7-9193-4696-85f6-b19d35be2a3b",
+        Id = "f2122bc2-cfb5-4623-850e-6715ad47d337",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "271f95a7-bbfc-403d-919c-785e59b3c427",
+                Id = "75904edd-1d58-4000-90ed-90de804f6b9d",
                 ItemDescription = "Innovative Table featuring left technology and Rubber construction",
                 ItemName = "Luxurious Cotton Pizza",
                 ItemSku = "978-0-8324-6620-5",
@@ -678,12 +688,13 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
         Metadata = new List<AccountingMetadata>() {},
         Name = "Refined Steel Shoes",
         PaymentMethod = "CASH",
-        PostedAt = System.DateTime.Parse("2021-06-04T15:33:50.453Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2021-06-07T19:24:37.552Z").ToUniversalTime(),
         ReimbursedAmount = 1833D,
         Status = AccountingExpenseStatus.Submitted,
         TaxAmount = 2602D,
         TotalAmount = 3580D,
-        UpdatedAt = System.DateTime.Parse("2026-05-12T09:40:54.236Z").ToUniversalTime(),
+        Type = AccountingExpenseType.User,
+        UpdatedAt = System.DateTime.Parse("2026-05-31T10:56:02.731Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -703,6 +714,90 @@ var res = await sdk.Accounting.CreateAccountingExpenseAsync(
 ### Response
 
 **[CreateAccountingExpenseResponse](../../Models/Requests/CreateAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAccountingExpensereport
+
+Create an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createAccountingExpensereport" method="post" path="/accounting/{connection_id}/expensereport" example="accounting_expensereport" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.CreateAccountingExpensereportAsync(
+    accountingExpensereport: new AccountingExpensereport() {
+        ApprovedAt = System.DateTime.Parse("2025-04-06T09:47:16.641Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
+        Currency = "BMD",
+        ExternalNumber = "asporto",
+        Id = "610828f0-563e-4383-85a1-92a419086e50",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "3741c577-32e9-4539-8f4d-e1a873597a92",
+                ItemDescription = "The Synchronised motivating software Car offers reliable performance and webbed design",
+                ItemName = "Intelligent Gold Cheese",
+                ItemSku = "978-0-6550-0228-4",
+                Notes = "Utrimque quas vesica spes.",
+                TaxAmount = 448D,
+                TotalAmount = 10875D,
+                UnitAmount = 4092D,
+                UnitQuantity = 1D,
+            },
+            new AccountingLineitem() {
+                Id = "dad308a6-54ac-4e77-bde6-b56079cd696a",
+                ItemDescription = "Ergonomic Bike made with Marble for all-day coordinated support",
+                ItemName = "Practical Steel Pizza",
+                ItemSku = "978-1-4129-9332-6",
+                Notes = "Corrumpo.",
+                TaxAmount = 875D,
+                TotalAmount = 12363D,
+                UnitAmount = 6783D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Rustic Aluminum Car",
+        PostedAt = System.DateTime.Parse("2022-10-30T06:40:14.178Z").ToUniversalTime(),
+        ReimbursedAmount = 6696D,
+        Status = AccountingExpensereportStatus.Paid,
+        TaxAmount = 983D,
+        TotalAmount = 13931D,
+        UpdatedAt = System.DateTime.Parse("2025-04-06T09:47:16.641Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AccountingExpensereport`                                                                                                                        | [AccountingExpensereport](../../Models/Components/AccountingExpensereport.md)                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateAccountingExpensereportQueryParamFields](../../Models/Requests/CreateAccountingExpensereportQueryParamFields.md)>                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAccountingExpensereportResponse](../../Models/Requests/CreateAccountingExpensereportResponse.md)**
 
 ### Errors
 
@@ -732,7 +827,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "a086fefd-c55c-4086-8542-9968b04e5561",
+                Id = "cd662c39-8498-45de-a007-33fc7fe5eb3c",
                 MimeType = "benevolentia",
                 Name = "vespillo",
             },
@@ -744,7 +839,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-11-27T21:25:37.363Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "a3e2a8ae-f055-408c-a0f6-ab0bb70b14f7",
+        Id = "6db4d48a-654d-4079-8546-7b90facdee42",
         InvoiceNumber = "vinco",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingLineitem>() {},
@@ -754,7 +849,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
         PaidAt = System.DateTime.Parse("2022-11-25T15:00:28.871Z").ToUniversalTime(),
         PaymentCollectionMethod = AccountingInvoicePaymentCollectionMethod.SendInvoice,
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2026-03-29T09:35:22.722Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2026-04-16T02:26:28.611Z").ToUniversalTime(),
         Reference = "adinventitias",
         SalesorderIds = new List<string>() {},
         Send = true,
@@ -764,7 +859,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
         Term = AccountingInvoiceTerm.Net45,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Creditmemo,
-        UpdatedAt = System.DateTime.Parse("2023-02-06T11:07:47.339Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-07T18:19:06.744Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/",
     },
     connectionId: "<id>"
@@ -814,17 +909,18 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
-        Currency = "FKP",
-        Description = "Calco constans adipisci.",
-        Id = "fa50e556-5eab-4cb7-afd1-a16ff072dcc4",
-        IsInclusiveOfTax = true,
-        PostedAt = System.DateTime.Parse("2023-10-20T15:13:49.802Z").ToUniversalTime(),
-        Reference = "ullam",
-        Source = "crustulum",
+        Currency = "RUB",
+        Description = "Solum commemoro conor nemo ultio.",
+        ExchangeRate = 1.0625D,
+        Id = "95573ab0-2508-42ed-8504-0b6059c152c6",
+        IsInclusiveOfTax = false,
+        Lineitems = new List<AccountingJournalLineitem>() {},
+        PostedAt = System.DateTime.Parse("2023-10-31T21:10:41.551Z").ToUniversalTime(),
+        Reference = "82523039",
+        Source = "amplitudo",
         Status = AccountingJournalStatus.Void,
-        TaxAmount = 78672D,
-        TotalAmount = 74094D,
-        UpdatedAt = System.DateTime.Parse("2022-01-02T06:10:58.511Z").ToUniversalTime(),
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-01-07T23:42:12.421Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -881,10 +977,10 @@ var res = await sdk.Accounting.CreateAccountingOrderAsync(
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "445e9028-1570-4f8f-9d13-775af36237a6",
+        Id = "53ea3cb4-8380-4b34-9781-59589848c165",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2022-04-05T16:02:41.218Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2022-04-10T10:12:59.145Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingOrderShippingAddress() {
             Address1 = "9745 Betty Shore",
             City = "South Alainaland",
@@ -896,7 +992,7 @@ var res = await sdk.Accounting.CreateAccountingOrderAsync(
         Status = AccountingOrderStatus.Submitted,
         TotalAmount = 0D,
         Type = AccountingOrderType.Purchase,
-        UpdatedAt = System.DateTime.Parse("2021-06-18T05:17:48.570Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-20T05:07:07.767Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -951,12 +1047,12 @@ var res = await sdk.Accounting.CreateAccountingPaymenttermAsync(
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "6c9516f3-8973-4fc0-b9eb-6b8b42fe52f0",
+        Id = "9b4907b3-29b7-4f92-8a35-b89d9ae4d121",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2025-12-13T20:05:08.549Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T23:39:55.115Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1044,6 +1140,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingPurchaseorderAsync(
     accountingPurchaseorder: new AccountingPurchaseorder() {
+        Attachments = new List<AccountingAttachment>() {},
         BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
             Address1 = "37214 Tanya Walks",
             City = "South Annabelleton",
@@ -1055,10 +1152,10 @@ var res = await sdk.Accounting.CreateAccountingPurchaseorderAsync(
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "ZMW",
-        Id = "2c15629f-d92a-450f-9a90-c739019fa131",
+        Id = "5df0165d-2362-45a3-a731-a5c2c266b425",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-27T06:22:37.375Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-05-12T13:45:08.967Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
             Address1 = "649 Maggio Overpass",
             City = "Lake Jaylan",
@@ -1069,7 +1166,7 @@ var res = await sdk.Accounting.CreateAccountingPurchaseorderAsync(
         },
         Status = AccountingPurchaseorderStatus.PartiallyRefunded,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-02-26T05:43:51.981Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-26T23:11:58.689Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1167,7 +1264,7 @@ var res = await sdk.Accounting.CreateAccountingSalesorderAsync(
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-08-17T20:29:31.172Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-08-24T16:29:18.392Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "ANG",
         DiscountAmount = 99D,
@@ -1181,12 +1278,12 @@ var res = await sdk.Accounting.CreateAccountingSalesorderAsync(
         },
         FulfillmentType = FulfillmentType.Takeout,
         GuestCount = 8D,
-        Id = "566ad961-babd-4344-bdd8-6636f2c1f2fa",
+        Id = "843100e4-79ef-4100-964b-71f23c4bc368",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "988187",
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2026-01-13T11:28:48.101Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2026-01-30T17:24:29.322Z").ToUniversalTime(),
         RefundedAmount = 0D,
         SalesChannel = "Harvey, Collier and Weimann",
         ServiceChargeAmount = 63D,
@@ -1204,7 +1301,7 @@ var res = await sdk.Accounting.CreateAccountingSalesorderAsync(
         TaxAmount = 63D,
         TipAmount = 34D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-02-10T19:46:08.025Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-11T02:37:49.468Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1261,7 +1358,7 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Atrox tricesimus creator.",
         EffectiveRate = 53D,
-        Id = "9d45b1ab-9993-41c7-9148-b552b5883179",
+        Id = "5133c370-8e58-4991-80af-a10937bf9444",
         IsActive = false,
         IsCompound = true,
         Metadata = new List<AccountingMetadata>() {},
@@ -1270,7 +1367,7 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
         Region = "TX",
         TotalRate = 53D,
         Type = AccountingTaxrateType.Other,
-        UpdatedAt = System.DateTime.Parse("2022-04-13T08:15:29.223Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-20T04:28:16.150Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1318,12 +1415,12 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
     accountingTransaction: new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
         ExchangeRate = 0.5674D,
-        Id = "17615f5e-0ebb-445a-b676-67eeac8b692b",
+        Id = "7de0c454-3db6-4811-afb0-45b3bb174f8d",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "211e7819-c286-480e-bcae-2c7237cdef02",
+                Id = "562d87be-d72d-46fc-b369-1a30ad47cb35",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -1336,7 +1433,7 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
         TaxAmount = 0D,
         TotalAmount = 94452D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-09-10T21:27:21.377Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-16T13:36:17.078Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1388,14 +1485,14 @@ var res = await sdk.Accounting.CreateAccountingVendorcreditAsync(
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "KGS",
         DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
-        Id = "a277fafd-6a45-453a-a250-b99677d7a27d",
+        Id = "77980879-72c8-45e3-a9ff-6e76f0de3795",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Conatus cruciamentum decor avaritia tantum.",
-        PostedAt = System.DateTime.Parse("2023-09-29T01:37:34.419Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-10-01T17:54:40.291Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-11-27T02:39:20.516Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-30T17:46:49.347Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1926,6 +2023,48 @@ var res = await sdk.Accounting.GetAccountingExpenseAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetAccountingExpensereport
+
+Retrieve an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getAccountingExpensereport" method="get" path="/accounting/{connection_id}/expensereport/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingExpensereportAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Expensereport                                                                                                                          |
+| `Fields`                                                                                                                                         | List<[GetAccountingExpensereportQueryParamFields](../../Models/Requests/GetAccountingExpensereportQueryParamFields.md)>                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingExpensereportResponse](../../Models/Requests/GetAccountingExpensereportResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetAccountingInvoice
 
 Retrieve an invoice
@@ -2262,6 +2401,48 @@ var res = await sdk.Accounting.GetAccountingPurchaseorderAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetAccountingPurchasereceipt
+
+Retrieve a purchasereceipt
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getAccountingPurchasereceipt" method="get" path="/accounting/{connection_id}/purchasereceipt/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingPurchasereceiptAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Purchasereceipt                                                                                                                        |
+| `Fields`                                                                                                                                         | List<[GetAccountingPurchasereceiptQueryParamFields](../../Models/Requests/GetAccountingPurchasereceiptQueryParamFields.md)>                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingPurchasereceiptResponse](../../Models/Requests/GetAccountingPurchasereceiptResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetAccountingQuote
 
 Retrieve a quote
@@ -2339,6 +2520,48 @@ var res = await sdk.Accounting.GetAccountingSalesorderAsync(
 ### Response
 
 **[GetAccountingSalesorderResponse](../../Models/Requests/GetAccountingSalesorderResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetAccountingSalesreceipt
+
+Retrieve a salesreceipt
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getAccountingSalesreceipt" method="get" path="/accounting/{connection_id}/salesreceipt/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingSalesreceiptAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Salesreceipt                                                                                                                           |
+| `Fields`                                                                                                                                         | List<[GetAccountingSalesreceiptQueryParamFields](../../Models/Requests/GetAccountingSalesreceiptQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingSalesreceiptResponse](../../Models/Requests/GetAccountingSalesreceiptResponse.md)**
 
 ### Errors
 
@@ -2965,6 +3188,47 @@ var res = await sdk.Accounting.ListAccountingCreditmemoesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListAccountingExpensereports
+
+List all expensereports
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listAccountingExpensereports" method="get" path="/accounting/{connection_id}/expensereport" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingExpensereportsRequest req = new ListAccountingExpensereportsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingExpensereportsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [ListAccountingExpensereportsRequest](../../Models/Requests/ListAccountingExpensereportsRequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+
+### Response
+
+**[ListAccountingExpensereportsResponse](../../Models/Requests/ListAccountingExpensereportsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAccountingExpenses
 
 List all expenses
@@ -3334,6 +3598,47 @@ var res = await sdk.Accounting.ListAccountingPurchaseordersAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListAccountingPurchasereceipts
+
+List all purchasereceipts
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listAccountingPurchasereceipts" method="get" path="/accounting/{connection_id}/purchasereceipt" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingPurchasereceiptsRequest req = new ListAccountingPurchasereceiptsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingPurchasereceiptsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                               | [ListAccountingPurchasereceiptsRequest](../../Models/Requests/ListAccountingPurchasereceiptsRequest.md) | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
+
+### Response
+
+**[ListAccountingPurchasereceiptsResponse](../../Models/Requests/ListAccountingPurchasereceiptsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAccountingQuotes
 
 List all quotes
@@ -3409,6 +3714,47 @@ var res = await sdk.Accounting.ListAccountingSalesordersAsync(req);
 ### Response
 
 **[ListAccountingSalesordersResponse](../../Models/Requests/ListAccountingSalesordersResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListAccountingSalesreceipts
+
+List all salesreceipts
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listAccountingSalesreceipts" method="get" path="/accounting/{connection_id}/salesreceipt" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingSalesreceiptsRequest req = new ListAccountingSalesreceiptsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingSalesreceiptsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListAccountingSalesreceiptsRequest](../../Models/Requests/ListAccountingSalesreceiptsRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+### Response
+
+**[ListAccountingSalesreceiptsResponse](../../Models/Requests/ListAccountingSalesreceiptsResponse.md)**
 
 ### Errors
 
@@ -3605,7 +3951,7 @@ PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "d91a9733-3a17-4074-a1b1-aa422f50d958",
+        Id = "215d9175-23e0-4862-b499-51dd50e98635",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -3622,7 +3968,7 @@ PatchAccountingAccountRequest req = new PatchAccountingAccountRequest() {
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.469Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-05T21:03:45.511Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3677,11 +4023,11 @@ PatchAccountingBankfeedaccountRequest req = new PatchAccountingBankfeedaccountRe
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "SSP",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "d019420d-033e-4e21-8a76-2104d7cbef79",
+        Id = "b8854a60-42a4-4705-beb0-212f3c9087a7",
         Name = "Corwin, Donnelly and Connelly Savings",
         RoutingNumber = "667753156",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-12T13:57:09.411Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-20T02:35:59.942Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3737,14 +4083,14 @@ PatchAccountingBankfeedtransactionRequest req = new PatchAccountingBankfeedtrans
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "SRD",
         Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-        Id = "a27d611c-a43a-436c-94bf-16e1266c55f2",
+        Id = "5fd4827b-da2b-4367-92eb-e65ee546deb0",
         IsPending = true,
         MerchantName = "Reichert, Erdman and Tillman",
-        PostedAt = System.DateTime.Parse("2025-03-25T15:26:46.365Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-08T03:38:14.255Z").ToUniversalTime(),
         Reference = "93642593",
-        TransactionAt = System.DateTime.Parse("2022-07-28T00:55:13.106Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-29T13:53:15.799Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-23T23:14:36.068Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-24T16:58:29.868Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3799,13 +4145,13 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "f9268e84-980f-40e0-a64b-2c964ec54a34",
+        Id = "687c6fa9-67b0-43b9-b80f-ee40f2bcb790",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Tutamen cilicium infit.",
         PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2024-04-06T03:20:50.910Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2024-04-19T08:55:21.062Z").ToUniversalTime(),
         PurchaseorderIds = new List<string>() {},
         Send = true,
         Status = AccountingBillStatus.Deleted,
@@ -3813,7 +4159,7 @@ PatchAccountingBillRequest req = new PatchAccountingBillRequest() {
         TaxAmount = 0D,
         Term = Term.Net10,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-01-31T04:40:21.369Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-15T18:13:43.905Z").ToUniversalTime(),
         Url = "https://coarse-interviewer.biz/",
     },
     ConnectionId = "<id>",
@@ -3863,11 +4209,11 @@ PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "517496d1-823c-438e-b1e0-ca87622b0590",
+        Id = "2ae5d710-e676-4d0f-96b3-acab3b2d98cb",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-08-22T03:49:23.618Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-04T18:35:02.010Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3916,11 +4262,11 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
     AccountingContact = new AccountingContact() {
         AssociatedContacts = new List<AccountingAssociatedContact>() {
             new AccountingAssociatedContact() {
-                Id = "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+                Id = "ab6100bc-c0cf-43fc-8ce0-eb6e166a84ba",
                 Name = "Delores Reynolds",
             },
             new AccountingAssociatedContact() {
-                Id = "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+                Id = "a617cbfd-4d86-4769-a0c8-8bbe99244b53",
                 Name = "Delores Reynolds",
             },
         },
@@ -3943,7 +4289,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4a153b39-b59a-47be-a636-304762d04879",
+        Id = "7b4c36f6-9ea3-4138-af0a-48fdb5c23c4f",
         Identification = "amicitia",
         IsActive = true,
         IsCustomer = true,
@@ -3953,7 +4299,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+                Id = "aa7b1b9d-d1bb-4a82-8262-b46a99ffd007",
                 Name = "Visa 1234",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -3980,7 +4326,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-06T04:50:42.446Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-15T08:19:00.780Z").ToUniversalTime(),
         Website = "https://noxious-advertisement.org",
     },
     ConnectionId = "<id>",
@@ -4032,7 +4378,7 @@ PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://enlightened-chairperson.com/",
-                Id = "1c286351-0ae3-4808-afca-05d66fa97fc4",
+                Id = "bf83c250-cf36-4499-b9be-ca3763083bd4",
                 MimeType = "complectus",
                 Name = "thesis",
             },
@@ -4042,12 +4388,12 @@ PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
         Currency = "MKD",
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
-        Id = "d40e3d9c-5b72-4e11-99da-b9debead5a6b",
+        Id = "98e3de9f-5a18-4005-840e-ee0ca5904187",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Dedecor amo adfero torqueo quas.",
         PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
-        PostedAt = System.DateTime.Parse("2025-11-17T11:22:22.083Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-12-02T00:30:20.982Z").ToUniversalTime(),
         RefundAmount = 0D,
         RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
         RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
@@ -4055,7 +4401,7 @@ PatchAccountingCreditmemoRequest req = new PatchAccountingCreditmemoRequest() {
         Status = AccountingCreditmemoStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2024-11-16T15:28:24.996Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-11-24T10:48:32.165Z").ToUniversalTime(),
         Url = "https://lighthearted-bandwidth.net/",
     },
     ConnectionId = "<id>",
@@ -4103,11 +4449,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
     AccountingExpense = new AccountingExpense() {
-        ApprovedAt = System.DateTime.Parse("2026-05-12T09:40:54.291Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://ripe-napkin.biz/",
-                Id = "952638a5-c054-405a-9014-96aef0753c77",
+                Id = "fc0f7439-3fa7-4e31-89cc-d5f4a93d3c88",
                 MimeType = "annus",
                 Name = "cohibeo",
             },
@@ -4116,10 +4462,10 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "SSP",
         ExternalNumber = "necessitatibus",
-        Id = "fa30c86b-1dc7-447f-99a5-bb2137a4e4c2",
+        Id = "acbe7639-ea60-46a9-9bec-90ec8c83fa2b",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "8b534c2b-fe41-4494-86df-02ef8117de50",
+                Id = "65c7f906-1e52-4a2c-857f-498f4a43dfe7",
                 ItemDescription = "Innovative Table featuring left technology and Rubber construction",
                 ItemName = "Luxurious Cotton Pizza",
                 ItemSku = "978-0-8324-6620-5",
@@ -4133,12 +4479,13 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         Metadata = new List<AccountingMetadata>() {},
         Name = "Refined Steel Shoes",
         PaymentMethod = "CASH",
-        PostedAt = System.DateTime.Parse("2021-06-04T15:33:50.462Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2021-06-07T19:24:37.557Z").ToUniversalTime(),
         ReimbursedAmount = 1833D,
         Status = AccountingExpenseStatus.Submitted,
         TaxAmount = 2602D,
         TotalAmount = 3580D,
-        UpdatedAt = System.DateTime.Parse("2026-05-12T09:40:54.291Z").ToUniversalTime(),
+        Type = AccountingExpenseType.User,
+        UpdatedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4158,6 +4505,91 @@ var res = await sdk.Accounting.PatchAccountingExpenseAsync(req);
 ### Response
 
 **[PatchAccountingExpenseResponse](../../Models/Requests/PatchAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchAccountingExpensereport
+
+Update an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchAccountingExpensereport" method="patch" path="/accounting/{connection_id}/expensereport/{id}" example="accounting_expensereport" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportRequest() {
+    AccountingExpensereport = new AccountingExpensereport() {
+        ApprovedAt = System.DateTime.Parse("2025-04-06T09:47:16.665Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
+        Currency = "BMD",
+        ExternalNumber = "asporto",
+        Id = "c3336adf-1600-4299-808c-84e8d2cf73d1",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "e92cbd00-bb45-4fb9-bcde-8b1876e273c0",
+                ItemDescription = "The Synchronised motivating software Car offers reliable performance and webbed design",
+                ItemName = "Intelligent Gold Cheese",
+                ItemSku = "978-0-6550-0228-4",
+                Notes = "Utrimque quas vesica spes.",
+                TaxAmount = 448D,
+                TotalAmount = 10875D,
+                UnitAmount = 4092D,
+                UnitQuantity = 1D,
+            },
+            new AccountingLineitem() {
+                Id = "5c54139d-c7f6-4e33-925e-e8732bf9ebae",
+                ItemDescription = "Ergonomic Bike made with Marble for all-day coordinated support",
+                ItemName = "Practical Steel Pizza",
+                ItemSku = "978-1-4129-9332-6",
+                Notes = "Corrumpo.",
+                TaxAmount = 875D,
+                TotalAmount = 12363D,
+                UnitAmount = 6783D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Rustic Aluminum Car",
+        PostedAt = System.DateTime.Parse("2022-10-30T06:40:14.190Z").ToUniversalTime(),
+        ReimbursedAmount = 6696D,
+        Status = AccountingExpensereportStatus.Paid,
+        TaxAmount = 983D,
+        TotalAmount = 13931D,
+        UpdatedAt = System.DateTime.Parse("2025-04-06T09:47:16.665Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.PatchAccountingExpensereportAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `request`                                                                                           | [PatchAccountingExpensereportRequest](../../Models/Requests/PatchAccountingExpensereportRequest.md) | :heavy_check_mark:                                                                                  | The request object to use for the request.                                                          |
+
+### Response
+
+**[PatchAccountingExpensereportResponse](../../Models/Requests/PatchAccountingExpensereportResponse.md)**
 
 ### Errors
 
@@ -4188,7 +4620,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "42f96d4c-bad4-4392-8233-a33df24a8c6c",
+                Id = "e7117d57-065f-4896-8906-6eba679f146a",
                 MimeType = "benevolentia",
                 Name = "vespillo",
             },
@@ -4200,7 +4632,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-11-27T21:25:37.363Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "06ca1e6c-52aa-4fe5-8ec5-54e9da3aa325",
+        Id = "49add81c-73bd-4ba3-a86a-07b6154932c0",
         InvoiceNumber = "vinco",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingLineitem>() {},
@@ -4210,7 +4642,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         PaidAt = System.DateTime.Parse("2022-11-25T15:00:28.871Z").ToUniversalTime(),
         PaymentCollectionMethod = AccountingInvoicePaymentCollectionMethod.SendInvoice,
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2026-03-29T09:35:22.780Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2026-04-16T02:26:28.645Z").ToUniversalTime(),
         Reference = "adinventitias",
         SalesorderIds = new List<string>() {},
         Send = true,
@@ -4220,7 +4652,7 @@ PatchAccountingInvoiceRequest req = new PatchAccountingInvoiceRequest() {
         Term = AccountingInvoiceTerm.Net45,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Creditmemo,
-        UpdatedAt = System.DateTime.Parse("2023-02-06T11:07:47.343Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-07T18:19:06.746Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/",
     },
     ConnectionId = "<id>",
@@ -4271,17 +4703,18 @@ PatchAccountingJournalRequest req = new PatchAccountingJournalRequest() {
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
-        Currency = "FKP",
-        Description = "Calco constans adipisci.",
-        Id = "f7779d43-9388-4634-8682-5de7127545a9",
-        IsInclusiveOfTax = true,
-        PostedAt = System.DateTime.Parse("2023-10-20T15:13:49.817Z").ToUniversalTime(),
-        Reference = "ullam",
-        Source = "crustulum",
+        Currency = "RUB",
+        Description = "Solum commemoro conor nemo ultio.",
+        ExchangeRate = 1.0625D,
+        Id = "c1e00979-6ffe-46b9-b7ca-6815812ac842",
+        IsInclusiveOfTax = false,
+        Lineitems = new List<AccountingJournalLineitem>() {},
+        PostedAt = System.DateTime.Parse("2023-10-31T21:10:41.563Z").ToUniversalTime(),
+        Reference = "82523039",
+        Source = "amplitudo",
         Status = AccountingJournalStatus.Void,
-        TaxAmount = 78672D,
-        TotalAmount = 74094D,
-        UpdatedAt = System.DateTime.Parse("2022-01-02T06:10:58.518Z").ToUniversalTime(),
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-01-07T23:42:12.427Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4339,10 +4772,10 @@ PatchAccountingOrderRequest req = new PatchAccountingOrderRequest() {
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "bdf36a05-6b7f-4eef-9179-63e8d329f593",
+        Id = "da1e6c6b-5808-4374-a576-0aa875b701a9",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2022-04-05T16:02:41.231Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2022-04-10T10:12:59.153Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingOrderShippingAddress() {
             Address1 = "9745 Betty Shore",
             City = "South Alainaland",
@@ -4354,7 +4787,7 @@ PatchAccountingOrderRequest req = new PatchAccountingOrderRequest() {
         Status = AccountingOrderStatus.Submitted,
         TotalAmount = 0D,
         Type = AccountingOrderType.Purchase,
-        UpdatedAt = System.DateTime.Parse("2021-06-18T05:17:48.576Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-20T05:07:07.770Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4410,12 +4843,12 @@ PatchAccountingPaymenttermRequest req = new PatchAccountingPaymenttermRequest() 
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "708643f5-baec-4dfc-8c39-cc2303907aa2",
+        Id = "99702f5c-8b2f-4d48-91ba-826a43bbe0b7",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2025-12-13T20:05:08.559Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T23:39:55.125Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4505,6 +4938,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderRequest() {
     AccountingPurchaseorder = new AccountingPurchaseorder() {
+        Attachments = new List<AccountingAttachment>() {},
         BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
             Address1 = "37214 Tanya Walks",
             City = "South Annabelleton",
@@ -4516,10 +4950,10 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "ZMW",
-        Id = "ccae6f41-dac0-491f-9987-35fe17107580",
+        Id = "0ef164ae-3d7d-43eb-b5a6-fba3cbcbd136",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-27T06:22:37.417Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-05-12T13:45:08.992Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
             Address1 = "649 Maggio Overpass",
             City = "Lake Jaylan",
@@ -4530,7 +4964,7 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         },
         Status = AccountingPurchaseorderStatus.PartiallyRefunded,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-02-26T05:43:51.983Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-26T23:11:58.691Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4630,7 +5064,7 @@ PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-08-17T20:29:31.196Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-08-24T16:29:18.407Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "ANG",
         DiscountAmount = 99D,
@@ -4644,12 +5078,12 @@ PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
         },
         FulfillmentType = FulfillmentType.Takeout,
         GuestCount = 8D,
-        Id = "06b6c05e-10dc-4e23-9cd8-d13c368864b3",
+        Id = "5558e453-d0ab-4386-989b-ddeefe517d68",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "988187",
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2026-01-13T11:28:48.163Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2026-01-30T17:24:29.360Z").ToUniversalTime(),
         RefundedAmount = 0D,
         SalesChannel = "Harvey, Collier and Weimann",
         ServiceChargeAmount = 63D,
@@ -4667,7 +5101,7 @@ PatchAccountingSalesorderRequest req = new PatchAccountingSalesorderRequest() {
         TaxAmount = 63D,
         TipAmount = 34D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-02-10T19:46:08.026Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-11T02:37:49.468Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4725,7 +5159,7 @@ PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Atrox tricesimus creator.",
         EffectiveRate = 53D,
-        Id = "6b146958-8711-4255-89a5-4e504a6d2a0f",
+        Id = "2e3bcadc-8c35-4f8d-afdc-3083ef7be848",
         IsActive = false,
         IsCompound = true,
         Metadata = new List<AccountingMetadata>() {},
@@ -4734,7 +5168,7 @@ PatchAccountingTaxrateRequest req = new PatchAccountingTaxrateRequest() {
         Region = "TX",
         TotalRate = 53D,
         Type = AccountingTaxrateType.Other,
-        UpdatedAt = System.DateTime.Parse("2022-04-13T08:15:29.226Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-20T04:28:16.155Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4783,12 +5217,12 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
         ExchangeRate = 0.5674D,
-        Id = "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
+        Id = "a54266f5-37f6-4957-849c-d6006068b45e",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "5dceaa79-1e95-4cee-928e-c57d24727437",
+                Id = "1bfb935d-3996-4971-befd-4c3ff7ca22ea",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -4801,7 +5235,7 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
         TaxAmount = 0D,
         TotalAmount = 94452D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-09-10T21:27:21.384Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-16T13:36:17.083Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4854,14 +5288,14 @@ PatchAccountingVendorcreditRequest req = new PatchAccountingVendorcreditRequest(
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "KGS",
         DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
-        Id = "b6f8e422-65bf-48c8-ad52-a5537ca85940",
+        Id = "b8ec19a9-c8ef-4a8b-bb14-c4a360838fd9",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Conatus cruciamentum decor avaritia tantum.",
-        PostedAt = System.DateTime.Parse("2023-09-29T01:37:34.425Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-10-01T17:54:40.294Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-11-27T02:39:20.523Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-30T17:46:49.352Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5201,6 +5635,46 @@ var res = await sdk.Accounting.RemoveAccountingExpenseAsync(
 ### Response
 
 **[RemoveAccountingExpenseResponse](../../Models/Requests/RemoveAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveAccountingExpensereport
+
+Remove an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeAccountingExpensereport" method="delete" path="/accounting/{connection_id}/expensereport/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.RemoveAccountingExpensereportAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter               | Type                    | Required                | Description             |
+| ----------------------- | ----------------------- | ----------------------- | ----------------------- |
+| `ConnectionId`          | *string*                | :heavy_check_mark:      | ID of the connection    |
+| `Id`                    | *string*                | :heavy_check_mark:      | ID of the Expensereport |
+
+### Response
+
+**[RemoveAccountingExpensereportResponse](../../Models/Requests/RemoveAccountingExpensereportResponse.md)**
 
 ### Errors
 
@@ -5673,7 +6147,7 @@ UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "d91a9733-3a17-4074-a1b1-aa422f50d958",
+        Id = "215d9175-23e0-4862-b499-51dd50e98635",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -5690,7 +6164,7 @@ UpdateAccountingAccountRequest req = new UpdateAccountingAccountRequest() {
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-03T11:11:55.469Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-05T21:03:45.511Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5745,11 +6219,11 @@ UpdateAccountingBankfeedaccountRequest req = new UpdateAccountingBankfeedaccount
         CreatedAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
         Currency = "SSP",
         FeedStartAt = System.DateTime.Parse("2022-10-31T16:42:19.277Z").ToUniversalTime(),
-        Id = "d019420d-033e-4e21-8a76-2104d7cbef79",
+        Id = "b8854a60-42a4-4705-beb0-212f3c9087a7",
         Name = "Corwin, Donnelly and Connelly Savings",
         RoutingNumber = "667753156",
         Status = AccountingBankfeedaccountStatus.Active,
-        UpdatedAt = System.DateTime.Parse("2024-04-12T13:57:09.411Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-20T02:35:59.942Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5805,14 +6279,14 @@ UpdateAccountingBankfeedtransactionRequest req = new UpdateAccountingBankfeedtra
         CreatedAt = System.DateTime.Parse("2022-03-24T23:41:08.374Z").ToUniversalTime(),
         Currency = "SRD",
         Description = "payment transaction at McLaughlin - Schaden using card ending with ****8233 for DOP 574.03 in account ***9523.",
-        Id = "a27d611c-a43a-436c-94bf-16e1266c55f2",
+        Id = "5fd4827b-da2b-4367-92eb-e65ee546deb0",
         IsPending = true,
         MerchantName = "Reichert, Erdman and Tillman",
-        PostedAt = System.DateTime.Parse("2025-03-25T15:26:46.365Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-04-08T03:38:14.255Z").ToUniversalTime(),
         Reference = "93642593",
-        TransactionAt = System.DateTime.Parse("2022-07-28T00:55:13.106Z").ToUniversalTime(),
+        TransactionAt = System.DateTime.Parse("2022-07-29T13:53:15.799Z").ToUniversalTime(),
         Type = AccountingBankfeedtransactionType.Credit,
-        UpdatedAt = System.DateTime.Parse("2022-05-23T23:14:36.068Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-05-24T16:58:29.868Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5867,13 +6341,13 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2019-08-11T20:52:55.321Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "f9268e84-980f-40e0-a64b-2c964ec54a34",
+        Id = "687c6fa9-67b0-43b9-b80f-ee40f2bcb790",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Tutamen cilicium infit.",
         PaymentCollectionMethod = PaymentCollectionMethod.ChargeAutomatically,
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2024-04-06T03:20:50.910Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2024-04-19T08:55:21.062Z").ToUniversalTime(),
         PurchaseorderIds = new List<string>() {},
         Send = true,
         Status = AccountingBillStatus.Deleted,
@@ -5881,7 +6355,7 @@ UpdateAccountingBillRequest req = new UpdateAccountingBillRequest() {
         TaxAmount = 0D,
         Term = Term.Net10,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2025-01-31T04:40:21.369Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-15T18:13:43.905Z").ToUniversalTime(),
         Url = "https://coarse-interviewer.biz/",
     },
     ConnectionId = "<id>",
@@ -5931,11 +6405,11 @@ UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "517496d1-823c-438e-b1e0-ca87622b0590",
+        Id = "2ae5d710-e676-4d0f-96b3-acab3b2d98cb",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-08-22T03:49:23.618Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-04T18:35:02.010Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -5984,11 +6458,11 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
     AccountingContact = new AccountingContact() {
         AssociatedContacts = new List<AccountingAssociatedContact>() {
             new AccountingAssociatedContact() {
-                Id = "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+                Id = "ab6100bc-c0cf-43fc-8ce0-eb6e166a84ba",
                 Name = "Delores Reynolds",
             },
             new AccountingAssociatedContact() {
-                Id = "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+                Id = "a617cbfd-4d86-4769-a0c8-8bbe99244b53",
                 Name = "Delores Reynolds",
             },
         },
@@ -6011,7 +6485,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4a153b39-b59a-47be-a636-304762d04879",
+        Id = "7b4c36f6-9ea3-4138-af0a-48fdb5c23c4f",
         Identification = "amicitia",
         IsActive = true,
         IsCustomer = true,
@@ -6021,7 +6495,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+                Id = "aa7b1b9d-d1bb-4a82-8262-b46a99ffd007",
                 Name = "Visa 1234",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -6048,7 +6522,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-06T04:50:42.446Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-15T08:19:00.780Z").ToUniversalTime(),
         Website = "https://noxious-advertisement.org",
     },
     ConnectionId = "<id>",
@@ -6100,7 +6574,7 @@ UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() 
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://enlightened-chairperson.com/",
-                Id = "1c286351-0ae3-4808-afca-05d66fa97fc4",
+                Id = "bf83c250-cf36-4499-b9be-ca3763083bd4",
                 MimeType = "complectus",
                 Name = "thesis",
             },
@@ -6110,12 +6584,12 @@ UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() 
         Currency = "MKD",
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2023-10-18T04:35:00.543Z").ToUniversalTime(),
-        Id = "d40e3d9c-5b72-4e11-99da-b9debead5a6b",
+        Id = "98e3de9f-5a18-4005-840e-ee0ca5904187",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Dedecor amo adfero torqueo quas.",
         PaymentCollectionMethod = AccountingCreditmemoPaymentCollectionMethod.ChargeAutomatically,
-        PostedAt = System.DateTime.Parse("2025-11-17T11:22:22.083Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-12-02T00:30:20.982Z").ToUniversalTime(),
         RefundAmount = 0D,
         RefundReason = "Virgo inflammatio quibusdam aestivus magnam.",
         RefundedAt = System.DateTime.Parse("2023-10-23T00:35:36.814Z").ToUniversalTime(),
@@ -6123,7 +6597,7 @@ UpdateAccountingCreditmemoRequest req = new UpdateAccountingCreditmemoRequest() 
         Status = AccountingCreditmemoStatus.Paid,
         TaxAmount = 0D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2024-11-16T15:28:24.996Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-11-24T10:48:32.165Z").ToUniversalTime(),
         Url = "https://lighthearted-bandwidth.net/",
     },
     ConnectionId = "<id>",
@@ -6171,11 +6645,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
     AccountingExpense = new AccountingExpense() {
-        ApprovedAt = System.DateTime.Parse("2026-05-12T09:40:54.291Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://ripe-napkin.biz/",
-                Id = "952638a5-c054-405a-9014-96aef0753c77",
+                Id = "fc0f7439-3fa7-4e31-89cc-d5f4a93d3c88",
                 MimeType = "annus",
                 Name = "cohibeo",
             },
@@ -6184,10 +6658,10 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "SSP",
         ExternalNumber = "necessitatibus",
-        Id = "fa30c86b-1dc7-447f-99a5-bb2137a4e4c2",
+        Id = "acbe7639-ea60-46a9-9bec-90ec8c83fa2b",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "8b534c2b-fe41-4494-86df-02ef8117de50",
+                Id = "65c7f906-1e52-4a2c-857f-498f4a43dfe7",
                 ItemDescription = "Innovative Table featuring left technology and Rubber construction",
                 ItemName = "Luxurious Cotton Pizza",
                 ItemSku = "978-0-8324-6620-5",
@@ -6201,12 +6675,13 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         Metadata = new List<AccountingMetadata>() {},
         Name = "Refined Steel Shoes",
         PaymentMethod = "CASH",
-        PostedAt = System.DateTime.Parse("2021-06-04T15:33:50.462Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2021-06-07T19:24:37.557Z").ToUniversalTime(),
         ReimbursedAmount = 1833D,
         Status = AccountingExpenseStatus.Submitted,
         TaxAmount = 2602D,
         TotalAmount = 3580D,
-        UpdatedAt = System.DateTime.Parse("2026-05-12T09:40:54.291Z").ToUniversalTime(),
+        Type = AccountingExpenseType.User,
+        UpdatedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6226,6 +6701,91 @@ var res = await sdk.Accounting.UpdateAccountingExpenseAsync(req);
 ### Response
 
 **[UpdateAccountingExpenseResponse](../../Models/Requests/UpdateAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAccountingExpensereport
+
+Update an expensereport
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateAccountingExpensereport" method="put" path="/accounting/{connection_id}/expensereport/{id}" example="accounting_expensereport" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequest() {
+    AccountingExpensereport = new AccountingExpensereport() {
+        ApprovedAt = System.DateTime.Parse("2025-04-06T09:47:16.665Z").ToUniversalTime(),
+        Attachments = new List<AccountingAttachment>() {},
+        CategoryIds = new List<string>() {},
+        CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
+        Currency = "BMD",
+        ExternalNumber = "asporto",
+        Id = "c3336adf-1600-4299-808c-84e8d2cf73d1",
+        Lineitems = new List<AccountingLineitem>() {
+            new AccountingLineitem() {
+                Id = "e92cbd00-bb45-4fb9-bcde-8b1876e273c0",
+                ItemDescription = "The Synchronised motivating software Car offers reliable performance and webbed design",
+                ItemName = "Intelligent Gold Cheese",
+                ItemSku = "978-0-6550-0228-4",
+                Notes = "Utrimque quas vesica spes.",
+                TaxAmount = 448D,
+                TotalAmount = 10875D,
+                UnitAmount = 4092D,
+                UnitQuantity = 1D,
+            },
+            new AccountingLineitem() {
+                Id = "5c54139d-c7f6-4e33-925e-e8732bf9ebae",
+                ItemDescription = "Ergonomic Bike made with Marble for all-day coordinated support",
+                ItemName = "Practical Steel Pizza",
+                ItemSku = "978-1-4129-9332-6",
+                Notes = "Corrumpo.",
+                TaxAmount = 875D,
+                TotalAmount = 12363D,
+                UnitAmount = 6783D,
+                UnitQuantity = 1D,
+            },
+        },
+        Metadata = new List<AccountingMetadata>() {},
+        Name = "Rustic Aluminum Car",
+        PostedAt = System.DateTime.Parse("2022-10-30T06:40:14.190Z").ToUniversalTime(),
+        ReimbursedAmount = 6696D,
+        Status = AccountingExpensereportStatus.Paid,
+        TaxAmount = 983D,
+        TotalAmount = 13931D,
+        UpdatedAt = System.DateTime.Parse("2025-04-06T09:47:16.665Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.UpdateAccountingExpensereportAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `request`                                                                                             | [UpdateAccountingExpensereportRequest](../../Models/Requests/UpdateAccountingExpensereportRequest.md) | :heavy_check_mark:                                                                                    | The request object to use for the request.                                                            |
+
+### Response
+
+**[UpdateAccountingExpensereportResponse](../../Models/Requests/UpdateAccountingExpensereportResponse.md)**
 
 ### Errors
 
@@ -6256,7 +6816,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://glossy-markup.net/",
-                Id = "42f96d4c-bad4-4392-8233-a33df24a8c6c",
+                Id = "e7117d57-065f-4896-8906-6eba679f146a",
                 MimeType = "benevolentia",
                 Name = "vespillo",
             },
@@ -6268,7 +6828,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         DiscountAmount = 0D,
         DueAt = System.DateTime.Parse("2022-11-27T21:25:37.363Z").ToUniversalTime(),
         ExtendedNotes = new List<AccountingExtendedNote>() {},
-        Id = "06ca1e6c-52aa-4fe5-8ec5-54e9da3aa325",
+        Id = "49add81c-73bd-4ba3-a86a-07b6154932c0",
         InvoiceNumber = "vinco",
         IsInclusiveOfTax = true,
         Lineitems = new List<AccountingLineitem>() {},
@@ -6278,7 +6838,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         PaidAt = System.DateTime.Parse("2022-11-25T15:00:28.871Z").ToUniversalTime(),
         PaymentCollectionMethod = AccountingInvoicePaymentCollectionMethod.SendInvoice,
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2026-03-29T09:35:22.780Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2026-04-16T02:26:28.645Z").ToUniversalTime(),
         Reference = "adinventitias",
         SalesorderIds = new List<string>() {},
         Send = true,
@@ -6288,7 +6848,7 @@ UpdateAccountingInvoiceRequest req = new UpdateAccountingInvoiceRequest() {
         Term = AccountingInvoiceTerm.Net45,
         TotalAmount = 0D,
         Type = AccountingInvoiceType.Creditmemo,
-        UpdatedAt = System.DateTime.Parse("2023-02-06T11:07:47.343Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-07T18:19:06.746Z").ToUniversalTime(),
         Url = "https://gifted-yarmulke.info/",
     },
     ConnectionId = "<id>",
@@ -6339,17 +6899,18 @@ UpdateAccountingJournalRequest req = new UpdateAccountingJournalRequest() {
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-02-20T15:14:55.881Z").ToUniversalTime(),
-        Currency = "FKP",
-        Description = "Calco constans adipisci.",
-        Id = "f7779d43-9388-4634-8682-5de7127545a9",
-        IsInclusiveOfTax = true,
-        PostedAt = System.DateTime.Parse("2023-10-20T15:13:49.817Z").ToUniversalTime(),
-        Reference = "ullam",
-        Source = "crustulum",
+        Currency = "RUB",
+        Description = "Solum commemoro conor nemo ultio.",
+        ExchangeRate = 1.0625D,
+        Id = "c1e00979-6ffe-46b9-b7ca-6815812ac842",
+        IsInclusiveOfTax = false,
+        Lineitems = new List<AccountingJournalLineitem>() {},
+        PostedAt = System.DateTime.Parse("2023-10-31T21:10:41.563Z").ToUniversalTime(),
+        Reference = "82523039",
+        Source = "amplitudo",
         Status = AccountingJournalStatus.Void,
-        TaxAmount = 78672D,
-        TotalAmount = 74094D,
-        UpdatedAt = System.DateTime.Parse("2022-01-02T06:10:58.518Z").ToUniversalTime(),
+        TotalAmount = 0D,
+        UpdatedAt = System.DateTime.Parse("2022-01-07T23:42:12.427Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6407,10 +6968,10 @@ UpdateAccountingOrderRequest req = new UpdateAccountingOrderRequest() {
         },
         CreatedAt = System.DateTime.Parse("2020-11-20T03:46:49.837Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "bdf36a05-6b7f-4eef-9179-63e8d329f593",
+        Id = "da1e6c6b-5808-4374-a576-0aa875b701a9",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2022-04-05T16:02:41.231Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2022-04-10T10:12:59.153Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingOrderShippingAddress() {
             Address1 = "9745 Betty Shore",
             City = "South Alainaland",
@@ -6422,7 +6983,7 @@ UpdateAccountingOrderRequest req = new UpdateAccountingOrderRequest() {
         Status = AccountingOrderStatus.Submitted,
         TotalAmount = 0D,
         Type = AccountingOrderType.Purchase,
-        UpdatedAt = System.DateTime.Parse("2021-06-18T05:17:48.576Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-20T05:07:07.770Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6478,12 +7039,12 @@ UpdateAccountingPaymenttermRequest req = new UpdateAccountingPaymenttermRequest(
         DiscountPercent = 5D,
         DueDays = 57D,
         DueNextMonthDays = 9D,
-        Id = "708643f5-baec-4dfc-8c39-cc2303907aa2",
+        Id = "99702f5c-8b2f-4d48-91ba-826a43bbe0b7",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Net 30",
         Type = AccountingPaymenttermType.Net15,
-        UpdatedAt = System.DateTime.Parse("2025-12-13T20:05:08.559Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-12-30T23:39:55.125Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6573,6 +7134,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequest() {
     AccountingPurchaseorder = new AccountingPurchaseorder() {
+        Attachments = new List<AccountingAttachment>() {},
         BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
             Address1 = "37214 Tanya Walks",
             City = "South Annabelleton",
@@ -6584,10 +7146,10 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "ZMW",
-        Id = "ccae6f41-dac0-491f-9987-35fe17107580",
+        Id = "0ef164ae-3d7d-43eb-b5a6-fba3cbcbd136",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-27T06:22:37.417Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-05-12T13:45:08.992Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
             Address1 = "649 Maggio Overpass",
             City = "Lake Jaylan",
@@ -6598,7 +7160,7 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         },
         Status = AccountingPurchaseorderStatus.PartiallyRefunded,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-02-26T05:43:51.983Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-26T23:11:58.691Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6698,7 +7260,7 @@ UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() 
             RegionCode = "MO",
         },
         CategoryIds = new List<string>() {},
-        ClosedAt = System.DateTime.Parse("2023-08-17T20:29:31.196Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2023-08-24T16:29:18.407Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2022-01-17T16:11:50.310Z").ToUniversalTime(),
         Currency = "ANG",
         DiscountAmount = 99D,
@@ -6712,12 +7274,12 @@ UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() 
         },
         FulfillmentType = FulfillmentType.Takeout,
         GuestCount = 8D,
-        Id = "06b6c05e-10dc-4e23-9cd8-d13c368864b3",
+        Id = "5558e453-d0ab-4386-989b-ddeefe517d68",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         OrderNumber = "988187",
         Payments = new List<AccountingPaymentReference>() {},
-        PostedAt = System.DateTime.Parse("2026-01-13T11:28:48.163Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2026-01-30T17:24:29.360Z").ToUniversalTime(),
         RefundedAmount = 0D,
         SalesChannel = "Harvey, Collier and Weimann",
         ServiceChargeAmount = 63D,
@@ -6735,7 +7297,7 @@ UpdateAccountingSalesorderRequest req = new UpdateAccountingSalesorderRequest() 
         TaxAmount = 63D,
         TipAmount = 34D,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2022-02-10T19:46:08.026Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-11T02:37:49.468Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6793,7 +7355,7 @@ UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
         CreatedAt = System.DateTime.Parse("2020-01-04T10:37:56.894Z").ToUniversalTime(),
         Description = "Atrox tricesimus creator.",
         EffectiveRate = 53D,
-        Id = "6b146958-8711-4255-89a5-4e504a6d2a0f",
+        Id = "2e3bcadc-8c35-4f8d-afdc-3083ef7be848",
         IsActive = false,
         IsCompound = true,
         Metadata = new List<AccountingMetadata>() {},
@@ -6802,7 +7364,7 @@ UpdateAccountingTaxrateRequest req = new UpdateAccountingTaxrateRequest() {
         Region = "TX",
         TotalRate = 53D,
         Type = AccountingTaxrateType.Other,
-        UpdatedAt = System.DateTime.Parse("2022-04-13T08:15:29.226Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-20T04:28:16.155Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6851,12 +7413,12 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
         ExchangeRate = 0.5674D,
-        Id = "81bf7ef2-8ff2-4ddc-b703-024288cc4b75",
+        Id = "a54266f5-37f6-4957-849c-d6006068b45e",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "5dceaa79-1e95-4cee-928e-c57d24727437",
+                Id = "1bfb935d-3996-4971-befd-4c3ff7ca22ea",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -6869,7 +7431,7 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
         TaxAmount = 0D,
         TotalAmount = 94452D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-09-10T21:27:21.384Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-16T13:36:17.083Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -6922,14 +7484,14 @@ UpdateAccountingVendorcreditRequest req = new UpdateAccountingVendorcreditReques
         CreatedAt = System.DateTime.Parse("2023-04-15T21:14:08.197Z").ToUniversalTime(),
         Currency = "KGS",
         DueAt = System.DateTime.Parse("2023-05-06T20:38:46.775Z").ToUniversalTime(),
-        Id = "b6f8e422-65bf-48c8-ad52-a5537ca85940",
+        Id = "b8ec19a9-c8ef-4a8b-bb14-c4a360838fd9",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
         Notes = "Conatus cruciamentum decor avaritia tantum.",
-        PostedAt = System.DateTime.Parse("2023-09-29T01:37:34.425Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2023-10-01T17:54:40.294Z").ToUniversalTime(),
         Status = AccountingVendorcreditStatus.Submitted,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2023-11-27T02:39:20.523Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-11-30T17:46:49.352Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

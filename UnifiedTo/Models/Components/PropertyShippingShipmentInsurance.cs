@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyShippingShipmentInsurance
     {
+        /// <summary>
+        /// Coverage amount (may differ from insured_value).
+        /// </summary>
         [JsonProperty("coverage_amount")]
         public double? CoverageAmount { get; set; }
 
@@ -31,18 +34,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Cost of insurance.
+        /// </summary>
         [JsonProperty("insurance_cost")]
         public double? InsuranceCost { get; set; }
 
         [JsonProperty("insurance_cost_currency")]
         public string? InsuranceCostCurrency { get; set; }
 
+        /// <summary>
+        /// Insurance provider name.
+        /// </summary>
         [JsonProperty("insurance_provider")]
         public string? InsuranceProvider { get; set; }
 
+        /// <summary>
+        /// Provider code.
+        /// </summary>
         [JsonProperty("insurance_provider_code")]
         public string? InsuranceProviderCode { get; set; }
 
+        /// <summary>
+        /// Insured value.
+        /// </summary>
         [JsonProperty("insured_value")]
         public double? InsuredValue { get; set; }
     }

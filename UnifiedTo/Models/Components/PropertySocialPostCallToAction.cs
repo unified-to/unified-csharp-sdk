@@ -22,9 +22,15 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertySocialPostCallToAction
     {
+        /// <summary>
+        /// The call-to-action button type.
+        /// </summary>
         [JsonProperty("type")]
         public PropertySocialPostCallToActionType? Type { get; set; }
 
+        /// <summary>
+        /// The URL the call-to-action points to.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

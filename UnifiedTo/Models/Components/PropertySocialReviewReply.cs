@@ -18,12 +18,21 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertySocialReviewReply
     {
+        /// <summary>
+        /// The reply text from the business.
+        /// </summary>
         [JsonProperty("content")]
         public string? Content { get; set; }
 
+        /// <summary>
+        /// When the reply was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// When the reply was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

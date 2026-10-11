@@ -18,16 +18,22 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Utils;
 
     /// <summary>
-    /// A webhook is used to POST new/updated information to your server.
+    /// A webhook is used to POST new, updated, or deleted records to your server.
     /// </summary>
     public class Webhook
     {
+        /// <summary>
+        /// Read-only. The time Unified.to last recorded a check on this webhook. Behaviour varies by webhook implementation, so don't use this field to tell whether a webhook is still running. Use is_healthy, and subscribe to WEBHOOK_UNHEALTHY on the notifications webhook, to monitor health. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("checked_at")]
         public DateTime? CheckedAt { get; set; }
 
         [JsonProperty("connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -46,15 +52,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("environment")]
         public string? Environment { get; set; } = "Production";
 
+        /// <summary>
+        /// The event to subscribe to. "deleted" is supported on native webhooks, and on virtual webhooks where the integration supports it. Check the integration's Feature Support tab.
+        /// </summary>
         [JsonProperty("event")]
         public WebhookEvent Event { get; set; } = default!;
 
         [JsonProperty("fields")]
         public string? Fields { get; set; }
 
+        /// <summary>
+        /// Supported on virtual webhooks, and on native webhooks for many integrations. Check the integration's Feature Support tab for which filters apply. Filters the integration doesn't support are accepted but have no effect. Some integrations require a filter; if it's missing, create returns an error naming the integration and the filter.
+        /// </summary>
         [JsonProperty("filters")]
         public Dictionary<string, string>? Filters { get; set; }
 
+        /// <summary>
+        /// The URL of the webhook.
+        /// </summary>
         [JsonProperty("hook_url")]
         public string? HookUrl { get; set; }
 
@@ -64,18 +79,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("integration_type")]
         public string? IntegrationType { get; set; }
 
+        /// <summary>
+        /// Virtual webhooks only. How often (in minutes) Unified.to checks for new or updated records. Minimum 1 on paid plans, 60 on free. Ignored for native webhooks.
+        /// </summary>
         [JsonProperty("interval")]
         public double? Interval { get; set; }
 
         [JsonProperty("is_beta")]
         public bool? IsBeta { get; set; }
 
+        /// <summary>
+        /// Read-only. True while the webhook can operate or recover; a transient failure may still be retrying. False after retries are exhausted or a non-retryable failure such as broken connection auth. Cannot be reset; recreate the webhook.
+        /// </summary>
         [JsonProperty("is_healthy")]
         public bool? IsHealthy { get; set; }
 
         [JsonProperty("is_paused")]
         public bool? IsPaused { get; set; }
 
+        /// <summary>
+        /// The object to return (eg. CRM "contact").
+        /// </summary>
         [JsonProperty("object_type")]
         public WebhookObjectType ObjectType { get; set; } = default!;
 
@@ -83,17 +107,26 @@ namespace UnifiedTo.Models.Components
         public double? PageMaxLimit { get; set; }
 
         /// <summary>
-        /// An array of the most revent virtual webhook runs.
+        /// An array of the most recent virtual webhook runs.
         /// </summary>
         [JsonProperty("runs")]
         public List<string>? Runs { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// "native" registers with the integration, which sends events as they happen. "virtual" checks for changes on "interval". Optional on create; if omitted, Unified.to picks a supported type for the object. Requesting a type the integration doesn't support returns 400. Set on create only: changes sent on update are ignored without an error. Delete and recreate the webhook to change type.
+        /// </summary>
         [JsonProperty("webhook_type")]
         public WebhookType? WebhookType { get; set; }
 
+        /// <summary>
+        /// (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }
     }

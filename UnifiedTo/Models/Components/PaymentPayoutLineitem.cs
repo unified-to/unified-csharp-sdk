@@ -19,21 +19,39 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentPayoutLineitem
     {
+        /// <summary>
+        /// Gross amount of this line.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// ISO 4217 currency code of the line amount.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Processor fee attributed to this line.
+        /// </summary>
         [JsonProperty("fee_amount")]
         public double? FeeAmount { get; set; }
 
+        /// <summary>
+        /// amount minus fee_amount.
+        /// </summary>
         [JsonProperty("net_amount")]
         public double? NetAmount { get; set; }
 
+        /// <summary>
+        /// id of the settled object -- a PaymentPayment or PaymentRefund for PAYMENT / REFUND lines.
+        /// </summary>
         [JsonProperty("object_id")]
         public string? ObjectId { get; set; }
 
+        /// <summary>
+        /// What this payout line settles.
+        /// </summary>
         [JsonProperty("object_type")]
         public PaymentPayoutLineitemObjectType? ObjectType { get; set; }
     }

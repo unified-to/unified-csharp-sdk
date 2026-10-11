@@ -11,8 +11,10 @@
 * [CreateHrisDeduction](#createhrisdeduction) - Create a deduction
 * [CreateHrisDevice](#createhrisdevice) - Create a device
 * [CreateHrisDocument](#createhrisdocument) - Create a document
+* [CreateHrisEarning](#createhrisearning) - Create an earning
 * [CreateHrisEmployee](#createhrisemployee) - Create an employee
 * [CreateHrisGroup](#createhrisgroup) - Create a group
+* [CreateHrisJob](#createhrisjob) - Create a job
 * [CreateHrisLocation](#createhrislocation) - Create a location
 * [CreateHrisTaxonomy](#createhristaxonomy) - Create a taxonomy
 * [CreateHrisTimeoff](#createhristimeoff) - Create a timeoff
@@ -24,9 +26,13 @@
 * [GetHrisDeduction](#gethrisdeduction) - Retrieve a deduction
 * [GetHrisDevice](#gethrisdevice) - Retrieve a device
 * [GetHrisDocument](#gethrisdocument) - Retrieve a document
+* [GetHrisEarning](#gethrisearning) - Retrieve an earning
 * [GetHrisEmployee](#gethrisemployee) - Retrieve an employee
 * [GetHrisGroup](#gethrisgroup) - Retrieve a group
+* [GetHrisJob](#gethrisjob) - Retrieve a job
 * [GetHrisLocation](#gethrislocation) - Retrieve a location
+* [GetHrisPaycode](#gethrispaycode) - Retrieve a paycode
+* [GetHrisPayroll](#gethrispayroll) - Retrieve a payroll
 * [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
 * [GetHrisTaxonomy](#gethristaxonomy) - Retrieve a taxonomy
 * [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
@@ -38,9 +44,13 @@
 * [ListHrisDeductions](#listhrisdeductions) - List all deductions
 * [ListHrisDevices](#listhrisdevices) - List all devices
 * [ListHrisDocuments](#listhrisdocuments) - List all documents
+* [ListHrisEarnings](#listhrisearnings) - List all earnings
 * [ListHrisEmployees](#listhrisemployees) - List all employees
 * [ListHrisGroups](#listhrisgroups) - List all groups
+* [ListHrisJobs](#listhrisjobs) - List all jobs
 * [ListHrisLocations](#listhrislocations) - List all locations
+* [ListHrisPaycodes](#listhrispaycodes) - List all paycodes
+* [ListHrisPayrolls](#listhrispayrolls) - List all payrolls
 * [ListHrisPayslips](#listhrispayslips) - List all payslips
 * [ListHrisTaxonomies](#listhristaxonomies) - List all taxonomies
 * [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
@@ -52,8 +62,10 @@
 * [PatchHrisDeduction](#patchhrisdeduction) - Update a deduction
 * [PatchHrisDevice](#patchhrisdevice) - Update a device
 * [PatchHrisDocument](#patchhrisdocument) - Update a document
+* [PatchHrisEarning](#patchhrisearning) - Update an earning
 * [PatchHrisEmployee](#patchhrisemployee) - Update an employee
 * [PatchHrisGroup](#patchhrisgroup) - Update a group
+* [PatchHrisJob](#patchhrisjob) - Update a job
 * [PatchHrisLocation](#patchhrislocation) - Update a location
 * [PatchHrisTimeoff](#patchhristimeoff) - Update a timeoff
 * [PatchHrisTimeshift](#patchhristimeshift) - Update a timeshift
@@ -64,8 +76,10 @@
 * [RemoveHrisDeduction](#removehrisdeduction) - Remove a deduction
 * [RemoveHrisDevice](#removehrisdevice) - Remove a device
 * [RemoveHrisDocument](#removehrisdocument) - Remove a document
+* [RemoveHrisEarning](#removehrisearning) - Remove an earning
 * [RemoveHrisEmployee](#removehrisemployee) - Remove an employee
 * [RemoveHrisGroup](#removehrisgroup) - Remove a group
+* [RemoveHrisJob](#removehrisjob) - Remove a job
 * [RemoveHrisLocation](#removehrislocation) - Remove a location
 * [RemoveHrisTimeoff](#removehristimeoff) - Remove a timeoff
 * [RemoveHrisTimeshift](#removehristimeshift) - Remove a timeshift
@@ -76,8 +90,10 @@
 * [UpdateHrisDeduction](#updatehrisdeduction) - Update a deduction
 * [UpdateHrisDevice](#updatehrisdevice) - Update a device
 * [UpdateHrisDocument](#updatehrisdocument) - Update a document
+* [UpdateHrisEarning](#updatehrisearning) - Update an earning
 * [UpdateHrisEmployee](#updatehrisemployee) - Update an employee
 * [UpdateHrisGroup](#updatehrisgroup) - Update a group
+* [UpdateHrisJob](#updatehrisjob) - Update a job
 * [UpdateHrisLocation](#updatehrislocation) - Update a location
 * [UpdateHrisTimeoff](#updatehristimeoff) - Update a timeoff
 * [UpdateHrisTimeshift](#updatehristimeshift) - Update a timeshift
@@ -109,31 +125,31 @@ var res = await sdk.Hris.CreateHrisAttendanceAsync(
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-08-13T10:41:42.336Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-08-13T11:22:36.465Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 12D,
-                EndAt = System.DateTime.Parse("2023-10-23T21:17:35.680Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-11-01T14:11:40.384Z").ToUniversalTime(),
                 Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
                 IsPaid = true,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-17T01:29:11.478Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-25T16:36:52.479Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "UGX",
         DeclaredTipsAmount = 161D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-07T14:50:55.145Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-18T03:04:04.268Z").ToUniversalTime(),
         HourlyRate = 53D,
         Hours = 10D,
-        Id = "4dc42a25-5423-40c7-8e9f-7a6ee2825a9d",
+        Id = "ce06123a-9946-4628-84b3-11a573803cb5",
         JobName = "Global Creative Supervisor",
         NonCashTipsAmount = 54D,
-        StartAt = System.DateTime.Parse("2021-11-09T13:41:47.651Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-10T13:16:25.399Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Closed,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-17T07:09:09.539Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T00:35:08.159Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -145,7 +161,7 @@ var res = await sdk.Hris.CreateHrisAttendanceAsync(
 
 | Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `HrisAttendance`                                                                                                                                 | [HrisAttendance](../../Models/Components/HrisAttendance.md)                                                                                      | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `HrisAttendance`                                                                                                                                 | [HrisAttendance](../../Models/Components/HrisAttendance.md)                                                                                      | :heavy_check_mark:                                                                                                                               | Also called timesheets                                                                                                                           |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Fields`                                                                                                                                         | List<[CreateHrisAttendanceQueryParamFields](../../Models/Requests/CreateHrisAttendanceQueryParamFields.md)>                                      | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
@@ -182,12 +198,17 @@ var res = await sdk.Hris.CreateHrisBankaccountAsync(
         AccountNumberLast4 = "3777",
         AccountType = HrisBankaccountAccountType.Checking,
         BankName = "Huel Group",
+        CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
-        Id = "c82c9187-bf76-4b65-bf02-79054582a285",
+        Currency = "USD",
+        Id = "67c815ed-2f66-4e7d-a729-cc896bb10458",
         IsPrimary = false,
         Name = "Checking Account",
+        Priority = 3D,
         RoutingNumber = "448650724",
-        UpdatedAt = System.DateTime.Parse("2025-06-06T18:00:27.146Z").ToUniversalTime(),
+        SplitAmount = 23D,
+        SplitType = SplitType.Fixed,
+        UpdatedAt = System.DateTime.Parse("2025-06-23T03:40:10.104Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -239,13 +260,13 @@ var res = await sdk.Hris.CreateHrisBenefitAsync(
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
-        Frequency = HrisBenefitFrequency.Hour,
-        Id = "b395db38-c261-454e-9bfe-9466e617f2ee",
+        Frequency = HrisBenefitFrequency.Month,
+        Id = "cb5f5b63-51cf-4c0b-b45c-af9a157b02d7",
         IsActive = false,
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
-        Type = HrisBenefitType.Garnishment,
-        UpdatedAt = System.DateTime.Parse("2023-03-07T16:17:00.575Z").ToUniversalTime(),
+        Type = HrisBenefitType.Other,
+        UpdatedAt = System.DateTime.Parse("2023-03-16T11:45:46.342Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -299,10 +320,10 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
             RegionCode = "PA",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "06e7e4d7-17be-4700-8e1d-0a3f524df53c",
+        Id = "258d7f93-f76d-4295-97a8-21e15265d0aa",
         LegalName = "Schultz LLC",
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-09-08T15:55:10.653Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-28T17:58:44.575Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -350,14 +371,17 @@ var res = await sdk.Hris.CreateHrisDeductionAsync(
         Amount = 139655D,
         CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2026-05-25T14:43:59.509Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Month,
-        Id = "c829711a-715d-455b-bb4d-00ee88c2deb9",
+        EmployerAmount = 22611D,
+        EmployerType = EmployerType.Fixed,
+        EndAt = System.DateTime.Parse("2026-06-13T20:05:36.854Z").ToUniversalTime(),
+        Frequency = HrisDeductionFrequency.Biweekly,
+        GarnishmentType = GarnishmentType.Other,
+        Id = "fac4b834-71a1-4778-83f4-0eb27f981968",
         IsActive = false,
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-02-20T07:45:12.827Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-07T17:02:44.736Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-03T17:00:24.883Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-16T03:24:52.301Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -411,14 +435,14 @@ var res = await sdk.Hris.CreateHrisDeviceAsync(
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = true,
-        Id = "e592d58c-449d-47c3-b4f2-cc9f41866826",
+        Id = "270f1911-555b-49ef-9302-beab4f089d58",
         IsMissing = false,
         Manufacturer = "Sanford - Hamill",
         Model = "Refined",
         Name = "cross_contamination_if.rar",
         Os = "monitor",
         OsVersion = "1.12.16",
-        UpdatedAt = System.DateTime.Parse("2023-05-22T14:06:09.513Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-02T18:34:32.261Z").ToUniversalTime(),
         Version = "2.20.17",
     },
     connectionId: "<id>"
@@ -467,9 +491,9 @@ var res = await sdk.Hris.CreateHrisDocumentAsync(
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "c36ce7b1-e96d-4546-8310-2b1cd2427e9f",
+        Id = "12c78552-ce05-4818-bf51-abfde44efa8f",
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-09-19T03:46:30.170Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-04T03:58:03.573Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -489,6 +513,59 @@ var res = await sdk.Hris.CreateHrisDocumentAsync(
 ### Response
 
 **[CreateHrisDocumentResponse](../../Models/Requests/CreateHrisDocumentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateHrisEarning
+
+Create an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createHrisEarning" method="post" path="/hris/{connection_id}/earning" example="hris_earning" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.CreateHrisEarningAsync(
+    hrisEarning: new HrisEarning() {
+        Amount = 4026D,
+        CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
+        Currency = "PKR",
+        Frequency = HrisEarningFrequency.Biweekly,
+        Id = "0e597460-d93d-4c94-a4f5-8b113a9e47db",
+        Notes = "Truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-20T23:26:45.466Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Processed,
+        UpdatedAt = System.DateTime.Parse("2020-02-07T12:25:00.115Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `HrisEarning`                                                                                                                                    | [HrisEarning](../../Models/Components/HrisEarning.md)                                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateHrisEarningQueryParamFields](../../Models/Requests/CreateHrisEarningQueryParamFields.md)>                                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateHrisEarningResponse](../../Models/Requests/CreateHrisEarningResponse.md)**
 
 ### Errors
 
@@ -527,11 +604,11 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
         Bio = "sushi devotee, singer",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 69148D,
+                Amount = 60136D,
                 Currency = "CRC",
                 Frequency = HrisCompensationFrequency.Quarter,
                 Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.Equity,
+                Type = HrisCompensationType.StockOptions,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
@@ -547,10 +624,11 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
         EmploymentStatus = EmploymentStatus.Active,
         EmploymentType = HrisEmployeeEmploymentType.Volunteer,
         FirstName = "Zetta",
+        FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
-        HasMfa = true,
-        HiredAt = System.DateTime.Parse("2023-05-12T03:12:11.486Z").ToUniversalTime(),
-        Id = "38a79fa8-80b1-4659-b0a6-327121c773f1",
+        HasMfa = false,
+        HiredAt = System.DateTime.Parse("2023-05-22T15:45:02.980Z").ToUniversalTime(),
+        Id = "3c57c9db-2490-435f-890b-c3b4065605fd",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -564,15 +642,16 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "f5bf964b-886a-4dd4-bc29-e4151986a960",
+                Id = "a18f53be-9e33-4567-8afb-ffd8e3af4904",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "tenetur"
+                    "appono"
                 ),
             },
         },
         Name = "Zetta Prohaska",
+        PayFrequency = PayFrequency.Biweekly,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
@@ -588,38 +667,35 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
                     },
                 },
                 Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Emergency,
+                Type = HrisEmployeerelationshipType.Friend,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
                         Email = "Benedict_Wisozk83@hotmail.com",
                     },
-                    new HrisEmail() {
-                        Email = "Princess_Rath43@gmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Elmira92@yahoo.com",
-                    },
                 },
                 Name = "Music",
-                Type = HrisEmployeerelationshipType.Friend,
+                Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Jane30@gmail.com",
+                        Email = "Margot11@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Jaden_Miller@gmail.com",
                     },
                 },
-                Name = "Jewelry",
-                Type = HrisEmployeerelationshipType.Sibling,
+                Name = "Electronics",
+                Type = HrisEmployeerelationshipType.Other,
             },
         },
         Salutation = "Miss",
         SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 3674489D,
-        StorageQuotaAvailable = 7748057D,
-        StorageQuotaUsed = 301727D,
+        StorageQuotaAllocated = 7748057D,
+        StorageQuotaAvailable = 1590710D,
+        StorageQuotaUsed = 730343D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
                 Telephone = "(409) 801-3705",
@@ -631,7 +707,7 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-02-20T06:18:08.630Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-27T06:24:28.834Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -678,11 +754,11 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
     hrisGroup: new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "5536364b-d302-4a73-96c0-7b59633aa9a4",
+        Id = "bb4d513f-e586-4c20-af9c-baa7aef5ab56",
         IsActive = false,
         Name = "Games",
-        Type = HrisGroupType.BusinessUnit,
-        UpdatedAt = System.DateTime.Parse("2026-04-26T00:08:53.897Z").ToUniversalTime(),
+        Type = HrisGroupType.Branch,
+        UpdatedAt = System.DateTime.Parse("2026-05-13T09:12:19.460Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -702,6 +778,58 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 ### Response
 
 **[CreateHrisGroupResponse](../../Models/Requests/CreateHrisGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateHrisJob
+
+Create a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createHrisJob" method="post" path="/hris/{connection_id}/job" example="hris_job" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.CreateHrisJobAsync(
+    hrisJob: new HrisJob() {
+        Code = "P-05547",
+        CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
+        Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+        EmploymentType = HrisJobEmploymentType.Freelance,
+        Id = "bb0fb822-230a-43a5-8b1b-4fd55b9ec014",
+        IsActive = false,
+        Name = "Internal Integration Specialist",
+        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.073Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `HrisJob`                                                                                                                                        | [HrisJob](../../Models/Components/HrisJob.md)                                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateHrisJobQueryParamFields](../../Models/Requests/CreateHrisJobQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateHrisJobResponse](../../Models/Requests/CreateHrisJobResponse.md)**
 
 ### Errors
 
@@ -740,8 +868,8 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "a4b2700b-1f32-461e-bdb2-b452e0c5c022",
-        Id = "babcc944-d428-43aa-902f-1d0ca3e00057",
+        ExternalIdentifier = "a95fb085-1de2-4952-a92c-4b2d394ad136",
+        Id = "71d77c71-c403-4af9-b84d-9873ee590086",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -761,7 +889,7 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-10T01:13:57.534Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-17T10:41:43.024Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -819,7 +947,7 @@ var res = await sdk.Hris.CreateHrisTaxonomyAsync(
         },
         Subcategory = "Bamboo",
         Type = HrisTaxonomyType.Knowledge,
-        UpdatedAt = System.DateTime.Parse("2023-05-22T19:24:30.042Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-27T03:47:37.296Z").ToUniversalTime(),
         Url = "https://our-polarisation.name",
     },
     connectionId: "<id>"
@@ -865,20 +993,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeoffAsync(
     hrisTimeoff: new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-21T02:08:20.330Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-22T14:56:33.852Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-09T08:52:11.281Z").ToUniversalTime(),
-        Id = "3766cf5c-9dcb-4419-9212-a74a979cf1ee",
+        EndAt = System.DateTime.Parse("2024-12-22T07:37:18.843Z").ToUniversalTime(),
+        Id = "c0b7b9cf-126e-4e53-a9dc-78008dee9690",
         IsPaid = true,
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-08-24T08:25:05.389Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-01T00:24:42.402Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-08T05:45:54.437Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-11T07:19:20.309Z").ToUniversalTime(),
         UserId = "<id>",
     },
     connectionId: "<id>"
@@ -925,24 +1053,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-07T03:05:14.680Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-18T03:10:12.113Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
                 Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Hour,
+                Frequency = HrisCompensationFrequency.Week,
                 Notes = "Annus adficio suasoria architecto aggero.",
-                Type = HrisCompensationType.Other,
+                Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-08-28T03:01:07.094Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-17T03:42:59.907Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "9f128688-46cc-481b-a41e-503d0c962370",
+        Id = "dfcf1802-ce5f-4727-89b0-f6b60d8029a2",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-06-26T08:32:27.006Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-23T15:17:01.677Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-07T12:09:32.558Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-29T04:09:58.867Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1263,6 +1391,48 @@ var res = await sdk.Hris.GetHrisDocumentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetHrisEarning
+
+Retrieve an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHrisEarning" method="get" path="/hris/{connection_id}/earning/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.GetHrisEarningAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Earning                                                                                                                                |
+| `Fields`                                                                                                                                         | List<[GetHrisEarningQueryParamFields](../../Models/Requests/GetHrisEarningQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHrisEarningResponse](../../Models/Requests/GetHrisEarningResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetHrisEmployee
 
 Retrieve an employee
@@ -1347,6 +1517,48 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetHrisJob
+
+Retrieve a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHrisJob" method="get" path="/hris/{connection_id}/job/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.GetHrisJobAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Job                                                                                                                                    |
+| `Fields`                                                                                                                                         | List<[GetHrisJobQueryParamFields](../../Models/Requests/GetHrisJobQueryParamFields.md)>                                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHrisJobResponse](../../Models/Requests/GetHrisJobResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetHrisLocation
 
 Retrieve a location
@@ -1382,6 +1594,90 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 ### Response
 
 **[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHrisPaycode
+
+Retrieve a paycode
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHrisPaycode" method="get" path="/hris/{connection_id}/paycode/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.GetHrisPaycodeAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Paycode                                                                                                                                |
+| `Fields`                                                                                                                                         | List<[GetHrisPaycodeQueryParamFields](../../Models/Requests/GetHrisPaycodeQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHrisPaycodeResponse](../../Models/Requests/GetHrisPaycodeResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHrisPayroll
+
+Retrieve a payroll
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHrisPayroll" method="get" path="/hris/{connection_id}/payroll/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.GetHrisPayrollAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Payroll                                                                                                                                |
+| `Fields`                                                                                                                                         | List<[GetHrisPayrollQueryParamFields](../../Models/Requests/GetHrisPayrollQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHrisPayrollResponse](../../Models/Requests/GetHrisPayrollResponse.md)**
 
 ### Errors
 
@@ -1844,6 +2140,47 @@ var res = await sdk.Hris.ListHrisDocumentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHrisEarnings
+
+List all earnings
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHrisEarnings" method="get" path="/hris/{connection_id}/earning" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisEarningsRequest req = new ListHrisEarningsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Hris.ListHrisEarningsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListHrisEarningsRequest](../../Models/Requests/ListHrisEarningsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[ListHrisEarningsResponse](../../Models/Requests/ListHrisEarningsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHrisEmployees
 
 List all employees
@@ -1926,6 +2263,47 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHrisJobs
+
+List all jobs
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHrisJobs" method="get" path="/hris/{connection_id}/job" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisJobsRequest req = new ListHrisJobsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Hris.ListHrisJobsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListHrisJobsRequest](../../Models/Requests/ListHrisJobsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+
+### Response
+
+**[ListHrisJobsResponse](../../Models/Requests/ListHrisJobsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHrisLocations
 
 List all locations
@@ -1960,6 +2338,88 @@ var res = await sdk.Hris.ListHrisLocationsAsync(req);
 ### Response
 
 **[ListHrisLocationsResponse](../../Models/Requests/ListHrisLocationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHrisPaycodes
+
+List all paycodes
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHrisPaycodes" method="get" path="/hris/{connection_id}/paycode" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisPaycodesRequest req = new ListHrisPaycodesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Hris.ListHrisPaycodesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListHrisPaycodesRequest](../../Models/Requests/ListHrisPaycodesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[ListHrisPaycodesResponse](../../Models/Requests/ListHrisPaycodesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHrisPayrolls
+
+List all payrolls
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHrisPayrolls" method="get" path="/hris/{connection_id}/payroll" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisPayrollsRequest req = new ListHrisPayrollsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Hris.ListHrisPayrollsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListHrisPayrollsRequest](../../Models/Requests/ListHrisPayrollsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[ListHrisPayrollsResponse](../../Models/Requests/ListHrisPayrollsResponse.md)**
 
 ### Errors
 
@@ -2159,31 +2619,31 @@ PatchHrisAttendanceRequest req = new PatchHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-08-13T10:41:42.336Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-08-13T11:22:36.465Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 12D,
-                EndAt = System.DateTime.Parse("2023-10-23T21:17:35.691Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-11-01T14:11:40.391Z").ToUniversalTime(),
                 Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
                 IsPaid = true,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-17T01:29:11.489Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-25T16:36:52.486Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "UGX",
         DeclaredTipsAmount = 161D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-07T14:50:55.159Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-18T03:04:04.277Z").ToUniversalTime(),
         HourlyRate = 53D,
         Hours = 10D,
-        Id = "6a4550f7-d438-4b96-af25-c8104c25caf9",
+        Id = "ca6855f6-b061-4c6c-a056-abf324fefe3d",
         JobName = "Global Creative Supervisor",
         NonCashTipsAmount = 54D,
-        StartAt = System.DateTime.Parse("2021-11-09T13:41:47.653Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-10T13:16:25.400Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Closed,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-17T07:09:09.542Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T00:35:08.160Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2233,12 +2693,17 @@ PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
         AccountNumberLast4 = "3777",
         AccountType = HrisBankaccountAccountType.Checking,
         BankName = "Huel Group",
+        CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
-        Id = "6005b494-a4b0-4602-8c37-94e7048e00e8",
+        Currency = "USD",
+        Id = "bcd4408c-762d-4625-8f76-1344e852bade",
         IsPrimary = false,
         Name = "Checking Account",
+        Priority = 3D,
         RoutingNumber = "448650724",
-        UpdatedAt = System.DateTime.Parse("2025-06-06T18:00:27.158Z").ToUniversalTime(),
+        SplitAmount = 23D,
+        SplitType = SplitType.Fixed,
+        UpdatedAt = System.DateTime.Parse("2025-06-23T03:40:10.111Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2291,13 +2756,13 @@ PatchHrisBenefitRequest req = new PatchHrisBenefitRequest() {
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
-        Frequency = HrisBenefitFrequency.Hour,
-        Id = "03fe3c3a-0a32-4f47-af0e-f9e4092754de",
+        Frequency = HrisBenefitFrequency.Month,
+        Id = "137a01e2-1551-4c4d-bb8f-022698b5d187",
         IsActive = false,
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
-        Type = HrisBenefitType.Garnishment,
-        UpdatedAt = System.DateTime.Parse("2023-03-07T16:17:00.582Z").ToUniversalTime(),
+        Type = HrisBenefitType.Other,
+        UpdatedAt = System.DateTime.Parse("2023-03-16T11:45:46.348Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2352,10 +2817,10 @@ PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
             RegionCode = "PA",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "85a95ea9-94dd-4928-a69f-aaef5373741a",
+        Id = "b2a1b766-0ef1-4bb8-a60d-b7b34587b7f6",
         LegalName = "Schultz LLC",
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-09-08T15:55:10.670Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-28T17:58:44.583Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2404,14 +2869,17 @@ PatchHrisDeductionRequest req = new PatchHrisDeductionRequest() {
         Amount = 139655D,
         CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2026-05-25T14:43:59.520Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Month,
-        Id = "a126ff04-6413-411e-932d-9a25af613ff0",
+        EmployerAmount = 22611D,
+        EmployerType = EmployerType.Fixed,
+        EndAt = System.DateTime.Parse("2026-06-13T20:05:36.869Z").ToUniversalTime(),
+        Frequency = HrisDeductionFrequency.Biweekly,
+        GarnishmentType = GarnishmentType.Other,
+        Id = "6598ef77-e61d-41d8-aba3-8868627cf0e6",
         IsActive = false,
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-02-20T07:45:12.836Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-07T17:02:44.747Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-03T17:00:24.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-16T03:24:52.310Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2466,14 +2934,14 @@ PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = true,
-        Id = "52148932-32c0-49fe-bd1f-9a5c66b73d70",
+        Id = "2733098a-ab40-459a-854b-b1bb6d2fb2f6",
         IsMissing = false,
         Manufacturer = "Sanford - Hamill",
         Model = "Refined",
         Name = "cross_contamination_if.rar",
         Os = "monitor",
         OsVersion = "1.12.16",
-        UpdatedAt = System.DateTime.Parse("2023-05-22T14:06:09.520Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-02T18:34:32.265Z").ToUniversalTime(),
         Version = "2.20.17",
     },
     ConnectionId = "<id>",
@@ -2523,9 +2991,9 @@ PatchHrisDocumentRequest req = new PatchHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "23391a53-5d85-4874-b27c-6cc01144df3c",
+        Id = "2183db2b-38b6-41f4-b6a2-4f5318b5fb14",
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-09-19T03:46:30.178Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-04T03:58:03.579Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2545,6 +3013,60 @@ var res = await sdk.Hris.PatchHrisDocumentAsync(req);
 ### Response
 
 **[PatchHrisDocumentResponse](../../Models/Requests/PatchHrisDocumentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchHrisEarning
+
+Update an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchHrisEarning" method="patch" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchHrisEarningRequest req = new PatchHrisEarningRequest() {
+    HrisEarning = new HrisEarning() {
+        Amount = 4026D,
+        CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
+        Currency = "PKR",
+        Frequency = HrisEarningFrequency.Biweekly,
+        Id = "e984a056-9298-45ea-9ffa-6479de095a1c",
+        Notes = "Truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-20T23:26:45.470Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Processed,
+        UpdatedAt = System.DateTime.Parse("2020-02-07T12:25:00.116Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.PatchHrisEarningAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [PatchHrisEarningRequest](../../Models/Requests/PatchHrisEarningRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[PatchHrisEarningResponse](../../Models/Requests/PatchHrisEarningResponse.md)**
 
 ### Errors
 
@@ -2584,11 +3106,11 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         Bio = "sushi devotee, singer",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 69148D,
+                Amount = 60136D,
                 Currency = "CRC",
                 Frequency = HrisCompensationFrequency.Quarter,
                 Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.Equity,
+                Type = HrisCompensationType.StockOptions,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
@@ -2604,10 +3126,11 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         EmploymentStatus = EmploymentStatus.Active,
         EmploymentType = HrisEmployeeEmploymentType.Volunteer,
         FirstName = "Zetta",
+        FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
-        HasMfa = true,
-        HiredAt = System.DateTime.Parse("2023-05-12T03:12:11.541Z").ToUniversalTime(),
-        Id = "58337faa-4e32-4102-b7c8-c1d452691dbf",
+        HasMfa = false,
+        HiredAt = System.DateTime.Parse("2023-05-22T15:45:03.018Z").ToUniversalTime(),
+        Id = "81c8b367-c709-49bf-83aa-4fe7d6faf9cc",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -2621,15 +3144,16 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+                Id = "24010608-6f76-45ac-925c-ab53fb3c734c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "tenetur"
+                    "appono"
                 ),
             },
         },
         Name = "Zetta Prohaska",
+        PayFrequency = PayFrequency.Biweekly,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
@@ -2645,38 +3169,35 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     },
                 },
                 Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Emergency,
+                Type = HrisEmployeerelationshipType.Friend,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
                         Email = "Benedict_Wisozk83@hotmail.com",
                     },
-                    new HrisEmail() {
-                        Email = "Princess_Rath43@gmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Elmira92@yahoo.com",
-                    },
                 },
                 Name = "Music",
-                Type = HrisEmployeerelationshipType.Friend,
+                Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Jane30@gmail.com",
+                        Email = "Margot11@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Jaden_Miller@gmail.com",
                     },
                 },
-                Name = "Jewelry",
-                Type = HrisEmployeerelationshipType.Sibling,
+                Name = "Electronics",
+                Type = HrisEmployeerelationshipType.Other,
             },
         },
         Salutation = "Miss",
         SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 3674489D,
-        StorageQuotaAvailable = 7748057D,
-        StorageQuotaUsed = 301727D,
+        StorageQuotaAllocated = 7748057D,
+        StorageQuotaAvailable = 1590710D,
+        StorageQuotaUsed = 730343D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
                 Telephone = "(409) 801-3705",
@@ -2688,7 +3209,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-02-20T06:18:08.666Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-27T06:24:28.860Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2736,11 +3257,11 @@ PatchHrisGroupRequest req = new PatchHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "3d2f3a6f-a93f-4944-9979-441dfe433fe9",
+        Id = "3e529d95-c8c0-4aaf-977f-4dfe1aa0158c",
         IsActive = false,
         Name = "Games",
-        Type = HrisGroupType.BusinessUnit,
-        UpdatedAt = System.DateTime.Parse("2026-04-26T00:08:53.907Z").ToUniversalTime(),
+        Type = HrisGroupType.Branch,
+        UpdatedAt = System.DateTime.Parse("2026-05-13T09:12:19.468Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2760,6 +3281,59 @@ var res = await sdk.Hris.PatchHrisGroupAsync(req);
 ### Response
 
 **[PatchHrisGroupResponse](../../Models/Requests/PatchHrisGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchHrisJob" method="patch" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchHrisJobRequest req = new PatchHrisJobRequest() {
+    HrisJob = new HrisJob() {
+        Code = "P-05547",
+        CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
+        Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+        EmploymentType = HrisJobEmploymentType.Freelance,
+        Id = "69c74d53-aa9f-46fc-b7ae-68d6296eff97",
+        IsActive = false,
+        Name = "Internal Integration Specialist",
+        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.112Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.PatchHrisJobAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [PatchHrisJobRequest](../../Models/Requests/PatchHrisJobRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+
+### Response
+
+**[PatchHrisJobResponse](../../Models/Requests/PatchHrisJobResponse.md)**
 
 ### Errors
 
@@ -2799,8 +3373,8 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "996e7b27-7913-4e41-b567-67ebb6db77ef",
-        Id = "8aada89e-1868-4e4d-9fcc-6e895a06d15d",
+        ExternalIdentifier = "019aebc6-abcb-41bd-842e-f9315e842363",
+        Id = "bf9eb454-3fd7-45f7-8a51-2b1635dfe888",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -2820,7 +3394,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-10T01:13:57.540Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-17T10:41:43.030Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2866,20 +3440,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-21T02:08:20.331Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-22T14:56:33.852Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-09T08:52:11.290Z").ToUniversalTime(),
-        Id = "1b90647f-5bb3-4551-b5f1-77cbcbbc655e",
+        EndAt = System.DateTime.Parse("2024-12-22T07:37:18.849Z").ToUniversalTime(),
+        Id = "03bc149e-7269-4d92-91c1-5735550edffe",
         IsPaid = true,
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-08-24T08:25:05.395Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-01T00:24:42.405Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-08T05:45:54.439Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-11T07:19:20.311Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -2927,24 +3501,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-07T03:05:14.688Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-18T03:10:12.122Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
                 Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Hour,
+                Frequency = HrisCompensationFrequency.Week,
                 Notes = "Annus adficio suasoria architecto aggero.",
-                Type = HrisCompensationType.Other,
+                Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-08-28T03:01:07.109Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-17T03:42:59.924Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+        Id = "66a39c02-f126-4c60-921c-1874dc4ce92d",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-06-26T08:32:27.015Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-23T15:17:01.681Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-07T12:09:32.567Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-29T04:09:58.872Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3251,6 +3825,46 @@ var res = await sdk.Hris.RemoveHrisDocumentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveHrisEarning
+
+Remove an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeHrisEarning" method="delete" path="/hris/{connection_id}/earning/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.RemoveHrisEarningAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Earning    |
+
+### Response
+
+**[RemoveHrisEarningResponse](../../Models/Requests/RemoveHrisEarningResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveHrisEmployee
 
 Remove an employee
@@ -3324,6 +3938,46 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 ### Response
 
 **[RemoveHrisGroupResponse](../../Models/Requests/RemoveHrisGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveHrisJob
+
+Remove a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeHrisJob" method="delete" path="/hris/{connection_id}/job/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.RemoveHrisJobAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Job        |
+
+### Response
+
+**[RemoveHrisJobResponse](../../Models/Requests/RemoveHrisJobResponse.md)**
 
 ### Errors
 
@@ -3479,31 +4133,31 @@ UpdateHrisAttendanceRequest req = new UpdateHrisAttendanceRequest() {
             Region = "Tennessee",
             RegionCode = "CA",
         },
-        ApprovedAt = System.DateTime.Parse("2021-08-13T10:41:42.336Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2021-08-13T11:22:36.465Z").ToUniversalTime(),
         Breaks = new List<HrisAttendanceBreak>() {
             new HrisAttendanceBreak() {
                 DurationMinutes = 12D,
-                EndAt = System.DateTime.Parse("2023-10-23T21:17:35.691Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-11-01T14:11:40.391Z").ToUniversalTime(),
                 Id = "d60a1001-5a8a-4991-8c21-f4da6036cc87",
                 IsPaid = true,
                 Name = "Lunch",
-                StartAt = System.DateTime.Parse("2023-10-17T01:29:11.489Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2023-10-25T16:36:52.486Z").ToUniversalTime(),
             },
         },
         CreatedAt = System.DateTime.Parse("2021-08-10T19:43:18.452Z").ToUniversalTime(),
         Currency = "UGX",
         DeclaredTipsAmount = 161D,
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2024-04-07T14:50:55.159Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2024-04-18T03:04:04.277Z").ToUniversalTime(),
         HourlyRate = 53D,
         Hours = 10D,
-        Id = "6a4550f7-d438-4b96-af25-c8104c25caf9",
+        Id = "ca6855f6-b061-4c6c-a056-abf324fefe3d",
         JobName = "Global Creative Supervisor",
         NonCashTipsAmount = 54D,
-        StartAt = System.DateTime.Parse("2021-11-09T13:41:47.653Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2021-11-10T13:16:25.400Z").ToUniversalTime(),
         Status = HrisAttendanceStatus.Closed,
         Timezone = "America/Atikokan",
-        UpdatedAt = System.DateTime.Parse("2022-01-17T07:09:09.542Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-19T00:35:08.160Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3553,12 +4207,17 @@ UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
         AccountNumberLast4 = "3777",
         AccountType = HrisBankaccountAccountType.Checking,
         BankName = "Huel Group",
+        CountryCode = "US",
         CreatedAt = System.DateTime.Parse("2019-11-16T16:43:45.976Z").ToUniversalTime(),
-        Id = "6005b494-a4b0-4602-8c37-94e7048e00e8",
+        Currency = "USD",
+        Id = "bcd4408c-762d-4625-8f76-1344e852bade",
         IsPrimary = false,
         Name = "Checking Account",
+        Priority = 3D,
         RoutingNumber = "448650724",
-        UpdatedAt = System.DateTime.Parse("2025-06-06T18:00:27.158Z").ToUniversalTime(),
+        SplitAmount = 23D,
+        SplitType = SplitType.Fixed,
+        UpdatedAt = System.DateTime.Parse("2025-06-23T03:40:10.111Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3611,13 +4270,13 @@ UpdateHrisBenefitRequest req = new UpdateHrisBenefitRequest() {
         EmployerContributionAmount = 185006D,
         EmployerContributionMaxAmount = 179093D,
         EmployerContributionType = EmployerContributionType.Percentage,
-        Frequency = HrisBenefitFrequency.Hour,
-        Id = "03fe3c3a-0a32-4f47-af0e-f9e4092754de",
+        Frequency = HrisBenefitFrequency.Month,
+        Id = "137a01e2-1551-4c4d-bb8f-022698b5d187",
         IsActive = false,
         Name = "Frozen Wooden Ball",
         Tax = Tax.PreTax,
-        Type = HrisBenefitType.Garnishment,
-        UpdatedAt = System.DateTime.Parse("2023-03-07T16:17:00.582Z").ToUniversalTime(),
+        Type = HrisBenefitType.Other,
+        UpdatedAt = System.DateTime.Parse("2023-03-16T11:45:46.348Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3672,10 +4331,10 @@ UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
             RegionCode = "PA",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "85a95ea9-94dd-4928-a69f-aaef5373741a",
+        Id = "b2a1b766-0ef1-4bb8-a60d-b7b34587b7f6",
         LegalName = "Schultz LLC",
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-09-08T15:55:10.670Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-28T17:58:44.583Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3724,14 +4383,17 @@ UpdateHrisDeductionRequest req = new UpdateHrisDeductionRequest() {
         Amount = 139655D,
         CoverageLevel = HrisDeductionCoverageLevel.EmployeeOnly,
         CreatedAt = System.DateTime.Parse("2020-02-05T01:46:31.384Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2026-05-25T14:43:59.520Z").ToUniversalTime(),
-        Frequency = HrisDeductionFrequency.Month,
-        Id = "a126ff04-6413-411e-932d-9a25af613ff0",
+        EmployerAmount = 22611D,
+        EmployerType = EmployerType.Fixed,
+        EndAt = System.DateTime.Parse("2026-06-13T20:05:36.869Z").ToUniversalTime(),
+        Frequency = HrisDeductionFrequency.Biweekly,
+        GarnishmentType = GarnishmentType.Other,
+        Id = "6598ef77-e61d-41d8-aba3-8868627cf0e6",
         IsActive = false,
         Notes = "Carmen desidero.",
-        StartAt = System.DateTime.Parse("2025-02-20T07:45:12.836Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-03-07T17:02:44.747Z").ToUniversalTime(),
         Type = HrisDeductionType.Fixed,
-        UpdatedAt = System.DateTime.Parse("2024-03-03T17:00:24.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-03-16T03:24:52.310Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3786,14 +4448,14 @@ UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
         HasHdEncrypted = true,
         HasPasswordManager = true,
         HasScreenlock = true,
-        Id = "52148932-32c0-49fe-bd1f-9a5c66b73d70",
+        Id = "2733098a-ab40-459a-854b-b1bb6d2fb2f6",
         IsMissing = false,
         Manufacturer = "Sanford - Hamill",
         Model = "Refined",
         Name = "cross_contamination_if.rar",
         Os = "monitor",
         OsVersion = "1.12.16",
-        UpdatedAt = System.DateTime.Parse("2023-05-22T14:06:09.520Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-02T18:34:32.265Z").ToUniversalTime(),
         Version = "2.20.17",
     },
     ConnectionId = "<id>",
@@ -3843,9 +4505,9 @@ UpdateHrisDocumentRequest req = new UpdateHrisDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2022-10-27T11:47:26.086Z").ToUniversalTime(),
         DocumentUrl = "https://sore-decision.biz/",
         Filename = "ridge_forager.xsl",
-        Id = "23391a53-5d85-4874-b27c-6cc01144df3c",
+        Id = "2183db2b-38b6-41f4-b6a2-4f5318b5fb14",
         Type = HrisDocumentType.Policy,
-        UpdatedAt = System.DateTime.Parse("2025-09-19T03:46:30.178Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-04T03:58:03.579Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3865,6 +4527,60 @@ var res = await sdk.Hris.UpdateHrisDocumentAsync(req);
 ### Response
 
 **[UpdateHrisDocumentResponse](../../Models/Requests/UpdateHrisDocumentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateHrisEarning
+
+Update an earning
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateHrisEarning" method="put" path="/hris/{connection_id}/earning/{id}" example="hris_earning" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateHrisEarningRequest req = new UpdateHrisEarningRequest() {
+    HrisEarning = new HrisEarning() {
+        Amount = 4026D,
+        CreatedAt = System.DateTime.Parse("2019-01-26T12:44:52.326Z").ToUniversalTime(),
+        Currency = "PKR",
+        Frequency = HrisEarningFrequency.Biweekly,
+        Id = "e984a056-9298-45ea-9ffa-6479de095a1c",
+        Notes = "Truculenter vinum beatae.",
+        StartAt = System.DateTime.Parse("2022-07-20T23:26:45.470Z").ToUniversalTime(),
+        Status = HrisEarningStatus.Processed,
+        UpdatedAt = System.DateTime.Parse("2020-02-07T12:25:00.116Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.UpdateHrisEarningAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [UpdateHrisEarningRequest](../../Models/Requests/UpdateHrisEarningRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[UpdateHrisEarningResponse](../../Models/Requests/UpdateHrisEarningResponse.md)**
 
 ### Errors
 
@@ -3904,11 +4620,11 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         Bio = "sushi devotee, singer",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 69148D,
+                Amount = 60136D,
                 Currency = "CRC",
                 Frequency = HrisCompensationFrequency.Quarter,
                 Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.Equity,
+                Type = HrisCompensationType.StockOptions,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
@@ -3924,10 +4640,11 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         EmploymentStatus = EmploymentStatus.Active,
         EmploymentType = HrisEmployeeEmploymentType.Volunteer,
         FirstName = "Zetta",
+        FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
-        HasMfa = true,
-        HiredAt = System.DateTime.Parse("2023-05-12T03:12:11.541Z").ToUniversalTime(),
-        Id = "58337faa-4e32-4102-b7c8-c1d452691dbf",
+        HasMfa = false,
+        HiredAt = System.DateTime.Parse("2023-05-22T15:45:03.018Z").ToUniversalTime(),
+        Id = "81c8b367-c709-49bf-83aa-4fe7d6faf9cc",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -3941,15 +4658,16 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+                Id = "24010608-6f76-45ac-925c-ab53fb3c734c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "tenetur"
+                    "appono"
                 ),
             },
         },
         Name = "Zetta Prohaska",
+        PayFrequency = PayFrequency.Biweekly,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
@@ -3965,38 +4683,35 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     },
                 },
                 Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Emergency,
+                Type = HrisEmployeerelationshipType.Friend,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
                         Email = "Benedict_Wisozk83@hotmail.com",
                     },
-                    new HrisEmail() {
-                        Email = "Princess_Rath43@gmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Elmira92@yahoo.com",
-                    },
                 },
                 Name = "Music",
-                Type = HrisEmployeerelationshipType.Friend,
+                Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Jane30@gmail.com",
+                        Email = "Margot11@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Jaden_Miller@gmail.com",
                     },
                 },
-                Name = "Jewelry",
-                Type = HrisEmployeerelationshipType.Sibling,
+                Name = "Electronics",
+                Type = HrisEmployeerelationshipType.Other,
             },
         },
         Salutation = "Miss",
         SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 3674489D,
-        StorageQuotaAvailable = 7748057D,
-        StorageQuotaUsed = 301727D,
+        StorageQuotaAllocated = 7748057D,
+        StorageQuotaAvailable = 1590710D,
+        StorageQuotaUsed = 730343D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
                 Telephone = "(409) 801-3705",
@@ -4008,7 +4723,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-02-20T06:18:08.666Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-27T06:24:28.860Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4056,11 +4771,11 @@ UpdateHrisGroupRequest req = new UpdateHrisGroupRequest() {
     HrisGroup = new HrisGroup() {
         CreatedAt = System.DateTime.Parse("2023-11-01T13:13:40.714Z").ToUniversalTime(),
         Description = "Absorbeo casso.",
-        Id = "3d2f3a6f-a93f-4944-9979-441dfe433fe9",
+        Id = "3e529d95-c8c0-4aaf-977f-4dfe1aa0158c",
         IsActive = false,
         Name = "Games",
-        Type = HrisGroupType.BusinessUnit,
-        UpdatedAt = System.DateTime.Parse("2026-04-26T00:08:53.907Z").ToUniversalTime(),
+        Type = HrisGroupType.Branch,
+        UpdatedAt = System.DateTime.Parse("2026-05-13T09:12:19.468Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4080,6 +4795,59 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(req);
 ### Response
 
 **[UpdateHrisGroupResponse](../../Models/Requests/UpdateHrisGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateHrisJob" method="put" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
+    HrisJob = new HrisJob() {
+        Code = "P-05547",
+        CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
+        Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+        EmploymentType = HrisJobEmploymentType.Freelance,
+        Id = "69c74d53-aa9f-46fc-b7ae-68d6296eff97",
+        IsActive = false,
+        Name = "Internal Integration Specialist",
+        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.112Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.UpdateHrisJobAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [UpdateHrisJobRequest](../../Models/Requests/UpdateHrisJobRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+
+### Response
+
+**[UpdateHrisJobResponse](../../Models/Requests/UpdateHrisJobResponse.md)**
 
 ### Errors
 
@@ -4119,8 +4887,8 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "996e7b27-7913-4e41-b567-67ebb6db77ef",
-        Id = "8aada89e-1868-4e4d-9fcc-6e895a06d15d",
+        ExternalIdentifier = "019aebc6-abcb-41bd-842e-f9315e842363",
+        Id = "bf9eb454-3fd7-45f7-8a51-2b1635dfe888",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -4140,7 +4908,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-10T01:13:57.540Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-17T10:41:43.030Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4186,20 +4954,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        ApprovedAt = System.DateTime.Parse("2022-02-21T02:08:20.331Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2022-02-22T14:56:33.852Z").ToUniversalTime(),
         Comments = "Blandior ventus curiositas amplitudo.",
         CreatedAt = System.DateTime.Parse("2021-10-06T18:00:20.615Z").ToUniversalTime(),
         Duration = 4D,
         DurationType = DurationType.Day,
-        EndAt = System.DateTime.Parse("2024-12-09T08:52:11.290Z").ToUniversalTime(),
-        Id = "1b90647f-5bb3-4551-b5f1-77cbcbbc655e",
+        EndAt = System.DateTime.Parse("2024-12-22T07:37:18.849Z").ToUniversalTime(),
+        Id = "03bc149e-7269-4d92-91c1-5735550edffe",
         IsPaid = true,
         OriginalType = "acerbitas ut",
         Reason = "verto",
-        StartAt = System.DateTime.Parse("2023-08-24T08:25:05.395Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-09-01T00:24:42.405Z").ToUniversalTime(),
         Status = HrisTimeoffStatus.Denied,
         Type = HrisTimeoffType.InLieu,
-        UpdatedAt = System.DateTime.Parse("2022-07-08T05:45:54.439Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-07-11T07:19:20.311Z").ToUniversalTime(),
         UserId = "<id>",
     },
     ConnectionId = "<id>",
@@ -4247,24 +5015,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-07T03:05:14.688Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-18T03:10:12.122Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
                 Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Hour,
+                Frequency = HrisCompensationFrequency.Week,
                 Notes = "Annus adficio suasoria architecto aggero.",
-                Type = HrisCompensationType.Other,
+                Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-08-28T03:01:07.109Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-17T03:42:59.924Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+        Id = "66a39c02-f126-4c60-921c-1874dc4ce92d",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-06-26T08:32:27.015Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-23T15:17:01.681Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-07T12:09:32.567Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-29T04:09:58.872Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

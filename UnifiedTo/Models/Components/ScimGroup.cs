@@ -19,15 +19,27 @@ namespace UnifiedTo.Models.Components
 
     public class ScimGroup
     {
+        /// <summary>
+        /// The group's display name.
+        /// </summary>
         [JsonProperty("displayName")]
         public string DisplayName { get; set; } = default!;
 
+        /// <summary>
+        /// A groups id in an external system.
+        /// </summary>
         [JsonProperty("externalId")]
         public string? ExternalId { get; set; }
 
+        /// <summary>
+        /// Organization [NOT STANDARD]
+        /// </summary>
         [JsonProperty("groupType")]
         public string? GroupType { get; set; }
 
+        /// <summary>
+        /// The group's unique id.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 

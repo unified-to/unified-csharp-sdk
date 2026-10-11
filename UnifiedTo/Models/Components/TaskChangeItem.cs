@@ -14,6 +14,9 @@ namespace UnifiedTo.Models.Components
 
     public class TaskChangeItem
     {
+        /// <summary>
+        /// unified field in ITaskTask.
+        /// </summary>
         [JsonProperty("field")]
         public string Field { get; set; } = default!;
 

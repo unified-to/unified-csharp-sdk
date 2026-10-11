@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PropertyAdsReportMetricsGroupBillingEvent : IEquatable<PropertyAdsReportMetricsGroupBillingEvent>
     {

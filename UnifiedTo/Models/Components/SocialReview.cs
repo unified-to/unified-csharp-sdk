@@ -17,30 +17,57 @@ namespace UnifiedTo.Models.Components
 
     public class SocialReview
     {
+        /// <summary>
+        /// Profile image URL of the reviewer.
+        /// </summary>
         [JsonProperty("author_avatar_url")]
         public string? AuthorAvatarUrl { get; set; }
 
+        /// <summary>
+        /// Free-text location of the reviewer.
+        /// </summary>
         [JsonProperty("author_location")]
         public string? AuthorLocation { get; set; }
 
+        /// <summary>
+        /// Display name of the reviewer.
+        /// </summary>
         [JsonProperty("author_name")]
         public string? AuthorName { get; set; }
 
+        /// <summary>
+        /// The review text.
+        /// </summary>
         [JsonProperty("content")]
         public string? Content { get; set; }
 
+        /// <summary>
+        /// When the review was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the review.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The social profile (page/handle/listing) being reviewed.
+        /// </summary>
         [JsonProperty("profile_id")]
         public string? ProfileId { get; set; }
 
+        /// <summary>
+        /// Star rating, typically 1-5.
+        /// </summary>
         [JsonProperty("rating")]
         public double? Rating { get; set; }
 
+        /// <summary>
+        /// Raw data from integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -50,12 +77,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reply")]
         public PropertySocialReviewReply? Reply { get; set; }
 
+        /// <summary>
+        /// Optional review title/headline.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// When the review was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Public permalink to the review.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

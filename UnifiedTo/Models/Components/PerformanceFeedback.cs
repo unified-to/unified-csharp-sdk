@@ -19,15 +19,24 @@ namespace UnifiedTo.Models.Components
 
     public class PerformanceFeedback
     {
+        /// <summary>
+        /// the HR Employee that gave this feedback (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("author_user_id")]
         public string? AuthorUserId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// true when publicly visible (e.g. praise wall); false when private or manager-only.
+        /// </summary>
         [JsonProperty("is_visible")]
         public bool? IsVisible { get; set; }
 
@@ -43,12 +52,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        /// <summary>
+        /// praise/recognition, constructive feedback, or a response to a feedback request.
+        /// </summary>
         [JsonProperty("type")]
         public PerformanceFeedbackType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// the HR Employee that this feedback is about (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string UserId { get; set; } = default!;
     }

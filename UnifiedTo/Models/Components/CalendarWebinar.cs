@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class CalendarWebinar
     {
+        /// <summary>
+        /// (reference to CalendarCalendar).
+        /// </summary>
         [JsonProperty("calendar_id")]
         public string? CalendarId { get; set; }
 
@@ -28,9 +31,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("conference")]
         public List<CalendarConference>? Conference { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -103,6 +112,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("require_phone")]
         public bool? RequirePhone { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -115,9 +127,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// information.
+        /// </summary>
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }
     }

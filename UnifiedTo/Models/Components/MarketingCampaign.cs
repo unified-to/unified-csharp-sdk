@@ -19,15 +19,27 @@ namespace UnifiedTo.Models.Components
 
     public class MarketingCampaign
     {
+        /// <summary>
+        /// When the campaign was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Sender email address.
+        /// </summary>
         [JsonProperty("from_email")]
         public string? FromEmail { get; set; }
 
+        /// <summary>
+        /// Sender name.
+        /// </summary>
         [JsonProperty("from_name")]
         public string? FromName { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the campaign.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -37,30 +49,57 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_ids")]
         public List<string>? ListIds { get; set; }
 
+        /// <summary>
+        /// Campaign nametitle.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Email preview text.
+        /// </summary>
         [JsonProperty("preview_text")]
         public string? PreviewText { get; set; }
 
+        /// <summary>
+        /// Raw data from integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Reply-to email address.
+        /// </summary>
         [JsonProperty("reply_to_email")]
         public string? ReplyToEmail { get; set; }
 
+        /// <summary>
+        /// Scheduled send time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("send_at")]
         public DateTime? SendAt { get; set; }
 
+        /// <summary>
+        /// Campaign status.
+        /// </summary>
         [JsonProperty("status")]
         public MarketingCampaignStatus? Status { get; set; }
 
+        /// <summary>
+        /// Email subject line.
+        /// </summary>
         [JsonProperty("subject_line")]
         public string? SubjectLine { get; set; }
 
+        /// <summary>
+        /// Campaign type (e.g., regular, automation, ab_test).
+        /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// When the campaign was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

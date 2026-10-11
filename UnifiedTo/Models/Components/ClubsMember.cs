@@ -22,36 +22,69 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class ClubsMember
     {
+        /// <summary>
+        /// The date that this member was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The member's first name.
+        /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
+        /// <summary>
+        /// The group this member belongs to (reference to HrisGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this member (not provided by Strava).
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the member is an admin of the group.
+        /// </summary>
         [JsonProperty("is_admin")]
         public bool? IsAdmin { get; set; }
 
+        /// <summary>
+        /// Whether the member is the owner of the group.
+        /// </summary>
         [JsonProperty("is_owner")]
         public bool? IsOwner { get; set; }
 
+        /// <summary>
+        /// The member's last name (a single initial for Strava).
+        /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
+        /// <summary>
+        /// The member's membership status.
+        /// </summary>
         [JsonProperty("membership_status")]
         public ClubsMemberMembershipStatus? MembershipStatus { get; set; }
 
+        /// <summary>
+        /// The full name of the member (first name + last initial for Strava).
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this member.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The last date that this member was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

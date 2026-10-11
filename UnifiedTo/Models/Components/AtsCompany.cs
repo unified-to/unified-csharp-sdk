@@ -20,6 +20,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyAtsCompanyAddress? Address { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -44,6 +47,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("recruiter_ids")]
         public List<string>? RecruiterIds { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

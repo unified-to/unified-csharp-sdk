@@ -27,6 +27,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("file_ids")]
         public List<string>? FileIds { get; set; }
 
+        /// <summary>
+        /// Can be string, number, boolean, array, etc.
+        /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; }
     }

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// What this payout line settles.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PaymentPayoutLineitemObjectType : IEquatable<PaymentPayoutLineitemObjectType>
     {

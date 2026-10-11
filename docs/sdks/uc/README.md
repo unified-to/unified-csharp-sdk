@@ -11,10 +11,14 @@
 * [GetUcComment](#getuccomment) - Retrieve a comment
 * [GetUcContact](#getuccontact) - Retrieve a contact
 * [GetUcRecording](#getucrecording) - Retrieve a recording
+* [GetUcScorecard](#getucscorecard) - Retrieve a scorecard
+* [GetUcScorecardtemplate](#getucscorecardtemplate) - Retrieve a scorecardtemplate
 * [ListUcCalls](#listuccalls) - List all calls
 * [ListUcComments](#listuccomments) - List all comments
 * [ListUcContacts](#listuccontacts) - List all contacts
 * [ListUcRecordings](#listucrecordings) - List all recordings
+* [ListUcScorecards](#listucscorecards) - List all scorecards
+* [ListUcScorecardtemplates](#listucscorecardtemplates) - List all scorecardtemplates
 * [PatchUcComment](#patchuccomment) - Update a comment
 * [PatchUcContact](#patchuccontact) - Update a contact
 * [PatchUcRecording](#patchucrecording) - Update a recording
@@ -44,8 +48,8 @@ var res = await sdk.Uc.CreateUcCommentAsync(
     ucComment: new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "d421c4ff-cae4-4a9f-82dc-4b463f68c6e2",
-        UpdatedAt = "2024-02-02T11:40:40.170Z",
+        Id = "b55bcbeb-d0d3-4f88-bf42-c9984245742e",
+        UpdatedAt = "2024-02-07T08:39:05.491Z",
     },
     connectionId: "<id>"
 );
@@ -100,7 +104,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "a07b6979-089e-4649-be28-728229ad5c33",
+        Id = "71892722-5d88-40d7-bf99-7d405cd261d5",
         LastName = "Rogahn",
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
@@ -118,7 +122,7 @@ var res = await sdk.Uc.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-11-20T14:03:27.338Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-02T11:47:51.993Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -165,34 +169,35 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Uc.CreateUcRecordingAsync(
     ucRecording: new UcRecording() {
         Contacts = new List<UcContact>() {},
+        ConversationIdentifier = "e92e4042-a800-41d5-9411-07742151d49f",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-04-22T23:09:58.257Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-03-31T03:31:56.772Z").ToUniversalTime(),
-        Id = "8b9b82d0-2e7d-4849-acf6-98a4606897db",
+        EndAt = System.DateTime.Parse("2024-05-01T00:22:37.256Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-17T23:03:03.151Z").ToUniversalTime(),
+        Id = "e92e4042-a800-41d5-9411-07742151d49f",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-03-21T10:55:57.895Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-03-29T01:22:20.176Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-04-18T10:32:22.668Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-06T12:07:07.207Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-01-30T03:04:30.679Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-05-20T15:35:59.030Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-16T02:42:27.963Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-05-29T01:58:59.623Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-09-27T06:32:59.084Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-07-05T06:34:34.659Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-07T11:52:50.369Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-07-24T09:56:38.505Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
-        StartAt = System.DateTime.Parse("2023-04-23T06:23:46.157Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-26T06:26:29.625Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-02-26T01:19:09.006Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-10T08:56:21.806Z").ToUniversalTime(),
         UserName = "Melyna Larson",
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
@@ -390,6 +395,90 @@ var res = await sdk.Uc.GetUcRecordingAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetUcScorecard
+
+Retrieve a scorecard
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getUcScorecard" method="get" path="/uc/{connection_id}/scorecard/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Uc.GetUcScorecardAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Scorecard                                                                                                                              |
+| `Fields`                                                                                                                                         | List<[GetUcScorecardQueryParamFields](../../Models/Requests/GetUcScorecardQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetUcScorecardResponse](../../Models/Requests/GetUcScorecardResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetUcScorecardtemplate
+
+Retrieve a scorecardtemplate
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getUcScorecardtemplate" method="get" path="/uc/{connection_id}/scorecardtemplate/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Uc.GetUcScorecardtemplateAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Scorecardtemplate                                                                                                                      |
+| `Fields`                                                                                                                                         | List<[GetUcScorecardtemplateQueryParamFields](../../Models/Requests/GetUcScorecardtemplateQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetUcScorecardtemplateResponse](../../Models/Requests/GetUcScorecardtemplateResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListUcCalls
 
 List all calls
@@ -554,6 +643,88 @@ var res = await sdk.Uc.ListUcRecordingsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListUcScorecards
+
+List all scorecards
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listUcScorecards" method="get" path="/uc/{connection_id}/scorecard" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListUcScorecardsRequest req = new ListUcScorecardsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Uc.ListUcScorecardsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListUcScorecardsRequest](../../Models/Requests/ListUcScorecardsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[ListUcScorecardsResponse](../../Models/Requests/ListUcScorecardsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListUcScorecardtemplates
+
+List all scorecardtemplates
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listUcScorecardtemplates" method="get" path="/uc/{connection_id}/scorecardtemplate" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListUcScorecardtemplatesRequest req = new ListUcScorecardtemplatesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Uc.ListUcScorecardtemplatesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListUcScorecardtemplatesRequest](../../Models/Requests/ListUcScorecardtemplatesRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[ListUcScorecardtemplatesResponse](../../Models/Requests/ListUcScorecardtemplatesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchUcComment
 
 Update a comment
@@ -574,8 +745,8 @@ PatchUcCommentRequest req = new PatchUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
-        UpdatedAt = "2024-02-02T11:40:40.172Z",
+        Id = "263c6302-731a-4748-9738-16c1097238e1",
+        UpdatedAt = "2024-02-07T08:39:05.493Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -631,7 +802,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+        Id = "5c181c14-a751-42f2-89eb-22b7f876a2a5",
         LastName = "Rogahn",
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
@@ -649,7 +820,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-11-20T14:03:27.344Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-02T11:47:52.001Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -697,34 +868,35 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchUcRecordingRequest req = new PatchUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
+        ConversationIdentifier = "7e7003c4-a24f-41d1-acca-86a24b27fc9d",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-04-22T23:09:58.269Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-03-31T03:31:56.797Z").ToUniversalTime(),
-        Id = "76e6eeb7-e7fc-4942-a26e-c387b757090d",
+        EndAt = System.DateTime.Parse("2024-05-01T00:22:37.266Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-17T23:03:03.175Z").ToUniversalTime(),
+        Id = "7e7003c4-a24f-41d1-acca-86a24b27fc9d",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-03-21T10:55:57.906Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-03-29T01:22:20.186Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-04-18T10:32:22.694Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-06T12:07:07.232Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-01-30T03:04:30.702Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-05-20T15:35:59.042Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-16T02:42:27.986Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-05-29T01:58:59.635Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-09-27T06:32:59.098Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-07-05T06:34:34.685Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-07T11:52:50.383Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-07-24T09:56:38.529Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
-        StartAt = System.DateTime.Parse("2023-04-23T06:23:46.161Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-26T06:26:29.629Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-02-26T01:19:09.024Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-10T08:56:21.823Z").ToUniversalTime(),
         UserName = "Melyna Larson",
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",
@@ -894,8 +1066,8 @@ UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
     UcComment = new UcComment() {
         Content = "Vociferor vitiosus.",
         CreatedAt = "2023-04-02T23:42:31.571Z",
-        Id = "a5ef67a9-9f23-4951-b5e0-dcbf92747aa9",
-        UpdatedAt = "2024-02-02T11:40:40.172Z",
+        Id = "263c6302-731a-4748-9738-16c1097238e1",
+        UpdatedAt = "2024-02-07T08:39:05.493Z",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -951,7 +1123,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+        Id = "5c181c14-a751-42f2-89eb-22b7f876a2a5",
         LastName = "Rogahn",
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
@@ -969,7 +1141,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-11-20T14:03:27.344Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-02T11:47:52.001Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1017,34 +1189,35 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateUcRecordingRequest req = new UpdateUcRecordingRequest() {
     UcRecording = new UcRecording() {
         Contacts = new List<UcContact>() {},
+        ConversationIdentifier = "7e7003c4-a24f-41d1-acca-86a24b27fc9d",
         CreatedAt = System.DateTime.Parse("2022-09-17T19:41:46.956Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2024-04-22T23:09:58.269Z").ToUniversalTime(),
-        ExpiresAt = System.DateTime.Parse("2026-03-31T03:31:56.797Z").ToUniversalTime(),
-        Id = "76e6eeb7-e7fc-4942-a26e-c387b757090d",
+        EndAt = System.DateTime.Parse("2024-05-01T00:22:37.266Z").ToUniversalTime(),
+        ExpiresAt = System.DateTime.Parse("2026-04-17T23:03:03.175Z").ToUniversalTime(),
+        Id = "7e7003c4-a24f-41d1-acca-86a24b27fc9d",
         Media = new List<UcRecordingMedia>() {
             new UcRecordingMedia() {
-                EndAt = System.DateTime.Parse("2024-03-21T10:55:57.906Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2024-03-29T01:22:20.186Z").ToUniversalTime(),
                 Language = "en",
                 RecordingDownloadUrl = "https://parched-wasabi.com/",
-                StartAt = System.DateTime.Parse("2026-04-18T10:32:22.694Z").ToUniversalTime(),
+                StartAt = System.DateTime.Parse("2026-05-06T12:07:07.232Z").ToUniversalTime(),
                 TranscriptDownloadUrl = "https://colossal-cuckoo.name",
                 Transcripts = new List<UcRecordingTranscript>() {
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2026-01-30T03:04:30.702Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2024-05-20T15:35:59.042Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2026-02-16T02:42:27.986Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2024-05-29T01:58:59.635Z").ToUniversalTime(),
                         Text = "Turpis maiores ducimus tero speculum.",
                     },
                     new UcRecordingTranscript() {
-                        EndAt = System.DateTime.Parse("2024-09-27T06:32:59.098Z").ToUniversalTime(),
-                        StartAt = System.DateTime.Parse("2026-07-05T06:34:34.685Z").ToUniversalTime(),
+                        EndAt = System.DateTime.Parse("2024-10-07T11:52:50.383Z").ToUniversalTime(),
+                        StartAt = System.DateTime.Parse("2026-07-24T09:56:38.529Z").ToUniversalTime(),
                         Text = "Magnam consuasor uxor tergiversatio subseco.",
                     },
                 },
             },
         },
-        StartAt = System.DateTime.Parse("2023-04-23T06:23:46.161Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-04-26T06:26:29.629Z").ToUniversalTime(),
         Type = UcRecordingType.Outbound,
-        UpdatedAt = System.DateTime.Parse("2025-02-26T01:19:09.024Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-10T08:56:21.823Z").ToUniversalTime(),
         UserName = "Melyna Larson",
         UserPhone = "1-915-327-0429 x509",
         WebUrl = "https://spherical-comparison.org",

@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingTransaction
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
@@ -28,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contacts")]
         public List<AccountingTransactionContact>? Contacts { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -37,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("customer_message")]
         public string? CustomerMessage { get; set; }
 
+        /// <summary>
+        /// Exchange rate to the base/home currency at the transaction date.
+        /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; }
 
@@ -58,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payment_terms")]
         public string? PaymentTerms { get; set; }
 
+        /// <summary>
+        /// (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
@@ -70,24 +82,42 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("split_account_id")]
         public string? SplitAccountId { get; set; }
 
+        /// <summary>
+        /// Posting state of the transaction.
+        /// </summary>
         [JsonProperty("status")]
         public AccountingTransactionStatus? Status { get; set; }
 
         [JsonProperty("sub_total_amount")]
         public double? SubTotalAmount { get; set; }
 
+        /// <summary>
+        /// negative for CREDIT, positive for DEBIT.
+        /// </summary>
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
+        /// <summary>
+        /// negative for CREDIT, positive for DEBIT.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("transaction_at")]
         public DateTime? TransactionAt { get; set; }
 
+        /// <summary>
+        /// eg. CreditCardCharge, Check, Invoice, ReceivePayment, JournalEntry, Bill, CreditCardCredit, VendorCredit, Credit, BillPaymentCheck, BillPaymentCreditCard, Charge, Transfer, Deposit, BANK_DEPOSIT, BANK_TRANSFER, Statement, BillableCharge, TimeActivity, CashPurchase, SalesReceipt, CreditMemo, CreditRefund, Estimate, InventoryQuantityAdjustment, PurchaseOrder, GlobalTaxPayment, GlobalTaxAdjustment, Service Tax Refund, Service Tax Gross Adjustment, Service Tax Reversal, Service Tax Defer, Service Tax Partial Utilisation.
+        /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public ScimPhotoType? Type { get; set; }
 
+        /// <summary>
+        /// URL.
+        /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; }
     }

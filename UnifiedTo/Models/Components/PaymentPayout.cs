@@ -19,18 +19,30 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentPayout
     {
+        /// <summary>
+        /// ref -&gt; AccountingAccount; the destination account (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// Date the funds land in the destination account (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("arrival_at")]
         public DateTime? ArrivalAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Processor fee deducted from the payout.
+        /// </summary>
         [JsonProperty("fee_amount")]
         public double? FeeAmount { get; set; }
 
@@ -43,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<PaymentPayoutLineitem>? Lineitems { get; set; }
 
+        /// <summary>
+        /// total_amount minus fee_amount.
+        /// </summary>
         [JsonProperty("net_amount")]
         public double? NetAmount { get; set; }
 
@@ -58,6 +73,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
     }

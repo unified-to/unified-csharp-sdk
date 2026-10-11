@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         }
     }
 
+    /// <summary>
+    /// The attribute/trait value.
+    /// </summary>
     [JsonConverter(typeof(CdpMetadataValue.CdpMetadataValueConverter))]
     public class CdpMetadataValue
     {

@@ -15,6 +15,9 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingTransactionLineItem
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
@@ -33,9 +36,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("object_type")]
         public string? ObjectType { get; set; }
 
+        /// <summary>
+        /// ref -&gt; AccountingTaxrate applied to the line.
+        /// </summary>
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
 
+        /// <summary>
+        /// will be a positive value for a debit and negative for a credit.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 

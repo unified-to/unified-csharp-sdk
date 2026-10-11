@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         CategoryIds,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("attachments")]
+        Attachments,
         [JsonProperty("raw")]
         Raw,
     }

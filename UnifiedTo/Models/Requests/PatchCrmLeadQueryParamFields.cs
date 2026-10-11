@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         Source,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("title")]
+        Title,
         [JsonProperty("link_urls")]
         LinkUrls,
         [JsonProperty("metadata")]

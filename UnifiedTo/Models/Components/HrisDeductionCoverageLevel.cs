@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisDeductionCoverageLevel : IEquatable<HrisDeductionCoverageLevel>
     {

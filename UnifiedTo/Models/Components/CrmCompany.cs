@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contact_ids")]
         public List<string>? ContactIds { get; set; }
 
+        /// <summary>
+        /// The date that this company object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -50,6 +53,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("employees")]
         public double? Employees { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this company object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -68,9 +74,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CrmMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The name of the company.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this company.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -83,9 +95,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// The last date that this company object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 

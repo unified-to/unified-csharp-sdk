@@ -19,12 +19,18 @@ namespace UnifiedTo.Models.Components
 
     public class AnalyticsReportMetrics
     {
+        /// <summary>
+        /// new vs returning.
+        /// </summary>
         [JsonProperty("dimension")]
         public AnalyticsReportMetricsDimension? Dimension { get; set; }
 
         [JsonProperty("dimension_value")]
         public string? DimensionValue { get; set; }
 
+        /// <summary>
+        /// Traffic metrics.
+        /// </summary>
         [JsonProperty("type")]
         public AnalyticsReportMetricsType? Type { get; set; }
 

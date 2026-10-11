@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// For SUB_RESULT type.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AssessmentAttributeStatus : IEquatable<AssessmentAttributeStatus>
     {

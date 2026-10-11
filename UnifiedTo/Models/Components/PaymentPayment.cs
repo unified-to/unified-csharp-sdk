@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentPayment
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
@@ -28,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("allocations")]
         public List<PaymentAllocation>? Allocations { get; set; }
 
+        /// <summary>
+        /// references AccountingBill.
+        /// </summary>
         [JsonProperty("bill_id")]
         public string? BillId { get; set; }
 
@@ -43,45 +49,75 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; } = "USD";
 
+        /// <summary>
+        /// POS terminal/register/device (hr device).
+        /// </summary>
         [JsonProperty("device_id")]
         public string? DeviceId { get; set; }
 
+        /// <summary>
+        /// Exchange rate to the base/home currency at the payment date.
+        /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; }
 
+        /// <summary>
+        /// processing/processor fee.
+        /// </summary>
         [JsonProperty("fee_amount")]
         public double? FeeAmount { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingInvoice).
+        /// </summary>
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
         [JsonProperty("link_id")]
         public string? LinkId { get; set; }
 
+        /// <summary>
+        /// store/site where the payment was taken (commerce_location).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// total_amount minus fee_amount.
+        /// </summary>
         [JsonProperty("net_amount")]
         public double? NetAmount { get; set; }
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
+        /// <summary>
+        /// reference to an AccountingOrganization.
+        /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// Date and time the payment was made (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("paid_at")]
         public DateTime? PaidAt { get; set; }
 
@@ -94,12 +130,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        /// <summary>
+        /// reference to an AccountingSalesorder, e.g. the POS order this payment settled.
+        /// </summary>
         [JsonProperty("salesorder_id")]
         public string? SalesorderId { get; set; }
 
         [JsonProperty("status")]
         public PaymentPaymentStatus? Status { get; set; }
 
+        /// <summary>
+        /// normalized tender category; the provider's original label stays in payment_method.
+        /// </summary>
         [JsonProperty("tender_type")]
         public TenderType? TenderType { get; set; }
 
@@ -112,6 +154,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public PaymentPaymentType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

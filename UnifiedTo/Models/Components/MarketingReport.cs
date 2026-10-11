@@ -17,48 +17,93 @@ namespace UnifiedTo.Models.Components
 
     public class MarketingReport
     {
+        /// <summary>
+        /// Number of abuse reports.
+        /// </summary>
         [JsonProperty("abuse_reports")]
         public double? AbuseReports { get; set; }
 
+        /// <summary>
+        /// Associated campaign ID.
+        /// </summary>
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
+        /// <summary>
+        /// Click rate (decimal).
+        /// </summary>
         [JsonProperty("click_rate")]
         public double? ClickRate { get; set; }
 
+        /// <summary>
+        /// Total clicks.
+        /// </summary>
         [JsonProperty("clicks_total")]
         public double? ClicksTotal { get; set; }
 
+        /// <summary>
+        /// Total emails sent.
+        /// </summary>
         [JsonProperty("emails_sent")]
         public double? EmailsSent { get; set; }
 
+        /// <summary>
+        /// End time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// Forward count.
+        /// </summary>
         [JsonProperty("forwards_count")]
         public double? ForwardsCount { get; set; }
 
+        /// <summary>
+        /// Forwards opened.
+        /// </summary>
         [JsonProperty("forwards_opens")]
         public double? ForwardsOpens { get; set; }
 
+        /// <summary>
+        /// Hard bounce count.
+        /// </summary>
         [JsonProperty("hard_bounces")]
         public double? HardBounces { get; set; }
 
+        /// <summary>
+        /// Open rate (decimal) excluding automated/bot/proxy opens.
+        /// </summary>
         [JsonProperty("human_open_rate")]
         public double? HumanOpenRate { get; set; }
 
+        /// <summary>
+        /// Total opens excluding automated/bot/proxy (e.g. Apple Mail Privacy Protection) opens.
+        /// </summary>
         [JsonProperty("human_opens_total")]
         public double? HumanOpensTotal { get; set; }
 
+        /// <summary>
+        /// Unique opens excluding automated/bot/proxy opens.
+        /// </summary>
         [JsonProperty("human_unique_opens")]
         public double? HumanUniqueOpens { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the campaign report.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("last_click_at")]
         public DateTime? LastClickAt { get; set; }
 
+        /// <summary>
+        /// Last open timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("last_open_at")]
         public DateTime? LastOpenAt { get; set; }
 
@@ -68,39 +113,75 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("links")]
         public List<MarketingReportLink>? Links { get; set; }
 
+        /// <summary>
+        /// Associated list ID.
+        /// </summary>
         [JsonProperty("list_id")]
         public string? ListId { get; set; }
 
+        /// <summary>
+        /// Open rate (decimal).
+        /// </summary>
         [JsonProperty("open_rate")]
         public double? OpenRate { get; set; }
 
+        /// <summary>
+        /// Total opens.
+        /// </summary>
         [JsonProperty("opens_total")]
         public double? OpensTotal { get; set; }
 
+        /// <summary>
+        /// Raw data from integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Send time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("sent_at")]
         public DateTime? SentAt { get; set; }
 
+        /// <summary>
+        /// Soft bounce count.
+        /// </summary>
         [JsonProperty("soft_bounces")]
         public double? SoftBounces { get; set; }
 
+        /// <summary>
+        /// Start time (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        /// <summary>
+        /// Syntax error count.
+        /// </summary>
         [JsonProperty("syntax_errors")]
         public double? SyntaxErrors { get; set; }
 
+        /// <summary>
+        /// Unique clicks.
+        /// </summary>
         [JsonProperty("unique_clicks")]
         public double? UniqueClicks { get; set; }
 
+        /// <summary>
+        /// Unique opens.
+        /// </summary>
         [JsonProperty("unique_opens")]
         public double? UniqueOpens { get; set; }
 
+        /// <summary>
+        /// Unique subscriber clicks.
+        /// </summary>
         [JsonProperty("unique_subscriber_clicks")]
         public double? UniqueSubscriberClicks { get; set; }
 
+        /// <summary>
+        /// Number of unsubscribes.
+        /// </summary>
         [JsonProperty("unsubscribed")]
         public double? Unsubscribed { get; set; }
     }

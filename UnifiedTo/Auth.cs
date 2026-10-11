@@ -24,10 +24,10 @@ namespace UnifiedTo
     public interface IAuth
     {
         /// <summary>
-        /// Authorize new connection.
+        /// Authorize or re-authorize a connection.
         /// </summary>
         /// <remarks>
-        /// Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+        /// Returns an authorization URL for the specified integration. After successful authorization, a new connection is created unless connection_id and reauth_token are provided, in which case the existing connection is updated in place.
         /// </remarks>
         /// <param name="request">A <see cref="GetUnifiedIntegrationAuthRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationAuthResponse"/> response envelope when completed.</returns>
@@ -86,10 +86,10 @@ namespace UnifiedTo
         }
 
         /// <summary>
-        /// Authorize new connection.
+        /// Authorize or re-authorize a connection.
         /// </summary>
         /// <remarks>
-        /// Returns an authorization URL for the specified integration.  Once a successful authorization occurs, a new connection is created.
+        /// Returns an authorization URL for the specified integration. After successful authorization, a new connection is created unless connection_id and reauth_token are provided, in which case the existing connection is updated in place.
         /// </remarks>
         /// <param name="request">A <see cref="GetUnifiedIntegrationAuthRequest"/> parameter.</param>
         /// <returns>An awaitable task that returns a <see cref="GetUnifiedIntegrationAuthResponse"/> response envelope when completed.</returns>

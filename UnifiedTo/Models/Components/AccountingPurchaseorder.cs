@@ -19,8 +19,14 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingPurchaseorder
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
+
+        [JsonProperty("attachments")]
+        public List<AccountingAttachment>? Attachments { get; set; }
 
         [JsonProperty("billing_address")]
         public PropertyAccountingPurchaseorderBillingAddress? BillingAddress { get; set; }
@@ -28,9 +34,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// Customer, Supplier (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -49,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
@@ -64,6 +79,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

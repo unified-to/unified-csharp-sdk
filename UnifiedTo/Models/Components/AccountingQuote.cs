@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingQuote
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("accepted_at")]
         public DateTime? AcceptedAt { get; set; }
 
@@ -28,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
@@ -37,42 +43,69 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contacts")]
         public List<AccountingTransactionContact>? Contacts { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// exchange rate to the organization's base currency.
+        /// </summary>
         [JsonProperty("currency_rate")]
         public double? CurrencyRate { get; set; }
 
+        /// <summary>
+        /// customer-visible message.
+        /// </summary>
         [JsonProperty("customer_message")]
         public string? CustomerMessage { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("declined_at")]
         public DateTime? DeclinedAt { get; set; }
 
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
 
+        /// <summary>
+        /// Xero ExpiryDate, QBO ExpirationDate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("expires_at")]
         public DateTime? ExpiresAt { get; set; }
 
+        /// <summary>
+        /// points to a HRIS Group (reference to HrisGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// populated once the quote is converted to an invoice; left null when the source cannot supply it (reference to AccountingInvoice).
+        /// </summary>
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
+        /// <summary>
+        /// Xero Date, QBO TxnDate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("issued_at")]
         public DateTime? IssuedAt { get; set; }
 
         [JsonProperty("lineitems")]
         public List<AccountingLineitem>? Lineitems { get; set; }
 
+        /// <summary>
+        /// internal note, not customer-visible.
+        /// </summary>
         [JsonProperty("memo")]
         public string? Memo { get; set; }
 
@@ -82,48 +115,81 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// unified payment terms enum, as on accounting_invoice / accounting_bill.
+        /// </summary>
         [JsonProperty("payment_terms")]
         public AccountingQuotePaymentTerms? PaymentTerms { get; set; }
 
+        /// <summary>
+        /// points to an AccountingProject (accounting costing project) (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
+        /// <summary>
+        /// External identifier for this quote (Xero QuoteNumber, QBO DocNumber, NetSuite tranId).
+        /// </summary>
         [JsonProperty("quote_number")]
         public string? QuoteNumber { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// customer-side reference / PO number.
+        /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("sent_at")]
         public DateTime? SentAt { get; set; }
 
+        /// <summary>
+        /// where EXPIRED is derived (expires_at &lt; now), the source status is preserved in raw.
+        /// </summary>
         [JsonProperty("status")]
         public AccountingQuoteStatus? Status { get; set; }
 
         [JsonProperty("sub_total_amount")]
         public double? SubTotalAmount { get; set; }
 
+        /// <summary>
+        /// longer summary (Xero Summary, max 3000).
+        /// </summary>
         [JsonProperty("summary")]
         public string? Summary { get; set; }
 
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
+        /// <summary>
+        /// INCLUSIVE / EXCLUSIVE / NONE; maps Xero LineAmountTypes (a boolean cannot represent NoTax).
+        /// </summary>
         [JsonProperty("tax_mode")]
         public TaxMode? TaxMode { get; set; }
 
+        /// <summary>
+        /// short title (Xero Title, max 100).
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// public online-quote link where exposed.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

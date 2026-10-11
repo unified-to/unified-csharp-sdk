@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class CalendarEventRecurrence
     {
+        /// <summary>
+        /// how many occurrences, defaults to undefined (no limit).
+        /// </summary>
         [JsonProperty("count")]
         public double? Count { get; set; }
 
+        /// <summary>
+        /// until date, defaults to undefined (no end date) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -40,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("included_dates")]
         public List<string>? IncludedDates { get; set; }
 
+        /// <summary>
+        /// how many "units" between occurrences, defaults to 1.
+        /// </summary>
         [JsonProperty("interval")]
         public double? Interval { get; set; }
 
@@ -73,9 +82,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("on_year_days")]
         public List<double>? OnYearDays { get; set; }
 
+        /// <summary>
+        /// timezone, defaults to undefined (no timezone).
+        /// </summary>
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// week start day, defaults to undefined (no week start day).
+        /// </summary>
         [JsonProperty("week_start")]
         public WeekStart? WeekStart { get; set; }
     }

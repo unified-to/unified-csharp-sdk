@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class CommerceReservation
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -37,12 +43,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceItem).
+        /// </summary>
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
         [JsonProperty("item_name")]
         public string? ItemName { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
@@ -58,15 +70,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("staff_name")]
         public string? StaffName { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("staff_user_id")]
         public string? StaffUserId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
         [JsonProperty("status")]
         public CommerceReservationStatus? Status { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

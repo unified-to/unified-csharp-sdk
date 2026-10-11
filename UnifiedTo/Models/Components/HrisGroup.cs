@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class HrisGroup
     {
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -40,8 +46,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// next pay date when type is PAY_GROUP (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
+        [JsonProperty("next_paid_at")]
+        public DateTime? NextPaidAt { get; set; }
+
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
+
+        /// <summary>
+        /// pay cycle when type is PAY_GROUP.
+        /// </summary>
+        [JsonProperty("pay_frequency")]
+        public HrisGroupPayFrequency? PayFrequency { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
@@ -49,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public HrisGroupType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

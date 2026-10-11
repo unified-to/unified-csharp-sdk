@@ -32,17 +32,17 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
     metadataMetadata: new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "a66e402b-9ccd-461c-9d94-1a40e872793e",
+        Id = "b078b6fb-501d-4281-b691-b487a1c21202",
         IsRequired = false,
         Name = "autem",
-        ObjectType = "signing_template",
+        ObjectType = "signing_signatory",
         Objects = new Dictionary<string, object>() {
 
         },
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-02-28T08:05:10.351Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-14T19:25:09.649Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -174,17 +174,17 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "a0d83ad7-5bf9-4c3b-ae13-626991f33c1b",
+        Id = "48604f71-85f3-43ca-bd45-4db4aa30471d",
         IsRequired = false,
         Name = "autem",
-        ObjectType = "signing_template",
+        ObjectType = "signing_signatory",
         Objects = new Dictionary<string, object>() {
 
         },
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-02-28T08:05:10.358Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-14T19:25:09.654Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -273,17 +273,17 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "a0d83ad7-5bf9-4c3b-ae13-626991f33c1b",
+        Id = "48604f71-85f3-43ca-bd45-4db4aa30471d",
         IsRequired = false,
         Name = "autem",
-        ObjectType = "signing_template",
+        ObjectType = "signing_signatory",
         Objects = new Dictionary<string, object>() {
 
         },
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-02-28T08:05:10.358Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-14T19:25:09.654Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

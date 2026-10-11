@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// week start day, defaults to undefined (no week start day).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class WeekStart : IEquatable<WeekStart>
     {

@@ -19,21 +19,36 @@ namespace UnifiedTo.Models.Components
 
     public class PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User
     {
+        /// <summary>
+        /// 'M3',
+        /// </summary>
         [JsonProperty("Job Level")]
         public string? JobLevel { get; set; }
 
+        /// <summary>
+        /// 'People Manager',
+        /// </summary>
         [JsonProperty("People Manager (Reviews)")]
         public string? PeopleManagerReviews { get; set; }
 
+        /// <summary>
+        /// 'Ontario',
+        /// </summary>
         [JsonProperty("Remote Work - Location")]
         public string? RemoteWorkLocation { get; set; }
 
+        /// <summary>
+        /// '130000',
+        /// </summary>
         [JsonProperty("Salary Information")]
         public string? SalaryInformation { get; set; }
 
         [JsonProperty("Sub Departments")]
         public string? SubDepartments { get; set; }
 
+        /// <summary>
+        /// "1987-10-06",
+        /// </summary>
         [JsonProperty("birthDate")]
         public DateTime? BirthDate { get; set; }
 
@@ -46,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("sexualOrientation")]
         public SexualOrientation? SexualOrientation { get; set; }
 
+        /// <summary>
+        /// "2022-03-08",
+        /// </summary>
         [JsonProperty("startDate")]
         public DateTime? StartDate { get; set; }
     }

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// @deprecated use payment_terms instead.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Term : IEquatable<Term>
     {

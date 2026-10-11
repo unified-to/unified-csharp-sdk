@@ -41,4 +41,5 @@ var value = PatchAccountingExpenseQueryParamFields.Id;
 | `Metadata`         | metadata           |
 | `TaxrateId`        | taxrate_id         |
 | `ExchangeRate`     | exchange_rate      |
+| `Type`             | type               |
 | `Raw`              | raw                |

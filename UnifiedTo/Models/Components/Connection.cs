@@ -34,48 +34,84 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("categories")]
         public List<PropertyConnectionCategories> Categories { get; set; } = default!;
 
+        /// <summary>
+        /// The date that this integration object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("environment")]
         public string? Environment { get; set; } = "Production";
 
+        /// <summary>
+        /// customer's user ID.
+        /// </summary>
         [JsonProperty("external_xref")]
         public string? ExternalXref { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this integration object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("integration_name")]
         public string? IntegrationName { get; set; }
 
+        /// <summary>
+        /// The integration type.
+        /// </summary>
         [JsonProperty("integration_type")]
         public string IntegrationType { get; set; } = default!;
 
+        /// <summary>
+        /// Whether this integration has exceed the monthly limit of the plan.
+        /// </summary>
         [JsonProperty("is_paused")]
         public bool? IsPaused { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("last_healthy_at")]
         public DateTime? LastHealthyAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("last_unhealthy_at")]
         public DateTime? LastUnhealthyAt { get; set; }
 
+        /// <summary>
+        /// The HTTP status code that caused the last unhealthy status.
+        /// </summary>
         [JsonProperty("last_unhealthy_code")]
         public string? LastUnhealthyCode { get; set; }
 
         [JsonProperty("permissions")]
         public List<PropertyConnectionPermissions> Permissions { get; set; } = default!;
 
+        /// <summary>
+        /// the ID of the SecretsManager object.
+        /// </summary>
         [JsonProperty("secretsmanager_id")]
         public string? SecretsmanagerId { get; set; }
 
+        /// <summary>
+        /// the key/path/name of the secret within the vault.
+        /// </summary>
         [JsonProperty("secretsmanager_key")]
         public string? SecretsmanagerKey { get; set; }
 
+        /// <summary>
+        /// The last date that this integration object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }
     }

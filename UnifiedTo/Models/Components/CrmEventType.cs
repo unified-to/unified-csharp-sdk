@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The type of event.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CrmEventType : IEquatable<CrmEventType>
     {

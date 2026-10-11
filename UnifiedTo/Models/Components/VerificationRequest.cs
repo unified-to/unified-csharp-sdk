@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class VerificationRequest
     {
+        /// <summary>
+        /// points to ATS Candidate.
+        /// </summary>
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -37,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("profile_addresses")]
         public List<VerificationAddress>? ProfileAddresses { get; set; }
 
+        /// <summary>
+        /// YYYY-MM-DD.
+        /// </summary>
         [JsonProperty("profile_date_of_birth")]
         public string? ProfileDateOfBirth { get; set; }
 
@@ -46,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("profile_gender")]
         public VerificationRequestProfileGender? ProfileGender { get; set; }
 
+        /// <summary>
+        /// XXX.XXX.XXX.XXX.
+        /// </summary>
         [JsonProperty("profile_ip_address")]
         public string? ProfileIpAddress { get; set; }
 
@@ -61,6 +73,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("response_completed_at")]
         public DateTime? ResponseCompletedAt { get; set; }
 
@@ -73,27 +88,45 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("response_download_urls")]
         public List<string>? ResponseDownloadUrls { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("response_expires_at")]
         public DateTime? ResponseExpiresAt { get; set; }
 
+        /// <summary>
+        /// datetime that identify was issued (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("response_issued_at")]
         public DateTime? ResponseIssuedAt { get; set; }
 
+        /// <summary>
+        /// Most modern IDV providers (like Onfido, Veriff, Jumio, ID.me). Background Check Providers, such as Checkr, GoodHire, Sterling, and HireRight. Credit bureaus and services often require direct user consent and information. This allows them to properly handle disclosures required by regulations like FCRA. Employment and Education Verification need users to confirm previous employers and schools.
+        /// </summary>
         [JsonProperty("response_redirect_url")]
         public string? ResponseRedirectUrl { get; set; }
 
+        /// <summary>
+        /// Identity verification services provide confidence scores (e.g., 0-100), Credit checks return specific numeric scores (e.g., FICO score 300-850), Fraud prevention tools use risk scores (e.g., 1-999).
+        /// </summary>
         [JsonProperty("response_score")]
         public double? ResponseScore { get; set; }
 
         [JsonProperty("response_source")]
         public string? ResponseSource { get; set; }
 
+        /// <summary>
+        /// Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO.
+        /// </summary>
         [JsonProperty("response_status")]
         public VerificationRequestResponseStatus? ResponseStatus { get; set; }
 
         [JsonProperty("target_url")]
         public string? TargetUrl { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

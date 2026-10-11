@@ -33,6 +33,12 @@ namespace UnifiedTo.Models.Requests
         McpDeferredTools,
         [JsonProperty("mcp_authorization_token")]
         McpAuthorizationToken,
+        [JsonProperty("questions")]
+        Questions,
+        [JsonProperty("answers")]
+        Answers,
+        [JsonProperty("skill_ids")]
+        SkillIds,
         [JsonProperty("raw")]
         Raw,
     }

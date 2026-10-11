@@ -31,12 +31,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("country_code")]
         public string? CountryCode { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("email")]
         public string? Email { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("first_seen_at")]
         public DateTime? FirstSeenAt { get; set; }
 
@@ -49,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("language")]
         public string? Language { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("last_seen_at")]
         public DateTime? LastSeenAt { get; set; }
 
@@ -58,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// points to AnalyticsProperty.
+        /// </summary>
         [JsonProperty("property_id")]
         public string? PropertyId { get; set; }
 
@@ -76,6 +88,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("total_sessions")]
         public double? TotalSessions { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

@@ -21,3 +21,5 @@ var custom = HrisCompensationType.Of("custom_value");
 | `StockOptions` | STOCK_OPTIONS  |
 | `Equity`       | EQUITY         |
 | `Other`        | OTHER          |
+| `Hourly`       | HOURLY         |
+| `Commission`   | COMMISSION     |

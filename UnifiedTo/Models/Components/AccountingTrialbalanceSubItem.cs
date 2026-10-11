@@ -14,6 +14,9 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingTrialbalanceSubItem
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 

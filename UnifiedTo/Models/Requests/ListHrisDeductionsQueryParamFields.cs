@@ -43,6 +43,16 @@ namespace UnifiedTo.Models.Requests
         IsActive,
         [JsonProperty("notes")]
         Notes,
+        [JsonProperty("employer_amount")]
+        EmployerAmount,
+        [JsonProperty("employer_type")]
+        EmployerType,
+        [JsonProperty("max_amount")]
+        MaxAmount,
+        [JsonProperty("paycode_id")]
+        PaycodeId,
+        [JsonProperty("garnishment_type")]
+        GarnishmentType,
         [JsonProperty("raw")]
         Raw,
     }

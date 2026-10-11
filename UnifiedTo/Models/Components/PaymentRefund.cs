@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentRefund
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -31,30 +34,45 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
+        /// <summary>
+        /// (reference to PaymentPayment).
+        /// </summary>
         [JsonProperty("payment_id")]
         public string? PaymentId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Why the refund was issued.
+        /// </summary>
         [JsonProperty("reason")]
         public Reason? Reason { get; set; }
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        /// <summary>
+        /// Date and time the refund occurred (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
         [JsonProperty("status")]
         public PaymentRefundStatus? Status { get; set; }
 
+        /// <summary>
+        /// Normalized tender category the refund was returned to; mirrors PaymentPayment.tender_type.
+        /// </summary>
         [JsonProperty("tender_type")]
         public PaymentRefundTenderType? TenderType { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

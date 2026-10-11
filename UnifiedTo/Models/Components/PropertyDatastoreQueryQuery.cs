@@ -46,6 +46,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("sort_order")]
         public SortOrder? SortOrder { get; set; }
 
+        /// <summary>
+        /// Raw SQL – when set, executed directly (table_id optional).
+        /// </summary>
         [JsonProperty("sql")]
         public string? Sql { get; set; }
     }

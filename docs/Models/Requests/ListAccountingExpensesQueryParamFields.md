@@ -41,4 +41,5 @@ var value = ListAccountingExpensesQueryParamFields.Id;
 | `Metadata`         | metadata           |
 | `TaxrateId`        | taxrate_id         |
 | `ExchangeRate`     | exchange_rate      |
+| `Type`             | type               |
 | `Raw`              | raw                |

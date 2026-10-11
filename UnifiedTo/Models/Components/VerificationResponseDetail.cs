@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_private")]
         public bool? IsPrivate { get; set; }
 
+        /// <summary>
+        /// in reference to the parameter input.
+        /// </summary>
         [JsonProperty("parameter_id")]
         public string? ParameterId { get; set; }
 

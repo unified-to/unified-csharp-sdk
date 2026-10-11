@@ -28,18 +28,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyEnrichPersonAddress? Address { get; set; }
 
+        /// <summary>
+        /// The biography description of the person.
+        /// </summary>
         [JsonProperty("bio")]
         public string? Bio { get; set; }
 
+        /// <summary>
+        /// The birth date of the person.
+        /// </summary>
         [JsonProperty("birthdate")]
         public string? Birthdate { get; set; }
 
+        /// <summary>
+        /// The companyorganization name  of the person.
+        /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; }
 
+        /// <summary>
+        /// The company's domain.
+        /// </summary>
         [JsonProperty("company_domain")]
         public string? CompanyDomain { get; set; }
 
+        /// <summary>
+        /// The date that this person object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -49,36 +64,63 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("emails")]
         public List<EnrichEmail>? Emails { get; set; }
 
+        /// <summary>
+        /// The Facebook URL of the person.
+        /// </summary>
         [JsonProperty("facebook_url")]
         public string? FacebookUrl { get; set; }
 
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
+        /// <summary>
+        /// The gender of the person.
+        /// </summary>
         [JsonProperty("gender")]
         public EnrichPersonGender? Gender { get; set; }
 
+        /// <summary>
+        /// The GitHub URL of the person.
+        /// </summary>
         [JsonProperty("github_url")]
         public string? GithubUrl { get; set; }
 
+        /// <summary>
+        /// The GitHub username of the person.
+        /// </summary>
         [JsonProperty("github_username")]
         public string? GithubUsername { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this person object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The image URL of the person.
+        /// </summary>
         [JsonProperty("image_url")]
         public string? ImageUrl { get; set; }
 
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
+        /// <summary>
+        /// The LinkedIn URL of the person.
+        /// </summary>
         [JsonProperty("linkedin_url")]
         public string? LinkedinUrl { get; set; }
 
+        /// <summary>
+        /// The name of the person.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this person.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -88,21 +130,39 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephones")]
         public List<EnrichTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// The timezone code of the person.
+        /// </summary>
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// The job title of the person.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// The twitter handle of the person.
+        /// </summary>
         [JsonProperty("twitter_handle")]
         public string? TwitterHandle { get; set; }
 
+        /// <summary>
+        /// The twitter URL of the person.
+        /// </summary>
         [JsonProperty("twitter_url")]
         public string? TwitterUrl { get; set; }
 
+        /// <summary>
+        /// The last date that this person object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// The timezone's hourly offset from UTC of the person.
+        /// </summary>
         [JsonProperty("utc_offset")]
         public double? UtcOffset { get; set; }
 

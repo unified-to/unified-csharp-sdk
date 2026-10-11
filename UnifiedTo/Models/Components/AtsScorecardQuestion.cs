@@ -14,12 +14,18 @@ namespace UnifiedTo.Models.Components
 
     public class AtsScorecardQuestion
     {
+        /// <summary>
+        /// Candidate’s answer to the question.
+        /// </summary>
         [JsonProperty("answer")]
         public string? Answer { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// The question to ask the interviewer.
+        /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; } = default!;
     }

@@ -26,6 +26,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("country")]
         public string? Country { get; set; }
 
+        /// <summary>
+        /// ISO 2-digit country code.
+        /// </summary>
         [JsonProperty("country_code")]
         public string? CountryCode { get; set; }
 

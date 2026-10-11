@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
+        /// <summary>
+        /// target Database Table ID.
+        /// </summary>
         [JsonProperty("table_id")]
         public string TableId { get; set; } = default!;
 

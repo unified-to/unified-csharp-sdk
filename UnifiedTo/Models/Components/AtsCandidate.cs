@@ -22,12 +22,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyAtsCandidateAddress? Address { get; set; }
 
+        /// <summary>
+        /// (reference to AtsCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// Name of company where candidate currently works.
+        /// </summary>
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -85,6 +94,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("sources")]
         public List<string>? Sources { get; set; }
 
+        /// <summary>
+        /// Personal / professional bio.
+        /// </summary>
         [JsonProperty("summary")]
         public string? Summary { get; set; }
 
@@ -94,12 +106,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephones")]
         public List<AtsTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// Candidate’s current job title.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Employee ID that owns the relationship for this candidate (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 

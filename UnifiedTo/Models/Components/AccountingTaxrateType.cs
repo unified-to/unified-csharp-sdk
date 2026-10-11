@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Whether the rate applies to sales, purchases, or both.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingTaxrateType : IEquatable<AccountingTaxrateType>
     {

@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("download_url")]
         public string? DownloadUrl { get; set; }
 
+        /// <summary>
+        /// ID for the storage_fileget endpoint.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 

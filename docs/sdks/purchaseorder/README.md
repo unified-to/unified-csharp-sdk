@@ -30,6 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
     accountingPurchaseorder: new AccountingPurchaseorder() {
+        Attachments = new List<AccountingAttachment>() {},
         BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
             Address1 = "37214 Tanya Walks",
             City = "South Annabelleton",
@@ -41,10 +42,10 @@ var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "ZMW",
-        Id = "2c15629f-d92a-450f-9a90-c739019fa131",
+        Id = "5df0165d-2362-45a3-a731-a5c2c266b425",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-27T06:22:37.375Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-05-12T13:45:08.967Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
             Address1 = "649 Maggio Overpass",
             City = "Lake Jaylan",
@@ -55,7 +56,7 @@ var res = await sdk.Purchaseorder.CreateAccountingPurchaseorderAsync(
         },
         Status = AccountingPurchaseorderStatus.PartiallyRefunded,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-02-26T05:43:51.981Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-26T23:11:58.689Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -185,6 +186,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderRequest() {
     AccountingPurchaseorder = new AccountingPurchaseorder() {
+        Attachments = new List<AccountingAttachment>() {},
         BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
             Address1 = "37214 Tanya Walks",
             City = "South Annabelleton",
@@ -196,10 +198,10 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "ZMW",
-        Id = "ccae6f41-dac0-491f-9987-35fe17107580",
+        Id = "0ef164ae-3d7d-43eb-b5a6-fba3cbcbd136",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-27T06:22:37.417Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-05-12T13:45:08.992Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
             Address1 = "649 Maggio Overpass",
             City = "Lake Jaylan",
@@ -210,7 +212,7 @@ PatchAccountingPurchaseorderRequest req = new PatchAccountingPurchaseorderReques
         },
         Status = AccountingPurchaseorderStatus.PartiallyRefunded,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-02-26T05:43:51.983Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-26T23:11:58.691Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -297,6 +299,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequest() {
     AccountingPurchaseorder = new AccountingPurchaseorder() {
+        Attachments = new List<AccountingAttachment>() {},
         BillingAddress = new PropertyAccountingPurchaseorderBillingAddress() {
             Address1 = "37214 Tanya Walks",
             City = "South Annabelleton",
@@ -308,10 +311,10 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-12-12T07:17:47.021Z").ToUniversalTime(),
         Currency = "ZMW",
-        Id = "ccae6f41-dac0-491f-9987-35fe17107580",
+        Id = "0ef164ae-3d7d-43eb-b5a6-fba3cbcbd136",
         Lineitems = new List<AccountingLineitem>() {},
         Metadata = new List<AccountingMetadata>() {},
-        PostedAt = System.DateTime.Parse("2025-04-27T06:22:37.417Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2025-05-12T13:45:08.992Z").ToUniversalTime(),
         ShippingAddress = new PropertyAccountingPurchaseorderShippingAddress() {
             Address1 = "649 Maggio Overpass",
             City = "Lake Jaylan",
@@ -322,7 +325,7 @@ UpdateAccountingPurchaseorderRequest req = new UpdateAccountingPurchaseorderRequ
         },
         Status = AccountingPurchaseorderStatus.PartiallyRefunded,
         TotalAmount = 0D,
-        UpdatedAt = System.DateTime.Parse("2021-02-26T05:43:51.983Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-26T23:11:58.691Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

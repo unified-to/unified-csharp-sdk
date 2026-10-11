@@ -23,3 +23,4 @@ var custom = HrisGroupType.Of("custom_value");
 | `BusinessUnit`  | BUSINESS_UNIT   |
 | `Branch`        | BRANCH          |
 | `SubDepartment` | SUB_DEPARTMENT  |
+| `PayGroup`      | PAY_GROUP       |

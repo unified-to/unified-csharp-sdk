@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyCrmEventNote
     {
+        /// <summary>
+        /// The event note's description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 

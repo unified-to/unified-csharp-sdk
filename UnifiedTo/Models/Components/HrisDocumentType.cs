@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// unified, normalized document type (OTHER when unmappable).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisDocumentType : IEquatable<HrisDocumentType>
     {

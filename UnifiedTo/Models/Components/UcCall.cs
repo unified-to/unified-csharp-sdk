@@ -19,18 +19,36 @@ namespace UnifiedTo.Models.Components
 
     public class UcCall
     {
+        /// <summary>
+        /// The contact ID for call (reference to UcContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
         [JsonProperty("contacts")]
         public List<UcContact>? Contacts { get; set; }
 
+        /// <summary>
+        /// opaque identifier shared across legs of one interaction.
+        /// </summary>
+        [JsonProperty("conversation_identifier")]
+        public string? ConversationIdentifier { get; set; }
+
+        /// <summary>
+        /// The date that this call object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The end time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this call object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -40,9 +58,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<UcMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this call.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The start time of the call (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -55,9 +79,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public UcCallType? Type { get; set; }
 
+        /// <summary>
+        /// The last date that this call object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 

@@ -19,30 +19,57 @@ namespace UnifiedTo.Models.Components
 
     public class SocialInsight
     {
+        /// <summary>
+        /// When the insight was recorded (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The day/timestamp of the data point.
+        /// </summary>
         [JsonProperty("date")]
         public DateTime? Date { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the insight data point.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The metric being reported.
+        /// </summary>
         [JsonProperty("metric")]
         public Metric? Metric { get; set; }
 
+        /// <summary>
+        /// The aggregation period of the value.
+        /// </summary>
         [JsonProperty("period")]
         public Period? Period { get; set; }
 
+        /// <summary>
+        /// Optional: the post these stats belong to.
+        /// </summary>
         [JsonProperty("post_id")]
         public string? PostId { get; set; }
 
+        /// <summary>
+        /// The social profile these stats belong to.
+        /// </summary>
         [JsonProperty("profile_id")]
         public string? ProfileId { get; set; }
 
+        /// <summary>
+        /// Raw data from integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The metric value.
+        /// </summary>
         [JsonProperty("value")]
         public double? Value { get; set; }
     }

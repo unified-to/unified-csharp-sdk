@@ -25,24 +25,42 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("additionalManagers")]
         public List<ScimManager>? AdditionalManagers { get; set; }
 
+        /// <summary>
+        /// 1985-07-20.
+        /// </summary>
         [JsonProperty("birthday")]
         public DateTime? Birthday { get; set; }
 
+        /// <summary>
+        /// Identifies the name of a cost center.
+        /// </summary>
         [JsonProperty("costCenter")]
         public string? CostCenter { get; set; }
 
+        /// <summary>
+        /// User currency.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Identifies the name of a department.
+        /// </summary>
         [JsonProperty("department")]
         public string? Department { get; set; }
 
+        /// <summary>
+        /// Identifies the name of a division.
+        /// </summary>
         [JsonProperty("division")]
         public string? Division { get; set; }
 
         [JsonProperty("employeeNumber")]
         public string? EmployeeNumber { get; set; }
 
+        /// <summary>
+        /// 2022-02-25.
+        /// </summary>
         [JsonProperty("endDate")]
         public DateTime? EndDate { get; set; }
 
@@ -52,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("level")]
         public string? Level { get; set; }
 
+        /// <summary>
+        /// Berlin.
+        /// </summary>
         [JsonProperty("location")]
         public string? Location { get; set; }
 
@@ -61,9 +82,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("manager")]
         public PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager? Manager { get; set; }
 
+        /// <summary>
+        /// Identifies the name of an organization.
+        /// </summary>
         [JsonProperty("organization")]
         public string? Organization { get; set; }
 
+        /// <summary>
+        /// 2011-03-25.
+        /// </summary>
         [JsonProperty("startDate")]
         public DateTime? StartDate { get; set; }
     }

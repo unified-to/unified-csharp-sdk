@@ -28,24 +28,45 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("aliases")]
         public List<string>? Aliases { get; set; }
 
+        /// <summary>
+        /// Connection ID that this package belongs to.
+        /// </summary>
         [JsonProperty("connection_id")]
         public string? ConnectionId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Detailed description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Whether provider redirects user to complete assessment.
+        /// </summary>
         [JsonProperty("has_redirect_url")]
         public bool? HasRedirectUrl { get; set; }
 
+        /// <summary>
+        /// Where provider redirects user after completion.
+        /// </summary>
         [JsonProperty("has_target_url")]
         public bool? HasTargetUrl { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the assessment package.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// URL to find additional information about this package.
+        /// </summary>
         [JsonProperty("info_url")]
         public string? InfoUrl { get; set; }
 
@@ -55,12 +76,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("integration_types")]
         public List<string>? IntegrationTypes { get; set; }
 
+        /// <summary>
+        /// Maximum possible score if this assessment returns a score.
+        /// </summary>
         [JsonProperty("max_score")]
         public double? MaxScore { get; set; }
 
+        /// <summary>
+        /// Name of the assessment package.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Whether IP address is required.
+        /// </summary>
         [JsonProperty("needs_ip_address")]
         public bool? NeedsIpAddress { get; set; }
 
@@ -85,9 +115,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public AssessmentPackageType Type { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Workspace ID that this package belongs to (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }
     }

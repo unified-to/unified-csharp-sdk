@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Format of the label (PDF, PNG, ZPL, EPL2).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LabelFormat : IEquatable<LabelFormat>
     {

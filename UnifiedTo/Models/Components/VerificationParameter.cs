@@ -40,6 +40,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("options")]
         public List<string>? Options { get; set; }
 
+        /// <summary>
+        /// question to ask the human.
+        /// </summary>
         [JsonProperty("public_question")]
         public string? PublicQuestion { get; set; }
 

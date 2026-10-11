@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The event to subscribe to. "deleted" is supported on native webhooks, and on virtual webhooks where the integration supports it. Check the integration's Feature Support tab.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class WebhookEvent : IEquatable<WebhookEvent>
     {

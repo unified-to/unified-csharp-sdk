@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// direction: DEBIT, CREDIT.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingBankfeedtransactionType : IEquatable<AccountingBankfeedtransactionType>
     {

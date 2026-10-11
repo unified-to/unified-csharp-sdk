@@ -19,57 +19,93 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentSubscription
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("canceled_at")]
         public DateTime? CanceledAt { get; set; }
 
+        /// <summary>
+        /// a reference to an Accounting Contact (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("current_period_end_at")]
         public DateTime? CurrentPeriodEndAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("current_period_start_at")]
         public DateTime? CurrentPeriodStartAt { get; set; }
 
+        /// <summary>
+        /// The day of the month to charge customers on. 1-28 or -1 to indicate the last day of the month. Only applies when the interval_unit is MONTH.
+        /// </summary>
         [JsonProperty("day_of_month")]
         public double? DayOfMonth { get; set; }
 
+        /// <summary>
+        /// The day of the week to charge customers on. 1-7 or -1 to indicate the last day of the week. Only applies when the interval_unit is WEEK.
+        /// </summary>
         [JsonProperty("day_of_week")]
         public double? DayOfWeek { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The number of intervals between charges within the interval_unit. Defaults to 1.
+        /// </summary>
         [JsonProperty("interval")]
         public double? Interval { get; set; }
 
         [JsonProperty("interval_unit")]
         public IntervalUnit? IntervalUnit { get; set; }
 
+        /// <summary>
+        /// a reference to an Accounting Invoice (reference to AccountingInvoice).
+        /// </summary>
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
         [JsonProperty("lineitems")]
         public List<PaymentLineitem>? Lineitems { get; set; }
 
+        /// <summary>
+        /// the month on which to charge a customer (1-12). Only applies when the interval_unit is YEAR.
+        /// </summary>
         [JsonProperty("month")]
         public double? Month { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -79,6 +115,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

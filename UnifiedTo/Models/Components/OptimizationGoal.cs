@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class OptimizationGoal : IEquatable<OptimizationGoal>
     {

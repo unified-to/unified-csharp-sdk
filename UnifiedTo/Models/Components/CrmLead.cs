@@ -20,18 +20,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyCrmLeadAddress? Address { get; set; }
 
+        /// <summary>
+        /// (reference to CrmCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 
+        /// <summary>
+        /// (reference to CrmContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("creator_user_id")]
         public string? CreatorUserId { get; set; }
 
@@ -71,9 +83,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephones")]
         public List<CrmTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// The job title of the lead.
+        /// </summary>
+        [JsonProperty("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

@@ -18,18 +18,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("company_domain")]
         public string? CompanyDomain { get; set; }
 
+        /// <summary>
+        /// (reference to EnrichCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
         [JsonProperty("location")]
         public string? Location { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 

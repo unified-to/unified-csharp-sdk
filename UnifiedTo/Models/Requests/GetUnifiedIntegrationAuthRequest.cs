@@ -14,6 +14,12 @@ namespace UnifiedTo.Models.Requests
 
     public class GetUnifiedIntegrationAuthRequest
     {
+        /// <summary>
+        /// Existing connection ID to re-authorize in place instead of creating a duplicate. Requires reauth_token.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=connection_id")]
+        public string? ConnectionId { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=env")]
         public string? Env { get; set; }
 
@@ -40,6 +46,12 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=lang")]
         public string? Lang { get; set; }
+
+        /// <summary>
+        /// Single-use token from "Create a re-authorization token for a connection" (POST /unified/connection/{id}/reauth); required with connection_id.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=reauth_token")]
+        public string? ReauthToken { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=redirect")]
         public bool? Redirect { get; set; }

@@ -19,15 +19,24 @@ namespace UnifiedTo.Models.Components
 
     public class AtsJobOpening
     {
+        /// <summary>
+        /// points to an application.
+        /// </summary>
         [JsonProperty("application_id")]
         public string? ApplicationId { get; set; }
 
         [JsonProperty("close_reason")]
         public string? CloseReason { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("opened_at")]
         public DateTime? OpenedAt { get; set; }
 

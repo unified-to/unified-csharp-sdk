@@ -15,6 +15,9 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingProfitlossAccount
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 

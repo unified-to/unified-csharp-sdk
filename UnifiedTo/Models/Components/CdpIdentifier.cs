@@ -19,18 +19,33 @@ namespace UnifiedTo.Models.Components
 
     public class CdpIdentifier
     {
+        /// <summary>
+        /// The encoding of the identifier value (eg. raw, sha256).
+        /// </summary>
         [JsonProperty("encoding")]
         public string? Encoding { get; set; }
 
+        /// <summary>
+        /// Whether this is the primary identifier for the profile.
+        /// </summary>
         [JsonProperty("is_primary")]
         public bool? IsPrimary { get; set; }
 
+        /// <summary>
+        /// The source that provided this identifier.
+        /// </summary>
         [JsonProperty("source")]
         public string? Source { get; set; }
 
+        /// <summary>
+        /// The type of the identifier (eg. EMAIL, USER_ID, ANONYMOUS_ID).
+        /// </summary>
         [JsonProperty("type")]
         public CdpIdentifierType? Type { get; set; }
 
+        /// <summary>
+        /// The identifier value that resolves to the profile.
+        /// </summary>
         [JsonProperty("value")]
         public string Value { get; set; } = default!;
     }

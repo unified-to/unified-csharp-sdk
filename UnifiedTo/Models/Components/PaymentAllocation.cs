@@ -19,21 +19,39 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentAllocation
     {
+        /// <summary>
+        /// Date and time when the payment was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("allocated_at")]
         public DateTime? AllocatedAt { get; set; }
 
+        /// <summary>
+        /// The amount of the payment applied to this object.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// ISO 4217 currency code of the applied amount.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// The exchange rate at the time the payment was applied, for multi-currency.
+        /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; }
 
+        /// <summary>
+        /// The id of the object this payment was applied to.
+        /// </summary>
         [JsonProperty("object_id")]
         public string? ObjectId { get; set; }
 
+        /// <summary>
+        /// The type of object this payment was applied to.
+        /// </summary>
         [JsonProperty("object_type")]
         public PaymentAllocationObjectType? ObjectType { get; set; }
     }

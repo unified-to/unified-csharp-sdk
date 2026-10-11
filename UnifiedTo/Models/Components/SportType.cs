@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The primary sport of the group.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class SportType : IEquatable<SportType>
     {

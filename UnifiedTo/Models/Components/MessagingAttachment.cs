@@ -14,6 +14,9 @@ namespace UnifiedTo.Models.Components
 
     public class MessagingAttachment
     {
+        /// <summary>
+        /// the inline attachment's content_id.
+        /// </summary>
         [JsonProperty("content_identifier")]
         public string? ContentIdentifier { get; set; }
 

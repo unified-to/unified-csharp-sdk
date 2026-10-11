@@ -44,11 +44,11 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
     accountingContact: new AccountingContact() {
         AssociatedContacts = new List<AccountingAssociatedContact>() {
             new AccountingAssociatedContact() {
-                Id = "9bebb770-590a-4626-9e91-a1e3f6a1a152",
+                Id = "9b5c2f50-3514-43d7-aad0-d3ec98a9103d",
                 Name = "Delores Reynolds",
             },
             new AccountingAssociatedContact() {
-                Id = "98dc7b2b-a61a-4a86-a865-2c32e436115f",
+                Id = "98c10c29-8cbf-45a2-b73d-3a24353fdd78",
                 Name = "Delores Reynolds",
             },
         },
@@ -71,7 +71,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
             },
         },
         FirstName = "Delores",
-        Id = "8ed22c78-3f9d-4b74-8667-42e4fe13d6d2",
+        Id = "a7c01682-7ccf-4b17-be2a-46f6b10e8e2f",
         Identification = "amicitia",
         IsActive = true,
         IsCustomer = true,
@@ -81,7 +81,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "ebd23a6a-340a-4205-bc59-1ccf6a918747",
+                Id = "ec710ebe-1e5a-45d5-b416-8cc245211f46",
                 Name = "Visa 1234",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -108,7 +108,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-06T04:50:42.426Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-15T08:19:00.768Z").ToUniversalTime(),
         Website = "https://noxious-advertisement.org",
     },
     connectionId: "<id>"
@@ -181,7 +181,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
             },
         },
         FirstName = "Mohammad",
-        Id = "e6dec62f-19f1-492d-9db1-5b8ba58a1c05",
+        Id = "b14e3254-2431-4d98-a07b-d0d5e4764255",
         ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -197,7 +197,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "57b5af22-3df9-46c0-b217-6d7b52ad1b23",
+                Id = "015a0955-5666-45a8-873f-d458fc9bfd38",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -221,7 +221,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-23T10:54:19.069Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-23T23:05:07.126Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -276,7 +276,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         FirstName = "Luther",
-        Id = "a07b6979-089e-4649-be28-728229ad5c33",
+        Id = "71892722-5d88-40d7-bf99-7d405cd261d5",
         LastName = "Rogahn",
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
@@ -294,7 +294,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-11-20T14:03:27.338Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-02T11:47:51.993Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -592,11 +592,11 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
     AccountingContact = new AccountingContact() {
         AssociatedContacts = new List<AccountingAssociatedContact>() {
             new AccountingAssociatedContact() {
-                Id = "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+                Id = "ab6100bc-c0cf-43fc-8ce0-eb6e166a84ba",
                 Name = "Delores Reynolds",
             },
             new AccountingAssociatedContact() {
-                Id = "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+                Id = "a617cbfd-4d86-4769-a0c8-8bbe99244b53",
                 Name = "Delores Reynolds",
             },
         },
@@ -619,7 +619,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4a153b39-b59a-47be-a636-304762d04879",
+        Id = "7b4c36f6-9ea3-4138-af0a-48fdb5c23c4f",
         Identification = "amicitia",
         IsActive = true,
         IsCustomer = true,
@@ -629,7 +629,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+                Id = "aa7b1b9d-d1bb-4a82-8262-b46a99ffd007",
                 Name = "Visa 1234",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -656,7 +656,7 @@ PatchAccountingContactRequest req = new PatchAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-06T04:50:42.446Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-15T08:19:00.780Z").ToUniversalTime(),
         Website = "https://noxious-advertisement.org",
     },
     ConnectionId = "<id>",
@@ -730,7 +730,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "c715a1d1-e31f-43a5-9150-ae4499298002",
+        Id = "3d197be4-3078-4cdc-89cd-6edd2aebf2d5",
         ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -746,7 +746,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e8da3d98-eae7-454b-935d-79a3dcece35c",
+                Id = "166ca224-cff1-42da-a3bd-01df42d85a55",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -770,7 +770,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-23T10:54:19.069Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-23T23:05:07.127Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -826,7 +826,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+        Id = "5c181c14-a751-42f2-89eb-22b7f876a2a5",
         LastName = "Rogahn",
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
@@ -844,7 +844,7 @@ PatchUcContactRequest req = new PatchUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-11-20T14:03:27.344Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-02T11:47:52.001Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1013,11 +1013,11 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
     AccountingContact = new AccountingContact() {
         AssociatedContacts = new List<AccountingAssociatedContact>() {
             new AccountingAssociatedContact() {
-                Id = "260f83a7-e7b8-4ae9-b0ce-be94b41a7b35",
+                Id = "ab6100bc-c0cf-43fc-8ce0-eb6e166a84ba",
                 Name = "Delores Reynolds",
             },
             new AccountingAssociatedContact() {
-                Id = "870d6f8b-7ceb-4ba0-b3be-5fe402b0b281",
+                Id = "a617cbfd-4d86-4769-a0c8-8bbe99244b53",
                 Name = "Delores Reynolds",
             },
         },
@@ -1040,7 +1040,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
             },
         },
         FirstName = "Delores",
-        Id = "4a153b39-b59a-47be-a636-304762d04879",
+        Id = "7b4c36f6-9ea3-4138-af0a-48fdb5c23c4f",
         Identification = "amicitia",
         IsActive = true,
         IsCustomer = true,
@@ -1050,7 +1050,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
         PaymentMethods = new List<AccountingContactPaymentMethod>() {
             new AccountingContactPaymentMethod() {
                 Default = true,
-                Id = "7483f4d4-8c30-45ce-837b-caf96891cfe5",
+                Id = "aa7b1b9d-d1bb-4a82-8262-b46a99ffd007",
                 Name = "Visa 1234",
                 Type = AccountingContactPaymentMethodType.Card,
             },
@@ -1077,7 +1077,7 @@ UpdateAccountingContactRequest req = new UpdateAccountingContactRequest() {
                 Type = AccountingTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2023-12-06T04:50:42.446Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-15T08:19:00.780Z").ToUniversalTime(),
         Website = "https://noxious-advertisement.org",
     },
     ConnectionId = "<id>",
@@ -1151,7 +1151,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "c715a1d1-e31f-43a5-9150-ae4499298002",
+        Id = "3d197be4-3078-4cdc-89cd-6edd2aebf2d5",
         ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -1167,7 +1167,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e8da3d98-eae7-454b-935d-79a3dcece35c",
+                Id = "166ca224-cff1-42da-a3bd-01df42d85a55",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1191,7 +1191,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-23T10:54:19.069Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-23T23:05:07.127Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1247,7 +1247,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         FirstName = "Luther",
-        Id = "c2fb5726-94f5-4b43-94a5-49c7d7dd7be8",
+        Id = "5c181c14-a751-42f2-89eb-22b7f876a2a5",
         LastName = "Rogahn",
         Name = "Luther Rogahn",
         Telephones = new List<UcTelephone>() {
@@ -1265,7 +1265,7 @@ UpdateUcContactRequest req = new UpdateUcContactRequest() {
             },
         },
         Title = "Chief Optimization Executive",
-        UpdatedAt = System.DateTime.Parse("2023-11-20T14:03:27.344Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-12-02T11:47:52.001Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

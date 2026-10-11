@@ -17,9 +17,15 @@ namespace UnifiedTo.Models.Components
 
     public class LmsClass
     {
+        /// <summary>
+        /// (reference to Course).
+        /// </summary>
         [JsonProperty("course_id")]
         public string? CourseId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -47,6 +53,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("students")]
         public List<LmsReference>? Students { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

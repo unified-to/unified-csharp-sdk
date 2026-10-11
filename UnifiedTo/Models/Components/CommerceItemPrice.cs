@@ -14,6 +14,9 @@ namespace UnifiedTo.Models.Components
 
     public class CommerceItemPrice
     {
+        /// <summary>
+        /// The original price of the item before an adjustment or a sale.
+        /// </summary>
         [JsonProperty("compare_at_price")]
         public double? CompareAtPrice { get; set; }
 

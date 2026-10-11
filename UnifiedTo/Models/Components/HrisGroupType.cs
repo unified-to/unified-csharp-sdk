@@ -26,6 +26,7 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisGroupType BusinessUnit = new HrisGroupType("BUSINESS_UNIT");
         public static readonly HrisGroupType Branch = new HrisGroupType("BRANCH");
         public static readonly HrisGroupType SubDepartment = new HrisGroupType("SUB_DEPARTMENT");
+        public static readonly HrisGroupType PayGroup = new HrisGroupType("PAY_GROUP");
 
         private static readonly Dictionary <string, HrisGroupType> _knownValues =
             new Dictionary <string, HrisGroupType> ()
@@ -36,7 +37,8 @@ namespace UnifiedTo.Models.Components
                 ["DIVISION"] = Division,
                 ["BUSINESS_UNIT"] = BusinessUnit,
                 ["BRANCH"] = Branch,
-                ["SUB_DEPARTMENT"] = SubDepartment
+                ["SUB_DEPARTMENT"] = SubDepartment,
+                ["PAY_GROUP"] = PayGroup
             };
 
         private static readonly ConcurrentDictionary<string, HrisGroupType> _values =

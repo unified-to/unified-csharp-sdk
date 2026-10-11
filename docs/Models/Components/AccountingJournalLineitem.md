@@ -3,20 +3,20 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `AccountId`        | *string*           | :heavy_minus_sign: | N/A                |
-| `CategoryIds`      | List<*string*>     | :heavy_minus_sign: | N/A                |
-| `ContactId`        | *string*           | :heavy_minus_sign: | N/A                |
-| `CreditAmount`     | *double*           | :heavy_minus_sign: | N/A                |
-| `DebitAmount`      | *double*           | :heavy_minus_sign: | N/A                |
-| `Description`      | *string*           | :heavy_minus_sign: | N/A                |
-| `GroupId`          | *string*           | :heavy_minus_sign: | N/A                |
-| `Id`               | *string*           | :heavy_minus_sign: | N/A                |
-| `InvoiceId`        | *string*           | :heavy_minus_sign: | N/A                |
-| `OrganizationId`   | *string*           | :heavy_minus_sign: | N/A                |
-| `PaymentId`        | *string*           | :heavy_minus_sign: | N/A                |
-| `ProjectId`        | *string*           | :heavy_minus_sign: | N/A                |
-| `TaxAmount`        | *double*           | :heavy_minus_sign: | N/A                |
-| `TaxrateId`        | *string*           | :heavy_minus_sign: | N/A                |
-| `TotalAmount`      | *double*           | :heavy_minus_sign: | N/A                |
+| Field                                                          | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `AccountId`                                                    | *string*                                                       | :heavy_minus_sign:                                             | (reference to AccountingAccount)                               |
+| `CategoryIds`                                                  | List<*string*>                                                 | :heavy_minus_sign:                                             | N/A                                                            |
+| `ContactId`                                                    | *string*                                                       | :heavy_minus_sign:                                             | (reference to AccountingContact)                               |
+| `CreditAmount`                                                 | *double*                                                       | :heavy_minus_sign:                                             | N/A                                                            |
+| `DebitAmount`                                                  | *double*                                                       | :heavy_minus_sign:                                             | will replace total_amount (absolute value)                     |
+| `Description`                                                  | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            |
+| `GroupId`                                                      | *string*                                                       | :heavy_minus_sign:                                             | points to a HRIS Group (reference to HrisGroup)                |
+| `Id`                                                           | *string*                                                       | :heavy_minus_sign:                                             | N/A                                                            |
+| `InvoiceId`                                                    | *string*                                                       | :heavy_minus_sign:                                             | (reference to AccountingInvoice)                               |
+| `OrganizationId`                                               | *string*                                                       | :heavy_minus_sign:                                             | points to a AccountingOrganization                             |
+| `PaymentId`                                                    | *string*                                                       | :heavy_minus_sign:                                             | link to PaymentPayment (reference to PaymentPayment)           |
+| `ProjectId`                                                    | *string*                                                       | :heavy_minus_sign:                                             | (reference to TaskProject)                                     |
+| `TaxAmount`                                                    | *double*                                                       | :heavy_minus_sign:                                             | N/A                                                            |
+| `TaxrateId`                                                    | *string*                                                       | :heavy_minus_sign:                                             | ref -> AccountingTaxrate applied to the line                   |
+| `TotalAmount`                                                  | *double*                                                       | :heavy_minus_sign:                                             | will be a positive value for a debit and negative for a credit |

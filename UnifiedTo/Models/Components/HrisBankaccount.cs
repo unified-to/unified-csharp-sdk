@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_number")]
         public string? AccountNumber { get; set; }
 
+        /// <summary>
+        /// when full number not returned.
+        /// </summary>
         [JsonProperty("account_number_last4")]
         public string? AccountNumberLast4 { get; set; }
 
@@ -31,30 +34,90 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("bank_name")]
         public string? BankName { get; set; }
 
+        /// <summary>
+        /// BIC / SWIFT code.
+        /// </summary>
+        [JsonProperty("bic")]
+        public string? Bic { get; set; }
+
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// ISO 2-digit country code of the bank account.
+        /// </summary>
+        [JsonProperty("country_code")]
+        public string? CountryCode { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
+
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
+        /// <summary>
+        /// International Bank Account Number (non-US accounts).
+        /// </summary>
+        [JsonProperty("iban")]
+        public string? Iban { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// primary for direct deposit.
+        /// </summary>
         [JsonProperty("is_primary")]
         public bool? IsPrimary { get; set; }
 
+        /// <summary>
+        /// account nickname (e.g. "BoA Checking").
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// order in which split accounts are funded (1 = first).
+        /// </summary>
+        [JsonProperty("priority")]
+        public double? Priority { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// 9-digit US routing number.
+        /// </summary>
         [JsonProperty("routing_number")]
         public string? RoutingNumber { get; set; }
 
+        /// <summary>
+        /// percentage (when split_type is PERCENTAGE) or money (when FIXED).
+        /// </summary>
+        [JsonProperty("split_amount")]
+        public double? SplitAmount { get; set; }
+
+        /// <summary>
+        /// how net pay is split into this account when an employee has several accounts.
+        /// </summary>
+        [JsonProperty("split_type")]
+        public SplitType? SplitType { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// employee ID (required for listcreate) (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

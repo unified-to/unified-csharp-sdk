@@ -19,30 +19,54 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingPaymentterm
     {
+        /// <summary>
+        /// STANDARD (days-based) or DATE_DRIVEN (month-based).
+        /// </summary>
         [JsonProperty("category")]
         public Models.Components.Category? Category { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// (date-driven) day of month payment is due (1–31).
+        /// </summary>
         [JsonProperty("day_of_month_due")]
         public double? DayOfMonthDue { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (date-driven) pay before this day of month for the discount.
+        /// </summary>
         [JsonProperty("discount_day_of_month")]
         public double? DiscountDayOfMonth { get; set; }
 
+        /// <summary>
+        /// (standard) days within which an early-pay discount applies.
+        /// </summary>
         [JsonProperty("discount_days")]
         public double? DiscountDays { get; set; }
 
+        /// <summary>
+        /// (standard) early-pay discount rate.
+        /// </summary>
         [JsonProperty("discount_percent")]
         public double? DiscountPercent { get; set; }
 
+        /// <summary>
+        /// (standard) days until payment is due.
+        /// </summary>
         [JsonProperty("due_days")]
         public double? DueDays { get; set; }
 
+        /// <summary>
+        /// (date-driven) if invoiced within N days of month-end, due next month.
+        /// </summary>
         [JsonProperty("due_next_month_days")]
         public double? DueNextMonthDays { get; set; }
 
@@ -55,6 +79,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AccountingMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// term label, e.g. "Net 30"
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -67,6 +94,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public AccountingPaymenttermType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

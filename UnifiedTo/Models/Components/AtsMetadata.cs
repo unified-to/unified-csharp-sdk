@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("namespace")]
         public string? Namespace { get; set; }
 
+        /// <summary>
+        /// Actual textual value of the slug.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 

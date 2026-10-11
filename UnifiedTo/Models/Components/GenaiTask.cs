@@ -19,15 +19,27 @@ namespace UnifiedTo.Models.Components
 
     public class GenaiTask
     {
+        /// <summary>
+        /// id of the genai_agent (the reusable agent/preset configuration) that runs this task.
+        /// </summary>
         [JsonProperty("agent_id")]
         public string? AgentId { get; set; }
 
+        /// <summary>
+        /// When the coding agent stopped working on the task. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The failure description (when the status is FAILED).
+        /// </summary>
         [JsonProperty("error")]
         public string? Error { get; set; }
 
@@ -37,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The natural-language instructions given to the coding agent.
+        /// </summary>
         [JsonProperty("instructions")]
         public string? Instructions { get; set; }
 
@@ -55,45 +70,78 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("model_id")]
         public string? ModelId { get; set; }
 
+        /// <summary>
+        /// A short human-readable title for the coding agent task.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// id of the genai_organization (the organization or execution environment) that this task runs under.
+        /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// The pull/merge request that the coding agent opened for its work.
+        /// </summary>
         [JsonProperty("pullrequest_url")]
         public string? PullrequestUrl { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The git repository that the coding agent works in.
+        /// </summary>
         [JsonProperty("repo_url")]
         public string? RepoUrl { get; set; }
 
+        /// <summary>
+        /// The name of the branch that the coding agent starts its work from.
+        /// </summary>
         [JsonProperty("source_branch_identifier")]
         public string? SourceBranchIdentifier { get; set; }
 
+        /// <summary>
+        /// When the coding agent started working on the task. (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("started_at")]
         public DateTime? StartedAt { get; set; }
 
         [JsonProperty("status")]
         public GenaiTaskStatus? Status { get; set; }
 
+        /// <summary>
+        /// The coding agent's summary of the work that it performed.
+        /// </summary>
         [JsonProperty("summary")]
         public string? Summary { get; set; }
 
+        /// <summary>
+        /// The name of the branch that the coding agent pushed its work to.
+        /// </summary>
         [JsonProperty("target_branch_identifier")]
         public string? TargetBranchIdentifier { get; set; }
 
         [JsonProperty("tokens_used")]
         public double? TokensUsed { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 
+        /// <summary>
+        /// The provider's own web page for this task.
+        /// </summary>
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }
     }

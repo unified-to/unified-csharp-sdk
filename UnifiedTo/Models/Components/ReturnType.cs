@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Type of return.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ReturnType : IEquatable<ReturnType>
     {

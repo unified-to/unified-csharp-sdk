@@ -52,11 +52,11 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "c1c1b89e-ef60-4c8d-b0b6-96694cd48f24",
+        Id = "1351c7f6-dcd1-4a84-837f-a54b59713590",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
-            "https://classic-sightseeing.com/",
+            "https://ruddy-unblinking.info/",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -66,11 +66,11 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "d45295e5-8c31-4cb4-b4c8-caba2e4bbe0d",
+                Id = "35f894d9-ad78-475e-9c03-219997df5b35",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "sublime"
+                    "vitiosus"
                 ),
             },
         },
@@ -87,7 +87,8 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                 Type = CrmTelephoneType.Work,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2020-05-15T07:51:42.622Z").ToUniversalTime(),
+        Title = "Direct Research Assistant",
+        UpdatedAt = System.DateTime.Parse("2020-05-17T01:09:27.631Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -239,11 +240,11 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "e2532ace-3a56-492e-bdc5-94a44fd6687f",
+        Id = "f563b6c8-fd43-41c8-9689-147f6af572c7",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
-            "https://classic-sightseeing.com/",
+            "https://ruddy-unblinking.info/",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -253,11 +254,11 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "d4d56e66-c481-499f-9aac-c87b47aa2ffb",
+                Id = "c66c4398-66ca-42aa-85c7-7f969707934f",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "sublime"
+                    "vitiosus"
                 ),
             },
         },
@@ -274,7 +275,8 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                 Type = CrmTelephoneType.Work,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2020-05-15T07:51:42.623Z").ToUniversalTime(),
+        Title = "Direct Research Assistant",
+        UpdatedAt = System.DateTime.Parse("2020-05-17T01:09:27.634Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -383,11 +385,11 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "e2532ace-3a56-492e-bdc5-94a44fd6687f",
+        Id = "f563b6c8-fd43-41c8-9689-147f6af572c7",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
-            "https://classic-sightseeing.com/",
+            "https://ruddy-unblinking.info/",
         },
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
@@ -397,11 +399,11 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "d4d56e66-c481-499f-9aac-c87b47aa2ffb",
+                Id = "c66c4398-66ca-42aa-85c7-7f969707934f",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
-                    "sublime"
+                    "vitiosus"
                 ),
             },
         },
@@ -418,7 +420,8 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                 Type = CrmTelephoneType.Work,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2020-05-15T07:51:42.623Z").ToUniversalTime(),
+        Title = "Direct Research Assistant",
+        UpdatedAt = System.DateTime.Parse("2020-05-17T01:09:27.634Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -20,9 +20,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyHrisLocationAddress? Address { get; set; }
 
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -41,6 +47,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// if this location is the headquarters of the company.
+        /// </summary>
         [JsonProperty("is_hq")]
         public bool? IsHq { get; set; }
 
@@ -62,6 +71,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

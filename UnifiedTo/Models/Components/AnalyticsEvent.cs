@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("country_code")]
         public string? CountryCode { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -64,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("page_url")]
         public string? PageUrl { get; set; }
 
+        /// <summary>
+        /// points to AnalyticsProperty.
+        /// </summary>
         [JsonProperty("property_id")]
         public string? PropertyId { get; set; }
 
@@ -73,9 +79,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("region")]
         public string? Region { get; set; }
 
+        /// <summary>
+        /// points to AnalyticsSession.
+        /// </summary>
         [JsonProperty("session_id")]
         public string? SessionId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
@@ -97,6 +109,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("value")]
         public double? Value { get; set; }
 
+        /// <summary>
+        /// points to AnalyticsVisitor.
+        /// </summary>
         [JsonProperty("visitor_id")]
         public string? VisitorId { get; set; }
     }

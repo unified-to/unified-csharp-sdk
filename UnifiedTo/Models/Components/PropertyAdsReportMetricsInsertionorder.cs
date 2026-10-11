@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -58,12 +61,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// client's reference ID for the insertion order.
+        /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
         [JsonProperty("status")]
         public PropertyAdsReportMetricsInsertionorderStatus? Status { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

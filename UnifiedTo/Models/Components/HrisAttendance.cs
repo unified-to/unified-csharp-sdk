@@ -17,44 +17,77 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Also called timesheets.
+    /// </summary>
     public class HrisAttendance
     {
         [JsonProperty("address")]
         public PropertyHrisAttendanceAddress? Address { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("approved_at")]
         public DateTime? ApprovedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("approver_user_id")]
         public string? ApproverUserId { get; set; }
 
         [JsonProperty("breaks")]
         public List<HrisAttendanceBreak>? Breaks { get; set; }
 
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// pairs with hourly_rate and tip amounts.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// cash tips declared by the employee for this attendance record.
+        /// </summary>
         [JsonProperty("declared_tips_amount")]
         public double? DeclaredTipsAmount { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("employee_user_id")]
         public string EmployeeUserId { get; set; } = default!;
 
+        /// <summary>
+        /// clock-out (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime EndAt { get; set; } = default!;
 
+        /// <summary>
+        /// department, team, etc. (reference to HrisGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
         [JsonProperty("hourly_rate")]
         public double? HourlyRate { get; set; }
 
+        /// <summary>
+        /// worked hours.
+        /// </summary>
         [JsonProperty("hours")]
         public double? Hours { get; set; }
 
@@ -64,27 +97,42 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("job_name")]
         public string? JobName { get; set; }
 
+        /// <summary>
+        /// (reference to HrisLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// card/non-cash tips attributed to this attendance record.
+        /// </summary>
         [JsonProperty("non_cash_tips_amount")]
         public double? NonCashTipsAmount { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// clock-in (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime StartAt { get; set; } = default!;
 
         [JsonProperty("status")]
         public HrisAttendanceStatus? Status { get; set; }
 
+        /// <summary>
+        /// the scheduled hris_timeshift this attendance record fulfils.
+        /// </summary>
         [JsonProperty("timeshift_id")]
         public string? TimeshiftId { get; set; }
 
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

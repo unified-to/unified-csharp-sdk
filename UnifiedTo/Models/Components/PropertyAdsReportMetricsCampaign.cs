@@ -31,21 +31,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("budget_unit")]
         public PropertyAdsReportMetricsCampaignBudgetUnit? BudgetUnit { get; set; }
 
+        /// <summary>
+        /// Resource name for existing/shared budget (Google).
+        /// </summary>
         [JsonProperty("campaign_budget_identifier")]
         public string? CampaignBudgetIdentifier { get; set; }
 
+        /// <summary>
+        /// Housing, employment, credit, NONE (Meta).
+        /// </summary>
         [JsonProperty("category")]
         public string? Category { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status.
+        /// </summary>
         [JsonProperty("effective_status")]
         public PropertyAdsReportMetricsCampaignEffectiveStatus? EffectiveStatus { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -79,6 +94,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -91,6 +109,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("total_spend_amount")]
         public double? TotalSpendAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

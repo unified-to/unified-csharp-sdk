@@ -15,15 +15,27 @@ namespace UnifiedTo.Models.Components
 
     public class CdpProfileSegment
     {
+        /// <summary>
+        /// When the profile's membership expires (if applicable) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("expires_at")]
         public DateTime? ExpiresAt { get; set; }
 
+        /// <summary>
+        /// When the profile joined the segment (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("joined_at")]
         public DateTime? JoinedAt { get; set; }
 
+        /// <summary>
+        /// The name of the segment/audience.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The segment/audience this profile belongs to; points to CdpSegment.
+        /// </summary>
         [JsonProperty("segment_id")]
         public string? SegmentId { get; set; }
     }

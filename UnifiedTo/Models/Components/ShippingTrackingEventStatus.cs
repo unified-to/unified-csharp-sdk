@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Status at the time of this event.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ShippingTrackingEventStatus : IEquatable<ShippingTrackingEventStatus>
     {

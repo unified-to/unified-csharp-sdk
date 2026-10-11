@@ -45,6 +45,26 @@ namespace UnifiedTo.Models.Requests
         Details,
         [JsonProperty("deduction")]
         Deduction,
+        [JsonProperty("payroll_id")]
+        PayrollId,
+        [JsonProperty("group_id")]
+        GroupId,
+        [JsonProperty("type")]
+        Type,
+        [JsonProperty("hours")]
+        Hours,
+        [JsonProperty("employee_tax_amount")]
+        EmployeeTaxAmount,
+        [JsonProperty("employer_tax_amount")]
+        EmployerTaxAmount,
+        [JsonProperty("deduction_amount")]
+        DeductionAmount,
+        [JsonProperty("employer_contribution_amount")]
+        EmployerContributionAmount,
+        [JsonProperty("gross_ytd_amount")]
+        GrossYtdAmount,
+        [JsonProperty("net_ytd_amount")]
+        NetYtdAmount,
         [JsonProperty("raw")]
         Raw,
     }

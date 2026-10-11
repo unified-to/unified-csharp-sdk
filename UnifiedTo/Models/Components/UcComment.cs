@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("content")]
         public string? Content { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
@@ -30,9 +33,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// reference to HrisEmployee (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

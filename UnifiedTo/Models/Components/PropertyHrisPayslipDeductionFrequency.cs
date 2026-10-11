@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Frequency for this deduction (should always be set, matches IHrisBenefit.frequency).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PropertyHrisPayslipDeductionFrequency : IEquatable<PropertyHrisPayslipDeductionFrequency>
     {
@@ -26,6 +29,8 @@ namespace UnifiedTo.Models.Components
         public static readonly PropertyHrisPayslipDeductionFrequency Hour = new PropertyHrisPayslipDeductionFrequency("HOUR");
         public static readonly PropertyHrisPayslipDeductionFrequency Month = new PropertyHrisPayslipDeductionFrequency("MONTH");
         public static readonly PropertyHrisPayslipDeductionFrequency Week = new PropertyHrisPayslipDeductionFrequency("WEEK");
+        public static readonly PropertyHrisPayslipDeductionFrequency Biweekly = new PropertyHrisPayslipDeductionFrequency("BIWEEKLY");
+        public static readonly PropertyHrisPayslipDeductionFrequency Semimonthly = new PropertyHrisPayslipDeductionFrequency("SEMIMONTHLY");
 
         private static readonly Dictionary <string, PropertyHrisPayslipDeductionFrequency> _knownValues =
             new Dictionary <string, PropertyHrisPayslipDeductionFrequency> ()
@@ -36,7 +41,9 @@ namespace UnifiedTo.Models.Components
                 ["YEAR"] = Year,
                 ["HOUR"] = Hour,
                 ["MONTH"] = Month,
-                ["WEEK"] = Week
+                ["WEEK"] = Week,
+                ["BIWEEKLY"] = Biweekly,
+                ["SEMIMONTHLY"] = Semimonthly
             };
 
         private static readonly ConcurrentDictionary<string, PropertyHrisPayslipDeductionFrequency> _values =

@@ -26,6 +26,8 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisCompensationFrequency Hour = new HrisCompensationFrequency("HOUR");
         public static readonly HrisCompensationFrequency Month = new HrisCompensationFrequency("MONTH");
         public static readonly HrisCompensationFrequency Week = new HrisCompensationFrequency("WEEK");
+        public static readonly HrisCompensationFrequency Biweekly = new HrisCompensationFrequency("BIWEEKLY");
+        public static readonly HrisCompensationFrequency Semimonthly = new HrisCompensationFrequency("SEMIMONTHLY");
 
         private static readonly Dictionary <string, HrisCompensationFrequency> _knownValues =
             new Dictionary <string, HrisCompensationFrequency> ()
@@ -36,7 +38,9 @@ namespace UnifiedTo.Models.Components
                 ["YEAR"] = Year,
                 ["HOUR"] = Hour,
                 ["MONTH"] = Month,
-                ["WEEK"] = Week
+                ["WEEK"] = Week,
+                ["BIWEEKLY"] = Biweekly,
+                ["SEMIMONTHLY"] = Semimonthly
             };
 
         private static readonly ConcurrentDictionary<string, HrisCompensationFrequency> _values =

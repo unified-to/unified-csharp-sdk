@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingSalesorder
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
@@ -28,24 +31,39 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
 
+        /// <summary>
+        /// Customer, Supplier (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// POS register/terminal/device (HRIS Device).
+        /// </summary>
         [JsonProperty("device_id")]
         public string? DeviceId { get; set; }
 
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
 
+        /// <summary>
+        /// selling/serving HR employee (server, cashier) (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("employee_user_id")]
         public string? EmployeeUserId { get; set; }
 
@@ -64,12 +82,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<AccountingLineitem>? Lineitems { get; set; }
 
+        /// <summary>
+        /// store/site; reference to a commerce_location or hris_location.
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
         [JsonProperty("metadata")]
         public List<AccountingMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// human-facing receipt/ticket/check number, distinct from id.
+        /// </summary>
         [JsonProperty("order_number")]
         public string? OrderNumber { get; set; }
 
@@ -82,6 +106,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payments")]
         public List<AccountingPaymentReference>? Payments { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
@@ -103,9 +130,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public AccountingSalesorderStatus? Status { get; set; }
 
+        /// <summary>
+        /// payment_subscription that generated this order, if recurring.
+        /// </summary>
         [JsonProperty("subscription_id")]
         public string? SubscriptionId { get; set; }
 
+        /// <summary>
+        /// pre-tax, pre-tip amount.
+        /// </summary>
         [JsonProperty("subtotal_amount")]
         public double? SubtotalAmount { get; set; }
 
@@ -118,6 +151,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

@@ -31,9 +31,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("cc")]
         public List<AtsEmail>? Cc { get; set; }
 
+        /// <summary>
+        /// (reference to AtsCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -79,6 +85,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public AtsActivityType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Frequency that costs accrue for this benefit. For insurance/benefits, usually "MONTHLY". For compensation, matches pay cycle (WEEKLY, BIWEEKLY, etc).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisBenefitFrequency : IEquatable<HrisBenefitFrequency>
     {
@@ -26,6 +29,8 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisBenefitFrequency Hour = new HrisBenefitFrequency("HOUR");
         public static readonly HrisBenefitFrequency Month = new HrisBenefitFrequency("MONTH");
         public static readonly HrisBenefitFrequency Week = new HrisBenefitFrequency("WEEK");
+        public static readonly HrisBenefitFrequency Biweekly = new HrisBenefitFrequency("BIWEEKLY");
+        public static readonly HrisBenefitFrequency Semimonthly = new HrisBenefitFrequency("SEMIMONTHLY");
 
         private static readonly Dictionary <string, HrisBenefitFrequency> _knownValues =
             new Dictionary <string, HrisBenefitFrequency> ()
@@ -36,7 +41,9 @@ namespace UnifiedTo.Models.Components
                 ["YEAR"] = Year,
                 ["HOUR"] = Hour,
                 ["MONTH"] = Month,
-                ["WEEK"] = Week
+                ["WEEK"] = Week,
+                ["BIWEEKLY"] = Biweekly,
+                ["SEMIMONTHLY"] = Semimonthly
             };
 
         private static readonly ConcurrentDictionary<string, HrisBenefitFrequency> _values =

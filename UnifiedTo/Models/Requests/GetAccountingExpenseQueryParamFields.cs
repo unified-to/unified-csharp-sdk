@@ -71,6 +71,8 @@ namespace UnifiedTo.Models.Requests
         TaxrateId,
         [JsonProperty("exchange_rate")]
         ExchangeRate,
+        [JsonProperty("type")]
+        Type,
         [JsonProperty("raw")]
         Raw,
     }

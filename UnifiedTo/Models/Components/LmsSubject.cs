@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Depth of this subject in the provider's topic hierarchy (0 = top level).
+        /// </summary>
         [JsonProperty("rank")]
         public double? Rank { get; set; }
     }

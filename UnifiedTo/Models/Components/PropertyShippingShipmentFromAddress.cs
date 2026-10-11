@@ -26,27 +26,48 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("city")]
         public string? City { get; set; }
 
+        /// <summary>
+        /// Company name (for commercial addresses).
+        /// </summary>
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 
         [JsonProperty("country")]
         public string? Country { get; set; }
 
+        /// <summary>
+        /// ISO 2-digit country code.
+        /// </summary>
         [JsonProperty("country_code")]
         public string? CountryCode { get; set; }
 
+        /// <summary>
+        /// Special delivery notes.
+        /// </summary>
         [JsonProperty("delivery_instructions")]
         public string? DeliveryInstructions { get; set; }
 
+        /// <summary>
+        /// Email address (for delivery notifications).
+        /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; }
 
+        /// <summary>
+        /// Alias for address_type === 'RESIDENTIAL'
+        /// </summary>
         [JsonProperty("is_residential")]
         public bool? IsResidential { get; set; }
 
+        /// <summary>
+        /// Whether address has been validated.
+        /// </summary>
         [JsonProperty("is_validated")]
         public bool? IsValidated { get; set; }
 
+        /// <summary>
+        /// Recipientsender name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -59,6 +80,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("region_code")]
         public string? RegionCode { get; set; }
 
+        /// <summary>
+        /// Phone number (required by FedEx, UPS, DHL).
+        /// </summary>
         [JsonProperty("telephone")]
         public string? Telephone { get; set; }
     }

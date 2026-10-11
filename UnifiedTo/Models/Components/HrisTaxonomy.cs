@@ -25,15 +25,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("alternative_names")]
         public List<string>? AlternativeNames { get; set; }
 
+        /// <summary>
+        /// 2nd-level grouping.
+        /// </summary>
         [JsonProperty("category")]
         public string? Category { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// 1st-level grouping (broadest).
+        /// </summary>
         [JsonProperty("domain")]
         public string? Domain { get; set; }
 
@@ -43,9 +52,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// the preferred label of the skill/role.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// id of the parent taxonomy item, for providers exposing arbitrary-depth trees.
+        /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
@@ -58,15 +73,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("role_ids")]
         public List<string>? RoleIds { get; set; }
 
+        /// <summary>
+        /// 3rd-level grouping.
+        /// </summary>
         [JsonProperty("subcategory")]
         public string? Subcategory { get; set; }
 
+        /// <summary>
+        /// the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation.
+        /// </summary>
         [JsonProperty("type")]
         public HrisTaxonomyType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// external reference URL for this item.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

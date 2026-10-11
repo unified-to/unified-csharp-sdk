@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("comment")]
         public string? Comment { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -52,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("recommendation")]
         public Recommendation? Recommendation { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

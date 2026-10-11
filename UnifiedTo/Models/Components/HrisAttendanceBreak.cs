@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("duration_minutes")]
         public double? DurationMinutes { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -27,9 +30,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_paid")]
         public bool? IsPaid { get; set; }
 
+        /// <summary>
+        /// break type label, e.g. "Lunch"
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
     }

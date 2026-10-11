@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// whether this is a review cycle or a goal cycle/timeframe.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PerformanceCycleType : IEquatable<PerformanceCycleType>
     {

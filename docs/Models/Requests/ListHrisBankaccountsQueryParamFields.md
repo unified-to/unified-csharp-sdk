@@ -25,4 +25,11 @@ var value = ListHrisBankaccountsQueryParamFields.Id;
 | `AccountNumberLast4` | account_number_last4 |
 | `Name`               | name                 |
 | `IsPrimary`          | is_primary           |
+| `Iban`               | iban                 |
+| `Bic`                | bic                  |
+| `CountryCode`        | country_code         |
+| `Currency`           | currency             |
+| `SplitType`          | split_type           |
+| `SplitAmount`        | split_amount         |
+| `Priority`           | priority             |
 | `Raw`                | raw                  |

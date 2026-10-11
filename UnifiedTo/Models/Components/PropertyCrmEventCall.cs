@@ -18,12 +18,21 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyCrmEventCall
     {
+        /// <summary>
+        /// The event call's descriptionnotes.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// The event call's duration in minutes.
+        /// </summary>
         [JsonProperty("duration")]
         public double? Duration { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
     }

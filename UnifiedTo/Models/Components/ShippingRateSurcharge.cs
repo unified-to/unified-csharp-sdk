@@ -14,15 +14,27 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingRateSurcharge
     {
+        /// <summary>
+        /// Surcharge amount.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// Surcharge type (e.g., "RESIDENTIAL", "FUEL", "SIGNATURE").
+        /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; }
 
+        /// <summary>
+        /// Description of surcharge.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Human-readable name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
     }

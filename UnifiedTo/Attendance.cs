@@ -27,7 +27,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an attendance.
         /// </summary>
-        /// <param name="hrisAttendance">A <see cref="HrisAttendance"/> parameter.</param>
+        /// <param name="hrisAttendance">Also called timesheets.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
         /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>
@@ -123,7 +123,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an attendance.
         /// </summary>
-        /// <param name="hrisAttendance">A <see cref="HrisAttendance"/> parameter.</param>
+        /// <param name="hrisAttendance">Also called timesheets.</param>
         /// <param name="connectionId">ID of the connection.</param>
         /// <param name="fields">Fields to return.</param>
         /// <param name="raw">Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar.</param>

@@ -19,15 +19,27 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingBankfeedtransaction
     {
+        /// <summary>
+        /// GL account once categorized (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// transaction amount (positive; direction from type).
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// the bank's own category label.
+        /// </summary>
         [JsonProperty("bank_category")]
         public string? BankCategory { get; set; }
 
+        /// <summary>
+        /// ref -&gt; BankfeedAccount this transaction belongs to.
+        /// </summary>
         [JsonProperty("bankfeedaccount_id")]
         public string? BankfeedaccountId { get; set; }
 
@@ -37,45 +49,84 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// matched vendor/customer once reconciled (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// creation timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ISO 4217.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// bank memo / statement text.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// true if not yet cleared.
+        /// </summary>
         [JsonProperty("is_pending")]
         public bool? IsPending { get; set; }
 
+        /// <summary>
+        /// counterparty as reported by the bank.
+        /// </summary>
         [JsonProperty("merchant_name")]
         public string? MerchantName { get; set; }
 
+        /// <summary>
+        /// ref -&gt; accounting Organization this record belongs to.
+        /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// when it posted / cleared (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
+        /// <summary>
+        /// The original data from the integration's API.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// bank reference or check number.
+        /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        /// <summary>
+        /// when the transaction occurred (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("transaction_at")]
         public DateTime? TransactionAt { get; set; }
 
+        /// <summary>
+        /// direction: DEBIT, CREDIT.
+        /// </summary>
         [JsonProperty("type")]
         public AccountingBankfeedtransactionType? Type { get; set; }
 
+        /// <summary>
+        /// last-update timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

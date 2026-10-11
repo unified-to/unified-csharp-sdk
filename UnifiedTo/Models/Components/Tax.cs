@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Tax describes the tax treatment of the benefit.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Tax : IEquatable<Tax>
     {

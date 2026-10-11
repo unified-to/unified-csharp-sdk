@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         Emails,
         [JsonProperty("title")]
         Title,
+        [JsonProperty("job_id")]
+        JobId,
         [JsonProperty("manager_id")]
         ManagerId,
         [JsonProperty("employment_status")]
@@ -97,6 +99,10 @@ namespace UnifiedTo.Models.Requests
         TimeoffDaysTotal,
         [JsonProperty("timeoff_days_used")]
         TimeoffDaysUsed,
+        [JsonProperty("flsa_status")]
+        FlsaStatus,
+        [JsonProperty("pay_frequency")]
+        PayFrequency,
         [JsonProperty("raw")]
         Raw,
     }

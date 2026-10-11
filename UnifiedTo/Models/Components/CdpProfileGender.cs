@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The gender of the profile.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CdpProfileGender : IEquatable<CdpProfileGender>
     {

@@ -20,12 +20,21 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class CrmDeal
     {
+        /// <summary>
+        /// The potential amount that deal could be worth.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// The date that this deal closed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
 
+        /// <summary>
+        /// expected closing date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("closing_at")]
         public DateTime? ClosingAt { get; set; }
 
@@ -35,15 +44,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contact_ids")]
         public List<string>? ContactIds { get; set; }
 
+        /// <summary>
+        /// The date that this deal object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The currency for the deal amount (3 letter ISO code; eg. USD).
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this deal object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -53,6 +71,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CrmMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The name of this deal.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -62,9 +83,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("probability")]
         public double? Probability { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this deal.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The source for this deal.
+        /// </summary>
         [JsonProperty("source")]
         public string? Source { get; set; }
 
@@ -74,9 +101,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        /// <summary>
+        /// The last date that this deal object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 

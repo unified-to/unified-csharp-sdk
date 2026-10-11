@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// new vs returning.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AnalyticsReportMetricsDimension : IEquatable<AnalyticsReportMetricsDimension>
     {

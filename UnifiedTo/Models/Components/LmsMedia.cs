@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class LmsMedia
     {
+        /// <summary>
+        /// Inline text/HTML/markdown content (use when url is empty or for embedded content).
+        /// </summary>
         [JsonProperty("content")]
         public string? Content { get; set; }
 

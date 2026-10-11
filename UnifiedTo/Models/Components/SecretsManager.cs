@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("auth")]
         public Dictionary<string, string> Auth { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -43,9 +46,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public SecretsManagerType Type { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }
     }

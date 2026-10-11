@@ -25,15 +25,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attendees")]
         public List<CalendarAttendee>? Attendees { get; set; }
 
+        /// <summary>
+        /// (reference to CalendarCalendar).
+        /// </summary>
         [JsonProperty("calendar_id")]
         public string? CalendarId { get; set; }
 
         [JsonProperty("conference")]
         public List<CalendarConference>? Conference { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public string? EndAt { get; set; }
 
@@ -67,12 +76,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("recurrence")]
         public List<CalendarEventRecurrence>? Recurrence { get; set; }
 
+        /// <summary>
+        /// (reference to CalendarEvent).
+        /// </summary>
         [JsonProperty("recurring_event_id")]
         public string? RecurringEventId { get; set; }
 
         [JsonProperty("send_notifications")]
         public bool? SendNotifications { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public string? StartAt { get; set; }
 
@@ -85,6 +100,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
 

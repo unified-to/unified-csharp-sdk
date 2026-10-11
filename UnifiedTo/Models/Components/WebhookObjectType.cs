@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The object to return (eg. CRM "contact").
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class WebhookObjectType : IEquatable<WebhookObjectType>
     {
@@ -32,12 +35,15 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType AccountingOrganization = new WebhookObjectType("accounting_organization");
         public static readonly WebhookObjectType AccountingOrder = new WebhookObjectType("accounting_order");
         public static readonly WebhookObjectType AccountingSalesorder = new WebhookObjectType("accounting_salesorder");
+        public static readonly WebhookObjectType AccountingSalesreceipt = new WebhookObjectType("accounting_salesreceipt");
         public static readonly WebhookObjectType AccountingPurchaseorder = new WebhookObjectType("accounting_purchaseorder");
         public static readonly WebhookObjectType AccountingBalancesheet = new WebhookObjectType("accounting_balancesheet");
         public static readonly WebhookObjectType AccountingProfitloss = new WebhookObjectType("accounting_profitloss");
         public static readonly WebhookObjectType AccountingTrialbalance = new WebhookObjectType("accounting_trialbalance");
         public static readonly WebhookObjectType AccountingCategory = new WebhookObjectType("accounting_category");
         public static readonly WebhookObjectType AccountingExpense = new WebhookObjectType("accounting_expense");
+        public static readonly WebhookObjectType AccountingExpensereport = new WebhookObjectType("accounting_expensereport");
+        public static readonly WebhookObjectType AccountingPurchasereceipt = new WebhookObjectType("accounting_purchasereceipt");
         public static readonly WebhookObjectType AccountingCashflow = new WebhookObjectType("accounting_cashflow");
         public static readonly WebhookObjectType AccountingQuote = new WebhookObjectType("accounting_quote");
         public static readonly WebhookObjectType AccountingAgedreceivable = new WebhookObjectType("accounting_agedreceivable");
@@ -93,6 +99,10 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType HrisBankaccount = new WebhookObjectType("hris_bankaccount");
         public static readonly WebhookObjectType HrisDocument = new WebhookObjectType("hris_document");
         public static readonly WebhookObjectType HrisTaxonomy = new WebhookObjectType("hris_taxonomy");
+        public static readonly WebhookObjectType HrisJob = new WebhookObjectType("hris_job");
+        public static readonly WebhookObjectType HrisPayroll = new WebhookObjectType("hris_payroll");
+        public static readonly WebhookObjectType HrisPaycode = new WebhookObjectType("hris_paycode");
+        public static readonly WebhookObjectType HrisEarning = new WebhookObjectType("hris_earning");
         public static readonly WebhookObjectType MartechList = new WebhookObjectType("martech_list");
         public static readonly WebhookObjectType MartechMember = new WebhookObjectType("martech_member");
         public static readonly WebhookObjectType MartechCampaign = new WebhookObjectType("martech_campaign");
@@ -106,6 +116,8 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType UcCall = new WebhookObjectType("uc_call");
         public static readonly WebhookObjectType UcComment = new WebhookObjectType("uc_comment");
         public static readonly WebhookObjectType UcRecording = new WebhookObjectType("uc_recording");
+        public static readonly WebhookObjectType UcScorecard = new WebhookObjectType("uc_scorecard");
+        public static readonly WebhookObjectType UcScorecardtemplate = new WebhookObjectType("uc_scorecardtemplate");
         public static readonly WebhookObjectType EnrichPerson = new WebhookObjectType("enrich_person");
         public static readonly WebhookObjectType EnrichCompany = new WebhookObjectType("enrich_company");
         public static readonly WebhookObjectType StorageFile = new WebhookObjectType("storage_file");
@@ -115,6 +127,7 @@ namespace UnifiedTo.Models.Components
         public static readonly WebhookObjectType GenaiTask = new WebhookObjectType("genai_task");
         public static readonly WebhookObjectType GenaiAgent = new WebhookObjectType("genai_agent");
         public static readonly WebhookObjectType GenaiOrganization = new WebhookObjectType("genai_organization");
+        public static readonly WebhookObjectType GenaiSkill = new WebhookObjectType("genai_skill");
         public static readonly WebhookObjectType MessagingMessage = new WebhookObjectType("messaging_message");
         public static readonly WebhookObjectType MessagingChannel = new WebhookObjectType("messaging_channel");
         public static readonly WebhookObjectType MessagingEvent = new WebhookObjectType("messaging_event");
@@ -211,12 +224,15 @@ namespace UnifiedTo.Models.Components
                 ["accounting_organization"] = AccountingOrganization,
                 ["accounting_order"] = AccountingOrder,
                 ["accounting_salesorder"] = AccountingSalesorder,
+                ["accounting_salesreceipt"] = AccountingSalesreceipt,
                 ["accounting_purchaseorder"] = AccountingPurchaseorder,
                 ["accounting_balancesheet"] = AccountingBalancesheet,
                 ["accounting_profitloss"] = AccountingProfitloss,
                 ["accounting_trialbalance"] = AccountingTrialbalance,
                 ["accounting_category"] = AccountingCategory,
                 ["accounting_expense"] = AccountingExpense,
+                ["accounting_expensereport"] = AccountingExpensereport,
+                ["accounting_purchasereceipt"] = AccountingPurchasereceipt,
                 ["accounting_cashflow"] = AccountingCashflow,
                 ["accounting_quote"] = AccountingQuote,
                 ["accounting_agedreceivable"] = AccountingAgedreceivable,
@@ -272,6 +288,10 @@ namespace UnifiedTo.Models.Components
                 ["hris_bankaccount"] = HrisBankaccount,
                 ["hris_document"] = HrisDocument,
                 ["hris_taxonomy"] = HrisTaxonomy,
+                ["hris_job"] = HrisJob,
+                ["hris_payroll"] = HrisPayroll,
+                ["hris_paycode"] = HrisPaycode,
+                ["hris_earning"] = HrisEarning,
                 ["martech_list"] = MartechList,
                 ["martech_member"] = MartechMember,
                 ["martech_campaign"] = MartechCampaign,
@@ -285,6 +305,8 @@ namespace UnifiedTo.Models.Components
                 ["uc_call"] = UcCall,
                 ["uc_comment"] = UcComment,
                 ["uc_recording"] = UcRecording,
+                ["uc_scorecard"] = UcScorecard,
+                ["uc_scorecardtemplate"] = UcScorecardtemplate,
                 ["enrich_person"] = EnrichPerson,
                 ["enrich_company"] = EnrichCompany,
                 ["storage_file"] = StorageFile,
@@ -294,6 +316,7 @@ namespace UnifiedTo.Models.Components
                 ["genai_task"] = GenaiTask,
                 ["genai_agent"] = GenaiAgent,
                 ["genai_organization"] = GenaiOrganization,
+                ["genai_skill"] = GenaiSkill,
                 ["messaging_message"] = MessagingMessage,
                 ["messaging_channel"] = MessagingChannel,
                 ["messaging_event"] = MessagingEvent,

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
 
     public class UpdateHrisAttendanceRequest
     {
+        /// <summary>
+        /// Also called timesheets.
+        /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public HrisAttendance HrisAttendance { get; set; } = default!;
 

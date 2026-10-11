@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Promoted entity types for ads_promoted list endpoint.
+        /// </summary>
         [JsonProperty("type")]
         public AdsPromotedType Type { get; set; } = default!;
     }

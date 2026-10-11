@@ -19,45 +19,84 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingLabel
     {
+        /// <summary>
+        /// The date that this label object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this label object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether label has been voided.
+        /// </summary>
         [JsonProperty("is_voided")]
         public bool? IsVoided { get; set; }
 
+        /// <summary>
+        /// Cost to purchase label.
+        /// </summary>
         [JsonProperty("label_cost")]
         public double? LabelCost { get; set; }
 
         [JsonProperty("label_cost_currency")]
         public string? LabelCostCurrency { get; set; }
 
+        /// <summary>
+        /// Format of the label (PDF, PNG, ZPL, EPL2).
+        /// </summary>
         [JsonProperty("label_format")]
         public LabelFormat? LabelFormat { get; set; }
 
+        /// <summary>
+        /// URL to download the label.
+        /// </summary>
         [JsonProperty("label_url")]
         public string? LabelUrl { get; set; }
 
+        /// <summary>
+        /// Rate used for this label; points to ShippingRate.
+        /// </summary>
         [JsonProperty("rate_id")]
         public string? RateId { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this label.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Service code used.
+        /// </summary>
         [JsonProperty("service_code")]
         public string? ServiceCode { get; set; }
 
+        /// <summary>
+        /// Reference to the shipment.
+        /// </summary>
         [JsonProperty("shipment_id")]
         public string? ShipmentId { get; set; }
 
+        /// <summary>
+        /// Status of the label.
+        /// </summary>
         [JsonProperty("status")]
         public ShippingLabelStatus? Status { get; set; }
 
+        /// <summary>
+        /// Tracking number for the shipment.
+        /// </summary>
         [JsonProperty("tracking_number")]
         public string? TrackingNumber { get; set; }
 
+        /// <summary>
+        /// The last date that this label object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

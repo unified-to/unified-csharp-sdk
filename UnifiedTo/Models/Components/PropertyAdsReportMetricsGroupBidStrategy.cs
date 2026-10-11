@@ -40,6 +40,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raise_bid_for_deals")]
         public bool? RaiseBidForDeals { get; set; }
 
+        /// <summary>
+        /// Target ROAS e.g. 2.5 = 250% (Google).
+        /// </summary>
         [JsonProperty("target_roas")]
         public double? TargetRoas { get; set; }
 

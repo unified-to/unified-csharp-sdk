@@ -17,9 +17,15 @@ namespace UnifiedTo.Models.Components
 
     public class DatastoreRecord
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// source Database ID.
+        /// </summary>
         [JsonProperty("database_id")]
         public string? DatabaseId { get; set; }
 
@@ -35,9 +41,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("row_number")]
         public double? RowNumber { get; set; }
 
+        /// <summary>
+        /// source Database Table ID.
+        /// </summary>
         [JsonProperty("table_id")]
         public string? TableId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

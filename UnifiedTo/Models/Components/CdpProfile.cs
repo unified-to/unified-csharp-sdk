@@ -25,9 +25,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyCdpProfileAddress? Address { get; set; }
 
+        /// <summary>
+        /// The birth date of the profile.
+        /// </summary>
         [JsonProperty("birthdate")]
         public string? Birthdate { get; set; }
 
+        /// <summary>
+        /// The company/organization name of the profile.
+        /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; }
 
@@ -37,18 +43,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("consent")]
         public List<CdpConsent>? Consent { get; set; }
 
+        /// <summary>
+        /// The date that this profile object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The primary email address of the profile.
+        /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; }
 
+        /// <summary>
+        /// The first name of the profile.
+        /// </summary>
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
+        /// <summary>
+        /// The gender of the profile.
+        /// </summary>
         [JsonProperty("gender")]
         public CdpProfileGender? Gender { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this profile object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -58,9 +79,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("identifiers")]
         public List<CdpIdentifier>? Identifiers { get; set; }
 
+        /// <summary>
+        /// Whether the profile is anonymous (no known identity).
+        /// </summary>
         [JsonProperty("is_anonymous")]
         public bool? IsAnonymous { get; set; }
 
+        /// <summary>
+        /// The last name of the profile.
+        /// </summary>
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
@@ -70,9 +97,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CdpMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The full name of the profile.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this profile.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -82,15 +115,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("segments")]
         public List<CdpProfileSegment>? Segments { get; set; }
 
+        /// <summary>
+        /// The cdp_source this profile originated from; points to CdpSource.
+        /// </summary>
         [JsonProperty("source_id")]
         public string? SourceId { get; set; }
 
+        /// <summary>
+        /// The primary telephone number of the profile.
+        /// </summary>
         [JsonProperty("telephone")]
         public string? Telephone { get; set; }
 
+        /// <summary>
+        /// The job title of the profile.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// The last date that this profile object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

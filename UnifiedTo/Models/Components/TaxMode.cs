@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// INCLUSIVE / EXCLUSIVE / NONE; maps Xero LineAmountTypes (a boolean cannot represent NoTax).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class TaxMode : IEquatable<TaxMode>
     {

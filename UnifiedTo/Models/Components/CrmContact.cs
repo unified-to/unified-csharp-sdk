@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyCrmContactAddress? Address { get; set; }
 
+        /// <summary>
+        /// The companyorganization name  of the contact.
+        /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; }
 
@@ -32,6 +35,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("company_ids")]
         public List<string>? CompanyIds { get; set; }
 
+        /// <summary>
+        /// The date that this contact object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -53,6 +59,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this contact object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -71,9 +80,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CrmMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// The name of the contact.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this contact.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -83,12 +98,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephones")]
         public List<CrmTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// The job title of the contact.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// The last date that this contact object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The current status of the activation.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CdpActivationStatus : IEquatable<CdpActivationStatus>
     {

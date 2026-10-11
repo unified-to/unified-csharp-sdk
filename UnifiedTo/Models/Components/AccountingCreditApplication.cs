@@ -19,15 +19,27 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingCreditApplication
     {
+        /// <summary>
+        /// The amount of credit applied to this object.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// Date and time when the credit was applied, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("applied_at")]
         public DateTime? AppliedAt { get; set; }
 
+        /// <summary>
+        /// The id of the object this credit was applied to.
+        /// </summary>
         [JsonProperty("object_id")]
         public string? ObjectId { get; set; }
 
+        /// <summary>
+        /// The type of object this credit was applied to.
+        /// </summary>
         [JsonProperty("object_type")]
         public ObjectType? ObjectType { get; set; }
     }

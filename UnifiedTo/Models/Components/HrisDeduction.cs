@@ -22,26 +22,59 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class HrisDeduction
     {
+        /// <summary>
+        /// percentage or absolute amount (employee's portion).
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
         [JsonProperty("benefit_id")]
         public string? BenefitId { get; set; }
 
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// Level selected by employee (e.g. "FAMILY", "EMPLOYEE_ONLY", or other).
+        /// </summary>
         [JsonProperty("coverage_level")]
         public HrisDeductionCoverageLevel? CoverageLevel { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// percentage or absolute amount (employer's portion/match).
+        /// </summary>
+        [JsonProperty("employer_amount")]
+        public double? EmployerAmount { get; set; }
+
+        [JsonProperty("employer_type")]
+        public EmployerType? EmployerType { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// Frequency for this deduction (should always be set, matches IHrisBenefit.frequency).
+        /// </summary>
         [JsonProperty("frequency")]
         public HrisDeductionFrequency? Frequency { get; set; }
+
+        /// <summary>
+        /// set when this deduction is a court-ordered garnishment.
+        /// </summary>
+        [JsonProperty("garnishment_type")]
+        public GarnishmentType? GarnishmentType { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -49,21 +82,42 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// annual maximum employee amount (always money).
+        /// </summary>
+        [JsonProperty("max_amount")]
+        public double? MaxAmount { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
+
+        /// <summary>
+        /// the hris_paycode (deduction code) this deduction uses.
+        /// </summary>
+        [JsonProperty("paycode_id")]
+        public string? PaycodeId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
         [JsonProperty("type")]
         public HrisDeductionType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// employee ID (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

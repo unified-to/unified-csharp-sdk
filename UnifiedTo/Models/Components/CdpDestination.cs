@@ -19,30 +19,57 @@ namespace UnifiedTo.Models.Components
 
     public class CdpDestination
     {
+        /// <summary>
+        /// The date that this destination object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// DESTINATION, or BIDIRECTIONAL for import+export connectors.
+        /// </summary>
         [JsonProperty("direction")]
         public Direction? Direction { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this destination object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the destination is active/enabled.
+        /// </summary>
         [JsonProperty("is_enabled")]
         public bool? IsEnabled { get; set; }
 
+        /// <summary>
+        /// The name of the outbound activation destination.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this destination.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// A stable handle/key for the destination.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// The connector/destination type (eg. the provider's connector slug or plugin id).
+        /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// The last date that this destination object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

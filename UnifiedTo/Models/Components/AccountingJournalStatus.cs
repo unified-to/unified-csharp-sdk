@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Posting state of the journal entry.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingJournalStatus : IEquatable<AccountingJournalStatus>
     {

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Current status of the signing document.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class SigningDocumentStatus : IEquatable<SigningDocumentStatus>
     {

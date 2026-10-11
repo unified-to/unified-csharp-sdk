@@ -11,20 +11,25 @@ var value = GetHrisDeductionQueryParamFields.Id;
 
 ## Values
 
-| Name            | Value           |
-| --------------- | --------------- |
-| `Id`            | id              |
-| `CreatedAt`     | created_at      |
-| `UpdatedAt`     | updated_at      |
-| `UserId`        | user_id         |
-| `CompanyId`     | company_id      |
-| `BenefitId`     | benefit_id      |
-| `Amount`        | amount          |
-| `Type`          | type            |
-| `CoverageLevel` | coverage_level  |
-| `Frequency`     | frequency       |
-| `StartAt`       | start_at        |
-| `EndAt`         | end_at          |
-| `IsActive`      | is_active       |
-| `Notes`         | notes           |
-| `Raw`           | raw             |
+| Name              | Value             |
+| ----------------- | ----------------- |
+| `Id`              | id                |
+| `CreatedAt`       | created_at        |
+| `UpdatedAt`       | updated_at        |
+| `UserId`          | user_id           |
+| `CompanyId`       | company_id        |
+| `BenefitId`       | benefit_id        |
+| `Amount`          | amount            |
+| `Type`            | type              |
+| `CoverageLevel`   | coverage_level    |
+| `Frequency`       | frequency         |
+| `StartAt`         | start_at          |
+| `EndAt`           | end_at            |
+| `IsActive`        | is_active         |
+| `Notes`           | notes             |
+| `EmployerAmount`  | employer_amount   |
+| `EmployerType`    | employer_type     |
+| `MaxAmount`       | max_amount        |
+| `PaycodeId`       | paycode_id        |
+| `GarnishmentType` | garnishment_type  |
+| `Raw`             | raw               |

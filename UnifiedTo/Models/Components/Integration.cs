@@ -28,9 +28,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("api", NullValueHandling = NullValueHandling.Include)]
         public Api? Api { get; set; }
 
+        /// <summary>
+        /// The URL of the integration's API documentation.
+        /// </summary>
         [JsonProperty("api_docs_url")]
         public string? ApiDocsUrl { get; set; }
 
+        /// <summary>
+        /// This integration is new and is still considered "beta"
+        /// </summary>
         [JsonProperty("beta")]
         public bool? Beta { get; set; }
 
@@ -40,33 +46,54 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("categories")]
         public List<PropertyIntegrationCategories> Categories { get; set; } = default!;
 
+        /// <summary>
+        /// button background color for AUTH.
+        /// </summary>
         [JsonProperty("color")]
         public string? Color { get; set; }
 
+        /// <summary>
+        /// Date that this integration was supported (YYYY-MM-DD) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// font-awesome icon.
+        /// </summary>
         [JsonProperty("fa_icon")]
         public string? FaIcon { get; set; }
 
         [JsonProperty("featured")]
         public bool? Featured { get; set; }
 
+        /// <summary>
+        /// If this integration is not yet available as it is currently being built by unified.to.
+        /// </summary>
         [JsonProperty("in_progress")]
         public bool? InProgress { get; set; }
 
+        /// <summary>
+        /// Is this integration active in this workspace.
+        /// </summary>
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
         [JsonProperty("is_hidden")]
         public bool? IsHidden { get; set; }
 
+        /// <summary>
+        /// The URL of the integration's logo.
+        /// </summary>
         [JsonProperty("logo_url")]
         public string? LogoUrl { get; set; }
 
+        /// <summary>
+        /// The integration's name.
+        /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
@@ -79,6 +106,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("rate_limit_description")]
         public string? RateLimitDescription { get; set; }
 
+        /// <summary>
+        /// OAuth requires a custom API domain (CNAME) for provider verification.
+        /// </summary>
         [JsonProperty("requires_cname")]
         public bool? RequiresCname { get; set; }
 
@@ -91,9 +121,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("support")]
         public Dictionary<string, IntegrationSupport>? Support { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("tested_at")]
         public DateTime? TestedAt { get; set; }
 
+        /// <summary>
+        /// text color for AUTH.
+        /// </summary>
         [JsonProperty("text_color")]
         public string? TextColor { get; set; }
 
@@ -109,12 +145,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("token_names")]
         public List<string>? TokenNames { get; set; }
 
+        /// <summary>
+        /// Identifier for this integration.
+        /// </summary>
         [JsonProperty("type")]
         public string Type { get; set; } = default!;
 
+        /// <summary>
+        /// YYYY-MM-DD (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// URL for the software vendor.
+        /// </summary>
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }
     }

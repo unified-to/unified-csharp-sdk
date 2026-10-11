@@ -17,15 +17,27 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingAgedreceivable
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ISO 4217.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// synthetic, one row per currency / date window.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -38,18 +50,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// open balances not yet past due; distinct from the first past-due period.
+        /// </summary>
         [JsonProperty("total_current_amount")]
         public double? TotalCurrentAmount { get; set; }
 
+        /// <summary>
+        /// sum of open balances across all past-due periods.
+        /// </summary>
         [JsonProperty("total_overdue_amount")]
         public double? TotalOverdueAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

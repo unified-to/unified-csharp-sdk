@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class SocialPost
     {
+        /// <summary>
+        /// The main text content of the post.
+        /// </summary>
         [JsonProperty("body")]
         public string? Body { get; set; }
 
@@ -28,12 +31,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("call_to_action")]
         public PropertySocialPostCallToAction? CallToAction { get; set; }
 
+        /// <summary>
+        /// When the post was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the post.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Language code of the post content.
+        /// </summary>
         [JsonProperty("language")]
         public string? Language { get; set; }
 
@@ -49,30 +61,57 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metrics")]
         public PropertySocialPostMetrics? Metrics { get; set; }
 
+        /// <summary>
+        /// The post this one replies to or references.
+        /// </summary>
         [JsonProperty("parent_post_id")]
         public string? ParentPostId { get; set; }
 
+        /// <summary>
+        /// The social profile (page/handle/listing) that owns this post.
+        /// </summary>
         [JsonProperty("profile_id")]
         public string? ProfileId { get; set; }
 
+        /// <summary>
+        /// Raw data from integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// When the post is scheduled to publish (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("scheduled_at")]
         public DateTime? ScheduledAt { get; set; }
 
+        /// <summary>
+        /// Publication status of the post.
+        /// </summary>
         [JsonProperty("status")]
         public SocialPostStatus? Status { get; set; }
 
+        /// <summary>
+        /// Optional post title/headline.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// The kind of post.
+        /// </summary>
         [JsonProperty("type")]
         public SocialPostType? Type { get; set; }
 
+        /// <summary>
+        /// When the post was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Public permalink to the post.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

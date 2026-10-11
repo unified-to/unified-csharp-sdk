@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("items")]
         public List<AccountingCashflowItem>? Items { get; set; }
 
+        /// <summary>
+        /// e.g. "Operating Activities"
+        /// </summary>
         [JsonProperty("section_name")]
         public string? SectionName { get; set; }
 
+        /// <summary>
+        /// Net cash providedused by this section.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
     }

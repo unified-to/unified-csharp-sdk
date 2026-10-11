@@ -22,30 +22,48 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class HrisBenefit
     {
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
         [JsonProperty("coverage_level")]
         public CoverageLevel? CoverageLevel { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// e.g. "Company 401(k) retirement plan"
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// percentage or money.
+        /// </summary>
         [JsonProperty("employer_contribution_amount")]
         public double? EmployerContributionAmount { get; set; }
 
+        /// <summary>
+        /// always money.
+        /// </summary>
         [JsonProperty("employer_contribution_max_amount")]
         public double? EmployerContributionMaxAmount { get; set; }
 
         [JsonProperty("employer_contribution_type")]
         public EmployerContributionType? EmployerContributionType { get; set; }
 
+        /// <summary>
+        /// Frequency that costs accrue for this benefit. For insurance/benefits, usually "MONTHLY". For compensation, matches pay cycle (WEEKLY, BIWEEKLY, etc).
+        /// </summary>
         [JsonProperty("frequency")]
         public HrisBenefitFrequency? Frequency { get; set; }
 
@@ -55,18 +73,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// e.g. "401(k) Plan"
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Tax describes the tax treatment of the benefit.
+        /// </summary>
         [JsonProperty("tax")]
         public Tax? Tax { get; set; }
 
         [JsonProperty("type")]
         public HrisBenefitType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

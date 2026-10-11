@@ -20,9 +20,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// ID of the AccountingContact (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -44,6 +50,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<PaymentLineitem>? Lineitems { get; set; }
 
+        /// <summary>
+        /// (reference to PaymentPayment).
+        /// </summary>
         [JsonProperty("payment_id")]
         public string? PaymentId { get; set; }
 
@@ -53,9 +62,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("success_url")]
         public string? SuccessUrl { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// the payment link.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

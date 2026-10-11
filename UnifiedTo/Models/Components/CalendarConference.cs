@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("conference_identifier")]
         public string? ConferenceIdentifier { get; set; }
 
+        /// <summary>
+        /// ISO 2-digit country code.
+        /// </summary>
         [JsonProperty("country_code")]
         public string? CountryCode { get; set; }
 
@@ -32,6 +35,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("participant_access_code")]
         public string? ParticipantAccessCode { get; set; }
 
+        /// <summary>
+        /// ISO 2-digit region code.
+        /// </summary>
         [JsonProperty("region_code")]
         public string? RegionCode { get; set; }
 

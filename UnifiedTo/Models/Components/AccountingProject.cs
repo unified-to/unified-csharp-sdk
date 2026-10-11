@@ -28,12 +28,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// provider-side project code/number (e.g. NetSuite entityId, Intacct PROJECTID, BC jobNumber).
+        /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; }
 
+        /// <summary>
+        /// the customer the project is for (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -52,9 +61,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// planned/target end date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        /// <summary>
+        /// actual completion (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("ended_at")]
         public DateTime? EndedAt { get; set; }
 
@@ -82,15 +97,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// references a HRIS employee/user (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("manager_user_id")]
         public string? ManagerUserId { get; set; }
 
         [JsonProperty("metadata")]
         public List<AccountingMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// integer minutes, not hours.
+        /// </summary>
         [JsonProperty("minutes_logged")]
         public double? MinutesLogged { get; set; }
 
+        /// <summary>
+        /// integer minutes, not hours.
+        /// </summary>
         [JsonProperty("minutes_to_be_invoiced")]
         public double? MinutesToBeInvoiced { get; set; }
 
@@ -100,15 +124,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// parent project / sub-project hierarchy.
+        /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
+        /// <summary>
+        /// 0-100.
+        /// </summary>
         [JsonProperty("percent_complete")]
         public double? PercentComplete { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("started_at")]
         public DateTime? StartedAt { get; set; }
 
@@ -118,6 +151,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("to_be_invoiced_amount")]
         public double? ToBeInvoicedAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

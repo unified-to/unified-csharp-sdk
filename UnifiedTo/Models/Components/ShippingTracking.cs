@@ -19,21 +19,39 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingTracking
     {
+        /// <summary>
+        /// Actual delivery timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("actual_delivery_at")]
         public DateTime? ActualDeliveryAt { get; set; }
 
+        /// <summary>
+        /// Reference to the carrier.
+        /// </summary>
         [JsonProperty("carrier_id")]
         public string? CarrierId { get; set; }
 
+        /// <summary>
+        /// Carrier's status code.
+        /// </summary>
         [JsonProperty("carrier_status_code")]
         public string? CarrierStatusCode { get; set; }
 
+        /// <summary>
+        /// Carrier's status description.
+        /// </summary>
         [JsonProperty("carrier_status_description")]
         public string? CarrierStatusDescription { get; set; }
 
+        /// <summary>
+        /// The date that this tracking object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Estimated delivery date.
+        /// </summary>
         [JsonProperty("estimated_delivery")]
         public DateTime? EstimatedDelivery { get; set; }
 
@@ -43,24 +61,45 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("events")]
         public List<ShippingTrackingEvent>? Events { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this tracking object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this tracking.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Reference to the shipment.
+        /// </summary>
         [JsonProperty("shipment_id")]
         public string? ShipmentId { get; set; }
 
+        /// <summary>
+        /// Current status of the shipment.
+        /// </summary>
         [JsonProperty("status")]
         public ShippingTrackingStatus? Status { get; set; }
 
+        /// <summary>
+        /// Human-readable status.
+        /// </summary>
         [JsonProperty("status_description")]
         public string? StatusDescription { get; set; }
 
+        /// <summary>
+        /// Tracking number for the shipment.
+        /// </summary>
         [JsonProperty("tracking_number")]
         public string? TrackingNumber { get; set; }
 
+        /// <summary>
+        /// The last date that this tracking object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

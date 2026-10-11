@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Status of the label.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ShippingLabelStatus : IEquatable<ShippingLabelStatus>
     {

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Frequency for this deduction (should always be set, matches IHrisBenefit.frequency).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisDeductionFrequency : IEquatable<HrisDeductionFrequency>
     {
@@ -26,6 +29,8 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisDeductionFrequency Hour = new HrisDeductionFrequency("HOUR");
         public static readonly HrisDeductionFrequency Month = new HrisDeductionFrequency("MONTH");
         public static readonly HrisDeductionFrequency Week = new HrisDeductionFrequency("WEEK");
+        public static readonly HrisDeductionFrequency Biweekly = new HrisDeductionFrequency("BIWEEKLY");
+        public static readonly HrisDeductionFrequency Semimonthly = new HrisDeductionFrequency("SEMIMONTHLY");
 
         private static readonly Dictionary <string, HrisDeductionFrequency> _knownValues =
             new Dictionary <string, HrisDeductionFrequency> ()
@@ -36,7 +41,9 @@ namespace UnifiedTo.Models.Components
                 ["YEAR"] = Year,
                 ["HOUR"] = Hour,
                 ["MONTH"] = Month,
-                ["WEEK"] = Week
+                ["WEEK"] = Week,
+                ["BIWEEKLY"] = Biweekly,
+                ["SEMIMONTHLY"] = Semimonthly
             };
 
         private static readonly ConcurrentDictionary<string, HrisDeductionFrequency> _values =

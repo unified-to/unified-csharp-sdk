@@ -22,18 +22,30 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyCrmEventTask
     {
+        /// <summary>
+        /// The event task's descriptionnote.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        /// <summary>
+        /// The event task's nametitle/subject.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
         [JsonProperty("priority")]
         public Priority? Priority { get; set; }
 
+        /// <summary>
+        /// The event task's status.
+        /// </summary>
         [JsonProperty("status")]
         public PropertyCrmEventTaskStatus? Status { get; set; }
     }

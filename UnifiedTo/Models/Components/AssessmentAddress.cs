@@ -26,15 +26,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("country")]
         public string? Country { get; set; }
 
+        /// <summary>
+        /// Country code in ISO 3166 A-2 format.
+        /// </summary>
         [JsonProperty("country_code")]
         public string? CountryCode { get; set; }
 
         [JsonProperty("postal_code")]
         public string? PostalCode { get; set; }
 
+        /// <summary>
+        /// Regional area (e.g., state in the U.S., province in Canada).
+        /// </summary>
         [JsonProperty("region")]
         public string? Region { get; set; }
 
+        /// <summary>
+        /// Short form for regional area (e.g., two-letter stateprovince abbreviation).
+        /// </summary>
         [JsonProperty("region_code")]
         public string? RegionCode { get; set; }
     }

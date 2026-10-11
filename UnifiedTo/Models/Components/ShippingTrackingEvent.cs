@@ -19,33 +19,60 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingTrackingEvent
     {
+        /// <summary>
+        /// Carrier's status code at this event.
+        /// </summary>
         [JsonProperty("carrier_status_code")]
         public string? CarrierStatusCode { get; set; }
 
+        /// <summary>
+        /// The date that this tracking event object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Description of the tracking event.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Carrier-specific event code.
+        /// </summary>
         [JsonProperty("event_code")]
         public string? EventCode { get; set; }
 
         [JsonProperty("location_address")]
         public PropertyShippingTrackingEventLocationAddress? LocationAddress { get; set; }
 
+        /// <summary>
+        /// Location ID; points to CommerceLocation (reference to ShippingLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// Location name.
+        /// </summary>
         [JsonProperty("location_name")]
         public string? LocationName { get; set; }
 
+        /// <summary>
+        /// Additional notes.
+        /// </summary>
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
+        /// <summary>
+        /// Who signed for delivery.
+        /// </summary>
         [JsonProperty("signed_by")]
         public string? SignedBy { get; set; }
 
+        /// <summary>
+        /// Status at the time of this event.
+        /// </summary>
         [JsonProperty("status")]
         public ShippingTrackingEventStatus? Status { get; set; }
     }

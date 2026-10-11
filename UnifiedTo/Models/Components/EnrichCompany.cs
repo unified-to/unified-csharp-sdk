@@ -26,60 +26,117 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyEnrichCompanyAddress? Address { get; set; }
 
+        /// <summary>
+        /// The Alexa rank of the company.
+        /// </summary>
         [JsonProperty("alexa_rank")]
         public double? AlexaRank { get; set; }
 
+        /// <summary>
+        /// The date that this company object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The Crunchbase URL of the company.
+        /// </summary>
         [JsonProperty("crunchbase_url")]
         public string? CrunchbaseUrl { get; set; }
 
+        /// <summary>
+        /// The description of the company.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// The webmail domain of the company.
+        /// </summary>
         [JsonProperty("domain")]
         public string? Domain { get; set; }
 
+        /// <summary>
+        /// The number of employees at the company.
+        /// </summary>
         [JsonProperty("employees")]
         public string? Employees { get; set; }
 
+        /// <summary>
+        /// The public exchange of the company (eg. NASDAQ).
+        /// </summary>
         [JsonProperty("exchange")]
         public string? Exchange { get; set; }
 
+        /// <summary>
+        /// The Facebook URL of the company.
+        /// </summary>
         [JsonProperty("facebook_url")]
         public string? FacebookUrl { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this company object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The industry of the company.
+        /// </summary>
         [JsonProperty("industry")]
         public string? Industry { get; set; }
 
+        /// <summary>
+        /// The Crunchbase URL of the company.
+        /// </summary>
         [JsonProperty("instagram_url")]
         public string? InstagramUrl { get; set; }
 
+        /// <summary>
+        /// The LinkedIn URL of the company.
+        /// </summary>
         [JsonProperty("linkedin_url")]
         public string? LinkedinUrl { get; set; }
 
+        /// <summary>
+        /// The URL of the logo of the company.
+        /// </summary>
         [JsonProperty("logo_url")]
         public string? LogoUrl { get; set; }
 
+        /// <summary>
+        /// The NAICS code of the company.
+        /// </summary>
         [JsonProperty("naics_code")]
         public double? NaicsCode { get; set; }
 
+        /// <summary>
+        /// The name of the company.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this company.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The approximate revenue of the company.
+        /// </summary>
         [JsonProperty("revenue")]
         public string? Revenue { get; set; }
 
+        /// <summary>
+        /// The SIC code of the company.
+        /// </summary>
         [JsonProperty("sic_code")]
         public double? SicCode { get; set; }
 
+        /// <summary>
+        /// The stock ticker of the company (eg. AMZN).
+        /// </summary>
         [JsonProperty("stock")]
         public string? Stock { get; set; }
 
@@ -89,21 +146,39 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephones")]
         public List<EnrichTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// The twitter handle of the company.
+        /// </summary>
         [JsonProperty("twitter_handle")]
         public string? TwitterHandle { get; set; }
 
+        /// <summary>
+        /// The twitter URL of the company.
+        /// </summary>
         [JsonProperty("twitter_url")]
         public string? TwitterUrl { get; set; }
 
+        /// <summary>
+        /// The last date that this company object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// The year that the company was founded.
+        /// </summary>
         [JsonProperty("year_founded")]
         public double? YearFounded { get; set; }
 
+        /// <summary>
+        /// The Yelp URL of the company.
+        /// </summary>
         [JsonProperty("yelp_url")]
         public string? YelpUrl { get; set; }
 
+        /// <summary>
+        /// The Youtube URL of the company.
+        /// </summary>
         [JsonProperty("youtube_url")]
         public string? YoutubeUrl { get; set; }
     }

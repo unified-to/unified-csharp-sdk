@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("content")]
         public string? Content { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -55,12 +58,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_verified")]
         public bool? IsVerified { get; set; }
 
+        /// <summary>
+        /// Reference to the product being reviewed (reference to CommerceItem).
+        /// </summary>
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
+        /// <summary>
+        /// Optional reference to specific variant if applicable (reference to CommerceCommerceItemvariant).
+        /// </summary>
         [JsonProperty("item_variant_id")]
         public string? ItemVariantId { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
@@ -73,9 +85,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CommerceMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// 1-5 rating.
+        /// </summary>
         [JsonProperty("rating")]
         public double? Rating { get; set; }
 
+        /// <summary>
+        /// Original review data from source platform.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -88,6 +106,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("unhelpful_votes")]
         public double? UnhelpfulVotes { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

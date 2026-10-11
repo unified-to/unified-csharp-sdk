@@ -16,27 +16,51 @@ namespace UnifiedTo.Models.Components
 
     public class SigningTemplate
     {
+        /// <summary>
+        /// The date that this template was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// User who created the template.
+        /// </summary>
         [JsonProperty("creator_id")]
         public string? CreatorId { get; set; }
 
+        /// <summary>
+        /// Template description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this template.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the template is active/available.
+        /// </summary>
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// Template name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The last date that this template was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

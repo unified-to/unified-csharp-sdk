@@ -14,24 +14,45 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingShipmentLineitem
     {
+        /// <summary>
+        /// Unique identifier for this fulfillment line.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Reference to the CommerceItem being fulfilled (reference to CommerceItem).
+        /// </summary>
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
+        /// <summary>
+        /// Item name (for display).
+        /// </summary>
         [JsonProperty("item_name")]
         public string? ItemName { get; set; }
 
+        /// <summary>
+        /// Reference to the CommerceItemvariant being fulfilled (reference to CommerceCommerceItemvariant).
+        /// </summary>
         [JsonProperty("item_variant_id")]
         public string? ItemVariantId { get; set; }
 
+        /// <summary>
+        /// The order line being fulfilled.
+        /// </summary>
         [JsonProperty("order_lineitem_id")]
         public string? OrderLineitemId { get; set; }
 
+        /// <summary>
+        /// Units fulfilled on this line.
+        /// </summary>
         [JsonProperty("quantity")]
         public double? Quantity { get; set; }
 
+        /// <summary>
+        /// Item SKU.
+        /// </summary>
         [JsonProperty("sku")]
         public string? Sku { get; set; }
     }

@@ -17,12 +17,21 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertySocialProfileMetrics
     {
+        /// <summary>
+        /// Number of followers.
+        /// </summary>
         [JsonProperty("follower_count")]
         public double? FollowerCount { get; set; }
 
+        /// <summary>
+        /// Number of accounts this profile follows.
+        /// </summary>
         [JsonProperty("following_count")]
         public double? FollowingCount { get; set; }
 
+        /// <summary>
+        /// Total number of posts published by this profile.
+        /// </summary>
         [JsonProperty("post_count")]
         public double? PostCount { get; set; }
     }

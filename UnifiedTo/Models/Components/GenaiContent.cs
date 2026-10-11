@@ -22,6 +22,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("content")]
         public string Content { get; set; } = default!;
 
+        /// <summary>
+        /// Images for the model to evaluate with this message, as base64 data URLs (data:image/png;base64,...). Only for models with has_vision.
+        /// </summary>
+        [JsonProperty("images")]
+        public List<string>? Images { get; set; }
+
         [JsonProperty("role")]
         public Role? Role { get; set; }
     }

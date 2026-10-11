@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The unified structural category of the event.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CdpEventType : IEquatable<CdpEventType>
     {

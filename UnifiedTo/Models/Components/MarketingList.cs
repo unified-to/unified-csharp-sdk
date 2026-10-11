@@ -23,15 +23,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyMarketingListAddress? Address { get; set; }
 
+        /// <summary>
+        /// Date that this list was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// Identifier for this list.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -41,9 +50,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("language")]
         public string? Language { get; set; }
 
+        /// <summary>
+        /// The list's name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this list.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -59,15 +74,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("sender_phone")]
         public string? SenderPhone { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
         [JsonProperty("subject")]
         public string? Subject { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// The user who created this list (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

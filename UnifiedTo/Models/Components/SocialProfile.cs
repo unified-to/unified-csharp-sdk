@@ -23,27 +23,51 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertySocialProfileAddress? Address { get; set; }
 
+        /// <summary>
+        /// Profile image URL.
+        /// </summary>
         [JsonProperty("avatar_url")]
         public string? AvatarUrl { get; set; }
 
+        /// <summary>
+        /// Primary category of the profile.
+        /// </summary>
         [JsonProperty("category")]
         public string? Category { get; set; }
 
+        /// <summary>
+        /// When the profile was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Bio or description of the profile.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Unique identifier for the profile.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the profile is private/protected.
+        /// </summary>
         [JsonProperty("is_private")]
         public bool? IsPrivate { get; set; }
 
+        /// <summary>
+        /// Whether the profile is verified.
+        /// </summary>
         [JsonProperty("is_verified")]
         public bool? IsVerified { get; set; }
 
+        /// <summary>
+        /// Free-text location/locale string.
+        /// </summary>
         [JsonProperty("location")]
         public string? Location { get; set; }
 
@@ -53,27 +77,51 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metrics")]
         public PropertySocialProfileMetrics? Metrics { get; set; }
 
+        /// <summary>
+        /// Display name of the profile.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Parent profile id when profiles are nested (e.g. account → location).
+        /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
+        /// <summary>
+        /// Contact phone number.
+        /// </summary>
         [JsonProperty("phone")]
         public string? Phone { get; set; }
 
+        /// <summary>
+        /// Raw data from integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// When the profile was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Public URL of the profile.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
 
+        /// <summary>
+        /// Handle/username/store code.
+        /// </summary>
         [JsonProperty("username")]
         public string? Username { get; set; }
 
+        /// <summary>
+        /// External website linked from the profile.
+        /// </summary>
         [JsonProperty("website_url")]
         public string? WebsiteUrl { get; set; }
     }

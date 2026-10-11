@@ -22,9 +22,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("content")]
         public List<GenaiEmbeddingContent>? Content { get; set; }
 
+        /// <summary>
+        /// 256, 512, 1024, and 1536.
+        /// </summary>
         [JsonProperty("dimension")]
         public double? Dimension { get; set; }
 
+        /// <summary>
+        /// JSON string based off of the format.
+        /// </summary>
         [JsonProperty("embeddings")]
         public string? Embeddings { get; set; }
 
@@ -46,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tokens_used")]
         public double? TokensUsed { get; set; }
 
+        /// <summary>
+        /// 'SEARCH_DOC' | 'SEARCH_QUERY' | 'CLUSTERING' | 'CLASSIFICATION';
+        /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; }
     }

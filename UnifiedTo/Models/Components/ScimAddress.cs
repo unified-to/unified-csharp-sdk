@@ -25,15 +25,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("formatted")]
         public string? Formatted { get; set; }
 
+        /// <summary>
+        /// city.
+        /// </summary>
         [JsonProperty("locality")]
         public string? Locality { get; set; }
 
         [JsonProperty("postalCode")]
         public string? PostalCode { get; set; }
 
+        /// <summary>
+        /// stateprovince.
+        /// </summary>
         [JsonProperty("region")]
         public string? Region { get; set; }
 
+        /// <summary>
+        /// could be multi-line.
+        /// </summary>
         [JsonProperty("streetAddress")]
         public string? StreetAddress { get; set; }
 

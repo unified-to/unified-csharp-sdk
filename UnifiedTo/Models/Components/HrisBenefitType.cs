@@ -35,6 +35,10 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisBenefitType LoanRepayment = new HrisBenefitType("LOAN_REPAYMENT");
         public static readonly HrisBenefitType CharitableContribution = new HrisBenefitType("CHARITABLE_CONTRIBUTION");
         public static readonly HrisBenefitType Other = new HrisBenefitType("OTHER");
+        public static readonly HrisBenefitType RetirementRoth = new HrisBenefitType("RETIREMENT_ROTH");
+        public static readonly HrisBenefitType Commuter = new HrisBenefitType("COMMUTER");
+        public static readonly HrisBenefitType DependentCare = new HrisBenefitType("DEPENDENT_CARE");
+        public static readonly HrisBenefitType Pension = new HrisBenefitType("PENSION");
 
         private static readonly Dictionary <string, HrisBenefitType> _knownValues =
             new Dictionary <string, HrisBenefitType> ()
@@ -54,7 +58,11 @@ namespace UnifiedTo.Models.Components
                 ["GARNISHMENT"] = Garnishment,
                 ["LOAN_REPAYMENT"] = LoanRepayment,
                 ["CHARITABLE_CONTRIBUTION"] = CharitableContribution,
-                ["OTHER"] = Other
+                ["OTHER"] = Other,
+                ["RETIREMENT_ROTH"] = RetirementRoth,
+                ["COMMUTER"] = Commuter,
+                ["DEPENDENT_CARE"] = DependentCare,
+                ["PENSION"] = Pension
             };
 
         private static readonly ConcurrentDictionary<string, HrisBenefitType> _values =

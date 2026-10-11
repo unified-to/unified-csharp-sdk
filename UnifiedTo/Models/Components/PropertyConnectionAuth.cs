@@ -58,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("expiry_date")]
         public DateTime? ExpiryDate { get; set; }
 
+        /// <summary>
+        /// the private KEY X.509 certificate in Base64 ASCII format.
+        /// </summary>
         [JsonProperty("key")]
         public string? Key { get; set; }
 
@@ -73,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("other_auth_info")]
         public List<string>? OtherAuthInfo { get; set; }
 
+        /// <summary>
+        /// the PEM X.509 certificate in Base64 ASCII format.
+        /// </summary>
         [JsonProperty("pem")]
         public string? Pem { get; set; }
 
@@ -97,6 +103,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("token_url")]
         public string? TokenUrl { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

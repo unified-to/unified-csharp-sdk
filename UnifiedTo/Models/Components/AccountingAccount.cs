@@ -22,48 +22,87 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class AccountingAccount
     {
+        /// <summary>
+        /// Balance of the account.
+        /// </summary>
         [JsonProperty("balance")]
         public double? Balance { get; set; }
 
+        /// <summary>
+        /// Date and time when the Account was created, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Account’s currency, in ISO 4217 format (e.g. U.S. dollars is USD).
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Identifier for tracking and categorizing accounts for reporting or analysis purposes that is defined by the end-customer.
+        /// </summary>
         [JsonProperty("customer_defined_code")]
         public string? CustomerDefinedCode { get; set; }
 
+        /// <summary>
+        /// Account description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Identifier used by the SaaS application to uniquely identify the Account.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// True if the account is an “accounts payable” account.
+        /// </summary>
         [JsonProperty("is_payable")]
         public bool? IsPayable { get; set; }
 
+        /// <summary>
+        /// Account name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// The parent account ID for this account.
+        /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
+        /// <summary>
+        /// The original data from the integration's API.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Account status, such as ACTIVE or ARCHIVED.
+        /// </summary>
         [JsonProperty("status")]
         public Status? Status { get; set; }
 
         [JsonProperty("taxonomy")]
         public List<AccountingAccountTaxonomy>? Taxonomy { get; set; }
 
+        /// <summary>
+        /// Account type, such as BANK. EQUITY, ASSET, ...
+        /// </summary>
         [JsonProperty("type")]
         public Models.Components.Type? Type { get; set; }
 
+        /// <summary>
+        /// Date and time when the Account was last updated, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

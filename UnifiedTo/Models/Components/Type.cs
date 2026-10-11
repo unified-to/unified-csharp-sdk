@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Account type, such as BANK. EQUITY, ASSET, ...
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Type : IEquatable<Type>
     {

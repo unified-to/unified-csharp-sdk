@@ -22,10 +22,22 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
+        /// The email address to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=email")]
+        public string? Email { get; set; }
+
+        /// <summary>
         /// Fields to return.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListHrisDevicesQueryParamFields>? Fields { get; set; }
+
+        /// <summary>
+        /// The group ID to filter by (reference to HrisGroup).
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=group_id")]
+        public string? GroupId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }

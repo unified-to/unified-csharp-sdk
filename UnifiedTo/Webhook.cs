@@ -30,7 +30,7 @@ namespace UnifiedTo
         /// <remarks>
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </remarks>
-        /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="webhook">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="includeAll">When true, send existing/historic data. When false, no historic data is sent.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="webhook"/> is null.</exception>
@@ -66,7 +66,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update webhook subscription.
         /// </summary>
-        /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="webhook">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="id">ID of the Webhook.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="webhook"/> or <paramref name="id"/> is null.</exception>
@@ -98,7 +98,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update webhook subscription.
         /// </summary>
-        /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="webhook">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="id">ID of the Webhook.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="webhook"/> or <paramref name="id"/> is null.</exception>
@@ -140,7 +140,7 @@ namespace UnifiedTo
         /// <remarks>
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </remarks>
-        /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="webhook">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="includeAll">When true, send existing/historic data. When false, no historic data is sent.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">The required parameter <paramref name="webhook"/> is null.</exception>
@@ -475,7 +475,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update webhook subscription.
         /// </summary>
-        /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="webhook">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="id">ID of the Webhook.</param>
         /// <returns>An awaitable task that returns a <see cref="PatchUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="webhook"/> or <paramref name="id"/> is null.</exception>
@@ -797,7 +797,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update webhook subscription.
         /// </summary>
-        /// <param name="webhook">A webhook is used to POST new/updated information to your server.</param>
+        /// <param name="webhook">A webhook is used to POST new, updated, or deleted records to your server.</param>
         /// <param name="id">ID of the Webhook.</param>
         /// <returns>An awaitable task that returns a <see cref="UpdateUnifiedWebhookResponse"/> response envelope when completed.</returns>
         /// <exception cref="ArgumentNullException">One of <paramref name="webhook"/> or <paramref name="id"/> is null.</exception>

@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("bid_strategy")]
         public PropertyAdsGroupBidStrategy? BidStrategy { get; set; }
 
+        /// <summary>
+        /// Billing events for ads_group (what you pay for; cross-platform; platform-specific values allowed as pass-through).
+        /// </summary>
         [JsonProperty("billing_event")]
         public BillingEvent? BillingEvent { get; set; }
 
@@ -49,12 +52,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("creative_ids")]
         public List<string>? CreativeIds { get; set; }
 
+        /// <summary>
+        /// Creative rotation strategy (LinkedIn creativeSelection).
+        /// </summary>
         [JsonProperty("creative_selection")]
         public CreativeSelection? CreativeSelection { get; set; }
 
@@ -64,6 +73,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("effective_status")]
         public AdsGroupEffectiveStatus? EffectiveStatus { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -79,12 +91,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("insertionorder_id")]
         public string? InsertionorderId { get; set; }
 
+        /// <summary>
+        /// Language + region, ISO 639-1 with region (e.g. en-US); LinkedIn locale.
+        /// </summary>
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Optimization goals for ads_group (cross-platform; platform-specific values allowed as pass-through).
+        /// </summary>
         [JsonProperty("optimization_goal")]
         public OptimizationGoal? OptimizationGoal { get; set; }
 
@@ -103,6 +121,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -115,6 +136,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public AdsGroupType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

@@ -20,9 +20,15 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class UcContact
     {
+        /// <summary>
+        /// The company/organization name  of the contact.
+        /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; }
 
+        /// <summary>
+        /// The date that this contact object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -35,15 +41,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this contact object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
+        /// <summary>
+        /// The name of the contact.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this contact.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -53,9 +68,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephones")]
         public List<UcTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// The job title of the contact.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// The last date that this contact object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

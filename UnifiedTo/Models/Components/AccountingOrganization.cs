@@ -22,21 +22,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyAccountingOrganizationAddress? Address { get; set; }
 
+        /// <summary>
+        /// Company-wide books close / lock date; transactions on or before this date fall in a closed accounting period (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("books_close_at")]
         public DateTime? BooksCloseAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Currency primarily used by the organization, in ISO 4217 format (e.g. U.S. dollars is USD).
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Month of the year when the organization’s fiscal year ends (1 - 12, where January is 1).
+        /// </summary>
         [JsonProperty("fiscal_year_end_month")]
         public double? FiscalYearEndMonth { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// True for consolidation/elimination entities.
+        /// </summary>
         [JsonProperty("is_elimination")]
         public bool? IsElimination { get; set; }
 
@@ -46,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Identifier for tracking and categorizing organizations for reporting or analysis purposes that is defined by the end-customer.
+        /// </summary>
         [JsonProperty("organization_code")]
         public string? OrganizationCode { get; set; }
 
@@ -55,15 +73,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Organization's tax number.  For example, in the U.S., this is an Employer Identification Number (EIN).
+        /// </summary>
         [JsonProperty("tax_number")]
         public string? TaxNumber { get; set; }
 
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// Entity type within a consolidation hierarchy.
+        /// </summary>
         [JsonProperty("type")]
         public AccountingOrganizationType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

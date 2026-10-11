@@ -19,24 +19,45 @@ namespace UnifiedTo.Models.Components
 
     public class SocialMedia
     {
+        /// <summary>
+        /// Accessibility caption / alt text.
+        /// </summary>
         [JsonProperty("alt")]
         public string? Alt { get; set; }
 
+        /// <summary>
+        /// Media height in pixels.
+        /// </summary>
         [JsonProperty("height")]
         public double? Height { get; set; }
 
+        /// <summary>
+        /// Provider media id, when the media is individually addressable.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Ordering of the media within the post; 1 is the first.
+        /// </summary>
         [JsonProperty("position")]
         public double? Position { get; set; }
 
+        /// <summary>
+        /// Type of media.
+        /// </summary>
         [JsonProperty("type")]
         public SocialMediaType? Type { get; set; }
 
+        /// <summary>
+        /// URL of the media asset.
+        /// </summary>
         [JsonProperty("url")]
         public string Url { get; set; } = default!;
 
+        /// <summary>
+        /// Media width in pixels.
+        /// </summary>
         [JsonProperty("width")]
         public double? Width { get; set; }
     }

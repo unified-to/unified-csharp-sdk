@@ -25,24 +25,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("bio")]
         public string? Bio { get; set; }
 
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
         [JsonProperty("compensation")]
         public List<HrisCompensation>? Compensation { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// YYYYMM/DD.
+        /// </summary>
         [JsonProperty("date_of_birth")]
         public DateTime? DateOfBirth { get; set; }
 
         [JsonProperty("emails")]
         public List<HrisEmail>? Emails { get; set; }
 
+        /// <summary>
+        /// the company's ID for this employee.
+        /// </summary>
         [JsonProperty("employee_number")]
         public string? EmployeeNumber { get; set; }
 
@@ -58,6 +70,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
+        /// <summary>
+        /// US Fair Labor Standards Act classification.
+        /// </summary>
+        [JsonProperty("flsa_status")]
+        public FlsaStatus? FlsaStatus { get; set; }
+
         [JsonProperty("gender")]
         public HrisEmployeeGender? Gender { get; set; }
 
@@ -67,17 +85,32 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("groups")]
         public List<HrisGroup>? Groups { get; set; }
 
+        /// <summary>
+        /// does the user/employee have multi-factor authentication enabled.
+        /// </summary>
         [JsonProperty("has_mfa")]
         public bool? HasMfa { get; set; }
 
+        /// <summary>
+        /// The employee's start date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("hired_at")]
         public DateTime? HiredAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// This link expires after 1 hour.
+        /// </summary>
         [JsonProperty("image_url")]
         public string? ImageUrl { get; set; }
+
+        /// <summary>
+        /// the hris_job (position) this employee holds; their primary job when they hold more than one.
+        /// </summary>
+        [JsonProperty("job_id")]
+        public string? JobId { get; set; }
 
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
@@ -100,6 +133,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// how often the employee is paid (eg. BIWEEKLY).
+        /// </summary>
+        [JsonProperty("pay_frequency")]
+        public PayFrequency? PayFrequency { get; set; }
+
         [JsonProperty("pronouns")]
         public string? Pronouns { get; set; }
 
@@ -112,6 +151,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("relationships")]
         public List<HrisEmployeerelationship>? Relationships { get; set; }
 
+        /// <summary>
+        /// Mr. Mrs. Ms.
+        /// </summary>
         [JsonProperty("salutation")]
         public string? Salutation { get; set; }
 
@@ -130,15 +172,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephones")]
         public List<HrisTelephone>? Telephones { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("terminated_at")]
         public DateTime? TerminatedAt { get; set; }
 
         [JsonProperty("termination_reason")]
         public string? TerminationReason { get; set; }
 
+        /// <summary>
+        /// Total time off allowance for the current leave period, in days (when reported by the provider).
+        /// </summary>
         [JsonProperty("timeoff_days_total")]
         public double? TimeoffDaysTotal { get; set; }
 
+        /// <summary>
+        /// Time off days used or booked in the current leave period (when reported by the provider).
+        /// </summary>
         [JsonProperty("timeoff_days_used")]
         public double? TimeoffDaysUsed { get; set; }
 
@@ -148,6 +199,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

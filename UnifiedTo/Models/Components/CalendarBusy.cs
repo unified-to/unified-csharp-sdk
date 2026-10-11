@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime EndAt { get; set; } = default!;
 
@@ -28,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime StartAt { get; set; } = default!;
 

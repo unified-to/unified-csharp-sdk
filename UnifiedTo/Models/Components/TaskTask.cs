@@ -28,18 +28,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attachment_ids")]
         public List<string>? AttachmentIds { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The user who created this task (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("creator_user_id")]
         public string? CreatorUserId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        /// <summary>
+        /// Scheduled/planned end of the task (distinct from due_at and completed_at) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -70,15 +85,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("priority")]
         public string? Priority { get; set; }
 
+        /// <summary>
+        /// 0-100.
+        /// </summary>
         [JsonProperty("progress")]
         public double? Progress { get; set; }
 
+        /// <summary>
+        /// (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Scheduled/planned start of the task (distinct from created_at) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -97,9 +121,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("time_spent_unit")]
         public string? TimeSpentUnit { get; set; }
 
+        /// <summary>
+        /// The task/issue type name (e.g. Jira issue type).
+        /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

@@ -19,36 +19,69 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingPackage
     {
+        /// <summary>
+        /// ISO 4217 currency code.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Description of the package contents.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Height of the package.
+        /// </summary>
         [JsonProperty("height")]
         public double? Height { get; set; }
 
+        /// <summary>
+        /// Insured value for this package.
+        /// </summary>
         [JsonProperty("insured_amount")]
         public double? InsuredAmount { get; set; }
 
+        /// <summary>
+        /// Length of the package.
+        /// </summary>
         [JsonProperty("length")]
         public double? Length { get; set; }
 
+        /// <summary>
+        /// Unit for dimensions (cm, inch).
+        /// </summary>
         [JsonProperty("size_unit")]
         public ShippingPackageSizeUnit? SizeUnit { get; set; }
 
+        /// <summary>
+        /// Package-level tracking (for multi-package shipments).
+        /// </summary>
         [JsonProperty("tracking_number")]
         public string? TrackingNumber { get; set; }
 
+        /// <summary>
+        /// Declared value of the package.
+        /// </summary>
         [JsonProperty("value")]
         public double? Value { get; set; }
 
+        /// <summary>
+        /// Weight of the package.
+        /// </summary>
         [JsonProperty("weight")]
         public double? Weight { get; set; }
 
+        /// <summary>
+        /// Unit for weight (g, kg, oz, lb).
+        /// </summary>
         [JsonProperty("weight_unit")]
         public ShippingPackageWeightUnit? WeightUnit { get; set; }
 
+        /// <summary>
+        /// Width of the package.
+        /// </summary>
         [JsonProperty("width")]
         public double? Width { get; set; }
     }

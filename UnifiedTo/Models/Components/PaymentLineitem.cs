@@ -15,9 +15,15 @@ namespace UnifiedTo.Models.Components
 
     public class PaymentLineitem
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -30,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("item_description")]
         public string? ItemDescription { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceItem).
+        /// </summary>
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
@@ -42,9 +51,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
+        /// <summary>
+        /// new field.
+        /// </summary>
         [JsonProperty("refund_amount")]
         public double? RefundAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
@@ -63,6 +78,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("unit_quantity")]
         public double? UnitQuantity { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

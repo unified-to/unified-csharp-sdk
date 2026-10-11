@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class HrisPayslip
     {
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -34,14 +40,59 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("deduction")]
         public PropertyHrisPayslipDeduction? Deduction { get; set; }
 
+        /// <summary>
+        /// total employee deductions (pre and post-tax).
+        /// </summary>
+        [JsonProperty("deduction_amount")]
+        public double? DeductionAmount { get; set; }
+
         [JsonProperty("details")]
         public List<HrisPayslipDetail>? Details { get; set; }
 
+        /// <summary>
+        /// total taxes withheld from the employee.
+        /// </summary>
+        [JsonProperty("employee_tax_amount")]
+        public double? EmployeeTaxAmount { get; set; }
+
+        /// <summary>
+        /// total employer benefit contributions.
+        /// </summary>
+        [JsonProperty("employer_contribution_amount")]
+        public double? EmployerContributionAmount { get; set; }
+
+        /// <summary>
+        /// total employer-paid taxes.
+        /// </summary>
+        [JsonProperty("employer_tax_amount")]
+        public double? EmployerTaxAmount { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
         [JsonProperty("gross_amount")]
         public double? GrossAmount { get; set; }
+
+        /// <summary>
+        /// year-to-date gross pay as of this payslip.
+        /// </summary>
+        [JsonProperty("gross_ytd_amount")]
+        public double? GrossYtdAmount { get; set; }
+
+        /// <summary>
+        /// the pay group (hris_group of type PAY_GROUP) (reference to HrisGroup).
+        /// </summary>
+        [JsonProperty("group_id")]
+        public string? GroupId { get; set; }
+
+        /// <summary>
+        /// total hours paid on this payslip.
+        /// </summary>
+        [JsonProperty("hours")]
+        public double? Hours { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -49,6 +100,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("net_amount")]
         public double? NetAmount { get; set; }
 
+        /// <summary>
+        /// year-to-date net pay as of this payslip.
+        /// </summary>
+        [JsonProperty("net_ytd_amount")]
+        public double? NetYtdAmount { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("paid_at")]
         public DateTime? PaidAt { get; set; }
 
@@ -58,15 +118,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payment_type")]
         public PaymentType? PaymentType { get; set; }
 
+        /// <summary>
+        /// the hris_payroll (pay run) this payslip belongs to.
+        /// </summary>
+        [JsonProperty("payroll_id")]
+        public string? PayrollId { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        [JsonProperty("type")]
+        public HrisPayslipType? Type { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// the employee (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

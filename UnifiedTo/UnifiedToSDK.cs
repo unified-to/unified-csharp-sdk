@@ -51,6 +51,8 @@ namespace UnifiedTo
 
         public IExpense Expense { get; }
 
+        public IExpensereport Expensereport { get; }
+
         public IInvoice Invoice { get; }
 
         public IJournal Journal { get; }
@@ -67,9 +69,13 @@ namespace UnifiedTo
 
         public IPurchaseorder Purchaseorder { get; }
 
+        public IPurchasereceipt Purchasereceipt { get; }
+
         public IQuote Quote { get; }
 
         public ISalesorder Salesorder { get; }
+
+        public ISalesreceipt Salesreceipt { get; }
 
         public ITaxrate Taxrate { get; }
 
@@ -219,6 +225,8 @@ namespace UnifiedTo
 
         public IPrompt Prompt { get; }
 
+        public ISkill Skill { get; }
+
         public ITask Task { get; }
 
         public IHris Hris { get; }
@@ -233,7 +241,13 @@ namespace UnifiedTo
 
         public IDevice Device { get; }
 
+        public IEarning Earning { get; }
+
         public IEmployee Employee { get; }
+
+        public IPaycode Paycode { get; }
+
+        public IPayroll Payroll { get; }
 
         public IPayslip Payslip { get; }
 
@@ -347,6 +361,8 @@ namespace UnifiedTo
 
         public ICall Call { get; }
 
+        public IScorecardtemplate Scorecardtemplate { get; }
+
         public IUnified Unified { get; }
 
         public IApicall Apicall { get; }
@@ -367,9 +383,9 @@ namespace UnifiedTo
 
         public INotification Notification { get; }
 
-        public IWebhook Webhook { get; }
-
         public ISecretsmanager Secretsmanager { get; }
+
+        public IWebhook Webhook { get; }
 
         public IVerification Verification { get; }
 
@@ -439,6 +455,10 @@ namespace UnifiedTo
         /// </summary>
         public IExpense Expense { get; private set; }
         /// <summary>
+        /// The Expensereport sub-SDK.
+        /// </summary>
+        public IExpensereport Expensereport { get; private set; }
+        /// <summary>
         /// The Invoice sub-SDK.
         /// </summary>
         public IInvoice Invoice { get; private set; }
@@ -471,6 +491,10 @@ namespace UnifiedTo
         /// </summary>
         public IPurchaseorder Purchaseorder { get; private set; }
         /// <summary>
+        /// The Purchasereceipt sub-SDK.
+        /// </summary>
+        public IPurchasereceipt Purchasereceipt { get; private set; }
+        /// <summary>
         /// The Quote sub-SDK.
         /// </summary>
         public IQuote Quote { get; private set; }
@@ -478,6 +502,10 @@ namespace UnifiedTo
         /// The Salesorder sub-SDK.
         /// </summary>
         public ISalesorder Salesorder { get; private set; }
+        /// <summary>
+        /// The Salesreceipt sub-SDK.
+        /// </summary>
+        public ISalesreceipt Salesreceipt { get; private set; }
         /// <summary>
         /// The Taxrate sub-SDK.
         /// </summary>
@@ -775,6 +803,10 @@ namespace UnifiedTo
         /// </summary>
         public IPrompt Prompt { get; private set; }
         /// <summary>
+        /// The Skill sub-SDK.
+        /// </summary>
+        public ISkill Skill { get; private set; }
+        /// <summary>
         /// The Task sub-SDK.
         /// </summary>
         public ITask Task { get; private set; }
@@ -803,9 +835,21 @@ namespace UnifiedTo
         /// </summary>
         public IDevice Device { get; private set; }
         /// <summary>
+        /// The Earning sub-SDK.
+        /// </summary>
+        public IEarning Earning { get; private set; }
+        /// <summary>
         /// The Employee sub-SDK.
         /// </summary>
         public IEmployee Employee { get; private set; }
+        /// <summary>
+        /// The Paycode sub-SDK.
+        /// </summary>
+        public IPaycode Paycode { get; private set; }
+        /// <summary>
+        /// The Payroll sub-SDK.
+        /// </summary>
+        public IPayroll Payroll { get; private set; }
         /// <summary>
         /// The Payslip sub-SDK.
         /// </summary>
@@ -1031,6 +1075,10 @@ namespace UnifiedTo
         /// </summary>
         public ICall Call { get; private set; }
         /// <summary>
+        /// The Scorecardtemplate sub-SDK.
+        /// </summary>
+        public IScorecardtemplate Scorecardtemplate { get; private set; }
+        /// <summary>
         /// The Unified sub-SDK.
         /// </summary>
         public IUnified Unified { get; private set; }
@@ -1071,13 +1119,13 @@ namespace UnifiedTo
         /// </summary>
         public INotification Notification { get; private set; }
         /// <summary>
-        /// The Webhook sub-SDK.
-        /// </summary>
-        public IWebhook Webhook { get; private set; }
-        /// <summary>
         /// The Secretsmanager sub-SDK.
         /// </summary>
         public ISecretsmanager Secretsmanager { get; private set; }
+        /// <summary>
+        /// The Webhook sub-SDK.
+        /// </summary>
+        public IWebhook Webhook { get; private set; }
         /// <summary>
         /// The Verification sub-SDK.
         /// </summary>
@@ -1122,6 +1170,8 @@ namespace UnifiedTo
 
             Expense = new Expense(SDKConfiguration);
 
+            Expensereport = new Expensereport(SDKConfiguration);
+
             Invoice = new Invoice(SDKConfiguration);
 
             Journal = new Journal(SDKConfiguration);
@@ -1138,9 +1188,13 @@ namespace UnifiedTo
 
             Purchaseorder = new Purchaseorder(SDKConfiguration);
 
+            Purchasereceipt = new Purchasereceipt(SDKConfiguration);
+
             Quote = new Quote(SDKConfiguration);
 
             Salesorder = new Salesorder(SDKConfiguration);
+
+            Salesreceipt = new Salesreceipt(SDKConfiguration);
 
             Taxrate = new Taxrate(SDKConfiguration);
 
@@ -1290,6 +1344,8 @@ namespace UnifiedTo
 
             Prompt = new Prompt(SDKConfiguration);
 
+            Skill = new Skill(SDKConfiguration);
+
             Task = new Task(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
@@ -1304,7 +1360,13 @@ namespace UnifiedTo
 
             Device = new Device(SDKConfiguration);
 
+            Earning = new Earning(SDKConfiguration);
+
             Employee = new Employee(SDKConfiguration);
+
+            Paycode = new Paycode(SDKConfiguration);
+
+            Payroll = new Payroll(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
 
@@ -1418,6 +1480,8 @@ namespace UnifiedTo
 
             Call = new Call(SDKConfiguration);
 
+            Scorecardtemplate = new Scorecardtemplate(SDKConfiguration);
+
             Unified = new Unified(SDKConfiguration);
 
             Apicall = new Apicall(SDKConfiguration);
@@ -1438,9 +1502,9 @@ namespace UnifiedTo
 
             Notification = new Notification(SDKConfiguration);
 
-            Webhook = new Webhook(SDKConfiguration);
-
             Secretsmanager = new Secretsmanager(SDKConfiguration);
+
+            Webhook = new Webhook(SDKConfiguration);
 
             Verification = new Verification(SDKConfiguration);
 
@@ -1535,6 +1599,8 @@ namespace UnifiedTo
 
             Expense = new Expense(SDKConfiguration);
 
+            Expensereport = new Expensereport(SDKConfiguration);
+
             Invoice = new Invoice(SDKConfiguration);
 
             Journal = new Journal(SDKConfiguration);
@@ -1551,9 +1617,13 @@ namespace UnifiedTo
 
             Purchaseorder = new Purchaseorder(SDKConfiguration);
 
+            Purchasereceipt = new Purchasereceipt(SDKConfiguration);
+
             Quote = new Quote(SDKConfiguration);
 
             Salesorder = new Salesorder(SDKConfiguration);
+
+            Salesreceipt = new Salesreceipt(SDKConfiguration);
 
             Taxrate = new Taxrate(SDKConfiguration);
 
@@ -1703,6 +1773,8 @@ namespace UnifiedTo
 
             Prompt = new Prompt(SDKConfiguration);
 
+            Skill = new Skill(SDKConfiguration);
+
             Task = new Task(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
@@ -1717,7 +1789,13 @@ namespace UnifiedTo
 
             Device = new Device(SDKConfiguration);
 
+            Earning = new Earning(SDKConfiguration);
+
             Employee = new Employee(SDKConfiguration);
+
+            Paycode = new Paycode(SDKConfiguration);
+
+            Payroll = new Payroll(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
 
@@ -1831,6 +1909,8 @@ namespace UnifiedTo
 
             Call = new Call(SDKConfiguration);
 
+            Scorecardtemplate = new Scorecardtemplate(SDKConfiguration);
+
             Unified = new Unified(SDKConfiguration);
 
             Apicall = new Apicall(SDKConfiguration);
@@ -1851,9 +1931,9 @@ namespace UnifiedTo
 
             Notification = new Notification(SDKConfiguration);
 
-            Webhook = new Webhook(SDKConfiguration);
-
             Secretsmanager = new Secretsmanager(SDKConfiguration);
+
+            Webhook = new Webhook(SDKConfiguration);
 
             Verification = new Verification(SDKConfiguration);
 

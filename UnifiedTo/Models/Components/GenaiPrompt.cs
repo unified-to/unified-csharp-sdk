@@ -16,15 +16,30 @@ namespace UnifiedTo.Models.Components
 
     public class GenaiPrompt
     {
+        /// <summary>
+        /// One answer per question, matched by id.
+        /// </summary>
+        [JsonProperty("answers")]
+        public List<GenaiAnswer>? Answers { get; set; }
+
+        /// <summary>
+        /// a float between 0-1.
+        /// </summary>
         [JsonProperty("max_tokens")]
         public double? MaxTokens { get; set; }
 
+        /// <summary>
+        /// OAuth Bearer token for MCP servers that require authentication.
+        /// </summary>
         [JsonProperty("mcp_authorization_token")]
         public string? McpAuthorizationToken { get; set; }
 
         [JsonProperty("mcp_deferred_tools")]
         public List<string>? McpDeferredTools { get; set; }
 
+        /// <summary>
+        /// Supply a remote MCP URL to send to the LLM API for it to call its tools.  Note: Some LLM APIs do not yet support remote MCP URLs.
+        /// </summary>
         [JsonProperty("mcp_url")]
         public string? McpUrl { get; set; }
 
@@ -34,12 +49,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("model_id")]
         public string? ModelId { get; set; }
 
+        /// <summary>
+        /// Typed questions to evaluate against the messages (for decision models such as TypeSafe Jev).
+        /// </summary>
+        [JsonProperty("questions")]
+        public List<GenaiQuestion>? Questions { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("responses")]
         public List<string>? Responses { get; set; }
 
+        /// <summary>
+        /// ids of the genai_skill objects (Agent Skills) to make available to the LLM while it answers.
+        /// </summary>
+        [JsonProperty("skill_ids")]
+        public List<string>? SkillIds { get; set; }
+
+        /// <summary>
+        /// 0-1.
+        /// </summary>
         [JsonProperty("temperature")]
         public double? Temperature { get; set; }
 

@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("asset_tag")]
         public string? AssetTag { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -46,18 +49,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_missing")]
         public bool? IsMissing { get; set; }
 
+        /// <summary>
+        /// pointer to HR Location object (reference to HrisLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// device manufacturer.
+        /// </summary>
         [JsonProperty("manufacturer")]
         public string? Manufacturer { get; set; }
 
+        /// <summary>
+        /// device model.
+        /// </summary>
         [JsonProperty("model")]
         public string? Model { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// operating system name.
+        /// </summary>
         [JsonProperty("os")]
         public string? Os { get; set; }
 
@@ -67,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
@@ -76,6 +94,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("user_ids")]
         public List<string>? UserIds { get; set; }
 
+        /// <summary>
+        /// device version.
+        /// </summary>
         [JsonProperty("version")]
         public string? Version { get; set; }
     }

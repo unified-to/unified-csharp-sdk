@@ -20,24 +20,42 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class AccountingCashflow
     {
+        /// <summary>
+        /// Cash at beginning of period.
+        /// </summary>
         [JsonProperty("cash_beginning_amount")]
         public double? CashBeginningAmount { get; set; }
 
+        /// <summary>
+        /// Cash at end of period.
+        /// </summary>
         [JsonProperty("cash_ending_amount")]
         public double? CashEndingAmount { get; set; }
 
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ISO 4217, e.g. "USD"
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -50,21 +68,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("investing_sections")]
         public List<AccountingCashflowSection>? InvestingSections { get; set; }
 
+        /// <summary>
+        /// e.g. "Cash Flow Statement Q1 2020"
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Usually ending - beginning.
+        /// </summary>
         [JsonProperty("net_change_in_cash_amount")]
         public double? NetChangeInCashAmount { get; set; }
 
         [JsonProperty("operating_sections")]
         public List<AccountingCashflowSection>? OperatingSections { get; set; }
 
+        /// <summary>
+        /// Original data from the integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

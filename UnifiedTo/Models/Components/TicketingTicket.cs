@@ -25,21 +25,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attachment_ids")]
         public List<string>? AttachmentIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingCategory).
+        /// </summary>
         [JsonProperty("category_id")]
         public string? CategoryId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("customer_id")]
         public string? CustomerId { get; set; }
 
+        /// <summary>
+        /// Full description of ticket issue.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
@@ -52,27 +67,42 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Channel where ticket was originally submitted.
+        /// </summary>
         [JsonProperty("source")]
         public string? Source { get; set; }
 
+        /// <summary>
+        /// Reference to source-specific object.
+        /// </summary>
         [JsonProperty("source_ref")]
         public string? SourceRef { get; set; }
 
         [JsonProperty("status")]
         public TicketingTicketStatus? Status { get; set; }
 
+        /// <summary>
+        /// short description of the ticket.
+        /// </summary>
         [JsonProperty("subject")]
         public string? Subject { get; set; }
 
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("url")]
         public string? Url { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

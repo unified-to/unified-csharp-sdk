@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// unified payment terms enum, as on accounting_invoice / accounting_bill.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingQuotePaymentTerms : IEquatable<AccountingQuotePaymentTerms>
     {

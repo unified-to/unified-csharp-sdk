@@ -26,12 +26,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("course_ids")]
         public List<string>? CourseIds { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Difficulty or level of the content (e.g. Beginner, Intermediate, Advanced).
+        /// </summary>
         [JsonProperty("difficulty")]
         public string? Difficulty { get; set; }
 
@@ -65,6 +71,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("provider_name")]
         public string? ProviderName { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("published_at")]
         public DateTime? PublishedAt { get; set; }
 
@@ -89,6 +98,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// value of the role.
+        /// </summary>
         [JsonProperty("value")]
         public string Value { get; set; } = default!;
     }

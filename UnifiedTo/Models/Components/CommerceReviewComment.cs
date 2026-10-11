@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("content")]
         public string? Content { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -52,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CommerceMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// Original review data from source platform.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -61,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("unhelpful_votes")]
         public double? UnhelpfulVotes { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

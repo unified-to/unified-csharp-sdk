@@ -41,7 +41,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(webhook: new UnifiedTo.Mod
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `Webhook`                                                                     | [Models.Components.Webhook](../../Models/Components/Webhook.md)               | :heavy_check_mark:                                                            | A webhook is used to POST new/updated information to your server.             |
+| `Webhook`                                                                     | [Models.Components.Webhook](../../Models/Components/Webhook.md)               | :heavy_check_mark:                                                            | A webhook is used to POST new, updated, or deleted records to your server.    |
 | `IncludeAll`                                                                  | *bool*                                                                        | :heavy_minus_sign:                                                            | When true, send existing/historic data. When false, no historic data is sent. |
 
 ### Response
@@ -158,10 +158,10 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_check_mark:                                                | A webhook is used to POST new/updated information to your server. |
-| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Webhook`                                                                  | [Models.Components.Webhook](../../Models/Components/Webhook.md)            | :heavy_check_mark:                                                         | A webhook is used to POST new, updated, or deleted records to your server. |
+| `Id`                                                                       | *string*                                                                   | :heavy_check_mark:                                                         | ID of the Webhook                                                          |
 
 ### Response
 
@@ -274,10 +274,10 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_check_mark:                                                | A webhook is used to POST new/updated information to your server. |
-| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Webhook`                                                                  | [Models.Components.Webhook](../../Models/Components/Webhook.md)            | :heavy_check_mark:                                                         | A webhook is used to POST new, updated, or deleted records to your server. |
+| `Id`                                                                       | *string*                                                                   | :heavy_check_mark:                                                         | ID of the Webhook                                                          |
 
 ### Response
 

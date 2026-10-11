@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// normalized tender category; the provider's original label stays in payment_method.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class TenderType : IEquatable<TenderType>
     {

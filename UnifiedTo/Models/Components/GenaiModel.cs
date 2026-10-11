@@ -18,12 +18,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Whether the model is a decision model (such as TypeSafe Jev or Cloudflare Clef) that answers the typed questions of a prompt with answers instead of generating text responses.
+        /// </summary>
+        [JsonProperty("has_questions")]
+        public bool? HasQuestions { get; set; }
+
+        /// <summary>
+        /// Controls randomness of responses. A lower temperature leads to more predictable outputs while a higher temperature results in more varies and sometimes more creative outputs. 0-1.
+        /// </summary>
         [JsonProperty("has_temperature")]
         public bool? HasTemperature { get; set; }
+
+        /// <summary>
+        /// Whether the model accepts images as input (see the images on each prompt message).
+        /// </summary>
+        [JsonProperty("has_vision")]
+        public bool? HasVision { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The maximum number of tokens that the model can process in a single response. This limits ensures computational efficiency and resource management.
+        /// </summary>
         [JsonProperty("max_tokens")]
         public double? MaxTokens { get; set; }
 

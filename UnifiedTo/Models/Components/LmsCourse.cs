@@ -23,9 +23,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("content_ids")]
         public List<string>? ContentIds { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The currency code (ISO) of the course price.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
@@ -56,12 +62,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// How much the course costs.
+        /// </summary>
         [JsonProperty("price_amount")]
         public double? PriceAmount { get; set; }
 
         [JsonProperty("provider_name")]
         public string? ProviderName { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("published_at")]
         public DateTime? PublishedAt { get; set; }
 
@@ -77,6 +89,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("time_estimate_minutes")]
         public double? TimeEstimateMinutes { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

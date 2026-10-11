@@ -22,18 +22,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// pointer to the Performance Cycle object (goal cycle or timeframe).
+        /// </summary>
         [JsonProperty("cycle_id")]
         public string? CycleId { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
@@ -49,15 +61,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// id of the parent goal, for goal alignment / OKR trees.
+        /// </summary>
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
+        /// <summary>
+        /// progress percentage from 0 to 100.
+        /// </summary>
         [JsonProperty("progress")]
         public double? Progress { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -67,6 +88,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public PerformanceGoalSchemasType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
@@ -76,6 +100,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("user_ids")]
         public List<string>? UserIds { get; set; }
 
+        /// <summary>
+        /// the weight of this goal when the provider weighs goals in reviews.
+        /// </summary>
         [JsonProperty("weight")]
         public double? Weight { get; set; }
     }

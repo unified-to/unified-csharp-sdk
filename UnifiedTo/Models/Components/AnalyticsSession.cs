@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("country")]
         public string? Country { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -37,24 +40,42 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("duration_seconds")]
         public double? DurationSeconds { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// Session attributes.
+        /// </summary>
         [JsonProperty("events_count")]
         public double? EventsCount { get; set; }
 
+        /// <summary>
+        /// Session attributes.
+        /// </summary>
         [JsonProperty("exit_page")]
         public string? ExitPage { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Engagement.
+        /// </summary>
         [JsonProperty("is_bounce")]
         public bool? IsBounce { get; set; }
 
+        /// <summary>
+        /// Engagement.
+        /// </summary>
         [JsonProperty("is_conversion")]
         public bool? IsConversion { get; set; }
 
+        /// <summary>
+        /// Session attributes.
+        /// </summary>
         [JsonProperty("landing_page")]
         public string? LandingPage { get; set; }
 
@@ -64,21 +85,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("os")]
         public string? Os { get; set; }
 
+        /// <summary>
+        /// Session attributes.
+        /// </summary>
         [JsonProperty("page_views")]
         public double? PageViews { get; set; }
 
+        /// <summary>
+        /// points to AnalyticsProperty.
+        /// </summary>
         [JsonProperty("property_id")]
         public string? PropertyId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Acquisition.
+        /// </summary>
         [JsonProperty("source")]
         public string? Source { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingRate
     {
+        /// <summary>
+        /// Reference to the carrier.
+        /// </summary>
         [JsonProperty("carrier_id")]
         public string? CarrierId { get; set; }
 
@@ -29,6 +32,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("from_address")]
         public PropertyShippingRateFromAddress? FromAddress { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this rate object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -44,9 +50,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Latest date to ship (from order) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("ship_by_at")]
         public DateTime? ShipByAt { get; set; }
 
+        /// <summary>
+        /// Reference to the shipping object (if rate is for existing shipment).
+        /// </summary>
         [JsonProperty("shipment_id")]
         public string? ShipmentId { get; set; }
 

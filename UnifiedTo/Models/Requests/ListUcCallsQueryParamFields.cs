@@ -45,6 +45,8 @@ namespace UnifiedTo.Models.Requests
         Metadata,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("conversation_identifier")]
+        ConversationIdentifier,
     }
 
     public static class ListUcCallsQueryParamFieldsExtension

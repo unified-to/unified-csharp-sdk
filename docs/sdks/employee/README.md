@@ -42,11 +42,11 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         Bio = "sushi devotee, singer",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 69148D,
+                Amount = 60136D,
                 Currency = "CRC",
                 Frequency = HrisCompensationFrequency.Quarter,
                 Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.Equity,
+                Type = HrisCompensationType.StockOptions,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
@@ -62,10 +62,11 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         EmploymentStatus = EmploymentStatus.Active,
         EmploymentType = HrisEmployeeEmploymentType.Volunteer,
         FirstName = "Zetta",
+        FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
-        HasMfa = true,
-        HiredAt = System.DateTime.Parse("2023-05-12T03:12:11.486Z").ToUniversalTime(),
-        Id = "38a79fa8-80b1-4659-b0a6-327121c773f1",
+        HasMfa = false,
+        HiredAt = System.DateTime.Parse("2023-05-22T15:45:02.980Z").ToUniversalTime(),
+        Id = "3c57c9db-2490-435f-890b-c3b4065605fd",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -79,15 +80,16 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "f5bf964b-886a-4dd4-bc29-e4151986a960",
+                Id = "a18f53be-9e33-4567-8afb-ffd8e3af4904",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "tenetur"
+                    "appono"
                 ),
             },
         },
         Name = "Zetta Prohaska",
+        PayFrequency = PayFrequency.Biweekly,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
@@ -103,38 +105,35 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
                     },
                 },
                 Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Emergency,
+                Type = HrisEmployeerelationshipType.Friend,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
                         Email = "Benedict_Wisozk83@hotmail.com",
                     },
-                    new HrisEmail() {
-                        Email = "Princess_Rath43@gmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Elmira92@yahoo.com",
-                    },
                 },
                 Name = "Music",
-                Type = HrisEmployeerelationshipType.Friend,
+                Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Jane30@gmail.com",
+                        Email = "Margot11@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Jaden_Miller@gmail.com",
                     },
                 },
-                Name = "Jewelry",
-                Type = HrisEmployeerelationshipType.Sibling,
+                Name = "Electronics",
+                Type = HrisEmployeerelationshipType.Other,
             },
         },
         Salutation = "Miss",
         SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 3674489D,
-        StorageQuotaAvailable = 7748057D,
-        StorageQuotaUsed = 301727D,
+        StorageQuotaAllocated = 7748057D,
+        StorageQuotaAvailable = 1590710D,
+        StorageQuotaUsed = 730343D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
                 Telephone = "(409) 801-3705",
@@ -146,7 +145,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-02-20T06:18:08.630Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-27T06:24:28.834Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -288,11 +287,11 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         Bio = "sushi devotee, singer",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 69148D,
+                Amount = 60136D,
                 Currency = "CRC",
                 Frequency = HrisCompensationFrequency.Quarter,
                 Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.Equity,
+                Type = HrisCompensationType.StockOptions,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
@@ -308,10 +307,11 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         EmploymentStatus = EmploymentStatus.Active,
         EmploymentType = HrisEmployeeEmploymentType.Volunteer,
         FirstName = "Zetta",
+        FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
-        HasMfa = true,
-        HiredAt = System.DateTime.Parse("2023-05-12T03:12:11.541Z").ToUniversalTime(),
-        Id = "58337faa-4e32-4102-b7c8-c1d452691dbf",
+        HasMfa = false,
+        HiredAt = System.DateTime.Parse("2023-05-22T15:45:03.018Z").ToUniversalTime(),
+        Id = "81c8b367-c709-49bf-83aa-4fe7d6faf9cc",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -325,15 +325,16 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+                Id = "24010608-6f76-45ac-925c-ab53fb3c734c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "tenetur"
+                    "appono"
                 ),
             },
         },
         Name = "Zetta Prohaska",
+        PayFrequency = PayFrequency.Biweekly,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
@@ -349,38 +350,35 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     },
                 },
                 Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Emergency,
+                Type = HrisEmployeerelationshipType.Friend,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
                         Email = "Benedict_Wisozk83@hotmail.com",
                     },
-                    new HrisEmail() {
-                        Email = "Princess_Rath43@gmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Elmira92@yahoo.com",
-                    },
                 },
                 Name = "Music",
-                Type = HrisEmployeerelationshipType.Friend,
+                Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Jane30@gmail.com",
+                        Email = "Margot11@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Jaden_Miller@gmail.com",
                     },
                 },
-                Name = "Jewelry",
-                Type = HrisEmployeerelationshipType.Sibling,
+                Name = "Electronics",
+                Type = HrisEmployeerelationshipType.Other,
             },
         },
         Salutation = "Miss",
         SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 3674489D,
-        StorageQuotaAvailable = 7748057D,
-        StorageQuotaUsed = 301727D,
+        StorageQuotaAllocated = 7748057D,
+        StorageQuotaAvailable = 1590710D,
+        StorageQuotaUsed = 730343D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
                 Telephone = "(409) 801-3705",
@@ -392,7 +390,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-02-20T06:18:08.666Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-27T06:24:28.860Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -491,11 +489,11 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         Bio = "sushi devotee, singer",
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
-                Amount = 69148D,
+                Amount = 60136D,
                 Currency = "CRC",
                 Frequency = HrisCompensationFrequency.Quarter,
                 Notes = "Tergeo laborum laboriosam tutis.",
-                Type = HrisCompensationType.Equity,
+                Type = HrisCompensationType.StockOptions,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-09-16T15:08:53.262Z").ToUniversalTime(),
@@ -511,10 +509,11 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         EmploymentStatus = EmploymentStatus.Active,
         EmploymentType = HrisEmployeeEmploymentType.Volunteer,
         FirstName = "Zetta",
+        FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
-        HasMfa = true,
-        HiredAt = System.DateTime.Parse("2023-05-12T03:12:11.541Z").ToUniversalTime(),
-        Id = "58337faa-4e32-4102-b7c8-c1d452691dbf",
+        HasMfa = false,
+        HiredAt = System.DateTime.Parse("2023-05-22T15:45:03.018Z").ToUniversalTime(),
+        Id = "81c8b367-c709-49bf-83aa-4fe7d6faf9cc",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -528,15 +527,16 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "dc9e304c-74a8-4e11-aa99-780c6ad1af40",
+                Id = "24010608-6f76-45ac-925c-ab53fb3c734c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
-                    "tenetur"
+                    "appono"
                 ),
             },
         },
         Name = "Zetta Prohaska",
+        PayFrequency = PayFrequency.Biweekly,
         Pronouns = "she/her",
         Relationships = new List<HrisEmployeerelationship>() {
             new HrisEmployeerelationship() {
@@ -552,38 +552,35 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     },
                 },
                 Name = "Automotive",
-                Type = HrisEmployeerelationshipType.Emergency,
+                Type = HrisEmployeerelationshipType.Friend,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
                         Email = "Benedict_Wisozk83@hotmail.com",
                     },
-                    new HrisEmail() {
-                        Email = "Princess_Rath43@gmail.com",
-                    },
-                    new HrisEmail() {
-                        Email = "Elmira92@yahoo.com",
-                    },
                 },
                 Name = "Music",
-                Type = HrisEmployeerelationshipType.Friend,
+                Type = HrisEmployeerelationshipType.Sibling,
             },
             new HrisEmployeerelationship() {
                 Emails = new List<HrisEmail>() {
                     new HrisEmail() {
-                        Email = "Jane30@gmail.com",
+                        Email = "Margot11@yahoo.com",
+                    },
+                    new HrisEmail() {
+                        Email = "Jaden_Miller@gmail.com",
                     },
                 },
-                Name = "Jewelry",
-                Type = HrisEmployeerelationshipType.Sibling,
+                Name = "Electronics",
+                Type = HrisEmployeerelationshipType.Other,
             },
         },
         Salutation = "Miss",
         SsnSin = "yMRtj0Q3xO",
-        StorageQuotaAllocated = 3674489D,
-        StorageQuotaAvailable = 7748057D,
-        StorageQuotaUsed = 301727D,
+        StorageQuotaAllocated = 7748057D,
+        StorageQuotaAvailable = 1590710D,
+        StorageQuotaUsed = 730343D,
         Telephones = new List<HrisTelephone>() {
             new HrisTelephone() {
                 Telephone = "(409) 801-3705",
@@ -595,7 +592,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-02-20T06:18:08.666Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-02-27T06:24:28.860Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -19,21 +19,36 @@ namespace UnifiedTo.Models.Components
 
     public class AdSchedule
     {
+        /// <summary>
+        /// 0.1-10.0.
+        /// </summary>
         [JsonProperty("bid_modifier")]
         public double? BidModifier { get; set; }
 
         [JsonProperty("day_of_week")]
         public DayOfWeek DayOfWeek { get; set; } = default!;
 
+        /// <summary>
+        /// 0-24 (24 = end of day).
+        /// </summary>
         [JsonProperty("end_hour")]
         public double EndHour { get; set; } = default!;
 
+        /// <summary>
+        /// 0, 15, 30, 45.
+        /// </summary>
         [JsonProperty("end_minute")]
         public double? EndMinute { get; set; }
 
+        /// <summary>
+        /// 0-23.
+        /// </summary>
         [JsonProperty("start_hour")]
         public double StartHour { get; set; } = default!;
 
+        /// <summary>
+        /// 0, 15, 30, 45.
+        /// </summary>
         [JsonProperty("start_minute")]
         public double? StartMinute { get; set; }
     }

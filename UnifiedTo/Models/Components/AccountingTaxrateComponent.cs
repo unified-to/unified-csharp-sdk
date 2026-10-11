@@ -14,12 +14,21 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingTaxrateComponent
     {
+        /// <summary>
+        /// True when this component is charged on top of the other components.
+        /// </summary>
         [JsonProperty("is_compound")]
         public bool? IsCompound { get; set; }
 
+        /// <summary>
+        /// Name of the tax component, e.g. GST or PST.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Rate of this component, in %
+        /// </summary>
         [JsonProperty("rate")]
         public double? Rate { get; set; }
     }

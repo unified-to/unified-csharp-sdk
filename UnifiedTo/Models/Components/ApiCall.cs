@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("connection_id")]
         public string? ConnectionId { get; set; }
 
+        /// <summary>
+        /// The date that this object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -31,15 +34,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("environment")]
         public string? Environment { get; set; } = "Production";
 
+        /// <summary>
+        /// The error description (if status code is &gt;= 400).
+        /// </summary>
         [JsonProperty("error")]
         public string? Error { get; set; }
 
+        /// <summary>
+        /// your customer's user ID.
+        /// </summary>
         [JsonProperty("external_xref")]
         public string? ExternalXref { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this API call.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The integration type.
+        /// </summary>
         [JsonProperty("integration_type")]
         public string IntegrationType { get; set; } = default!;
 
@@ -52,18 +67,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("method")]
         public string Method { get; set; } = default!;
 
+        /// <summary>
+        /// The called name of the API method.
+        /// </summary>
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
+        /// <summary>
+        /// The called API method's HTTP verb and route path (PUT /crm/{integration}/deak/{id}).
+        /// </summary>
         [JsonProperty("path")]
         public string Path { get; set; } = default!;
 
+        /// <summary>
+        /// The size of the response.
+        /// </summary>
         [JsonProperty("size")]
         public double? Size { get; set; }
 
+        /// <summary>
+        /// The resulting HTTP status code (200).
+        /// </summary>
         [JsonProperty("status")]
         public string Status { get; set; } = default!;
 
+        /// <summary>
+        /// The type of API Call being logged.
+        /// </summary>
         [JsonProperty("type")]
         public ApiCallType Type { get; set; } = default!;
 
@@ -76,6 +106,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("webhook_id")]
         public string? WebhookId { get; set; }
 
+        /// <summary>
+        /// (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }
     }

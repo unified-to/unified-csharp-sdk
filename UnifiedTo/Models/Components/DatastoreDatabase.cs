@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
 
     public class DatastoreDatabase
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -40,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("region")]
         public string? Region { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

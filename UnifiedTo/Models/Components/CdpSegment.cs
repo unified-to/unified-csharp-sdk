@@ -19,42 +19,81 @@ namespace UnifiedTo.Models.Components
 
     public class CdpSegment
     {
+        /// <summary>
+        /// How the segment membership is computed (REALTIME or BATCH).
+        /// </summary>
         [JsonProperty("compute_mode")]
         public ComputeMode? ComputeMode { get; set; }
 
+        /// <summary>
+        /// The date that this segment object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The membership rule/query that defines the segment.
+        /// </summary>
         [JsonProperty("definition")]
         public string? Definition { get; set; }
 
+        /// <summary>
+        /// The description of the segment/audience.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this segment object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the segment is active/enabled.
+        /// </summary>
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// The name of the segment/audience.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this segment.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The number of profiles currently in the segment.
+        /// </summary>
         [JsonProperty("size")]
         public double? Size { get; set; }
 
+        /// <summary>
+        /// The data-plane handle/key used to identify segment membership in profiles and destinations.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// The cdp_source this segment originated from; points to CdpSource.
+        /// </summary>
         [JsonProperty("source_id")]
         public string? SourceId { get; set; }
 
+        /// <summary>
+        /// The type of entity the segment targets (USERS, ACCOUNTS, LINKED).
+        /// </summary>
         [JsonProperty("type")]
         public CdpSegmentType? Type { get; set; }
 
+        /// <summary>
+        /// The last date that this segment object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

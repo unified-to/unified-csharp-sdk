@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -52,6 +55,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("external_placement_reference")]
         public string? ExternalPlacementReference { get; set; }
 
+        /// <summary>
+        /// (reference to AdsGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
@@ -64,12 +70,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// references Commerce Item ID (reference to CommerceItem).
+        /// </summary>
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
         [JsonProperty("labels")]
         public List<string>? Labels { get; set; }
 
+        /// <summary>
+        /// Destination URL for creatives with links.
+        /// </summary>
         [JsonProperty("link_url")]
         public string? LinkUrl { get; set; }
 
@@ -79,9 +91,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// Display URL path 1 (Microsoft RSA Path1).
+        /// </summary>
         [JsonProperty("path1")]
         public string? Path1 { get; set; }
 
+        /// <summary>
+        /// Display URL path 2 (Microsoft RSA Path2).
+        /// </summary>
         [JsonProperty("path2")]
         public string? Path2 { get; set; }
 
@@ -100,9 +118,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("title")]
         public string? Title { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Appended URL tracking params (e.g. utm_source=..&amp;utm_medium=..); Meta url_tags, Google tracking template.
+        /// </summary>
         [JsonProperty("url_tags")]
         public string? UrlTags { get; set; }
 

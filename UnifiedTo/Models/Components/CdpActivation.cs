@@ -19,39 +19,75 @@ namespace UnifiedTo.Models.Components
 
     public class CdpActivation
     {
+        /// <summary>
+        /// The date that this activation object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The cdp_destination the data is sent to; points to CdpDestination.
+        /// </summary>
         [JsonProperty("destination_id")]
         public string? DestinationId { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this activation object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the activation is active/enabled.
+        /// </summary>
         [JsonProperty("is_enabled")]
         public bool? IsEnabled { get; set; }
 
+        /// <summary>
+        /// When the activation last ran (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("last_run_at")]
         public DateTime? LastRunAt { get; set; }
 
+        /// <summary>
+        /// The name of the activation/sync job.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this activation.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The activation schedule or mode (eg. cron, interval, realtime, batch).
+        /// </summary>
         [JsonProperty("schedule")]
         public string? Schedule { get; set; }
 
+        /// <summary>
+        /// The cdp_segment being activated; points to CdpSegment.
+        /// </summary>
         [JsonProperty("segment_id")]
         public string? SegmentId { get; set; }
 
+        /// <summary>
+        /// The cdp_source the data originates from; points to CdpSource.
+        /// </summary>
         [JsonProperty("source_id")]
         public string? SourceId { get; set; }
 
+        /// <summary>
+        /// The current status of the activation.
+        /// </summary>
         [JsonProperty("status")]
         public CdpActivationStatus? Status { get; set; }
 
+        /// <summary>
+        /// The last date that this activation object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

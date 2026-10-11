@@ -22,132 +22,261 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class ClubsActivity
     {
+        /// <summary>
+        /// The number of achievements gained during this activity.
+        /// </summary>
         [JsonProperty("achievement_count")]
         public double? AchievementCount { get; set; }
 
+        /// <summary>
+        /// The number of athletes that took part in this activity.
+        /// </summary>
         [JsonProperty("athlete_count")]
         public double? AthleteCount { get; set; }
 
+        /// <summary>
+        /// The id of the athlete who performed the activity (DetailedActivity only).
+        /// </summary>
         [JsonProperty("athlete_id")]
         public string? AthleteId { get; set; }
 
+        /// <summary>
+        /// The full name of the athlete.
+        /// </summary>
         [JsonProperty("athlete_name")]
         public string? AthleteName { get; set; }
 
+        /// <summary>
+        /// The activity's average cadence.
+        /// </summary>
         [JsonProperty("average_cadence")]
         public double? AverageCadence { get; set; }
 
+        /// <summary>
+        /// The activity's average heart rate, in beats per minute.
+        /// </summary>
         [JsonProperty("average_heartrate")]
         public double? AverageHeartrate { get; set; }
 
+        /// <summary>
+        /// The activity's average speed, in meters per second.
+        /// </summary>
         [JsonProperty("average_speed")]
         public double? AverageSpeed { get; set; }
 
+        /// <summary>
+        /// The activity's average power output, in watts.
+        /// </summary>
         [JsonProperty("average_watts")]
         public double? AverageWatts { get; set; }
 
+        /// <summary>
+        /// The number of kilocalories consumed during this activity.
+        /// </summary>
         [JsonProperty("calories")]
         public double? Calories { get; set; }
 
+        /// <summary>
+        /// The number of comments for this activity.
+        /// </summary>
         [JsonProperty("comment_count")]
         public double? CommentCount { get; set; }
 
+        /// <summary>
+        /// The date that this activity was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The description of the activity (DetailedActivity only).
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// The activity's distance, in meters.
+        /// </summary>
         [JsonProperty("distance")]
         public double? Distance { get; set; }
 
+        /// <summary>
+        /// The activity's elapsed time, in seconds.
+        /// </summary>
         [JsonProperty("elapsed_time")]
         public double? ElapsedTime { get; set; }
 
+        /// <summary>
+        /// The activity's highest elevation, in meters (DetailedActivity only).
+        /// </summary>
         [JsonProperty("elevation_high")]
         public double? ElevationHigh { get; set; }
 
+        /// <summary>
+        /// The activity's lowest elevation, in meters (DetailedActivity only).
+        /// </summary>
         [JsonProperty("elevation_low")]
         public double? ElevationLow { get; set; }
 
+        /// <summary>
+        /// The group this activity was listed under (reference to HrisGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
+        /// <summary>
+        /// Whether the activity has heart rate data.
+        /// </summary>
         [JsonProperty("has_heartrate")]
         public bool? HasHeartrate { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this activity (not provided by ClubActivity).
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether this activity is a commute.
+        /// </summary>
         [JsonProperty("is_commute")]
         public bool? IsCommute { get; set; }
 
+        /// <summary>
+        /// Whether this activity was created manually.
+        /// </summary>
         [JsonProperty("is_manual")]
         public bool? IsManual { get; set; }
 
+        /// <summary>
+        /// Whether this activity is private.
+        /// </summary>
         [JsonProperty("is_private")]
         public bool? IsPrivate { get; set; }
 
+        /// <summary>
+        /// Whether this activity was recorded on a training machine.
+        /// </summary>
         [JsonProperty("is_trainer")]
         public bool? IsTrainer { get; set; }
 
+        /// <summary>
+        /// The total work done, in kilojoules.
+        /// </summary>
         [JsonProperty("kilojoules")]
         public double? Kilojoules { get; set; }
 
+        /// <summary>
+        /// The number of kudos given for this activity.
+        /// </summary>
         [JsonProperty("kudos_count")]
         public double? KudosCount { get; set; }
 
+        /// <summary>
+        /// The detailed polyline of the activity's map.
+        /// </summary>
         [JsonProperty("map_polyline")]
         public string? MapPolyline { get; set; }
 
+        /// <summary>
+        /// The summary polyline of the activity's map.
+        /// </summary>
         [JsonProperty("map_summary_polyline")]
         public string? MapSummaryPolyline { get; set; }
 
+        /// <summary>
+        /// The activity's max heart rate, in beats per minute.
+        /// </summary>
         [JsonProperty("max_heartrate")]
         public double? MaxHeartrate { get; set; }
 
+        /// <summary>
+        /// The activity's max speed, in meters per second.
+        /// </summary>
         [JsonProperty("max_speed")]
         public double? MaxSpeed { get; set; }
 
+        /// <summary>
+        /// The activity's max power output, in watts.
+        /// </summary>
         [JsonProperty("max_watts")]
         public double? MaxWatts { get; set; }
 
+        /// <summary>
+        /// The activity's moving time, in seconds.
+        /// </summary>
         [JsonProperty("moving_time")]
         public double? MovingTime { get; set; }
 
+        /// <summary>
+        /// The name of the activity.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The number of Instagram photos for this activity.
+        /// </summary>
         [JsonProperty("photo_count")]
         public double? PhotoCount { get; set; }
 
+        /// <summary>
+        /// The number of personal records set during this activity.
+        /// </summary>
         [JsonProperty("pr_count")]
         public double? PrCount { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this activity.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// When the activity started (UTC) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        /// <summary>
+        /// The activity's relative effort score.
+        /// </summary>
         [JsonProperty("suffer_score")]
         public double? SufferScore { get; set; }
 
+        /// <summary>
+        /// The timezone of the activity.
+        /// </summary>
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// The activity's total elevation gain, in meters.
+        /// </summary>
         [JsonProperty("total_elevation_gain")]
         public double? TotalElevationGain { get; set; }
 
+        /// <summary>
+        /// The activity type.
+        /// </summary>
         [JsonProperty("type")]
         public ClubsActivityType? Type { get; set; }
 
+        /// <summary>
+        /// The last date that this activity was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// The activity's weighted average power output, in watts.
+        /// </summary>
         [JsonProperty("weighted_average_watts")]
         public double? WeightedAverageWatts { get; set; }
 
+        /// <summary>
+        /// The activity's workout type.
+        /// </summary>
         [JsonProperty("workout_type")]
         public double? WorkoutType { get; set; }
     }

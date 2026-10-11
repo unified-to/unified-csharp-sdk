@@ -25,15 +25,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("connection_id")]
         public string? ConnectionId { get; set; }
 
+        /// <summary>
+        /// The date that this integration object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Longer description of this notification.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
         [JsonProperty("event")]
         public Models.Components.Event? Event { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this notification object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -43,12 +52,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("integration_type")]
         public string? IntegrationType { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("sent_at")]
         public DateTime? SentAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 
@@ -58,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("webhook_id")]
         public string? WebhookId { get; set; }
 
+        /// <summary>
+        /// (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }
 

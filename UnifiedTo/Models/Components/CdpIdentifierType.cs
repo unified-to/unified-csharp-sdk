@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The type of the identifier (eg. EMAIL, USER_ID, ANONYMOUS_ID).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class CdpIdentifierType : IEquatable<CdpIdentifierType>
     {

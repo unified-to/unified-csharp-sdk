@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
 
     public class KmsSpace
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -34,15 +37,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
+        /// <summary>
+        /// (reference to KmsPage).
+        /// </summary>
         [JsonProperty("parent_page_id")]
         public string? ParentPageId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

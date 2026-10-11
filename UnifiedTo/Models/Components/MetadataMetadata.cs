@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class MetadataMetadata
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -34,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
+        /// <summary>
+        /// This is the unified object type that this metadata is associated with. eg. crm_contact or coomerce_item.
+        /// </summary>
         [JsonProperty("object_type")]
         public string ObjectType { get; set; } = default!;
 
@@ -52,6 +58,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

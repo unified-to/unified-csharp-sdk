@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant).
+        /// </summary>
         [JsonProperty("type")]
         public AdsTargetType? Type { get; set; }
     }

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Promoted entity types for ads_promoted list endpoint.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AdsPromotedType : IEquatable<AdsPromotedType>
     {

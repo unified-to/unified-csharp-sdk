@@ -19,15 +19,24 @@ namespace UnifiedTo.Models.Components
 
     public class StorageFile
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// base64 encoded file contents used to create/update only.
+        /// </summary>
         [JsonProperty("data")]
         public string? Data { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// This link expires after 1 hour. When you need to retrieve the contents of a file, call the "Retrieve a file" endpoint again to get a new download_url.
+        /// </summary>
         [JsonProperty("download_url")]
         public string? DownloadUrl { get; set; }
 
@@ -67,9 +76,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public StorageFileType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 

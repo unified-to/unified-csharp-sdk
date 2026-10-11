@@ -25,15 +25,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("components")]
         public List<AccountingTaxrateComponent>? Components { get; set; }
 
+        /// <summary>
+        /// Jurisdiction country.
+        /// </summary>
         [JsonProperty("country")]
         public string? Country { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Net effective rate in %, where it differs from the nominal rate.
+        /// </summary>
         [JsonProperty("effective_rate")]
         public double? EffectiveRate { get; set; }
 
@@ -43,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// True when the rate stacks on top of other taxes.
+        /// </summary>
         [JsonProperty("is_compound")]
         public bool? IsCompound { get; set; }
 
@@ -55,21 +67,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// %
+        /// </summary>
         [JsonProperty("rate")]
         public double? Rate { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Jurisdiction state / province.
+        /// </summary>
         [JsonProperty("region")]
         public string? Region { get; set; }
 
+        /// <summary>
+        /// Sum of all components, in %
+        /// </summary>
         [JsonProperty("total_rate")]
         public double? TotalRate { get; set; }
 
+        /// <summary>
+        /// Whether the rate applies to sales, purchases, or both.
+        /// </summary>
         [JsonProperty("type")]
         public AccountingTaxrateType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

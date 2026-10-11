@@ -1,0 +1,11 @@
+# UcScorecardtemplateQuestion
+
+
+## Fields
+
+| Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `Options`                                                                                     | List<*string*>                                                                                | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `QuestionIdentifier`                                                                          | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `Text`                                                                                        | *string*                                                                                      | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `Type`                                                                                        | [UcScorecardtemplateQuestionType](../../Models/Components/UcScorecardtemplateQuestionType.md) | :heavy_minus_sign:                                                                            | N/A                                                                                           |

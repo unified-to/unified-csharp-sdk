@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class CommerceItem
     {
+        /// <summary>
+        /// Reference to Accounting Account (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
@@ -28,12 +31,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("collections")]
         public List<CommerceReference>? Collections { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// minutes.
+        /// </summary>
         [JsonProperty("duration")]
         public double? Duration { get; set; }
 
@@ -58,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_visible")]
         public bool? IsVisible { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
@@ -91,15 +103,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        /// <summary>
+        /// references AccountingTaxrate.
+        /// </summary>
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
 
         [JsonProperty("total_stock")]
         public double? TotalStock { get; set; }
 
+        /// <summary>
+        /// product, service, digital-download, ...
+        /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

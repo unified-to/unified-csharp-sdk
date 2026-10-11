@@ -22,78 +22,153 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class ClubsEvent
     {
+        /// <summary>
+        /// The away team's score.
+        /// </summary>
         [JsonProperty("away_score")]
         public double? AwayScore { get; set; }
 
+        /// <summary>
+        /// The away team's name (homeaway providers).
+        /// </summary>
         [JsonProperty("away_team_name")]
         public string? AwayTeamName { get; set; }
 
+        /// <summary>
+        /// The date that this event was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// A description or notes for the event.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// The scheduled duration, in minutes.
+        /// </summary>
         [JsonProperty("duration_minutes")]
         public double? DurationMinutes { get; set; }
 
+        /// <summary>
+        /// When the event ends (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// The group this event belongs to (reference to HrisGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
+        /// <summary>
+        /// The home team's score.
+        /// </summary>
         [JsonProperty("home_score")]
         public double? HomeScore { get; set; }
 
+        /// <summary>
+        /// The home team's name (homeaway providers).
+        /// </summary>
         [JsonProperty("home_team_name")]
         public string? HomeTeamName { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this event.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the connected groupteam is the home side.
+        /// </summary>
         [JsonProperty("is_home")]
         public bool? IsHome { get; set; }
 
+        /// <summary>
+        /// The id of the location for this event (reference to ClubsLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// The name of the location for this event.
+        /// </summary>
         [JsonProperty("location_name")]
         public string? LocationName { get; set; }
 
+        /// <summary>
+        /// The event name (or a "Home vs Away" matchup label).
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The id of the opposing team (single-opponent providers).
+        /// </summary>
         [JsonProperty("opponent_id")]
         public string? OpponentId { get; set; }
 
+        /// <summary>
+        /// The name of the opposing team.
+        /// </summary>
         [JsonProperty("opponent_name")]
         public string? OpponentName { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this event.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The opponent's score (team-vs-opponent providers).
+        /// </summary>
         [JsonProperty("score_against")]
         public double? ScoreAgainst { get; set; }
 
+        /// <summary>
+        /// The connected groupteam's score (team-vs-opponent providers).
+        /// </summary>
         [JsonProperty("score_for")]
         public double? ScoreFor { get; set; }
 
+        /// <summary>
+        /// When the event starts (UTC) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        /// <summary>
+        /// The event status.
+        /// </summary>
         [JsonProperty("status")]
         public ClubsEventStatus? Status { get; set; }
 
+        /// <summary>
+        /// The timezone of the event.
+        /// </summary>
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
+        /// <summary>
+        /// The event type.
+        /// </summary>
         [JsonProperty("type")]
         public ClubsEventType? Type { get; set; }
 
+        /// <summary>
+        /// The last date that this event was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// A URL to the event.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

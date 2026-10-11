@@ -19,12 +19,21 @@ namespace UnifiedTo.Models.Components
 
     public class CdpConsent
     {
+        /// <summary>
+        /// The consent purpose or objective (eg. marketing, analytics).
+        /// </summary>
         [JsonProperty("purpose")]
         public string? Purpose { get; set; }
 
+        /// <summary>
+        /// The consent status for this purpose.
+        /// </summary>
         [JsonProperty("status")]
         public CdpConsentStatus? Status { get; set; }
 
+        /// <summary>
+        /// When the consent status was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

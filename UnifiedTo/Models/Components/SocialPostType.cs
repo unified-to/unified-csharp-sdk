@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The kind of post.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class SocialPostType : IEquatable<SocialPostType>
     {

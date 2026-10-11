@@ -19,27 +19,48 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingCustomsItem
     {
+        /// <summary>
+        /// Value per unit.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// Country of origin (ISO code).
+        /// </summary>
         [JsonProperty("country_of_origin")]
         public string? CountryOfOrigin { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Item description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// HS code.
+        /// </summary>
         [JsonProperty("harmonized_tariff_code")]
         public string? HarmonizedTariffCode { get; set; }
 
+        /// <summary>
+        /// Quantity.
+        /// </summary>
         [JsonProperty("quantity")]
         public double? Quantity { get; set; }
 
+        /// <summary>
+        /// SKU.
+        /// </summary>
         [JsonProperty("sku")]
         public string? Sku { get; set; }
 
+        /// <summary>
+        /// Weight per unit.
+        /// </summary>
         [JsonProperty("weight")]
         public double? Weight { get; set; }
 

@@ -43,6 +43,8 @@ namespace UnifiedTo.Models.Requests
         UserPhone,
         [JsonProperty("type")]
         Type,
+        [JsonProperty("conversation_identifier")]
+        ConversationIdentifier,
         [JsonProperty("raw")]
         Raw,
     }

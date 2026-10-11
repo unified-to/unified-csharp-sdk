@@ -25,18 +25,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("balance_amount")]
         public double? BalanceAmount { get; set; }
 
+        /// <summary>
+        /// External identifier for this invoice.
+        /// </summary>
         [JsonProperty("bill_number")]
         public string? BillNumber { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("cancelled_at")]
         public DateTime? CancelledAt { get; set; }
 
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -46,9 +58,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        /// <summary>
+        /// Exchange rate to the base/home currency at the document date.
+        /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; }
 
@@ -73,9 +91,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("paid_amount")]
         public double? PaidAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("paid_at")]
         public DateTime? PaidAt { get; set; }
 
+        /// <summary>
+        /// When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+        /// </summary>
         [JsonProperty("payment_collection_method")]
         public PaymentCollectionMethod? PaymentCollectionMethod { get; set; }
 
@@ -91,9 +115,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("paymentterm_id")]
         public string? PaymenttermId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
+        /// <summary>
+        /// (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
@@ -112,6 +142,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("refund_reason")]
         public string? RefundReason { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
@@ -121,21 +154,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public AccountingBillStatus? Status { get; set; }
 
+        /// <summary>
+        /// Total before tax.
+        /// </summary>
         [JsonProperty("sub_total_amount")]
         public double? SubTotalAmount { get; set; }
 
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
+        /// <summary>
+        /// @deprecated use payment_terms instead.
+        /// </summary>
         [JsonProperty("term")]
         public Term? Term { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// The public URL for the invoice to send to a customer to view or pay.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

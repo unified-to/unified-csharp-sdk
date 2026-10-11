@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// How the segment membership is computed (REALTIME or BATCH).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ComputeMode : IEquatable<ComputeMode>
     {

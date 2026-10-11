@@ -37,7 +37,7 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "c2c277f3-ba03-40e5-b02f-e0da309f209b",
+        Id = "bac6d55b-84eb-4934-a70e-820792e400e6",
         Name = "Christian Windler",
         Tags = new List<string>() {
             "casso",
@@ -57,7 +57,7 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-05-06T22:14:18.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-25T18:20:49.854Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -194,7 +194,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "09377e0b-c4e6-465d-b9e9-8167d658eb44",
+        Id = "9fee2054-3b4a-4539-b9bf-5311b6cb9844",
         Name = "Christian Windler",
         Tags = new List<string>() {
             "casso",
@@ -214,7 +214,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-05-06T22:14:18.897Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-25T18:20:49.865Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -308,7 +308,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "09377e0b-c4e6-465d-b9e9-8167d658eb44",
+        Id = "9fee2054-3b4a-4539-b9bf-5311b6cb9844",
         Name = "Christian Windler",
         Tags = new List<string>() {
             "casso",
@@ -328,7 +328,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-05-06T22:14:18.897Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-05-25T18:20:49.865Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// Create connection.
         /// </summary>
         /// <remarks>
-        /// Used only to import existing customer credentials; use "Authorize new connection" instead.
+        /// Used only to import existing customer credentials. To connect a new account, use the "Authorize or re-authorize a connection" auth URL instead. To change credentials on an existing connection, use "Update connection".
         /// </remarks>
         /// <param name="request">A connection represents a specific authentication of an integration.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateUnifiedConnectionResponse"/> response envelope when completed.</returns>
@@ -37,6 +37,20 @@ namespace UnifiedTo
         /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
         /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
         public  Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection request);
+
+        /// <summary>
+        /// Create a re-authorization token for a connection.
+        /// </summary>
+        /// <remarks>
+        /// Returns a short-lived, single-use token that lets your end-user re-authorize this existing connection in place via the "Authorize or re-authorize a connection" URL with connection_id and reauth_token.
+        /// </remarks>
+        /// <param name="id">ID of the Connection.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateUnifiedConnectionReauthResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public  Task<CreateUnifiedConnectionReauthResponse> CreateUnifiedConnectionReauthAsync(string id);
 
         /// <summary>
         /// Retrieve connection.
@@ -119,7 +133,7 @@ namespace UnifiedTo
         /// Create connection.
         /// </summary>
         /// <remarks>
-        /// Used only to import existing customer credentials; use "Authorize new connection" instead.
+        /// Used only to import existing customer credentials. To connect a new account, use the "Authorize or re-authorize a connection" auth URL instead. To change credentials on an existing connection, use "Update connection".
         /// </remarks>
         /// <param name="request">A connection represents a specific authentication of an integration.</param>
         /// <returns>An awaitable task that returns a <see cref="CreateUnifiedConnectionResponse"/> response envelope when completed.</returns>
@@ -213,6 +227,119 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.Connection = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", httpResponse, await httpResponse.Content.ReadAsStringAsync());
+        }
+
+
+        /// <summary>
+        /// Create a re-authorization token for a connection.
+        /// </summary>
+        /// <remarks>
+        /// Returns a short-lived, single-use token that lets your end-user re-authorize this existing connection in place via the "Authorize or re-authorize a connection" URL with connection_id and reauth_token.
+        /// </remarks>
+        /// <param name="id">ID of the Connection.</param>
+        /// <returns>An awaitable task that returns a <see cref="CreateUnifiedConnectionReauthResponse"/> response envelope when completed.</returns>
+        /// <exception cref="ArgumentNullException">The required parameter <paramref name="id"/> is null.</exception>
+        /// <exception cref="HttpRequestException">The HTTP request failed due to network issues.</exception>
+        /// <exception cref="ResponseValidationException">The response body could not be deserialized.</exception>
+        /// <exception cref="SDKException">Default API Exception. Thrown when the API returns a 4XX or 5XX response.</exception>
+        public async  Task<CreateUnifiedConnectionReauthResponse> CreateUnifiedConnectionReauthAsync(string id)
+        {
+            if (id == null) throw new ArgumentNullException(nameof(id));
+
+            var request = new CreateUnifiedConnectionReauthRequest()
+            {
+                Id = id,
+            };
+
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/connection/{id}/reauth", request, null);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", SDKConfiguration.UserAgent);
+
+            if (!httpRequest.Headers.Contains("Accept"))
+            {
+                httpRequest.Headers.Add("Accept", "application/json");
+            }
+
+            if (SDKConfiguration.SecuritySource != null)
+            {
+                httpRequest = new SecurityMetadata(SDKConfiguration.SecuritySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext(SDKConfiguration, baseUrl, "createUnifiedConnectionReauth", null, SDKConfiguration.SecuritySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await SDKConfiguration.Client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception _hookError)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, _hookError);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
+                    ConnectionReauth obj;
+                    try
+                    {
+                        obj = ResponseBodyDeserializer.DeserializeNotNull<ConnectionReauth>(httpResponseBody, NullValueHandling.Ignore);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new ResponseValidationException("Failed to deserialize response body into ConnectionReauth.", httpResponse, httpResponseBody, ex);
+                    }
+
+                    var response = new CreateUnifiedConnectionReauthResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.ConnectionReauth = obj;
                     return response;
                 }
 

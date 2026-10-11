@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("advantage_placements")]
         public bool? AdvantagePlacements { get; set; }
 
+        /// <summary>
+        /// Google: bid_only falsetrue.
+        /// </summary>
         [JsonProperty("mode")]
         public PropertyAdsReportMetricsCampaignTargetingOptimizationMode? Mode { get; set; }
 

@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
@@ -36,6 +39,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("target_value")]
         public double? TargetValue { get; set; }
 
+        /// <summary>
+        /// unit of the target/current values (e.g. %, USD, count).
+        /// </summary>
         [JsonProperty("unit")]
         public string? Unit { get; set; }
 

@@ -15,21 +15,39 @@ namespace UnifiedTo.Models.Components
 
     public class MarketingReportLink
     {
+        /// <summary>
+        /// Percentage of total clicks.
+        /// </summary>
         [JsonProperty("click_percentage")]
         public double? ClickPercentage { get; set; }
 
+        /// <summary>
+        /// Last click timestamp (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("last_click_at")]
         public DateTime? LastClickAt { get; set; }
 
+        /// <summary>
+        /// Total clicks on this link.
+        /// </summary>
         [JsonProperty("total_clicks")]
         public double? TotalClicks { get; set; }
 
+        /// <summary>
+        /// Percentage of unique clicks.
+        /// </summary>
         [JsonProperty("unique_click_percentage")]
         public double? UniqueClickPercentage { get; set; }
 
+        /// <summary>
+        /// Unique clicks on this link.
+        /// </summary>
         [JsonProperty("unique_clicks")]
         public double? UniqueClicks { get; set; }
 
+        /// <summary>
+        /// The URL.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

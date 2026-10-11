@@ -19,30 +19,54 @@ namespace UnifiedTo.Models.Components
 
     public class AssessmentOrder
     {
+        /// <summary>
+        /// ATS application ID.
+        /// </summary>
         [JsonProperty("application_id")]
         public string? ApplicationId { get; set; }
 
+        /// <summary>
+        /// ATS candidate ID.
+        /// </summary>
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
 
+        /// <summary>
+        /// ATS company ID (reference to AtsCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// Connection ID that this order belongs to.
+        /// </summary>
         [JsonProperty("connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ATS employee ID.
+        /// </summary>
         [JsonProperty("employee_id")]
         public string? EmployeeId { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// ATS job ID.
+        /// </summary>
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 
+        /// <summary>
+        /// Assessment package ID.
+        /// </summary>
         [JsonProperty("package_id")]
         public string? PackageId { get; set; }
 
@@ -55,6 +79,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("profile_addresses")]
         public List<AssessmentAddress>? ProfileAddresses { get; set; }
 
+        /// <summary>
+        /// YYYY-MM-DD.
+        /// </summary>
         [JsonProperty("profile_date_of_birth")]
         public string? ProfileDateOfBirth { get; set; }
 
@@ -67,6 +94,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("profile_gender")]
         public ProfileGender? ProfileGender { get; set; }
 
+        /// <summary>
+        /// XXX.XXX.XXX.XXX.
+        /// </summary>
         [JsonProperty("profile_ip_address")]
         public string? ProfileIpAddress { get; set; }
 
@@ -91,6 +121,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// ATS-specific reference ID.
+        /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
@@ -100,6 +133,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("response_attributes")]
         public List<AssessmentAttribute>? ResponseAttributes { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("response_completed_at")]
         public DateTime? ResponseCompletedAt { get; set; }
 
@@ -112,18 +148,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("response_download_urls")]
         public List<string>? ResponseDownloadUrls { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("response_expires_at")]
         public DateTime? ResponseExpiresAt { get; set; }
 
+        /// <summary>
+        /// Datetime that assessment was issued (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("response_issued_at")]
         public DateTime? ResponseIssuedAt { get; set; }
 
+        /// <summary>
+        /// Maximum possible score.
+        /// </summary>
         [JsonProperty("response_max_score")]
         public double? ResponseMaxScore { get; set; }
 
+        /// <summary>
+        /// URL to redirect the user to complete assessment.
+        /// </summary>
         [JsonProperty("response_redirect_url")]
         public string? ResponseRedirectUrl { get; set; }
 
+        /// <summary>
+        /// Assessment score (e.g., 0-100).
+        /// </summary>
         [JsonProperty("response_score")]
         public double? ResponseScore { get; set; }
 
@@ -133,21 +184,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("response_status")]
         public ResponseStatus? ResponseStatus { get; set; }
 
+        /// <summary>
+        /// URL to view detailed results.
+        /// </summary>
         [JsonProperty("response_url")]
         public string? ResponseUrl { get; set; }
 
         [JsonProperty("status")]
         public AssessmentOrderStatus? Status { get; set; }
 
+        /// <summary>
+        /// URL to redirect user to after assessment.
+        /// </summary>
         [JsonProperty("target_url")]
         public string? TargetUrl { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Webhook ID that this order belongs to.
+        /// </summary>
         [JsonProperty("webhook_id")]
         public string? WebhookId { get; set; }
 
+        /// <summary>
+        /// Workspace ID that this order belongs to (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string WorkspaceId { get; set; } = default!;
     }

@@ -51,10 +51,10 @@ namespace UnifiedTo.Models.Requests
         ContactIds,
         [JsonProperty("company_ids")]
         CompanyIds,
-        [JsonProperty("metadata")]
-        Metadata,
         [JsonProperty("description")]
         Description,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

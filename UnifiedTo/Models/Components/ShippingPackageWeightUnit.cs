@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Unit for weight (g, kg, oz, lb).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ShippingPackageWeightUnit : IEquatable<ShippingPackageWeightUnit>
     {

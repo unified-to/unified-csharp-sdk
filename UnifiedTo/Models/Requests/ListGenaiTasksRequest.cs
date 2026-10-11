@@ -16,6 +16,12 @@ namespace UnifiedTo.Models.Requests
     public class ListGenaiTasksRequest
     {
         /// <summary>
+        /// The agent ID to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=agent_id")]
+        public string? AgentId { get; set; }
+
+        /// <summary>
         /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]

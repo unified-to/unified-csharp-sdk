@@ -5,11 +5,17 @@
 ### Available Operations
 
 * [CreateAtsJob](#createatsjob) - Create a job
+* [CreateHrisJob](#createhrisjob) - Create a job
 * [GetAtsJob](#getatsjob) - Retrieve a job
+* [GetHrisJob](#gethrisjob) - Retrieve a job
 * [ListAtsJobs](#listatsjobs) - List all jobs
+* [ListHrisJobs](#listhrisjobs) - List all jobs
 * [PatchAtsJob](#patchatsjob) - Update a job
+* [PatchHrisJob](#patchhrisjob) - Update a job
 * [RemoveAtsJob](#removeatsjob) - Remove a job
+* [RemoveHrisJob](#removehrisjob) - Remove a job
 * [UpdateAtsJob](#updateatsjob) - Update a job
+* [UpdateHrisJob](#updatehrisjob) - Update a job
 
 ## CreateAtsJob
 
@@ -61,12 +67,12 @@ var res = await sdk.Job.CreateAtsJobAsync(
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {
             new AtsReference() {
-                Id = "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-                Name = "Eloise Mueller PhD",
+                Id = "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+                Name = "Troy Greenholt",
             },
         },
-        Id = "a4e564ca-17df-4b25-9e7c-4e8bd4b8c91e",
-        Industry = "Gorgeous Plastic Computer",
+        Id = "c62a2ee8-e727-4fef-a1fc-471e16433bac",
+        Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -76,11 +82,11 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "0922852e-0bdd-4572-8490-0c07e2162c8d",
+                Id = "aa99fcf0-f085-47e7-ab94-cb696220e875",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
-                    "acceptus"
+                    "vomica"
                 ),
             },
         },
@@ -91,28 +97,28 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-12T00:39:03.827Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-30T00:05:48.189Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
         Postings = new List<AtsJobPosting>() {
             new AtsJobPosting() {
                 Address = new PropertyAtsJobPostingAddress() {
-                    Address1 = "8460 Nils Trace",
-                    City = "West Mervinburgh",
+                    Address1 = "51372 Kshlerin Creek",
+                    City = "Logancester",
                     CountryCode = "US",
-                    PostalCode = "14162",
-                    Region = "Maine",
+                    PostalCode = "85013-9865",
+                    Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-04T18:58:56.779Z").ToUniversalTime(),
-                Description = "Deduco cultellus alii terebro depono thesaurus.",
-                Id = "f6101769-deb3-4721-978c-d205638870ee",
+                CreatedAt = System.DateTime.Parse("2026-07-23T16:18:04.067Z").ToUniversalTime(),
+                Description = "Provident turbo cunabula spoliatio agnitio.",
+                Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
-                Location = "6788 Oxford Road",
-                Name = "Forward Security Orchestrator",
-                PostingUrl = "https://ajar-metabolite.net/",
-                UpdatedAt = System.DateTime.Parse("2026-07-30T10:45:53.530Z").ToUniversalTime(),
+                Location = "2925 Connie Green",
+                Name = "Lead Intranet Developer",
+                PostingUrl = "https://smart-summer.name/",
+                UpdatedAt = System.DateTime.Parse("2026-08-18T18:31:19.157Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -123,6 +129,8 @@ var res = await sdk.Job.CreateAtsJobAsync(
             new AtsJobQuestion() {
                 Description = "Trepide provident taceo rem.",
                 Id = "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+                MaxLength = 387D,
+                MinLength = 1D,
                 Options = new List<string>() {
                     "censura",
                     "tum",
@@ -133,34 +141,38 @@ var res = await sdk.Job.CreateAtsJobAsync(
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+                Id = "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+                MaxLength = 430D,
+                MinLength = 1D,
                 Options = new List<string>() {
-                    "odit",
+                    "aetas",
                 },
-                Prompt = "Similique absque temeritas celebrer enim.",
-                Question = "Vinitor sodalitas desino sollers viduo volo.",
+                Prompt = "Contra damno desolo suadeo utrimque cresco.",
+                Question = "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Description = "Abstergo possimus quibusdam deinde amoveo.",
-                Id = "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+                Description = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+                Id = "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+                MaxLength = 381D,
+                MinLength = 1D,
                 Options = new List<string>() {
-                    "vallum",
+                    "utroque",
                 },
-                Prompt = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-                Question = "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+                Prompt = "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+                Question = "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
         },
         Skills = new List<string>() {
-            "amiculum",
-            "crux",
+            "coaegresco",
+            "appello",
         },
         Status = AtsJobStatus.Archived,
-        Summary = "Amicitia vergo hic.",
-        UpdatedAt = System.DateTime.Parse("2026-02-03T00:33:37.747Z").ToUniversalTime(),
+        Summary = "Iste sto communis.",
+        UpdatedAt = System.DateTime.Parse("2026-02-19T08:08:04.953Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -180,6 +192,58 @@ var res = await sdk.Job.CreateAtsJobAsync(
 ### Response
 
 **[CreateAtsJobResponse](../../Models/Requests/CreateAtsJobResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateHrisJob
+
+Create a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createHrisJob" method="post" path="/hris/{connection_id}/job" example="hris_job" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Job.CreateHrisJobAsync(
+    hrisJob: new HrisJob() {
+        Code = "P-05547",
+        CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
+        Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+        EmploymentType = HrisJobEmploymentType.Freelance,
+        Id = "bb0fb822-230a-43a5-8b1b-4fd55b9ec014",
+        IsActive = false,
+        Name = "Internal Integration Specialist",
+        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.073Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `HrisJob`                                                                                                                                        | [HrisJob](../../Models/Components/HrisJob.md)                                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateHrisJobQueryParamFields](../../Models/Requests/CreateHrisJobQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateHrisJobResponse](../../Models/Requests/CreateHrisJobResponse.md)**
 
 ### Errors
 
@@ -229,6 +293,48 @@ var res = await sdk.Job.GetAtsJobAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetHrisJob
+
+Retrieve a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHrisJob" method="get" path="/hris/{connection_id}/job/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Job.GetHrisJobAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Job                                                                                                                                    |
+| `Fields`                                                                                                                                         | List<[GetHrisJobQueryParamFields](../../Models/Requests/GetHrisJobQueryParamFields.md)>                                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHrisJobResponse](../../Models/Requests/GetHrisJobResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAtsJobs
 
 List all jobs
@@ -263,6 +369,47 @@ var res = await sdk.Job.ListAtsJobsAsync(req);
 ### Response
 
 **[ListAtsJobsResponse](../../Models/Requests/ListAtsJobsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListHrisJobs
+
+List all jobs
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHrisJobs" method="get" path="/hris/{connection_id}/job" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisJobsRequest req = new ListHrisJobsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Job.ListHrisJobsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListHrisJobsRequest](../../Models/Requests/ListHrisJobsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+
+### Response
+
+**[ListHrisJobsResponse](../../Models/Requests/ListHrisJobsResponse.md)**
 
 ### Errors
 
@@ -321,12 +468,12 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {
             new AtsReference() {
-                Id = "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-                Name = "Eloise Mueller PhD",
+                Id = "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+                Name = "Troy Greenholt",
             },
         },
-        Id = "78c9bfcb-beac-4ae7-adf1-cb11fb046603",
-        Industry = "Gorgeous Plastic Computer",
+        Id = "a7fa9c17-0a1d-4992-a384-01d53b722701",
+        Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -336,11 +483,11 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "d7b24ca2-56c7-478f-96e3-9af999ae067d",
+                Id = "7ff0b09c-050a-46d1-b304-b6c98db5254b",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
-                    "acceptus"
+                    "vomica"
                 ),
             },
         },
@@ -351,28 +498,28 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-12T00:39:03.877Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-30T00:05:48.254Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
         Postings = new List<AtsJobPosting>() {
             new AtsJobPosting() {
                 Address = new PropertyAtsJobPostingAddress() {
-                    Address1 = "8460 Nils Trace",
-                    City = "West Mervinburgh",
+                    Address1 = "51372 Kshlerin Creek",
+                    City = "Logancester",
                     CountryCode = "US",
-                    PostalCode = "14162",
-                    Region = "Maine",
+                    PostalCode = "85013-9865",
+                    Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-04T18:58:56.831Z").ToUniversalTime(),
-                Description = "Deduco cultellus alii terebro depono thesaurus.",
-                Id = "f6101769-deb3-4721-978c-d205638870ee",
+                CreatedAt = System.DateTime.Parse("2026-07-23T16:18:04.137Z").ToUniversalTime(),
+                Description = "Provident turbo cunabula spoliatio agnitio.",
+                Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
-                Location = "6788 Oxford Road",
-                Name = "Forward Security Orchestrator",
-                PostingUrl = "https://ajar-metabolite.net/",
-                UpdatedAt = System.DateTime.Parse("2026-07-30T10:45:53.584Z").ToUniversalTime(),
+                Location = "2925 Connie Green",
+                Name = "Lead Intranet Developer",
+                PostingUrl = "https://smart-summer.name/",
+                UpdatedAt = System.DateTime.Parse("2026-08-18T18:31:19.229Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -383,6 +530,8 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
             new AtsJobQuestion() {
                 Description = "Trepide provident taceo rem.",
                 Id = "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+                MaxLength = 387D,
+                MinLength = 1D,
                 Options = new List<string>() {
                     "censura",
                     "tum",
@@ -393,34 +542,38 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+                Id = "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+                MaxLength = 430D,
+                MinLength = 1D,
                 Options = new List<string>() {
-                    "odit",
+                    "aetas",
                 },
-                Prompt = "Similique absque temeritas celebrer enim.",
-                Question = "Vinitor sodalitas desino sollers viduo volo.",
+                Prompt = "Contra damno desolo suadeo utrimque cresco.",
+                Question = "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Description = "Abstergo possimus quibusdam deinde amoveo.",
-                Id = "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+                Description = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+                Id = "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+                MaxLength = 381D,
+                MinLength = 1D,
                 Options = new List<string>() {
-                    "vallum",
+                    "utroque",
                 },
-                Prompt = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-                Question = "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+                Prompt = "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+                Question = "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
         },
         Skills = new List<string>() {
-            "amiculum",
-            "crux",
+            "coaegresco",
+            "appello",
         },
         Status = AtsJobStatus.Archived,
-        Summary = "Amicitia vergo hic.",
-        UpdatedAt = System.DateTime.Parse("2026-02-03T00:33:37.792Z").ToUniversalTime(),
+        Summary = "Iste sto communis.",
+        UpdatedAt = System.DateTime.Parse("2026-02-19T08:08:05.013Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -440,6 +593,59 @@ var res = await sdk.Job.PatchAtsJobAsync(req);
 ### Response
 
 **[PatchAtsJobResponse](../../Models/Requests/PatchAtsJobResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchHrisJob" method="patch" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchHrisJobRequest req = new PatchHrisJobRequest() {
+    HrisJob = new HrisJob() {
+        Code = "P-05547",
+        CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
+        Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+        EmploymentType = HrisJobEmploymentType.Freelance,
+        Id = "69c74d53-aa9f-46fc-b7ae-68d6296eff97",
+        IsActive = false,
+        Name = "Internal Integration Specialist",
+        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.112Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Job.PatchHrisJobAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [PatchHrisJobRequest](../../Models/Requests/PatchHrisJobRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
+
+### Response
+
+**[PatchHrisJobResponse](../../Models/Requests/PatchHrisJobResponse.md)**
 
 ### Errors
 
@@ -480,6 +686,46 @@ var res = await sdk.Job.RemoveAtsJobAsync(
 ### Response
 
 **[RemoveAtsJobResponse](../../Models/Requests/RemoveAtsJobResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveHrisJob
+
+Remove a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeHrisJob" method="delete" path="/hris/{connection_id}/job/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Job.RemoveHrisJobAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Job        |
+
+### Response
+
+**[RemoveHrisJobResponse](../../Models/Requests/RemoveHrisJobResponse.md)**
 
 ### Errors
 
@@ -538,12 +784,12 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         EmploymentType = EmploymentType.Freelance,
         HiringManagers = new List<AtsReference>() {
             new AtsReference() {
-                Id = "fd9852e3-9035-4f42-beb3-bbf4e4022122",
-                Name = "Eloise Mueller PhD",
+                Id = "eb3bbf4e-4022-4122-9d44-39fd5b501e80",
+                Name = "Troy Greenholt",
             },
         },
-        Id = "78c9bfcb-beac-4ae7-adf1-cb11fb046603",
-        Industry = "Gorgeous Plastic Computer",
+        Id = "a7fa9c17-0a1d-4992-a384-01d53b722701",
+        Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -553,11 +799,11 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "d7b24ca2-56c7-478f-96e3-9af999ae067d",
+                Id = "7ff0b09c-050a-46d1-b304-b6c98db5254b",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
-                    "acceptus"
+                    "vomica"
                 ),
             },
         },
@@ -568,28 +814,28 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-12T00:39:03.877Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-30T00:05:48.254Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
         Postings = new List<AtsJobPosting>() {
             new AtsJobPosting() {
                 Address = new PropertyAtsJobPostingAddress() {
-                    Address1 = "8460 Nils Trace",
-                    City = "West Mervinburgh",
+                    Address1 = "51372 Kshlerin Creek",
+                    City = "Logancester",
                     CountryCode = "US",
-                    PostalCode = "14162",
-                    Region = "Maine",
+                    PostalCode = "85013-9865",
+                    Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-04T18:58:56.831Z").ToUniversalTime(),
-                Description = "Deduco cultellus alii terebro depono thesaurus.",
-                Id = "f6101769-deb3-4721-978c-d205638870ee",
+                CreatedAt = System.DateTime.Parse("2026-07-23T16:18:04.137Z").ToUniversalTime(),
+                Description = "Provident turbo cunabula spoliatio agnitio.",
+                Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
-                Location = "6788 Oxford Road",
-                Name = "Forward Security Orchestrator",
-                PostingUrl = "https://ajar-metabolite.net/",
-                UpdatedAt = System.DateTime.Parse("2026-07-30T10:45:53.584Z").ToUniversalTime(),
+                Location = "2925 Connie Green",
+                Name = "Lead Intranet Developer",
+                PostingUrl = "https://smart-summer.name/",
+                UpdatedAt = System.DateTime.Parse("2026-08-18T18:31:19.229Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -600,6 +846,8 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
             new AtsJobQuestion() {
                 Description = "Trepide provident taceo rem.",
                 Id = "289f27c0-311c-41e5-ad9d-cbe2097332c2",
+                MaxLength = 387D,
+                MinLength = 1D,
                 Options = new List<string>() {
                     "censura",
                     "tum",
@@ -610,34 +858,38 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Id = "b3a0b53b-38f3-4e8d-84b9-f413a900d79b",
+                Id = "3a0b53b3-8f3e-48d4-ab9f-413a900d79b0",
+                MaxLength = 430D,
+                MinLength = 1D,
                 Options = new List<string>() {
-                    "odit",
+                    "aetas",
                 },
-                Prompt = "Similique absque temeritas celebrer enim.",
-                Question = "Vinitor sodalitas desino sollers viduo volo.",
+                Prompt = "Contra damno desolo suadeo utrimque cresco.",
+                Question = "Sodalitas desino sollers viduo volo cresco ventus tui sufficio iusto.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
             new AtsJobQuestion() {
-                Description = "Abstergo possimus quibusdam deinde amoveo.",
-                Id = "568be61d-060e-4d8c-a8ab-8a17cb25edf3",
+                Description = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
+                Id = "060ed8c8-ab8a-417c-8b25-edf38cb19b1c",
+                MaxLength = 381D,
+                MinLength = 1D,
                 Options = new List<string>() {
-                    "vallum",
+                    "utroque",
                 },
-                Prompt = "Ara thermae aetas vivo constans victoria volo carbo vehemens praesentium.",
-                Question = "Subiungo ambitus neque talis amitto terreo alienus quae vulticulus.",
+                Prompt = "Vir crepusculum ait adeptio ait defendo cotidie porro uterque.",
+                Question = "Vulticulus depono abstergo possimus quibusdam deinde amoveo.",
                 Required = false,
                 Type = AtsJobQuestionType.Text,
             },
         },
         Skills = new List<string>() {
-            "amiculum",
-            "crux",
+            "coaegresco",
+            "appello",
         },
         Status = AtsJobStatus.Archived,
-        Summary = "Amicitia vergo hic.",
-        UpdatedAt = System.DateTime.Parse("2026-02-03T00:33:37.792Z").ToUniversalTime(),
+        Summary = "Iste sto communis.",
+        UpdatedAt = System.DateTime.Parse("2026-02-19T08:08:05.013Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -657,6 +909,59 @@ var res = await sdk.Job.UpdateAtsJobAsync(req);
 ### Response
 
 **[UpdateAtsJobResponse](../../Models/Requests/UpdateAtsJobResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateHrisJob
+
+Update a job
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateHrisJob" method="put" path="/hris/{connection_id}/job/{id}" example="hris_job" -->
+```csharp
+using System;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
+    HrisJob = new HrisJob() {
+        Code = "P-05547",
+        CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
+        Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
+        EmploymentType = HrisJobEmploymentType.Freelance,
+        Id = "69c74d53-aa9f-46fc-b7ae-68d6296eff97",
+        IsActive = false,
+        Name = "Internal Integration Specialist",
+        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.112Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Job.UpdateHrisJobAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [UpdateHrisJobRequest](../../Models/Requests/UpdateHrisJobRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+
+### Response
+
+**[UpdateHrisJobResponse](../../Models/Requests/UpdateHrisJobResponse.md)**
 
 ### Errors
 

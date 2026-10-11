@@ -39,6 +39,20 @@ namespace UnifiedTo.Models.Requests
         Name,
         [JsonProperty("is_primary")]
         IsPrimary,
+        [JsonProperty("iban")]
+        Iban,
+        [JsonProperty("bic")]
+        Bic,
+        [JsonProperty("country_code")]
+        CountryCode,
+        [JsonProperty("currency")]
+        Currency,
+        [JsonProperty("split_type")]
+        SplitType,
+        [JsonProperty("split_amount")]
+        SplitAmount,
+        [JsonProperty("priority")]
+        Priority,
         [JsonProperty("raw")]
         Raw,
     }

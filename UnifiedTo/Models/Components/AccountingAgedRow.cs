@@ -22,9 +22,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contact")]
         public PropertyAccountingAgedRowContact? Contact { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 

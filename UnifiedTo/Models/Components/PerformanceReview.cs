@@ -19,57 +19,96 @@ namespace UnifiedTo.Models.Components
 
     public class PerformanceReview
     {
+        /// <summary>
+        /// the overall/summary comment of this review.
+        /// </summary>
         [JsonProperty("comment")]
         public string? Comment { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// pointer to the Performance Cycle object.
+        /// </summary>
         [JsonProperty("cycle_id")]
         public string? CycleId { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// whether the reviewee acknowledged this review.
+        /// </summary>
         [JsonProperty("is_acknowledged")]
         public bool? IsAcknowledged { get; set; }
 
         [JsonProperty("questions")]
         public List<PerformanceReviewQuestion>? Questions { get; set; }
 
+        /// <summary>
+        /// the overall rating/score of this review.
+        /// </summary>
         [JsonProperty("rating")]
         public double? Rating { get; set; }
 
+        /// <summary>
+        /// label of the rating on the provider's scale (e.g. "Exceeds expectations").
+        /// </summary>
         [JsonProperty("rating_description")]
         public string? RatingDescription { get; set; }
 
+        /// <summary>
+        /// the maximum possible rating/score on the provider's scale.
+        /// </summary>
         [JsonProperty("rating_maximum")]
         public double? RatingMaximum { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// the HR Employee that wrote this review (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("reviewer_user_id")]
         public string? ReviewerUserId { get; set; }
 
         [JsonProperty("status")]
         public PerformanceReviewStatus? Status { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("submitted_at")]
         public DateTime? SubmittedAt { get; set; }
 
+        /// <summary>
+        /// id of the review template/form this review is based on.
+        /// </summary>
         [JsonProperty("template_identifier")]
         public string? TemplateIdentifier { get; set; }
 
         [JsonProperty("type")]
         public PerformanceReviewType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// the HR Employee being reviewed (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string UserId { get; set; } = default!;
     }

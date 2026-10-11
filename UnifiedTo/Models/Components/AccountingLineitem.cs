@@ -17,21 +17,33 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingLineitem
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
 
+        /// <summary>
+        /// The exchange rate applied to this line, for multi-currency documents.
+        /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; }
 
@@ -41,12 +53,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// True when the line is rebillable to a customer.
+        /// </summary>
         [JsonProperty("is_billable")]
         public bool? IsBillable { get; set; }
 
         [JsonProperty("item_description")]
         public string? ItemDescription { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceItem).
+        /// </summary>
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
@@ -65,12 +83,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
+        /// <summary>
+        /// ref -&gt; AccountingProject; the project this line is coded to (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
         [JsonProperty("refund_amount")]
         public double? RefundAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
@@ -80,6 +104,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
 
+        /// <summary>
+        /// unit_quantity * unit_amount + tax_amount.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
@@ -89,6 +116,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("unit_quantity")]
         public double? UnitQuantity { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

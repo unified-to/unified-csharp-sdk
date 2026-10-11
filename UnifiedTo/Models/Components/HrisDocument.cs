@@ -19,15 +19,27 @@ namespace UnifiedTo.Models.Components
 
     public class HrisDocument
     {
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// base64 encoded file contents for create/update.
+        /// </summary>
         [JsonProperty("document_data")]
         public string? DocumentData { get; set; }
 
+        /// <summary>
+        /// download link, expires after 1 hour.
+        /// </summary>
         [JsonProperty("document_url")]
         public string? DocumentUrl { get; set; }
 
@@ -40,12 +52,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// unified, normalized document type (OTHER when unmappable).
+        /// </summary>
         [JsonProperty("type")]
         public HrisDocumentType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// pointer to the HR Employee object that owns this document (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

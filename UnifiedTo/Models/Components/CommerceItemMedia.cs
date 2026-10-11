@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<CommerceMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// 1 is the first.
+        /// </summary>
         [JsonProperty("position")]
         public double? Position { get; set; }
 

@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class StoragePermission
     {
+        /// <summary>
+        /// (reference to HrisGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
@@ -31,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("roles")]
         public List<PropertyStoragePermissionRoles> Roles { get; set; } = default!;
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

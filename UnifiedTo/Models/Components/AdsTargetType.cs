@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Targeting search types for ads_target list endpoint (Meta: adinterest, adbehavior, adlocale, adgeolocation; Google: geoTargetConstants, user_interest, topic_constant, language_constant).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AdsTargetType : IEquatable<AdsTargetType>
     {

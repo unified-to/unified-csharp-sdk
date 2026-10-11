@@ -15,48 +15,78 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingJournalLineitem
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
         [JsonProperty("credit_amount")]
         public double? CreditAmount { get; set; }
 
+        /// <summary>
+        /// will replace total_amount (absolute value).
+        /// </summary>
         [JsonProperty("debit_amount")]
         public double? DebitAmount { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// points to a HRIS Group (reference to HrisGroup).
+        /// </summary>
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingInvoice).
+        /// </summary>
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
+        /// <summary>
+        /// points to a AccountingOrganization.
+        /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// link to PaymentPayment (reference to PaymentPayment).
+        /// </summary>
         [JsonProperty("payment_id")]
         public string? PaymentId { get; set; }
 
+        /// <summary>
+        /// (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
+        /// <summary>
+        /// ref -&gt; AccountingTaxrate applied to the line.
+        /// </summary>
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
 
+        /// <summary>
+        /// will be a positive value for a debit and negative for a credit.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
     }

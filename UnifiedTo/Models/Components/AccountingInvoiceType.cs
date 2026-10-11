@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// BILL removed (use AccountingBill); remaining values: INVOICE, CREDITMEMO.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingInvoiceType : IEquatable<AccountingInvoiceType>
     {

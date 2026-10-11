@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attachment_file_ids")]
         public List<string>? AttachmentFileIds { get; set; }
 
+        /// <summary>
+        /// The event email's body.
+        /// </summary>
         [JsonProperty("body")]
         public string? Body { get; set; }
 
@@ -27,12 +30,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("cc")]
         public List<string>? Cc { get; set; }
 
+        /// <summary>
+        /// The event email's from name &amp; email address (name &lt;test@test.com&gt;).
+        /// </summary>
         [JsonProperty("from")]
         public string? From { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The event email's subject.
+        /// </summary>
         [JsonProperty("subject")]
         public string? Subject { get; set; }
 

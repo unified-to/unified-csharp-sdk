@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// where EXPIRED is derived (expires_at &lt; now), the source status is preserved in raw.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingQuoteStatus : IEquatable<AccountingQuoteStatus>
     {

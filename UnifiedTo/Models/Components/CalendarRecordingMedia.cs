@@ -20,21 +20,36 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attendees")]
         public List<CalendarAttendee>? Attendees { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// two digit ISO code.
+        /// </summary>
         [JsonProperty("language")]
         public string? Language { get; set; }
 
         [JsonProperty("recording_download_url")]
         public string? RecordingDownloadUrl { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        /// <summary>
+        /// provider AI-generated meeting summary.
+        /// </summary>
         [JsonProperty("summary")]
         public string? Summary { get; set; }
 
+        /// <summary>
+        /// download/export link for a provider AI summary document (e.g. Google Meet smart notes).
+        /// </summary>
         [JsonProperty("summary_download_url")]
         public string? SummaryDownloadUrl { get; set; }
 

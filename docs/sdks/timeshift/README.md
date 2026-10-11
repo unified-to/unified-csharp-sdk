@@ -30,24 +30,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-07T03:05:14.680Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-18T03:10:12.113Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
                 Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Hour,
+                Frequency = HrisCompensationFrequency.Week,
                 Notes = "Annus adficio suasoria architecto aggero.",
-                Type = HrisCompensationType.Other,
+                Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-08-28T03:01:07.094Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-17T03:42:59.907Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "9f128688-46cc-481b-a41e-503d0c962370",
+        Id = "dfcf1802-ce5f-4727-89b0-f6b60d8029a2",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-06-26T08:32:27.006Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-23T15:17:01.677Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-07T12:09:32.558Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-29T04:09:58.867Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -177,24 +177,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-07T03:05:14.688Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-18T03:10:12.122Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
                 Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Hour,
+                Frequency = HrisCompensationFrequency.Week,
                 Notes = "Annus adficio suasoria architecto aggero.",
-                Type = HrisCompensationType.Other,
+                Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-08-28T03:01:07.109Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-17T03:42:59.924Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+        Id = "66a39c02-f126-4c60-921c-1874dc4ce92d",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-06-26T08:32:27.015Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-23T15:17:01.681Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-07T12:09:32.567Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-29T04:09:58.872Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -281,24 +281,24 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-07T03:05:14.688Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-18T03:10:12.122Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
                 Currency = "JPY",
-                Frequency = HrisCompensationFrequency.Hour,
+                Frequency = HrisCompensationFrequency.Week,
                 Notes = "Annus adficio suasoria architecto aggero.",
-                Type = HrisCompensationType.Other,
+                Type = HrisCompensationType.Commission,
             },
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-08-28T03:01:07.109Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-17T03:42:59.924Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "2492c6df-e2c6-450f-af6d-7db5a8f448c0",
+        Id = "66a39c02-f126-4c60-921c-1874dc4ce92d",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-06-26T08:32:27.015Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-23T15:17:01.681Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-07T12:09:32.567Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-29T04:09:58.872Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

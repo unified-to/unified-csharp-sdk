@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Traffic metrics.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AnalyticsReportMetricsType : IEquatable<AnalyticsReportMetricsType>
     {

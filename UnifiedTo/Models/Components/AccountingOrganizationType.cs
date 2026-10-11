@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Entity type within a consolidation hierarchy.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountingOrganizationType : IEquatable<AccountingOrganizationType>
     {

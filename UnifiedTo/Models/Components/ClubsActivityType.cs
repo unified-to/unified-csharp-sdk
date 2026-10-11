@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The activity type.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ClubsActivityType : IEquatable<ClubsActivityType>
     {

@@ -22,9 +22,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyAtsJobPostingAddress? Address { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// job-post-specific description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -34,15 +40,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// job-post-specific location.
+        /// </summary>
         [JsonProperty("location")]
         public string? Location { get; set; }
 
+        /// <summary>
+        /// job-post-specific name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
         [JsonProperty("posting_url")]
         public string? PostingUrl { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

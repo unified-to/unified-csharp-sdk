@@ -16,12 +16,21 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingCashflowItem
     {
+        /// <summary>
+        /// If attributable to a specific GL account (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// Positive = inflow, Negative = outflow.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// e.g. "Net Income", "Depreciation", "Equipment"
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

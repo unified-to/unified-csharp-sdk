@@ -24,6 +24,8 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisCompensationType StockOptions = new HrisCompensationType("STOCK_OPTIONS");
         public static readonly HrisCompensationType Equity = new HrisCompensationType("EQUITY");
         public static readonly HrisCompensationType Other = new HrisCompensationType("OTHER");
+        public static readonly HrisCompensationType Hourly = new HrisCompensationType("HOURLY");
+        public static readonly HrisCompensationType Commission = new HrisCompensationType("COMMISSION");
 
         private static readonly Dictionary <string, HrisCompensationType> _knownValues =
             new Dictionary <string, HrisCompensationType> ()
@@ -32,7 +34,9 @@ namespace UnifiedTo.Models.Components
                 ["BONUS"] = Bonus,
                 ["STOCK_OPTIONS"] = StockOptions,
                 ["EQUITY"] = Equity,
-                ["OTHER"] = Other
+                ["OTHER"] = Other,
+                ["HOURLY"] = Hourly,
+                ["COMMISSION"] = Commission
             };
 
         private static readonly ConcurrentDictionary<string, HrisCompensationType> _values =

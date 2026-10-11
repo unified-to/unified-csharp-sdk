@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public PropertyCalendarEventOrganizerStatus? Status { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

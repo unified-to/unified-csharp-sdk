@@ -19,4 +19,6 @@ var value = GetGenaiModelQueryParamFields.Id;
 | `MaxTokens`      | max_tokens       |
 | `WebUrl`         | web_url          |
 | `HasTemperature` | has_temperature  |
+| `HasQuestions`   | has_questions    |
+| `HasVision`      | has_vision       |
 | `Raw`            | raw              |

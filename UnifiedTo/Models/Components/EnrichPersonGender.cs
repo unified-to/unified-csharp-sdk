@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The gender of the person.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class EnrichPersonGender : IEquatable<EnrichPersonGender>
     {

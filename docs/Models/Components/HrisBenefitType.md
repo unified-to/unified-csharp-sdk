@@ -32,3 +32,7 @@ var custom = HrisBenefitType.Of("custom_value");
 | `LoanRepayment`           | LOAN_REPAYMENT            |
 | `CharitableContribution`  | CHARITABLE_CONTRIBUTION   |
 | `Other`                   | OTHER                     |
+| `RetirementRoth`          | RETIREMENT_ROTH           |
+| `Commuter`                | COMMUTER                  |
+| `DependentCare`           | DEPENDENT_CARE            |
+| `Pension`                 | PENSION                   |

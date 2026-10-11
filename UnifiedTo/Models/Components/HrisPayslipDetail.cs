@@ -22,8 +22,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("amount")]
         public double Amount { get; set; } = default!;
 
+        [JsonProperty("benefit_id")]
+        public string? BenefitId { get; set; }
+
         [JsonProperty("company_amount")]
         public double? CompanyAmount { get; set; }
+
+        [JsonProperty("deduction_id")]
+        public string? DeductionId { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
@@ -31,10 +37,46 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("employee_amount")]
         public double? EmployeeAmount { get; set; }
 
+        [JsonProperty("hours")]
+        public double? Hours { get; set; }
+
+        /// <summary>
+        /// true when this line is paid by the employer (employer tax or contribution).
+        /// </summary>
+        [JsonProperty("is_employer")]
+        public bool? IsEmployer { get; set; }
+
+        [JsonProperty("is_pre_tax")]
+        public bool? IsPreTax { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// integration pay-code label before normalization.
+        /// </summary>
+        [JsonProperty("original_type")]
+        public string? OriginalType { get; set; }
+
+        /// <summary>
+        /// the hris_paycode for this line.
+        /// </summary>
+        [JsonProperty("paycode_id")]
+        public string? PaycodeId { get; set; }
+
+        /// <summary>
+        /// pay rate for hourly/unit-based lines.
+        /// </summary>
+        [JsonProperty("rate_amount")]
+        public double? RateAmount { get; set; }
+
         [JsonProperty("type")]
         public HrisPayslipDetailType? Type { get; set; }
+
+        /// <summary>
+        /// year-to-date amount for this line.
+        /// </summary>
+        [JsonProperty("ytd_amount")]
+        public double? YtdAmount { get; set; }
     }
 }

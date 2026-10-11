@@ -34,63 +34,123 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyClubsGroupAddress? Address { get; set; }
 
+        /// <summary>
+        /// URL to the group's cover photo.
+        /// </summary>
         [JsonProperty("cover_image_url")]
         public string? CoverImageUrl { get; set; }
 
+        /// <summary>
+        /// The date that this group was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The group's description.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// The number of athletes the group follows.
+        /// </summary>
         [JsonProperty("following_count")]
         public double? FollowingCount { get; set; }
 
+        /// <summary>
+        /// The group type.
+        /// </summary>
         [JsonProperty("group_type")]
         public GroupType? GroupType { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this group.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the authenticated user is an admin of the group.
+        /// </summary>
         [JsonProperty("is_admin")]
         public bool? IsAdmin { get; set; }
 
+        /// <summary>
+        /// Whether the group is featured.
+        /// </summary>
         [JsonProperty("is_featured")]
         public bool? IsFeatured { get; set; }
 
+        /// <summary>
+        /// Whether the authenticated user is the owner of the group.
+        /// </summary>
         [JsonProperty("is_owner")]
         public bool? IsOwner { get; set; }
 
+        /// <summary>
+        /// Whether the group is private.
+        /// </summary>
         [JsonProperty("is_private")]
         public bool? IsPrivate { get; set; }
 
+        /// <summary>
+        /// Whether the group is verified.
+        /// </summary>
         [JsonProperty("is_verified")]
         public bool? IsVerified { get; set; }
 
+        /// <summary>
+        /// The number of members in the group.
+        /// </summary>
         [JsonProperty("member_count")]
         public double? MemberCount { get; set; }
 
+        /// <summary>
+        /// The authenticated user's membership status.
+        /// </summary>
         [JsonProperty("membership_status")]
         public MembershipStatus? MembershipStatus { get; set; }
 
+        /// <summary>
+        /// The group's name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The number of posts in the group.
+        /// </summary>
         [JsonProperty("post_count")]
         public double? PostCount { get; set; }
 
+        /// <summary>
+        /// URL to the group's profile picture.
+        /// </summary>
         [JsonProperty("profile_image_url")]
         public string? ProfileImageUrl { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this group.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// The primary sport of the group.
+        /// </summary>
         [JsonProperty("sport_type")]
         public SportType? SportType { get; set; }
 
+        /// <summary>
+        /// The last date that this group was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// The group's vanity URL.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

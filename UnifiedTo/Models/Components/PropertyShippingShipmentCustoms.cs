@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyShippingShipmentCustoms
     {
+        /// <summary>
+        /// Customs declared value.
+        /// </summary>
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
@@ -31,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Explanation of contents.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -46,9 +52,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("non_delivery_option")]
         public NonDeliveryOption? NonDeliveryOption { get; set; }
 
+        /// <summary>
+        /// Importer EORI number.
+        /// </summary>
         [JsonProperty("recipient_eori")]
         public string? RecipientEori { get; set; }
 
+        /// <summary>
+        /// Importer tax ID.
+        /// </summary>
         [JsonProperty("recipient_tax_number")]
         public string? RecipientTaxNumber { get; set; }
 
@@ -58,9 +70,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("restrictions")]
         public List<string>? Restrictions { get; set; }
 
+        /// <summary>
+        /// Exporter EORI number.
+        /// </summary>
         [JsonProperty("shipper_eori")]
         public string? ShipperEori { get; set; }
 
+        /// <summary>
+        /// Exporter tax ID.
+        /// </summary>
         [JsonProperty("shipper_tax_number")]
         public string? ShipperTaxNumber { get; set; }
 

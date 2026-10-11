@@ -22,21 +22,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceItem).
+        /// </summary>
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
         [JsonProperty("item_option_id")]
         public string? ItemOptionId { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceCommerceItemvariant).
+        /// </summary>
         [JsonProperty("item_variant_id")]
         public string? ItemVariantId { get; set; }
 
+        /// <summary>
+        /// (reference to CommerceLocation).
+        /// </summary>
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

@@ -15,18 +15,30 @@ namespace UnifiedTo.Models.Components
 
     public class UcRecordingTranscript
     {
+        /// <summary>
+        /// (reference to UcContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
         [JsonProperty("text")]
         public string Text { get; set; } = default!;
 
+        /// <summary>
+        /// reference to HrisEmployee (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

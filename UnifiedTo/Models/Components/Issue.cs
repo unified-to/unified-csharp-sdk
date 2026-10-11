@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class Issue
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
@@ -28,12 +31,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// 1-5, 1 is lowest.
+        /// </summary>
         [JsonProperty("importance")]
         public double? Importance { get; set; }
 
         [JsonProperty("resolution_time")]
         public double? ResolutionTime { get; set; }
 
+        /// <summary>
+        /// 1-5, 1 is lowest.
+        /// </summary>
         [JsonProperty("size")]
         public double? Size { get; set; }
 
@@ -49,12 +58,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public List<string>? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
 
         [JsonProperty("url")]
         public string? Url { get; set; }
 
+        /// <summary>
+        /// (reference to KmsSpace).
+        /// </summary>
         [JsonProperty("workspace_id")]
         public string WorkspaceId { get; set; } = default!;
     }

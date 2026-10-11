@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The aggregation period of the value.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Period : IEquatable<Period>
     {

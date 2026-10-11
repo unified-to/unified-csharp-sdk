@@ -74,7 +74,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
             Name = "Toby Grant",
             Type = PropertyAtsActivityFromType.Other,
         },
-        Id = "15544126-1e1e-454c-9436-9cd590c4d504",
+        Id = "6be4b122-76fb-4cad-84d5-335d82ccd2ed",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -84,7 +84,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "a5637b20-ea42-4450-a966-3f78ca393813",
+                Id = "7954f594-97a3-4e21-8800-5d0be0b77840",
                 Namespace = "activity",
                 Slug = "acer",
                 Value = AtsMetadataValue.CreateStr(
@@ -98,7 +98,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "a057a51a-cf0a-4fc9-88cc-68814aea63b2",
+                Id = "9d7a338d-2cd7-4f69-9e18-04b15da8c838",
                 Namespace = "activity",
                 Slug = "tremo",
                 Value = AtsMetadataValue.CreateStr(
@@ -116,7 +116,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
             },
         },
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-03-08T23:58:21.586Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-26T13:56:55.214Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -162,14 +162,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Activity.CreateLmsActivityAsync(
     lmsActivity: new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-14T05:06:52.329Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-04-23T20:07:20.202Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "b47f36c5-ca15-424f-a44f-2f5ac37470d9",
+        Id = "c74a1c6c-6830-4491-b2e3-58dd58a94c5a",
         IsCompleted = true,
         ProgressPercentage = 100D,
         StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-24T12:09:13.333Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-28T20:13:19.234Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -501,7 +501,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
             Name = "Toby Grant",
             Type = PropertyAtsActivityFromType.Other,
         },
-        Id = "c8d54b59-1442-4eff-b309-aea61f6abc47",
+        Id = "e636b4b1-e83d-4f0f-acf2-47f3c66decae",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -511,7 +511,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "a6413e6c-d303-43d1-bfbc-b97b9d28e832",
+                Id = "ae84be1e-6cf7-4196-9c09-889abd2e3fdc",
                 Namespace = "activity",
                 Slug = "acer",
                 Value = AtsMetadataValue.CreateStr(
@@ -525,7 +525,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "2fd4d43b-0068-43f9-92bf-b78dbee0f9c0",
+                Id = "7b63204a-0b7e-4486-817b-e8b1e5c85692",
                 Namespace = "activity",
                 Slug = "tremo",
                 Value = AtsMetadataValue.CreateStr(
@@ -543,7 +543,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
             },
         },
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-03-08T23:58:21.609Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-26T13:56:55.244Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -590,14 +590,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-14T05:06:52.334Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-04-23T20:07:20.207Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "774daa7a-da0f-412c-ba30-3355325d6932",
+        Id = "380c2529-7209-45ee-93ee-cb22fa3b39e8",
         IsCompleted = true,
         ProgressPercentage = 100D,
         StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-24T12:09:13.335Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-28T20:13:19.237Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -760,7 +760,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
             Name = "Toby Grant",
             Type = PropertyAtsActivityFromType.Other,
         },
-        Id = "c8d54b59-1442-4eff-b309-aea61f6abc47",
+        Id = "e636b4b1-e83d-4f0f-acf2-47f3c66decae",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -770,7 +770,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "a6413e6c-d303-43d1-bfbc-b97b9d28e832",
+                Id = "ae84be1e-6cf7-4196-9c09-889abd2e3fdc",
                 Namespace = "activity",
                 Slug = "acer",
                 Value = AtsMetadataValue.CreateStr(
@@ -784,7 +784,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "2fd4d43b-0068-43f9-92bf-b78dbee0f9c0",
+                Id = "7b63204a-0b7e-4486-817b-e8b1e5c85692",
                 Namespace = "activity",
                 Slug = "tremo",
                 Value = AtsMetadataValue.CreateStr(
@@ -802,7 +802,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
             },
         },
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-03-08T23:58:21.609Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-26T13:56:55.244Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -849,14 +849,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-14T05:06:52.334Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-04-23T20:07:20.207Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "774daa7a-da0f-412c-ba30-3355325d6932",
+        Id = "380c2529-7209-45ee-93ee-cb22fa3b39e8",
         IsCompleted = true,
         ProgressPercentage = 100D,
         StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-24T12:09:13.335Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-28T20:13:19.237Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

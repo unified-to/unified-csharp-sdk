@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class AdsAsset
     {
+        /// <summary>
+        /// inbound create-only: base64-encoded image/media bytes to upload.
+        /// </summary>
         [JsonProperty("content")]
         public string? Content { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -31,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("height")]
         public double? Height { get; set; }
 
+        /// <summary>
+        /// provider asset resource name/id (e.g. Google Ads customers/{cid}/assets/{id}, TikTok image/video id, DV360 mediaId).
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -49,9 +58,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public AdsAssetType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// outbound: public asset URL; inbound (create): source URL to fetch bytes from when content is not supplied.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
 

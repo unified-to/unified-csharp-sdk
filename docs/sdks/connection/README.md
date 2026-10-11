@@ -5,6 +5,7 @@
 ### Available Operations
 
 * [CreateUnifiedConnection](#createunifiedconnection) - Create connection
+* [CreateUnifiedConnectionReauth](#createunifiedconnectionreauth) - Create a re-authorization token for a connection
 * [GetUnifiedConnection](#getunifiedconnection) - Retrieve connection
 * [ListUnifiedConnections](#listunifiedconnections) - List all connections
 * [PatchUnifiedConnection](#patchunifiedconnection) - Update connection
@@ -13,7 +14,7 @@
 
 ## CreateUnifiedConnection
 
-Used only to import existing customer credentials; use "Authorize new connection" instead
+Used only to import existing customer credentials. To connect a new account, use the "Authorize or re-authorize a connection" auth URL instead. To change credentials on an existing connection, use "Update connection".
 
 ### Example Usage
 
@@ -49,6 +50,42 @@ var res = await sdk.Connection.CreateUnifiedConnectionAsync(req);
 ### Response
 
 **[CreateUnifiedConnectionResponse](../../Models/Requests/CreateUnifiedConnectionResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateUnifiedConnectionReauth
+
+Returns a short-lived, single-use token that lets your end-user re-authorize this existing connection in place via the "Authorize or re-authorize a connection" URL with connection_id and reauth_token.
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createUnifiedConnectionReauth" method="post" path="/unified/connection/{id}/reauth" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Connection.CreateUnifiedConnectionReauthAsync(id: "<id>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Connection |
+
+### Response
+
+**[CreateUnifiedConnectionReauthResponse](../../Models/Requests/CreateUnifiedConnectionReauthResponse.md)**
 
 ### Errors
 

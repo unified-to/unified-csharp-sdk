@@ -19,51 +19,96 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingBankfeedaccount
     {
+        /// <summary>
+        /// ref -&gt; AccountingAccount: the target GL account the feed posts into (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// full account number where available.
+        /// </summary>
         [JsonProperty("account_number")]
         public string? AccountNumber { get; set; }
 
+        /// <summary>
+        /// last-4 when the full number isn't returned.
+        /// </summary>
         [JsonProperty("account_number_last4")]
         public string? AccountNumberLast4 { get; set; }
 
+        /// <summary>
+        /// CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER.
+        /// </summary>
         [JsonProperty("account_type")]
         public AccountType? AccountType { get; set; }
 
+        /// <summary>
+        /// current balance of the source account.
+        /// </summary>
         [JsonProperty("balance")]
         public double? Balance { get; set; }
 
+        /// <summary>
+        /// bank / institution name.
+        /// </summary>
         [JsonProperty("bank_name")]
         public string? BankName { get; set; }
 
+        /// <summary>
+        /// creation timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ISO 4217 currency of the account.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// date the feed begins delivering transactions (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("feed_start_at")]
         public DateTime? FeedStartAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// account nickname / source name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// ref -&gt; accounting Organization this record belongs to.
+        /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// The original data from the integration's API.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// bank routing number.
+        /// </summary>
         [JsonProperty("routing_number")]
         public string? RoutingNumber { get; set; }
 
+        /// <summary>
+        /// feed state: ACTIVE, INACTIVE.
+        /// </summary>
         [JsonProperty("status")]
         public AccountingBankfeedaccountStatus? Status { get; set; }
 
+        /// <summary>
+        /// last-update timestamp, in ISO 8601 format and UTC (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

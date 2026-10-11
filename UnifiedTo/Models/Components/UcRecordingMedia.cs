@@ -17,15 +17,24 @@ namespace UnifiedTo.Models.Components
 
     public class UcRecordingMedia
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// two digit ISO code.
+        /// </summary>
         [JsonProperty("language")]
         public string? Language { get; set; }
 
         [JsonProperty("recording_download_url")]
         public string? RecordingDownloadUrl { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 

@@ -19,12 +19,21 @@ namespace UnifiedTo.Models.Components
 
     public class ShippingShipment
     {
+        /// <summary>
+        /// Reference to the carrier.
+        /// </summary>
         [JsonProperty("carrier_id")]
         public string? CarrierId { get; set; }
 
+        /// <summary>
+        /// Human-readable carrier/provider name when there is no carrier record to reference (e.g. commerce-platform fulfillments).
+        /// </summary>
         [JsonProperty("carrier_name")]
         public string? CarrierName { get; set; }
 
+        /// <summary>
+        /// The date that this shipment object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -40,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("from_address")]
         public PropertyShippingShipmentFromAddress? FromAddress { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this shipment object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -49,21 +61,39 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("insurance")]
         public PropertyShippingShipmentInsurance? Insurance { get; set; }
 
+        /// <summary>
+        /// Adult signature required.
+        /// </summary>
         [JsonProperty("is_adult_signature_required")]
         public bool? IsAdultSignatureRequired { get; set; }
 
+        /// <summary>
+        /// Whether shipment is international.
+        /// </summary>
         [JsonProperty("is_international")]
         public bool? IsInternational { get; set; }
 
+        /// <summary>
+        /// Whether delivery is guaranteed (from rate).
+        /// </summary>
         [JsonProperty("is_rate_guaranteed")]
         public bool? IsRateGuaranteed { get; set; }
 
+        /// <summary>
+        /// Whether this is a return shipment.
+        /// </summary>
         [JsonProperty("is_return")]
         public bool? IsReturn { get; set; }
 
+        /// <summary>
+        /// Signature required on delivery.
+        /// </summary>
         [JsonProperty("is_signature_required")]
         public bool? IsSignatureRequired { get; set; }
 
+        /// <summary>
+        /// Optional reference to the shipping label.
+        /// </summary>
         [JsonProperty("label_id")]
         public string? LabelId { get; set; }
 
@@ -73,12 +103,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<ShippingShipmentLineitem>? Lineitems { get; set; }
 
+        /// <summary>
+        /// Reference to commerce_order or accounting_order.
+        /// </summary>
         [JsonProperty("order_id")]
         public string? OrderId { get; set; }
 
+        /// <summary>
+        /// ref -&gt; accounting Organization this shipment belongs to (multi-company ERPs).
+        /// </summary>
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// Reference to original shipment if return; points to ShippingShipment.
+        /// </summary>
         [JsonProperty("original_shipment_id")]
         public string? OriginalShipmentId { get; set; }
 
@@ -88,27 +127,51 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("packages")]
         public List<ShippingPackage>? Packages { get; set; }
 
+        /// <summary>
+        /// The rate amount used (may differ from shipping_cost due to adjustments).
+        /// </summary>
         [JsonProperty("rate_amount")]
         public double? RateAmount { get; set; }
 
+        /// <summary>
+        /// Currency for rate_amount.
+        /// </summary>
         [JsonProperty("rate_currency")]
         public string? RateCurrency { get; set; }
 
+        /// <summary>
+        /// Estimated delivery days from the rate.
+        /// </summary>
         [JsonProperty("rate_estimated_days")]
         public double? RateEstimatedDays { get; set; }
 
+        /// <summary>
+        /// Estimated delivery date from the rate (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("rate_estimated_delivery_at")]
         public DateTime? RateEstimatedDeliveryAt { get; set; }
 
+        /// <summary>
+        /// Optional reference to the selected rate (for traceability).
+        /// </summary>
         [JsonProperty("rate_id")]
         public string? RateId { get; set; }
 
+        /// <summary>
+        /// Service name from the rate (e.g., "Priority Mail").
+        /// </summary>
         [JsonProperty("rate_service_name")]
         public string? RateServiceName { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this shipment.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Customer reference number.
+        /// </summary>
         [JsonProperty("reference_number")]
         public string? ReferenceNumber { get; set; }
 
@@ -118,18 +181,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("return_address")]
         public PropertyShippingShipmentReturnAddress? ReturnAddress { get; set; }
 
+        /// <summary>
+        /// RMA number if return shipment.
+        /// </summary>
         [JsonProperty("return_authorization_number")]
         public string? ReturnAuthorizationNumber { get; set; }
 
+        /// <summary>
+        /// Reason for return.
+        /// </summary>
         [JsonProperty("return_reason")]
         public string? ReturnReason { get; set; }
 
+        /// <summary>
+        /// Type of return.
+        /// </summary>
         [JsonProperty("return_type")]
         public ReturnType? ReturnType { get; set; }
 
+        /// <summary>
+        /// Code for the shipping service used.
+        /// </summary>
         [JsonProperty("service_code")]
         public string? ServiceCode { get; set; }
 
+        /// <summary>
+        /// When shipment was createddispatched (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("shipped_at")]
         public DateTime? ShippedAt { get; set; }
 
@@ -139,6 +217,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("special_instructions")]
         public List<string>? SpecialInstructions { get; set; }
 
+        /// <summary>
+        /// Current status of the shipment.
+        /// </summary>
         [JsonProperty("status")]
         public ShippingShipmentStatus? Status { get; set; }
 
@@ -148,18 +229,33 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("to_address")]
         public PropertyShippingShipmentToAddress? ToAddress { get; set; }
 
+        /// <summary>
+        /// Optional reference to the tracking information.
+        /// </summary>
         [JsonProperty("tracking_id")]
         public string? TrackingId { get; set; }
 
+        /// <summary>
+        /// Carrier tracking URL for this shipment.
+        /// </summary>
         [JsonProperty("tracking_url")]
         public string? TrackingUrl { get; set; }
 
+        /// <summary>
+        /// The last date that this shipment object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// Origin warehouselocation ID; points to CommerceLocation.
+        /// </summary>
         [JsonProperty("warehouse_location_id")]
         public string? WarehouseLocationId { get; set; }
 
+        /// <summary>
+        /// Origin warehouse location name.
+        /// </summary>
         [JsonProperty("warehouse_location_name")]
         public string? WarehouseLocationName { get; set; }
     }

@@ -19,18 +19,30 @@ namespace UnifiedTo.Models.Components
 
     public class HrisTimeoff
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("approved_at")]
         public DateTime? ApprovedAt { get; set; }
 
+        /// <summary>
+        /// (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("approver_user_id")]
         public string? ApproverUserId { get; set; }
 
         [JsonProperty("comments")]
         public string? Comments { get; set; }
 
+        /// <summary>
+        /// (reference to HrisCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -40,6 +52,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("duration_type")]
         public DurationType? DurationType { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -49,6 +64,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_paid")]
         public bool? IsPaid { get; set; }
 
+        /// <summary>
+        /// integration leave-type label before normalization.
+        /// </summary>
         [JsonProperty("original_type")]
         public string? OriginalType { get; set; }
 
@@ -58,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reason")]
         public string? Reason { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
@@ -67,9 +88,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public HrisTimeoffType? Type { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// employee ID (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string UserId { get; set; } = default!;
     }

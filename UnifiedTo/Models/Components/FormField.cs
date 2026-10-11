@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("choices")]
         public List<string>? Choices { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -67,6 +70,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public FormFieldType Type { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

@@ -19,39 +19,75 @@ namespace UnifiedTo.Models.Components
 
     public class SigningSignatory
     {
+        /// <summary>
+        /// The date that this signatory was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// Reason for declining (if status is DECLINED).
+        /// </summary>
         [JsonProperty("decline_reason")]
         public string? DeclineReason { get; set; }
 
+        /// <summary>
+        /// Parent signing document; points to SigningDocument.
+        /// </summary>
         [JsonProperty("document_id")]
         public string? DocumentId { get; set; }
 
+        /// <summary>
+        /// Email address of the signatory.
+        /// </summary>
         [JsonProperty("email")]
         public string? Email { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this signatory.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Full name of the signatory.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Signing order (1, 2, 3...).
+        /// </summary>
         [JsonProperty("order")]
         public double? Order { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// Role of the signatory.
+        /// </summary>
         [JsonProperty("role")]
         public SigningSignatoryRole? Role { get; set; }
 
+        /// <summary>
+        /// When this signatory signed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("signed_at")]
         public DateTime? SignedAt { get; set; }
 
+        /// <summary>
+        /// Current status of this signatory.
+        /// </summary>
         [JsonProperty("status")]
         public SigningSignatoryStatus? Status { get; set; }
 
+        /// <summary>
+        /// The last date that this signatory was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

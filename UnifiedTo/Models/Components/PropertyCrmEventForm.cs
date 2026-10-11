@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
 
     public class PropertyCrmEventForm
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("archived_at")]
         public DateTime? ArchivedAt { get; set; }
 

@@ -36,6 +36,29 @@ namespace UnifiedTo.Models.Components
         public static readonly HrisPayslipDetailType PosttaxBenefit = new HrisPayslipDetailType("POSTTAX_BENEFIT");
         public static readonly HrisPayslipDetailType PosttaxGarnishment = new HrisPayslipDetailType("POSTTAX_GARNISHMENT");
         public static readonly HrisPayslipDetailType Reimbursement = new HrisPayslipDetailType("REIMBURSEMENT");
+        public static readonly HrisPayslipDetailType EarningRegular = new HrisPayslipDetailType("EARNING_REGULAR");
+        public static readonly HrisPayslipDetailType EarningDoubleOvertime = new HrisPayslipDetailType("EARNING_DOUBLE_OVERTIME");
+        public static readonly HrisPayslipDetailType EarningPto = new HrisPayslipDetailType("EARNING_PTO");
+        public static readonly HrisPayslipDetailType EarningSick = new HrisPayslipDetailType("EARNING_SICK");
+        public static readonly HrisPayslipDetailType EarningHoliday = new HrisPayslipDetailType("EARNING_HOLIDAY");
+        public static readonly HrisPayslipDetailType EarningSeverance = new HrisPayslipDetailType("EARNING_SEVERANCE");
+        public static readonly HrisPayslipDetailType EarningReimbursement = new HrisPayslipDetailType("EARNING_REIMBURSEMENT");
+        public static readonly HrisPayslipDetailType TaxSocialSecurity = new HrisPayslipDetailType("TAX_SOCIAL_SECURITY");
+        public static readonly HrisPayslipDetailType TaxMedicare = new HrisPayslipDetailType("TAX_MEDICARE");
+        public static readonly HrisPayslipDetailType TaxUnemployment = new HrisPayslipDetailType("TAX_UNEMPLOYMENT");
+        public static readonly HrisPayslipDetailType TaxEmployer = new HrisPayslipDetailType("TAX_EMPLOYER");
+        public static readonly HrisPayslipDetailType PretaxDeductionHsa = new HrisPayslipDetailType("PRETAX_DEDUCTION_HSA");
+        public static readonly HrisPayslipDetailType PretaxDeductionFsa = new HrisPayslipDetailType("PRETAX_DEDUCTION_FSA");
+        public static readonly HrisPayslipDetailType PretaxDeductionDependentCare = new HrisPayslipDetailType("PRETAX_DEDUCTION_DEPENDENT_CARE");
+        public static readonly HrisPayslipDetailType PretaxDeductionCommuter = new HrisPayslipDetailType("PRETAX_DEDUCTION_COMMUTER");
+        public static readonly HrisPayslipDetailType PretaxDeductionDental = new HrisPayslipDetailType("PRETAX_DEDUCTION_DENTAL");
+        public static readonly HrisPayslipDetailType PretaxDeductionVision = new HrisPayslipDetailType("PRETAX_DEDUCTION_VISION");
+        public static readonly HrisPayslipDetailType PosttaxDeduction = new HrisPayslipDetailType("POSTTAX_DEDUCTION");
+        public static readonly HrisPayslipDetailType PosttaxRetirementRoth = new HrisPayslipDetailType("POSTTAX_RETIREMENT_ROTH");
+        public static readonly HrisPayslipDetailType PosttaxLoanRepayment = new HrisPayslipDetailType("POSTTAX_LOAN_REPAYMENT");
+        public static readonly HrisPayslipDetailType EmployerContribution = new HrisPayslipDetailType("EMPLOYER_CONTRIBUTION");
+        public static readonly HrisPayslipDetailType Pension = new HrisPayslipDetailType("PENSION");
+        public static readonly HrisPayslipDetailType EarningCashInLieu = new HrisPayslipDetailType("EARNING_CASH_IN_LIEU");
 
         private static readonly Dictionary <string, HrisPayslipDetailType> _knownValues =
             new Dictionary <string, HrisPayslipDetailType> ()
@@ -56,7 +79,30 @@ namespace UnifiedTo.Models.Components
                 ["TAX_LOCAL"] = TaxLocal,
                 ["POSTTAX_BENEFIT"] = PosttaxBenefit,
                 ["POSTTAX_GARNISHMENT"] = PosttaxGarnishment,
-                ["REIMBURSEMENT"] = Reimbursement
+                ["REIMBURSEMENT"] = Reimbursement,
+                ["EARNING_REGULAR"] = EarningRegular,
+                ["EARNING_DOUBLE_OVERTIME"] = EarningDoubleOvertime,
+                ["EARNING_PTO"] = EarningPto,
+                ["EARNING_SICK"] = EarningSick,
+                ["EARNING_HOLIDAY"] = EarningHoliday,
+                ["EARNING_SEVERANCE"] = EarningSeverance,
+                ["EARNING_REIMBURSEMENT"] = EarningReimbursement,
+                ["TAX_SOCIAL_SECURITY"] = TaxSocialSecurity,
+                ["TAX_MEDICARE"] = TaxMedicare,
+                ["TAX_UNEMPLOYMENT"] = TaxUnemployment,
+                ["TAX_EMPLOYER"] = TaxEmployer,
+                ["PRETAX_DEDUCTION_HSA"] = PretaxDeductionHsa,
+                ["PRETAX_DEDUCTION_FSA"] = PretaxDeductionFsa,
+                ["PRETAX_DEDUCTION_DEPENDENT_CARE"] = PretaxDeductionDependentCare,
+                ["PRETAX_DEDUCTION_COMMUTER"] = PretaxDeductionCommuter,
+                ["PRETAX_DEDUCTION_DENTAL"] = PretaxDeductionDental,
+                ["PRETAX_DEDUCTION_VISION"] = PretaxDeductionVision,
+                ["POSTTAX_DEDUCTION"] = PosttaxDeduction,
+                ["POSTTAX_RETIREMENT_ROTH"] = PosttaxRetirementRoth,
+                ["POSTTAX_LOAN_REPAYMENT"] = PosttaxLoanRepayment,
+                ["EMPLOYER_CONTRIBUTION"] = EmployerContribution,
+                ["PENSION"] = Pension,
+                ["EARNING_CASH_IN_LIEU"] = EarningCashInLieu
             };
 
         private static readonly ConcurrentDictionary<string, HrisPayslipDetailType> _values =

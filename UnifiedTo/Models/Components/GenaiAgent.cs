@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
 
     public class GenaiAgent
     {
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -25,12 +28,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The system prompt or stored procedure that the agent follows.
+        /// </summary>
         [JsonProperty("instructions")]
         public string? Instructions { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// The model that the agent runs on.
+        /// </summary>
         [JsonProperty("model_id")]
         public string? ModelId { get; set; }
 
@@ -40,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

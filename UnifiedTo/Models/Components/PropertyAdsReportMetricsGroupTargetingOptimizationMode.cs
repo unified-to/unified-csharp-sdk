@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Google: bid_only falsetrue.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class PropertyAdsReportMetricsGroupTargetingOptimizationMode : IEquatable<PropertyAdsReportMetricsGroupTargetingOptimizationMode>
     {

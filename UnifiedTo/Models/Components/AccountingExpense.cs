@@ -19,12 +19,21 @@ namespace UnifiedTo.Models.Components
 
     public class AccountingExpense
     {
+        /// <summary>
+        /// (reference to AccountingAccount).
+        /// </summary>
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("approved_at")]
         public DateTime? ApprovedAt { get; set; }
 
+        /// <summary>
+        /// references HR employee/user (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("approver_user_id")]
         public string? ApproverUserId { get; set; }
 
@@ -40,15 +49,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Exchange rate to the base/home currency at the expense date.
+        /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; }
 
@@ -73,9 +91,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payment_method")]
         public string? PaymentMethod { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
+        /// <summary>
+        /// (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
@@ -85,6 +109,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reimbursed_amount")]
         public double? ReimbursedAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("reimbursed_at")]
         public DateTime? ReimbursedAt { get; set; }
 
@@ -94,15 +121,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
+        /// <summary>
+        /// ref -&gt; AccountingTaxrate applied to the expense.
+        /// </summary>
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// USER = employee spend; COMPANY = books/purchase expense.
+        /// </summary>
+        [JsonProperty("type")]
+        public AccountingExpenseType? Type { get; set; }
+
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// references a HR employee/user (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
 

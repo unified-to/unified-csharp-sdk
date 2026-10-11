@@ -22,6 +22,12 @@ namespace UnifiedTo.Models.Requests
         public string? ApplicationId { get; set; }
 
         /// <summary>
+        /// The candidate ID to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=candidate_id")]
+        public string? CandidateId { get; set; }
+
+        /// <summary>
         /// ID of the connection.
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
@@ -32,6 +38,12 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListAtsInterviewsQueryParamFields>? Fields { get; set; }
+
+        /// <summary>
+        /// The job ID to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=job_id")]
+        public string? JobId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }

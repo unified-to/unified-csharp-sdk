@@ -22,18 +22,30 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("extra_data", NullValueHandling = NullValueHandling.Include)]
         public CdpMetadataExtraData? ExtraData { get; set; }
 
+        /// <summary>
+        /// The data type of the attribute value.
+        /// </summary>
         [JsonProperty("format")]
         public CdpMetadataFormat? Format { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The scope or origin of the attribute (eg. computed, event, visitor).
+        /// </summary>
         [JsonProperty("namespace")]
         public string? Namespace { get; set; }
 
+        /// <summary>
+        /// The attribute/trait key (eg. lifetime_value).
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// The attribute/trait value.
+        /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public CdpMetadataValue? Value { get; set; }
     }

@@ -24,6 +24,25 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Prompt.CreateGenaiPromptAsync(
     genaiPrompt: new GenaiPrompt() {
+        Answers = new List<GenaiAnswer>() {
+            new GenaiAnswer() {
+                Confidence = 0.5384309098590165D,
+                Id = "TeZpueFB",
+                Probabilities = new List<GenaiAnswerProbability>() {
+                    new GenaiAnswerProbability() {
+                        Option = "veniam",
+                        Probability = 0.05683182482607663D,
+                    },
+                    new GenaiAnswerProbability() {
+                        Option = "comes",
+                        Probability = 0.1404057613108307D,
+                    },
+                },
+                Score = 0.05974147981032729D,
+                Type = GenaiAnswerType.Choice,
+                Value = "summisse",
+            },
+        },
         MaxTokens = 0.4677782787475735D,
         McpAuthorizationToken = "f45a6e93-7bed-49b4-a5c8-37a2ed2d58f4",
         McpDeferredTools = new List<string>() {},
@@ -31,11 +50,45 @@ var res = await sdk.Prompt.CreateGenaiPromptAsync(
         Messages = new List<GenaiContent>() {
             new GenaiContent() {
                 Content = "Aegre repudiandae verecundia facere statua.",
+                Images = new List<string>() {},
                 Role = Role.Assistant,
             },
             new GenaiContent() {
                 Content = "Speciosus xiphias soleo trepide crinis.",
+                Images = new List<string>() {},
                 Role = Role.System,
+            },
+        },
+        Questions = new List<GenaiQuestion>() {
+            new GenaiQuestion() {
+                Id = "KtvbYiEq",
+                Instructions = "Admiratio cura contabesco subvenio venustas architecto vacuus summopere.",
+                Options = new List<string>() {
+                    "vulnero",
+                    "quasi",
+                    "tolero",
+                },
+                Type = GenaiQuestionType.Boolean,
+            },
+            new GenaiQuestion() {
+                Id = "oV6IURtv",
+                Instructions = "Celer deleniti ventus ipsam tendo odit.",
+                Options = new List<string>() {
+                    "nulla",
+                    "aspicio",
+                    "tero",
+                },
+                Type = GenaiQuestionType.Choice,
+            },
+            new GenaiQuestion() {
+                Id = "60dBZk2K",
+                Instructions = "Decretum vesica amet repudiandae.",
+                Options = new List<string>() {
+                    "ducimus",
+                    "civis",
+                    "alter",
+                },
+                Type = GenaiQuestionType.Boolean,
             },
         },
         Responses = new List<string>() {

@@ -19,18 +19,33 @@ namespace UnifiedTo.Models.Components
 
     public class ScimGroupMember
     {
+        /// <summary>
+        /// url to user.
+        /// </summary>
         [JsonProperty("$ref")]
         public string? DollarRef { get; set; }
 
+        /// <summary>
+        /// user name.
+        /// </summary>
         [JsonProperty("display")]
         public string? Display { get; set; }
 
+        /// <summary>
+        /// ONLY USED ON UPDATES.
+        /// </summary>
         [JsonProperty("operation")]
         public Operation? Operation { get; set; }
 
+        /// <summary>
+        /// NOT STANDARD.
+        /// </summary>
         [JsonProperty("type")]
         public ScimGroupMemberType? Type { get; set; }
 
+        /// <summary>
+        /// ID of user.
+        /// </summary>
         [JsonProperty("value")]
         public string Value { get; set; } = default!;
     }

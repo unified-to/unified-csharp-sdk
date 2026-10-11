@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("inputs")]
         public List<string>? Inputs { get; set; }
 
+        /// <summary>
+        /// Name of parameter.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 

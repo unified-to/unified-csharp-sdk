@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category_ids")]
         public List<string>? CategoryIds { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -34,12 +37,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Exchange rate to the base/home currency at the posting date.
+        /// </summary>
         [JsonProperty("exchange_rate")]
         public double? ExchangeRate { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// True when the line amounts already include tax.
+        /// </summary>
         [JsonProperty("is_inclusive_of_tax")]
         public bool? IsInclusiveOfTax { get; set; }
 
@@ -52,9 +61,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
+        /// <summary>
+        /// (reference to TaskProject).
+        /// </summary>
         [JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
@@ -67,6 +82,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("source")]
         public string? Source { get; set; }
 
+        /// <summary>
+        /// Posting state of the journal entry.
+        /// </summary>
         [JsonProperty("status")]
         public AccountingJournalStatus? Status { get; set; }
 
@@ -76,9 +94,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
 
+        /// <summary>
+        /// Total of the debit lines; equals the total of the credit lines.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

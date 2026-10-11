@@ -22,15 +22,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("addresses")]
         public List<AtsAddress>? Addresses { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
 
+        /// <summary>
+        /// id value of the company associated with the job in the ATS (reference to AtsCompany).
+        /// </summary>
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
         [JsonProperty("compensation")]
         public List<AtsCompensation>? Compensation { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -58,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("industry")]
         public string? Industry { get; set; }
 
+        /// <summary>
+        /// Preferred language for the job, in ISO 639-1 format (e.g., U.S. English is en-us).
+        /// </summary>
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
 
@@ -73,6 +85,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// Number of openings for the job.
+        /// </summary>
         [JsonProperty("number_of_openings")]
         public double? NumberOfOpenings { get; set; }
 
@@ -109,12 +124,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public AtsJobStatus? Status { get; set; }
 
+        /// <summary>
+        /// Short job blurb (distinct from full description when both exist).
+        /// </summary>
         [JsonProperty("summary")]
         public string? Summary { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// User id of the job owner in the ATS (references an HRIS employee) (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }

@@ -19,15 +19,24 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("assigned_grade")]
         public string? AssignedGrade { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; }
 
         [JsonProperty("content_id")]
         public string? ContentId { get; set; }
 
+        /// <summary>
+        /// For providers that track at course level (e.g., Learnupon enrollments) (reference to Course).
+        /// </summary>
         [JsonProperty("course_id")]
         public string? CourseId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -46,12 +55,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("started_at")]
         public DateTime? StartedAt { get; set; }
 
+        /// <summary>
+        /// (reference to LmsStudent).
+        /// </summary>
         [JsonProperty("student_id")]
         public string? StudentId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

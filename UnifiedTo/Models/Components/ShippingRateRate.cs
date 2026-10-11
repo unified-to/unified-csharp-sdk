@@ -20,48 +20,87 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("amount")]
         public double? Amount { get; set; }
 
+        /// <summary>
+        /// Base shipping rate.
+        /// </summary>
         [JsonProperty("base_amount")]
         public double? BaseAmount { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Delivery days (integer).
+        /// </summary>
         [JsonProperty("delivery_days")]
         public double? DeliveryDays { get; set; }
 
+        /// <summary>
+        /// Delivery duration terms (e.g., "3-5 business days").
+        /// </summary>
         [JsonProperty("delivery_terms")]
         public string? DeliveryTerms { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// Applied discount.
+        /// </summary>
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
 
+        /// <summary>
+        /// Estimated delivery time in days.
+        /// </summary>
         [JsonProperty("estimated_days")]
         public double? EstimatedDays { get; set; }
 
+        /// <summary>
+        /// Specific delivery date (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("estimated_delivery_end_at")]
         public DateTime? EstimatedDeliveryEndAt { get; set; }
 
+        /// <summary>
+        /// Time window (e.g., "10:00 AM - 2:00 PM") (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("estimated_delivery_start_at")]
         public DateTime? EstimatedDeliveryStartAt { get; set; }
 
+        /// <summary>
+        /// Whether rate is currently available.
+        /// </summary>
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// Whether delivery is guaranteed.
+        /// </summary>
         [JsonProperty("is_guaranteed")]
         public bool? IsGuaranteed { get; set; }
 
+        /// <summary>
+        /// Whether this is a negotiated rate.
+        /// </summary>
         [JsonProperty("is_negotiated_rate")]
         public bool? IsNegotiatedRate { get; set; }
 
+        /// <summary>
+        /// Whether shipment is trackable.
+        /// </summary>
         [JsonProperty("is_trackable")]
         public bool? IsTrackable { get; set; }
 
+        /// <summary>
+        /// Package type (e.g., "package", "envelope", "flat").
+        /// </summary>
         [JsonProperty("package_type")]
         public string? PackageType { get; set; }
 
+        /// <summary>
+        /// Source of rate (e.g., "carrier", "negotiated", "account").
+        /// </summary>
         [JsonProperty("rate_source")]
         public string? RateSource { get; set; }
 
@@ -77,6 +116,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("title")]
         public string Title { get; set; } = default!;
 
+        /// <summary>
+        /// Transit time in hours.
+        /// </summary>
         [JsonProperty("transit_hours")]
         public double? TransitHours { get; set; }
     }

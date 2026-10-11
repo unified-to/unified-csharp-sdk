@@ -20,6 +20,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("answers")]
         public List<FormAnswer> Answers { get; set; } = default!;
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -38,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("respondent_name")]
         public string? RespondentName { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

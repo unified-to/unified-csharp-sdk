@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// read-only; controlled by the provider (whether/why the campaign can serve), unlike the user-managed status.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class EffectiveStatus : IEquatable<EffectiveStatus>
     {

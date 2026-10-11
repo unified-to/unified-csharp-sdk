@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("degree")]
         public string? Degree { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -30,6 +33,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("level")]
         public string? Level { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
     }

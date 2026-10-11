@@ -18,9 +18,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("cost_amount")]
         public double? CostAmount { get; set; }
 
+        /// <summary>
+        /// ISO 4217 format.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// Processing time in milliseconds.
+        /// </summary>
         [JsonProperty("processing_time")]
         public double? ProcessingTime { get; set; }
 

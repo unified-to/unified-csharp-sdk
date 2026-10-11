@@ -19,30 +19,57 @@ namespace UnifiedTo.Models.Components
 
     public class CdpSource
     {
+        /// <summary>
+        /// The date that this source object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// SOURCE, or BIDIRECTIONAL for import+export connectors.
+        /// </summary>
         [JsonProperty("direction")]
         public CdpSourceDirection? Direction { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this source object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Whether the source is active/enabled.
+        /// </summary>
         [JsonProperty("is_enabled")]
         public bool? IsEnabled { get; set; }
 
+        /// <summary>
+        /// The name of the inbound data source.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this source.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// A stable handle/key for the source.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// The connector/source type (eg. the provider's connector slug or plugin id).
+        /// </summary>
         [JsonProperty("type")]
         public string? Type { get; set; }
 
+        /// <summary>
+        /// The last date that this source object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

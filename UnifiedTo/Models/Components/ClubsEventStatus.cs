@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The event status.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class ClubsEventStatus : IEquatable<ClubsEventStatus>
     {

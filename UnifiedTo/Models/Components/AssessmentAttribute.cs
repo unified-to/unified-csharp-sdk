@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("label")]
         public string Label { get; set; } = default!;
 
+        /// <summary>
+        /// For SUB_RESULT type.
+        /// </summary>
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
@@ -31,12 +34,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("score_value")]
         public double? ScoreValue { get; set; }
 
+        /// <summary>
+        /// For SUB_RESULT type.
+        /// </summary>
         [JsonProperty("status")]
         public AssessmentAttributeStatus? Status { get; set; }
 
         [JsonProperty("type")]
         public AssessmentAttributeType Type { get; set; } = default!;
 
+        /// <summary>
+        /// For TEXT and NUMBER types.
+        /// </summary>
         [JsonProperty("value")]
         public string? Value { get; set; }
     }

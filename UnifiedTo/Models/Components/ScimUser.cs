@@ -103,6 +103,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("userName")]
         public string? UserName { get; set; }
 
+        /// <summary>
+        /// 'Employee','Super Admin', 'General Admin', 'Account Manager', 'User Manager', 'Workflow Manager', 'Experience Manager', 'Author','Reporter','Contractor,'Intern','Temp','External','Unknown']
+        /// </summary>
         [JsonProperty("userType")]
         public string? UserType { get; set; }
 

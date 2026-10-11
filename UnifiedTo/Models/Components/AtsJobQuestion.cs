@@ -25,8 +25,56 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// latest allowed answer (DATE) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
+        [JsonProperty("max_at")]
+        public DateTime? MaxAt { get; set; }
+
+        /// <summary>
+        /// maximum answer length (TEXT).
+        /// </summary>
+        [JsonProperty("max_length")]
+        public double? MaxLength { get; set; }
+
+        /// <summary>
+        /// maximum answer value (NUMBER).
+        /// </summary>
+        [JsonProperty("max_value")]
+        public double? MaxValue { get; set; }
+
+        /// <summary>
+        /// earliest allowed answer (DATE) (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
+        [JsonProperty("min_at")]
+        public DateTime? MinAt { get; set; }
+
+        /// <summary>
+        /// minimum answer length (TEXT).
+        /// </summary>
+        [JsonProperty("min_length")]
+        public double? MinLength { get; set; }
+
+        /// <summary>
+        /// minimum answer value (NUMBER).
+        /// </summary>
+        [JsonProperty("min_value")]
+        public double? MinValue { get; set; }
+
         [JsonProperty("options")]
         public List<string>? Options { get; set; }
+
+        /// <summary>
+        /// only ask this question when the parent question's answer is one of these.
+        /// </summary>
+        [JsonProperty("parent_answer_values")]
+        public List<string>? ParentAnswerValues { get; set; }
+
+        /// <summary>
+        /// id of the question in this job's questions list that this question depends on.
+        /// </summary>
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
 
         [JsonProperty("prompt")]
         public string? Prompt { get; set; }

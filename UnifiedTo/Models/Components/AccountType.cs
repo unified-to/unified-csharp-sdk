@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// CHECKING, SAVINGS, CREDIT_CARD, LOAN, OTHER.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class AccountType : IEquatable<AccountType>
     {

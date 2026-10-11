@@ -1,5 +1,7 @@
 # PropertyHrisPayslipDeductionFrequency
 
+Frequency for this deduction (should always be set, matches IHrisBenefit.frequency)
+
 ## Example Usage
 
 ```csharp
@@ -14,12 +16,14 @@ var custom = PropertyHrisPayslipDeductionFrequency.Of("custom_value");
 
 ## Values
 
-| Name      | Value     |
-| --------- | --------- |
-| `OneTime` | ONE_TIME  |
-| `Day`     | DAY       |
-| `Quarter` | QUARTER   |
-| `Year`    | YEAR      |
-| `Hour`    | HOUR      |
-| `Month`   | MONTH     |
-| `Week`    | WEEK      |
+| Name          | Value         |
+| ------------- | ------------- |
+| `OneTime`     | ONE_TIME      |
+| `Day`         | DAY           |
+| `Quarter`     | QUARTER       |
+| `Year`        | YEAR          |
+| `Hour`        | HOUR          |
+| `Month`       | MONTH         |
+| `Week`        | WEEK          |
+| `Biweekly`    | BIWEEKLY      |
+| `Semimonthly` | SEMIMONTHLY   |

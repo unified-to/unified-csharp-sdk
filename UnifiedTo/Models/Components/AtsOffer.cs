@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class AtsOffer
     {
+        /// <summary>
+        /// date the offer was accepted (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("accepted_at")]
         public DateTime? AcceptedAt { get; set; }
 
@@ -28,30 +31,51 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("compensation")]
         public List<AtsCompensation>? Compensation { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// user id of the recruiter who created the offer (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("creator_user_id")]
         public string? CreatorUserId { get; set; }
 
+        /// <summary>
+        /// newly hired employee id (reference to HrisEmployee).
+        /// </summary>
         [JsonProperty("employee_user_id")]
         public string? EmployeeUserId { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// date the offer was rejected (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("rejected_at")]
         public DateTime? RejectedAt { get; set; }
 
+        /// <summary>
+        /// date the offer was sent (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("sent_at")]
         public DateTime? SentAt { get; set; }
 
+        /// <summary>
+        /// date the employee starts (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
         [JsonProperty("status")]
         public AtsOfferStatus? Status { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

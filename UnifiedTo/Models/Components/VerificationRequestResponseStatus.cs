@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// Background checks and compliance checks return CLEARFLAGGED or PASS/FAIL or YES/NO.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class VerificationRequestResponseStatus : IEquatable<VerificationRequestResponseStatus>
     {

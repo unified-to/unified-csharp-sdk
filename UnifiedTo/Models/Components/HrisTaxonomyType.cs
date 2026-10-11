@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// the kind of taxonomy item: skill, knowledge, competence, ability, certification or role/occupation.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HrisTaxonomyType : IEquatable<HrisTaxonomyType>
     {

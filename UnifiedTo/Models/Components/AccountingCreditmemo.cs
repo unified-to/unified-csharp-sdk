@@ -34,15 +34,27 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("balance_amount")]
         public double? BalanceAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("cancelled_at")]
         public DateTime? CancelledAt { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingContact).
+        /// </summary>
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// External identifier for this invoice.
+        /// </summary>
         [JsonProperty("creditmemo_number")]
         public string? CreditmemoNumber { get; set; }
 
@@ -52,12 +64,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("due_at")]
         public DateTime? DueAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// (reference to AccountingInvoice).
+        /// </summary>
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
@@ -76,12 +94,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("paid_amount")]
         public double? PaidAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("paid_at")]
         public DateTime? PaidAt { get; set; }
 
+        /// <summary>
+        /// When set to charging_automatically, an automated attempt will occur to pay this invoice using the default payment source attached to the contactcustomer. When set to send_invoice, an will email will be sent with this invoice to the contact/customer with payment instructions.
+        /// </summary>
         [JsonProperty("payment_collection_method")]
         public AccountingCreditmemoPaymentCollectionMethod? PaymentCollectionMethod { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("posted_at")]
         public DateTime? PostedAt { get; set; }
 
@@ -94,6 +121,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("refund_reason")]
         public string? RefundReason { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
@@ -109,9 +139,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// The public URL for the invoice to send to a customer to view or pay.
+        /// </summary>
         [JsonProperty("url")]
         public string? Url { get; set; }
     }

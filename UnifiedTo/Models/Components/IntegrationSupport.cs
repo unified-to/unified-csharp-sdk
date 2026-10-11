@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_ad_id")]
         public ListAdId? ListAdId { get; set; }
 
+        [JsonProperty("list_agent_id")]
+        public ListAgentId? ListAgentId { get; set; }
+
         [JsonProperty("list_application_id")]
         public ListApplicationId? ListApplicationId { get; set; }
 
@@ -114,6 +117,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_effective_status")]
         public ListEffectiveStatus? ListEffectiveStatus { get; set; }
+
+        [JsonProperty("list_email")]
+        public ListEmail? ListEmail { get; set; }
 
         [JsonProperty("list_end_lt")]
         public ListEndLt? ListEndLt { get; set; }
@@ -395,7 +401,7 @@ namespace UnifiedTo.Models.Components
         /// objects that we map from in the integration.
         /// </summary>
         [JsonProperty("raw_objects")]
-        public List<string>? RawObjects { get; set; }
+        public List<string> RawObjects { get; set; } = default!;
 
         [JsonProperty("search_domain")]
         public SearchDomain? SearchDomain { get; set; }

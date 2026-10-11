@@ -22,12 +22,21 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("amount")]
         public double Amount { get; set; } = default!;
 
+        /// <summary>
+        /// ISO 4217 currency code, e.g. USD.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// The provider's original fee label, e.g. "VAT" or a shipping carrier name.
+        /// </summary>
         [JsonProperty("original_type")]
         public string? OriginalType { get; set; }
 
+        /// <summary>
+        /// Unified fee category.
+        /// </summary>
         [JsonProperty("type")]
         public AccountingFeeType Type { get; set; } = default!;
     }

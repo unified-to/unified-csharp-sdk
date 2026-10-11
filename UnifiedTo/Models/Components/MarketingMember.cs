@@ -22,9 +22,15 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class MarketingMember
     {
+        /// <summary>
+        /// The name of the company/organization the member belongs to.
+        /// </summary>
         [JsonProperty("company")]
         public string? Company { get; set; }
 
+        /// <summary>
+        /// The date that this member object was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -37,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("first_name")]
         public string? FirstName { get; set; }
 
+        /// <summary>
+        /// Unique identifier for this member object.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -49,9 +58,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_ids")]
         public List<string>? ListIds { get; set; }
 
+        /// <summary>
+        /// The name of the member.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// The raw data returned by the integration for this member.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -64,6 +79,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        /// <summary>
+        /// The last date that this member object was updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

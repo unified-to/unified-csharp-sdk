@@ -37,6 +37,10 @@ namespace UnifiedTo.Models.Requests
         IsActive,
         [JsonProperty("company_id")]
         CompanyId,
+        [JsonProperty("pay_frequency")]
+        PayFrequency,
+        [JsonProperty("next_paid_at")]
+        NextPaidAt,
         [JsonProperty("raw")]
         Raw,
     }

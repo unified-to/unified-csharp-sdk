@@ -17,21 +17,39 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertySocialPostMetrics
     {
+        /// <summary>
+        /// Number of bookmarks/saves.
+        /// </summary>
         [JsonProperty("bookmark_count")]
         public double? BookmarkCount { get; set; }
 
+        /// <summary>
+        /// Number of comments/replies.
+        /// </summary>
         [JsonProperty("comment_count")]
         public double? CommentCount { get; set; }
 
+        /// <summary>
+        /// Number of likes/reactions.
+        /// </summary>
         [JsonProperty("like_count")]
         public double? LikeCount { get; set; }
 
+        /// <summary>
+        /// Number of quotes.
+        /// </summary>
         [JsonProperty("quote_count")]
         public double? QuoteCount { get; set; }
 
+        /// <summary>
+        /// Number of shares/reposts.
+        /// </summary>
         [JsonProperty("share_count")]
         public double? ShareCount { get; set; }
 
+        /// <summary>
+        /// Number of views/impressions.
+        /// </summary>
         [JsonProperty("view_count")]
         public double? ViewCount { get; set; }
     }

@@ -6,7 +6,9 @@
 
 * [CreateAtsScorecard](#createatsscorecard) - Create a scorecard
 * [GetAtsScorecard](#getatsscorecard) - Retrieve a scorecard
+* [GetUcScorecard](#getucscorecard) - Retrieve a scorecard
 * [ListAtsScorecards](#listatsscorecards) - List all scorecards
+* [ListUcScorecards](#listucscorecards) - List all scorecards
 * [PatchAtsScorecard](#patchatsscorecard) - Update a scorecard
 * [RemoveAtsScorecard](#removeatsscorecard) - Remove a scorecard
 * [UpdateAtsScorecard](#updateatsscorecard) - Update a scorecard
@@ -32,7 +34,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "091c9532-8ab4-4902-a520-acd54c4e76d1",
+        Id = "4344b5a0-af68-48c7-a37f-bdeb26e3d8cc",
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -45,7 +47,7 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-05-28T05:41:35.701Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-02T19:29:44.467Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -114,6 +116,48 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetUcScorecard
+
+Retrieve a scorecard
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getUcScorecard" method="get" path="/uc/{connection_id}/scorecard/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Scorecard.GetUcScorecardAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Scorecard                                                                                                                              |
+| `Fields`                                                                                                                                         | List<[GetUcScorecardQueryParamFields](../../Models/Requests/GetUcScorecardQueryParamFields.md)>                                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetUcScorecardResponse](../../Models/Requests/GetUcScorecardResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAtsScorecards
 
 List all scorecards
@@ -155,6 +199,47 @@ var res = await sdk.Scorecard.ListAtsScorecardsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListUcScorecards
+
+List all scorecards
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listUcScorecards" method="get" path="/uc/{connection_id}/scorecard" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListUcScorecardsRequest req = new ListUcScorecardsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Scorecard.ListUcScorecardsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListUcScorecardsRequest](../../Models/Requests/ListUcScorecardsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[ListUcScorecardsResponse](../../Models/Requests/ListUcScorecardsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchAtsScorecard
 
 Update a scorecard
@@ -177,7 +262,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "ad5a2091-694e-47c1-b863-8de6e0265017",
+        Id = "fc84d8e1-71a6-4d6c-a683-7da40edb6c5e",
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -190,7 +275,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-05-28T05:41:35.703Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-02T19:29:44.470Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -279,7 +364,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "ad5a2091-694e-47c1-b863-8de6e0265017",
+        Id = "fc84d8e1-71a6-4d6c-a683-7da40edb6c5e",
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -292,7 +377,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-05-28T05:41:35.703Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-02T19:29:44.470Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

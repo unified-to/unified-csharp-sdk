@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// DESTINATION, or BIDIRECTIONAL for import+export connectors.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class Direction : IEquatable<Direction>
     {

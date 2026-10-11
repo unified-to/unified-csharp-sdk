@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The ID of the job this status/stage belongs to, when the provider scopes statuses per job.
+        /// </summary>
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 

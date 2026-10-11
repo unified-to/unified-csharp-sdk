@@ -18,15 +18,27 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyCrmEventMeeting
     {
+        /// <summary>
+        /// The event meeting's agendadescription.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// The event meeting's end datetime (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        /// <summary>
+        /// The event meeting's start datetime (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// </summary>
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        /// <summary>
+        /// The event meeting's topicsubject.
+        /// </summary>
         [JsonProperty("title")]
         public string? Title { get; set; }
     }

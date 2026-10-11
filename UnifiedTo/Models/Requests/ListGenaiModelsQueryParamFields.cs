@@ -27,6 +27,10 @@ namespace UnifiedTo.Models.Requests
         WebUrl,
         [JsonProperty("has_temperature")]
         HasTemperature,
+        [JsonProperty("has_questions")]
+        HasQuestions,
+        [JsonProperty("has_vision")]
+        HasVision,
         [JsonProperty("raw")]
         Raw,
     }
