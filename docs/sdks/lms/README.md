@@ -66,14 +66,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Lms.CreateLmsActivityAsync(
     lmsActivity: new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-23T20:07:20.202Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-04-24T06:11:32.137Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "c74a1c6c-6830-4491-b2e3-58dd58a94c5a",
+        Id = "748e1d62-1ce1-423d-934a-1efd3e38b67b",
         IsCompleted = true,
         ProgressPercentage = 100D,
         StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-28T20:13:19.234Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-29T00:45:30.624Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -121,7 +121,7 @@ var res = await sdk.Lms.CreateLmsClassAsync(
     lmsClass: new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "1877117e-d909-494c-89d6-f070563449e1",
+        Id = "919f1e51-dad2-46ee-8b8c-8f1309031a7b",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -142,7 +142,7 @@ var res = await sdk.Lms.CreateLmsClassAsync(
         },
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-07-26T17:17:34.060Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-27T10:35:17.684Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -190,7 +190,7 @@ var res = await sdk.Lms.CreateLmsCollectionAsync(
     lmsCollection: new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "9708d240-5f96-49e6-9d73-1fec44334524",
+        Id = "13e97ee4-da10-42e2-8b87-002bb018e8b7",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -206,7 +206,7 @@ var res = await sdk.Lms.CreateLmsCollectionAsync(
             },
         },
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-20T14:46:27.065Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-21T11:15:02.352Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -260,7 +260,7 @@ var res = await sdk.Lms.CreateLmsContentAsync(
         Difficulty = "Beginner",
         DurationMinutes = 19D,
         ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "79533768-dc14-4cb3-8c8f-c817d1281d6f",
+        Id = "ab7f3353-03c9-4cca-b5ff-3e9823861d37",
         Instructors = new List<LmsReference>() {
             new LmsReference() {
                 Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -339,7 +339,7 @@ var res = await sdk.Lms.CreateLmsContentAsync(
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-09-30T22:38:26.543Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-01T05:30:38.446Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -393,7 +393,7 @@ var res = await sdk.Lms.CreateLmsCourseAsync(
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "a6f6c6a4-edc2-4653-9351-5a45c65dd80a",
+        Id = "c7bb7067-87a2-41ce-b3d2-7c7f3c4350da",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -426,7 +426,7 @@ var res = await sdk.Lms.CreateLmsCourseAsync(
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-08T21:47:43.878Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-08T23:36:21.623Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -478,7 +478,7 @@ var res = await sdk.Lms.CreateLmsInstructorAsync(
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "aa73df91-3ee0-467e-8c4f-bcb6460cc314",
+        Id = "8588805f-d19b-419c-bd82-2cee2153e617",
         ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
         LastName = "Ritchie",
         Name = "Deangelo Ritchie",
@@ -489,7 +489,7 @@ var res = await sdk.Lms.CreateLmsInstructorAsync(
             },
         },
         Title = "Product Solutions Engineer",
-        UpdatedAt = System.DateTime.Parse("2025-07-16T21:45:47.924Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-17T13:40:44.821Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -550,7 +550,7 @@ var res = await sdk.Lms.CreateLmsStudentAsync(
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "9691bd82-252c-4fe1-afa8-ccd95a9e2ba0",
+        Id = "a2a62cf2-3a97-4969-bb77-8093091cb921",
         ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
         LastName = "Murazik",
         Name = "Marcella Murazik",
@@ -560,7 +560,7 @@ var res = await sdk.Lms.CreateLmsStudentAsync(
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-27T12:36:43.648Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-27T19:54:48.387Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1188,14 +1188,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchLmsActivityRequest req = new PatchLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-23T20:07:20.207Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-04-24T06:11:32.142Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "380c2529-7209-45ee-93ee-cb22fa3b39e8",
+        Id = "f4f6b32c-faf8-49c2-8832-6c078828004d",
         IsCompleted = true,
         ProgressPercentage = 100D,
         StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-28T20:13:19.237Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-29T00:45:30.627Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1244,7 +1244,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "0bdf0088-93b7-40f7-9c50-49af8de4fe90",
+        Id = "8976ffab-1890-4330-8b80-306d851e84ec",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -1265,7 +1265,7 @@ PatchLmsClassRequest req = new PatchLmsClassRequest() {
         },
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-07-26T17:17:34.070Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-27T10:35:17.697Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1314,7 +1314,7 @@ PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "62844b2d-c35f-4af4-bae8-7ada13b985e2",
+        Id = "69e0b6d5-f527-4f8f-b5f9-b2bf39a7f12a",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -1330,7 +1330,7 @@ PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
             },
         },
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-20T14:46:27.075Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-21T11:15:02.365Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1385,7 +1385,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Difficulty = "Beginner",
         DurationMinutes = 19D,
         ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "b703274f-42b3-4544-b5fe-2c9e10424ca3",
+        Id = "9b49f50f-ea68-4746-b106-a3aeea5af297",
         Instructors = new List<LmsReference>() {
             new LmsReference() {
                 Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -1464,7 +1464,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-09-30T22:38:26.550Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-01T05:30:38.455Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1519,7 +1519,7 @@ PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "6c73dc22-1a93-4399-ae73-28d2cd22bd92",
+        Id = "d9aaa5d9-c917-4ef9-b53e-f3e0d003b32d",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -1552,7 +1552,7 @@ PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-08T21:47:43.879Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-08T23:36:21.625Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1605,7 +1605,7 @@ PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "a7418baa-1c79-43c4-a83f-2ad423972a4b",
+        Id = "2d184ad7-543d-4bc5-9f4c-c36d3a7b5901",
         ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
         LastName = "Ritchie",
         Name = "Deangelo Ritchie",
@@ -1616,7 +1616,7 @@ PatchLmsInstructorRequest req = new PatchLmsInstructorRequest() {
             },
         },
         Title = "Product Solutions Engineer",
-        UpdatedAt = System.DateTime.Parse("2025-07-16T21:45:47.930Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-17T13:40:44.831Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1678,7 +1678,7 @@ PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "4130baf1-b772-4c8b-90a2-b3f54268aaa4",
+        Id = "1c7d3a70-6692-4305-9047-9d0d809c83a8",
         ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
         LastName = "Murazik",
         Name = "Marcella Murazik",
@@ -1688,7 +1688,7 @@ PatchLmsStudentRequest req = new PatchLmsStudentRequest() {
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-27T12:36:43.652Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-27T19:54:48.393Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2015,14 +2015,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateLmsActivityRequest req = new UpdateLmsActivityRequest() {
     LmsActivity = new LmsActivity() {
         AssignedGrade = "summopere",
-        CompletedAt = System.DateTime.Parse("2025-04-23T20:07:20.207Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-04-24T06:11:32.142Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-17T01:25:21.745Z").ToUniversalTime(),
         DurationMinutes = 55D,
-        Id = "380c2529-7209-45ee-93ee-cb22fa3b39e8",
+        Id = "f4f6b32c-faf8-49c2-8832-6c078828004d",
         IsCompleted = true,
         ProgressPercentage = 100D,
         StartedAt = System.DateTime.Parse("2023-12-24T04:54:05.825Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2022-01-28T20:13:19.237Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-01-29T00:45:30.627Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2071,7 +2071,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
     LmsClass = new LmsClass() {
         CreatedAt = System.DateTime.Parse("2020-02-20T14:48:51.845Z").ToUniversalTime(),
         Description = "Anser sperno decerno.",
-        Id = "0bdf0088-93b7-40f7-9c50-49af8de4fe90",
+        Id = "8976ffab-1890-4330-8b80-306d851e84ec",
         Instructors = new List<LmsReference>() {},
         Languages = new List<string>() {
             "in",
@@ -2092,7 +2092,7 @@ UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
         },
         Name = "virtus",
         Students = new List<LmsReference>() {},
-        UpdatedAt = System.DateTime.Parse("2025-07-26T17:17:34.070Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-27T10:35:17.697Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2141,7 +2141,7 @@ UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "62844b2d-c35f-4af4-bae8-7ada13b985e2",
+        Id = "69e0b6d5-f527-4f8f-b5f9-b2bf39a7f12a",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -2157,7 +2157,7 @@ UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
             },
         },
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-20T14:46:27.075Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-21T11:15:02.365Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2212,7 +2212,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Difficulty = "Beginner",
         DurationMinutes = 19D,
         ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "b703274f-42b3-4544-b5fe-2c9e10424ca3",
+        Id = "9b49f50f-ea68-4746-b106-a3aeea5af297",
         Instructors = new List<LmsReference>() {
             new LmsReference() {
                 Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -2291,7 +2291,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-09-30T22:38:26.550Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-01T05:30:38.455Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2346,7 +2346,7 @@ UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
         Currency = "FJD",
         Description = "Vinco alias aut capitulus.",
         DurationMinutes = 148D,
-        Id = "6c73dc22-1a93-4399-ae73-28d2cd22bd92",
+        Id = "d9aaa5d9-c917-4ef9-b53e-f3e0d003b32d",
         Instructors = new List<LmsReference>() {},
         IsActive = true,
         IsPrivate = false,
@@ -2379,7 +2379,7 @@ UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
         },
         Students = new List<LmsReference>() {},
         TimeEstimateMinutes = 100D,
-        UpdatedAt = System.DateTime.Parse("2023-02-08T21:47:43.879Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-08T23:36:21.625Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2432,7 +2432,7 @@ UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
             new LmsEmail() {},
         },
         FirstName = "Deangelo",
-        Id = "a7418baa-1c79-43c4-a83f-2ad423972a4b",
+        Id = "2d184ad7-543d-4bc5-9f4c-c36d3a7b5901",
         ImageUrl = "https://avatars.githubusercontent.com/u/20232618",
         LastName = "Ritchie",
         Name = "Deangelo Ritchie",
@@ -2443,7 +2443,7 @@ UpdateLmsInstructorRequest req = new UpdateLmsInstructorRequest() {
             },
         },
         Title = "Product Solutions Engineer",
-        UpdatedAt = System.DateTime.Parse("2025-07-16T21:45:47.930Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-17T13:40:44.831Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2505,7 +2505,7 @@ UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
             new LmsEmail() {},
         },
         FirstName = "Marcella",
-        Id = "4130baf1-b772-4c8b-90a2-b3f54268aaa4",
+        Id = "1c7d3a70-6692-4305-9047-9d0d809c83a8",
         ImageUrl = "https://avatars.githubusercontent.com/u/36301374",
         LastName = "Murazik",
         Name = "Marcella Murazik",
@@ -2515,7 +2515,7 @@ UpdateLmsStudentRequest req = new UpdateLmsStudentRequest() {
                 Type = LmsTelephoneType.Fax,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2022-06-27T12:36:43.652Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-06-27T19:54:48.393Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

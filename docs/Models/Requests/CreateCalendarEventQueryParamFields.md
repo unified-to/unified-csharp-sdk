@@ -36,4 +36,5 @@ var value = CreateCalendarEventQueryParamFields.Id;
 | `Conference`        | conference          |
 | `Attachments`       | attachments         |
 | `SendNotifications` | send_notifications  |
+| `MatterId`          | matter_id           |
 | `Raw`               | raw                 |

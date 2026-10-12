@@ -71,7 +71,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                 Name = "Troy Greenholt",
             },
         },
-        Id = "c62a2ee8-e727-4fef-a1fc-471e16433bac",
+        Id = "04b7264c-87d9-446a-80b9-93241982511e",
         Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -82,7 +82,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "aa99fcf0-f085-47e7-ab94-cb696220e875",
+                Id = "0242647e-6fc8-426d-8d04-a75ef08a8286",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -97,7 +97,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-30T00:05:48.189Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-30T18:54:15.168Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -111,14 +111,14 @@ var res = await sdk.Job.CreateAtsJobAsync(
                     Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-23T16:18:04.067Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-24T12:03:43.593Z").ToUniversalTime(),
                 Description = "Provident turbo cunabula spoliatio agnitio.",
                 Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
                 Location = "2925 Connie Green",
                 Name = "Lead Intranet Developer",
                 PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-18T18:31:19.157Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-19T14:44:16.791Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -172,7 +172,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
         },
         Status = AtsJobStatus.Archived,
         Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-19T08:08:04.953Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-20T01:12:14.889Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -221,10 +221,10 @@ var res = await sdk.Job.CreateHrisJobAsync(
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "bb0fb822-230a-43a5-8b1b-4fd55b9ec014",
+        Id = "891fab03-0a42-4f8f-8438-4e57e73945a5",
         IsActive = false,
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.073Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:45:52.628Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -472,7 +472,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Name = "Troy Greenholt",
             },
         },
-        Id = "a7fa9c17-0a1d-4992-a384-01d53b722701",
+        Id = "7b5fe651-e5b5-49fb-a72a-cd1d1a342df9",
         Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -483,7 +483,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "7ff0b09c-050a-46d1-b304-b6c98db5254b",
+                Id = "37d5def4-83a1-4d4b-ba98-ed29b1598fd0",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -498,7 +498,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-30T00:05:48.254Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-30T18:54:15.208Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -512,14 +512,14 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-23T16:18:04.137Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-24T12:03:43.636Z").ToUniversalTime(),
                 Description = "Provident turbo cunabula spoliatio agnitio.",
                 Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
                 Location = "2925 Connie Green",
                 Name = "Lead Intranet Developer",
                 PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-18T18:31:19.229Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-19T14:44:16.835Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -573,7 +573,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-19T08:08:05.013Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-20T01:12:14.926Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -623,10 +623,10 @@ PatchHrisJobRequest req = new PatchHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "69c74d53-aa9f-46fc-b7ae-68d6296eff97",
+        Id = "91ad0616-561b-4f79-ae05-777119e49a55",
         IsActive = false,
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.112Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:45:52.660Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -788,7 +788,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Name = "Troy Greenholt",
             },
         },
-        Id = "a7fa9c17-0a1d-4992-a384-01d53b722701",
+        Id = "7b5fe651-e5b5-49fb-a72a-cd1d1a342df9",
         Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -799,7 +799,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "7ff0b09c-050a-46d1-b304-b6c98db5254b",
+                Id = "37d5def4-83a1-4d4b-ba98-ed29b1598fd0",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -814,7 +814,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-05-30T00:05:48.254Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-05-30T18:54:15.208Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -828,14 +828,14 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-23T16:18:04.137Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-24T12:03:43.636Z").ToUniversalTime(),
                 Description = "Provident turbo cunabula spoliatio agnitio.",
                 Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
                 Location = "2925 Connie Green",
                 Name = "Lead Intranet Developer",
                 PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-18T18:31:19.229Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-19T14:44:16.835Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -889,7 +889,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-19T08:08:05.013Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-20T01:12:14.926Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -939,10 +939,10 @@ UpdateHrisJobRequest req = new UpdateHrisJobRequest() {
         CreatedAt = System.DateTime.Parse("2020-10-28T01:13:19.491Z").ToUniversalTime(),
         Description = "Alienus timor depromo bonus vobis creator tabella callide cavus triumphus caveo.",
         EmploymentType = HrisJobEmploymentType.Freelance,
-        Id = "69c74d53-aa9f-46fc-b7ae-68d6296eff97",
+        Id = "91ad0616-561b-4f79-ae05-777119e49a55",
         IsActive = false,
         Name = "Internal Integration Specialist",
-        UpdatedAt = System.DateTime.Parse("2023-01-26T10:47:07.112Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-26T18:45:52.660Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

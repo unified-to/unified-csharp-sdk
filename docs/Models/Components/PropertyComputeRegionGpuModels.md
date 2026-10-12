@@ -1,0 +1,50 @@
+# PropertyComputeRegionGpuModels
+
+## Example Usage
+
+```csharp
+using UnifiedTo.Models.Components;
+
+var value = PropertyComputeRegionGpuModels.NvidiaGb300;
+
+// Open enum: use .Of() to create instances from custom string values
+var custom = PropertyComputeRegionGpuModels.Of("custom_value");
+```
+
+
+## Values
+
+| Name                  | Value                 |
+| --------------------- | --------------------- |
+| `NvidiaGb300`         | NVIDIA_GB300          |
+| `NvidiaB300`          | NVIDIA_B300           |
+| `NvidiaGb200`         | NVIDIA_GB200          |
+| `NvidiaB200`          | NVIDIA_B200           |
+| `NvidiaGh200`         | NVIDIA_GH200          |
+| `NvidiaH200`          | NVIDIA_H200           |
+| `NvidiaH100Sxm`       | NVIDIA_H100_SXM       |
+| `NvidiaH100Pcie`      | NVIDIA_H100_PCIE      |
+| `NvidiaH100Nvl`       | NVIDIA_H100_NVL       |
+| `NvidiaA100Sxm80Gb`   | NVIDIA_A100_SXM_80GB  |
+| `NvidiaA100Pcie80Gb`  | NVIDIA_A100_PCIE_80GB |
+| `NvidiaA10040Gb`      | NVIDIA_A100_40GB      |
+| `NvidiaL40S`          | NVIDIA_L40S           |
+| `NvidiaL40`           | NVIDIA_L40            |
+| `NvidiaL4`            | NVIDIA_L4             |
+| `NvidiaA40`           | NVIDIA_A40            |
+| `NvidiaA10`           | NVIDIA_A10            |
+| `NvidiaRtxPro6000`    | NVIDIA_RTX_PRO_6000   |
+| `NvidiaRtx6000Ada`    | NVIDIA_RTX_6000_ADA   |
+| `NvidiaRtxA6000`      | NVIDIA_RTX_A6000      |
+| `NvidiaRtxA5000`      | NVIDIA_RTX_A5000      |
+| `NvidiaRtxA4000`      | NVIDIA_RTX_A4000      |
+| `NvidiaRtx5090`       | NVIDIA_RTX_5090       |
+| `NvidiaRtx4090`       | NVIDIA_RTX_4090       |
+| `NvidiaRtx3090`       | NVIDIA_RTX_3090       |
+| `NvidiaV100`          | NVIDIA_V100           |
+| `NvidiaT4`            | NVIDIA_T4             |
+| `AmdMi355X`           | AMD_MI355X            |
+| `AmdMi325X`           | AMD_MI325X            |
+| `AmdMi300X`           | AMD_MI300X            |
+| `AmdMi250`            | AMD_MI250             |
+| `Other`               | OTHER                 |

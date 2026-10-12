@@ -48,6 +48,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
+        /// <summary>
+        /// The matter ID to filter by.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=matter_id")]
+        public string? MatterId { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=offset")]
         public double? Offset { get; set; }
 

@@ -8,9 +8,11 @@
 * [CreateHrisLocation](#createhrislocation) - Create a location
 * [GetClubsLocation](#getclubslocation) - Retrieve a location
 * [GetCommerceLocation](#getcommercelocation) - Retrieve a location
+* [GetHealthcareLocation](#gethealthcarelocation) - Retrieve a location
 * [GetHrisLocation](#gethrislocation) - Retrieve a location
 * [ListClubsLocations](#listclubslocations) - List all locations
 * [ListCommerceLocations](#listcommercelocations) - List all locations
+* [ListHealthcareLocations](#listhealthcarelocations) - List all locations
 * [ListHrisLocations](#listhrislocations) - List all locations
 * [PatchCommerceLocation](#patchcommercelocation) - Update a location
 * [PatchHrisLocation](#patchhrislocation) - Update a location
@@ -50,7 +52,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "3d7eb4c9-224d-4192-909a-ffee9511a2d6",
+        Id = "03250068-96d9-47aa-a7e9-952292dce7a1",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -61,10 +63,10 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "81a94236-8cdf-4d10-b3f3-892e5a415dd9",
+                Id = "75fd667a-c2fe-43fa-a5a6-1b07c8f57c4a",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "369a99a4-0314-496e-b8fb-b6dd2cc284e0",
+                        Id = "c5327c9f-b99e-4038-acc8-87f860fd487f",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -91,7 +93,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-17T07:27:52.972Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-17T14:44:06.189Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     connectionId: "<id>"
@@ -150,8 +152,8 @@ var res = await sdk.Location.CreateHrisLocationAsync(
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "a95fb085-1de2-4952-a92c-4b2d394ad136",
-        Id = "71d77c71-c403-4af9-b84d-9873ee590086",
+        ExternalIdentifier = "285fcb30-0404-4733-a7e6-6afd97323f68",
+        Id = "ed53ddf1-1216-4a5a-bed8-7461c4da1dce",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -171,7 +173,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-17T10:41:43.024Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-17T18:25:52.278Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -275,6 +277,48 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 ### Response
 
 **[GetCommerceLocationResponse](../../Models/Requests/GetCommerceLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHealthcareLocation
+
+Retrieve a location
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getHealthcareLocation" method="get" path="/healthcare/{connection_id}/location/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Location.GetHealthcareLocationAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetHealthcareLocationQueryParamFields](../../Models/Requests/GetHealthcareLocationQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHealthcareLocationResponse](../../Models/Requests/GetHealthcareLocationResponse.md)**
 
 ### Errors
 
@@ -406,6 +450,47 @@ var res = await sdk.Location.ListCommerceLocationsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHealthcareLocations
+
+List all locations
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listHealthcareLocations" method="get" path="/healthcare/{connection_id}/location" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHealthcareLocationsRequest req = new ListHealthcareLocationsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Location.ListHealthcareLocationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListHealthcareLocationsRequest](../../Models/Requests/ListHealthcareLocationsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[ListHealthcareLocationsResponse](../../Models/Requests/ListHealthcareLocationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHrisLocations
 
 List all locations
@@ -479,7 +564,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "807edb13-f876-457a-98dd-258282cc6997",
+        Id = "aeff0b79-07fd-4bfd-94d3-34f919a0928f",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -490,10 +575,10 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "4c1f73b2-fee9-4130-a73e-8e0f227a6cf0",
+                Id = "b986af92-8bff-428d-9899-d34f5da4c358",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0a9a7714-e2ce-49e5-9936-149141d0e05f",
+                        Id = "12413905-8b10-4465-9897-d071dd768822",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -520,7 +605,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-17T07:27:52.982Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-17T14:44:06.197Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -580,8 +665,8 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "019aebc6-abcb-41bd-842e-f9315e842363",
-        Id = "bf9eb454-3fd7-45f7-8a51-2b1635dfe888",
+        ExternalIdentifier = "658e681a-7bce-43bc-8a87-ca9b18e1e635",
+        Id = "0b9cfd6b-4c38-452a-8950-37a0117315cd",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -601,7 +686,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-17T10:41:43.030Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-17T18:25:52.284Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -740,7 +825,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "807edb13-f876-457a-98dd-258282cc6997",
+        Id = "aeff0b79-07fd-4bfd-94d3-34f919a0928f",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -751,10 +836,10 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "4c1f73b2-fee9-4130-a73e-8e0f227a6cf0",
+                Id = "b986af92-8bff-428d-9899-d34f5da4c358",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0a9a7714-e2ce-49e5-9936-149141d0e05f",
+                        Id = "12413905-8b10-4465-9897-d071dd768822",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -781,7 +866,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-17T07:27:52.982Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-17T14:44:06.197Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -841,8 +926,8 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "019aebc6-abcb-41bd-842e-f9315e842363",
-        Id = "bf9eb454-3fd7-45f7-8a51-2b1635dfe888",
+        ExternalIdentifier = "658e681a-7bce-43bc-8a87-ca9b18e1e635",
+        Id = "0b9cfd6b-4c38-452a-8950-37a0117315cd",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -862,7 +947,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-17T10:41:43.030Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-17T18:25:52.284Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

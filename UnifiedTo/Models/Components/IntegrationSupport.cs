@@ -142,6 +142,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_group_id")]
         public ListGroupId? ListGroupId { get; set; }
 
+        [JsonProperty("list_instance_id")]
+        public ListInstanceId? ListInstanceId { get; set; }
+
         [JsonProperty("list_instructor_id")]
         public ListInstructorId? ListInstructorId { get; set; }
 
@@ -181,6 +184,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_location_id")]
         public ListLocationId? ListLocationId { get; set; }
 
+        [JsonProperty("list_matter_id")]
+        public ListMatterId? ListMatterId { get; set; }
+
         [JsonProperty("list_medium")]
         public ListMedium? ListMedium { get; set; }
 
@@ -208,6 +214,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_parent_id")]
         public ListParentId? ListParentId { get; set; }
 
+        [JsonProperty("list_patient_id")]
+        public ListPatientId? ListPatientId { get; set; }
+
         [JsonProperty("list_payment_id")]
         public ListPaymentId? ListPaymentId { get; set; }
 
@@ -219,6 +228,12 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_post_id")]
         public ListPostId? ListPostId { get; set; }
+
+        [JsonProperty("list_practicearea_id")]
+        public ListPracticeareaId? ListPracticeareaId { get; set; }
+
+        [JsonProperty("list_practitioner_id")]
+        public ListPractitionerId? ListPractitionerId { get; set; }
 
         [JsonProperty("list_profile_id")]
         public ListProfileId? ListProfileId { get; set; }
@@ -238,6 +253,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_reference")]
         public ListReference? ListReference { get; set; }
 
+        [JsonProperty("list_region_id")]
+        public ListRegionId? ListRegionId { get; set; }
+
         [JsonProperty("list_repo_id")]
         public ListRepoId? ListRepoId { get; set; }
 
@@ -252,6 +270,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_segment_id")]
         public ListSegmentId? ListSegmentId { get; set; }
+
+        [JsonProperty("list_service_id")]
+        public ListServiceId? ListServiceId { get; set; }
 
         [JsonProperty("list_session_id")]
         public ListSessionId? ListSessionId { get; set; }
@@ -544,6 +565,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_location_id")]
         public VirtualWebhookLocationId? VirtualWebhookLocationId { get; set; }
 
+        [JsonProperty("virtual_webhook_matter_id")]
+        public VirtualWebhookMatterId? VirtualWebhookMatterId { get; set; }
+
         [JsonProperty("virtual_webhook_member_id")]
         public VirtualWebhookMemberId? VirtualWebhookMemberId { get; set; }
 
@@ -559,6 +583,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_parent_id")]
         public VirtualWebhookParentId? VirtualWebhookParentId { get; set; }
 
+        [JsonProperty("virtual_webhook_patient_id")]
+        public VirtualWebhookPatientId? VirtualWebhookPatientId { get; set; }
+
         [JsonProperty("virtual_webhook_payment_id")]
         public VirtualWebhookPaymentId? VirtualWebhookPaymentId { get; set; }
 
@@ -567,6 +594,12 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_post_id")]
         public VirtualWebhookPostId? VirtualWebhookPostId { get; set; }
+
+        [JsonProperty("virtual_webhook_practicearea_id")]
+        public VirtualWebhookPracticeareaId? VirtualWebhookPracticeareaId { get; set; }
+
+        [JsonProperty("virtual_webhook_practitioner_id")]
+        public VirtualWebhookPractitionerId? VirtualWebhookPractitionerId { get; set; }
 
         [JsonProperty("virtual_webhook_profile_id")]
         public VirtualWebhookProfileId? VirtualWebhookProfileId { get; set; }

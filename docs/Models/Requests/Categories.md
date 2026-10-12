@@ -48,3 +48,6 @@ var value = Categories.Passthrough;
 | `Cdp`          | cdp            |
 | `Performance`  | performance    |
 | `Social`       | social         |
+| `Legal`        | legal          |
+| `Compute`      | compute        |
+| `Healthcare`   | healthcare     |

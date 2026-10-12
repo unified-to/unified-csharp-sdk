@@ -85,6 +85,12 @@ namespace UnifiedTo.Models.Requests
         Performance,
         [JsonProperty("social")]
         Social,
+        [JsonProperty("legal")]
+        Legal,
+        [JsonProperty("compute")]
+        Compute,
+        [JsonProperty("healthcare")]
+        Healthcare,
     }
 
     public static class CategoriesExtension

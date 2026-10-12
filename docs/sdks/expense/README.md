@@ -5,11 +5,17 @@
 ### Available Operations
 
 * [CreateAccountingExpense](#createaccountingexpense) - Create an expense
+* [CreateLegalExpense](#createlegalexpense) - Create an expense
 * [GetAccountingExpense](#getaccountingexpense) - Retrieve an expense
+* [GetLegalExpense](#getlegalexpense) - Retrieve an expense
 * [ListAccountingExpenses](#listaccountingexpenses) - List all expenses
+* [ListLegalExpenses](#listlegalexpenses) - List all expenses
 * [PatchAccountingExpense](#patchaccountingexpense) - Update an expense
+* [PatchLegalExpense](#patchlegalexpense) - Update an expense
 * [RemoveAccountingExpense](#removeaccountingexpense) - Remove an expense
+* [RemoveLegalExpense](#removelegalexpense) - Remove an expense
 * [UpdateAccountingExpense](#updateaccountingexpense) - Update an expense
+* [UpdateLegalExpense](#updatelegalexpense) - Update an expense
 
 ## CreateAccountingExpense
 
@@ -30,11 +36,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Expense.CreateAccountingExpenseAsync(
     accountingExpense: new AccountingExpense() {
-        ApprovedAt = System.DateTime.Parse("2026-05-31T10:56:02.731Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2026-06-01T06:51:59.432Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://ripe-napkin.biz/",
-                Id = "2d3e86aa-a965-4d39-95a0-62dbc6d206a8",
+                Id = "7a838f4e-5648-4aea-92a6-47507b4e1150",
                 MimeType = "annus",
                 Name = "cohibeo",
             },
@@ -43,10 +49,10 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "SSP",
         ExternalNumber = "necessitatibus",
-        Id = "f2122bc2-cfb5-4623-850e-6715ad47d337",
+        Id = "69afc85e-8fe6-48cf-9bc6-23ea25e6ba5d",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "75904edd-1d58-4000-90ed-90de804f6b9d",
+                Id = "b842e969-c46a-4141-92ff-64b98bc50cd1",
                 ItemDescription = "Innovative Table featuring left technology and Rubber construction",
                 ItemName = "Luxurious Cotton Pizza",
                 ItemSku = "978-0-8324-6620-5",
@@ -60,13 +66,13 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
         Metadata = new List<AccountingMetadata>() {},
         Name = "Refined Steel Shoes",
         PaymentMethod = "CASH",
-        PostedAt = System.DateTime.Parse("2021-06-07T19:24:37.552Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2021-06-07T22:43:00.145Z").ToUniversalTime(),
         ReimbursedAmount = 1833D,
         Status = AccountingExpenseStatus.Submitted,
         TaxAmount = 2602D,
         TotalAmount = 3580D,
         Type = AccountingExpenseType.User,
-        UpdatedAt = System.DateTime.Parse("2026-05-31T10:56:02.731Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-01T06:51:59.432Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -86,6 +92,64 @@ var res = await sdk.Expense.CreateAccountingExpenseAsync(
 ### Response
 
 **[CreateAccountingExpenseResponse](../../Models/Requests/CreateAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateLegalExpense
+
+Create an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createLegalExpense" method="post" path="/legal/{connection_id}/expense" example="legal_expense" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Expense.CreateLegalExpenseAsync(
+    legalExpense: new LegalExpense() {
+        Category = "Kids",
+        CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
+        Currency = "MVR",
+        Description = "Temporibus agnitio sui.",
+        Id = "a3ef8abf-1870-4d60-861d-6aa48dd8ea4d",
+        IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
+        IsBilled = false,
+        Metadata = new List<LegalMetadata>() {},
+        PriceAmount = 100D,
+        Quantity = 3D,
+        TotalAmount = 300D,
+        Type = LegalExpenseType.Other,
+        UpdatedAt = System.DateTime.Parse("2024-03-25T18:38:13.648Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `LegalExpense`                                                                                                                                   | [LegalExpense](../../Models/Components/LegalExpense.md)                                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateLegalExpenseQueryParamFields](../../Models/Requests/CreateLegalExpenseQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateLegalExpenseResponse](../../Models/Requests/CreateLegalExpenseResponse.md)**
 
 ### Errors
 
@@ -135,6 +199,48 @@ var res = await sdk.Expense.GetAccountingExpenseAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetLegalExpense
+
+Retrieve an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getLegalExpense" method="get" path="/legal/{connection_id}/expense/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Expense.GetLegalExpenseAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Expense                                                                                                                                |
+| `Fields`                                                                                                                                         | List<[GetLegalExpenseQueryParamFields](../../Models/Requests/GetLegalExpenseQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetLegalExpenseResponse](../../Models/Requests/GetLegalExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAccountingExpenses
 
 List all expenses
@@ -176,6 +282,47 @@ var res = await sdk.Expense.ListAccountingExpensesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListLegalExpenses
+
+List all expenses
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listLegalExpenses" method="get" path="/legal/{connection_id}/expense" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListLegalExpensesRequest req = new ListLegalExpensesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Expense.ListLegalExpensesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListLegalExpensesRequest](../../Models/Requests/ListLegalExpensesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[ListLegalExpensesResponse](../../Models/Requests/ListLegalExpensesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchAccountingExpense
 
 Update an expense
@@ -196,11 +343,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
     AccountingExpense = new AccountingExpense() {
-        ApprovedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2026-06-01T06:51:59.461Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://ripe-napkin.biz/",
-                Id = "fc0f7439-3fa7-4e31-89cc-d5f4a93d3c88",
+                Id = "1ad07739-0358-4d55-8948-11321716e448",
                 MimeType = "annus",
                 Name = "cohibeo",
             },
@@ -209,10 +356,10 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "SSP",
         ExternalNumber = "necessitatibus",
-        Id = "acbe7639-ea60-46a9-9bec-90ec8c83fa2b",
+        Id = "8f81d1c3-166b-4aa6-b399-86173a79ae71",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "65c7f906-1e52-4a2c-857f-498f4a43dfe7",
+                Id = "f14e93a9-7d33-4ff5-ae4b-b931bc6bd7e2",
                 ItemDescription = "Innovative Table featuring left technology and Rubber construction",
                 ItemName = "Luxurious Cotton Pizza",
                 ItemSku = "978-0-8324-6620-5",
@@ -226,13 +373,13 @@ PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
         Metadata = new List<AccountingMetadata>() {},
         Name = "Refined Steel Shoes",
         PaymentMethod = "CASH",
-        PostedAt = System.DateTime.Parse("2021-06-07T19:24:37.557Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2021-06-07T22:43:00.150Z").ToUniversalTime(),
         ReimbursedAmount = 1833D,
         Status = AccountingExpenseStatus.Submitted,
         TaxAmount = 2602D,
         TotalAmount = 3580D,
         Type = AccountingExpenseType.User,
-        UpdatedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-01T06:51:59.461Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -252,6 +399,65 @@ var res = await sdk.Expense.PatchAccountingExpenseAsync(req);
 ### Response
 
 **[PatchAccountingExpenseResponse](../../Models/Requests/PatchAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchLegalExpense
+
+Update an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchLegalExpense" method="patch" path="/legal/{connection_id}/expense/{id}" example="legal_expense" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchLegalExpenseRequest req = new PatchLegalExpenseRequest() {
+    LegalExpense = new LegalExpense() {
+        Category = "Kids",
+        CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
+        Currency = "MVR",
+        Description = "Temporibus agnitio sui.",
+        Id = "6ee14eb0-054a-4b7c-b3c6-0edfbaf1a550",
+        IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
+        IsBilled = false,
+        Metadata = new List<LegalMetadata>() {},
+        PriceAmount = 100D,
+        Quantity = 3D,
+        TotalAmount = 300D,
+        Type = LegalExpenseType.Other,
+        UpdatedAt = System.DateTime.Parse("2024-03-25T18:38:13.658Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Expense.PatchLegalExpenseAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [PatchLegalExpenseRequest](../../Models/Requests/PatchLegalExpenseRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+### Response
+
+**[PatchLegalExpenseResponse](../../Models/Requests/PatchLegalExpenseResponse.md)**
 
 ### Errors
 
@@ -299,6 +505,46 @@ var res = await sdk.Expense.RemoveAccountingExpenseAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveLegalExpense
+
+Remove an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeLegalExpense" method="delete" path="/legal/{connection_id}/expense/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Expense.RemoveLegalExpenseAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Expense    |
+
+### Response
+
+**[RemoveLegalExpenseResponse](../../Models/Requests/RemoveLegalExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## UpdateAccountingExpense
 
 Update an expense
@@ -319,11 +565,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
     AccountingExpense = new AccountingExpense() {
-        ApprovedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2026-06-01T06:51:59.461Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {
             new AccountingAttachment() {
                 DownloadUrl = "https://ripe-napkin.biz/",
-                Id = "fc0f7439-3fa7-4e31-89cc-d5f4a93d3c88",
+                Id = "1ad07739-0358-4d55-8948-11321716e448",
                 MimeType = "annus",
                 Name = "cohibeo",
             },
@@ -332,10 +578,10 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         CreatedAt = System.DateTime.Parse("2020-06-11T03:39:37.305Z").ToUniversalTime(),
         Currency = "SSP",
         ExternalNumber = "necessitatibus",
-        Id = "acbe7639-ea60-46a9-9bec-90ec8c83fa2b",
+        Id = "8f81d1c3-166b-4aa6-b399-86173a79ae71",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "65c7f906-1e52-4a2c-857f-498f4a43dfe7",
+                Id = "f14e93a9-7d33-4ff5-ae4b-b931bc6bd7e2",
                 ItemDescription = "Innovative Table featuring left technology and Rubber construction",
                 ItemName = "Luxurious Cotton Pizza",
                 ItemSku = "978-0-8324-6620-5",
@@ -349,13 +595,13 @@ UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
         Metadata = new List<AccountingMetadata>() {},
         Name = "Refined Steel Shoes",
         PaymentMethod = "CASH",
-        PostedAt = System.DateTime.Parse("2021-06-07T19:24:37.557Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2021-06-07T22:43:00.150Z").ToUniversalTime(),
         ReimbursedAmount = 1833D,
         Status = AccountingExpenseStatus.Submitted,
         TaxAmount = 2602D,
         TotalAmount = 3580D,
         Type = AccountingExpenseType.User,
-        UpdatedAt = System.DateTime.Parse("2026-05-31T10:56:02.763Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-01T06:51:59.461Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -375,6 +621,65 @@ var res = await sdk.Expense.UpdateAccountingExpenseAsync(req);
 ### Response
 
 **[UpdateAccountingExpenseResponse](../../Models/Requests/UpdateAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateLegalExpense
+
+Update an expense
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateLegalExpense" method="put" path="/legal/{connection_id}/expense/{id}" example="legal_expense" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateLegalExpenseRequest req = new UpdateLegalExpenseRequest() {
+    LegalExpense = new LegalExpense() {
+        Category = "Kids",
+        CreatedAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
+        Currency = "MVR",
+        Description = "Temporibus agnitio sui.",
+        Id = "6ee14eb0-054a-4b7c-b3c6-0edfbaf1a550",
+        IncurredAt = System.DateTime.Parse("2020-11-08T00:41:42.356Z").ToUniversalTime(),
+        IsBilled = false,
+        Metadata = new List<LegalMetadata>() {},
+        PriceAmount = 100D,
+        Quantity = 3D,
+        TotalAmount = 300D,
+        Type = LegalExpenseType.Other,
+        UpdatedAt = System.DateTime.Parse("2024-03-25T18:38:13.658Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Expense.UpdateLegalExpenseAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [UpdateLegalExpenseRequest](../../Models/Requests/UpdateLegalExpenseRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[UpdateLegalExpenseResponse](../../Models/Requests/UpdateLegalExpenseResponse.md)**
 
 ### Errors
 

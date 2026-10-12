@@ -64,6 +64,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location")]
         public string? Location { get; set; }
 
+        /// <summary>
+        /// pointer to Legal Matter.
+        /// </summary>
+        [JsonProperty("matter_id")]
+        public string? MatterId { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 

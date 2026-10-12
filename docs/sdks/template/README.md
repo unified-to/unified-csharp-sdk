@@ -4,8 +4,120 @@
 
 ### Available Operations
 
+* [CreateComputeTemplate](#createcomputetemplate) - Create a template
+* [GetComputeTemplate](#getcomputetemplate) - Retrieve a template
 * [GetSigningTemplate](#getsigningtemplate) - Retrieve a template
+* [ListComputeTemplates](#listcomputetemplates) - List all templates
 * [ListSigningTemplates](#listsigningtemplates) - List all templates
+* [PatchComputeTemplate](#patchcomputetemplate) - Update a template
+* [RemoveComputeTemplate](#removecomputetemplate) - Remove a template
+* [UpdateComputeTemplate](#updatecomputetemplate) - Update a template
+
+## CreateComputeTemplate
+
+Create a template
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="createComputeTemplate" method="post" path="/compute/{connection_id}/template" example="compute_template" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Template.CreateComputeTemplateAsync(
+    computeTemplate: new ComputeTemplate() {
+        CpuCount = 4D,
+        CreatedAt = System.DateTime.Parse("2023-02-23T03:28:59.864Z").ToUniversalTime(),
+        DiskMb = 10240D,
+        Dockerfile = @"FROM ubuntu:24.04
+        RUN apt-get update",
+        GpuCount = 2D,
+        GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
+        Id = "59037b29-253e-4f40-971a-e9e8eb1b8f5b",
+        Image = "perfumed-molasses/cohibeo:5.2",
+        IsPublic = false,
+        LastUsedAt = System.DateTime.Parse("2026-03-16T04:17:20.639Z").ToUniversalTime(),
+        MemoryMb = 8192D,
+        Metadata = new List<ComputeMetadata>() {},
+        Name = "multi-byte-card",
+        Ports = new List<double>() {
+            8080D,
+        },
+        Status = ComputeTemplateStatus.Other,
+        UpdatedAt = System.DateTime.Parse("2025-02-07T20:38:51.378Z").ToUniversalTime(),
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ComputeTemplate`                                                                                                                                | [ComputeTemplate](../../Models/Components/ComputeTemplate.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateComputeTemplateQueryParamFields](../../Models/Requests/CreateComputeTemplateQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateComputeTemplateResponse](../../Models/Requests/CreateComputeTemplateResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetComputeTemplate
+
+Retrieve a template
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="getComputeTemplate" method="get" path="/compute/{connection_id}/template/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Template.GetComputeTemplateAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Template                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetComputeTemplateQueryParamFields](../../Models/Requests/GetComputeTemplateQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetComputeTemplateResponse](../../Models/Requests/GetComputeTemplateResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetSigningTemplate
 
@@ -49,6 +161,47 @@ var res = await sdk.Template.GetSigningTemplateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListComputeTemplates
+
+List all templates
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="listComputeTemplates" method="get" path="/compute/{connection_id}/template" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListComputeTemplatesRequest req = new ListComputeTemplatesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Template.ListComputeTemplatesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListComputeTemplatesRequest](../../Models/Requests/ListComputeTemplatesRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[ListComputeTemplatesResponse](../../Models/Requests/ListComputeTemplatesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListSigningTemplates
 
 List all templates
@@ -83,6 +236,176 @@ var res = await sdk.Template.ListSigningTemplatesAsync(req);
 ### Response
 
 **[ListSigningTemplatesResponse](../../Models/Requests/ListSigningTemplatesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchComputeTemplate
+
+Update a template
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="patchComputeTemplate" method="patch" path="/compute/{connection_id}/template/{id}" example="compute_template" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchComputeTemplateRequest req = new PatchComputeTemplateRequest() {
+    ComputeTemplate = new ComputeTemplate() {
+        CpuCount = 4D,
+        CreatedAt = System.DateTime.Parse("2023-02-23T03:28:59.864Z").ToUniversalTime(),
+        DiskMb = 10240D,
+        Dockerfile = @"FROM ubuntu:24.04
+        RUN apt-get update",
+        GpuCount = 2D,
+        GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
+        Id = "9af52b83-63d2-4ad7-b238-bf4775936024",
+        Image = "perfumed-molasses/cohibeo:5.2",
+        IsPublic = false,
+        LastUsedAt = System.DateTime.Parse("2026-03-16T04:17:20.654Z").ToUniversalTime(),
+        MemoryMb = 8192D,
+        Metadata = new List<ComputeMetadata>() {},
+        Name = "multi-byte-card",
+        Ports = new List<double>() {
+            8080D,
+        },
+        Status = ComputeTemplateStatus.Other,
+        UpdatedAt = System.DateTime.Parse("2025-02-07T20:38:51.388Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Template.PatchComputeTemplateAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchComputeTemplateRequest](../../Models/Requests/PatchComputeTemplateRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[PatchComputeTemplateResponse](../../Models/Requests/PatchComputeTemplateResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveComputeTemplate
+
+Remove a template
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="removeComputeTemplate" method="delete" path="/compute/{connection_id}/template/{id}" -->
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Template.RemoveComputeTemplateAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Template   |
+
+### Response
+
+**[RemoveComputeTemplateResponse](../../Models/Requests/RemoveComputeTemplateResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateComputeTemplate
+
+Update a template
+
+### Example Usage
+
+<!-- UsageSnippet language="csharp" operationID="updateComputeTemplate" method="put" path="/compute/{connection_id}/template/{id}" example="compute_template" -->
+```csharp
+using System;
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateComputeTemplateRequest req = new UpdateComputeTemplateRequest() {
+    ComputeTemplate = new ComputeTemplate() {
+        CpuCount = 4D,
+        CreatedAt = System.DateTime.Parse("2023-02-23T03:28:59.864Z").ToUniversalTime(),
+        DiskMb = 10240D,
+        Dockerfile = @"FROM ubuntu:24.04
+        RUN apt-get update",
+        GpuCount = 2D,
+        GpuModel = ComputeTemplateGpuModel.NvidiaGh200,
+        Id = "9af52b83-63d2-4ad7-b238-bf4775936024",
+        Image = "perfumed-molasses/cohibeo:5.2",
+        IsPublic = false,
+        LastUsedAt = System.DateTime.Parse("2026-03-16T04:17:20.654Z").ToUniversalTime(),
+        MemoryMb = 8192D,
+        Metadata = new List<ComputeMetadata>() {},
+        Name = "multi-byte-card",
+        Ports = new List<double>() {
+            8080D,
+        },
+        Status = ComputeTemplateStatus.Other,
+        UpdatedAt = System.DateTime.Parse("2025-02-07T20:38:51.388Z").ToUniversalTime(),
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Template.UpdateComputeTemplateAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateComputeTemplateRequest](../../Models/Requests/UpdateComputeTemplateRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[UpdateComputeTemplateResponse](../../Models/Requests/UpdateComputeTemplateResponse.md)**
 
 ### Errors
 

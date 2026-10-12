@@ -1,0 +1,13 @@
+# LegalMetadata
+
+
+## Fields
+
+| Field                                                                       | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `ExtraData`                                                                 | [LegalMetadataExtraData](../../Models/Components/LegalMetadataExtraData.md) | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Format`                                                                    | [LegalMetadataFormat](../../Models/Components/LegalMetadataFormat.md)       | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Id`                                                                        | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Namespace`                                                                 | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Slug`                                                                      | *string*                                                                    | :heavy_minus_sign:                                                          | N/A                                                                         |
+| `Value`                                                                     | [LegalMetadataValue](../../Models/Components/LegalMetadataValue.md)         | :heavy_minus_sign:                                                          | N/A                                                                         |

@@ -185,6 +185,32 @@ namespace UnifiedTo
 
         public ISaleschannel Saleschannel { get; }
 
+        public ICompute Compute { get; }
+
+        public IDeployment Deployment { get; }
+
+        public IDomain Domain { get; }
+
+        public IEnvvar Envvar { get; }
+
+        public IGputype Gputype { get; }
+
+        public IInstance Instance { get; }
+
+        public IKey Key { get; }
+
+        public IRegion Region { get; }
+
+        public IService Service { get; }
+
+        public ISnapshot Snapshot { get; }
+
+        public ITemplate Template { get; }
+
+        public IUsage Usage { get; }
+
+        public IVolume Volume { get; }
+
         public ICrm Crm { get; }
 
         public IDeal Deal { get; }
@@ -229,6 +255,28 @@ namespace UnifiedTo
 
         public ITask Task { get; }
 
+        public IHealthcare Healthcare { get; }
+
+        public IAllergy Allergy { get; }
+
+        public IAppointment Appointment { get; }
+
+        public ICondition Condition { get; }
+
+        public IEncounter Encounter { get; }
+
+        public IImmunization Immunization { get; }
+
+        public IMedication Medication { get; }
+
+        public IObservation Observation { get; }
+
+        public IPatient Patient { get; }
+
+        public IPractitioner Practitioner { get; }
+
+        public ISlot Slot { get; }
+
         public IHris Hris { get; }
 
         public IAttendance Attendance { get; }
@@ -262,6 +310,14 @@ namespace UnifiedTo
         public IPage Page { get; }
 
         public ISpace Space { get; }
+
+        public ILegal Legal { get; }
+
+        public IMatter Matter { get; }
+
+        public IPracticearea Practicearea { get; }
+
+        public ITimeentry Timeentry { get; }
 
         public ILms Lms { get; }
 
@@ -334,8 +390,6 @@ namespace UnifiedTo
         public ISigning Signing { get; }
 
         public ISignatory Signatory { get; }
-
-        public ITemplate Template { get; }
 
         public ISocial Social { get; }
 
@@ -723,6 +777,58 @@ namespace UnifiedTo
         /// </summary>
         public ISaleschannel Saleschannel { get; private set; }
         /// <summary>
+        /// The Compute sub-SDK.
+        /// </summary>
+        public ICompute Compute { get; private set; }
+        /// <summary>
+        /// The Deployment sub-SDK.
+        /// </summary>
+        public IDeployment Deployment { get; private set; }
+        /// <summary>
+        /// The Domain sub-SDK.
+        /// </summary>
+        public IDomain Domain { get; private set; }
+        /// <summary>
+        /// The Envvar sub-SDK.
+        /// </summary>
+        public IEnvvar Envvar { get; private set; }
+        /// <summary>
+        /// The Gputype sub-SDK.
+        /// </summary>
+        public IGputype Gputype { get; private set; }
+        /// <summary>
+        /// The Instance sub-SDK.
+        /// </summary>
+        public IInstance Instance { get; private set; }
+        /// <summary>
+        /// The Key sub-SDK.
+        /// </summary>
+        public IKey Key { get; private set; }
+        /// <summary>
+        /// The Region sub-SDK.
+        /// </summary>
+        public IRegion Region { get; private set; }
+        /// <summary>
+        /// The Service sub-SDK.
+        /// </summary>
+        public IService Service { get; private set; }
+        /// <summary>
+        /// The Snapshot sub-SDK.
+        /// </summary>
+        public ISnapshot Snapshot { get; private set; }
+        /// <summary>
+        /// The Template sub-SDK.
+        /// </summary>
+        public ITemplate Template { get; private set; }
+        /// <summary>
+        /// The Usage sub-SDK.
+        /// </summary>
+        public IUsage Usage { get; private set; }
+        /// <summary>
+        /// The Volume sub-SDK.
+        /// </summary>
+        public IVolume Volume { get; private set; }
+        /// <summary>
         /// The Crm sub-SDK.
         /// </summary>
         public ICrm Crm { get; private set; }
@@ -811,6 +917,50 @@ namespace UnifiedTo
         /// </summary>
         public ITask Task { get; private set; }
         /// <summary>
+        /// The Healthcare sub-SDK.
+        /// </summary>
+        public IHealthcare Healthcare { get; private set; }
+        /// <summary>
+        /// The Allergy sub-SDK.
+        /// </summary>
+        public IAllergy Allergy { get; private set; }
+        /// <summary>
+        /// The Appointment sub-SDK.
+        /// </summary>
+        public IAppointment Appointment { get; private set; }
+        /// <summary>
+        /// The Condition sub-SDK.
+        /// </summary>
+        public ICondition Condition { get; private set; }
+        /// <summary>
+        /// The Encounter sub-SDK.
+        /// </summary>
+        public IEncounter Encounter { get; private set; }
+        /// <summary>
+        /// The Immunization sub-SDK.
+        /// </summary>
+        public IImmunization Immunization { get; private set; }
+        /// <summary>
+        /// The Medication sub-SDK.
+        /// </summary>
+        public IMedication Medication { get; private set; }
+        /// <summary>
+        /// The Observation sub-SDK.
+        /// </summary>
+        public IObservation Observation { get; private set; }
+        /// <summary>
+        /// The Patient sub-SDK.
+        /// </summary>
+        public IPatient Patient { get; private set; }
+        /// <summary>
+        /// The Practitioner sub-SDK.
+        /// </summary>
+        public IPractitioner Practitioner { get; private set; }
+        /// <summary>
+        /// The Slot sub-SDK.
+        /// </summary>
+        public ISlot Slot { get; private set; }
+        /// <summary>
         /// The Hris sub-SDK.
         /// </summary>
         public IHris Hris { get; private set; }
@@ -878,6 +1028,22 @@ namespace UnifiedTo
         /// The Space sub-SDK.
         /// </summary>
         public ISpace Space { get; private set; }
+        /// <summary>
+        /// The Legal sub-SDK.
+        /// </summary>
+        public ILegal Legal { get; private set; }
+        /// <summary>
+        /// The Matter sub-SDK.
+        /// </summary>
+        public IMatter Matter { get; private set; }
+        /// <summary>
+        /// The Practicearea sub-SDK.
+        /// </summary>
+        public IPracticearea Practicearea { get; private set; }
+        /// <summary>
+        /// The Timeentry sub-SDK.
+        /// </summary>
+        public ITimeentry Timeentry { get; private set; }
         /// <summary>
         /// The Lms sub-SDK.
         /// </summary>
@@ -1022,10 +1188,6 @@ namespace UnifiedTo
         /// The Signatory sub-SDK.
         /// </summary>
         public ISignatory Signatory { get; private set; }
-        /// <summary>
-        /// The Template sub-SDK.
-        /// </summary>
-        public ITemplate Template { get; private set; }
         /// <summary>
         /// The Social sub-SDK.
         /// </summary>
@@ -1304,6 +1466,32 @@ namespace UnifiedTo
 
             Saleschannel = new Saleschannel(SDKConfiguration);
 
+            Compute = new Compute(SDKConfiguration);
+
+            Deployment = new Deployment(SDKConfiguration);
+
+            Domain = new Domain(SDKConfiguration);
+
+            Envvar = new Envvar(SDKConfiguration);
+
+            Gputype = new Gputype(SDKConfiguration);
+
+            Instance = new Instance(SDKConfiguration);
+
+            Key = new Key(SDKConfiguration);
+
+            Region = new Region(SDKConfiguration);
+
+            Service = new Service(SDKConfiguration);
+
+            Snapshot = new Snapshot(SDKConfiguration);
+
+            Template = new Template(SDKConfiguration);
+
+            Usage = new Usage(SDKConfiguration);
+
+            Volume = new Volume(SDKConfiguration);
+
             Crm = new Crm(SDKConfiguration);
 
             Deal = new Deal(SDKConfiguration);
@@ -1348,6 +1536,28 @@ namespace UnifiedTo
 
             Task = new Task(SDKConfiguration);
 
+            Healthcare = new Healthcare(SDKConfiguration);
+
+            Allergy = new Allergy(SDKConfiguration);
+
+            Appointment = new Appointment(SDKConfiguration);
+
+            Condition = new Condition(SDKConfiguration);
+
+            Encounter = new Encounter(SDKConfiguration);
+
+            Immunization = new Immunization(SDKConfiguration);
+
+            Medication = new Medication(SDKConfiguration);
+
+            Observation = new Observation(SDKConfiguration);
+
+            Patient = new Patient(SDKConfiguration);
+
+            Practitioner = new Practitioner(SDKConfiguration);
+
+            Slot = new Slot(SDKConfiguration);
+
             Hris = new Hris(SDKConfiguration);
 
             Attendance = new Attendance(SDKConfiguration);
@@ -1381,6 +1591,14 @@ namespace UnifiedTo
             Page = new Page(SDKConfiguration);
 
             Space = new Space(SDKConfiguration);
+
+            Legal = new Legal(SDKConfiguration);
+
+            Matter = new Matter(SDKConfiguration);
+
+            Practicearea = new Practicearea(SDKConfiguration);
+
+            Timeentry = new Timeentry(SDKConfiguration);
 
             Lms = new Lms(SDKConfiguration);
 
@@ -1453,8 +1671,6 @@ namespace UnifiedTo
             Signing = new Signing(SDKConfiguration);
 
             Signatory = new Signatory(SDKConfiguration);
-
-            Template = new Template(SDKConfiguration);
 
             Social = new Social(SDKConfiguration);
 
@@ -1733,6 +1949,32 @@ namespace UnifiedTo
 
             Saleschannel = new Saleschannel(SDKConfiguration);
 
+            Compute = new Compute(SDKConfiguration);
+
+            Deployment = new Deployment(SDKConfiguration);
+
+            Domain = new Domain(SDKConfiguration);
+
+            Envvar = new Envvar(SDKConfiguration);
+
+            Gputype = new Gputype(SDKConfiguration);
+
+            Instance = new Instance(SDKConfiguration);
+
+            Key = new Key(SDKConfiguration);
+
+            Region = new Region(SDKConfiguration);
+
+            Service = new Service(SDKConfiguration);
+
+            Snapshot = new Snapshot(SDKConfiguration);
+
+            Template = new Template(SDKConfiguration);
+
+            Usage = new Usage(SDKConfiguration);
+
+            Volume = new Volume(SDKConfiguration);
+
             Crm = new Crm(SDKConfiguration);
 
             Deal = new Deal(SDKConfiguration);
@@ -1777,6 +2019,28 @@ namespace UnifiedTo
 
             Task = new Task(SDKConfiguration);
 
+            Healthcare = new Healthcare(SDKConfiguration);
+
+            Allergy = new Allergy(SDKConfiguration);
+
+            Appointment = new Appointment(SDKConfiguration);
+
+            Condition = new Condition(SDKConfiguration);
+
+            Encounter = new Encounter(SDKConfiguration);
+
+            Immunization = new Immunization(SDKConfiguration);
+
+            Medication = new Medication(SDKConfiguration);
+
+            Observation = new Observation(SDKConfiguration);
+
+            Patient = new Patient(SDKConfiguration);
+
+            Practitioner = new Practitioner(SDKConfiguration);
+
+            Slot = new Slot(SDKConfiguration);
+
             Hris = new Hris(SDKConfiguration);
 
             Attendance = new Attendance(SDKConfiguration);
@@ -1810,6 +2074,14 @@ namespace UnifiedTo
             Page = new Page(SDKConfiguration);
 
             Space = new Space(SDKConfiguration);
+
+            Legal = new Legal(SDKConfiguration);
+
+            Matter = new Matter(SDKConfiguration);
+
+            Practicearea = new Practicearea(SDKConfiguration);
+
+            Timeentry = new Timeentry(SDKConfiguration);
 
             Lms = new Lms(SDKConfiguration);
 
@@ -1882,8 +2154,6 @@ namespace UnifiedTo
             Signing = new Signing(SDKConfiguration);
 
             Signatory = new Signatory(SDKConfiguration);
-
-            Template = new Template(SDKConfiguration);
 
             Social = new Social(SDKConfiguration);
 

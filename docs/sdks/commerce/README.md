@@ -75,7 +75,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "d19dc245-2512-4f6e-bfaa-31589f6bae73",
+        Id = "80cd7cf4-c931-460b-b759-e739d2cbb9cc",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -84,10 +84,10 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "7b78f7ca-9ff0-490f-ad46-9f7bb4fc2461",
+                Id = "acde4e6c-6ad4-4300-8b99-4dde69c63901",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "39c0330d-0063-42f9-8555-6108457b509d",
+                        Id = "4974e4ca-0919-4d02-95af-dc069cfb8f00",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -102,7 +102,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "1552f8d6-90a1-4687-bf95-9914842f0908",
+                Id = "77f8ecd4-daaf-4d45-a0b4-6e97e89ee631",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -118,7 +118,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-09T22:50:47.900Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-10T09:38:26.412Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -164,7 +164,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commerce.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-12T08:31:44.281Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-13T01:33:56.046Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -215,7 +215,7 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
         Description = "Vulnero ustulo abeo.",
         Duration = 87D,
         GlobalCode = "calamitas",
-        Id = "41d7eebd-d447-45fb-8b37-ede133592538",
+        Id = "a978e30f-1c28-426e-a8b4-d7f2edff4784",
         IsActive = false,
         IsFeatured = true,
         IsTaxable = true,
@@ -224,10 +224,10 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 663D,
-                Id = "b5d9f924-beaf-4c8b-a1c1-4b0a30f58906",
+                Id = "036f38a8-d79b-47bd-bf64-2b22e50f3bfa",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0d81242f-a73d-44ee-9675-36c63bdf9605",
+                        Id = "c0e69ed0-2723-41ca-9de5-557ee0ed65f7",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -242,10 +242,10 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 189D,
-                Id = "6783982c-bcf4-42e7-a8e4-50970c361f1a",
+                Id = "30f16bb6-fc6a-48cc-94d0-0cd3b1748a95",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "4003197f-7efd-48f5-92a6-3d274fbb99d6",
+                        Id = "0c81d4ea-17a6-4117-ad02-e0fec3da9308",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -266,7 +266,7 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "956e98d7-c54f-47f8-a31f-c962db726e1a",
+                Id = "742c6e2f-5eec-471e-878d-b75a82f66f2c",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -292,7 +292,7 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
         },
         TotalStock = 579D,
         Type = "beatae",
-        UpdatedAt = System.DateTime.Parse("2022-04-15T15:31:50.670Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-15T23:41:01.011Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 22D,
         WeightUnit = WeightUnit.Kg,
@@ -345,7 +345,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
         Height = 52D,
-        Id = "5c490591-d2a1-470c-a016-2a6bc92b5377",
+        Id = "150d0065-7460-4058-a948-5153ba63f052",
         IsActive = false,
         IsFeatured = false,
         IsVisible = false,
@@ -354,10 +354,10 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
             new CommerceItemMedia() {
                 Alt = "Calcar delibero cursim summisse.",
                 Height = 394D,
-                Id = "adbef15f-8a7d-4e18-9ef1-afe5f9510c49",
+                Id = "a35f7d66-b8eb-40ac-906e-254971bb9452",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "1ccc71f9-b4b2-4a6b-a857-a85c5ebacefa",
+                        Id = "50317735-5708-4cb7-9858-34ac3ccba996",
                         Slug = "illo",
                         Value = CommerceMetadataValue.CreateStr(
                             "quia"
@@ -372,10 +372,10 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
             new CommerceItemMedia() {
                 Alt = "Civitas acies substantia tergo.",
                 Height = 351D,
-                Id = "c4f98acb-c50f-45a8-abab-3ea6a74d9a59",
+                Id = "46779539-abf0-4929-843e-7d891b96a206",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "d3334b35-1a0e-44c0-a048-8e40794de17c",
+                        Id = "f5610356-0bc9-469f-984e-78345cfef0d0",
                         Slug = "libero",
                         Value = CommerceMetadataValue.CreateStr(
                             "capitulus"
@@ -396,7 +396,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "06ff2d54-be89-434e-a272-0cb2cfa18c70",
+                Id = "7022ac6d-78de-489f-91ed-042ee6493e2a",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -407,7 +407,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
         Name = "Keyboard",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "f889225a-cbca-42ae-b96c-aa0e18aabed0",
+                Id = "5bf4ab01-b32a-494b-9d44-7ca549908c20",
                 Name = "Steel",
                 Position = 97D,
                 Values = new List<string>() {
@@ -443,7 +443,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
             "custodia",
         },
         TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-09T21:37:46.891Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-10T12:47:20.353Z").ToUniversalTime(),
         Weight = 61D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 26D,
@@ -504,7 +504,7 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "3d7eb4c9-224d-4192-909a-ffee9511a2d6",
+        Id = "03250068-96d9-47aa-a7e9-952292dce7a1",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -515,10 +515,10 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "81a94236-8cdf-4d10-b3f3-892e5a415dd9",
+                Id = "75fd667a-c2fe-43fa-a5a6-1b07c8f57c4a",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "369a99a4-0314-496e-b8fb-b6dd2cc284e0",
+                        Id = "c5327c9f-b99e-4038-acc8-87f860fd487f",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -545,7 +545,7 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-17T07:27:52.972Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-17T14:44:06.189Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     connectionId: "<id>"
@@ -596,14 +596,14 @@ var res = await sdk.Commerce.CreateCommerceReservationAsync(
         GuestEmail = "Sunny.Strosin77@yahoo.com",
         GuestName = "Annette Franecki",
         GuestPhone = "(990) 317-6213",
-        Id = "ebe310d2-aa75-4663-97e2-e5c9e5fee0c2",
+        Id = "584252a0-0ae3-49cc-af69-f1ac30a8aa58",
         ItemName = "Practical Ceramic Shoes",
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StaffName = "Vickie Fahey",
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-01T17:14:42.158Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-01T21:50:30.969Z").ToUniversalTime(),
         Url = "https://cluttered-pine.info/",
     },
     connectionId: "<id>"
@@ -658,7 +658,7 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 26D,
-        Id = "fd7121be-a6f1-4bef-890d-b3f73f898271",
+        Id = "e6b8e987-7dc7-416f-afc9-a773fe3da7d3",
         IsFeatured = true,
         IsPublic = true,
         IsVerified = false,
@@ -666,10 +666,10 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Adulescens.",
                 Height = 519D,
-                Id = "6a607c5a-6142-4703-8c08-7d661df55128",
+                Id = "ccd2cbde-7ddc-4ede-abd2-232b0218b0de",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "ccd08727-6809-4e9b-a1a1-1e1531dfb2e3",
+                        Id = "5b559726-ebd1-4f0d-bf38-99f39f9b7848",
                         Slug = "aggero",
                         Value = CommerceMetadataValue.CreateStr(
                             "tero"
@@ -684,10 +684,10 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Pauci timidus sol comburo thema.",
                 Height = 297D,
-                Id = "3cc7dc1e-c754-4709-a88c-5faff6c4dc9d",
+                Id = "a5546835-2394-48ad-a890-45e7fdd4f694",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "c92c2e0d-341a-4a81-a7ce-34e5fbf57e5e",
+                        Id = "b4aaa878-7269-4a5f-abb7-637c795bf15e",
                         Slug = "vito",
                         Value = CommerceMetadataValue.CreateStr(
                             "cuppedia"
@@ -702,10 +702,10 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Cuppedia vestrum patruus.",
                 Height = 6D,
-                Id = "25eb1945-d795-448f-ae76-6ec2af088afb",
+                Id = "b2bdea36-b10b-41ba-98ff-d4436f7f38eb",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "c9c7dfb8-968d-482c-b1a4-791818153194",
+                        Id = "a62cad70-1ece-414b-9fe2-006e79ec9205",
                         Slug = "arbitro",
                         Value = CommerceMetadataValue.CreateStr(
                             "villa"
@@ -723,7 +723,7 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-13T01:35:58.102Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-13T19:08:59.436Z").ToUniversalTime(),
         Url = "https://excitable-underneath.com",
         VerifiedPurchase = false,
     },
@@ -774,10 +774,10 @@ var res = await sdk.Commerce.CreateCommerceSaleschannelAsync(
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "bc1e136d-b105-40eb-941d-a1910163aec3",
+        Id = "8a35bbad-2db5-44cc-a17c-467e9c239b5c",
         IsActive = false,
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-21T13:29:09.421Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-22T03:06:29.535Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1531,7 +1531,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "2a5ad4ae-7bf5-422d-a470-8e0767ec5b84",
+        Id = "62b2086a-a1ec-467b-b7d0-08d9403ac0b6",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -1540,10 +1540,10 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "9233a17b-44ef-42e5-84f1-231b50f57468",
+                Id = "9dc42acc-4e8a-4513-9f23-ed368fbf41a0",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "a7616476-a3d2-4907-bb89-9d06e406db90",
+                        Id = "75a0778f-f7b0-4196-b7ed-30707a56d9bf",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -1558,7 +1558,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "597478d6-ab79-473b-bd41-817f9dfaebc7",
+                Id = "e4b521f7-39b6-4f5b-86e8-3f36f850f456",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -1574,7 +1574,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-09T22:50:47.915Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-10T09:38:26.423Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1621,7 +1621,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-12T08:31:44.286Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-13T01:33:56.049Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1673,7 +1673,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         Description = "Vulnero ustulo abeo.",
         Duration = 87D,
         GlobalCode = "calamitas",
-        Id = "c8bf1dc0-b5a4-4c28-a8bd-60c5d56d7a88",
+        Id = "498285e6-3f23-4118-9afb-318805f1a9cb",
         IsActive = false,
         IsFeatured = true,
         IsTaxable = true,
@@ -1682,10 +1682,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 663D,
-                Id = "e342898e-b8ff-4270-ad55-91b834b0cf94",
+                Id = "484541a0-99eb-4e59-ad29-0eeab4c39e5f",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "3396bd5d-1f0c-4687-88be-4eb978a9f097",
+                        Id = "fbd5aebb-7402-460a-978e-f712b2573b28",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -1700,10 +1700,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 189D,
-                Id = "21a77d36-4126-4aac-b304-9557a09f9167",
+                Id = "f33fefae-01fc-4bf6-9dca-5ed3f6850e0b",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "c2efc8e7-3cc7-4873-8959-ca90b5198730",
+                        Id = "b6cb5635-142e-436e-bde0-be11172cd663",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -1724,7 +1724,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "91a1b635-18dc-40b0-99ba-d329dd0179ca",
+                Id = "3046bc10-54d4-401b-9c29-6d0c16554520",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -1750,7 +1750,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         },
         TotalStock = 579D,
         Type = "beatae",
-        UpdatedAt = System.DateTime.Parse("2022-04-15T15:31:50.680Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-15T23:41:01.021Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 22D,
         WeightUnit = WeightUnit.Kg,
@@ -1804,7 +1804,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
         Height = 52D,
-        Id = "1e16a20d-5b27-4741-9336-be01a198bdf4",
+        Id = "842f26f5-74c6-49e8-9dc0-58d695f0c4e5",
         IsActive = false,
         IsFeatured = false,
         IsVisible = false,
@@ -1813,10 +1813,10 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Calcar delibero cursim summisse.",
                 Height = 394D,
-                Id = "63a8cf91-9c6f-44cf-8407-0d091259559d",
+                Id = "8ac1d1df-da2f-43ae-96bc-489f3dfa945e",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "4d748301-86bc-4b80-a72a-df88546c9736",
+                        Id = "1394624d-6ff5-403a-b3cf-8ae9be6ed254",
                         Slug = "illo",
                         Value = CommerceMetadataValue.CreateStr(
                             "quia"
@@ -1831,10 +1831,10 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Civitas acies substantia tergo.",
                 Height = 351D,
-                Id = "a7773b2c-5552-4ffe-b159-ae2a43fd49ca",
+                Id = "ad4905bb-4415-493a-a115-51363cef4075",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "60134ea9-6179-4a4a-b2d3-9d1de0c36de0",
+                        Id = "08aa4ba9-f0b4-45aa-947e-1bc3ff528fab",
                         Slug = "libero",
                         Value = CommerceMetadataValue.CreateStr(
                             "capitulus"
@@ -1855,7 +1855,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8a751d96-7b45-4f96-b698-b05f80be5677",
+                Id = "e1048285-75a1-4e2b-838e-7d008a1ff1f4",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -1866,7 +1866,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         Name = "Keyboard",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "2909b676-0d4a-4229-bc9a-1fa00cffb292",
+                Id = "57b25bbc-0ab8-42c5-a540-b7e48523cc55",
                 Name = "Steel",
                 Position = 97D,
                 Values = new List<string>() {
@@ -1902,7 +1902,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             "custodia",
         },
         TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-09T21:37:46.912Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-10T12:47:20.375Z").ToUniversalTime(),
         Weight = 61D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 26D,
@@ -1964,7 +1964,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "807edb13-f876-457a-98dd-258282cc6997",
+        Id = "aeff0b79-07fd-4bfd-94d3-34f919a0928f",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -1975,10 +1975,10 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "4c1f73b2-fee9-4130-a73e-8e0f227a6cf0",
+                Id = "b986af92-8bff-428d-9899-d34f5da4c358",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0a9a7714-e2ce-49e5-9936-149141d0e05f",
+                        Id = "12413905-8b10-4465-9897-d071dd768822",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -2005,7 +2005,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-17T07:27:52.982Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-17T14:44:06.197Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -2057,14 +2057,14 @@ PatchCommerceReservationRequest req = new PatchCommerceReservationRequest() {
         GuestEmail = "Sunny.Strosin77@yahoo.com",
         GuestName = "Annette Franecki",
         GuestPhone = "(990) 317-6213",
-        Id = "de4c485b-ef42-41c2-ac84-7342c0b43d27",
+        Id = "4573e6e1-3782-4c7d-b087-0f3f1b9158c5",
         ItemName = "Practical Ceramic Shoes",
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StaffName = "Vickie Fahey",
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-01T17:14:42.160Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-01T21:50:30.971Z").ToUniversalTime(),
         Url = "https://cluttered-pine.info/",
     },
     ConnectionId = "<id>",
@@ -2120,7 +2120,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 26D,
-        Id = "3f58fd9a-75ea-469b-b4d7-07914996172b",
+        Id = "5e90c0c1-6a3a-42ed-a6ed-c6909cfbc724",
         IsFeatured = true,
         IsPublic = true,
         IsVerified = false,
@@ -2128,10 +2128,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adulescens.",
                 Height = 519D,
-                Id = "b5bf3f6b-fe05-4022-8d58-0a429cc56d29",
+                Id = "b587b498-0db4-4199-ae38-63282fd2b842",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "61dba2b4-7fc3-48a5-9ed8-e41f1efb58a5",
+                        Id = "93b2f606-5fd3-463d-aeed-d342cbe4fb79",
                         Slug = "aggero",
                         Value = CommerceMetadataValue.CreateStr(
                             "tero"
@@ -2146,10 +2146,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Pauci timidus sol comburo thema.",
                 Height = 297D,
-                Id = "9986cb81-76aa-4a52-abf1-9425fb0984bd",
+                Id = "e591f5e1-5ef2-4720-babd-88e14b862951",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6fd4a501-e33b-4fd9-a4e5-8f3695fa0c5a",
+                        Id = "0007aea8-c8ec-4924-be69-21f568df96d2",
                         Slug = "vito",
                         Value = CommerceMetadataValue.CreateStr(
                             "cuppedia"
@@ -2164,10 +2164,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Cuppedia vestrum patruus.",
                 Height = 6D,
-                Id = "2980102d-91d1-4f60-89c1-e7336cbc2729",
+                Id = "a2538921-2b13-43cf-ba61-137ff0048b01",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "d71d1f64-bbad-4f2b-9022-d71f2db218d8",
+                        Id = "f8c707af-0d8c-482d-958c-cd5b02fb6c30",
                         Slug = "arbitro",
                         Value = CommerceMetadataValue.CreateStr(
                             "villa"
@@ -2185,7 +2185,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-13T01:35:58.134Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-13T19:08:59.463Z").ToUniversalTime(),
         Url = "https://excitable-underneath.com",
         VerifiedPurchase = false,
     },
@@ -2237,10 +2237,10 @@ PatchCommerceSaleschannelRequest req = new PatchCommerceSaleschannelRequest() {
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "7a0cc0ec-0370-4559-9d24-cc3399fbfe68",
+        Id = "9070bf5b-9f7e-43e5-8077-00ba10e49281",
         IsActive = false,
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-21T13:29:09.425Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-22T03:06:29.539Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2609,7 +2609,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "2a5ad4ae-7bf5-422d-a470-8e0767ec5b84",
+        Id = "62b2086a-a1ec-467b-b7d0-08d9403ac0b6",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -2618,10 +2618,10 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "9233a17b-44ef-42e5-84f1-231b50f57468",
+                Id = "9dc42acc-4e8a-4513-9f23-ed368fbf41a0",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "a7616476-a3d2-4907-bb89-9d06e406db90",
+                        Id = "75a0778f-f7b0-4196-b7ed-30707a56d9bf",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -2636,7 +2636,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "597478d6-ab79-473b-bd41-817f9dfaebc7",
+                Id = "e4b521f7-39b6-4f5b-86e8-3f36f850f456",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -2652,7 +2652,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-09T22:50:47.915Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-10T09:38:26.423Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2699,7 +2699,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-12T08:31:44.286Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-13T01:33:56.049Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2751,7 +2751,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         Description = "Vulnero ustulo abeo.",
         Duration = 87D,
         GlobalCode = "calamitas",
-        Id = "c8bf1dc0-b5a4-4c28-a8bd-60c5d56d7a88",
+        Id = "498285e6-3f23-4118-9afb-318805f1a9cb",
         IsActive = false,
         IsFeatured = true,
         IsTaxable = true,
@@ -2760,10 +2760,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 663D,
-                Id = "e342898e-b8ff-4270-ad55-91b834b0cf94",
+                Id = "484541a0-99eb-4e59-ad29-0eeab4c39e5f",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "3396bd5d-1f0c-4687-88be-4eb978a9f097",
+                        Id = "fbd5aebb-7402-460a-978e-f712b2573b28",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -2778,10 +2778,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 189D,
-                Id = "21a77d36-4126-4aac-b304-9557a09f9167",
+                Id = "f33fefae-01fc-4bf6-9dca-5ed3f6850e0b",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "c2efc8e7-3cc7-4873-8959-ca90b5198730",
+                        Id = "b6cb5635-142e-436e-bde0-be11172cd663",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -2802,7 +2802,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "91a1b635-18dc-40b0-99ba-d329dd0179ca",
+                Id = "3046bc10-54d4-401b-9c29-6d0c16554520",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -2828,7 +2828,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         },
         TotalStock = 579D,
         Type = "beatae",
-        UpdatedAt = System.DateTime.Parse("2022-04-15T15:31:50.680Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-15T23:41:01.021Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 22D,
         WeightUnit = WeightUnit.Kg,
@@ -2882,7 +2882,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
         Height = 52D,
-        Id = "1e16a20d-5b27-4741-9336-be01a198bdf4",
+        Id = "842f26f5-74c6-49e8-9dc0-58d695f0c4e5",
         IsActive = false,
         IsFeatured = false,
         IsVisible = false,
@@ -2891,10 +2891,10 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Calcar delibero cursim summisse.",
                 Height = 394D,
-                Id = "63a8cf91-9c6f-44cf-8407-0d091259559d",
+                Id = "8ac1d1df-da2f-43ae-96bc-489f3dfa945e",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "4d748301-86bc-4b80-a72a-df88546c9736",
+                        Id = "1394624d-6ff5-403a-b3cf-8ae9be6ed254",
                         Slug = "illo",
                         Value = CommerceMetadataValue.CreateStr(
                             "quia"
@@ -2909,10 +2909,10 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Civitas acies substantia tergo.",
                 Height = 351D,
-                Id = "a7773b2c-5552-4ffe-b159-ae2a43fd49ca",
+                Id = "ad4905bb-4415-493a-a115-51363cef4075",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "60134ea9-6179-4a4a-b2d3-9d1de0c36de0",
+                        Id = "08aa4ba9-f0b4-45aa-947e-1bc3ff528fab",
                         Slug = "libero",
                         Value = CommerceMetadataValue.CreateStr(
                             "capitulus"
@@ -2933,7 +2933,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "8a751d96-7b45-4f96-b698-b05f80be5677",
+                Id = "e1048285-75a1-4e2b-838e-7d008a1ff1f4",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -2944,7 +2944,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         Name = "Keyboard",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "2909b676-0d4a-4229-bc9a-1fa00cffb292",
+                Id = "57b25bbc-0ab8-42c5-a540-b7e48523cc55",
                 Name = "Steel",
                 Position = 97D,
                 Values = new List<string>() {
@@ -2980,7 +2980,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             "custodia",
         },
         TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-09T21:37:46.912Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-10T12:47:20.375Z").ToUniversalTime(),
         Weight = 61D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 26D,
@@ -3042,7 +3042,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "807edb13-f876-457a-98dd-258282cc6997",
+        Id = "aeff0b79-07fd-4bfd-94d3-34f919a0928f",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -3053,10 +3053,10 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "4c1f73b2-fee9-4130-a73e-8e0f227a6cf0",
+                Id = "b986af92-8bff-428d-9899-d34f5da4c358",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0a9a7714-e2ce-49e5-9936-149141d0e05f",
+                        Id = "12413905-8b10-4465-9897-d071dd768822",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -3083,7 +3083,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-17T07:27:52.982Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-17T14:44:06.197Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -3135,14 +3135,14 @@ UpdateCommerceReservationRequest req = new UpdateCommerceReservationRequest() {
         GuestEmail = "Sunny.Strosin77@yahoo.com",
         GuestName = "Annette Franecki",
         GuestPhone = "(990) 317-6213",
-        Id = "de4c485b-ef42-41c2-ac84-7342c0b43d27",
+        Id = "4573e6e1-3782-4c7d-b087-0f3f1b9158c5",
         ItemName = "Practical Ceramic Shoes",
         Notes = "Adsum textilis ipsum despecto.",
         Size = 10D,
         StaffName = "Vickie Fahey",
         StartAt = System.DateTime.Parse("2021-12-18T00:40:25.125Z").ToUniversalTime(),
         Status = CommerceReservationStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-01-01T17:14:42.160Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-01T21:50:30.971Z").ToUniversalTime(),
         Url = "https://cluttered-pine.info/",
     },
     ConnectionId = "<id>",
@@ -3198,7 +3198,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 26D,
-        Id = "3f58fd9a-75ea-469b-b4d7-07914996172b",
+        Id = "5e90c0c1-6a3a-42ed-a6ed-c6909cfbc724",
         IsFeatured = true,
         IsPublic = true,
         IsVerified = false,
@@ -3206,10 +3206,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adulescens.",
                 Height = 519D,
-                Id = "b5bf3f6b-fe05-4022-8d58-0a429cc56d29",
+                Id = "b587b498-0db4-4199-ae38-63282fd2b842",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "61dba2b4-7fc3-48a5-9ed8-e41f1efb58a5",
+                        Id = "93b2f606-5fd3-463d-aeed-d342cbe4fb79",
                         Slug = "aggero",
                         Value = CommerceMetadataValue.CreateStr(
                             "tero"
@@ -3224,10 +3224,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Pauci timidus sol comburo thema.",
                 Height = 297D,
-                Id = "9986cb81-76aa-4a52-abf1-9425fb0984bd",
+                Id = "e591f5e1-5ef2-4720-babd-88e14b862951",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6fd4a501-e33b-4fd9-a4e5-8f3695fa0c5a",
+                        Id = "0007aea8-c8ec-4924-be69-21f568df96d2",
                         Slug = "vito",
                         Value = CommerceMetadataValue.CreateStr(
                             "cuppedia"
@@ -3242,10 +3242,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Cuppedia vestrum patruus.",
                 Height = 6D,
-                Id = "2980102d-91d1-4f60-89c1-e7336cbc2729",
+                Id = "a2538921-2b13-43cf-ba61-137ff0048b01",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "d71d1f64-bbad-4f2b-9022-d71f2db218d8",
+                        Id = "f8c707af-0d8c-482d-958c-cd5b02fb6c30",
                         Slug = "arbitro",
                         Value = CommerceMetadataValue.CreateStr(
                             "villa"
@@ -3263,7 +3263,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-13T01:35:58.134Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-13T19:08:59.463Z").ToUniversalTime(),
         Url = "https://excitable-underneath.com",
         VerifiedPurchase = false,
     },
@@ -3315,10 +3315,10 @@ UpdateCommerceSaleschannelRequest req = new UpdateCommerceSaleschannelRequest() 
         Collections = new List<CommerceReference>() {},
         CreatedAt = System.DateTime.Parse("2021-12-12T06:19:55.421Z").ToUniversalTime(),
         Description = "Utroque denuncio solutio.",
-        Id = "7a0cc0ec-0370-4559-9d24-cc3399fbfe68",
+        Id = "9070bf5b-9f7e-43e5-8077-00ba10e49281",
         IsActive = false,
         Slug = "amiculum-congregatio-suspendo",
-        UpdatedAt = System.DateTime.Parse("2025-01-21T13:29:09.425Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-01-22T03:06:29.539Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

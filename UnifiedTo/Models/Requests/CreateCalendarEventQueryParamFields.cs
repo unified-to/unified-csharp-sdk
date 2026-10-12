@@ -61,6 +61,8 @@ namespace UnifiedTo.Models.Requests
         Attachments,
         [JsonProperty("send_notifications")]
         SendNotifications,
+        [JsonProperty("matter_id")]
+        MatterId,
         [JsonProperty("raw")]
         Raw,
     }
