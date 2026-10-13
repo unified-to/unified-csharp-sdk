@@ -38,7 +38,7 @@ namespace UnifiedTo.Models.Components
         public double? CpuCount { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// When the GPU type was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -110,7 +110,7 @@ namespace UnifiedTo.Models.Components
         public string? Sku { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// When the GPU type was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

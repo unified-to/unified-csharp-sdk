@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The data type of the value.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HealthcareMetadataFormat : IEquatable<HealthcareMetadataFormat>
     {

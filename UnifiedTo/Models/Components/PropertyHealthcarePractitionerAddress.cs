@@ -17,21 +17,39 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class PropertyHealthcarePractitionerAddress
     {
+        /// <summary>
+        /// First line of the street address.
+        /// </summary>
         [JsonProperty("address1")]
         public string? Address1 { get; set; }
 
+        /// <summary>
+        /// Second line of the street address.
+        /// </summary>
         [JsonProperty("address2")]
         public string? Address2 { get; set; }
 
+        /// <summary>
+        /// City or locality.
+        /// </summary>
         [JsonProperty("city")]
         public string? City { get; set; }
 
+        /// <summary>
+        /// Country.
+        /// </summary>
         [JsonProperty("country")]
         public string? Country { get; set; }
 
+        /// <summary>
+        /// Postal or ZIP code.
+        /// </summary>
         [JsonProperty("postal_code")]
         public string? PostalCode { get; set; }
 
+        /// <summary>
+        /// Regional area (e.g., state in the U.S., province in Canada).
+        /// </summary>
         [JsonProperty("region")]
         public string? Region { get; set; }
     }

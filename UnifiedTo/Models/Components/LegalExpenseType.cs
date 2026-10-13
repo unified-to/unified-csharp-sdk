@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// hard cost, soft cost or other.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LegalExpenseType : IEquatable<LegalExpenseType>
     {

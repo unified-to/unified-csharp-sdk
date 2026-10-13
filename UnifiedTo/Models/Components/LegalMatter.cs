@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class LegalMatter
     {
+        /// <summary>
+        /// how the matter is billed.
+        /// </summary>
         [JsonProperty("billing_method")]
         public BillingMethod? BillingMethod { get; set; }
 
@@ -29,7 +32,7 @@ namespace UnifiedTo.Models.Components
         public string? ClientReference { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the matter was closed (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
@@ -47,20 +50,32 @@ namespace UnifiedTo.Models.Components
         public List<string>? ContactIds { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the matter was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ISO 4217 currency code.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// free-text description of the matter.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// unique identifier for the matter.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// whether the matter is billable.
+        /// </summary>
         [JsonProperty("is_billable")]
         public bool? IsBillable { get; set; }
 
@@ -70,6 +85,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<LegalMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// the matter name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -80,7 +98,7 @@ namespace UnifiedTo.Models.Components
         public string? Number { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the matter was opened (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("opened_at")]
         public DateTime? OpenedAt { get; set; }
@@ -98,7 +116,7 @@ namespace UnifiedTo.Models.Components
         public List<LegalParty>? Parties { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the matter became pending (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("pending_at")]
         public DateTime? PendingAt { get; set; }
@@ -109,6 +127,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("practicearea_id")]
         public string? PracticeareaId { get; set; }
 
+        /// <summary>
+        /// raw data from the integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -118,17 +139,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("stage")]
         public string? Stage { get; set; }
 
+        /// <summary>
+        /// the matter status.
+        /// </summary>
         [JsonProperty("status")]
         public LegalMatterStatus? Status { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// statute of limitations deadline for the matter (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("statute_of_limitations_at")]
         public DateTime? StatuteOfLimitationsAt { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the matter was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

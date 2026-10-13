@@ -97,6 +97,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
+        /// <summary>
+        /// Custom field values.
+        /// </summary>
         [JsonProperty("metadata")]
         public List<HealthcareMetadata>? Metadata { get; set; }
 

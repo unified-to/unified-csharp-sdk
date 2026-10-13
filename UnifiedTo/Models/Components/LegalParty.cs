@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// the party role on the matter.
+        /// </summary>
         [JsonProperty("role")]
         public LegalPartyRole? Role { get; set; }
     }

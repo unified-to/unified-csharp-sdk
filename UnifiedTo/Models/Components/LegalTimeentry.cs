@@ -30,17 +30,26 @@ namespace UnifiedTo.Models.Components
         public double? BillableMinutes { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the time entry was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ISO 4217 currency code.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// description of the work performed.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// unique identifier for the time entry.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -50,9 +59,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
+        /// <summary>
+        /// whether the time entry is billable.
+        /// </summary>
         [JsonProperty("is_billable")]
         public bool? IsBillable { get; set; }
 
+        /// <summary>
+        /// whether the time entry has been billed.
+        /// </summary>
         [JsonProperty("is_billed")]
         public bool? IsBilled { get; set; }
 
@@ -80,6 +95,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("rate_amount")]
         public double? RateAmount { get; set; }
 
+        /// <summary>
+        /// raw data from the integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
@@ -89,11 +107,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("task_code")]
         public string? TaskCode { get; set; }
 
+        /// <summary>
+        /// total amount of the time entry.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the time entry was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

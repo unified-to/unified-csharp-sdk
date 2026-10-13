@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// the matter status.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LegalMatterStatus : IEquatable<LegalMatterStatus>
     {

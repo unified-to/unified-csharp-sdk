@@ -52,7 +52,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "2e750f62-3bfa-4b04-89ae-a37df9fa1c80",
+        Id = "6cfd8538-df56-4de9-938d-ae0ec7681f40",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -66,7 +66,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "123aa3bd-af97-4b1e-bce8-53b30830d38f",
+                Id = "33fb636c-f9b8-4c51-bf05-60f431d35d39",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -88,7 +88,7 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
             },
         },
         Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T02:57:28.212Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T04:33:46.880Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -240,7 +240,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "19e9c4c8-1ca9-4594-8042-3fa4c3172aa5",
+        Id = "9b0424eb-87ec-440f-b997-7234a5b41bba",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -254,7 +254,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c96fff01-6364-4690-9787-c4f8a8f35ca6",
+                Id = "5591e11c-c6a5-472b-a8e6-135e45d96dda",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -276,7 +276,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T02:57:28.214Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T04:33:46.884Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -385,7 +385,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "19e9c4c8-1ca9-4594-8042-3fa4c3172aa5",
+        Id = "9b0424eb-87ec-440f-b997-7234a5b41bba",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -399,7 +399,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c96fff01-6364-4690-9787-c4f8a8f35ca6",
+                Id = "5591e11c-c6a5-472b-a8e6-135e45d96dda",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -421,7 +421,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T02:57:28.214Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T04:33:46.884Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// the normalized practice area type.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LegalPracticeareaType : IEquatable<LegalPracticeareaType>
     {

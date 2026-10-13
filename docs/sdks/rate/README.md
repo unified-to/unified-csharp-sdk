@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Rate.CreateShippingRateAsync(
     shippingRate: new ShippingRate() {
         Currency = "USD",
-        Id = "bce9531a-c9a4-4d13-ba64-923e5f52841f",
+        Id = "025c5b76-817f-4d9f-b5b4-ad273ec513cd",
         Rates = new List<ShippingRateRate>() {
             new ShippingRateRate() {
                 Amount = 54.679719475097954D,
@@ -35,7 +35,7 @@ var res = await sdk.Rate.CreateShippingRateAsync(
                 DeliveryDays = 8D,
                 Description = "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
                 EstimatedDays = 10D,
-                EstimatedDeliveryEndAt = System.DateTime.Parse("2024-02-12T09:34:07.696Z").ToUniversalTime(),
+                EstimatedDeliveryEndAt = System.DateTime.Parse("2024-02-12T18:35:30.127Z").ToUniversalTime(),
                 IsGuaranteed = true,
                 IsNegotiatedRate = true,
                 TaxAmount = 2.2701712837442756D,

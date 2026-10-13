@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         }
     }
 
+    /// <summary>
+    /// The custom field value.
+    /// </summary>
     [JsonConverter(typeof(HealthcareMetadataValue.HealthcareMetadataValueConverter))]
     public class HealthcareMetadataValue
     {

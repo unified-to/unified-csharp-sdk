@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class HealthcareEmail
     {
+        /// <summary>
+        /// The email address.
+        /// </summary>
         [JsonProperty("email")]
         public string Email { get; set; } = default!;
 
+        /// <summary>
+        /// The kind of email address (work, home or other).
+        /// </summary>
         [JsonProperty("type")]
         public HealthcareEmailType? Type { get; set; }
     }

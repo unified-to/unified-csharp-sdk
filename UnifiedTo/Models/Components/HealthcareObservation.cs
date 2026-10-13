@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("issued_at")]
         public DateTime? IssuedAt { get; set; }
 
+        /// <summary>
+        /// Custom field values.
+        /// </summary>
         [JsonProperty("metadata")]
         public List<HealthcareMetadata>? Metadata { get; set; }
 

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// The kind of email address (work, home or other).
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class HealthcareEmailType : IEquatable<HealthcareEmailType>
     {

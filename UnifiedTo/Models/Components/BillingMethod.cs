@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// how the matter is billed.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class BillingMethod : IEquatable<BillingMethod>
     {

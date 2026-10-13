@@ -19,9 +19,15 @@ namespace UnifiedTo.Models.Components
 
     public class HealthcareTelephone
     {
+        /// <summary>
+        /// The telephone number.
+        /// </summary>
         [JsonProperty("telephone")]
         public string Telephone { get; set; } = default!;
 
+        /// <summary>
+        /// The kind of telephone number (work, home, mobile, fax or other).
+        /// </summary>
         [JsonProperty("type")]
         public HealthcareTelephoneType? Type { get; set; }
     }

@@ -30,11 +30,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Domain.CreateComputeDomainAsync(
     computeDomain: new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "b1ae8d84-1d38-42dc-aafb-0ea6aa85ccd3",
+        Id = "749c5c56-3961-4ec4-ae9d-fff645675c05",
         IsPrimary = false,
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-10-29T10:14:56.120Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-29T21:01:09.265Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -164,11 +164,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeDomainRequest req = new PatchComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "fbaec0e3-8e94-4db3-ab98-c6664b4aa37f",
+        Id = "a48045a7-2fe1-4408-8d95-02830cc79960",
         IsPrimary = false,
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-10-29T10:14:56.122Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-29T21:01:09.270Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -255,11 +255,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeDomainRequest req = new UpdateComputeDomainRequest() {
     ComputeDomain = new ComputeDomain() {
         CreatedAt = System.DateTime.Parse("2019-11-22T16:38:26.009Z").ToUniversalTime(),
-        Id = "fbaec0e3-8e94-4db3-ab98-c6664b4aa37f",
+        Id = "a48045a7-2fe1-4408-8d95-02830cc79960",
         IsPrimary = false,
         Name = "mysterious-republican.usable-section.info",
         Status = ComputeDomainStatus.Pending,
-        UpdatedAt = System.DateTime.Parse("2023-10-29T10:14:56.122Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-29T21:01:09.270Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

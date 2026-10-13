@@ -32,7 +32,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
     metadataMetadata: new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "ca203760-38b2-43d1-b624-e390b50e1826",
+        Id = "1f0b5a92-177c-4cbf-b044-e391c8eb7f6c",
         IsRequired = false,
         Name = "autem",
         ObjectType = "social_review",
@@ -42,7 +42,7 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-15T10:33:36.490Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-16T00:03:41.764Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -174,7 +174,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "2c08b393-b08a-4517-aa4b-457967133beb",
+        Id = "25dcb84c-95b8-4849-8158-898b6c1ff6d1",
         IsRequired = false,
         Name = "autem",
         ObjectType = "social_review",
@@ -184,7 +184,7 @@ PatchMetadataMetadataRequest req = new PatchMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-15T10:33:36.500Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-16T00:03:41.771Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -273,7 +273,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
     MetadataMetadata = new MetadataMetadata() {
         CreatedAt = System.DateTime.Parse("2021-03-25T03:02:17.656Z").ToUniversalTime(),
         Format = MetadataMetadataFormat.Price,
-        Id = "2c08b393-b08a-4517-aa4b-457967133beb",
+        Id = "25dcb84c-95b8-4849-8158-898b6c1ff6d1",
         IsRequired = false,
         Name = "autem",
         ObjectType = "social_review",
@@ -283,7 +283,7 @@ UpdateMetadataMetadataRequest req = new UpdateMetadataMetadataRequest() {
         Options = new List<string>() {},
         OriginalFormat = "advoco",
         Slug = "arbustum",
-        UpdatedAt = System.DateTime.Parse("2025-03-15T10:33:36.500Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-16T00:03:41.771Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location_id")]
         public string? LocationId { get; set; }
 
+        /// <summary>
+        /// Custom field values.
+        /// </summary>
         [JsonProperty("metadata")]
         public List<HealthcareMetadata>? Metadata { get; set; }
 

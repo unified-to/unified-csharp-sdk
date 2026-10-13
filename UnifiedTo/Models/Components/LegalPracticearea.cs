@@ -19,18 +19,27 @@ namespace UnifiedTo.Models.Components
 
     public class LegalPracticearea
     {
+        /// <summary>
+        /// the practice area code.
+        /// </summary>
         [JsonProperty("code")]
         public string? Code { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the practice area was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// unique identifier for the practice area.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// whether the practice area is active.
+        /// </summary>
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
@@ -40,17 +49,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<LegalMetadata>? Metadata { get; set; }
 
+        /// <summary>
+        /// the practice area name.
+        /// </summary>
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        /// <summary>
+        /// raw data from the integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// the normalized practice area type.
+        /// </summary>
         [JsonProperty("type")]
         public LegalPracticeareaType? Type { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the practice area was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

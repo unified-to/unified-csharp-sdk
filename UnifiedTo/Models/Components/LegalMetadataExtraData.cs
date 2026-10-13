@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         }
     }
 
+    /// <summary>
+    /// additional data about the custom field.
+    /// </summary>
     [JsonConverter(typeof(LegalMetadataExtraData.LegalMetadataExtraDataConverter))]
     public class LegalMetadataExtraData
     {

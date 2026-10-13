@@ -71,6 +71,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("longitude")]
         public double? Longitude { get; set; }
 
+        /// <summary>
+        /// Custom field values.
+        /// </summary>
         [JsonProperty("metadata")]
         public List<HealthcareMetadata>? Metadata { get; set; }
 

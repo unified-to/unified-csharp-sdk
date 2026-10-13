@@ -19,21 +19,39 @@ namespace UnifiedTo.Models.Components
 
     public class HealthcareMetadata
     {
+        /// <summary>
+        /// Additional data about the custom field.
+        /// </summary>
         [JsonProperty("extra_data", NullValueHandling = NullValueHandling.Include)]
         public HealthcareMetadataExtraData? ExtraData { get; set; }
 
+        /// <summary>
+        /// The data type of the value.
+        /// </summary>
         [JsonProperty("format")]
         public HealthcareMetadataFormat? Format { get; set; }
 
+        /// <summary>
+        /// Identifier of the custom field.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// The scope or origin of the custom field.
+        /// </summary>
         [JsonProperty("namespace")]
         public string? Namespace { get; set; }
 
+        /// <summary>
+        /// The custom field key.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// The custom field value.
+        /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public HealthcareMetadataValue? Value { get; set; }
     }

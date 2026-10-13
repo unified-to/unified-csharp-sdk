@@ -19,21 +19,39 @@ namespace UnifiedTo.Models.Components
 
     public class LegalMetadata
     {
+        /// <summary>
+        /// additional data about the custom field.
+        /// </summary>
         [JsonProperty("extra_data", NullValueHandling = NullValueHandling.Include)]
         public LegalMetadataExtraData? ExtraData { get; set; }
 
+        /// <summary>
+        /// the data type of the value.
+        /// </summary>
         [JsonProperty("format")]
         public LegalMetadataFormat? Format { get; set; }
 
+        /// <summary>
+        /// the custom field identifier.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// the scope or origin of the custom field.
+        /// </summary>
         [JsonProperty("namespace")]
         public string? Namespace { get; set; }
 
+        /// <summary>
+        /// the custom field key.
+        /// </summary>
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
+        /// <summary>
+        /// the custom field value.
+        /// </summary>
         [JsonProperty("value", NullValueHandling = NullValueHandling.Include)]
         public LegalMetadataValue? Value { get; set; }
     }

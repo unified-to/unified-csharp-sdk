@@ -67,6 +67,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lot_number")]
         public string? LotNumber { get; set; }
 
+        /// <summary>
+        /// Custom field values.
+        /// </summary>
         [JsonProperty("metadata")]
         public List<HealthcareMetadata>? Metadata { get; set; }
 

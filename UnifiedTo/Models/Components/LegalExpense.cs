@@ -26,14 +26,20 @@ namespace UnifiedTo.Models.Components
         public string? Category { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the expense was created (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// ISO 4217 currency code.
+        /// </summary>
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// free-text description of the expense.
+        /// </summary>
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -43,6 +49,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("expense_code")]
         public string? ExpenseCode { get; set; }
 
+        /// <summary>
+        /// unique identifier for the expense.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -58,9 +67,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
+        /// <summary>
+        /// whether the expense is billable.
+        /// </summary>
         [JsonProperty("is_billable")]
         public bool? IsBillable { get; set; }
 
+        /// <summary>
+        /// whether the expense has been billed.
+        /// </summary>
         [JsonProperty("is_billed")]
         public bool? IsBilled { get; set; }
 
@@ -82,20 +97,32 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("price_amount")]
         public double? PriceAmount { get; set; }
 
+        /// <summary>
+        /// number of units.
+        /// </summary>
         [JsonProperty("quantity")]
         public double? Quantity { get; set; }
 
+        /// <summary>
+        /// raw data from the integration.
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// total amount of the expense.
+        /// </summary>
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
 
+        /// <summary>
+        /// hard cost, soft cost or other.
+        /// </summary>
         [JsonProperty("type")]
         public LegalExpenseType? Type { get; set; }
 
         /// <summary>
-        /// (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
+        /// when the expense was last updated (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format).
         /// </summary>
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

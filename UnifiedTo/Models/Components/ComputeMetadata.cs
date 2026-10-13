@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
     public class ComputeMetadata
     {
+        /// <summary>
+        /// Additional data about the value.
+        /// </summary>
         [JsonProperty("extra_data", NullValueHandling = NullValueHandling.Include)]
         public ComputeMetadataExtraData? ExtraData { get; set; }
 
@@ -28,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("format")]
         public ComputeMetadataFormat? Format { get; set; }
 
+        /// <summary>
+        /// The label, tag or metadata identifier.
+        /// </summary>
         [JsonProperty("id")]
         public string? Id { get; set; }
 

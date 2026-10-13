@@ -61,6 +61,9 @@ namespace UnifiedTo.Models.Components
         }
     }
 
+    /// <summary>
+    /// Additional data about the value.
+    /// </summary>
     [JsonConverter(typeof(ComputeMetadataExtraData.ComputeMetadataExtraDataConverter))]
     public class ComputeMetadataExtraData
     {

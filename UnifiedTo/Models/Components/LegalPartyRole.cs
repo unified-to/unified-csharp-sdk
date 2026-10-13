@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using System.Linq;
     using UnifiedTo.Utils;
 
+    /// <summary>
+    /// the party role on the matter.
+    /// </summary>
     [JsonConverter(typeof(OpenEnumConverter))]
     public class LegalPartyRole : IEquatable<LegalPartyRole>
     {
