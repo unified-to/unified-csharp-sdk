@@ -30,13 +30,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Interview.CreateAtsInterviewAsync(
     atsInterview: new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-12T23:07:21.357Z").ToUniversalTime(),
-        ExternalEventXref = "725bb1dc-0b66-4a13-b4c8-8258d433bd06",
-        Id = "9ac0f74c-e8a7-4063-994c-713079bb165c",
+        EndAt = System.DateTime.Parse("2025-10-13T22:00:37.244Z").ToUniversalTime(),
+        ExternalEventXref = "a40eb7ac-cd10-4b46-99f5-8e728e38f0f4",
+        Id = "5a4b7e8c-337b-4202-b7f8-627bab19d525",
         Location = "26596 Halle Trafficway",
-        StartAt = System.DateTime.Parse("2025-06-06T02:22:21.425Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-06-06T23:10:32.576Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-02-25T12:33:27.709Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-26T13:38:18.244Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,13 +166,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-12T23:07:21.367Z").ToUniversalTime(),
-        ExternalEventXref = "1d1c6930-e777-4f01-9ca6-1a508f00013e",
-        Id = "6e3a152b-03c2-459e-aef1-598cd35c2b79",
+        EndAt = System.DateTime.Parse("2025-10-13T22:00:37.254Z").ToUniversalTime(),
+        ExternalEventXref = "3379dc34-abf0-4651-b335-558ac3e14b6a",
+        Id = "96badb51-4abd-4e88-b4b4-bb32574f1b22",
         Location = "26596 Halle Trafficway",
-        StartAt = System.DateTime.Parse("2025-06-06T02:22:21.434Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-06-06T23:10:32.585Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-02-25T12:33:27.720Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-26T13:38:18.255Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -259,13 +259,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-12T23:07:21.367Z").ToUniversalTime(),
-        ExternalEventXref = "1d1c6930-e777-4f01-9ca6-1a508f00013e",
-        Id = "6e3a152b-03c2-459e-aef1-598cd35c2b79",
+        EndAt = System.DateTime.Parse("2025-10-13T22:00:37.254Z").ToUniversalTime(),
+        ExternalEventXref = "3379dc34-abf0-4651-b335-558ac3e14b6a",
+        Id = "96badb51-4abd-4e88-b4b4-bb32574f1b22",
         Location = "26596 Halle Trafficway",
-        StartAt = System.DateTime.Parse("2025-06-06T02:22:21.434Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-06-06T23:10:32.585Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-02-25T12:33:27.720Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-26T13:38:18.255Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

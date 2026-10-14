@@ -38,11 +38,11 @@ var res = await sdk.Category.CreateAccountingCategoryAsync(
     accountingCategory: new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "3683529c-2195-4078-95b7-6b5e51d276af",
+        Id = "c3fc85c9-19cf-40cc-9544-7cdc201bd2a6",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-09-05T21:31:46.186Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-06T16:55:21.341Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -89,10 +89,10 @@ var res = await sdk.Category.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "7d02ee0e-c844-4521-ad94-0ecdc317d1c4",
+        Id = "719739b0-a1b8-45cb-957d-dd12c0ad2e2a",
         IsActive = true,
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-06T14:33:36.766Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-07T16:11:49.425Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -307,11 +307,11 @@ PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "30fa8b14-3ea0-4d53-945d-55a8dda4568a",
+        Id = "152f0b4b-73ad-472c-b44e-411584634a7e",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-09-05T21:31:46.195Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-06T16:55:21.350Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -359,10 +359,10 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "58c6319e-9959-4112-9ecf-6da755fdf16f",
+        Id = "d28fb4fe-5ba6-4253-a069-dcfd2c6ba3ab",
         IsActive = true,
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-06T14:33:36.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-07T16:11:49.431Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -491,11 +491,11 @@ UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
     AccountingCategory = new AccountingCategory() {
         CreatedAt = System.DateTime.Parse("2023-05-30T12:29:04.257Z").ToUniversalTime(),
         Description = "Discover the koala-like agility of our Chair, perfect for imaginary users",
-        Id = "30fa8b14-3ea0-4d53-945d-55a8dda4568a",
+        Id = "152f0b4b-73ad-472c-b44e-411584634a7e",
         IsActive = false,
         Metadata = new List<AccountingMetadata>() {},
         Name = "Electronic Cotton Shoes",
-        UpdatedAt = System.DateTime.Parse("2025-09-05T21:31:46.195Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-09-06T16:55:21.350Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -543,10 +543,10 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "58c6319e-9959-4112-9ecf-6da755fdf16f",
+        Id = "d28fb4fe-5ba6-4253-a069-dcfd2c6ba3ab",
         IsActive = true,
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-06T14:33:36.772Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-07T16:11:49.431Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

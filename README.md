@@ -27,7 +27,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "e77ca7ff-7a39-4088-9bc2-7b694d6c5309",
+        Id = "7da12d59-16f8-4adc-acfb-064305ad48a2",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -44,7 +44,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T01:50:03.281Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-06T05:16:06.412Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2740,7 +2740,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "e77ca7ff-7a39-4088-9bc2-7b694d6c5309",
+        Id = "7da12d59-16f8-4adc-acfb-064305ad48a2",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -2757,7 +2757,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T01:50:03.281Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-06T05:16:06.412Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2788,7 +2788,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "e77ca7ff-7a39-4088-9bc2-7b694d6c5309",
+        Id = "7da12d59-16f8-4adc-acfb-064305ad48a2",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -2805,7 +2805,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T01:50:03.281Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-06T05:16:06.412Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2885,7 +2885,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "e77ca7ff-7a39-4088-9bc2-7b694d6c5309",
+        Id = "7da12d59-16f8-4adc-acfb-064305ad48a2",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -2902,7 +2902,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T01:50:03.281Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-06T05:16:06.412Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -2947,7 +2947,7 @@ try
             Currency = "BOB",
             CustomerDefinedCode = "quo",
             Description = "Spoliatio comedo vilitas harum cupiditate.",
-            Id = "e77ca7ff-7a39-4088-9bc2-7b694d6c5309",
+            Id = "7da12d59-16f8-4adc-acfb-064305ad48a2",
             IsPayable = true,
             Name = "Electronic Aluminum Tuna",
             Status = Status.Archived,
@@ -2964,7 +2964,7 @@ try
                 },
             },
             Type = UnifiedTo.Models.Components.Type.Bank,
-            UpdatedAt = System.DateTime.Parse("2023-01-06T01:50:03.281Z").ToUniversalTime(),
+            UpdatedAt = System.DateTime.Parse("2023-01-06T05:16:06.412Z").ToUniversalTime(),
         },
         connectionId: "<id>"
     );

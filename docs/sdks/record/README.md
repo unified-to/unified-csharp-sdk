@@ -34,9 +34,9 @@ var res = await sdk.Record.CreateDatastoreRecordAsync(
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "3f18f9d7-7843-4dd6-8598-6263e38019c5",
+        Id = "f0c720f8-7056-47f3-a4d9-90075c93e13a",
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-02-27T23:19:30.275Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-28T17:09:42.736Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -170,9 +170,9 @@ PatchDatastoreRecordRequest req = new PatchDatastoreRecordRequest() {
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "dfec1b8a-a322-4a57-8561-275bc2d59d8e",
+        Id = "fb31337a-8cd7-4d66-be55-7602fe071c89",
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-02-27T23:19:30.282Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-28T17:09:42.740Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -263,9 +263,9 @@ UpdateDatastoreRecordRequest req = new UpdateDatastoreRecordRequest() {
         Fields = new Dictionary<string, DatastoreFieldValue>() {
 
         },
-        Id = "dfec1b8a-a322-4a57-8561-275bc2d59d8e",
+        Id = "fb31337a-8cd7-4d66-be55-7602fe071c89",
         RowNumber = 33D,
-        UpdatedAt = System.DateTime.Parse("2025-02-27T23:19:30.282Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-28T17:09:42.740Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

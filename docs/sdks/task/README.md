@@ -50,10 +50,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Task.CreateGenaiTaskAsync(
     genaiTask: new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-09-24T09:57:51.734Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-09-25T09:41:08.911Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "cfc21592-e935-4675-a244-3432007ccd6b",
+        Id = "d03a68e9-0013-4802-b984-e541ce58fef7",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -68,12 +68,12 @@ var res = await sdk.Task.CreateGenaiTaskAsync(
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-16T11:18:32.111Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-17T04:28:29.062Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-23T01:13:12.631Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-23T12:27:30.839Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     connectionId: "<id>"
@@ -121,9 +121,9 @@ var res = await sdk.Task.CreateTaskCommentAsync(
     taskComment: new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "e226fa7f-78a6-4639-83af-ae43abbaed2e",
+        Id = "9eaf3385-2804-455d-aa4d-225c58fa5106",
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-09-30T23:46:24.720Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-10-01T07:52:13.231Z").ToUniversalTime(),
         UserName = "Santina Abbott",
     },
     connectionId: "<id>"
@@ -174,7 +174,7 @@ var res = await sdk.Task.CreateTaskProjectAsync(
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "90a47297-07d8-4632-8c01-cfafe47959a0",
+        Id = "03ee7d0c-414a-47f1-b6db-fdf27fb7e77a",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -183,7 +183,7 @@ var res = await sdk.Task.CreateTaskProjectAsync(
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "c4c4c2bd-f607-4992-a3eb-525bc7e9bc2c",
+                Id = "895d0f32-b4a0-4ec5-b975-274e0e44c219",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -197,7 +197,7 @@ var res = await sdk.Task.CreateTaskProjectAsync(
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "b51de033-72bd-4792-99b4-f77c0295d697",
+                Id = "e100533d-7e24-420f-83fd-4e7522cd21f1",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -206,7 +206,7 @@ var res = await sdk.Task.CreateTaskProjectAsync(
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-10T20:25:54.898Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-10T23:02:07.528Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -253,18 +253,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Task.CreateTaskTaskAsync(
     taskTask: new TaskTask() {
         AttachmentIds = new List<string>() {},
-        CompletedAt = System.DateTime.Parse("2022-04-03T15:50:40.349Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2022-04-04T03:42:19.416Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2019-01-31T08:34:55.626Z").ToUniversalTime(),
-        DueAt = System.DateTime.Parse("2026-05-16T17:30:09.982Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2022-10-25T16:32:51.046Z").ToUniversalTime(),
+        DueAt = System.DateTime.Parse("2026-05-17T20:45:54.270Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2022-10-26T06:30:28.205Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "e44b65af-4db1-49d1-a9bb-d11fa54318cd",
+        Id = "0c86dfb3-7d58-4cef-99d1-511ed855e453",
         Metadata = new List<TaskMetadata>() {},
         Name = "Direct Markets Architect",
         Notes = "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
         Priority = "LOW",
         Progress = 2D,
-        StartAt = System.DateTime.Parse("2022-01-29T01:46:43.502Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-01-29T12:58:41.700Z").ToUniversalTime(),
         Status = TaskTaskStatus.InProgress,
         StoryPoints = 0D,
         Tags = new List<string>() {
@@ -274,7 +274,7 @@ var res = await sdk.Task.CreateTaskTaskAsync(
         TimeSpent = 957D,
         TimeSpentUnit = "SECONDS",
         Type = "tubineus",
-        UpdatedAt = System.DateTime.Parse("2019-07-14T21:28:40.828Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-07-14T23:09:46.247Z").ToUniversalTime(),
         Url = "https://dismal-silk.net/",
     },
     connectionId: "<id>"
@@ -737,10 +737,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchGenaiTaskRequest req = new PatchGenaiTaskRequest() {
     GenaiTask = new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-09-24T09:57:51.753Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-09-25T09:41:08.924Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "acd257ab-e574-4444-9c9e-86a911340236",
+        Id = "ba38c567-6213-43c3-bd93-2c295ddb5f17",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -755,12 +755,12 @@ PatchGenaiTaskRequest req = new PatchGenaiTaskRequest() {
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-16T11:18:32.124Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-17T04:28:29.072Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-23T01:13:12.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-23T12:27:30.845Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     ConnectionId = "<id>",
@@ -809,9 +809,9 @@ PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
     TaskComment = new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "c4377f42-7ff1-4595-b294-556417f4c9f9",
+        Id = "f4867490-d740-41ed-98d3-2093a98f2a1f",
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-09-30T23:46:24.722Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-10-01T07:52:13.233Z").ToUniversalTime(),
         UserName = "Santina Abbott",
     },
     ConnectionId = "<id>",
@@ -863,7 +863,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "87a5166d-4ccf-41ca-8667-6cc780a9ec97",
+        Id = "fe95d00d-32c1-4c95-9c7c-97a4fb3d875e",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -872,7 +872,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "df4bee40-cdec-4d50-b155-747692a13e8b",
+                Id = "6e7963c8-f569-4685-8a30-7d761b95391a",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -886,7 +886,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "b0b2d84b-8958-4e07-bfc9-68fde673cadb",
+                Id = "3aa5907c-a8ec-49a5-9947-8833baf686a8",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -895,7 +895,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-10T20:25:54.900Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-10T23:02:07.529Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -943,18 +943,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchTaskTaskRequest req = new PatchTaskTaskRequest() {
     TaskTask = new TaskTask() {
         AttachmentIds = new List<string>() {},
-        CompletedAt = System.DateTime.Parse("2022-04-03T15:50:40.359Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2022-04-04T03:42:19.426Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2019-01-31T08:34:55.626Z").ToUniversalTime(),
-        DueAt = System.DateTime.Parse("2026-05-16T17:30:10.004Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2022-10-25T16:32:51.058Z").ToUniversalTime(),
+        DueAt = System.DateTime.Parse("2026-05-17T20:45:54.293Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2022-10-26T06:30:28.217Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "899b9f6c-22a5-4e1a-928e-c6853d7a24e0",
+        Id = "8e1ec806-3447-4375-91fd-2f85d769a6b8",
         Metadata = new List<TaskMetadata>() {},
         Name = "Direct Markets Architect",
         Notes = "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
         Priority = "LOW",
         Progress = 2D,
-        StartAt = System.DateTime.Parse("2022-01-29T01:46:43.511Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-01-29T12:58:41.709Z").ToUniversalTime(),
         Status = TaskTaskStatus.InProgress,
         StoryPoints = 0D,
         Tags = new List<string>() {
@@ -964,7 +964,7 @@ PatchTaskTaskRequest req = new PatchTaskTaskRequest() {
         TimeSpent = 957D,
         TimeSpentUnit = "SECONDS",
         Type = "tubineus",
-        UpdatedAt = System.DateTime.Parse("2019-07-14T21:28:40.829Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-07-14T23:09:46.248Z").ToUniversalTime(),
         Url = "https://dismal-silk.net/",
     },
     ConnectionId = "<id>",
@@ -1172,10 +1172,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateGenaiTaskRequest req = new UpdateGenaiTaskRequest() {
     GenaiTask = new GenaiTask() {
-        CompletedAt = System.DateTime.Parse("2025-09-24T09:57:51.753Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2025-09-25T09:41:08.924Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2020-10-25T20:19:33.247Z").ToUniversalTime(),
         FilesChanged = 19D,
-        Id = "acd257ab-e574-4444-9c9e-86a911340236",
+        Id = "ba38c567-6213-43c3-bd93-2c295ddb5f17",
         Instructions = "Benigne canonicus officiis solvo adsidue deleo angustus.",
         LinesAdded = 244D,
         LinesDeleted = 118D,
@@ -1190,12 +1190,12 @@ UpdateGenaiTaskRequest req = new UpdateGenaiTaskRequest() {
         PullrequestUrl = "https://github.com/berenice.satterfield/joshingly-ignorance/pull/383",
         RepoUrl = "https://github.com/berenice.satterfield/joshingly-ignorance",
         SourceBranchIdentifier = "main",
-        StartedAt = System.DateTime.Parse("2024-05-16T11:18:32.124Z").ToUniversalTime(),
+        StartedAt = System.DateTime.Parse("2024-05-17T04:28:29.072Z").ToUniversalTime(),
         Status = GenaiTaskStatus.Blocked,
         Summary = "Cur aeternus cogito vesper.",
         TargetBranchIdentifier = "agent/joshingly-ignorance",
         TokensUsed = 2165D,
-        UpdatedAt = System.DateTime.Parse("2023-02-23T01:13:12.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-02-23T12:27:30.845Z").ToUniversalTime(),
         WebUrl = "https://inexperienced-adrenalin.biz/",
     },
     ConnectionId = "<id>",
@@ -1244,9 +1244,9 @@ UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
     TaskComment = new TaskComment() {
         CreatedAt = System.DateTime.Parse("2019-10-12T20:33:37.879Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "c4377f42-7ff1-4595-b294-556417f4c9f9",
+        Id = "f4867490-d740-41ed-98d3-2093a98f2a1f",
         Text = "Colo ulciscor sublime tabernus.",
-        UpdatedAt = System.DateTime.Parse("2021-09-30T23:46:24.722Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-10-01T07:52:13.233Z").ToUniversalTime(),
         UserName = "Santina Abbott",
     },
     ConnectionId = "<id>",
@@ -1298,7 +1298,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "87a5166d-4ccf-41ca-8667-6cc780a9ec97",
+        Id = "fe95d00d-32c1-4c95-9c7c-97a4fb3d875e",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -1307,7 +1307,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "df4bee40-cdec-4d50-b155-747692a13e8b",
+                Id = "6e7963c8-f569-4685-8a30-7d761b95391a",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -1321,7 +1321,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "b0b2d84b-8958-4e07-bfc9-68fde673cadb",
+                Id = "3aa5907c-a8ec-49a5-9947-8833baf686a8",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -1330,7 +1330,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-10T20:25:54.900Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-10T23:02:07.529Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1378,18 +1378,18 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateTaskTaskRequest req = new UpdateTaskTaskRequest() {
     TaskTask = new TaskTask() {
         AttachmentIds = new List<string>() {},
-        CompletedAt = System.DateTime.Parse("2022-04-03T15:50:40.359Z").ToUniversalTime(),
+        CompletedAt = System.DateTime.Parse("2022-04-04T03:42:19.426Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2019-01-31T08:34:55.626Z").ToUniversalTime(),
-        DueAt = System.DateTime.Parse("2026-05-16T17:30:10.004Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2022-10-25T16:32:51.058Z").ToUniversalTime(),
+        DueAt = System.DateTime.Parse("2026-05-17T20:45:54.293Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2022-10-26T06:30:28.217Z").ToUniversalTime(),
         HasChildren = true,
-        Id = "899b9f6c-22a5-4e1a-928e-c6853d7a24e0",
+        Id = "8e1ec806-3447-4375-91fd-2f85d769a6b8",
         Metadata = new List<TaskMetadata>() {},
         Name = "Direct Markets Architect",
         Notes = "Calcar vilicus audacia ut cultura argentum ventosus. Talis neque thymbra titulus absconditus peccatus crustulum tollo. Volva vacuus eos cedo spero. Utpote coadunatio denuncio adopto autus sono atrocitas vulnero.",
         Priority = "LOW",
         Progress = 2D,
-        StartAt = System.DateTime.Parse("2022-01-29T01:46:43.511Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2022-01-29T12:58:41.709Z").ToUniversalTime(),
         Status = TaskTaskStatus.InProgress,
         StoryPoints = 0D,
         Tags = new List<string>() {
@@ -1399,7 +1399,7 @@ UpdateTaskTaskRequest req = new UpdateTaskTaskRequest() {
         TimeSpent = 957D,
         TimeSpentUnit = "SECONDS",
         Type = "tubineus",
-        UpdatedAt = System.DateTime.Parse("2019-07-14T21:28:40.829Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2019-07-14T23:09:46.248Z").ToUniversalTime(),
         Url = "https://dismal-silk.net/",
     },
     ConnectionId = "<id>",
