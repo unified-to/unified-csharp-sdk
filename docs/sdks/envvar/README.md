@@ -34,10 +34,10 @@ var res = await sdk.Envvar.CreateComputeEnvvarAsync(
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "de08c733-e1f5-44de-a10b-f08870080c38",
+        Id = "949b6ffe-a21f-4dbd-b73d-2e2fb4a3ff1f",
         IsSecret = true,
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-06-28T06:10:48.418Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-29T00:04:36.243Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -171,10 +171,10 @@ PatchComputeEnvvarRequest req = new PatchComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "4811feb8-0f14-42cc-be3c-462eca117a92",
+        Id = "548b4392-f1a2-4365-b3ac-832fe51eaae7",
         IsSecret = true,
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-06-28T06:10:48.422Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-29T00:04:36.252Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -265,10 +265,10 @@ UpdateComputeEnvvarRequest req = new UpdateComputeEnvvarRequest() {
         Environments = new List<PropertyComputeEnvvarEnvironments>() {
             PropertyComputeEnvvarEnvironments.Preview,
         },
-        Id = "4811feb8-0f14-42cc-be3c-462eca117a92",
+        Id = "548b4392-f1a2-4365-b3ac-832fe51eaae7",
         IsSecret = true,
         Name = "AEGER_SUBSTANTIA",
-        UpdatedAt = System.DateTime.Parse("2025-06-28T06:10:48.422Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-29T00:04:36.252Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

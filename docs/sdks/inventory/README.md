@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-14T15:57:08.694Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-15T11:11:56.577Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-14T15:57:08.699Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-15T11:11:56.583Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -247,7 +247,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
         Available = 337D,
-        UpdatedAt = System.DateTime.Parse("2025-11-14T15:57:08.699Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-15T11:11:56.583Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

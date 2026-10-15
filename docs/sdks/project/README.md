@@ -82,7 +82,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "03ee7d0c-414a-47f1-b6db-fdf27fb7e77a",
+        Id = "41f1d99a-dc7c-4807-840a-da0075150d1a",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -91,7 +91,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "895d0f32-b4a0-4ec5-b975-274e0e44c219",
+                Id = "097417f0-aaa7-486d-87e1-e0497418bd57",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -105,7 +105,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "e100533d-7e24-420f-83fd-4e7522cd21f1",
+                Id = "7805d53a-d6b4-4668-9053-c85739b6f596",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -114,7 +114,7 @@ var res = await sdk.Project.CreateTaskProjectAsync(
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-10T23:02:07.528Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-11T01:11:44.681Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -374,7 +374,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "fe95d00d-32c1-4c95-9c7c-97a4fb3d875e",
+        Id = "1fa4757b-1c6a-4ac3-99db-82fb074df204",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -383,7 +383,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "6e7963c8-f569-4685-8a30-7d761b95391a",
+                Id = "81332f8b-da7c-4761-ab81-def42495fd99",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -397,7 +397,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "3aa5907c-a8ec-49a5-9947-8833baf686a8",
+                Id = "72153968-0dda-4489-b4f0-80ef954dd365",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -406,7 +406,7 @@ PatchTaskProjectRequest req = new PatchTaskProjectRequest() {
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-10T23:02:07.529Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-11T01:11:44.683Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -580,7 +580,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
         Description = "Valetudo aggredior accommodo curiositas vox.",
         HasChildren = false,
         HasTasks = false,
-        Id = "fe95d00d-32c1-4c95-9c7c-97a4fb3d875e",
+        Id = "1fa4757b-1c6a-4ac3-99db-82fb074df204",
         Metadata = new List<TaskMetadata>() {
             new TaskMetadata() {
                 ExtraData = TaskMetadataExtraData.CreateMapOfAny(
@@ -589,7 +589,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "6e7963c8-f569-4685-8a30-7d761b95391a",
+                Id = "81332f8b-da7c-4761-ab81-def42495fd99",
                 Namespace = "custom",
                 Slug = "decens",
                 Value = TaskMetadataValue.CreateStr(
@@ -603,7 +603,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
                     }
                 ),
                 Format = TaskMetadataFormat.Text,
-                Id = "3aa5907c-a8ec-49a5-9947-8833baf686a8",
+                Id = "72153968-0dda-4489-b4f0-80ef954dd365",
                 Namespace = "custom",
                 Slug = "benevolentia",
                 Value = TaskMetadataValue.CreateStr(
@@ -612,7 +612,7 @@ UpdateTaskProjectRequest req = new UpdateTaskProjectRequest() {
             },
         },
         Name = "Garden",
-        UpdatedAt = System.DateTime.Parse("2023-10-10T23:02:07.529Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-10-11T01:11:44.683Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

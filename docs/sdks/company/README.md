@@ -43,10 +43,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.CreateAtsCompanyAsync(
     atsCompany: new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "9a0f1de4-bd7f-45bb-b227-fa5b77e72188",
+        Id = "f98d0840-70db-47cf-a7a4-f30b332ec971",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-29T19:13:16.508Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-29T23:49:34.951Z").ToUniversalTime(),
         WebsiteUrl = "https://somber-substitution.com/",
     },
     connectionId: "<id>"
@@ -124,7 +124,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
             },
         },
         Employees = 967D,
-        Id = "db763c72-7a4f-463d-952d-da0068c07ab5",
+        Id = "2fdd162f-2bd1-4991-b1d2-82017631ed9f",
         Industry = "Infrastructure",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -140,7 +140,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "460163c4-e244-4945-92fb-96812305d6c1",
+                Id = "537d3490-bedd-4465-b140-a1abda8307aa",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -168,7 +168,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
             },
         },
         Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-02-25T20:02:19.674Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-26T13:52:02.730Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://wise-possession.org",
         },
@@ -225,10 +225,10 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
             RegionCode = "PA",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "66dc74eb-bc21-489f-b5e0-52f7e12cc479",
+        Id = "11a553b6-63f6-4229-94f0-5e4d32e620f5",
         LegalName = "Schultz LLC",
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-01T14:20:27.138Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-02T14:04:50.046Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -562,10 +562,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "d09dbbf8-a27e-447c-8ef6-c08da8a68523",
+        Id = "0c9c23f5-38b1-4365-91f0-a1fadf8b29ad",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-29T19:13:16.513Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-29T23:49:34.957Z").ToUniversalTime(),
         WebsiteUrl = "https://somber-substitution.com/",
     },
     ConnectionId = "<id>",
@@ -644,7 +644,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Employees = 967D,
-        Id = "1e18a680-6e7f-4528-9683-dbae2cab49c5",
+        Id = "757c8cb0-470e-4214-9ace-d4f369bd3c55",
         Industry = "Infrastructure",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -660,7 +660,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "990bbfbb-8b55-4f45-92e6-e88dd57aa1ed",
+                Id = "231d6d33-ab08-476a-981b-9bdd1297abb5",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -688,7 +688,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-02-25T20:02:19.698Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-26T13:52:02.752Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://wise-possession.org",
         },
@@ -746,10 +746,10 @@ PatchHrisCompanyRequest req = new PatchHrisCompanyRequest() {
             RegionCode = "PA",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "45af0e8b-8cd3-459c-8af0-a2185022ccc5",
+        Id = "cca8641d-a94c-474a-a9f7-c4e3b26a7557",
         LegalName = "Schultz LLC",
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-01T14:20:27.152Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-02T14:04:50.061Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -916,10 +916,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "d09dbbf8-a27e-447c-8ef6-c08da8a68523",
+        Id = "0c9c23f5-38b1-4365-91f0-a1fadf8b29ad",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-29T19:13:16.513Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-29T23:49:34.957Z").ToUniversalTime(),
         WebsiteUrl = "https://somber-substitution.com/",
     },
     ConnectionId = "<id>",
@@ -998,7 +998,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Employees = 967D,
-        Id = "1e18a680-6e7f-4528-9683-dbae2cab49c5",
+        Id = "757c8cb0-470e-4214-9ace-d4f369bd3c55",
         Industry = "Infrastructure",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -1014,7 +1014,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "990bbfbb-8b55-4f45-92e6-e88dd57aa1ed",
+                Id = "231d6d33-ab08-476a-981b-9bdd1297abb5",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1042,7 +1042,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-02-25T20:02:19.698Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-26T13:52:02.752Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://wise-possession.org",
         },
@@ -1100,10 +1100,10 @@ UpdateHrisCompanyRequest req = new UpdateHrisCompanyRequest() {
             RegionCode = "PA",
         },
         CreatedAt = System.DateTime.Parse("2021-05-02T22:27:38.970Z").ToUniversalTime(),
-        Id = "45af0e8b-8cd3-459c-8af0-a2185022ccc5",
+        Id = "cca8641d-a94c-474a-a9f7-c4e3b26a7557",
         LegalName = "Schultz LLC",
         Name = "Gottlieb Group",
-        UpdatedAt = System.DateTime.Parse("2026-10-01T14:20:27.152Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-02T14:04:50.061Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

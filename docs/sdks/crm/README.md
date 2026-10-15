@@ -92,7 +92,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
             },
         },
         Employees = 967D,
-        Id = "db763c72-7a4f-463d-952d-da0068c07ab5",
+        Id = "2fdd162f-2bd1-4991-b1d2-82017631ed9f",
         Industry = "Infrastructure",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -108,7 +108,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "460163c4-e244-4945-92fb-96812305d6c1",
+                Id = "537d3490-bedd-4465-b140-a1abda8307aa",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -136,7 +136,7 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
             },
         },
         Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-02-25T20:02:19.674Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-26T13:52:02.730Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://wise-possession.org",
         },
@@ -211,7 +211,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
             },
         },
         FirstName = "Mohammad",
-        Id = "91916675-76ce-45a5-9f64-0d42fdf41abe",
+        Id = "12857277-6cea-401f-967a-a4ea310de5cf",
         ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -227,7 +227,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "b0a400ea-779f-48aa-a88f-75189cdff51d",
+                Id = "633d7bcc-efac-4a39-adf7-34e6a3204701",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -251,7 +251,7 @@ var res = await sdk.Crm.CreateCrmContactAsync(
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T00:48:45.305Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T01:24:44.667Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -298,12 +298,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Crm.CreateCrmDealAsync(
     crmDeal: new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-08T22:36:46.334Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-26T20:33:12.329Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-09T03:34:07.239Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-27T12:12:03.065Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "IQD",
         Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
-        Id = "34d22d7d-4164-4d98-b83a-d15e8f5ff94e",
+        Id = "a58e1eca-76d5-4138-997c-3f088263e744",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -312,7 +312,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "c0faa9d8-92c1-4cd9-86f9-f9c88b548737",
+                Id = "8c0113bb-fb63-4528-8da3-f2533283a0f4",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -323,7 +323,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
         Name = "Frozen Silk Chicken",
         Pipelines = new List<CrmReference>() {
             new CrmReference() {
-                Id = "bbb79cdf-aa97-4177-84f3-3da31a3f040c",
+                Id = "cc627b6c-5d1d-4e2f-a050-7f6f487d506f",
                 Name = "trans",
             },
         },
@@ -331,11 +331,11 @@ var res = await sdk.Crm.CreateCrmDealAsync(
         Source = "cubo",
         Stages = new List<CrmReference>() {
             new CrmReference() {
-                Id = "e769e236-8696-40bf-9eae-8820f5df680c",
+                Id = "a7c65c4c-e79b-423e-bc22-8ce555b2ddfe",
                 Name = "tubineus",
             },
             new CrmReference() {
-                Id = "64e72729-d87a-44cd-b079-1ef4691a1436",
+                Id = "aa4124e5-0dc3-4f26-9db1-d3f46078ff63",
                 Name = "adfectus",
             },
         },
@@ -343,7 +343,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-09T03:06:43.909Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-09T12:20:27.948Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     connectionId: "<id>"
@@ -392,12 +392,12 @@ var res = await sdk.Crm.CreateCrmEventAsync(
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-06T00:26:33.066Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-06T17:14:47.818Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "5e5fae03-2930-42c9-bb5d-22c04063435e",
+        Id = "9a7cb1cb-de41-4d50-8f72-19f9d492bae3",
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-04T10:32:22.671Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-05T10:19:40.705Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -465,7 +465,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
             },
         },
         FirstName = "Velda",
-        Id = "789cab07-fdf7-4b5f-a0df-177ad40b047f",
+        Id = "a8b22a76-479d-4e74-8830-ac4ba8c13193",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -479,7 +479,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "0a354b4d-ac3f-43d3-bcfe-4ca03ea64433",
+                Id = "ac0d6adc-e135-4144-9ac9-9c09fd73b999",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -501,7 +501,7 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
             },
         },
         Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T07:00:50.105Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T09:02:51.333Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -550,7 +550,7 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "73f2a40f-0401-40ea-8881-013ed024d7f1",
+        Id = "4401d730-69b3-4d62-8a88-983cabef7e4a",
         IsActive = true,
         Name = "Small Steel Bacon",
         Stages = new List<CrmStage>() {
@@ -559,13 +559,13 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "b3d276e7-8532-4ffb-a9c2-c645e2c4e7f1",
+                Id = "9f4fc199-3d87-46c8-afbe-2113d4ddc6d4",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-05T07:30:59.239Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-06T00:57:43.940Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-10-26T22:17:07.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-27T16:06:14.459Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1182,7 +1182,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Employees = 967D,
-        Id = "1e18a680-6e7f-4528-9683-dbae2cab49c5",
+        Id = "757c8cb0-470e-4214-9ace-d4f369bd3c55",
         Industry = "Infrastructure",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -1198,7 +1198,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "990bbfbb-8b55-4f45-92e6-e88dd57aa1ed",
+                Id = "231d6d33-ab08-476a-981b-9bdd1297abb5",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1226,7 +1226,7 @@ PatchCrmCompanyRequest req = new PatchCrmCompanyRequest() {
             },
         },
         Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-02-25T20:02:19.698Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-26T13:52:02.752Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://wise-possession.org",
         },
@@ -1302,7 +1302,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "711851fb-951c-44fb-9673-0a85bb54427a",
+        Id = "6792afb0-4eec-46b5-91c6-5e1a9c690d3a",
         ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -1318,7 +1318,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "f68dee9f-6930-4b95-9472-9e1d555b8303",
+                Id = "4e3778bb-82eb-4f53-aa01-79ff8dfb0497",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1342,7 +1342,7 @@ PatchCrmContactRequest req = new PatchCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T00:48:45.305Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T01:24:44.668Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1390,12 +1390,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchCrmDealRequest req = new PatchCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-08T22:36:46.339Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-26T20:33:12.344Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-09T03:34:07.244Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-27T12:12:03.082Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "IQD",
         Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
-        Id = "3bd1a570-5791-48ce-b335-aa317e03989f",
+        Id = "fd065f75-f46a-4fe6-9fdc-a09f486a6af4",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -1404,7 +1404,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "7844dead-985f-4154-ac44-6401df153488",
+                Id = "9e313bef-9124-4e70-99a2-0da21e28d7fc",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1415,7 +1415,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
         Name = "Frozen Silk Chicken",
         Pipelines = new List<CrmReference>() {
             new CrmReference() {
-                Id = "a657d285-f848-4d19-b02d-138a2b719f53",
+                Id = "ae861d16-be60-4c09-a914-42257ce3e55f",
                 Name = "trans",
             },
         },
@@ -1423,11 +1423,11 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
         Source = "cubo",
         Stages = new List<CrmReference>() {
             new CrmReference() {
-                Id = "d17d9398-fb9a-4da8-a3dc-f57a05be0f3a",
+                Id = "4100b8e1-edac-4fe0-8f49-50daffced8e7",
                 Name = "tubineus",
             },
             new CrmReference() {
-                Id = "688a79db-8090-4e67-827d-4b39c5af9354",
+                Id = "5afa04fc-606e-46e0-b08d-ca7c51754779",
                 Name = "adfectus",
             },
         },
@@ -1435,7 +1435,7 @@ PatchCrmDealRequest req = new PatchCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-09T03:06:43.919Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-09T12:20:27.958Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -1485,12 +1485,12 @@ PatchCrmEventRequest req = new PatchCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-06T00:26:33.104Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-06T17:14:47.846Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "0e560536-bc85-4dcc-a766-a818db06d14f",
+        Id = "c2d621be-44a6-418a-970e-2692c4edec0d",
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-04T10:32:22.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-05T10:19:40.743Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1559,7 +1559,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "4e2b1956-cd60-4f10-a0ac-ae7e23ed1110",
+        Id = "f25afdba-289a-4cfd-ab09-201bae9c02f0",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -1573,7 +1573,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e837473e-6736-44fc-8495-b921db4401cd",
+                Id = "047afa60-66ba-444e-af7c-8ef74a8c5f28",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -1595,7 +1595,7 @@ PatchCrmLeadRequest req = new PatchCrmLeadRequest() {
             },
         },
         Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T07:00:50.108Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T09:02:51.335Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1645,7 +1645,7 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "d3dd90ad-42ea-49a1-8775-b17146306823",
+        Id = "7c41402b-67c7-474d-933b-5a1f8bfaf591",
         IsActive = true,
         Name = "Small Steel Bacon",
         Stages = new List<CrmStage>() {
@@ -1654,13 +1654,13 @@ PatchCrmPipelineRequest req = new PatchCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "0e11bbe1-524e-448d-8523-ded9b31f391e",
+                Id = "bba609cb-c5d9-4908-ad31-7a3d45a7b0f3",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-05T07:30:59.246Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-06T00:57:43.952Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-10-26T22:17:07.970Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-27T16:06:14.471Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1978,7 +1978,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Employees = 967D,
-        Id = "1e18a680-6e7f-4528-9683-dbae2cab49c5",
+        Id = "757c8cb0-470e-4214-9ace-d4f369bd3c55",
         Industry = "Infrastructure",
         IsActive = true,
         LinkUrls = new List<string>() {
@@ -1994,7 +1994,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "990bbfbb-8b55-4f45-92e6-e88dd57aa1ed",
+                Id = "231d6d33-ab08-476a-981b-9bdd1297abb5",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2022,7 +2022,7 @@ UpdateCrmCompanyRequest req = new UpdateCrmCompanyRequest() {
             },
         },
         Timezone = "Europe/San_Marino",
-        UpdatedAt = System.DateTime.Parse("2025-02-25T20:02:19.698Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-02-26T13:52:02.752Z").ToUniversalTime(),
         Websites = new List<string>() {
             "https://wise-possession.org",
         },
@@ -2098,7 +2098,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         FirstName = "Mohammad",
-        Id = "711851fb-951c-44fb-9673-0a85bb54427a",
+        Id = "6792afb0-4eec-46b5-91c6-5e1a9c690d3a",
         ImageUrl = "https://picsum.photos/seed/zmbPeg/2905/378",
         LastName = "Bartell",
         LinkUrls = new List<string>() {
@@ -2114,7 +2114,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "f68dee9f-6930-4b95-9472-9e1d555b8303",
+                Id = "4e3778bb-82eb-4f53-aa01-79ff8dfb0497",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2138,7 +2138,7 @@ UpdateCrmContactRequest req = new UpdateCrmContactRequest() {
             },
         },
         Title = "National Tactics Analyst",
-        UpdatedAt = System.DateTime.Parse("2021-02-24T00:48:45.305Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-02-24T01:24:44.668Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2186,12 +2186,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
     CrmDeal = new CrmDeal() {
         Amount = 98162D,
-        ClosedAt = System.DateTime.Parse("2024-03-08T22:36:46.339Z").ToUniversalTime(),
-        ClosingAt = System.DateTime.Parse("2025-08-26T20:33:12.344Z").ToUniversalTime(),
+        ClosedAt = System.DateTime.Parse("2024-03-09T03:34:07.244Z").ToUniversalTime(),
+        ClosingAt = System.DateTime.Parse("2025-08-27T12:12:03.082Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-07-04T12:48:48.470Z").ToUniversalTime(),
         Currency = "IQD",
         Description = "Tabula cicuta sophismata comis tepidus sit cavus.",
-        Id = "3bd1a570-5791-48ce-b335-aa317e03989f",
+        Id = "fd065f75-f46a-4fe6-9fdc-a09f486a6af4",
         Metadata = new List<CrmMetadata>() {
             new CrmMetadata() {
                 ExtraData = CrmMetadataExtraData.CreateMapOfAny(
@@ -2200,7 +2200,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "7844dead-985f-4154-ac44-6401df153488",
+                Id = "9e313bef-9124-4e70-99a2-0da21e28d7fc",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2211,7 +2211,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
         Name = "Frozen Silk Chicken",
         Pipelines = new List<CrmReference>() {
             new CrmReference() {
-                Id = "a657d285-f848-4d19-b02d-138a2b719f53",
+                Id = "ae861d16-be60-4c09-a914-42257ce3e55f",
                 Name = "trans",
             },
         },
@@ -2219,11 +2219,11 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
         Source = "cubo",
         Stages = new List<CrmReference>() {
             new CrmReference() {
-                Id = "d17d9398-fb9a-4da8-a3dc-f57a05be0f3a",
+                Id = "4100b8e1-edac-4fe0-8f49-50daffced8e7",
                 Name = "tubineus",
             },
             new CrmReference() {
-                Id = "688a79db-8090-4e67-827d-4b39c5af9354",
+                Id = "5afa04fc-606e-46e0-b08d-ca7c51754779",
                 Name = "adfectus",
             },
         },
@@ -2231,7 +2231,7 @@ UpdateCrmDealRequest req = new UpdateCrmDealRequest() {
             "causa",
             "suus",
         },
-        UpdatedAt = System.DateTime.Parse("2024-10-09T03:06:43.919Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-09T12:20:27.958Z").ToUniversalTime(),
         WonReason = "Usque libero soleo.",
     },
     ConnectionId = "<id>",
@@ -2281,12 +2281,12 @@ UpdateCrmEventRequest req = new UpdateCrmEventRequest() {
         Call = new PropertyCrmEventCall() {
             Description = "Arbitro aptus.",
             Duration = 64D,
-            StartAt = System.DateTime.Parse("2024-12-06T00:26:33.104Z").ToUniversalTime(),
+            StartAt = System.DateTime.Parse("2024-12-06T17:14:47.846Z").ToUniversalTime(),
         },
         CreatedAt = System.DateTime.Parse("2020-07-14T04:53:23.784Z").ToUniversalTime(),
-        Id = "0e560536-bc85-4dcc-a766-a818db06d14f",
+        Id = "c2d621be-44a6-418a-970e-2692c4edec0d",
         Type = CrmEventType.Call,
-        UpdatedAt = System.DateTime.Parse("2026-10-04T10:32:22.724Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-05T10:19:40.743Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2355,7 +2355,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         FirstName = "Velda",
-        Id = "4e2b1956-cd60-4f10-a0ac-ae7e23ed1110",
+        Id = "f25afdba-289a-4cfd-ab09-201bae9c02f0",
         IsActive = true,
         LastName = "Sporer",
         LinkUrls = new List<string>() {
@@ -2369,7 +2369,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
                     }
                 ),
                 Format = CrmMetadataFormat.Text,
-                Id = "e837473e-6736-44fc-8495-b921db4401cd",
+                Id = "047afa60-66ba-444e-af7c-8ef74a8c5f28",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CrmMetadataValue.CreateStr(
@@ -2391,7 +2391,7 @@ UpdateCrmLeadRequest req = new UpdateCrmLeadRequest() {
             },
         },
         Title = "Direct Research Assistant",
-        UpdatedAt = System.DateTime.Parse("2020-05-17T07:00:50.108Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-05-17T09:02:51.335Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2441,7 +2441,7 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
         DealProbability = 99D,
         DisplayOrder = 8D,
-        Id = "d3dd90ad-42ea-49a1-8775-b17146306823",
+        Id = "7c41402b-67c7-474d-933b-5a1f8bfaf591",
         IsActive = true,
         Name = "Small Steel Bacon",
         Stages = new List<CrmStage>() {
@@ -2450,13 +2450,13 @@ UpdateCrmPipelineRequest req = new UpdateCrmPipelineRequest() {
                 CreatedAt = System.DateTime.Parse("2022-12-28T13:45:38.446Z").ToUniversalTime(),
                 DealProbability = 84D,
                 DisplayOrder = 72D,
-                Id = "0e11bbe1-524e-448d-8523-ded9b31f391e",
+                Id = "bba609cb-c5d9-4908-ad31-7a3d45a7b0f3",
                 IsClosed = true,
                 Name = "Veniam.",
-                UpdatedAt = System.DateTime.Parse("2025-10-05T07:30:59.246Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2025-10-06T00:57:43.952Z").ToUniversalTime(),
             },
         },
-        UpdatedAt = System.DateTime.Parse("2025-10-26T22:17:07.970Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-10-27T16:06:14.471Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

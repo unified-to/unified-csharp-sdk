@@ -41,7 +41,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingLabelAsync(
     shippingLabel: new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "59f7dae8-ddec-4ddb-97a8-5e1caa072bf5",
+        Id = "8a3c1184-9c86-48e4-981c-02d887205d10",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
@@ -50,7 +50,7 @@ var res = await sdk.Shipping.CreateShippingLabelAsync(
         ServiceCode = "GIz",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-26T06:55:06.531Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-26T15:42:39.885Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -97,7 +97,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Shipping.CreateShippingRateAsync(
     shippingRate: new ShippingRate() {
         Currency = "USD",
-        Id = "8edbb7c7-e6bb-49bf-a300-7a449a6d7ecd",
+        Id = "81e6eace-ee71-4148-87b4-4aeabc10a38a",
         Rates = new List<ShippingRateRate>() {
             new ShippingRateRate() {
                 Amount = 54.679719475097954D,
@@ -106,7 +106,7 @@ var res = await sdk.Shipping.CreateShippingRateAsync(
                 DeliveryDays = 8D,
                 Description = "Bos turpis pax amet dolorem sufficio demonstro complectus benevolentia rerum.",
                 EstimatedDays = 10D,
-                EstimatedDeliveryEndAt = System.DateTime.Parse("2024-02-13T08:22:04.099Z").ToUniversalTime(),
+                EstimatedDeliveryEndAt = System.DateTime.Parse("2024-02-13T19:47:56.000Z").ToUniversalTime(),
                 IsGuaranteed = true,
                 IsNegotiatedRate = true,
                 TaxAmount = 2.2701712837442756D,
@@ -159,16 +159,16 @@ var res = await sdk.Shipping.CreateShippingShipmentAsync(
     shippingShipment: new ShippingShipment() {
         CarrierName = "Bogisich, Franey and Koelpin",
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "65641ae8-15bc-442c-b371-0ea86369a418",
+        Id = "2e46c5b7-e1bd-4834-a352-f364bd581d04",
         RateAmount = 8.86546263936907D,
         RateCurrency = "USD",
         RateEstimatedDays = 8D,
         RateServiceName = "Fisher - Kilback",
         ServiceCode = "F7U",
-        ShippedAt = System.DateTime.Parse("2025-09-12T18:32:16.734Z").ToUniversalTime(),
+        ShippedAt = System.DateTime.Parse("2025-09-13T12:05:12.016Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Pending,
         TrackingUrl = "https://shallow-secrecy.info/",
-        UpdatedAt = System.DateTime.Parse("2025-07-21T04:01:22.327Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-21T20:42:49.540Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -547,7 +547,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "cc5ae9e9-7c0d-471a-9e7c-de8e47b43d18",
+        Id = "458e24ce-8013-45d4-80dd-89f27ff237be",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
@@ -556,7 +556,7 @@ PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
         ServiceCode = "GIz",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-26T06:55:06.534Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-26T15:42:39.889Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -604,16 +604,16 @@ PatchShippingShipmentRequest req = new PatchShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CarrierName = "Bogisich, Franey and Koelpin",
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "9ec531e2-cd26-4c86-9644-b8ebe0c4b871",
+        Id = "74ac337c-afb0-4681-ae5c-e95d0f9dfb4a",
         RateAmount = 8.86546263936907D,
         RateCurrency = "USD",
         RateEstimatedDays = 8D,
         RateServiceName = "Fisher - Kilback",
         ServiceCode = "F7U",
-        ShippedAt = System.DateTime.Parse("2025-09-12T18:32:16.783Z").ToUniversalTime(),
+        ShippedAt = System.DateTime.Parse("2025-09-13T12:05:12.091Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Pending,
         TrackingUrl = "https://shallow-secrecy.info/",
-        UpdatedAt = System.DateTime.Parse("2025-07-21T04:01:22.373Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-21T20:42:49.611Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -740,7 +740,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "cc5ae9e9-7c0d-471a-9e7c-de8e47b43d18",
+        Id = "458e24ce-8013-45d4-80dd-89f27ff237be",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
@@ -749,7 +749,7 @@ UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
         ServiceCode = "GIz",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-26T06:55:06.534Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-26T15:42:39.889Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -797,16 +797,16 @@ UpdateShippingShipmentRequest req = new UpdateShippingShipmentRequest() {
     ShippingShipment = new ShippingShipment() {
         CarrierName = "Bogisich, Franey and Koelpin",
         CreatedAt = System.DateTime.Parse("2022-09-12T03:11:28.960Z").ToUniversalTime(),
-        Id = "9ec531e2-cd26-4c86-9644-b8ebe0c4b871",
+        Id = "74ac337c-afb0-4681-ae5c-e95d0f9dfb4a",
         RateAmount = 8.86546263936907D,
         RateCurrency = "USD",
         RateEstimatedDays = 8D,
         RateServiceName = "Fisher - Kilback",
         ServiceCode = "F7U",
-        ShippedAt = System.DateTime.Parse("2025-09-12T18:32:16.783Z").ToUniversalTime(),
+        ShippedAt = System.DateTime.Parse("2025-09-13T12:05:12.091Z").ToUniversalTime(),
         Status = ShippingShipmentStatus.Pending,
         TrackingUrl = "https://shallow-secrecy.info/",
-        UpdatedAt = System.DateTime.Parse("2025-07-21T04:01:22.373Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-07-21T20:42:49.611Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

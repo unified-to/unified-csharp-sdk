@@ -72,7 +72,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         FirstName = "Ardith",
-        Id = "cbd8b36a-a595-4303-85d8-3b21a76c78ac",
+        Id = "913c941d-1d53-482c-8d5d-3b84a386c30f",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -89,7 +89,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "0fd38f00-2706-4d00-a82d-8d3076420b64",
+                Id = "7fc99af0-70a3-4043-9e9b-e074e612adc5",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -117,7 +117,7 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-27T11:24:14.986Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-27T15:38:48.107Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     connectionId: "<id>"
@@ -290,7 +290,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "f061b0b3-f5fd-4385-baab-7c4d56857bb1",
+        Id = "13fc82a0-a8df-4aea-8fc8-4c68c6bafd4e",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -307,7 +307,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "30bb7abe-730c-4511-87f5-3dc8240cd234",
+                Id = "317df2a1-8c07-4fea-bb5c-967f33ad5948",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -335,7 +335,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-27T11:24:14.995Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-27T15:38:48.116Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     ConnectionId = "<id>",
@@ -465,7 +465,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "f061b0b3-f5fd-4385-baab-7c4d56857bb1",
+        Id = "13fc82a0-a8df-4aea-8fc8-4c68c6bafd4e",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -482,7 +482,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "30bb7abe-730c-4511-87f5-3dc8240cd234",
+                Id = "317df2a1-8c07-4fea-bb5c-967f33ad5948",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -510,7 +510,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-27T11:24:14.995Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-27T15:38:48.116Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     ConnectionId = "<id>",

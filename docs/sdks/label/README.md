@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Label.CreateShippingLabelAsync(
     shippingLabel: new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "59f7dae8-ddec-4ddb-97a8-5e1caa072bf5",
+        Id = "8a3c1184-9c86-48e4-981c-02d887205d10",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
@@ -39,7 +39,7 @@ var res = await sdk.Label.CreateShippingLabelAsync(
         ServiceCode = "GIz",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-26T06:55:06.531Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-26T15:42:39.885Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -169,7 +169,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "cc5ae9e9-7c0d-471a-9e7c-de8e47b43d18",
+        Id = "458e24ce-8013-45d4-80dd-89f27ff237be",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
@@ -178,7 +178,7 @@ PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
         ServiceCode = "GIz",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-26T06:55:06.534Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-26T15:42:39.889Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -265,7 +265,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
     ShippingLabel = new ShippingLabel() {
         CreatedAt = System.DateTime.Parse("2022-11-18T16:45:38.067Z").ToUniversalTime(),
-        Id = "cc5ae9e9-7c0d-471a-9e7c-de8e47b43d18",
+        Id = "458e24ce-8013-45d4-80dd-89f27ff237be",
         IsVoided = false,
         LabelCost = 40.83653403213248D,
         LabelCostCurrency = "USD",
@@ -274,7 +274,7 @@ UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
         ServiceCode = "GIz",
         Status = ShippingLabelStatus.Exception,
         TrackingNumber = "zYv60FOIBUJ6",
-        UpdatedAt = System.DateTime.Parse("2024-04-26T06:55:06.534Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-26T15:42:39.889Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
