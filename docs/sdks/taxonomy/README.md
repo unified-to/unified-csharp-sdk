@@ -40,7 +40,7 @@ var res = await sdk.Taxonomy.CreateHrisTaxonomyAsync(
         },
         Subcategory = "Bamboo",
         Type = HrisTaxonomyType.Knowledge,
-        UpdatedAt = System.DateTime.Parse("2023-05-27T23:44:14.671Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-28T05:42:23.261Z").ToUniversalTime(),
         Url = "https://our-polarisation.name",
     },
     connectionId: "<id>"

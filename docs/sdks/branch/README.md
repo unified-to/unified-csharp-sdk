@@ -30,10 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Branch.CreateRepoBranchAsync(
     repoBranch: new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "d8a6300a-bf69-43ae-80b6-3a4995f2102f",
+        Id = "673c675f-c7de-4b79-8b1c-4b06c6c6e342",
         Name = "voluptas",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-06T15:21:35.226Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-06T18:30:15.407Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -163,10 +163,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoBranchRequest req = new PatchRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "009d50fd-f0b9-4aba-968e-3c4ffbbb514d",
+        Id = "3919664f-feed-4fad-86b7-c5909f3d0067",
         Name = "voluptas",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-06T15:21:35.227Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-06T18:30:15.408Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -253,10 +253,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoBranchRequest req = new UpdateRepoBranchRequest() {
     RepoBranch = new RepoBranch() {
         CreatedAt = System.DateTime.Parse("2019-02-24T09:33:48.540Z").ToUniversalTime(),
-        Id = "009d50fd-f0b9-4aba-968e-3c4ffbbb514d",
+        Id = "3919664f-feed-4fad-86b7-c5909f3d0067",
         Name = "voluptas",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2020-01-06T15:21:35.227Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-01-06T18:30:15.408Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

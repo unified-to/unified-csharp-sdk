@@ -38,7 +38,7 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "9a5f0ae7-02e1-4e3a-8422-d0426ca0fea3",
+        Id = "3f5628d6-9d4e-43f0-85f8-5c8f64a3a8d7",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -47,10 +47,10 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "9bbaa206-02f5-4dd7-9be3-4a4712deac41",
+                Id = "3bba5818-a1ed-470d-b06d-71bbfd1bbdfb",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "af172512-a5ef-4691-aa1a-9837b693e168",
+                        Id = "dcbd5d58-4c83-4341-99ff-9da2b8f680c2",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -65,7 +65,7 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "b93f4e9c-d734-4f57-8bcf-50708e2ca065",
+                Id = "b8b24a11-1001-4dc9-9a2b-ea4f44d6397a",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -81,7 +81,7 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-11T22:09:21.675Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-12T12:18:55.623Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -129,7 +129,7 @@ var res = await sdk.Collection.CreateLmsCollectionAsync(
     lmsCollection: new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "9e4a0215-d0a3-4234-b371-b092142aa9cf",
+        Id = "868a7d64-5b65-448d-bff1-f44936ecef6e",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -145,7 +145,7 @@ var res = await sdk.Collection.CreateLmsCollectionAsync(
             },
         },
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-24T08:31:17.023Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-25T11:22:56.101Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -360,7 +360,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "6b45c29c-d543-460a-80ff-5eae2fef2a34",
+        Id = "7efe5039-8dbf-45fa-b90d-34fac7bfcb36",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -369,10 +369,10 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "1f154c32-b935-4a7b-a519-6e2bea1b5bf0",
+                Id = "d8d92d57-2798-4d77-b399-813c0cf36fc9",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "e0857dae-26a5-49b0-9a31-d55faf1de87a",
+                        Id = "63f2713b-ee21-4480-9b8a-7acbd7d85311",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -387,7 +387,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "5c468c73-ee0a-43a7-a320-2c640825dd56",
+                Id = "45a3e062-890d-4cb0-b2e0-30e51b208f16",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -403,7 +403,7 @@ PatchCommerceCollectionRequest req = new PatchCommerceCollectionRequest() {
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-11T22:09:21.692Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-12T12:18:55.646Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -452,7 +452,7 @@ PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "53475018-5a2b-457f-b593-5409f2124fdd",
+        Id = "fc057cda-ea60-4e2f-ab88-343d5d74dda4",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -468,7 +468,7 @@ PatchLmsCollectionRequest req = new PatchLmsCollectionRequest() {
             },
         },
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-24T08:31:17.036Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-25T11:22:56.115Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -597,7 +597,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
     CommerceCollection = new CommerceCollection() {
         CreatedAt = System.DateTime.Parse("2023-07-14T00:42:54.742Z").ToUniversalTime(),
         Description = "The Integrated leading edge website Cheese offers reliable performance and productive design",
-        Id = "6b45c29c-d543-460a-80ff-5eae2fef2a34",
+        Id = "7efe5039-8dbf-45fa-b90d-34fac7bfcb36",
         IsActive = true,
         IsFeatured = false,
         IsVisible = false,
@@ -606,10 +606,10 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
             new CommerceItemMedia() {
                 Alt = "Defungo adopto thorax.",
                 Height = 759D,
-                Id = "1f154c32-b935-4a7b-a519-6e2bea1b5bf0",
+                Id = "d8d92d57-2798-4d77-b399-813c0cf36fc9",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "e0857dae-26a5-49b0-9a31-d55faf1de87a",
+                        Id = "63f2713b-ee21-4480-9b8a-7acbd7d85311",
                         Slug = "censura",
                         Value = CommerceMetadataValue.CreateStr(
                             "toties"
@@ -624,7 +624,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
         },
         Metadata = new List<CommerceMetadata>() {
             new CommerceMetadata() {
-                Id = "5c468c73-ee0a-43a7-a320-2c640825dd56",
+                Id = "45a3e062-890d-4cb0-b2e0-30e51b208f16",
                 Slug = "aetas",
                 Value = CommerceMetadataValue.CreateStr(
                     "consuasor"
@@ -640,7 +640,7 @@ UpdateCommerceCollectionRequest req = new UpdateCommerceCollectionRequest() {
             "contego",
         },
         Type = CommerceCollectionType.Collection,
-        UpdatedAt = System.DateTime.Parse("2025-03-11T22:09:21.692Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-03-12T12:18:55.646Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -689,7 +689,7 @@ UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
     LmsCollection = new LmsCollection() {
         CreatedAt = System.DateTime.Parse("2019-08-19T14:40:29.227Z").ToUniversalTime(),
         Description = "Ab.",
-        Id = "53475018-5a2b-457f-b593-5409f2124fdd",
+        Id = "fc057cda-ea60-4e2f-ab88-343d5d74dda4",
         IsActive = true,
         Media = new List<LmsMedia>() {
             new LmsMedia() {
@@ -705,7 +705,7 @@ UpdateLmsCollectionRequest req = new UpdateLmsCollectionRequest() {
             },
         },
         Name = "ara",
-        UpdatedAt = System.DateTime.Parse("2026-07-24T08:31:17.036Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-07-25T11:22:56.115Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

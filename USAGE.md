@@ -16,7 +16,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
         Currency = "BOB",
         CustomerDefinedCode = "quo",
         Description = "Spoliatio comedo vilitas harum cupiditate.",
-        Id = "1d0e3367-2083-4ab0-80f3-66e7f9b950f5",
+        Id = "ffb05012-b7b9-41e4-b26d-84e9564fba1f",
         IsPayable = true,
         Name = "Electronic Aluminum Tuna",
         Status = Status.Archived,
@@ -33,7 +33,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
             },
         },
         Type = UnifiedTo.Models.Components.Type.Bank,
-        UpdatedAt = System.DateTime.Parse("2023-01-06T08:07:04.937Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-01-06T11:25:36.699Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );

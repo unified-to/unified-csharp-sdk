@@ -110,7 +110,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
             Name = "Toby Grant",
             Type = PropertyAtsActivityFromType.Other,
         },
-        Id = "a977827b-b121-44aa-b5fb-03d6e92712df",
+        Id = "7aa22c14-e439-4466-ab59-b9a2d48fb841",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -120,7 +120,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "7de2060b-8067-42d9-ba3e-401db0c4a770",
+                Id = "e0949100-ad1c-4a0a-9092-9a24bbf83cf0",
                 Namespace = "activity",
                 Slug = "acer",
                 Value = AtsMetadataValue.CreateStr(
@@ -134,7 +134,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "00b15a32-2f6a-45ac-94fb-7a5ca45725dd",
+                Id = "9b47951f-2726-4623-a3b4-4e5418219215",
                 Namespace = "activity",
                 Slug = "tremo",
                 Value = AtsMetadataValue.CreateStr(
@@ -152,7 +152,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
             },
         },
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-03-29T22:34:14.655Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-30T22:42:02.016Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -199,10 +199,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.CreateAtsApplicationAsync(
     atsApplication: new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-25T19:11:11.993Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-26T13:10:55.531Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-07T12:52:55.827Z").ToUniversalTime(),
-        Id = "2d553764-468a-4345-bbcf-4f7e346e4069",
+        HiredAt = System.DateTime.Parse("2026-05-08T12:33:08.705Z").ToUniversalTime(),
+        Id = "ff3a575f-aebb-4c10-95eb-b2b0b2ca5158",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -222,12 +222,12 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-05T11:10:23.468Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-06T14:40:17.578Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-        UpdatedAt = System.DateTime.Parse("2026-10-12T06:29:41.938Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-13T10:09:57.416Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -315,7 +315,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
             },
         },
         FirstName = "Ardith",
-        Id = "913c941d-1d53-482c-8d5d-3b84a386c30f",
+        Id = "68fd850b-cbb7-4c17-9e00-b30a718bc6a1",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -332,7 +332,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "7fc99af0-70a3-4043-9e9b-e074e612adc5",
+                Id = "5bf6adab-db35-4816-9cae-2f9f8792b2a8",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -360,7 +360,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-27T15:38:48.107Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-27T20:34:22.621Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     connectionId: "<id>"
@@ -407,10 +407,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.CreateAtsCompanyAsync(
     atsCompany: new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "f98d0840-70db-47cf-a7a4-f30b332ec971",
+        Id = "0d2a0424-5c43-4e83-bbe4-18c6f7f8915e",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-29T23:49:34.951Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-30T05:10:25.166Z").ToUniversalTime(),
         WebsiteUrl = "https://somber-substitution.com/",
     },
     connectionId: "<id>"
@@ -459,9 +459,9 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "bah_white_frantically.bz",
-        Id = "3098c63d-413c-410b-88ab-817a920da81d",
+        Id = "9a0e30b0-c357-4194-97a1-8cde6dec28f4",
         Type = AtsDocumentType.Resume,
-        UpdatedAt = System.DateTime.Parse("2022-12-05T16:02:36.637Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-05T23:00:23.201Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -507,13 +507,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.CreateAtsInterviewAsync(
     atsInterview: new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-14T17:00:06.672Z").ToUniversalTime(),
-        ExternalEventXref = "651bb3c9-9d97-4dfb-9ee9-8fa8ba3f12a3",
-        Id = "5316e013-4cd0-4759-8ff8-1fd06244af0d",
+        EndAt = System.DateTime.Parse("2025-10-15T15:03:14.445Z").ToUniversalTime(),
+        ExternalEventXref = "bd9c69fd-4344-467a-bbad-05ad5120fd0d",
+        Id = "a9d5c83a-ae2c-494c-8ac9-619e8c74963c",
         Location = "26596 Halle Trafficway",
-        StartAt = System.DateTime.Parse("2025-06-07T16:26:14.818Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-06-08T12:28:51.839Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:26:58.393Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T10:36:52.596Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -594,7 +594,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                 Name = "Troy Greenholt",
             },
         },
-        Id = "12706923-0855-49ed-b537-680dc937d0a2",
+        Id = "3c46b232-7e18-4b0c-917f-bd8595ff399c",
         Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -605,7 +605,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "15c4acef-f0b9-4af7-98de-7ffc075a6da2",
+                Id = "bdbea5b9-c9af-4ed5-bbca-026db2b3f9a0",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -620,7 +620,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-02T10:31:40.937Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-03T11:11:57.698Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -634,14 +634,14 @@ var res = await sdk.Ats.CreateAtsJobAsync(
                     Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-27T06:54:41.313Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-28T08:50:00.824Z").ToUniversalTime(),
                 Description = "Provident turbo cunabula spoliatio agnitio.",
                 Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
                 Location = "2925 Connie Green",
                 Name = "Lead Intranet Developer",
                 PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-22T11:07:36.061Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-23T13:38:44.412Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -695,7 +695,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
         },
         Status = AtsJobStatus.Archived,
         Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-22T10:56:53.721Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-23T09:20:22.608Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -743,7 +743,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "8bd3bed6-93d9-4d27-b925-610a49e68d64",
+        Id = "96ed0fe5-e7f2-4ec3-aeca-3be935cd1e25",
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -756,7 +756,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-03T21:03:35.144Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-04T04:42:39.520Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1586,7 +1586,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
             Name = "Toby Grant",
             Type = PropertyAtsActivityFromType.Other,
         },
-        Id = "108ea3ca-903d-4c05-aeb0-6b0b0ae25996",
+        Id = "5003e258-629f-45ba-b06f-aa3233b74ac5",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -1596,7 +1596,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "c4c7bdae-7cd4-489b-b7e5-5caca3ef8d08",
+                Id = "fe57f09e-41fe-4c12-9682-431c226dcc0a",
                 Namespace = "activity",
                 Slug = "acer",
                 Value = AtsMetadataValue.CreateStr(
@@ -1610,7 +1610,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "b388f661-e2ea-4b96-b496-5af06fccbd04",
+                Id = "28fece6d-d6f2-4343-b70a-7f6b00b92d61",
                 Namespace = "activity",
                 Slug = "tremo",
                 Value = AtsMetadataValue.CreateStr(
@@ -1628,7 +1628,7 @@ PatchAtsActivityRequest req = new PatchAtsActivityRequest() {
             },
         },
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-03-29T22:34:14.678Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-30T22:42:02.037Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1676,10 +1676,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-25T19:11:12.013Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-26T13:10:55.553Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-07T12:52:55.853Z").ToUniversalTime(),
-        Id = "961b1f14-5381-4a08-9f04-97cbf09195ce",
+        HiredAt = System.DateTime.Parse("2026-05-08T12:33:08.734Z").ToUniversalTime(),
+        Id = "32895ecd-b563-4e7e-b132-da35fb5e634c",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -1699,12 +1699,12 @@ PatchAtsApplicationRequest req = new PatchAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-05T11:10:23.498Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-06T14:40:17.611Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-        UpdatedAt = System.DateTime.Parse("2026-10-12T06:29:41.969Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-13T10:09:57.449Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1793,7 +1793,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "13fc82a0-a8df-4aea-8fc8-4c68c6bafd4e",
+        Id = "c20e317d-2b4f-40a5-af0f-5ff000e4cc0f",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -1810,7 +1810,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "317df2a1-8c07-4fea-bb5c-967f33ad5948",
+                Id = "7f31dcef-ba32-4037-a014-88176a9980ca",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -1838,7 +1838,7 @@ PatchAtsCandidateRequest req = new PatchAtsCandidateRequest() {
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-27T15:38:48.116Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-27T20:34:22.630Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     ConnectionId = "<id>",
@@ -1886,10 +1886,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "0c9c23f5-38b1-4365-91f0-a1fadf8b29ad",
+        Id = "fbeedbf9-18b1-4db9-8e68-a415ee7a5e45",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-29T23:49:34.957Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-30T05:10:25.171Z").ToUniversalTime(),
         WebsiteUrl = "https://somber-substitution.com/",
     },
     ConnectionId = "<id>",
@@ -1939,9 +1939,9 @@ PatchAtsDocumentRequest req = new PatchAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "bah_white_frantically.bz",
-        Id = "86076b14-4599-47c3-8e32-6d668c2dc6da",
+        Id = "1474e3b2-739a-48ca-95d5-9bb3fa1bfb44",
         Type = AtsDocumentType.Resume,
-        UpdatedAt = System.DateTime.Parse("2022-12-05T16:02:36.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-05T23:00:23.204Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1988,13 +1988,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAtsInterviewRequest req = new PatchAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-14T17:00:06.677Z").ToUniversalTime(),
-        ExternalEventXref = "9776cf6b-4fd5-468a-8e94-dd4dc3bf15fc",
-        Id = "ebd2b690-a375-42b3-82be-f774eb289869",
+        EndAt = System.DateTime.Parse("2025-10-15T15:03:14.452Z").ToUniversalTime(),
+        ExternalEventXref = "82cf6e75-1bd2-4e23-aa98-e126cbf0dfd8",
+        Id = "bad56fa1-a4ba-4bb1-a8db-dc83401cdc99",
         Location = "26596 Halle Trafficway",
-        StartAt = System.DateTime.Parse("2025-06-07T16:26:14.823Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-06-08T12:28:51.845Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:26:58.399Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T10:36:52.604Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2076,7 +2076,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                 Name = "Troy Greenholt",
             },
         },
-        Id = "6b1bb87c-e766-4df2-b6b5-826bc918566b",
+        Id = "451d0ac6-6a4f-411d-8ee2-815a0c3089ee",
         Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -2087,7 +2087,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "9ded9721-ed68-4f68-8577-2fe807971141",
+                Id = "c3504424-d37a-46d4-83f6-a296ad1095b7",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -2102,7 +2102,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-02T10:31:40.994Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-03T11:11:57.767Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -2116,14 +2116,14 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
                     Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-27T06:54:41.374Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-28T08:50:00.897Z").ToUniversalTime(),
                 Description = "Provident turbo cunabula spoliatio agnitio.",
                 Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
                 Location = "2925 Connie Green",
                 Name = "Lead Intranet Developer",
                 PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-22T11:07:36.123Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-23T13:38:44.486Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -2177,7 +2177,7 @@ PatchAtsJobRequest req = new PatchAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-22T10:56:53.773Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-23T09:20:22.671Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2226,7 +2226,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "1346d275-25a0-4a0b-82bb-3b1e0e19201f",
+        Id = "68b369ab-7dd7-47ea-b845-d323a954febb",
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -2239,7 +2239,7 @@ PatchAtsScorecardRequest req = new PatchAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-03T21:03:35.147Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-04T04:42:39.523Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2642,7 +2642,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
             Name = "Toby Grant",
             Type = PropertyAtsActivityFromType.Other,
         },
-        Id = "108ea3ca-903d-4c05-aeb0-6b0b0ae25996",
+        Id = "5003e258-629f-45ba-b06f-aa3233b74ac5",
         IsPrivate = false,
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
@@ -2652,7 +2652,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "c4c7bdae-7cd4-489b-b7e5-5caca3ef8d08",
+                Id = "fe57f09e-41fe-4c12-9682-431c226dcc0a",
                 Namespace = "activity",
                 Slug = "acer",
                 Value = AtsMetadataValue.CreateStr(
@@ -2666,7 +2666,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "b388f661-e2ea-4b96-b496-5af06fccbd04",
+                Id = "28fece6d-d6f2-4343-b70a-7f6b00b92d61",
                 Namespace = "activity",
                 Slug = "tremo",
                 Value = AtsMetadataValue.CreateStr(
@@ -2684,7 +2684,7 @@ UpdateAtsActivityRequest req = new UpdateAtsActivityRequest() {
             },
         },
         Type = AtsActivityType.Task,
-        UpdatedAt = System.DateTime.Parse("2026-03-29T22:34:14.678Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-30T22:42:02.037Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2732,10 +2732,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
     AtsApplication = new AtsApplication() {
         Answers = new List<AtsApplicationAnswer>() {},
-        AppliedAt = System.DateTime.Parse("2025-09-25T19:11:12.013Z").ToUniversalTime(),
+        AppliedAt = System.DateTime.Parse("2025-09-26T13:10:55.553Z").ToUniversalTime(),
         CreatedAt = System.DateTime.Parse("2023-10-17T07:19:48.787Z").ToUniversalTime(),
-        HiredAt = System.DateTime.Parse("2026-05-07T12:52:55.853Z").ToUniversalTime(),
-        Id = "961b1f14-5381-4a08-9f04-97cbf09195ce",
+        HiredAt = System.DateTime.Parse("2026-05-08T12:33:08.734Z").ToUniversalTime(),
+        Id = "32895ecd-b563-4e7e-b132-da35fb5e634c",
         Metadata = new List<AtsMetadata>() {
             new AtsMetadata() {
                 ExtraData = AtsMetadataExtraData.CreateMapOfAny(
@@ -2755,12 +2755,12 @@ UpdateAtsApplicationRequest req = new UpdateAtsApplicationRequest() {
         Offers = new List<AtsOffer>() {},
         OriginalStatus = "vomica",
         OriginalSubstatus = "allatus",
-        RejectedAt = System.DateTime.Parse("2026-10-05T11:10:23.498Z").ToUniversalTime(),
+        RejectedAt = System.DateTime.Parse("2026-10-06T14:40:17.611Z").ToUniversalTime(),
         RejectedReason = "Cometes amplitudo videlicet talio.",
         Source = "credo",
         Status = AtsApplicationStatus.Reviewing,
         Summary = "Comburo quidem vesica vulnus curatio. Appositus amita attonbitus conatus degenero charisma sordeo villa victoria varius. Cenaculum acsi officia.",
-        UpdatedAt = System.DateTime.Parse("2026-10-12T06:29:41.969Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-10-13T10:09:57.449Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2849,7 +2849,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         FirstName = "Ardith",
-        Id = "13fc82a0-a8df-4aea-8fc8-4c68c6bafd4e",
+        Id = "c20e317d-2b4f-40a5-af0f-5ff000e4cc0f",
         ImageUrl = "https://loremflickr.com/40/3693?lock=5634712403880328",
         JobIds = new List<string>() {},
         LastName = "Beatty",
@@ -2866,7 +2866,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "317df2a1-8c07-4fea-bb5c-967f33ad5948",
+                Id = "7f31dcef-ba32-4037-a014-88176a9980ca",
                 Namespace = "custom",
                 Slug = "custom_field",
                 Value = AtsMetadataValue.CreateStr(
@@ -2894,7 +2894,7 @@ UpdateAtsCandidateRequest req = new UpdateAtsCandidateRequest() {
             },
         },
         Title = "Principal Implementation Analyst",
-        UpdatedAt = System.DateTime.Parse("2024-04-27T15:38:48.116Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-27T20:34:22.630Z").ToUniversalTime(),
         WebUrl = "https://expert-lender.name/",
     },
     ConnectionId = "<id>",
@@ -2942,10 +2942,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
     AtsCompany = new AtsCompany() {
         CreatedAt = System.DateTime.Parse("2019-04-22T03:50:02.920Z").ToUniversalTime(),
-        Id = "0c9c23f5-38b1-4365-91f0-a1fadf8b29ad",
+        Id = "fbeedbf9-18b1-4db9-8e68-a415ee7a5e45",
         Name = "Gulgowski, Dibbert and Wilderman",
         Phone = "1-602-210-4548",
-        UpdatedAt = System.DateTime.Parse("2020-09-29T23:49:34.957Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2020-09-30T05:10:25.171Z").ToUniversalTime(),
         WebsiteUrl = "https://somber-substitution.com/",
     },
     ConnectionId = "<id>",
@@ -2995,9 +2995,9 @@ UpdateAtsDocumentRequest req = new UpdateAtsDocumentRequest() {
         CreatedAt = System.DateTime.Parse("2021-08-20T08:00:27.437Z").ToUniversalTime(),
         DocumentUrl = "https://vengeful-lashes.biz",
         Filename = "bah_white_frantically.bz",
-        Id = "86076b14-4599-47c3-8e32-6d668c2dc6da",
+        Id = "1474e3b2-739a-48ca-95d5-9bb3fa1bfb44",
         Type = AtsDocumentType.Resume,
-        UpdatedAt = System.DateTime.Parse("2022-12-05T16:02:36.640Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-12-05T23:00:23.204Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3044,13 +3044,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAtsInterviewRequest req = new UpdateAtsInterviewRequest() {
     AtsInterview = new AtsInterview() {
         CreatedAt = System.DateTime.Parse("2021-11-28T03:14:47.774Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-14T17:00:06.677Z").ToUniversalTime(),
-        ExternalEventXref = "9776cf6b-4fd5-468a-8e94-dd4dc3bf15fc",
-        Id = "ebd2b690-a375-42b3-82be-f774eb289869",
+        EndAt = System.DateTime.Parse("2025-10-15T15:03:14.452Z").ToUniversalTime(),
+        ExternalEventXref = "82cf6e75-1bd2-4e23-aa98-e126cbf0dfd8",
+        Id = "bad56fa1-a4ba-4bb1-a8db-dc83401cdc99",
         Location = "26596 Halle Trafficway",
-        StartAt = System.DateTime.Parse("2025-06-07T16:26:14.823Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-06-08T12:28:51.845Z").ToUniversalTime(),
         Status = AtsInterviewStatus.Scheduled,
-        UpdatedAt = System.DateTime.Parse("2026-02-27T10:26:58.399Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-28T10:36:52.604Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3132,7 +3132,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                 Name = "Troy Greenholt",
             },
         },
-        Id = "6b1bb87c-e766-4df2-b6b5-826bc918566b",
+        Id = "451d0ac6-6a4f-411d-8ee2-815a0c3089ee",
         Industry = "Modern Granite Gloves",
         LanguageLocale = "en",
         Metadata = new List<AtsMetadata>() {
@@ -3143,7 +3143,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     }
                 ),
                 Format = AtsMetadataFormat.Text,
-                Id = "9ded9721-ed68-4f68-8577-2fe807971141",
+                Id = "c3504424-d37a-46d4-83f6-a296ad1095b7",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = AtsMetadataValue.CreateStr(
@@ -3158,7 +3158,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         Openings = new List<AtsJobOpening>() {
             new AtsJobOpening() {
                 CloseReason = "Admoveo trado textilis.",
-                OpenedAt = System.DateTime.Parse("2026-06-02T10:31:40.994Z").ToUniversalTime(),
+                OpenedAt = System.DateTime.Parse("2026-06-03T11:11:57.767Z").ToUniversalTime(),
                 Status = AtsJobOpeningStatus.Open,
             },
         },
@@ -3172,14 +3172,14 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
                     Region = "Vermont",
                     RegionCode = "MO",
                 },
-                CreatedAt = System.DateTime.Parse("2026-07-27T06:54:41.374Z").ToUniversalTime(),
+                CreatedAt = System.DateTime.Parse("2026-07-28T08:50:00.897Z").ToUniversalTime(),
                 Description = "Provident turbo cunabula spoliatio agnitio.",
                 Id = "372178cd-2056-4388-870e-e7c199761c7c",
                 IsActive = false,
                 Location = "2925 Connie Green",
                 Name = "Lead Intranet Developer",
                 PostingUrl = "https://smart-summer.name/",
-                UpdatedAt = System.DateTime.Parse("2026-08-22T11:07:36.123Z").ToUniversalTime(),
+                UpdatedAt = System.DateTime.Parse("2026-08-23T13:38:44.486Z").ToUniversalTime(),
             },
         },
         PublicJobUrls = new List<string>() {
@@ -3233,7 +3233,7 @@ UpdateAtsJobRequest req = new UpdateAtsJobRequest() {
         },
         Status = AtsJobStatus.Archived,
         Summary = "Iste sto communis.",
-        UpdatedAt = System.DateTime.Parse("2026-02-22T10:56:53.773Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-02-23T09:20:22.671Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -3282,7 +3282,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
     AtsScorecard = new AtsScorecard() {
         Comment = "Maiores enim.",
         CreatedAt = System.DateTime.Parse("2022-02-20T17:09:45.498Z").ToUniversalTime(),
-        Id = "1346d275-25a0-4a0b-82bb-3b1e0e19201f",
+        Id = "68b369ab-7dd7-47ea-b845-d323a954febb",
         Questions = new List<AtsScorecardQuestion>() {
             new AtsScorecardQuestion() {
                 Description = "Sulum textor eveniet facere vita.",
@@ -3295,7 +3295,7 @@ UpdateAtsScorecardRequest req = new UpdateAtsScorecardRequest() {
             },
         },
         Recommendation = Recommendation.StrongYes,
-        UpdatedAt = System.DateTime.Parse("2023-06-03T21:03:35.147Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-04T04:42:39.523Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

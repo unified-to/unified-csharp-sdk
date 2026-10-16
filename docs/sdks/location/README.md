@@ -52,7 +52,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "1be850c6-92cb-4151-920c-0d08714d5159",
+        Id = "f55508f1-b9bc-4629-82d0-7bab47c4ccb1",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -63,10 +63,10 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "294d432b-7cfe-4ce1-a7f1-0ed045b90de5",
+                Id = "67158910-d0dc-498c-8405-bea1d3ee6f5f",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "1574b679-ff04-4b11-81ed-7f24eaac9d2f",
+                        Id = "b10df78a-6979-4bb3-a856-97ed6b221287",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -93,7 +93,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-18T15:19:48.124Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-19T00:52:01.729Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     connectionId: "<id>"
@@ -152,8 +152,8 @@ var res = await sdk.Location.CreateHrisLocationAsync(
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "6ae4f7e6-bcf6-4ae2-ae57-d27b7ac01b98",
-        Id = "490ed02c-3fe8-43bc-919f-ffab087a0deb",
+        ExternalIdentifier = "351d5ccb-8b0c-4be6-9a1a-8f35b77d9acc",
+        Id = "f897643e-648b-41b5-b4ad-5fd333d3c07b",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -173,7 +173,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-18T20:36:03.671Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-19T06:44:55.867Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -564,7 +564,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "ad31d939-b195-4bfa-889e-cf550e325fb3",
+        Id = "45c2fcc0-54d3-4147-a4f4-0ca5264c6c33",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -575,10 +575,10 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "0fe40b58-37f7-4ea9-b928-c58a5dffe131",
+                Id = "2bfd4909-26db-4200-8826-04e043db28fe",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6e89ffc6-2512-4562-80b4-b7ed8a75541e",
+                        Id = "2343d286-518b-44ce-84d8-7136e4f080a9",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -605,7 +605,7 @@ PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-18T15:19:48.133Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-19T00:52:01.743Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -665,8 +665,8 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "b336d7ad-fd4e-43d8-9fae-831b8d86e775",
-        Id = "9267161d-ed3b-4e50-a08b-fd1b509efaa1",
+        ExternalIdentifier = "a85fa753-f38e-44b0-bbff-01448e4fdeca",
+        Id = "31bf0961-3e07-4127-a5f9-09eb8a53db14",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -686,7 +686,7 @@ PatchHrisLocationRequest req = new PatchHrisLocationRequest() {
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-18T20:36:03.680Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-19T06:44:55.875Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -825,7 +825,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
         CreatedAt = System.DateTime.Parse("2022-12-29T04:15:21.195Z").ToUniversalTime(),
         Currency = "XCD",
         Description = "Adsidue audentia.",
-        Id = "ad31d939-b195-4bfa-889e-cf550e325fb3",
+        Id = "45c2fcc0-54d3-4147-a4f4-0ca5264c6c33",
         ImageUrl = "https://picsum.photos/seed/hjFt1/1036/2220",
         IsActive = false,
         LanguageLocale = "vulgaris",
@@ -836,10 +836,10 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
             new CommerceItemMedia() {
                 Alt = "Addo.",
                 Height = 283D,
-                Id = "0fe40b58-37f7-4ea9-b928-c58a5dffe131",
+                Id = "2bfd4909-26db-4200-8826-04e043db28fe",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6e89ffc6-2512-4562-80b4-b7ed8a75541e",
+                        Id = "2343d286-518b-44ce-84d8-7136e4f080a9",
                         Slug = "abutor",
                         Value = CommerceMetadataValue.CreateStr(
                             "damno"
@@ -866,7 +866,7 @@ UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
                 Type = CommerceTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2024-04-18T15:19:48.133Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-04-19T00:52:01.743Z").ToUniversalTime(),
         WebUrl = "https://chilly-edge.info",
     },
     ConnectionId = "<id>",
@@ -926,8 +926,8 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
         CreatedAt = System.DateTime.Parse("2021-07-18T10:32:01.414Z").ToUniversalTime(),
         Currency = "MUR",
         Description = "Acervus caries.",
-        ExternalIdentifier = "b336d7ad-fd4e-43d8-9fae-831b8d86e775",
-        Id = "9267161d-ed3b-4e50-a08b-fd1b509efaa1",
+        ExternalIdentifier = "a85fa753-f38e-44b0-bbff-01448e4fdeca",
+        Id = "31bf0961-3e07-4127-a5f9-09eb8a53db14",
         IsActive = true,
         IsHq = false,
         LanguageLocale = "fr",
@@ -947,7 +947,7 @@ UpdateHrisLocationRequest req = new UpdateHrisLocationRequest() {
             },
         },
         Timezone = "America/Guyana",
-        UpdatedAt = System.DateTime.Parse("2023-06-18T20:36:03.680Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-19T06:44:55.875Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
