@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-20T20:43:34.572Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-21T09:52:10.314Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -42,12 +42,12 @@ var res = await sdk.Timeshift.CreateHrisTimeshiftAsync(
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-22T03:02:44.825Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-23T02:58:11.593Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "05bbea75-a5b8-44d6-bff8-382dbf7015cd",
+        Id = "0fe1c754-1485-4be3-a228-6d6c35bea078",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-07-10T06:35:34.662Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-30T13:09:11.889Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-10T19:54:43.876Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-30T19:46:00.486Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -177,7 +177,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-20T20:43:34.580Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-21T09:52:10.320Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -189,12 +189,12 @@ PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-22T03:02:44.839Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-23T02:58:11.607Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "018a40af-ec11-40fe-98cf-db9838dd062f",
+        Id = "f17341bc-970d-47c1-a546-f5712ea5624e",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-07-10T06:35:34.670Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-30T13:09:11.893Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-10T19:54:43.883Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-30T19:46:00.489Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -281,7 +281,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
-        ApprovedAt = System.DateTime.Parse("2023-06-20T20:43:34.580Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2023-06-21T09:52:10.320Z").ToUniversalTime(),
         Compensation = new List<HrisCompensation>() {
             new HrisCompensation() {
                 Amount = 76761D,
@@ -293,12 +293,12 @@ UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
         },
         CreatedAt = System.DateTime.Parse("2019-07-01T23:53:15.738Z").ToUniversalTime(),
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2026-09-22T03:02:44.839Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2026-09-23T02:58:11.607Z").ToUniversalTime(),
         Hours = 8D,
-        Id = "018a40af-ec11-40fe-98cf-db9838dd062f",
+        Id = "f17341bc-970d-47c1-a546-f5712ea5624e",
         IsApproved = true,
-        StartAt = System.DateTime.Parse("2023-07-10T06:35:34.670Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-06-30T13:09:11.893Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2023-07-10T19:54:43.883Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-06-30T19:46:00.489Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

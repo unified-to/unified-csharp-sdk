@@ -57,7 +57,7 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "82c31f1d-72b0-4750-baac-a1e449a9a8eb",
+        Id = "d1471f05-3f03-4bfd-ac1b-661dc24a1447",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -77,7 +77,7 @@ var res = await sdk.Healthcare.CreateHealthcareAppointmentAsync(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-15T18:19:30.940Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-16T12:10:48.275Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -155,15 +155,15 @@ var res = await sdk.Healthcare.CreateHealthcareObservationAsync(
             },
         },
         CreatedAt = System.DateTime.Parse("2022-12-06T21:34:04.293Z").ToUniversalTime(),
-        Id = "32f5ce3f-fcec-459d-bbac-f31d5550b0dc",
+        Id = "59d803ef-1d7a-4691-ac4f-1d4375a964b7",
         Interpretation = Interpretation.CriticalHigh,
-        IssuedAt = System.DateTime.Parse("2025-05-08T07:35:28.326Z").ToUniversalTime(),
+        IssuedAt = System.DateTime.Parse("2025-05-08T22:43:32.759Z").ToUniversalTime(),
         Metadata = new List<HealthcareMetadata>() {},
         Name = "Blood pressure panel",
-        ObservedAt = System.DateTime.Parse("2025-01-17T10:30:19.249Z").ToUniversalTime(),
+        ObservedAt = System.DateTime.Parse("2025-01-17T23:44:25.289Z").ToUniversalTime(),
         Status = HealthcareObservationStatus.Corrected,
         Type = HealthcareObservationType.VitalSigns,
-        UpdatedAt = System.DateTime.Parse("2026-03-20T00:44:34.116Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-20T21:17:10.124Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -217,7 +217,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
             PostalCode = "31579",
             Region = "Minnesota",
         },
-        Birthdate = "2025-02-07",
+        Birthdate = "2025-02-08",
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -227,7 +227,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "bad27cee-4164-40cf-a1c6-4ddeebb5866a",
+        Id = "a667a186-e3ef-4c58-a8a0-f49801c80458",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -247,7 +247,7 @@ var res = await sdk.Healthcare.CreateHealthcarePatientAsync(
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-18T04:08:55.617Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-19T02:48:43.338Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -1210,7 +1210,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "0a08e622-1b45-4636-8fa4-7adb4ee79740",
+        Id = "76e24631-07f5-4981-94da-fc5fc76ea71d",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -1230,7 +1230,7 @@ PatchHealthcareAppointmentRequest req = new PatchHealthcareAppointmentRequest() 
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-15T18:19:30.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-16T12:10:48.296Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1285,7 +1285,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
             PostalCode = "31579",
             Region = "Minnesota",
         },
-        Birthdate = "2025-02-07",
+        Birthdate = "2025-02-08",
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -1295,7 +1295,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "4b331a34-acad-4175-97bc-1c43a0eb4c5a",
+        Id = "befcee1e-3976-41a4-9253-2ba7b6a70a8f",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -1315,7 +1315,7 @@ PatchHealthcarePatientRequest req = new PatchHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-18T04:08:55.648Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-19T02:48:43.365Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1405,7 +1405,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         CreatedAt = System.DateTime.Parse("2023-04-11T08:16:20.874Z").ToUniversalTime(),
         Description = "clarus aptus cetera",
         EndAt = System.DateTime.Parse("2023-12-12T13:04:41.451Z").ToUniversalTime(),
-        Id = "0a08e622-1b45-4636-8fa4-7adb4ee79740",
+        Id = "76e24631-07f5-4981-94da-fc5fc76ea71d",
         Metadata = new List<HealthcareMetadata>() {},
         PractitionerIds = new List<string>() {},
         Reasons = new List<HealthcareCode>() {
@@ -1425,7 +1425,7 @@ UpdateHealthcareAppointmentRequest req = new UpdateHealthcareAppointmentRequest(
         SlotIds = new List<string>() {},
         StartAt = System.DateTime.Parse("2023-12-12T12:34:41.451Z").ToUniversalTime(),
         Status = HealthcareAppointmentStatus.Booked,
-        UpdatedAt = System.DateTime.Parse("2025-11-15T18:19:30.962Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-11-16T12:10:48.296Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1480,7 +1480,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
             PostalCode = "31579",
             Region = "Minnesota",
         },
-        Birthdate = "2025-02-07",
+        Birthdate = "2025-02-08",
         CreatedAt = System.DateTime.Parse("2021-06-05T21:08:04.917Z").ToUniversalTime(),
         Emails = new List<HealthcareEmail>() {
             new HealthcareEmail() {
@@ -1490,7 +1490,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
         },
         FirstName = "Alejandrin",
         Gender = HealthcarePatientGender.Female,
-        Id = "4b331a34-acad-4175-97bc-1c43a0eb4c5a",
+        Id = "befcee1e-3976-41a4-9253-2ba7b6a70a8f",
         Identifiers = new List<HealthcareIdentifier>() {
             new HealthcareIdentifier() {
                 Type = HealthcareIdentifierType.Mrn,
@@ -1510,7 +1510,7 @@ UpdateHealthcarePatientRequest req = new UpdateHealthcarePatientRequest() {
                 Type = HealthcareTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-06-18T04:08:55.648Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-19T02:48:43.365Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

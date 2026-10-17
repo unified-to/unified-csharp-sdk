@@ -44,7 +44,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 26D,
-        Id = "65c19102-9bcd-425e-8277-9fc7e2d09cf7",
+        Id = "9b22f175-6687-40e0-a5db-e21e5623e265",
         IsFeatured = true,
         IsPublic = true,
         IsVerified = false,
@@ -52,10 +52,10 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Adulescens.",
                 Height = 519D,
-                Id = "c9bdd3f0-08cb-4853-bd6e-a5b651822136",
+                Id = "cf1f0bd0-7e5c-42be-8d2e-e3a8ef719016",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "6cc6d710-0a09-4cd1-a2db-da70480da9c5",
+                        Id = "8c19bee7-ee5e-4f03-be96-5f7dbaf69b8b",
                         Slug = "aggero",
                         Value = CommerceMetadataValue.CreateStr(
                             "tero"
@@ -70,10 +70,10 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Pauci timidus sol comburo thema.",
                 Height = 297D,
-                Id = "4e43dc35-e589-49af-be73-66afe9c7d5e0",
+                Id = "4bed654d-d88c-453e-ab63-4ca23d236512",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "953800cb-aaee-41c2-abce-8d03bfd52a86",
+                        Id = "41d44994-f82c-4492-8e0c-5d886fc38e5c",
                         Slug = "vito",
                         Value = CommerceMetadataValue.CreateStr(
                             "cuppedia"
@@ -88,10 +88,10 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
             new CommerceItemMedia() {
                 Alt = "Cuppedia vestrum patruus.",
                 Height = 6D,
-                Id = "25c61985-f0f0-4148-a63a-566706e07b41",
+                Id = "de3032f8-c756-49c1-82a9-08ca63ee2c91",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "1bfd061d-ca69-47a5-a86d-43f747773529",
+                        Id = "57d6a1ed-8da0-459c-a639-7c818fb78eba",
                         Slug = "arbitro",
                         Value = CommerceMetadataValue.CreateStr(
                             "villa"
@@ -109,7 +109,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-17T05:32:37.257Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-18T01:34:52.738Z").ToUniversalTime(),
         Url = "https://excitable-underneath.com",
         VerifiedPurchase = false,
     },
@@ -415,7 +415,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 26D,
-        Id = "d41ddc47-6048-4ad2-97b9-fbfb4a0a0be0",
+        Id = "5ca2e955-4a04-4731-a150-73baf36a0008",
         IsFeatured = true,
         IsPublic = true,
         IsVerified = false,
@@ -423,10 +423,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adulescens.",
                 Height = 519D,
-                Id = "6ca90331-c2b2-458a-b263-c18320cedc44",
+                Id = "590f8892-aa2f-49d6-bc0a-5570be74aaa2",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "28ea4da0-f05a-42bc-b232-647410c7989a",
+                        Id = "e5732f12-b1c8-477a-9443-efbe0884ebd6",
                         Slug = "aggero",
                         Value = CommerceMetadataValue.CreateStr(
                             "tero"
@@ -441,10 +441,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Pauci timidus sol comburo thema.",
                 Height = 297D,
-                Id = "b4865c02-a913-46a3-ae12-99e05999f815",
+                Id = "6da54183-a670-44e4-a5de-2f7c810847b3",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "bae3bb85-e4cf-4091-9ea4-f6d475e97f19",
+                        Id = "81fb1f9c-d836-4009-989a-895900352649",
                         Slug = "vito",
                         Value = CommerceMetadataValue.CreateStr(
                             "cuppedia"
@@ -459,10 +459,10 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Cuppedia vestrum patruus.",
                 Height = 6D,
-                Id = "19688693-8336-4af3-becd-e4c266a698a3",
+                Id = "e178544b-fcca-44f7-8e6d-95c471f02a87",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "e9bfb43c-5725-44be-a9bc-197cc289e223",
+                        Id = "d8d0298b-acc3-489a-b909-a4754a3107da",
                         Slug = "arbitro",
                         Value = CommerceMetadataValue.CreateStr(
                             "villa"
@@ -480,7 +480,7 @@ PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-17T05:32:37.286Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-18T01:34:52.779Z").ToUniversalTime(),
         Url = "https://excitable-underneath.com",
         VerifiedPurchase = false,
     },
@@ -620,7 +620,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Content = "Taedium thymum adipiscor amicitia cui.",
         CreatedAt = System.DateTime.Parse("2019-12-12T18:10:22.988Z").ToUniversalTime(),
         HelpfulVotes = 26D,
-        Id = "d41ddc47-6048-4ad2-97b9-fbfb4a0a0be0",
+        Id = "5ca2e955-4a04-4731-a150-73baf36a0008",
         IsFeatured = true,
         IsPublic = true,
         IsVerified = false,
@@ -628,10 +628,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Adulescens.",
                 Height = 519D,
-                Id = "6ca90331-c2b2-458a-b263-c18320cedc44",
+                Id = "590f8892-aa2f-49d6-bc0a-5570be74aaa2",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "28ea4da0-f05a-42bc-b232-647410c7989a",
+                        Id = "e5732f12-b1c8-477a-9443-efbe0884ebd6",
                         Slug = "aggero",
                         Value = CommerceMetadataValue.CreateStr(
                             "tero"
@@ -646,10 +646,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Pauci timidus sol comburo thema.",
                 Height = 297D,
-                Id = "b4865c02-a913-46a3-ae12-99e05999f815",
+                Id = "6da54183-a670-44e4-a5de-2f7c810847b3",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "bae3bb85-e4cf-4091-9ea4-f6d475e97f19",
+                        Id = "81fb1f9c-d836-4009-989a-895900352649",
                         Slug = "vito",
                         Value = CommerceMetadataValue.CreateStr(
                             "cuppedia"
@@ -664,10 +664,10 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
             new CommerceItemMedia() {
                 Alt = "Cuppedia vestrum patruus.",
                 Height = 6D,
-                Id = "19688693-8336-4af3-becd-e4c266a698a3",
+                Id = "e178544b-fcca-44f7-8e6d-95c471f02a87",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "e9bfb43c-5725-44be-a9bc-197cc289e223",
+                        Id = "d8d0298b-acc3-489a-b909-a4754a3107da",
                         Slug = "arbitro",
                         Value = CommerceMetadataValue.CreateStr(
                             "villa"
@@ -685,7 +685,7 @@ UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
         Status = CommerceReviewStatus.Approved,
         Title = "Coepi adamo amicitia auxilium toties.",
         UnhelpfulVotes = 49D,
-        UpdatedAt = System.DateTime.Parse("2025-08-17T05:32:37.286Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-08-18T01:34:52.779Z").ToUniversalTime(),
         Url = "https://excitable-underneath.com",
         VerifiedPurchase = false,
     },

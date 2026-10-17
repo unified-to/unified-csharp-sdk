@@ -32,12 +32,12 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     accountingTransaction: new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
         ExchangeRate = 0.5674D,
-        Id = "1be6a717-02c7-4e9b-8a4e-be245c631ce9",
+        Id = "88c64b26-ff04-45cd-a198-3a7d4fc22025",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "27920441-fae9-4378-a75d-ee765b2dbe86",
+                Id = "c1793431-c09d-44f8-8930-08223fca5798",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -50,7 +50,7 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
         TaxAmount = 0D,
         TotalAmount = 94452D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-09-17T23:24:09.094Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-18T06:10:42.923Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -182,12 +182,12 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
         ExchangeRate = 0.5674D,
-        Id = "3935b487-b53c-4237-b676-dc8666fd2911",
+        Id = "c1264043-d6ad-4620-97bf-498ebd5501e6",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "017c1af0-13a8-4abe-acb6-fcf9c9686843",
+                Id = "71a62555-2919-492f-848c-cbb50987d1df",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -200,7 +200,7 @@ PatchAccountingTransactionRequest req = new PatchAccountingTransactionRequest() 
         TaxAmount = 0D,
         TotalAmount = 94452D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-09-17T23:24:09.101Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-18T06:10:42.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -289,12 +289,12 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
     AccountingTransaction = new AccountingTransaction() {
         CreatedAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
         ExchangeRate = 0.5674D,
-        Id = "3935b487-b53c-4237-b676-dc8666fd2911",
+        Id = "c1264043-d6ad-4620-97bf-498ebd5501e6",
         Lineitems = new List<AccountingTransactionLineItem>() {
             new AccountingTransactionLineItem() {
                 CategoryIds = new List<string>() {},
                 Description = "The Nikolas Table is the latest in a series of downright products from Beier and Sons",
-                Id = "017c1af0-13a8-4abe-acb6-fcf9c9686843",
+                Id = "71a62555-2919-492f-848c-cbb50987d1df",
                 Name = "Salad",
                 ObjectType = "delicate",
                 TotalAmount = 58531D,
@@ -307,7 +307,7 @@ UpdateAccountingTransactionRequest req = new UpdateAccountingTransactionRequest(
         TaxAmount = 0D,
         TotalAmount = 94452D,
         TransactionAt = System.DateTime.Parse("2019-09-25T11:40:42.574Z").ToUniversalTime(),
-        UpdatedAt = System.DateTime.Parse("2021-09-17T23:24:09.101Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-18T06:10:42.930Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

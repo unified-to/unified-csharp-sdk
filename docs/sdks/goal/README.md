@@ -32,12 +32,12 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
     performanceGoal: new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-07-24T22:57:22.425Z").ToUniversalTime(),
-        Id = "c987682a-8c77-4bcb-aaa4-57cd41887bbd",
+        DueAt = System.DateTime.Parse("2026-07-25T22:17:07.904Z").ToUniversalTime(),
+        Id = "a77bcf45-f70d-4932-bd03-04fa595700c8",
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-05-30T04:21:00.548Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-05-31T03:08:04.500Z").ToUniversalTime(),
                 Id = "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
                 IsCompleted = true,
                 Name = "Front-line asynchronous hub",
@@ -47,7 +47,7 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-03T15:20:05.464Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-08-04T14:45:31.460Z").ToUniversalTime(),
                 Id = "09e04b09-7197-4fc4-9c32-077230408c26",
                 IsCompleted = true,
                 Name = "Organized encompassing archive",
@@ -57,7 +57,7 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Nobis tremo debitis.",
-                DueAt = System.DateTime.Parse("2026-10-05T11:07:51.054Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-10-06T11:10:06.500Z").ToUniversalTime(),
                 Id = "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
                 IsCompleted = true,
                 Name = "Devolved directional middleware",
@@ -67,10 +67,10 @@ var res = await sdk.Goal.CreatePerformanceGoalAsync(
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-19T07:39:38.211Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-20T03:22:08.959Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-11T02:20:07.301Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-11T11:51:44.747Z").ToUniversalTime(),
         Weight = 5D,
     },
     connectionId: "<id>"
@@ -203,12 +203,12 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
     PerformanceGoal = new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-07-24T22:57:22.444Z").ToUniversalTime(),
-        Id = "202facf1-d930-4ec1-b80b-ed8787dce366",
+        DueAt = System.DateTime.Parse("2026-07-25T22:17:07.929Z").ToUniversalTime(),
+        Id = "698047bb-88e5-4eec-b49c-25496904e1f8",
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-05-30T04:21:00.567Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-05-31T03:08:04.524Z").ToUniversalTime(),
                 Id = "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
                 IsCompleted = true,
                 Name = "Front-line asynchronous hub",
@@ -218,7 +218,7 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-03T15:20:05.483Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-08-04T14:45:31.484Z").ToUniversalTime(),
                 Id = "09e04b09-7197-4fc4-9c32-077230408c26",
                 IsCompleted = true,
                 Name = "Organized encompassing archive",
@@ -228,7 +228,7 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Nobis tremo debitis.",
-                DueAt = System.DateTime.Parse("2026-10-05T11:07:51.073Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-10-06T11:10:06.525Z").ToUniversalTime(),
                 Id = "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
                 IsCompleted = true,
                 Name = "Devolved directional middleware",
@@ -238,10 +238,10 @@ PatchPerformanceGoalRequest req = new PatchPerformanceGoalRequest() {
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-19T07:39:38.227Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-20T03:22:08.980Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-11T02:20:07.309Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-11T11:51:44.757Z").ToUniversalTime(),
         Weight = 5D,
     },
     ConnectionId = "<id>",
@@ -331,12 +331,12 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
     PerformanceGoal = new PerformanceGoal() {
         CreatedAt = System.DateTime.Parse("2020-01-09T20:43:07.380Z").ToUniversalTime(),
         Description = "Suscipit suspendo vulnero vel facere valeo vallum degero.",
-        DueAt = System.DateTime.Parse("2026-07-24T22:57:22.444Z").ToUniversalTime(),
-        Id = "202facf1-d930-4ec1-b80b-ed8787dce366",
+        DueAt = System.DateTime.Parse("2026-07-25T22:17:07.929Z").ToUniversalTime(),
+        Id = "698047bb-88e5-4eec-b49c-25496904e1f8",
         Milestones = new List<PerformanceGoalMilestone>() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 10D,
-                DueAt = System.DateTime.Parse("2026-05-30T04:21:00.567Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-05-31T03:08:04.524Z").ToUniversalTime(),
                 Id = "ec90d3e3-23bd-4d9f-a5d7-e388979f90d9",
                 IsCompleted = true,
                 Name = "Front-line asynchronous hub",
@@ -346,7 +346,7 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
             },
             new PerformanceGoalMilestone() {
                 CurrentValue = 0D,
-                DueAt = System.DateTime.Parse("2026-08-03T15:20:05.483Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-08-04T14:45:31.484Z").ToUniversalTime(),
                 Id = "09e04b09-7197-4fc4-9c32-077230408c26",
                 IsCompleted = true,
                 Name = "Organized encompassing archive",
@@ -356,7 +356,7 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
             new PerformanceGoalMilestone() {
                 CurrentValue = 31D,
                 Description = "Nobis tremo debitis.",
-                DueAt = System.DateTime.Parse("2026-10-05T11:07:51.073Z").ToUniversalTime(),
+                DueAt = System.DateTime.Parse("2026-10-06T11:10:06.525Z").ToUniversalTime(),
                 Id = "bbe63683-c1d0-4932-89ac-ef81e73ae6f1",
                 IsCompleted = true,
                 Name = "Devolved directional middleware",
@@ -366,10 +366,10 @@ UpdatePerformanceGoalRequest req = new UpdatePerformanceGoalRequest() {
         },
         Name = "Proactive national protocol",
         Progress = 3D,
-        StartAt = System.DateTime.Parse("2025-07-19T07:39:38.227Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-07-20T03:22:08.980Z").ToUniversalTime(),
         Status = PerformanceGoalStatus.Closed,
         Type = PerformanceGoalSchemasType.Company,
-        UpdatedAt = System.DateTime.Parse("2022-09-11T02:20:07.309Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-09-11T11:51:44.757Z").ToUniversalTime(),
         Weight = 5D,
     },
     ConnectionId = "<id>",

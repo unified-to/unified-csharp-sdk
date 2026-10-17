@@ -24,5 +24,6 @@ var value = PatchAtsInterviewQueryParamFields.Id;
 | `StartAt`           | start_at            |
 | `EndAt`             | end_at              |
 | `Location`          | location            |
+| `MeetingUrl`        | meeting_url         |
 | `ExternalEventXref` | external_event_xref |
 | `Raw`               | raw                 |

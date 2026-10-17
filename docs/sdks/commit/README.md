@@ -30,13 +30,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commit.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "36a37a53-c241-46b5-aa58-1d03ee6a01c4",
+        Id = "60e5d194-d4ff-46c7-9152-bedb686ad7c8",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-28T23:58:23.968Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-29T11:03:47.950Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -166,13 +166,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "4b7c7d83-e740-4809-95fa-5b68e535e580",
+        Id = "8fefe2db-90d1-487b-8398-10dd13712308",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-28T23:58:23.973Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-29T11:03:47.954Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -259,13 +259,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         CreatedAt = System.DateTime.Parse("2020-07-12T16:20:42.520Z").ToUniversalTime(),
-        Id = "4b7c7d83-e740-4809-95fa-5b68e535e580",
+        Id = "8fefe2db-90d1-487b-8398-10dd13712308",
         LinesAdded = 313D,
         LinesChanged = 659D,
         LinesDeleted = 482D,
         Message = "Auctus ascisco esse attollo clarus odio tum bis rerum.",
         RepoId = "<id>",
-        UpdatedAt = System.DateTime.Parse("2023-05-28T23:58:23.973Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-05-29T11:03:47.954Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

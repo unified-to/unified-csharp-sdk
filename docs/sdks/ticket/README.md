@@ -31,17 +31,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticket.CreateTicketingTicketAsync(
     ticketingTicket: new TicketingTicket() {
         AttachmentIds = new List<string>() {
-            "45eb83fc-13b5-48af-b866-74a0188e64da",
-            "f55614f5-0f30-40aa-bfff-68146f7faf80",
+            "fb154fcc-82d2-4ec7-a1b0-64728e1c2959",
+            "d5d4c98d-e974-4019-b3b3-08cd07f54068",
         },
         CategoryId = "vilicus",
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-10T22:58:14.458Z").ToUniversalTime(),
-        Id = "7b1b2fc5-40d2-4160-b91a-cef046ff3ce6",
+        DueAt = System.DateTime.Parse("2025-08-11T17:44:32.894Z").ToUniversalTime(),
+        Id = "e85b5156-5bbf-4bb1-b470-408cc2abeda2",
         Priority = "LOW",
         Source = "atavus",
-        SourceRef = "9affbd83-8a45-44ee-8207-78e99b5f7ea4",
+        SourceRef = "602d0f4f-bd54-4af7-a992-1a9bb7586f43",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
@@ -49,7 +49,7 @@ var res = await sdk.Ticket.CreateTicketingTicketAsync(
             "vitae",
             "torrens",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-07T14:26:02.363Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-07T23:17:58.240Z").ToUniversalTime(),
         Url = "https://yellowish-testimonial.biz",
     },
     connectionId: "<id>"
@@ -181,17 +181,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
     TicketingTicket = new TicketingTicket() {
         AttachmentIds = new List<string>() {
-            "b62de0a1-5924-4c82-a919-41cd3e4cd59a",
-            "779374e5-a0e2-4615-bcbf-f8e7f49914b6",
+            "aa6fe5d1-92da-4a51-b192-f37d3d87386b",
+            "40aa0380-8b18-49f2-ad9f-f8f67a626031",
         },
         CategoryId = "vilicus",
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-10T22:58:14.469Z").ToUniversalTime(),
-        Id = "4c91e333-04cb-4f29-82a8-75e1bef46143",
+        DueAt = System.DateTime.Parse("2025-08-11T17:44:32.905Z").ToUniversalTime(),
+        Id = "d3d55770-6736-4add-bde7-dbac64903c80",
         Priority = "LOW",
         Source = "atavus",
-        SourceRef = "ffda6296-030d-40f2-9ca6-5957c573a90d",
+        SourceRef = "b67b0246-c8b7-4205-9b88-89a0aa22436d",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
@@ -199,7 +199,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
             "vitae",
             "torrens",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-07T14:26:02.369Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-07T23:17:58.245Z").ToUniversalTime(),
         Url = "https://yellowish-testimonial.biz",
     },
     ConnectionId = "<id>",
@@ -288,17 +288,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
     TicketingTicket = new TicketingTicket() {
         AttachmentIds = new List<string>() {
-            "b62de0a1-5924-4c82-a919-41cd3e4cd59a",
-            "779374e5-a0e2-4615-bcbf-f8e7f49914b6",
+            "aa6fe5d1-92da-4a51-b192-f37d3d87386b",
+            "40aa0380-8b18-49f2-ad9f-f8f67a626031",
         },
         CategoryId = "vilicus",
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-10T22:58:14.469Z").ToUniversalTime(),
-        Id = "4c91e333-04cb-4f29-82a8-75e1bef46143",
+        DueAt = System.DateTime.Parse("2025-08-11T17:44:32.905Z").ToUniversalTime(),
+        Id = "d3d55770-6736-4add-bde7-dbac64903c80",
         Priority = "LOW",
         Source = "atavus",
-        SourceRef = "ffda6296-030d-40f2-9ca6-5957c573a90d",
+        SourceRef = "b67b0246-c8b7-4205-9b88-89a0aa22436d",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
@@ -306,7 +306,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
             "vitae",
             "torrens",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-07T14:26:02.369Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-07T23:17:58.245Z").ToUniversalTime(),
         Url = "https://yellowish-testimonial.biz",
     },
     ConnectionId = "<id>",

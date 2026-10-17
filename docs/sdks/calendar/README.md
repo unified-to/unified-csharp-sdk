@@ -52,11 +52,11 @@ var res = await sdk.Calendar.CreateCalendarCalendarAsync(
     calendarCalendar: new CalendarCalendar() {
         CreatedAt = System.DateTime.Parse("2020-01-09T23:11:34.147Z").ToUniversalTime(),
         Description = "Socius catena auxilium.",
-        Id = "0f2d397c-02fa-4bcb-8e85-e0ea9b4c684c",
+        Id = "2738a4c6-8617-4111-856e-d6849d001b56",
         IsPrimary = false,
         Name = "Acer supra vallum suasoria thesaurus omnis condico cognomen accendo vehemens.",
         Timezone = "America/Dawson_Creek",
-        UpdatedAt = System.DateTime.Parse("2023-03-25T18:50:18.692Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-26T06:16:36.266Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -105,8 +105,8 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-23T17:42:00.870Z",
-        Id = "9cdd00d0-10aa-4e1e-96f5-165468f66fb7",
+        EndAt = "2020-05-23T20:23:29.350Z",
+        Id = "3a8ac097-898f-4421-ae79-3303e16b6644",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -115,15 +115,15 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-01-19T14:11:37.346Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-01-20T11:51:38.950Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-10-24T08:45:13.390Z",
-                    "2023-10-25T09:45:36.340Z",
-                    "2024-03-03T19:06:40.599Z",
+                    "2025-10-25T05:37:12.000Z",
+                    "2023-10-25T23:55:28.564Z",
+                    "2024-03-04T10:28:22.427Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2021-02-22T18:34:19.563Z",
+                    "2021-02-22T23:47:18.473Z",
                 },
                 Interval = 4D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -412,15 +412,15 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 9D,
-                EndAt = System.DateTime.Parse("2025-05-22T01:30:49.277Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-05-22T20:57:14.897Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2020-05-01T19:47:36.333Z",
+                    "2020-05-01T22:17:00.556Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2020-09-15T07:23:38.563Z",
-                    "2021-12-07T21:13:03.742Z",
-                    "2019-12-24T05:07:12.341Z",
+                    "2020-09-15T11:08:13.800Z",
+                    "2021-12-08T05:04:45.197Z",
+                    "2019-12-24T06:25:12.682Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -662,14 +662,14 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 1D,
-                EndAt = System.DateTime.Parse("2020-11-09T12:22:26.264Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2020-11-09T16:37:26.204Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-01-24T23:29:10.140Z",
-                    "2021-09-15T12:29:57.538Z",
+                    "2023-01-25T11:08:25.089Z",
+                    "2021-09-15T19:35:43.692Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-09-19T18:11:58.475Z",
+                    "2024-09-20T11:23:49.397Z",
                 },
                 Interval = 9D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -964,13 +964,13 @@ var res = await sdk.Calendar.CreateCalendarEventAsync(
                 WeekStart = WeekStart.Tu,
             },
         },
-        RecurringEventId = "695a374c-7af5-45ce-a2cf-bcb9380100ba",
+        RecurringEventId = "9842e0a7-f26b-4813-978d-76ccbd526327",
         SendNotifications = false,
-        StartAt = "2020-05-23T08:29:26.411Z",
+        StartAt = "2020-05-23T11:10:42.208Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-29T14:24:07.639Z",
+        UpdatedAt = "2020-06-29T17:25:54.491Z",
         WebUrl = "https://another-pinstripe.com",
     },
     connectionId: "<id>"
@@ -1018,12 +1018,12 @@ var res = await sdk.Calendar.CreateCalendarLinkAsync(
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "7c223017-e93a-48d8-b90c-7bbcba55bbe3",
+        Id = "f3d2e7ff-80f5-4e3a-9ec1-ca5b16447d70",
         IsActive = true,
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-14T03:16:18.273Z",
+        UpdatedAt = "2024-03-14T10:05:36.607Z",
         Url = "https://annual-apricot.info/",
     },
     connectionId: "<id>"
@@ -1072,10 +1072,10 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
     calendarWebinar: new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-24T21:07:14.117Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-25T15:45:32.784Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "5ab1a5f4-df06-40f4-946a-d943b664c343",
+        Id = "49dbf390-2b2c-4c10-8fa5-6078222d05ff",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -1088,13 +1088,13 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-30T06:42:37.220Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-30T13:11:45.667Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-02-09T23:59:59.214Z",
+                    "2025-02-10T14:40:10.375Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-26T04:20:56.789Z",
+                    "2024-04-26T14:32:28.413Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1485,16 +1485,16 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-30T09:39:31.193Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-30T10:59:09.603Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-08-30T06:01:31.402Z",
-                    "2024-08-14T18:14:33.197Z",
+                    "2024-08-30T18:09:54.951Z",
+                    "2024-08-15T06:08:35.149Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-23T04:21:48.977Z",
-                    "2026-01-09T07:35:48.250Z",
-                    "2023-08-12T23:35:49.633Z",
+                    "2024-03-23T14:01:49.575Z",
+                    "2026-01-10T03:24:58.268Z",
+                    "2023-08-13T05:48:56.065Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1638,16 +1638,16 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-07-21T19:56:28.424Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-07-22T18:45:01.587Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-17T12:02:06.792Z",
-                    "2023-06-06T13:42:44.418Z",
+                    "2023-06-17T17:22:51.745Z",
+                    "2023-06-06T18:53:21.445Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-03-31T04:37:22.829Z",
-                    "2023-08-18T18:34:53.294Z",
-                    "2024-09-24T08:53:13.143Z",
+                    "2024-03-31T14:24:48.983Z",
+                    "2023-08-19T00:53:21.819Z",
+                    "2024-09-24T21:24:53.808Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -1800,11 +1800,11 @@ var res = await sdk.Calendar.CreateCalendarWebinarAsync(
         RegistrantPassword = "OxwWzr0C",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-27T07:22:46.163Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-04-27T23:13:41.499Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-09-25T14:10:58.172Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-26T14:00:28.869Z").ToUniversalTime(),
         WebUrl = "https://classic-recovery.biz",
     },
     connectionId: "<id>"
@@ -2309,11 +2309,11 @@ PatchCalendarCalendarRequest req = new PatchCalendarCalendarRequest() {
     CalendarCalendar = new CalendarCalendar() {
         CreatedAt = System.DateTime.Parse("2020-01-09T23:11:34.147Z").ToUniversalTime(),
         Description = "Socius catena auxilium.",
-        Id = "3e4868e0-e641-4850-9893-bdd339bf11fd",
+        Id = "3b8735b3-ee5d-40db-a79e-bf1af2337714",
         IsPrimary = false,
         Name = "Acer supra vallum suasoria thesaurus omnis condico cognomen accendo vehemens.",
         Timezone = "America/Dawson_Creek",
-        UpdatedAt = System.DateTime.Parse("2023-03-25T18:50:18.695Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-26T06:16:36.269Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2363,8 +2363,8 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-23T17:42:00.876Z",
-        Id = "66e711e1-3697-4340-894c-71fa991cc3b4",
+        EndAt = "2020-05-23T20:23:29.355Z",
+        Id = "43ffcd13-4a6d-4557-b0d2-be88e4a68d16",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -2373,15 +2373,15 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-01-19T14:11:37.391Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-01-20T11:51:38.994Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-10-24T08:45:13.433Z",
-                    "2023-10-25T09:45:36.370Z",
-                    "2024-03-03T19:06:40.631Z",
+                    "2025-10-25T05:37:12.043Z",
+                    "2023-10-25T23:55:28.593Z",
+                    "2024-03-04T10:28:22.459Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2021-02-22T18:34:19.574Z",
+                    "2021-02-22T23:47:18.484Z",
                 },
                 Interval = 4D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2670,15 +2670,15 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 9D,
-                EndAt = System.DateTime.Parse("2025-05-22T01:30:49.317Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-05-22T20:57:14.937Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2020-05-01T19:47:36.338Z",
+                    "2020-05-01T22:17:00.562Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2020-09-15T07:23:38.571Z",
-                    "2021-12-07T21:13:03.758Z",
-                    "2019-12-24T05:07:12.343Z",
+                    "2020-09-15T11:08:13.807Z",
+                    "2021-12-08T05:04:45.213Z",
+                    "2019-12-24T06:25:12.684Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -2920,14 +2920,14 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 1D,
-                EndAt = System.DateTime.Parse("2020-11-09T12:22:26.272Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2020-11-09T16:37:26.213Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-01-24T23:29:10.164Z",
-                    "2021-09-15T12:29:57.553Z",
+                    "2023-01-25T11:08:25.112Z",
+                    "2021-09-15T19:35:43.706Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-09-19T18:11:58.510Z",
+                    "2024-09-20T11:23:49.432Z",
                 },
                 Interval = 9D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -3222,13 +3222,13 @@ PatchCalendarEventRequest req = new PatchCalendarEventRequest() {
                 WeekStart = WeekStart.Tu,
             },
         },
-        RecurringEventId = "4a8e5744-86c4-4004-afe5-81a533c36d4d",
+        RecurringEventId = "407c32aa-1377-4d33-ae8f-a98ded3484e5",
         SendNotifications = false,
-        StartAt = "2020-05-23T08:29:26.417Z",
+        StartAt = "2020-05-23T11:10:42.213Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-29T14:24:07.645Z",
+        UpdatedAt = "2020-06-29T17:25:54.497Z",
         WebUrl = "https://another-pinstripe.com",
     },
     ConnectionId = "<id>",
@@ -3277,12 +3277,12 @@ PatchCalendarLinkRequest req = new PatchCalendarLinkRequest() {
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "f1945df2-2184-40eb-bac3-9ed199efee0a",
+        Id = "33664bf4-35e5-4d7f-b19a-b52f2a761e10",
         IsActive = true,
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-14T03:16:18.276Z",
+        UpdatedAt = "2024-03-14T10:05:36.610Z",
         Url = "https://annual-apricot.info/",
     },
     ConnectionId = "<id>",
@@ -3332,10 +3332,10 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-24T21:07:14.157Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-25T15:45:32.827Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "b6fb32c7-4832-4483-a480-9cae30d35643",
+        Id = "1b9d0165-ecec-45b7-9736-0ae5b646f9fc",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -3348,13 +3348,13 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-30T06:42:37.234Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-30T13:11:45.682Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-02-09T23:59:59.245Z",
+                    "2025-02-10T14:40:10.409Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-26T04:20:56.811Z",
+                    "2024-04-26T14:32:28.436Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -3745,16 +3745,16 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-30T09:39:31.196Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-30T10:59:09.606Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-08-30T06:01:31.428Z",
-                    "2024-08-14T18:14:33.222Z",
+                    "2024-08-30T18:09:54.979Z",
+                    "2024-08-15T06:08:35.176Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-23T04:21:48.997Z",
-                    "2026-01-09T07:35:48.293Z",
-                    "2023-08-12T23:35:49.646Z",
+                    "2024-03-23T14:01:49.597Z",
+                    "2026-01-10T03:24:58.313Z",
+                    "2023-08-13T05:48:56.080Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -3898,16 +3898,16 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-07-21T19:56:28.472Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-07-22T18:45:01.639Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-17T12:02:06.803Z",
-                    "2023-06-06T13:42:44.428Z",
+                    "2023-06-17T17:22:51.758Z",
+                    "2023-06-06T18:53:21.457Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-03-31T04:37:22.850Z",
-                    "2023-08-18T18:34:53.307Z",
-                    "2024-09-24T08:53:13.170Z",
+                    "2024-03-31T14:24:49.006Z",
+                    "2023-08-19T00:53:21.833Z",
+                    "2024-09-24T21:24:53.836Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -4060,11 +4060,11 @@ PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
         RegistrantPassword = "OxwWzr0C",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-27T07:22:46.197Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-04-27T23:13:41.535Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-09-25T14:10:58.223Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-26T14:00:28.923Z").ToUniversalTime(),
         WebUrl = "https://classic-recovery.biz",
     },
     ConnectionId = "<id>",
@@ -4273,11 +4273,11 @@ UpdateCalendarCalendarRequest req = new UpdateCalendarCalendarRequest() {
     CalendarCalendar = new CalendarCalendar() {
         CreatedAt = System.DateTime.Parse("2020-01-09T23:11:34.147Z").ToUniversalTime(),
         Description = "Socius catena auxilium.",
-        Id = "3e4868e0-e641-4850-9893-bdd339bf11fd",
+        Id = "3b8735b3-ee5d-40db-a79e-bf1af2337714",
         IsPrimary = false,
         Name = "Acer supra vallum suasoria thesaurus omnis condico cognomen accendo vehemens.",
         Timezone = "America/Dawson_Creek",
-        UpdatedAt = System.DateTime.Parse("2023-03-25T18:50:18.695Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-03-26T06:16:36.269Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -4327,8 +4327,8 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
         Attachments = new List<CalendarAttachment>() {},
         Conference = new List<CalendarConference>() {},
         CreatedAt = "2019-08-04T14:33:51.814Z",
-        EndAt = "2020-05-23T17:42:00.876Z",
-        Id = "66e711e1-3697-4340-894c-71fa991cc3b4",
+        EndAt = "2020-05-23T20:23:29.355Z",
+        Id = "43ffcd13-4a6d-4557-b0d2-be88e4a68d16",
         IsAllDay = false,
         IsFree = false,
         IsPrivate = false,
@@ -4337,15 +4337,15 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-01-19T14:11:37.391Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-01-20T11:51:38.994Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-10-24T08:45:13.433Z",
-                    "2023-10-25T09:45:36.370Z",
-                    "2024-03-03T19:06:40.631Z",
+                    "2025-10-25T05:37:12.043Z",
+                    "2023-10-25T23:55:28.593Z",
+                    "2024-03-04T10:28:22.459Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2021-02-22T18:34:19.574Z",
+                    "2021-02-22T23:47:18.484Z",
                 },
                 Interval = 4D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -4634,15 +4634,15 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 9D,
-                EndAt = System.DateTime.Parse("2025-05-22T01:30:49.317Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2025-05-22T20:57:14.937Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2020-05-01T19:47:36.338Z",
+                    "2020-05-01T22:17:00.562Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2020-09-15T07:23:38.571Z",
-                    "2021-12-07T21:13:03.758Z",
-                    "2019-12-24T05:07:12.343Z",
+                    "2020-09-15T11:08:13.807Z",
+                    "2021-12-08T05:04:45.213Z",
+                    "2019-12-24T06:25:12.684Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -4884,14 +4884,14 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 1D,
-                EndAt = System.DateTime.Parse("2020-11-09T12:22:26.272Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2020-11-09T16:37:26.213Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-01-24T23:29:10.164Z",
-                    "2021-09-15T12:29:57.553Z",
+                    "2023-01-25T11:08:25.112Z",
+                    "2021-09-15T19:35:43.706Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-09-19T18:11:58.510Z",
+                    "2024-09-20T11:23:49.432Z",
                 },
                 Interval = 9D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -5186,13 +5186,13 @@ UpdateCalendarEventRequest req = new UpdateCalendarEventRequest() {
                 WeekStart = WeekStart.Tu,
             },
         },
-        RecurringEventId = "4a8e5744-86c4-4004-afe5-81a533c36d4d",
+        RecurringEventId = "407c32aa-1377-4d33-ae8f-a98ded3484e5",
         SendNotifications = false,
-        StartAt = "2020-05-23T08:29:26.417Z",
+        StartAt = "2020-05-23T11:10:42.213Z",
         Status = CalendarEventStatus.Confirmed,
         Subject = "Sunt spargo tepidus bestia vigor credo coadunatio appello.",
         Timezone = "Asia/Bangkok",
-        UpdatedAt = "2020-06-29T14:24:07.645Z",
+        UpdatedAt = "2020-06-29T17:25:54.497Z",
         WebUrl = "https://another-pinstripe.com",
     },
     ConnectionId = "<id>",
@@ -5241,12 +5241,12 @@ UpdateCalendarLinkRequest req = new UpdateCalendarLinkRequest() {
         CreatedAt = "2023-03-07T13:34:11.959Z",
         Description = "Vitium clibanus laboriosam uxor denuncio.",
         Duration = 74D,
-        Id = "f1945df2-2184-40eb-bac3-9ed199efee0a",
+        Id = "33664bf4-35e5-4d7f-b19a-b52f2a761e10",
         IsActive = true,
         Name = "Sopor sopor ancilla animus anser dignissimos vito confero utilis.",
         PriceAmount = 44D,
         PriceCurrency = "USD",
-        UpdatedAt = "2024-03-14T03:16:18.276Z",
+        UpdatedAt = "2024-03-14T10:05:36.610Z",
         Url = "https://annual-apricot.info/",
     },
     ConnectionId = "<id>",
@@ -5296,10 +5296,10 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
     CalendarWebinar = new CalendarWebinar() {
         Conference = new List<CalendarConference>() {},
         CreatedAt = System.DateTime.Parse("2022-07-06T11:45:14.631Z").ToUniversalTime(),
-        EndAt = System.DateTime.Parse("2025-10-24T21:07:14.157Z").ToUniversalTime(),
+        EndAt = System.DateTime.Parse("2025-10-25T15:45:32.827Z").ToUniversalTime(),
         HasPolls = false,
         HasRecording = false,
-        Id = "b6fb32c7-4832-4483-a480-9cae30d35643",
+        Id = "1b9d0165-ecec-45b7-9736-0ae5b646f9fc",
         IsAutoApprove = false,
         IsEnabled = true,
         IsWebcast = false,
@@ -5312,13 +5312,13 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
         Recurrence = new List<CalendarEventRecurrence>() {
             new CalendarEventRecurrence() {
                 Count = 10D,
-                EndAt = System.DateTime.Parse("2023-08-30T06:42:37.234Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2023-08-30T13:11:45.682Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2025-02-09T23:59:59.245Z",
+                    "2025-02-10T14:40:10.409Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Monthly,
                 IncludedDates = new List<string>() {
-                    "2024-04-26T04:20:56.811Z",
+                    "2024-04-26T14:32:28.436Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -5709,16 +5709,16 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 3D,
-                EndAt = System.DateTime.Parse("2022-09-30T09:39:31.196Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2022-09-30T10:59:09.606Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2024-08-30T06:01:31.428Z",
-                    "2024-08-14T18:14:33.222Z",
+                    "2024-08-30T18:09:54.979Z",
+                    "2024-08-15T06:08:35.176Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Daily,
                 IncludedDates = new List<string>() {
-                    "2024-03-23T04:21:48.997Z",
-                    "2026-01-09T07:35:48.293Z",
-                    "2023-08-12T23:35:49.646Z",
+                    "2024-03-23T14:01:49.597Z",
+                    "2026-01-10T03:24:58.313Z",
+                    "2023-08-13T05:48:56.080Z",
                 },
                 Interval = 1D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -5862,16 +5862,16 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
             },
             new CalendarEventRecurrence() {
                 Count = 8D,
-                EndAt = System.DateTime.Parse("2026-07-21T19:56:28.472Z").ToUniversalTime(),
+                EndAt = System.DateTime.Parse("2026-07-22T18:45:01.639Z").ToUniversalTime(),
                 ExcludedDates = new List<string>() {
-                    "2023-06-17T12:02:06.803Z",
-                    "2023-06-06T13:42:44.428Z",
+                    "2023-06-17T17:22:51.758Z",
+                    "2023-06-06T18:53:21.457Z",
                 },
                 Frequency = CalendarEventRecurrenceFrequency.Weekly,
                 IncludedDates = new List<string>() {
-                    "2024-03-31T04:37:22.850Z",
-                    "2023-08-18T18:34:53.307Z",
-                    "2024-09-24T08:53:13.170Z",
+                    "2024-03-31T14:24:49.006Z",
+                    "2023-08-19T00:53:21.833Z",
+                    "2024-09-24T21:24:53.836Z",
                 },
                 Interval = 8D,
                 OnDays = new List<PropertyCalendarEventRecurrenceOnDays>() {
@@ -6024,11 +6024,11 @@ UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
         RegistrantPassword = "OxwWzr0C",
         RequireAddress = false,
         RequireJobTitle = false,
-        StartAt = System.DateTime.Parse("2025-04-27T07:22:46.197Z").ToUniversalTime(),
+        StartAt = System.DateTime.Parse("2025-04-27T23:13:41.535Z").ToUniversalTime(),
         Status = CalendarWebinarStatus.Tentative,
         Subject = "Harum culpa decipio ex cubo ancilla cresco.",
         Timezone = "Europe/Kaliningrad",
-        UpdatedAt = System.DateTime.Parse("2026-09-25T14:10:58.223Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-09-26T14:00:28.923Z").ToUniversalTime(),
         WebUrl = "https://classic-recovery.biz",
     },
     ConnectionId = "<id>",

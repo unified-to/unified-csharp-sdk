@@ -30,16 +30,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
     accountingExpensereport: new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2025-04-10T05:35:25.899Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2025-04-10T23:59:45.129Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "BMD",
         ExternalNumber = "asporto",
-        Id = "9744b5af-ce4e-4546-9fe6-613e9486cd77",
+        Id = "806d8e50-8acc-477f-b0ef-19b11d7adc2f",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "dde8c416-5ae3-4bd4-894f-6200929f6e9f",
+                Id = "5ebc2106-74e5-4495-906c-48c934ed7c77",
                 ItemDescription = "The Synchronised motivating software Car offers reliable performance and webbed design",
                 ItemName = "Intelligent Gold Cheese",
                 ItemSku = "978-0-6550-0228-4",
@@ -50,7 +50,7 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "98728253-c093-4620-a632-ddae0a58395e",
+                Id = "73dbe382-1029-4b11-89f3-a541536aa07a",
                 ItemDescription = "Ergonomic Bike made with Marble for all-day coordinated support",
                 ItemName = "Practical Steel Pizza",
                 ItemSku = "978-1-4129-9332-6",
@@ -63,12 +63,12 @@ var res = await sdk.Expensereport.CreateAccountingExpensereportAsync(
         },
         Metadata = new List<AccountingMetadata>() {},
         Name = "Rustic Aluminum Car",
-        PostedAt = System.DateTime.Parse("2022-11-01T04:26:38.597Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2022-11-01T13:37:15.946Z").ToUniversalTime(),
         ReimbursedAmount = 6696D,
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 983D,
         TotalAmount = 13931D,
-        UpdatedAt = System.DateTime.Parse("2025-04-10T05:35:25.899Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-10T23:59:45.129Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -198,16 +198,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2025-04-10T05:35:25.936Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2025-04-10T23:59:45.168Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "BMD",
         ExternalNumber = "asporto",
-        Id = "3fe87970-378c-453e-b4a9-99c74cbbfa7f",
+        Id = "e5cbf141-1cb6-4448-a62f-ace988417822",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "52cf6179-c180-44cf-936c-3cf15d8ad816",
+                Id = "65a8fcae-74f4-4e1d-9443-dec81c75b478",
                 ItemDescription = "The Synchronised motivating software Car offers reliable performance and webbed design",
                 ItemName = "Intelligent Gold Cheese",
                 ItemSku = "978-0-6550-0228-4",
@@ -218,7 +218,7 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "047f5eba-e0e8-4eac-98bb-79e6ba69d701",
+                Id = "14845de2-b94c-4ca0-880d-02df305ba596",
                 ItemDescription = "Ergonomic Bike made with Marble for all-day coordinated support",
                 ItemName = "Practical Steel Pizza",
                 ItemSku = "978-1-4129-9332-6",
@@ -231,12 +231,12 @@ PatchAccountingExpensereportRequest req = new PatchAccountingExpensereportReques
         },
         Metadata = new List<AccountingMetadata>() {},
         Name = "Rustic Aluminum Car",
-        PostedAt = System.DateTime.Parse("2022-11-01T04:26:38.615Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2022-11-01T13:37:15.965Z").ToUniversalTime(),
         ReimbursedAmount = 6696D,
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 983D,
         TotalAmount = 13931D,
-        UpdatedAt = System.DateTime.Parse("2025-04-10T05:35:25.936Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-10T23:59:45.168Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -323,16 +323,16 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequest() {
     AccountingExpensereport = new AccountingExpensereport() {
-        ApprovedAt = System.DateTime.Parse("2025-04-10T05:35:25.936Z").ToUniversalTime(),
+        ApprovedAt = System.DateTime.Parse("2025-04-10T23:59:45.168Z").ToUniversalTime(),
         Attachments = new List<AccountingAttachment>() {},
         CategoryIds = new List<string>() {},
         CreatedAt = System.DateTime.Parse("2020-05-29T02:04:59.078Z").ToUniversalTime(),
         Currency = "BMD",
         ExternalNumber = "asporto",
-        Id = "3fe87970-378c-453e-b4a9-99c74cbbfa7f",
+        Id = "e5cbf141-1cb6-4448-a62f-ace988417822",
         Lineitems = new List<AccountingLineitem>() {
             new AccountingLineitem() {
-                Id = "52cf6179-c180-44cf-936c-3cf15d8ad816",
+                Id = "65a8fcae-74f4-4e1d-9443-dec81c75b478",
                 ItemDescription = "The Synchronised motivating software Car offers reliable performance and webbed design",
                 ItemName = "Intelligent Gold Cheese",
                 ItemSku = "978-0-6550-0228-4",
@@ -343,7 +343,7 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
                 UnitQuantity = 1D,
             },
             new AccountingLineitem() {
-                Id = "047f5eba-e0e8-4eac-98bb-79e6ba69d701",
+                Id = "14845de2-b94c-4ca0-880d-02df305ba596",
                 ItemDescription = "Ergonomic Bike made with Marble for all-day coordinated support",
                 ItemName = "Practical Steel Pizza",
                 ItemSku = "978-1-4129-9332-6",
@@ -356,12 +356,12 @@ UpdateAccountingExpensereportRequest req = new UpdateAccountingExpensereportRequ
         },
         Metadata = new List<AccountingMetadata>() {},
         Name = "Rustic Aluminum Car",
-        PostedAt = System.DateTime.Parse("2022-11-01T04:26:38.615Z").ToUniversalTime(),
+        PostedAt = System.DateTime.Parse("2022-11-01T13:37:15.965Z").ToUniversalTime(),
         ReimbursedAmount = 6696D,
         Status = AccountingExpensereportStatus.Paid,
         TaxAmount = 983D,
         TotalAmount = 13931D,
-        UpdatedAt = System.DateTime.Parse("2025-04-10T05:35:25.936Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-04-10T23:59:45.168Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

@@ -52,6 +52,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("location")]
         public string? Location { get; set; }
 
+        /// <summary>
+        /// the URL of the virtual/video meeting (eg. Zoom, Google Meet, Microsoft Teams).
+        /// </summary>
+        [JsonProperty("meeting_url")]
+        public string? MeetingUrl { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

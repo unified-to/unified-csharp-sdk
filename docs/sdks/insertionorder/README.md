@@ -30,10 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Insertionorder.CreateAdsInsertionorderAsync(
     adsInsertionorder: new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "ca4afe8c-8c0a-4667-9086-ddea4d1a59eb",
+        Id = "a1b1edc4-57e6-4a3c-b014-b2c9a0c111b8",
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T18:41:42.628Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T18:55:00.162Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -163,10 +163,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchAdsInsertionorderRequest req = new PatchAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "c4a3a6f3-1222-4b55-bd71-e51c9afe3eb8",
+        Id = "9c3b6307-d459-44b9-bb2c-7ef2908cb5ab",
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T18:41:42.628Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T18:55:00.163Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -253,10 +253,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateAdsInsertionorderRequest req = new UpdateAdsInsertionorderRequest() {
     AdsInsertionorder = new AdsInsertionorder() {
         CreatedAt = System.DateTime.Parse("2021-04-10T06:57:36.611Z").ToUniversalTime(),
-        Id = "c4a3a6f3-1222-4b55-bd71-e51c9afe3eb8",
+        Id = "9c3b6307-d459-44b9-bb2c-7ef2908cb5ab",
         Name = "Kunde, Smith and Reinger",
         Status = AdsInsertionorderStatus.Unspecified,
-        UpdatedAt = System.DateTime.Parse("2021-04-28T18:41:42.628Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-04-28T18:55:00.163Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

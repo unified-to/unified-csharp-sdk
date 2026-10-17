@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         EndAt,
         [JsonProperty("location")]
         Location,
+        [JsonProperty("meeting_url")]
+        MeetingUrl,
         [JsonProperty("external_event_xref")]
         ExternalEventXref,
         [JsonProperty("raw")]
