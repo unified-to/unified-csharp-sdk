@@ -29,13 +29,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Snapshot.CreateComputeSnapshotAsync(
     computeSnapshot: new ComputeSnapshot() {
         CreatedAt = System.DateTime.Parse("2021-09-24T14:40:06.110Z").ToUniversalTime(),
-        Id = "8985a683-fa9f-49d8-a071-2e67924da9e2",
+        Id = "a89a8768-fa2f-4c37-86cd-38e09bca5590",
         Metadata = new List<ComputeMetadata>() {},
         Name = "snap-alius",
         SizeMb = 169984D,
         Status = ComputeSnapshotStatus.Deleting,
         Type = ComputeSnapshotType.Disk,
-        UpdatedAt = System.DateTime.Parse("2026-03-27T08:34:45.674Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-03-28T05:27:51.967Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );

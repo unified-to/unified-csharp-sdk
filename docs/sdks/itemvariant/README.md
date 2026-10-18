@@ -34,7 +34,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
         Height = 52D,
-        Id = "19987266-09bb-48e7-9f40-18b4ece2475e",
+        Id = "bc75d871-6746-4e5c-8968-70f4957ce5d3",
         IsActive = false,
         IsFeatured = false,
         IsVisible = false,
@@ -43,10 +43,10 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
             new CommerceItemMedia() {
                 Alt = "Calcar delibero cursim summisse.",
                 Height = 394D,
-                Id = "bb3e7ef9-977a-4399-8dfb-18d979a4cefd",
+                Id = "6e1fb848-275d-4013-9a39-f6ed377042f7",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "d90b096f-85cd-4975-bda2-5148a7bc7261",
+                        Id = "0fe7d0e0-df68-4baf-ab86-06983a3f8cd6",
                         Slug = "illo",
                         Value = CommerceMetadataValue.CreateStr(
                             "quia"
@@ -61,10 +61,10 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
             new CommerceItemMedia() {
                 Alt = "Civitas acies substantia tergo.",
                 Height = 351D,
-                Id = "5c2da98f-efda-4aed-af00-76eb9bf68b4a",
+                Id = "c650425c-202a-4aae-9a03-0faec464457c",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "56276dd0-4527-453d-916c-b7d5cbc90e5b",
+                        Id = "1e3d6310-1f4d-469f-9de8-db2251883653",
                         Slug = "libero",
                         Value = CommerceMetadataValue.CreateStr(
                             "capitulus"
@@ -85,7 +85,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "2eea0c08-b158-4f17-b039-5b3629bfb1a6",
+                Id = "59c00f4c-e45d-4008-91fd-2a3ae1625517",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -96,7 +96,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
         Name = "Keyboard",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "353b3157-08e0-44a9-a0bd-7c827bbac272",
+                Id = "d673bd44-3101-49de-b7e5-8626cdc50232",
                 Name = "Steel",
                 Position = 97D,
                 Values = new List<string>() {
@@ -132,7 +132,7 @@ var res = await sdk.Itemvariant.CreateCommerceItemvariantAsync(
             "custodia",
         },
         TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-14T05:15:54.573Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-14T22:05:34.786Z").ToUniversalTime(),
         Weight = 61D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 26D,
@@ -269,7 +269,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
         Height = 52D,
-        Id = "a2f86f11-a81e-4552-ad57-ce0ab896a7b9",
+        Id = "05fb9ab9-76d2-4146-bf01-61f06cd09e5b",
         IsActive = false,
         IsFeatured = false,
         IsVisible = false,
@@ -278,10 +278,10 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Calcar delibero cursim summisse.",
                 Height = 394D,
-                Id = "0670e7bd-78dc-4b52-ae28-22137f962ca1",
+                Id = "940224e9-419f-478f-a51a-74184fdf7353",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0d88314b-cd61-416e-aa6e-dd611c26d982",
+                        Id = "3570969f-264b-463b-91b6-1aee4e6f9038",
                         Slug = "illo",
                         Value = CommerceMetadataValue.CreateStr(
                             "quia"
@@ -296,10 +296,10 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Civitas acies substantia tergo.",
                 Height = 351D,
-                Id = "a6417cf6-b81b-4071-9614-31115841aeec",
+                Id = "ea2d5c8e-31b0-4a48-bb74-71db0495fa1d",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "825eb927-2518-4e31-9544-d6c5d3a02574",
+                        Id = "8040e4d3-ece2-413f-997a-cf61c4657042",
                         Slug = "libero",
                         Value = CommerceMetadataValue.CreateStr(
                             "capitulus"
@@ -320,7 +320,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "2ba3ff2e-0eba-440b-8482-cdfaa4610260",
+                Id = "b1d2982a-850e-482f-9e62-ed18e6457c54",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -331,7 +331,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
         Name = "Keyboard",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "6df73b90-3655-411a-937b-6943860ffd22",
+                Id = "12c854c7-6566-448e-b1df-aff00a7e34e3",
                 Name = "Steel",
                 Position = 97D,
                 Values = new List<string>() {
@@ -367,7 +367,7 @@ PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
             "custodia",
         },
         TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-14T05:15:54.604Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-14T22:05:34.814Z").ToUniversalTime(),
         Weight = 61D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 26D,
@@ -461,7 +461,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         CreatedAt = System.DateTime.Parse("2022-01-20T13:49:12.968Z").ToUniversalTime(),
         Description = "Featuring Helium-enhanced technology, our Chips offers unparalleled helpful performance",
         Height = 52D,
-        Id = "a2f86f11-a81e-4552-ad57-ce0ab896a7b9",
+        Id = "05fb9ab9-76d2-4146-bf01-61f06cd09e5b",
         IsActive = false,
         IsFeatured = false,
         IsVisible = false,
@@ -470,10 +470,10 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Calcar delibero cursim summisse.",
                 Height = 394D,
-                Id = "0670e7bd-78dc-4b52-ae28-22137f962ca1",
+                Id = "940224e9-419f-478f-a51a-74184fdf7353",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "0d88314b-cd61-416e-aa6e-dd611c26d982",
+                        Id = "3570969f-264b-463b-91b6-1aee4e6f9038",
                         Slug = "illo",
                         Value = CommerceMetadataValue.CreateStr(
                             "quia"
@@ -488,10 +488,10 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             new CommerceItemMedia() {
                 Alt = "Civitas acies substantia tergo.",
                 Height = 351D,
-                Id = "a6417cf6-b81b-4071-9614-31115841aeec",
+                Id = "ea2d5c8e-31b0-4a48-bb74-71db0495fa1d",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "825eb927-2518-4e31-9544-d6c5d3a02574",
+                        Id = "8040e4d3-ece2-413f-997a-cf61c4657042",
                         Slug = "libero",
                         Value = CommerceMetadataValue.CreateStr(
                             "capitulus"
@@ -512,7 +512,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "2ba3ff2e-0eba-440b-8482-cdfaa4610260",
+                Id = "b1d2982a-850e-482f-9e62-ed18e6457c54",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -523,7 +523,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
         Name = "Keyboard",
         Options = new List<CommerceItemOption>() {
             new CommerceItemOption() {
-                Id = "6df73b90-3655-411a-937b-6943860ffd22",
+                Id = "12c854c7-6566-448e-b1df-aff00a7e34e3",
                 Name = "Steel",
                 Position = 97D,
                 Values = new List<string>() {
@@ -559,7 +559,7 @@ UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
             "custodia",
         },
         TotalStock = 929D,
-        UpdatedAt = System.DateTime.Parse("2025-06-14T05:15:54.604Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-14T22:05:34.814Z").ToUniversalTime(),
         Weight = 61D,
         WeightUnit = CommerceItemvariantWeightUnit.Oz,
         Width = 26D,

@@ -28,11 +28,11 @@ var res = await sdk.Asset.CreateAdsAssetAsync(
     adsAsset: new AdsAsset() {
         CreatedAt = System.DateTime.Parse("2020-03-27T20:14:38.603Z").ToUniversalTime(),
         Height = 400D,
-        Id = "dedb3019-7ba5-43a4-9607-35e4cb3b353f",
+        Id = "b6e03fdc-206d-49e9-8f57-3cfe666d8e70",
         MimeType = "IMAGE_PNG",
         Name = "Lockman - DuBuque",
         Type = AdsAssetType.Image,
-        UpdatedAt = System.DateTime.Parse("2022-03-23T23:44:14.302Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-24T06:51:21.872Z").ToUniversalTime(),
         Url = "https://informal-perfection.com/",
         Width = 600D,
     },

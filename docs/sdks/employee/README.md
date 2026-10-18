@@ -65,8 +65,8 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
         HasMfa = false,
-        HiredAt = System.DateTime.Parse("2023-05-25T19:00:45.937Z").ToUniversalTime(),
-        Id = "80917de2-6658-4d07-87bd-6944fd32b75e",
+        HiredAt = System.DateTime.Parse("2023-05-26T07:14:00.746Z").ToUniversalTime(),
+        Id = "cfdafe49-16ec-4509-9396-d515b56d7db0",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -80,7 +80,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "97428f74-5605-4075-91a4-85070c2f5fcd",
+                Id = "dba5ba74-a057-410c-822f-39f4ac9cbd8d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -145,7 +145,7 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-03-01T08:30:19.093Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-01T16:38:23.763Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -310,8 +310,8 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
         HasMfa = false,
-        HiredAt = System.DateTime.Parse("2023-05-25T19:00:45.990Z").ToUniversalTime(),
-        Id = "5492fb1b-9288-4949-8fee-f6cf89452eae",
+        HiredAt = System.DateTime.Parse("2023-05-26T07:14:00.801Z").ToUniversalTime(),
+        Id = "14c92751-e426-4456-aa29-8fbe056035e2",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -325,7 +325,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "6aee922c-2f71-4512-b1d3-2c697600f6d2",
+                Id = "b5076769-22f6-4257-bd5f-6cecf426d59f",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -390,7 +390,7 @@ PatchHrisEmployeeRequest req = new PatchHrisEmployeeRequest() {
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-03-01T08:30:19.129Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-01T16:38:23.800Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -512,8 +512,8 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         FlsaStatus = FlsaStatus.SalariedNonexempt,
         Gender = HrisEmployeeGender.Intersex,
         HasMfa = false,
-        HiredAt = System.DateTime.Parse("2023-05-25T19:00:45.990Z").ToUniversalTime(),
-        Id = "5492fb1b-9288-4949-8fee-f6cf89452eae",
+        HiredAt = System.DateTime.Parse("2023-05-26T07:14:00.801Z").ToUniversalTime(),
+        Id = "14c92751-e426-4456-aa29-8fbe056035e2",
         ImageUrl = "https://loremflickr.com/3684/2116?lock=4686991638584456",
         LanguageLocale = "es",
         LastName = "Prohaska",
@@ -527,7 +527,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
                     }
                 ),
                 Format = HrisMetadataFormat.Text,
-                Id = "6aee922c-2f71-4512-b1d3-2c697600f6d2",
+                Id = "b5076769-22f6-4257-bd5f-6cecf426d59f",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = HrisMetadataValue.CreateStr(
@@ -592,7 +592,7 @@ UpdateHrisEmployeeRequest req = new UpdateHrisEmployeeRequest() {
         TimeoffDaysUsed = 6D,
         Timezone = "Africa/Harare",
         Title = "Investor Paradigm Liaison",
-        UpdatedAt = System.DateTime.Parse("2022-03-01T08:30:19.129Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-03-01T16:38:23.800Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

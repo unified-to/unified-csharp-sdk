@@ -44,12 +44,12 @@ var res = await sdk.Analytics.CreateAnalyticsEventAsync(
     analyticsEvent: new AnalyticsEvent() {
         CreatedAt = System.DateTime.Parse("2023-06-21T03:13:22.954Z").ToUniversalTime(),
         EventType = EventType.ScreenView,
-        Id = "a8156b16-3ad4-4fe1-85d3-06208b7f5a1c",
+        Id = "cd0a8542-ddd9-43bb-a84a-3d8568bbabc7",
         Metadata = new Dictionary<string, PropertyAnalyticsEventMetadata>() {
             { "key", new PropertyAnalyticsEventMetadata() {} },
         },
         Name = "Xk707ttsb51v",
-        UpdatedAt = System.DateTime.Parse("2023-09-24T08:54:17.987Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-09-24T10:44:47.266Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -96,10 +96,10 @@ var res = await sdk.Analytics.CreateAnalyticsPropertyAsync(
     analyticsProperty: new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "ec53f86d-6013-43eb-a653-b188abda0b5d",
+        Id = "684ae4a5-37d6-4f8c-b670-cf185737b2fe",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T19:58:37.266Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:05:26.224Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -148,14 +148,14 @@ var res = await sdk.Analytics.CreateAnalyticsVisitorAsync(
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "Dallas_Mitchell@yahoo.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "ad3a2cc1-0bf4-4fcb-a55e-964a84d078fe",
-        LastSeenAt = System.DateTime.Parse("2021-12-12T03:29:41.930Z").ToUniversalTime(),
+        Id = "efb5310c-fff2-4fbb-a29a-b2a02722de7c",
+        LastSeenAt = System.DateTime.Parse("2021-12-12T09:28:08.644Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         Name = "Desiree O'Hara",
         TotalEvents = 3639D,
-        UpdatedAt = System.DateTime.Parse("2025-06-26T13:05:18.692Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-27T07:50:21.861Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -576,10 +576,10 @@ PatchAnalyticsPropertyRequest req = new PatchAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "4e302496-84b2-4ec2-9ef6-250e68f08211",
+        Id = "3745fd1b-3966-4ac9-b1d6-acec367d8712",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T19:58:37.266Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:05:26.224Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -629,14 +629,14 @@ PatchAnalyticsVisitorRequest req = new PatchAnalyticsVisitorRequest() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "Dallas_Mitchell@yahoo.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "716696da-8166-4b25-9e94-fa9edaac8473",
-        LastSeenAt = System.DateTime.Parse("2021-12-12T03:29:41.934Z").ToUniversalTime(),
+        Id = "cc27e52a-0421-4d23-8f53-53151a264f20",
+        LastSeenAt = System.DateTime.Parse("2021-12-12T09:28:08.648Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         Name = "Desiree O'Hara",
         TotalEvents = 3639D,
-        UpdatedAt = System.DateTime.Parse("2025-06-26T13:05:18.703Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-27T07:50:21.873Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -764,10 +764,10 @@ UpdateAnalyticsPropertyRequest req = new UpdateAnalyticsPropertyRequest() {
     AnalyticsProperty = new AnalyticsProperty() {
         CreatedAt = System.DateTime.Parse("2021-09-05T19:04:58.430Z").ToUniversalTime(),
         Currency = "USD",
-        Id = "4e302496-84b2-4ec2-9ef6-250e68f08211",
+        Id = "3745fd1b-3966-4ac9-b1d6-acec367d8712",
         Name = "Daniel, Goldner and Dickinson",
         Timezone = "UTC",
-        UpdatedAt = System.DateTime.Parse("2021-09-14T19:58:37.266Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2021-09-14T20:05:26.224Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -817,14 +817,14 @@ UpdateAnalyticsVisitorRequest req = new UpdateAnalyticsVisitorRequest() {
         CreatedAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
         Email = "Dallas_Mitchell@yahoo.com",
         FirstSeenAt = System.DateTime.Parse("2020-04-16T20:29:48.281Z").ToUniversalTime(),
-        Id = "716696da-8166-4b25-9e94-fa9edaac8473",
-        LastSeenAt = System.DateTime.Parse("2021-12-12T03:29:41.934Z").ToUniversalTime(),
+        Id = "cc27e52a-0421-4d23-8f53-53151a264f20",
+        LastSeenAt = System.DateTime.Parse("2021-12-12T09:28:08.648Z").ToUniversalTime(),
         Metadata = new Dictionary<string, PropertyAnalyticsVisitorMetadata>() {
             { "segment", new PropertyAnalyticsVisitorMetadata() {} },
         },
         Name = "Desiree O'Hara",
         TotalEvents = 3639D,
-        UpdatedAt = System.DateTime.Parse("2025-06-26T13:05:18.703Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2025-06-27T07:50:21.873Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",

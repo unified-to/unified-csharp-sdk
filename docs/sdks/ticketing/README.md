@@ -49,10 +49,10 @@ var res = await sdk.Ticketing.CreateTicketingCategoryAsync(
     ticketingCategory: new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "f3538caa-2456-44f4-b7d4-b656bd486238",
+        Id = "34ed3031-80c2-4427-932c-fa8e844f69e4",
         IsActive = true,
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-10T11:40:08.929Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-11T08:34:18.565Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -105,7 +105,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "128603ba-e37c-4dd2-ac29-0c966bab0052",
+        Id = "fd6e012a-7597-40b2-9a74-1a67b00bcff2",
         Name = "Christian Windler",
         Tags = new List<string>() {
             "casso",
@@ -125,7 +125,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-05-31T09:04:49.632Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-01T06:57:28.776Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -172,8 +172,8 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "2e6ae35e-9938-45b6-977a-5224cac878d9",
-        UpdatedAt = System.DateTime.Parse("2024-09-26T10:28:12.440Z").ToUniversalTime(),
+        Id = "0a51e346-68bf-4453-95a1-a419766790f7",
+        UpdatedAt = System.DateTime.Parse("2024-09-27T03:16:28.001Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -220,17 +220,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticketing.CreateTicketingTicketAsync(
     ticketingTicket: new TicketingTicket() {
         AttachmentIds = new List<string>() {
-            "fb154fcc-82d2-4ec7-a1b0-64728e1c2959",
-            "d5d4c98d-e974-4019-b3b3-08cd07f54068",
+            "116cac13-b7c7-441b-a977-4eac369e9b84",
+            "abb77e3d-6d4b-41cc-8373-f3b2cfe1363a",
         },
         CategoryId = "vilicus",
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-11T17:44:32.894Z").ToUniversalTime(),
-        Id = "e85b5156-5bbf-4bb1-b470-408cc2abeda2",
+        DueAt = System.DateTime.Parse("2025-08-12T11:59:38.200Z").ToUniversalTime(),
+        Id = "d0845f87-cb32-4d49-88f9-aefc27a55287",
         Priority = "LOW",
         Source = "atavus",
-        SourceRef = "602d0f4f-bd54-4af7-a992-1a9bb7586f43",
+        SourceRef = "29cae13e-4b0b-4f77-88ee-dec55ae51a23",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
@@ -238,7 +238,7 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
             "vitae",
             "torrens",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-07T23:17:58.240Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T07:55:09.477Z").ToUniversalTime(),
         Url = "https://yellowish-testimonial.biz",
     },
     connectionId: "<id>"
@@ -619,10 +619,10 @@ PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "497a8c60-ade7-4e91-8e4f-5cc601bd3d58",
+        Id = "c35ccb3a-e3cd-4066-bbd8-57ddd350768a",
         IsActive = true,
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-10T11:40:08.935Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-11T08:34:18.571Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -676,7 +676,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "2effc827-3286-461b-afbf-f4021b73ce4d",
+        Id = "911658bf-0acf-4a65-b968-04b095599b72",
         Name = "Christian Windler",
         Tags = new List<string>() {
             "casso",
@@ -696,7 +696,7 @@ PatchTicketingCustomerRequest req = new PatchTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-05-31T09:04:49.643Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-01T06:57:28.791Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -744,8 +744,8 @@ PatchTicketingNoteRequest req = new PatchTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "71d7063b-857d-4fc6-8f7b-fc60bbf55d10",
-        UpdatedAt = System.DateTime.Parse("2024-09-26T10:28:12.446Z").ToUniversalTime(),
+        Id = "4ed11899-41a9-40c3-aa6c-0e2320b22c1a",
+        UpdatedAt = System.DateTime.Parse("2024-09-27T03:16:28.004Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -793,17 +793,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
     TicketingTicket = new TicketingTicket() {
         AttachmentIds = new List<string>() {
-            "aa6fe5d1-92da-4a51-b192-f37d3d87386b",
-            "40aa0380-8b18-49f2-ad9f-f8f67a626031",
+            "d3915ccd-4090-41ce-b4ae-460a750f70f6",
+            "00dc8df3-1513-45e5-acc9-46662126db61",
         },
         CategoryId = "vilicus",
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-11T17:44:32.905Z").ToUniversalTime(),
-        Id = "d3d55770-6736-4add-bde7-dbac64903c80",
+        DueAt = System.DateTime.Parse("2025-08-12T11:59:38.213Z").ToUniversalTime(),
+        Id = "8c8d0c1f-7e80-48ac-b72d-7e344fe03f32",
         Priority = "LOW",
         Source = "atavus",
-        SourceRef = "b67b0246-c8b7-4205-9b88-89a0aa22436d",
+        SourceRef = "502c8b73-3b23-43b3-92a1-a82dac14b701",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
@@ -811,7 +811,7 @@ PatchTicketingTicketRequest req = new PatchTicketingTicketRequest() {
             "vitae",
             "torrens",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-07T23:17:58.245Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T07:55:09.483Z").ToUniversalTime(),
         Url = "https://yellowish-testimonial.biz",
     },
     ConnectionId = "<id>",
@@ -1020,10 +1020,10 @@ UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
     TicketingCategory = new TicketingCategory() {
         CreatedAt = System.DateTime.Parse("2019-10-19T22:02:51.067Z").ToUniversalTime(),
         Description = "Tempus umbra cibus carpo depulso torqueo. Curtus aperiam nam optio tendo. Bardus tumultus delectus arbitro amplus tollo coerceo clam comprehendo vulnero.",
-        Id = "497a8c60-ade7-4e91-8e4f-5cc601bd3d58",
+        Id = "c35ccb3a-e3cd-4066-bbd8-57ddd350768a",
         IsActive = true,
         Name = "amicitia",
-        UpdatedAt = System.DateTime.Parse("2026-01-10T11:40:08.935Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-01-11T08:34:18.571Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1077,7 +1077,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingEmailType.Home,
             },
         },
-        Id = "2effc827-3286-461b-afbf-f4021b73ce4d",
+        Id = "911658bf-0acf-4a65-b968-04b095599b72",
         Name = "Christian Windler",
         Tags = new List<string>() {
             "casso",
@@ -1097,7 +1097,7 @@ UpdateTicketingCustomerRequest req = new UpdateTicketingCustomerRequest() {
                 Type = TicketingTelephoneType.Mobile,
             },
         },
-        UpdatedAt = System.DateTime.Parse("2026-05-31T09:04:49.643Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2026-06-01T06:57:28.791Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1145,8 +1145,8 @@ UpdateTicketingNoteRequest req = new UpdateTicketingNoteRequest() {
     TicketingNote = new TicketingNote() {
         CreatedAt = System.DateTime.Parse("2019-07-23T15:05:03.241Z").ToUniversalTime(),
         Description = "Civitas absum adipisci vitiosus recusandae tristis dedico libero comminor cena. Spes virgo absorbeo defluo nostrum.",
-        Id = "71d7063b-857d-4fc6-8f7b-fc60bbf55d10",
-        UpdatedAt = System.DateTime.Parse("2024-09-26T10:28:12.446Z").ToUniversalTime(),
+        Id = "4ed11899-41a9-40c3-aa6c-0e2320b22c1a",
+        UpdatedAt = System.DateTime.Parse("2024-09-27T03:16:28.004Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -1194,17 +1194,17 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
     TicketingTicket = new TicketingTicket() {
         AttachmentIds = new List<string>() {
-            "aa6fe5d1-92da-4a51-b192-f37d3d87386b",
-            "40aa0380-8b18-49f2-ad9f-f8f67a626031",
+            "d3915ccd-4090-41ce-b4ae-460a750f70f6",
+            "00dc8df3-1513-45e5-acc9-46662126db61",
         },
         CategoryId = "vilicus",
         CreatedAt = System.DateTime.Parse("2021-06-25T19:19:31.279Z").ToUniversalTime(),
         Description = "Cura dignissimos aut clibanus vulgaris patrocinor. Laborum acies curiositas antepono coniuratio. Correptius curiositas sono censura coma. Bestia suus tot cotidie terror subito coniecto beneficium.",
-        DueAt = System.DateTime.Parse("2025-08-11T17:44:32.905Z").ToUniversalTime(),
-        Id = "d3d55770-6736-4add-bde7-dbac64903c80",
+        DueAt = System.DateTime.Parse("2025-08-12T11:59:38.213Z").ToUniversalTime(),
+        Id = "8c8d0c1f-7e80-48ac-b72d-7e344fe03f32",
         Priority = "LOW",
         Source = "atavus",
-        SourceRef = "b67b0246-c8b7-4205-9b88-89a0aa22436d",
+        SourceRef = "502c8b73-3b23-43b3-92a1-a82dac14b701",
         Status = TicketingTicketStatus.Active,
         Subject = "Thymbra ratione minus arbitro tricesimus cetera validus.",
         Tags = new List<string>() {
@@ -1212,7 +1212,7 @@ UpdateTicketingTicketRequest req = new UpdateTicketingTicketRequest() {
             "vitae",
             "torrens",
         },
-        UpdatedAt = System.DateTime.Parse("2023-06-07T23:17:58.245Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-06-08T07:55:09.483Z").ToUniversalTime(),
         Url = "https://yellowish-testimonial.biz",
     },
     ConnectionId = "<id>",

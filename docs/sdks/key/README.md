@@ -30,10 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Key.CreateComputeKeyAsync(
     computeKey: new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "1fdc2d5d-ee3b-4331-883b-c0630f2aef1c",
+        Id = "7d6118f4-a2b9-461f-86dc-d4eb16d45f1b",
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-05T13:14:39.578Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-05T21:38:24.869Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -163,10 +163,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchComputeKeyRequest req = new PatchComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "6b9b513e-2251-485d-913c-82c037d5309f",
+        Id = "e6223ebf-ed02-4e0e-b817-b92167f2dd0e",
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-05T13:14:39.582Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-05T21:38:24.872Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -253,10 +253,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateComputeKeyRequest req = new UpdateComputeKeyRequest() {
     ComputeKey = new ComputeKey() {
         CreatedAt = System.DateTime.Parse("2023-08-19T14:31:46.492Z").ToUniversalTime(),
-        Id = "6b9b513e-2251-485d-913c-82c037d5309f",
+        Id = "e6223ebf-ed02-4e0e-b817-b92167f2dd0e",
         Name = "nienow-secret",
         Type = ComputeKeyType.Secret,
-        UpdatedAt = System.DateTime.Parse("2024-10-05T13:14:39.582Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2024-10-05T21:38:24.872Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
