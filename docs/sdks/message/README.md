@@ -32,17 +32,17 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
     messagingMessage: new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "5404d632-eaf0-40c5-80c6-625343930738",
+                ContentIdentifier = "cd558bbb-d013-4071-b390-b76a0fab3723",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "9b112778-1b2a-4d20-a5a7-6b05239d4b7b",
+                MessageId = "f0e68b6a-7e5a-480f-b775-5f1ffe9fc586",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "e0ba27c7-e5bd-467c-87f8-395644162932",
+                Id = "ffc585d8-d0d0-4c3b-afde-70f96d58ce63",
                 Text = "denuo",
             },
         },
@@ -50,7 +50,7 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "9b112778-1b2a-4d20-a5a7-6b05239d4b7b",
+        Id = "f0e68b6a-7e5a-480f-b775-5f1ffe9fc586",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -59,7 +59,7 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
         Reactions = new List<MessagingReaction>() {},
         Reference = "571483f2-d95b-4f06-8b78-d35e7046bb74",
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-16T11:55:35.587Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-16T19:18:19.628Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     connectionId: "<id>"
@@ -192,17 +192,17 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "7873b0ba-c91d-4c46-9493-372477ea38db",
+                ContentIdentifier = "8d8058f7-a817-40e0-9617-d33ec81a03e1",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "905fa806-2bd2-45ba-8e74-89d8daddd47c",
+                MessageId = "e71a21d0-7c8d-451f-96ce-a11776a86a4e",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "83b0e7fd-56a1-4f41-9606-94eade38a290",
+                Id = "63516897-11e1-4e4b-9e7b-08a4164dd86d",
                 Text = "denuo",
             },
         },
@@ -210,7 +210,7 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "905fa806-2bd2-45ba-8e74-89d8daddd47c",
+        Id = "e71a21d0-7c8d-451f-96ce-a11776a86a4e",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -219,7 +219,7 @@ PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
         Reactions = new List<MessagingReaction>() {},
         Reference = "571483f2-d95b-4f06-8b78-d35e7046bb74",
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-16T11:55:35.595Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-16T19:18:19.640Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     ConnectionId = "<id>",
@@ -309,17 +309,17 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
     MessagingMessage = new MessagingMessage() {
         Attachments = new List<MessagingAttachment>() {
             new MessagingAttachment() {
-                ContentIdentifier = "7873b0ba-c91d-4c46-9493-372477ea38db",
+                ContentIdentifier = "8d8058f7-a817-40e0-9617-d33ec81a03e1",
                 ContentType = "coaegresco",
                 DownloadUrl = "https://rotating-advertisement.org",
                 Filename = "super",
-                MessageId = "905fa806-2bd2-45ba-8e74-89d8daddd47c",
+                MessageId = "e71a21d0-7c8d-451f-96ce-a11776a86a4e",
                 Size = 327D,
             },
         },
         Buttons = new List<MessagingButton>() {
             new MessagingButton() {
-                Id = "83b0e7fd-56a1-4f41-9606-94eade38a290",
+                Id = "63516897-11e1-4e4b-9e7b-08a4164dd86d",
                 Text = "denuo",
             },
         },
@@ -327,7 +327,7 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
         DestinationMembers = new List<MessagingMember>() {},
         HasChildren = true,
         HiddenMembers = new List<MessagingMember>() {},
-        Id = "905fa806-2bd2-45ba-8e74-89d8daddd47c",
+        Id = "e71a21d0-7c8d-451f-96ce-a11776a86a4e",
         IsUnread = false,
         MentionedMembers = new List<MessagingMember>() {},
         Message = "Sum utique aliquid.",
@@ -336,7 +336,7 @@ UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
         Reactions = new List<MessagingReaction>() {},
         Reference = "571483f2-d95b-4f06-8b78-d35e7046bb74",
         Subject = "Cernuus optio cohaero summisse in.",
-        UpdatedAt = System.DateTime.Parse("2023-07-16T11:55:35.595Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2023-07-16T19:18:19.640Z").ToUniversalTime(),
         WebUrl = "https://grumpy-kit.net",
     },
     ConnectionId = "<id>",

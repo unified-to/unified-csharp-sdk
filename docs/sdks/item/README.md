@@ -35,7 +35,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
         Description = "Vulnero ustulo abeo.",
         Duration = 87D,
         GlobalCode = "calamitas",
-        Id = "26090175-190a-4b67-a4b1-06b7d38316f4",
+        Id = "cfde012b-37ed-472b-8392-6de88215839b",
         IsActive = false,
         IsFeatured = true,
         IsTaxable = true,
@@ -44,10 +44,10 @@ var res = await sdk.Item.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 663D,
-                Id = "6890c017-9ed5-4aec-a077-40d53db46884",
+                Id = "466cd342-caac-4da8-9429-89e41a142116",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "18c59f8f-cc9f-4081-ba3c-481e1b963161",
+                        Id = "5dd595ab-5138-4ec6-bedc-2824688aa5a0",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -62,10 +62,10 @@ var res = await sdk.Item.CreateCommerceItemAsync(
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 189D,
-                Id = "607f7bfb-fb88-4bb2-97c8-fa5af6170a56",
+                Id = "c8507770-0605-44a3-9ddf-de65d8454b83",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "9f7a49cd-9d3a-4864-9bfb-4f4dd2ff401d",
+                        Id = "f90c2a7a-0a4f-473a-b1de-504929acf274",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -86,7 +86,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "cf710c68-9f66-4000-a723-3d16e65dabbd",
+                Id = "ff244e6c-44e3-4216-a6bc-e42faac408f5",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -112,7 +112,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
         },
         TotalStock = 579D,
         Type = "beatae",
-        UpdatedAt = System.DateTime.Parse("2022-04-18T08:19:02.944Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-18T16:49:50.451Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 22D,
         WeightUnit = WeightUnit.Kg,
@@ -250,7 +250,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         Description = "Vulnero ustulo abeo.",
         Duration = 87D,
         GlobalCode = "calamitas",
-        Id = "f50dc025-eee2-49ec-a5af-f53539746f02",
+        Id = "0b1db13d-a589-41d8-a20f-f856d6452427",
         IsActive = false,
         IsFeatured = true,
         IsTaxable = true,
@@ -259,10 +259,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 663D,
-                Id = "7249c90b-59c8-40c1-9df6-b9642a02d019",
+                Id = "27b338b1-6a62-4aab-b460-7bbc79030fe2",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "178e3acb-19bc-49e7-9c47-0ece0bf1b4c3",
+                        Id = "8cefbb31-7da6-4053-97c0-c13d95c7ff5e",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -277,10 +277,10 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 189D,
-                Id = "8da491c2-6cfc-4d76-932f-19296936c736",
+                Id = "02ca86ca-595e-4bb4-9e5e-ec9391787d29",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "034bc5fb-ef2b-4e00-a162-d83e2096148c",
+                        Id = "07e733c7-e1d0-4d56-8fb5-6e3cafa5b736",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -301,7 +301,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "61dd2823-e75d-4009-9a5e-3ca42d6ce626",
+                Id = "203b988e-8c7d-4132-89b1-2c887f32408d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -327,7 +327,7 @@ PatchCommerceItemRequest req = new PatchCommerceItemRequest() {
         },
         TotalStock = 579D,
         Type = "beatae",
-        UpdatedAt = System.DateTime.Parse("2022-04-18T08:19:02.956Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-18T16:49:50.467Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 22D,
         WeightUnit = WeightUnit.Kg,
@@ -422,7 +422,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         Description = "Vulnero ustulo abeo.",
         Duration = 87D,
         GlobalCode = "calamitas",
-        Id = "f50dc025-eee2-49ec-a5af-f53539746f02",
+        Id = "0b1db13d-a589-41d8-a20f-f856d6452427",
         IsActive = false,
         IsFeatured = true,
         IsTaxable = true,
@@ -431,10 +431,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Caterva eveniet acies candidus.",
                 Height = 663D,
-                Id = "7249c90b-59c8-40c1-9df6-b9642a02d019",
+                Id = "27b338b1-6a62-4aab-b460-7bbc79030fe2",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "178e3acb-19bc-49e7-9c47-0ece0bf1b4c3",
+                        Id = "8cefbb31-7da6-4053-97c0-c13d95c7ff5e",
                         Slug = "doloremque",
                         Value = CommerceMetadataValue.CreateStr(
                             "allatus"
@@ -449,10 +449,10 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
             new CommerceItemMedia() {
                 Alt = "Comedo.",
                 Height = 189D,
-                Id = "8da491c2-6cfc-4d76-932f-19296936c736",
+                Id = "02ca86ca-595e-4bb4-9e5e-ec9391787d29",
                 Metadata = new List<CommerceMetadata>() {
                     new CommerceMetadata() {
-                        Id = "034bc5fb-ef2b-4e00-a162-d83e2096148c",
+                        Id = "07e733c7-e1d0-4d56-8fb5-6e3cafa5b736",
                         Slug = "bis",
                         Value = CommerceMetadataValue.CreateStr(
                             "somniculosus"
@@ -473,7 +473,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
                     }
                 ),
                 Format = CommerceMetadataFormat.Text,
-                Id = "61dd2823-e75d-4009-9a5e-3ca42d6ce626",
+                Id = "203b988e-8c7d-4132-89b1-2c887f32408d",
                 Namespace = "custom",
                 Slug = "custom_property",
                 Value = CommerceMetadataValue.CreateStr(
@@ -499,7 +499,7 @@ UpdateCommerceItemRequest req = new UpdateCommerceItemRequest() {
         },
         TotalStock = 579D,
         Type = "beatae",
-        UpdatedAt = System.DateTime.Parse("2022-04-18T08:19:02.956Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-04-18T16:49:50.467Z").ToUniversalTime(),
         VendorName = "Mayer - Flatley",
         Weight = 22D,
         WeightUnit = WeightUnit.Kg,

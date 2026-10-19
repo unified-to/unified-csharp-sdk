@@ -38,7 +38,7 @@ var res = await sdk.Content.CreateLmsContentAsync(
         Difficulty = "Beginner",
         DurationMinutes = 19D,
         ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "8f1a8453-8a01-4a6d-84b4-138768a5041b",
+        Id = "f7224f95-ce1f-49aa-a41c-f293a1760d5d",
         Instructors = new List<LmsReference>() {
             new LmsReference() {
                 Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -117,7 +117,7 @@ var res = await sdk.Content.CreateLmsContentAsync(
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-03T05:13:59.358Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-03T12:24:24.519Z").ToUniversalTime(),
     },
     connectionId: "<id>"
 );
@@ -255,7 +255,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Difficulty = "Beginner",
         DurationMinutes = 19D,
         ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "bf864c62-9ac5-42bc-9416-a2a0cd6078d1",
+        Id = "31af44ba-0efe-4868-b5ad-2cc0feb5b131",
         Instructors = new List<LmsReference>() {
             new LmsReference() {
                 Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -334,7 +334,7 @@ PatchLmsContentRequest req = new PatchLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-03T05:13:59.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-03T12:24:24.528Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -429,7 +429,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Difficulty = "Beginner",
         DurationMinutes = 19D,
         ExternalReference = "0d230e31-a9c4-4a35-a5b9-9168e91ffff5",
-        Id = "bf864c62-9ac5-42bc-9416-a2a0cd6078d1",
+        Id = "31af44ba-0efe-4868-b5ad-2cc0feb5b131",
         Instructors = new List<LmsReference>() {
             new LmsReference() {
                 Id = "91a23b20-a7a3-4323-9548-0897c09eb49e",
@@ -508,7 +508,7 @@ UpdateLmsContentRequest req = new UpdateLmsContentRequest() {
         Tags = new List<string>() {
             "dens",
         },
-        UpdatedAt = System.DateTime.Parse("2022-10-03T05:13:59.366Z").ToUniversalTime(),
+        UpdatedAt = System.DateTime.Parse("2022-10-03T12:24:24.528Z").ToUniversalTime(),
     },
     ConnectionId = "<id>",
     Id = "<id>",
